@@ -1,0 +1,8 @@
+2026-03-25 13:06:30 *NORMAL*     Started on Windows 10.0.0.26200 x64. Driver status: 0xC0000225
+2026-03-25 13:06:44 *CRITICAL*   Injection initiated. Mode: 0, process type: 0, pid: 61216, mmap flags: 0x0, erasePE: 0, unlink: 0, thread hijack: 0, init routine: '', init arg: ''
+2026-03-25 13:06:44 *CRITICAL*   Injecting image 'C:\Users\markp\Documents\GitHub\StarRupture-ModLoader\StarRupture SDK\Dumper-7.dll'
+
+2026-03-25 13:12:35 *NORMAL*     Started on Windows 10.0.0.26200 x64. Driver status: 0xC0000225
+2026-03-25 13:12:44 *CRITICAL*   Injection initiated. Mode: 0, process type: 0, pid: 33968, mmap flags: 0x0, erasePE: 0, unlink: 0, thread hijack: 0, init routine: '', init arg: ''
+2026-03-25 13:12:44 *CRITICAL*   Injecting image 'C:\Users\markp\Documents\GitHub\StarRupture-ModLoader\StarRupture SDK\Dumper-7.dll'
+

@@ -14,6 +14,17 @@
 namespace SDK
 {
 
+// Enum ChimeraInteriorsMapper.EGridExpandSide
+// NumValues: 0x0005
+enum class EGridExpandSide : uint8
+{
+	Top                                      = 0,
+	Bottom                                   = 1,
+	Left                                     = 2,
+	Right                                    = 3,
+	EGridExpandSide_MAX                      = 4,
+};
+
 // ScriptStruct ChimeraInteriorsMapper.BoxData
 // 0x0020 (0x0020 - 0x0000)
 struct alignas(0x10) FBoxData final

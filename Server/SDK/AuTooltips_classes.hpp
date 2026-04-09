@@ -42,26 +42,6 @@ public:
 };
 DUMPER7_ASSERTS_UAuTooltipSettings;
 
-// Class AuTooltips.AuUW_TooltipBase
-// 0x0000 (0x03A0 - 0x03A0)
-class UAuUW_TooltipBase final : public UUserWidget
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AuUW_TooltipBase")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AuUW_TooltipBase")
-	}
-	static class UAuUW_TooltipBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAuUW_TooltipBase>();
-	}
-};
-DUMPER7_ASSERTS_UAuUW_TooltipBase;
-
 // Class AuTooltips.AuTooltipSubsystem
 // 0x0000 (0x0030 - 0x0030)
 class UAuTooltipSubsystem final : public UGameInstanceSubsystem
@@ -81,6 +61,26 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAuTooltipSubsystem;
+
+// Class AuTooltips.AuUW_TooltipBase
+// 0x0000 (0x03A0 - 0x03A0)
+class UAuUW_TooltipBase final : public UUserWidget
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AuUW_TooltipBase")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AuUW_TooltipBase")
+	}
+	static class UAuUW_TooltipBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAuUW_TooltipBase>();
+	}
+};
+DUMPER7_ASSERTS_UAuUW_TooltipBase;
 
 // Class AuTooltips.AuUW_ItemTooltipBase
 // 0x0000 (0x03A0 - 0x03A0)

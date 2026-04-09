@@ -31,6 +31,30 @@ void UWBP_ToolTipWidget_C::AddDefaultActions()
 }
 
 
+// Function WBP_ToolTipWidget.WBP_ToolTipWidget_C.AddEffect
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// int32                                   InValue                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FSlateBrush&               InIcon                                                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// const class FText&                      InDescription                                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void UWBP_ToolTipWidget_C::AddEffect(int32 InValue, const struct FSlateBrush& InIcon, const class FText& InDescription)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_ToolTipWidget_C", "AddEffect");
+
+	Params::WBP_ToolTipWidget_C_AddEffect Parms{};
+
+	Parms.InValue = InValue;
+	Parms.InIcon = std::move(InIcon);
+	Parms.InDescription = std::move(InDescription);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function WBP_ToolTipWidget.WBP_ToolTipWidget_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 

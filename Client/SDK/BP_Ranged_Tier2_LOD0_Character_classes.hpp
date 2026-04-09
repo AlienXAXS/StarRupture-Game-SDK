@@ -18,25 +18,28 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Ranged_Tier2_LOD0_Character.BP_Ranged_Tier2_LOD0_Character_C
-// 0x0020 (0x0C20 - 0x0C00)
+// 0x0020 (0x0D20 - 0x0D00)
 class ABP_Ranged_Tier2_LOD0_Character_C final : public ABP_BaseAI_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Ranged_Tier2_LOD0_Character_C;   // 0x0BF8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UNiagaraComponent*                      NiagaraEyes;                                       // 0x0C00(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UNiagaraComponent*                      SpitDrip;                                          // 0x0C08(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class FName                                   Key_Name;                                          // 0x0C10(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        InjuryPoseAlpha;                                   // 0x0C18(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Ranged_Tier2_LOD0_Character_C;   // 0x0D00(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UNiagaraComponent*                      NiagaraEyes;                                       // 0x0D08(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      SpitDrip;                                          // 0x0D10(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	double                                        InjuryPoseAlpha;                                   // 0x0D18(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_Ranged_Tier2_LOD0_Character(int32 EntryPoint);
+	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
 	void OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag);
 	void OnDamage(class AActor* Actor, const struct FHitResult& HitResult, float InDamage);
+	void OnEnterActorPool();
+	void OnExitActorPool();
+	void OnPrepareForGame();
 	void OnRep_InjuryPoseAlpha();
-	void ReceiveBeginPlay();
 	void SetIsAggroEyeColor(bool NewIsAggro);
-	void SetIsBoostedEyeColor(bool NewIsBoosted);
 	void UserConstructionScript();
+
+	void OnMeshVisibilityUpdated(bool bIsMeshHidden) const;
 
 public:
 	static class UClass* StaticClass()

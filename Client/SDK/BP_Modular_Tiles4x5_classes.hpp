@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Modular_Tiles4x5.BP_Modular_Tiles4x5_C
-// 0x0000 (0x0870 - 0x0870)
+// 0x0000 (0x0880 - 0x0880)
 class ABP_Modular_Tiles4x5_C final : public ABP_Modular_Tiles_Base_C
 {
 public:

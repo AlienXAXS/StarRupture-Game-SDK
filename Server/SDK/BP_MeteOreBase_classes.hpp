@@ -89,6 +89,7 @@ public:
 	struct FTimerHandle                           WaitForStreamingCompleteTimerHandle;               // 0x08F0(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void TurnOffWalkableCollision();
 	void ShouldSpawnForListenServer(bool* bShouldSpawnForLS);
 	void ReceiveTick(float DeltaSeconds);
 	void ReceiveEndPlay(EEndPlayReason EndPlayReason);

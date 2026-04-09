@@ -541,6 +541,17 @@ public:
 };
 DUMPER7_ASSERTS_AuItemsStoreComponent_ClientOnItemAdded;
 
+// Function AuItems.AuItemsStoreComponent.ClientOnItemMerged
+// 0x0010 (0x0010 - 0x0000)
+struct AuItemsStoreComponent_ClientOnItemMerged final
+{
+public:
+	const class UAuItemDataBase*                  NewItem;                                           // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Amount;                                            // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AddedAmount;                                       // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AuItemsStoreComponent_ClientOnItemMerged;
+
 // Function AuItems.AuItemsStoreComponent.GetItemCopy
 // 0x01E8 (0x01E8 - 0x0000)
 struct AuItemsStoreComponent_GetItemCopy final

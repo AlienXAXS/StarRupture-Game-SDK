@@ -42,6 +42,7 @@ public:
 	void ReceiveBeginPlay();
 	void Timeline__FinishedFunc();
 	void Timeline__UpdateFunc();
+	void TurnOffWalkableCollision();
 
 public:
 	static class UClass* StaticClass()

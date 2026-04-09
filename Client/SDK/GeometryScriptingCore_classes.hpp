@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "GeometryScriptingCore_structs.hpp"
-#include "CoreUObject_classes.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "GeometryScriptingCore_structs.hpp"
+#include "CoreUObject_classes.hpp"
 
 
 namespace SDK

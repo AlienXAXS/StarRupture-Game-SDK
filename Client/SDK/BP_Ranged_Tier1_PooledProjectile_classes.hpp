@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Chimera_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -29,6 +29,8 @@ public:
 	void ExecuteUbergraph_BP_Ranged_Tier1_PooledProjectile(int32 EntryPoint);
 	void OnHit(const struct FHitResult& HitResult);
 	void OnProjectileShot(const struct FCrAiProjectileParameters& InProjectileParameters);
+
+	bool CanReturnToPoolAfterHit() const;
 
 public:
 	static class UClass* StaticClass()

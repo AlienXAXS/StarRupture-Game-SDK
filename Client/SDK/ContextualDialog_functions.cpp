@@ -100,6 +100,25 @@ bool IContextualDialogInterface::IsCharacterTalking()
 }
 
 
+// Function ContextualDialog.ContextualDialogInterface.OnNoReplyDialogueRuleFound
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void IContextualDialogInterface::OnNoReplyDialogueRuleFound()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ContextualDialogInterface", "OnNoReplyDialogueRuleFound");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function ContextualDialog.ContextualDialogInterface.OnResponseFinished
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:

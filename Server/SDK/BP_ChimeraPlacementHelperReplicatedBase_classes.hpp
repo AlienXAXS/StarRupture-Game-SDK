@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ChimeraPlacementHelperReplicatedBase.BP_ChimeraPlacementHelperReplicatedBase_C
-// 0x0000 (0x0840 - 0x0840)
+// 0x0000 (0x08B0 - 0x08B0)
 #pragma pack(push, 0x1)
 class alignas(0x10) ABP_ChimeraPlacementHelperReplicatedBase_C : public ABP_PlacementHelperReplicatedBase_C
 {

@@ -14,15 +14,6 @@
 namespace SDK::Params
 {
 
-// Function MeshModelingTools.MeshAttributePaintToolProperties.GetAttributeNames
-// 0x0010 (0x0010 - 0x0000)
-struct MeshAttributePaintToolProperties_GetAttributeNames final
-{
-public:
-	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MeshAttributePaintToolProperties_GetAttributeNames;
-
 // Function MeshModelingTools.MeshConstraintProperties.IsPreventNormalFlipsEnabled
 // 0x0001 (0x0001 - 0x0000)
 struct MeshConstraintProperties_IsPreventNormalFlipsEnabled final
@@ -67,6 +58,15 @@ public:
 	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_SelectiveTessellationProperties_GetMaterialIDsFunc;
+
+// Function MeshModelingTools.MeshAttributePaintToolProperties.GetAttributeNames
+// 0x0010 (0x0010 - 0x0000)
+struct MeshAttributePaintToolProperties_GetAttributeNames final
+{
+public:
+	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MeshAttributePaintToolProperties_GetAttributeNames;
 
 // Function MeshModelingTools.MeshVertexPaintToolUtilityActions.GetWeightMapsFunc
 // 0x0010 (0x0010 - 0x0000)

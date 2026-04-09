@@ -95,22 +95,6 @@ public:
 };
 DUMPER7_ASSERTS_AuActorPlacementComponent_ServerSetHelperDynamicExtent;
 
-// Function AuActorPlacement.AuActorPlacementComponent.ServerSpawnActorFromSubsystem
-// 0x00B0 (0x00B0 - 0x0000)
-struct AuActorPlacementComponent_ServerSpawnActorFromSubsystem final
-{
-public:
-	struct FAuAPPayloadDataHandle                 InPayloadHandle;                                   // 0x0000(0x0020)(Parm, NativeAccessSpecifierPublic)
-	struct FTransform                             InSpawnTransform;                                  // 0x0020(0x0060)(Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FVector>                        TilesLocations;                                    // 0x0080(0x0010)(ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          bCurrentFoundation;                                // 0x0090(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCurrentTiles;                                     // 0x0091(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_92[0x6];                                       // 0x0092(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FCrMassEntityReplicationHelper> InBuildingsToReplace;                              // 0x0098(0x0010)(ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A8[0x8];                                       // 0x00A8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_AuActorPlacementComponent_ServerSpawnActorFromSubsystem;
-
 // Function AuActorPlacement.AuActorPlacementComponent.ServerSpawnHelperActor
 // 0x0048 (0x0048 - 0x0000)
 struct AuActorPlacementComponent_ServerSpawnHelperActor final
@@ -154,12 +138,12 @@ public:
 DUMPER7_ASSERTS_AuActorPlacementFunctionLibrary_GetPayloadPlacementData;
 
 // Function AuActorPlacement.AuActorPlacementFunctionLibrary.GetSplineActorData
-// 0x0100 (0x0100 - 0x0000)
+// 0x0108 (0x0108 - 0x0000)
 struct AuActorPlacementFunctionLibrary_GetSplineActorData final
 {
 public:
 	struct FAuAPPayloadDataHandle                 InHandle;                                          // 0x0000(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	struct FAuAPSplineActorPayloadData            ReturnValue;                                       // 0x0020(0x00E0)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+	struct FAuAPSplineActorPayloadData            ReturnValue;                                       // 0x0020(0x00E8)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_AuActorPlacementFunctionLibrary_GetSplineActorData;
 

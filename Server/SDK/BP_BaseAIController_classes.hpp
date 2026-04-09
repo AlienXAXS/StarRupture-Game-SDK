@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_BaseAIController.BP_BaseAIController_C
-// 0x0000 (0x03F0 - 0x03F0)
+// 0x0000 (0x03F8 - 0x03F8)
 class ABP_BaseAIController_C : public AMassEnemyAiController
 {
 public:

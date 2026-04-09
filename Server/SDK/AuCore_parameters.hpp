@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "AuCore_structs.hpp"
-#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 #include "Niagara_structs.hpp"
 
 

@@ -19,30 +19,28 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Melee_Tier1_Actor_Character.BP_Melee_Tier1_Actor_Character_C
-// 0x0040 (0x0C40 - 0x0C00)
+// 0x0050 (0x0D50 - 0x0D00)
 class ABP_Melee_Tier1_Actor_Character_C final : public ABP_BaseAI_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Melee_Tier1_Actor_Character_C;   // 0x0BF8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UCrAiMeleeAnimationStateSyncComponent*  CrAiMeleeAnimationStateSync;                       // 0x0C00(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   SM_Tendrils;                                       // 0x0C08(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UNiagaraComponent*                      NiagaraEyes;                                       // 0x0C10(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                StrafePositionModifier;                            // 0x0C18(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         FakeStrafeAlphaMod;                                // 0x0C30(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_C34[0x4];                                      // 0x0C34(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        FakeStrafeMagnitudeMod;                            // 0x0C38(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Melee_Tier1_Actor_Character_C;   // 0x0D00(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UStaticMeshComponent*                   SM_Tendrils;                                       // 0x0D08(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCrAiMeleeAnimationStateSyncComponent*  CrAiMeleeAnimationStateSync;                       // 0x0D10(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      NiagaraEyes;                                       // 0x0D18(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                StrafePositionModifier;                            // 0x0D20(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         FakeStrafeAlphaMod;                                // 0x0D38(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_D3C[0x4];                                      // 0x0D3C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        FakeStrafeMagnitudeMod;                            // 0x0D40(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void UserConstructionScript();
-	void TryApplySpeedupRemoveActivator();
-	void TryApplySpeedup();
-	void SetIsJumpEyeBehaviour(bool NewIsJumpEyeBehaviour);
-	void SetIsBoostedEyeColor(bool NewIsBoosted);
-	void SetIsAggroEyeColor(bool NewIsAggro);
 	void OnVisualVariationChanged(const struct FVector& NewVisualVariationSeed);
-	void OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag);
+	void OnExitActorPool();
+	void OnEnterActorPool();
+	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
 	void ExecuteUbergraph_BP_Melee_Tier1_Actor_Character(int32 EntryPoint);
-	void CanChangeEyeColor(bool* Result);
+
+	void OnMeshVisibilityUpdated(bool bIsMeshHidden) const;
 
 public:
 	static class UClass* StaticClass()

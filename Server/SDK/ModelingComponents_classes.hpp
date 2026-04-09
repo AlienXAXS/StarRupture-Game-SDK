@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "GeometryFramework_classes.hpp"
 #include "InteractiveToolsFramework_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
@@ -17,162 +18,10 @@
 #include "ModelingComponents_structs.hpp"
 #include "DeveloperSettings_classes.hpp"
 #include "PhysicsCore_structs.hpp"
-#include "GeometryFramework_classes.hpp"
 
 
 namespace SDK
 {
-
-// Class ModelingComponents.MultiSelectionMeshEditingTool
-// 0x0008 (0x00C8 - 0x00C0)
-class UMultiSelectionMeshEditingTool : public UMultiSelectionTool
-{
-public:
-	TWeakObjectPtr<class UWorld>                  TargetWorld;                                       // 0x00C0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MultiSelectionMeshEditingTool")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MultiSelectionMeshEditingTool")
-	}
-	static class UMultiSelectionMeshEditingTool* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMultiSelectionMeshEditingTool>();
-	}
-};
-DUMPER7_ASSERTS_UMultiSelectionMeshEditingTool;
-
-// Class ModelingComponents.BaseCreateFromSelectedTool
-// 0x0050 (0x0118 - 0x00C8)
-class UBaseCreateFromSelectedTool : public UMultiSelectionMeshEditingTool
-{
-public:
-	uint8                                         Pad_C8[0x8];                                       // 0x00C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTransformInputsToolProperties*         TransformProperties;                               // 0x00D0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCreateMeshObjectTypeProperties*        OutputTypeProperties;                              // 0x00D8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UBaseCreateFromSelectedHandleSourceProperties* HandleSourcesProperties;                    // 0x00E0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UBaseCreateFromSelectedCollisionProperties* CollisionProperties;                           // 0x00E8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UMeshOpPreviewWithBackgroundCompute*    Preview;                                           // 0x00F0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TArray<class UTransformProxy*>                TransformProxies;                                  // 0x00F8(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
-	TArray<class UCombinedTransformGizmo*>        TransformGizmos;                                   // 0x0108(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("BaseCreateFromSelectedTool")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"BaseCreateFromSelectedTool")
-	}
-	static class UBaseCreateFromSelectedTool* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBaseCreateFromSelectedTool>();
-	}
-};
-DUMPER7_ASSERTS_UBaseCreateFromSelectedTool;
-
-// Class ModelingComponents.DynamicMeshProvider
-// 0x0000 (0x0000 - 0x0000)
-class IDynamicMeshProvider final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("DynamicMeshProvider")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"DynamicMeshProvider")
-	}
-	static class IDynamicMeshProvider* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IDynamicMeshProvider>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IDynamicMeshProvider;
-
-// Class ModelingComponents.MultiSelectionMeshEditingToolBuilder
-// 0x0000 (0x0028 - 0x0028)
-class UMultiSelectionMeshEditingToolBuilder : public UInteractiveToolWithToolTargetsBuilder
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MultiSelectionMeshEditingToolBuilder")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MultiSelectionMeshEditingToolBuilder")
-	}
-	static class UMultiSelectionMeshEditingToolBuilder* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMultiSelectionMeshEditingToolBuilder>();
-	}
-};
-DUMPER7_ASSERTS_UMultiSelectionMeshEditingToolBuilder;
-
-// Class ModelingComponents.BaseCreateFromSelectedToolBuilder
-// 0x0000 (0x0028 - 0x0028)
-class UBaseCreateFromSelectedToolBuilder : public UMultiSelectionMeshEditingToolBuilder
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("BaseCreateFromSelectedToolBuilder")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"BaseCreateFromSelectedToolBuilder")
-	}
-	static class UBaseCreateFromSelectedToolBuilder* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBaseCreateFromSelectedToolBuilder>();
-	}
-};
-DUMPER7_ASSERTS_UBaseCreateFromSelectedToolBuilder;
-
-// Class ModelingComponents.DynamicMeshCommitter
-// 0x0000 (0x0000 - 0x0000)
-class IDynamicMeshCommitter final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("DynamicMeshCommitter")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"DynamicMeshCommitter")
-	}
-	static class IDynamicMeshCommitter* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IDynamicMeshCommitter>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IDynamicMeshCommitter;
 
 // Class ModelingComponents.MeshTopologySelectionMechanic
 // 0x0AC0 (0x0AF0 - 0x0030)
@@ -209,6 +58,82 @@ public:
 };
 DUMPER7_ASSERTS_UMeshTopologySelectionMechanic;
 
+// Class ModelingComponents.CollisionPrimitivesMechanic
+// 0x0570 (0x05A0 - 0x0030)
+class alignas(0x10) UCollisionPrimitivesMechanic final : public UInteractionMechanic
+{
+public:
+	uint8                                         Pad_30[0x230];                                     // 0x0030(0x0230)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPreviewGeometry*                       PreviewGeometry;                                   // 0x0260(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class ULineSetComponent*                      DrawnPrimitiveEdges;                               // 0x0268(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_270[0x130];                                    // 0x0270(0x0130)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTransformProxy*                        TranslateTransformProxy;                           // 0x03A0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UTransformProxy*                        SphereTransformProxy;                              // 0x03A8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UTransformProxy*                        BoxTransformProxy;                                 // 0x03B0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UTransformProxy*                        CapsuleTransformProxy;                             // 0x03B8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UTransformProxy*                        FullTransformProxy;                                // 0x03C0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UTransformProxy*                        CurrentActiveProxy;                                // 0x03C8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCombinedTransformGizmo*                TranslateTransformGizmo;                           // 0x03D0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCombinedTransformGizmo*                SphereTransformGizmo;                              // 0x03D8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCombinedTransformGizmo*                BoxTransformGizmo;                                 // 0x03E0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCombinedTransformGizmo*                CapsuleTransformGizmo;                             // 0x03E8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCombinedTransformGizmo*                FullTransformGizmo;                                // 0x03F0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UIntervalGizmo*                         BoxIntervalGizmo;                                  // 0x03F8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UGizmoLocalFloatParameterSource*        BoxXIntervalSource;                                // 0x0400(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UGizmoLocalFloatParameterSource*        BoxYIntervalSource;                                // 0x0408(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UGizmoLocalFloatParameterSource*        BoxZIntervalSource;                                // 0x0410(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UIntervalGizmo*                         CapsuleIntervalGizmo;                              // 0x0418(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UGizmoLocalFloatParameterSource*        CapsuleRadiusIntervalSource;                       // 0x0420(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UGizmoLocalFloatParameterSource*        CapsuleLengthIntervalSource;                       // 0x0428(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_430[0x48];                                     // 0x0430(0x0048)(Fixing Size After Last Property [ Dumper-7 ])
+	class URectangleMarqueeMechanic*              MarqueeMechanic;                                   // 0x0478(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_480[0x120];                                    // 0x0480(0x0120)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CollisionPrimitivesMechanic")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CollisionPrimitivesMechanic")
+	}
+	static class UCollisionPrimitivesMechanic* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCollisionPrimitivesMechanic>();
+	}
+};
+DUMPER7_ASSERTS_UCollisionPrimitivesMechanic;
+
+// Class ModelingComponents.DynamicMeshProvider
+// 0x0000 (0x0000 - 0x0000)
+class IDynamicMeshProvider final
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("DynamicMeshProvider")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"DynamicMeshProvider")
+	}
+	static class IDynamicMeshProvider* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IDynamicMeshProvider>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IDynamicMeshProvider;
+
 // Class ModelingComponents.BoundarySelectionMechanic
 // 0x0000 (0x0AF0 - 0x0AF0)
 class UBoundarySelectionMechanic final : public UMeshTopologySelectionMechanic
@@ -228,6 +153,62 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UBoundarySelectionMechanic;
+
+// Class ModelingComponents.PreviewMesh
+// 0x0108 (0x0130 - 0x0028)
+class alignas(0x10) UPreviewMesh : public UObject
+{
+public:
+	uint8                                         Pad_28[0x18];                                      // 0x0028(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bBuildSpatialDataStructure;                        // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_41[0xF];                                       // 0x0041(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
+	class UDynamicMeshComponent*                  DynamicMeshComponent;                              // 0x0050(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_58[0xD8];                                      // 0x0058(0x00D8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PreviewMesh")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PreviewMesh")
+	}
+	static class UPreviewMesh* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPreviewMesh>();
+	}
+};
+DUMPER7_ASSERTS_UPreviewMesh;
+
+// Class ModelingComponents.DynamicMeshCommitter
+// 0x0000 (0x0000 - 0x0000)
+class IDynamicMeshCommitter final
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("DynamicMeshCommitter")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"DynamicMeshCommitter")
+	}
+	static class IDynamicMeshCommitter* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IDynamicMeshCommitter>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IDynamicMeshCommitter;
 
 // Class ModelingComponents.PersistentDynamicMeshSource
 // 0x0000 (0x0000 - 0x0000)
@@ -571,6 +552,46 @@ public:
 };
 DUMPER7_ASSERTS_UVoxelProperties;
 
+// Class ModelingComponents.MultiSelectionMeshEditingToolBuilder
+// 0x0000 (0x0028 - 0x0028)
+class UMultiSelectionMeshEditingToolBuilder : public UInteractiveToolWithToolTargetsBuilder
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MultiSelectionMeshEditingToolBuilder")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MultiSelectionMeshEditingToolBuilder")
+	}
+	static class UMultiSelectionMeshEditingToolBuilder* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMultiSelectionMeshEditingToolBuilder>();
+	}
+};
+DUMPER7_ASSERTS_UMultiSelectionMeshEditingToolBuilder;
+
+// Class ModelingComponents.BaseCreateFromSelectedToolBuilder
+// 0x0000 (0x0028 - 0x0028)
+class UBaseCreateFromSelectedToolBuilder : public UMultiSelectionMeshEditingToolBuilder
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BaseCreateFromSelectedToolBuilder")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BaseCreateFromSelectedToolBuilder")
+	}
+	static class UBaseCreateFromSelectedToolBuilder* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBaseCreateFromSelectedToolBuilder>();
+	}
+};
+DUMPER7_ASSERTS_UBaseCreateFromSelectedToolBuilder;
+
 // Class ModelingComponents.OnAcceptHandleSourcesPropertiesBase
 // 0x0000 (0x00B0 - 0x00B0)
 class UOnAcceptHandleSourcesPropertiesBase : public UInteractiveToolPropertySet
@@ -688,6 +709,59 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UTransformInputsToolProperties;
+
+// Class ModelingComponents.MultiSelectionMeshEditingTool
+// 0x0008 (0x00C8 - 0x00C0)
+class UMultiSelectionMeshEditingTool : public UMultiSelectionTool
+{
+public:
+	TWeakObjectPtr<class UWorld>                  TargetWorld;                                       // 0x00C0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MultiSelectionMeshEditingTool")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MultiSelectionMeshEditingTool")
+	}
+	static class UMultiSelectionMeshEditingTool* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMultiSelectionMeshEditingTool>();
+	}
+};
+DUMPER7_ASSERTS_UMultiSelectionMeshEditingTool;
+
+// Class ModelingComponents.BaseCreateFromSelectedTool
+// 0x0050 (0x0118 - 0x00C8)
+class UBaseCreateFromSelectedTool : public UMultiSelectionMeshEditingTool
+{
+public:
+	uint8                                         Pad_C8[0x8];                                       // 0x00C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTransformInputsToolProperties*         TransformProperties;                               // 0x00D0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCreateMeshObjectTypeProperties*        OutputTypeProperties;                              // 0x00D8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UBaseCreateFromSelectedHandleSourceProperties* HandleSourcesProperties;                    // 0x00E0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UBaseCreateFromSelectedCollisionProperties* CollisionProperties;                           // 0x00E8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UMeshOpPreviewWithBackgroundCompute*    Preview;                                           // 0x00F0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TArray<class UTransformProxy*>                TransformProxies;                                  // 0x00F8(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	TArray<class UCombinedTransformGizmo*>        TransformGizmos;                                   // 0x0108(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BaseCreateFromSelectedTool")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BaseCreateFromSelectedTool")
+	}
+	static class UBaseCreateFromSelectedTool* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBaseCreateFromSelectedTool>();
+	}
+};
+DUMPER7_ASSERTS_UBaseCreateFromSelectedTool;
 
 // Class ModelingComponents.SingleTargetWithSelectionToolBuilder
 // 0x0000 (0x0028 - 0x0028)
@@ -1194,33 +1268,6 @@ public:
 };
 DUMPER7_ASSERTS_UPointSetComponent;
 
-// Class ModelingComponents.PreviewMesh
-// 0x0108 (0x0130 - 0x0028)
-class alignas(0x10) UPreviewMesh : public UObject
-{
-public:
-	uint8                                         Pad_28[0x18];                                      // 0x0028(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bBuildSpatialDataStructure;                        // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_41[0xF];                                       // 0x0041(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
-	class UDynamicMeshComponent*                  DynamicMeshComponent;                              // 0x0050(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_58[0xD8];                                      // 0x0058(0x00D8)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("PreviewMesh")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"PreviewMesh")
-	}
-	static class UPreviewMesh* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPreviewMesh>();
-	}
-};
-DUMPER7_ASSERTS_UPreviewMesh;
-
 // Class ModelingComponents.PolyEditPreviewMesh
 // 0x0340 (0x0470 - 0x0130)
 class UPolyEditPreviewMesh final : public UPreviewMesh
@@ -1371,53 +1418,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCollectSurfacePathMechanic;
-
-// Class ModelingComponents.CollisionPrimitivesMechanic
-// 0x0570 (0x05A0 - 0x0030)
-class alignas(0x10) UCollisionPrimitivesMechanic final : public UInteractionMechanic
-{
-public:
-	uint8                                         Pad_30[0x230];                                     // 0x0030(0x0230)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPreviewGeometry*                       PreviewGeometry;                                   // 0x0260(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class ULineSetComponent*                      DrawnPrimitiveEdges;                               // 0x0268(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_270[0x130];                                    // 0x0270(0x0130)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTransformProxy*                        TranslateTransformProxy;                           // 0x03A0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UTransformProxy*                        SphereTransformProxy;                              // 0x03A8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UTransformProxy*                        BoxTransformProxy;                                 // 0x03B0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UTransformProxy*                        CapsuleTransformProxy;                             // 0x03B8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UTransformProxy*                        FullTransformProxy;                                // 0x03C0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UTransformProxy*                        CurrentActiveProxy;                                // 0x03C8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCombinedTransformGizmo*                TranslateTransformGizmo;                           // 0x03D0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCombinedTransformGizmo*                SphereTransformGizmo;                              // 0x03D8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCombinedTransformGizmo*                BoxTransformGizmo;                                 // 0x03E0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCombinedTransformGizmo*                CapsuleTransformGizmo;                             // 0x03E8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCombinedTransformGizmo*                FullTransformGizmo;                                // 0x03F0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UIntervalGizmo*                         BoxIntervalGizmo;                                  // 0x03F8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UGizmoLocalFloatParameterSource*        BoxXIntervalSource;                                // 0x0400(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UGizmoLocalFloatParameterSource*        BoxYIntervalSource;                                // 0x0408(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UGizmoLocalFloatParameterSource*        BoxZIntervalSource;                                // 0x0410(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UIntervalGizmo*                         CapsuleIntervalGizmo;                              // 0x0418(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UGizmoLocalFloatParameterSource*        CapsuleRadiusIntervalSource;                       // 0x0420(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UGizmoLocalFloatParameterSource*        CapsuleLengthIntervalSource;                       // 0x0428(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_430[0x48];                                     // 0x0430(0x0048)(Fixing Size After Last Property [ Dumper-7 ])
-	class URectangleMarqueeMechanic*              MarqueeMechanic;                                   // 0x0478(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_480[0x120];                                    // 0x0480(0x0120)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CollisionPrimitivesMechanic")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CollisionPrimitivesMechanic")
-	}
-	static class UCollisionPrimitivesMechanic* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCollisionPrimitivesMechanic>();
-	}
-};
-DUMPER7_ASSERTS_UCollisionPrimitivesMechanic;
 
 // Class ModelingComponents.ConstructionPlaneMechanic
 // 0x00C0 (0x00F0 - 0x0030)

@@ -13,8 +13,8 @@
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "AuActorPlacement_structs.hpp"
 #include "MassAIBehavior_structs.hpp"
-#include "Chimera_structs.hpp"
 #include "MassReplication_structs.hpp"
+#include "Chimera_structs.hpp"
 #include "MassEntity_structs.hpp"
 
 
@@ -92,12 +92,12 @@ public:
 DUMPER7_ASSERTS_FExploderFastArrayItem;
 
 // ScriptStruct CrAiExploderRuntime.ExploderClientBubbleSerializer
-// 0x01A8 (0x02E0 - 0x0138)
+// 0x01B8 (0x02F0 - 0x0138)
 struct FExploderClientBubbleSerializer final : public FMassClientBubbleSerializerBase
 {
 public:
-	uint8                                         Pad_138[0x198];                                    // 0x0138(0x0198)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FExploderFastArrayItem>         Ais;                                               // 0x02D0(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_138[0x1A8];                                    // 0x0138(0x01A8)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FExploderFastArrayItem>         Ais;                                               // 0x02E0(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
 };
 DUMPER7_ASSERTS_FExploderClientBubbleSerializer;
 

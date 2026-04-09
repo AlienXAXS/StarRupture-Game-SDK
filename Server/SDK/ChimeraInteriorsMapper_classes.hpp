@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Class ChimeraInteriorsMapper.CrInteriorsMapperBoxComponent
-// 0x0050 (0x05A0 - 0x0550)
+// 0x0040 (0x0590 - 0x0550)
 class UCrInteriorsMapperBoxComponent final : public UBoxComponent
 {
 public:
@@ -26,14 +26,12 @@ public:
 	bool                                          UseOnlyWithNiagara;                                // 0x0550(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Only2D;                                            // 0x0551(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_552[0x6];                                      // 0x0552(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UStaticMeshComponent*                   PlaneMesh;                                         // 0x0558(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UStaticMesh*                            BasicPlane;                                        // 0x0560(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, EditConst, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UMaterialInterface*                     TargetBoxMaterial;                                 // 0x0568(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, EditConst, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class URuntimeVirtualTexture*                 TargetTexture;                                     // 0x0570(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, EditConst, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class FName                                   InteriorMapperZMinName;                            // 0x0578(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FName                                   InteriorMapperZMaxName;                            // 0x0580(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FString                                 AddonKeyword;                                      // 0x0588(0x0010)(Edit, ZeroConstructor, Config, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_598[0x8];                                      // 0x0598(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UStaticMesh*                            BasicPlane;                                        // 0x0558(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, EditConst, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UMaterialInterface*                     TargetBoxMaterial;                                 // 0x0560(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, EditConst, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class FName                                   InteriorMapperZMinName;                            // 0x0568(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   InteriorMapperZMaxName;                            // 0x0570(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FString                                 AddonKeyword;                                      // 0x0578(0x0010)(Edit, ZeroConstructor, Config, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_588[0x8];                                      // 0x0588(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -105,19 +103,46 @@ public:
 };
 DUMPER7_ASSERTS_ICrInteriorsMapperInterface;
 
+// Class ChimeraInteriorsMapper.CrInteriorsMapperQualityInterface
+// 0x0000 (0x0000 - 0x0000)
+class ICrInteriorsMapperQualityInterface final
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrInteriorsMapperQualityInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrInteriorsMapperQualityInterface")
+	}
+	static class ICrInteriorsMapperQualityInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ICrInteriorsMapperQualityInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_ICrInteriorsMapperQualityInterface;
+
 // Class ChimeraInteriorsMapper.CrInteriorsMapperSphereComponent
-// 0x0030 (0x0570 - 0x0540)
+// 0x0020 (0x0560 - 0x0540)
 class UCrInteriorsMapperSphereComponent final : public USphereComponent
 {
 public:
 	uint8                                         Pad_538[0x8];                                      // 0x0538(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          UseOnlyWithNiagara;                                // 0x0540(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_541[0x7];                                      // 0x0541(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UStaticMeshComponent*                   SphereMesh;                                        // 0x0548(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UStaticMesh*                            BasicPlane;                                        // 0x0550(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, EditConst, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UMaterialInterface*                     TargetSphereMaterial;                              // 0x0558(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, EditConst, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class URuntimeVirtualTexture*                 TargetTexture;                                     // 0x0560(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, EditConst, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_568[0x8];                                      // 0x0568(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UStaticMesh*                            BasicPlane;                                        // 0x0548(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, EditConst, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UMaterialInterface*                     TargetSphereMaterial;                              // 0x0550(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, EditConst, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_558[0x8];                                      // 0x0558(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -136,20 +161,28 @@ public:
 DUMPER7_ASSERTS_UCrInteriorsMapperSphereComponent;
 
 // Class ChimeraInteriorsMapper.CrInteriorsMapperWorldSubsystem
-// 0x0070 (0x00B0 - 0x0040)
+// 0x00A0 (0x00E0 - 0x0040)
 class UCrInteriorsMapperWorldSubsystem final : public UTickableWorldSubsystem
 {
 public:
 	TArray<TScriptInterface<class ICrInteriorsMapperInterface>> MapperSpheres;                       // 0x0040(0x0010)(ZeroConstructor, Transient, UObjectWrapper, NativeAccessSpecifierPrivate)
 	TArray<TScriptInterface<class ICrInteriorsMapperInterface>> MapperBoxes;                         // 0x0050(0x0010)(ZeroConstructor, Transient, UObjectWrapper, NativeAccessSpecifierPrivate)
-	class UTextureRenderTarget2D*                 SphereMappersRT;                                   // 0x0060(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UTextureRenderTarget2D*                 BoxMappersOriginRT;                                // 0x0068(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UTextureRenderTarget2D*                 BoxMappersExtentRT;                                // 0x0070(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UMaterialParameterCollection*           InteriorsMPC;                                      // 0x0078(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	int32                                         MaxInteriorMapper;                                 // 0x0080(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	float                                         UpdateThreshold;                                   // 0x0084(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	float                                         MaxSearchDistance;                                 // 0x0088(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_8C[0x24];                                      // 0x008C(0x0024)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<TScriptInterface<class ICrInteriorsMapperInterface>> MapperBoxes2d;                       // 0x0060(0x0010)(ZeroConstructor, Transient, UObjectWrapper, NativeAccessSpecifierPrivate)
+	class UTextureRenderTarget2D*                 SphereMappersRT;                                   // 0x0070(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UTextureRenderTarget2D*                 BoxMappersOriginRT;                                // 0x0078(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UTextureRenderTarget2D*                 BoxMappersExtentRT;                                // 0x0080(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UTextureRenderTarget2D*                 InteriorsMapperBitMaskRT;                          // 0x0088(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UMaterialParameterCollection*           InteriorsMPC;                                      // 0x0090(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	int32                                         MaxInteriorMapper;                                 // 0x0098(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         UpdateThreshold;                                   // 0x009C(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         MaxSearchDistance;                                 // 0x00A0(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         Interiors2dChunkSize;                              // 0x00A4(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         Interiors2dChunkOffset;                            // 0x00A8(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         Interiors2dMapAreaMinX;                            // 0x00AC(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         Interiors2dMapAreaMaxX;                            // 0x00B0(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         Interiors2dMapAreaMinY;                            // 0x00B4(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         Interiors2dMapAreaMaxY;                            // 0x00B8(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_BC[0x24];                                      // 0x00BC(0x0024)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class UTextureRenderTarget2D* GetBoxMappersExtentRenderTarget() const;

@@ -18,13 +18,16 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GE_CamEffect_Oil_Heat.GE_CamEffect_Oil_Heat_C
-// 0x0010 (0x0AB8 - 0x0AA8)
+// 0x0020 (0x0AC8 - 0x0AA8)
 class UGE_CamEffect_Oil_Heat_C final : public UCrCameraGameplayEffect
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0AA8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	bool                                          RadiationIncreased;                                // 0x0AB0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          RadiationDecreased;                                // 0x0AB1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          HeatIncreased;                                     // 0x0AB0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          HeatDecreased;                                     // 0x0AB1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_AB2[0x6];                                      // 0x0AB2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAudioComponent*                        AudioComponent;                                    // 0x0AB8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          HasGameplayTag;                                    // 0x0AC0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GE_CamEffect_Oil_Heat(int32 EntryPoint);

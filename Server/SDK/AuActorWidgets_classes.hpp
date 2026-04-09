@@ -12,9 +12,9 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "CommonUI_classes.hpp"
 #include "AuActorWidgets_structs.hpp"
 #include "Engine_classes.hpp"
-#include "CommonUI_classes.hpp"
 
 
 namespace SDK

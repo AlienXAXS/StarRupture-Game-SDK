@@ -18,13 +18,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Melee_Tier2_Actor_Character.BP_Melee_Tier2_Actor_Character_C
-// 0x0010 (0x0C10 - 0x0C00)
+// 0x0020 (0x0D20 - 0x0D00)
 class ABP_Melee_Tier2_Actor_Character_C final : public ABP_BaseAI_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Melee_Tier2_Actor_Character_C;   // 0x0BF8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	double                                        Attack_Start_Forward_Offset;                       // 0x0C00(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               WeakpointMaterial;                                 // 0x0C08(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Melee_Tier2_Actor_Character_C;   // 0x0D00(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	double                                        Attack_Start_Forward_Offset;                       // 0x0D08(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               WeakpointMaterial;                                 // 0x0D10(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_Melee_Tier2_Actor_Character(int32 EntryPoint);

@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "StreamlineBlueprint_structs.hpp"
 #include "Engine_classes.hpp"
 #include "StreamlineDeepDVCBlueprint_structs.hpp"
-#include "StreamlineBlueprint_structs.hpp"
 
 
 namespace SDK

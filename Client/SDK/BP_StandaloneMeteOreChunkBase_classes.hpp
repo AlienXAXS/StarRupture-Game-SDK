@@ -42,6 +42,9 @@ public:
 public:
 	void BP_OnSpawnedWithResourceDepleted();
 	void ExecuteUbergraph_BP_StandaloneMeteOreChunkBase(int32 EntryPoint);
+	void GetCurrentEnvironmentalWaveStage(EEnviroWaveStage* CurrentEnviroWaveStage);
+	void GetCurrentFadeoutSubstage(EEnviroWaveFadeoutSubstage* GrowbackSubstage);
+	void GetCurrentGrowbackSubstage(EEnviroWaveGrowbackSubstage* GrowbackSubstage);
 	void OnResourceDepletedCosmeticsStart();
 	void ReceiveBeginPlay();
 	void Timeline__FinishedFunc();

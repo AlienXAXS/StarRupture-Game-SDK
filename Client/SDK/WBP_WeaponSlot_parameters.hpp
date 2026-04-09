@@ -16,27 +16,14 @@
 namespace SDK::Params
 {
 
-// Function WBP_WeaponSlot.WBP_WeaponSlot_C.AddModIcon
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_WeaponSlot_C_AddModIcon final
-{
-public:
-	class UCrWeaponModDataAsset*                  ModDA;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_WeaponSlot_C_AddModIcon;
-
 // Function WBP_WeaponSlot.WBP_WeaponSlot_C.ExecuteUbergraph_WBP_WeaponSlot
-// 0x00E0 (0x00E0 - 0x0000)
+// 0x00C0 (0x00C0 - 0x0000)
 struct WBP_WeaponSlot_C_ExecuteUbergraph_WBP_WeaponSlot final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UWBP_ModIcon_C*                         CallFunc_Create_ReturnValue;                       // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UCrWeaponModDataAsset*                  K2Node_Event_ModDA;                                // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UHorizontalBoxSlot*                     CallFunc_AddChildToHorizontalBox_ReturnValue;      // 0x0018(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	struct FMargin                                K2Node_MakeStruct_Margin;                          // 0x0020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FSlateBrush                            K2Node_Event_InBrush;                              // 0x0030(0x00B0)()
+	uint8                                         Pad_4[0xC];                                        // 0x0004(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            K2Node_Event_InBrush;                              // 0x0010(0x00B0)()
 };
 DUMPER7_ASSERTS_WBP_WeaponSlot_C_ExecuteUbergraph_WBP_WeaponSlot;
 

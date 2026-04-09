@@ -46,11 +46,11 @@ public:
 DUMPER7_ASSERTS_UCrAiRangedAnimationStateSyncComponent;
 
 // Class CrAiRangedRuntime.CrMassRangedBubbleReplicatedSerializerHolder
-// 0x02F8 (0x05B0 - 0x02B8)
+// 0x0308 (0x05C0 - 0x02B8)
 class ACrMassRangedBubbleReplicatedSerializerHolder final : public ACrMassBubbleReplicatedSerializerHolder
 {
 public:
-	struct FRangedClientBubbleSerializer          Serializer;                                        // 0x02B8(0x02F8)(Net, Transient, NativeAccessSpecifierPublic)
+	struct FRangedClientBubbleSerializer          Serializer;                                        // 0x02B8(0x0308)(Net, Transient, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()

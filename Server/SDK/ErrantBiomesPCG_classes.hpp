@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
+#include "PCG_classes.hpp"
 #include "ErrantBiomesPCG_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "PCG_classes.hpp"
+#include "Engine_classes.hpp"
 
 
 namespace SDK

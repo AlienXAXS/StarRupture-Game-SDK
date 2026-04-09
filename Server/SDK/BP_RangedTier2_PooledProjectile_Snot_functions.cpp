@@ -93,6 +93,34 @@ void ABP_RangedTier2_PooledProjectile_Snot_C::ExecuteUbergraph_BP_RangedTier2_Po
 }
 
 
+// Function BP_RangedTier2_PooledProjectile_Snot.BP_RangedTier2_PooledProjectile_Snot_C.OnProjectileActivated
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_RangedTier2_PooledProjectile_Snot_C::OnProjectileActivated()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_RangedTier2_PooledProjectile_Snot_C", "OnProjectileActivated");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_RangedTier2_PooledProjectile_Snot.BP_RangedTier2_PooledProjectile_Snot_C.OnProjectileDeactivated
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_RangedTier2_PooledProjectile_Snot_C::OnProjectileDeactivated()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_RangedTier2_PooledProjectile_Snot_C", "OnProjectileDeactivated");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_RangedTier2_PooledProjectile_Snot.BP_RangedTier2_PooledProjectile_Snot_C.OnProjectileShot
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -110,6 +138,20 @@ void ABP_RangedTier2_PooledProjectile_Snot_C::OnProjectileShot(const struct FCrA
 	Parms.InProjectileParameters = std::move(InProjectileParameters);
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_RangedTier2_PooledProjectile_Snot.BP_RangedTier2_PooledProjectile_Snot_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_RangedTier2_PooledProjectile_Snot_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_RangedTier2_PooledProjectile_Snot_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

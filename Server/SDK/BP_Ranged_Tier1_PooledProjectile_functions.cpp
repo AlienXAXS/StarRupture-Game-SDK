@@ -76,5 +76,25 @@ void ABP_Ranged_Tier1_PooledProjectile_C::OnProjectileShot(const struct FCrAiPro
 	UObject::ProcessEvent(Func, &Parms);
 }
 
+
+// Function BP_Ranged_Tier1_PooledProjectile.BP_Ranged_Tier1_PooledProjectile_C.CanReturnToPoolAfterHit
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool ABP_Ranged_Tier1_PooledProjectile_C::CanReturnToPoolAfterHit() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Ranged_Tier1_PooledProjectile_C", "CanReturnToPoolAfterHit");
+
+	Params::BP_Ranged_Tier1_PooledProjectile_C_CanReturnToPoolAfterHit Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
 }
 

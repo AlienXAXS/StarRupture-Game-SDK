@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "PCG_structs.hpp"
 #include "PCGPointCreationMethod_structs.hpp"
+#include "PCG_structs.hpp"
 
 
 namespace SDK::Params

@@ -36,6 +36,7 @@ public:
 	class AFS_Explosion_C*                        FSExplosion;                                       // 0x0940(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void TurnOffWalkableCollision();
 	void Timeline__UpdateFunc();
 	void Timeline__FinishedFunc();
 	void ReceiveBeginPlay();

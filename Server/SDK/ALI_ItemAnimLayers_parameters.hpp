@@ -182,6 +182,15 @@ public:
 };
 DUMPER7_ASSERTS_ALI_ItemAnimLayers_C_FullBody_StopState;
 
+// Function ALI_ItemAnimLayers.ALI_ItemAnimLayers_C.FullBody_ZiplineLoop
+// 0x0010 (0x0010 - 0x0000)
+struct ALI_ItemAnimLayers_C_FullBody_ZiplineLoop final
+{
+public:
+	struct FPoseLink                              FullBody_ZiplineLoop_0;                            // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
+};
+DUMPER7_ASSERTS_ALI_ItemAnimLayers_C_FullBody_ZiplineLoop;
+
 // Function ALI_ItemAnimLayers.ALI_ItemAnimLayers_C.FullBodyAdditives
 // 0x0010 (0x0010 - 0x0000)
 struct ALI_ItemAnimLayers_C_FullBodyAdditives final

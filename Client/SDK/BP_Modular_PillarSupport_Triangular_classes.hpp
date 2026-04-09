@@ -17,13 +17,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Modular_PillarSupport_Triangular.BP_Modular_PillarSupport_Triangular_C
-// 0x0018 (0x0848 - 0x0830)
+// 0x0018 (0x0858 - 0x0840)
 class ABP_Modular_PillarSupport_Triangular_C final : public ACrCustomBuilding
 {
 public:
-	class UCrInteriorsMapperBoxComponent*         CrInteriorsMapperBox;                              // 0x0830(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   PoleCapBottomDetail;                               // 0x0838(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   PoleCapTop;                                        // 0x0840(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCrInteriorsMapperBoxComponent*         CrInteriorsMapperBox;                              // 0x0840(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   PoleCapBottomDetail;                               // 0x0848(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   PoleCapTop;                                        // 0x0850(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

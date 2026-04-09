@@ -18,12 +18,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_CoolerPassive_Foundation.BP_CoolerPassive_Foundation_C
-// 0x0010 (0x0880 - 0x0870)
+// 0x0010 (0x0890 - 0x0880)
 class ABP_CoolerPassive_Foundation_C final : public ABP_Modular_Foundation_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_CoolerPassive_Foundation_C;      // 0x0870(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UBoxComponent*                          PillarCollisions;                                  // 0x0878(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_CoolerPassive_Foundation_C;      // 0x0880(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UBoxComponent*                          PillarCollisions;                                  // 0x0888(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_CoolerPassive_Foundation(int32 EntryPoint);

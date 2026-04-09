@@ -1504,7 +1504,7 @@ void UAuItemsComponent::ServerUseSystemAbility(const struct FAuItemId& InItemId,
 
 
 // Function AuItems.AuItemsStoreComponent.ClientOnItemAdded
-// (Final, Net, Native, Event, Private, NetClient)
+// (Net, Native, Event, Public, NetClient)
 // Parameters:
 // const class UAuItemDataBase*            NewItem                                                (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1520,6 +1520,35 @@ void UAuItemsStoreComponent::ClientOnItemAdded(const class UAuItemDataBase* NewI
 
 	Parms.NewItem = NewItem;
 	Parms.Amount = Amount;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AuItems.AuItemsStoreComponent.ClientOnItemMerged
+// (Net, Native, Event, Public, NetClient)
+// Parameters:
+// const class UAuItemDataBase*            NewItem                                                (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   AddedAmount                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAuItemsStoreComponent::ClientOnItemMerged(const class UAuItemDataBase* NewItem, int32 Amount, int32 AddedAmount)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AuItemsStoreComponent", "ClientOnItemMerged");
+
+	Params::AuItemsStoreComponent_ClientOnItemMerged Parms{};
+
+	Parms.NewItem = NewItem;
+	Parms.Amount = Amount;
+	Parms.AddedAmount = AddedAmount;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

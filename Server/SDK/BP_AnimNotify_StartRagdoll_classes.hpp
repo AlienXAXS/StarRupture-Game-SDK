@@ -18,11 +18,16 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_AnimNotify_StartRagdoll.BP_AnimNotify_StartRagdoll_C
-// 0x0008 (0x0040 - 0x0038)
+// 0x0020 (0x0058 - 0x0038)
 class UBP_AnimNotify_StartRagdoll_C final : public UAnimNotify
 {
 public:
 	struct FGameplayTag                           RagdollTypeTag;                                    // 0x0038(0x0008)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash)
+	float                                         Ragdoll_Time_S;                                    // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         Time_To_Dissolve_S;                                // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         Dissolve_Time_S;                                   // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class ACrAiDeathSequenceActor>    Death_Sequence_Actor_Class;                        // 0x0050(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 public:
 	bool Received_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, const struct FAnimNotifyEventReference& EventReference) const;

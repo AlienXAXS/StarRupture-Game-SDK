@@ -174,5 +174,19 @@ void ABP_Ranged_Tier2_PooledProjectile_C::SplashWithSnotProjectiles(const struct
 	UObject::ProcessEvent(Func, &Parms);
 }
 
+
+// Function BP_Ranged_Tier2_PooledProjectile.BP_Ranged_Tier2_PooledProjectile_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Ranged_Tier2_PooledProjectile_C::UserConstructionScript()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Ranged_Tier2_PooledProjectile_C", "UserConstructionScript");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
 }
 

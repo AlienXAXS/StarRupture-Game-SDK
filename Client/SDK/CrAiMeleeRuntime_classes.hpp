@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "Chimera_classes.hpp"
+#include "CrAiMeleeRuntime_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "CrAiMeleeRuntime_structs.hpp"
+#include "Chimera_classes.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
 #include "MassSpawner_classes.hpp"
@@ -31,10 +31,11 @@ public:
 	bool                                          bIsCoverActive;                                    // 0x0088(0x0001)(Edit, Net, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          bIsUpCover;                                        // 0x0089(0x0001)(Edit, Net, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          bHasAggroTarget;                                   // 0x008A(0x0001)(Edit, Net, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_8B[0x5];                                       // 0x008B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bIsInSlowRotationRange;                            // 0x008B(0x0001)(Edit, Net, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_8C[0x4];                                       // 0x008C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	static class UCrAiActionModifyMeleeT3AnimData* Create_CrAiActionModifyMeleeT3AnimData(TSubclassOf<class UCrAiActionModifyMeleeT3AnimData> ActionType, float NewMaxLifetimeS, bool NewHasAggroTarget, bool NewIsCoverActive, bool NewIsUpCover);
+	static class UCrAiActionModifyMeleeT3AnimData* Create_CrAiActionModifyMeleeT3AnimData(TSubclassOf<class UCrAiActionModifyMeleeT3AnimData> ActionType, float NewMaxLifetimeS, bool NewHasAggroTarget, bool NewIsCoverActive, bool NewIsUpCover, bool NewIsInSlowRotationRange);
 
 public:
 	static class UClass* StaticClass()
@@ -97,11 +98,11 @@ public:
 DUMPER7_ASSERTS_UCrAiMeleeAnimUpdateProcessor;
 
 // Class CrAiMeleeRuntime.CrMassMeleeBubbleReplicatedSerializerHolder
-// 0x0348 (0x0600 - 0x02B8)
+// 0x0358 (0x0610 - 0x02B8)
 class ACrMassMeleeBubbleReplicatedSerializerHolder final : public ACrMassBubbleReplicatedSerializerHolder
 {
 public:
-	struct FMeleeClientBubbleSerializer           Serializer;                                        // 0x02B8(0x0348)(Net, Transient, NativeAccessSpecifierPublic)
+	struct FMeleeClientBubbleSerializer           Serializer;                                        // 0x02B8(0x0358)(Net, Transient, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -241,6 +242,7 @@ public:
 	TArray<struct FVector> GetCachedLongAoePoints();
 	void SetHasAggroTarget(bool bNewHasAggroTarget);
 	void SetIsCoverActive(bool bNewIsCoverActive);
+	void SetIsInSlowRotationRange(bool bNewIsInSlowRotationRange);
 	void SetIsUpCover(bool bNewIsUpCover);
 	void ShowLongAoeAttackEffect();
 	void UpdateAnimState();
@@ -351,7 +353,7 @@ public:
 DUMPER7_ASSERTS_UCrArMeleeRepresentationSubsystem;
 
 // Class CrAiMeleeRuntime.MeleeAnimationInstance
-// 0x0000 (0x05A0 - 0x05A0)
+// 0x0000 (0x0600 - 0x0600)
 class UMeleeAnimationInstance : public UMassEnemyAnimationInstance
 {
 public:

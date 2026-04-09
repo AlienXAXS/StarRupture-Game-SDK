@@ -17,6 +17,20 @@
 namespace SDK
 {
 
+// Function BP_MediumMeteOre.BP_MediumMeteOre_C.TurnOffWalkableCollision
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_MediumMeteOre_C::TurnOffWalkableCollision()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MediumMeteOre_C", "TurnOffWalkableCollision");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_MediumMeteOre.BP_MediumMeteOre_C.Timeline__UpdateFunc
 // (BlueprintEvent)
 

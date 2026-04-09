@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Chimera_structs.hpp"
 #include "Engine_structs.hpp"
 #include "BP_GatherableBaseActor_classes.hpp"
-#include "Chimera_structs.hpp"
 
 
 namespace SDK

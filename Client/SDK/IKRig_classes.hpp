@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
+#include "PBIK_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "IKRig_structs.hpp"
 #include "Engine_classes.hpp"
-#include "PBIK_structs.hpp"
 
 
 namespace SDK
@@ -421,6 +421,33 @@ public:
 };
 DUMPER7_ASSERTS_UIKRetargetPelvisMotionController;
 
+// Class IKRig.IKRigSolverControllerBase
+// 0x0008 (0x0030 - 0x0028)
+class UIKRigSolverControllerBase : public UObject
+{
+public:
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	bool GetEnabled();
+	void SetEnabled(bool bIsEnabled);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("IKRigSolverControllerBase")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"IKRigSolverControllerBase")
+	}
+	static class UIKRigSolverControllerBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UIKRigSolverControllerBase>();
+	}
+};
+DUMPER7_ASSERTS_UIKRigSolverControllerBase;
+
 // Class IKRig.IKRetargetPinBoneController
 // 0x0000 (0x0030 - 0x0030)
 class UIKRetargetPinBoneController final : public UIKRetargetOpControllerBase
@@ -482,6 +509,35 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UPinBoneOp;
+
+// Class IKRig.IKRigComponent
+// 0x0020 (0x00D8 - 0x00B8)
+class UIKRigComponent final : public UActorComponent
+{
+public:
+	uint8                                         Pad_B8[0x20];                                      // 0x00B8(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void ClearAllGoals();
+	void SetIKRigGoal(const struct FIKRigGoal& Goal);
+	void SetIKRigGoalPositionAndRotation(const class FName GoalName, const struct FVector& Position, const struct FQuat& Rotation, const float PositionAlpha, const float RotationAlpha);
+	void SetIKRigGoalTransform(const class FName GoalName, const struct FTransform& Transform, const float PositionAlpha, const float RotationAlpha);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("IKRigComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"IKRigComponent")
+	}
+	static class UIKRigComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UIKRigComponent>();
+	}
+};
+DUMPER7_ASSERTS_UIKRigComponent;
 
 // Class IKRig.IKRetargetAdditivePoseController
 // 0x0000 (0x0030 - 0x0030)
@@ -593,6 +649,35 @@ public:
 };
 DUMPER7_ASSERTS_UIKRetargetRunIKRigController;
 
+// Class IKRig.IKRigDefinition
+// 0x00E8 (0x0110 - 0x0028)
+class UIKRigDefinition final : public UObject
+{
+public:
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftObjectPtr<class USkeletalMesh>           PreviewSkeletalMesh;                               // 0x0030(0x0028)(Edit, AssetRegistrySearchable, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FIKRigSkeleton                         Skeleton;                                          // 0x0058(0x0070)(NativeAccessSpecifierPrivate)
+	TArray<class UIKRigEffectorGoal*>             Goals;                                             // 0x00C8(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
+	TArray<struct FInstancedStruct>               SolverStack;                                       // 0x00D8(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	struct FRetargetDefinition                    RetargetDefinition;                                // 0x00E8(0x0018)(NativeAccessSpecifierPrivate)
+	TArray<class UIKRigSolver*>                   Solvers;                                           // 0x0100(0x0010)(ZeroConstructor, Deprecated, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("IKRigDefinition")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"IKRigDefinition")
+	}
+	static class UIKRigDefinition* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UIKRigDefinition>();
+	}
+};
+DUMPER7_ASSERTS_UIKRigDefinition;
+
 // Class IKRig.IKRetargetScaleSourceController
 // 0x0000 (0x0030 - 0x0030)
 class UIKRetargetScaleSourceController final : public UIKRetargetOpControllerBase
@@ -664,35 +749,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UIKRetargetStrideWarpingController;
-
-// Class IKRig.IKRigComponent
-// 0x0020 (0x00D8 - 0x00B8)
-class UIKRigComponent final : public UActorComponent
-{
-public:
-	uint8                                         Pad_B8[0x20];                                      // 0x00B8(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void ClearAllGoals();
-	void SetIKRigGoal(const struct FIKRigGoal& Goal);
-	void SetIKRigGoalPositionAndRotation(const class FName GoalName, const struct FVector& Position, const struct FQuat& Rotation, const float PositionAlpha, const float RotationAlpha);
-	void SetIKRigGoalTransform(const class FName GoalName, const struct FTransform& Transform, const float PositionAlpha, const float RotationAlpha);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("IKRigComponent")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"IKRigComponent")
-	}
-	static class UIKRigComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UIKRigComponent>();
-	}
-};
-DUMPER7_ASSERTS_UIKRigComponent;
 
 // Class IKRig.IKRetargeter
 // 0x01E0 (0x0208 - 0x0028)
@@ -810,35 +866,6 @@ public:
 };
 DUMPER7_ASSERTS_UIKRigEffectorGoal;
 
-// Class IKRig.IKRigDefinition
-// 0x00E8 (0x0110 - 0x0028)
-class UIKRigDefinition final : public UObject
-{
-public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TSoftObjectPtr<class USkeletalMesh>           PreviewSkeletalMesh;                               // 0x0030(0x0028)(Edit, AssetRegistrySearchable, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FIKRigSkeleton                         Skeleton;                                          // 0x0058(0x0070)(NativeAccessSpecifierPrivate)
-	TArray<class UIKRigEffectorGoal*>             Goals;                                             // 0x00C8(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
-	TArray<struct FInstancedStruct>               SolverStack;                                       // 0x00D8(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	struct FRetargetDefinition                    RetargetDefinition;                                // 0x00E8(0x0018)(NativeAccessSpecifierPrivate)
-	TArray<class UIKRigSolver*>                   Solvers;                                           // 0x0100(0x0010)(ZeroConstructor, Deprecated, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("IKRigDefinition")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"IKRigDefinition")
-	}
-	static class UIKRigDefinition* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UIKRigDefinition>();
-	}
-};
-DUMPER7_ASSERTS_UIKRigDefinition;
-
 // Class IKRig.IKRigProcessor
 // 0x0160 (0x0188 - 0x0028)
 class UIKRigProcessor final : public UObject
@@ -861,33 +888,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UIKRigProcessor;
-
-// Class IKRig.IKRigSolverControllerBase
-// 0x0008 (0x0030 - 0x0028)
-class UIKRigSolverControllerBase : public UObject
-{
-public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	bool GetEnabled();
-	void SetEnabled(bool bIsEnabled);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("IKRigSolverControllerBase")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"IKRigSolverControllerBase")
-	}
-	static class UIKRigSolverControllerBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UIKRigSolverControllerBase>();
-	}
-};
-DUMPER7_ASSERTS_UIKRigSolverControllerBase;
 
 // Class IKRig.IKRigBodyMoverController
 // 0x0000 (0x0030 - 0x0030)

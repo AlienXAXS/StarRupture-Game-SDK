@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_PlacementHelperReplicatedCustom_Ladder.BP_PlacementHelperReplicatedCustom_Ladder_C
-// 0x0000 (0x09E0 - 0x09E0)
+// 0x0000 (0x09A0 - 0x09A0)
 class ABP_PlacementHelperReplicatedCustom_Ladder_C final : public ABP_PlacementHelperReplicatedCustom_C
 {
 public:

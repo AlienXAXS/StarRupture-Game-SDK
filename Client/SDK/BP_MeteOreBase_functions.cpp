@@ -227,5 +227,19 @@ void ABP_MeteOreBase_C::ShouldSpawnForListenServer(bool* bShouldSpawnForLS)
 		*bShouldSpawnForLS = Parms.bShouldSpawnForLS;
 }
 
+
+// Function BP_MeteOreBase.BP_MeteOreBase_C.TurnOffWalkableCollision
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_MeteOreBase_C::TurnOffWalkableCollision()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MeteOreBase_C", "TurnOffWalkableCollision");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
 }
 

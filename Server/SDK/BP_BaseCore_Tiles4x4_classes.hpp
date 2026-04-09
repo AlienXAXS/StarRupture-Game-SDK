@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_BaseCore_Tiles4x4.BP_BaseCore_Tiles4x4_C
-// 0x0008 (0x0878 - 0x0870)
+// 0x0008 (0x0888 - 0x0880)
 class ABP_BaseCore_Tiles4x4_C final : public ABP_Modular_Tiles_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_BaseCore_Tiles4x4_C;             // 0x0870(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_BaseCore_Tiles4x4_C;             // 0x0880(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ReceiveTick(float DeltaSeconds);

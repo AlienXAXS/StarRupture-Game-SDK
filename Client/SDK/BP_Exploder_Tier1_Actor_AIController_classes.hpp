@@ -11,23 +11,15 @@
 #include "Basic.hpp"
 
 #include "BP_BaseAIController_classes.hpp"
-#include "Engine_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Exploder_Tier1_Actor_AIController.BP_Exploder_Tier1_Actor_AIController_C
-// 0x0008 (0x03F8 - 0x03F0)
+// 0x0000 (0x03F8 - 0x03F8)
 class ABP_Exploder_Tier1_Actor_AIController_C final : public ABP_BaseAIController_C
 {
-public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03F0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-
-public:
-	void ExecuteUbergraph_BP_Exploder_Tier1_Actor_AIController(int32 EntryPoint);
-	void ReceiveBeginPlay();
-
 public:
 	static class UClass* StaticClass()
 	{

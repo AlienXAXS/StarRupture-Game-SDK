@@ -21,7 +21,7 @@ namespace SDK
 {
 
 // Class ErrantBiomesRuntime.BiomesMaskBase
-// 0x0060 (0x0088 - 0x0028)
+// 0x0068 (0x0090 - 0x0028)
 class UBiomesMaskBase : public UObject
 {
 public:
@@ -32,7 +32,8 @@ public:
 	int32                                         ComponentY;                                        // 0x0048(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, AssetRegistrySearchable, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTextureRenderTarget2D*                 RenderTarget;                                      // 0x0050(0x0008)(Edit, ZeroConstructor, Transient, EditConst, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_58[0x30];                                      // 0x0058(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	EBiomesMaskFlags                              MaskFlags;                                         // 0x0058(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, AssetRegistrySearchable, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5C[0x34];                                      // 0x005C(0x0034)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -51,7 +52,7 @@ public:
 DUMPER7_ASSERTS_UBiomesMaskBase;
 
 // Class ErrantBiomesRuntime.BiomesHandPaintedMaskBase
-// 0x0000 (0x0088 - 0x0088)
+// 0x0000 (0x0090 - 0x0090)
 class UBiomesHandPaintedMaskBase : public UBiomesMaskBase
 {
 public:
@@ -71,7 +72,7 @@ public:
 DUMPER7_ASSERTS_UBiomesHandPaintedMaskBase;
 
 // Class ErrantBiomesRuntime.BiomesBiomeMaskTextureData
-// 0x0000 (0x0088 - 0x0088)
+// 0x0000 (0x0090 - 0x0090)
 class UBiomesBiomeMaskTextureData final : public UBiomesHandPaintedMaskBase
 {
 public:
@@ -91,7 +92,7 @@ public:
 DUMPER7_ASSERTS_UBiomesBiomeMaskTextureData;
 
 // Class ErrantBiomesRuntime.BiomesCustomMask
-// 0x0000 (0x0088 - 0x0088)
+// 0x0000 (0x0090 - 0x0090)
 class UBiomesCustomMask final : public UBiomesMaskBase
 {
 public:
@@ -133,7 +134,7 @@ public:
 DUMPER7_ASSERTS_UBiomesHierarchicalInstancedStaticMeshComponent;
 
 // Class ErrantBiomesRuntime.BiomesInteropMask
-// 0x0000 (0x0088 - 0x0088)
+// 0x0000 (0x0090 - 0x0090)
 class UBiomesInteropMask : public UBiomesMaskBase
 {
 public:
@@ -153,7 +154,7 @@ public:
 DUMPER7_ASSERTS_UBiomesInteropMask;
 
 // Class ErrantBiomesRuntime.BiomesErrantLandscapeInteropMask
-// 0x0000 (0x0088 - 0x0088)
+// 0x0000 (0x0090 - 0x0090)
 class UBiomesErrantLandscapeInteropMask final : public UBiomesInteropMask
 {
 public:
@@ -173,7 +174,7 @@ public:
 DUMPER7_ASSERTS_UBiomesErrantLandscapeInteropMask;
 
 // Class ErrantBiomesRuntime.BiomesErrantPathsInteropMask
-// 0x0000 (0x0088 - 0x0088)
+// 0x0000 (0x0090 - 0x0090)
 class UBiomesErrantPathsInteropMask final : public UBiomesInteropMask
 {
 public:
@@ -362,7 +363,7 @@ public:
 DUMPER7_ASSERTS_UBiomesMaskEngineSubsystem;
 
 // Class ErrantBiomesRuntime.BiomesMaskTextureData
-// 0x0000 (0x0088 - 0x0088)
+// 0x0000 (0x0090 - 0x0090)
 class UBiomesMaskTextureData final : public UBiomesHandPaintedMaskBase
 {
 public:

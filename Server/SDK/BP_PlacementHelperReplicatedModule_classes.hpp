@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_PlacementHelperReplicatedModule.BP_PlacementHelperReplicatedModule_C
-// 0x0000 (0x09E0 - 0x09E0)
+// 0x0000 (0x09A0 - 0x09A0)
 class ABP_PlacementHelperReplicatedModule_C final : public ABP_PlacementHelperReplicatedCustom_C
 {
 public:

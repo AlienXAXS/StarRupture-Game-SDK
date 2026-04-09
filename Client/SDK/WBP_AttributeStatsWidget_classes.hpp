@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_AttributeStatsWidget.WBP_AttributeStatsWidget_C
-// 0x0008 (0x0400 - 0x03F8)
+// 0x0008 (0x0450 - 0x0448)
 class UWBP_AttributeStatsWidget_C final : public UCrUW_AttributeStatsWidget
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03F8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0448(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void Destruct();

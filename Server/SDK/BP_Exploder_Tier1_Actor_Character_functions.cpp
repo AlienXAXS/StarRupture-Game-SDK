@@ -87,46 +87,6 @@ void ABP_Exploder_Tier1_Actor_Character_C::StartActivationTimer()
 }
 
 
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.SetIsBoostedEyeColor
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    NewIsBoosted                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Exploder_Tier1_Actor_Character_C::SetIsBoostedEyeColor(bool NewIsBoosted)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "SetIsBoostedEyeColor");
-
-	Params::BP_Exploder_Tier1_Actor_Character_C_SetIsBoostedEyeColor Parms{};
-
-	Parms.NewIsBoosted = NewIsBoosted;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.SetIsAggroEyeColor
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    NewIsAggro                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Exploder_Tier1_Actor_Character_C::SetIsAggroEyeColor(bool NewIsAggro)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "SetIsAggroEyeColor");
-
-	Params::BP_Exploder_Tier1_Actor_Character_C_SetIsAggroEyeColor Parms{};
-
-	Parms.NewIsAggro = NewIsAggro;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -144,6 +104,62 @@ void ABP_Exploder_Tier1_Actor_Character_C::ReceiveTick(float DeltaSeconds)
 	Parms.DeltaSeconds = DeltaSeconds;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnPrepareForPooling
+// (Event, Public, BlueprintEvent)
+
+void ABP_Exploder_Tier1_Actor_Character_C::OnPrepareForPooling()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "OnPrepareForPooling");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnPrepareForGame
+// (Event, Public, BlueprintEvent)
+
+void ABP_Exploder_Tier1_Actor_Character_C::OnPrepareForGame()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "OnPrepareForGame");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnExitActorPool
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier1_Actor_Character_C::OnExitActorPool()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "OnExitActorPool");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnEnterActorPool
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier1_Actor_Character_C::OnEnterActorPool()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "OnEnterActorPool");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -219,6 +235,27 @@ void ABP_Exploder_Tier1_Actor_Character_C::OnAiDied(const struct FHitResult& Hit
 }
 
 
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.GetNiagaraEyeSystem
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UNiagaraComponent**               NewParam                                               (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Exploder_Tier1_Actor_Character_C::GetNiagaraEyeSystem(class UNiagaraComponent** NewParam)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "GetNiagaraEyeSystem");
+
+	Params::BP_Exploder_Tier1_Actor_Character_C_GetNiagaraEyeSystem Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (NewParam != nullptr)
+		*NewParam = Parms.NewParam;
+}
+
+
 // Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.ExecuteUbergraph_BP_Exploder_Tier1_Actor_Character
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -239,27 +276,6 @@ void ABP_Exploder_Tier1_Actor_Character_C::ExecuteUbergraph_BP_Exploder_Tier1_Ac
 }
 
 
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.CanChangeEyeColor
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool*                                   Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Exploder_Tier1_Actor_Character_C::CanChangeEyeColor(bool* Result)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "CanChangeEyeColor");
-
-	Params::BP_Exploder_Tier1_Actor_Character_C_CanChangeEyeColor Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (Result != nullptr)
-		*Result = Parms.Result;
-}
-
-
 // Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.ShouldSpawnHugeCollision
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
@@ -277,6 +293,26 @@ bool ABP_Exploder_Tier1_Actor_Character_C::ShouldSpawnHugeCollision() const
 	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
+}
+
+
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnMeshVisibilityUpdated
+// (Event, Public, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// bool                                    bIsMeshHidden                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Exploder_Tier1_Actor_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidden) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "OnMeshVisibilityUpdated");
+
+	Params::BP_Exploder_Tier1_Actor_Character_C_OnMeshVisibilityUpdated Parms{};
+
+	Parms.bIsMeshHidden = bIsMeshHidden;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

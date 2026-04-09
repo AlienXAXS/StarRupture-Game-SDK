@@ -26,7 +26,7 @@ namespace SDK
 {
 
 // Class AuActorPlacement.AuActorPlacementComponent
-// 0x0638 (0x06F0 - 0x00B8)
+// 0x0640 (0x06F8 - 0x00B8)
 class UAuActorPlacementComponent : public UActorComponent
 {
 public:
@@ -47,23 +47,24 @@ public:
 	uint8                                         Pad_580[0x10];                                     // 0x0580(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	class UStaticMeshSocket*                      VerticalSnappedSocket;                             // 0x0590(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 	uint8                                         Pad_598[0x20];                                     // 0x0598(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
-	class UStaticMeshComponent*                   CurrentSocketMesh;                                 // 0x05B8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UStaticMeshSocket*                      CurrentSocket;                                     // 0x05C0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class AActor*                                 SnappedActor;                                      // 0x05C8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_5D0[0x40];                                     // 0x05D0(0x0040)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FCrMassEntityReplicationHelper> BuildingsToReplace;                                // 0x0610(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class AActor*>                         BuildingActorsToReplace;                           // 0x0620(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-	class UAuActorPlacementData*                  LastPlacementData;                                 // 0x0630(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UAuActorPlacementDeveloperSettings*     PlacementDeveloperSettings;                        // 0x0638(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class AAuAPHelperActor*                       AdditionalHelperActor;                             // 0x0640(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class AAuAPHelperActor*                       AdditionalHelperOwnerActor;                        // 0x0648(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class AActor*                                 ActorToConnectTo;                                  // 0x0650(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UStaticMeshSocket*                      FirstRailAutoConnectionSocket;                     // 0x0658(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_660[0x10];                                     // 0x0660(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<EPlacementSoundType, struct FActorPlacementSounds> PlacementSounds;                         // 0x0670(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	class UNiagaraSystem*                         SparksFX;                                          // 0x06C0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class USoundBase*                             SparksSFX;                                         // 0x06C8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_6D0[0x20];                                     // 0x06D0(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class AActor*                                 CurrentSocketActor;                                // 0x05B8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UStaticMeshComponent*                   CurrentSocketMesh;                                 // 0x05C0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UStaticMeshSocket*                      CurrentSocket;                                     // 0x05C8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class AActor*                                 SnappedActor;                                      // 0x05D0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_5D8[0x40];                                     // 0x05D8(0x0040)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FCrMassEntityReplicationHelper> BuildingsToReplace;                                // 0x0618(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class AActor*>                         BuildingActorsToReplace;                           // 0x0628(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	class UAuActorPlacementData*                  LastPlacementData;                                 // 0x0638(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UAuActorPlacementDeveloperSettings*     PlacementDeveloperSettings;                        // 0x0640(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class AAuAPHelperActor*                       AdditionalHelperActor;                             // 0x0648(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class AAuAPHelperActor*                       AdditionalHelperOwnerActor;                        // 0x0650(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class AActor*                                 ActorToConnectTo;                                  // 0x0658(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UStaticMeshSocket*                      FirstRailAutoConnectionSocket;                     // 0x0660(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_668[0x10];                                     // 0x0668(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<EPlacementSoundType, struct FActorPlacementSounds> PlacementSounds;                         // 0x0678(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	class UNiagaraSystem*                         SparksFX;                                          // 0x06C8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class USoundBase*                             SparksSFX;                                         // 0x06D0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_6D8[0x20];                                     // 0x06D8(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	struct FRotator GetActorPlacementRotation();
@@ -74,7 +75,6 @@ public:
 	bool OnRemoveZLocationRequest(float DeltaTime);
 	void ServerDestroyHelper(class AActor* InHelperActor);
 	void ServerSetHelperDynamicExtent(const struct FVector& InExtent);
-	void ServerSpawnActorFromSubsystem(const struct FAuAPPayloadDataHandle& InPayloadHandle, const struct FTransform& InSpawnTransform, const TArray<struct FVector>& TilesLocations, bool bCurrentFoundation, bool bCurrentTiles, const TArray<struct FCrMassEntityReplicationHelper>& InBuildingsToReplace);
 	void ServerSpawnHelperActor(TSubclassOf<class AAuAPHelperActor> HelperClass, const struct FVector& Position, bool bInDynamic, bool bFromClient, const struct FAuAPPayloadDataHandle& InPayloadHandle);
 
 public:
@@ -134,78 +134,85 @@ public:
 DUMPER7_ASSERTS_UAuCustomPlacementMethod;
 
 // Class AuActorPlacement.AuActorPlacementData
-// 0x0190 (0x01C0 - 0x0030)
+// 0x01C8 (0x01F8 - 0x0030)
 class UAuActorPlacementData : public UDataAsset
 {
 public:
 	TSoftClassPtr<class UClass>                   ActorClass;                                        // 0x0030(0x0028)(Edit, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TSubclassOf<class AAuAPHelperActor>           HelperActorClass;                                  // 0x0058(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         MaxMultiConfirmPoints;                             // 0x0060(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EAuAPlacementPointsRespectingSurface          PointsRespectingSurfaceMode;                       // 0x0064(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_65[0x3];                                       // 0x0065(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         RangeOfPointsRespectingSurface;                    // 0x0068(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UStaticMesh*                            HelperActorCustomMesh;                             // 0x0070(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	bool                                          bRepeatedPlacement;                                // 0x0078(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FString>                         MeshComponentsToShow;                              // 0x0080(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TArray<class FString>                         MeshComponentsToAlwaysShow;                        // 0x0090(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	float                                         MinPlacementDistance;                              // 0x00A0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         MaxPlacementDistance;                              // 0x00A4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         DroneMinPlacementDistance;                         // 0x00A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         DroneMaxPlacementDistance;                         // 0x00AC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UAuCustomPlacementMethod*               CustomPlacementMethod;                             // 0x00B0(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UAuActorPlacingConditionsData*          PlacementConditions;                               // 0x00B8(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TSubclassOf<class UAuPlaceActorCustom>        CustomPlacement;                                   // 0x00C0(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bCanBePlacedOnOil;                                 // 0x00C8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bCanBePlacedOnTerrain;                             // 0x00C9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bHasToBePlacedOnTerrain;                           // 0x00CA(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bSnapToHitNormal;                                  // 0x00CB(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bSnapToSocketNormal;                               // 0x00CC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_CD[0x3];                                       // 0x00CD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<TSubclassOf<class AActor>>             MustHitActors;                                     // 0x00D0(0x0010)(Edit, ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
-	struct FAuAPSocketParams                      Socket;                                            // 0x00E0(0x0040)(Edit, Protected, NativeAccessSpecifierProtected)
-	bool                                          AllSocketsShouldBeSnapped;                         // 0x0120(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_121[0x7];                                      // 0x0121(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAuAPMassSpawnedEntityType             EntityType;                                        // 0x0128(0x0038)(Edit, Protected, NativeAccessSpecifierProtected)
-	class UAuActorPlacementData*                  TilesData;                                         // 0x0160(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UAuActorPlacementData*                  FoundationData;                                    // 0x0168(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	float                                         FoundationYaw;                                     // 0x0170(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bForceDirectPlacementTrace;                        // 0x0174(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	ECrBuildingID                                 BuildingID;                                        // 0x0175(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	ECrBuildingID                                 AdditionalHelperBuildingID;                        // 0x0176(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          IsExtractor;                                       // 0x0177(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          CanSnapToActor;                                    // 0x0178(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          CanRotateSnapToActor;                              // 0x0179(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          UseGrid;                                           // 0x017A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          ForceAllignToTerrain;                              // 0x017B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          CanBlockZLevel;                                    // 0x017C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          UseLowCollisionRestriction;                        // 0x017D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          PlacementHitIgnoreBuildings;                       // 0x017E(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          UseBuildingCamera;                                 // 0x017F(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          CanSetMainMeshZLocation;                           // 0x0180(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_181[0x3];                                      // 0x0181(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         MaxMainMeshZLocationShift;                         // 0x0184(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         MinMainMeshZLocationShift;                         // 0x0188(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_18C[0x4];                                      // 0x018C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAuActorPlacementData*                  FoundationHelperVariant;                           // 0x0190(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UAuActorPlacementData*                  AdditionalHelper;                                  // 0x0198(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	bool                                          RequireHabitat;                                    // 0x01A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          RequiresBeingInsideHabitat;                        // 0x01A1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          SplineBased;                                       // 0x01A2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          CheckBaseCoreArea;                                 // 0x01A3(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          CheckOutsideBaseCoreArea;                          // 0x01A4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	ECrDirection                                  StartHelperDirection;                              // 0x01A5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1A6[0x2];                                      // 0x01A6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   AdditionalButtonText;                              // 0x01A8(0x0010)(Edit, BlueprintVisible, Protected, NativeAccessSpecifierProtected)
-	bool                                          UsesConnectors;                                    // 0x01B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          ShowConstrucionHudStability;                       // 0x01B9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          CanRotateInSnapSocket;                             // 0x01BA(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          CheckZAxisTraceCollision;                          // 0x01BB(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          RequirePlatformConnecting;                         // 0x01BC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          StabilityPlatformsHiddenInGame;                    // 0x01BD(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          CanCopyBuilding;                                   // 0x01BE(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1BF[0x1];                                      // 0x01BF(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class AAuAPHelperActor>           UniqueHelperActorClass;                            // 0x0060(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         MaxMultiConfirmPoints;                             // 0x0068(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EAuAPlacementPointsRespectingSurface          PointsRespectingSurfaceMode;                       // 0x006C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_6D[0x3];                                       // 0x006D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         RangeOfPointsRespectingSurface;                    // 0x0070(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_74[0x4];                                       // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UStaticMesh*                            HelperActorCustomMesh;                             // 0x0078(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	bool                                          bRepeatedPlacement;                                // 0x0080(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_81[0x7];                                       // 0x0081(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FString>                         MeshComponentsToShow;                              // 0x0088(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<class FString>                         MeshComponentsToAlwaysShow;                        // 0x0098(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	float                                         MinPlacementDistance;                              // 0x00A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         MaxPlacementDistance;                              // 0x00AC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         DroneMinPlacementDistance;                         // 0x00B0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         DroneMaxPlacementDistance;                         // 0x00B4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UAuCustomPlacementMethod*               CustomPlacementMethod;                             // 0x00B8(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UAuActorPlacingConditionsData*          PlacementConditions;                               // 0x00C0(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TSubclassOf<class UAuPlaceActorCustom>        CustomPlacement;                                   // 0x00C8(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bCanBePlacedOnOil;                                 // 0x00D0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bCanBePlacedOnTerrain;                             // 0x00D1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bHasToBePlacedOnTerrain;                           // 0x00D2(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bSnapToHitNormal;                                  // 0x00D3(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bSnapToSocketNormal;                               // 0x00D4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_D5[0x3];                                       // 0x00D5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<TSubclassOf<class AActor>>             MustHitActors;                                     // 0x00D8(0x0010)(Edit, ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
+	struct FAuAPSocketParams                      Socket;                                            // 0x00E8(0x0040)(Edit, Protected, NativeAccessSpecifierProtected)
+	bool                                          AllSocketsShouldBeSnapped;                         // 0x0128(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_129[0x7];                                      // 0x0129(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FAuAPMassSpawnedEntityType             EntityType;                                        // 0x0130(0x0038)(Edit, Protected, NativeAccessSpecifierProtected)
+	class UAuActorPlacementData*                  TilesData;                                         // 0x0168(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UAuActorPlacementData*                  FoundationData;                                    // 0x0170(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	float                                         FoundationYaw;                                     // 0x0178(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bForceDirectPlacementTrace;                        // 0x017C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_17D[0x3];                                      // 0x017D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	ECrBuildingID                                 BuildingID;                                        // 0x0180(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	ECrBuildingID                                 AdditionalHelperBuildingID;                        // 0x0184(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          IsExtractor;                                       // 0x0188(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          CanSnapToActor;                                    // 0x0189(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          CanRotateSnapToActor;                              // 0x018A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          UseGrid;                                           // 0x018B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          ForceAllignToTerrain;                              // 0x018C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          CanBlockZLevel;                                    // 0x018D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          UseLowCollisionRestriction;                        // 0x018E(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          PlacementHitIgnoreBuildings;                       // 0x018F(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          UseBuildingCamera;                                 // 0x0190(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          CanSetMainMeshZLocation;                           // 0x0191(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_192[0x2];                                      // 0x0192(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         MaxMainMeshZLocationShift;                         // 0x0194(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         MinMainMeshZLocationShift;                         // 0x0198(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_19C[0x4];                                      // 0x019C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAuActorPlacementData*                  FoundationHelperVariant;                           // 0x01A0(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UAuActorPlacementData*                  ZOffsetVariantUp;                                  // 0x01A8(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UAuActorPlacementData*                  ZOffsetVariantDown;                                // 0x01B0(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UAuActorPlacementData*                  AdditionalHelper;                                  // 0x01B8(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	bool                                          RequireHabitat;                                    // 0x01C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          RequiresBeingInsideHabitat;                        // 0x01C1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          SplineBased;                                       // 0x01C2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          CheckBaseCoreArea;                                 // 0x01C3(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          CheckOutsideBaseCoreArea;                          // 0x01C4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	ECrDirection                                  StartHelperDirection;                              // 0x01C5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_1C6[0x2];                                      // 0x01C6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   AdditionalButtonText;                              // 0x01C8(0x0010)(Edit, BlueprintVisible, Protected, NativeAccessSpecifierProtected)
+	bool                                          UsesConnectors;                                    // 0x01D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          ShowConstrucionHudStability;                       // 0x01D9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          CanRotateInSnapSocket;                             // 0x01DA(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          CheckZAxisTraceCollision;                          // 0x01DB(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          RequirePlatformConnecting;                         // 0x01DC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          StabilityPlatformsHiddenInGame;                    // 0x01DD(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          CanCopyBuilding;                                   // 0x01DE(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_1DF[0x1];                                      // 0x01DF(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         SplineHelperZOffset;                               // 0x01E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         MaxSplineAngle;                                    // 0x01E4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TArray<class FName>                           IgnoredCollisonProfileNames;                       // 0x01E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 
 public:
 	class AActor* GetActorDefaultObject() const;
@@ -466,17 +473,18 @@ public:
 DUMPER7_ASSERTS_UAuActorPlacingConditionsData;
 
 // Class AuActorPlacement.AuAPHelperActor
-// 0x0578 (0x0820 - 0x02A8)
-class AAuAPHelperActor : public AActor
+// 0x05E8 (0x0890 - 0x02A8)
+#pragma pack(push, 0x1)
+class alignas(0x10) AAuAPHelperActor : public AActor
 {
 public:
 	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FColor                                 AcceptColor;                                       // 0x02B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FColor                                 NoResourceColor;                                   // 0x02B4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FColor                                 RejectColor;                                       // 0x02B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FColor                                 BuildingAndGridPlacementColor;                     // 0x02BC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FColor                                 SimulatedProxyColor;                               // 0x02C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_2C4[0x4];                                      // 0x02C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	ECrBuildingID                                 BuildingID;                                        // 0x02B0(0x0004)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FColor                                 AcceptColor;                                       // 0x02B4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FColor                                 NoResourceColor;                                   // 0x02B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FColor                                 RejectColor;                                       // 0x02BC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FColor                                 BuildingAndGridPlacementColor;                     // 0x02C0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FColor                                 SimulatedProxyColor;                               // 0x02C4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UMaterialInstance*                      HelperMaterial;                                    // 0x02C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 	class UMaterialInstance*                      HelperBoostMaterial;                               // 0x02D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 	class UMaterialInstance*                      HelperGoldPanelMaterial;                           // 0x02D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
@@ -496,54 +504,60 @@ public:
 	class USceneComponent*                        Root;                                              // 0x0368(0x0008)(Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 	class USkeletalMeshComponent*                 SkeletalMesh;                                      // 0x0370(0x0008)(Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 	class UStaticMeshComponent*                   StaticMesh;                                        // 0x0378(0x0008)(Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_380[0x2C];                                     // 0x0380(0x002C)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bInCompatibleSocket;                               // 0x03AC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3AD[0x3];                                      // 0x03AD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UStaticMeshSocket*>              UsedSockets;                                       // 0x03B0(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-	class UStaticMesh*                            ReplicatedStaticMesh;                              // 0x03C0(0x0008)(Net, ZeroConstructor, RepNotify, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class USkeletalMesh*                          ReplicatedSkeletalMesh;                            // 0x03C8(0x0008)(Net, ZeroConstructor, RepNotify, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	struct FTransform                             MeshRelativeTransform;                             // 0x03D0(0x0060)(Net, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UStaticMesh*                            ReplicatedFoundationInstanceMesh;                  // 0x0430(0x0008)(Net, ZeroConstructor, RepNotify, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UStaticMesh*                            ReplicatedTilesInstanceMesh;                       // 0x0438(0x0008)(Net, ZeroConstructor, RepNotify, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	int32                                         FoundationSizeX;                                   // 0x0440(0x0004)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         FoundationSizeY;                                   // 0x0444(0x0004)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         FoundationYaw;                                     // 0x0448(0x0004)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bFoundationShown;                                  // 0x044C(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAuAPlacementConditionResult                  ReplicatedPlacementConditionResult;                // 0x044D(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_44E[0x2];                                      // 0x044E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ReplicatedMainMeshZOffset;                         // 0x0450(0x0004)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          ReplicatedIsVisible;                               // 0x0454(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_455[0x3];                                      // 0x0455(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UInstancedStaticMeshComponent*          FoundationISM;                                     // 0x0458(0x0008)(Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UInstancedStaticMeshComponent*          TilesISM;                                          // 0x0460(0x0008)(Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UInstancedStaticMeshComponent*          CollisionBoxISM;                                   // 0x0468(0x0008)(Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UInstancedStaticMeshComponent*          PlatformSnapBoxISM;                                // 0x0470(0x0008)(Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UInstancedStaticMeshComponent*          PlatformSnapIconISM;                               // 0x0478(0x0008)(Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TArray<class UMeshComponent*>                 AllMeshes;                                         // 0x0480(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_490[0xC0];                                     // 0x0490(0x00C0)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         SmallSnappingIndex;                                // 0x0550(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         BigSnappingIndex;                                  // 0x0554(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_558[0x58];                                     // 0x0558(0x0058)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAuActorPlacementComponent*             PlacementComponent;                                // 0x05B0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_5B8[0xD0];                                     // 0x05B8(0x00D0)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAuActorPlacementDeveloperSettings*     PlacementDeveloperSettings;                        // 0x0688(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_690[0x8];                                      // 0x0690(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UBoxComponent*                          OverlapWaterDecalBox;                              // 0x0698(0x0008)(Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UAuActorPlacementData*                  BuildingData;                                      // 0x06A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_6A8[0x78];                                     // 0x06A8(0x0078)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 SnappedActor;                                      // 0x0720(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_728[0x10];                                     // 0x0728(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAuBuildingGridSubsystem*               GridSubsystem;                                     // 0x0738(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class ADecalActor*                            GridDecal;                                         // 0x0740(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_748[0x8];                                      // 0x0748(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class AAuAPHelperActor*                       BasicHelper;                                       // 0x0750(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_758[0x30];                                     // 0x0758(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UPrimitiveComponent*>            DebugCollisionComponents;                          // 0x0788(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_798[0x8];                                      // 0x0798(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAuActorPlacementData*                  WaitingForBuildingData;                            // 0x07A0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_7A8[0x30];                                     // 0x07A8(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         StabilityStrength;                                 // 0x07D8(0x0004)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_7DC[0x44];                                     // 0x07DC(0x0044)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<class UStaticMeshComponent*>           AdditionalStaticMeshes;                            // 0x0380(0x0010)(Edit, ExportObject, ZeroConstructor, EditConst, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_390[0x2C];                                     // 0x0390(0x002C)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bInCompatibleSocket;                               // 0x03BC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3BD[0x3];                                      // 0x03BD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UStaticMeshSocket*>              UsedSockets;                                       // 0x03C0(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	class UStaticMesh*                            ReplicatedStaticMesh;                              // 0x03D0(0x0008)(Net, ZeroConstructor, RepNotify, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class USkeletalMesh*                          ReplicatedSkeletalMesh;                            // 0x03D8(0x0008)(Net, ZeroConstructor, RepNotify, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	struct FTransform                             MeshRelativeTransform;                             // 0x03E0(0x0060)(Net, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UStaticMesh*                            ReplicatedFoundationInstanceMesh;                  // 0x0440(0x0008)(Net, ZeroConstructor, RepNotify, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UStaticMesh*                            ReplicatedTilesInstanceMesh;                       // 0x0448(0x0008)(Net, ZeroConstructor, RepNotify, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	int32                                         FoundationSizeX;                                   // 0x0450(0x0004)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         FoundationSizeY;                                   // 0x0454(0x0004)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         FoundationYaw;                                     // 0x0458(0x0004)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bFoundationShown;                                  // 0x045C(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAuAPlacementConditionResult                  ReplicatedPlacementConditionResult;                // 0x045D(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_45E[0x2];                                      // 0x045E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ReplicatedMainMeshZOffset;                         // 0x0460(0x0004)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          ReplicatedIsVisible;                               // 0x0464(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_465[0x3];                                      // 0x0465(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UInstancedStaticMeshComponent*          FoundationISM;                                     // 0x0468(0x0008)(Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UInstancedStaticMeshComponent*          TilesISM;                                          // 0x0470(0x0008)(Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UInstancedStaticMeshComponent*          CollisionBoxISM;                                   // 0x0478(0x0008)(Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UInstancedStaticMeshComponent*          PlatformSnapBoxISM;                                // 0x0480(0x0008)(Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UInstancedStaticMeshComponent*          PlatformSnapIconISM;                               // 0x0488(0x0008)(Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TArray<class UMeshComponent*>                 AllMeshes;                                         // 0x0490(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_4A0[0xC0];                                     // 0x04A0(0x00C0)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         SmallSnappingIndex;                                // 0x0560(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         BigSnappingIndex;                                  // 0x0564(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_568[0x58];                                     // 0x0568(0x0058)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAuActorPlacementComponent*             PlacementComponent;                                // 0x05C0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_5C8[0xB8];                                     // 0x05C8(0x00B8)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAuActorPlacementDeveloperSettings*     PlacementDeveloperSettings;                        // 0x0680(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_688[0x8];                                      // 0x0688(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 ActorUnderneath;                                   // 0x0690(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UPrimitiveComponent*                    ComponentUnderneath;                               // 0x0698(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UBoxComponent*                          OverlapWaterDecalBox;                              // 0x06A0(0x0008)(Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UAuActorPlacementData*                  BuildingData;                                      // 0x06A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_6B0[0x78];                                     // 0x06B0(0x0078)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 SnappedActor;                                      // 0x0728(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_730[0x10];                                     // 0x0730(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAuBuildingGridSubsystem*               GridSubsystem;                                     // 0x0740(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class ADecalActor*                            GridDecal;                                         // 0x0748(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	bool                                          AdditionalHelper;                                  // 0x0750(0x0001)(Edit, Net, ZeroConstructor, EditConst, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_751[0x7];                                      // 0x0751(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AAuAPHelperActor*                       BasicHelper;                                       // 0x0758(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_760[0x30];                                     // 0x0760(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UPrimitiveComponent*>            DebugCollisionComponents;                          // 0x0790(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_7A0[0x8];                                      // 0x07A0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAuActorPlacementData*                  WaitingForBuildingData;                            // 0x07A8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_7B0[0x30];                                     // 0x07B0(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         StabilityStrength;                                 // 0x07E0(0x0004)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_7E4[0x44];                                     // 0x07E4(0x0044)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FString, class UActorComponent*>   AllComponentsByName;                               // 0x0828(0x0050)(ExportObject, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	TArray<class UStaticMeshComponent*>           EnabledStaticMeshComponent;                        // 0x0878(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
 
 public:
 	struct FVector GetMouseLocation();
@@ -552,6 +566,8 @@ public:
 	void OnFoundationSetUp(const TArray<struct FTransform>& FoundationTransforms);
 	void OnPlacedObjectClassChange(TSubclassOf<class AActor> NewClass);
 	void OnRep_ActorToReplace();
+	void OnRep_AdditionalHelper();
+	void OnRep_BuildingID();
 	void OnRep_Foundation();
 	void OnRep_FoundationShown();
 	void OnRep_IsVisible();
@@ -588,18 +604,18 @@ public:
 		return GetDefaultObjImpl<AAuAPHelperActor>();
 	}
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_AAuAPHelperActor;
 
 // Class AuActorPlacement.AuAPHelperActorMultiConfirm
-// 0x0070 (0x0890 - 0x0820)
-#pragma pack(push, 0x1)
-class alignas(0x10) AAuAPHelperActorMultiConfirm : public AAuAPHelperActor
+// 0x0060 (0x08F0 - 0x0890)
+class AAuAPHelperActorMultiConfirm : public AAuAPHelperActor
 {
 public:
-	TArray<struct FAuAPConfirmPointData>          ConfirmedPoints;                                   // 0x0820(0x0010)(Net, ZeroConstructor, RepNotify, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	struct FVector                                RelativeMouseLocation;                             // 0x0830(0x0018)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FActorInstanceHandle                   StartActor;                                        // 0x0848(0x0020)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FActorInstanceHandle                   EndActor;                                          // 0x0868(0x0020)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TArray<struct FAuAPConfirmPointData>          ConfirmedPoints;                                   // 0x0888(0x0010)(Net, ZeroConstructor, RepNotify, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	struct FVector                                RelativeMouseLocation;                             // 0x0898(0x0018)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FActorInstanceHandle                   StartActor;                                        // 0x08B0(0x0020)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FActorInstanceHandle                   EndActor;                                          // 0x08D0(0x0020)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	void OnCancelPoint(int32 PointIndex);
@@ -623,19 +639,19 @@ public:
 		return GetDefaultObjImpl<AAuAPHelperActorMultiConfirm>();
 	}
 };
-#pragma pack(pop)
 DUMPER7_ASSERTS_AAuAPHelperActorMultiConfirm;
 
 // Class AuActorPlacement.AuAPHelperActorSpline
-// 0x0050 (0x08E0 - 0x0890)
-class AAuAPHelperActorSpline : public AAuAPHelperActorMultiConfirm
+// 0x0070 (0x0960 - 0x08F0)
+#pragma pack(push, 0x1)
+class alignas(0x10) AAuAPHelperActorSpline : public AAuAPHelperActorMultiConfirm
 {
 public:
-	class USplineComponent*                       Spline;                                            // 0x0888(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	struct FVector                                EndPointLocation;                                  // 0x0890(0x0018)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector                                StartPointTangent;                                 // 0x08A8(0x0018)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector                                EndPointTangent;                                   // 0x08C0(0x0018)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_8D8[0x8];                                      // 0x08D8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class USplineComponent*                       Spline;                                            // 0x08F0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	struct FVector                                EndPointLocation;                                  // 0x08F8(0x0018)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector                                StartPointTangent;                                 // 0x0910(0x0018)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector                                EndPointTangent;                                   // 0x0928(0x0018)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_940[0x18];                                     // 0x0940(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void OnRep_EndPointAndTangentsLocation();
@@ -657,6 +673,7 @@ public:
 		return GetDefaultObjImpl<AAuAPHelperActorSpline>();
 	}
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_AAuAPHelperActorSpline;
 
 // Class AuActorPlacement.AuAPMassRepresentationActorManagement

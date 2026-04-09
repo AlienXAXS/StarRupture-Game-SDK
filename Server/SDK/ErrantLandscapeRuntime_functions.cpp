@@ -426,6 +426,31 @@ void UElRtTextureStampBrushComponent::NotifySplineChanged()
 }
 
 
+// Function ErrantLandscapeRuntime.ElRtTextureStampBrushComponent.SetBrushLandscape
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// TSoftObjectPtr<class ALandscape>        InLandscape                                            (Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UElRtTextureStampBrushComponent::SetBrushLandscape(TSoftObjectPtr<class ALandscape> InLandscape)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ElRtTextureStampBrushComponent", "SetBrushLandscape");
+
+	Params::ElRtTextureStampBrushComponent_SetBrushLandscape Parms{};
+
+	Parms.InLandscape = InLandscape;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function ErrantLandscapeRuntime.ElRtWorldSubsystem.QueueRender
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:

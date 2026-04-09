@@ -18,12 +18,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Animal_Crab_Ragdoll_DeathSequenceActor.BP_Animal_Crab_Ragdoll_DeathSequenceActor_C
-// 0x0010 (0x0420 - 0x0410)
+// 0x0010 (0x0430 - 0x0420)
 class ABP_Animal_Crab_Ragdoll_DeathSequenceActor_C final : public ABP_DeathSequenceActor_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0408(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	bool                                          Did_Play_Dissolve_Blood_Cloud_VFX;                 // 0x0410(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0418(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	bool                                          Did_Play_Dissolve_Blood_Cloud_VFX;                 // 0x0420(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_Animal_Crab_Ragdoll_DeathSequenceActor(int32 EntryPoint);

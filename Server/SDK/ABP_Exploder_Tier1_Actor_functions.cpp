@@ -17,6 +17,72 @@
 namespace SDK
 {
 
+// Function ABP_Exploder_Tier1_Actor.ABP_Exploder_Tier1_Actor_C.UpdateYawRotationRateForLocomotionState
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECrEnemyLocomotionType                  OldLocomotionType                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrEnemyLocomotionType                  NewLocomotionType                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UABP_Exploder_Tier1_Actor_C::UpdateYawRotationRateForLocomotionState(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Exploder_Tier1_Actor_C", "UpdateYawRotationRateForLocomotionState");
+
+	Params::ABP_Exploder_Tier1_Actor_C_UpdateYawRotationRateForLocomotionState Parms{};
+
+	Parms.OldLocomotionType = OldLocomotionType;
+	Parms.NewLocomotionType = NewLocomotionType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ABP_Exploder_Tier1_Actor.ABP_Exploder_Tier1_Actor_C.UpdateYawRotationRateForAttackType
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECrEnemyAttackType                      OldAttackType                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrEnemyAttackType                      NewAttackType                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UABP_Exploder_Tier1_Actor_C::UpdateYawRotationRateForAttackType(ECrEnemyAttackType OldAttackType, ECrEnemyAttackType NewAttackType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Exploder_Tier1_Actor_C", "UpdateYawRotationRateForAttackType");
+
+	Params::ABP_Exploder_Tier1_Actor_C_UpdateYawRotationRateForAttackType Parms{};
+
+	Parms.OldAttackType = OldAttackType;
+	Parms.NewAttackType = NewAttackType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ABP_Exploder_Tier1_Actor.ABP_Exploder_Tier1_Actor_C.ResetSyncedAnimationProgress
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+
+void UABP_Exploder_Tier1_Actor_C::ResetSyncedAnimationProgress(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Exploder_Tier1_Actor_C", "ResetSyncedAnimationProgress");
+
+	Params::ABP_Exploder_Tier1_Actor_C_ResetSyncedAnimationProgress Parms{};
+
+	Parms.Context = std::move(Context);
+	Parms.Node = std::move(Node);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function ABP_Exploder_Tier1_Actor.ABP_Exploder_Tier1_Actor_C.ExecuteUbergraph_ABP_Exploder_Tier1_Actor
 // (Final, UbergraphFunction)
 // Parameters:
@@ -121,20 +187,6 @@ void UABP_Exploder_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_AB
 }
 
 
-// Function ABP_Exploder_Tier1_Actor.ABP_Exploder_Tier1_Actor_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier1_Actor_AnimGraphNode_TransitionResult_C42A9F6849DF91D32FA3E2B521EDCF09
-// (BlueprintEvent)
-
-void UABP_Exploder_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier1_Actor_AnimGraphNode_TransitionResult_C42A9F6849DF91D32FA3E2B521EDCF09()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier1_Actor_AnimGraphNode_TransitionResult_C42A9F6849DF91D32FA3E2B521EDCF09");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function ABP_Exploder_Tier1_Actor.ABP_Exploder_Tier1_Actor_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier1_Actor_AnimGraphNode_TransitionResult_BF0F0A2B40CFEE69DE6894A5EC6FCB47
 // (BlueprintEvent)
 
@@ -144,20 +196,6 @@ void UABP_Exploder_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_AB
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("ABP_Exploder_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier1_Actor_AnimGraphNode_TransitionResult_BF0F0A2B40CFEE69DE6894A5EC6FCB47");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ABP_Exploder_Tier1_Actor.ABP_Exploder_Tier1_Actor_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier1_Actor_AnimGraphNode_TransitionResult_B8653B814E6A07274A9E78B891DECAA7
-// (BlueprintEvent)
-
-void UABP_Exploder_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier1_Actor_AnimGraphNode_TransitionResult_B8653B814E6A07274A9E78B891DECAA7()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier1_Actor_AnimGraphNode_TransitionResult_B8653B814E6A07274A9E78B891DECAA7");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -270,20 +308,6 @@ void UABP_Exploder_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_AB
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("ABP_Exploder_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier1_Actor_AnimGraphNode_TransitionResult_7D01DA8D4C56FD0EE120F9B377309B4C");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ABP_Exploder_Tier1_Actor.ABP_Exploder_Tier1_Actor_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier1_Actor_AnimGraphNode_TransitionResult_79D9862B47D640DF2343718FEEDC885E
-// (BlueprintEvent)
-
-void UABP_Exploder_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier1_Actor_AnimGraphNode_TransitionResult_79D9862B47D640DF2343718FEEDC885E()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier1_Actor_AnimGraphNode_TransitionResult_79D9862B47D640DF2343718FEEDC885E");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -410,20 +434,6 @@ void UABP_Exploder_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_AB
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("ABP_Exploder_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier1_Actor_AnimGraphNode_TransitionResult_432518EE4CD163CAA7DE39B8DFCFE61C");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ABP_Exploder_Tier1_Actor.ABP_Exploder_Tier1_Actor_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier1_Actor_AnimGraphNode_TransitionResult_4255C062428B10D69A8EFB90668EB2C3
-// (BlueprintEvent)
-
-void UABP_Exploder_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier1_Actor_AnimGraphNode_TransitionResult_4255C062428B10D69A8EFB90668EB2C3()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier1_Actor_AnimGraphNode_TransitionResult_4255C062428B10D69A8EFB90668EB2C3");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -614,6 +624,28 @@ void UABP_Exploder_Tier1_Actor_C::BPOnLocomotionTypeChanged(ECrEnemyLocomotionTy
 
 	Parms.OldLocomotionType = OldLocomotionType;
 	Parms.NewLocomotionType = NewLocomotionType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ABP_Exploder_Tier1_Actor.ABP_Exploder_Tier1_Actor_C.BPOnAttackTypeChanged
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// ECrEnemyAttackType                      OldAttackType                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrEnemyAttackType                      NewAttackType                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UABP_Exploder_Tier1_Actor_C::BPOnAttackTypeChanged(ECrEnemyAttackType OldAttackType, ECrEnemyAttackType NewAttackType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Exploder_Tier1_Actor_C", "BPOnAttackTypeChanged");
+
+	Params::ABP_Exploder_Tier1_Actor_C_BPOnAttackTypeChanged Parms{};
+
+	Parms.OldAttackType = OldAttackType;
+	Parms.NewAttackType = NewAttackType;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

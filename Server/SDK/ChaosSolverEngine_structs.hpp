@@ -52,18 +52,23 @@ enum class EClusterConnectionTypeEnum : uint8
 	Chaos_MAX                                = 7,
 };
 
-// ScriptStruct ChaosSolverEngine.ChaosVDRecordingStatusMessage
-// 0x0050 (0x0050 - 0x0000)
-struct FChaosVDRecordingStatusMessage final
+// ScriptStruct ChaosSolverEngine.ChaosVDStopRecordingCommandMessage
+// 0x0001 (0x0001 - 0x0000)
+struct FChaosVDStopRecordingCommandMessage final
 {
 public:
-	struct FGuid                                  InstanceId;                                        // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsRecording;                                      // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ElapsedTime;                                       // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FChaosVDTraceDetails                   TraceDetails;                                      // 0x0018(0x0038)(NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FChaosVDRecordingStatusMessage;
+DUMPER7_ASSERTS_FChaosVDStopRecordingCommandMessage;
+
+// ScriptStruct ChaosSolverEngine.RemovalEventCallbackWrapper
+// 0x0030 (0x0030 - 0x0000)
+struct alignas(0x10) FRemovalEventCallbackWrapper final
+{
+public:
+	uint8                                         Pad_0[0x30];                                       // 0x0000(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRemovalEventCallbackWrapper;
 
 // ScriptStruct ChaosSolverEngine.ChaosPhysicsCollisionInfo
 // 0x00C0 (0x00C0 - 0x0000)
@@ -117,14 +122,18 @@ public:
 };
 DUMPER7_ASSERTS_FChaosVDStartRecordingCommandMessage;
 
-// ScriptStruct ChaosSolverEngine.ChaosVDStopRecordingCommandMessage
-// 0x0001 (0x0001 - 0x0000)
-struct FChaosVDStopRecordingCommandMessage final
+// ScriptStruct ChaosSolverEngine.ChaosVDRecordingStatusMessage
+// 0x0050 (0x0050 - 0x0000)
+struct FChaosVDRecordingStatusMessage final
 {
 public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FGuid                                  InstanceId;                                        // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsRecording;                                      // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ElapsedTime;                                       // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FChaosVDTraceDetails                   TraceDetails;                                      // 0x0018(0x0038)(NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FChaosVDStopRecordingCommandMessage;
+DUMPER7_ASSERTS_FChaosVDRecordingStatusMessage;
 
 // ScriptStruct ChaosSolverEngine.ChaosVDDataChannelState
 // 0x0018 (0x0018 - 0x0000)
@@ -186,15 +195,6 @@ public:
 	uint8                                         Pad_0[0x30];                                       // 0x0000(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FBreakEventCallbackWrapper;
-
-// ScriptStruct ChaosSolverEngine.RemovalEventCallbackWrapper
-// 0x0030 (0x0030 - 0x0000)
-struct alignas(0x10) FRemovalEventCallbackWrapper final
-{
-public:
-	uint8                                         Pad_0[0x30];                                       // 0x0000(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRemovalEventCallbackWrapper;
 
 // ScriptStruct ChaosSolverEngine.CrumblingEventCallbackWrapper
 // 0x0030 (0x0030 - 0x0000)

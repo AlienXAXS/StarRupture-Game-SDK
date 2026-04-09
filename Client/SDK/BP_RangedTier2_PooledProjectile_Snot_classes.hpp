@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Chimera_classes.hpp"
 #include "Engine_structs.hpp"
 #include "GameplayTags_structs.hpp"
-#include "Chimera_classes.hpp"
 
 
 namespace SDK
@@ -36,7 +36,10 @@ public:
 	void BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult);
 	void BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 	void ExecuteUbergraph_BP_RangedTier2_PooledProjectile_Snot(int32 EntryPoint);
+	void OnProjectileActivated();
+	void OnProjectileDeactivated();
 	void OnProjectileShot(const struct FCrAiProjectileParameters& InProjectileParameters);
+	void ReceiveBeginPlay();
 
 	bool CanReturnToPool() const;
 	bool CanReturnToPoolAfterHit() const;

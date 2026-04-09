@@ -37,6 +37,27 @@ void ABP_Ranged_Tier2_LOD0_Character_C::ExecuteUbergraph_BP_Ranged_Tier2_LOD0_Ch
 }
 
 
+// Function BP_Ranged_Tier2_LOD0_Character.BP_Ranged_Tier2_LOD0_Character_C.GetNiagaraEyeSystem
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UNiagaraComponent**               NewParam                                               (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Ranged_Tier2_LOD0_Character_C::GetNiagaraEyeSystem(class UNiagaraComponent** NewParam)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Ranged_Tier2_LOD0_Character_C", "GetNiagaraEyeSystem");
+
+	Params::BP_Ranged_Tier2_LOD0_Character_C_GetNiagaraEyeSystem Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (NewParam != nullptr)
+		*NewParam = Parms.NewParam;
+}
+
+
 // Function BP_Ranged_Tier2_LOD0_Character.BP_Ranged_Tier2_LOD0_Character_C.OnAiDied
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
@@ -83,6 +104,48 @@ void ABP_Ranged_Tier2_LOD0_Character_C::OnDamage(class AActor* Actor, const stru
 }
 
 
+// Function BP_Ranged_Tier2_LOD0_Character.BP_Ranged_Tier2_LOD0_Character_C.OnEnterActorPool
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Ranged_Tier2_LOD0_Character_C::OnEnterActorPool()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Ranged_Tier2_LOD0_Character_C", "OnEnterActorPool");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Ranged_Tier2_LOD0_Character.BP_Ranged_Tier2_LOD0_Character_C.OnExitActorPool
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Ranged_Tier2_LOD0_Character_C::OnExitActorPool()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Ranged_Tier2_LOD0_Character_C", "OnExitActorPool");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Ranged_Tier2_LOD0_Character.BP_Ranged_Tier2_LOD0_Character_C.OnPrepareForGame
+// (Event, Public, BlueprintEvent)
+
+void ABP_Ranged_Tier2_LOD0_Character_C::OnPrepareForGame()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Ranged_Tier2_LOD0_Character_C", "OnPrepareForGame");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_Ranged_Tier2_LOD0_Character.BP_Ranged_Tier2_LOD0_Character_C.OnRep_InjuryPoseAlpha
 // (BlueprintCallable, BlueprintEvent)
 
@@ -92,20 +155,6 @@ void ABP_Ranged_Tier2_LOD0_Character_C::OnRep_InjuryPoseAlpha()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_Ranged_Tier2_LOD0_Character_C", "OnRep_InjuryPoseAlpha");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Ranged_Tier2_LOD0_Character.BP_Ranged_Tier2_LOD0_Character_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Ranged_Tier2_LOD0_Character_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier2_LOD0_Character_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -131,26 +180,6 @@ void ABP_Ranged_Tier2_LOD0_Character_C::SetIsAggroEyeColor(bool NewIsAggro)
 }
 
 
-// Function BP_Ranged_Tier2_LOD0_Character.BP_Ranged_Tier2_LOD0_Character_C.SetIsBoostedEyeColor
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    NewIsBoosted                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Ranged_Tier2_LOD0_Character_C::SetIsBoostedEyeColor(bool NewIsBoosted)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier2_LOD0_Character_C", "SetIsBoostedEyeColor");
-
-	Params::BP_Ranged_Tier2_LOD0_Character_C_SetIsBoostedEyeColor Parms{};
-
-	Parms.NewIsBoosted = NewIsBoosted;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_Ranged_Tier2_LOD0_Character.BP_Ranged_Tier2_LOD0_Character_C.UserConstructionScript
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 
@@ -162,6 +191,26 @@ void ABP_Ranged_Tier2_LOD0_Character_C::UserConstructionScript()
 		Func = Class->GetFunction("BP_Ranged_Tier2_LOD0_Character_C", "UserConstructionScript");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Ranged_Tier2_LOD0_Character.BP_Ranged_Tier2_LOD0_Character_C.OnMeshVisibilityUpdated
+// (Event, Public, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// bool                                    bIsMeshHidden                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Ranged_Tier2_LOD0_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidden) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Ranged_Tier2_LOD0_Character_C", "OnMeshVisibilityUpdated");
+
+	Params::BP_Ranged_Tier2_LOD0_Character_C_OnMeshVisibilityUpdated Parms{};
+
+	Parms.bIsMeshHidden = bIsMeshHidden;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

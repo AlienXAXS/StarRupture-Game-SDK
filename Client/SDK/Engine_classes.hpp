@@ -12,19 +12,19 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "AudioPlatformConfiguration_structs.hpp"
 #include "Engine_structs.hpp"
 #include "ClothingSystemRuntimeInterface_structs.hpp"
 #include "AudioExtensions_structs.hpp"
 #include "AudioExtensions_classes.hpp"
 #include "InputCore_structs.hpp"
-#include "FieldNotification_structs.hpp"
+#include "DeveloperSettings_structs.hpp"
+#include "DeveloperSettings_classes.hpp"
 #include "RenderCore_structs.hpp"
-#include "AudioPlatformConfiguration_structs.hpp"
 #include "PacketHandler_classes.hpp"
 #include "PhysicsCore_structs.hpp"
 #include "PhysicsCore_classes.hpp"
-#include "DeveloperSettings_structs.hpp"
-#include "DeveloperSettings_classes.hpp"
+#include "FieldNotification_structs.hpp"
 #include "Chaos_structs.hpp"
 #include "IrisCore_classes.hpp"
 #include "MeshDescription_classes.hpp"
@@ -3449,7 +3449,8 @@ DUMPER7_ASSERTS_USkinnedMeshComponent;
 
 // Class Engine.SkeletalMeshComponent
 // 0x0730 (0x1040 - 0x0910)
-class USkeletalMeshComponent : public USkinnedMeshComponent
+#pragma pack(push, 0x1)
+class alignas(0x10) USkeletalMeshComponent : public USkinnedMeshComponent
 {
 public:
 	uint8                                         Pad_910[0x8];                                      // 0x0910(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -3541,7 +3542,7 @@ public:
 	TMulticastInlineDelegate<void()>              OnAnimInitialized;                                 // 0x0D80(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_D98[0x298];                                    // 0x0D98(0x0298)(Fixing Size After Last Property [ Dumper-7 ])
 	uint32                                        LastPoseTickFrame;                                 // 0x1030(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1034[0xC];                                     // 0x1034(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1034[0x4];                                     // 0x1034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void AccumulateAllBodiesBelowPhysicsBlendWeight(const class FName& InBoneName, float AddPhysicsBlendWeight, bool bSkipCustomPhysicsType);
@@ -3673,6 +3674,7 @@ public:
 		return GetDefaultObjImpl<USkeletalMeshComponent>();
 	}
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_USkeletalMeshComponent;
 
 // Class Engine.LevelBounds
@@ -27756,7 +27758,7 @@ public:
 DUMPER7_ASSERTS_UKismetMaterialLibrary;
 
 // Class Engine.StaticMeshSocket
-// 0x0090 (0x00B8 - 0x0028)
+// 0x00E0 (0x0108 - 0x0028)
 class UStaticMeshSocket final : public UObject
 {
 public:
@@ -27770,6 +27772,7 @@ public:
 	uint8                                         Pad_99[0x7];                                       // 0x0099(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UDataAsset*                             ReplaceBuilding;                                   // 0x00A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	TArray<class UStaticMesh*>                    BlockedBuildings;                                  // 0x00A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	TMap<class FString, bool>                     ComponentVisibility;                               // 0x00B8(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -30097,7 +30100,7 @@ DUMPER7_ASSERTS_IPreviewCollectionInterface;
 
 // Class Engine.SkeletalMeshActor
 // 0x0080 (0x0328 - 0x02A8)
-class ASkeletalMeshActor final : public AActor
+class ASkeletalMeshActor : public AActor
 {
 public:
 	uint8                                         bShouldDoAnimNotifies : 1;                         // 0x02A8(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))

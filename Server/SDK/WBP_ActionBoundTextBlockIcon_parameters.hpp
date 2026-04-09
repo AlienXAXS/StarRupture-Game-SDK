@@ -54,31 +54,32 @@ public:
 DUMPER7_ASSERTS_WBP_ActionBoundTextBlockIcon_C_SetButtonImageVisibility;
 
 // Function WBP_ActionBoundTextBlockIcon.WBP_ActionBoundTextBlockIcon_C.GetHeightSize
-// 0x0010 (0x0010 - 0x0000)
+// 0x0008 (0x0008 - 0x0000)
 struct WBP_ActionBoundTextBlockIcon_C_GetHeightSize final
 {
 public:
 	double                                        Height;                                            // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        K2Node_FunctionResult_Height_ImplicitCast;         // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_ActionBoundTextBlockIcon_C_GetHeightSize;
 
 // Function WBP_ActionBoundTextBlockIcon.WBP_ActionBoundTextBlockIcon_C.ExecuteUbergraph_WBP_ActionBoundTextBlockIcon
-// 0x00F8 (0x00F8 - 0x0000)
+// 0x01C0 (0x01C0 - 0x0000)
 struct WBP_ActionBoundTextBlockIcon_C_ExecuteUbergraph_WBP_ActionBoundTextBlockIcon final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_bLong;                                // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateColor                            K2Node_MakeStruct_SlateColor;                      // 0x0008(0x0014)()
-	ESlateVisibility                              K2Node_Event_InVisibility;                         // 0x001C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateFontInfo                         K2Node_MakeStruct_SlateFontInfo;                   // 0x0020(0x0060)(HasGetValueTypeHash)
-	struct FSlateFontInfo                         K2Node_MakeStruct_SlateFontInfo_1;                 // 0x0080(0x0060)(HasGetValueTypeHash)
-	bool                                          K2Node_Event_bVisible;                             // 0x00E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_E1[0x7];                                       // 0x00E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   K2Node_Event_InText;                               // 0x00E8(0x0010)(ConstParm)
+	uint8                                         Pad_4[0xC];                                        // 0x0004(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush;                      // 0x0010(0x00B0)()
+	bool                                          K2Node_Event_bLong;                                // 0x00C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C1[0x3];                                       // 0x00C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateColor                            K2Node_MakeStruct_SlateColor;                      // 0x00C4(0x0014)()
+	ESlateVisibility                              K2Node_Event_InVisibility;                         // 0x00D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_D9[0x7];                                       // 0x00D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateFontInfo                         K2Node_MakeStruct_SlateFontInfo;                   // 0x00E0(0x0060)(HasGetValueTypeHash)
+	struct FSlateFontInfo                         K2Node_MakeStruct_SlateFontInfo_1;                 // 0x0140(0x0060)(HasGetValueTypeHash)
+	bool                                          K2Node_Event_bVisible;                             // 0x01A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1A1[0x7];                                      // 0x01A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   K2Node_Event_InText;                               // 0x01A8(0x0010)(ConstParm)
 };
 DUMPER7_ASSERTS_WBP_ActionBoundTextBlockIcon_C_ExecuteUbergraph_WBP_ActionBoundTextBlockIcon;
 

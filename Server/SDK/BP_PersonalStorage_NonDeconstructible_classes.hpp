@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_PersonalStorage_NonDeconstructible.BP_PersonalStorage_NonDeconstructible_C
-// 0x0000 (0x0860 - 0x0860)
+// 0x0000 (0x0870 - 0x0870)
 class ABP_PersonalStorage_NonDeconstructible_C final : public ABP_PersonalStorage_C
 {
 public:

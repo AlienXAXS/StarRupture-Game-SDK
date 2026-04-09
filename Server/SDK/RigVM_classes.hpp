@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "RigVM_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "RigVM_structs.hpp"
 #include "Engine_classes.hpp"
 #include "DeveloperSettings_classes.hpp"
 
@@ -49,39 +49,6 @@ public:
 };
 DUMPER7_ASSERTS_IRigVMGraphFunctionHost;
 
-// Class RigVM.RigVMUserWorkflowOptions
-// 0x0088 (0x00B0 - 0x0028)
-class URigVMUserWorkflowOptions : public UObject
-{
-public:
-	class UObject*                                Subject;                                           // 0x0028(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	struct FRigVMUserWorkflow                     Workflow;                                          // 0x0030(0x0068)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_98[0x18];                                      // 0x0098(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void ReportError(const class FString& InMessage);
-	void ReportInfo(const class FString& InMessage);
-	void ReportWarning(const class FString& InMessage);
-
-	bool IsValid() const;
-	bool RequiresDialog() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("RigVMUserWorkflowOptions")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"RigVMUserWorkflowOptions")
-	}
-	static class URigVMUserWorkflowOptions* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<URigVMUserWorkflowOptions>();
-	}
-};
-DUMPER7_ASSERTS_URigVMUserWorkflowOptions;
-
 // Class RigVM.RigVMBlueprintGeneratedClass
 // 0x0028 (0x0388 - 0x0360)
 class URigVMBlueprintGeneratedClass : public UBlueprintGeneratedClass
@@ -105,30 +72,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_URigVMBlueprintGeneratedClass;
-
-// Class RigVM.NameSpacedUserData
-// 0x00D8 (0x0100 - 0x0028)
-class UNameSpacedUserData : public UAssetUserData
-{
-public:
-	class FString                                 Namespace;                                         // 0x0028(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_38[0xC8];                                      // 0x0038(0x00C8)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("NameSpacedUserData")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"NameSpacedUserData")
-	}
-	static class UNameSpacedUserData* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UNameSpacedUserData>();
-	}
-};
-DUMPER7_ASSERTS_UNameSpacedUserData;
 
 // Class RigVM.RigVM
 // 0x0370 (0x0398 - 0x0028)
@@ -193,6 +136,30 @@ public:
 };
 DUMPER7_ASSERTS_URigVM;
 
+// Class RigVM.NameSpacedUserData
+// 0x00D8 (0x0100 - 0x0028)
+class UNameSpacedUserData : public UAssetUserData
+{
+public:
+	class FString                                 Namespace;                                         // 0x0028(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_38[0xC8];                                      // 0x0038(0x00C8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NameSpacedUserData")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NameSpacedUserData")
+	}
+	static class UNameSpacedUserData* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UNameSpacedUserData>();
+	}
+};
+DUMPER7_ASSERTS_UNameSpacedUserData;
+
 // Class RigVM.DataAssetLink
 // 0x0030 (0x0130 - 0x0100)
 class UDataAssetLink final : public UNameSpacedUserData
@@ -247,7 +214,7 @@ DUMPER7_ASSERTS_URigVMMemoryStorageGeneratorClass;
 
 // Class RigVM.RigVMMemoryStorage
 // 0x0000 (0x0028 - 0x0028)
-class URigVMMemoryStorage final : public UObject
+class URigVMMemoryStorage : public UObject
 {
 public:
 	static class UClass* StaticClass()
@@ -287,6 +254,39 @@ public:
 	}
 };
 DUMPER7_ASSERTS_URigVMNativized;
+
+// Class RigVM.RigVMUserWorkflowOptions
+// 0x0088 (0x00B0 - 0x0028)
+class URigVMUserWorkflowOptions : public UObject
+{
+public:
+	class UObject*                                Subject;                                           // 0x0028(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	struct FRigVMUserWorkflow                     Workflow;                                          // 0x0030(0x0068)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_98[0x18];                                      // 0x0098(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void ReportError(const class FString& InMessage);
+	void ReportInfo(const class FString& InMessage);
+	void ReportWarning(const class FString& InMessage);
+
+	bool IsValid() const;
+	bool RequiresDialog() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("RigVMUserWorkflowOptions")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"RigVMUserWorkflowOptions")
+	}
+	static class URigVMUserWorkflowOptions* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<URigVMUserWorkflowOptions>();
+	}
+};
+DUMPER7_ASSERTS_URigVMUserWorkflowOptions;
 
 // Class RigVM.RigVMHost
 // 0x0268 (0x0290 - 0x0028)

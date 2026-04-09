@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "ChaosVDRuntime_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ChaosVDRuntime_structs.hpp"
 #include "DataflowSimulation_structs.hpp"
 
 
@@ -63,15 +63,6 @@ public:
 	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FChaosVDDataChannelState;
-
-// ScriptStruct ChaosSolverEngine.ChaosVDChannelStateChangeCommandMessage
-// 0x0018 (0x0018 - 0x0000)
-struct FChaosVDChannelStateChangeCommandMessage final
-{
-public:
-	struct FChaosVDDataChannelState               NewState;                                          // 0x0000(0x0018)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FChaosVDChannelStateChangeCommandMessage;
 
 // ScriptStruct ChaosSolverEngine.ChaosPhysicsCollisionInfo
 // 0x00C0 (0x00C0 - 0x0000)
@@ -146,6 +137,15 @@ public:
 	struct FChaosVDTraceDetails                   TraceDetails;                                      // 0x0018(0x0038)(NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FChaosVDRecordingStatusMessage;
+
+// ScriptStruct ChaosSolverEngine.ChaosVDChannelStateChangeCommandMessage
+// 0x0018 (0x0018 - 0x0000)
+struct FChaosVDChannelStateChangeCommandMessage final
+{
+public:
+	struct FChaosVDDataChannelState               NewState;                                          // 0x0000(0x0018)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FChaosVDChannelStateChangeCommandMessage;
 
 // ScriptStruct ChaosSolverEngine.ChaosVDChannelStateChangeResponseMessage
 // 0x0028 (0x0028 - 0x0000)

@@ -92,6 +92,20 @@ bool AGS_GameStateBase_C::OnResponseFinished(const struct FContextualResponsePay
 }
 
 
+// Function GS_GameStateBase.GS_GameStateBase_C.OnNoReplyDialogueRuleFound
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void AGS_GameStateBase_C::OnNoReplyDialogueRuleFound()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GS_GameStateBase_C", "OnNoReplyDialogueRuleFound");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function GS_GameStateBase.GS_GameStateBase_C.OnLoaded_A12FDB953A422BD9EAFD018D9BCB7500
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:

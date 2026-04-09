@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
+#include "Chimera_structs.hpp"
 #include "AIModule_structs.hpp"
 #include "AIModule_classes.hpp"
 #include "CoreUObject_classes.hpp"
 #include "Engine_classes.hpp"
-#include "Chimera_structs.hpp"
 
 
 namespace SDK
@@ -78,27 +78,39 @@ public:
 DUMPER7_ASSERTS_ICrAiAnimalPanzerHundInterface;
 
 // Class CrAiAnimalPanzerHundRuntime.CrAiAnimalPanzerHundUpdateStateComponent
-// 0x00D8 (0x0190 - 0x00B8)
+// 0x0128 (0x01E0 - 0x00B8)
 class UCrAiAnimalPanzerHundUpdateStateComponent final : public UActorComponent
 {
 public:
-	float                                         ConsiderableRadius;                                // 0x00B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         AwarenessRadius;                                   // 0x00BC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         DangerRadius;                                      // 0x00C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FName                                   IsAnyDamageRegistered_BBKeyName;                   // 0x00C4(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FName                                   IsAnyoneInDangerZoneDetected_BBKeyName;            // 0x00CC(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FName                                   IsShotInAwarenessZoneDetected_BBKeyName;           // 0x00D4(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FName                                   IsShotToDangerZoneDetected_BBKeyName;              // 0x00DC(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FName                                   IsPlayerInAwarenessZoneDetected_BBKeyName;         // 0x00E4(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FName                                   IsWaveStarted_BBKeyName;                           // 0x00EC(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FName                                   IsWaveFinished_BBKeyName;                          // 0x00F4(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FName                                   TargetActor_BBKeyName;                             // 0x00FC(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_104[0x4];                                      // 0x0104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AMassEnemyCharacterBase*                Panzerhund;                                        // 0x0108(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UBlackboardComponent*                   PanzerhundBlackboardComponent;                     // 0x0110(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	TArray<class ACrCharacterPlayerBase*>         PlayersInConsiderableZone;                         // 0x0118(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
-	TArray<class ACrCharacterPlayerBase*>         PlayersInAwarenessZone;                            // 0x0128(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_138[0x58];                                     // 0x0138(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_B8[0x8];                                       // 0x00B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ConsiderableRadius;                                // 0x00C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         NoticeRadius;                                      // 0x00C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         AwarenessRadius;                                   // 0x00C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         DangerRadius;                                      // 0x00CC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         RollSignalRadius;                                  // 0x00D0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EEnviroWaveStage                              RollWaveStage;                                     // 0x00D4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EEnviroWaveStage                              UnrollWaveStage;                                   // 0x00D5(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_D6[0x2];                                       // 0x00D6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   IsAnyDamageRegistered_BBKeyName;                   // 0x00D8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   IsAnyoneInDangerZoneDetected_BBKeyName;            // 0x00E0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   IsShotInAwarenessZoneDetected_BBKeyName;           // 0x00E8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   IsShotToDangerZoneDetected_BBKeyName;              // 0x00F0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   IsPlayerInAwarenessZoneDetected_BBKeyName;         // 0x00F8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   IsPlayerInNoticeZoneDetected_BBKeyName;            // 0x0100(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   IsWaveStarted_BBKeyName;                           // 0x0108(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   IsWaveFinished_BBKeyName;                          // 0x0110(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   TargetActor_BBKeyName;                             // 0x0118(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   IsRolled_BBKeyName;                                // 0x0120(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   SpawnLocation_BBKeyName;                           // 0x0128(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   RollSignal_BBKeyName;                              // 0x0130(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class AMassEnemyCharacterBase*                Panzerhund;                                        // 0x0138(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	TWeakObjectPtr<class UBlackboardComponent>    PanzerhundBlackboardComponent;                     // 0x0140(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UCrAIBaseAttributeSet*                  PanzerhundBaseAttributes;                          // 0x0148(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	TArray<TWeakObjectPtr<class ACrCharacterPlayerBase>> PlayersInConsiderableZone;                  // 0x0150(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate)
+	TArray<TWeakObjectPtr<class ACrCharacterPlayerBase>> PlayersInAwarenessZone;                     // 0x0160(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_170[0x60];                                     // 0x0170(0x0060)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCrAggroSubsystem*                      AggroSubsystem;                                    // 0x01D0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_1D8[0x8];                                      // 0x01D8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void OnShotInAwarenessZone(const struct FAuEquippedWeapon& EquippedWeapon);
@@ -121,6 +133,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCrAiAnimalPanzerHundUpdateStateComponent;
+
+// Class CrAiAnimalPanzerHundRuntime.BTTask_CrAiAnimalPanzerHundRollSignal
+// 0x0028 (0x0098 - 0x0070)
+class UBTTask_CrAiAnimalPanzerHundRollSignal final : public UBTTaskNode
+{
+public:
+	struct FBlackboardKeySelector                 SelfActorKey;                                      // 0x0070(0x0028)(Edit, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BTTask_CrAiAnimalPanzerHundRollSignal")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BTTask_CrAiAnimalPanzerHundRollSignal")
+	}
+	static class UBTTask_CrAiAnimalPanzerHundRollSignal* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTTask_CrAiAnimalPanzerHundRollSignal>();
+	}
+};
+DUMPER7_ASSERTS_UBTTask_CrAiAnimalPanzerHundRollSignal;
 
 }
 

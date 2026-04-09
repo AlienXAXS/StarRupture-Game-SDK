@@ -827,45 +827,6 @@ public:
 };
 DUMPER7_ASSERTS_FHoudiniGeoPartObject;
 
-// ScriptStruct HoudiniEngineRuntime.OutputActorOwner
-// 0x0010 (0x0010 - 0x0000)
-struct FOutputActorOwner final
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 OutputActor;                                       // 0x0008(0x0008)(ZeroConstructor, NonTransactional, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-};
-DUMPER7_ASSERTS_FOutputActorOwner;
-
-// ScriptStruct HoudiniEngineRuntime.TOPWorkResultObject
-// 0x0058 (0x0058 - 0x0000)
-struct FTOPWorkResultObject final
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Name;                                              // 0x0008(0x0010)(ZeroConstructor, NonTransactional, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 FilePath;                                          // 0x0018(0x0010)(ZeroConstructor, NonTransactional, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EPDGWorkResultState                           State;                                             // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         WorkItemResultInfoIndex;                           // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class UHoudiniOutput*>                 ResultOutputs;                                     // 0x0030(0x0010)(ZeroConstructor, NonTransactional, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
-	bool                                          bAutoBakedSinceLastLoad;                           // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NonTransactional, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FOutputActorOwner                      OutputActorOwner;                                  // 0x0048(0x0010)(NonTransactional, NativeAccessSpecifierPrivate)
-};
-DUMPER7_ASSERTS_FTOPWorkResultObject;
-
-// ScriptStruct HoudiniEngineRuntime.TOPWorkResult
-// 0x0018 (0x0018 - 0x0000)
-struct FTOPWorkResult final
-{
-public:
-	int32                                         WorkItemIndex;                                     // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         WorkItemID;                                        // 0x0004(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FTOPWorkResultObject>           ResultObjects;                                     // 0x0008(0x0010)(ZeroConstructor, NonTransactional, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FTOPWorkResult;
-
 // ScriptStruct HoudiniEngineRuntime.HoudiniBrushInfo
 // 0x00B0 (0x00B0 - 0x0000)
 struct FHoudiniBrushInfo final
@@ -893,25 +854,6 @@ public:
 	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FHoudiniLandscapeSplineControlPointData;
-
-// ScriptStruct HoudiniEngineRuntime.HoudiniInstancedOutput
-// 0x0088 (0x0088 - 0x0000)
-struct FHoudiniInstancedOutput final
-{
-public:
-	TSoftObjectPtr<class UObject>                 OriginalObject;                                    // 0x0000(0x0028)(UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         OriginalObjectIndex;                               // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FTransform>                     OriginalTransforms;                                // 0x0030(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<TSoftObjectPtr<class UObject>>         VariationObjects;                                  // 0x0040(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-	TArray<struct FTransform>                     VariationTransformOffsets;                         // 0x0050(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 TransformVariationIndices;                         // 0x0060(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 OriginalInstanceIndices;                           // 0x0070(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          bChanged;                                          // 0x0080(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStale;                                            // 0x0081(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_82[0x6];                                       // 0x0082(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FHoudiniInstancedOutput;
 
 // ScriptStruct HoudiniEngineRuntime.HoudiniLandscapeSplineSegmentData
 // 0x0001 (0x0001 - 0x0000)
@@ -1014,6 +956,25 @@ public:
 };
 DUMPER7_ASSERTS_FHoudiniBakedOutputObjectIdentifier;
 
+// ScriptStruct HoudiniEngineRuntime.HoudiniInstancedOutput
+// 0x0088 (0x0088 - 0x0000)
+struct FHoudiniInstancedOutput final
+{
+public:
+	TSoftObjectPtr<class UObject>                 OriginalObject;                                    // 0x0000(0x0028)(UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OriginalObjectIndex;                               // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FTransform>                     OriginalTransforms;                                // 0x0030(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<TSoftObjectPtr<class UObject>>         VariationObjects;                                  // 0x0040(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	TArray<struct FTransform>                     VariationTransformOffsets;                         // 0x0050(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 TransformVariationIndices;                         // 0x0060(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 OriginalInstanceIndices;                           // 0x0070(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          bChanged;                                          // 0x0080(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStale;                                            // 0x0081(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_82[0x6];                                       // 0x0082(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FHoudiniInstancedOutput;
+
 // ScriptStruct HoudiniEngineRuntime.HoudiniBakedOutputObject
 // 0x0120 (0x0120 - 0x0000)
 struct FHoudiniBakedOutputObject final
@@ -1054,6 +1015,45 @@ public:
 	TArray<struct FHoudiniDataLayer>              DataLayers;                                        // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FHoudiniAttributeDataLayer;
+
+// ScriptStruct HoudiniEngineRuntime.OutputActorOwner
+// 0x0010 (0x0010 - 0x0000)
+struct FOutputActorOwner final
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 OutputActor;                                       // 0x0008(0x0008)(ZeroConstructor, NonTransactional, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+};
+DUMPER7_ASSERTS_FOutputActorOwner;
+
+// ScriptStruct HoudiniEngineRuntime.TOPWorkResultObject
+// 0x0058 (0x0058 - 0x0000)
+struct FTOPWorkResultObject final
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Name;                                              // 0x0008(0x0010)(ZeroConstructor, NonTransactional, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 FilePath;                                          // 0x0018(0x0010)(ZeroConstructor, NonTransactional, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EPDGWorkResultState                           State;                                             // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         WorkItemResultInfoIndex;                           // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class UHoudiniOutput*>                 ResultOutputs;                                     // 0x0030(0x0010)(ZeroConstructor, NonTransactional, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	bool                                          bAutoBakedSinceLastLoad;                           // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NonTransactional, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FOutputActorOwner                      OutputActorOwner;                                  // 0x0048(0x0010)(NonTransactional, NativeAccessSpecifierPrivate)
+};
+DUMPER7_ASSERTS_FTOPWorkResultObject;
+
+// ScriptStruct HoudiniEngineRuntime.TOPWorkResult
+// 0x0018 (0x0018 - 0x0000)
+struct FTOPWorkResult final
+{
+public:
+	int32                                         WorkItemIndex;                                     // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         WorkItemID;                                        // 0x0004(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FTOPWorkResultObject>           ResultObjects;                                     // 0x0008(0x0010)(ZeroConstructor, NonTransactional, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FTOPWorkResult;
 
 // ScriptStruct HoudiniEngineRuntime.WorkItemTallyBase
 // 0x0008 (0x0008 - 0x0000)

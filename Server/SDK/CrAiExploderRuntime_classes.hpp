@@ -10,16 +10,16 @@
 
 #include "Basic.hpp"
 
+#include "AIModule_structs.hpp"
+#include "AIModule_classes.hpp"
 #include "Chimera_classes.hpp"
 #include "AuActorPlacement_structs.hpp"
 #include "MassReplication_classes.hpp"
-#include "AIModule_structs.hpp"
-#include "AIModule_classes.hpp"
+#include "CrAiExploderRuntime_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
-#include "CrAiExploderRuntime_structs.hpp"
 #include "Engine_classes.hpp"
 #include "MassSpawner_classes.hpp"
 #include "MassEntity_classes.hpp"
@@ -300,7 +300,7 @@ public:
 DUMPER7_ASSERTS_UCrMassExploderInfectionReplicator;
 
 // Class CrAiExploderRuntime.ExploderAnimationInstance
-// 0x0000 (0x05A0 - 0x05A0)
+// 0x0000 (0x0600 - 0x0600)
 class UExploderAnimationInstance : public UMassEnemyAnimationInstance
 {
 public:
@@ -320,11 +320,11 @@ public:
 DUMPER7_ASSERTS_UExploderAnimationInstance;
 
 // Class CrAiExploderRuntime.CrMassExploderBubbleReplicatedSerializerHolder
-// 0x02E0 (0x0598 - 0x02B8)
+// 0x02F0 (0x05A8 - 0x02B8)
 class ACrMassExploderBubbleReplicatedSerializerHolder final : public ACrMassBubbleReplicatedSerializerHolder
 {
 public:
-	struct FExploderClientBubbleSerializer        Serializer;                                        // 0x02B8(0x02E0)(Net, Transient, NativeAccessSpecifierPublic)
+	struct FExploderClientBubbleSerializer        Serializer;                                        // 0x02B8(0x02F0)(Net, Transient, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -511,6 +511,29 @@ public:
 };
 DUMPER7_ASSERTS_UCrMassEnemyClientExplosionSphereSetupObserver;
 
+// Class CrAiExploderRuntime.CrMassEnemyClientExploderFXEventsProcessor
+// 0x0350 (0x0410 - 0x00C0)
+class UCrMassEnemyClientExploderFXEventsProcessor final : public UMassProcessor
+{
+public:
+	uint8                                         Pad_C0[0x350];                                     // 0x00C0(0x0350)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrMassEnemyClientExploderFXEventsProcessor")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrMassEnemyClientExploderFXEventsProcessor")
+	}
+	static class UCrMassEnemyClientExploderFXEventsProcessor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrMassEnemyClientExploderFXEventsProcessor>();
+	}
+};
+DUMPER7_ASSERTS_UCrMassEnemyClientExploderFXEventsProcessor;
+
 // Class CrAiExploderRuntime.ExploderReplicator
 // 0x0000 (0x0028 - 0x0028)
 class UExploderReplicator final : public UCrMassReplicatorBase
@@ -586,6 +609,9 @@ public:
 	float                                         AnimLerp;                                          // 0x00D4(0x0004)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bShouldSpawnHugeCollision;                         // 0x00D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_D9[0x7];                                       // 0x00D9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void Reset();
 
 public:
 	static class UClass* StaticClass()

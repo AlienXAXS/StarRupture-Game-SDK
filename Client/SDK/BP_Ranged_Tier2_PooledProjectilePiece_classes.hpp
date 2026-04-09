@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Chimera_classes.hpp"
 #include "AuCore_structs.hpp"
 #include "Engine_structs.hpp"
-#include "Chimera_classes.hpp"
 
 
 namespace SDK

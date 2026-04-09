@@ -18,16 +18,19 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_WeaponsToolsTab.WBP_WeaponsToolsTab_C
-// 0x0028 (0x0620 - 0x05F8)
+// 0x0038 (0x0630 - 0x05F8)
 class UWBP_WeaponsToolsTab_C final : public UCrUW_WeaponsToolsTab
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x05F8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UWBP_HeaderLineInfoScreen_C*            ToolTitle;                                         // 0x0600(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 Image_104;                                         // 0x0608(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class FText                                   WeaponName;                                        // 0x0610(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class UHorizontalBox*                         Weapon2Mods;                                       // 0x0600(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UHorizontalBox*                         Weapon1Mods;                                       // 0x0608(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWBP_HeaderLineInfoScreen_C*            ToolTitle;                                         // 0x0610(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 Image_104;                                         // 0x0618(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class FText                                   WeaponName;                                        // 0x0620(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
+	void AddModIcon(class UCrWeaponModDataAsset* ModDA, int32 WeaponIndex);
 	void Construct();
 	void ExecuteUbergraph_WBP_WeaponsToolsTab(int32 EntryPoint);
 

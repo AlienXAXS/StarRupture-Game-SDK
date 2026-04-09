@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ChimeraPlacementHelperReplicatedDecoy.BP_ChimeraPlacementHelperReplicatedDecoy_C
-// 0x0000 (0x0840 - 0x0840)
+// 0x0000 (0x08B0 - 0x08B0)
 class ABP_ChimeraPlacementHelperReplicatedDecoy_C final : public ABP_ChimeraPlacementHelperReplicatedBase_C
 {
 public:
-	class UStaticMeshComponent*                   Sphere;                                            // 0x0838(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   Sphere;                                            // 0x08A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

@@ -198,8 +198,9 @@ bool ABP_PlayerCharacter_C::ExecuteContextualResponse(const struct FContextualRe
 // TSoftObjectPtr<class UDialogueWave>     Dialogue_Wave                                          (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 // bool                                    is_Important                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FName                             Response_Name                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Is_Local                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PlayerCharacter_C::ExecuteContextualResponseMulticast(TSoftObjectPtr<class UDialogueWave> Dialogue_Wave, bool is_Important, class FName Response_Name)
+void ABP_PlayerCharacter_C::ExecuteContextualResponseMulticast(TSoftObjectPtr<class UDialogueWave> Dialogue_Wave, bool is_Important, class FName Response_Name, bool Is_Local)
 {
 	static class UFunction* Func = nullptr;
 
@@ -211,6 +212,7 @@ void ABP_PlayerCharacter_C::ExecuteContextualResponseMulticast(TSoftObjectPtr<cl
 	Parms.Dialogue_Wave = Dialogue_Wave;
 	Parms.is_Important = is_Important;
 	Parms.Response_Name = Response_Name;
+	Parms.Is_Local = Is_Local;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -484,7 +486,7 @@ void ABP_PlayerCharacter_C::HeroComponentReady(const struct FActorInitStateChang
 }
 
 
-// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_CloseInGameMenu_K2Node_EnhancedInputActionEvent_7
+// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_CloseInGameMenu_K2Node_EnhancedInputActionEvent_9
 // (BlueprintEvent)
 // Parameters:
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -492,14 +494,14 @@ void ABP_PlayerCharacter_C::HeroComponentReady(const struct FActorInitStateChang
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PlayerCharacter_C::InpActEvt_CloseInGameMenu_K2Node_EnhancedInputActionEvent_7(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void ABP_PlayerCharacter_C::InpActEvt_CloseInGameMenu_K2Node_EnhancedInputActionEvent_9(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_CloseInGameMenu_K2Node_EnhancedInputActionEvent_7");
+		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_CloseInGameMenu_K2Node_EnhancedInputActionEvent_9");
 
-	Params::BP_PlayerCharacter_C_InpActEvt_CloseInGameMenu_K2Node_EnhancedInputActionEvent_7 Parms{};
+	Params::BP_PlayerCharacter_C_InpActEvt_CloseInGameMenu_K2Node_EnhancedInputActionEvent_9 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -510,7 +512,7 @@ void ABP_PlayerCharacter_C::InpActEvt_CloseInGameMenu_K2Node_EnhancedInputAction
 }
 
 
-// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_12
+// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_0
 // (BlueprintEvent)
 // Parameters:
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -518,14 +520,14 @@ void ABP_PlayerCharacter_C::InpActEvt_CloseInGameMenu_K2Node_EnhancedInputAction
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PlayerCharacter_C::InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_12(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void ABP_PlayerCharacter_C::InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_0(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_12");
+		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_0");
 
-	Params::BP_PlayerCharacter_C_InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_12 Parms{};
+	Params::BP_PlayerCharacter_C_InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_0 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -536,7 +538,7 @@ void ABP_PlayerCharacter_C::InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_12(
 }
 
 
-// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_13
+// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_14
 // (BlueprintEvent)
 // Parameters:
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -544,14 +546,14 @@ void ABP_PlayerCharacter_C::InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_12(
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PlayerCharacter_C::InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_13(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void ABP_PlayerCharacter_C::InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_14(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_13");
+		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_14");
 
-	Params::BP_PlayerCharacter_C_InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_13 Parms{};
+	Params::BP_PlayerCharacter_C_InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_14 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -562,7 +564,7 @@ void ABP_PlayerCharacter_C::InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_13(
 }
 
 
-// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_Dash_K2Node_EnhancedInputActionEvent_6
+// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_15
 // (BlueprintEvent)
 // Parameters:
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -570,14 +572,14 @@ void ABP_PlayerCharacter_C::InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_13(
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PlayerCharacter_C::InpActEvt_Dash_K2Node_EnhancedInputActionEvent_6(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void ABP_PlayerCharacter_C::InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_15(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_Dash_K2Node_EnhancedInputActionEvent_6");
+		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_15");
 
-	Params::BP_PlayerCharacter_C_InpActEvt_Dash_K2Node_EnhancedInputActionEvent_6 Parms{};
+	Params::BP_PlayerCharacter_C_InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_15 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -588,7 +590,7 @@ void ABP_PlayerCharacter_C::InpActEvt_Dash_K2Node_EnhancedInputActionEvent_6(con
 }
 
 
-// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_8
+// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_Dash_K2Node_EnhancedInputActionEvent_8
 // (BlueprintEvent)
 // Parameters:
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -596,14 +598,14 @@ void ABP_PlayerCharacter_C::InpActEvt_Dash_K2Node_EnhancedInputActionEvent_6(con
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PlayerCharacter_C::InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_8(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void ABP_PlayerCharacter_C::InpActEvt_Dash_K2Node_EnhancedInputActionEvent_8(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_8");
+		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_Dash_K2Node_EnhancedInputActionEvent_8");
 
-	Params::BP_PlayerCharacter_C_InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_8 Parms{};
+	Params::BP_PlayerCharacter_C_InpActEvt_Dash_K2Node_EnhancedInputActionEvent_8 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -614,7 +616,7 @@ void ABP_PlayerCharacter_C::InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_8(c
 }
 
 
-// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_9
+// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_10
 // (BlueprintEvent)
 // Parameters:
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -622,14 +624,14 @@ void ABP_PlayerCharacter_C::InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_8(c
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PlayerCharacter_C::InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_9(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void ABP_PlayerCharacter_C::InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_10(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_9");
+		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_10");
 
-	Params::BP_PlayerCharacter_C_InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_9 Parms{};
+	Params::BP_PlayerCharacter_C_InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_10 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -640,7 +642,7 @@ void ABP_PlayerCharacter_C::InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_9(c
 }
 
 
-// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEvent_3
+// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_11
 // (BlueprintEvent)
 // Parameters:
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -648,14 +650,14 @@ void ABP_PlayerCharacter_C::InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_9(c
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PlayerCharacter_C::InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEvent_3(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void ABP_PlayerCharacter_C::InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_11(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEvent_3");
+		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_11");
 
-	Params::BP_PlayerCharacter_C_InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEvent_3 Parms{};
+	Params::BP_PlayerCharacter_C_InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_11 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -666,7 +668,7 @@ void ABP_PlayerCharacter_C::InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEv
 }
 
 
-// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEvent_4
+// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEvent_5
 // (BlueprintEvent)
 // Parameters:
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -674,14 +676,14 @@ void ABP_PlayerCharacter_C::InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEv
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PlayerCharacter_C::InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEvent_4(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void ABP_PlayerCharacter_C::InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEvent_5(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEvent_4");
+		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEvent_5");
 
-	Params::BP_PlayerCharacter_C_InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEvent_4 Parms{};
+	Params::BP_PlayerCharacter_C_InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEvent_5 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -692,7 +694,7 @@ void ABP_PlayerCharacter_C::InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEv
 }
 
 
-// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_Interact_K2Node_EnhancedInputActionEvent_11
+// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEvent_6
 // (BlueprintEvent)
 // Parameters:
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -700,14 +702,14 @@ void ABP_PlayerCharacter_C::InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEv
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PlayerCharacter_C::InpActEvt_Interact_K2Node_EnhancedInputActionEvent_11(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void ABP_PlayerCharacter_C::InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEvent_6(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_Interact_K2Node_EnhancedInputActionEvent_11");
+		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEvent_6");
 
-	Params::BP_PlayerCharacter_C_InpActEvt_Interact_K2Node_EnhancedInputActionEvent_11 Parms{};
+	Params::BP_PlayerCharacter_C_InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEvent_6 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -718,7 +720,7 @@ void ABP_PlayerCharacter_C::InpActEvt_Interact_K2Node_EnhancedInputActionEvent_1
 }
 
 
-// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_Jump_K2Node_EnhancedInputActionEvent_10
+// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_Interact_K2Node_EnhancedInputActionEvent_13
 // (BlueprintEvent)
 // Parameters:
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -726,14 +728,14 @@ void ABP_PlayerCharacter_C::InpActEvt_Interact_K2Node_EnhancedInputActionEvent_1
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PlayerCharacter_C::InpActEvt_Jump_K2Node_EnhancedInputActionEvent_10(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void ABP_PlayerCharacter_C::InpActEvt_Interact_K2Node_EnhancedInputActionEvent_13(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_Jump_K2Node_EnhancedInputActionEvent_10");
+		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_Interact_K2Node_EnhancedInputActionEvent_13");
 
-	Params::BP_PlayerCharacter_C_InpActEvt_Jump_K2Node_EnhancedInputActionEvent_10 Parms{};
+	Params::BP_PlayerCharacter_C_InpActEvt_Interact_K2Node_EnhancedInputActionEvent_13 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -744,20 +746,46 @@ void ABP_PlayerCharacter_C::InpActEvt_Jump_K2Node_EnhancedInputActionEvent_10(co
 }
 
 
-// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_L_K2Node_InputDebugKeyEvent_1
+// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_Jump_K2Node_EnhancedInputActionEvent_12
+// (BlueprintEvent)
+// Parameters:
+// const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// float                                   ElapsedTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void ABP_PlayerCharacter_C::InpActEvt_Jump_K2Node_EnhancedInputActionEvent_12(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_Jump_K2Node_EnhancedInputActionEvent_12");
+
+	Params::BP_PlayerCharacter_C_InpActEvt_Jump_K2Node_EnhancedInputActionEvent_12 Parms{};
+
+	Parms.ActionValue = std::move(ActionValue);
+	Parms.ElapsedTime = ElapsedTime;
+	Parms.TriggeredTime = TriggeredTime;
+	Parms.SourceAction = SourceAction;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_L_K2Node_InputDebugKeyEvent_2
 // (BlueprintEvent)
 // Parameters:
 // const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
 
-void ABP_PlayerCharacter_C::InpActEvt_L_K2Node_InputDebugKeyEvent_1(const struct FKey& Key, const struct FInputActionValue& ActionValue)
+void ABP_PlayerCharacter_C::InpActEvt_L_K2Node_InputDebugKeyEvent_2(const struct FKey& Key, const struct FInputActionValue& ActionValue)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_L_K2Node_InputDebugKeyEvent_1");
+		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_L_K2Node_InputDebugKeyEvent_2");
 
-	Params::BP_PlayerCharacter_C_InpActEvt_L_K2Node_InputDebugKeyEvent_1 Parms{};
+	Params::BP_PlayerCharacter_C_InpActEvt_L_K2Node_InputDebugKeyEvent_2 Parms{};
 
 	Parms.Key = std::move(Key);
 	Parms.ActionValue = std::move(ActionValue);
@@ -766,7 +794,7 @@ void ABP_PlayerCharacter_C::InpActEvt_L_K2Node_InputDebugKeyEvent_1(const struct
 }
 
 
-// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_OpenEOSOverlay_K2Node_EnhancedInputActionEvent_5
+// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_OpenEOSOverlay_K2Node_EnhancedInputActionEvent_7
 // (BlueprintEvent)
 // Parameters:
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -774,66 +802,14 @@ void ABP_PlayerCharacter_C::InpActEvt_L_K2Node_InputDebugKeyEvent_1(const struct
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PlayerCharacter_C::InpActEvt_OpenEOSOverlay_K2Node_EnhancedInputActionEvent_5(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void ABP_PlayerCharacter_C::InpActEvt_OpenEOSOverlay_K2Node_EnhancedInputActionEvent_7(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_OpenEOSOverlay_K2Node_EnhancedInputActionEvent_5");
+		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_OpenEOSOverlay_K2Node_EnhancedInputActionEvent_7");
 
-	Params::BP_PlayerCharacter_C_InpActEvt_OpenEOSOverlay_K2Node_EnhancedInputActionEvent_5 Parms{};
-
-	Parms.ActionValue = std::move(ActionValue);
-	Parms.ElapsedTime = ElapsedTime;
-	Parms.TriggeredTime = TriggeredTime;
-	Parms.SourceAction = SourceAction;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_Reload_K2Node_EnhancedInputActionEvent_0
-// (BlueprintEvent)
-// Parameters:
-// const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// float                                   ElapsedTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void ABP_PlayerCharacter_C::InpActEvt_Reload_K2Node_EnhancedInputActionEvent_0(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_Reload_K2Node_EnhancedInputActionEvent_0");
-
-	Params::BP_PlayerCharacter_C_InpActEvt_Reload_K2Node_EnhancedInputActionEvent_0 Parms{};
-
-	Parms.ActionValue = std::move(ActionValue);
-	Parms.ElapsedTime = ElapsedTime;
-	Parms.TriggeredTime = TriggeredTime;
-	Parms.SourceAction = SourceAction;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_Reload_K2Node_EnhancedInputActionEvent_1
-// (BlueprintEvent)
-// Parameters:
-// const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// float                                   ElapsedTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void ABP_PlayerCharacter_C::InpActEvt_Reload_K2Node_EnhancedInputActionEvent_1(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_Reload_K2Node_EnhancedInputActionEvent_1");
-
-	Params::BP_PlayerCharacter_C_InpActEvt_Reload_K2Node_EnhancedInputActionEvent_1 Parms{};
+	Params::BP_PlayerCharacter_C_InpActEvt_OpenEOSOverlay_K2Node_EnhancedInputActionEvent_7 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -870,6 +846,58 @@ void ABP_PlayerCharacter_C::InpActEvt_Reload_K2Node_EnhancedInputActionEvent_2(c
 }
 
 
+// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_Reload_K2Node_EnhancedInputActionEvent_3
+// (BlueprintEvent)
+// Parameters:
+// const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// float                                   ElapsedTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void ABP_PlayerCharacter_C::InpActEvt_Reload_K2Node_EnhancedInputActionEvent_3(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_Reload_K2Node_EnhancedInputActionEvent_3");
+
+	Params::BP_PlayerCharacter_C_InpActEvt_Reload_K2Node_EnhancedInputActionEvent_3 Parms{};
+
+	Parms.ActionValue = std::move(ActionValue);
+	Parms.ElapsedTime = ElapsedTime;
+	Parms.TriggeredTime = TriggeredTime;
+	Parms.SourceAction = SourceAction;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_Reload_K2Node_EnhancedInputActionEvent_4
+// (BlueprintEvent)
+// Parameters:
+// const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// float                                   ElapsedTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void ABP_PlayerCharacter_C::InpActEvt_Reload_K2Node_EnhancedInputActionEvent_4(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_Reload_K2Node_EnhancedInputActionEvent_4");
+
+	Params::BP_PlayerCharacter_C_InpActEvt_Reload_K2Node_EnhancedInputActionEvent_4 Parms{};
+
+	Parms.ActionValue = std::move(ActionValue);
+	Parms.ElapsedTime = ElapsedTime;
+	Parms.TriggeredTime = TriggeredTime;
+	Parms.SourceAction = SourceAction;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_X_K2Node_InputDebugKeyEvent_0
 // (BlueprintEvent)
 // Parameters:
@@ -892,20 +920,20 @@ void ABP_PlayerCharacter_C::InpActEvt_X_K2Node_InputDebugKeyEvent_0(const struct
 }
 
 
-// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_X_K2Node_InputDebugKeyEvent_3
+// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_X_K2Node_InputDebugKeyEvent_1
 // (BlueprintEvent)
 // Parameters:
 // const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
 
-void ABP_PlayerCharacter_C::InpActEvt_X_K2Node_InputDebugKeyEvent_3(const struct FKey& Key, const struct FInputActionValue& ActionValue)
+void ABP_PlayerCharacter_C::InpActEvt_X_K2Node_InputDebugKeyEvent_1(const struct FKey& Key, const struct FInputActionValue& ActionValue)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_X_K2Node_InputDebugKeyEvent_3");
+		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_X_K2Node_InputDebugKeyEvent_1");
 
-	Params::BP_PlayerCharacter_C_InpActEvt_X_K2Node_InputDebugKeyEvent_3 Parms{};
+	Params::BP_PlayerCharacter_C_InpActEvt_X_K2Node_InputDebugKeyEvent_1 Parms{};
 
 	Parms.Key = std::move(Key);
 	Parms.ActionValue = std::move(ActionValue);
@@ -914,23 +942,71 @@ void ABP_PlayerCharacter_C::InpActEvt_X_K2Node_InputDebugKeyEvent_3(const struct
 }
 
 
-// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_Z_K2Node_InputDebugKeyEvent_2
+// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_X_K2Node_InputDebugKeyEvent_4
 // (BlueprintEvent)
 // Parameters:
 // const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
 
-void ABP_PlayerCharacter_C::InpActEvt_Z_K2Node_InputDebugKeyEvent_2(const struct FKey& Key, const struct FInputActionValue& ActionValue)
+void ABP_PlayerCharacter_C::InpActEvt_X_K2Node_InputDebugKeyEvent_4(const struct FKey& Key, const struct FInputActionValue& ActionValue)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_Z_K2Node_InputDebugKeyEvent_2");
+		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_X_K2Node_InputDebugKeyEvent_4");
 
-	Params::BP_PlayerCharacter_C_InpActEvt_Z_K2Node_InputDebugKeyEvent_2 Parms{};
+	Params::BP_PlayerCharacter_C_InpActEvt_X_K2Node_InputDebugKeyEvent_4 Parms{};
 
 	Parms.Key = std::move(Key);
 	Parms.ActionValue = std::move(ActionValue);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_Z_K2Node_InputDebugKeyEvent_3
+// (BlueprintEvent)
+// Parameters:
+// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+
+void ABP_PlayerCharacter_C::InpActEvt_Z_K2Node_InputDebugKeyEvent_3(const struct FKey& Key, const struct FInputActionValue& ActionValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_Z_K2Node_InputDebugKeyEvent_3");
+
+	Params::BP_PlayerCharacter_C_InpActEvt_Z_K2Node_InputDebugKeyEvent_3 Parms{};
+
+	Parms.Key = std::move(Key);
+	Parms.ActionValue = std::move(ActionValue);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_PlayerCharacter.BP_PlayerCharacter_C.InpActEvt_ZiplineCancel_K2Node_EnhancedInputActionEvent_1
+// (BlueprintEvent)
+// Parameters:
+// const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// float                                   ElapsedTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void ABP_PlayerCharacter_C::InpActEvt_ZiplineCancel_K2Node_EnhancedInputActionEvent_1(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_ZiplineCancel_K2Node_EnhancedInputActionEvent_1");
+
+	Params::BP_PlayerCharacter_C_InpActEvt_ZiplineCancel_K2Node_EnhancedInputActionEvent_1 Parms{};
+
+	Parms.ActionValue = std::move(ActionValue);
+	Parms.ElapsedTime = ElapsedTime;
+	Parms.TriggeredTime = TriggeredTime;
+	Parms.SourceAction = SourceAction;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -1743,6 +1819,26 @@ void ABP_PlayerCharacter_C::OnZiplineTravelStarted()
 }
 
 
+// Function BP_PlayerCharacter.BP_PlayerCharacter_C.PlayDropItemsSoundAtLocation
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// const struct FVector&                   Location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_PlayerCharacter_C::PlayDropItemsSoundAtLocation(const struct FVector& Location)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PlayerCharacter_C", "PlayDropItemsSoundAtLocation");
+
+	Params::BP_PlayerCharacter_C_PlayDropItemsSoundAtLocation Parms{};
+
+	Parms.Location = std::move(Location);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_PlayerCharacter.BP_PlayerCharacter_C.PostRespawn
 // (Event, Public, BlueprintEvent)
 
@@ -1988,6 +2084,20 @@ void ABP_PlayerCharacter_C::SpawnHitmarkWidget(ECrHitmarkType Hitmark)
 	Parms.Hitmark = Hitmark;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_PlayerCharacter.BP_PlayerCharacter_C.SpawnZiplineArmHandle
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_PlayerCharacter_C::SpawnZiplineArmHandle()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PlayerCharacter_C", "SpawnZiplineArmHandle");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

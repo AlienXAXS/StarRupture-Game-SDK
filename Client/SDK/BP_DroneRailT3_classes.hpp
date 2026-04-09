@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_DroneRailT3.BP_DroneRailT3_C
-// 0x0000 (0x0700 - 0x0700)
+// 0x0000 (0x0710 - 0x0710)
 class ABP_DroneRailT3_C final : public ABP_DroneRailT1_C
 {
 public:

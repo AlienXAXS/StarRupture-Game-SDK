@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ChimeraPlacementHelperReplicatedExtractor.BP_ChimeraPlacementHelperReplicatedExtractor_C
-// 0x0000 (0x0820 - 0x0820)
+// 0x0000 (0x0890 - 0x0890)
 class ABP_ChimeraPlacementHelperReplicatedExtractor_C final : public ACrAPHelperActorExtractor
 {
 public:

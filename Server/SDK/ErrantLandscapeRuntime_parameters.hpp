@@ -137,6 +137,15 @@ public:
 };
 DUMPER7_ASSERTS_ElRtDataTransferComponent_IsTransferInProgress;
 
+// Function ErrantLandscapeRuntime.ElRtTextureStampBrushComponent.SetBrushLandscape
+// 0x0028 (0x0028 - 0x0000)
+struct ElRtTextureStampBrushComponent_SetBrushLandscape final
+{
+public:
+	TSoftObjectPtr<class ALandscape>              InLandscape;                                       // 0x0000(0x0028)(Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ElRtTextureStampBrushComponent_SetBrushLandscape;
+
 // Function ErrantLandscapeRuntime.ElRtWorldSubsystem.QueueRender
 // 0x0028 (0x0028 - 0x0000)
 struct ElRtWorldSubsystem_QueueRender final

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_MassAILocalSpawner_ExploderEncounterHARDTemplate.BP_MassAILocalSpawner_ExploderEncounterHARDTemplate_C
-// 0x0000 (0x0548 - 0x0548)
+// 0x0000 (0x0550 - 0x0550)
 class ABP_MassAILocalSpawner_ExploderEncounterHARDTemplate_C final : public ABP_MassAILocalSpawnerWithPCG_Placeable_C
 {
 public:

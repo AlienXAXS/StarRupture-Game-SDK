@@ -31,28 +31,6 @@ enum class ESoundModulationLFOShape : uint8
 	ESoundModulationLFOShape_MAX             = 8,
 };
 
-// ScriptStruct AudioModulation.SoundModulationMixValue
-// 0x0020 (0x0020 - 0x0000)
-struct FSoundModulationMixValue final
-{
-public:
-	float                                         TargetValue;                                       // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AttackTime;                                        // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReleaseTime;                                       // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x14];                                       // 0x000C(0x0014)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSoundModulationMixValue;
-
-// ScriptStruct AudioModulation.SoundControlBusMixStage
-// 0x0028 (0x0028 - 0x0000)
-struct FSoundControlBusMixStage final
-{
-public:
-	class USoundControlBus*                       Bus;                                               // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	struct FSoundModulationMixValue               Value;                                             // 0x0008(0x0020)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSoundControlBusMixStage;
-
 // ScriptStruct AudioModulation.SoundModulationADEnvelopeParams
 // 0x0014 (0x0014 - 0x0000)
 struct FSoundModulationADEnvelopeParams final
@@ -102,6 +80,28 @@ public:
 	uint8                                         Pad_1E[0x2];                                       // 0x001E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FSoundModulationLFOParams;
+
+// ScriptStruct AudioModulation.SoundModulationMixValue
+// 0x0020 (0x0020 - 0x0000)
+struct FSoundModulationMixValue final
+{
+public:
+	float                                         TargetValue;                                       // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AttackTime;                                        // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReleaseTime;                                       // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x14];                                       // 0x000C(0x0014)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSoundModulationMixValue;
+
+// ScriptStruct AudioModulation.SoundControlBusMixStage
+// 0x0028 (0x0028 - 0x0000)
+struct FSoundControlBusMixStage final
+{
+public:
+	class USoundControlBus*                       Bus;                                               // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FSoundModulationMixValue               Value;                                             // 0x0008(0x0020)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSoundControlBusMixStage;
 
 // ScriptStruct AudioModulation.SoundModulationParameterSettings
 // 0x0004 (0x0004 - 0x0000)

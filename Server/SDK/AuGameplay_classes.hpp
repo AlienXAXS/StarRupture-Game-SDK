@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_classes.hpp"
-#include "AuGameplay_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
+#include "AuGameplay_structs.hpp"
 
 
 namespace SDK

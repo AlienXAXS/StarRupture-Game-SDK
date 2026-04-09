@@ -10,23 +10,23 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "BP_ChimeraPlacementHelperReplicatedBase_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ChimeraPlacementHelperReplicatedBaseCore.BP_ChimeraPlacementHelperReplicatedBaseCore_C
-// 0x0020 (0x0860 - 0x0840)
+// 0x0020 (0x08D0 - 0x08B0)
 class ABP_ChimeraPlacementHelperReplicatedBaseCore_C final : public ABP_ChimeraPlacementHelperReplicatedBase_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_ChimeraPlacementHelperReplicatedBaseCore_C; // 0x0838(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UDecalComponent*                        RangeOutline;                                      // 0x0840(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   RangeVis;                                          // 0x0848(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               RangeDecalMaterial;                                // 0x0850(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               RangeVisMaterial;                                  // 0x0858(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_ChimeraPlacementHelperReplicatedBaseCore_C; // 0x08A8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UDecalComponent*                        RangeOutline;                                      // 0x08B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   RangeVis;                                          // 0x08B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               RangeDecalMaterial;                                // 0x08C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               RangeVisMaterial;                                  // 0x08C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void UserConstructionScript();

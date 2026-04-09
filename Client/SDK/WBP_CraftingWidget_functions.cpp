@@ -73,6 +73,34 @@ void UWBP_CraftingWidget_C::BndEvt__WBP_CrafterInterior_TransferRequiredItemsx10
 }
 
 
+// Function WBP_CraftingWidget.WBP_CraftingWidget_C.BndEvt__WBP_CraftingWidget_InfiniteCrafting_K2Node_ComponentBoundEvent_4_OnButtonHoverEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UWBP_CraftingWidget_C::BndEvt__WBP_CraftingWidget_InfiniteCrafting_K2Node_ComponentBoundEvent_4_OnButtonHoverEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_CraftingWidget_C", "BndEvt__WBP_CraftingWidget_InfiniteCrafting_K2Node_ComponentBoundEvent_4_OnButtonHoverEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_CraftingWidget.WBP_CraftingWidget_C.BndEvt__WBP_CraftingWidget_InfiniteCrafting_K2Node_ComponentBoundEvent_5_OnButtonHoverEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UWBP_CraftingWidget_C::BndEvt__WBP_CraftingWidget_InfiniteCrafting_K2Node_ComponentBoundEvent_5_OnButtonHoverEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_CraftingWidget_C", "BndEvt__WBP_CraftingWidget_InfiniteCrafting_K2Node_ComponentBoundEvent_5_OnButtonHoverEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function WBP_CraftingWidget.WBP_CraftingWidget_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 

@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_WaterExtractorFoundation.BP_WaterExtractorFoundation_C
-// 0x0008 (0x0870 - 0x0868)
+// 0x0008 (0x0880 - 0x0878)
 class ABP_WaterExtractorFoundation_C final : public ABP_Modular_Foundation_Unique_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_WaterExtractorFoundation_C;      // 0x0868(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_WaterExtractorFoundation_C;      // 0x0878(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ReceiveTick(float DeltaSeconds);

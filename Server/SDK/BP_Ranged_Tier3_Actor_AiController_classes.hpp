@@ -10,19 +10,19 @@
 
 #include "Basic.hpp"
 
-#include "BP_BaseAIController_classes.hpp"
 #include "Engine_structs.hpp"
+#include "BP_BaseAIController_classes.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Ranged_Tier3_Actor_AiController.BP_Ranged_Tier3_Actor_AiController_C
-// 0x0008 (0x03F8 - 0x03F0)
+// 0x0008 (0x0400 - 0x03F8)
 class ABP_Ranged_Tier3_Actor_AiController_C final : public ABP_BaseAIController_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03F0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03F8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ReceiveBeginPlay();

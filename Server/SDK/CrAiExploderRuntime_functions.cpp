@@ -186,5 +186,24 @@ bool ICrAiExploder::ShouldSpawnHugeCollision() const
 	return Parms.ReturnValue;
 }
 
+
+// Function CrAiExploderRuntime.ExploderStateSyncComponent.Reset
+// (Final, Native, Public, BlueprintCallable)
+
+void UExploderStateSyncComponent::Reset()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ExploderStateSyncComponent", "Reset");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
 }
 

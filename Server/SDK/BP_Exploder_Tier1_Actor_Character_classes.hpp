@@ -11,7 +11,6 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "AuActorPlacement_structs.hpp"
 #include "BP_BaseAI_classes.hpp"
 
 
@@ -19,19 +18,18 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C
-// 0x0070 (0x0C70 - 0x0C00)
+// 0x0040 (0x0D40 - 0x0D00)
 class ABP_Exploder_Tier1_Actor_Character_C final : public ABP_BaseAI_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Exploder_Tier1_Actor_Character_C; // 0x0BF8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UStaticMeshComponent*                   SM_Enemy_tendrils_B;                               // 0x0C00(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UCapsuleComponent*                      Capsule;                                           // 0x0C08(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UNiagaraComponent*                      NiagaraEyes;                                       // 0x0C10(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UExploderStateSyncComponent*            ExploderStateSync;                                 // 0x0C18(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USphereComponent*                       Weakpoint;                                         // 0x0C20(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   SM_Exploder_top;                                   // 0x0C28(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UAudioComponent*                        SFX_Pulse;                                         // 0x0C30(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	struct FAuAPMassSpawnedEntityType             ExplosionSphereEntity;                             // 0x0C38(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Exploder_Tier1_Actor_Character_C; // 0x0D00(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UStaticMeshComponent*                   SM_Enemy_tendrils_B;                               // 0x0D08(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_Exploder_top;                                   // 0x0D10(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCapsuleComponent*                      Capsule;                                           // 0x0D18(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      NiagaraEyes;                                       // 0x0D20(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UExploderStateSyncComponent*            ExploderStateSync;                                 // 0x0D28(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USphereComponent*                       Weakpoint;                                         // 0x0D30(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UAudioComponent*                        SFX_Pulse;                                         // 0x0D38(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void UserConstructionScript();
@@ -39,17 +37,20 @@ public:
 	void TryApplySpeedup();
 	void StartExplosionTimer();
 	void StartActivationTimer();
-	void SetIsBoostedEyeColor(bool NewIsBoosted);
-	void SetIsAggroEyeColor(bool NewIsAggro);
 	void ReceiveTick(float DeltaSeconds);
+	void OnPrepareForPooling();
+	void OnPrepareForGame();
+	void OnExitActorPool();
+	void OnEnterActorPool();
 	void OnEnableExplosionTimer();
 	void OnEnableActivationTimer();
 	void OnDiedFromGas(const struct FHitResult& LastHit, const struct FGameplayTag& KillingDamageTag);
 	void OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag);
+	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
 	void ExecuteUbergraph_BP_Exploder_Tier1_Actor_Character(int32 EntryPoint);
-	void CanChangeEyeColor(bool* Result);
 
 	bool ShouldSpawnHugeCollision() const;
+	void OnMeshVisibilityUpdated(bool bIsMeshHidden) const;
 	bool IsExploderDead() const;
 
 public:

@@ -14,10 +14,10 @@
 #include "CoreUObject_classes.hpp"
 #include "MovieScene_structs.hpp"
 #include "MovieScene_classes.hpp"
-#include "TemplateSequence_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CinematicCamera_structs.hpp"
+#include "TemplateSequence_structs.hpp"
 
 
 namespace SDK
@@ -152,29 +152,6 @@ public:
 };
 DUMPER7_ASSERTS_UCameraAnimationSpawnableSystem;
 
-// Class TemplateSequence.TemplateSequencePropertyScalingEvaluatorSystem
-// 0x0050 (0x0090 - 0x0040)
-class UTemplateSequencePropertyScalingEvaluatorSystem final : public UMovieSceneEntitySystem
-{
-public:
-	uint8                                         Pad_40[0x50];                                      // 0x0040(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("TemplateSequencePropertyScalingEvaluatorSystem")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"TemplateSequencePropertyScalingEvaluatorSystem")
-	}
-	static class UTemplateSequencePropertyScalingEvaluatorSystem* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UTemplateSequencePropertyScalingEvaluatorSystem>();
-	}
-};
-DUMPER7_ASSERTS_UTemplateSequencePropertyScalingEvaluatorSystem;
-
 // Class TemplateSequence.CameraAnimationBoundObjectInstantiator
 // 0x0000 (0x0040 - 0x0040)
 class UCameraAnimationBoundObjectInstantiator final : public UMovieSceneEntityInstantiatorSystem
@@ -262,26 +239,6 @@ public:
 };
 DUMPER7_ASSERTS_UTemplateSequenceSection;
 
-// Class TemplateSequence.TemplateSequenceTrack
-// 0x0000 (0x0128 - 0x0128)
-class UTemplateSequenceTrack final : public UMovieSceneSubTrack
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("TemplateSequenceTrack")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"TemplateSequenceTrack")
-	}
-	static class UTemplateSequenceTrack* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UTemplateSequenceTrack>();
-	}
-};
-DUMPER7_ASSERTS_UTemplateSequenceTrack;
-
 // Class TemplateSequence.SequenceCameraShakePattern
 // 0x0050 (0x0078 - 0x0028)
 class USequenceCameraShakePattern final : public UCameraShakePattern
@@ -360,6 +317,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UTemplateSequencePropertyScalingInstantiatorSystem;
+
+// Class TemplateSequence.TemplateSequencePropertyScalingEvaluatorSystem
+// 0x0050 (0x0090 - 0x0040)
+class UTemplateSequencePropertyScalingEvaluatorSystem final : public UMovieSceneEntitySystem
+{
+public:
+	uint8                                         Pad_40[0x50];                                      // 0x0040(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("TemplateSequencePropertyScalingEvaluatorSystem")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"TemplateSequencePropertyScalingEvaluatorSystem")
+	}
+	static class UTemplateSequencePropertyScalingEvaluatorSystem* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UTemplateSequencePropertyScalingEvaluatorSystem>();
+	}
+};
+DUMPER7_ASSERTS_UTemplateSequencePropertyScalingEvaluatorSystem;
 
 // Class TemplateSequence.TemplateSequenceActor
 // 0x0068 (0x0310 - 0x02A8)
@@ -447,6 +427,26 @@ public:
 	}
 };
 DUMPER7_ASSERTS_USequenceCameraShakeTestUtil;
+
+// Class TemplateSequence.TemplateSequenceTrack
+// 0x0000 (0x0128 - 0x0128)
+class UTemplateSequenceTrack final : public UMovieSceneSubTrack
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("TemplateSequenceTrack")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"TemplateSequenceTrack")
+	}
+	static class UTemplateSequenceTrack* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UTemplateSequenceTrack>();
+	}
+};
+DUMPER7_ASSERTS_UTemplateSequenceTrack;
 
 }
 

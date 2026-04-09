@@ -17,6 +17,30 @@
 namespace SDK
 {
 
+// Function BP_AN_Footstep.BP_AN_Footstep_C.GetWaterType
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// const struct FGameplayTagContainer&     Tags                                                   (BlueprintVisible, BlueprintReadOnly, Parm)
+// class FName*                            WaterSurfaceType                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBP_AN_Footstep_C::GetWaterType(const struct FGameplayTagContainer& Tags, class FName* WaterSurfaceType) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_AN_Footstep_C", "GetWaterType");
+
+	Params::BP_AN_Footstep_C_GetWaterType Parms{};
+
+	Parms.Tags = std::move(Tags);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (WaterSurfaceType != nullptr)
+		*WaterSurfaceType = Parms.WaterSurfaceType;
+}
+
+
 // Function BP_AN_Footstep.BP_AN_Footstep_C.ShouldWaveChangeFootsteps
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:

@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "GameplayAbilities_structs.hpp"
 #include "Chimera_classes.hpp"
+#include "GameplayAbilities_structs.hpp"
 
 
 namespace SDK

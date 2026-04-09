@@ -24,6 +24,9 @@ public:
 	class UImage*                                 Frame;                                             // 0x05B0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
+	void SetFontSize(int32 InSize);
+
+public:
 	static class UClass* StaticClass()
 	{
 		BP_STATIC_CLASS_IMPL("WBP_CrInputActionWidget_C")

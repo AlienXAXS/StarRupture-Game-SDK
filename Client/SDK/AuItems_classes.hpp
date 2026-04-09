@@ -722,7 +722,7 @@ public:
 DUMPER7_ASSERTS_UAuItemsComponent;
 
 // Class AuItems.AuItemsStoreComponent
-// 0x0768 (0x0820 - 0x00B8)
+// 0x0788 (0x0840 - 0x00B8)
 class UAuItemsStoreComponent : public UActorComponent
 {
 public:
@@ -731,10 +731,11 @@ public:
 	struct FAuItemDataArray                       ItemsDataArray;                                    // 0x03E8(0x0170)(Net, RepNotify, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	TArray<class UAuItemsComponent*>              RegisteredComponenets;                             // 0x0558(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
 	class UAbilitySystemComponent*                ASC;                                               // 0x0568(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_570[0x2B0];                                    // 0x0570(0x02B0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_570[0x2D0];                                    // 0x0570(0x02D0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ClientOnItemAdded(const class UAuItemDataBase* NewItem, int32 Amount);
+	void ClientOnItemMerged(const class UAuItemDataBase* NewItem, int32 Amount, int32 AddedAmount);
 	void OnRep_ItemsArray();
 	void OnRep_ItemsComponentId();
 	void OnRep_ItemsDataArray();

@@ -18,6 +18,15 @@
 namespace SDK
 {
 
+// ScriptStruct MassCommon.MassInt16Real10
+// 0x0002 (0x0002 - 0x0000)
+struct FMassInt16Real10 final
+{
+public:
+	int16                                         Value;                                             // 0x0000(0x0002)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+};
+DUMPER7_ASSERTS_FMassInt16Real10;
+
 // ScriptStruct MassCommon.MassNetworkID
 // 0x0000 (0x0004 - 0x0004)
 struct FMassNetworkID final : public FSequentialIDBase
@@ -71,15 +80,6 @@ public:
 	int8                                          Z;                                                 // 0x0002(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
 DUMPER7_ASSERTS_FMassSnorm8Vector;
-
-// ScriptStruct MassCommon.MassInt16Real10
-// 0x0002 (0x0002 - 0x0000)
-struct FMassInt16Real10 final
-{
-public:
-	int16                                         Value;                                             // 0x0000(0x0002)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-};
-DUMPER7_ASSERTS_FMassInt16Real10;
 
 // ScriptStruct MassCommon.MassSnorm8Vector2D
 // 0x0002 (0x0002 - 0x0000)

@@ -12,25 +12,25 @@
 
 #include "Engine_structs.hpp"
 #include "AuActorPlacement_structs.hpp"
-#include "BP_BaseAI_classes.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
+#include "BP_BaseAI_classes.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C
-// 0x0090 (0x0C90 - 0x0C00)
+// 0x00A0 (0x0DA0 - 0x0D00)
 class ABP_Exploder_Tier2_Actor_Character_C final : public ABP_BaseAI_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Exploder_Tier2_Actor_Character_C; // 0x0BF8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FTimerHandle                           ExplosionAttackTimerHandle;                        // 0x0C00(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	struct FAuAPMassSpawnedEntityType             SmallExplosionSphereEntityConfig;                  // 0x0C08(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FAuAPMassSpawnedEntityType             BigExplosionSphereEntityConfig;                    // 0x0C40(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance)
-	double                                        LastAttackTimestamp;                               // 0x0C78(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        InfectionAttackCooldown;                           // 0x0C80(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ECrEnemyAttackType                            Attack_Type;                                       // 0x0C88(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Exploder_Tier2_Actor_Character_C; // 0x0D00(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FTimerHandle                           ExplosionAttackTimerHandle;                        // 0x0D08(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FAuAPMassSpawnedEntityType             SmallExplosionSphereEntityConfig;                  // 0x0D10(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FAuAPMassSpawnedEntityType             BigExplosionSphereEntityConfig;                    // 0x0D48(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance)
+	double                                        LastAttackTimestamp;                               // 0x0D80(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        InfectionAttackCooldown;                           // 0x0D88(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECrEnemyAttackType                            Attack_Type;                                       // 0x0D90(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void UserConstructionScript();

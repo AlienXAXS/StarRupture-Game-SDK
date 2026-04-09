@@ -10,53 +10,56 @@
 
 #include "Basic.hpp"
 
+#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "BP_BaseAI_classes.hpp"
-#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Melee_Tier3_Actor_Character.BP_Melee_Tier3_Actor_Character_C
-// 0x00C0 (0x0CC0 - 0x0C00)
+// 0x00E0 (0x0DE0 - 0x0D00)
 class ABP_Melee_Tier3_Actor_Character_C final : public ABP_BaseAI_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Melee_Tier3_Actor_Character_C;   // 0x0BF8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UStaticMeshComponent*                   SM_MeleeT3_Weakpoint;                              // 0x0C00(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USphereComponent*                       HeadCollision;                                     // 0x0C08(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UCrMeleeT3AvoidanceComponent*           CrMeleeT3Avoidance_Right;                          // 0x0C10(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UCrMeleeT3AvoidanceComponent*           CrMeleeT3Avoidance_Left;                           // 0x0C18(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UCrMeleeT3AvoidanceComponent*           CrMeleeT3Avoidance_Front;                          // 0x0C20(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UCrMeleeT3BatteringRamComponent*        CrMeleeT3BatteringRam;                             // 0x0C28(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UNiagaraComponent*                      NiagaraEyes;                                       // 0x0C30(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	struct FTimerHandle                           RangedAttackHandle;                                // 0x0C38(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	double                                        Attack_Start_Forward_Offset;                       // 0x0C40(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         RangedAttackCastTime;                              // 0x0C48(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ECrEnemyAttackType                            Attack_Type;                                       // 0x0C4C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_C4D[0x3];                                      // 0x0C4D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 MoveTargetActor;                                   // 0x0C50(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	bool                                          Internal_HasAggroTarget;                           // 0x0C58(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Internal_IsCoverActive;                            // 0x0C59(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Internal_IsUpCover;                                // 0x0C5A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Internal_HasRecentlyReceivedDamage;                // 0x0C5B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Internal_IsInSidesCoverDistance;                   // 0x0C5C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_C5D[0x3];                                      // 0x0C5D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UBlackboardComponent*                   Blackboard;                                        // 0x0C60(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class FName                                   MoveTargetBBKeyName;                               // 0x0C68(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   AggroTargetActorBBKeyName;                         // 0x0C70(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   IsCoverActiveBBKeyName;                            // 0x0C78(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   IsUpCoverBBKeyName;                                // 0x0C80(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   IsInSidesCoverDistanceBBKeyName;                   // 0x0C88(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<struct FVector>                        LongAoeAttackPoints;                               // 0x0C90(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	int32                                         CurrentAoePointIndex;                              // 0x0CA0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         LongAoeAttackFVXDelay;                             // 0x0CA4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EMovementAttackStage                          MovementAttackStage;                               // 0x0CA8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_CA9[0x7];                                      // 0x0CA9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class USoundBase*                             RangedLongAttackEnviroSound;                       // 0x0CB0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	class UAudioComponent*                        RangedLongAttackEnviroSoundComp;                   // 0x0CB8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Melee_Tier3_Actor_Character_C;   // 0x0D00(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USphereComponent*                       HeadCollision;                                     // 0x0D08(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_MeleeT3_Weakpoint;                              // 0x0D10(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCrMeleeT3AvoidanceComponent*           CrMeleeT3Avoidance_Right;                          // 0x0D18(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCrMeleeT3AvoidanceComponent*           CrMeleeT3Avoidance_Left;                           // 0x0D20(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCrMeleeT3AvoidanceComponent*           CrMeleeT3Avoidance_Front;                          // 0x0D28(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCrMeleeT3BatteringRamComponent*        CrMeleeT3BatteringRam;                             // 0x0D30(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      NiagaraEyes;                                       // 0x0D38(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FTimerHandle                           RangedAttackHandle;                                // 0x0D40(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	double                                        Attack_Start_Forward_Offset;                       // 0x0D48(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         RangedAttackCastTime;                              // 0x0D50(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECrEnemyAttackType                            Attack_Type;                                       // 0x0D54(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_D55[0x3];                                      // 0x0D55(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 MoveTargetActor;                                   // 0x0D58(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	bool                                          Internal_HasAggroTarget;                           // 0x0D60(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Internal_IsCoverActive;                            // 0x0D61(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Internal_IsUpCover;                                // 0x0D62(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Internal_HasRecentlyReceivedDamage;                // 0x0D63(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Internal_IsInSidesCoverDistance;                   // 0x0D64(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_D65[0x3];                                      // 0x0D65(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBlackboardComponent*                   Blackboard;                                        // 0x0D68(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class FName                                   MoveTargetBBKeyName;                               // 0x0D70(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   AggroTargetActorBBKeyName;                         // 0x0D78(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   IsCoverActiveBBKeyName;                            // 0x0D80(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   IsUpCoverBBKeyName;                                // 0x0D88(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   IsInSidesCoverDistanceBBKeyName;                   // 0x0D90(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<struct FVector>                        LongAoeAttackPoints;                               // 0x0D98(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	int32                                         CurrentAoePointIndex;                              // 0x0DA8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         LongAoeAttackFVXDelay;                             // 0x0DAC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EMovementAttackStage                          MovementAttackStage;                               // 0x0DB0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_DB1[0x7];                                      // 0x0DB1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class USoundBase*                             RangedLongAttackEnviroSound;                       // 0x0DB8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class UAudioComponent*                        RangedLongAttackEnviroSoundComp;                   // 0x0DC0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          Internal_Is_in_Slow_Rotation_Range;                // 0x0DC8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_DC9[0x3];                                      // 0x0DC9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   Is_In_Slow_Rotation_Range;                         // 0x0DCC(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void UserConstructionScript();
@@ -65,21 +68,27 @@ public:
 	void SetRangedAttackTimer(bool SetTimerActive, double TimeToRangedAttack);
 	void SetMovementAttackStage(EMovementAttackStage MovementAttackStage_0);
 	void SetIsUpCover(bool bNewIsUpCover);
-	void SetIsJumpEyeBehaviour(bool NewIsJumpEyeBehaviour);
+	void SetIsInSlowRotationRange(bool bNewIsInSlowRotationRange);
 	void SetIsCoverActive(bool bNewIsCoverActive);
-	void SetIsBoostedEyeColor(bool NewIsBoosted);
-	void SetIsAggroEyeColor(bool NewIsAggro);
 	void SetHasAggroTarget(bool bNewHasAggroTarget);
 	void ReceiveTick(float DeltaSeconds);
 	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 	void ReceiveBeginPlay();
 	void OnRangedAttackTimerFinished();
+	void OnPrepareForPooling();
+	void OnPrepareForGame();
+	void OnExitActorPool();
+	void OnEnterActorPool();
+	void OnBlackboardConfigured(class UMassEnemyDataAsset* Config);
 	void OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag);
+	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
 	EMovementAttackStage GetMovementAttackStage();
 	TArray<struct FVector> GetCachedLongAoePoints();
 	void ExecuteUbergraph_BP_Melee_Tier3_Actor_Character(int32 EntryPoint);
 	void CacheLongAoePoints(const TArray<struct FVector>& Points);
 	void AttachWeakpoint();
+
+	void OnMeshVisibilityUpdated(bool bIsMeshHidden) const;
 
 public:
 	static class UClass* StaticClass()

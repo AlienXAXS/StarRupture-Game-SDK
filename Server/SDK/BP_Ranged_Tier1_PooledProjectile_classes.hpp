@@ -30,6 +30,8 @@ public:
 	void OnHit(const struct FHitResult& HitResult);
 	void OnProjectileShot(const struct FCrAiProjectileParameters& InProjectileParameters);
 
+	bool CanReturnToPoolAfterHit() const;
+
 public:
 	static class UClass* StaticClass()
 	{

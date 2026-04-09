@@ -50,14 +50,15 @@ enum class EMetaSoundBuilderResult : uint8
 	EMetaSoundBuilderResult_MAX              = 2,
 };
 
-// ScriptStruct MetasoundEngine.DefaultMetaSoundAssetAutoUpdateSettings
-// 0x0020 (0x0020 - 0x0000)
-struct FDefaultMetaSoundAssetAutoUpdateSettings final
+// ScriptStruct MetasoundEngine.MetaSoundPageSettings
+// 0x0018 (0x0018 - 0x0000)
+struct FMetaSoundPageSettings final
 {
 public:
-	struct FSoftObjectPath                        MetaSound;                                         // 0x0000(0x0020)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGuid                                  UniqueID;                                          // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name;                                              // 0x0010(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FDefaultMetaSoundAssetAutoUpdateSettings;
+DUMPER7_ASSERTS_FMetaSoundPageSettings;
 
 // ScriptStruct MetasoundEngine.MetaSoundOutput
 // 0x0008 (0x0010 - 0x0008)
@@ -68,15 +69,14 @@ public:
 };
 DUMPER7_ASSERTS_FMetaSoundOutput;
 
-// ScriptStruct MetasoundEngine.MetaSoundPageSettings
-// 0x0018 (0x0018 - 0x0000)
-struct FMetaSoundPageSettings final
+// ScriptStruct MetasoundEngine.DefaultMetaSoundAssetAutoUpdateSettings
+// 0x0020 (0x0020 - 0x0000)
+struct FDefaultMetaSoundAssetAutoUpdateSettings final
 {
 public:
-	struct FGuid                                  UniqueID;                                          // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Name;                                              // 0x0010(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSoftObjectPath                        MetaSound;                                         // 0x0000(0x0020)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FMetaSoundPageSettings;
+DUMPER7_ASSERTS_FDefaultMetaSoundAssetAutoUpdateSettings;
 
 // ScriptStruct MetasoundEngine.MetaSoundQualitySettings
 // 0x0020 (0x0020 - 0x0000)

@@ -39,6 +39,7 @@ public:
 	void FullBody_SlideOutState(struct FPoseLink* FullBody_SlideOutState_0);
 	void FullBody_StartState(struct FPoseLink* FullBody_StartState_0);
 	void FullBody_StopState(struct FPoseLink* FullBody_StopState_0);
+	void FullBody_ZiplineLoop(struct FPoseLink* FullBody_ZiplineLoop_0);
 	void FullBodyAdditives(struct FPoseLink* FullBodyAdditives_0);
 	void Head_FaceLayer(struct FPoseLink* Head_FaceLayer_0);
 	void LeftHandPose_OverrideState(const struct FPoseLink& InputPose, struct FPoseLink* LeftHandPose_OverrideState_0);

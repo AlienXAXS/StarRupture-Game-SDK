@@ -12,9 +12,9 @@
 
 #include "DeveloperSettings_classes.hpp"
 #include "Engine_classes.hpp"
+#include "ErrantLandscapeRuntime_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "ErrantLandscapeRuntime_structs.hpp"
 
 
 namespace SDK
@@ -229,20 +229,20 @@ public:
 DUMPER7_ASSERTS_UElRtStampBrushComponent;
 
 // Class ErrantLandscapeRuntime.ElRtTextureStampBrushComponent
-// 0x01A0 (0x06F0 - 0x0550)
+// 0x0170 (0x06C0 - 0x0550)
 class UElRtTextureStampBrushComponent : public UElRtStampBrushComponent
 {
 public:
 	EElRtStampBrushShape                          Shape;                                             // 0x0548(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_549[0x7];                                      // 0x0549(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FElRtStampBrushSplineShapeParams       SplineParams;                                      // 0x0550(0x0058)(Edit, BlueprintVisible, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	struct FElRtStampBrushTextureSettings         Heightmap;                                         // 0x05A8(0x00C8)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	TMap<TSoftObjectPtr<class ULandscapeLayerInfoObject>, struct FElRtStampBrushTextureSettings> WeightMaps; // 0x0670(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class ALandscape>              BrushLandscape;                                    // 0x06C0(0x0028)(Edit, BlueprintVisible, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_6E8[0x8];                                      // 0x06E8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FElRtStampBrushSplineShapeParams       SplineParams;                                      // 0x0550(0x0030)(Edit, BlueprintVisible, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	struct FElRtStampBrushTextureSettings         Heightmap;                                         // 0x0580(0x00C8)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	TMap<TSoftObjectPtr<class ULandscapeLayerInfoObject>, struct FElRtStampBrushTextureSettings> WeightMaps; // 0x0648(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class ALandscape>              BrushLandscape;                                    // 0x0698(0x0028)(Edit, BlueprintVisible, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void NotifySplineChanged();
+	void SetBrushLandscape(TSoftObjectPtr<class ALandscape> InLandscape);
 
 public:
 	static class UClass* StaticClass()
@@ -261,7 +261,7 @@ public:
 DUMPER7_ASSERTS_UElRtTextureStampBrushComponent;
 
 // Class ErrantLandscapeRuntime.ElRtStaticTextureStampBrushComponent
-// 0x0000 (0x06F0 - 0x06F0)
+// 0x0000 (0x06C0 - 0x06C0)
 class UElRtStaticTextureStampBrushComponent final : public UElRtTextureStampBrushComponent
 {
 public:

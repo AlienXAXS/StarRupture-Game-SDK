@@ -218,6 +218,20 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 }
 
 
+// Function ABP_Mannequin_Base.ABP_Mannequin_Base_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_339C03EA436B0E9C636E4EBBDFEFB48B
+// (BlueprintEvent)
+
+void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_339C03EA436B0E9C636E4EBBDFEFB48B()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_339C03EA436B0E9C636E4EBBDFEFB48B");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function ABP_Mannequin_Base.ABP_Mannequin_Base_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_339F7A3742028D5892AD67A16463FA1B
 // (BlueprintEvent)
 
@@ -246,6 +260,20 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 }
 
 
+// Function ABP_Mannequin_Base.ABP_Mannequin_Base_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_58BA0E1246F174E14BEB83A72F4B14A0
+// (BlueprintEvent)
+
+void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_58BA0E1246F174E14BEB83A72F4B14A0()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_58BA0E1246F174E14BEB83A72F4B14A0");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function ABP_Mannequin_Base.ABP_Mannequin_Base_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_6E07F7B34DE20BD5AA8E33BCC953F206
 // (BlueprintEvent)
 
@@ -269,6 +297,20 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_727985CC469470662A9373B766CE058E");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Mannequin_Base.ABP_Mannequin_Base_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_73C4553A40117BD6701AA7A18DB112D5
+// (BlueprintEvent)
+
+void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_73C4553A40117BD6701AA7A18DB112D5()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_73C4553A40117BD6701AA7A18DB112D5");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -819,6 +861,27 @@ void UABP_Mannequin_Base_C::FullBody_StopState(struct FPoseLink* FullBody_StopSt
 
 	if (FullBody_StopState_0 != nullptr)
 		*FullBody_StopState_0 = std::move(Parms.FullBody_StopState_0);
+}
+
+
+// Function ABP_Mannequin_Base.ABP_Mannequin_Base_C.FullBody_ZiplineLoop
+// (HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FPoseLink*                       FullBody_ZiplineLoop_0                                 (Parm, OutParm, NoDestructor)
+
+void UABP_Mannequin_Base_C::FullBody_ZiplineLoop(struct FPoseLink* FullBody_ZiplineLoop_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Mannequin_Base_C", "FullBody_ZiplineLoop");
+
+	Params::ABP_Mannequin_Base_C_FullBody_ZiplineLoop Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (FullBody_ZiplineLoop_0 != nullptr)
+		*FullBody_ZiplineLoop_0 = std::move(Parms.FullBody_ZiplineLoop_0);
 }
 
 

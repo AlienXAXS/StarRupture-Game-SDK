@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "AuCrafting_structs.hpp"
 #include "NetCore_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "PhysicsCore_structs.hpp"
@@ -21,7 +22,6 @@
 #include "AuAbilities_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "MassEntity_structs.hpp"
-#include "AuCrafting_structs.hpp"
 #include "MassReplication_structs.hpp"
 #include "AuActorPlacement_structs.hpp"
 #include "ContextualDialog_structs.hpp"
@@ -79,7 +79,7 @@ enum class EBuildingManualInteraction : uint8
 };
 
 // Enum Chimera.ECrCorporationUnlockedFeatures
-// NumValues: 0x0009
+// NumValues: 0x000A
 enum class ECrCorporationUnlockedFeatures : uint8
 {
 	None                                     = 0,
@@ -89,8 +89,9 @@ enum class ECrCorporationUnlockedFeatures : uint8
 	BuildingDrone                            = 8,
 	Pistol                                   = 16,
 	BiggerInventory                          = 32,
-	_Last                                    = 32,
-	ECrCorporationUnlockedFeatures_MAX       = 33,
+	Dash                                     = 64,
+	_Last                                    = 64,
+	ECrCorporationUnlockedFeatures_MAX       = 65,
 };
 
 // Enum Chimera.ECrPlayerControlState
@@ -357,6 +358,18 @@ enum class ECrAlienObeliskState : uint32
 	ECrAlienObeliskState_MAX                 = 5,
 };
 
+// Enum Chimera.EGoldenBalloonState
+// NumValues: 0x0006
+enum class EGoldenBalloonState : uint8
+{
+	Idle                                     = 0,
+	RunAway                                  = 1,
+	Dig                                      = 2,
+	Hidden                                   = 3,
+	Destroyed                                = 4,
+	EGoldenBalloonState_MAX                  = 5,
+};
+
 // Enum Chimera.EObservedAttributeValueComparison
 // NumValues: 0x0008
 enum class EObservedAttributeValueComparison : uint8
@@ -546,7 +559,7 @@ enum class ECrBuildingState : uint8
 };
 
 // Enum Chimera.ECrBuildingMalfunctionFlags
-// NumValues: 0x000F
+// NumValues: 0x0010
 enum class ECrBuildingMalfunctionFlags : uint16
 {
 	None                                     = 0,
@@ -562,8 +575,9 @@ enum class ECrBuildingMalfunctionFlags : uint16
 	BaseCoreUnavailable                      = 512,
 	UnavailableInputItem                     = 1024,
 	InventoryEmpty                           = 2048,
-	_Last                                    = 2048,
-	ECrBuildingMalfunctionFlags_MAX          = 2049,
+	NoTransportConnection                    = 4096,
+	_Last                                    = 4096,
+	ECrBuildingMalfunctionFlags_MAX          = 4097,
 };
 
 // Enum Chimera.EDroneState
@@ -1155,12 +1169,13 @@ enum class EMultisampleParam : uint8
 };
 
 // Enum Chimera.ECrPropertyOwner
-// NumValues: 0x0003
+// NumValues: 0x0004
 enum class ECrPropertyOwner : uint8
 {
-	Player                                   = 0,
-	GameState                                = 1,
-	ECrPropertyOwner_MAX                     = 2,
+	None                                     = 0,
+	Player                                   = 1,
+	GameState                                = 2,
+	ECrPropertyOwner_MAX                     = 3,
 };
 
 // Enum Chimera.EOrePurityLevel
@@ -1716,115 +1731,157 @@ enum class EConsoleGraphicsMode : uint8
 	EConsoleGraphicsMode_MAX                 = 3,
 };
 
-// ScriptStruct Chimera.CrFoundtionTilesConnection
-// 0x0030 (0x0030 - 0x0000)
-struct FCrFoundtionTilesConnection final
-{
-public:
-	struct FVector                                MyLocation;                                        // 0x0000(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCrMassActorReplicationHelper          ConnectionActor;                                   // 0x0018(0x0018)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrFoundtionTilesConnection;
-
-// ScriptStruct Chimera.CrEncyclopediaChapterUnlockCondition
-// 0x0014 (0x0014 - 0x0000)
-struct FCrEncyclopediaChapterUnlockCondition final
-{
-public:
-	class FName                                   Context;                                           // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   ContextValue;                                      // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ConditionNumber;                                   // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrEncyclopediaChapterUnlockCondition;
-
-// ScriptStruct Chimera.CrEncyclopediaChapter
-// 0x0028 (0x0028 - 0x0000)
-struct FCrEncyclopediaChapter final
-{
-public:
-	struct FCrEncyclopediaChapterUnlockCondition  UnlockCondition;                                   // 0x0000(0x0014)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   ChapterText;                                       // 0x0018(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrEncyclopediaChapter;
-
-// ScriptStruct Chimera.CrPerformanceStatGroup
-// 0x0098 (0x0098 - 0x0000)
-struct FCrPerformanceStatGroup final
-{
-public:
-	struct FGameplayTagQuery                      VisibilityQuery;                                   // 0x0000(0x0048)(Edit, NativeAccessSpecifierPublic)
-	TSet<ECrDisplayablePerformanceStat>           AllowedStats;                                      // 0x0048(0x0050)(Edit, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrPerformanceStatGroup;
-
-// ScriptStruct Chimera.CrAiProjectilePooledActorConfiguration
-// 0x0010 (0x0010 - 0x0000)
-struct FCrAiProjectilePooledActorConfiguration final
-{
-public:
-	TSubclassOf<class ACrAiProjectileActor>       ProjectileActorClass;                              // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         PoolSize;                                          // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         PoolSizeLimit;                                     // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrAiProjectilePooledActorConfiguration;
-
-// ScriptStruct Chimera.CrAntennaChargingTag
+// ScriptStruct Chimera.CrMassLogisticsRequestCompleteTag
 // 0x0000 (0x0001 - 0x0001)
-struct FCrAntennaChargingTag final : public FMassTag
+struct FCrMassLogisticsRequestCompleteTag final : public FMassTag
 {
 };
-DUMPER7_ASSERTS_FCrAntennaChargingTag;
+DUMPER7_ASSERTS_FCrMassLogisticsRequestCompleteTag;
 
-// ScriptStruct Chimera.CrCountItem
-// 0x0010 (0x0010 - 0x0000)
-struct FCrCountItem final
+// ScriptStruct Chimera.ReplicatedAgentPositionRotationData
+// 0x0040 (0x0040 - 0x0000)
+struct FReplicatedAgentPositionRotationData final
 {
 public:
-	TSubclassOf<class UCrItemDataBase>            Item;                                              // 0x0000(0x0008)(ZeroConstructor, SaveGame, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Count;                                             // 0x0008(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FVector                                Translation;                                       // 0x0000(0x0018)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FQuat                                  Rotation;                                          // 0x0020(0x0020)(Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrCountItem;
+DUMPER7_ASSERTS_FReplicatedAgentPositionRotationData;
 
-// ScriptStruct Chimera.CrBaseCoreData
-// 0x003C (0x0048 - 0x000C)
-struct FCrBaseCoreData final : public FFastArraySerializerItem
+// ScriptStruct Chimera.CrSlotId
+// 0x0004 (0x0004 - 0x0000)
+struct FCrSlotId final
 {
 public:
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrMassEntityReplicationHelper         BaseCore;                                          // 0x0010(0x0018)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DeconstructionStartTime;                           // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          InfectionSphere;                                   // 0x002C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         UpgradeLevel;                                      // 0x002D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int8                                          SelectedLevelToUpgrade;                            // 0x002E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2F[0x1];                                       // 0x002F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FCrCountItem>                   ItemsAddedToUpgrade;                               // 0x0030(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	float                                         CurrentCoolingCapacity;                            // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CurrentCoolingCapacityUsed;                        // 0x0044(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ID;                                                // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
-DUMPER7_ASSERTS_FCrBaseCoreData;
+DUMPER7_ASSERTS_FCrSlotId;
 
-// ScriptStruct Chimera.CrEnviroWaveCurveVectorMap
-// 0x0050 (0x0050 - 0x0000)
-struct FCrEnviroWaveCurveVectorMap final
+// ScriptStruct Chimera.CrStorageItem
+// 0x005C (0x0068 - 0x000C)
+struct FCrStorageItem final : public FFastArraySerializerItem
 {
 public:
-	TMap<EEnviroWaveStage, struct FRuntimeVectorCurve> Curves;                                       // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FCrSlotId                              SlotID;                                            // 0x000C(0x0004)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAuSimpleItem                          Item;                                              // 0x0010(0x0030)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Column;                                            // 0x0040(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Row;                                               // 0x0044(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCrSlotId                              OwnerSlot;                                         // 0x0048(0x0004)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UAuItemDataBase*>                ItemTypeFilter;                                    // 0x0050(0x0010)(ZeroConstructor, SaveGame, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	bool                                          bIsDisabled;                                       // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrEnviroWaveCurveVectorMap;
+DUMPER7_ASSERTS_FCrStorageItem;
 
-// ScriptStruct Chimera.CrWeatherSettingsVectorCurves
-// 0x0070 (0x0070 - 0x0000)
-struct FCrWeatherSettingsVectorCurves final
+// ScriptStruct Chimera.CrItemsStorageContainer
+// 0x0018 (0x0120 - 0x0108)
+struct FCrItemsStorageContainer final : public FFastArraySerializer
 {
 public:
-	TMap<EEnviroWave, struct FCrEnviroWaveCurveVectorMap> Curves;                                    // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FVector                                DefaultValue;                                      // 0x0050(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrWeatherSettingsCurvesValueMode             CurvesValueMode;                                   // 0x0068(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<struct FCrStorageItem>                 Items;                                             // 0x0108(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPrivate)
+	TWeakObjectPtr<class UCrBuildingItemStorageComponent> Owner;                                     // 0x0118(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrWeatherSettingsVectorCurves;
+DUMPER7_ASSERTS_FCrItemsStorageContainer;
+
+// ScriptStruct Chimera.CrSlotItemThresholdSetting
+// 0x0008 (0x0008 - 0x0000)
+struct FCrSlotItemThresholdSetting final
+{
+public:
+	struct FCrSlotId                              SlotID;                                            // 0x0000(0x0004)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Threshold;                                         // 0x0004(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrSlotItemThresholdSetting;
+
+// ScriptStruct Chimera.CrReplicatedInventoryData
+// 0x0280 (0x0280 - 0x0000)
+struct FCrReplicatedInventoryData final
+{
+public:
+	struct FCrItemsStorageContainer               InputInventoryContainer;                           // 0x0000(0x0120)(Transient, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	struct FCrItemsStorageContainer               MainInventoryContainer;                            // 0x0120(0x0120)(Transient, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<struct FCrSlotItemThresholdSetting>    ItemThresholds;                                    // 0x0240(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+	TArray<int32>                                 ChangedInputIndexes;                               // 0x0250(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+	TArray<int32>                                 ChangedMainIndexes;                                // 0x0260(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+	int32                                         InputReplicationKey;                               // 0x0270(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MainReplicationKey;                                // 0x0274(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ClientInputReplicationKey;                         // 0x0278(0x0004)(ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ClientMainReplicationKey;                          // 0x027C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrReplicatedInventoryData;
+
+// ScriptStruct Chimera.CrReplicatedFoundableData
+// 0x0030 (0x0030 - 0x0000)
+struct FCrReplicatedFoundableData final
+{
+public:
+	struct FVector_NetQuantize                    TrajectoryStartLocation;                           // 0x0000(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector_NetQuantize                    TrajectoryEndLocation;                             // 0x0018(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrReplicatedFoundableData;
+
+// ScriptStruct Chimera.CrReplicatedFoundableAgent
+// 0x02F8 (0x0320 - 0x0028)
+struct FCrReplicatedFoundableAgent final : public FReplicatedAgentBase
+{
+public:
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FReplicatedAgentPositionRotationData   PosRot;                                            // 0x0030(0x0040)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FCrReplicatedInventoryData             InventoryData;                                     // 0x0070(0x0280)(Transient, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	struct FCrReplicatedFoundableData             FoundableData;                                     // 0x02F0(0x0030)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
+};
+DUMPER7_ASSERTS_FCrReplicatedFoundableAgent;
+
+// ScriptStruct Chimera.CrMassFoundableFastArrayItem
+// 0x0320 (0x0330 - 0x0010)
+struct FCrMassFoundableFastArrayItem final : public FMassFastArrayItemBase
+{
+public:
+	struct FCrReplicatedFoundableAgent            Agent;                                             // 0x0010(0x0320)(ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrMassFoundableFastArrayItem;
+
+// ScriptStruct Chimera.CrMassFoundableClientBubbleSerializer
+// 0x0138 (0x0270 - 0x0138)
+struct FCrMassFoundableClientBubbleSerializer final : public FMassClientBubbleSerializerBase
+{
+public:
+	uint8                                         Pad_138[0x128];                                    // 0x0138(0x0128)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FCrMassFoundableFastArrayItem>  Entities;                                          // 0x0260(0x0010)(ZeroConstructor, Transient, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+};
+DUMPER7_ASSERTS_FCrMassFoundableClientBubbleSerializer;
+
+// ScriptStruct Chimera.CrReplicatedFName
+// 0x000C (0x000C - 0x0000)
+struct FCrReplicatedFName final
+{
+public:
+	int32                                         HashCode;                                          // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name;                                              // 0x0004(0x0008)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrReplicatedFName;
+
+// ScriptStruct Chimera.CrAiDeathSequenceParameters
+// 0x0130 (0x0130 - 0x0000)
+struct FCrAiDeathSequenceParameters final
+{
+public:
+	TSubclassOf<class ACrAiDeathSequenceActor>    DeathSequenceActorClass;                           // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             ActorWorldTransform;                               // 0x0010(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             MeshWorldTransform;                                // 0x0070(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                RagdollForceImpulse;                               // 0x00D0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ForceImpulseLocation;                              // 0x00E8(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RagdollTimeS;                                      // 0x0100(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TimeToDissolveS;                                   // 0x0104(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DissolveTimeS;                                     // 0x0108(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_10C[0x4];                                      // 0x010C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                VisualVariationSeed;                               // 0x0110(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           RagdollTypeTag;                                    // 0x0128(0x0008)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrAiDeathSequenceParameters;
 
 // ScriptStruct Chimera.CrEnviroWaveSettings
 // 0x002C (0x002C - 0x0000)
@@ -1845,34 +1902,59 @@ public:
 };
 DUMPER7_ASSERTS_FCrEnviroWaveSettings;
 
-// ScriptStruct Chimera.CloudsBillboardsParamsCameraSunAdditionalLighting
-// 0x0044 (0x0044 - 0x0000)
-struct FCloudsBillboardsParamsCameraSunAdditionalLighting final
+// ScriptStruct Chimera.EventGEData
+// 0x0010 (0x0010 - 0x0000)
+struct FEventGEData final
 {
 public:
-	struct FLinearColor                           EmissionMainColor;                                 // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           EmissionShadowColor;                               // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         EmissionLerpClampMin;                              // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         EmissionLerpClampMax;                              // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         EmissionLerpFalloffPower;                          // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         EmissionNoiseOpacity;                              // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BacklightBoost;                                    // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BacklightClampMin;                                 // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BacklightClampMax;                                 // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BacklightFalloffPower;                             // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SkymaskSkyBoost;                                   // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         OffsetPerEventValue;                               // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UAuAttributeSet>            AttributeSetClass;                                 // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCloudsBillboardsParamsCameraSunAdditionalLighting;
+DUMPER7_ASSERTS_FEventGEData;
 
-// ScriptStruct Chimera.CrReplicatedFName
-// 0x000C (0x000C - 0x0000)
-struct FCrReplicatedFName final
+// ScriptStruct Chimera.EventGEDataArray
+// 0x0010 (0x0010 - 0x0000)
+struct FEventGEDataArray final
 {
 public:
-	int32                                         HashCode;                                          // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Name;                                              // 0x0004(0x0008)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FEventGEData>                   EventsDataArray;                                   // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrReplicatedFName;
+DUMPER7_ASSERTS_FEventGEDataArray;
+
+// ScriptStruct Chimera.SubEventsData
+// 0x0050 (0x0050 - 0x0000)
+struct FSubEventsData final
+{
+public:
+	TMap<struct FGameplayTag, struct FEventGEDataArray> SubEvents;                                   // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSubEventsData;
+
+// ScriptStruct Chimera.CrBuildingStateSetting
+// 0x0024 (0x0024 - 0x0000)
+struct FCrBuildingStateSetting final
+{
+public:
+	struct FLinearColor                           Color;                                             // 0x0000(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFlickering;                                       // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         FlickeringFrequency;                               // 0x0014(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FlickeringMinIntensity;                            // 0x0018(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         IntensityMul;                                      // 0x001C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FColor                                 UIColor;                                           // 0x0020(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrBuildingStateSetting;
+
+// ScriptStruct Chimera.CrFoundtionTilesConnection
+// 0x0030 (0x0030 - 0x0000)
+struct FCrFoundtionTilesConnection final
+{
+public:
+	struct FVector                                MyLocation;                                        // 0x0000(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCrMassActorReplicationHelper          ConnectionActor;                                   // 0x0018(0x0018)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrFoundtionTilesConnection;
 
 // ScriptStruct Chimera.CrBuildingBeginPlayDataExternalConnection
 // 0x0038 (0x0038 - 0x0000)
@@ -1919,153 +2001,114 @@ public:
 };
 DUMPER7_ASSERTS_FCrBuildingBeginPlayData;
 
-// ScriptStruct Chimera.CrFlowSaveData
+// ScriptStruct Chimera.CrCountItem
+// 0x0010 (0x0010 - 0x0000)
+struct FCrCountItem final
+{
+public:
+	TSubclassOf<class UCrItemDataBase>            Item;                                              // 0x0000(0x0008)(ZeroConstructor, SaveGame, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0008(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrCountItem;
+
+// ScriptStruct Chimera.CrBaseCoreSaveData
+// 0x0028 (0x0028 - 0x0000)
+struct FCrBaseCoreSaveData final
+{
+public:
+	struct FCrMassPersistentEntityID              BaseCore;                                          // 0x0000(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          InfectionSphere;                                   // 0x0010(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         UpgradeLevel;                                      // 0x0011(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int8                                          SelectedLevelToUpgrade;                            // 0x0012(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_13[0x5];                                       // 0x0013(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FCrCountItem>                   ItemsAddedToUpgrade;                               // 0x0018(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrBaseCoreSaveData;
+
+// ScriptStruct Chimera.CrAimContextTraceData
+// 0x0028 (0x0028 - 0x0000)
+struct FCrAimContextTraceData final
+{
+public:
+	struct FGameplayTag                           TraceTag;                                          // 0x0000(0x0008)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TraceRange;                                        // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        TickRate;                                          // 0x0010(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bTriggerWithNonBlockingHit;                        // 0x0018(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAuCustomTargetHandle                  CustomTraceHandle;                                 // 0x0019(0x0001)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShouldDrawTraceDebug;                             // 0x001A(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1B[0x1];                                       // 0x001B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FAuTraceDebugParams                    TraceDebugParams;                                  // 0x001C(0x0008)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrAimContextTraceData;
+
+// ScriptStruct Chimera.CrAimContextCriteriaData
+// 0x0090 (0x0090 - 0x0000)
+struct FCrAimContextCriteriaData final
+{
+public:
+	struct FGameplayTagContainer                  RequireAllTags;                                    // 0x0000(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	struct FGameplayTagContainer                  RequireAnyTags;                                    // 0x0020(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	struct FGameplayTagContainer                  BlockAllTags;                                      // 0x0040(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	struct FGameplayTagContainer                  BlockAnyTags;                                      // 0x0060(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TArray<TSubclassOf<class UCrAimAnalysisCustomCriterion>> CustomTraceTriggerCriteria;             // 0x0080(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, UObjectWrapper, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrAimContextCriteriaData;
+
+// ScriptStruct Chimera.CrAimContextResponseData
 // 0x0078 (0x0078 - 0x0000)
-struct FCrFlowSaveData final
+struct FCrAimContextResponseData final
 {
 public:
-	struct FGuid                                  CurrentEntryID;                                    // 0x0000(0x0010)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CurrentEventIndex;                                 // 0x0010(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<struct FGuid, bool>                      TriggeredListeners;                                // 0x0018(0x0050)(SaveGame, NativeAccessSpecifierPublic)
-	TArray<class FName>                           BuildingsDisabledInBuildingMenu;                   // 0x0068(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	bool                                          bRetriggerResponseOnRepeatedHitResults;            // 0x0000(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<TSubclassOf<class UObject>>            BlockingHitCheckClasses;                           // 0x0008(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, UObjectWrapper, NativeAccessSpecifierPublic)
+	EPhysicalSurface                              PhysicalSurfaceCheck;                              // 0x0018(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UPhysicalMaterial*>              AllowedPhysicalMaterialsCheck;                     // 0x0020(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	TArray<class UPhysicalMaterial*>              RejectionPhysicalMaterialsCheck;                   // 0x0030(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FGameplayTagContainer                  ResponseTagsToApply;                               // 0x0040(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	bool                                          bForceOnlyCustomResponses;                         // 0x0060(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<TSubclassOf<class UCrAimAnalysisCustomResponse>> CustomResponses;                         // 0x0068(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, UObjectWrapper, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrFlowSaveData;
+DUMPER7_ASSERTS_FCrAimContextResponseData;
 
-// ScriptStruct Chimera.CrBaseSiteData
-// 0x0040 (0x0040 - 0x0000)
-struct FCrBaseSiteData
+// ScriptStruct Chimera.CrAimContextCheckConfig
+// 0x0140 (0x0140 - 0x0000)
+struct FCrAimContextCheckConfig final
 {
 public:
-	struct FMassEntityHandle                      BaseCoreHandle;                                    // 0x0000(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBox                                   Bounds;                                            // 0x0008(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ConfigName;                                        // 0x0000(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCrAimContextTraceData                 TraceData;                                         // 0x0010(0x0028)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
+	struct FCrAimContextCriteriaData              CriteriaData;                                      // 0x0038(0x0090)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	struct FCrAimContextResponseData              ResponseData;                                      // 0x00C8(0x0078)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrBaseSiteData;
+DUMPER7_ASSERTS_FCrAimContextCheckConfig;
 
-// ScriptStruct Chimera.CrToxicityAttributeTableRow
-// 0x0010 (0x0018 - 0x0008)
-struct FCrToxicityAttributeTableRow final : public FTableRowBase
-{
-public:
-	int32                                         CurrentToxicity;                                   // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxToxicity;                                       // 0x000C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MinToxicity;                                       // 0x0010(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrToxicityAttributeTableRow;
-
-// ScriptStruct Chimera.CrAISpawnRequestHandle
+// ScriptStruct Chimera.CrCraftingEventParameters
 // 0x0004 (0x0004 - 0x0000)
-struct alignas(0x04) FCrAISpawnRequestHandle final
+struct FCrCraftingEventParameters final : public FMassConstSharedFragment
 {
 public:
-	uint8                                         Pad_0[0x4];                                        // 0x0000(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FStaticMeshInstanceVisualizationDescHandle EventStaticMeshDescHandle;                     // 0x0000(0x0002)(NoDestructor, NativeAccessSpecifierPublic)
+	EMassRepresentationType                       StaticMeshMinLOD;                                  // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrAISpawnRequestHandle;
+DUMPER7_ASSERTS_FCrCraftingEventParameters;
 
-// ScriptStruct Chimera.CrEncyclopediaBaseData
-// 0x00E8 (0x00F0 - 0x0008)
-struct FCrEncyclopediaBaseData : public FTableRowBase
+// ScriptStruct Chimera.DeathSequencePooledActorConfiguration
+// 0x0010 (0x0010 - 0x0000)
+struct FDeathSequencePooledActorConfiguration final
 {
 public:
-	struct FGuid                                  EntryID;                                           // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Category;                                          // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   SubCategory;                                       // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FText                                   EntryName;                                         // 0x0028(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            MiniaturePicture;                                  // 0x0040(0x00B0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TSubclassOf<class ACrAiDeathSequenceActor>    DeathSequenceActorClass;                           // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PoolSize;                                          // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrEncyclopediaBaseData;
-
-// ScriptStruct Chimera.CrEncyclopediaEntryData
-// 0x00E0 (0x01D0 - 0x00F0)
-struct FCrEncyclopediaEntryData final : public FCrEncyclopediaBaseData
-{
-public:
-	class FText                                   EntryHeader;                                       // 0x00F0(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FName                                   Author;                                            // 0x0100(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FCrEncyclopediaChapter>         Chapters;                                          // 0x0108(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_118[0x8];                                      // 0x0118(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            Picture;                                           // 0x0120(0x00B0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrEncyclopediaEntryData;
-
-// ScriptStruct Chimera.CrAbilitySet_GrantedHandles
-// 0x0030 (0x0030 - 0x0000)
-struct FCrAbilitySet_GrantedHandles final
-{
-public:
-	TArray<struct FGameplayAbilitySpecHandle>     AbilitySpecHandles;                                // 0x0000(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FActiveGameplayEffectHandle>    GameplayEffectHandles;                             // 0x0010(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TArray<class UAttributeSet*>                  GrantedAttributeSets;                              // 0x0020(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrAbilitySet_GrantedHandles;
-
-// ScriptStruct Chimera.CrEnviroWaveCurveTableMap
-// 0x0050 (0x0050 - 0x0000)
-struct FCrEnviroWaveCurveTableMap final
-{
-public:
-	TMap<EEnviroWaveStage, class UCurveTable*>    Curves;                                            // 0x0000(0x0050)(Edit, BlueprintVisible, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrEnviroWaveCurveTableMap;
-
-// ScriptStruct Chimera.CrEnviroWaveCurveFloatMap
-// 0x0050 (0x0050 - 0x0000)
-struct FCrEnviroWaveCurveFloatMap final
-{
-public:
-	TMap<EEnviroWaveStage, struct FRuntimeFloatCurve> Curves;                                        // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrEnviroWaveCurveFloatMap;
-
-// ScriptStruct Chimera.CrWeatherSettingsFloatCurves
-// 0x0058 (0x0058 - 0x0000)
-struct FCrWeatherSettingsFloatCurves final
-{
-public:
-	TMap<EEnviroWave, struct FCrEnviroWaveCurveFloatMap> Curves;                                     // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	float                                         DefaultValue;                                      // 0x0050(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrWeatherSettingsCurvesValueMode             CurvesValueMode;                                   // 0x0054(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_55[0x3];                                       // 0x0055(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrWeatherSettingsFloatCurves;
-
-// ScriptStruct Chimera.CrWeakSpotRuntimeData
-// 0x002C (0x0038 - 0x000C)
-struct FCrWeakSpotRuntimeData final : public FFastArraySerializerItem
-{
-public:
-	class FName                                   Name;                                              // 0x000C(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CurrentMiningHealth;                               // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxMiningHealth;                                   // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UCrItemDataBase>            Resource;                                          // 0x0020(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ResourceCount;                                     // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class ACrCharacterPlayerBase*                 MiningGrantee;                                     // 0x0030(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrWeakSpotRuntimeData;
-
-// ScriptStruct Chimera.CrWeakSpotsContainer
-// 0x0018 (0x0120 - 0x0108)
-struct FCrWeakSpotsContainer final : public FFastArraySerializer
-{
-public:
-	TArray<struct FCrWeakSpotRuntimeData>         Items;                                             // 0x0108(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	class ACrOreActor*                            Owner;                                             // 0x0118(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrWeakSpotsContainer;
-
-// ScriptStruct Chimera.CrContextEffectAnimNotifyAudioSettings
-// 0x0008 (0x0008 - 0x0000)
-struct FCrContextEffectAnimNotifyAudioSettings final
-{
-public:
-	float                                         VolumeMultiplier;                                  // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PitchMultiplier;                                   // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrContextEffectAnimNotifyAudioSettings;
+DUMPER7_ASSERTS_FDeathSequencePooledActorConfiguration;
 
 // ScriptStruct Chimera.MegamachineTimelineDeviceSaveData
 // 0x0060 (0x0060 - 0x0000)
@@ -2081,45 +2124,110 @@ public:
 };
 DUMPER7_ASSERTS_FMegamachineTimelineDeviceSaveData;
 
-// ScriptStruct Chimera.CrGenericMassSubGraph
-// 0x0004 (0x0004 - 0x0000)
-struct FCrGenericMassSubGraph final
-{
-public:
-	int32                                         SubGraphId;                                        // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrGenericMassSubGraph;
-
-// ScriptStruct Chimera.CrElectricitySubgraphData
-// 0x005C (0x0068 - 0x000C)
-struct FCrElectricitySubgraphData final : public FFastArraySerializerItem
-{
-public:
-	bool                                          bInitialized;                                      // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrGenericMassSubGraph                 SubGraph;                                          // 0x0010(0x0004)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ProducersNum;                                      // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAnyProducer;                                      // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPrevAnyProducer;                                  // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A[0x2];                                       // 0x001A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ProducedElectricity;                               // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PrevProducedElectricity;                           // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ConsumedElectricity;                               // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PrevConsumedElectricity;                           // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBox                                   BoxWorld;                                          // 0x0030(0x0038)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrElectricitySubgraphData;
-
-// ScriptStruct Chimera.DeathSequencePooledActorGroup
+// ScriptStruct Chimera.OreComponentSpawnedEntities
 // 0x0018 (0x0018 - 0x0000)
-struct FDeathSequencePooledActorGroup final
+struct FOreComponentSpawnedEntities final
 {
 public:
-	TSubclassOf<class ACrAiDeathSequenceActor>    DeathSequenceActorClass;                           // 0x0000(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class ACrAiDeathSequenceActor*>        PooledActors;                                      // 0x0008(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	class UStaticMesh*                            OreMesh;                                           // 0x0010(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 };
-DUMPER7_ASSERTS_FDeathSequencePooledActorGroup;
+DUMPER7_ASSERTS_FOreComponentSpawnedEntities;
+
+// ScriptStruct Chimera.CrAudioLoopGameplayEffectDefinition
+// 0x0090 (0x0090 - 0x0000)
+struct FCrAudioLoopGameplayEffectDefinition final
+{
+public:
+	TSoftObjectPtr<class USoundBase>              SoundSoftPtr;                                      // 0x0000(0x0028)(Edit, BlueprintVisible, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USoundBase*                             SoundLoaded;                                       // 0x0028(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	bool                                          bLocalFPPSound;                                    // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTagContainer                  MustHaveTags;                                      // 0x0038(0x0020)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FGameplayTagContainer                  MustNotHaveTags;                                   // 0x0058(0x0020)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	float                                         FadeInDuration;                                    // 0x0078(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FadeOutDuration;                                   // 0x007C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAudioComponent*                        OwningAudioComponent;                              // 0x0080(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	bool                                          bFadingIn;                                         // 0x0088(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFadingOut;                                        // 0x0089(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8A[0x6];                                       // 0x008A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrAudioLoopGameplayEffectDefinition;
+
+// ScriptStruct Chimera.CrHintCondition
+// 0x0014 (0x0014 - 0x0000)
+struct FCrHintCondition final
+{
+public:
+	class FName                                   Context;                                           // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ContextValue;                                      // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ContextNumber;                                     // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrHintCondition;
+
+// ScriptStruct Chimera.CrAnimLayerSelectionEntry
+// 0x0028 (0x0028 - 0x0000)
+struct FCrAnimLayerSelectionEntry final
+{
+public:
+	TSubclassOf<class UAnimInstance>              Layer;                                             // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTagContainer                  RequiredTags;                                      // 0x0008(0x0020)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrAnimLayerSelectionEntry;
+
+// ScriptStruct Chimera.CrReplicatedLogisticsAgentData
+// 0x00A0 (0x00A0 - 0x0000)
+struct FCrReplicatedLogisticsAgentData final
+{
+public:
+	struct FCrMassEntityReplicationHelper         Connection;                                        // 0x0000(0x0018)(Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCrMassEntityReplicationHelper         NextConnection;                                    // 0x0018(0x0018)(Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCrMassEntityReplicationHelper         Start;                                             // 0x0030(0x0018)(Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCrMassEntityReplicationHelper         End;                                               // 0x0048(0x0018)(Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAuSimpleItem                          CarriedItem;                                       // 0x0060(0x0030)(Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StartAdditionalAgentMovementDistance;              // 0x0090(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         EndAdditionalAgentMovementDistance;                // 0x0094(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRequestInvalid;                                   // 0x0098(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_99[0x7];                                       // 0x0099(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrReplicatedLogisticsAgentData;
+
+// ScriptStruct Chimera.CrReplicatedLogisticsAgent
+// 0x00A0 (0x00C8 - 0x0028)
+struct FCrReplicatedLogisticsAgent final : public FReplicatedAgentBase
+{
+public:
+	struct FCrReplicatedLogisticsAgentData        LogisticsAgentData;                                // 0x0028(0x00A0)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
+};
+DUMPER7_ASSERTS_FCrReplicatedLogisticsAgent;
+
+// ScriptStruct Chimera.CrLogisticsAgentFastArrayItem
+// 0x00C8 (0x00D8 - 0x0010)
+struct FCrLogisticsAgentFastArrayItem final : public FMassFastArrayItemBase
+{
+public:
+	struct FCrReplicatedLogisticsAgent            Agent;                                             // 0x0010(0x00C8)(NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrLogisticsAgentFastArrayItem;
+
+// ScriptStruct Chimera.CrMassLogisticsAgentClientBubbleSerializer
+// 0x00E8 (0x0220 - 0x0138)
+struct FCrMassLogisticsAgentClientBubbleSerializer final : public FMassClientBubbleSerializerBase
+{
+public:
+	uint8                                         Pad_138[0xD8];                                     // 0x0138(0x00D8)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FCrLogisticsAgentFastArrayItem> Logistics;                                         // 0x0210(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
+};
+DUMPER7_ASSERTS_FCrMassLogisticsAgentClientBubbleSerializer;
+
+// ScriptStruct Chimera.CrBaseUnderAttackNotificationContext
+// 0x0018 (0x0020 - 0x0008)
+struct FCrBaseUnderAttackNotificationContext final : public FAuNotificationContext
+{
+public:
+	struct FVector                                Location;                                          // 0x0008(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrBaseUnderAttackNotificationContext;
 
 // ScriptStruct Chimera.CrSkillData
 // 0x000C (0x000C - 0x0000)
@@ -2133,141 +2241,300 @@ public:
 };
 DUMPER7_ASSERTS_FCrSkillData;
 
-// ScriptStruct Chimera.CrAntenaSpawners
-// 0x0028 (0x0028 - 0x0000)
-struct FCrAntenaSpawners final
+// ScriptStruct Chimera.AimAssistFragment
+// 0x0020 (0x0020 - 0x0000)
+struct alignas(0x08) FAimAssistFragment final : public FMassFragment
 {
 public:
-	float                                         Delay;                                             // 0x0000(0x0004)(Edit, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class ACrAISpawner*                           Spawner;                                           // 0x0008(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	struct FGuid                                  SpawnerID;                                         // 0x0010(0x0010)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_20[0x8];                                       // 0x0020(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrAntenaSpawners;
+DUMPER7_ASSERTS_FAimAssistFragment;
 
-// ScriptStruct Chimera.CrAntennaParams
-// 0x0028 (0x0028 - 0x0000)
-struct FCrAntennaParams final
+// ScriptStruct Chimera.CrMassGatherableEnviroWaveStageCondition
+// 0x0001 (0x0001 - 0x0000)
+struct FCrMassGatherableEnviroWaveStageCondition final : public FMassFragment
 {
 public:
-	ECrAntennaState                               State;                                             // 0x0000(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ChargingDuration;                                  // 0x0004(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FailDistanceInMeters;                              // 0x0008(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         UncoverSizeMultiplier;                             // 0x000C(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ExpRewardMultiplier;                               // 0x0010(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FCrAntenaSpawners>              AntennaSpawners;                                   // 0x0018(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrAntennaParams;
+DUMPER7_ASSERTS_FCrMassGatherableEnviroWaveStageCondition;
 
-// ScriptStruct Chimera.CrAntennaSaveData
-// 0x0050 (0x0050 - 0x0000)
-struct FCrAntennaSaveData final
+// ScriptStruct Chimera.CrMassTurretNiagaraSystemParam
+// 0x000C (0x000C - 0x0000)
+struct FCrMassTurretNiagaraSystemParam final
 {
 public:
-	TMap<struct FCrMassPersistentEntityID, struct FCrAntennaParams> Antennas;                        // 0x0000(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+	class FName                                   ParamName;                                         // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ParamVal;                                          // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrAntennaSaveData;
+DUMPER7_ASSERTS_FCrMassTurretNiagaraSystemParam;
 
-// ScriptStruct Chimera.CrRepPermanentDepletedGatherableData
-// 0x0054 (0x0060 - 0x000C)
-struct FCrRepPermanentDepletedGatherableData final : public FFastArraySerializerItem
+// ScriptStruct Chimera.CrMassTurretNiagaraSystemParams
+// 0x0010 (0x0010 - 0x0000)
+struct FCrMassTurretNiagaraSystemParams final
 {
 public:
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                Location;                                          // 0x0010(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBoxSphereBounds                       Bounds;                                            // 0x0028(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	TArray<struct FCrMassTurretNiagaraSystemParam> Params;                                           // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrRepPermanentDepletedGatherableData;
+DUMPER7_ASSERTS_FCrMassTurretNiagaraSystemParams;
 
-// ScriptStruct Chimera.CrHeaterCoolerConnectionData
-// 0x0028 (0x0028 - 0x0000)
-struct FCrHeaterCoolerConnectionData final
+// ScriptStruct Chimera.CrMassFragmentWithCustomOnRepCallActor
+// 0x0000 (0x0000 - 0x0000)
+#pragma pack(push, 0x1)
+struct alignas(0x01) FCrMassFragmentWithCustomOnRepCallActor : public FMassFragment
+{
+};
+#pragma pack(pop)
+DUMPER7_ASSERTS_FCrMassFragmentWithCustomOnRepCallActor;
+
+// ScriptStruct Chimera.CrMassCustomDoorStateFragment
+// 0x0001 (0x0001 - 0x0000)
+struct FCrMassCustomDoorStateFragment final : public FCrMassFragmentWithCustomOnRepCallActor
 {
 public:
-	struct FCrMassPersistentEntityID              Entity;                                            // 0x0000(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ConnectedSocketCount;                              // 0x0010(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FName>                           ConnectedSockets;                                  // 0x0018(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	bool                                          bState;                                            // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrHeaterCoolerConnectionData;
+DUMPER7_ASSERTS_FCrMassCustomDoorStateFragment;
 
-// ScriptStruct Chimera.CrMassZiplineTag
+// ScriptStruct Chimera.CrStateSoundsEntry
+// 0x0068 (0x0068 - 0x0000)
+struct FCrStateSoundsEntry final
+{
+public:
+	bool                                          bMappedEntry;                                      // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTagContainer                  RequiredPlayerTags;                                // 0x0008(0x0020)(Edit, NativeAccessSpecifierPublic)
+	struct FGameplayTagContainer                  NotAllowedPlayerTags;                              // 0x0028(0x0020)(Edit, NativeAccessSpecifierPublic)
+	TArray<class UCrSoundEntryBase*>              Sounds;                                            // 0x0048(0x0010)(Edit, ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	bool                                          RestorePlaybackState;                              // 0x0058(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_59[0x3];                                       // 0x0059(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         FadeInTime;                                        // 0x005C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FadeOutTime;                                       // 0x0060(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrStateSoundsEntry;
+
+// ScriptStruct Chimera.CrSoundChannel
+// 0x0018 (0x0018 - 0x0000)
+struct FCrSoundChannel final
+{
+public:
+	class FName                                   Name;                                              // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FCrStateSoundsEntry>            StateSoundsEntries;                                // 0x0008(0x0010)(Edit, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrSoundChannel;
+
+// ScriptStruct Chimera.CrContextEffectAnimNotifyPreviewSettings
+// 0x0048 (0x0048 - 0x0000)
+struct FCrContextEffectAnimNotifyPreviewSettings final
+{
+public:
+	bool                                          bPreviewPhysicalSurfaceAsContext;                  // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EPhysicalSurface                              PreviewPhysicalSurface;                            // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSoftObjectPath                        PreviewContextEffectsLibrary;                      // 0x0008(0x0020)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTagContainer                  PreviewContexts;                                   // 0x0028(0x0020)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrContextEffectAnimNotifyPreviewSettings;
+
+// ScriptStruct Chimera.CrMassBuildingDestroyWithNeighbour
 // 0x0000 (0x0001 - 0x0001)
-struct FCrMassZiplineTag final : public FMassTag
+struct FCrMassBuildingDestroyWithNeighbour final : public FMassTag
 {
 };
-DUMPER7_ASSERTS_FCrMassZiplineTag;
+DUMPER7_ASSERTS_FCrMassBuildingDestroyWithNeighbour;
 
-// ScriptStruct Chimera.CrSlotId
-// 0x0004 (0x0004 - 0x0000)
-struct FCrSlotId final
+// ScriptStruct Chimera.CrPopupWindowData
+// 0x0028 (0x0028 - 0x0000)
+struct FCrPopupWindowData final
 {
 public:
-	int32                                         ID;                                                // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UTexture2D*                             Image;                                             // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class FText                                   HeaderText;                                        // 0x0008(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FText                                   ContentText;                                       // 0x0018(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrSlotId;
+DUMPER7_ASSERTS_FCrPopupWindowData;
 
-// ScriptStruct Chimera.InFlockGridTag
-// 0x0000 (0x0001 - 0x0001)
-struct FInFlockGridTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FInFlockGridTag;
-
-// ScriptStruct Chimera.CrMassBuildingNiagaraParameterDriverBase
+// ScriptStruct Chimera.CrReplicatedAlienObeliskData
 // 0x0008 (0x0008 - 0x0000)
-struct alignas(0x08) FCrMassBuildingNiagaraParameterDriverBase
+struct FCrReplicatedAlienObeliskData final
 {
 public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	ECrAlienObeliskState                          State;                                             // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ChargeValue;                                       // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrMassBuildingNiagaraParameterDriverBase;
+DUMPER7_ASSERTS_FCrReplicatedAlienObeliskData;
 
-// ScriptStruct Chimera.CrMassAlienObeliskRocksDecalNiagaraParameterDriver
-// 0x0000 (0x0008 - 0x0008)
-struct FCrMassAlienObeliskRocksDecalNiagaraParameterDriver final : public FCrMassBuildingNiagaraParameterDriverBase
-{
-};
-DUMPER7_ASSERTS_FCrMassAlienObeliskRocksDecalNiagaraParameterDriver;
-
-// ScriptStruct Chimera.CrAbilityMontageFailureMessage
-// 0x0030 (0x0030 - 0x0000)
-struct FCrAbilityMontageFailureMessage final
+// ScriptStruct Chimera.CrReplicatedAlienObelisk
+// 0x0028 (0x0050 - 0x0028)
+struct FCrReplicatedAlienObelisk final : public FReplicatedAgentBase
 {
 public:
-	class APlayerController*                      PlayerController;                                  // 0x0000(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	struct FGameplayTagContainer                  FailureTags;                                       // 0x0008(0x0020)(BlueprintVisible, NativeAccessSpecifierPublic)
-	class UAnimMontage*                           FailureMontage;                                    // 0x0028(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FReplicatedAgentPositionYawData        PositionYaw;                                       // 0x0028(0x0020)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FCrReplicatedAlienObeliskData          AlienObeliskData;                                  // 0x0048(0x0008)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
 };
-DUMPER7_ASSERTS_FCrAbilityMontageFailureMessage;
+DUMPER7_ASSERTS_FCrReplicatedAlienObelisk;
 
-// ScriptStruct Chimera.CrMassTurretFragment
-// 0x0088 (0x0088 - 0x0000)
-struct FCrMassTurretFragment final : public FMassFragment
+// ScriptStruct Chimera.CrAlienObeliskFastArrayItem
+// 0x0050 (0x0060 - 0x0010)
+struct FCrAlienObeliskFastArrayItem final : public FMassFastArrayItemBase
 {
 public:
-	ECrTurretState                                PrevState;                                         // 0x0000(0x0001)(ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrTurretState                                State;                                             // 0x0001(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         StateEnterServerTime;                              // 0x0004(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StateEnterAngle;                                   // 0x0008(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMassEntityHandle                      TargetHandle;                                      // 0x0010(0x0008)(Transient, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                PrevAimDirForISM;                                  // 0x0018(0x0018)(ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                CurrentAimDir;                                     // 0x0030(0x0018)(ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                WantedAimDir;                                      // 0x0048(0x0018)(ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector_NetQuantizeNormal              AttackAimDir;                                      // 0x0060(0x0018)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShooting;                                         // 0x0078(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_79[0x3];                                       // 0x0079(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ReacquireTargetRequiredCooldown;                   // 0x007C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TimeOfLastAttack;                                  // 0x0080(0x0004)(ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FStaticMeshInstanceVisualizationDescHandle HorizontalRotMeshDescHandle;                   // 0x0084(0x0002)(Transient, RepSkip, NoDestructor, NativeAccessSpecifierPublic)
-	struct FStaticMeshInstanceVisualizationDescHandle VerticalRotMeshDescHandle;                     // 0x0086(0x0002)(Transient, RepSkip, NoDestructor, NativeAccessSpecifierPublic)
+	struct FCrReplicatedAlienObelisk              Agent;                                             // 0x0010(0x0050)(NoDestructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrMassTurretFragment;
+DUMPER7_ASSERTS_FCrAlienObeliskFastArrayItem;
+
+// ScriptStruct Chimera.CrMassAlienObeliskClientBubbleSerializer
+// 0x00E8 (0x0220 - 0x0138)
+struct FCrMassAlienObeliskClientBubbleSerializer final : public FMassClientBubbleSerializerBase
+{
+public:
+	uint8                                         Pad_138[0xD8];                                     // 0x0138(0x00D8)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FCrAlienObeliskFastArrayItem>   AlienObelisk;                                      // 0x0210(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
+};
+DUMPER7_ASSERTS_FCrMassAlienObeliskClientBubbleSerializer;
+
+// ScriptStruct Chimera.CrActiveGEChangingMaxAttributesValue
+// 0x0010 (0x0010 - 0x0000)
+struct FCrActiveGEChangingMaxAttributesValue final
+{
+public:
+	TSubclassOf<class UGameplayEffect>            GameplayEffectClass;                               // 0x0000(0x0008)(ZeroConstructor, SaveGame, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TimeLeft;                                          // 0x0008(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrActiveGEChangingMaxAttributesValue;
+
+// ScriptStruct Chimera.CrLogisticsLineItem
+// 0x0028 (0x0028 - 0x0000)
+struct FCrLogisticsLineItem
+{
+public:
+	struct FCrMassEntityReplicationHelper         Entity;                                            // 0x0000(0x0018)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Location;                                          // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LocationFromReplication;                           // 0x001C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MoveSpeed;                                         // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bQueued;                                           // 0x0024(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStopped;                                          // 0x0025(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_26[0x2];                                       // 0x0026(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrLogisticsLineItem;
+
+// ScriptStruct Chimera.CrLogisticsLineWaitingItem
+// 0x0028 (0x0028 - 0x0000)
+struct FCrLogisticsLineWaitingItem final
+{
+public:
+	struct FCrMassEntityReplicationHelper         Entity;                                            // 0x0000(0x0018)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MovementFinishedExtraLocation;                     // 0x0018(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint64                                        WaitStartFrame;                                    // 0x0020(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrLogisticsLineWaitingItem;
+
+// ScriptStruct Chimera.CrLogisticsLineSimulationState
+// 0x0028 (0x0028 - 0x0000)
+struct FCrLogisticsLineSimulationState final
+{
+public:
+	TArray<struct FCrLogisticsLineItem>           OrderedItems;                                      // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	TArray<struct FCrLogisticsLineWaitingItem>    WaitingItems;                                      // 0x0010(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+	float                                         InitialSpace;                                      // 0x0020(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrLogisticsLineSimulationState;
+
+// ScriptStruct Chimera.CrLogisticsLineFragment
+// 0x0038 (0x0038 - 0x0000)
+struct FCrLogisticsLineFragment final : public FCrMassSavableFragment
+{
+public:
+	struct FCrLogisticsLineSimulationState        State;                                             // 0x0000(0x0028)(NativeAccessSpecifierPublic)
+	float                                         LineLength;                                        // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AdditionalLengthStart;                             // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AdditionalLengthEnd;                               // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsStartLine;                                      // 0x0034(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsEndLine;                                        // 0x0035(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_36[0x2];                                       // 0x0036(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrLogisticsLineFragment;
+
+// ScriptStruct Chimera.CrUpgradeTaskCondition
+// 0x0038 (0x0038 - 0x0000)
+struct FCrUpgradeTaskCondition final
+{
+public:
+	struct FGuid                                  ID;                                                // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   EntryText;                                         // 0x0010(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FName                                   Context;                                           // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ContextValue;                                      // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ContextNumber;                                     // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCheckConditionWhenInactive;                       // 0x0034(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_35[0x3];                                       // 0x0035(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrUpgradeTaskCondition;
+
+// ScriptStruct Chimera.CrBuildingUpgradeTask
+// 0x005C (0x0068 - 0x000C)
+struct FCrBuildingUpgradeTask final : public FFastArraySerializerItem
+{
+public:
+	struct FGuid                                  ID;                                                // 0x000C(0x0010)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCrUpgradeTaskCondition                UpgradeCondition;                                  // 0x0020(0x0038)(NativeAccessSpecifierPublic)
+	int32                                         InitContextNumber;                                 // 0x0058(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CurrentContextNumber;                              // 0x005C(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCompleted;                                        // 0x0060(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrBuildingUpgradeTask;
+
+// ScriptStruct Chimera.CrGoldenBalloonTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrGoldenBalloonTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrGoldenBalloonTag;
+
+// ScriptStruct Chimera.CrCountItems
+// 0x0010 (0x0010 - 0x0000)
+struct FCrCountItems final
+{
+public:
+	TArray<struct FCrCountItem>                   Items;                                             // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrCountItems;
+
+// ScriptStruct Chimera.CrCraftingOwnerSaveData
+// 0x0070 (0x0070 - 0x0000)
+struct FCrCraftingOwnerSaveData final
+{
+public:
+	TMap<class UCrItemRecipeData*, struct FCrCountItems> LockedRecipes;                              // 0x0000(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+	TArray<class UCrItemRecipeData*>              UnlockedRecipes;                                   // 0x0050(0x0010)(ZeroConstructor, SaveGame, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	TArray<TSubclassOf<class UCrItemDataBase>>    PickedUpItems;                                     // 0x0060(0x0010)(ZeroConstructor, SaveGame, UObjectWrapper, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrCraftingOwnerSaveData;
+
+// ScriptStruct Chimera.CrAbilitySet_GameplayEffect
+// 0x0010 (0x0010 - 0x0000)
+struct FCrAbilitySet_GameplayEffect final
+{
+public:
+	TSubclassOf<class UGameplayEffect>            GameplayEffect;                                    // 0x0000(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         EffectLevel;                                       // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrAbilitySet_GameplayEffect;
+
+// ScriptStruct Chimera.CrBuildingCollectionUnlockedNotificationContext
+// 0x0008 (0x0010 - 0x0008)
+struct FCrBuildingCollectionUnlockedNotificationContext final : public FAuNotificationContext
+{
+public:
+	class UCrBuildingCollectionData*              BuildingCollectionData;                            // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrBuildingCollectionUnlockedNotificationContext;
 
 // ScriptStruct Chimera.CrSubObjectiveEntryStatus
 // 0x0010 (0x0010 - 0x0000)
@@ -2294,74 +2561,72 @@ public:
 };
 DUMPER7_ASSERTS_FCrObjectiveEntryStatus;
 
-// ScriptStruct Chimera.CrGameplayImportantAggroEntityTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrGameplayImportantAggroEntityTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrGameplayImportantAggroEntityTag;
-
-// ScriptStruct Chimera.SkyboxMaterialScalar
-// 0x000C (0x000C - 0x0000)
-struct FSkyboxMaterialScalar final
+// ScriptStruct Chimera.MassGatherableCropRuntimeData
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x04) FMassGatherableCropRuntimeData final : public FMassFragment
 {
 public:
-	class FName                                   Name;                                              // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Value;                                             // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FSkyboxMaterialScalar;
+DUMPER7_ASSERTS_FMassGatherableCropRuntimeData;
 
-// ScriptStruct Chimera.SkyboxMaterialColor
+// ScriptStruct Chimera.CrMassEntityStabilityData
+// 0x0008 (0x0008 - 0x0000)
+struct FCrMassEntityStabilityData final
+{
+public:
+	float                                         Cost;                                              // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Strength;                                          // 0x0004(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrMassEntityStabilityData;
+
+// ScriptStruct Chimera.CrJingleEntry
+// 0x0030 (0x0030 - 0x0000)
+struct FCrJingleEntry final
+{
+public:
+	struct FGameplayTagContainer                  RequiredPlayerTags;                                // 0x0000(0x0020)(Edit, NativeAccessSpecifierPublic)
+	class USoundBase*                             Sound;                                             // 0x0020(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	float                                         MainChannelsFadeOutTime;                           // 0x0028(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MainChannelsFadeInTime;                            // 0x002C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrJingleEntry;
+
+// ScriptStruct Chimera.CrLogisticsIntersectionFilterParams
+// 0x0010 (0x0010 - 0x0000)
+struct FCrLogisticsIntersectionFilterParams final : public FMassConstSharedFragment
+{
+public:
+	TArray<struct FVector>                        SocketLocations;                                   // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrLogisticsIntersectionFilterParams;
+
+// ScriptStruct Chimera.CrHintSaveData
 // 0x0018 (0x0018 - 0x0000)
-struct FSkyboxMaterialColor final
+struct alignas(0x04) FCrHintSaveData final
 {
 public:
-	class FName                                   Name;                                              // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           Value;                                             // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FSkyboxMaterialColor;
+DUMPER7_ASSERTS_FCrHintSaveData;
 
-// ScriptStruct Chimera.SkyboxMaterialVector
-// 0x0030 (0x0030 - 0x0000)
-struct FSkyboxMaterialVector final
+// ScriptStruct Chimera.CrBaseCoreData
+// 0x003C (0x0048 - 0x000C)
+struct FCrBaseCoreData final : public FFastArraySerializerItem
 {
 public:
-	class FName                                   Name;                                              // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector4                               Value;                                             // 0x0010(0x0020)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCrMassEntityReplicationHelper         BaseCore;                                          // 0x0010(0x0018)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DeconstructionStartTime;                           // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          InfectionSphere;                                   // 0x002C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         UpgradeLevel;                                      // 0x002D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int8                                          SelectedLevelToUpgrade;                            // 0x002E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2F[0x1];                                       // 0x002F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FCrCountItem>                   ItemsAddedToUpgrade;                               // 0x0030(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         CurrentCoolingCapacity;                            // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CurrentCoolingCapacityUsed;                        // 0x0044(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FSkyboxMaterialVector;
-
-// ScriptStruct Chimera.SkyboxMaterialOverrides
-// 0x0030 (0x0030 - 0x0000)
-struct FSkyboxMaterialOverrides final
-{
-public:
-	TArray<struct FSkyboxMaterialScalar>          ScalarOverrides;                                   // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FSkyboxMaterialColor>           ColorOverrides;                                    // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FSkyboxMaterialVector>          VectorOverrides;                                   // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSkyboxMaterialOverrides;
-
-// ScriptStruct Chimera.CrSkyboxMaterialOverrideStruct
-// 0x0120 (0x0120 - 0x0000)
-struct FCrSkyboxMaterialOverrideStruct final
-{
-public:
-	struct FRuntimeFloatCurve                     KeysWeight;                                        // 0x0000(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FRuntimeFloatCurve                     TimeRemap;                                         // 0x0088(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TArray<struct FSkyboxMaterialOverrides>       Keys;                                              // 0x0110(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrSkyboxMaterialOverrideStruct;
-
-// ScriptStruct Chimera.CrEnviroWaveCurveSkyboxMaterialOverride
-// 0x0050 (0x0050 - 0x0000)
-struct FCrEnviroWaveCurveSkyboxMaterialOverride final
-{
-public:
-	TMap<EEnviroWaveStage, struct FCrSkyboxMaterialOverrideStruct> Curves;                           // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrEnviroWaveCurveSkyboxMaterialOverride;
+DUMPER7_ASSERTS_FCrBaseCoreData;
 
 // ScriptStruct Chimera.CrEncyclopediaEntryStatus
 // 0x0014 (0x0020 - 0x000C)
@@ -2374,32 +2639,35 @@ public:
 };
 DUMPER7_ASSERTS_FCrEncyclopediaEntryStatus;
 
-// ScriptStruct Chimera.CrReplicatedDroneData
-// 0x0028 (0x0028 - 0x0000)
-struct FCrReplicatedDroneData final
+// ScriptStruct Chimera.MassNeutralAITag
+// 0x0000 (0x0001 - 0x0001)
+struct FMassNeutralAITag final : public FMassTag
 {
-public:
-	struct FCrMassEntityReplicationHelper         Drone;                                             // 0x0000(0x0018)(Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Location;                                          // 0x0018(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LeavingLocation;                                   // 0x001C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bQueued;                                           // 0x0020(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStopped;                                          // 0x0021(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_22[0x6];                                       // 0x0022(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrReplicatedDroneData;
+DUMPER7_ASSERTS_FMassNeutralAITag;
 
-// ScriptStruct Chimera.CrReplicatedDroneBuildingData
-// 0x0020 (0x0020 - 0x0000)
-struct FCrReplicatedDroneBuildingData final
+// ScriptStruct Chimera.CrAlienObeliskTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrAlienObeliskTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrAlienObeliskTag;
+
+// ScriptStruct Chimera.MassOreRegenInitData
+// 0x0004 (0x0004 - 0x0000)
+struct FMassOreRegenInitData final : public FMassFragment
 {
 public:
-	TArray<struct FCrReplicatedDroneData>         Drones;                                            // 0x0000(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
-	float                                         LineLength;                                        // 0x0010(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AdditionalLengthStart;                             // 0x0014(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AdditionalLengthEnd;                               // 0x0018(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         InitOreRegenerationDuration;                       // 0x0000(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrReplicatedDroneBuildingData;
+DUMPER7_ASSERTS_FMassOreRegenInitData;
+
+// ScriptStruct Chimera.CrAiAttackDisabledTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrAiAttackDisabledTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrAiAttackDisabledTag;
 
 // ScriptStruct Chimera.InfectionEntityHandle
 // 0x0008 (0x0008 - 0x0000)
@@ -2410,31 +2678,15 @@ public:
 };
 DUMPER7_ASSERTS_FInfectionEntityHandle;
 
-// ScriptStruct Chimera.CrMassEnviroWaveStageFadeoutTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassEnviroWaveStageFadeoutTag final : public FCrMassSavableTag
-{
-};
-DUMPER7_ASSERTS_FCrMassEnviroWaveStageFadeoutTag;
-
-// ScriptStruct Chimera.CrExporterItemRow
-// 0x0048 (0x0050 - 0x0008)
-struct FCrExporterItemRow final : public FTableRowBase
+// ScriptStruct Chimera.CrAnimBodyStyleSelectionEntry
+// 0x0028 (0x0028 - 0x0000)
+struct FCrAnimBodyStyleSelectionEntry final
 {
 public:
-	class FText                                   ItemText;                                          // 0x0008(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	class FText                                   DescriptionText;                                   // 0x0018(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	TSubclassOf<class UCrItemDataBase>            Item;                                              // 0x0028(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BuildTime;                                         // 0x0030(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Level;                                             // 0x0034(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SelenianValue;                                     // 0x0038(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CleverValue;                                       // 0x003C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         FutureValue;                                       // 0x0040(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         GriffithsValue;                                    // 0x0044(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MoonValue;                                         // 0x0048(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class USkeletalMesh*                          Mesh;                                              // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FGameplayTagContainer                  RequiredTags;                                      // 0x0008(0x0020)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrExporterItemRow;
+DUMPER7_ASSERTS_FCrAnimBodyStyleSelectionEntry;
 
 // ScriptStruct Chimera.CrContextEffectAnimNotifyVFXSettings
 // 0x0018 (0x0018 - 0x0000)
@@ -2444,888 +2696,6 @@ public:
 	struct FVector                                Scale;                                             // 0x0000(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCrContextEffectAnimNotifyVFXSettings;
-
-// ScriptStruct Chimera.CrContextEffectAnimNotifyTraceSettings
-// 0x0028 (0x0028 - 0x0000)
-struct FCrContextEffectAnimNotifyTraceSettings final
-{
-public:
-	ECollisionChannel                             TraceChannel;                                      // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                EndTraceLocationOffset;                            // 0x0008(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIgnoreActor;                                      // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrContextEffectAnimNotifyTraceSettings;
-
-// ScriptStruct Chimera.CrGatherableEnviroWaveProgressInteractivityThresholds
-// 0x0030 (0x0030 - 0x0000)
-struct FCrGatherableEnviroWaveProgressInteractivityThresholds final
-{
-public:
-	EEnviroWaveStage                              WaveStage;                                         // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         EnableInteractionEnviroWaveStageProgressThresholdStart; // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         EnableInteractionEnviroWaveStageProgressThresholdEnd; // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<EEnviroWaveFadeoutSubstage>            FadeoutSubstages;                                  // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<EEnviroWaveGrowbackSubstage>           GrowbackSubstages;                                 // 0x0020(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrGatherableEnviroWaveProgressInteractivityThresholds;
-
-// ScriptStruct Chimera.CrReceiverData
-// 0x0034 (0x0040 - 0x000C)
-struct FCrReceiverData final : public FFastArraySerializerItem
-{
-public:
-	bool                                          bElectricity;                                      // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bGoodTemperature;                                  // 0x000D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStandby;                                          // 0x000E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_F[0x1];                                        // 0x000F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrMassEntityReplicationHelper         Receiver;                                          // 0x0010(0x0018)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector_NetQuantize                    Location;                                          // 0x0028(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrReceiverData;
-
-// ScriptStruct Chimera.CrReceiversContainer
-// 0x0018 (0x0120 - 0x0108)
-struct FCrReceiversContainer final : public FFastArraySerializer
-{
-public:
-	TArray<struct FCrReceiverData>                ReceiversData;                                     // 0x0108(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	class ACrPackageTransportReplicator*          Owner;                                             // 0x0118(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrReceiversContainer;
-
-// ScriptStruct Chimera.CrContextEffectAnimNotifyPreviewSettings
-// 0x0048 (0x0048 - 0x0000)
-struct FCrContextEffectAnimNotifyPreviewSettings final
-{
-public:
-	bool                                          bPreviewPhysicalSurfaceAsContext;                  // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EPhysicalSurface                              PreviewPhysicalSurface;                            // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSoftObjectPath                        PreviewContextEffectsLibrary;                      // 0x0008(0x0020)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTagContainer                  PreviewContexts;                                   // 0x0028(0x0020)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrContextEffectAnimNotifyPreviewSettings;
-
-// ScriptStruct Chimera.CrConnectorSocketCheckData
-// 0x0030 (0x0030 - 0x0000)
-struct FCrConnectorSocketCheckData final
-{
-public:
-	class UStaticMeshSocket*                      Socket;                                            // 0x0000(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	struct FVector                                SocketLocation;                                    // 0x0008(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_20[0x10];                                      // 0x0020(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrConnectorSocketCheckData;
-
-// ScriptStruct Chimera.EventGEData
-// 0x0010 (0x0010 - 0x0000)
-struct FEventGEData final
-{
-public:
-	float                                         OffsetPerEventValue;                               // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UAuAttributeSet>            AttributeSetClass;                                 // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FEventGEData;
-
-// ScriptStruct Chimera.CrProcessedSpecificConeTracePattern
-// 0x0018 (0x0018 - 0x0000)
-struct alignas(0x08) FCrProcessedSpecificConeTracePattern final
-{
-public:
-	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrProcessedSpecificConeTracePattern;
-
-// ScriptStruct Chimera.EventGEDataArray
-// 0x0010 (0x0010 - 0x0000)
-struct FEventGEDataArray final
-{
-public:
-	TArray<struct FEventGEData>                   EventsDataArray;                                   // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FEventGEDataArray;
-
-// ScriptStruct Chimera.SubEventsData
-// 0x0050 (0x0050 - 0x0000)
-struct FSubEventsData final
-{
-public:
-	TMap<struct FGameplayTag, struct FEventGEDataArray> SubEvents;                                   // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSubEventsData;
-
-// ScriptStruct Chimera.CrBuildingSoundEventData
-// 0x0010 (0x0010 - 0x0000)
-struct FCrBuildingSoundEventData final
-{
-public:
-	class FName                                   SocketName;                                        // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USoundBase*                             Sound;                                             // 0x0008(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrBuildingSoundEventData;
-
-// ScriptStruct Chimera.CrAbilitySet_GameplayAbility
-// 0x0018 (0x0018 - 0x0000)
-struct FCrAbilitySet_GameplayAbility final
-{
-public:
-	TSubclassOf<class UCrGameplayAbility>         Ability;                                           // 0x0000(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         AbilityLevel;                                      // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           InputTag;                                          // 0x000C(0x0008)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrAbilitySet_GameplayAbility;
-
-// ScriptStruct Chimera.CrCountItems
-// 0x0010 (0x0010 - 0x0000)
-struct FCrCountItems final
-{
-public:
-	TArray<struct FCrCountItem>                   Items;                                             // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrCountItems;
-
-// ScriptStruct Chimera.CrCraftingOwnerSaveData
-// 0x0060 (0x0060 - 0x0000)
-struct FCrCraftingOwnerSaveData final
-{
-public:
-	TMap<class UCrItemRecipeData*, struct FCrCountItems> LockedRecipes;                              // 0x0000(0x0050)(SaveGame, NativeAccessSpecifierPublic)
-	TArray<TSubclassOf<class UCrItemDataBase>>    PickedUpItems;                                     // 0x0050(0x0010)(ZeroConstructor, SaveGame, UObjectWrapper, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrCraftingOwnerSaveData;
-
-// ScriptStruct Chimera.CrAbilitySet_GameplayEffect
-// 0x0010 (0x0010 - 0x0000)
-struct FCrAbilitySet_GameplayEffect final
-{
-public:
-	TSubclassOf<class UGameplayEffect>            GameplayEffect;                                    // 0x0000(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         EffectLevel;                                       // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrAbilitySet_GameplayEffect;
-
-// ScriptStruct Chimera.CrWaveTimerActorSaveData
-// 0x000C (0x000C - 0x0000)
-struct FCrWaveTimerActorSaveData final
-{
-public:
-	float                                         NextTime;                                          // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         NextPhase;                                         // 0x0004(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPause;                                            // 0x0008(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrWaveTimerActorSaveData;
-
-// ScriptStruct Chimera.CrAbilitySet_AttributeSet
-// 0x0008 (0x0008 - 0x0000)
-struct FCrAbilitySet_AttributeSet final
-{
-public:
-	TSubclassOf<class UAttributeSet>              AttributeSet;                                      // 0x0000(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrAbilitySet_AttributeSet;
-
-// ScriptStruct Chimera.CrAbilitySimpleFailureMessage
-// 0x0038 (0x0038 - 0x0000)
-struct FCrAbilitySimpleFailureMessage final
-{
-public:
-	class APlayerController*                      PlayerController;                                  // 0x0000(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	struct FGameplayTagContainer                  FailureTags;                                       // 0x0008(0x0020)(BlueprintVisible, NativeAccessSpecifierPublic)
-	class FText                                   UserFacingReason;                                  // 0x0028(0x0010)(BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrAbilitySimpleFailureMessage;
-
-// ScriptStruct Chimera.CrBaseCoreTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrBaseCoreTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrBaseCoreTag;
-
-// ScriptStruct Chimera.CrGameplayEffectContext
-// 0x0000 (0x00D8 - 0x00D8)
-struct FCrGameplayEffectContext final : public FAuGameplayEffectContext
-{
-};
-DUMPER7_ASSERTS_FCrGameplayEffectContext;
-
-// ScriptStruct Chimera.CrMassHubSpawnPointTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassHubSpawnPointTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrMassHubSpawnPointTag;
-
-// ScriptStruct Chimera.CrGameplayAbilityActorInfo
-// 0x0028 (0x0080 - 0x0058)
-struct FCrGameplayAbilityActorInfo final : public FAuGameplayAbilityActorInfo
-{
-public:
-	uint8                                         Pad_58[0x28];                                      // 0x0058(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrGameplayAbilityActorInfo;
-
-// ScriptStruct Chimera.CrAbilityTagRelationship
-// 0x0088 (0x0088 - 0x0000)
-struct FCrAbilityTagRelationship final
-{
-public:
-	struct FGameplayTag                           AbilityTag;                                        // 0x0000(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTagContainer                  AbilityTagsToBlock;                                // 0x0008(0x0020)(Edit, NativeAccessSpecifierPublic)
-	struct FGameplayTagContainer                  AbilityTagsToCancel;                               // 0x0028(0x0020)(Edit, NativeAccessSpecifierPublic)
-	struct FGameplayTagContainer                  ActivationRequiredTags;                            // 0x0048(0x0020)(Edit, NativeAccessSpecifierPublic)
-	struct FGameplayTagContainer                  ActivationBlockedTags;                             // 0x0068(0x0020)(Edit, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrAbilityTagRelationship;
-
-// ScriptStruct Chimera.CrRelatedActors
-// 0x0050 (0x0050 - 0x0000)
-struct FCrRelatedActors final
-{
-public:
-	TArray<class AActor*>                         ActorsToHide;                                      // 0x0000(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-	TArray<class AActor*>                         ActorsToShow;                                      // 0x0010(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-	TArray<class AActor*>                         MachinesToActivate;                                // 0x0020(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-	TArray<class AActor*>                         MachinesToUnlock;                                  // 0x0030(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-	TArray<class AActor*>                         MachinesToLock;                                    // 0x0040(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrRelatedActors;
-
-// ScriptStruct Chimera.CrAudioLoopGameplayEffectDefinition
-// 0x0090 (0x0090 - 0x0000)
-struct FCrAudioLoopGameplayEffectDefinition final
-{
-public:
-	TSoftObjectPtr<class USoundBase>              SoundSoftPtr;                                      // 0x0000(0x0028)(Edit, BlueprintVisible, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USoundBase*                             SoundLoaded;                                       // 0x0028(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	bool                                          bLocalFPPSound;                                    // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTagContainer                  MustHaveTags;                                      // 0x0038(0x0020)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FGameplayTagContainer                  MustNotHaveTags;                                   // 0x0058(0x0020)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	float                                         FadeInDuration;                                    // 0x0078(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FadeOutDuration;                                   // 0x007C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UAudioComponent*                        OwningAudioComponent;                              // 0x0080(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	bool                                          bFadingIn;                                         // 0x0088(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bFadingOut;                                        // 0x0089(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8A[0x6];                                       // 0x008A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrAudioLoopGameplayEffectDefinition;
-
-// ScriptStruct Chimera.CrCustomBuildingAdjointCustom
-// 0x0030 (0x0030 - 0x0000)
-struct FCrCustomBuildingAdjointCustom final
-{
-public:
-	class UStaticMeshSocket*                      Socket;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	int32                                         ComponentIndex;                                    // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 HitActor;                                          // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UStaticMeshComponent*                   HitComponent;                                      // 0x0018(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	int32                                         HitComponentIndex;                                 // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UStaticMeshSocket*                      HitSocket;                                         // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrCustomBuildingAdjointCustom;
-
-// ScriptStruct Chimera.CrCustomBuildingNeighbourhood
-// 0x0018 (0x0018 - 0x0000)
-struct FCrCustomBuildingNeighbourhood final
-{
-public:
-	TArray<struct FCrCustomBuildingAdjointCustom> Customs;                                           // 0x0000(0x0010)(Edit, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	int32                                         GroundedIndex;                                     // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrCustomBuildingNeighbourhood;
-
-// ScriptStruct Chimera.CrAudioForEventData
-// 0x0030 (0x0030 - 0x0000)
-struct FCrAudioForEventData final
-{
-public:
-	TSoftObjectPtr<class USoundBase>              SoundSoftPtr;                                      // 0x0000(0x0028)(Edit, BlueprintVisible, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           GameplayEvent;                                     // 0x0028(0x0008)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrAudioForEventData;
-
-// ScriptStruct Chimera.AppliedModData
-// 0x0030 (0x0030 - 0x0000)
-struct FAppliedModData final
-{
-public:
-	struct FGameplayTag                           Tag;                                               // 0x0000(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UCrWeaponModDataAsset>   ModSoftObjPtr;                                     // 0x0008(0x0028)(UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAppliedModData;
-
-// ScriptStruct Chimera.CrAiAttackDisabledTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrAiAttackDisabledTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrAiAttackDisabledTag;
-
-// ScriptStruct Chimera.CrAggroTargetData
-// 0x0050 (0x0050 - 0x0000)
-struct FCrAggroTargetData final
-{
-public:
-	float                                         Aggro;                                             // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBox                                   Bounds;                                            // 0x0008(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMassEntityHandle                      Handle;                                            // 0x0040(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrAggroTargetType                            Type;                                              // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrAggroTargetData;
-
-// ScriptStruct Chimera.CrReplicatedTemperatureData
-// 0x0004 (0x0004 - 0x0000)
-struct FCrReplicatedTemperatureData final
-{
-public:
-	float                                         Temperature;                                       // 0x0000(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrReplicatedTemperatureData;
-
-// ScriptStruct Chimera.CrEncyclopediaEntryRead
-// 0x0014 (0x0014 - 0x0000)
-struct FCrEncyclopediaEntryRead final
-{
-public:
-	struct FGuid                                  EntryID;                                           // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         ChaptersRead;                                      // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrEncyclopediaEntryRead;
-
-// ScriptStruct Chimera.CrCachedAggroData
-// 0x00C0 (0x00C0 - 0x0000)
-struct FCrCachedAggroData final
-{
-public:
-	bool                                          bIsValid;                                          // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsInfected;                                       // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ExpirationTimeS;                                   // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AggroMax;                                          // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CurrentAggroBase;                                  // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MinAggroDistance;                                  // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxAggroDistance;                                  // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AggroRangeMultiplier;                              // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CachedCustomValueModifiersVal;                     // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             Transform;                                         // 0x0020(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBox                                   Bounds;                                            // 0x0080(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrAggroTargetType                            Type;                                              // 0x00B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B9[0x7];                                       // 0x00B9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrCachedAggroData;
-
-// ScriptStruct Chimera.CrMassHasGuarantedAggroTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassHasGuarantedAggroTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrMassHasGuarantedAggroTag;
-
-// ScriptStruct Chimera.CrDebugEnemyData
-// 0x0090 (0x0090 - 0x0000)
-struct FCrDebugEnemyData final
-{
-public:
-	class AActor*                                 EnemyActorRef;                                     // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             Transform;                                         // 0x0010(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           EnemyTag;                                          // 0x0070(0x0008)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         HP;                                                // 0x0078(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_7C[0x4];                                       // 0x007C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 AggroTarget;                                       // 0x0080(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_88[0x8];                                       // 0x0088(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrDebugEnemyData;
-
-// ScriptStruct Chimera.DeathSequencePooledActorConfiguration
-// 0x0010 (0x0010 - 0x0000)
-struct FDeathSequencePooledActorConfiguration final
-{
-public:
-	TSubclassOf<class ACrAiDeathSequenceActor>    DeathSequenceActorClass;                           // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         PoolSize;                                          // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FDeathSequencePooledActorConfiguration;
-
-// ScriptStruct Chimera.CrWeaponInstanceSaveData
-// 0x0060 (0x0060 - 0x0000)
-struct FCrWeaponInstanceSaveData
-{
-public:
-	int32                                         CurrentAmmo;                                       // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<struct FGameplayTag, TSoftObjectPtr<class UCrWeaponModDataAsset>> AppliedMods;              // 0x0008(0x0050)(SaveGame, UObjectWrapper, NativeAccessSpecifierPublic)
-	bool                                          bFirstShotExecuted;                                // 0x0058(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrWeaponInstanceSaveData;
-
-// ScriptStruct Chimera.CrAiDeathSequenceParameters
-// 0x0120 (0x0120 - 0x0000)
-struct FCrAiDeathSequenceParameters final
-{
-public:
-	struct FTransform                             ActorWorldTransform;                               // 0x0000(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             MeshWorldTransform;                                // 0x0060(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                RagdollForceImpulse;                               // 0x00C0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ForceImpulseLocation;                              // 0x00D8(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RagdollTimeS;                                      // 0x00F0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TimeToDissolveS;                                   // 0x00F4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DissolveTimeS;                                     // 0x00F8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_FC[0x4];                                       // 0x00FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                VisualVariationSeed;                               // 0x0100(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           RagdollTypeTag;                                    // 0x0118(0x0008)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrAiDeathSequenceParameters;
-
-// ScriptStruct Chimera.CrMapMenuFogOfWarSegmentData
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FCrMapMenuFogOfWarSegmentData final
-{
-public:
-	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrMapMenuFogOfWarSegmentData;
-
-// ScriptStruct Chimera.AimAssistFragment
-// 0x0020 (0x0020 - 0x0000)
-struct alignas(0x08) FAimAssistFragment final : public FMassFragment
-{
-public:
-	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAimAssistFragment;
-
-// ScriptStruct Chimera.CrAimContextTraceData
-// 0x0028 (0x0028 - 0x0000)
-struct FCrAimContextTraceData final
-{
-public:
-	struct FGameplayTag                           TraceTag;                                          // 0x0000(0x0008)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TraceRange;                                        // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        TickRate;                                          // 0x0010(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bTriggerWithNonBlockingHit;                        // 0x0018(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAuCustomTargetHandle                  CustomTraceHandle;                                 // 0x0019(0x0001)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShouldDrawTraceDebug;                             // 0x001A(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B[0x1];                                       // 0x001B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAuTraceDebugParams                    TraceDebugParams;                                  // 0x001C(0x0008)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrAimContextTraceData;
-
-// ScriptStruct Chimera.CrAnimMontageLayerSelectionEntry
-// 0x0028 (0x0028 - 0x0000)
-struct FCrAnimMontageLayerSelectionEntry final
-{
-public:
-	class UAnimMontage*                           AnimMontage;                                       // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	struct FGameplayTagContainer                  RequiredTags;                                      // 0x0008(0x0020)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrAnimMontageLayerSelectionEntry;
-
-// ScriptStruct Chimera.CrAnimMontageLayerSelectionSet
-// 0x0018 (0x0018 - 0x0000)
-struct FCrAnimMontageLayerSelectionSet final
-{
-public:
-	TArray<struct FCrAnimMontageLayerSelectionEntry> LayerRules;                                     // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	class UAnimMontage*                           DefaultAnimMontage;                                // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrAnimMontageLayerSelectionSet;
-
-// ScriptStruct Chimera.CrAimContextCriteriaData
-// 0x0090 (0x0090 - 0x0000)
-struct FCrAimContextCriteriaData final
-{
-public:
-	struct FGameplayTagContainer                  RequireAllTags;                                    // 0x0000(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	struct FGameplayTagContainer                  RequireAnyTags;                                    // 0x0020(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	struct FGameplayTagContainer                  BlockAllTags;                                      // 0x0040(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	struct FGameplayTagContainer                  BlockAnyTags;                                      // 0x0060(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	TArray<TSubclassOf<class UCrAimAnalysisCustomCriterion>> CustomTraceTriggerCriteria;             // 0x0080(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, UObjectWrapper, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrAimContextCriteriaData;
-
-// ScriptStruct Chimera.CrEncyclopediaDataPadData
-// 0x0010 (0x0100 - 0x00F0)
-struct FCrEncyclopediaDataPadData final : public FCrEncyclopediaBaseData
-{
-public:
-	struct FDataTableRowHandle                    DataPadEntryDT;                                    // 0x00F0(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrEncyclopediaDataPadData;
-
-// ScriptStruct Chimera.CrAimContextResponseData
-// 0x0078 (0x0078 - 0x0000)
-struct FCrAimContextResponseData final
-{
-public:
-	bool                                          bRetriggerResponseOnRepeatedHitResults;            // 0x0000(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<TSubclassOf<class UObject>>            BlockingHitCheckClasses;                           // 0x0008(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, UObjectWrapper, NativeAccessSpecifierPublic)
-	EPhysicalSurface                              PhysicalSurfaceCheck;                              // 0x0018(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UPhysicalMaterial*>              AllowedPhysicalMaterialsCheck;                     // 0x0020(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-	TArray<class UPhysicalMaterial*>              RejectionPhysicalMaterialsCheck;                   // 0x0030(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-	struct FGameplayTagContainer                  ResponseTagsToApply;                               // 0x0040(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	bool                                          bForceOnlyCustomResponses;                         // 0x0060(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<TSubclassOf<class UCrAimAnalysisCustomResponse>> CustomResponses;                         // 0x0068(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, UObjectWrapper, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrAimContextResponseData;
-
-// ScriptStruct Chimera.CrAntennaTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrAntennaTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrAntennaTag;
-
-// ScriptStruct Chimera.CrAimContextCheckConfig
-// 0x0140 (0x0140 - 0x0000)
-struct FCrAimContextCheckConfig final
-{
-public:
-	class FString                                 ConfigName;                                        // 0x0000(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCrAimContextTraceData                 TraceData;                                         // 0x0010(0x0028)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
-	struct FCrAimContextCriteriaData              CriteriaData;                                      // 0x0038(0x0090)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	struct FCrAimContextResponseData              ResponseData;                                      // 0x00C8(0x0078)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrAimContextCheckConfig;
-
-// ScriptStruct Chimera.CrAimContextTraceResult
-// 0x0010 (0x0010 - 0x0000)
-struct FCrAimContextTraceResult final
-{
-public:
-	class AActor*                                 HitActor;                                          // 0x0000(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UActorComponent*                        HitComponent;                                      // 0x0008(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrAimContextTraceResult;
-
-// ScriptStruct Chimera.MegamachineDeviceSaveData
-// 0x0060 (0x0060 - 0x0000)
-struct FMegamachineDeviceSaveData final
-{
-public:
-	bool                                          bWasActivated;                                     // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FName, float>                      ContaminationData;                                 // 0x0008(0x0050)(BlueprintVisible, SaveGame, NativeAccessSpecifierPublic)
-	bool                                          bIsEnemySpawnerDepleted;                           // 0x0058(0x0001)(BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMegamachineDeviceSaveData;
-
-// ScriptStruct Chimera.CrAiProjectileParameters
-// 0x0060 (0x0060 - 0x0000)
-struct FCrAiProjectileParameters final
-{
-public:
-	struct FVector                                StartLocation;                                     // 0x0000(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                TargetLocation;                                    // 0x0018(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                LaunchVelocity;                                    // 0x0030(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         UniformScale;                                      // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TWeakObjectPtr<class AActor>                  Instigator;                                        // 0x004C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TWeakObjectPtr<class AActor>                  AdditionalIgnoredActor;                            // 0x0054(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrAiProjectileParameters;
-
-// ScriptStruct Chimera.RepGraphActorClassSettings
-// 0x0030 (0x0030 - 0x0000)
-struct FRepGraphActorClassSettings final
-{
-public:
-	struct FSoftClassPath                         ActorClass;                                        // 0x0000(0x0020)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAddClassRepInfoToMap;                             // 0x0020(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	EClassRepNodeMapping                          ClassNodeMapping;                                  // 0x0024(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAddToRPC_Multicast_OpenChannelForClassMap;        // 0x0028(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRPC_Multicast_OpenChannelForClass;                // 0x0029(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A[0x6];                                       // 0x002A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRepGraphActorClassSettings;
-
-// ScriptStruct Chimera.CrAiProjectilePooledActorGroup
-// 0x0020 (0x0020 - 0x0000)
-struct FCrAiProjectilePooledActorGroup final
-{
-public:
-	TSubclassOf<class ACrAiProjectileActor>       ProjectileActorClass;                              // 0x0000(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class ACrAiProjectileActor*>           PooledActors;                                      // 0x0008(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-	float                                         PoolSizeLimit;                                     // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrAiProjectilePooledActorGroup;
-
-// ScriptStruct Chimera.CrAISpawnRequestData
-// 0x00E0 (0x00E0 - 0x0000)
-struct FCrAISpawnRequestData final
-{
-public:
-	struct FGameplayTagContainer                  AiTypeTags;                                        // 0x0000(0x0020)(NativeAccessSpecifierPublic)
-	struct FVector                                Location;                                          // 0x0020(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrSpawnPositionIndexFlag                     SpawnPosition;                                     // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGuid                                  SpawnerGuid;                                       // 0x003C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGuid                                  PresetEntryId;                                     // 0x004C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5C[0x3E];                                      // 0x005C(0x003E)(Fixing Size After Last Property [ Dumper-7 ])
-	uint8                                         GenericFlags;                                      // 0x009A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9B[0x45];                                      // 0x009B(0x0045)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrAISpawnRequestData;
-
-// ScriptStruct Chimera.CrUnlockableRecipeData
-// 0x001C (0x0028 - 0x000C)
-struct FCrUnlockableRecipeData final : public FFastArraySerializerItem
-{
-public:
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCrItemRecipeData*                      Recipe;                                            // 0x0010(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	TArray<struct FCrCountItem>                   OwnedItems;                                        // 0x0018(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrUnlockableRecipeData;
-
-// ScriptStruct Chimera.CrAlienObeliskTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrAlienObeliskTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrAlienObeliskTag;
-
-// ScriptStruct Chimera.CrAntennaSpawningEnemiesTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrAntennaSpawningEnemiesTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrAntennaSpawningEnemiesTag;
-
-// ScriptStruct Chimera.CrAlienObeliskFragment
-// 0x0038 (0x0038 - 0x0000)
-struct FCrAlienObeliskFragment final : public FCrMassSavableFragment
-{
-public:
-	double                                        LastSpawnTime;                                     // 0x0000(0x0008)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ChargeValue;                                       // 0x0008(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAttackSpawnedThisInterWave;                       // 0x000C(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                AttackLocation;                                    // 0x0010(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         NumberOfClosestPlayers;                            // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrAlienObeliskState                          State;                                             // 0x002C(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BaseCoreSearchRadius;                              // 0x0030(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrAlienObeliskFragment;
-
-// ScriptStruct Chimera.CrAlienObeliskParameters
-// 0x0020 (0x0020 - 0x0000)
-struct FCrAlienObeliskParameters final : public FMassConstSharedFragment
-{
-public:
-	int32                                         Level;                                             // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ChargePerS;                                        // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ActiveAttackChargePerS;                            // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DischargePerS;                                     // 0x000C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ChargeAdditionalMulForClosestPlayer;               // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AdditionalChargePerSForBaseCoreIsRequiringAttack;  // 0x0014(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ChargeDropAfterAnyAttack;                          // 0x0018(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ChargeValueToActivateAttack;                       // 0x001C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrAlienObeliskParameters;
-
-// ScriptStruct Chimera.CrRadiationBordersSaveData
-// 0x0004 (0x0004 - 0x0000)
-struct FCrRadiationBordersSaveData final
-{
-public:
-	int32                                         Level;                                             // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrRadiationBordersSaveData;
-
-// ScriptStruct Chimera.CrMassAlienObeliskNiagaraParameterDriver
-// 0x0000 (0x0008 - 0x0008)
-struct FCrMassAlienObeliskNiagaraParameterDriver final : public FCrMassBuildingNiagaraParameterDriverBase
-{
-};
-DUMPER7_ASSERTS_FCrMassAlienObeliskNiagaraParameterDriver;
-
-// ScriptStruct Chimera.CrCraftingEventParameters
-// 0x0004 (0x0004 - 0x0000)
-struct FCrCraftingEventParameters final : public FMassConstSharedFragment
-{
-public:
-	struct FStaticMeshInstanceVisualizationDescHandle EventStaticMeshDescHandle;                     // 0x0000(0x0002)(NoDestructor, NativeAccessSpecifierPublic)
-	EMassRepresentationType                       StaticMeshMinLOD;                                  // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrCraftingEventParameters;
-
-// ScriptStruct Chimera.CrStoreRequestStorageItemState
-// 0x0010 (0x0010 - 0x0000)
-struct FCrStoreRequestStorageItemState final
-{
-public:
-	class UAuItemDataBase*                        ItemType;                                          // 0x0000(0x0008)(ZeroConstructor, SaveGame, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	int32                                         Count;                                             // 0x0008(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrStoreRequestStorageItemState;
-
-// ScriptStruct Chimera.CrStoreRequestStorageState
-// 0x0050 (0x0050 - 0x0000)
-struct FCrStoreRequestStorageState final
-{
-public:
-	TSet<struct FCrStoreRequestStorageItemState>  ItemStates;                                        // 0x0000(0x0050)(SaveGame, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrStoreRequestStorageState;
-
-// ScriptStruct Chimera.CrMassAlienObeliskPulseNiagaraParameterDriver
-// 0x0000 (0x0008 - 0x0008)
-struct FCrMassAlienObeliskPulseNiagaraParameterDriver final : public FCrMassBuildingNiagaraParameterDriverBase
-{
-};
-DUMPER7_ASSERTS_FCrMassAlienObeliskPulseNiagaraParameterDriver;
-
-// ScriptStruct Chimera.CrTemperatureInfectionManualRemovalData
-// 0x0058 (0x0058 - 0x0000)
-struct FCrTemperatureInfectionManualRemovalData final
-{
-public:
-	EBuildingManualInteraction                    InteractionType;                                   // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrMassEntityReplicationHelper         MassEntityReplicationHelper;                       // 0x0008(0x0018)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FUniqueNetIdRepl                       PlayerInteracting;                                 // 0x0020(0x0030)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        StartInteractionWorldTime;                         // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrTemperatureInfectionManualRemovalData;
-
-// ScriptStruct Chimera.CrContextualInputsBindHandles
-// 0x0020 (0x0020 - 0x0000)
-struct alignas(0x08) FCrContextualInputsBindHandles final
-{
-public:
-	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrContextualInputsBindHandles;
-
-// ScriptStruct Chimera.CrAnalyzerItemRow
-// 0x0020 (0x0028 - 0x0008)
-struct FCrAnalyzerItemRow final : public FTableRowBase
-{
-public:
-	class FText                                   ItemText;                                          // 0x0008(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	TSubclassOf<class UCrItemDataBase>            Item;                                              // 0x0018(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         DataPoints;                                        // 0x0020(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrAnalyzerItemRow;
-
-// ScriptStruct Chimera.GatherablesOctreeForEnviroWaveStage
-// 0x00C0 (0x00C0 - 0x0000)
-struct alignas(0x10) FGatherablesOctreeForEnviroWaveStage final
-{
-public:
-	uint8                                         Pad_0[0xC0];                                       // 0x0000(0x00C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FGatherablesOctreeForEnviroWaveStage;
-
-// ScriptStruct Chimera.CrMiningBoostMutlipliersData
-// 0x0008 (0x0008 - 0x0000)
-struct FCrMiningBoostMutlipliersData final
-{
-public:
-	int32                                         BoostLevel;                                        // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BoostMultiplierValue;                              // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrMiningBoostMutlipliersData;
-
-// ScriptStruct Chimera.GasOverlapAction
-// 0x0020 (0x0020 - 0x0000)
-struct FGasOverlapAction final
-{
-public:
-	TArray<TSubclassOf<class AActor>>             PossibleOverlappedClasses;                         // 0x0000(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-	TSubclassOf<class UCrGameplayEffect>          GameplayEffectToApply;                             // 0x0010(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGasOverlapResolveType                        BeginOverlapResolveType;                           // 0x0018(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGasOverlapResolveType                        EndOverlapResolveType;                             // 0x0019(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A[0x6];                                       // 0x001A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FGasOverlapAction;
-
-// ScriptStruct Chimera.CrAntennaData
-// 0x0054 (0x0060 - 0x000C)
-struct FCrAntennaData final : public FFastArraySerializerItem
-{
-public:
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrMassEntityReplicationHelper         Antenna;                                           // 0x0010(0x0018)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrAntennaState                               State;                                             // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FCrAntenaSpawners>              Spawners;                                          // 0x0030(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	float                                         ChargingProgress;                                  // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ChargingDuration;                                  // 0x0044(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FailDistanceInMeters;                              // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         UncoverSizeMultiplier;                             // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ExpRewardMultiliplier;                             // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2f                              AntennaLocation;                                   // 0x0054(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrAntennaData;
-
-// ScriptStruct Chimera.CrCraftingParameters
-// 0x0018 (0x0018 - 0x0000)
-struct FCrCraftingParameters final : public FMassConstSharedFragment
-{
-public:
-	class UCrItemRecipeCollection*                RecipeCollection;                                  // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	float                                         CraftingLoopDuration;                              // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EMassRepresentationType                       StaticMeshMinLOD;                                  // 0x000C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUsesSlotFilters;                                  // 0x000D(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseCraftingProcessor;                             // 0x000E(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_F[0x1];                                        // 0x000F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CraftingUpdateInterval;                            // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrCraftingParameters;
-
-// ScriptStruct Chimera.CrAntennasContainer
-// 0x0018 (0x0120 - 0x0108)
-struct FCrAntennasContainer final : public FFastArraySerializer
-{
-public:
-	TArray<struct FCrAntennaData>                 AntennasData;                                      // 0x0108(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	class ACrAntennasOwner*                       Owner;                                             // 0x0118(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrAntennasContainer;
-
-// ScriptStruct Chimera.CrReplicatedInfectionData
-// 0x0008 (0x0008 - 0x0000)
-struct FCrReplicatedInfectionData final
-{
-public:
-	float                                         CurrentInfectionLevel;                             // 0x0000(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInfectionForcedByBaseCore;                        // 0x0004(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bConnectedToInfectionSpore;                        // 0x0005(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrReplicatedInfectionData;
 
 // ScriptStruct Chimera.CrReplicatedAgentPositionYawData
 // 0x0028 (0x0028 - 0x0000)
@@ -3369,6 +2739,15 @@ public:
 };
 DUMPER7_ASSERTS_FCrReplicatedStabilityData;
 
+// ScriptStruct Chimera.CrGenericMassSubGraph
+// 0x0004 (0x0004 - 0x0000)
+struct FCrGenericMassSubGraph final
+{
+public:
+	int32                                         SubGraphId;                                        // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrGenericMassSubGraph;
+
 // ScriptStruct Chimera.CrReplicatedElectricityData
 // 0x000C (0x000C - 0x0000)
 struct FCrReplicatedElectricityData final
@@ -3380,6 +2759,15 @@ public:
 	struct FCrGenericMassSubGraph                 SubGraph;                                          // 0x0008(0x0004)(Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCrReplicatedElectricityData;
+
+// ScriptStruct Chimera.CrReplicatedTemperatureData
+// 0x0004 (0x0004 - 0x0000)
+struct FCrReplicatedTemperatureData final
+{
+public:
+	float                                         Temperature;                                       // 0x0000(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrReplicatedTemperatureData;
 
 // ScriptStruct Chimera.CrReplicatedSimpleBuildingAgent
 // 0x0070 (0x0098 - 0x0028)
@@ -3394,6 +2782,45 @@ public:
 };
 DUMPER7_ASSERTS_FCrReplicatedSimpleBuildingAgent;
 
+// ScriptStruct Chimera.CrReplicatedDroneData
+// 0x0028 (0x0028 - 0x0000)
+struct FCrReplicatedDroneData final
+{
+public:
+	struct FCrMassEntityReplicationHelper         Drone;                                             // 0x0000(0x0018)(Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Location;                                          // 0x0018(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LeavingLocation;                                   // 0x001C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bQueued;                                           // 0x0020(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStopped;                                          // 0x0021(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_22[0x6];                                       // 0x0022(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrReplicatedDroneData;
+
+// ScriptStruct Chimera.CrReplicatedDroneBuildingData
+// 0x0020 (0x0020 - 0x0000)
+struct FCrReplicatedDroneBuildingData final
+{
+public:
+	TArray<struct FCrReplicatedDroneData>         Drones;                                            // 0x0000(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+	float                                         LineLength;                                        // 0x0010(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AdditionalLengthStart;                             // 0x0014(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AdditionalLengthEnd;                               // 0x0018(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrReplicatedDroneBuildingData;
+
+// ScriptStruct Chimera.CrReplicatedInfectionData
+// 0x0008 (0x0008 - 0x0000)
+struct FCrReplicatedInfectionData final
+{
+public:
+	float                                         CurrentInfectionLevel;                             // 0x0000(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInfectionForcedByBaseCore;                        // 0x0004(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bConnectedToInfectionSpore;                        // 0x0005(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrReplicatedInfectionData;
+
 // ScriptStruct Chimera.CrReplicatedDroneBuildingAgent
 // 0x0028 (0x00C0 - 0x0098)
 struct FCrReplicatedDroneBuildingAgent final : public FCrReplicatedSimpleBuildingAgent
@@ -3404,46 +2831,722 @@ public:
 };
 DUMPER7_ASSERTS_FCrReplicatedDroneBuildingAgent;
 
-// ScriptStruct Chimera.PlayerMarkerDataFastArrayItem
-// 0x0034 (0x0040 - 0x000C)
-struct FPlayerMarkerDataFastArrayItem final : public FFastArraySerializerItem
+// ScriptStruct Chimera.CrMassDroneBuildingFastArrayItem
+// 0x00C0 (0x00D0 - 0x0010)
+struct FCrMassDroneBuildingFastArrayItem final : public FMassFastArrayItemBase
+{
+public:
+	struct FCrReplicatedDroneBuildingAgent        Agent;                                             // 0x0010(0x00C0)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrMassDroneBuildingFastArrayItem;
+
+// ScriptStruct Chimera.CrMassDroneBuildingClientBubbleSerializer
+// 0x01C0 (0x02F8 - 0x0138)
+struct FCrMassDroneBuildingClientBubbleSerializer final : public FMassClientBubbleSerializerBase
+{
+public:
+	uint8                                         Pad_138[0x1B0];                                    // 0x0138(0x01B0)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FCrMassDroneBuildingFastArrayItem> Buildings;                                      // 0x02E8(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
+};
+DUMPER7_ASSERTS_FCrMassDroneBuildingClientBubbleSerializer;
+
+// ScriptStruct Chimera.CrCachedAggroData
+// 0x00C0 (0x00C0 - 0x0000)
+struct FCrCachedAggroData final
+{
+public:
+	bool                                          bIsValid;                                          // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsInfected;                                       // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ExpirationTimeS;                                   // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AggroMax;                                          // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CurrentAggroBase;                                  // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MinAggroDistance;                                  // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxAggroDistance;                                  // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AggroRangeMultiplier;                              // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CachedCustomValueModifiersVal;                     // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             Transform;                                         // 0x0020(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBox                                   Bounds;                                            // 0x0080(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrAggroTargetType                            Type;                                              // 0x00B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B9[0x7];                                       // 0x00B9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrCachedAggroData;
+
+// ScriptStruct Chimera.CrWeakSpotData
+// 0x000C (0x000C - 0x0000)
+struct FCrWeakSpotData final
+{
+public:
+	int32                                         ID;                                                // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CurrentMiningHealth;                               // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxMiningHealth;                                   // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrWeakSpotData;
+
+// ScriptStruct Chimera.CrReplicatedOreRuntimeData
+// 0x0090 (0x0090 - 0x0000)
+struct FCrReplicatedOreRuntimeData final
+{
+public:
+	int32                                         CurrentResourceCount;                              // 0x0000(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DamageReceived;                                    // 0x0004(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxResourceCount;                                  // 0x0008(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsDepleted;                                       // 0x000C(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CurrentCropCount;                                  // 0x0010(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCrWeakSpotData                        WeakSpotsArray[0xA];                               // 0x0014(0x000C)(Transient, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         RandomSeed;                                        // 0x008C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrReplicatedOreRuntimeData;
+
+// ScriptStruct Chimera.CrReplicatedOreAgent
+// 0x00B0 (0x00D8 - 0x0028)
+struct FCrReplicatedOreAgent final : public FReplicatedAgentBase
+{
+public:
+	struct FCrReplicatedOreRuntimeData            OreData;                                           // 0x0028(0x0090)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FReplicatedAgentPositionYawData        PositionYawData;                                   // 0x00B8(0x0020)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
+};
+DUMPER7_ASSERTS_FCrReplicatedOreAgent;
+
+// ScriptStruct Chimera.CrOreFastArrayItem
+// 0x00D8 (0x00E8 - 0x0010)
+struct FCrOreFastArrayItem final : public FMassFastArrayItemBase
+{
+public:
+	struct FCrReplicatedOreAgent                  Agent;                                             // 0x0010(0x00D8)(NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrOreFastArrayItem;
+
+// ScriptStruct Chimera.CrMassOreClientBubbleSerializer
+// 0x0108 (0x0240 - 0x0138)
+struct FCrMassOreClientBubbleSerializer final : public FMassClientBubbleSerializerBase
+{
+public:
+	uint8                                         Pad_138[0xF8];                                     // 0x0138(0x00F8)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FCrOreFastArrayItem>            Ore;                                               // 0x0230(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
+};
+DUMPER7_ASSERTS_FCrMassOreClientBubbleSerializer;
+
+// ScriptStruct Chimera.CrContextEffectAnimNotifyAudioSettings
+// 0x0008 (0x0008 - 0x0000)
+struct FCrContextEffectAnimNotifyAudioSettings final
+{
+public:
+	float                                         VolumeMultiplier;                                  // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PitchMultiplier;                                   // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrContextEffectAnimNotifyAudioSettings;
+
+// ScriptStruct Chimera.CrAnalyzerItemRow
+// 0x0020 (0x0028 - 0x0008)
+struct FCrAnalyzerItemRow final : public FTableRowBase
+{
+public:
+	class FText                                   ItemText;                                          // 0x0008(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TSubclassOf<class UCrItemDataBase>            Item;                                              // 0x0018(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         DataPoints;                                        // 0x0020(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrAnalyzerItemRow;
+
+// ScriptStruct Chimera.CrContextEffectAnimNotifyTraceSettings
+// 0x0028 (0x0028 - 0x0000)
+struct FCrContextEffectAnimNotifyTraceSettings final
+{
+public:
+	ECollisionChannel                             TraceChannel;                                      // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                EndTraceLocationOffset;                            // 0x0008(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIgnoreActor;                                      // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrContextEffectAnimNotifyTraceSettings;
+
+// ScriptStruct Chimera.MassOreMiningData
+// 0x0020 (0x0020 - 0x0000)
+struct FMassOreMiningData final : public FMassFragment
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 MiningResourceGrantee;                             // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_10[0x10];                                      // 0x0010(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassOreMiningData;
+
+// ScriptStruct Chimera.CrAbilitySet_GameplayAbility
+// 0x0018 (0x0018 - 0x0000)
+struct FCrAbilitySet_GameplayAbility final
+{
+public:
+	TSubclassOf<class UCrGameplayAbility>         Ability;                                           // 0x0000(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AbilityLevel;                                      // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           InputTag;                                          // 0x000C(0x0008)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrAbilitySet_GameplayAbility;
+
+// ScriptStruct Chimera.CrMassElectricityGridEnabledTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassElectricityGridEnabledTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrMassElectricityGridEnabledTag;
+
+// ScriptStruct Chimera.CrMassOreWeakSpotMiningTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassOreWeakSpotMiningTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrMassOreWeakSpotMiningTag;
+
+// ScriptStruct Chimera.CrAbilitySet_AttributeSet
+// 0x0008 (0x0008 - 0x0000)
+struct FCrAbilitySet_AttributeSet final
+{
+public:
+	TSubclassOf<class UAttributeSet>              AttributeSet;                                      // 0x0000(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrAbilitySet_AttributeSet;
+
+// ScriptStruct Chimera.CrAbilitySet_GrantedHandles
+// 0x0030 (0x0030 - 0x0000)
+struct FCrAbilitySet_GrantedHandles final
+{
+public:
+	TArray<struct FGameplayAbilitySpecHandle>     AbilitySpecHandles;                                // 0x0000(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FActiveGameplayEffectHandle>    GameplayEffectHandles;                             // 0x0010(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<class UAttributeSet*>                  GrantedAttributeSets;                              // 0x0020(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrAbilitySet_GrantedHandles;
+
+// ScriptStruct Chimera.CrAntenaSpawners
+// 0x0028 (0x0028 - 0x0000)
+struct FCrAntenaSpawners final
+{
+public:
+	float                                         Delay;                                             // 0x0000(0x0004)(Edit, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class ACrAISpawner*                           Spawner;                                           // 0x0008(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FGuid                                  SpawnerID;                                         // 0x0010(0x0010)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_20[0x8];                                       // 0x0020(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrAntenaSpawners;
+
+// ScriptStruct Chimera.CrAntennaData
+// 0x004C (0x0058 - 0x000C)
+struct FCrAntennaData final : public FFastArraySerializerItem
 {
 public:
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Player;                                            // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2f                              Location;                                          // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           PlayerColor;                                       // 0x0028(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RotationZ;                                         // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EPlayerMarkerFlags                            PlayerMarkerFlags;                                 // 0x003C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FCrMassEntityReplicationHelper         Antenna;                                           // 0x0010(0x0018)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrAntennaState                               State;                                             // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FCrAntenaSpawners>              Spawners;                                          // 0x0030(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         ChargingDuration;                                  // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FailDistanceInMeters;                              // 0x0044(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         UncoverSizeMultiplier;                             // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ExpRewardMultiliplier;                             // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2f                              AntennaLocation;                                   // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FPlayerMarkerDataFastArrayItem;
+DUMPER7_ASSERTS_FCrAntennaData;
 
-// ScriptStruct Chimera.CrCameraEffectParamBase
-// 0x0098 (0x0098 - 0x0000)
-struct FCrCameraEffectParamBase final
+// ScriptStruct Chimera.CrAntennaContainer
+// 0x0018 (0x0120 - 0x0108)
+struct FCrAntennaContainer final : public FFastArraySerializer
 {
 public:
-	struct FRuntimeFloatCurve                     Curve;                                             // 0x0000(0x0088)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	uint8                                         Pad_88[0x10];                                      // 0x0088(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<struct FCrAntennaData>                 AntennasData;                                      // 0x0108(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	class ACrAntennasOwner*                       Owner;                                             // 0x0118(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 };
-DUMPER7_ASSERTS_FCrCameraEffectParamBase;
+DUMPER7_ASSERTS_FCrAntennaContainer;
+
+// ScriptStruct Chimera.CrElectricityFragment
+// 0x0014 (0x0014 - 0x0000)
+struct FCrElectricityFragment final : public FCrMassSavableFragment
+{
+public:
+	int32                                         ElectricityMultiplierLevel;                        // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFunctional;                                       // 0x0004(0x0001)(ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCrGenericMassSubGraph                 LastSetSubgraph;                                   // 0x0008(0x0004)(Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CurrentValue;                                      // 0x000C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCheatElectricity;                                 // 0x0010(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrElectricityFragment;
+
+// ScriptStruct Chimera.CrAISpawnRequestData
+// 0x00E0 (0x00E0 - 0x0000)
+struct FCrAISpawnRequestData final
+{
+public:
+	struct FGameplayTagContainer                  AiTypeTags;                                        // 0x0000(0x0020)(NativeAccessSpecifierPublic)
+	struct FVector                                Location;                                          // 0x0020(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrSpawnPositionIndexFlag                     SpawnPosition;                                     // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGuid                                  SpawnerGuid;                                       // 0x003C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGuid                                  PresetEntryId;                                     // 0x004C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5C[0x3F];                                      // 0x005C(0x003F)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         GenericFlags;                                      // 0x009B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9C[0x44];                                      // 0x009C(0x0044)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrAISpawnRequestData;
+
+// ScriptStruct Chimera.CrItemNotificationContext
+// 0x0010 (0x0018 - 0x0008)
+struct FCrItemNotificationContext final : public FAuNotificationContext
+{
+public:
+	class UAuItemDataBase*                        ItemType;                                          // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	int32                                         ItemCount;                                         // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AddedCount;                                        // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrItemNotificationContext;
+
+// ScriptStruct Chimera.CrAbilitySimpleFailureMessage
+// 0x0038 (0x0038 - 0x0000)
+struct FCrAbilitySimpleFailureMessage final
+{
+public:
+	class APlayerController*                      PlayerController;                                  // 0x0000(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FGameplayTagContainer                  FailureTags;                                       // 0x0008(0x0020)(BlueprintVisible, NativeAccessSpecifierPublic)
+	class FText                                   UserFacingReason;                                  // 0x0028(0x0010)(BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrAbilitySimpleFailureMessage;
+
+// ScriptStruct Chimera.CrFlowData
+// 0x0018 (0x0020 - 0x0008)
+struct FCrFlowData final : public FTableRowBase
+{
+public:
+	struct FGuid                                  EntryID;                                           // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCrFlowEventDataAsset*                  FlowEvent;                                         // 0x0018(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrFlowData;
+
+// ScriptStruct Chimera.CrGameplayEffectContext
+// 0x0000 (0x00D8 - 0x00D8)
+struct FCrGameplayEffectContext final : public FAuGameplayEffectContext
+{
+};
+DUMPER7_ASSERTS_FCrGameplayEffectContext;
+
+// ScriptStruct Chimera.CrMassBuildingNiagaraSystemRuntimeData
+// 0x0020 (0x0020 - 0x0000)
+struct FCrMassBuildingNiagaraSystemRuntimeData final
+{
+public:
+	class UNiagaraComponent*                      NiagaraComponent;                                  // 0x0000(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	bool                                          bDestroying;                                       // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x17];                                       // 0x0009(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrMassBuildingNiagaraSystemRuntimeData;
+
+// ScriptStruct Chimera.CrMassBuildingNiagaraRuntimeFragment
+// 0x0018 (0x0018 - 0x0000)
+struct FCrMassBuildingNiagaraRuntimeFragment final : public FMassFragment
+{
+public:
+	TArray<struct FCrMassBuildingNiagaraSystemRuntimeData> SystemData;                               // 0x0000(0x0010)(ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	EMassLOD                                      PrevLOD;                                           // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrMassBuildingNiagaraRuntimeFragment;
+
+// ScriptStruct Chimera.DeathSequencePooledActorGroup
+// 0x0018 (0x0018 - 0x0000)
+struct FDeathSequencePooledActorGroup final
+{
+public:
+	TSubclassOf<class ACrAiDeathSequenceActor>    DeathSequenceActorClass;                           // 0x0000(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class ACrAiDeathSequenceActor*>        PooledActors;                                      // 0x0008(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FDeathSequencePooledActorGroup;
+
+// ScriptStruct Chimera.CrItemDroppedNotificationContext
+// 0x0020 (0x0028 - 0x0008)
+struct FCrItemDroppedNotificationContext final : public FAuNotificationContext
+{
+public:
+	class FText                                   EntrySubcategory;                                  // 0x0008(0x0010)(NativeAccessSpecifierPublic)
+	class UCrItemDataBase*                        ItemData;                                          // 0x0018(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	int32                                         Quantity;                                          // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrItemDroppedNotificationContext;
+
+// ScriptStruct Chimera.CrGameplayAbilityActorInfo
+// 0x0028 (0x0080 - 0x0058)
+struct FCrGameplayAbilityActorInfo final : public FAuGameplayAbilityActorInfo
+{
+public:
+	uint8                                         Pad_58[0x28];                                      // 0x0058(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrGameplayAbilityActorInfo;
+
+// ScriptStruct Chimera.CrAiProjectilePooledActorConfiguration
+// 0x0018 (0x0018 - 0x0000)
+struct FCrAiProjectilePooledActorConfiguration final
+{
+public:
+	TSubclassOf<class ACrAiProjectileActor>       ProjectileActorClass;                              // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PoolSize;                                          // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PoolSizeLimit;                                     // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShouldSpawnOnClient;                              // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrAiProjectilePooledActorConfiguration;
+
+// ScriptStruct Chimera.CrAbilityTagRelationship
+// 0x0088 (0x0088 - 0x0000)
+struct FCrAbilityTagRelationship final
+{
+public:
+	struct FGameplayTag                           AbilityTag;                                        // 0x0000(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTagContainer                  AbilityTagsToBlock;                                // 0x0008(0x0020)(Edit, NativeAccessSpecifierPublic)
+	struct FGameplayTagContainer                  AbilityTagsToCancel;                               // 0x0028(0x0020)(Edit, NativeAccessSpecifierPublic)
+	struct FGameplayTagContainer                  ActivationRequiredTags;                            // 0x0048(0x0020)(Edit, NativeAccessSpecifierPublic)
+	struct FGameplayTagContainer                  ActivationBlockedTags;                             // 0x0068(0x0020)(Edit, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrAbilityTagRelationship;
+
+// ScriptStruct Chimera.AttributeCheatEffectsTags
+// 0x0028 (0x0028 - 0x0000)
+struct FAttributeCheatEffectsTags final
+{
+public:
+	TSubclassOf<class UGameplayEffect>            DirectCurrentValueSetEffect;                       // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UGameplayEffect>            ImmunityApplyEffect;                               // 0x0008(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UGameplayEffect>            ImmunityClearEffect;                               // 0x0010(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UGameplayEffect>            ValueIncreaseEffect;                               // 0x0018(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UGameplayEffect>            ValueDecreaseEffect;                               // 0x0020(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAttributeCheatEffectsTags;
+
+// ScriptStruct Chimera.CrCustomBuildingAdjointCustom
+// 0x0030 (0x0030 - 0x0000)
+struct FCrCustomBuildingAdjointCustom final
+{
+public:
+	class UStaticMeshSocket*                      Socket;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	int32                                         ComponentIndex;                                    // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 HitActor;                                          // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UStaticMeshComponent*                   HitComponent;                                      // 0x0018(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	int32                                         HitComponentIndex;                                 // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UStaticMeshSocket*                      HitSocket;                                         // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrCustomBuildingAdjointCustom;
+
+// ScriptStruct Chimera.CrCustomBuildingNeighbourhood
+// 0x0018 (0x0018 - 0x0000)
+struct FCrCustomBuildingNeighbourhood final
+{
+public:
+	TArray<struct FCrCustomBuildingAdjointCustom> Customs;                                           // 0x0000(0x0010)(Edit, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	int32                                         GroundedIndex;                                     // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrCustomBuildingNeighbourhood;
+
+// ScriptStruct Chimera.CrAudioForEventData
+// 0x0030 (0x0030 - 0x0000)
+struct FCrAudioForEventData final
+{
+public:
+	TSoftObjectPtr<class USoundBase>              SoundSoftPtr;                                      // 0x0000(0x0028)(Edit, BlueprintVisible, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           GameplayEvent;                                     // 0x0028(0x0008)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrAudioForEventData;
+
+// ScriptStruct Chimera.CrGameplayImportantAggroEntityTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrGameplayImportantAggroEntityTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrGameplayImportantAggroEntityTag;
+
+// ScriptStruct Chimera.CrUnlockableRecipeData
+// 0x001C (0x0028 - 0x000C)
+struct FCrUnlockableRecipeData final : public FFastArraySerializerItem
+{
+public:
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCrItemRecipeData*                      Recipe;                                            // 0x0010(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	TArray<struct FCrCountItem>                   OwnedItems;                                        // 0x0018(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrUnlockableRecipeData;
+
+// ScriptStruct Chimera.EntityWithLifespanFragment
+// 0x000C (0x000C - 0x0000)
+struct alignas(0x04) FEntityWithLifespanFragment final : public FMassFragment
+{
+public:
+	uint8                                         Pad_0[0xC];                                        // 0x0000(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FEntityWithLifespanFragment;
+
+// ScriptStruct Chimera.CrMassBuildingNiagaraParameterDriverBase
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x08) FCrMassBuildingNiagaraParameterDriverBase
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrMassBuildingNiagaraParameterDriverBase;
+
+// ScriptStruct Chimera.CrMassAlienObeliskPulseNiagaraParameterDriver
+// 0x0000 (0x0008 - 0x0008)
+struct FCrMassAlienObeliskPulseNiagaraParameterDriver final : public FCrMassBuildingNiagaraParameterDriverBase
+{
+};
+DUMPER7_ASSERTS_FCrMassAlienObeliskPulseNiagaraParameterDriver;
+
+// ScriptStruct Chimera.CrEncyclopediaEntryUnlockedNotificationContext
+// 0x0010 (0x0018 - 0x0008)
+struct FCrEncyclopediaEntryUnlockedNotificationContext final : public FAuNotificationContext
+{
+public:
+	class FText                                   EntrySubcategory;                                  // 0x0008(0x0010)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrEncyclopediaEntryUnlockedNotificationContext;
+
+// ScriptStruct Chimera.CrAggroTargetData
+// 0x0050 (0x0050 - 0x0000)
+struct FCrAggroTargetData final
+{
+public:
+	float                                         Aggro;                                             // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBox                                   Bounds;                                            // 0x0008(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMassEntityHandle                      Handle;                                            // 0x0040(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrAggroTargetType                            Type;                                              // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrAggroTargetData;
+
+// ScriptStruct Chimera.CrDebugEnemyData
+// 0x0090 (0x0090 - 0x0000)
+struct FCrDebugEnemyData final
+{
+public:
+	class AActor*                                 EnemyActorRef;                                     // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Transform;                                         // 0x0010(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           EnemyTag;                                          // 0x0070(0x0008)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HP;                                                // 0x0078(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_7C[0x4];                                       // 0x007C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 AggroTarget;                                       // 0x0080(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_88[0x8];                                       // 0x0088(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrDebugEnemyData;
+
+// ScriptStruct Chimera.CrAimContextTraceResult
+// 0x0010 (0x0010 - 0x0000)
+struct FCrAimContextTraceResult final
+{
+public:
+	class AActor*                                 HitActor;                                          // 0x0000(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UActorComponent*                        HitComponent;                                      // 0x0008(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrAimContextTraceResult;
+
+// ScriptStruct Chimera.CrReplicatedCustomData
+// 0x0018 (0x0018 - 0x0000)
+struct FCrReplicatedCustomData final
+{
+public:
+	struct FInstancedStruct                       Instance;                                          // 0x0000(0x0010)(Transient, NativeAccessSpecifierPublic)
+	bool                                          bDirty;                                            // 0x0010(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrReplicatedCustomData;
+
+// ScriptStruct Chimera.CrReplicatedCustomDataArray
+// 0x0010 (0x0010 - 0x0000)
+struct FCrReplicatedCustomDataArray final
+{
+public:
+	TArray<struct FCrReplicatedCustomData>        Data;                                              // 0x0000(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrReplicatedCustomDataArray;
+
+// ScriptStruct Chimera.CrMassCustomDataFragment
+// 0x0010 (0x0010 - 0x0000)
+struct FCrMassCustomDataFragment final : public FMassFragment
+{
+public:
+	struct FCrReplicatedCustomDataArray           Data;                                              // 0x0000(0x0010)(Transient, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrMassCustomDataFragment;
+
+// ScriptStruct Chimera.CrAiProjectileParameters
+// 0x0060 (0x0060 - 0x0000)
+struct FCrAiProjectileParameters final
+{
+public:
+	struct FVector                                StartLocation;                                     // 0x0000(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                TargetLocation;                                    // 0x0018(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                LaunchVelocity;                                    // 0x0030(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         UniformScale;                                      // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class AActor>                  Instigator;                                        // 0x004C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class AActor>                  AdditionalIgnoredActor;                            // 0x0054(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bReplicateRequest;                                 // 0x005C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5D[0x3];                                       // 0x005D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrAiProjectileParameters;
+
+// ScriptStruct Chimera.CrAiProjectilePooledActorGroup
+// 0x0020 (0x0020 - 0x0000)
+struct FCrAiProjectilePooledActorGroup final
+{
+public:
+	TSubclassOf<class ACrAiProjectileActor>       ProjectileActorClass;                              // 0x0000(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class ACrAiProjectileActor*>           PooledActors;                                      // 0x0008(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	float                                         PoolSizeLimit;                                     // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrAiProjectilePooledActorGroup;
+
+// ScriptStruct Chimera.CrAISpawnRequestHandle
+// 0x0004 (0x0004 - 0x0000)
+struct alignas(0x04) FCrAISpawnRequestHandle final
+{
+public:
+	uint8                                         Pad_0[0x4];                                        // 0x0000(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrAISpawnRequestHandle;
+
+// ScriptStruct Chimera.CrAlienObeliskFragment
+// 0x0038 (0x0038 - 0x0000)
+struct FCrAlienObeliskFragment final : public FCrMassSavableFragment
+{
+public:
+	double                                        LastSpawnTime;                                     // 0x0000(0x0008)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ChargeValue;                                       // 0x0008(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAttackSpawnedThisInterWave;                       // 0x000C(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                AttackLocation;                                    // 0x0010(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NumberOfClosestPlayers;                            // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrAlienObeliskState                          State;                                             // 0x002C(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BaseCoreSearchRadius;                              // 0x0030(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrAlienObeliskFragment;
+
+// ScriptStruct Chimera.CrMassElectricityBuildingProducerTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassElectricityBuildingProducerTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrMassElectricityBuildingProducerTag;
+
+// ScriptStruct Chimera.CrAlienObeliskParameters
+// 0x0020 (0x0020 - 0x0000)
+struct FCrAlienObeliskParameters final : public FMassConstSharedFragment
+{
+public:
+	int32                                         Level;                                             // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ChargePerS;                                        // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ActiveAttackChargePerS;                            // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DischargePerS;                                     // 0x000C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ChargeAdditionalMulForClosestPlayer;               // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AdditionalChargePerSForBaseCoreIsRequiringAttack;  // 0x0014(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ChargeDropAfterAnyAttack;                          // 0x0018(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ChargeValueToActivateAttack;                       // 0x001C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrAlienObeliskParameters;
+
+// ScriptStruct Chimera.CrMassAlienObeliskNiagaraParameterDriver
+// 0x0000 (0x0008 - 0x0008)
+struct FCrMassAlienObeliskNiagaraParameterDriver final : public FCrMassBuildingNiagaraParameterDriverBase
+{
+};
+DUMPER7_ASSERTS_FCrMassAlienObeliskNiagaraParameterDriver;
+
+// ScriptStruct Chimera.CrMassAlienObeliskRocksDecalNiagaraParameterDriver
+// 0x0000 (0x0008 - 0x0008)
+struct FCrMassAlienObeliskRocksDecalNiagaraParameterDriver final : public FCrMassBuildingNiagaraParameterDriverBase
+{
+};
+DUMPER7_ASSERTS_FCrMassAlienObeliskRocksDecalNiagaraParameterDriver;
+
+// ScriptStruct Chimera.CrAnimalGoldenBalloonMovementConfig
+// 0x0010 (0x0010 - 0x0000)
+struct FCrAnimalGoldenBalloonMovementConfig final
+{
+public:
+	float                                         Acceleration;                                      // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Deceleration;                                      // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxSpeed;                                          // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxMovementDuration;                               // 0x000C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrAnimalGoldenBalloonMovementConfig;
+
+// ScriptStruct Chimera.CrAnimalGoldenBalloonDropItemData
+// 0x0018 (0x0018 - 0x0000)
+struct FCrAnimalGoldenBalloonDropItemData final
+{
+public:
+	TSubclassOf<class UAuItemDataBase>            LootItem;                                          // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FIntPoint                              MinMaxAmount;                                      // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ProbabilityFactor;                                 // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrAnimalGoldenBalloonDropItemData;
+
+// ScriptStruct Chimera.DeathSequenceDamageForceConfig
+// 0x0008 (0x0008 - 0x0000)
+struct FDeathSequenceDamageForceConfig final
+{
+public:
+	float                                         ForceMultiplayer;                                  // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAbsZ;                                             // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FDeathSequenceDamageForceConfig;
+
+// ScriptStruct Chimera.CrAntennaParams
+// 0x0028 (0x0028 - 0x0000)
+struct FCrAntennaParams final
+{
+public:
+	ECrAntennaState                               State;                                             // 0x0000(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ChargingDuration;                                  // 0x0004(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FailDistanceInMeters;                              // 0x0008(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         UncoverSizeMultiplier;                             // 0x000C(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ExpRewardMultiplier;                               // 0x0010(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FCrAntenaSpawners>              AntennaSpawners;                                   // 0x0018(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrAntennaParams;
+
+// ScriptStruct Chimera.CrAntennaSaveData
+// 0x0050 (0x0050 - 0x0000)
+struct FCrAntennaSaveData final
+{
+public:
+	TMap<struct FCrMassPersistentEntityID, struct FCrAntennaParams> Antennas;                        // 0x0000(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrAntennaSaveData;
+
+// ScriptStruct Chimera.CrMassEnviroWaveStageGrowbackTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassEnviroWaveStageGrowbackTag final : public FCrMassSavableTag
+{
+};
+DUMPER7_ASSERTS_FCrMassEnviroWaveStageGrowbackTag;
 
 // ScriptStruct Chimera.CrDynamicHelperData
-// 0x0088 (0x0088 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct FCrDynamicHelperData final
 {
 public:
-	struct FVector                                FirstPoint;                                        // 0x0000(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                SecondPoint;                                       // 0x0018(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ThirdPoint;                                        // 0x0030(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               Rotation;                                          // 0x0048(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bXDirection;                                       // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                RelativeOffset;                                    // 0x0068(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_80[0x4];                                       // 0x0080(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bLine;                                             // 0x0084(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_85[0x3];                                       // 0x0085(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FVector                                StartLocation;                                     // 0x0000(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                EndLocation;                                       // 0x0018(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCrDynamicHelperData;
 
@@ -3458,26 +3561,14 @@ public:
 };
 DUMPER7_ASSERTS_FAudiologStatementData;
 
-// ScriptStruct Chimera.CrSkillSaveData
-// 0x000C (0x000C - 0x0000)
-struct FCrSkillSaveData final
+// ScriptStruct Chimera.CrEntityGridParameters
+// 0x0001 (0x0001 - 0x0000)
+struct FCrEntityGridParameters final : public FMassConstSharedFragment
 {
 public:
-	ECrPlayerProgressionSkill                     Skill;                                             // 0x0000(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Level;                                             // 0x0004(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Experience;                                        // 0x0008(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bMovable;                                          // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrSkillSaveData;
-
-// ScriptStruct Chimera.CrPlayerProgressionState
-// 0x0010 (0x0010 - 0x0000)
-struct FCrPlayerProgressionState final
-{
-public:
-	TArray<struct FCrSkillSaveData>               Skills;                                            // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrPlayerProgressionState;
+DUMPER7_ASSERTS_FCrEntityGridParameters;
 
 // ScriptStruct Chimera.AudiologData
 // 0x0080 (0x0088 - 0x0008)
@@ -3491,15 +3582,6 @@ public:
 };
 DUMPER7_ASSERTS_FAudiologData;
 
-// ScriptStruct Chimera.CrEnviroWaveTimerTickFunction
-// 0x0008 (0x0030 - 0x0028)
-struct FCrEnviroWaveTimerTickFunction final : public FTickFunction
-{
-public:
-	class UCrEnviroWaveTimerSubsystem*            EnviroWaveTimerSubsystem;                          // 0x0028(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrEnviroWaveTimerTickFunction;
-
 // ScriptStruct Chimera.CrAudioSubmixEffectsChain
 // 0x0018 (0x0018 - 0x0000)
 struct FCrAudioSubmixEffectsChain final
@@ -3509,6 +3591,13 @@ public:
 	TArray<class USoundEffectSubmixPreset*>       SubmixEffectChain;                                 // 0x0008(0x0010)(ZeroConstructor, Transient, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
 };
 DUMPER7_ASSERTS_FCrAudioSubmixEffectsChain;
+
+// ScriptStruct Chimera.CrNonSimDataReduced
+// 0x0000 (0x0001 - 0x0001)
+struct FCrNonSimDataReduced final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrNonSimDataReduced;
 
 // ScriptStruct Chimera.CrSubmixEffectChainMap
 // 0x0038 (0x0038 - 0x0000)
@@ -3527,69 +3616,12 @@ struct FCrMassBaseCoreNiagaraParameterDriver final : public FCrMassBuildingNiaga
 };
 DUMPER7_ASSERTS_FCrMassBaseCoreNiagaraParameterDriver;
 
-// ScriptStruct Chimera.GatherableLocationRef
-// 0x0050 (0x0050 - 0x0000)
-struct FGatherableLocationRef final
-{
-public:
-	struct FVector                                Location;                                          // 0x0000(0x0018)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBoxSphereBounds                       Bounds;                                            // 0x0018(0x0038)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGatherableLocationRef;
-
-// ScriptStruct Chimera.CrSavedDepletedGatherableLocationRefAndWaveStage
-// 0x0058 (0x0058 - 0x0000)
-struct FCrSavedDepletedGatherableLocationRefAndWaveStage final
-{
-public:
-	struct FGatherableLocationRef                 LocationRef;                                       // 0x0000(0x0050)(SaveGame, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         WaveStagesToRespondTo;                             // 0x0050(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrSavedDepletedGatherableLocationRefAndWaveStage;
-
-// ScriptStruct Chimera.CrSavedPermanentDepletedGatherableLocationRef
-// 0x0050 (0x0050 - 0x0000)
-struct FCrSavedPermanentDepletedGatherableLocationRef final
-{
-public:
-	struct FGatherableLocationRef                 LocationRef;                                       // 0x0000(0x0050)(SaveGame, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrSavedPermanentDepletedGatherableLocationRef;
-
-// ScriptStruct Chimera.CrGatherableSpawnersSubsystemSaveData
-// 0x0028 (0x0028 - 0x0000)
-struct FCrGatherableSpawnersSubsystemSaveData final
-{
-public:
-	int32                                         GlobalGatherablePCGSeed;                           // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FCrSavedDepletedGatherableLocationRefAndWaveStage> DepletedGatherables;            // 0x0008(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-	TArray<struct FCrSavedPermanentDepletedGatherableLocationRef> PermanentDepletedGatherables;      // 0x0018(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrGatherableSpawnersSubsystemSaveData;
-
-// ScriptStruct Chimera.CrCamEffectStateBase
-// 0x0040 (0x0040 - 0x0000)
-struct FCrCamEffectStateBase
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInstanceDynamic*               MaterialInstanceDynamic;                           // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UMaterialInterface*                     PostProcessMat;                                    // 0x0010(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_18[0x10];                                      // 0x0018(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPostProcessComponent*                  PostProcessComp;                                   // 0x0028(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UCrCameraEffect*                        Effect;                                            // 0x0030(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrCamEffectStateBase;
-
-// ScriptStruct Chimera.CrCamEffectState_Active
-// 0x0000 (0x0040 - 0x0040)
-struct FCrCamEffectState_Active final : public FCrCamEffectStateBase
+// ScriptStruct Chimera.CrMassEnviroWaveStageMovingTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassEnviroWaveStageMovingTag final : public FCrMassSavableTag
 {
 };
-DUMPER7_ASSERTS_FCrCamEffectState_Active;
+DUMPER7_ASSERTS_FCrMassEnviroWaveStageMovingTag;
 
 // ScriptStruct Chimera.CrMassBaseCoreSteamNiagaraParameterDriver
 // 0x0000 (0x0008 - 0x0008)
@@ -3597,15 +3629,6 @@ struct FCrMassBaseCoreSteamNiagaraParameterDriver final : public FCrMassBuilding
 {
 };
 DUMPER7_ASSERTS_FCrMassBaseCoreSteamNiagaraParameterDriver;
-
-// ScriptStruct Chimera.CrMassDroneBuildingFastArrayItem
-// 0x00C0 (0x00D0 - 0x0010)
-struct FCrMassDroneBuildingFastArrayItem final : public FMassFastArrayItemBase
-{
-public:
-	struct FCrReplicatedDroneBuildingAgent        Agent;                                             // 0x0010(0x00C0)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrMassDroneBuildingFastArrayItem;
 
 // ScriptStruct Chimera.CrBaseCoreLevel
 // 0x0028 (0x0028 - 0x0000)
@@ -3623,37 +3646,219 @@ public:
 };
 DUMPER7_ASSERTS_FCrBaseCoreLevel;
 
-// ScriptStruct Chimera.CrMassElectricityBuildingProducerTag
+// ScriptStruct Chimera.BaseCoreReplicationSaveData
+// 0x0030 (0x0030 - 0x0000)
+struct FBaseCoreReplicationSaveData final
+{
+public:
+	struct FCrMassPersistentEntityID              BaseCoreAwaitingForBaseAttackAfterUpgradeSaved;    // 0x0000(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCrMassPersistentEntityID              CurrentBaseCoreBaseAttackTargetSaved;              // 0x0010(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FCrBaseCoreSaveData>            BaseCoreSaveData;                                  // 0x0020(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FBaseCoreReplicationSaveData;
+
+// ScriptStruct Chimera.CrMassEnviroWaveTypeColdTag
 // 0x0000 (0x0001 - 0x0001)
-struct FCrMassElectricityBuildingProducerTag final : public FMassTag
+struct FCrMassEnviroWaveTypeColdTag final : public FCrMassSavableTag
 {
 };
-DUMPER7_ASSERTS_FCrMassElectricityBuildingProducerTag;
+DUMPER7_ASSERTS_FCrMassEnviroWaveTypeColdTag;
 
-// ScriptStruct Chimera.PointOfInterestData
+// ScriptStruct Chimera.CrBaseCoreDataContainer
+// 0x0018 (0x0120 - 0x0108)
+struct FCrBaseCoreDataContainer final : public FFastArraySerializer
+{
+public:
+	TArray<struct FCrBaseCoreData>                BaseCoreData;                                      // 0x0108(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	class ACrBaseCoreReplicationHelper*           Owner;                                             // 0x0118(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrBaseCoreDataContainer;
+
+// ScriptStruct Chimera.CrBaseSiteData
+// 0x0040 (0x0040 - 0x0000)
+struct FCrBaseSiteData
+{
+public:
+	struct FMassEntityHandle                      BaseCoreHandle;                                    // 0x0000(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBox                                   Bounds;                                            // 0x0008(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrBaseSiteData;
+
+// ScriptStruct Chimera.CrMassInEnviroWaveTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassInEnviroWaveTag final : public FCrMassSavableTag
+{
+};
+DUMPER7_ASSERTS_FCrMassInEnviroWaveTag;
+
+// ScriptStruct Chimera.CrBaseSiteDataWithCachedInfo
+// 0x0010 (0x0050 - 0x0040)
+struct FCrBaseSiteDataWithCachedInfo final : public FCrBaseSiteData
+{
+public:
+	bool                                          AwaitingForBaseAttackAfterUpgrade;                 // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_41[0x3];                                       // 0x0041(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CoreLevel;                                         // 0x0044(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ElectricityAmount;                                 // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DistanceToAnyPlayer;                               // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrBaseSiteDataWithCachedInfo;
+
+// ScriptStruct Chimera.CrBaseSiteDataTickFunction
+// 0x0008 (0x0030 - 0x0028)
+struct FCrBaseSiteDataTickFunction final : public FTickFunction
+{
+public:
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrBaseSiteDataTickFunction;
+
+// ScriptStruct Chimera.CrSoundSocket
+// 0x0010 (0x0010 - 0x0000)
+struct FCrSoundSocket final
+{
+public:
+	class FName                                   SocketName;                                        // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USoundBase*                             Sound;                                             // 0x0008(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrSoundSocket;
+
+// ScriptStruct Chimera.CrBuildingStateSoundsNew
+// 0x0030 (0x0030 - 0x0000)
+struct FCrBuildingStateSoundsNew final
+{
+public:
+	TArray<struct FCrSoundSocket>                 StartSounds;                                       // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FCrSoundSocket>                 MainLoops;                                         // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FCrSoundSocket>                 EndSounds;                                         // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrBuildingStateSoundsNew;
+
+// ScriptStruct Chimera.CrMassPermamentGatherableTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassPermamentGatherableTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrMassPermamentGatherableTag;
+
+// ScriptStruct Chimera.CrAnimCurveMeshComponentSet
+// 0x0030 (0x0030 - 0x0000)
+struct FCrAnimCurveMeshComponentSet final
+{
+public:
+	class UCurveVector*                           OnBeginCurve;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UCurveVector*                           LoopCurve;                                         // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UCurveVector*                           OnEndCurve;                                        // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UCurveVector*                           RotOnBeginCurve;                                   // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UCurveVector*                           RotLoopCurve;                                      // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UCurveVector*                           RotOnEndCurve;                                     // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrAnimCurveMeshComponentSet;
+
+// ScriptStruct Chimera.CrArrayOfAnimCurveMeshComponentSet
+// 0x0018 (0x0018 - 0x0000)
+struct FCrArrayOfAnimCurveMeshComponentSet final
+{
+public:
+	ECrBuildingAnimationSubState                  CurrentAnimSubState;                               // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FCrAnimCurveMeshComponentSet>   ArrayOfSets;                                       // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrArrayOfAnimCurveMeshComponentSet;
+
+// ScriptStruct Chimera.CrMassFoundableParameters
+// 0x000C (0x000C - 0x0000)
+struct FCrMassFoundableParameters final : public FMassConstSharedFragment
+{
+public:
+	ECrFoundableType                              FoundableType;                                     // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         InventoryColumns;                                  // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InventoryRows;                                     // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrMassFoundableParameters;
+
+// ScriptStruct Chimera.CrBuildingAnimationSignificanceSettings
 // 0x0014 (0x0014 - 0x0000)
-struct FPointOfInterestData final
+struct FCrBuildingAnimationSignificanceSettings final
 {
 public:
-	struct FGuid                                  PointOfInterestMarkerID;                           // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EPointOfInterestState                         State;                                             // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         SlowestAnimTickRateDistance;                       // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FastestAnimTickRateDistance;                       // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SlowestAnimTickRate;                               // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FastestAnimTickRate;                               // 0x000C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AnimatedMeshesCollisionSignificanceThreshold;      // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FPointOfInterestData;
+DUMPER7_ASSERTS_FCrBuildingAnimationSignificanceSettings;
 
-// ScriptStruct Chimera.CrBaseCoreSaveData
-// 0x0028 (0x0028 - 0x0000)
-struct FCrBaseCoreSaveData final
+// ScriptStruct Chimera.CrBuildingActorBaseComponentMobility
+// 0x0010 (0x0010 - 0x0000)
+struct FCrBuildingActorBaseComponentMobility final
 {
 public:
-	struct FCrMassPersistentEntityID              BaseCore;                                          // 0x0000(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          InfectionSphere;                                   // 0x0010(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         UpgradeLevel;                                      // 0x0011(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int8                                          SelectedLevelToUpgrade;                            // 0x0012(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_13[0x5];                                       // 0x0013(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FCrCountItem>                   ItemsAddedToUpgrade;                               // 0x0018(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	class USceneComponent*                        Component;                                         // 0x0000(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	EComponentMobility                            Mobility;                                          // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bGenerateOverlaps;                                 // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrBaseCoreSaveData;
+DUMPER7_ASSERTS_FCrBuildingActorBaseComponentMobility;
+
+// ScriptStruct Chimera.CrMassEnviroWaveAffectedAgentTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassEnviroWaveAffectedAgentTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrMassEnviroWaveAffectedAgentTag;
+
+// ScriptStruct Chimera.BuildingCustomNameSaveData
+// 0x0050 (0x0050 - 0x0000)
+struct FBuildingCustomNameSaveData final
+{
+public:
+	TMap<struct FCrMassPersistentEntityID, class FString> CustomNames;                               // 0x0000(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FBuildingCustomNameSaveData;
+
+// ScriptStruct Chimera.CrResourceRequirementEntry
+// 0x0010 (0x0010 - 0x0000)
+struct FCrResourceRequirementEntry final
+{
+public:
+	TSubclassOf<class UCrItemDataBase>            Item;                                              // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Quantity;                                          // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrResourceRequirementEntry;
+
+// ScriptStruct Chimera.CrMassGatherableTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassGatherableTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrMassGatherableTag;
+
+// ScriptStruct Chimera.CrResourceRequirements
+// 0x0010 (0x0010 - 0x0000)
+struct FCrResourceRequirements final
+{
+public:
+	TArray<struct FCrResourceRequirementEntry>    Requirements;                                      // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrResourceRequirements;
+
+// ScriptStruct Chimera.ContaminationSocket
+// 0x0050 (0x0050 - 0x0000)
+struct FContaminationSocket final
+{
+public:
+	struct FVector                                Location;                                          // 0x0000(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FQuat                                  Rotation;                                          // 0x0020(0x0020)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ACrContaminationActor*                  InfectionActor;                                    // 0x0040(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	float                                         Infection;                                         // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FContaminationSocket;
 
 // ScriptStruct Chimera.CrItemBasedCraftingData
 // 0x0010 (0x0010 - 0x0000)
@@ -3698,16 +3903,1086 @@ public:
 };
 DUMPER7_ASSERTS_FCrCraftingFragment;
 
-// ScriptStruct Chimera.BaseCoreReplicationSaveData
-// 0x0030 (0x0030 - 0x0000)
-struct FBaseCoreReplicationSaveData final
+// ScriptStruct Chimera.CrItemsSpawnSettings
+// 0x0018 (0x0020 - 0x0008)
+struct FCrItemsSpawnSettings final : public FTableRowBase
 {
 public:
-	struct FCrMassPersistentEntityID              BaseCoreAwaitingForBaseAttackAfterUpgradeSaved;    // 0x0000(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCrMassPersistentEntityID              CurrentBaseCoreBaseAttackTargetSaved;              // 0x0010(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FCrBaseCoreSaveData>            BaseCoreSaveData;                                  // 0x0020(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	TSubclassOf<class UAuItemDataBase>            Item;                                              // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ProbabilityOfSpawn;                                // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MinAmountToSpawn;                                  // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxAmountToSpawn;                                  // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FBaseCoreReplicationSaveData;
+DUMPER7_ASSERTS_FCrItemsSpawnSettings;
+
+// ScriptStruct Chimera.CrItemsReplacementSettings
+// 0x0018 (0x0020 - 0x0008)
+struct FCrItemsReplacementSettings final : public FTableRowBase
+{
+public:
+	TSubclassOf<class UAuItemDataBase>            SourceItem;                                        // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UAuItemDataBase>            TargetItem;                                        // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MinAmountToSpawn;                                  // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxAmountToSpawn;                                  // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrItemsReplacementSettings;
+
+// ScriptStruct Chimera.CrMassBuildingNiagaraConfig
+// 0x00D0 (0x00D0 - 0x0000)
+struct FCrMassBuildingNiagaraConfig final
+{
+public:
+	class UNiagaraSystem*                         NiagaraSystem;                                     // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	int32                                         EnabledLODs;                                       // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseTransformOffset;                               // 0x000C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             TransformOffset;                                   // 0x0010(0x0060)(Edit, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FInstancedStruct>               UserParameters;                                    // 0x0070(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FInstancedStruct>               RequiredTags;                                      // 0x0080(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FInstancedStruct>               DisallowedTags;                                    // 0x0090(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	EFCrMassBuildingNiagaraSystemSpawnMode        SpawnMode;                                         // 0x00A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A1[0x7];                                       // 0x00A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FName>                           SignalEvents;                                      // 0x00A8(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FInstancedStruct>               CustomParameterDrivers;                            // 0x00B8(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C8[0x8];                                       // 0x00C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrMassBuildingNiagaraConfig;
+
+// ScriptStruct Chimera.CrMassBuildingNiagaraParameters
+// 0x0018 (0x0018 - 0x0000)
+struct FCrMassBuildingNiagaraParameters final : public FMassConstSharedFragment
+{
+public:
+	TArray<struct FCrMassBuildingNiagaraConfig>   SystemData;                                        // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          bForceUpdate;                                      // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrMassBuildingNiagaraParameters;
+
+// ScriptStruct Chimera.CrItemsSpawnPresetSettings
+// 0x0010 (0x0018 - 0x0008)
+struct FCrItemsSpawnPresetSettings final : public FTableRowBase
+{
+public:
+	TArray<struct FCrItemsSpawnSettings>          ItemsToSpawn;                                      // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrItemsSpawnPresetSettings;
+
+// ScriptStruct Chimera.CrBuildingOrePurityRecipe
+// 0x0020 (0x0020 - 0x0000)
+struct FCrBuildingOrePurityRecipe final
+{
+public:
+	TSubclassOf<class ACrExtractor>               ExtractorType;                                     // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UCrItemDataBase>            Resource;                                          // 0x0008(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EOrePurityLevel                               PurityLevel;                                       // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCrItemRecipeData*                      Recipe;                                            // 0x0018(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrBuildingOrePurityRecipe;
+
+// ScriptStruct Chimera.CrBuildingGraphData
+// 0x00B0 (0x00B0 - 0x0000)
+struct FCrBuildingGraphData final
+{
+public:
+	TMap<struct FCrMassPersistentEntityID, struct FCrMassPersistentEntityIDArray> Neighbours;        // 0x0000(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+	TMap<struct FCrMassPersistentEntityID, struct FCrMassEntityStabilityData> NodeDatas;             // 0x0050(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+	struct FCrMassPersistentEntityID              GroundNode;                                        // 0x00A0(0x0010)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrBuildingGraphData;
+
+// ScriptStruct Chimera.CrBuildingRotationEffectParams
+// 0x0008 (0x0008 - 0x0000)
+struct FCrBuildingRotationEffectParams final : public FMassConstSharedFragment
+{
+public:
+	float                                         AnimRotSpeed;                                      // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AnimDuration;                                      // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrBuildingRotationEffectParams;
+
+// ScriptStruct Chimera.CrBuildingStabilityTickFunction
+// 0x0008 (0x0030 - 0x0028)
+struct FCrBuildingStabilityTickFunction final : public FTickFunction
+{
+public:
+	class UCrBuildingStabilitySubsystem*          BuildingStabilitySubsystem;                        // 0x0028(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrBuildingStabilityTickFunction;
+
+// ScriptStruct Chimera.CrCustomConnectionData
+// 0x0070 (0x0070 - 0x0000)
+struct FCrCustomConnectionData final
+{
+public:
+	TArray<struct FCrMassPersistentEntityID>      Ramps;                                             // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	TArray<struct FCrMassPersistentEntityID>      Buildings;                                         // 0x0010(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FCrMassPersistentEntityIDArray> SocketConnections;                      // 0x0020(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrCustomConnectionData;
+
+// ScriptStruct Chimera.InfectionCollisionData
+// 0x0020 (0x0020 - 0x0000)
+struct FInfectionCollisionData final
+{
+public:
+	EInfectionCollisionType                       CollisionType;                                     // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Radius;                                            // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                BoxExtent;                                         // 0x0008(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FInfectionCollisionData;
+
+// ScriptStruct Chimera.InfectionCollisionConfigurationFragment
+// 0x0020 (0x0020 - 0x0000)
+struct FInfectionCollisionConfigurationFragment final : public FMassConstSharedFragment
+{
+public:
+	struct FInfectionCollisionData                InfectionCollisionData;                            // 0x0000(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FInfectionCollisionConfigurationFragment;
+
+// ScriptStruct Chimera.CrBuildingStabilitySubsystemState
+// 0x01F0 (0x01F0 - 0x0000)
+struct FCrBuildingStabilitySubsystemState final
+{
+public:
+	struct FCrBuildingGraphData                   GraphData;                                         // 0x0000(0x00B0)(SaveGame, NativeAccessSpecifierPublic)
+	TMap<struct FCrMassPersistentEntityID, struct FCrCustomConnectionData> CustomConnectionData;     // 0x00B0(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+	TMap<struct FCrMassPersistentEntityID, struct FCrMassPersistentEntityIDArray> RampConnectionData; // 0x0100(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+	TMap<struct FCrMassPersistentEntityID, struct FCrMassPersistentEntityIDArray> BuildingFoundationData; // 0x0150(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+	TMap<struct FCrMassPersistentEntityID, struct FCrMassPersistentEntityIDArray> BuildingDefaultFoundationData; // 0x01A0(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrBuildingStabilitySubsystemState;
+
+// ScriptStruct Chimera.CrBuildingDestroyInstigator
+// 0x0020 (0x0020 - 0x0000)
+struct alignas(0x08) FCrBuildingDestroyInstigator final
+{
+public:
+	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrBuildingDestroyInstigator;
+
+// ScriptStruct Chimera.CrHeaterCoolerParameters
+// 0x0040 (0x0040 - 0x0000)
+struct FCrHeaterCoolerParameters final : public FMassConstSharedFragment
+{
+public:
+	ECrMassHeaterCoolerType                       Type;                                              // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Power;                                             // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FuelUsagePerS;                                     // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TotalSocketsNum;                                   // 0x000C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxEnvTempToEnable;                                // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftClassPtr<class UClass>                   FuelItemDefinition;                                // 0x0018(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrHeaterCoolerParameters;
+
+// ScriptStruct Chimera.CrBuildingStabilitySubsystemSpawnerArrayWrapper
+// 0x0010 (0x0010 - 0x0000)
+struct FCrBuildingStabilitySubsystemSpawnerArrayWrapper final
+{
+public:
+	TArray<class ACrSimpleBuildingMassSpawner*>   Spawners;                                          // 0x0000(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrBuildingStabilitySubsystemSpawnerArrayWrapper;
+
+// ScriptStruct Chimera.CrReplicatedBuildingVisualCustomizationData
+// 0x0010 (0x0010 - 0x0000)
+struct FCrReplicatedBuildingVisualCustomizationData final
+{
+public:
+	struct FLinearColor                           ColorTint;                                         // 0x0000(0x0010)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrReplicatedBuildingVisualCustomizationData;
+
+// ScriptStruct Chimera.CrHeaterCoolerConnectionData
+// 0x0028 (0x0028 - 0x0000)
+struct FCrHeaterCoolerConnectionData final
+{
+public:
+	struct FCrMassPersistentEntityID              Entity;                                            // 0x0000(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ConnectedSocketCount;                              // 0x0010(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FName>                           ConnectedSockets;                                  // 0x0018(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrHeaterCoolerConnectionData;
+
+// ScriptStruct Chimera.CrReplicatedHeaterCoolerData
+// 0x0020 (0x0020 - 0x0000)
+struct FCrReplicatedHeaterCoolerData final
+{
+public:
+	ECrMassHeaterCoolerState                      State;                                             // 0x0000(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrLogisticsRequestPriority                   Priority;                                          // 0x0001(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FCrHeaterCoolerConnectionData>  Connections;                                       // 0x0008(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+	int32                                         ConnectionsRevision;                               // 0x0018(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrReplicatedHeaterCoolerData;
+
+// ScriptStruct Chimera.CrReplicatedHeaterCoolerAgent
+// 0x0318 (0x0340 - 0x0028)
+struct FCrReplicatedHeaterCoolerAgent final : public FReplicatedAgentBase
+{
+public:
+	struct FCrReplicatedInventoryData             InventoryData;                                     // 0x0028(0x0280)(Transient, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	struct FCrReplicatedInfectionData             InfectionData;                                     // 0x02A8(0x0008)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FCrReplicatedBuildingVisualCustomizationData VisualCustomizationData;                     // 0x02B0(0x0010)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FCrReplicatedHeaterCoolerData          HeaterCoolerData;                                  // 0x02C0(0x0020)(Transient, NativeAccessSpecifierPrivate)
+	struct FReplicatedAgentPositionYawData        PositionYaw;                                       // 0x02E0(0x0020)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FCrReplicatedPlacementData             PlacementData;                                     // 0x0300(0x0030)(Transient, NativeAccessSpecifierPrivate)
+	struct FCrReplicatedStabilityData             StabilityData;                                     // 0x0330(0x0008)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FCrReplicatedTemperatureData           TemperatureData;                                   // 0x0338(0x0004)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_33C[0x4];                                      // 0x033C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrReplicatedHeaterCoolerAgent;
+
+// ScriptStruct Chimera.CrBuildingPayloadData
+// 0x0068 (0x00D0 - 0x0068)
+struct FCrBuildingPayloadData : public FAuAPPayloadData
+{
+public:
+	struct FCrBuildingBeginPlayData               BeginPlayData;                                     // 0x0068(0x0068)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrBuildingPayloadData;
+
+// ScriptStruct Chimera.CrCompatibileSockets
+// 0x0068 (0x0068 - 0x0000)
+struct FCrCompatibileSockets final
+{
+public:
+	class FString                                 SocketName;                                        // 0x0000(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<class FString, float>                    SocketsAndAngles;                                  // 0x0010(0x0050)(Edit, NativeAccessSpecifierPublic)
+	float                                         SnapOffset;                                        // 0x0060(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrCompatibileSockets;
+
+// ScriptStruct Chimera.CrBuildingUpgradeTaskContainer
+// 0x0018 (0x0120 - 0x0108)
+struct FCrBuildingUpgradeTaskContainer final : public FFastArraySerializer
+{
+public:
+	class ACrBuildingUpgradeTasksOwner*           Owner;                                             // 0x0108(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	TArray<struct FCrBuildingUpgradeTask>         TasksData;                                         // 0x0110(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+};
+DUMPER7_ASSERTS_FCrBuildingUpgradeTaskContainer;
+
+// ScriptStruct Chimera.CrBuildingUpgradeTasksSaveData
+// 0x0010 (0x0010 - 0x0000)
+struct FCrBuildingUpgradeTasksSaveData final
+{
+public:
+	TArray<struct FCrBuildingUpgradeTask>         Tasks;                                             // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrBuildingUpgradeTasksSaveData;
+
+// ScriptStruct Chimera.CrBuildingSpawnPoint
+// 0x0054 (0x0060 - 0x000C)
+struct FCrBuildingSpawnPoint final : public FFastArraySerializerItem
+{
+public:
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCrMassEntityReplicationHelper         Building;                                          // 0x0010(0x0018)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerUniqueNedId;                                 // 0x0028(0x0010)(ZeroConstructor, SaveGame, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsMalfunction;                                     // 0x0038(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                SpawnPointLocation;                                // 0x0040(0x0018)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsInHub;                                           // 0x0058(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrBuildingSpawnPoint;
+
+// ScriptStruct Chimera.CrBuildingSpawnPointsContainer
+// 0x0018 (0x0120 - 0x0108)
+struct FCrBuildingSpawnPointsContainer final : public FFastArraySerializer
+{
+public:
+	TArray<struct FCrBuildingSpawnPoint>          BuildingSpawnPoints;                               // 0x0108(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	class ACrGameStateBase*                       Owner;                                             // 0x0118(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrBuildingSpawnPointsContainer;
+
+// ScriptStruct Chimera.InfectionReceiverFragment
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x04) FInfectionReceiverFragment final : public FMassFragment
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FInfectionReceiverFragment;
+
+// ScriptStruct Chimera.CrBuildingSpawnPointsSaveData
+// 0x0050 (0x0050 - 0x0000)
+struct FCrBuildingSpawnPointsSaveData final
+{
+public:
+	TMap<struct FCrMassPersistentEntityID, class FString> SpawnPointOwnerships;                      // 0x0000(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrBuildingSpawnPointsSaveData;
+
+// ScriptStruct Chimera.MassInfectionGridCellLocationFragment
+// 0x000C (0x000C - 0x0000)
+struct alignas(0x04) FMassInfectionGridCellLocationFragment final : public FMassFragment
+{
+public:
+	uint8                                         Pad_0[0xC];                                        // 0x0000(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassInfectionGridCellLocationFragment;
+
+// ScriptStruct Chimera.AttributeSetCheatProperties
+// 0x0040 (0x0040 - 0x0000)
+struct FAttributeSetCheatProperties final
+{
+public:
+	class FString                                 AttributeSetName;                                  // 0x0000(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAttributeCheatEffectsTags             CurrentValueCheatTags;                             // 0x0010(0x0028)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	TSubclassOf<class UGameplayEffect>            DirectMaxValueSetEffect;                           // 0x0038(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAttributeSetCheatProperties;
+
+// ScriptStruct Chimera.CloudsOnSkyParams
+// 0x0038 (0x0038 - 0x0000)
+struct FCloudsOnSkyParams final
+{
+public:
+	float                                         Density;                                           // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxMipLevel;                                       // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BorderMargin;                                      // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WindSpeed;                                         // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NoiseMaskOpacity;                                  // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NoiseMaskExponential;                              // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Tilling;                                           // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         TillingOffset;                                     // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          RandomizeRot;                                      // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         RandomizeRotAmount;                                // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          RandomizeScale;                                    // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         RandomizeScaleAmount;                              // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          RandomizePos;                                      // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         RandomizePosAmount;                                // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCloudsOnSkyParams;
+
+// ScriptStruct Chimera.CrMassListenServerInfoPerViewerFragment
+// 0x0040 (0x0040 - 0x0000)
+struct alignas(0x08) FCrMassListenServerInfoPerViewerFragment final : public FMassFragment
+{
+public:
+	uint8                                         Pad_0[0x40];                                       // 0x0000(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrMassListenServerInfoPerViewerFragment;
+
+// ScriptStruct Chimera.CloudsBillboardsParamsDensityAndShadowing
+// 0x0024 (0x0024 - 0x0000)
+struct FCloudsBillboardsParamsDensityAndShadowing final
+{
+public:
+	float                                         Density;                                           // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         OpacityFresnelExponent;                            // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         OpacityFresnelOffset;                              // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NoiseTilling;                                      // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WindSpeed;                                         // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ShadowOpacity;                                     // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ShadowLenght;                                      // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ShadowFalloff;                                     // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ShadowCurvePower;                                  // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCloudsBillboardsParamsDensityAndShadowing;
+
+// ScriptStruct Chimera.CloudsBillboardsParamsAlbedo
+// 0x0030 (0x0030 - 0x0000)
+struct FCloudsBillboardsParamsAlbedo final
+{
+public:
+	struct FLinearColor                           AlbedoMainColor;                                   // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           AlbedoShadowColor;                                 // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AlbedoLerpClampMin;                                // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AlbedoLerpClampMax;                                // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AlbedoLerpFalloffPower;                            // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AlbedoNoiseOpacity;                                // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCloudsBillboardsParamsAlbedo;
+
+// ScriptStruct Chimera.CloudsBillboardsParamsCameraFading
+// 0x0008 (0x0008 - 0x0000)
+struct FCloudsBillboardsParamsCameraFading final
+{
+public:
+	float                                         CameraFadingDistance;                              // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SoftEdgeDistance;                                  // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCloudsBillboardsParamsCameraFading;
+
+// ScriptStruct Chimera.CloudsBillboardsParamsCameraSunAdditionalLighting
+// 0x0044 (0x0044 - 0x0000)
+struct FCloudsBillboardsParamsCameraSunAdditionalLighting final
+{
+public:
+	struct FLinearColor                           EmissionMainColor;                                 // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           EmissionShadowColor;                               // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         EmissionLerpClampMin;                              // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         EmissionLerpClampMax;                              // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         EmissionLerpFalloffPower;                          // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         EmissionNoiseOpacity;                              // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BacklightBoost;                                    // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BacklightClampMin;                                 // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BacklightClampMax;                                 // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BacklightFalloffPower;                             // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SkymaskSkyBoost;                                   // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCloudsBillboardsParamsCameraSunAdditionalLighting;
+
+// ScriptStruct Chimera.CrContextEffects
+// 0x0038 (0x0038 - 0x0000)
+struct FCrContextEffects final
+{
+public:
+	struct FGameplayTag                           EffectTag;                                         // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTagContainer                  Context;                                           // 0x0008(0x0020)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	TArray<struct FSoftObjectPath>                Effects;                                           // 0x0028(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrContextEffects;
+
+// ScriptStruct Chimera.CrCorporationItemReward
+// 0x0010 (0x0010 - 0x0000)
+struct FCrCorporationItemReward final
+{
+public:
+	TSubclassOf<class UCrItemDataBase>            Item;                                              // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         Amount;                                            // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrCorporationItemReward;
+
+// ScriptStruct Chimera.CrMassListenServerVisualizationLODSharedFragment
+// 0x2038 (0x2038 - 0x0000)
+struct FCrMassListenServerVisualizationLODSharedFragment final : public FMassSharedFragment
+{
+public:
+	uint8                                         Pad_0[0x2030];                                     // 0x0000(0x2030)(Fixing Size After Last Property [ Dumper-7 ])
+	class UScriptStruct*                          FilterTag;                                         // 0x2030(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrMassListenServerVisualizationLODSharedFragment;
+
+// ScriptStruct Chimera.CrCorporationLevel
+// 0x0088 (0x0088 - 0x0000)
+struct FCrCorporationLevel final
+{
+public:
+	int64                                         Level;                                             // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         ReputationRequired;                                // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FCrCorporationItemReward>       ItemRewards;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class UCrBuildingData*>                BuildingRewards;                                   // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	TArray<class UCrBuildingCollectionData*>      BuildingCollectionRewards;                         // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	TArray<class UCrBuildingUpgradeRecipeData*>   BuildingUpgradeRecipes;                            // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	TArray<ECrCorporationUnlockedFeatures>        FeatureRewards;                                    // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         InventorySlotRewards;                              // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UCrBuildingData*>                BuildingsForUI;                                    // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	TArray<class UCrBuildingCollectionData*>      CollectionsForUI;                                  // 0x0078(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrCorporationLevel;
+
+// ScriptStruct Chimera.CrBuildingUpgrade
+// 0x0008 (0x0008 - 0x0000)
+struct FCrBuildingUpgrade final
+{
+public:
+	int32                                         BuildingIdx;                                       // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Upgraded;                                          // 0x0004(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrBuildingUpgrade;
+
+// ScriptStruct Chimera.CrBuildingsToUpgrade
+// 0x0018 (0x0018 - 0x0000)
+struct FCrBuildingsToUpgrade final
+{
+public:
+	int32                                         Level;                                             // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FCrBuildingUpgrade>             UpgradedBuildings;                                 // 0x0008(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrBuildingsToUpgrade;
+
+// ScriptStruct Chimera.CrCorporation
+// 0x003C (0x0048 - 0x000C)
+struct FCrCorporation final : public FFastArraySerializerItem
+{
+public:
+	class FName                                   Name;                                              // 0x000C(0x0008)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHidden;                                           // 0x0014(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Reputation;                                        // 0x0018(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Level;                                             // 0x001C(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<int32>                                 LevelRewardsClaimed;                               // 0x0020(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	TArray<struct FCrBuildingsToUpgrade>          UpgradedBuildingsClaimed;                          // 0x0030(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	int32                                         ResearchPointsTier1;                               // 0x0040(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ResearchPointsTier2;                               // 0x0044(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrCorporation;
+
+// ScriptStruct Chimera.CrCorporationsContainer
+// 0x0018 (0x0120 - 0x0108)
+struct FCrCorporationsContainer final : public FFastArraySerializer
+{
+public:
+	TArray<struct FCrCorporation>                 CorporationsData;                                  // 0x0108(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	class ACrCorporationsOwner*                   Owner;                                             // 0x0118(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrCorporationsContainer;
+
+// ScriptStruct Chimera.CrCorporationsOwnerSaveData
+// 0x0020 (0x0020 - 0x0000)
+struct FCrCorporationsOwnerSaveData final
+{
+public:
+	TArray<struct FCrCorporation>                 Corporations;                                      // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	int32                                         DataPoints;                                        // 0x0010(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStartingCorporationMaxedOut;                      // 0x0014(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         UnlockedFeaturesFlags;                             // 0x0015(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_16[0x2];                                       // 0x0016(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         UnlockedInventorySlotsNumber;                      // 0x0018(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrCorporationsOwnerSaveData;
+
+// ScriptStruct Chimera.CrRecipes
+// 0x0010 (0x0010 - 0x0000)
+struct FCrRecipes final
+{
+public:
+	TArray<class UCrItemRecipeData*>              Recipes;                                           // 0x0000(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrRecipes;
+
+// ScriptStruct Chimera.CrCorporationRecipes
+// 0x0050 (0x0050 - 0x0000)
+struct FCrCorporationRecipes final
+{
+public:
+	TMap<int32, struct FCrRecipes>                LevelRecipes;                                      // 0x0000(0x0050)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrCorporationRecipes;
+
+// ScriptStruct Chimera.CrLocalCorporationData
+// 0x0030 (0x0030 - 0x0000)
+struct FCrLocalCorporationData final
+{
+public:
+	TArray<int32>                                 RewardsClaimed;                                    // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FCrBuildingsToUpgrade>          UpgradedBuildingsClaimed;                          // 0x0010(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	int32                                         Reputation;                                        // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Level;                                             // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHidden;                                           // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrLocalCorporationData;
+
+// ScriptStruct Chimera.CrAnimMontageLayerSelectionEntry
+// 0x0028 (0x0028 - 0x0000)
+struct FCrAnimMontageLayerSelectionEntry final
+{
+public:
+	class UAnimMontage*                           AnimMontage;                                       // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FGameplayTagContainer                  RequiredTags;                                      // 0x0008(0x0020)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrAnimMontageLayerSelectionEntry;
+
+// ScriptStruct Chimera.CrAnimMontageLayerSelectionSet
+// 0x0018 (0x0018 - 0x0000)
+struct FCrAnimMontageLayerSelectionSet final
+{
+public:
+	TArray<struct FCrAnimMontageLayerSelectionEntry> LayerRules;                                     // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	class UAnimMontage*                           DefaultAnimMontage;                                // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrAnimMontageLayerSelectionSet;
+
+// ScriptStruct Chimera.CrAnimLayerSelectionSet
+// 0x0018 (0x0018 - 0x0000)
+struct FCrAnimLayerSelectionSet final
+{
+public:
+	TArray<struct FCrAnimLayerSelectionEntry>     LayerRules;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TSubclassOf<class UAnimInstance>              DefaultLayer;                                      // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrAnimLayerSelectionSet;
+
+// ScriptStruct Chimera.CrAnimBodyStyleSelectionSet
+// 0x0020 (0x0020 - 0x0000)
+struct FCrAnimBodyStyleSelectionSet final
+{
+public:
+	TArray<struct FCrAnimBodyStyleSelectionEntry> MeshRules;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	class USkeletalMesh*                          DefaultMesh;                                       // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UPhysicsAsset*                          ForcedPhysicsAsset;                                // 0x0018(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrAnimBodyStyleSelectionSet;
+
+// ScriptStruct Chimera.CrBuildingSoundEventData
+// 0x0010 (0x0010 - 0x0000)
+struct FCrBuildingSoundEventData final
+{
+public:
+	class FName                                   SocketName;                                        // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USoundBase*                             Sound;                                             // 0x0008(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrBuildingSoundEventData;
+
+// ScriptStruct Chimera.CrCraftingSettings
+// 0x000C (0x000C - 0x0000)
+struct FCrCraftingSettings final
+{
+public:
+	bool                                          bCloseListAfterSelection;                          // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSingleClickConfirmsSelection;                     // 0x0001(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHasQueue;                                         // 0x0002(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CraftAmountToRequest;                              // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CraftingSpeed;                                     // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrCraftingSettings;
+
+// ScriptStruct Chimera.CrCrafterQueueEntry
+// 0x0010 (0x0010 - 0x0000)
+struct FCrCrafterQueueEntry final
+{
+public:
+	class UCrItemRecipeData*                      Recipe;                                            // 0x0000(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	int32                                         Amount;                                            // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsPrerequisite;                                   // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrCrafterQueueEntry;
+
+// ScriptStruct Chimera.CrUnlockableRecipesContainer
+// 0x0018 (0x0120 - 0x0108)
+struct FCrUnlockableRecipesContainer final : public FFastArraySerializer
+{
+public:
+	TArray<struct FCrUnlockableRecipeData>        RecipesData;                                       // 0x0108(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	class ACrCraftingRecipeOwner*                 Owner;                                             // 0x0118(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrUnlockableRecipesContainer;
+
+// ScriptStruct Chimera.CrCraftingReverseLookupBuildingData
+// 0x0010 (0x0010 - 0x0000)
+struct FCrCraftingReverseLookupBuildingData final
+{
+public:
+	TArray<TSoftObjectPtr<class UCrBuildingData>> Data;                                              // 0x0000(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrCraftingReverseLookupBuildingData;
+
+// ScriptStruct Chimera.CrCraftingReverseLookupRecipeData
+// 0x0010 (0x0010 - 0x0000)
+struct FCrCraftingReverseLookupRecipeData final
+{
+public:
+	TArray<TSoftObjectPtr<class UCrItemRecipeData>> RecipeData;                                      // 0x0000(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrCraftingReverseLookupRecipeData;
+
+// ScriptStruct Chimera.CrCrosshairData
+// 0x0028 (0x0028 - 0x0000)
+struct FCrCrosshairData final
+{
+public:
+	TSoftObjectPtr<class UTexture2D>              CrosshairTexture;                                  // 0x0000(0x0028)(Edit, BlueprintVisible, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrCrosshairData;
+
+// ScriptStruct Chimera.CrConnectorSocketCheckData
+// 0x0030 (0x0030 - 0x0000)
+struct FCrConnectorSocketCheckData final
+{
+public:
+	class UStaticMeshSocket*                      Socket;                                            // 0x0000(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FVector                                SocketLocation;                                    // 0x0008(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_20[0x10];                                      // 0x0020(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrConnectorSocketCheckData;
+
+// ScriptStruct Chimera.CrCustomBuildingMesh
+// 0x0010 (0x0010 - 0x0000)
+struct FCrCustomBuildingMesh final
+{
+public:
+	class UStaticMeshSocket*                      Socket;                                            // 0x0000(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UStaticMeshComponent*                   Mesh;                                              // 0x0008(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrCustomBuildingMesh;
+
+// ScriptStruct Chimera.CrConnectingClassMeshes
+// 0x0050 (0x0050 - 0x0000)
+struct FCrConnectingClassMeshes final
+{
+public:
+	TMap<TSubclassOf<class ACrCustomBuilding>, class UStaticMesh*> Map;                              // 0x0000(0x0050)(Edit, BlueprintVisible, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrConnectingClassMeshes;
+
+// ScriptStruct Chimera.DamageData
+// 0x0030 (0x0030 - 0x0000)
+struct FDamageData final
+{
+public:
+	bool                                          bWeakpointHit;                                     // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bArmorHit;                                         // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShieldHit;                                        // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bKillingHit;                                       // 0x0003(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                HitLocation;                                       // 0x0008(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           TargetTag;                                         // 0x0020(0x0008)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           DamagingWeaponTag;                                 // 0x0028(0x0008)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FDamageData;
+
+// ScriptStruct Chimera.DatapadEntriesListSaveData
+// 0x0010 (0x0010 - 0x0000)
+struct FDatapadEntriesListSaveData final
+{
+public:
+	TArray<class FName>                           Entries;                                           // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, SaveGame, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FDatapadEntriesListSaveData;
+
+// ScriptStruct Chimera.DatapadData
+// 0x0048 (0x0050 - 0x0008)
+struct FDatapadData final : public FTableRowBase
+{
+public:
+	class FName                                   RowName;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   Title;                                             // 0x0010(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FText                                   Content;                                           // 0x0020(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FText                                   Date;                                              // 0x0030(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FText                                   Author;                                            // 0x0040(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FDatapadData;
+
+// ScriptStruct Chimera.CrDLCEntry
+// 0x0018 (0x0018 - 0x0000)
+struct FCrDLCEntry final
+{
+public:
+	ECrDLCId                                      DlcId;                                             // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         SteamDLCId;                                        // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FCrItemsSpawnSettings>          ItemsToAdd;                                        // 0x0008(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrDLCEntry;
+
+// ScriptStruct Chimera.CrDoorStateSetting
+// 0x0048 (0x0048 - 0x0000)
+struct FCrDoorStateSetting final
+{
+public:
+	struct FLinearColor                           EmissiveLightColor;                                // 0x0000(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           TerminalColor;                                     // 0x0010(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   TriggerText;                                       // 0x0020(0x0010)(Edit, NativeAccessSpecifierPublic)
+	class FString                                 RuleData;                                          // 0x0030(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             Icon;                                              // 0x0040(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrDoorStateSetting;
+
+// ScriptStruct Chimera.CrInteractionContextDataBase
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x08) FCrInteractionContextDataBase
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrInteractionContextDataBase;
+
+// ScriptStruct Chimera.CrHeaterCoolerOperatingTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrHeaterCoolerOperatingTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrHeaterCoolerOperatingTag;
+
+// ScriptStruct Chimera.CrDroneInteractionContextData
+// 0x0028 (0x0030 - 0x0008)
+struct FCrDroneInteractionContextData final : public FCrInteractionContextDataBase
+{
+public:
+	uint8                                         Pad_8[0x28];                                       // 0x0008(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrDroneInteractionContextData;
+
+// ScriptStruct Chimera.CrElectricityGraphSubsystemSaveData
+// 0x0008 (0x0008 - 0x0000)
+struct FCrElectricityGraphSubsystemSaveData final
+{
+public:
+	float                                         HighestProducedElectricity;                        // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HighestConsumedElectricity;                        // 0x0004(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrElectricityGraphSubsystemSaveData;
+
+// ScriptStruct Chimera.CrMassHeaterCoolerFastArrayItem
+// 0x0340 (0x0350 - 0x0010)
+struct FCrMassHeaterCoolerFastArrayItem final : public FMassFastArrayItemBase
+{
+public:
+	struct FCrReplicatedHeaterCoolerAgent         Agent;                                             // 0x0010(0x0340)(ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrMassHeaterCoolerFastArrayItem;
+
+// ScriptStruct Chimera.CrMassHeaterCoolerClientBubbleSerializer
+// 0x0198 (0x02D0 - 0x0138)
+struct FCrMassHeaterCoolerClientBubbleSerializer final : public FMassClientBubbleSerializerBase
+{
+public:
+	uint8                                         Pad_138[0x188];                                    // 0x0138(0x0188)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FCrMassHeaterCoolerFastArrayItem> Buildings;                                       // 0x02C0(0x0010)(ZeroConstructor, Transient, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+};
+DUMPER7_ASSERTS_FCrMassHeaterCoolerClientBubbleSerializer;
+
+// ScriptStruct Chimera.CrElectricitySubgraphData
+// 0x005C (0x0068 - 0x000C)
+struct FCrElectricitySubgraphData final : public FFastArraySerializerItem
+{
+public:
+	bool                                          bInitialized;                                      // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCrGenericMassSubGraph                 SubGraph;                                          // 0x0010(0x0004)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ProducersNum;                                      // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAnyProducer;                                      // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPrevAnyProducer;                                  // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1A[0x2];                                       // 0x001A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ProducedElectricity;                               // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PrevProducedElectricity;                           // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ConsumedElectricity;                               // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PrevConsumedElectricity;                           // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBox                                   BoxWorld;                                          // 0x0030(0x0038)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrElectricitySubgraphData;
+
+// ScriptStruct Chimera.CrElectricitySubgraphDataSerializer
+// 0x0068 (0x0170 - 0x0108)
+struct FCrElectricitySubgraphDataSerializer final : public FFastArraySerializer
+{
+public:
+	TMap<struct FCrGenericMassSubGraph, int32>    GraphToIndex;                                      // 0x0108(0x0050)(RepSkip, NativeAccessSpecifierPublic)
+	TArray<struct FCrElectricitySubgraphData>     Items;                                             // 0x0158(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	class ACrElectricitySubgraphDataReplicator*   Owner;                                             // 0x0168(0x0008)(ZeroConstructor, RepSkip, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrElectricitySubgraphDataSerializer;
+
+// ScriptStruct Chimera.EncyclopediaEntryAuthor
+// 0x00D0 (0x00D0 - 0x0000)
+struct FEncyclopediaEntryAuthor final
+{
+public:
+	class FName                                   AuthorID;                                          // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   AuthorName;                                        // 0x0008(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            AuthorPicture;                                     // 0x0020(0x00B0)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FEncyclopediaEntryAuthor;
+
+// ScriptStruct Chimera.CrEncyclopediaEntryRead
+// 0x0014 (0x0014 - 0x0000)
+struct FCrEncyclopediaEntryRead final
+{
+public:
+	struct FGuid                                  EntryID;                                           // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         ChaptersRead;                                      // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrEncyclopediaEntryRead;
+
+// ScriptStruct Chimera.CrEncyclopediaEntryReadSaveData
+// 0x0014 (0x0014 - 0x0000)
+struct FCrEncyclopediaEntryReadSaveData final
+{
+public:
+	struct FGuid                                  EntryID;                                           // 0x0000(0x0010)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         ChaptersRead;                                      // 0x0010(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrEncyclopediaEntryReadSaveData;
+
+// ScriptStruct Chimera.CrEncyclopediaEntryStatusSaveData
+// 0x0014 (0x0014 - 0x0000)
+struct FCrEncyclopediaEntryStatusSaveData final
+{
+public:
+	struct FGuid                                  EntryID;                                           // 0x0000(0x0010)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         ChaptersUnlocked;                                  // 0x0010(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrEncyclopediaEntryStatusSaveData;
+
+// ScriptStruct Chimera.CrEncyclopediaEntriesStatusContainer
+// 0x0018 (0x0120 - 0x0108)
+struct FCrEncyclopediaEntriesStatusContainer final : public FFastArraySerializer
+{
+public:
+	TArray<struct FCrEncyclopediaEntryStatus>     EntriesStatusData;                                 // 0x0108(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	class ACrEncyclopediaReplicationHelper*       Owner;                                             // 0x0118(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrEncyclopediaEntriesStatusContainer;
+
+// ScriptStruct Chimera.CrEncyclopediaChapterUnlockCondition
+// 0x0014 (0x0014 - 0x0000)
+struct FCrEncyclopediaChapterUnlockCondition final
+{
+public:
+	class FName                                   Context;                                           // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ContextValue;                                      // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ConditionNumber;                                   // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrEncyclopediaChapterUnlockCondition;
+
+// ScriptStruct Chimera.CrLogisticsSubgraphData
+// 0x0088 (0x0088 - 0x0000)
+struct FCrLogisticsSubgraphData final
+{
+public:
+	TArray<struct FCrMassPersistentEntityID>      Nodes;                                             // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	uint8                                         Pad_10[0x78];                                      // 0x0010(0x0078)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrLogisticsSubgraphData;
+
+// ScriptStruct Chimera.CrEncyclopediaChapter
+// 0x0028 (0x0028 - 0x0000)
+struct FCrEncyclopediaChapter final
+{
+public:
+	struct FCrEncyclopediaChapterUnlockCondition  UnlockCondition;                                   // 0x0000(0x0014)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   ChapterText;                                       // 0x0018(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrEncyclopediaChapter;
+
+// ScriptStruct Chimera.CrEncyclopediaBaseData
+// 0x00E8 (0x00F0 - 0x0008)
+struct FCrEncyclopediaBaseData : public FTableRowBase
+{
+public:
+	struct FGuid                                  EntryID;                                           // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Category;                                          // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   SubCategory;                                       // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   EntryName;                                         // 0x0028(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            MiniaturePicture;                                  // 0x0040(0x00B0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrEncyclopediaBaseData;
+
+// ScriptStruct Chimera.CrEncyclopediaAudiologData
+// 0x0010 (0x0100 - 0x00F0)
+struct FCrEncyclopediaAudiologData final : public FCrEncyclopediaBaseData
+{
+public:
+	struct FDataTableRowHandle                    AudiologEntryDT;                                   // 0x00F0(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrEncyclopediaAudiologData;
+
+// ScriptStruct Chimera.CrEncyclopediaDataPadData
+// 0x0010 (0x0100 - 0x00F0)
+struct FCrEncyclopediaDataPadData final : public FCrEncyclopediaBaseData
+{
+public:
+	struct FDataTableRowHandle                    DataPadEntryDT;                                    // 0x00F0(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrEncyclopediaDataPadData;
+
+// ScriptStruct Chimera.CrReplicatedCraftingData
+// 0x0030 (0x0030 - 0x0000)
+struct FCrReplicatedCraftingData final
+{
+public:
+	class UCrItemRecipeData*                      Recipe;                                            // 0x0000(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FCrItemBasedCraftingData               ItemBasedData;                                     // 0x0008(0x0010)(Transient, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         LastStartTime;                                     // 0x0018(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LastCompleteTime;                                  // 0x001C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LastHaltTime;                                      // 0x0020(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CraftingSpeed;                                     // 0x0024(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsMissingItems;                                   // 0x0028(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOutputFull;                                       // 0x0029(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUnavailableInputItem;                             // 0x002A(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int8                                          CraftingMultiplier;                                // 0x002B(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrReplicatedCraftingData;
+
+// ScriptStruct Chimera.CrReplicatedLogisticsOptionsData
+// 0x0001 (0x0001 - 0x0000)
+struct FCrReplicatedLogisticsOptionsData final
+{
+public:
+	ECrLogisticsRequestPriority                   Priority;                                          // 0x0000(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrReplicatedLogisticsOptionsData;
+
+// ScriptStruct Chimera.CrReplicatedBuildingAgent
+// 0x02E0 (0x0378 - 0x0098)
+struct FCrReplicatedBuildingAgent final : public FCrReplicatedSimpleBuildingAgent
+{
+public:
+	struct FCrReplicatedInventoryData             InventoryData;                                     // 0x0098(0x0280)(Transient, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	struct FCrReplicatedCraftingData              CraftingData;                                      // 0x0318(0x0030)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FCrReplicatedInfectionData             InfectionData;                                     // 0x0348(0x0008)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FCrReplicatedBuildingVisualCustomizationData VisualCustomizationData;                     // 0x0350(0x0010)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FCrReplicatedLogisticsOptionsData      LogisticsOptionsData;                              // 0x0360(0x0001)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_361[0x7];                                      // 0x0361(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCrReplicatedCustomDataArray           CustomData;                                        // 0x0368(0x0010)(Transient, NativeAccessSpecifierPrivate)
+};
+DUMPER7_ASSERTS_FCrReplicatedBuildingAgent;
+
+// ScriptStruct Chimera.CrMassBuildingFastArrayItem
+// 0x0378 (0x0388 - 0x0010)
+struct FCrMassBuildingFastArrayItem final : public FMassFastArrayItemBase
+{
+public:
+	struct FCrReplicatedBuildingAgent             Agent;                                             // 0x0010(0x0378)(ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrMassBuildingFastArrayItem;
+
+// ScriptStruct Chimera.CrMassBuildingClientBubbleSerializer
+// 0x01E8 (0x0320 - 0x0138)
+struct FCrMassBuildingClientBubbleSerializer final : public FMassClientBubbleSerializerBase
+{
+public:
+	uint8                                         Pad_138[0x1D8];                                    // 0x0138(0x01D8)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FCrMassBuildingFastArrayItem>   Buildings;                                         // 0x0310(0x0010)(ZeroConstructor, Transient, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+};
+DUMPER7_ASSERTS_FCrMassBuildingClientBubbleSerializer;
+
+// ScriptStruct Chimera.CrEncyclopediaEntryData
+// 0x00E0 (0x01D0 - 0x00F0)
+struct FCrEncyclopediaEntryData final : public FCrEncyclopediaBaseData
+{
+public:
+	class FText                                   EntryHeader;                                       // 0x00F0(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FName                                   Author;                                            // 0x0100(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FCrEncyclopediaChapter>         Chapters;                                          // 0x0108(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_118[0x8];                                      // 0x0118(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            Picture;                                           // 0x0120(0x00B0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrEncyclopediaEntryData;
+
+// ScriptStruct Chimera.EntityCallToActorRequest
+// 0x0028 (0x0028 - 0x0000)
+struct alignas(0x08) FEntityCallToActorRequest final
+{
+public:
+	uint8                                         Pad_0[0x28];                                       // 0x0000(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FEntityCallToActorRequest;
 
 // ScriptStruct Chimera.NodeEntityArrayWrapper
 // 0x0010 (0x0010 - 0x0000)
@@ -3718,176 +4993,133 @@ public:
 };
 DUMPER7_ASSERTS_FNodeEntityArrayWrapper;
 
-// ScriptStruct Chimera.CrBaseCoreDataContainer
-// 0x0018 (0x0120 - 0x0108)
-struct FCrBaseCoreDataContainer final : public FFastArraySerializer
-{
-public:
-	TArray<struct FCrBaseCoreData>                BaseCoreData;                                      // 0x0108(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	class ACrBaseCoreReplicationHelper*           Owner;                                             // 0x0118(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrBaseCoreDataContainer;
-
-// ScriptStruct Chimera.CrBaseSiteDataWithCachedInfo
-// 0x0010 (0x0050 - 0x0040)
-struct FCrBaseSiteDataWithCachedInfo final : public FCrBaseSiteData
-{
-public:
-	bool                                          AwaitingForBaseAttackAfterUpgrade;                 // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_41[0x3];                                       // 0x0041(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CoreLevel;                                         // 0x0044(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ElectricityAmount;                                 // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DistanceToAnyPlayer;                               // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrBaseSiteDataWithCachedInfo;
-
-// ScriptStruct Chimera.CrBaseSiteDataTickFunction
-// 0x0008 (0x0030 - 0x0028)
-struct FCrBaseSiteDataTickFunction final : public FTickFunction
-{
-public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrBaseSiteDataTickFunction;
-
-// ScriptStruct Chimera.CrGenericMassGraphSubgraphData
-// 0x0028 (0x0028 - 0x0000)
-struct FCrGenericMassGraphSubgraphData final
-{
-public:
-	TArray<struct FCrMassPersistentEntityID>      Nodes;                                             // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-	TArray<struct FCrMassPersistentEntityID>      Connectors;                                        // 0x0010(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-	struct FCrGenericMassSubGraph                 SubGraph;                                          // 0x0020(0x0004)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrGenericMassGraphSubgraphData;
-
-// ScriptStruct Chimera.CrSoundSocket
-// 0x0010 (0x0010 - 0x0000)
-struct FCrSoundSocket final
-{
-public:
-	class FName                                   SocketName;                                        // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USoundBase*                             Sound;                                             // 0x0008(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrSoundSocket;
-
-// ScriptStruct Chimera.CrMassBuildingDisabledTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassBuildingDisabledTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrMassBuildingDisabledTag;
-
-// ScriptStruct Chimera.CrBuildingStateSoundsNew
-// 0x0030 (0x0030 - 0x0000)
-struct FCrBuildingStateSoundsNew final
-{
-public:
-	TArray<struct FCrSoundSocket>                 StartSounds;                                       // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FCrSoundSocket>                 MainLoops;                                         // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FCrSoundSocket>                 EndSounds;                                         // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrBuildingStateSoundsNew;
-
-// ScriptStruct Chimera.CrNonSimDataReduced
-// 0x0000 (0x0001 - 0x0001)
-struct FCrNonSimDataReduced final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrNonSimDataReduced;
-
-// ScriptStruct Chimera.GlobalAppliedEffectList
-// 0x0050 (0x0050 - 0x0000)
-struct FGlobalAppliedEffectList final
-{
-public:
-	TMap<class UCrAbilitySystemComponent*, struct FActiveGameplayEffectHandle> Handles;              // 0x0000(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGlobalAppliedEffectList;
-
-// ScriptStruct Chimera.CrStorageItem
-// 0x005C (0x0068 - 0x000C)
-struct FCrStorageItem final : public FFastArraySerializerItem
-{
-public:
-	struct FCrSlotId                              SlotID;                                            // 0x000C(0x0004)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAuSimpleItem                          Item;                                              // 0x0010(0x0030)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Column;                                            // 0x0040(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Row;                                               // 0x0044(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCrSlotId                              OwnerSlot;                                         // 0x0048(0x0004)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UAuItemDataBase*>                ItemTypeFilter;                                    // 0x0050(0x0010)(ZeroConstructor, SaveGame, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-	bool                                          bIsDisabled;                                       // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrStorageItem;
-
-// ScriptStruct Chimera.CrItemsStorageContainer
-// 0x0018 (0x0120 - 0x0108)
-struct FCrItemsStorageContainer final : public FFastArraySerializer
-{
-public:
-	TArray<struct FCrStorageItem>                 Items;                                             // 0x0108(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPrivate)
-	TWeakObjectPtr<class UCrBuildingItemStorageComponent> Owner;                                     // 0x0118(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrItemsStorageContainer;
-
-// ScriptStruct Chimera.CrSlotItemThresholdSetting
-// 0x0008 (0x0008 - 0x0000)
-struct FCrSlotItemThresholdSetting final
-{
-public:
-	struct FCrSlotId                              SlotID;                                            // 0x0000(0x0004)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Threshold;                                         // 0x0004(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrSlotItemThresholdSetting;
-
-// ScriptStruct Chimera.CrInventoryFragment
-// 0x0250 (0x0250 - 0x0000)
-struct FCrInventoryFragment final : public FCrMassSavableFragment
-{
-public:
-	struct FCrItemsStorageContainer               InputInventoryContainer;                           // 0x0000(0x0120)(SaveGame, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	struct FCrItemsStorageContainer               MainInventoryContainer;                            // 0x0120(0x0120)(SaveGame, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	TArray<struct FCrSlotItemThresholdSetting>    ItemThresholds;                                    // 0x0240(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrInventoryFragment;
-
-// ScriptStruct Chimera.CrAnimCurveMeshComponentSet
-// 0x0030 (0x0030 - 0x0000)
-struct FCrAnimCurveMeshComponentSet final
-{
-public:
-	class UCurveVector*                           OnBeginCurve;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UCurveVector*                           LoopCurve;                                         // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UCurveVector*                           OnEndCurve;                                        // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UCurveVector*                           RotOnBeginCurve;                                   // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UCurveVector*                           RotLoopCurve;                                      // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UCurveVector*                           RotOnEndCurve;                                     // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrAnimCurveMeshComponentSet;
-
-// ScriptStruct Chimera.CrMassDroneBuildingClientBubbleSerializer
-// 0x01C0 (0x02F8 - 0x0138)
-struct FCrMassDroneBuildingClientBubbleSerializer final : public FMassClientBubbleSerializerBase
-{
-public:
-	uint8                                         Pad_138[0x1B0];                                    // 0x0138(0x01B0)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FCrMassDroneBuildingFastArrayItem> Buildings;                                      // 0x02E8(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
-};
-DUMPER7_ASSERTS_FCrMassDroneBuildingClientBubbleSerializer;
-
-// ScriptStruct Chimera.CrArrayOfAnimCurveMeshComponentSet
+// ScriptStruct Chimera.CrGridEntityHandle
 // 0x0018 (0x0018 - 0x0000)
-struct FCrArrayOfAnimCurveMeshComponentSet final
+struct alignas(0x08) FCrGridEntityHandle final
 {
 public:
-	ECrBuildingAnimationSubState                  CurrentAnimSubState;                               // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FCrAnimCurveMeshComponentSet>   ArrayOfSets;                                       // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrArrayOfAnimCurveMeshComponentSet;
+DUMPER7_ASSERTS_FCrGridEntityHandle;
+
+// ScriptStruct Chimera.CrGridEntityDataBase
+// 0x000C (0x000C - 0x0000)
+struct alignas(0x04) FCrGridEntityDataBase final
+{
+public:
+	uint8                                         Pad_0[0xC];                                        // 0x0000(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrGridEntityDataBase;
+
+// ScriptStruct Chimera.CrStoreRequestStorageItemState
+// 0x0010 (0x0010 - 0x0000)
+struct FCrStoreRequestStorageItemState final
+{
+public:
+	class UAuItemDataBase*                        ItemType;                                          // 0x0000(0x0008)(ZeroConstructor, SaveGame, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	int32                                         Count;                                             // 0x0008(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrStoreRequestStorageItemState;
+
+// ScriptStruct Chimera.CrStoreRequestStorageState
+// 0x0050 (0x0050 - 0x0000)
+struct FCrStoreRequestStorageState final
+{
+public:
+	TSet<struct FCrStoreRequestStorageItemState>  ItemStates;                                        // 0x0000(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrStoreRequestStorageState;
+
+// ScriptStruct Chimera.CrEnviroWaveStageAmbientData
+// 0x00C8 (0x00C8 - 0x0000)
+struct FCrEnviroWaveStageAmbientData final
+{
+public:
+	struct FGameplayTagQuery                      TagQuery;                                          // 0x0000(0x0048)(Edit, NativeAccessSpecifierPublic)
+	bool                                          bSeparatedAudioForInteriorExterior;                // 0x0048(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftObjectPtr<class USoundBase>              InteriorSound;                                     // 0x0050(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class USoundBase>              ExteriorSound;                                     // 0x0078(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class USoundBase>              Sound;                                             // 0x00A0(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrEnviroWaveStageAmbientData;
+
+// ScriptStruct Chimera.CrEnviroWaveAmbientData
+// 0x0010 (0x0010 - 0x0000)
+struct FCrEnviroWaveAmbientData final
+{
+public:
+	TArray<struct FCrEnviroWaveStageAmbientData>  StagesAmbientData;                                 // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrEnviroWaveAmbientData;
+
+// ScriptStruct Chimera.CrLogisticsGraphConnectionData
+// 0x0020 (0x0020 - 0x0000)
+struct FCrLogisticsGraphConnectionData final
+{
+public:
+	struct FCrMassPersistentEntityID              Neighbour;                                         // 0x0000(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FCrMassPersistentEntityID>      Connectors;                                        // 0x0010(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrLogisticsGraphConnectionData;
+
+// ScriptStruct Chimera.NodeGraphConnectionArrayWrapper
+// 0x0010 (0x0010 - 0x0000)
+struct FNodeGraphConnectionArrayWrapper final
+{
+public:
+	TArray<struct FCrLogisticsGraphConnectionData> ArrayData;                                        // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FNodeGraphConnectionArrayWrapper;
+
+// ScriptStruct Chimera.CurrentEnviroWaveAudio
+// 0x0018 (0x0018 - 0x0000)
+struct FCurrentEnviroWaveAudio final
+{
+public:
+	bool                                          bSeparatedAudioForInteriorExterior;                // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAudioComponent*                        InteriorSoundComponent;                            // 0x0008(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UAudioComponent*                        ExteriorSoundComponent;                            // 0x0010(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCurrentEnviroWaveAudio;
+
+// ScriptStruct Chimera.CrEnviroWaveCurveFloatMap
+// 0x0050 (0x0050 - 0x0000)
+struct FCrEnviroWaveCurveFloatMap final
+{
+public:
+	TMap<EEnviroWaveStage, struct FRuntimeFloatCurve> Curves;                                        // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrEnviroWaveCurveFloatMap;
+
+// ScriptStruct Chimera.CrLogisticsNavGraphNode
+// 0x0010 (0x0010 - 0x0000)
+struct FCrLogisticsNavGraphNode final
+{
+public:
+	struct FCrMassPersistentEntityID              UId;                                               // 0x0000(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrLogisticsNavGraphNode;
+
+// ScriptStruct Chimera.CrEnviroWaveCurveVectorMap
+// 0x0050 (0x0050 - 0x0000)
+struct FCrEnviroWaveCurveVectorMap final
+{
+public:
+	TMap<EEnviroWaveStage, struct FRuntimeVectorCurve> Curves;                                       // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrEnviroWaveCurveVectorMap;
+
+// ScriptStruct Chimera.CrEnviroWaveCurveTableMap
+// 0x0050 (0x0050 - 0x0000)
+struct FCrEnviroWaveCurveTableMap final
+{
+public:
+	TMap<EEnviroWaveStage, class UCurveTable*>    Curves;                                            // 0x0000(0x0050)(Edit, BlueprintVisible, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrEnviroWaveCurveTableMap;
 
 // ScriptStruct Chimera.CrLogisticsTypeFilter
 // 0x0010 (0x0010 - 0x0000)
@@ -3898,80 +5130,324 @@ public:
 };
 DUMPER7_ASSERTS_FCrLogisticsTypeFilter;
 
-// ScriptStruct Chimera.CrWeaponItemInstance
-// 0x0050 (0x00A0 - 0x0050)
-struct FCrWeaponItemInstance : public FAuWeaponItemInstance
-{
-public:
-	TMap<struct FGameplayTag, TSoftObjectPtr<class UCrWeaponModDataAsset>> AppliedMods;              // 0x0050(0x0050)(UObjectWrapper, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrWeaponItemInstance;
-
-// ScriptStruct Chimera.CrHarvesterItemInstance
-// 0x0008 (0x00A8 - 0x00A0)
-struct FCrHarvesterItemInstance final : public FCrWeaponItemInstance
-{
-public:
-	int32                                         HeatStackCurrent;                                  // 0x00A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         HeatStackMax;                                      // 0x00A4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrHarvesterItemInstance;
-
-// ScriptStruct Chimera.CrBuildingAnimationSignificanceSettings
-// 0x0014 (0x0014 - 0x0000)
-struct FCrBuildingAnimationSignificanceSettings final
-{
-public:
-	float                                         SlowestAnimTickRateDistance;                       // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FastestAnimTickRateDistance;                       // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SlowestAnimTickRate;                               // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FastestAnimTickRate;                               // 0x000C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AnimatedMeshesCollisionSignificanceThreshold;      // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrBuildingAnimationSignificanceSettings;
-
-// ScriptStruct Chimera.CrPlayerAttributeSaveData
-// 0x000C (0x000C - 0x0000)
-struct FCrPlayerAttributeSaveData final
-{
-public:
-	float                                         Current;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Min;                                               // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Max;                                               // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrPlayerAttributeSaveData;
-
-// ScriptStruct Chimera.CrBuildingActorBaseComponentMobility
-// 0x0010 (0x0010 - 0x0000)
-struct FCrBuildingActorBaseComponentMobility final
-{
-public:
-	class USceneComponent*                        Component;                                         // 0x0000(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	EComponentMobility                            Mobility;                                          // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bGenerateOverlaps;                                 // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrBuildingActorBaseComponentMobility;
-
-// ScriptStruct Chimera.BuildingCustomNameSaveData
+// ScriptStruct Chimera.CrEnviroWaveCurveLinearColorMap
 // 0x0050 (0x0050 - 0x0000)
-struct FBuildingCustomNameSaveData final
+struct FCrEnviroWaveCurveLinearColorMap final
 {
 public:
-	TMap<struct FCrMassPersistentEntityID, class FString> CustomNames;                               // 0x0000(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+	TMap<EEnviroWaveStage, struct FRuntimeCurveLinearColor> Curves;                                  // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FBuildingCustomNameSaveData;
+DUMPER7_ASSERTS_FCrEnviroWaveCurveLinearColorMap;
 
-// ScriptStruct Chimera.CrResourceRequirementEntry
-// 0x0010 (0x0010 - 0x0000)
-struct FCrResourceRequirementEntry final
+// ScriptStruct Chimera.CrEnviroWaveCurves
+// 0x0140 (0x0140 - 0x0000)
+struct FCrEnviroWaveCurves final
 {
 public:
-	TSubclassOf<class UCrItemDataBase>            Item;                                              // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Quantity;                                          // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TMap<EEnviroWave, struct FCrEnviroWaveCurveFloatMap> FloatCurves;                                // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<EEnviroWave, struct FCrEnviroWaveCurveVectorMap> VectorCurves;                              // 0x0050(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<EEnviroWave, struct FCrEnviroWaveCurveLinearColorMap> LinearColorCurves;                    // 0x00A0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<EEnviroWave, struct FCrEnviroWaveCurveTableMap> TableCurves;                                // 0x00F0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrResourceRequirementEntry;
+DUMPER7_ASSERTS_FCrEnviroWaveCurves;
+
+// ScriptStruct Chimera.PlayerMarkerDataFastArrayItem
+// 0x0034 (0x0040 - 0x000C)
+struct FPlayerMarkerDataFastArrayItem final : public FFastArraySerializerItem
+{
+public:
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Player;                                            // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2f                              Location;                                          // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           PlayerColor;                                       // 0x0028(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RotationZ;                                         // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EPlayerMarkerFlags                            PlayerMarkerFlags;                                 // 0x003C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FPlayerMarkerDataFastArrayItem;
+
+// ScriptStruct Chimera.SkyboxMaterialVector
+// 0x0030 (0x0030 - 0x0000)
+struct FSkyboxMaterialVector final
+{
+public:
+	class FName                                   Name;                                              // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector4                               Value;                                             // 0x0010(0x0020)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSkyboxMaterialVector;
+
+// ScriptStruct Chimera.SkyboxMaterialColor
+// 0x0018 (0x0018 - 0x0000)
+struct FSkyboxMaterialColor final
+{
+public:
+	class FName                                   Name;                                              // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           Value;                                             // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSkyboxMaterialColor;
+
+// ScriptStruct Chimera.CrLogisticsRequestRuntimeData
+// 0x0068 (0x0068 - 0x0000)
+struct FCrLogisticsRequestRuntimeData final
+{
+public:
+	ECrLogisticsRequestState                      State;                                             // 0x0000(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCrMassPersistentEntityID              AgentEntity;                                       // 0x0008(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FAuSimpleItem                          ActualItem;                                        // 0x0018(0x0030)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCrMassPersistentEntityID              ItemSource;                                        // 0x0048(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCrMassPersistentEntityID              ItemDestination;                                   // 0x0058(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrLogisticsRequestRuntimeData;
+
+// ScriptStruct Chimera.CrLogisticsRequestData
+// 0x0078 (0x0078 - 0x0000)
+struct FCrLogisticsRequestData final
+{
+public:
+	struct FCrMassPersistentEntityID              UId;                                               // 0x0000(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAuSimpleItem                          WantedItem;                                        // 0x0010(0x0030)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrLogisticsRequestType                       Type;                                              // 0x0040(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCrMassPersistentEntityID              RequesterEntity;                                   // 0x0048(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FCrLogisticsRequestRuntimeData> RuntimeData;                                       // 0x0058(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	ECrLogisticsRequestPriority                   CurrentPriority;                                   // 0x0068(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_69[0x3];                                       // 0x0069(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         LastHandledTime;                                   // 0x006C(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAborted;                                          // 0x0070(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_71[0x7];                                       // 0x0071(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrLogisticsRequestData;
+
+// ScriptStruct Chimera.SkyboxMaterialScalar
+// 0x000C (0x000C - 0x0000)
+struct FSkyboxMaterialScalar final
+{
+public:
+	class FName                                   Name;                                              // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Value;                                             // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSkyboxMaterialScalar;
+
+// ScriptStruct Chimera.SkyboxMaterialOverrides
+// 0x0030 (0x0030 - 0x0000)
+struct FSkyboxMaterialOverrides final
+{
+public:
+	TArray<struct FSkyboxMaterialScalar>          ScalarOverrides;                                   // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FSkyboxMaterialColor>           ColorOverrides;                                    // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FSkyboxMaterialVector>          VectorOverrides;                                   // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSkyboxMaterialOverrides;
+
+// ScriptStruct Chimera.CrLogisticsGraphDataHandle
+// 0x0004 (0x0004 - 0x0000)
+struct FCrLogisticsGraphDataHandle final
+{
+public:
+	uint16                                        Index;                                             // 0x0000(0x0002)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint16                                        Generation;                                        // 0x0002(0x0002)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrLogisticsGraphDataHandle;
+
+// ScriptStruct Chimera.CrSkyboxMaterialOverrideStruct
+// 0x0120 (0x0120 - 0x0000)
+struct FCrSkyboxMaterialOverrideStruct final
+{
+public:
+	struct FRuntimeFloatCurve                     KeysWeight;                                        // 0x0000(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FRuntimeFloatCurve                     TimeRemap;                                         // 0x0088(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<struct FSkyboxMaterialOverrides>       Keys;                                              // 0x0110(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrSkyboxMaterialOverrideStruct;
+
+// ScriptStruct Chimera.CrEnviroWaveCurveSkyboxMaterialOverride
+// 0x0050 (0x0050 - 0x0000)
+struct FCrEnviroWaveCurveSkyboxMaterialOverride final
+{
+public:
+	TMap<EEnviroWaveStage, struct FCrSkyboxMaterialOverrideStruct> Curves;                           // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrEnviroWaveCurveSkyboxMaterialOverride;
+
+// ScriptStruct Chimera.CrLogisticsRequestHandlingStage
+// 0x0018 (0x0018 - 0x0000)
+struct FCrLogisticsRequestHandlingStage final
+{
+public:
+	ECrLogisticsOperationType                     Operation;                                         // 0x0000(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCrMassPersistentEntityID              EntityContext;                                     // 0x0008(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrLogisticsRequestHandlingStage;
+
+// ScriptStruct Chimera.CrEnviroWaveEffectSaveData
+// 0x0008 (0x0008 - 0x0000)
+struct FCrEnviroWaveEffectSaveData final
+{
+public:
+	bool                                          bValue;                                            // 0x0000(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         LastChangeTime;                                    // 0x0004(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrEnviroWaveEffectSaveData;
+
+// ScriptStruct Chimera.CrEnviroWaveEffectSubsystemSaveData
+// 0x0028 (0x0028 - 0x0000)
+struct FCrEnviroWaveEffectSubsystemSaveData final
+{
+public:
+	struct FCrEnviroWaveEffectSaveData            SulfurActive;                                      // 0x0000(0x0008)(SaveGame, NoDestructor, NativeAccessSpecifierPublic)
+	struct FCrEnviroWaveEffectSaveData            EnemySpawnersActive;                               // 0x0008(0x0008)(SaveGame, NoDestructor, NativeAccessSpecifierPublic)
+	struct FCrEnviroWaveEffectSaveData            EvaporateWater;                                    // 0x0010(0x0008)(SaveGame, NoDestructor, NativeAccessSpecifierPublic)
+	struct FCrEnviroWaveEffectSaveData            HidePoisonIvy;                                     // 0x0018(0x0008)(SaveGame, NoDestructor, NativeAccessSpecifierPublic)
+	struct FCrEnviroWaveEffectSaveData            HideAggressivePlant;                               // 0x0020(0x0008)(SaveGame, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrEnviroWaveEffectSubsystemSaveData;
+
+// ScriptStruct Chimera.PointOfInterestData
+// 0x0014 (0x0014 - 0x0000)
+struct FPointOfInterestData final
+{
+public:
+	struct FGuid                                  PointOfInterestMarkerID;                           // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EPointOfInterestState                         State;                                             // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FPointOfInterestData;
+
+// ScriptStruct Chimera.CrEnviroWaveMaterialMapStruct
+// 0x0050 (0x0050 - 0x0000)
+struct FCrEnviroWaveMaterialMapStruct final
+{
+public:
+	TMap<ECrEnviroWaveMaterialState, TSoftObjectPtr<class UMaterialInterface>> MaterialMap;          // 0x0000(0x0050)(Edit, UObjectWrapper, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrEnviroWaveMaterialMapStruct;
+
+// ScriptStruct Chimera.CrEnviroWaveSaveData
+// 0x0040 (0x0040 - 0x0000)
+struct FCrEnviroWaveSaveData final
+{
+public:
+	EEnviroWave                                   Wave;                                              // 0x0000(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EEnviroWaveStage                              Stage;                                             // 0x0001(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCrEnviroWaveSettings                  Settings;                                          // 0x0004(0x002C)(SaveGame, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         Progress;                                          // 0x0030(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        WaveStartTimeSeconds;                              // 0x0038(0x0008)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrEnviroWaveSaveData;
+
+// ScriptStruct Chimera.BuildingMarkerDataFastArrayItem
+// 0x0034 (0x0040 - 0x000C)
+struct FBuildingMarkerDataFastArrayItem final : public FFastArraySerializerItem
+{
+public:
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMassEntityHandle                      BuildingHandle;                                    // 0x0010(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2f                              Location;                                          // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   BuildingName;                                      // 0x0020(0x0010)(NativeAccessSpecifierPublic)
+	class FName                                   BuildingUniqueName;                                // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrBuildingType                               BuildingType;                                      // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_39[0x1];                                       // 0x0039(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	ECrBuildingMalfunctionFlags                   Flags;                                             // 0x003A(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsInteriorBuilding;                                // 0x003C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FBuildingMarkerDataFastArrayItem;
+
+// ScriptStruct Chimera.CrEnviroWaveSubsystemTickFunction
+// 0x0008 (0x0030 - 0x0028)
+struct FCrEnviroWaveSubsystemTickFunction final : public FTickFunction
+{
+public:
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrEnviroWaveSubsystemTickFunction;
+
+// ScriptStruct Chimera.CrEnviroWaveTimerTickFunction
+// 0x0008 (0x0030 - 0x0028)
+struct FCrEnviroWaveTimerTickFunction final : public FTickFunction
+{
+public:
+	class UCrEnviroWaveTimerSubsystem*            EnviroWaveTimerSubsystem;                          // 0x0028(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrEnviroWaveTimerTickFunction;
+
+// ScriptStruct Chimera.CrLogisticsRequestSubsystemCustomSaveData
+// 0x0010 (0x0010 - 0x0000)
+struct FCrLogisticsRequestSubsystemCustomSaveData final
+{
+public:
+	TArray<TSoftClassPtr<class UClass>>           RecentSelectedItems;                               // 0x0000(0x0010)(ZeroConstructor, SaveGame, UObjectWrapper, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrLogisticsRequestSubsystemCustomSaveData;
+
+// ScriptStruct Chimera.CrEnviroWaveTimerSaveData
+// 0x0070 (0x0070 - 0x0000)
+struct FCrEnviroWaveTimerSaveData final
+{
+public:
+	float                                         NextWaveTimer;                                     // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bWaitingForNextWave;                               // 0x0004(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPause;                                            // 0x0005(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EEnviroWaveStage                              PreviousWaveStage;                                 // 0x0006(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStopWaves;                                        // 0x0007(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         NumWaves;                                          // 0x0008(0x0008)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             HeatWaveRegionTransform;                           // 0x0010(0x0060)(SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrEnviroWaveTimerSaveData;
+
+// ScriptStruct Chimera.CrEnviroWaveVisualsWorldSubsystemTickFunction
+// 0x0008 (0x0030 - 0x0028)
+struct FCrEnviroWaveVisualsWorldSubsystemTickFunction final : public FTickFunction
+{
+public:
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrEnviroWaveVisualsWorldSubsystemTickFunction;
+
+// ScriptStruct Chimera.CrEnviroWaveVisualsWorldSubsystemDebugTickFunction
+// 0x0008 (0x0030 - 0x0028)
+struct FCrEnviroWaveVisualsWorldSubsystemDebugTickFunction final : public FTickFunction
+{
+public:
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrEnviroWaveVisualsWorldSubsystemDebugTickFunction;
+
+// ScriptStruct Chimera.CrExporterItemRow
+// 0x0040 (0x0048 - 0x0008)
+struct FCrExporterItemRow final : public FTableRowBase
+{
+public:
+	class FText                                   ItemText;                                          // 0x0008(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	class FText                                   DescriptionText;                                   // 0x0018(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TSubclassOf<class UCrItemDataBase>            Item;                                              // 0x0028(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Level;                                             // 0x0030(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SelenianValue;                                     // 0x0034(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CleverValue;                                       // 0x0038(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         FutureValue;                                       // 0x003C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         GriffithsValue;                                    // 0x0040(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MoonValue;                                         // 0x0044(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrExporterItemRow;
+
+// ScriptStruct Chimera.CrStartingExporterItemRow
+// 0x0030 (0x0038 - 0x0008)
+struct FCrStartingExporterItemRow final : public FTableRowBase
+{
+public:
+	class FText                                   ItemText;                                          // 0x0008(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	class FText                                   DescriptionText;                                   // 0x0018(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TSubclassOf<class UCrItemDataBase>            Item;                                              // 0x0028(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Level;                                             // 0x0030(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         StartingCorporationValue;                          // 0x0034(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrStartingExporterItemRow;
 
 // ScriptStruct Chimera.FlashlightProfile
 // 0x0078 (0x0078 - 0x0000)
@@ -4005,23 +5481,75 @@ public:
 };
 DUMPER7_ASSERTS_FFlashlightProfile;
 
-// ScriptStruct Chimera.CrResourceRequirements
-// 0x0010 (0x0010 - 0x0000)
-struct FCrResourceRequirements final
+// ScriptStruct Chimera.CrFlowSaveData
+// 0x0078 (0x0078 - 0x0000)
+struct FCrFlowSaveData final
 {
 public:
-	TArray<struct FCrResourceRequirementEntry>    Requirements;                                      // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FGuid                                  CurrentEntryID;                                    // 0x0000(0x0010)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CurrentEventIndex;                                 // 0x0010(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<struct FGuid, bool>                      TriggeredListeners;                                // 0x0018(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+	TArray<class FName>                           BuildingsDisabledInBuildingMenu;                   // 0x0068(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrResourceRequirements;
+DUMPER7_ASSERTS_FCrFlowSaveData;
 
-// ScriptStruct Chimera.MassEnemyLootFragment
-// 0x0038 (0x0038 - 0x0000)
-struct alignas(0x08) FMassEnemyLootFragment final : public FMassFragment
+// ScriptStruct Chimera.CrFlowEventCombinedData
+// 0x0040 (0x0040 - 0x0000)
+struct FCrFlowEventCombinedData final
 {
 public:
-	uint8                                         Pad_0[0x38];                                       // 0x0000(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UCrFlowEventBase*>               FlowEvents;                                        // 0x0020(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	TArray<class UCrContextualEventFlowListener*> ContextualEventFlowListeners;                      // 0x0030(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
 };
-DUMPER7_ASSERTS_FMassEnemyLootFragment;
+DUMPER7_ASSERTS_FCrFlowEventCombinedData;
+
+// ScriptStruct Chimera.CrRecipeArray
+// 0x0010 (0x0010 - 0x0000)
+struct FCrRecipeArray final
+{
+public:
+	TArray<class UCrItemRecipeData*>              Recipes;                                           // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrRecipeArray;
+
+// ScriptStruct Chimera.AggroModifierData
+// 0x0008 (0x0008 - 0x0000)
+struct FAggroModifierData final
+{
+public:
+	float                                         CurrentValue;                                      // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PreviousValue;                                     // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAggroModifierData;
+
+// ScriptStruct Chimera.CrAggroTargetFragment
+// 0x00B8 (0x00B8 - 0x0000)
+struct FCrAggroTargetFragment final : public FMassFragment
+{
+public:
+	float                                         LastUpdateTimestamp;                               // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FName, int32>                      AggroLevelModifiers;                               // 0x0008(0x0050)(NativeAccessSpecifierPublic)
+	float                                         CurrentAggroBase;                                  // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AggroRangeMultiplier;                              // 0x005C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FAggroModifierData>  AggroCustomValueModifiers;                         // 0x0060(0x0050)(NativeAccessSpecifierPublic)
+	bool                                          bIsSpawnedWithAggro;                               // 0x00B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B1[0x7];                                       // 0x00B1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrAggroTargetFragment;
+
+// ScriptStruct Chimera.CrAbilityMontageFailureMessage
+// 0x0030 (0x0030 - 0x0000)
+struct FCrAbilityMontageFailureMessage final
+{
+public:
+	class APlayerController*                      PlayerController;                                  // 0x0000(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FGameplayTagContainer                  FailureTags;                                       // 0x0008(0x0020)(BlueprintVisible, NativeAccessSpecifierPublic)
+	class UAnimMontage*                           FailureMontage;                                    // 0x0028(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrAbilityMontageFailureMessage;
 
 // ScriptStruct Chimera.CrGameplayDebuggerMassData
 // 0x0068 (0x0068 - 0x0000)
@@ -4033,222 +5561,23 @@ public:
 };
 DUMPER7_ASSERTS_FCrGameplayDebuggerMassData;
 
-// ScriptStruct Chimera.ContaminationSocket
-// 0x0050 (0x0050 - 0x0000)
-struct FContaminationSocket final
+// ScriptStruct Chimera.CrAntennaReadyToChargeTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrAntennaReadyToChargeTag final : public FMassTag
 {
-public:
-	struct FVector                                Location;                                          // 0x0000(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FQuat                                  Rotation;                                          // 0x0020(0x0020)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ACrContaminationActor*                  InfectionActor;                                    // 0x0040(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	float                                         Infection;                                         // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FContaminationSocket;
+DUMPER7_ASSERTS_FCrAntennaReadyToChargeTag;
 
-// ScriptStruct Chimera.CrItemsSpawnSettings
-// 0x0018 (0x0020 - 0x0008)
-struct FCrItemsSpawnSettings final : public FTableRowBase
+// ScriptStruct Chimera.CrPlayerAttributeSaveData
+// 0x000C (0x000C - 0x0000)
+struct FCrPlayerAttributeSaveData final
 {
 public:
-	TSubclassOf<class UAuItemDataBase>            Item;                                              // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ProbabilityOfSpawn;                                // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MinAmountToSpawn;                                  // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxAmountToSpawn;                                  // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         Current;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Min;                                               // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Max;                                               // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrItemsSpawnSettings;
-
-// ScriptStruct Chimera.CrItemsSpawnPresetSettings
-// 0x0010 (0x0018 - 0x0008)
-struct FCrItemsSpawnPresetSettings final : public FTableRowBase
-{
-public:
-	TArray<struct FCrItemsSpawnSettings>          ItemsToSpawn;                                      // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrItemsSpawnPresetSettings;
-
-// ScriptStruct Chimera.CrExcludedGatherableActorClassData
-// 0x0010 (0x0010 - 0x0000)
-struct FCrExcludedGatherableActorClassData final
-{
-public:
-	TSubclassOf<class AActor>                     ActorClass;                                        // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShouldExcludeChildren;                            // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrExcludedGatherableActorClassData;
-
-// ScriptStruct Chimera.CrSkillLevelRequirements
-// 0x0050 (0x0050 - 0x0000)
-struct FCrSkillLevelRequirements final
-{
-public:
-	TMap<int32, float>                            LevelRequirements;                                 // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrSkillLevelRequirements;
-
-// ScriptStruct Chimera.CrBuildingOrePurityRecipe
-// 0x0020 (0x0020 - 0x0000)
-struct FCrBuildingOrePurityRecipe final
-{
-public:
-	TSubclassOf<class ACrExtractor>               ExtractorType;                                     // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UCrItemDataBase>            Resource;                                          // 0x0008(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EOrePurityLevel                               PurityLevel;                                       // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCrItemRecipeData*                      Recipe;                                            // 0x0018(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrBuildingOrePurityRecipe;
-
-// ScriptStruct Chimera.CrDLCEntry
-// 0x0018 (0x0018 - 0x0000)
-struct FCrDLCEntry final
-{
-public:
-	ECrDLCId                                      DlcId;                                             // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         SteamDLCId;                                        // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FCrItemsSpawnSettings>          ItemsToAdd;                                        // 0x0008(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrDLCEntry;
-
-// ScriptStruct Chimera.CrMassEntityStabilityData
-// 0x0008 (0x0008 - 0x0000)
-struct FCrMassEntityStabilityData final
-{
-public:
-	float                                         Cost;                                              // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Strength;                                          // 0x0004(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrMassEntityStabilityData;
-
-// ScriptStruct Chimera.CrPCGEviroWaveConditions
-// 0x0002 (0x0002 - 0x0000)
-struct FCrPCGEviroWaveConditions final
-{
-public:
-	EEnviroWave                                   EnviroWaveType;                                    // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EEnviroWaveStage                              EnviroWaveStage;                                   // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrPCGEviroWaveConditions;
-
-// ScriptStruct Chimera.CrBuildingGraphData
-// 0x00B0 (0x00B0 - 0x0000)
-struct FCrBuildingGraphData final
-{
-public:
-	TMap<struct FCrMassPersistentEntityID, struct FCrMassPersistentEntityIDArray> Neighbours;        // 0x0000(0x0050)(SaveGame, NativeAccessSpecifierPublic)
-	TMap<struct FCrMassPersistentEntityID, struct FCrMassEntityStabilityData> NodeDatas;             // 0x0050(0x0050)(SaveGame, NativeAccessSpecifierPublic)
-	struct FCrMassPersistentEntityID              GroundNode;                                        // 0x00A0(0x0010)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrBuildingGraphData;
-
-// ScriptStruct Chimera.CrBuildingStabilityTickFunction
-// 0x0008 (0x0030 - 0x0028)
-struct FCrBuildingStabilityTickFunction final : public FTickFunction
-{
-public:
-	class UCrBuildingStabilitySubsystem*          BuildingStabilitySubsystem;                        // 0x0028(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrBuildingStabilityTickFunction;
-
-// ScriptStruct Chimera.CrCraftingReverseLookupRecipeData
-// 0x0010 (0x0010 - 0x0000)
-struct FCrCraftingReverseLookupRecipeData final
-{
-public:
-	TArray<TSoftObjectPtr<class UCrItemRecipeData>> RecipeData;                                      // 0x0000(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrCraftingReverseLookupRecipeData;
-
-// ScriptStruct Chimera.CrCustomConnectionData
-// 0x0070 (0x0070 - 0x0000)
-struct FCrCustomConnectionData final
-{
-public:
-	TArray<struct FCrMassPersistentEntityID>      Ramps;                                             // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-	TArray<struct FCrMassPersistentEntityID>      Buildings;                                         // 0x0010(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-	TMap<class FName, struct FCrMassPersistentEntityIDArray> SocketConnections;                      // 0x0020(0x0050)(SaveGame, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrCustomConnectionData;
-
-// ScriptStruct Chimera.InfectionActorSaveData
-// 0x0001 (0x0001 - 0x0000)
-struct FInfectionActorSaveData final
-{
-public:
-	bool                                          bWasDestroyed;                                     // 0x0000(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FInfectionActorSaveData;
-
-// ScriptStruct Chimera.CrEncyclopediaEntryStatusSaveData
-// 0x0014 (0x0014 - 0x0000)
-struct FCrEncyclopediaEntryStatusSaveData final
-{
-public:
-	struct FGuid                                  EntryID;                                           // 0x0000(0x0010)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         ChaptersUnlocked;                                  // 0x0010(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrEncyclopediaEntryStatusSaveData;
-
-// ScriptStruct Chimera.MegamachineDoorSaveData
-// 0x0005 (0x0005 - 0x0000)
-struct FMegamachineDoorSaveData final
-{
-public:
-	EDoorState                                    State_Inside;                                      // 0x0000(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EDoorState                                    State_Outside;                                     // 0x0001(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bWasOpened;                                        // 0x0002(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bExternalLock;                                     // 0x0003(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bWasUnlocked;                                      // 0x0004(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMegamachineDoorSaveData;
-
-// ScriptStruct Chimera.PointOfInterestMarkerActorSaveData
-// 0x0001 (0x0001 - 0x0000)
-struct FPointOfInterestMarkerActorSaveData final
-{
-public:
-	EPointOfInterestState                         PointOfInterestState;                              // 0x0000(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FPointOfInterestMarkerActorSaveData;
-
-// ScriptStruct Chimera.CrObjectiveEntryStatusSaveData
-// 0x0030 (0x0030 - 0x0000)
-struct FCrObjectiveEntryStatusSaveData final
-{
-public:
-	struct FGuid                                  EntryID;                                           // 0x0000(0x0010)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrObjectiveState                             ObjectiveState;                                    // 0x0010(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FCrSubObjectiveEntryStatus>     SubObjectives;                                     // 0x0018(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-	bool                                          bNeedsActivateion;                                 // 0x0028(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrObjectiveEntryStatusSaveData;
-
-// ScriptStruct Chimera.CrHintSaveData
-// 0x0018 (0x0018 - 0x0000)
-struct alignas(0x04) FCrHintSaveData final
-{
-public:
-	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrHintSaveData;
-
-// ScriptStruct Chimera.CrActiveGEChangingMaxAttributesValue
-// 0x0010 (0x0010 - 0x0000)
-struct FCrActiveGEChangingMaxAttributesValue final
-{
-public:
-	TSubclassOf<class UGameplayEffect>            GameplayEffectClass;                               // 0x0000(0x0008)(ZeroConstructor, SaveGame, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TimeLeft;                                          // 0x0008(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrActiveGEChangingMaxAttributesValue;
+DUMPER7_ASSERTS_FCrPlayerAttributeSaveData;
 
 // ScriptStruct Chimera.CrCharacterPlayerSurvivalData
 // 0x01A0 (0x01A0 - 0x0000)
@@ -4279,6 +5608,145 @@ public:
 	uint8                                         Pad_198[0x8];                                      // 0x0198(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCrCharacterPlayerSurvivalData;
+
+// ScriptStruct Chimera.CrPlayerProfessionSurvivalData
+// 0x01C0 (0x01C0 - 0x0000)
+struct FCrPlayerProfessionSurvivalData final
+{
+public:
+	EProfessionType                               Profession;                                        // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 UnqiueNetId;                                       // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCrCharacterPlayerSurvivalData         CharacterSurvivalData;                             // 0x0020(0x01A0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrPlayerProfessionSurvivalData;
+
+// ScriptStruct Chimera.CrAggroTargetParameters
+// 0x0040 (0x0040 - 0x0000)
+struct FCrAggroTargetParameters final : public FMassConstSharedFragment
+{
+public:
+	ECrAggroTargetType                            Type;                                              // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         AggroMin;                                          // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AggroMax;                                          // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<float>                                 AggroLevels;                                       // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         MinAggroDistance;                                  // 0x0020(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxAggroDistance;                                  // 0x0024(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AggroDecayRate;                                    // 0x0028(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseDecayRate;                                     // 0x002C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bMovable;                                          // 0x002D(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2E[0x2];                                       // 0x002E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         GuarantedAggroLevel;                               // 0x0030(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GuarantedAggroRange;                               // 0x0034(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPrintDebug;                                       // 0x0038(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrAggroTargetParameters;
+
+// ScriptStruct Chimera.CrPlayerProfessionState
+// 0x000C (0x000C - 0x0000)
+struct FCrPlayerProfessionState final
+{
+public:
+	EProfessionType                               SelectedType;                                      // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         PlayerId;                                          // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPossessed;                                        // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrPlayerProfessionState;
+
+// ScriptStruct Chimera.CrTemperatureInfectionManualRemovalData
+// 0x0058 (0x0058 - 0x0000)
+struct FCrTemperatureInfectionManualRemovalData final
+{
+public:
+	EBuildingManualInteraction                    InteractionType;                                   // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCrMassEntityReplicationHelper         MassEntityReplicationHelper;                       // 0x0008(0x0018)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FUniqueNetIdRepl                       PlayerInteracting;                                 // 0x0020(0x0030)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        StartInteractionWorldTime;                         // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrTemperatureInfectionManualRemovalData;
+
+// ScriptStruct Chimera.CrAntennaInfectedTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrAntennaInfectedTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrAntennaInfectedTag;
+
+// ScriptStruct Chimera.CrPlayerPersonalMarkerData
+// 0x0028 (0x0028 - 0x0000)
+struct FCrPlayerPersonalMarkerData final
+{
+public:
+	struct FVector2f                              MarkerPosition;                                    // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlayerName;                                        // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           PlayerColor;                                       // 0x0018(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrPlayerPersonalMarkerData;
+
+// ScriptStruct Chimera.PointOfInterestMarkerActorSaveData
+// 0x0001 (0x0001 - 0x0000)
+struct FPointOfInterestMarkerActorSaveData final
+{
+public:
+	EPointOfInterestState                         PointOfInterestState;                              // 0x0000(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FPointOfInterestMarkerActorSaveData;
+
+// ScriptStruct Chimera.MegamachineDoorSaveData
+// 0x0005 (0x0005 - 0x0000)
+struct FMegamachineDoorSaveData final
+{
+public:
+	EDoorState                                    State_Inside;                                      // 0x0000(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EDoorState                                    State_Outside;                                     // 0x0001(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bWasOpened;                                        // 0x0002(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bExternalLock;                                     // 0x0003(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bWasUnlocked;                                      // 0x0004(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMegamachineDoorSaveData;
+
+// ScriptStruct Chimera.MegamachineDeviceSaveData
+// 0x0060 (0x0060 - 0x0000)
+struct FMegamachineDeviceSaveData final
+{
+public:
+	bool                                          bWasActivated;                                     // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FName, float>                      ContaminationData;                                 // 0x0008(0x0050)(BlueprintVisible, SaveGame, NativeAccessSpecifierPublic)
+	bool                                          bIsEnemySpawnerDepleted;                           // 0x0058(0x0001)(BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMegamachineDeviceSaveData;
+
+// ScriptStruct Chimera.InfectionActorSaveData
+// 0x0001 (0x0001 - 0x0000)
+struct FInfectionActorSaveData final
+{
+public:
+	bool                                          bWasDestroyed;                                     // 0x0000(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FInfectionActorSaveData;
+
+// ScriptStruct Chimera.CrObjectiveEntryStatusSaveData
+// 0x0030 (0x0030 - 0x0000)
+struct FCrObjectiveEntryStatusSaveData final
+{
+public:
+	struct FGuid                                  EntryID;                                           // 0x0000(0x0010)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrObjectiveState                             ObjectiveState;                                    // 0x0010(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FCrSubObjectiveEntryStatus>     SubObjectives;                                     // 0x0018(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	bool                                          bNeedsActivateion;                                 // 0x0028(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrObjectiveEntryStatusSaveData;
 
 // ScriptStruct Chimera.CrInventorySlot
 // 0x0024 (0x0024 - 0x0000)
@@ -4328,16 +5796,26 @@ public:
 };
 DUMPER7_ASSERTS_FCrPlayerBuildingMenuState;
 
-// ScriptStruct Chimera.CrEncyclopediaEntryReadSaveData
-// 0x0014 (0x0014 - 0x0000)
-struct FCrEncyclopediaEntryReadSaveData final
+// ScriptStruct Chimera.CrSkillSaveData
+// 0x000C (0x000C - 0x0000)
+struct FCrSkillSaveData final
 {
 public:
-	struct FGuid                                  EntryID;                                           // 0x0000(0x0010)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         ChaptersRead;                                      // 0x0010(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	ECrPlayerProgressionSkill                     Skill;                                             // 0x0000(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Level;                                             // 0x0004(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Experience;                                        // 0x0008(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrEncyclopediaEntryReadSaveData;
+DUMPER7_ASSERTS_FCrSkillSaveData;
+
+// ScriptStruct Chimera.CrPlayerProgressionState
+// 0x0010 (0x0010 - 0x0000)
+struct FCrPlayerProgressionState final
+{
+public:
+	TArray<struct FCrSkillSaveData>               Skills;                                            // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrPlayerProgressionState;
 
 // ScriptStruct Chimera.CrEncyclopediaReadInfoState
 // 0x0010 (0x0010 - 0x0000)
@@ -4357,8 +5835,19 @@ public:
 };
 DUMPER7_ASSERTS_FCrInstalledDLCData;
 
+// ScriptStruct Chimera.CrGameVersion
+// 0x000C (0x000C - 0x0000)
+struct FCrGameVersion final
+{
+public:
+	int32                                         Major;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Minor;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PATCH;                                             // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrGameVersion;
+
 // ScriptStruct Chimera.CrCharacterPlayerBaseSaveDataPerPlayer
-// 0x06D0 (0x06D0 - 0x0000)
+// 0x06E0 (0x06E0 - 0x0000)
 struct FCrCharacterPlayerBaseSaveDataPerPlayer final
 {
 public:
@@ -4388,7 +5877,8 @@ public:
 	bool                                          bInitialEventsExecuted;                            // 0x06B0(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_6B1[0x7];                                      // 0x06B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FCrInstalledDLCData                    DLCData;                                           // 0x06B8(0x0010)(SaveGame, NativeAccessSpecifierPublic)
-	uint8                                         Pad_6C8[0x8];                                      // 0x06C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FCrGameVersion                         LastPlayedGameVersion;                             // 0x06C8(0x000C)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6D4[0xC];                                      // 0x06D4(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCrCharacterPlayerBaseSaveDataPerPlayer;
 
@@ -4400,15 +5890,6 @@ public:
 	TMap<class FString, struct FCrCharacterPlayerBaseSaveDataPerPlayer> AllPlayersSaveData;          // 0x0000(0x0050)(SaveGame, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCrCharacterPlayersBaseSaveData;
-
-// ScriptStruct Chimera.DatapadEntriesListSaveData
-// 0x0010 (0x0010 - 0x0000)
-struct FDatapadEntriesListSaveData final
-{
-public:
-	TArray<class FName>                           Entries;                                           // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, SaveGame, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FDatapadEntriesListSaveData;
 
 // ScriptStruct Chimera.GameStateSaveData
 // 0x0468 (0x0468 - 0x0000)
@@ -4435,456 +5916,71 @@ public:
 };
 DUMPER7_ASSERTS_FGameStateSaveData;
 
-// ScriptStruct Chimera.CrBuildingStabilitySubsystemState
-// 0x01F0 (0x01F0 - 0x0000)
-struct FCrBuildingStabilitySubsystemState final
+// ScriptStruct Chimera.CrBuildingBaseCoreUnavailableTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrBuildingBaseCoreUnavailableTag final : public FCrMassSavableTag
 {
-public:
-	struct FCrBuildingGraphData                   GraphData;                                         // 0x0000(0x00B0)(SaveGame, NativeAccessSpecifierPublic)
-	TMap<struct FCrMassPersistentEntityID, struct FCrCustomConnectionData> CustomConnectionData;     // 0x00B0(0x0050)(SaveGame, NativeAccessSpecifierPublic)
-	TMap<struct FCrMassPersistentEntityID, struct FCrMassPersistentEntityIDArray> RampConnectionData; // 0x0100(0x0050)(SaveGame, NativeAccessSpecifierPublic)
-	TMap<struct FCrMassPersistentEntityID, struct FCrMassPersistentEntityIDArray> BuildingFoundationData; // 0x0150(0x0050)(SaveGame, NativeAccessSpecifierPublic)
-	TMap<struct FCrMassPersistentEntityID, struct FCrMassPersistentEntityIDArray> BuildingDefaultFoundationData; // 0x01A0(0x0050)(SaveGame, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrBuildingStabilitySubsystemState;
+DUMPER7_ASSERTS_FCrBuildingBaseCoreUnavailableTag;
 
-// ScriptStruct Chimera.CrBuildingDestroyInstigator
-// 0x0020 (0x0020 - 0x0000)
-struct alignas(0x08) FCrBuildingDestroyInstigator final
+// ScriptStruct Chimera.CrAntennaReadyToActivateTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrAntennaReadyToActivateTag final : public FMassTag
 {
-public:
-	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrBuildingDestroyInstigator;
+DUMPER7_ASSERTS_FCrAntennaReadyToActivateTag;
 
-// ScriptStruct Chimera.CrBuildingStabilitySubsystemSpawnerArrayWrapper
-// 0x0010 (0x0010 - 0x0000)
-struct FCrBuildingStabilitySubsystemSpawnerArrayWrapper final
-{
-public:
-	TArray<class ACrSimpleBuildingMassSpawner*>   Spawners;                                          // 0x0000(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrBuildingStabilitySubsystemSpawnerArrayWrapper;
-
-// ScriptStruct Chimera.CrISMGatherableVisualQueData
-// 0x0080 (0x0080 - 0x0000)
-struct FCrISMGatherableVisualQueData final
-{
-public:
-	class UStaticMeshComponent*                   ComponentFromGatherable;                           // 0x0000(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             Transform;                                         // 0x0010(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UStaticMesh*                            Mesh;                                              // 0x0070(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_78[0x8];                                       // 0x0078(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrISMGatherableVisualQueData;
-
-// ScriptStruct Chimera.CrMetaFileInfo
-// 0x0020 (0x0020 - 0x0000)
-struct FCrMetaFileInfo final
-{
-public:
-	class FString                                 Timestamp;                                         // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        WorldTimeSeconds;                                  // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsInTutorial;                                     // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Version;                                           // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrMetaFileInfo;
-
-// ScriptStruct Chimera.CrBuildingStateSetting
-// 0x0024 (0x0024 - 0x0000)
-struct FCrBuildingStateSetting final
-{
-public:
-	struct FLinearColor                           Color;                                             // 0x0000(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bFlickering;                                       // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         FlickeringFrequency;                               // 0x0014(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FlickeringMinIntensity;                            // 0x0018(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         IntensityMul;                                      // 0x001C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FColor                                 UIColor;                                           // 0x0020(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrBuildingStateSetting;
-
-// ScriptStruct Chimera.CrBuildingPayloadData
-// 0x0068 (0x00C8 - 0x0060)
-struct FCrBuildingPayloadData : public FAuAPPayloadData
-{
-public:
-	struct FCrBuildingBeginPlayData               BeginPlayData;                                     // 0x0060(0x0068)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrBuildingPayloadData;
-
-// ScriptStruct Chimera.CrSkillSlotUnlocks
-// 0x0010 (0x0010 - 0x0000)
-struct FCrSkillSlotUnlocks final
-{
-public:
-	TArray<int32>                                 LevelsToUnlockSlots;                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrSkillSlotUnlocks;
-
-// ScriptStruct Chimera.CrCompatibileSockets
-// 0x0068 (0x0068 - 0x0000)
-struct FCrCompatibileSockets final
-{
-public:
-	class FString                                 SocketName;                                        // 0x0000(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class FString, float>                    SocketsAndAngles;                                  // 0x0010(0x0050)(Edit, NativeAccessSpecifierPublic)
-	float                                         SnapOffset;                                        // 0x0060(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrCompatibileSockets;
-
-// ScriptStruct Chimera.CrBuildingSpawnPoint
-// 0x0054 (0x0060 - 0x000C)
-struct FCrBuildingSpawnPoint final : public FFastArraySerializerItem
-{
-public:
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrMassEntityReplicationHelper         Building;                                          // 0x0010(0x0018)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 PlayerUniqueNedId;                                 // 0x0028(0x0010)(ZeroConstructor, SaveGame, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsMalfunction;                                     // 0x0038(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                SpawnPointLocation;                                // 0x0040(0x0018)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsInHub;                                           // 0x0058(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrBuildingSpawnPoint;
-
-// ScriptStruct Chimera.CrBuildingSpawnPointsContainer
-// 0x0018 (0x0120 - 0x0108)
-struct FCrBuildingSpawnPointsContainer final : public FFastArraySerializer
-{
-public:
-	TArray<struct FCrBuildingSpawnPoint>          BuildingSpawnPoints;                               // 0x0108(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	class ACrGameStateBase*                       Owner;                                             // 0x0118(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrBuildingSpawnPointsContainer;
-
-// ScriptStruct Chimera.CrBuildingSpawnPointsSaveData
-// 0x0050 (0x0050 - 0x0000)
-struct FCrBuildingSpawnPointsSaveData final
-{
-public:
-	TMap<struct FCrMassPersistentEntityID, class FString> SpawnPointOwnerships;                      // 0x0000(0x0050)(SaveGame, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrBuildingSpawnPointsSaveData;
-
-// ScriptStruct Chimera.CrWeatherSettingsMaterialsOverride
-// 0x0050 (0x0050 - 0x0000)
-struct FCrWeatherSettingsMaterialsOverride final
-{
-public:
-	TMap<EEnviroWave, struct FCrEnviroWaveCurveSkyboxMaterialOverride> Curves;                       // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrWeatherSettingsMaterialsOverride;
-
-// ScriptStruct Chimera.AttributeCheatEffectsTags
-// 0x0028 (0x0028 - 0x0000)
-struct FAttributeCheatEffectsTags final
-{
-public:
-	TSubclassOf<class UGameplayEffect>            DirectCurrentValueSetEffect;                       // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UGameplayEffect>            ImmunityApplyEffect;                               // 0x0008(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UGameplayEffect>            ImmunityClearEffect;                               // 0x0010(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UGameplayEffect>            ValueIncreaseEffect;                               // 0x0018(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UGameplayEffect>            ValueDecreaseEffect;                               // 0x0020(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAttributeCheatEffectsTags;
-
-// ScriptStruct Chimera.AttributeSetCheatProperties
-// 0x0040 (0x0040 - 0x0000)
-struct FAttributeSetCheatProperties final
-{
-public:
-	class FString                                 AttributeSetName;                                  // 0x0000(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAttributeCheatEffectsTags             CurrentValueCheatTags;                             // 0x0010(0x0028)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	TSubclassOf<class UGameplayEffect>            DirectMaxValueSetEffect;                           // 0x0038(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAttributeSetCheatProperties;
-
-// ScriptStruct Chimera.CrEnviroWaveVisualsWorldSubsystemTickFunction
-// 0x0008 (0x0030 - 0x0028)
-struct FCrEnviroWaveVisualsWorldSubsystemTickFunction final : public FTickFunction
-{
-public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrEnviroWaveVisualsWorldSubsystemTickFunction;
-
-// ScriptStruct Chimera.CrSubmixPresetEntry
-// 0x0060 (0x0060 - 0x0000)
-struct FCrSubmixPresetEntry final
-{
-public:
-	TSet<class USoundSubmix*>                     AffectedSubmixes;                                  // 0x0000(0x0050)(Edit, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-	TArray<class USoundEffectSubmixPreset*>       SubmixEffectChain;                                 // 0x0050(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrSubmixPresetEntry;
-
-// ScriptStruct Chimera.CrSoundEffectEntry
-// 0x0038 (0x0038 - 0x0000)
-struct FCrSoundEffectEntry final
-{
-public:
-	struct FGameplayTagContainer                  RequiredPlayerTags;                                // 0x0000(0x0020)(Edit, NativeAccessSpecifierPublic)
-	float                                         FadeInTime;                                        // 0x0020(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FadeOutTime;                                       // 0x0024(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FCrSubmixPresetEntry>           EffectEntries;                                     // 0x0028(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrSoundEffectEntry;
-
-// ScriptStruct Chimera.CloudsOnSkyParams
-// 0x0038 (0x0038 - 0x0000)
-struct FCloudsOnSkyParams final
-{
-public:
-	float                                         Density;                                           // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxMipLevel;                                       // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BorderMargin;                                      // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WindSpeed;                                         // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NoiseMaskOpacity;                                  // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NoiseMaskExponential;                              // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Tilling;                                           // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         TillingOffset;                                     // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          RandomizeRot;                                      // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         RandomizeRotAmount;                                // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          RandomizeScale;                                    // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         RandomizeScaleAmount;                              // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          RandomizePos;                                      // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         RandomizePosAmount;                                // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCloudsOnSkyParams;
-
-// ScriptStruct Chimera.CrEnviroWaveInteractionEnablingData
-// 0x0004 (0x0004 - 0x0000)
-struct FCrEnviroWaveInteractionEnablingData final
-{
-public:
-	EEnviroWave                                   WaveType;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EEnviroWaveStage                              WaveStage;                                         // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EEnviroWaveFadeoutSubstage                    FadeoutSubstage;                                   // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EEnviroWaveGrowbackSubstage                   GrowbackSubstage;                                  // 0x0003(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrEnviroWaveInteractionEnablingData;
-
-// ScriptStruct Chimera.CloudsBillboardsParamsDensityAndShadowing
-// 0x0024 (0x0024 - 0x0000)
-struct FCloudsBillboardsParamsDensityAndShadowing final
-{
-public:
-	float                                         Density;                                           // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         OpacityFresnelExponent;                            // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         OpacityFresnelOffset;                              // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NoiseTilling;                                      // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WindSpeed;                                         // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ShadowOpacity;                                     // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ShadowLenght;                                      // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ShadowFalloff;                                     // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ShadowCurvePower;                                  // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCloudsBillboardsParamsDensityAndShadowing;
-
-// ScriptStruct Chimera.CrFriendListItem
-// 0x0020 (0x0020 - 0x0000)
-struct alignas(0x08) FCrFriendListItem final
-{
-public:
-	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrFriendListItem;
-
-// ScriptStruct Chimera.CloudsBillboardsParamsAlbedo
-// 0x0030 (0x0030 - 0x0000)
-struct FCloudsBillboardsParamsAlbedo final
-{
-public:
-	struct FLinearColor                           AlbedoMainColor;                                   // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           AlbedoShadowColor;                                 // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AlbedoLerpClampMin;                                // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AlbedoLerpClampMax;                                // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AlbedoLerpFalloffPower;                            // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AlbedoNoiseOpacity;                                // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCloudsBillboardsParamsAlbedo;
-
-// ScriptStruct Chimera.CloudsBillboardsParamsCameraFading
+// ScriptStruct Chimera.CrMassBuildingAntennaParameters
 // 0x0008 (0x0008 - 0x0000)
-struct FCloudsBillboardsParamsCameraFading final
+struct FCrMassBuildingAntennaParameters final : public FMassConstSharedFragment
 {
 public:
-	float                                         CameraFadingDistance;                              // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SoftEdgeDistance;                                  // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCrAntennaStateSettings*                AntennaStateSettings;                              // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 };
-DUMPER7_ASSERTS_FCloudsBillboardsParamsCameraFading;
+DUMPER7_ASSERTS_FCrMassBuildingAntennaParameters;
 
-// ScriptStruct Chimera.CrElectricitySubgraphDataSerializer
-// 0x0068 (0x0170 - 0x0108)
-struct FCrElectricitySubgraphDataSerializer final : public FFastArraySerializer
+// ScriptStruct Chimera.CrBaseCoreTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrBaseCoreTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrBaseCoreTag;
+
+// ScriptStruct Chimera.CrInfectedBaseCoreLocalSpawnersData
+// 0x0028 (0x0028 - 0x0000)
+struct FCrInfectedBaseCoreLocalSpawnersData final
 {
 public:
-	TMap<struct FCrGenericMassSubGraph, int32>    GraphToIndex;                                      // 0x0108(0x0050)(RepSkip, NativeAccessSpecifierPublic)
-	TArray<struct FCrElectricitySubgraphData>     Items;                                             // 0x0158(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	class ACrElectricitySubgraphDataReplicator*   Owner;                                             // 0x0168(0x0008)(ZeroConstructor, RepSkip, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FGuid                                  SpawnerID;                                         // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                SpawnerLocation;                                   // 0x0010(0x0018)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrElectricitySubgraphDataSerializer;
+DUMPER7_ASSERTS_FCrInfectedBaseCoreLocalSpawnersData;
 
-// ScriptStruct Chimera.CrLogisticsSubgraphData
-// 0x0088 (0x0088 - 0x0000)
-struct FCrLogisticsSubgraphData final
+// ScriptStruct Chimera.CrAntennaActivatedTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrAntennaActivatedTag final : public FMassTag
 {
-public:
-	TArray<struct FCrMassPersistentEntityID>      Nodes;                                             // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10[0x78];                                      // 0x0010(0x0078)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrLogisticsSubgraphData;
+DUMPER7_ASSERTS_FCrAntennaActivatedTag;
 
-// ScriptStruct Chimera.CrContextEffects
-// 0x0038 (0x0038 - 0x0000)
-struct FCrContextEffects final
-{
-public:
-	struct FGameplayTag                           EffectTag;                                         // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTagContainer                  Context;                                           // 0x0008(0x0020)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	TArray<struct FSoftObjectPath>                Effects;                                           // 0x0028(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrContextEffects;
-
-// ScriptStruct Chimera.CrZiplineSaveData
-// 0x0050 (0x0050 - 0x0000)
-struct FCrZiplineSaveData final
-{
-public:
-	TMap<struct FCrMassPersistentEntityID, struct FCrMassPersistentEntityIDArray> ZiplineConnections; // 0x0000(0x0050)(SaveGame, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrZiplineSaveData;
-
-// ScriptStruct Chimera.CrCorporationItemReward
+// ScriptStruct Chimera.CrMassNiagaraUserParameterBase
 // 0x0010 (0x0010 - 0x0000)
-struct FCrCorporationItemReward final
+struct alignas(0x08) FCrMassNiagaraUserParameterBase
 {
 public:
-	TSubclassOf<class UCrItemDataBase>            Item;                                              // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int64                                         Amount;                                            // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   Name;                                              // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrCorporationItemReward;
+DUMPER7_ASSERTS_FCrMassNiagaraUserParameterBase;
 
-// ScriptStruct Chimera.CrCorporationLevel
-// 0x0078 (0x0078 - 0x0000)
-struct FCrCorporationLevel final
+// ScriptStruct Chimera.CrMassNiagaraUserParameterVector
+// 0x0018 (0x0028 - 0x0010)
+struct FCrMassNiagaraUserParameterVector final : public FCrMassNiagaraUserParameterBase
 {
 public:
-	int64                                         Level;                                             // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int64                                         ReputationRequired;                                // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FCrCorporationItemReward>       ItemRewards;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class UCrBuildingData*>                BuildingRewards;                                   // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-	TArray<class UCrBuildingCollectionData*>      BuildingCollectionRewards;                         // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-	TArray<ECrCorporationUnlockedFeatures>        FeatureRewards;                                    // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         InventorySlotRewards;                              // 0x0050(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UCrBuildingData*>                BuildingsForUI;                                    // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-	TArray<class UCrBuildingCollectionData*>      CollectionsForUI;                                  // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FVector                                Val;                                               // 0x0010(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrCorporationLevel;
-
-// ScriptStruct Chimera.CrRecipeArray
-// 0x0010 (0x0010 - 0x0000)
-struct FCrRecipeArray final
-{
-public:
-	TArray<class UCrItemRecipeData*>              Recipes;                                           // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrRecipeArray;
-
-// ScriptStruct Chimera.CrCameraEffectPostprocessParam
-// 0x0138 (0x0138 - 0x0000)
-struct FCrCameraEffectPostprocessParam final
-{
-public:
-	uint8                                         Pad_0[0x4];                                        // 0x0000(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	ECrPostprocessEffect                          EffectType;                                        // 0x0004(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrCameraEffectParamBase               FadeIn;                                            // 0x0008(0x0098)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	struct FCrCameraEffectParamBase               FadeOut;                                           // 0x00A0(0x0098)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrCameraEffectPostprocessParam;
-
-// ScriptStruct Chimera.CrCorporation
-// 0x002C (0x0038 - 0x000C)
-struct FCrCorporation final : public FFastArraySerializerItem
-{
-public:
-	class FName                                   Name;                                              // 0x000C(0x0008)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHidden;                                           // 0x0014(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Reputation;                                        // 0x0018(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Level;                                             // 0x001C(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<int32>                                 LevelRewardsClaimed;                               // 0x0020(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-	int32                                         ResearchPointsTier1;                               // 0x0030(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ResearchPointsTier2;                               // 0x0034(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrCorporation;
-
-// ScriptStruct Chimera.CrGatherableSpawnersSubsystemTickFunction
-// 0x0008 (0x0030 - 0x0028)
-struct FCrGatherableSpawnersSubsystemTickFunction final : public FTickFunction
-{
-public:
-	class UCrGatherableSpawnersSubsystem*         GatherableSpawnersSubsystem;                       // 0x0028(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrGatherableSpawnersSubsystemTickFunction;
-
-// ScriptStruct Chimera.CrCorporationsContainer
-// 0x0018 (0x0120 - 0x0108)
-struct FCrCorporationsContainer final : public FFastArraySerializer
-{
-public:
-	TArray<struct FCrCorporation>                 CorporationsData;                                  // 0x0108(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	class ACrCorporationsOwner*                   Owner;                                             // 0x0118(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrCorporationsContainer;
-
-// ScriptStruct Chimera.CrSoundBaseArray
-// 0x0040 (0x0040 - 0x0000)
-struct FCrSoundBaseArray final
-{
-public:
-	TArray<TSoftObjectPtr<class USoundBase>>      Values;                                            // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-	bool                                          bOnWaveException;                                  // 0x0010(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TSoftObjectPtr<class USoundBase>              SoundOnWave;                                       // 0x0018(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrSoundBaseArray;
-
-// ScriptStruct Chimera.CrCorporationsOwnerSaveData
-// 0x0020 (0x0020 - 0x0000)
-struct FCrCorporationsOwnerSaveData final
-{
-public:
-	TArray<struct FCrCorporation>                 Corporations;                                      // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-	int32                                         DataPoints;                                        // 0x0010(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStartingCorporationMaxedOut;                      // 0x0014(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         UnlockedFeaturesFlags;                             // 0x0015(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16[0x2];                                       // 0x0016(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         UnlockedInventorySlotsNumber;                      // 0x0018(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrCorporationsOwnerSaveData;
-
-// ScriptStruct Chimera.CrRecipes
-// 0x0010 (0x0010 - 0x0000)
-struct FCrRecipes final
-{
-public:
-	TArray<class UCrItemRecipeData*>              Recipes;                                           // 0x0000(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrRecipes;
+DUMPER7_ASSERTS_FCrMassNiagaraUserParameterVector;
 
 // ScriptStruct Chimera.CrPlayerPingData
 // 0x0028 (0x0028 - 0x0000)
@@ -4899,568 +5995,6 @@ public:
 };
 DUMPER7_ASSERTS_FCrPlayerPingData;
 
-// ScriptStruct Chimera.CrZiplineReplicatorSaveData
-// 0x0050 (0x0050 - 0x0000)
-struct FCrZiplineReplicatorSaveData final
-{
-public:
-	TMap<struct FCrMassPersistentEntityID, bool>  ZiplinesActivity;                                  // 0x0000(0x0050)(SaveGame, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrZiplineReplicatorSaveData;
-
-// ScriptStruct Chimera.CrCorporationRecipes
-// 0x0050 (0x0050 - 0x0000)
-struct FCrCorporationRecipes final
-{
-public:
-	TMap<int32, struct FCrRecipes>                LevelRecipes;                                      // 0x0000(0x0050)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrCorporationRecipes;
-
-// ScriptStruct Chimera.CrLocalCorporationData
-// 0x0020 (0x0020 - 0x0000)
-struct FCrLocalCorporationData final
-{
-public:
-	TArray<int32>                                 RewardsClaimed;                                    // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         Reputation;                                        // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Level;                                             // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHidden;                                           // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrLocalCorporationData;
-
-// ScriptStruct Chimera.CrAnimLayerSelectionEntry
-// 0x0028 (0x0028 - 0x0000)
-struct FCrAnimLayerSelectionEntry final
-{
-public:
-	TSubclassOf<class UAnimInstance>              Layer;                                             // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTagContainer                  RequiredTags;                                      // 0x0008(0x0020)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrAnimLayerSelectionEntry;
-
-// ScriptStruct Chimera.CrLogisticsRoundaboutItem
-// 0x0028 (0x0028 - 0x0000)
-struct FCrLogisticsRoundaboutItem final
-{
-public:
-	struct FCrMassEntityReplicationHelper         Entity;                                            // 0x0000(0x0018)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Location;                                          // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LocationFromReplication;                           // 0x001C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LeavingLocation;                                   // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrLogisticsRoundaboutItem;
-
-// ScriptStruct Chimera.CrLogisticsLineItem
-// 0x0028 (0x0028 - 0x0000)
-struct FCrLogisticsLineItem
-{
-public:
-	struct FCrMassEntityReplicationHelper         Entity;                                            // 0x0000(0x0018)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Location;                                          // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LocationFromReplication;                           // 0x001C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MoveSpeed;                                         // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bQueued;                                           // 0x0024(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStopped;                                          // 0x0025(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_26[0x2];                                       // 0x0026(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrLogisticsLineItem;
-
-// ScriptStruct Chimera.CrLogisticsIntersectionItem
-// 0x0018 (0x0040 - 0x0028)
-struct FCrLogisticsIntersectionItem final : public FCrLogisticsLineItem
-{
-public:
-	struct FCrMassEntityReplicationHelper         TargetLine;                                        // 0x0028(0x0018)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrLogisticsIntersectionItem;
-
-// ScriptStruct Chimera.CrLogisticsIntersectionSimulationState
-// 0x0020 (0x0020 - 0x0000)
-struct FCrLogisticsIntersectionSimulationState final
-{
-public:
-	TArray<struct FCrLogisticsIntersectionItem>   Items;                                             // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FCrMassEntityReplicationHelper> WaitingItems;                                      // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrLogisticsIntersectionSimulationState;
-
-// ScriptStruct Chimera.CrAnimLayerSelectionSet
-// 0x0018 (0x0018 - 0x0000)
-struct FCrAnimLayerSelectionSet final
-{
-public:
-	TArray<struct FCrAnimLayerSelectionEntry>     LayerRules;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TSubclassOf<class UAnimInstance>              DefaultLayer;                                      // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrAnimLayerSelectionSet;
-
-// ScriptStruct Chimera.CrAnimBodyStyleSelectionEntry
-// 0x0028 (0x0028 - 0x0000)
-struct FCrAnimBodyStyleSelectionEntry final
-{
-public:
-	class USkeletalMesh*                          Mesh;                                              // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	struct FGameplayTagContainer                  RequiredTags;                                      // 0x0008(0x0020)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrAnimBodyStyleSelectionEntry;
-
-// ScriptStruct Chimera.CrAnimBodyStyleSelectionSet
-// 0x0020 (0x0020 - 0x0000)
-struct FCrAnimBodyStyleSelectionSet final
-{
-public:
-	TArray<struct FCrAnimBodyStyleSelectionEntry> MeshRules;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	class USkeletalMesh*                          DefaultMesh;                                       // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UPhysicsAsset*                          ForcedPhysicsAsset;                                // 0x0018(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrAnimBodyStyleSelectionSet;
-
-// ScriptStruct Chimera.CrCraftingSettings
-// 0x000C (0x000C - 0x0000)
-struct FCrCraftingSettings final
-{
-public:
-	bool                                          bCloseListAfterSelection;                          // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSingleClickConfirmsSelection;                     // 0x0001(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHasQueue;                                         // 0x0002(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CraftAmountToRequest;                              // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CraftingSpeed;                                     // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrCraftingSettings;
-
-// ScriptStruct Chimera.CrCrafterQueueEntry
-// 0x0010 (0x0010 - 0x0000)
-struct FCrCrafterQueueEntry final
-{
-public:
-	class UCrItemRecipeData*                      Recipe;                                            // 0x0000(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	int32                                         Amount;                                            // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsPrerequisite;                                   // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrCrafterQueueEntry;
-
-// ScriptStruct Chimera.CrUnlockableRecipesContainer
-// 0x0018 (0x0120 - 0x0108)
-struct FCrUnlockableRecipesContainer final : public FFastArraySerializer
-{
-public:
-	TArray<struct FCrUnlockableRecipeData>        RecipesData;                                       // 0x0108(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	class ACrCraftingRecipeOwner*                 Owner;                                             // 0x0118(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrUnlockableRecipesContainer;
-
-// ScriptStruct Chimera.CrCraftingReverseLookupBuildingData
-// 0x0010 (0x0010 - 0x0000)
-struct FCrCraftingReverseLookupBuildingData final
-{
-public:
-	TArray<TSoftObjectPtr<class UCrBuildingData>> Data;                                              // 0x0000(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrCraftingReverseLookupBuildingData;
-
-// ScriptStruct Chimera.CrCrosshairData
-// 0x0028 (0x0028 - 0x0000)
-struct FCrCrosshairData final
-{
-public:
-	TSoftObjectPtr<class UTexture2D>              CrosshairTexture;                                  // 0x0000(0x0028)(Edit, BlueprintVisible, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrCrosshairData;
-
-// ScriptStruct Chimera.CrCustomBuildingMesh
-// 0x0010 (0x0010 - 0x0000)
-struct FCrCustomBuildingMesh final
-{
-public:
-	class UStaticMeshSocket*                      Socket;                                            // 0x0000(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UStaticMeshComponent*                   Mesh;                                              // 0x0008(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrCustomBuildingMesh;
-
-// ScriptStruct Chimera.CrConnectingClassMeshes
-// 0x0050 (0x0050 - 0x0000)
-struct FCrConnectingClassMeshes final
-{
-public:
-	TMap<TSubclassOf<class ACrCustomBuilding>, class UStaticMesh*> Map;                              // 0x0000(0x0050)(Edit, BlueprintVisible, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrConnectingClassMeshes;
-
-// ScriptStruct Chimera.DamageData
-// 0x0030 (0x0030 - 0x0000)
-struct FDamageData final
-{
-public:
-	bool                                          bWeakpointHit;                                     // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bArmorHit;                                         // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShieldHit;                                        // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bKillingHit;                                       // 0x0003(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                HitLocation;                                       // 0x0008(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           TargetTag;                                         // 0x0020(0x0008)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           DamagingWeaponTag;                                 // 0x0028(0x0008)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FDamageData;
-
-// ScriptStruct Chimera.DatapadData
-// 0x0048 (0x0050 - 0x0008)
-struct FDatapadData final : public FTableRowBase
-{
-public:
-	class FName                                   RowName;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FText                                   Title;                                             // 0x0010(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FText                                   Content;                                           // 0x0020(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FText                                   Date;                                              // 0x0030(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FText                                   Author;                                            // 0x0040(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FDatapadData;
-
-// ScriptStruct Chimera.CrDoorStateSetting
-// 0x0048 (0x0048 - 0x0000)
-struct FCrDoorStateSetting final
-{
-public:
-	struct FLinearColor                           EmissiveLightColor;                                // 0x0000(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           TerminalColor;                                     // 0x0010(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FText                                   TriggerText;                                       // 0x0020(0x0010)(Edit, NativeAccessSpecifierPublic)
-	class FString                                 RuleData;                                          // 0x0030(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture2D*                             Icon;                                              // 0x0040(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrDoorStateSetting;
-
-// ScriptStruct Chimera.CrInteractionContextDataBase
-// 0x0008 (0x0008 - 0x0000)
-struct alignas(0x08) FCrInteractionContextDataBase
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrInteractionContextDataBase;
-
-// ScriptStruct Chimera.CrDroneInteractionContextData
-// 0x0028 (0x0030 - 0x0008)
-struct FCrDroneInteractionContextData final : public FCrInteractionContextDataBase
-{
-public:
-	uint8                                         Pad_8[0x28];                                       // 0x0008(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrDroneInteractionContextData;
-
-// ScriptStruct Chimera.EncyclopediaEntryAuthor
-// 0x00D0 (0x00D0 - 0x0000)
-struct FEncyclopediaEntryAuthor final
-{
-public:
-	class FName                                   AuthorID;                                          // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FText                                   AuthorName;                                        // 0x0008(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            AuthorPicture;                                     // 0x0020(0x00B0)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FEncyclopediaEntryAuthor;
-
-// ScriptStruct Chimera.CrEncyclopediaEntriesStatusContainer
-// 0x0018 (0x0120 - 0x0108)
-struct FCrEncyclopediaEntriesStatusContainer final : public FFastArraySerializer
-{
-public:
-	TArray<struct FCrEncyclopediaEntryStatus>     EntriesStatusData;                                 // 0x0108(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	class ACrEncyclopediaReplicationHelper*       Owner;                                             // 0x0118(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrEncyclopediaEntriesStatusContainer;
-
-// ScriptStruct Chimera.CrEncyclopediaAudiologData
-// 0x0010 (0x0100 - 0x00F0)
-struct FCrEncyclopediaAudiologData final : public FCrEncyclopediaBaseData
-{
-public:
-	struct FDataTableRowHandle                    AudiologEntryDT;                                   // 0x00F0(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrEncyclopediaAudiologData;
-
-// ScriptStruct Chimera.EntityCallToActorRequest
-// 0x0028 (0x0028 - 0x0000)
-struct alignas(0x08) FEntityCallToActorRequest final
-{
-public:
-	uint8                                         Pad_0[0x28];                                       // 0x0000(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FEntityCallToActorRequest;
-
-// ScriptStruct Chimera.CrGridEntityHandle
-// 0x0018 (0x0018 - 0x0000)
-struct alignas(0x08) FCrGridEntityHandle final
-{
-public:
-	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrGridEntityHandle;
-
-// ScriptStruct Chimera.CrGridEntityDataBase
-// 0x000C (0x000C - 0x0000)
-struct alignas(0x04) FCrGridEntityDataBase final
-{
-public:
-	uint8                                         Pad_0[0xC];                                        // 0x0000(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrGridEntityDataBase;
-
-// ScriptStruct Chimera.CrEnviroWaveStageAmbientData
-// 0x00C8 (0x00C8 - 0x0000)
-struct FCrEnviroWaveStageAmbientData final
-{
-public:
-	struct FGameplayTagQuery                      TagQuery;                                          // 0x0000(0x0048)(Edit, NativeAccessSpecifierPublic)
-	bool                                          bSeparatedAudioForInteriorExterior;                // 0x0048(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TSoftObjectPtr<class USoundBase>              InteriorSound;                                     // 0x0050(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class USoundBase>              ExteriorSound;                                     // 0x0078(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class USoundBase>              Sound;                                             // 0x00A0(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrEnviroWaveStageAmbientData;
-
-// ScriptStruct Chimera.CrEnviroWaveAmbientData
-// 0x0010 (0x0010 - 0x0000)
-struct FCrEnviroWaveAmbientData final
-{
-public:
-	TArray<struct FCrEnviroWaveStageAmbientData>  StagesAmbientData;                                 // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrEnviroWaveAmbientData;
-
-// ScriptStruct Chimera.CurrentEnviroWaveAudio
-// 0x0018 (0x0018 - 0x0000)
-struct FCurrentEnviroWaveAudio final
-{
-public:
-	bool                                          bSeparatedAudioForInteriorExterior;                // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAudioComponent*                        InteriorSoundComponent;                            // 0x0008(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UAudioComponent*                        ExteriorSoundComponent;                            // 0x0010(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCurrentEnviroWaveAudio;
-
-// ScriptStruct Chimera.CrEnviroWaveCurveLinearColorMap
-// 0x0050 (0x0050 - 0x0000)
-struct FCrEnviroWaveCurveLinearColorMap final
-{
-public:
-	TMap<EEnviroWaveStage, struct FRuntimeCurveLinearColor> Curves;                                  // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrEnviroWaveCurveLinearColorMap;
-
-// ScriptStruct Chimera.CrEnviroWaveCurves
-// 0x0140 (0x0140 - 0x0000)
-struct FCrEnviroWaveCurves final
-{
-public:
-	TMap<EEnviroWave, struct FCrEnviroWaveCurveFloatMap> FloatCurves;                                // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TMap<EEnviroWave, struct FCrEnviroWaveCurveVectorMap> VectorCurves;                              // 0x0050(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TMap<EEnviroWave, struct FCrEnviroWaveCurveLinearColorMap> LinearColorCurves;                    // 0x00A0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TMap<EEnviroWave, struct FCrEnviroWaveCurveTableMap> TableCurves;                                // 0x00F0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrEnviroWaveCurves;
-
-// ScriptStruct Chimera.CrLogisticsIntersectionFilterParams
-// 0x0010 (0x0010 - 0x0000)
-struct FCrLogisticsIntersectionFilterParams final : public FMassConstSharedFragment
-{
-public:
-	TArray<struct FVector>                        SocketLocations;                                   // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrLogisticsIntersectionFilterParams;
-
-// ScriptStruct Chimera.CrLogisticsSocketRuntimeData
-// 0x0038 (0x0038 - 0x0000)
-struct FCrLogisticsSocketRuntimeData final
-{
-public:
-	struct FVector                                WorldPosition;                                     // 0x0000(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrLogisticsSocketType                        ConnectionType;                                    // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMassEntityHandle                      ConnectionEntity;                                  // 0x0020(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCrMassPersistentEntityID              SocketPairInvisibleConnector;                      // 0x0028(0x0010)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrLogisticsSocketRuntimeData;
-
-// ScriptStruct Chimera.CrLogisticsSocketsFragment
-// 0x0010 (0x0010 - 0x0000)
-struct FCrLogisticsSocketsFragment final : public FMassFragment
-{
-public:
-	TArray<struct FCrLogisticsSocketRuntimeData>  Sockets;                                           // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrLogisticsSocketsFragment;
-
-// ScriptStruct Chimera.CrEnviroWaveEffectSaveData
-// 0x0008 (0x0008 - 0x0000)
-struct FCrEnviroWaveEffectSaveData final
-{
-public:
-	bool                                          bValue;                                            // 0x0000(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         LastChangeTime;                                    // 0x0004(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrEnviroWaveEffectSaveData;
-
-// ScriptStruct Chimera.CrEnviroWaveEffectSubsystemSaveData
-// 0x0028 (0x0028 - 0x0000)
-struct FCrEnviroWaveEffectSubsystemSaveData final
-{
-public:
-	struct FCrEnviroWaveEffectSaveData            SulfurActive;                                      // 0x0000(0x0008)(SaveGame, NoDestructor, NativeAccessSpecifierPublic)
-	struct FCrEnviroWaveEffectSaveData            EnemySpawnersActive;                               // 0x0008(0x0008)(SaveGame, NoDestructor, NativeAccessSpecifierPublic)
-	struct FCrEnviroWaveEffectSaveData            EvaporateWater;                                    // 0x0010(0x0008)(SaveGame, NoDestructor, NativeAccessSpecifierPublic)
-	struct FCrEnviroWaveEffectSaveData            HidePoisonIvy;                                     // 0x0018(0x0008)(SaveGame, NoDestructor, NativeAccessSpecifierPublic)
-	struct FCrEnviroWaveEffectSaveData            HideAggressivePlant;                               // 0x0020(0x0008)(SaveGame, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrEnviroWaveEffectSubsystemSaveData;
-
-// ScriptStruct Chimera.CrLogisticsIntersectionMoveSpeedPerLine
-// 0x0020 (0x0020 - 0x0000)
-struct FCrLogisticsIntersectionMoveSpeedPerLine final
-{
-public:
-	struct FCrMassEntityReplicationHelper         Entity;                                            // 0x0000(0x0018)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MoveSpeed;                                         // 0x0018(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrLogisticsIntersectionMoveSpeedPerLine;
-
-// ScriptStruct Chimera.CrEnviroWaveMaterialMapStruct
-// 0x0050 (0x0050 - 0x0000)
-struct FCrEnviroWaveMaterialMapStruct final
-{
-public:
-	TMap<ECrEnviroWaveMaterialState, TSoftObjectPtr<class UMaterialInterface>> MaterialMap;          // 0x0000(0x0050)(Edit, UObjectWrapper, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrEnviroWaveMaterialMapStruct;
-
-// ScriptStruct Chimera.CrEnviroWaveSaveData
-// 0x0040 (0x0040 - 0x0000)
-struct FCrEnviroWaveSaveData final
-{
-public:
-	EEnviroWave                                   Wave;                                              // 0x0000(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EEnviroWaveStage                              Stage;                                             // 0x0001(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrEnviroWaveSettings                  Settings;                                          // 0x0004(0x002C)(SaveGame, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         Progress;                                          // 0x0030(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        WaveStartTimeSeconds;                              // 0x0038(0x0008)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrEnviroWaveSaveData;
-
-// ScriptStruct Chimera.CrEnviroWaveSubsystemTickFunction
-// 0x0008 (0x0030 - 0x0028)
-struct FCrEnviroWaveSubsystemTickFunction final : public FTickFunction
-{
-public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrEnviroWaveSubsystemTickFunction;
-
-// ScriptStruct Chimera.CrEnviroWaveTimerSaveData
-// 0x0070 (0x0070 - 0x0000)
-struct FCrEnviroWaveTimerSaveData final
-{
-public:
-	float                                         NextWaveTimer;                                     // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bWaitingForNextWave;                               // 0x0004(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPause;                                            // 0x0005(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EEnviroWaveStage                              PreviousWaveStage;                                 // 0x0006(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStopWaves;                                        // 0x0007(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int64                                         NumWaves;                                          // 0x0008(0x0008)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             HeatWaveRegionTransform;                           // 0x0010(0x0060)(SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrEnviroWaveTimerSaveData;
-
-// ScriptStruct Chimera.CrEnviroWaveVisualsWorldSubsystemDebugTickFunction
-// 0x0008 (0x0030 - 0x0028)
-struct FCrEnviroWaveVisualsWorldSubsystemDebugTickFunction final : public FTickFunction
-{
-public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrEnviroWaveVisualsWorldSubsystemDebugTickFunction;
-
-// ScriptStruct Chimera.CrStartingExporterItemRow
-// 0x0038 (0x0040 - 0x0008)
-struct FCrStartingExporterItemRow final : public FTableRowBase
-{
-public:
-	class FText                                   ItemText;                                          // 0x0008(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	class FText                                   DescriptionText;                                   // 0x0018(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	TSubclassOf<class UCrItemDataBase>            Item;                                              // 0x0028(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BuildTime;                                         // 0x0030(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Level;                                             // 0x0034(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         StartingCorporationValue;                          // 0x0038(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrStartingExporterItemRow;
-
-// ScriptStruct Chimera.CrFlowData
-// 0x0018 (0x0020 - 0x0008)
-struct FCrFlowData final : public FTableRowBase
-{
-public:
-	struct FGuid                                  EntryID;                                           // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCrFlowEventDataAsset*                  FlowEvent;                                         // 0x0018(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrFlowData;
-
-// ScriptStruct Chimera.CrFlowEventCombinedData
-// 0x0040 (0x0040 - 0x0000)
-struct FCrFlowEventCombinedData final
-{
-public:
-	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UCrFlowEventBase*>               FlowEvents;                                        // 0x0020(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-	TArray<class UCrContextualEventFlowListener*> ContextualEventFlowListeners;                      // 0x0030(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrFlowEventCombinedData;
-
-// ScriptStruct Chimera.CrPlayerProfessionSurvivalData
-// 0x01C0 (0x01C0 - 0x0000)
-struct FCrPlayerProfessionSurvivalData final
-{
-public:
-	EProfessionType                               Profession;                                        // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 UnqiueNetId;                                       // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrCharacterPlayerSurvivalData         CharacterSurvivalData;                             // 0x0020(0x01A0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrPlayerProfessionSurvivalData;
-
-// ScriptStruct Chimera.CrPlayerProfessionState
-// 0x000C (0x000C - 0x0000)
-struct FCrPlayerProfessionState final
-{
-public:
-	EProfessionType                               SelectedType;                                      // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         PlayerId;                                          // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPossessed;                                        // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrPlayerProfessionState;
-
-// ScriptStruct Chimera.CrPlayerPersonalMarkerData
-// 0x0028 (0x0028 - 0x0000)
-struct FCrPlayerPersonalMarkerData final
-{
-public:
-	struct FVector2f                              MarkerPosition;                                    // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 PlayerName;                                        // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           PlayerColor;                                       // 0x0018(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrPlayerPersonalMarkerData;
-
 // ScriptStruct Chimera.CrScalabilitySnapshot
 // 0x0060 (0x0060 - 0x0000)
 struct alignas(0x08) FCrScalabilitySnapshot final
@@ -5469,6 +6003,29 @@ public:
 	uint8                                         Pad_0[0x60];                                       // 0x0000(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCrScalabilitySnapshot;
+
+// ScriptStruct Chimera.CrMassBuildingNiagaraParameterDriverForge
+// 0x0008 (0x0010 - 0x0008)
+struct FCrMassBuildingNiagaraParameterDriverForge final : public FCrMassBuildingNiagaraParameterDriverBase
+{
+public:
+	float                                         DeactivateDelay;                                   // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCanDeactivateImmediately;                         // 0x000C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrMassBuildingNiagaraParameterDriverForge;
+
+// ScriptStruct Chimera.CrEnviroWaveInteractionEnablingData
+// 0x0004 (0x0004 - 0x0000)
+struct FCrEnviroWaveInteractionEnablingData final
+{
+public:
+	EEnviroWave                                   WaveType;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EEnviroWaveStage                              WaveStage;                                         // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EEnviroWaveFadeoutSubstage                    FadeoutSubstage;                                   // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EEnviroWaveGrowbackSubstage                   GrowbackSubstage;                                  // 0x0003(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrEnviroWaveInteractionEnablingData;
 
 // ScriptStruct Chimera.CrGatherableInstancedVisualsData
 // 0x0010 (0x0010 - 0x0000)
@@ -5481,6 +6038,21 @@ public:
 };
 DUMPER7_ASSERTS_FCrGatherableInstancedVisualsData;
 
+// ScriptStruct Chimera.CrGatherableEnviroWaveProgressInteractivityThresholds
+// 0x0030 (0x0030 - 0x0000)
+struct FCrGatherableEnviroWaveProgressInteractivityThresholds final
+{
+public:
+	EEnviroWaveStage                              WaveStage;                                         // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         EnableInteractionEnviroWaveStageProgressThresholdStart; // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         EnableInteractionEnviroWaveStageProgressThresholdEnd; // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<EEnviroWaveFadeoutSubstage>            FadeoutSubstages;                                  // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<EEnviroWaveGrowbackSubstage>           GrowbackSubstages;                                 // 0x0020(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrGatherableEnviroWaveProgressInteractivityThresholds;
+
 // ScriptStruct Chimera.CrGatherableActorInteractivityArray
 // 0x0018 (0x0018 - 0x0000)
 struct FCrGatherableActorInteractivityArray final
@@ -5491,6 +6063,13 @@ public:
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCrGatherableActorInteractivityArray;
+
+// ScriptStruct Chimera.CrMassBuildingLOD0Tag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassBuildingLOD0Tag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrMassBuildingLOD0Tag;
 
 // ScriptStruct Chimera.CrRepDepletedGatherableData
 // 0x005C (0x0068 - 0x000C)
@@ -5515,6 +6094,17 @@ public:
 };
 DUMPER7_ASSERTS_FCrRepDepletedGatherablesContainer;
 
+// ScriptStruct Chimera.CrRepPermanentDepletedGatherableData
+// 0x0054 (0x0060 - 0x000C)
+struct FCrRepPermanentDepletedGatherableData final : public FFastArraySerializerItem
+{
+public:
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                Location;                                          // 0x0010(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBoxSphereBounds                       Bounds;                                            // 0x0028(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrRepPermanentDepletedGatherableData;
+
 // ScriptStruct Chimera.CrRepPermanentDepletedGatherablesContainer
 // 0x0018 (0x0120 - 0x0108)
 struct FCrRepPermanentDepletedGatherablesContainer final : public FFastArraySerializer
@@ -5524,6 +6114,43 @@ public:
 	class ACrGatherableSpawnersRepActor*          Owner;                                             // 0x0118(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 };
 DUMPER7_ASSERTS_FCrRepPermanentDepletedGatherablesContainer;
+
+// ScriptStruct Chimera.CrGatherableSpawnersSubsystemTickFunction
+// 0x0008 (0x0030 - 0x0028)
+struct FCrGatherableSpawnersSubsystemTickFunction final : public FTickFunction
+{
+public:
+	class UCrGatherableSpawnersSubsystem*         GatherableSpawnersSubsystem;                       // 0x0028(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrGatherableSpawnersSubsystemTickFunction;
+
+// ScriptStruct Chimera.GatherableLocationRef
+// 0x0050 (0x0050 - 0x0000)
+struct FGatherableLocationRef final
+{
+public:
+	struct FVector                                Location;                                          // 0x0000(0x0018)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBoxSphereBounds                       Bounds;                                            // 0x0018(0x0038)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGatherableLocationRef;
+
+// ScriptStruct Chimera.CrMassBuildingTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassBuildingTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrMassBuildingTag;
+
+// ScriptStruct Chimera.CrExcludedGatherableActorClassData
+// 0x0010 (0x0010 - 0x0000)
+struct FCrExcludedGatherableActorClassData final
+{
+public:
+	TSubclassOf<class AActor>                     ActorClass;                                        // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShouldExcludeChildren;                            // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrExcludedGatherableActorClassData;
 
 // ScriptStruct Chimera.ExcludedGatherableLocationRef
 // 0x0060 (0x0060 - 0x0000)
@@ -5536,6 +6163,73 @@ public:
 };
 DUMPER7_ASSERTS_FExcludedGatherableLocationRef;
 
+// ScriptStruct Chimera.CrMassSpawnerSubsystemDeferredInitData
+// 0x0028 (0x0028 - 0x0000)
+struct FCrMassSpawnerSubsystemDeferredInitData final
+{
+public:
+	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FInstancedStruct                       SpawnData;                                         // 0x0018(0x0010)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrMassSpawnerSubsystemDeferredInitData;
+
+// ScriptStruct Chimera.CrMassPackageSenderTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassPackageSenderTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrMassPackageSenderTag;
+
+// ScriptStruct Chimera.CrSavedDepletedGatherableLocationRefAndWaveStage
+// 0x0058 (0x0058 - 0x0000)
+struct FCrSavedDepletedGatherableLocationRefAndWaveStage final
+{
+public:
+	struct FGatherableLocationRef                 LocationRef;                                       // 0x0000(0x0050)(SaveGame, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         WaveStagesToRespondTo;                             // 0x0050(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrSavedDepletedGatherableLocationRefAndWaveStage;
+
+// ScriptStruct Chimera.CrSavedPermanentDepletedGatherableLocationRef
+// 0x0050 (0x0050 - 0x0000)
+struct FCrSavedPermanentDepletedGatherableLocationRef final
+{
+public:
+	struct FGatherableLocationRef                 LocationRef;                                       // 0x0000(0x0050)(SaveGame, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrSavedPermanentDepletedGatherableLocationRef;
+
+// ScriptStruct Chimera.CrMassSimpleBuildingTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassSimpleBuildingTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrMassSimpleBuildingTag;
+
+// ScriptStruct Chimera.CrSavedUsedPCGMarkersLocationRef
+// 0x0050 (0x0050 - 0x0000)
+struct FCrSavedUsedPCGMarkersLocationRef final
+{
+public:
+	struct FGatherableLocationRef                 LocationRef;                                       // 0x0000(0x0050)(SaveGame, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrSavedUsedPCGMarkersLocationRef;
+
+// ScriptStruct Chimera.CrGatherableSpawnersSubsystemSaveData
+// 0x0048 (0x0048 - 0x0000)
+struct FCrGatherableSpawnersSubsystemSaveData final
+{
+public:
+	int32                                         GlobalGatherablePCGSeed;                           // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FCrSavedDepletedGatherableLocationRefAndWaveStage> DepletedGatherables;            // 0x0008(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	TArray<struct FCrSavedPermanentDepletedGatherableLocationRef> PermanentDepletedGatherables;      // 0x0018(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	TArray<struct FCrSavedUsedPCGMarkersLocationRef> PrevUsedPCGMarkers;                             // 0x0028(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	TArray<struct FCrSavedUsedPCGMarkersLocationRef> CurrentUsedPCGMarkers;                          // 0x0038(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrGatherableSpawnersSubsystemSaveData;
+
 // ScriptStruct Chimera.PCGGatherableSpawnBoxLocationRef
 // 0x0050 (0x0050 - 0x0000)
 struct FPCGGatherableSpawnBoxLocationRef final
@@ -5546,6 +6240,22 @@ public:
 };
 DUMPER7_ASSERTS_FPCGGatherableSpawnBoxLocationRef;
 
+// ScriptStruct Chimera.GatherablesOctreeForEnviroWaveStage
+// 0x00C0 (0x00C0 - 0x0000)
+struct alignas(0x10) FGatherablesOctreeForEnviroWaveStage final
+{
+public:
+	uint8                                         Pad_0[0xC0];                                       // 0x0000(0x00C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FGatherablesOctreeForEnviroWaveStage;
+
+// ScriptStruct Chimera.CrMassExtractorTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassExtractorTag : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrMassExtractorTag;
+
 // ScriptStruct Chimera.CrGatherableActorToInstanceMapping
 // 0x0050 (0x0050 - 0x0000)
 struct FCrGatherableActorToInstanceMapping final
@@ -5554,6 +6264,33 @@ public:
 	TMap<class UStaticMeshComponent*, int32>      Mapping;                                           // 0x0000(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
 };
 DUMPER7_ASSERTS_FCrGatherableActorToInstanceMapping;
+
+// ScriptStruct Chimera.CrISMGatherableVisualQueData
+// 0x0080 (0x0080 - 0x0000)
+struct FCrISMGatherableVisualQueData final
+{
+public:
+	class UStaticMeshComponent*                   ComponentFromGatherable;                           // 0x0000(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Transform;                                         // 0x0010(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UStaticMesh*                            Mesh;                                              // 0x0070(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_78[0x8];                                       // 0x0078(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrISMGatherableVisualQueData;
+
+// ScriptStruct Chimera.CrMassTemperatureProcessorTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassTemperatureProcessorTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrMassTemperatureProcessorTag;
+
+// ScriptStruct Chimera.CrMassStabilitySimulateRemovalTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassStabilitySimulateRemovalTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrMassStabilitySimulateRemovalTag;
 
 // ScriptStruct Chimera.CrGenericMassGraphNode
 // 0x0010 (0x0010 - 0x0000)
@@ -5574,6 +6311,13 @@ public:
 };
 DUMPER7_ASSERTS_FCrGenericMassGraphConnectionData;
 
+// ScriptStruct Chimera.CrMassTeleporterTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassTeleporterTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrMassTeleporterTag;
+
 // ScriptStruct Chimera.CrGenericMassGraphNodeData
 // 0x0028 (0x0028 - 0x0000)
 struct FCrGenericMassGraphNodeData final
@@ -5585,6 +6329,46 @@ public:
 	TArray<struct FCrGenericMassGraphConnectionData> NeighbourData;                                  // 0x0018(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCrGenericMassGraphNodeData;
+
+// ScriptStruct Chimera.CrGenericMassGraphSubgraphData
+// 0x0028 (0x0028 - 0x0000)
+struct FCrGenericMassGraphSubgraphData final
+{
+public:
+	TArray<struct FCrMassPersistentEntityID>      Nodes;                                             // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	TArray<struct FCrMassPersistentEntityID>      Connectors;                                        // 0x0010(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	struct FCrGenericMassSubGraph                 SubGraph;                                          // 0x0020(0x0004)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrGenericMassGraphSubgraphData;
+
+// ScriptStruct Chimera.CrEntitySpawnData
+// 0x0070 (0x0070 - 0x0000)
+struct FCrEntitySpawnData final
+{
+public:
+	class FString                                 EntityConfigDataPath;                              // 0x0000(0x0010)(ZeroConstructor, SaveGame, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             Transform;                                         // 0x0010(0x0060)(SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrEntitySpawnData;
+
+// ScriptStruct Chimera.CrEntitySaveData
+// 0x0090 (0x0090 - 0x0000)
+struct FCrEntitySaveData final
+{
+public:
+	struct FCrEntitySpawnData                     SpawnData;                                         // 0x0000(0x0070)(SaveGame, NativeAccessSpecifierPublic)
+	TArray<struct FInstancedStruct>               Tags;                                              // 0x0070(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	TArray<struct FInstancedStruct>               FragmentValues;                                    // 0x0080(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrEntitySaveData;
+
+// ScriptStruct Chimera.CrMassZiplineTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassZiplineTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrMassZiplineTag;
 
 // ScriptStruct Chimera.CrGenericMassGraphConnectionNodesData
 // 0x0030 (0x0030 - 0x0000)
@@ -5600,15 +6384,6 @@ public:
 };
 DUMPER7_ASSERTS_FCrGenericMassGraphConnectionNodesData;
 
-// ScriptStruct Chimera.EntityWithLifespanFragment
-// 0x000C (0x000C - 0x0000)
-struct alignas(0x04) FEntityWithLifespanFragment final : public FMassFragment
-{
-public:
-	uint8                                         Pad_0[0xC];                                        // 0x0000(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FEntityWithLifespanFragment;
-
 // ScriptStruct Chimera.CrGenericMassGraphDataHandle
 // 0x0004 (0x0004 - 0x0000)
 struct FCrGenericMassGraphDataHandle final
@@ -5618,6 +6393,20 @@ public:
 	uint16                                        Generation;                                        // 0x0002(0x0002)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCrGenericMassGraphDataHandle;
+
+// ScriptStruct Chimera.BaseAttackMarkerDataFastArrayItem
+// 0x0024 (0x0030 - 0x000C)
+struct FBaseAttackMarkerDataFastArrayItem final : public FFastArraySerializerItem
+{
+public:
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMassEntityHandle                      ObeliskHandle;                                     // 0x0010(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2f                              Location;                                          // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2f                              AttackLocationIfAny;                               // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrAlienObeliskState                          State;                                             // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FBaseAttackMarkerDataFastArrayItem;
 
 // ScriptStruct Chimera.CrGenericMassGraphData
 // 0x00F0 (0x00F0 - 0x0000)
@@ -5630,15 +6419,6 @@ public:
 };
 DUMPER7_ASSERTS_FCrGenericMassGraphData;
 
-// ScriptStruct Chimera.CrBuildingUpdateSharedFragment
-// 0x0008 (0x0008 - 0x0000)
-struct FCrBuildingUpdateSharedFragment final : public FMassSharedFragment
-{
-public:
-	double                                        LastCustomFloatsUpdateTime;                        // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrBuildingUpdateSharedFragment;
-
 // ScriptStruct Chimera.CrGenericMassGraphSegmentData
 // 0x0030 (0x0030 - 0x0000)
 struct alignas(0x08) FCrGenericMassGraphSegmentData final
@@ -5647,55 +6427,6 @@ public:
 	uint8                                         Pad_0[0x30];                                       // 0x0000(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCrGenericMassGraphSegmentData;
-
-// ScriptStruct Chimera.GlobalAppliedAbilityList
-// 0x0050 (0x0050 - 0x0000)
-struct FGlobalAppliedAbilityList final
-{
-public:
-	TMap<class UCrAbilitySystemComponent*, struct FGameplayAbilitySpecHandle> Handles;               // 0x0000(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGlobalAppliedAbilityList;
-
-// ScriptStruct Chimera.CrGrid2DEntry
-// 0x0058 (0x0058 - 0x0000)
-struct alignas(0x08) FCrGrid2DEntry final
-{
-public:
-	uint8                                         Pad_0[0x58];                                       // 0x0000(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrGrid2DEntry;
-
-// ScriptStruct Chimera.DeathSequenceDamageForceConfig
-// 0x0008 (0x0008 - 0x0000)
-struct FDeathSequenceDamageForceConfig final
-{
-public:
-	float                                         ForceMultiplayer;                                  // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAbsZ;                                             // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FDeathSequenceDamageForceConfig;
-
-// ScriptStruct Chimera.Grid
-// 0x0050 (0x0050 - 0x0000)
-struct FGrid final
-{
-public:
-	TMap<int32, float>                            GridsWithRanges;                                   // 0x0000(0x0050)(Edit, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGrid;
-
-// ScriptStruct Chimera.CrHelperDroneRailCollisionHit
-// 0x0020 (0x0020 - 0x0000)
-struct FCrHelperDroneRailCollisionHit final
-{
-public:
-	float                                         HitTime;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                HitLocation;                                       // 0x0008(0x0018)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrHelperDroneRailCollisionHit;
 
 // ScriptStruct Chimera.CrBuildingParameters
 // 0x0018 (0x0018 - 0x0000)
@@ -5711,6 +6442,73 @@ public:
 };
 DUMPER7_ASSERTS_FCrBuildingParameters;
 
+// ScriptStruct Chimera.GlobalAppliedAbilityList
+// 0x0050 (0x0050 - 0x0000)
+struct FGlobalAppliedAbilityList final
+{
+public:
+	TMap<class UCrAbilitySystemComponent*, struct FGameplayAbilitySpecHandle> Handles;               // 0x0000(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGlobalAppliedAbilityList;
+
+// ScriptStruct Chimera.GlobalAppliedEffectList
+// 0x0050 (0x0050 - 0x0000)
+struct FGlobalAppliedEffectList final
+{
+public:
+	TMap<class UCrAbilitySystemComponent*, struct FActiveGameplayEffectHandle> Handles;              // 0x0000(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGlobalAppliedEffectList;
+
+// ScriptStruct Chimera.CrMassAggroTargetTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassAggroTargetTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrMassAggroTargetTag;
+
+// ScriptStruct Chimera.CrGrid2DEntry
+// 0x0058 (0x0058 - 0x0000)
+struct alignas(0x08) FCrGrid2DEntry final
+{
+public:
+	uint8                                         Pad_0[0x58];                                       // 0x0000(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrGrid2DEntry;
+
+// ScriptStruct Chimera.Grid
+// 0x0050 (0x0050 - 0x0000)
+struct FGrid final
+{
+public:
+	TMap<int32, float>                            GridsWithRanges;                                   // 0x0000(0x0050)(Edit, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGrid;
+
+// ScriptStruct Chimera.FoundableMarkerDataFastArrayItem
+// 0x001C (0x0028 - 0x000C)
+struct FFoundableMarkerDataFastArrayItem final : public FFastArraySerializerItem
+{
+public:
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMassEntityHandle                      FoundableHandle;                                   // 0x0010(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2f                              Location;                                          // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrFoundableType                              FoundableType;                                     // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FFoundableMarkerDataFastArrayItem;
+
+// ScriptStruct Chimera.CrHelperDroneRailCollisionHit
+// 0x0020 (0x0020 - 0x0000)
+struct FCrHelperDroneRailCollisionHit final
+{
+public:
+	float                                         HitTime;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                HitLocation;                                       // 0x0008(0x0018)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrHelperDroneRailCollisionHit;
+
 // ScriptStruct Chimera.CrHintEntryStatus
 // 0x0024 (0x0030 - 0x000C)
 struct alignas(0x08) FCrHintEntryStatus final : public FFastArraySerializerItem
@@ -5719,6 +6517,13 @@ public:
 	uint8                                         Pad_C[0x24];                                       // 0x000C(0x0024)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCrHintEntryStatus;
+
+// ScriptStruct Chimera.CrBuildingISMSwitcherTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrBuildingISMSwitcherTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrBuildingISMSwitcherTag;
 
 // ScriptStruct Chimera.CrHintsEntriesStatusContainer
 // 0x0018 (0x0018 - 0x0000)
@@ -5730,27 +6535,12 @@ public:
 };
 DUMPER7_ASSERTS_FCrHintsEntriesStatusContainer;
 
-// ScriptStruct Chimera.CrBuildingHealthFragment
-// 0x0008 (0x0008 - 0x0000)
-struct FCrBuildingHealthFragment final : public FMassFragment
+// ScriptStruct Chimera.CrMassBuildingHealthCriticalTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassBuildingHealthCriticalTag final : public FMassTag
 {
-public:
-	bool                                          bIsCritical;                                       // 0x0000(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CurrentHealth;                                     // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrBuildingHealthFragment;
-
-// ScriptStruct Chimera.CrHintCondition
-// 0x0014 (0x0014 - 0x0000)
-struct FCrHintCondition final
-{
-public:
-	class FName                                   Context;                                           // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   ContextValue;                                      // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ContextNumber;                                     // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrHintCondition;
+DUMPER7_ASSERTS_FCrMassBuildingHealthCriticalTag;
 
 // ScriptStruct Chimera.CrHintData
 // 0x00A8 (0x00B0 - 0x0008)
@@ -5778,19 +6568,6 @@ public:
 };
 DUMPER7_ASSERTS_FCrHintData;
 
-// ScriptStruct Chimera.CrMassBuildingStabilityData
-// 0x000C (0x000C - 0x0000)
-struct FCrMassBuildingStabilityData final : public FCrMassSavableFragment
-{
-public:
-	float                                         Strength;                                          // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Cost;                                              // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIndicated;                                        // 0x0008(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bDeconstructionAllowed;                            // 0x0009(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A[0x2];                                        // 0x000A(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrMassBuildingStabilityData;
-
 // ScriptStruct Chimera.CrInfiniteOreData
 // 0x0018 (0x0018 - 0x0000)
 struct FCrInfiniteOreData final
@@ -5807,6 +6584,15 @@ public:
 };
 DUMPER7_ASSERTS_FCrInfiniteOreData;
 
+// ScriptStruct Chimera.CrBuildingUpdateChunkFragment
+// 0x0008 (0x0008 - 0x0000)
+struct FCrBuildingUpdateChunkFragment final : public FMassChunkFragment
+{
+public:
+	double                                        LastCustomFloatsUpdateTime;                        // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrBuildingUpdateChunkFragment;
+
 // ScriptStruct Chimera.CrInputActionGroup
 // 0x0010 (0x0010 - 0x0000)
 struct FCrInputActionGroup final
@@ -5815,13 +6601,6 @@ public:
 	TArray<class UInputAction*>                   InputActionGroup;                                  // 0x0000(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
 };
 DUMPER7_ASSERTS_FCrInputActionGroup;
-
-// ScriptStruct Chimera.CrBuildingISMSwitcherTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrBuildingISMSwitcherTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrBuildingISMSwitcherTag;
 
 // ScriptStruct Chimera.CrInputTagAction
 // 0x0010 (0x0010 - 0x0000)
@@ -5832,6 +6611,13 @@ public:
 	struct FGameplayTag                           InputTag;                                          // 0x0008(0x0008)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCrInputTagAction;
+
+// ScriptStruct Chimera.CrMassBuildingAlwaysOnForCustomFloatsTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassBuildingAlwaysOnForCustomFloatsTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrMassBuildingAlwaysOnForCustomFloatsTag;
 
 // ScriptStruct Chimera.CrNativeInputAction
 // 0x0018 (0x0018 - 0x0000)
@@ -5844,13 +6630,6 @@ public:
 };
 DUMPER7_ASSERTS_FCrNativeInputAction;
 
-// ScriptStruct Chimera.CrMassBuildingHealthCriticalTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassBuildingHealthCriticalTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrMassBuildingHealthCriticalTag;
-
 // ScriptStruct Chimera.CrInputCategoryConflicts
 // 0x0020 (0x0020 - 0x0000)
 struct FCrInputCategoryConflicts final
@@ -5859,6 +6638,15 @@ public:
 	struct FGameplayTagContainer                  ConflictingCategories;                             // 0x0000(0x0020)(Edit, NativeAccessSpecifierPrivate)
 };
 DUMPER7_ASSERTS_FCrInputCategoryConflicts;
+
+// ScriptStruct Chimera.CrBuildingVisualCustomizationFragment
+// 0x0010 (0x0010 - 0x0000)
+struct FCrBuildingVisualCustomizationFragment final : public FMassFragment
+{
+public:
+	struct FLinearColor                           ColorTint;                                         // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrBuildingVisualCustomizationFragment;
 
 // ScriptStruct Chimera.CrInstancedGatherableReward
 // 0x0028 (0x0028 - 0x0000)
@@ -5873,16 +6661,6 @@ public:
 };
 DUMPER7_ASSERTS_FCrInstancedGatherableReward;
 
-// ScriptStruct Chimera.CrMassBuildingNiagaraParameterDriverGenericCrafter
-// 0x0008 (0x0010 - 0x0008)
-struct FCrMassBuildingNiagaraParameterDriverGenericCrafter final : public FCrMassBuildingNiagaraParameterDriverBase
-{
-public:
-	float                                         DeactivateDelay;                                   // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrMassBuildingNiagaraParameterDriverGenericCrafter;
-
 // ScriptStruct Chimera.CrInteractionDurationMessage
 // 0x0018 (0x0018 - 0x0000)
 struct FCrInteractionDurationMessage final
@@ -5894,53 +6672,6 @@ public:
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCrInteractionDurationMessage;
-
-// ScriptStruct Chimera.CrItemEntry
-// 0x0030 (0x0030 - 0x0000)
-struct FCrItemEntry final
-{
-public:
-	TSoftClassPtr<class UClass>                   ItemType;                                          // 0x0000(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Amount;                                            // 0x0028(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrItemEntry;
-
-// ScriptStruct Chimera.CrSpreadingInfectionTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrSpreadingInfectionTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrSpreadingInfectionTag;
-
-// ScriptStruct Chimera.NestedItemRecipeCollectionArray
-// 0x0010 (0x0010 - 0x0000)
-struct FNestedItemRecipeCollectionArray final
-{
-public:
-	TArray<class UCrItemRecipeCollection*>        Collections;                                       // 0x0000(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FNestedItemRecipeCollectionArray;
-
-// ScriptStruct Chimera.CrItemRecipeDefHelper
-// 0x0010 (0x0010 - 0x0000)
-struct FCrItemRecipeDefHelper final
-{
-public:
-	TSubclassOf<class UAuItemDataBase>            Item;                                              // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Count;                                             // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrItemRecipeDefHelper;
-
-// ScriptStruct Chimera.CrBuildingVisualCustomizationFragment
-// 0x0010 (0x0010 - 0x0000)
-struct FCrBuildingVisualCustomizationFragment final : public FMassFragment
-{
-public:
-	struct FLinearColor                           ColorTint;                                         // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrBuildingVisualCustomizationFragment;
 
 // ScriptStruct Chimera.CrBuildingInfectionFragment
 // 0x0030 (0x0030 - 0x0000)
@@ -5959,6 +6690,61 @@ public:
 };
 DUMPER7_ASSERTS_FCrBuildingInfectionFragment;
 
+// ScriptStruct Chimera.CrItemEntry
+// 0x0030 (0x0030 - 0x0000)
+struct FCrItemEntry final
+{
+public:
+	TSoftClassPtr<class UClass>                   ItemType;                                          // 0x0000(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Amount;                                            // 0x0028(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrItemEntry;
+
+// ScriptStruct Chimera.NestedItemRecipeCollectionArray
+// 0x0010 (0x0010 - 0x0000)
+struct FNestedItemRecipeCollectionArray final
+{
+public:
+	TArray<class UCrItemRecipeCollection*>        Collections;                                       // 0x0000(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FNestedItemRecipeCollectionArray;
+
+// ScriptStruct Chimera.CrBuildingHealthFragment
+// 0x0008 (0x0008 - 0x0000)
+struct FCrBuildingHealthFragment final : public FMassFragment
+{
+public:
+	bool                                          bIsCritical;                                       // 0x0000(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CurrentHealth;                                     // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrBuildingHealthFragment;
+
+// ScriptStruct Chimera.CrItemRecipeDefHelper
+// 0x0010 (0x0010 - 0x0000)
+struct FCrItemRecipeDefHelper final
+{
+public:
+	TSubclassOf<class UAuItemDataBase>            Item;                                              // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrItemRecipeDefHelper;
+
+// ScriptStruct Chimera.CrMassBuildingStabilityData
+// 0x000C (0x000C - 0x0000)
+struct FCrMassBuildingStabilityData final : public FCrMassSavableFragment
+{
+public:
+	float                                         Strength;                                          // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Cost;                                              // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIndicated;                                        // 0x0008(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDeconstructionAllowed;                            // 0x0009(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x2];                                        // 0x000A(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrMassBuildingStabilityData;
+
 // ScriptStruct Chimera.CrIvySaveData
 // 0x0014 (0x0014 - 0x0000)
 struct FCrIvySaveData final
@@ -5975,6 +6761,13 @@ public:
 };
 DUMPER7_ASSERTS_FCrIvySaveData;
 
+// ScriptStruct Chimera.CrBuildingInfectionActiveTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrBuildingInfectionActiveTag final : public FCrMassSavableTag
+{
+};
+DUMPER7_ASSERTS_FCrBuildingInfectionActiveTag;
+
 // ScriptStruct Chimera.CrIvySubsystemSaveData
 // 0x0050 (0x0050 - 0x0000)
 struct FCrIvySubsystemSaveData final
@@ -5983,25 +6776,6 @@ public:
 	TMap<struct FGuid, struct FCrIvySaveData>     IviesSaveData;                                     // 0x0000(0x0050)(SaveGame, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCrIvySubsystemSaveData;
-
-// ScriptStruct Chimera.CrMassNiagaraUserParameterBase
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FCrMassNiagaraUserParameterBase
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   Name;                                              // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrMassNiagaraUserParameterBase;
-
-// ScriptStruct Chimera.CrMassNiagaraUserParameterColor
-// 0x0010 (0x0020 - 0x0010)
-struct FCrMassNiagaraUserParameterColor final : public FCrMassNiagaraUserParameterBase
-{
-public:
-	struct FLinearColor                           Val;                                               // 0x0010(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrMassNiagaraUserParameterColor;
 
 // ScriptStruct Chimera.CrLogisticsAgentParameters
 // 0x0018 (0x0018 - 0x0000)
@@ -6013,6 +6787,16 @@ public:
 	TArray<float>                                 MovementUpdateIntervals;                           // 0x0008(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCrLogisticsAgentParameters;
+
+// ScriptStruct Chimera.CrMassNiagaraUserParameterInt
+// 0x0008 (0x0018 - 0x0010)
+struct FCrMassNiagaraUserParameterInt final : public FCrMassNiagaraUserParameterBase
+{
+public:
+	int32                                         Val;                                               // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrMassNiagaraUserParameterInt;
 
 // ScriptStruct Chimera.CrLogisticsPathSegmentData
 // 0x0058 (0x0058 - 0x0000)
@@ -6062,12 +6846,14 @@ public:
 };
 DUMPER7_ASSERTS_FCrLogisticsAgentFragment;
 
-// ScriptStruct Chimera.CrMassBuildingNiagaraVisualizationTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassBuildingNiagaraVisualizationTag final : public FMassTag
+// ScriptStruct Chimera.CrMassBuildingNiagaraParameterDriverData
+// 0x0020 (0x0020 - 0x0000)
+struct alignas(0x08) FCrMassBuildingNiagaraParameterDriverData final
 {
+public:
+	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrMassBuildingNiagaraVisualizationTag;
+DUMPER7_ASSERTS_FCrMassBuildingNiagaraParameterDriverData;
 
 // ScriptStruct Chimera.CrDroneActorWrapperFragment
 // 0x0008 (0x0008 - 0x0000)
@@ -6077,13 +6863,6 @@ public:
 	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCrDroneActorWrapperFragment;
-
-// ScriptStruct Chimera.CrBuildingInfectionActiveTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrBuildingInfectionActiveTag final : public FCrMassSavableTag
-{
-};
-DUMPER7_ASSERTS_FCrBuildingInfectionActiveTag;
 
 // ScriptStruct Chimera.CrLogisticsSpawnDataElement
 // 0x0090 (0x0090 - 0x0000)
@@ -6096,6 +6875,13 @@ public:
 };
 DUMPER7_ASSERTS_FCrLogisticsSpawnDataElement;
 
+// ScriptStruct Chimera.CrSpreadingInfectionTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrSpreadingInfectionTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrSpreadingInfectionTag;
+
 // ScriptStruct Chimera.CrLogisticsSpawnData
 // 0x0010 (0x0010 - 0x0000)
 struct FCrLogisticsSpawnData final
@@ -6105,14 +6891,15 @@ public:
 };
 DUMPER7_ASSERTS_FCrLogisticsSpawnData;
 
-// ScriptStruct Chimera.CrLogisticsNavGraphNode
-// 0x0010 (0x0010 - 0x0000)
-struct FCrLogisticsNavGraphNode final
+// ScriptStruct Chimera.ZiplineSplineEndsData
+// 0x0030 (0x0030 - 0x0000)
+struct FZiplineSplineEndsData final
 {
 public:
-	struct FCrMassPersistentEntityID              UId;                                               // 0x0000(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                StartLocation;                                     // 0x0000(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                EndLocation;                                       // 0x0018(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrLogisticsNavGraphNode;
+DUMPER7_ASSERTS_FZiplineSplineEndsData;
 
 // ScriptStruct Chimera.CrLogisticsNavSubGraph
 // 0x0004 (0x0004 - 0x0000)
@@ -6132,24 +6919,29 @@ public:
 };
 DUMPER7_ASSERTS_FCrGraphNodePairWithPath;
 
-// ScriptStruct Chimera.CrLogisticsGraphConnectionData
-// 0x0020 (0x0020 - 0x0000)
-struct FCrLogisticsGraphConnectionData final
+// ScriptStruct Chimera.CrZiplineNeighbourLocationData
+// 0x0044 (0x0050 - 0x000C)
+struct FCrZiplineNeighbourLocationData final : public FFastArraySerializerItem
 {
 public:
-	struct FCrMassPersistentEntityID              Neighbour;                                         // 0x0000(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FCrMassPersistentEntityID>      Connectors;                                        // 0x0010(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCrMassEntityReplicationHelper         Zipline;                                           // 0x0010(0x0018)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FVector_NetQuantize>            ActiveNeighbourLocations;                          // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FVector_NetQuantize>            InactiveNeighbourLocations;                        // 0x0038(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          bActive;                                           // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrLogisticsGraphConnectionData;
+DUMPER7_ASSERTS_FCrZiplineNeighbourLocationData;
 
-// ScriptStruct Chimera.NodeGraphConnectionArrayWrapper
-// 0x0010 (0x0010 - 0x0000)
-struct FNodeGraphConnectionArrayWrapper final
+// ScriptStruct Chimera.CrZiplineNeighbourLocationsContainer
+// 0x0018 (0x0120 - 0x0108)
+struct FCrZiplineNeighbourLocationsContainer final : public FFastArraySerializer
 {
 public:
-	TArray<struct FCrLogisticsGraphConnectionData> ArrayData;                                        // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	TArray<struct FCrZiplineNeighbourLocationData> ZiplinesData;                                     // 0x0108(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	class ACrZiplineReplicator*                   Owner;                                             // 0x0118(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 };
-DUMPER7_ASSERTS_FNodeGraphConnectionArrayWrapper;
+DUMPER7_ASSERTS_FCrZiplineNeighbourLocationsContainer;
 
 // ScriptStruct Chimera.CrLogisticsNavGraphNodeData
 // 0x0058 (0x0058 - 0x0000)
@@ -6167,25 +6959,14 @@ public:
 };
 DUMPER7_ASSERTS_FCrLogisticsNavGraphNodeData;
 
-// ScriptStruct Chimera.CrBuildingRotationEffectParams
-// 0x0008 (0x0008 - 0x0000)
-struct FCrBuildingRotationEffectParams final : public FMassConstSharedFragment
+// ScriptStruct Chimera.CrAbilityGrant
+// 0x0028 (0x0028 - 0x0000)
+struct FCrAbilityGrant final
 {
 public:
-	float                                         AnimRotSpeed;                                      // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AnimDuration;                                      // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftClassPtr<class UClass>                   AbilityType;                                       // 0x0000(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrBuildingRotationEffectParams;
-
-// ScriptStruct Chimera.CrLogisticsGraphDataHandle
-// 0x0004 (0x0004 - 0x0000)
-struct FCrLogisticsGraphDataHandle final
-{
-public:
-	uint16                                        Index;                                             // 0x0000(0x0002)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint16                                        Generation;                                        // 0x0002(0x0002)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrLogisticsGraphDataHandle;
+DUMPER7_ASSERTS_FCrAbilityGrant;
 
 // ScriptStruct Chimera.CrLogisticsGraphData
 // 0x01D0 (0x01D0 - 0x0000)
@@ -6200,38 +6981,17 @@ public:
 };
 DUMPER7_ASSERTS_FCrLogisticsGraphData;
 
-// ScriptStruct Chimera.CrLogisticsRequestRuntimeData
-// 0x0068 (0x0068 - 0x0000)
-struct FCrLogisticsRequestRuntimeData final
+// ScriptStruct Chimera.GameFeatureLevelInstanceEntry
+// 0x0080 (0x0080 - 0x0000)
+struct FGameFeatureLevelInstanceEntry final
 {
 public:
-	ECrLogisticsRequestState                      State;                                             // 0x0000(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrMassPersistentEntityID              AgentEntity;                                       // 0x0008(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	struct FAuSimpleItem                          ActualItem;                                        // 0x0018(0x0030)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCrMassPersistentEntityID              ItemSource;                                        // 0x0048(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCrMassPersistentEntityID              ItemDestination;                                   // 0x0058(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UWorld>                  Level;                                             // 0x0000(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UWorld>                  TargetWorld;                                       // 0x0028(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Location;                                          // 0x0050(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               Rotation;                                          // 0x0068(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrLogisticsRequestRuntimeData;
-
-// ScriptStruct Chimera.CrLogisticsRequestData
-// 0x0078 (0x0078 - 0x0000)
-struct FCrLogisticsRequestData final
-{
-public:
-	struct FCrMassPersistentEntityID              UId;                                               // 0x0000(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAuSimpleItem                          WantedItem;                                        // 0x0010(0x0030)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrLogisticsRequestType                       Type;                                              // 0x0040(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrMassPersistentEntityID              RequesterEntity;                                   // 0x0048(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FCrLogisticsRequestRuntimeData> RuntimeData;                                       // 0x0058(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-	ECrLogisticsRequestPriority                   CurrentPriority;                                   // 0x0068(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_69[0x3];                                       // 0x0069(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         LastHandledTime;                                   // 0x006C(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAborted;                                          // 0x0070(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_71[0x7];                                       // 0x0071(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrLogisticsRequestData;
+DUMPER7_ASSERTS_FGameFeatureLevelInstanceEntry;
 
 // ScriptStruct Chimera.CrLogisticsRequestSubsystemState
 // 0x00A0 (0x00A0 - 0x0000)
@@ -6243,54 +7003,17 @@ public:
 };
 DUMPER7_ASSERTS_FCrLogisticsRequestSubsystemState;
 
-// ScriptStruct Chimera.CrMassBuildingNiagaraSystemRuntimeData
-// 0x0020 (0x0020 - 0x0000)
-struct FCrMassBuildingNiagaraSystemRuntimeData final
+// ScriptStruct Chimera.CrStandaloneInfectionData
+// 0x0028 (0x0028 - 0x0000)
+struct FCrStandaloneInfectionData final
 {
 public:
-	class UNiagaraComponent*                      NiagaraComponent;                                  // 0x0000(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	bool                                          bDestroying;                                       // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x17];                                       // 0x0009(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FVector                                Location;                                          // 0x0000(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMassEntityHandle                      Entity;                                            // 0x0018(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUpdatedOnNavmesh;                                 // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrMassBuildingNiagaraSystemRuntimeData;
-
-// ScriptStruct Chimera.CrMassBuildingNiagaraRuntimeFragment
-// 0x0018 (0x0018 - 0x0000)
-struct FCrMassBuildingNiagaraRuntimeFragment final : public FMassFragment
-{
-public:
-	TArray<struct FCrMassBuildingNiagaraSystemRuntimeData> SystemData;                               // 0x0000(0x0010)(ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	EMassLOD                                      PrevLOD;                                           // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrMassBuildingNiagaraRuntimeFragment;
-
-// ScriptStruct Chimera.CrMassFragmentWithCustomOnRepCallActor
-// 0x0000 (0x0000 - 0x0000)
-#pragma pack(push, 0x1)
-struct alignas(0x01) FCrMassFragmentWithCustomOnRepCallActor : public FMassFragment
-{
-};
-#pragma pack(pop)
-DUMPER7_ASSERTS_FCrMassFragmentWithCustomOnRepCallActor;
-
-// ScriptStruct Chimera.CrMassCustomDoorStateFragment
-// 0x0001 (0x0001 - 0x0000)
-struct FCrMassCustomDoorStateFragment final : public FCrMassFragmentWithCustomOnRepCallActor
-{
-public:
-	bool                                          bState;                                            // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrMassCustomDoorStateFragment;
-
-// ScriptStruct Chimera.CrLogisticsRequestSubsystemCustomSaveData
-// 0x0010 (0x0010 - 0x0000)
-struct FCrLogisticsRequestSubsystemCustomSaveData final
-{
-public:
-	TArray<TSoftClassPtr<class UClass>>           RecentSelectedItems;                               // 0x0000(0x0010)(ZeroConstructor, SaveGame, UObjectWrapper, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrLogisticsRequestSubsystemCustomSaveData;
+DUMPER7_ASSERTS_FCrStandaloneInfectionData;
 
 // ScriptStruct Chimera.CrLogisticsRequestSubsystemTickFunction
 // 0x0008 (0x0030 - 0x0028)
@@ -6301,24 +7024,6 @@ public:
 };
 DUMPER7_ASSERTS_FCrLogisticsRequestSubsystemTickFunction;
 
-// ScriptStruct Chimera.CrMassElectricityGridEnabledTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassElectricityGridEnabledTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrMassElectricityGridEnabledTag;
-
-// ScriptStruct Chimera.CrLogisticsRequestHandlingStage
-// 0x0018 (0x0018 - 0x0000)
-struct FCrLogisticsRequestHandlingStage final
-{
-public:
-	ECrLogisticsOperationType                     Operation;                                         // 0x0000(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrMassPersistentEntityID              EntityContext;                                     // 0x0008(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrLogisticsRequestHandlingStage;
-
 // ScriptStruct Chimera.CrLogisticsRequestFragment
 // 0x0078 (0x0078 - 0x0000)
 struct FCrLogisticsRequestFragment final : public FMassFragment
@@ -6327,6 +7032,18 @@ public:
 	struct FCrLogisticsRequestData                Data;                                              // 0x0000(0x0078)(NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCrLogisticsRequestFragment;
+
+// ScriptStruct Chimera.CrOxygenAttributeTableRow
+// 0x0010 (0x0018 - 0x0008)
+struct FCrOxygenAttributeTableRow final : public FTableRowBase
+{
+public:
+	int32                                         CurrentOxygen;                                     // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxOxygen;                                         // 0x000C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MinOxygen;                                         // 0x0010(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrOxygenAttributeTableRow;
 
 // ScriptStruct Chimera.PlayersMarkerDataContainer
 // 0x0018 (0x0120 - 0x0108)
@@ -6338,53 +7055,6 @@ public:
 };
 DUMPER7_ASSERTS_FPlayersMarkerDataContainer;
 
-// ScriptStruct Chimera.CrReplicatedCustomData
-// 0x0018 (0x0018 - 0x0000)
-struct FCrReplicatedCustomData final
-{
-public:
-	struct FInstancedStruct                       Instance;                                          // 0x0000(0x0010)(Transient, NativeAccessSpecifierPublic)
-	bool                                          bDirty;                                            // 0x0010(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrReplicatedCustomData;
-
-// ScriptStruct Chimera.CrReplicatedCustomDataArray
-// 0x0010 (0x0010 - 0x0000)
-struct FCrReplicatedCustomDataArray final
-{
-public:
-	TArray<struct FCrReplicatedCustomData>        Data;                                              // 0x0000(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrReplicatedCustomDataArray;
-
-// ScriptStruct Chimera.CrMassCustomDataFragment
-// 0x0010 (0x0010 - 0x0000)
-struct FCrMassCustomDataFragment final : public FMassFragment
-{
-public:
-	struct FCrReplicatedCustomDataArray           Data;                                              // 0x0000(0x0010)(Transient, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrMassCustomDataFragment;
-
-// ScriptStruct Chimera.BuildingMarkerDataFastArrayItem
-// 0x0034 (0x0040 - 0x000C)
-struct FBuildingMarkerDataFastArrayItem final : public FFastArraySerializerItem
-{
-public:
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMassEntityHandle                      BuildingHandle;                                    // 0x0010(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2f                              Location;                                          // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FText                                   BuildingName;                                      // 0x0020(0x0010)(NativeAccessSpecifierPublic)
-	class FName                                   BuildingUniqueName;                                // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrBuildingType                               BuildingType;                                      // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_39[0x1];                                       // 0x0039(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	ECrBuildingMalfunctionFlags                   Flags;                                             // 0x003A(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsInteriorBuilding;                                // 0x003C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FBuildingMarkerDataFastArrayItem;
-
 // ScriptStruct Chimera.BuildingsMarkerDataContainer
 // 0x0018 (0x0120 - 0x0108)
 struct FBuildingsMarkerDataContainer final : public FFastArraySerializer
@@ -6395,33 +7065,17 @@ public:
 };
 DUMPER7_ASSERTS_FBuildingsMarkerDataContainer;
 
-// ScriptStruct Chimera.CrElectricityFragment
-// 0x0014 (0x0014 - 0x0000)
-struct FCrElectricityFragment final : public FCrMassSavableFragment
+// ScriptStruct Chimera.CrRadiationAttributeTableRow
+// 0x0010 (0x0018 - 0x0008)
+struct FCrRadiationAttributeTableRow final : public FTableRowBase
 {
 public:
-	int32                                         ElectricityMultiplierLevel;                        // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bFunctional;                                       // 0x0004(0x0001)(ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrGenericMassSubGraph                 LastSetSubgraph;                                   // 0x0008(0x0004)(Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CurrentValue;                                      // 0x000C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCheatElectricity;                                 // 0x0010(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         CurrentRadiation;                                  // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxRadiation;                                      // 0x000C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MinRadiation;                                      // 0x0010(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrElectricityFragment;
-
-// ScriptStruct Chimera.FoundableMarkerDataFastArrayItem
-// 0x001C (0x0028 - 0x000C)
-struct FFoundableMarkerDataFastArrayItem final : public FFastArraySerializerItem
-{
-public:
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMassEntityHandle                      FoundableHandle;                                   // 0x0010(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2f                              Location;                                          // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrFoundableType                              FoundableType;                                     // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FFoundableMarkerDataFastArrayItem;
+DUMPER7_ASSERTS_FCrRadiationAttributeTableRow;
 
 // ScriptStruct Chimera.FoundableMarkerDataContainer
 // 0x0018 (0x0120 - 0x0108)
@@ -6433,27 +7087,6 @@ public:
 };
 DUMPER7_ASSERTS_FFoundableMarkerDataContainer;
 
-// ScriptStruct Chimera.MassEnemyDeadTag
-// 0x0000 (0x0001 - 0x0001)
-struct FMassEnemyDeadTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FMassEnemyDeadTag;
-
-// ScriptStruct Chimera.BaseAttackMarkerDataFastArrayItem
-// 0x0024 (0x0030 - 0x000C)
-struct FBaseAttackMarkerDataFastArrayItem final : public FFastArraySerializerItem
-{
-public:
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMassEntityHandle                      ObeliskHandle;                                     // 0x0010(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2f                              Location;                                          // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2f                              AttackLocationIfAny;                               // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrAlienObeliskState                          State;                                             // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FBaseAttackMarkerDataFastArrayItem;
-
 // ScriptStruct Chimera.BaseAttackMarkerDataContainer
 // 0x0018 (0x0120 - 0x0108)
 struct FBaseAttackMarkerDataContainer final : public FFastArraySerializer
@@ -6464,6 +7097,18 @@ public:
 };
 DUMPER7_ASSERTS_FBaseAttackMarkerDataContainer;
 
+// ScriptStruct Chimera.CrCorrosionAttributeTableRow
+// 0x0010 (0x0018 - 0x0008)
+struct FCrCorrosionAttributeTableRow final : public FTableRowBase
+{
+public:
+	int32                                         CurrentCorrosion;                                  // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxCorrosion;                                      // 0x000C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MinCorrosion;                                      // 0x0010(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrCorrosionAttributeTableRow;
+
 // ScriptStruct Chimera.CrMassAggroRequiresRecalculationTag
 // 0x0000 (0x0001 - 0x0001)
 struct FCrMassAggroRequiresRecalculationTag final : public FMassTag
@@ -6471,172 +7116,57 @@ struct FCrMassAggroRequiresRecalculationTag final : public FMassTag
 };
 DUMPER7_ASSERTS_FCrMassAggroRequiresRecalculationTag;
 
-// ScriptStruct Chimera.CrMassAggroTargetTag
+// ScriptStruct Chimera.CrMassHasGuarantedAggroTag
 // 0x0000 (0x0001 - 0x0001)
-struct FCrMassAggroTargetTag final : public FMassTag
+struct FCrMassHasGuarantedAggroTag final : public FMassTag
 {
 };
-DUMPER7_ASSERTS_FCrMassAggroTargetTag;
+DUMPER7_ASSERTS_FCrMassHasGuarantedAggroTag;
 
-// ScriptStruct Chimera.CrAggroTargetParameters
-// 0x0040 (0x0040 - 0x0000)
-struct FCrAggroTargetParameters final : public FMassConstSharedFragment
-{
-public:
-	ECrAggroTargetType                            Type;                                              // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         AggroMin;                                          // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AggroMax;                                          // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<float>                                 AggroLevels;                                       // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	float                                         MinAggroDistance;                                  // 0x0020(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxAggroDistance;                                  // 0x0024(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AggroDecayRate;                                    // 0x0028(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseDecayRate;                                     // 0x002C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bMovable;                                          // 0x002D(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2E[0x2];                                       // 0x002E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         GuarantedAggroLevel;                               // 0x0030(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         GuarantedAggroRange;                               // 0x0034(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPrintDebug;                                       // 0x0038(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrAggroTargetParameters;
-
-// ScriptStruct Chimera.AggroModifierData
-// 0x0008 (0x0008 - 0x0000)
-struct FAggroModifierData final
+// ScriptStruct Chimera.CrBlueprintUnlockedNotificationContext
+// 0x00D8 (0x00E0 - 0x0008)
+struct FCrBlueprintUnlockedNotificationContext final : public FAuNotificationContext
 {
 public:
-	float                                         CurrentValue;                                      // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PreviousValue;                                     // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   EntrySubcategory;                                  // 0x0008(0x0010)(NativeAccessSpecifierPublic)
+	class FText                                   BlueprintName;                                     // 0x0018(0x0010)(NativeAccessSpecifierPublic)
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            SlateIcon;                                         // 0x0030(0x00B0)(NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FAggroModifierData;
+DUMPER7_ASSERTS_FCrBlueprintUnlockedNotificationContext;
 
-// ScriptStruct Chimera.CrEntityGridParameters
-// 0x0001 (0x0001 - 0x0000)
-struct FCrEntityGridParameters final : public FMassConstSharedFragment
+// ScriptStruct Chimera.CrSubObjectiveCondition
+// 0x0018 (0x0018 - 0x0000)
+struct FCrSubObjectiveCondition final
 {
 public:
-	bool                                          bMovable;                                          // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Context;                                           // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ContextValue;                                      // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ContextNumber;                                     // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCheckConditionWhenInactive;                       // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowCounter;                                      // 0x0015(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrPropertyOwner                              PropertyOwner;                                     // 0x0016(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_17[0x1];                                       // 0x0017(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrEntityGridParameters;
+DUMPER7_ASSERTS_FCrSubObjectiveCondition;
 
-// ScriptStruct Chimera.CrAggroTargetFragment
-// 0x00B8 (0x00B8 - 0x0000)
-struct FCrAggroTargetFragment final : public FMassFragment
-{
-public:
-	float                                         LastUpdateTimestamp;                               // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FName, int32>                      AggroLevelModifiers;                               // 0x0008(0x0050)(NativeAccessSpecifierPublic)
-	float                                         CurrentAggroBase;                                  // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AggroRangeMultiplier;                              // 0x005C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class FName, struct FAggroModifierData>  AggroCustomValueModifiers;                         // 0x0060(0x0050)(NativeAccessSpecifierPublic)
-	bool                                          bIsSpawnedWithAggro;                               // 0x00B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B1[0x7];                                       // 0x00B1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrAggroTargetFragment;
-
-// ScriptStruct Chimera.CrReplicatedAlienObeliskData
-// 0x0008 (0x0008 - 0x0000)
-struct FCrReplicatedAlienObeliskData final
-{
-public:
-	ECrAlienObeliskState                          State;                                             // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ChargeValue;                                       // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrReplicatedAlienObeliskData;
-
-// ScriptStruct Chimera.CrLogisticsSocketProperties
-// 0x0020 (0x0020 - 0x0000)
-struct FCrLogisticsSocketProperties
-{
-public:
-	struct FVector                                LocalPosition;                                     // 0x0000(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrLogisticsSocketType                        Type;                                              // 0x0018(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrLogisticsSocketBehaviourType               Behaviour;                                         // 0x0019(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A[0x2];                                       // 0x001A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         SocketPairIndex;                                   // 0x001C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrLogisticsSocketProperties;
-
-// ScriptStruct Chimera.CrLogisticsHelperVisSocket
-// 0x0018 (0x0038 - 0x0020)
-struct FCrLogisticsHelperVisSocket final : public FCrLogisticsSocketProperties
-{
-public:
-	struct FRotator                               LocalRotation;                                     // 0x0020(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrLogisticsHelperVisSocket;
-
-// ScriptStruct Chimera.CrReplicatedAlienObelisk
-// 0x0028 (0x0050 - 0x0028)
-struct FCrReplicatedAlienObelisk final : public FReplicatedAgentBase
-{
-public:
-	struct FReplicatedAgentPositionYawData        PositionYaw;                                       // 0x0028(0x0020)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FCrReplicatedAlienObeliskData          AlienObeliskData;                                  // 0x0048(0x0008)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
-};
-DUMPER7_ASSERTS_FCrReplicatedAlienObelisk;
-
-// ScriptStruct Chimera.CrAlienObeliskFastArrayItem
-// 0x0050 (0x0060 - 0x0010)
-struct FCrAlienObeliskFastArrayItem final : public FMassFastArrayItemBase
-{
-public:
-	struct FCrReplicatedAlienObelisk              Agent;                                             // 0x0010(0x0050)(NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrAlienObeliskFastArrayItem;
-
-// ScriptStruct Chimera.CrLogisticsLineWaitingItem
-// 0x0028 (0x0028 - 0x0000)
-struct FCrLogisticsLineWaitingItem final
-{
-public:
-	struct FCrMassEntityReplicationHelper         Entity;                                            // 0x0000(0x0018)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MovementFinishedExtraLocation;                     // 0x0018(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	uint64                                        WaitStartFrame;                                    // 0x0020(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrLogisticsLineWaitingItem;
-
-// ScriptStruct Chimera.CrLogisticsLineSimulationState
-// 0x0028 (0x0028 - 0x0000)
-struct FCrLogisticsLineSimulationState final
-{
-public:
-	TArray<struct FCrLogisticsLineItem>           OrderedItems;                                      // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-	TArray<struct FCrLogisticsLineWaitingItem>    WaitingItems;                                      // 0x0010(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
-	float                                         InitialSpace;                                      // 0x0020(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrLogisticsLineSimulationState;
-
-// ScriptStruct Chimera.CrMassAlienObeliskClientBubbleSerializer
-// 0x00E8 (0x0220 - 0x0138)
-struct FCrMassAlienObeliskClientBubbleSerializer final : public FMassClientBubbleSerializerBase
-{
-public:
-	uint8                                         Pad_138[0xD8];                                     // 0x0138(0x00D8)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FCrAlienObeliskFastArrayItem>   AlienObelisk;                                      // 0x0210(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
-};
-DUMPER7_ASSERTS_FCrMassAlienObeliskClientBubbleSerializer;
-
-// ScriptStruct Chimera.CrMassEntityGridTag
+// ScriptStruct Chimera.CrAntennaTag
 // 0x0000 (0x0001 - 0x0001)
-struct FCrMassEntityGridTag final : public FMassTag
+struct FCrAntennaTag final : public FMassTag
 {
 };
-DUMPER7_ASSERTS_FCrMassEntityGridTag;
+DUMPER7_ASSERTS_FCrAntennaTag;
 
-// ScriptStruct Chimera.CrMassBuildingAntennaParameters
-// 0x0001 (0x0001 - 0x0000)
-struct FCrMassBuildingAntennaParameters final : public FMassConstSharedFragment
+// ScriptStruct Chimera.CrObjectiveDataCombined
+// 0x0070 (0x0070 - 0x0000)
+struct FCrObjectiveDataCombined final
 {
 public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x30];                                       // 0x0000(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             Image;                                             // 0x0030(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_38[0x38];                                      // 0x0038(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrMassBuildingAntennaParameters;
+DUMPER7_ASSERTS_FCrObjectiveDataCombined;
 
 // ScriptStruct Chimera.CrMassBuildingAntennaFragment
 // 0x0058 (0x0058 - 0x0000)
@@ -6659,20 +7189,6 @@ public:
 };
 DUMPER7_ASSERTS_FCrMassBuildingAntennaFragment;
 
-// ScriptStruct Chimera.CrMassEnviroWaveTypeColdTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassEnviroWaveTypeColdTag final : public FCrMassSavableTag
-{
-};
-DUMPER7_ASSERTS_FCrMassEnviroWaveTypeColdTag;
-
-// ScriptStruct Chimera.CrAntennaInfectedTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrAntennaInfectedTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrAntennaInfectedTag;
-
 // ScriptStruct Chimera.CrAntennaLockedTag
 // 0x0000 (0x0001 - 0x0001)
 struct FCrAntennaLockedTag final : public FMassTag
@@ -6680,73 +7196,50 @@ struct FCrAntennaLockedTag final : public FMassTag
 };
 DUMPER7_ASSERTS_FCrAntennaLockedTag;
 
-// ScriptStruct Chimera.CrMassInEnviroWaveTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassInEnviroWaveTag final : public FCrMassSavableTag
-{
-};
-DUMPER7_ASSERTS_FCrMassInEnviroWaveTag;
-
-// ScriptStruct Chimera.CrAntennaReadyToChargeTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrAntennaReadyToChargeTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrAntennaReadyToChargeTag;
-
-// ScriptStruct Chimera.CrMassEntityFragmentLODReductionData
-// 0x0020 (0x0020 - 0x0000)
-struct alignas(0x08) FCrMassEntityFragmentLODReductionData final
+// ScriptStruct Chimera.CrOreStaticMeshData
+// 0x0030 (0x0030 - 0x0000)
+struct FCrOreStaticMeshData final
 {
 public:
-	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UStaticMesh*                            ActiveOreMesh;                                     // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	TArray<class UMaterialInterface*>             ActiveOreMaterials;                                // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	class UStaticMesh*                            CoreOreMesh;                                       // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	TArray<class UMaterialInterface*>             CoreOreMaterials;                                  // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
 };
-DUMPER7_ASSERTS_FCrMassEntityFragmentLODReductionData;
+DUMPER7_ASSERTS_FCrOreStaticMeshData;
 
-// ScriptStruct Chimera.CrAntennaReadyToActivateTag
+// ScriptStruct Chimera.CrAntennaChargingTag
 // 0x0000 (0x0001 - 0x0001)
-struct FCrAntennaReadyToActivateTag final : public FMassTag
+struct FCrAntennaChargingTag final : public FMassTag
 {
 };
-DUMPER7_ASSERTS_FCrAntennaReadyToActivateTag;
+DUMPER7_ASSERTS_FCrAntennaChargingTag;
 
-// ScriptStruct Chimera.CrMassEnviroWaveStageGrowbackTag
+// ScriptStruct Chimera.CrAntennaSpawningEnemiesTag
 // 0x0000 (0x0001 - 0x0001)
-struct FCrMassEnviroWaveStageGrowbackTag final : public FCrMassSavableTag
+struct FCrAntennaSpawningEnemiesTag final : public FMassTag
 {
 };
-DUMPER7_ASSERTS_FCrMassEnviroWaveStageGrowbackTag;
+DUMPER7_ASSERTS_FCrAntennaSpawningEnemiesTag;
 
-// ScriptStruct Chimera.CrAntennaActivatedTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrAntennaActivatedTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrAntennaActivatedTag;
-
-// ScriptStruct Chimera.CrCorrosionAttributeTableRow
-// 0x0010 (0x0018 - 0x0008)
-struct FCrCorrosionAttributeTableRow final : public FTableRowBase
+// ScriptStruct Chimera.CrProcessedPatternIdxPair
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x04) FCrProcessedPatternIdxPair final
 {
 public:
-	int32                                         CurrentCorrosion;                                  // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxCorrosion;                                      // 0x000C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MinCorrosion;                                      // 0x0010(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrCorrosionAttributeTableRow;
+DUMPER7_ASSERTS_FCrProcessedPatternIdxPair;
 
-// ScriptStruct Chimera.CrMassFoundableParameters
-// 0x000C (0x000C - 0x0000)
-struct FCrMassFoundableParameters final : public FMassConstSharedFragment
+// ScriptStruct Chimera.CrMassRotationReplicationCustomData
+// 0x0008 (0x0008 - 0x0000)
+struct FCrMassRotationReplicationCustomData final
 {
 public:
-	ECrFoundableType                              FoundableType;                                     // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         InventoryColumns;                                  // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         InventoryRows;                                     // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Roll;                                              // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Pitch;                                             // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrMassFoundableParameters;
+DUMPER7_ASSERTS_FCrMassRotationReplicationCustomData;
 
 // ScriptStruct Chimera.CrIgnoreBaseCoreRequirementTag
 // 0x0000 (0x0001 - 0x0001)
@@ -6755,19 +7248,28 @@ struct FCrIgnoreBaseCoreRequirementTag final : public FMassTag
 };
 DUMPER7_ASSERTS_FCrIgnoreBaseCoreRequirementTag;
 
-// ScriptStruct Chimera.CrBuildingBaseCoreUnavailableTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrBuildingBaseCoreUnavailableTag final : public FCrMassSavableTag
+// ScriptStruct Chimera.CrWeaponInstanceSaveData
+// 0x0060 (0x0060 - 0x0000)
+struct FCrWeaponInstanceSaveData
 {
+public:
+	int32                                         CurrentAmmo;                                       // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<struct FGameplayTag, TSoftObjectPtr<class UCrWeaponModDataAsset>> AppliedMods;              // 0x0008(0x0050)(SaveGame, UObjectWrapper, NativeAccessSpecifierPublic)
+	bool                                          bFirstShotExecuted;                                // 0x0058(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrBuildingBaseCoreUnavailableTag;
+DUMPER7_ASSERTS_FCrWeaponInstanceSaveData;
 
-// ScriptStruct Chimera.CrMassEnviroWaveAffectedAgentTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassEnviroWaveAffectedAgentTag final : public FMassTag
+// ScriptStruct Chimera.CrHarvesterInstanceSaveData
+// 0x0008 (0x0068 - 0x0060)
+struct FCrHarvesterInstanceSaveData final : public FCrWeaponInstanceSaveData
 {
+public:
+	int32                                         HeatStackCurrent;                                  // 0x0060(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         HeatStackMax;                                      // 0x0064(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrMassEnviroWaveAffectedAgentTag;
+DUMPER7_ASSERTS_FCrHarvesterInstanceSaveData;
 
 // ScriptStruct Chimera.CrMassBuildingBaseCoreParameters
 // 0x0001 (0x0001 - 0x0000)
@@ -6789,308 +7291,38 @@ public:
 	float                                         DestroyedCystTimestamp;                            // 0x0008(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FCrMassPersistentEntityID              DeconstructionTimerInstigator;                     // 0x0010(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FGuid>                          InfectedBaseCoreLocalSpawners;                     // 0x0020(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FCrInfectedBaseCoreLocalSpawnersData> InfectedBaseCoreLocalSpawners;               // 0x0020(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
 	struct FBox                                   CachedBoundingBox;                                 // 0x0030(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCrMassBuildingBaseCoreFragment;
 
-// ScriptStruct Chimera.CrMassEnviroWaveStageMovingTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassEnviroWaveStageMovingTag final : public FCrMassSavableTag
-{
-};
-DUMPER7_ASSERTS_FCrMassEnviroWaveStageMovingTag;
-
-// ScriptStruct Chimera.CrReplicatedInventoryData
-// 0x0280 (0x0280 - 0x0000)
-struct FCrReplicatedInventoryData final
+// ScriptStruct Chimera.CrWeaponItemInstance
+// 0x0050 (0x00A0 - 0x0050)
+struct FCrWeaponItemInstance : public FAuWeaponItemInstance
 {
 public:
-	struct FCrItemsStorageContainer               InputInventoryContainer;                           // 0x0000(0x0120)(Transient, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	struct FCrItemsStorageContainer               MainInventoryContainer;                            // 0x0120(0x0120)(Transient, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	TArray<struct FCrSlotItemThresholdSetting>    ItemThresholds;                                    // 0x0240(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
-	TArray<int32>                                 ChangedInputIndexes;                               // 0x0250(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
-	TArray<int32>                                 ChangedMainIndexes;                                // 0x0260(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
-	int32                                         InputReplicationKey;                               // 0x0270(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MainReplicationKey;                                // 0x0274(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ClientInputReplicationKey;                         // 0x0278(0x0004)(ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ClientMainReplicationKey;                          // 0x027C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<struct FGameplayTag, TSoftObjectPtr<class UCrWeaponModDataAsset>> AppliedMods;              // 0x0050(0x0050)(UObjectWrapper, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrReplicatedInventoryData;
+DUMPER7_ASSERTS_FCrWeaponItemInstance;
 
-// ScriptStruct Chimera.CrReplicatedCraftingData
-// 0x0030 (0x0030 - 0x0000)
-struct FCrReplicatedCraftingData final
+// ScriptStruct Chimera.CrKineticWeaponItemInstance
+// 0x0000 (0x00A0 - 0x00A0)
+struct FCrKineticWeaponItemInstance final : public FCrWeaponItemInstance
+{
+};
+DUMPER7_ASSERTS_FCrKineticWeaponItemInstance;
+
+// ScriptStruct Chimera.CrWeatherSettingsFloatCurves
+// 0x0058 (0x0058 - 0x0000)
+struct FCrWeatherSettingsFloatCurves final
 {
 public:
-	class UCrItemRecipeData*                      Recipe;                                            // 0x0000(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	struct FCrItemBasedCraftingData               ItemBasedData;                                     // 0x0008(0x0010)(Transient, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         LastStartTime;                                     // 0x0018(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LastCompleteTime;                                  // 0x001C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LastHaltTime;                                      // 0x0020(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CraftingSpeed;                                     // 0x0024(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsMissingItems;                                   // 0x0028(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bOutputFull;                                       // 0x0029(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUnavailableInputItem;                             // 0x002A(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int8                                          CraftingMultiplier;                                // 0x002B(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TMap<EEnviroWave, struct FCrEnviroWaveCurveFloatMap> Curves;                                     // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	float                                         DefaultValue;                                      // 0x0050(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrWeatherSettingsCurvesValueMode             CurvesValueMode;                                   // 0x0054(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_55[0x3];                                       // 0x0055(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrReplicatedCraftingData;
-
-// ScriptStruct Chimera.CrReplicatedBuildingVisualCustomizationData
-// 0x0010 (0x0010 - 0x0000)
-struct FCrReplicatedBuildingVisualCustomizationData final
-{
-public:
-	struct FLinearColor                           ColorTint;                                         // 0x0000(0x0010)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrReplicatedBuildingVisualCustomizationData;
-
-// ScriptStruct Chimera.CrReplicatedLogisticsOptionsData
-// 0x0001 (0x0001 - 0x0000)
-struct FCrReplicatedLogisticsOptionsData final
-{
-public:
-	ECrLogisticsRequestPriority                   Priority;                                          // 0x0000(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrReplicatedLogisticsOptionsData;
-
-// ScriptStruct Chimera.CrReplicatedBuildingAgent
-// 0x02E0 (0x0378 - 0x0098)
-struct FCrReplicatedBuildingAgent final : public FCrReplicatedSimpleBuildingAgent
-{
-public:
-	struct FCrReplicatedInventoryData             InventoryData;                                     // 0x0098(0x0280)(Transient, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	struct FCrReplicatedCraftingData              CraftingData;                                      // 0x0318(0x0030)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FCrReplicatedInfectionData             InfectionData;                                     // 0x0348(0x0008)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FCrReplicatedBuildingVisualCustomizationData VisualCustomizationData;                     // 0x0350(0x0010)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FCrReplicatedLogisticsOptionsData      LogisticsOptionsData;                              // 0x0360(0x0001)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_361[0x7];                                      // 0x0361(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrReplicatedCustomDataArray           CustomData;                                        // 0x0368(0x0010)(Transient, NativeAccessSpecifierPrivate)
-};
-DUMPER7_ASSERTS_FCrReplicatedBuildingAgent;
-
-// ScriptStruct Chimera.CrMassBuildingFastArrayItem
-// 0x0378 (0x0388 - 0x0010)
-struct FCrMassBuildingFastArrayItem final : public FMassFastArrayItemBase
-{
-public:
-	struct FCrReplicatedBuildingAgent             Agent;                                             // 0x0010(0x0378)(ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrMassBuildingFastArrayItem;
-
-// ScriptStruct Chimera.CrMassBuildingClientBubbleSerializer
-// 0x01E8 (0x0320 - 0x0138)
-struct FCrMassBuildingClientBubbleSerializer final : public FMassClientBubbleSerializerBase
-{
-public:
-	uint8                                         Pad_138[0x1D8];                                    // 0x0138(0x01D8)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FCrMassBuildingFastArrayItem>   Buildings;                                         // 0x0310(0x0010)(ZeroConstructor, Transient, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-};
-DUMPER7_ASSERTS_FCrMassBuildingClientBubbleSerializer;
-
-// ScriptStruct Chimera.CrReplicatedFoundableData
-// 0x0030 (0x0030 - 0x0000)
-struct FCrReplicatedFoundableData final
-{
-public:
-	struct FVector_NetQuantize                    TrajectoryStartLocation;                           // 0x0000(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector_NetQuantize                    TrajectoryEndLocation;                             // 0x0018(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrReplicatedFoundableData;
-
-// ScriptStruct Chimera.CrConePelletsRowSpreadPattern
-// 0x0010 (0x0010 - 0x0000)
-struct FCrConePelletsRowSpreadPattern final
-{
-public:
-	TArray<bool>                                  bShouldTrace;                                      // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrConePelletsRowSpreadPattern;
-
-// ScriptStruct Chimera.CrReplicatedHeaterCoolerData
-// 0x0020 (0x0020 - 0x0000)
-struct FCrReplicatedHeaterCoolerData final
-{
-public:
-	ECrMassHeaterCoolerState                      State;                                             // 0x0000(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrLogisticsRequestPriority                   Priority;                                          // 0x0001(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FCrHeaterCoolerConnectionData>  Connections;                                       // 0x0008(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
-	int32                                         ConnectionsRevision;                               // 0x0018(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrReplicatedHeaterCoolerData;
-
-// ScriptStruct Chimera.CrReplicatedHeaterCoolerAgent
-// 0x0318 (0x0340 - 0x0028)
-struct FCrReplicatedHeaterCoolerAgent final : public FReplicatedAgentBase
-{
-public:
-	struct FCrReplicatedInventoryData             InventoryData;                                     // 0x0028(0x0280)(Transient, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	struct FCrReplicatedInfectionData             InfectionData;                                     // 0x02A8(0x0008)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FCrReplicatedBuildingVisualCustomizationData VisualCustomizationData;                     // 0x02B0(0x0010)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FCrReplicatedHeaterCoolerData          HeaterCoolerData;                                  // 0x02C0(0x0020)(Transient, NativeAccessSpecifierPrivate)
-	struct FReplicatedAgentPositionYawData        PositionYaw;                                       // 0x02E0(0x0020)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FCrReplicatedPlacementData             PlacementData;                                     // 0x0300(0x0030)(Transient, NativeAccessSpecifierPrivate)
-	struct FCrReplicatedStabilityData             StabilityData;                                     // 0x0330(0x0008)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FCrReplicatedTemperatureData           TemperatureData;                                   // 0x0338(0x0004)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_33C[0x4];                                      // 0x033C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrReplicatedHeaterCoolerAgent;
-
-// ScriptStruct Chimera.CrMassHeaterCoolerFastArrayItem
-// 0x0340 (0x0350 - 0x0010)
-struct FCrMassHeaterCoolerFastArrayItem final : public FMassFastArrayItemBase
-{
-public:
-	struct FCrReplicatedHeaterCoolerAgent         Agent;                                             // 0x0010(0x0340)(ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrMassHeaterCoolerFastArrayItem;
-
-// ScriptStruct Chimera.CrMassHeaterCoolerClientBubbleSerializer
-// 0x0198 (0x02D0 - 0x0138)
-struct FCrMassHeaterCoolerClientBubbleSerializer final : public FMassClientBubbleSerializerBase
-{
-public:
-	uint8                                         Pad_138[0x188];                                    // 0x0138(0x0188)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FCrMassHeaterCoolerFastArrayItem> Buildings;                                       // 0x02C0(0x0010)(ZeroConstructor, Transient, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-};
-DUMPER7_ASSERTS_FCrMassHeaterCoolerClientBubbleSerializer;
-
-// ScriptStruct Chimera.MassGatherableCropRuntimeData
-// 0x0008 (0x0008 - 0x0000)
-struct alignas(0x04) FMassGatherableCropRuntimeData final : public FMassFragment
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassGatherableCropRuntimeData;
-
-// ScriptStruct Chimera.CrRadiationAttributeTableRow
-// 0x0010 (0x0018 - 0x0008)
-struct FCrRadiationAttributeTableRow final : public FTableRowBase
-{
-public:
-	int32                                         CurrentRadiation;                                  // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxRadiation;                                      // 0x000C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MinRadiation;                                      // 0x0010(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrRadiationAttributeTableRow;
-
-// ScriptStruct Chimera.ReplicatedAgentPositionRotationData
-// 0x0040 (0x0040 - 0x0000)
-struct FReplicatedAgentPositionRotationData final
-{
-public:
-	struct FVector                                Translation;                                       // 0x0000(0x0018)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FQuat                                  Rotation;                                          // 0x0020(0x0020)(Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FReplicatedAgentPositionRotationData;
-
-// ScriptStruct Chimera.CrReplicatedFoundableAgent
-// 0x02F8 (0x0320 - 0x0028)
-struct FCrReplicatedFoundableAgent final : public FReplicatedAgentBase
-{
-public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FReplicatedAgentPositionRotationData   PosRot;                                            // 0x0030(0x0040)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FCrReplicatedInventoryData             InventoryData;                                     // 0x0070(0x0280)(Transient, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	struct FCrReplicatedFoundableData             FoundableData;                                     // 0x02F0(0x0030)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
-};
-DUMPER7_ASSERTS_FCrReplicatedFoundableAgent;
-
-// ScriptStruct Chimera.CrMassFoundableFastArrayItem
-// 0x0320 (0x0330 - 0x0010)
-struct FCrMassFoundableFastArrayItem final : public FMassFastArrayItemBase
-{
-public:
-	struct FCrReplicatedFoundableAgent            Agent;                                             // 0x0010(0x0320)(ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrMassFoundableFastArrayItem;
-
-// ScriptStruct Chimera.CrMassNiagaraUserParameterFloat
-// 0x0008 (0x0018 - 0x0010)
-struct FCrMassNiagaraUserParameterFloat final : public FCrMassNiagaraUserParameterBase
-{
-public:
-	float                                         Val;                                               // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrMassNiagaraUserParameterFloat;
-
-// ScriptStruct Chimera.CrHeaterCoolerParameters
-// 0x0040 (0x0040 - 0x0000)
-struct FCrHeaterCoolerParameters final : public FMassConstSharedFragment
-{
-public:
-	ECrMassHeaterCoolerType                       Type;                                              // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Power;                                             // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FuelUsagePerS;                                     // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TotalSocketsNum;                                   // 0x000C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxEnvTempToEnable;                                // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TSoftClassPtr<class UClass>                   FuelItemDefinition;                                // 0x0018(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrHeaterCoolerParameters;
-
-// ScriptStruct Chimera.CrMassBuildingNiagaraConfig
-// 0x00C0 (0x00C0 - 0x0000)
-struct FCrMassBuildingNiagaraConfig final
-{
-public:
-	class UNiagaraSystem*                         NiagaraSystem;                                     // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	int32                                         EnabledLODs;                                       // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseTransformOffset;                               // 0x000C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             TransformOffset;                                   // 0x0010(0x0060)(Edit, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FInstancedStruct>               UserParameters;                                    // 0x0070(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FInstancedStruct>               RequiredTags;                                      // 0x0080(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	EFCrMassBuildingNiagaraSystemSpawnMode        SpawnMode;                                         // 0x0090(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_91[0x7];                                       // 0x0091(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FName>                           SignalEvents;                                      // 0x0098(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FInstancedStruct>               CustomParameterDrivers;                            // 0x00A8(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B8[0x8];                                       // 0x00B8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrMassBuildingNiagaraConfig;
-
-// ScriptStruct Chimera.CrMassBuildingNiagaraParameters
-// 0x0018 (0x0018 - 0x0000)
-struct FCrMassBuildingNiagaraParameters final : public FMassConstSharedFragment
-{
-public:
-	TArray<struct FCrMassBuildingNiagaraConfig>   SystemData;                                        // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          bForceUpdate;                                      // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrMassBuildingNiagaraParameters;
-
-// ScriptStruct Chimera.CrMassNiagaraUserParameterBool
-// 0x0008 (0x0018 - 0x0010)
-struct FCrMassNiagaraUserParameterBool final : public FCrMassNiagaraUserParameterBase
-{
-public:
-	bool                                          bVal;                                              // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrMassNiagaraUserParameterBool;
-
-// ScriptStruct Chimera.CrHeaterCoolerOperatingTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrHeaterCoolerOperatingTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrHeaterCoolerOperatingTag;
-
-// ScriptStruct Chimera.CrMassBuildingTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassBuildingTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrMassBuildingTag;
+DUMPER7_ASSERTS_FCrWeatherSettingsFloatCurves;
 
 // ScriptStruct Chimera.CrMassFoundationTag
 // 0x0000 (0x0001 - 0x0001)
@@ -7099,51 +7331,23 @@ struct FCrMassFoundationTag final : public FMassTag
 };
 DUMPER7_ASSERTS_FCrMassFoundationTag;
 
-// ScriptStruct Chimera.InfectionReceiverFragment
-// 0x0008 (0x0008 - 0x0000)
-struct alignas(0x04) FInfectionReceiverFragment final : public FMassFragment
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FInfectionReceiverFragment;
-
-// ScriptStruct Chimera.CrMassBuildingLOD0Tag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassBuildingLOD0Tag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrMassBuildingLOD0Tag;
-
-// ScriptStruct Chimera.CrMassBuildingDestroyWithNeighbour
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassBuildingDestroyWithNeighbour final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrMassBuildingDestroyWithNeighbour;
-
-// ScriptStruct Chimera.MassInfectionGridCellLocationFragment
-// 0x000C (0x000C - 0x0000)
-struct alignas(0x04) FMassInfectionGridCellLocationFragment final : public FMassFragment
-{
-public:
-	uint8                                         Pad_0[0xC];                                        // 0x0000(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassInfectionGridCellLocationFragment;
-
-// ScriptStruct Chimera.CrMassSimpleBuildingTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassSimpleBuildingTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrMassSimpleBuildingTag;
-
 // ScriptStruct Chimera.CrMassDroneBuildingTag
 // 0x0000 (0x0001 - 0x0001)
 struct FCrMassDroneBuildingTag final : public FMassTag
 {
 };
 DUMPER7_ASSERTS_FCrMassDroneBuildingTag;
+
+// ScriptStruct Chimera.AuItemDataBaseClassMap
+// 0x0010 (0x0010 - 0x0000)
+struct FAuItemDataBaseClassMap final
+{
+public:
+	TSubclassOf<class UAuItemDataBase>            ItemClass;                                         // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Quantity;                                          // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAuItemDataBaseClassMap;
 
 // ScriptStruct Chimera.CrMassExporterTag
 // 0x0000 (0x0001 - 0x0001)
@@ -7152,34 +7356,6 @@ struct FCrMassExporterTag final : public FMassTag
 };
 DUMPER7_ASSERTS_FCrMassExporterTag;
 
-// ScriptStruct Chimera.InfectionCollisionData
-// 0x0020 (0x0020 - 0x0000)
-struct FInfectionCollisionData final
-{
-public:
-	EInfectionCollisionType                       CollisionType;                                     // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Radius;                                            // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                BoxExtent;                                         // 0x0008(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FInfectionCollisionData;
-
-// ScriptStruct Chimera.InfectionCollisionConfigurationFragment
-// 0x0020 (0x0020 - 0x0000)
-struct FInfectionCollisionConfigurationFragment final : public FMassConstSharedFragment
-{
-public:
-	struct FInfectionCollisionData                InfectionCollisionData;                            // 0x0000(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FInfectionCollisionConfigurationFragment;
-
-// ScriptStruct Chimera.CrMassExtractorTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassExtractorTag : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrMassExtractorTag;
-
 // ScriptStruct Chimera.CrMassAcidExtractorTag
 // 0x0000 (0x0001 - 0x0001)
 struct FCrMassAcidExtractorTag final : public FCrMassExtractorTag
@@ -7187,29 +7363,27 @@ struct FCrMassAcidExtractorTag final : public FCrMassExtractorTag
 };
 DUMPER7_ASSERTS_FCrMassAcidExtractorTag;
 
-// ScriptStruct Chimera.CrReplicatedLogisticsAgentData
-// 0x00A0 (0x00A0 - 0x0000)
-struct FCrReplicatedLogisticsAgentData final
+// ScriptStruct Chimera.CrCamEffectStateBase
+// 0x0040 (0x0040 - 0x0000)
+struct FCrCamEffectStateBase
 {
 public:
-	struct FCrMassEntityReplicationHelper         Connection;                                        // 0x0000(0x0018)(Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCrMassEntityReplicationHelper         NextConnection;                                    // 0x0018(0x0018)(Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCrMassEntityReplicationHelper         Start;                                             // 0x0030(0x0018)(Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCrMassEntityReplicationHelper         End;                                               // 0x0048(0x0018)(Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAuSimpleItem                          CarriedItem;                                       // 0x0060(0x0030)(Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StartAdditionalAgentMovementDistance;              // 0x0090(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         EndAdditionalAgentMovementDistance;                // 0x0094(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRequestInvalid;                                   // 0x0098(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_99[0x7];                                       // 0x0099(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInstanceDynamic*               MaterialInstanceDynamic;                           // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UMaterialInterface*                     PostProcessMat;                                    // 0x0010(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_18[0x10];                                      // 0x0018(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPostProcessComponent*                  PostProcessComp;                                   // 0x0028(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UCrCameraEffect*                        Effect;                                            // 0x0030(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrReplicatedLogisticsAgentData;
+DUMPER7_ASSERTS_FCrCamEffectStateBase;
 
-// ScriptStruct Chimera.CrMassPackageSenderTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassPackageSenderTag final : public FMassTag
+// ScriptStruct Chimera.CrCamEffectState_FadeIn
+// 0x0000 (0x0040 - 0x0040)
+struct FCrCamEffectState_FadeIn final : public FCrCamEffectStateBase
 {
 };
-DUMPER7_ASSERTS_FCrMassPackageSenderTag;
+DUMPER7_ASSERTS_FCrCamEffectState_FadeIn;
 
 // ScriptStruct Chimera.CrMassPackageReceiverTag
 // 0x0000 (0x0001 - 0x0001)
@@ -7218,29 +7392,25 @@ struct FCrMassPackageReceiverTag final : public FMassTag
 };
 DUMPER7_ASSERTS_FCrMassPackageReceiverTag;
 
-// ScriptStruct Chimera.CrMassListenServerVisualizationLODSharedFragment
-// 0x2038 (0x2038 - 0x0000)
-struct FCrMassListenServerVisualizationLODSharedFragment final : public FMassSharedFragment
-{
-public:
-	uint8                                         Pad_0[0x2030];                                     // 0x0000(0x2030)(Fixing Size After Last Property [ Dumper-7 ])
-	class UScriptStruct*                          FilterTag;                                         // 0x2030(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrMassListenServerVisualizationLODSharedFragment;
-
-// ScriptStruct Chimera.CrMassTeleporterTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassTeleporterTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrMassTeleporterTag;
-
 // ScriptStruct Chimera.CrMassMachineActivatorTag
 // 0x0000 (0x0001 - 0x0001)
 struct FCrMassMachineActivatorTag final : public FMassTag
 {
 };
 DUMPER7_ASSERTS_FCrMassMachineActivatorTag;
+
+// ScriptStruct Chimera.CrInfectionSpawnPointData
+// 0x0014 (0x0014 - 0x0000)
+struct FCrInfectionSpawnPointData final
+{
+public:
+	float                                         Growth;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SmoothGrowth;                                      // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HealthNormalized;                                  // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Level;                                             // 0x000C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AllowedGrowth;                                     // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrInfectionSpawnPointData;
 
 // ScriptStruct Chimera.CrMassSpawnPointTag
 // 0x0000 (0x0001 - 0x0001)
@@ -7249,23 +7419,35 @@ struct FCrMassSpawnPointTag final : public FMassTag
 };
 DUMPER7_ASSERTS_FCrMassSpawnPointTag;
 
-// ScriptStruct Chimera.CrReplicatedLogisticsAgent
-// 0x00A0 (0x00C8 - 0x0028)
-struct FCrReplicatedLogisticsAgent final : public FReplicatedAgentBase
+// ScriptStruct Chimera.CrCameraEffectParamBase
+// 0x0098 (0x0098 - 0x0000)
+struct FCrCameraEffectParamBase final
 {
 public:
-	struct FCrReplicatedLogisticsAgentData        LogisticsAgentData;                                // 0x0028(0x00A0)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FRuntimeFloatCurve                     Curve;                                             // 0x0000(0x0088)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	uint8                                         Pad_88[0x10];                                      // 0x0088(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrReplicatedLogisticsAgent;
+DUMPER7_ASSERTS_FCrCameraEffectParamBase;
 
-// ScriptStruct Chimera.CrLogisticsAgentFastArrayItem
-// 0x00C8 (0x00D8 - 0x0010)
-struct FCrLogisticsAgentFastArrayItem final : public FMassFastArrayItemBase
+// ScriptStruct Chimera.CrCameraEffectMaterialParam
+// 0x0140 (0x0140 - 0x0000)
+struct FCrCameraEffectMaterialParam final
 {
 public:
-	struct FCrReplicatedLogisticsAgent            Agent;                                             // 0x0010(0x00C8)(NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x4];                                        // 0x0000(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   ParameterName;                                     // 0x0004(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCrCameraEffectParamBase               FadeIn;                                            // 0x0010(0x0098)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	struct FCrCameraEffectParamBase               FadeOut;                                           // 0x00A8(0x0098)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrLogisticsAgentFastArrayItem;
+DUMPER7_ASSERTS_FCrCameraEffectMaterialParam;
+
+// ScriptStruct Chimera.CrMassHubSpawnPointTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassHubSpawnPointTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrMassHubSpawnPointTag;
 
 // ScriptStruct Chimera.CrMassStabilityAddTag
 // 0x0000 (0x0001 - 0x0001)
@@ -7281,27 +7463,16 @@ struct FCrMassStabilityRemoveTag final : public FMassTag
 };
 DUMPER7_ASSERTS_FCrMassStabilityRemoveTag;
 
-// ScriptStruct Chimera.CrLogisticsLineFragment
-// 0x0038 (0x0038 - 0x0000)
-struct FCrLogisticsLineFragment final : public FCrMassSavableFragment
+// ScriptStruct Chimera.HarvesterRepHeatStackInfo
+// 0x000C (0x000C - 0x0000)
+struct FHarvesterRepHeatStackInfo final
 {
 public:
-	struct FCrLogisticsLineSimulationState        State;                                             // 0x0000(0x0028)(NativeAccessSpecifierPublic)
-	float                                         LineLength;                                        // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AdditionalLengthStart;                             // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AdditionalLengthEnd;                               // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsStartLine;                                      // 0x0034(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsEndLine;                                        // 0x0035(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_36[0x2];                                       // 0x0036(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         CurrentStackCount;                                 // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OldStackCount;                                     // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         StackLimit;                                        // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrLogisticsLineFragment;
-
-// ScriptStruct Chimera.CrMassStabilitySimulateRemovalTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassStabilitySimulateRemovalTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrMassStabilitySimulateRemovalTag;
+DUMPER7_ASSERTS_FHarvesterRepHeatStackInfo;
 
 // ScriptStruct Chimera.CrMassBuildingInGridTag
 // 0x0000 (0x0001 - 0x0001)
@@ -7309,17 +7480,6 @@ struct FCrMassBuildingInGridTag final : public FMassTag
 {
 };
 DUMPER7_ASSERTS_FCrMassBuildingInGridTag;
-
-// ScriptStruct Chimera.CrLogisticsRequestContainerFragment
-// 0x0028 (0x0028 - 0x0000)
-struct FCrLogisticsRequestContainerFragment final : public FCrMassSavableFragment
-{
-public:
-	TArray<struct FCrMassPersistentEntityID>      Requests;                                          // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-	TArray<struct FCrLogisticsRequestData>        PendingRequests;                                   // 0x0010(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-	uint8                                         Pad_20[0x8];                                       // 0x0020(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrLogisticsRequestContainerFragment;
 
 // ScriptStruct Chimera.CrMassBuildingGridElementTag
 // 0x0000 (0x0001 - 0x0001)
@@ -7335,14 +7495,17 @@ struct FCrMassBuildingUseCustomFloatsTag final : public FMassTag
 };
 DUMPER7_ASSERTS_FCrMassBuildingUseCustomFloatsTag;
 
-// ScriptStruct Chimera.CrMassListenServerInfoPerViewerFragment
-// 0x0040 (0x0040 - 0x0000)
-struct alignas(0x08) FCrMassListenServerInfoPerViewerFragment final : public FMassFragment
+// ScriptStruct Chimera.CrMedToolChargeAttributeTableRow
+// 0x0010 (0x0018 - 0x0008)
+struct FCrMedToolChargeAttributeTableRow final : public FTableRowBase
 {
 public:
-	uint8                                         Pad_0[0x40];                                       // 0x0000(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         CurrentCharge;                                     // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxCharge;                                         // 0x000C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MinCharge;                                         // 0x0010(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrMassListenServerInfoPerViewerFragment;
+DUMPER7_ASSERTS_FCrMedToolChargeAttributeTableRow;
 
 // ScriptStruct Chimera.CrMassRotateTowardsSunTag
 // 0x0000 (0x0001 - 0x0001)
@@ -7357,6 +7520,15 @@ struct FCrMassSplineWalkwayConnectionTag final : public FMassTag
 {
 };
 DUMPER7_ASSERTS_FCrMassSplineWalkwayConnectionTag;
+
+// ScriptStruct Chimera.CrConePelletsRowSpreadPattern
+// 0x0010 (0x0010 - 0x0000)
+struct FCrConePelletsRowSpreadPattern final
+{
+public:
+	TArray<bool>                                  bShouldTrace;                                      // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrConePelletsRowSpreadPattern;
 
 // ScriptStruct Chimera.CrBuildingUpdateParameters
 // 0x000C (0x000C - 0x0000)
@@ -7379,14 +7551,40 @@ public:
 };
 DUMPER7_ASSERTS_FCrBuildingResearchPartFragment;
 
+// ScriptStruct Chimera.CrOriginalHitResultsForPiercingData
+// 0x0058 (0x0058 - 0x0000)
+struct FCrOriginalHitResultsForPiercingData final
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 HitActor;                                          // 0x0008(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FVector_NetQuantize                    OriginalTraceStartPoint;                           // 0x0010(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector_NetQuantize                    OriginalTraceEndPoint;                             // 0x0028(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector_NetQuantize                    OriginalImpactPoint;                               // 0x0040(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrOriginalHitResultsForPiercingData;
+
+// ScriptStruct Chimera.CrPiercingTraceData
+// 0x0020 (0x0028 - 0x0008)
+struct FCrPiercingTraceData final : public FAuCustomTraceData
+{
+public:
+	float                                         Range;                                             // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FCrOriginalHitResultsForPiercingData> OriginalHitTraceData;                        // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         PossibleEnemyPiercings;                            // 0x0020(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrPiercingTraceData;
+
 // ScriptStruct Chimera.CrBuildingStateFragment
 // 0x0004 (0x0004 - 0x0000)
 struct FCrBuildingStateFragment final : public FCrMassSavableFragment
 {
 public:
-	bool                                          bInitialized;                                      // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInitialized;                                      // 0x0000(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bDisabled;                                         // 0x0001(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrBuildingMalfunctionFlags                   MalfunctionFlags;                                  // 0x0002(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	ECrBuildingMalfunctionFlags                   MalfunctionFlags;                                  // 0x0002(0x0002)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
 DUMPER7_ASSERTS_FCrBuildingStateFragment;
 
@@ -7398,6 +7596,15 @@ public:
 	struct FBox                                   BuildingBoundingBox;                               // 0x0000(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCrBuildingAggroTargetDataFragment;
+
+// ScriptStruct Chimera.CrTweenCurveAnimation
+// 0x00F0 (0x00F0 - 0x0000)
+struct alignas(0x10) FCrTweenCurveAnimation final
+{
+public:
+	uint8                                         Pad_0[0xF0];                                       // 0x0000(0x00F0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrTweenCurveAnimation;
 
 // ScriptStruct Chimera.CrBuildingHealthParameters
 // 0x000C (0x000C - 0x0000)
@@ -7425,7 +7632,7 @@ struct FCrBuildingInfectionNonZeroTag final : public FCrMassSavableTag
 DUMPER7_ASSERTS_FCrBuildingInfectionNonZeroTag;
 
 // ScriptStruct Chimera.CrBuildingInfectionParameters
-// 0x0048 (0x0048 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct FCrBuildingInfectionParameters final : public FMassConstSharedFragment
 {
 public:
@@ -7435,56 +7642,79 @@ public:
 	bool                                          CanBeInfectedByStandaloneActors;                   // 0x000C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAuAPMassSpawnedEntityType             InfectionSphereEntityType;                         // 0x0010(0x0038)(Edit, NativeAccessSpecifierPublic)
+	bool                                          bPlayAlarmOnInfection;                             // 0x0048(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCrBuildingInfectionParameters;
 
-// ScriptStruct Chimera.CrMassBuildingNiagaraParameterDriverData
-// 0x0020 (0x0020 - 0x0000)
-struct alignas(0x08) FCrMassBuildingNiagaraParameterDriverData final
+// ScriptStruct Chimera.CrBuildingInfectionAlarmFragment
+// 0x0004 (0x0004 - 0x0000)
+struct FCrBuildingInfectionAlarmFragment final : public FCrMassSavableFragment
 {
 public:
-	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         LastInfectionLevel;                                // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrMassBuildingNiagaraParameterDriverData;
+DUMPER7_ASSERTS_FCrBuildingInfectionAlarmFragment;
 
-// ScriptStruct Chimera.CrMassBuildingNiagaraParameterDriverForge
+// ScriptStruct Chimera.CrMassBuildingNiagaraParameterDriverGenericCrafter
 // 0x0008 (0x0010 - 0x0008)
-struct FCrMassBuildingNiagaraParameterDriverForge final : public FCrMassBuildingNiagaraParameterDriverBase
+struct FCrMassBuildingNiagaraParameterDriverGenericCrafter final : public FCrMassBuildingNiagaraParameterDriverBase
 {
 public:
 	float                                         DeactivateDelay;                                   // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrMassBuildingNiagaraParameterDriverForge;
+DUMPER7_ASSERTS_FCrMassBuildingNiagaraParameterDriverGenericCrafter;
 
-// ScriptStruct Chimera.CrMassNiagaraUserParameterInt
+// ScriptStruct Chimera.CrMassBuildingNiagaraVisualizationTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassBuildingNiagaraVisualizationTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrMassBuildingNiagaraVisualizationTag;
+
+// ScriptStruct Chimera.CrMassNiagaraUserParameterBool
 // 0x0008 (0x0018 - 0x0010)
-struct FCrMassNiagaraUserParameterInt final : public FCrMassNiagaraUserParameterBase
+struct FCrMassNiagaraUserParameterBool final : public FCrMassNiagaraUserParameterBase
 {
 public:
-	int32                                         Val;                                               // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bVal;                                              // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrMassNiagaraUserParameterBool;
+
+// ScriptStruct Chimera.CrMassNiagaraUserParameterFloat
+// 0x0008 (0x0018 - 0x0010)
+struct FCrMassNiagaraUserParameterFloat final : public FCrMassNiagaraUserParameterBase
+{
+public:
+	float                                         Val;                                               // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrMassNiagaraUserParameterInt;
+DUMPER7_ASSERTS_FCrMassNiagaraUserParameterFloat;
 
-// ScriptStruct Chimera.CrMassNiagaraUserParameterVector
-// 0x0018 (0x0028 - 0x0010)
-struct FCrMassNiagaraUserParameterVector final : public FCrMassNiagaraUserParameterBase
+// ScriptStruct Chimera.CrMassNiagaraUserParameterColor
+// 0x0010 (0x0020 - 0x0010)
+struct FCrMassNiagaraUserParameterColor final : public FCrMassNiagaraUserParameterBase
 {
 public:
-	struct FVector                                Val;                                               // 0x0010(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           Val;                                               // 0x0010(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrMassNiagaraUserParameterVector;
+DUMPER7_ASSERTS_FCrMassNiagaraUserParameterColor;
 
-// ScriptStruct Chimera.CrAttributeSetGrant
-// 0x0050 (0x0050 - 0x0000)
-struct FCrAttributeSetGrant final
+// ScriptStruct Chimera.CrMassOreRegeneratingTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassOreRegeneratingTag final : public FMassTag
 {
-public:
-	TSoftClassPtr<class UClass>                   AttributeSetType;                                  // 0x0000(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UDataTable>              InitializationData;                                // 0x0028(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrAttributeSetGrant;
+DUMPER7_ASSERTS_FCrMassOreRegeneratingTag;
+
+// ScriptStruct Chimera.CrMassOreIdHashNotCreated
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassOreIdHashNotCreated final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrMassOreIdHashNotCreated;
 
 // ScriptStruct Chimera.CrBuildingRotationEffectFragment
 // 0x000C (0x000C - 0x0000)
@@ -7497,37 +7727,63 @@ public:
 };
 DUMPER7_ASSERTS_FCrBuildingRotationEffectFragment;
 
-// ScriptStruct Chimera.CrRecyclingFragment
-// 0x0010 (0x0010 - 0x0000)
-struct FCrRecyclingFragment final : public FCrMassSavableFragment
+// ScriptStruct Chimera.CrInventoryFragment
+// 0x0250 (0x0250 - 0x0000)
+struct FCrInventoryFragment final : public FCrMassSavableFragment
 {
 public:
-	class UCrItemRecipeData*                      UsedRecipe;                                        // 0x0000(0x0008)(ZeroConstructor, SaveGame, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	bool                                          bFullRecycle;                                      // 0x0008(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FCrItemsStorageContainer               InputInventoryContainer;                           // 0x0000(0x0120)(SaveGame, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	struct FCrItemsStorageContainer               MainInventoryContainer;                            // 0x0120(0x0120)(SaveGame, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<struct FCrSlotItemThresholdSetting>    ItemThresholds;                                    // 0x0240(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrRecyclingFragment;
+DUMPER7_ASSERTS_FCrInventoryFragment;
 
-// ScriptStruct Chimera.AuItemDataBaseClassMap
-// 0x0010 (0x0010 - 0x0000)
-struct FAuItemDataBaseClassMap final
+// ScriptStruct Chimera.MassOreWeakSpotsRuntimeData
+// 0x0084 (0x0084 - 0x0000)
+struct alignas(0x04) FMassOreWeakSpotsRuntimeData final : public FMassFragment
 {
 public:
-	TSubclassOf<class UAuItemDataBase>            ItemClass;                                         // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Quantity;                                          // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x84];                                       // 0x0000(0x0084)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FAuItemDataBaseClassMap;
+DUMPER7_ASSERTS_FMassOreWeakSpotsRuntimeData;
 
-// ScriptStruct Chimera.SharedQuestItemsSaveData
+// ScriptStruct Chimera.CrCraftingParameters
 // 0x0020 (0x0020 - 0x0000)
-struct FSharedQuestItemsSaveData final
+struct FCrCraftingParameters final : public FMassConstSharedFragment
 {
 public:
-	TArray<struct FAuItemDataBaseClassMap>        SharedQuestItems;                                  // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-	TArray<struct FGuid>                          PickedItemsGuids;                                  // 0x0010(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	class UCrItemRecipeCollection*                RecipeCollection;                                  // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	float                                         CraftingLoopDuration;                              // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EMassRepresentationType                       StaticMeshMinLOD;                                  // 0x000C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUsesSlotFilters;                                  // 0x000D(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseCraftingProcessor;                             // 0x000E(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_F[0x1];                                        // 0x000F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CraftingUpdateInterval;                            // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         OverwriteRecipeBuildTime;                          // 0x0014(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         DynamicCraftMultiplierMax;                         // 0x0018(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FSharedQuestItemsSaveData;
+DUMPER7_ASSERTS_FCrCraftingParameters;
+
+// ScriptStruct Chimera.CrRecycleParameters
+// 0x0008 (0x0008 - 0x0000)
+struct FCrRecycleParameters final : public FMassConstSharedFragment
+{
+public:
+	class UCrItemRecyclerRecipeCollection*        RecyclerRecipeCollection;                          // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrRecycleParameters;
+
+// ScriptStruct Chimera.CrReplicatedStandaloneInfectionData
+// 0x000C (0x000C - 0x0000)
+struct FCrReplicatedStandaloneInfectionData final
+{
+public:
+	float                                         Health;                                            // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DamageProtectionTime;                              // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SpawnTime;                                         // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrReplicatedStandaloneInfectionData;
 
 // ScriptStruct Chimera.CrDefenseTurretTag
 // 0x0000 (0x0001 - 0x0001)
@@ -7535,6 +7791,32 @@ struct FCrDefenseTurretTag final : public FMassTag
 {
 };
 DUMPER7_ASSERTS_FCrDefenseTurretTag;
+
+// ScriptStruct Chimera.CrOreSpawnTickFunction
+// 0x0008 (0x0030 - 0x0028)
+struct FCrOreSpawnTickFunction final : public FTickFunction
+{
+public:
+	class UCrOreSpawnDataRegistrySubsystem*       OreSpawnSubsystem;                                 // 0x0028(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrOreSpawnTickFunction;
+
+// ScriptStruct Chimera.CrPackageTransportConnectionData
+// 0x0064 (0x0070 - 0x000C)
+struct FCrPackageTransportConnectionData final : public FFastArraySerializerItem
+{
+public:
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCrMassEntityReplicationHelper         Sender;                                            // 0x0010(0x0018)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCrMassEntityReplicationHelper         Receiver;                                          // 0x0028(0x0018)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCrMassEntityReplicationHelper         PrevReceiver;                                      // 0x0040(0x0018)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCrItemDataBase*                        Item;                                              // 0x0058(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	int32                                         RequestedAmount;                                   // 0x0060(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StartSendServerTime;                               // 0x0064(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInventorySpace;                                   // 0x0068(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrPackageTransportConnectionData;
 
 // ScriptStruct Chimera.CrElectricityParameters
 // 0x0010 (0x0010 - 0x0000)
@@ -7557,12 +7839,53 @@ struct FCrMassElectricityProcessorTag final : public FMassTag
 };
 DUMPER7_ASSERTS_FCrMassElectricityProcessorTag;
 
+// ScriptStruct Chimera.CrSenderConnectionData
+// 0x0020 (0x0020 - 0x0000)
+struct FCrSenderConnectionData final
+{
+public:
+	struct FCrMassPersistentEntityID              Receiver;                                          // 0x0000(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCrItemDataBase*                        Item;                                              // 0x0010(0x0008)(ZeroConstructor, SaveGame, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	int32                                         RequestedAmount;                                   // 0x0018(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrSenderConnectionData;
+
+// ScriptStruct Chimera.CrSenderConnectionsSaveData
+// 0x0058 (0x0058 - 0x0000)
+struct FCrSenderConnectionsSaveData final
+{
+public:
+	TMap<struct FCrMassPersistentEntityID, struct FCrSenderConnectionData> SenderConnections;        // 0x0000(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+	int32                                         SenderSerialNum;                                   // 0x0050(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReceiverSerialNum;                                 // 0x0054(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrSenderConnectionsSaveData;
+
+// ScriptStruct Chimera.CrMassBuildingDisabledTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassBuildingDisabledTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrMassBuildingDisabledTag;
+
 // ScriptStruct Chimera.CrMassElectricityConductorTag
 // 0x0000 (0x0001 - 0x0001)
 struct FCrMassElectricityConductorTag final : public FMassTag
 {
 };
 DUMPER7_ASSERTS_FCrMassElectricityConductorTag;
+
+// ScriptStruct Chimera.CrPlayerAggroEventDefinition
+// 0x0008 (0x0008 - 0x0000)
+struct FCrPlayerAggroEventDefinition final
+{
+public:
+	float                                         AggroValue;                                        // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsPeriodicEvent;                                  // 0x0004(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrPlayerAggroEventDefinition;
 
 // ScriptStruct Chimera.CrMassEnemyConfigurationFragment
 // 0x02F0 (0x02F0 - 0x0000)
@@ -7608,8 +7931,8 @@ public:
 	float                                         MaxPathLegLength;                                  // 0x00A8(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         MinPathZDeltaToSplit;                              // 0x00AC(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                PathSplitNavSearchExtents;                         // 0x00B0(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         GroundTraceInterval;                               // 0x00C8(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         GroundTraceHeightUnit;                             // 0x00CC(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GroundTraceUpOffset;                               // 0x00C8(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GroundTraceDownOffset;                             // 0x00CC(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         GroundTrace_ActorsTraceRadius;                     // 0x00D0(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         GroundZLocationAdjustmentSpeed;                    // 0x00D4(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         GroundRotationAdjustmentSpeed;                     // 0x00D8(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -7720,6 +8043,75 @@ struct FMassEnemyTag final : public FMassTag
 };
 DUMPER7_ASSERTS_FMassEnemyTag;
 
+// ScriptStruct Chimera.CrMassTurretFragment
+// 0x0088 (0x0088 - 0x0000)
+struct FCrMassTurretFragment final : public FMassFragment
+{
+public:
+	ECrTurretState                                PrevState;                                         // 0x0000(0x0001)(ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrTurretState                                State;                                             // 0x0001(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         StateEnterServerTime;                              // 0x0004(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StateEnterAngle;                                   // 0x0008(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMassEntityHandle                      TargetHandle;                                      // 0x0010(0x0008)(Transient, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                PrevAimDirForISM;                                  // 0x0018(0x0018)(ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                CurrentAimDir;                                     // 0x0030(0x0018)(ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                WantedAimDir;                                      // 0x0048(0x0018)(ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector_NetQuantizeNormal              AttackAimDir;                                      // 0x0060(0x0018)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShooting;                                         // 0x0078(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_79[0x3];                                       // 0x0079(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ReacquireTargetRequiredCooldown;                   // 0x007C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TimeOfLastAttack;                                  // 0x0080(0x0004)(ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FStaticMeshInstanceVisualizationDescHandle HorizontalRotMeshDescHandle;                   // 0x0084(0x0002)(Transient, RepSkip, NoDestructor, NativeAccessSpecifierPublic)
+	struct FStaticMeshInstanceVisualizationDescHandle VerticalRotMeshDescHandle;                     // 0x0086(0x0002)(Transient, RepSkip, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrMassTurretFragment;
+
+// ScriptStruct Chimera.MassEnemyDeadTag
+// 0x0000 (0x0001 - 0x0001)
+struct FMassEnemyDeadTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FMassEnemyDeadTag;
+
+// ScriptStruct Chimera.InputMappingContextAndPriority
+// 0x0030 (0x0030 - 0x0000)
+struct FInputMappingContextAndPriority final
+{
+public:
+	TSoftObjectPtr<class UInputMappingContext>    InputMapping;                                      // 0x0000(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Priority;                                          // 0x0028(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRegisterWithSettings;                             // 0x002C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FInputMappingContextAndPriority;
+
+// ScriptStruct Chimera.MassEnemyLootFragment
+// 0x0038 (0x0038 - 0x0000)
+struct alignas(0x08) FMassEnemyLootFragment final : public FMassFragment
+{
+public:
+	uint8                                         Pad_0[0x38];                                       // 0x0000(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassEnemyLootFragment;
+
+// ScriptStruct Chimera.EnemyLootTag
+// 0x0000 (0x0001 - 0x0001)
+struct FEnemyLootTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FEnemyLootTag;
+
+// ScriptStruct Chimera.CrMegamachinesSubsystemSaveData
+// 0x0050 (0x0050 - 0x0000)
+struct FCrMegamachinesSubsystemSaveData final
+{
+public:
+	TMap<ECrMegamachineType, ECrMegamachineState> MegamachineDatas;                                  // 0x0000(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrMegamachinesSubsystemSaveData;
+
 // ScriptStruct Chimera.CrMassEntityFragmentLODRestorationData
 // 0x0040 (0x0040 - 0x0000)
 struct alignas(0x08) FCrMassEntityFragmentLODRestorationData final
@@ -7729,6 +8121,15 @@ public:
 };
 DUMPER7_ASSERTS_FCrMassEntityFragmentLODRestorationData;
 
+// ScriptStruct Chimera.CrMassEntityFragmentLODReductionData
+// 0x0020 (0x0020 - 0x0000)
+struct alignas(0x08) FCrMassEntityFragmentLODReductionData final
+{
+public:
+	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrMassEntityFragmentLODReductionData;
+
 // ScriptStruct Chimera.CrMassEntityFragmentLODTickFunction
 // 0x0008 (0x0030 - 0x0028)
 struct FCrMassEntityFragmentLODTickFunction final : public FTickFunction
@@ -7737,6 +8138,24 @@ public:
 	class UCrMassEntityFragmentLODSubsystem*      MassEntityFragmentLODSystem;                       // 0x0028(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 };
 DUMPER7_ASSERTS_FCrMassEntityFragmentLODTickFunction;
+
+// ScriptStruct Chimera.CrMassEntityGridTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassEntityGridTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrMassEntityGridTag;
+
+// ScriptStruct Chimera.CrMeteOreWeakSpotDissolveData
+// 0x0018 (0x0018 - 0x0000)
+struct FCrMeteOreWeakSpotDissolveData final
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInstanceDynamic*               DynamicMaterialInstance;                           // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_10[0x8];                                       // 0x0010(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrMeteOreWeakSpotDissolveData;
 
 // ScriptStruct Chimera.CrMassEntityGridMovableTag
 // 0x0000 (0x0001 - 0x0001)
@@ -7756,12 +8175,46 @@ public:
 };
 DUMPER7_ASSERTS_FCrMassEnviroWaveSubsystemState;
 
+// ScriptStruct Chimera.CrOreMiningState
+// 0x0048 (0x0048 - 0x0000)
+struct FCrOreMiningState final
+{
+public:
+	struct FCrInfiniteOreData                     InfiniteOreData;                                   // 0x0000(0x0018)(NoDestructor, NativeAccessSpecifierPrivate)
+	class ACrOreActor*                            OreActor;                                          // 0x0018(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	float                                         MiningRPM;                                         // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MiningDamage;                                      // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DamageApplied;                                     // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPhysicalMaterial*                      InfiniteOrePhysicalMaterial;                       // 0x0030(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	bool                                          bIsMiningWeakSpot;                                 // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_39[0x3];                                       // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   WeakSpotSocketName;                                // 0x003C(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrMiningObjectType                           MiningObjectType;                                  // 0x0044(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_45[0x3];                                       // 0x0045(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrOreMiningState;
+
 // ScriptStruct Chimera.CrMassEnviroWaveStagePrewaveTag
 // 0x0000 (0x0001 - 0x0001)
 struct FCrMassEnviroWaveStagePrewaveTag final : public FCrMassSavableTag
 {
 };
 DUMPER7_ASSERTS_FCrMassEnviroWaveStagePrewaveTag;
+
+// ScriptStruct Chimera.CrMassEnviroWaveStageFadeoutTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassEnviroWaveStageFadeoutTag final : public FCrMassSavableTag
+{
+};
+DUMPER7_ASSERTS_FCrMassEnviroWaveStageFadeoutTag;
+
+// ScriptStruct Chimera.CrMassLogisticsNodeTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassLogisticsNodeTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrMassLogisticsNodeTag;
 
 // ScriptStruct Chimera.CrMassEnviroWaveTypeHeatTag
 // 0x0000 (0x0001 - 0x0001)
@@ -7777,15 +8230,12 @@ struct FCrMassEnviroWaveAffectedTag final : public FMassTag
 };
 DUMPER7_ASSERTS_FCrMassEnviroWaveAffectedTag;
 
-// ScriptStruct Chimera.CrMassFoundableClientBubbleSerializer
-// 0x0138 (0x0270 - 0x0138)
-struct FCrMassFoundableClientBubbleSerializer final : public FMassClientBubbleSerializerBase
+// ScriptStruct Chimera.CrMassZeroTransformTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassZeroTransformTag final : public FMassTag
 {
-public:
-	uint8                                         Pad_138[0x128];                                    // 0x0138(0x0128)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FCrMassFoundableFastArrayItem>  Entities;                                          // 0x0260(0x0010)(ZeroConstructor, Transient, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
 };
-DUMPER7_ASSERTS_FCrMassFoundableClientBubbleSerializer;
+DUMPER7_ASSERTS_FCrMassZeroTransformTag;
 
 // ScriptStruct Chimera.CrMassFoundableFragment
 // 0x0010 (0x0010 - 0x0000)
@@ -7807,40 +8257,18 @@ public:
 };
 DUMPER7_ASSERTS_FMassGatherableCropInitData;
 
-// ScriptStruct Chimera.CrMedToolChargeAttributeTableRow
-// 0x0010 (0x0018 - 0x0008)
-struct FCrMedToolChargeAttributeTableRow final : public FTableRowBase
+// ScriptStruct Chimera.CrSubObjectiveConditionValuesData
+// 0x0010 (0x0010 - 0x0000)
+struct FCrSubObjectiveConditionValuesData final
 {
 public:
-	int32                                         CurrentCharge;                                     // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxCharge;                                         // 0x000C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MinCharge;                                         // 0x0010(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         InitialValue;                                      // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CurrentValue;                                      // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ConditionValue;                                    // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowCounter;                                      // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrMedToolChargeAttributeTableRow;
-
-// ScriptStruct Chimera.CrMassGatherableTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassGatherableTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrMassGatherableTag;
-
-// ScriptStruct Chimera.CrMassGatherableEnviroWaveStageCondition
-// 0x0001 (0x0001 - 0x0000)
-struct FCrMassGatherableEnviroWaveStageCondition final : public FMassFragment
-{
-public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrMassGatherableEnviroWaveStageCondition;
-
-// ScriptStruct Chimera.CrMassPermamentGatherableTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassPermamentGatherableTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrMassPermamentGatherableTag;
+DUMPER7_ASSERTS_FCrSubObjectiveConditionValuesData;
 
 // ScriptStruct Chimera.CrReplicatedHealthData
 // 0x0004 (0x0004 - 0x0000)
@@ -7851,12 +8279,36 @@ public:
 };
 DUMPER7_ASSERTS_FCrReplicatedHealthData;
 
+// ScriptStruct Chimera.CrSubObjectiveData
+// 0x0038 (0x0038 - 0x0000)
+struct FCrSubObjectiveData final
+{
+public:
+	class FText                                   EntryText;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FCrSubObjectiveCondition               Condition;                                         // 0x0010(0x0018)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 OtherSubobjectivesToComplete;                      // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrSubObjectiveData;
+
 // ScriptStruct Chimera.CrHeaterCoolerTag
 // 0x0000 (0x0001 - 0x0001)
 struct FCrHeaterCoolerTag final : public FMassTag
 {
 };
 DUMPER7_ASSERTS_FCrHeaterCoolerTag;
+
+// ScriptStruct Chimera.CrOreRuntimeData
+// 0x0010 (0x0010 - 0x0000)
+struct FCrOreRuntimeData final
+{
+public:
+	int32                                         CurrentResourceCount;                              // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxResourceCount;                                  // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsDepleted;                                       // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         DamageReceived;                                    // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrOreRuntimeData;
 
 // ScriptStruct Chimera.CrHeaterCoolerUsesFuelTag
 // 0x0000 (0x0001 - 0x0001)
@@ -7880,6 +8332,20 @@ public:
 };
 DUMPER7_ASSERTS_FCrHeaterCoolerFragment;
 
+// ScriptStruct Chimera.OreSaveData
+// 0x0014 (0x0020 - 0x000C)
+struct FOreSaveData final : public FFastArraySerializerItem
+{
+public:
+	int32                                         CurrentResourceCount;                              // 0x000C(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsDepleted;                                       // 0x0010(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         DamageReceived;                                    // 0x0014(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CurrentRegenerationProgressInSec;                  // 0x0018(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RegenerationDuration;                              // 0x001C(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FOreSaveData;
+
 // ScriptStruct Chimera.InfectionSphereTag
 // 0x0000 (0x0001 - 0x0001)
 struct FInfectionSphereTag final : public FMassTag
@@ -7896,6 +8362,15 @@ public:
 };
 DUMPER7_ASSERTS_FInfectionCollisionFragment;
 
+// ScriptStruct Chimera.CrProcessedSpecificConeTracePattern
+// 0x0018 (0x0018 - 0x0000)
+struct alignas(0x08) FCrProcessedSpecificConeTracePattern final
+{
+public:
+	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrProcessedSpecificConeTracePattern;
+
 // ScriptStruct Chimera.EntityInInfectionTag
 // 0x0000 (0x0001 - 0x0001)
 struct FEntityInInfectionTag final : public FMassTag
@@ -7910,6 +8385,16 @@ struct FCrSeparateVisualizationProcessorOnLSTag final : public FMassTag
 };
 DUMPER7_ASSERTS_FCrSeparateVisualizationProcessorOnLSTag;
 
+// ScriptStruct Chimera.AppliedModData
+// 0x0030 (0x0030 - 0x0000)
+struct FAppliedModData final
+{
+public:
+	struct FGameplayTag                           Tag;                                               // 0x0000(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UCrWeaponModDataAsset>   ModSoftObjPtr;                                     // 0x0008(0x0028)(UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAppliedModData;
+
 // ScriptStruct Chimera.CrMassListenServerRepresentationLODFragment
 // 0x0028 (0x0028 - 0x0000)
 struct alignas(0x08) FCrMassListenServerRepresentationLODFragment final : public FMassFragment
@@ -7921,15 +8406,15 @@ public:
 };
 DUMPER7_ASSERTS_FCrMassListenServerRepresentationLODFragment;
 
-// ScriptStruct Chimera.CrMassLogisticsAgentClientBubbleSerializer
-// 0x00E8 (0x0220 - 0x0138)
-struct FCrMassLogisticsAgentClientBubbleSerializer final : public FMassClientBubbleSerializerBase
+// ScriptStruct Chimera.CrWeaponModCosmetics
+// 0x0018 (0x0018 - 0x0000)
+struct FCrWeaponModCosmetics final
 {
 public:
-	uint8                                         Pad_138[0xD8];                                     // 0x0138(0x00D8)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FCrLogisticsAgentFastArrayItem> Logistics;                                         // 0x0210(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
+	class UStaticMesh*                            Mesh;                                              // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class FString                                 AttachmentSocket;                                  // 0x0008(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrMassLogisticsAgentClientBubbleSerializer;
+DUMPER7_ASSERTS_FCrWeaponModCosmetics;
 
 // ScriptStruct Chimera.CrLogisticsParameters
 // 0x0040 (0x0040 - 0x0000)
@@ -7955,9 +8440,30 @@ public:
 	TArray<TSubclassOf<class UObject>>            AllowedItems;                                      // 0x0028(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
 	float                                         AdditionalAgentMovementDistance;                   // 0x0038(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsReplicatedStorage;                              // 0x003C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bCheckFilterOnInventoryChange;                     // 0x003D(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3E[0x2];                                       // 0x003E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCrLogisticsParameters;
+
+// ScriptStruct Chimera.CrLogisticsRequestContainerFragment
+// 0x0028 (0x0028 - 0x0000)
+struct FCrLogisticsRequestContainerFragment final : public FCrMassSavableFragment
+{
+public:
+	TArray<struct FCrMassPersistentEntityID>      Requests;                                          // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	TArray<struct FCrLogisticsRequestData>        PendingRequests;                                   // 0x0010(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	uint8                                         Pad_20[0x8];                                       // 0x0020(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrLogisticsRequestContainerFragment;
+
+// ScriptStruct Chimera.CrWeatherSettingsMaterialsOverride
+// 0x0050 (0x0050 - 0x0000)
+struct FCrWeatherSettingsMaterialsOverride final
+{
+public:
+	TMap<EEnviroWave, struct FCrEnviroWaveCurveSkyboxMaterialOverride> Curves;                       // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrWeatherSettingsMaterialsOverride;
 
 // ScriptStruct Chimera.CrLogisticsRequestOptionsFragment
 // 0x0001 (0x0001 - 0x0000)
@@ -7967,6 +8473,17 @@ public:
 	ECrLogisticsRequestPriority                   Priority;                                          // 0x0000(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCrLogisticsRequestOptionsFragment;
+
+// ScriptStruct Chimera.CrAIKillExperience
+// 0x000C (0x000C - 0x0000)
+struct FCrAIKillExperience final
+{
+public:
+	float                                         GrenadeExperience;                                 // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GunExperience;                                     // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ExperienceRadius;                                  // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrAIKillExperience;
 
 // ScriptStruct Chimera.CrLogisticsLineParameters
 // 0x0010 (0x0010 - 0x0000)
@@ -7981,6 +8498,43 @@ public:
 };
 DUMPER7_ASSERTS_FCrLogisticsLineParameters;
 
+// ScriptStruct Chimera.CrLogisticsSocketProperties
+// 0x0020 (0x0020 - 0x0000)
+struct FCrLogisticsSocketProperties
+{
+public:
+	struct FVector                                LocalPosition;                                     // 0x0000(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrLogisticsSocketType                        Type;                                              // 0x0018(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrLogisticsSocketBehaviourType               Behaviour;                                         // 0x0019(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1A[0x2];                                       // 0x001A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         SocketPairIndex;                                   // 0x001C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrLogisticsSocketProperties;
+
+// ScriptStruct Chimera.CrLogisticsHelperVisSocket
+// 0x0018 (0x0038 - 0x0020)
+struct FCrLogisticsHelperVisSocket final : public FCrLogisticsSocketProperties
+{
+public:
+	struct FRotator                               LocalRotation;                                     // 0x0020(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrLogisticsHelperVisSocket;
+
+// ScriptStruct Chimera.RepGraphActorClassSettings
+// 0x0030 (0x0030 - 0x0000)
+struct FRepGraphActorClassSettings final
+{
+public:
+	struct FSoftClassPath                         ActorClass;                                        // 0x0000(0x0020)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAddClassRepInfoToMap;                             // 0x0020(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	EClassRepNodeMapping                          ClassNodeMapping;                                  // 0x0024(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAddToRPC_Multicast_OpenChannelForClassMap;        // 0x0028(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRPC_Multicast_OpenChannelForClass;                // 0x0029(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2A[0x6];                                       // 0x002A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRepGraphActorClassSettings;
+
 // ScriptStruct Chimera.CrLogisticsSocketsParams
 // 0x0028 (0x0028 - 0x0000)
 struct FCrLogisticsSocketsParams final : public FMassConstSharedFragment
@@ -7993,24 +8547,27 @@ public:
 };
 DUMPER7_ASSERTS_FCrLogisticsSocketsParams;
 
-// ScriptStruct Chimera.CrSaveGameData
-// 0x00B8 (0x00B8 - 0x0000)
-struct FCrSaveGameData final
+// ScriptStruct Chimera.CrLogisticsSocketRuntimeData
+// 0x0038 (0x0038 - 0x0000)
+struct FCrLogisticsSocketRuntimeData final
 {
 public:
-	TMap<class FString, struct FJsonObjectWrapper> ItemData;                                         // 0x0000(0x0050)(SaveGame, NativeAccessSpecifierPublic)
-	class FString                                 Level;                                             // 0x0050(0x0010)(ZeroConstructor, SaveGame, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        WorldTimeSeconds;                                  // 0x0060(0x0008)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        WorldUnpausedTimeSeconds;                          // 0x0068(0x0008)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        WorldRealTimeSeconds;                              // 0x0070(0x0008)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        WorldAudioTimeSeconds;                             // 0x0078(0x0008)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 SessionName;                                       // 0x0080(0x0010)(ZeroConstructor, SaveGame, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 SaveName;                                          // 0x0090(0x0010)(ZeroConstructor, SaveGame, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Timestamp;                                         // 0x00A0(0x0010)(ZeroConstructor, SaveGame, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Version;                                           // 0x00B0(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B4[0x4];                                       // 0x00B4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FVector                                WorldPosition;                                     // 0x0000(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrLogisticsSocketType                        ConnectionType;                                    // 0x0018(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMassEntityHandle                      ConnectionEntity;                                  // 0x0020(0x0008)(Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCrMassPersistentEntityID              SocketPairInvisibleConnector;                      // 0x0028(0x0010)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrSaveGameData;
+DUMPER7_ASSERTS_FCrLogisticsSocketRuntimeData;
+
+// ScriptStruct Chimera.CrLogisticsSocketsFragment
+// 0x0010 (0x0010 - 0x0000)
+struct FCrLogisticsSocketsFragment final : public FCrMassSavableFragment
+{
+public:
+	TArray<struct FCrLogisticsSocketRuntimeData>  Sockets;                                           // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrLogisticsSocketsFragment;
 
 // ScriptStruct Chimera.CrLogisticsIntersectionParameters
 // 0x0028 (0x0028 - 0x0000)
@@ -8027,33 +8584,44 @@ public:
 };
 DUMPER7_ASSERTS_FCrLogisticsIntersectionParameters;
 
-// ScriptStruct Chimera.CrStateSoundsEntry
-// 0x0068 (0x0068 - 0x0000)
-struct FCrStateSoundsEntry final
+// ScriptStruct Chimera.CrFriendListItem
+// 0x0020 (0x0020 - 0x0000)
+struct alignas(0x08) FCrFriendListItem final
 {
 public:
-	bool                                          bMappedEntry;                                      // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTagContainer                  RequiredPlayerTags;                                // 0x0008(0x0020)(Edit, NativeAccessSpecifierPublic)
-	struct FGameplayTagContainer                  NotAllowedPlayerTags;                              // 0x0028(0x0020)(Edit, NativeAccessSpecifierPublic)
-	TArray<class UCrSoundEntryBase*>              Sounds;                                            // 0x0048(0x0010)(Edit, ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-	bool                                          RestorePlaybackState;                              // 0x0058(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_59[0x3];                                       // 0x0059(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         FadeInTime;                                        // 0x005C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FadeOutTime;                                       // 0x0060(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrStateSoundsEntry;
+DUMPER7_ASSERTS_FCrFriendListItem;
 
-// ScriptStruct Chimera.CrSoundChannel
-// 0x0018 (0x0018 - 0x0000)
-struct FCrSoundChannel final
+// ScriptStruct Chimera.CrLogisticsIntersectionItem
+// 0x0018 (0x0040 - 0x0028)
+struct FCrLogisticsIntersectionItem final : public FCrLogisticsLineItem
 {
 public:
-	class FName                                   Name;                                              // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FCrStateSoundsEntry>            StateSoundsEntries;                                // 0x0008(0x0010)(Edit, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	struct FCrMassEntityReplicationHelper         TargetLine;                                        // 0x0028(0x0018)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrSoundChannel;
+DUMPER7_ASSERTS_FCrLogisticsIntersectionItem;
+
+// ScriptStruct Chimera.CrLogisticsIntersectionSimulationState
+// 0x0020 (0x0020 - 0x0000)
+struct FCrLogisticsIntersectionSimulationState final
+{
+public:
+	TArray<struct FCrLogisticsIntersectionItem>   Items;                                             // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FCrMassEntityReplicationHelper> WaitingItems;                                      // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrLogisticsIntersectionSimulationState;
+
+// ScriptStruct Chimera.CrLogisticsIntersectionMoveSpeedPerLine
+// 0x0020 (0x0020 - 0x0000)
+struct FCrLogisticsIntersectionMoveSpeedPerLine final
+{
+public:
+	struct FCrMassEntityReplicationHelper         Entity;                                            // 0x0000(0x0018)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MoveSpeed;                                         // 0x0018(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrLogisticsIntersectionMoveSpeedPerLine;
 
 // ScriptStruct Chimera.CrLogisticsIntersectionFragment
 // 0x0030 (0x0030 - 0x0000)
@@ -8064,18 +8632,6 @@ public:
 	TArray<struct FCrLogisticsIntersectionMoveSpeedPerLine> CachedMoveSpeedPerLine;                  // 0x0020(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCrLogisticsIntersectionFragment;
-
-// ScriptStruct Chimera.CrStandaloneInfectionData
-// 0x0028 (0x0028 - 0x0000)
-struct FCrStandaloneInfectionData final
-{
-public:
-	struct FVector                                Location;                                          // 0x0000(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMassEntityHandle                      Entity;                                            // 0x0018(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUpdatedOnNavmesh;                                 // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrStandaloneInfectionData;
 
 // ScriptStruct Chimera.CrLogisticsRoundaboutParameters
 // 0x0030 (0x0030 - 0x0000)
@@ -8094,6 +8650,19 @@ public:
 };
 DUMPER7_ASSERTS_FCrLogisticsRoundaboutParameters;
 
+// ScriptStruct Chimera.CrLogisticsRoundaboutItem
+// 0x0028 (0x0028 - 0x0000)
+struct FCrLogisticsRoundaboutItem final
+{
+public:
+	struct FCrMassEntityReplicationHelper         Entity;                                            // 0x0000(0x0018)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Location;                                          // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LocationFromReplication;                           // 0x001C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LeavingLocation;                                   // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrLogisticsRoundaboutItem;
+
 // ScriptStruct Chimera.CrLogisticsRoundaboutEntryState
 // 0x0050 (0x0050 - 0x0000)
 struct FCrLogisticsRoundaboutEntryState final
@@ -8107,6 +8676,15 @@ public:
 };
 DUMPER7_ASSERTS_FCrLogisticsRoundaboutEntryState;
 
+// ScriptStruct Chimera.CrAPModularActorPayloadData
+// 0x0010 (0x00E0 - 0x00D0)
+struct FCrAPModularActorPayloadData final : public FCrBuildingPayloadData
+{
+public:
+	TArray<struct FVector>                        Positions;                                         // 0x00D0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrAPModularActorPayloadData;
+
 // ScriptStruct Chimera.CrLogisticsRoundaboutSimulationState
 // 0x0020 (0x0020 - 0x0000)
 struct FCrLogisticsRoundaboutSimulationState final
@@ -8116,18 +8694,6 @@ public:
 	uint8                                         Pad_10[0x10];                                      // 0x0010(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCrLogisticsRoundaboutSimulationState;
-
-// ScriptStruct Chimera.CrOxygenAttributeTableRow
-// 0x0010 (0x0018 - 0x0008)
-struct FCrOxygenAttributeTableRow final : public FTableRowBase
-{
-public:
-	int32                                         CurrentOxygen;                                     // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxOxygen;                                         // 0x000C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MinOxygen;                                         // 0x0010(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrOxygenAttributeTableRow;
 
 // ScriptStruct Chimera.CrLogisticsRoundaboutFragment
 // 0x0020 (0x0020 - 0x0000)
@@ -8152,26 +8718,21 @@ struct FCrMassCraftingSyncTag final : public FMassTag
 };
 DUMPER7_ASSERTS_FCrMassCraftingSyncTag;
 
+// ScriptStruct Chimera.CrBuildingUnlockedNotificationContext
+// 0x0008 (0x0010 - 0x0008)
+struct FCrBuildingUnlockedNotificationContext final : public FAuNotificationContext
+{
+public:
+	class UCrBuildingData*                        BuildingData;                                      // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrBuildingUnlockedNotificationContext;
+
 // ScriptStruct Chimera.CrMassDroneStorageSyncTag
 // 0x0000 (0x0001 - 0x0001)
 struct FCrMassDroneStorageSyncTag final : public FMassTag
 {
 };
 DUMPER7_ASSERTS_FCrMassDroneStorageSyncTag;
-
-// ScriptStruct Chimera.SharedRepMovement
-// 0x0090 (0x0090 - 0x0000)
-struct FSharedRepMovement final
-{
-public:
-	struct FRepMovement                           RepMovement;                                       // 0x0000(0x0088)(Transient, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         RepTimeStamp;                                      // 0x0088(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         RepMovementMode;                                   // 0x008C(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bProxyIsJumpForceApplied;                          // 0x008D(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsCrouched;                                       // 0x008E(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bWantsToCrouch;                                    // 0x008F(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSharedRepMovement;
 
 // ScriptStruct Chimera.CrMassInInteriorTag
 // 0x0000 (0x0001 - 0x0001)
@@ -8194,22 +8755,23 @@ struct FCrMassFoundableTag final : public FMassTag
 };
 DUMPER7_ASSERTS_FCrMassFoundableTag;
 
+// ScriptStruct Chimera.CrPlayerSkillLevelUpNotificationContext
+// 0x0008 (0x0010 - 0x0008)
+struct FCrPlayerSkillLevelUpNotificationContext final : public FAuNotificationContext
+{
+public:
+	ECrPlayerProgressionSkill                     Skill;                                             // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Level;                                             // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrPlayerSkillLevelUpNotificationContext;
+
 // ScriptStruct Chimera.CrMassInventoryBuildingTag
 // 0x0000 (0x0001 - 0x0001)
 struct FCrMassInventoryBuildingTag final : public FMassTag
 {
 };
 DUMPER7_ASSERTS_FCrMassInventoryBuildingTag;
-
-// ScriptStruct Chimera.CrMontagePair
-// 0x0010 (0x0010 - 0x0000)
-struct FCrMontagePair final
-{
-public:
-	class UAnimMontage*                           TppMontage;                                        // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UAnimMontage*                           FppMontage;                                        // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrMontagePair;
 
 // ScriptStruct Chimera.CrMassStorageTag
 // 0x0000 (0x0001 - 0x0001)
@@ -8232,33 +8794,21 @@ struct FCrMassProducerConsumerTag final : public FMassTag
 };
 DUMPER7_ASSERTS_FCrMassProducerConsumerTag;
 
+// ScriptStruct Chimera.CrInventoryFullNotificationContext
+// 0x0010 (0x0018 - 0x0008)
+struct FCrInventoryFullNotificationContext final : public FAuNotificationContext
+{
+public:
+	class FText                                   EntrySubcategory;                                  // 0x0008(0x0010)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrInventoryFullNotificationContext;
+
 // ScriptStruct Chimera.CrMassProducerTag
 // 0x0000 (0x0001 - 0x0001)
 struct FCrMassProducerTag final : public FMassTag
 {
 };
 DUMPER7_ASSERTS_FCrMassProducerTag;
-
-// ScriptStruct Chimera.InputMappingContextAndPriority
-// 0x0030 (0x0030 - 0x0000)
-struct FInputMappingContextAndPriority final
-{
-public:
-	TSoftObjectPtr<class UInputMappingContext>    InputMapping;                                      // 0x0000(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Priority;                                          // 0x0028(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRegisterWithSettings;                             // 0x002C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FInputMappingContextAndPriority;
-
-// ScriptStruct Chimera.CrContextualInputBinding
-// 0x0010 (0x0010 - 0x0000)
-struct FCrContextualInputBinding final
-{
-public:
-	TArray<struct FInputMappingContextAndPriority> Bindings;                                         // 0x0000(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrContextualInputBinding;
 
 // ScriptStruct Chimera.CrMassConsumerTag
 // 0x0000 (0x0001 - 0x0001)
@@ -8288,13 +8838,6 @@ struct FCrMassTransportLineConnectionUninitializedTag final : public FMassTag
 };
 DUMPER7_ASSERTS_FCrMassTransportLineConnectionUninitializedTag;
 
-// ScriptStruct Chimera.CrMassLogisticsNodeTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassLogisticsNodeTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrMassLogisticsNodeTag;
-
 // ScriptStruct Chimera.CrMassCraftingIdleTag
 // 0x0000 (0x0001 - 0x0001)
 struct FCrMassCraftingIdleTag final : public FMassTag
@@ -8315,39 +8858,6 @@ struct FCrMassLogisticsSimulateMovementTag final : public FMassTag
 {
 };
 DUMPER7_ASSERTS_FCrMassLogisticsSimulateMovementTag;
-
-// ScriptStruct Chimera.CrOriginalHitResultsForPiercingData
-// 0x0058 (0x0058 - 0x0000)
-struct FCrOriginalHitResultsForPiercingData final
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 HitActor;                                          // 0x0008(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	struct FVector_NetQuantize                    OriginalTraceStartPoint;                           // 0x0010(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector_NetQuantize                    OriginalTraceEndPoint;                             // 0x0028(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector_NetQuantize                    OriginalImpactPoint;                               // 0x0040(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrOriginalHitResultsForPiercingData;
-
-// ScriptStruct Chimera.CrPiercingTraceData
-// 0x0020 (0x0028 - 0x0008)
-struct FCrPiercingTraceData final : public FAuCustomTraceData
-{
-public:
-	float                                         Range;                                             // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FCrOriginalHitResultsForPiercingData> OriginalHitTraceData;                        // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         PossibleEnemyPiercings;                            // 0x0020(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrPiercingTraceData;
-
-// ScriptStruct Chimera.CrMassLogisticsRequestCompleteTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassLogisticsRequestCompleteTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrMassLogisticsRequestCompleteTag;
 
 // ScriptStruct Chimera.CrMassLogisticsAgentTag
 // 0x0000 (0x0001 - 0x0001)
@@ -8370,80 +8880,6 @@ struct FCrMassLogisticsDynamicSocketsTag final : public FMassTag
 };
 DUMPER7_ASSERTS_FCrMassLogisticsDynamicSocketsTag;
 
-// ScriptStruct Chimera.CrTweenCurveAnimation
-// 0x00F0 (0x00F0 - 0x0000)
-struct alignas(0x10) FCrTweenCurveAnimation final
-{
-public:
-	uint8                                         Pad_0[0xF0];                                       // 0x0000(0x00F0)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrTweenCurveAnimation;
-
-// ScriptStruct Chimera.CrWeakSpotData
-// 0x000C (0x000C - 0x0000)
-struct FCrWeakSpotData final
-{
-public:
-	int32                                         ID;                                                // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CurrentMiningHealth;                               // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxMiningHealth;                                   // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrWeakSpotData;
-
-// ScriptStruct Chimera.CrReplicatedOreRuntimeData
-// 0x0090 (0x0090 - 0x0000)
-struct FCrReplicatedOreRuntimeData final
-{
-public:
-	int32                                         CurrentResourceCount;                              // 0x0000(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DamageReceived;                                    // 0x0004(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxResourceCount;                                  // 0x0008(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsDepleted;                                       // 0x000C(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CurrentCropCount;                                  // 0x0010(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCrWeakSpotData                        WeakSpotsArray[0xA];                               // 0x0014(0x000C)(Transient, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         RandomSeed;                                        // 0x008C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrReplicatedOreRuntimeData;
-
-// ScriptStruct Chimera.CrReplicatedOreAgent
-// 0x00B0 (0x00D8 - 0x0028)
-struct FCrReplicatedOreAgent final : public FReplicatedAgentBase
-{
-public:
-	struct FCrReplicatedOreRuntimeData            OreData;                                           // 0x0028(0x0090)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FReplicatedAgentPositionYawData        PositionYawData;                                   // 0x00B8(0x0020)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
-};
-DUMPER7_ASSERTS_FCrReplicatedOreAgent;
-
-// ScriptStruct Chimera.CrOreFastArrayItem
-// 0x00D8 (0x00E8 - 0x0010)
-struct FCrOreFastArrayItem final : public FMassFastArrayItemBase
-{
-public:
-	struct FCrReplicatedOreAgent                  Agent;                                             // 0x0010(0x00D8)(NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrOreFastArrayItem;
-
-// ScriptStruct Chimera.CrMassOreClientBubbleSerializer
-// 0x0108 (0x0240 - 0x0138)
-struct FCrMassOreClientBubbleSerializer final : public FMassClientBubbleSerializerBase
-{
-public:
-	uint8                                         Pad_138[0xF8];                                     // 0x0138(0x00F8)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FCrOreFastArrayItem>            Ore;                                               // 0x0230(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
-};
-DUMPER7_ASSERTS_FCrMassOreClientBubbleSerializer;
-
-// ScriptStruct Chimera.CrProcessedPatternIdxPair
-// 0x0008 (0x0008 - 0x0000)
-struct alignas(0x04) FCrProcessedPatternIdxPair final
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrProcessedPatternIdxPair;
-
 // ScriptStruct Chimera.CrMassOreTag
 // 0x0000 (0x0001 - 0x0001)
 struct FCrMassOreTag final : public FMassTag
@@ -8458,30 +8894,6 @@ struct FCrMassOreMiningTag final : public FMassTag
 };
 DUMPER7_ASSERTS_FCrMassOreMiningTag;
 
-// ScriptStruct Chimera.CrMassOreRegeneratingTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassOreRegeneratingTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrMassOreRegeneratingTag;
-
-// ScriptStruct Chimera.CrHarvesterInstanceSaveData
-// 0x0008 (0x0068 - 0x0060)
-struct FCrHarvesterInstanceSaveData final : public FCrWeaponInstanceSaveData
-{
-public:
-	int32                                         HeatStackCurrent;                                  // 0x0060(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         HeatStackMax;                                      // 0x0064(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrHarvesterInstanceSaveData;
-
-// ScriptStruct Chimera.CrMassOreWeakSpotMiningTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassOreWeakSpotMiningTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrMassOreWeakSpotMiningTag;
-
 // ScriptStruct Chimera.CrMassSulphurOreGasTag
 // 0x0000 (0x0001 - 0x0001)
 struct FCrMassSulphurOreGasTag final : public FMassTag
@@ -8495,34 +8907,6 @@ struct FCrMassOreRandomSeedNotSet final : public FMassTag
 {
 };
 DUMPER7_ASSERTS_FCrMassOreRandomSeedNotSet;
-
-// ScriptStruct Chimera.CrMassOreIdHashNotCreated
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassOreIdHashNotCreated final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrMassOreIdHashNotCreated;
-
-// ScriptStruct Chimera.CrSenderConnectionData
-// 0x0020 (0x0020 - 0x0000)
-struct FCrSenderConnectionData final
-{
-public:
-	struct FCrMassPersistentEntityID              Receiver;                                          // 0x0000(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCrItemDataBase*                        Item;                                              // 0x0010(0x0008)(ZeroConstructor, SaveGame, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	int32                                         RequestedAmount;                                   // 0x0018(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrSenderConnectionData;
-
-// ScriptStruct Chimera.CrSenderConnectionsSaveData
-// 0x0050 (0x0050 - 0x0000)
-struct FCrSenderConnectionsSaveData final
-{
-public:
-	TMap<struct FCrMassPersistentEntityID, struct FCrSenderConnectionData> SenderConnections;        // 0x0000(0x0050)(SaveGame, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrSenderConnectionsSaveData;
 
 // ScriptStruct Chimera.MassOreInitData
 // 0x0030 (0x0030 - 0x0000)
@@ -8555,46 +8939,6 @@ public:
 };
 DUMPER7_ASSERTS_FMassOreRuntimeData;
 
-// ScriptStruct Chimera.MassOreMiningData
-// 0x0020 (0x0020 - 0x0000)
-struct FMassOreMiningData final : public FMassFragment
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 MiningResourceGrantee;                             // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_10[0x10];                                      // 0x0010(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassOreMiningData;
-
-// ScriptStruct Chimera.MassOreWeakSpotsRuntimeData
-// 0x0084 (0x0084 - 0x0000)
-struct alignas(0x04) FMassOreWeakSpotsRuntimeData final : public FMassFragment
-{
-public:
-	uint8                                         Pad_0[0x84];                                       // 0x0000(0x0084)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassOreWeakSpotsRuntimeData;
-
-// ScriptStruct Chimera.CrPlayerAggroEventDefinition
-// 0x0008 (0x0008 - 0x0000)
-struct FCrPlayerAggroEventDefinition final
-{
-public:
-	float                                         AggroValue;                                        // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsPeriodicEvent;                                  // 0x0004(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrPlayerAggroEventDefinition;
-
-// ScriptStruct Chimera.MassOreRegenInitData
-// 0x0004 (0x0004 - 0x0000)
-struct FMassOreRegenInitData final : public FMassFragment
-{
-public:
-	float                                         InitOreRegenerationDuration;                       // 0x0000(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMassOreRegenInitData;
-
 // ScriptStruct Chimera.MassOreRegenRuntimeData
 // 0x000C (0x000C - 0x0000)
 struct alignas(0x04) FMassOreRegenRuntimeData final : public FMassFragment
@@ -8603,17 +8947,6 @@ public:
 	uint8                                         Pad_0[0xC];                                        // 0x0000(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FMassOreRegenRuntimeData;
-
-// ScriptStruct Chimera.CrReplicatedStandaloneInfectionData
-// 0x000C (0x000C - 0x0000)
-struct FCrReplicatedStandaloneInfectionData final
-{
-public:
-	float                                         Health;                                            // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DamageProtectionTime;                              // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SpawnTime;                                         // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrReplicatedStandaloneInfectionData;
 
 // ScriptStruct Chimera.CrReplicatedStandaloneInfection
 // 0x0058 (0x0080 - 0x0028)
@@ -8627,17 +8960,6 @@ public:
 };
 DUMPER7_ASSERTS_FCrReplicatedStandaloneInfection;
 
-// ScriptStruct Chimera.CrAIKillExperience
-// 0x000C (0x000C - 0x0000)
-struct FCrAIKillExperience final
-{
-public:
-	float                                         GrenadeExperience;                                 // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         GunExperience;                                     // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ExperienceRadius;                                  // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrAIKillExperience;
-
 // ScriptStruct Chimera.CrStandaloneInfectionFastArrayItem
 // 0x0080 (0x0090 - 0x0010)
 struct FCrStandaloneInfectionFastArrayItem final : public FMassFastArrayItemBase
@@ -8646,16 +8968,6 @@ public:
 	struct FCrReplicatedStandaloneInfection       Agent;                                             // 0x0010(0x0080)(NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCrStandaloneInfectionFastArrayItem;
-
-// ScriptStruct Chimera.CrEntitySpawnData
-// 0x0070 (0x0070 - 0x0000)
-struct FCrEntitySpawnData final
-{
-public:
-	class FString                                 EntityConfigDataPath;                              // 0x0000(0x0010)(ZeroConstructor, SaveGame, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             Transform;                                         // 0x0010(0x0060)(SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrEntitySpawnData;
 
 // ScriptStruct Chimera.CrFoundableEntitySpawnData
 // 0x0070 (0x0070 - 0x0000)
@@ -8667,44 +8979,24 @@ public:
 };
 DUMPER7_ASSERTS_FCrFoundableEntitySpawnData;
 
-// ScriptStruct Chimera.CrEntitySaveData
-// 0x0090 (0x0090 - 0x0000)
-struct FCrEntitySaveData final
-{
-public:
-	struct FCrEntitySpawnData                     SpawnData;                                         // 0x0000(0x0070)(SaveGame, NativeAccessSpecifierPublic)
-	TArray<struct FInstancedStruct>               Tags;                                              // 0x0070(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-	TArray<struct FInstancedStruct>               FragmentValues;                                    // 0x0080(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrEntitySaveData;
-
-// ScriptStruct Chimera.CrRecycleRecipes
-// 0x0010 (0x0010 - 0x0000)
-struct FCrRecycleRecipes final
-{
-public:
-	class UCrRecycleRecipeData*                   RecycleRecipe;                                     // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UCrRecycleRecipeData*                   FullRecycleRecipe;                                 // 0x0008(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrRecycleRecipes;
-
 // ScriptStruct Chimera.CrMassSaveData
-// 0x0540 (0x0540 - 0x0000)
+// 0x0548 (0x0548 - 0x0000)
 struct FCrMassSaveData final
 {
 public:
 	TMap<struct FCrMassPersistentEntityID, struct FCrEntitySaveData> Entities;                       // 0x0000(0x0050)(SaveGame, NativeAccessSpecifierPublic)
 	struct FCrBuildingStabilitySubsystemState     StabilitySubsystemState;                           // 0x0050(0x01F0)(SaveGame, NativeAccessSpecifierPublic)
 	struct FCrGenericMassGraphData                ElectricitySubsystemState;                         // 0x0240(0x00F0)(SaveGame, NativeAccessSpecifierPublic)
-	struct FCrLogisticsRequestSubsystemState      LogisticsRequestSubsystemState;                    // 0x0330(0x00A0)(SaveGame, NativeAccessSpecifierPublic)
-	struct FCrMassEnviroWaveSubsystemState        EnviroWaveSubsystemState;                          // 0x03D0(0x0018)(SaveGame, NativeAccessSpecifierPublic)
-	struct FCrBuildingSpawnPointsSaveData         BuildingSpawnPointsSaveData;                       // 0x03E8(0x0050)(SaveGame, NativeAccessSpecifierPublic)
-	TSet<struct FGuid>                            ExecutedSpawnersGuids;                             // 0x0438(0x0050)(SaveGame, NativeAccessSpecifierPublic)
-	uint32                                        MaxPersistentID;                                   // 0x0488(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_48C[0x4];                                      // 0x048C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<TSoftObjectPtr<class UAuItemDataBase>> LoadedItems;                                       // 0x0490(0x0010)(ZeroConstructor, SaveGame, UObjectWrapper, NativeAccessSpecifierPublic)
-	TMap<struct FCrMassPersistentEntityID, struct FCrFoundableEntitySpawnData> FoundableEntitiesSpawnData; // 0x04A0(0x0050)(SaveGame, NativeAccessSpecifierPublic)
-	TMap<struct FCrFoundableEntitySpawnData, struct FCrMassPersistentEntityID> FoundableEntityToPersistentIdMap; // 0x04F0(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+	struct FCrElectricityGraphSubsystemSaveData   ElectricitySubsystemCustomState;                   // 0x0330(0x0008)(SaveGame, NoDestructor, NativeAccessSpecifierPublic)
+	struct FCrLogisticsRequestSubsystemState      LogisticsRequestSubsystemState;                    // 0x0338(0x00A0)(SaveGame, NativeAccessSpecifierPublic)
+	struct FCrMassEnviroWaveSubsystemState        EnviroWaveSubsystemState;                          // 0x03D8(0x0018)(SaveGame, NativeAccessSpecifierPublic)
+	struct FCrBuildingSpawnPointsSaveData         BuildingSpawnPointsSaveData;                       // 0x03F0(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+	TSet<struct FGuid>                            ExecutedSpawnersGuids;                             // 0x0440(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+	uint32                                        MaxPersistentID;                                   // 0x0490(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_494[0x4];                                      // 0x0494(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<TSoftObjectPtr<class UAuItemDataBase>> LoadedItems;                                       // 0x0498(0x0010)(ZeroConstructor, SaveGame, UObjectWrapper, NativeAccessSpecifierPublic)
+	TMap<struct FCrMassPersistentEntityID, struct FCrFoundableEntitySpawnData> FoundableEntitiesSpawnData; // 0x04A8(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+	TMap<struct FCrFoundableEntitySpawnData, struct FCrMassPersistentEntityID> FoundableEntityToPersistentIdMap; // 0x04F8(0x0050)(SaveGame, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCrMassSaveData;
 
@@ -8726,37 +9018,6 @@ public:
 	TArray<struct FCrMassSimpleBuildingFastArrayItem> Buildings;                                     // 0x0278(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
 };
 DUMPER7_ASSERTS_FCrMassSimpleBuildingClientBubbleSerializer;
-
-// ScriptStruct Chimera.CrMassSpawnerSubsystemDeferredInitData
-// 0x0028 (0x0028 - 0x0000)
-struct FCrMassSpawnerSubsystemDeferredInitData final
-{
-public:
-	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FInstancedStruct                       SpawnData;                                         // 0x0018(0x0010)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrMassSpawnerSubsystemDeferredInitData;
-
-// ScriptStruct Chimera.CrAbilityGrant
-// 0x0028 (0x0028 - 0x0000)
-struct FCrAbilityGrant final
-{
-public:
-	TSoftClassPtr<class UClass>                   AbilityType;                                       // 0x0000(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrAbilityGrant;
-
-// ScriptStruct Chimera.GameFeatureAbilitiesEntry
-// 0x0058 (0x0058 - 0x0000)
-struct FGameFeatureAbilitiesEntry final
-{
-public:
-	TSoftClassPtr<class UClass>                   ActorClass;                                        // 0x0000(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FCrAbilityGrant>                GrantedAbilities;                                  // 0x0028(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FCrAttributeSetGrant>           GrantedAttributes;                                 // 0x0038(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<TSoftObjectPtr<class UCrAbilitiesDataSet>> GrantedAbilitySets;                            // 0x0048(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGameFeatureAbilitiesEntry;
 
 // ScriptStruct Chimera.CrMassStandaloneInfectionClientBubbleSerializer
 // 0x00E8 (0x0220 - 0x0138)
@@ -8783,28 +9044,6 @@ public:
 	float                                         MaxHealth;                                         // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCrStandaloneInfectionParameters;
-
-// ScriptStruct Chimera.CrInfectionSpawnPointData
-// 0x0014 (0x0014 - 0x0000)
-struct FCrInfectionSpawnPointData final
-{
-public:
-	float                                         Growth;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SmoothGrowth;                                      // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         HealthNormalized;                                  // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Level;                                             // 0x000C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         AllowedGrowth;                                     // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrInfectionSpawnPointData;
-
-// ScriptStruct Chimera.MassEnemyGridCellLocationFragment
-// 0x000C (0x000C - 0x0000)
-struct alignas(0x04) FMassEnemyGridCellLocationFragment final : public FMassFragment
-{
-public:
-	uint8                                         Pad_0[0xC];                                        // 0x0000(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassEnemyGridCellLocationFragment;
 
 // ScriptStruct Chimera.CrStandaloneInfectionFragment
 // 0x0028 (0x0028 - 0x0000)
@@ -8849,13 +9088,6 @@ public:
 };
 DUMPER7_ASSERTS_FCrMassTemperatureFragment;
 
-// ScriptStruct Chimera.CrMassTemperatureProcessorTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassTemperatureProcessorTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrMassTemperatureProcessorTag;
-
 // ScriptStruct Chimera.CrMassTemperatureOutsideRangeTag
 // 0x0000 (0x0001 - 0x0001)
 struct FCrMassTemperatureOutsideRangeTag final : public FMassTag
@@ -8880,32 +9112,6 @@ public:
 };
 DUMPER7_ASSERTS_FMassTemperatureParameters;
 
-// ScriptStruct Chimera.CrCamEffectState_FadeOut
-// 0x0000 (0x0040 - 0x0040)
-struct FCrCamEffectState_FadeOut final : public FCrCamEffectStateBase
-{
-};
-DUMPER7_ASSERTS_FCrCamEffectState_FadeOut;
-
-// ScriptStruct Chimera.CrMassTurretNiagaraSystemParam
-// 0x000C (0x000C - 0x0000)
-struct FCrMassTurretNiagaraSystemParam final
-{
-public:
-	class FName                                   ParamName;                                         // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ParamVal;                                          // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrMassTurretNiagaraSystemParam;
-
-// ScriptStruct Chimera.CrMassTurretNiagaraSystemParams
-// 0x0010 (0x0010 - 0x0000)
-struct FCrMassTurretNiagaraSystemParams final
-{
-public:
-	TArray<struct FCrMassTurretNiagaraSystemParam> Params;                                           // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrMassTurretNiagaraSystemParams;
-
 // ScriptStruct Chimera.CrMassTurretParams
 // 0x00D0 (0x00D0 - 0x0000)
 struct FCrMassTurretParams final : public FMassConstSharedFragment
@@ -8922,15 +9128,6 @@ public:
 	struct FCrMassTurretNiagaraSystemParams       FlashNiagaraParams;                                // 0x00C0(0x0010)(Edit, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCrMassTurretParams;
-
-// ScriptStruct Chimera.CrMegamachinesSubsystemSaveData
-// 0x0050 (0x0050 - 0x0000)
-struct FCrMegamachinesSubsystemSaveData final
-{
-public:
-	TMap<ECrMegamachineType, ECrMegamachineState> MegamachineDatas;                                  // 0x0000(0x0050)(SaveGame, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrMegamachinesSubsystemSaveData;
 
 // ScriptStruct Chimera.CrMegamachineData
 // 0x0002 (0x0002 - 0x0000)
@@ -8967,17 +9164,6 @@ public:
 };
 DUMPER7_ASSERTS_FCrMeteOreWeakSpotResourcesInitData;
 
-// ScriptStruct Chimera.CrMeteOreWeakSpotDissolveData
-// 0x0018 (0x0018 - 0x0000)
-struct FCrMeteOreWeakSpotDissolveData final
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInstanceDynamic*               DynamicMaterialInstance;                           // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_10[0x8];                                       // 0x0010(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrMeteOreWeakSpotDissolveData;
-
 // ScriptStruct Chimera.CrMinedResource
 // 0x0010 (0x0010 - 0x0000)
 struct FCrMinedResource final
@@ -9011,26 +9197,6 @@ public:
 	class ACrCharacterPlayerBase*                 InBoosterPlayer;                                   // 0x0010(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 };
 DUMPER7_ASSERTS_FCrMiningBoostMessage;
-
-// ScriptStruct Chimera.CrOreMiningState
-// 0x0048 (0x0048 - 0x0000)
-struct FCrOreMiningState final
-{
-public:
-	struct FCrInfiniteOreData                     InfiniteOreData;                                   // 0x0000(0x0018)(NoDestructor, NativeAccessSpecifierPrivate)
-	class ACrOreActor*                            OreActor;                                          // 0x0018(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	float                                         MiningRPM;                                         // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MiningDamage;                                      // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DamageApplied;                                     // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPhysicalMaterial*                      InfiniteOrePhysicalMaterial;                       // 0x0030(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	bool                                          bIsMiningWeakSpot;                                 // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_39[0x3];                                       // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   WeakSpotSocketName;                                // 0x003C(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrMiningObjectType                           MiningObjectType;                                  // 0x0044(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_45[0x3];                                       // 0x0045(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrOreMiningState;
 
 // ScriptStruct Chimera.CrMineableActorData
 // 0x0018 (0x0018 - 0x0000)
@@ -9067,16 +9233,6 @@ public:
 };
 DUMPER7_ASSERTS_FCrMiningProgressMessage;
 
-// ScriptStruct Chimera.CrAPModularActorPayloadData
-// 0x0020 (0x00E8 - 0x00C8)
-struct FCrAPModularActorPayloadData final : public FCrBuildingPayloadData
-{
-public:
-	TArray<struct FVector>                        Positions;                                         // 0x00C8(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FRotator>                       Rotations;                                         // 0x00D8(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrAPModularActorPayloadData;
-
 // ScriptStruct Chimera.CrMultisampleCurveData
 // 0x0010 (0x0010 - 0x0000)
 struct FCrMultisampleCurveData final
@@ -9098,35 +9254,6 @@ public:
 };
 DUMPER7_ASSERTS_FCrMultisampleElement;
 
-// ScriptStruct Chimera.CrItemNotificationContext
-// 0x0010 (0x0018 - 0x0008)
-struct FCrItemNotificationContext final : public FAuNotificationContext
-{
-public:
-	class UAuItemDataBase*                        ItemType;                                          // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	int32                                         ItemCount;                                         // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         AddedCount;                                        // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrItemNotificationContext;
-
-// ScriptStruct Chimera.CrBuildingUnlockedNotificationContext
-// 0x0008 (0x0010 - 0x0008)
-struct FCrBuildingUnlockedNotificationContext final : public FAuNotificationContext
-{
-public:
-	class UCrBuildingData*                        BuildingData;                                      // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrBuildingUnlockedNotificationContext;
-
-// ScriptStruct Chimera.CrBuildingCollectionUnlockedNotificationContext
-// 0x0008 (0x0010 - 0x0008)
-struct FCrBuildingCollectionUnlockedNotificationContext final : public FAuNotificationContext
-{
-public:
-	class UCrBuildingCollectionData*              BuildingCollectionData;                            // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrBuildingCollectionUnlockedNotificationContext;
-
 // ScriptStruct Chimera.CrRecipeUnlockedNotificationContext
 // 0x0008 (0x0010 - 0x0008)
 struct FCrRecipeUnlockedNotificationContext final : public FAuNotificationContext
@@ -9136,16 +9263,16 @@ public:
 };
 DUMPER7_ASSERTS_FCrRecipeUnlockedNotificationContext;
 
-// ScriptStruct Chimera.CrPlayerSkillLevelUpNotificationContext
-// 0x0008 (0x0010 - 0x0008)
-struct FCrPlayerSkillLevelUpNotificationContext final : public FAuNotificationContext
+// ScriptStruct Chimera.CrBuildingUpgradeTaskNotificationContext
+// 0x0128 (0x0130 - 0x0008)
+struct FCrBuildingUpgradeTaskNotificationContext final : public FAuNotificationContext
 {
 public:
-	ECrPlayerProgressionSkill                     Skill;                                             // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Level;                                             // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCrBuildingUpgradeTask                 TaskData;                                          // 0x0008(0x0068)(NativeAccessSpecifierPublic)
+	class FText                                   Name;                                              // 0x0070(0x0010)(NativeAccessSpecifierPublic)
+	struct FSlateBrush                            SlateIcon;                                         // 0x0080(0x00B0)(NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrPlayerSkillLevelUpNotificationContext;
+DUMPER7_ASSERTS_FCrBuildingUpgradeTaskNotificationContext;
 
 // ScriptStruct Chimera.CrGemSlotUnlockedNotificationContext
 // 0x0008 (0x0010 - 0x0008)
@@ -9158,45 +9285,6 @@ public:
 };
 DUMPER7_ASSERTS_FCrGemSlotUnlockedNotificationContext;
 
-// ScriptStruct Chimera.CrBaseUnderAttackNotificationContext
-// 0x0018 (0x0020 - 0x0008)
-struct FCrBaseUnderAttackNotificationContext final : public FAuNotificationContext
-{
-public:
-	struct FVector                                Location;                                          // 0x0008(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrBaseUnderAttackNotificationContext;
-
-// ScriptStruct Chimera.CrEncyclopediaEntryUnlockedNotificationContext
-// 0x0010 (0x0018 - 0x0008)
-struct FCrEncyclopediaEntryUnlockedNotificationContext final : public FAuNotificationContext
-{
-public:
-	class FText                                   EntrySubcategory;                                  // 0x0008(0x0010)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrEncyclopediaEntryUnlockedNotificationContext;
-
-// ScriptStruct Chimera.CrInventoryFullNotificationContext
-// 0x0010 (0x0018 - 0x0008)
-struct FCrInventoryFullNotificationContext final : public FAuNotificationContext
-{
-public:
-	class FText                                   EntrySubcategory;                                  // 0x0008(0x0010)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrInventoryFullNotificationContext;
-
-// ScriptStruct Chimera.CrItemDroppedNotificationContext
-// 0x0020 (0x0028 - 0x0008)
-struct FCrItemDroppedNotificationContext final : public FAuNotificationContext
-{
-public:
-	class FText                                   EntrySubcategory;                                  // 0x0008(0x0010)(NativeAccessSpecifierPublic)
-	class UCrItemDataBase*                        ItemData;                                          // 0x0018(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	int32                                         Quantity;                                          // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrItemDroppedNotificationContext;
-
 // ScriptStruct Chimera.CrFeatureUnlockedNotificationContext
 // 0x00D8 (0x00E0 - 0x0008)
 struct FCrFeatureUnlockedNotificationContext final : public FAuNotificationContext
@@ -9208,31 +9296,6 @@ public:
 	struct FSlateBrush                            SlateIcon;                                         // 0x0030(0x00B0)(NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCrFeatureUnlockedNotificationContext;
-
-// ScriptStruct Chimera.CrBlueprintUnlockedNotificationContext
-// 0x00D8 (0x00E0 - 0x0008)
-struct FCrBlueprintUnlockedNotificationContext final : public FAuNotificationContext
-{
-public:
-	class FText                                   EntrySubcategory;                                  // 0x0008(0x0010)(NativeAccessSpecifierPublic)
-	class FText                                   BlueprintName;                                     // 0x0018(0x0010)(NativeAccessSpecifierPublic)
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            SlateIcon;                                         // 0x0030(0x00B0)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrBlueprintUnlockedNotificationContext;
-
-// ScriptStruct Chimera.CrSubObjectiveConditionValuesData
-// 0x0010 (0x0010 - 0x0000)
-struct FCrSubObjectiveConditionValuesData final
-{
-public:
-	int32                                         InitialValue;                                      // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CurrentValue;                                      // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ConditionValue;                                    // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShowCounter;                                      // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrSubObjectiveConditionValuesData;
 
 // ScriptStruct Chimera.CrObjectivesEntriesStatusContainer
 // 0x0018 (0x0018 - 0x0000)
@@ -9255,32 +9318,6 @@ public:
 };
 DUMPER7_ASSERTS_FCrObjectiveCondition;
 
-// ScriptStruct Chimera.CrSubObjectiveCondition
-// 0x0018 (0x0018 - 0x0000)
-struct FCrSubObjectiveCondition final
-{
-public:
-	class FName                                   Context;                                           // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   ContextValue;                                      // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ContextNumber;                                     // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCheckConditionWhenInactive;                       // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShowCounter;                                      // 0x0015(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrPropertyOwner                              PropertyOwner;                                     // 0x0016(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17[0x1];                                       // 0x0017(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrSubObjectiveCondition;
-
-// ScriptStruct Chimera.CrSubObjectiveData
-// 0x0038 (0x0038 - 0x0000)
-struct FCrSubObjectiveData final
-{
-public:
-	class FText                                   EntryText;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FCrSubObjectiveCondition               Condition;                                         // 0x0010(0x0018)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 OtherSubobjectivesToComplete;                      // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrSubObjectiveData;
-
 // ScriptStruct Chimera.CrObjectiveData
 // 0x0050 (0x0058 - 0x0008)
 struct FCrObjectiveData final : public FTableRowBase
@@ -9297,13 +9334,6 @@ public:
 };
 DUMPER7_ASSERTS_FCrObjectiveData;
 
-// ScriptStruct Chimera.CrKineticWeaponItemInstance
-// 0x0000 (0x00A0 - 0x00A0)
-struct FCrKineticWeaponItemInstance final : public FCrWeaponItemInstance
-{
-};
-DUMPER7_ASSERTS_FCrKineticWeaponItemInstance;
-
 // ScriptStruct Chimera.CrSubObjectiveDataCombined
 // 0x0038 (0x0038 - 0x0000)
 struct alignas(0x08) FCrSubObjectiveDataCombined final
@@ -9313,55 +9343,31 @@ public:
 };
 DUMPER7_ASSERTS_FCrSubObjectiveDataCombined;
 
-// ScriptStruct Chimera.CrObjectiveDataCombined
-// 0x0070 (0x0070 - 0x0000)
-struct FCrObjectiveDataCombined final
+// ScriptStruct Chimera.CrWeakSpotRuntimeData
+// 0x002C (0x0038 - 0x000C)
+struct FCrWeakSpotRuntimeData final : public FFastArraySerializerItem
 {
 public:
-	uint8                                         Pad_0[0x30];                                       // 0x0000(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture2D*                             Image;                                             // 0x0030(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_38[0x38];                                      // 0x0038(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FName                                   Name;                                              // 0x000C(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CurrentMiningHealth;                               // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxMiningHealth;                                   // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UCrItemDataBase>            Resource;                                          // 0x0020(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ResourceCount;                                     // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class ACrCharacterPlayerBase*                 MiningGrantee;                                     // 0x0030(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 };
-DUMPER7_ASSERTS_FCrObjectiveDataCombined;
+DUMPER7_ASSERTS_FCrWeakSpotRuntimeData;
 
-// ScriptStruct Chimera.CrOreRuntimeData
-// 0x0010 (0x0010 - 0x0000)
-struct FCrOreRuntimeData final
+// ScriptStruct Chimera.CrWeakSpotsContainer
+// 0x0018 (0x0120 - 0x0108)
+struct FCrWeakSpotsContainer final : public FFastArraySerializer
 {
 public:
-	int32                                         CurrentResourceCount;                              // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxResourceCount;                                  // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsDepleted;                                       // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         DamageReceived;                                    // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FCrWeakSpotRuntimeData>         Items;                                             // 0x0108(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	class ACrOreActor*                            Owner;                                             // 0x0118(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 };
-DUMPER7_ASSERTS_FCrOreRuntimeData;
-
-// ScriptStruct Chimera.CrOreStaticMeshData
-// 0x0030 (0x0030 - 0x0000)
-struct FCrOreStaticMeshData final
-{
-public:
-	class UStaticMesh*                            ActiveOreMesh;                                     // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	TArray<class UMaterialInterface*>             ActiveOreMaterials;                                // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-	class UStaticMesh*                            CoreOreMesh;                                       // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	TArray<class UMaterialInterface*>             CoreOreMaterials;                                  // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrOreStaticMeshData;
-
-// ScriptStruct Chimera.OreSaveData
-// 0x0014 (0x0020 - 0x000C)
-struct FOreSaveData final : public FFastArraySerializerItem
-{
-public:
-	int32                                         CurrentResourceCount;                              // 0x000C(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsDepleted;                                       // 0x0010(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         DamageReceived;                                    // 0x0014(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CurrentRegenerationProgressInSec;                  // 0x0018(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RegenerationDuration;                              // 0x001C(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FOreSaveData;
+DUMPER7_ASSERTS_FCrWeakSpotsContainer;
 
 // ScriptStruct Chimera.OreEntityToSpawnData
 // 0x0048 (0x0048 - 0x0000)
@@ -9375,17 +9381,6 @@ public:
 };
 DUMPER7_ASSERTS_FOreEntityToSpawnData;
 
-// ScriptStruct Chimera.CrAngledNeighbour
-// 0x0020 (0x0020 - 0x0000)
-struct FCrAngledNeighbour final
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class ACrZiplinePoint*                        Actor;                                             // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_10[0x10];                                      // 0x0010(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrAngledNeighbour;
-
 // ScriptStruct Chimera.OreEntityClientData
 // 0x0048 (0x0048 - 0x0000)
 struct FOreEntityClientData final
@@ -9398,60 +9393,28 @@ public:
 };
 DUMPER7_ASSERTS_FOreEntityClientData;
 
-// ScriptStruct Chimera.OreComponentSpawnedEntities
-// 0x0018 (0x0018 - 0x0000)
-struct FOreComponentSpawnedEntities final
-{
-public:
-	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	class UStaticMesh*                            OreMesh;                                           // 0x0010(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FOreComponentSpawnedEntities;
-
-// ScriptStruct Chimera.CrOreSpawnTickFunction
-// 0x0008 (0x0030 - 0x0028)
-struct FCrOreSpawnTickFunction final : public FTickFunction
-{
-public:
-	class UCrOreSpawnDataRegistrySubsystem*       OreSpawnSubsystem;                                 // 0x0028(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrOreSpawnTickFunction;
-
 // ScriptStruct Chimera.CrPackageSenderReceiverFragment
-// 0x0008 (0x0008 - 0x0000)
+// 0x000C (0x000C - 0x0000)
 struct FCrPackageSenderReceiverFragment final : public FMassFragment
 {
 public:
-	float                                         PackageSendReceiveServerTime;                      // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PackageSendServerTime;                             // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         PrevPackageSendServerTime;                         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bChangeDetected;                                   // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCrPackageSenderReceiverFragment;
 
-// ScriptStruct Chimera.CrZiplineNeighbours
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FCrZiplineNeighbours final
+// ScriptStruct Chimera.CrPackageReceiverFragment
+// 0x0038 (0x0038 - 0x0000)
+struct FCrPackageReceiverFragment final : public FCrMassSavableFragment
 {
 public:
-	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FAuSimpleItem                          ItemInTransfer;                                    // 0x0000(0x0030)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bReceiveVisualsTriggered;                          // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrZiplineNeighbours;
-
-// ScriptStruct Chimera.CrPackageTransportConnectionData
-// 0x0064 (0x0070 - 0x000C)
-struct FCrPackageTransportConnectionData final : public FFastArraySerializerItem
-{
-public:
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrMassEntityReplicationHelper         Sender;                                            // 0x0010(0x0018)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCrMassEntityReplicationHelper         Receiver;                                          // 0x0028(0x0018)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCrItemDataBase*                        Item;                                              // 0x0040(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	int32                                         RequestedAmount;                                   // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StartSendServerTime;                               // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInventorySpace;                                   // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector_NetQuantize                    SenderLocation;                                    // 0x0058(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrPackageTransportConnectionData;
+DUMPER7_ASSERTS_FCrPackageReceiverFragment;
 
 // ScriptStruct Chimera.CrPackageTransportConnectionsContainer
 // 0x0018 (0x0120 - 0x0108)
@@ -9462,6 +9425,44 @@ public:
 	class ACrPackageTransportReplicator*          Owner;                                             // 0x0118(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 };
 DUMPER7_ASSERTS_FCrPackageTransportConnectionsContainer;
+
+// ScriptStruct Chimera.CrSenderReceiverData
+// 0x0044 (0x0050 - 0x000C)
+struct FCrSenderReceiverData final : public FFastArraySerializerItem
+{
+public:
+	bool                                          bIsSender;                                         // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bElectricity;                                      // 0x000D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bGoodTemperature;                                  // 0x000E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStandby;                                          // 0x000F(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCrMassEntityReplicationHelper         Entity;                                            // 0x0010(0x0018)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector_NetQuantize                    Location;                                          // 0x0028(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCrItemDataBase*                        ItemType;                                          // 0x0040(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	ECrBuildingMalfunctionFlags                   MalfunctionFlags;                                  // 0x0048(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrBuildingMalfunctionFlags                   PrevMalfunctionFlags;                              // 0x004A(0x0002)(ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrSenderReceiverData;
+
+// ScriptStruct Chimera.CrSenderReceiversContainer
+// 0x0018 (0x0120 - 0x0108)
+struct FCrSenderReceiversContainer final : public FFastArraySerializer
+{
+public:
+	TArray<struct FCrSenderReceiverData>          AllSenderReceiversData;                            // 0x0108(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	class ACrPackageTransportReplicator*          Owner;                                             // 0x0118(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrSenderReceiversContainer;
+
+// ScriptStruct Chimera.CrPCGEviroWaveConditions
+// 0x0002 (0x0002 - 0x0000)
+struct FCrPCGEviroWaveConditions final
+{
+public:
+	EEnviroWave                                   EnviroWaveType;                                    // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EEnviroWaveStage                              EnviroWaveStage;                                   // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrPCGEviroWaveConditions;
 
 // ScriptStruct Chimera.CrQualityDeviceProfileVariant
 // 0x0028 (0x0028 - 0x0000)
@@ -9475,6 +9476,25 @@ public:
 };
 DUMPER7_ASSERTS_FCrQualityDeviceProfileVariant;
 
+// ScriptStruct Chimera.CrPerformanceStatGroup
+// 0x0098 (0x0098 - 0x0000)
+struct FCrPerformanceStatGroup final
+{
+public:
+	struct FGameplayTagQuery                      VisibilityQuery;                                   // 0x0000(0x0048)(Edit, NativeAccessSpecifierPublic)
+	TSet<ECrDisplayablePerformanceStat>           AllowedStats;                                      // 0x0048(0x0050)(Edit, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrPerformanceStatGroup;
+
+// ScriptStruct Chimera.CrMapMenuFogOfWarSegmentData
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FCrMapMenuFogOfWarSegmentData final
+{
+public:
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrMapMenuFogOfWarSegmentData;
+
 // ScriptStruct Chimera.CrSkillExperience
 // 0x0008 (0x0008 - 0x0000)
 struct FCrSkillExperience final
@@ -9485,6 +9505,24 @@ public:
 	float                                         Experience;                                        // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCrSkillExperience;
+
+// ScriptStruct Chimera.CrSkillLevelRequirements
+// 0x0050 (0x0050 - 0x0000)
+struct FCrSkillLevelRequirements final
+{
+public:
+	TMap<int32, float>                            LevelRequirements;                                 // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrSkillLevelRequirements;
+
+// ScriptStruct Chimera.CrSkillSlotUnlocks
+// 0x0010 (0x0010 - 0x0000)
+struct FCrSkillSlotUnlocks final
+{
+public:
+	TArray<int32>                                 LevelsToUnlockSlots;                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrSkillSlotUnlocks;
 
 // ScriptStruct Chimera.RadiationBillboardPrimitiveData
 // 0x004C (0x004C - 0x0000)
@@ -9507,6 +9545,15 @@ public:
 };
 DUMPER7_ASSERTS_FRadiationBillboardPrimitiveData;
 
+// ScriptStruct Chimera.CrRadiationBordersSaveData
+// 0x0004 (0x0004 - 0x0000)
+struct FCrRadiationBordersSaveData final
+{
+public:
+	int32                                         Level;                                             // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrRadiationBordersSaveData;
+
 // ScriptStruct Chimera.CrConnectionAlwaysRelevantNodePair
 // 0x0010 (0x0010 - 0x0000)
 struct FCrConnectionAlwaysRelevantNodePair final
@@ -9517,6 +9564,38 @@ public:
 };
 DUMPER7_ASSERTS_FCrConnectionAlwaysRelevantNodePair;
 
+// ScriptStruct Chimera.CrMetaFileInfo
+// 0x0028 (0x0028 - 0x0000)
+struct FCrMetaFileInfo final
+{
+public:
+	class FString                                 Timestamp;                                         // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        WorldTimeSeconds;                                  // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsInTutorial;                                     // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCrGameVersion                         GameVersion;                                       // 0x001C(0x000C)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrMetaFileInfo;
+
+// ScriptStruct Chimera.CrSaveGameData
+// 0x00C0 (0x00C0 - 0x0000)
+struct FCrSaveGameData final
+{
+public:
+	TMap<class FString, struct FJsonObjectWrapper> ItemData;                                         // 0x0000(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+	class FString                                 Level;                                             // 0x0050(0x0010)(ZeroConstructor, SaveGame, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        WorldTimeSeconds;                                  // 0x0060(0x0008)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        WorldUnpausedTimeSeconds;                          // 0x0068(0x0008)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        WorldRealTimeSeconds;                              // 0x0070(0x0008)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        WorldAudioTimeSeconds;                             // 0x0078(0x0008)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 SessionName;                                       // 0x0080(0x0010)(ZeroConstructor, SaveGame, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 SaveName;                                          // 0x0090(0x0010)(ZeroConstructor, SaveGame, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Timestamp;                                         // 0x00A0(0x0010)(ZeroConstructor, SaveGame, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCrGameVersion                         GameVersion;                                       // 0x00B0(0x000C)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_BC[0x4];                                       // 0x00BC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrSaveGameData;
+
 // ScriptStruct Chimera.CrAutoSessionParams
 // 0x0018 (0x0018 - 0x0000)
 struct alignas(0x08) FCrAutoSessionParams final
@@ -9526,17 +9605,39 @@ public:
 };
 DUMPER7_ASSERTS_FCrAutoSessionParams;
 
-// ScriptStruct Chimera.CrJingleEntry
-// 0x0030 (0x0030 - 0x0000)
-struct FCrJingleEntry final
+// ScriptStruct Chimera.CrSubmixPresetEntry
+// 0x0060 (0x0060 - 0x0000)
+struct FCrSubmixPresetEntry final
+{
+public:
+	TSet<class USoundSubmix*>                     AffectedSubmixes;                                  // 0x0000(0x0050)(Edit, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	TArray<class USoundEffectSubmixPreset*>       SubmixEffectChain;                                 // 0x0050(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrSubmixPresetEntry;
+
+// ScriptStruct Chimera.CrSoundEffectEntry
+// 0x0038 (0x0038 - 0x0000)
+struct FCrSoundEffectEntry final
 {
 public:
 	struct FGameplayTagContainer                  RequiredPlayerTags;                                // 0x0000(0x0020)(Edit, NativeAccessSpecifierPublic)
-	class USoundBase*                             Sound;                                             // 0x0020(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	float                                         MainChannelsFadeOutTime;                           // 0x0028(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MainChannelsFadeInTime;                            // 0x002C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FadeInTime;                                        // 0x0020(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FadeOutTime;                                       // 0x0024(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FCrSubmixPresetEntry>           EffectEntries;                                     // 0x0028(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrJingleEntry;
+DUMPER7_ASSERTS_FCrSoundEffectEntry;
+
+// ScriptStruct Chimera.CrSoundBaseArray
+// 0x0040 (0x0040 - 0x0000)
+struct FCrSoundBaseArray final
+{
+public:
+	TArray<TSoftObjectPtr<class USoundBase>>      Values;                                            // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	bool                                          bOnWaveException;                                  // 0x0010(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftObjectPtr<class USoundBase>              SoundOnWave;                                       // 0x0018(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrSoundBaseArray;
 
 // ScriptStruct Chimera.CrHealthAttributeTableRow
 // 0x0010 (0x0018 - 0x0008)
@@ -9585,6 +9686,18 @@ public:
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCrCaloriesAttributeTableRow;
+
+// ScriptStruct Chimera.CrToxicityAttributeTableRow
+// 0x0010 (0x0018 - 0x0008)
+struct FCrToxicityAttributeTableRow final : public FTableRowBase
+{
+public:
+	int32                                         CurrentToxicity;                                   // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxToxicity;                                       // 0x000C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MinToxicity;                                       // 0x0010(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrToxicityAttributeTableRow;
 
 // ScriptStruct Chimera.CrHeatAttributeTableRow
 // 0x0010 (0x0018 - 0x0008)
@@ -9738,6 +9851,31 @@ public:
 };
 DUMPER7_ASSERTS_FCrTeleportersContainer;
 
+// ScriptStruct Chimera.CrRelatedActors
+// 0x0050 (0x0050 - 0x0000)
+struct FCrRelatedActors final
+{
+public:
+	TArray<class AActor*>                         ActorsToHide;                                      // 0x0000(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	TArray<class AActor*>                         ActorsToShow;                                      // 0x0010(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	TArray<class AActor*>                         MachinesToActivate;                                // 0x0020(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	TArray<class AActor*>                         MachinesToUnlock;                                  // 0x0030(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	TArray<class AActor*>                         MachinesToLock;                                    // 0x0040(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrRelatedActors;
+
+// ScriptStruct Chimera.CrWaveTimerActorSaveData
+// 0x000C (0x000C - 0x0000)
+struct FCrWaveTimerActorSaveData final
+{
+public:
+	float                                         NextTime;                                          // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NextPhase;                                         // 0x0004(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPause;                                            // 0x0008(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrWaveTimerActorSaveData;
+
 // ScriptStruct Chimera.CrBuildingToolParameters
 // 0x0010 (0x0010 - 0x0000)
 struct FCrBuildingToolParameters final
@@ -9771,15 +9909,15 @@ public:
 };
 DUMPER7_ASSERTS_FCrWeaponTraceCosmeticResponseAssets;
 
-// ScriptStruct Chimera.CrWeaponModCosmetics
-// 0x0018 (0x0018 - 0x0000)
-struct FCrWeaponModCosmetics final
+// ScriptStruct Chimera.CrHarvesterItemInstance
+// 0x0008 (0x00A8 - 0x00A0)
+struct FCrHarvesterItemInstance final : public FCrWeaponItemInstance
 {
 public:
-	class UStaticMesh*                            Mesh;                                              // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class FString                                 AttachmentSocket;                                  // 0x0008(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         HeatStackCurrent;                                  // 0x00A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         HeatStackMax;                                      // 0x00A4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrWeaponModCosmetics;
+DUMPER7_ASSERTS_FCrHarvesterItemInstance;
 
 // ScriptStruct Chimera.CrWeatherSettingsLinearColorCurves
 // 0x0068 (0x0068 - 0x0000)
@@ -9792,6 +9930,18 @@ public:
 	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCrWeatherSettingsLinearColorCurves;
+
+// ScriptStruct Chimera.CrWeatherSettingsVectorCurves
+// 0x0070 (0x0070 - 0x0000)
+struct FCrWeatherSettingsVectorCurves final
+{
+public:
+	TMap<EEnviroWave, struct FCrEnviroWaveCurveVectorMap> Curves;                                    // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FVector                                DefaultValue;                                      // 0x0050(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrWeatherSettingsCurvesValueMode             CurvesValueMode;                                   // 0x0068(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrWeatherSettingsVectorCurves;
 
 // ScriptStruct Chimera.CrWeatherSettings
 // 0x0B80 (0x0B80 - 0x0000)
@@ -9875,29 +10025,83 @@ public:
 };
 DUMPER7_ASSERTS_FCrWeatherSubSystemTickFunction;
 
-// ScriptStruct Chimera.CrZiplineNeighbourLocationData
-// 0x0044 (0x0050 - 0x000C)
-struct FCrZiplineNeighbourLocationData final : public FFastArraySerializerItem
+// ScriptStruct Chimera.ZiplineFullSplineProxy
+// 0x0048 (0x0048 - 0x0000)
+struct FZiplineFullSplineProxy final
 {
 public:
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrMassEntityReplicationHelper         Zipline;                                           // 0x0010(0x0018)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FVector_NetQuantize>            ActiveNeighbourLocations;                          // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FVector_NetQuantize>            InactiveNeighbourLocations;                        // 0x0038(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          bActive;                                           // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<class ACrBuildingSplineActorBase*>     ZiplineActorsOrder;                                // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	TArray<float>                                 ZiplineActorsDirectionsOrder;                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	class ACrSplineActor*                         SplineActor;                                       // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	bool                                          bIsClosedLoop;                                     // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 Owner;                                             // 0x0030(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UCharacterMovementComponent*            OwningCharacterMovementComponent;                  // 0x0038(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	float                                         LastCharacterDistanceAlongSpline;                  // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCanExecuteRebuildOnEnd;                           // 0x0044(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_45[0x3];                                       // 0x0045(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrZiplineNeighbourLocationData;
+DUMPER7_ASSERTS_FZiplineFullSplineProxy;
 
-// ScriptStruct Chimera.CrZiplineNeighbourLocationsContainer
-// 0x0018 (0x0120 - 0x0108)
-struct FCrZiplineNeighbourLocationsContainer final : public FFastArraySerializer
+// ScriptStruct Chimera.CrAngledNeighbour
+// 0x0020 (0x0020 - 0x0000)
+struct FCrAngledNeighbour final
 {
 public:
-	TArray<struct FCrZiplineNeighbourLocationData> ZiplinesData;                                     // 0x0108(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	class ACrZiplineReplicator*                   Owner;                                             // 0x0118(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class ACrZiplinePoint*                        Actor;                                             // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_10[0x10];                                      // 0x0010(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrZiplineNeighbourLocationsContainer;
+DUMPER7_ASSERTS_FCrAngledNeighbour;
+
+// ScriptStruct Chimera.CrZiplineReplicatorSaveData
+// 0x0050 (0x0050 - 0x0000)
+struct FCrZiplineReplicatorSaveData final
+{
+public:
+	TMap<struct FCrMassPersistentEntityID, bool>  ZiplinesActivity;                                  // 0x0000(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrZiplineReplicatorSaveData;
+
+// ScriptStruct Chimera.CrZiplineNeighbours
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FCrZiplineNeighbours final
+{
+public:
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrZiplineNeighbours;
+
+// ScriptStruct Chimera.CrZiplineSaveData
+// 0x0050 (0x0050 - 0x0000)
+struct FCrZiplineSaveData final
+{
+public:
+	TMap<struct FCrMassPersistentEntityID, struct FCrMassPersistentEntityIDArray> ZiplineConnections; // 0x0000(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrZiplineSaveData;
+
+// ScriptStruct Chimera.CrAttributeSetGrant
+// 0x0050 (0x0050 - 0x0000)
+struct FCrAttributeSetGrant final
+{
+public:
+	TSoftClassPtr<class UClass>                   AttributeSetType;                                  // 0x0000(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UDataTable>              InitializationData;                                // 0x0028(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrAttributeSetGrant;
+
+// ScriptStruct Chimera.GameFeatureAbilitiesEntry
+// 0x0058 (0x0058 - 0x0000)
+struct FGameFeatureAbilitiesEntry final
+{
+public:
+	TSoftClassPtr<class UClass>                   ActorClass;                                        // 0x0000(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FCrAbilityGrant>                GrantedAbilities;                                  // 0x0028(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FCrAttributeSetGrant>           GrantedAttributes;                                 // 0x0038(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<TSoftObjectPtr<class UCrAbilitiesDataSet>> GrantedAbilitySets;                            // 0x0048(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGameFeatureAbilitiesEntry;
 
 // ScriptStruct Chimera.CrGameFeatureActionItemRecipeCollectionData
 // 0x0038 (0x0038 - 0x0000)
@@ -9909,17 +10113,44 @@ public:
 };
 DUMPER7_ASSERTS_FCrGameFeatureActionItemRecipeCollectionData;
 
-// ScriptStruct Chimera.GameFeatureLevelInstanceEntry
-// 0x0080 (0x0080 - 0x0000)
-struct FGameFeatureLevelInstanceEntry final
+// ScriptStruct Chimera.GasOverlapAction
+// 0x0020 (0x0020 - 0x0000)
+struct FGasOverlapAction final
 {
 public:
-	TSoftObjectPtr<class UWorld>                  Level;                                             // 0x0000(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UWorld>                  TargetWorld;                                       // 0x0028(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Location;                                          // 0x0050(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               Rotation;                                          // 0x0068(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	TArray<TSubclassOf<class AActor>>             PossibleOverlappedClasses;                         // 0x0000(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	TSubclassOf<class UCrGameplayEffect>          GameplayEffectToApply;                             // 0x0010(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGasOverlapResolveType                        BeginOverlapResolveType;                           // 0x0018(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGasOverlapResolveType                        EndOverlapResolveType;                             // 0x0019(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1A[0x6];                                       // 0x001A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FGameFeatureLevelInstanceEntry;
+DUMPER7_ASSERTS_FGasOverlapAction;
+
+// ScriptStruct Chimera.MassEnemyGridCellLocationFragment
+// 0x000C (0x000C - 0x0000)
+struct alignas(0x04) FMassEnemyGridCellLocationFragment final : public FMassFragment
+{
+public:
+	uint8                                         Pad_0[0xC];                                        // 0x0000(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassEnemyGridCellLocationFragment;
+
+// ScriptStruct Chimera.InFlockGridTag
+// 0x0000 (0x0001 - 0x0001)
+struct FInFlockGridTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FInFlockGridTag;
+
+// ScriptStruct Chimera.SharedQuestItemsSaveData
+// 0x0020 (0x0020 - 0x0000)
+struct FSharedQuestItemsSaveData final
+{
+public:
+	TArray<struct FAuItemDataBaseClassMap>        SharedQuestItems;                                  // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	TArray<struct FGuid>                          PickedItemsGuids;                                  // 0x0010(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSharedQuestItemsSaveData;
 
 // ScriptStruct Chimera.CrCamEffectState_Inactive
 // 0x0008 (0x0048 - 0x0040)
@@ -9930,36 +10161,56 @@ public:
 };
 DUMPER7_ASSERTS_FCrCamEffectState_Inactive;
 
-// ScriptStruct Chimera.CrCamEffectState_FadeIn
+// ScriptStruct Chimera.CrCamEffectState_Active
 // 0x0000 (0x0040 - 0x0040)
-struct FCrCamEffectState_FadeIn final : public FCrCamEffectStateBase
+struct FCrCamEffectState_Active final : public FCrCamEffectStateBase
 {
 };
-DUMPER7_ASSERTS_FCrCamEffectState_FadeIn;
+DUMPER7_ASSERTS_FCrCamEffectState_Active;
 
-// ScriptStruct Chimera.CrCameraEffectMaterialParam
-// 0x0140 (0x0140 - 0x0000)
-struct FCrCameraEffectMaterialParam final
+// ScriptStruct Chimera.CrCamEffectState_FadeOut
+// 0x0000 (0x0040 - 0x0040)
+struct FCrCamEffectState_FadeOut final : public FCrCamEffectStateBase
+{
+};
+DUMPER7_ASSERTS_FCrCamEffectState_FadeOut;
+
+// ScriptStruct Chimera.CrCameraEffectPostprocessParam
+// 0x0138 (0x0138 - 0x0000)
+struct FCrCameraEffectPostprocessParam final
 {
 public:
 	uint8                                         Pad_0[0x4];                                        // 0x0000(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   ParameterName;                                     // 0x0004(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrCameraEffectParamBase               FadeIn;                                            // 0x0010(0x0098)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	struct FCrCameraEffectParamBase               FadeOut;                                           // 0x00A8(0x0098)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	ECrPostprocessEffect                          EffectType;                                        // 0x0004(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCrCameraEffectParamBase               FadeIn;                                            // 0x0008(0x0098)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	struct FCrCameraEffectParamBase               FadeOut;                                           // 0x00A0(0x0098)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrCameraEffectMaterialParam;
+DUMPER7_ASSERTS_FCrCameraEffectPostprocessParam;
 
-// ScriptStruct Chimera.HarvesterRepHeatStackInfo
-// 0x000C (0x000C - 0x0000)
-struct FHarvesterRepHeatStackInfo final
+// ScriptStruct Chimera.SharedRepMovement
+// 0x0090 (0x0090 - 0x0000)
+struct FSharedRepMovement final
 {
 public:
-	int32                                         CurrentStackCount;                                 // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         OldStackCount;                                     // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         StackLimit;                                        // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRepMovement                           RepMovement;                                       // 0x0000(0x0088)(Transient, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         RepTimeStamp;                                      // 0x0088(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         RepMovementMode;                                   // 0x008C(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bProxyIsJumpForceApplied;                          // 0x008D(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsCrouched;                                       // 0x008E(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bWantsToCrouch;                                    // 0x008F(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FHarvesterRepHeatStackInfo;
+DUMPER7_ASSERTS_FSharedRepMovement;
+
+// ScriptStruct Chimera.CrMiningBoostMutlipliersData
+// 0x0008 (0x0008 - 0x0000)
+struct FCrMiningBoostMutlipliersData final
+{
+public:
+	int32                                         BoostLevel;                                        // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BoostMultiplierValue;                              // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrMiningBoostMutlipliersData;
 
 // ScriptStruct Chimera.CrCharacterPlayerBaseTag
 // 0x0000 (0x0001 - 0x0001)
@@ -9967,6 +10218,16 @@ struct FCrCharacterPlayerBaseTag final : public FMassTag
 {
 };
 DUMPER7_ASSERTS_FCrCharacterPlayerBaseTag;
+
+// ScriptStruct Chimera.CrMontagePair
+// 0x0010 (0x0010 - 0x0000)
+struct FCrMontagePair final
+{
+public:
+	class UAnimMontage*                           TppMontage;                                        // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UAnimMontage*                           FppMontage;                                        // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrMontagePair;
 
 // ScriptStruct Chimera.CrCheatToRun
 // 0x0020 (0x0020 - 0x0000)
@@ -9980,6 +10241,35 @@ public:
 	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCrCheatToRun;
+
+// ScriptStruct Chimera.CrItemsAmount
+// 0x0010 (0x0010 - 0x0000)
+struct FCrItemsAmount final
+{
+public:
+	TSubclassOf<class UAuItemDataBase>            Item;                                              // 0x0000(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Amount;                                            // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrItemsAmount;
+
+// ScriptStruct Chimera.CrContextualInputsBindHandles
+// 0x0020 (0x0020 - 0x0000)
+struct alignas(0x08) FCrContextualInputsBindHandles final
+{
+public:
+	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrContextualInputsBindHandles;
+
+// ScriptStruct Chimera.CrContextualInputBinding
+// 0x0010 (0x0010 - 0x0000)
+struct FCrContextualInputBinding final
+{
+public:
+	TArray<struct FInputMappingContextAndPriority> Bindings;                                         // 0x0000(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrContextualInputBinding;
 
 }
 

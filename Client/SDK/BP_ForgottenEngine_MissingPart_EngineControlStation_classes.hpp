@@ -10,20 +10,20 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Chimera_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ForgottenEngine_MissingPart_EngineControlStation.BP_ForgottenEngine_MissingPart_EngineControlStation_C
-// 0x0010 (0x06E8 - 0x06D8)
+// 0x0010 (0x06F8 - 0x06E8)
 class ABP_ForgottenEngine_MissingPart_EngineControlStation_C final : public ACrMegamachineMissingPartDevice
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x06D8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UStaticMeshComponent*                   Cube;                                              // 0x06E0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x06E8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UStaticMeshComponent*                   Cube;                                              // 0x06F0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_ForgottenEngine_MissingPart_EngineControlStation(int32 EntryPoint);

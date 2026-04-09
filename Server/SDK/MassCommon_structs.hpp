@@ -18,15 +18,16 @@
 namespace SDK
 {
 
-// ScriptStruct MassCommon.MassSnorm8Vector2D
-// 0x0002 (0x0002 - 0x0000)
-struct FMassSnorm8Vector2D final
+// ScriptStruct MassCommon.MassSnorm8Vector
+// 0x0003 (0x0003 - 0x0000)
+struct FMassSnorm8Vector final
 {
 public:
 	int8                                          X;                                                 // 0x0000(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	int8                                          Y;                                                 // 0x0001(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int8                                          Z;                                                 // 0x0002(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
-DUMPER7_ASSERTS_FMassSnorm8Vector2D;
+DUMPER7_ASSERTS_FMassSnorm8Vector;
 
 // ScriptStruct MassCommon.MassNetworkID
 // 0x0000 (0x0004 - 0x0004)
@@ -80,16 +81,15 @@ public:
 };
 DUMPER7_ASSERTS_FMassInt16Real10;
 
-// ScriptStruct MassCommon.MassSnorm8Vector
-// 0x0003 (0x0003 - 0x0000)
-struct FMassSnorm8Vector final
+// ScriptStruct MassCommon.MassSnorm8Vector2D
+// 0x0002 (0x0002 - 0x0000)
+struct FMassSnorm8Vector2D final
 {
 public:
 	int8                                          X;                                                 // 0x0000(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	int8                                          Y;                                                 // 0x0001(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int8                                          Z;                                                 // 0x0002(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
-DUMPER7_ASSERTS_FMassSnorm8Vector;
+DUMPER7_ASSERTS_FMassSnorm8Vector2D;
 
 // ScriptStruct MassCommon.MassUnorm8Real
 // 0x0001 (0x0001 - 0x0000)

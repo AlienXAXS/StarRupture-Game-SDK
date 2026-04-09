@@ -154,5 +154,19 @@ void UWBP_MainMenuWidget_C::BndEvt__WBP_MainMenuWidget_DiscordButton_K2Node_Comp
 	UObject::ProcessEvent(Func, nullptr);
 }
 
+
+// Function WBP_MainMenuWidget.WBP_MainMenuWidget_C.BndEvt__WBP_MainMenuWidget_BenchmarkButton_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UWBP_MainMenuWidget_C::BndEvt__WBP_MainMenuWidget_BenchmarkButton_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_MainMenuWidget_C", "BndEvt__WBP_MainMenuWidget_BenchmarkButton_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
 }
 

@@ -11,15 +11,15 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "Engine_structs.hpp"
 #include "Chimera_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Ranged_Tier2_PooledProjectile.BP_Ranged_Tier2_PooledProjectile_C
-// 0x00A8 (0x03D8 - 0x0330)
+// 0x00B8 (0x03E8 - 0x0330)
 class ABP_Ranged_Tier2_PooledProjectile_C final : public ACrAiProjectileActor
 {
 public:
@@ -39,6 +39,8 @@ public:
 	double                                        MaxPieceLaunchSpeed;                               // 0x03C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        MinPieceDistance;                                  // 0x03C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        MinPieceLaunchSpeed;                               // 0x03D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Seed;                                              // 0x03D8(0x0004)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRandomStream                          RandomStream;                                      // 0x03DC(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor)
 
 public:
 	void AddInstantHeatToCharacter(class ACharacter* Chatacter);
@@ -49,6 +51,7 @@ public:
 	void OnReleasedToPool();
 	void SpawnSnotProjectiles(const struct FVector& BigSnotLocation, const struct FVector& SmallProjectilesLocation, bool SpawnBigSnot);
 	void SplashWithSnotProjectiles(const struct FHitResult& HitResult);
+	void UserConstructionScript();
 
 public:
 	static class UClass* StaticClass()

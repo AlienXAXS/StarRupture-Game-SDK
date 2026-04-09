@@ -31,7 +31,7 @@ public:
 	class UGameSettingRegistry*                   Registry;                                          // 0x03E0(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 
 public:
-	void RegisterTab(class FName TabCollection, class FName TabName);
+	void RegisterTab(class FName TabCollection, const class FText& TabName);
 	void SelectTabByID(class FName TabId);
 
 public:
@@ -293,15 +293,15 @@ public:
 DUMPER7_ASSERTS_UKeyAlreadyBoundWarning;
 
 // Class GameSettings.GameSetting
-// 0x0150 (0x0178 - 0x0028)
+// 0x0170 (0x0198 - 0x0028)
 class UGameSetting : public UObject
 {
 public:
-	uint8                                         Pad_28[0x60];                                      // 0x0028(0x0060)(Fixing Size After Last Property [ Dumper-7 ])
-	class ULocalPlayer*                           LocalPlayer;                                       // 0x0088(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UGameSetting*                           SettingParent;                                     // 0x0090(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UGameSettingRegistry*                   OwningRegistry;                                    // 0x0098(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_A0[0xD8];                                      // 0x00A0(0x00D8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_28[0x80];                                      // 0x0028(0x0080)(Fixing Size After Last Property [ Dumper-7 ])
+	class ULocalPlayer*                           LocalPlayer;                                       // 0x00A8(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UGameSetting*                           SettingParent;                                     // 0x00B0(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UGameSettingRegistry*                   OwningRegistry;                                    // 0x00B8(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_C0[0xD8];                                      // 0x00C0(0x00D8)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	ESlateVisibility GetDisplayNameVisibility();
@@ -330,11 +330,11 @@ public:
 DUMPER7_ASSERTS_UGameSetting;
 
 // Class GameSettings.GameSettingAction
-// 0x0058 (0x01D0 - 0x0178)
+// 0x0058 (0x01F0 - 0x0198)
 class UGameSettingAction : public UGameSetting
 {
 public:
-	uint8                                         Pad_178[0x58];                                     // 0x0178(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_198[0x58];                                     // 0x0198(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -353,11 +353,11 @@ public:
 DUMPER7_ASSERTS_UGameSettingAction;
 
 // Class GameSettings.GameSettingCollection
-// 0x0010 (0x0188 - 0x0178)
+// 0x0010 (0x01A8 - 0x0198)
 class UGameSettingCollection : public UGameSetting
 {
 public:
-	TArray<class UGameSetting*>                   Settings;                                          // 0x0178(0x0010)(ZeroConstructor, Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	TArray<class UGameSetting*>                   Settings;                                          // 0x0198(0x0010)(ZeroConstructor, Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
 
 public:
 	static class UClass* StaticClass()
@@ -376,11 +376,11 @@ public:
 DUMPER7_ASSERTS_UGameSettingCollection;
 
 // Class GameSettings.GameSettingCollectionPage
-// 0x0030 (0x01B8 - 0x0188)
+// 0x0030 (0x01D8 - 0x01A8)
 class UGameSettingCollectionPage final : public UGameSettingCollection
 {
 public:
-	uint8                                         Pad_188[0x30];                                     // 0x0188(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1A8[0x30];                                     // 0x01A8(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -399,7 +399,7 @@ public:
 DUMPER7_ASSERTS_UGameSettingCollectionPage;
 
 // Class GameSettings.GameSettingValue
-// 0x0000 (0x0178 - 0x0178)
+// 0x0000 (0x0198 - 0x0198)
 class UGameSettingValue : public UGameSetting
 {
 public:
@@ -419,11 +419,11 @@ public:
 DUMPER7_ASSERTS_UGameSettingValue;
 
 // Class GameSettings.GameSettingValueDiscrete
-// 0x0008 (0x0180 - 0x0178)
+// 0x0008 (0x01A0 - 0x0198)
 class UGameSettingValueDiscrete : public UGameSettingValue
 {
 public:
-	uint8                                         Pad_178[0x8];                                      // 0x0178(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_198[0x8];                                      // 0x0198(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	int32 GetDiscreteOptionDefaultIndex() const;
@@ -447,11 +447,11 @@ public:
 DUMPER7_ASSERTS_UGameSettingValueDiscrete;
 
 // Class GameSettings.GameSettingValueDiscreteDynamic
-// 0x0060 (0x01E0 - 0x0180)
+// 0x0060 (0x0200 - 0x01A0)
 class UGameSettingValueDiscreteDynamic : public UGameSettingValueDiscrete
 {
 public:
-	uint8                                         Pad_180[0x60];                                     // 0x0180(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1A0[0x60];                                     // 0x01A0(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -470,7 +470,7 @@ public:
 DUMPER7_ASSERTS_UGameSettingValueDiscreteDynamic;
 
 // Class GameSettings.GameSettingValueDiscreteDynamic_Bool
-// 0x0000 (0x01E0 - 0x01E0)
+// 0x0000 (0x0200 - 0x0200)
 class UGameSettingValueDiscreteDynamic_Bool final : public UGameSettingValueDiscreteDynamic
 {
 public:
@@ -490,7 +490,7 @@ public:
 DUMPER7_ASSERTS_UGameSettingValueDiscreteDynamic_Bool;
 
 // Class GameSettings.GameSettingValueDiscreteDynamic_Number
-// 0x0000 (0x01E0 - 0x01E0)
+// 0x0000 (0x0200 - 0x0200)
 class UGameSettingValueDiscreteDynamic_Number final : public UGameSettingValueDiscreteDynamic
 {
 public:
@@ -510,7 +510,7 @@ public:
 DUMPER7_ASSERTS_UGameSettingValueDiscreteDynamic_Number;
 
 // Class GameSettings.GameSettingValueDiscreteDynamic_Enum
-// 0x0000 (0x01E0 - 0x01E0)
+// 0x0000 (0x0200 - 0x0200)
 class UGameSettingValueDiscreteDynamic_Enum final : public UGameSettingValueDiscreteDynamic
 {
 public:
@@ -530,7 +530,7 @@ public:
 DUMPER7_ASSERTS_UGameSettingValueDiscreteDynamic_Enum;
 
 // Class GameSettings.GameSettingValueDiscreteDynamic_Color
-// 0x0000 (0x01E0 - 0x01E0)
+// 0x0000 (0x0200 - 0x0200)
 class UGameSettingValueDiscreteDynamic_Color final : public UGameSettingValueDiscreteDynamic
 {
 public:
@@ -550,7 +550,7 @@ public:
 DUMPER7_ASSERTS_UGameSettingValueDiscreteDynamic_Color;
 
 // Class GameSettings.GameSettingValueDiscreteDynamic_Vector2D
-// 0x0000 (0x01E0 - 0x01E0)
+// 0x0000 (0x0200 - 0x0200)
 class UGameSettingValueDiscreteDynamic_Vector2D final : public UGameSettingValueDiscreteDynamic
 {
 public:
@@ -570,7 +570,7 @@ public:
 DUMPER7_ASSERTS_UGameSettingValueDiscreteDynamic_Vector2D;
 
 // Class GameSettings.GameSettingValueScalar
-// 0x0000 (0x0178 - 0x0178)
+// 0x0000 (0x0198 - 0x0198)
 class UGameSettingValueScalar : public UGameSettingValue
 {
 public:
@@ -590,11 +590,11 @@ public:
 DUMPER7_ASSERTS_UGameSettingValueScalar;
 
 // Class GameSettings.GameSettingValueScalarDynamic
-// 0x00B8 (0x0230 - 0x0178)
+// 0x00B8 (0x0250 - 0x0198)
 class UGameSettingValueScalarDynamic : public UGameSettingValueScalar
 {
 public:
-	uint8                                         Pad_178[0xB8];                                     // 0x0178(0x00B8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_198[0xB8];                                     // 0x0198(0x00B8)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

@@ -12,8 +12,8 @@
 
 #include "CoreUObject_structs.hpp"
 #include "AIModule_structs.hpp"
-#include "Chimera_classes.hpp"
 #include "AuActorPlacement_structs.hpp"
+#include "Chimera_classes.hpp"
 
 
 namespace SDK

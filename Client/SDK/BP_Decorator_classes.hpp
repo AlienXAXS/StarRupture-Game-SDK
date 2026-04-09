@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Decorator.BP_Decorator_C
-// 0x0008 (0x06D0 - 0x06C8)
+// 0x0008 (0x06E0 - 0x06D8)
 class ABP_Decorator_C final : public ACrCrafter
 {
 public:
-	class UStaticMeshComponent*                   BuildingMesh;                                      // 0x06C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   BuildingMesh;                                      // 0x06D8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

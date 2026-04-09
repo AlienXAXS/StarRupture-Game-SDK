@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_MassAILocalSpawner_MeleeSingleBOSSTemplate.BP_MassAILocalSpawner_MeleeSingleBOSSTemplate_C
-// 0x0000 (0x0548 - 0x0548)
+// 0x0000 (0x0550 - 0x0550)
 class ABP_MassAILocalSpawner_MeleeSingleBOSSTemplate_C final : public ABP_MassAILocalSpawnerWithPCG_Placeable_C
 {
 public:

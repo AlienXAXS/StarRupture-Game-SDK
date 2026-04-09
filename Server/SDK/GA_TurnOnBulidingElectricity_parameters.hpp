@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Chimera_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
+#include "Chimera_structs.hpp"
 
 
 namespace SDK::Params

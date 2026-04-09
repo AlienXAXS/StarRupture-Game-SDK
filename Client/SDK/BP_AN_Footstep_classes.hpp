@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "GameplayTags_structs.hpp"
 #include "E_FootstepType_structs.hpp"
 #include "Engine_classes.hpp"
 #include "PhysicsCore_structs.hpp"
@@ -19,14 +20,17 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_AN_Footstep.BP_AN_Footstep_C
-// 0x0010 (0x0048 - 0x0038)
+// 0x0060 (0x0098 - 0x0038)
 class UBP_AN_Footstep_C final : public UAnimNotify
 {
 public:
 	class FName                                   WaterSurfaceID;                                    // 0x0038(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	E_FootstepType                                FootstepType;                                      // 0x0040(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<struct FGameplayTag, class FName>        WaterSurfacesIDs;                                  // 0x0048(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
+	void GetWaterType(const struct FGameplayTagContainer& Tags, class FName* WaterSurfaceType) const;
 	void ShouldWaveChangeFootsteps(class ABP_PlayerCharacter_C* Character, bool* Result) const;
 	void ShouldProcessAnimNotify(class ABP_PlayerCharacter_C* InPlayerChar, class UAnimSequenceBase* InAnimation, bool* bShouldProcess) const;
 	void IsLocallyFPPControlled(class ABP_PlayerCharacter_C* InPlayerCharacter, bool* bIsLocallyFPPControlled) const;

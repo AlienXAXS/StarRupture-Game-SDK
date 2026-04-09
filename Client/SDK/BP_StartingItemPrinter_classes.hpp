@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_StartingItemPrinter.BP_StartingItemPrinter_C
-// 0x0000 (0x0740 - 0x0740)
+// 0x0000 (0x0750 - 0x0750)
 class ABP_StartingItemPrinter_C final : public ABP_ItemPrinter_C
 {
 public:

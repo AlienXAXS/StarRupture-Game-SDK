@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BTT_FindMoveAwayLocation.BTT_FindMoveAwayLocation_C
-// 0x0080 (0x0128 - 0x00A8)
+// 0x0088 (0x0130 - 0x00A8)
 class UBTT_FindMoveAwayLocation_C final : public UBTTask_BlueprintBase
 {
 public:
@@ -32,6 +32,7 @@ public:
 	uint8                                         Pad_111[0x7];                                      // 0x0111(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class APawn*                                  ControlledPawn;                                    // 0x0118(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	class AActor*                                 TargetActor;                                       // 0x0120(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	double                                        RandomAngle;                                       // 0x0128(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BTT_FindMoveAwayLocation(int32 EntryPoint);

@@ -19,25 +19,31 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_BaseAI.BP_BaseAI_C
-// 0x0020 (0x0C00 - 0x0BE0)
-#pragma pack(push, 0x1)
-class alignas(0x10) ABP_BaseAI_C : public AMassEnemyCharacterBase
+// 0x0020 (0x0D00 - 0x0CE0)
+class ABP_BaseAI_C : public AMassEnemyCharacterBase
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0BE0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FLinearColor                           IdleEyeColor;                                      // 0x0BE8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0CE0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FLinearColor                           IdleEyeColor;                                      // 0x0CE8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ApplySlowdownAfterDamage;                          // 0x0CF8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void SetIsJumpEyeBehaviour(bool NewIsJumpEyeBehaviour);
 	void SetIsBoostedEyeColor(bool NewIsBoosted);
 	void SetIsAggroEyeColor(bool NewIsAggro);
 	void ReceiveBeginPlay();
+	void PostSetupPooledActorData(bool bNewIsInPool);
+	void OnPrepareForPooling();
+	void OnPrepareForGame();
+	void OnExitActorPool();
+	void OnEnterActorPool();
 	void OnDamage(class AActor* Actor, const struct FHitResult& HitResult, float InDamage);
 	void OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag);
 	bool NotifyNearbyPlayerCharactersAboutSpawn();
 	void NotifyAggroTargetChanged(bool bHasAggroTarget);
-	void HideAndDisableActor();
+	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
 	void ExecuteUbergraph_BP_BaseAI(int32 EntryPoint);
-	void CalculateDeathSequenceData(const struct FHitResult& LastHitResult, bool bIsLastHitGrenadeHit, struct FVector* RagdollImpulseForce, struct FVector* RagdollImpulseLocation, struct FTransform* DeathSequenceActorWorldLocation, struct FTransform* DeathSequenceMeshWorldLocation);
+	void CanChangeEyeColor(bool* Result);
 
 	struct FColor GetIdleEyeColor() const;
 
@@ -55,7 +61,6 @@ public:
 		return GetDefaultObjImpl<ABP_BaseAI_C>();
 	}
 };
-#pragma pack(pop)
 DUMPER7_ASSERTS_ABP_BaseAI_C;
 
 }

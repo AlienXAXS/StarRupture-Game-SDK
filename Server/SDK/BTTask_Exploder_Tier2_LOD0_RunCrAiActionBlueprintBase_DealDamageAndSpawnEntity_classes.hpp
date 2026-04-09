@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "AIModule_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "Chimera_classes.hpp"
+#include "AIModule_structs.hpp"
 #include "AuActorPlacement_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK

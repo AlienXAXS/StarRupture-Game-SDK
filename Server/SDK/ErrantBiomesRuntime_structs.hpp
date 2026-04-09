@@ -72,6 +72,15 @@ enum class EBiomesRuntimeScalability : uint8
 	EBiomesRuntimeScalability_MAX            = 7,
 };
 
+// Enum ErrantBiomesRuntime.EBiomesMaskFlags
+// NumValues: 0x0003
+enum class EBiomesMaskFlags : uint32
+{
+	None                                     = 0,
+	Empty                                    = 1,
+	EBiomesMaskFlags_MAX                     = 2,
+};
+
 // Enum ErrantBiomesRuntime.EBiomesMaskType
 // NumValues: 0x0007
 enum class EBiomesMaskType : uint8
@@ -142,7 +151,7 @@ public:
 	class AActor*                                 ActorTemplate;                                     // 0x0008(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	TSubclassOf<class ABiomesRuntimeSpawnerContainer> RuntimeSpawningActorClass;                     // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class ABiomesRuntimeSpawnerContainer*         RuntimeSpawningActorTemplate;                      // 0x0018(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UHierarchicalInstancedStaticMeshComponent* InstanceComponentTemplate;                      // 0x0020(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UInstancedStaticMeshComponent*          InstanceComponentTemplate;                         // 0x0020(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	EBiomesGroupInstances                         GroupInstances;                                    // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         MinInstancesInGroup;                               // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -207,10 +216,10 @@ DUMPER7_ASSERTS_FBiomesRandomRotation;
 struct FBiomesInstanceComponentPartitions final
 {
 public:
-	TArray<class UHierarchicalInstancedStaticMeshComponent*> RuntimeInstanceComponents;              // 0x0000(0x0010)(Edit, ExportObject, ZeroConstructor, Transient, EditConst, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	TArray<class UInstancedStaticMeshComponent*>  RuntimeInstanceComponents;                         // 0x0000(0x0010)(Edit, ExportObject, ZeroConstructor, Transient, EditConst, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
 	TArray<struct FBox2D>                         PartitionBounds;                                   // 0x0010(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
 	uint8                                         Pad_20[0x10];                                      // 0x0020(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<TSoftObjectPtr<class UHierarchicalInstancedStaticMeshComponent>> InstanceComponents;      // 0x0030(0x0010)(ExportObject, ZeroConstructor, Deprecated, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic)
+	TArray<TSoftObjectPtr<class UInstancedStaticMeshComponent>> InstanceComponents;                  // 0x0030(0x0010)(ExportObject, ZeroConstructor, Deprecated, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FBiomesInstanceComponentPartitions;
 

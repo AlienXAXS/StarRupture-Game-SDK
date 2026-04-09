@@ -503,6 +503,56 @@ void UIKRetargetPelvisMotionController::SetTargetPelvisBone(const class FName In
 }
 
 
+// Function IKRig.IKRigSolverControllerBase.GetEnabled
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UIKRigSolverControllerBase::GetEnabled()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("IKRigSolverControllerBase", "GetEnabled");
+
+	Params::IKRigSolverControllerBase_GetEnabled Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function IKRig.IKRigSolverControllerBase.SetEnabled
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bIsEnabled                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UIKRigSolverControllerBase::SetEnabled(bool bIsEnabled)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("IKRigSolverControllerBase", "SetEnabled");
+
+	Params::IKRigSolverControllerBase_SetEnabled Parms{};
+
+	Parms.bIsEnabled = bIsEnabled;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function IKRig.IKRetargetPinBoneController.ClearAllBonePairs
 // (Final, RequiredAPI, Native, Public, BlueprintCallable)
 
@@ -614,6 +664,114 @@ void UIKRetargetPinBoneController::SetSettings(const struct FIKRetargetPinBoneOp
 	Params::IKRetargetPinBoneController_SetSettings Parms{};
 
 	Parms.InSettings = std::move(InSettings);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function IKRig.IKRigComponent.ClearAllGoals
+// (Final, Native, Public, BlueprintCallable)
+
+void UIKRigComponent::ClearAllGoals()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("IKRigComponent", "ClearAllGoals");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function IKRig.IKRigComponent.SetIKRigGoal
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FIKRigGoal&                Goal                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UIKRigComponent::SetIKRigGoal(const struct FIKRigGoal& Goal)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("IKRigComponent", "SetIKRigGoal");
+
+	Params::IKRigComponent_SetIKRigGoal Parms{};
+
+	Parms.Goal = std::move(Goal);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function IKRig.IKRigComponent.SetIKRigGoalPositionAndRotation
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const class FName                       GoalName                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Position                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FQuat&                     Rotation                                               (ConstParm, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             PositionAlpha                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             RotationAlpha                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UIKRigComponent::SetIKRigGoalPositionAndRotation(const class FName GoalName, const struct FVector& Position, const struct FQuat& Rotation, const float PositionAlpha, const float RotationAlpha)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("IKRigComponent", "SetIKRigGoalPositionAndRotation");
+
+	Params::IKRigComponent_SetIKRigGoalPositionAndRotation Parms{};
+
+	Parms.GoalName = GoalName;
+	Parms.Position = std::move(Position);
+	Parms.Rotation = std::move(Rotation);
+	Parms.PositionAlpha = PositionAlpha;
+	Parms.RotationAlpha = RotationAlpha;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function IKRig.IKRigComponent.SetIKRigGoalTransform
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const class FName                       GoalName                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FTransform&                Transform                                              (ConstParm, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             PositionAlpha                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             RotationAlpha                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UIKRigComponent::SetIKRigGoalTransform(const class FName GoalName, const struct FTransform& Transform, const float PositionAlpha, const float RotationAlpha)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("IKRigComponent", "SetIKRigGoalTransform");
+
+	Params::IKRigComponent_SetIKRigGoalTransform Parms{};
+
+	Parms.GoalName = GoalName;
+	Parms.Transform = std::move(Transform);
+	Parms.PositionAlpha = PositionAlpha;
+	Parms.RotationAlpha = RotationAlpha;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1074,114 +1232,6 @@ void UIKRetargetStrideWarpingController::SetSettings(const struct FIKRetargetStr
 }
 
 
-// Function IKRig.IKRigComponent.ClearAllGoals
-// (Final, Native, Public, BlueprintCallable)
-
-void UIKRigComponent::ClearAllGoals()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("IKRigComponent", "ClearAllGoals");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function IKRig.IKRigComponent.SetIKRigGoal
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FIKRigGoal&                Goal                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UIKRigComponent::SetIKRigGoal(const struct FIKRigGoal& Goal)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("IKRigComponent", "SetIKRigGoal");
-
-	Params::IKRigComponent_SetIKRigGoal Parms{};
-
-	Parms.Goal = std::move(Goal);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function IKRig.IKRigComponent.SetIKRigGoalPositionAndRotation
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const class FName                       GoalName                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   Position                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FQuat&                     Rotation                                               (ConstParm, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const float                             PositionAlpha                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const float                             RotationAlpha                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UIKRigComponent::SetIKRigGoalPositionAndRotation(const class FName GoalName, const struct FVector& Position, const struct FQuat& Rotation, const float PositionAlpha, const float RotationAlpha)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("IKRigComponent", "SetIKRigGoalPositionAndRotation");
-
-	Params::IKRigComponent_SetIKRigGoalPositionAndRotation Parms{};
-
-	Parms.GoalName = GoalName;
-	Parms.Position = std::move(Position);
-	Parms.Rotation = std::move(Rotation);
-	Parms.PositionAlpha = PositionAlpha;
-	Parms.RotationAlpha = RotationAlpha;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function IKRig.IKRigComponent.SetIKRigGoalTransform
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const class FName                       GoalName                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FTransform&                Transform                                              (ConstParm, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const float                             PositionAlpha                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const float                             RotationAlpha                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UIKRigComponent::SetIKRigGoalTransform(const class FName GoalName, const struct FTransform& Transform, const float PositionAlpha, const float RotationAlpha)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("IKRigComponent", "SetIKRigGoalTransform");
-
-	Params::IKRigComponent_SetIKRigGoalTransform Parms{};
-
-	Parms.GoalName = GoalName;
-	Parms.Transform = std::move(Transform);
-	Parms.PositionAlpha = PositionAlpha;
-	Parms.RotationAlpha = RotationAlpha;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function IKRig.IKRetargeter.GetChainSettingsFromRetargetAsset
 // (Final, RequiredAPI, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
@@ -1627,56 +1677,6 @@ bool UIKRetargeter::HasTargetIKRig() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function IKRig.IKRigSolverControllerBase.GetEnabled
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UIKRigSolverControllerBase::GetEnabled()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("IKRigSolverControllerBase", "GetEnabled");
-
-	Params::IKRigSolverControllerBase_GetEnabled Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function IKRig.IKRigSolverControllerBase.SetEnabled
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bIsEnabled                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UIKRigSolverControllerBase::SetEnabled(bool bIsEnabled)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("IKRigSolverControllerBase", "SetEnabled");
-
-	Params::IKRigSolverControllerBase_SetEnabled Parms{};
-
-	Parms.bIsEnabled = bIsEnabled;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 

@@ -121,21 +121,21 @@ void ABP_Melee_Tier3_Actor_Character_C::SetIsUpCover(bool bNewIsUpCover)
 }
 
 
-// Function BP_Melee_Tier3_Actor_Character.BP_Melee_Tier3_Actor_Character_C.SetIsJumpEyeBehaviour
+// Function BP_Melee_Tier3_Actor_Character.BP_Melee_Tier3_Actor_Character_C.SetIsInSlowRotationRange
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    NewIsJumpEyeBehaviour                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bNewIsInSlowRotationRange                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Melee_Tier3_Actor_Character_C::SetIsJumpEyeBehaviour(bool NewIsJumpEyeBehaviour)
+void ABP_Melee_Tier3_Actor_Character_C::SetIsInSlowRotationRange(bool bNewIsInSlowRotationRange)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "SetIsJumpEyeBehaviour");
+		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "SetIsInSlowRotationRange");
 
-	Params::BP_Melee_Tier3_Actor_Character_C_SetIsJumpEyeBehaviour Parms{};
+	Params::BP_Melee_Tier3_Actor_Character_C_SetIsInSlowRotationRange Parms{};
 
-	Parms.NewIsJumpEyeBehaviour = NewIsJumpEyeBehaviour;
+	Parms.bNewIsInSlowRotationRange = bNewIsInSlowRotationRange;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -156,46 +156,6 @@ void ABP_Melee_Tier3_Actor_Character_C::SetIsCoverActive(bool bNewIsCoverActive)
 	Params::BP_Melee_Tier3_Actor_Character_C_SetIsCoverActive Parms{};
 
 	Parms.bNewIsCoverActive = bNewIsCoverActive;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Melee_Tier3_Actor_Character.BP_Melee_Tier3_Actor_Character_C.SetIsBoostedEyeColor
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    NewIsBoosted                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Melee_Tier3_Actor_Character_C::SetIsBoostedEyeColor(bool NewIsBoosted)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "SetIsBoostedEyeColor");
-
-	Params::BP_Melee_Tier3_Actor_Character_C_SetIsBoostedEyeColor Parms{};
-
-	Parms.NewIsBoosted = NewIsBoosted;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Melee_Tier3_Actor_Character.BP_Melee_Tier3_Actor_Character_C.SetIsAggroEyeColor
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    NewIsAggro                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Melee_Tier3_Actor_Character_C::SetIsAggroEyeColor(bool NewIsAggro)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "SetIsAggroEyeColor");
-
-	Params::BP_Melee_Tier3_Actor_Character_C_SetIsAggroEyeColor Parms{};
-
-	Parms.NewIsAggro = NewIsAggro;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -289,6 +249,82 @@ void ABP_Melee_Tier3_Actor_Character_C::OnRangedAttackTimerFinished()
 }
 
 
+// Function BP_Melee_Tier3_Actor_Character.BP_Melee_Tier3_Actor_Character_C.OnPrepareForPooling
+// (Event, Public, BlueprintEvent)
+
+void ABP_Melee_Tier3_Actor_Character_C::OnPrepareForPooling()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "OnPrepareForPooling");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Melee_Tier3_Actor_Character.BP_Melee_Tier3_Actor_Character_C.OnPrepareForGame
+// (Event, Public, BlueprintEvent)
+
+void ABP_Melee_Tier3_Actor_Character_C::OnPrepareForGame()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "OnPrepareForGame");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Melee_Tier3_Actor_Character.BP_Melee_Tier3_Actor_Character_C.OnExitActorPool
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Melee_Tier3_Actor_Character_C::OnExitActorPool()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "OnExitActorPool");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Melee_Tier3_Actor_Character.BP_Melee_Tier3_Actor_Character_C.OnEnterActorPool
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Melee_Tier3_Actor_Character_C::OnEnterActorPool()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "OnEnterActorPool");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Melee_Tier3_Actor_Character.BP_Melee_Tier3_Actor_Character_C.OnBlackboardConfigured
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class UMassEnemyDataAsset*              Config                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Melee_Tier3_Actor_Character_C::OnBlackboardConfigured(class UMassEnemyDataAsset* Config)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "OnBlackboardConfigured");
+
+	Params::BP_Melee_Tier3_Actor_Character_C_OnBlackboardConfigured Parms{};
+
+	Parms.Config = Config;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_Melee_Tier3_Actor_Character.BP_Melee_Tier3_Actor_Character_C.OnAiDied
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
@@ -308,6 +344,27 @@ void ABP_Melee_Tier3_Actor_Character_C::OnAiDied(const struct FHitResult& HitRes
 	Parms.KillingDamageTag = std::move(KillingDamageTag);
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Melee_Tier3_Actor_Character.BP_Melee_Tier3_Actor_Character_C.GetNiagaraEyeSystem
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UNiagaraComponent**               NewParam                                               (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Melee_Tier3_Actor_Character_C::GetNiagaraEyeSystem(class UNiagaraComponent** NewParam)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "GetNiagaraEyeSystem");
+
+	Params::BP_Melee_Tier3_Actor_Character_C_GetNiagaraEyeSystem Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (NewParam != nullptr)
+		*NewParam = Parms.NewParam;
 }
 
 
@@ -402,6 +459,26 @@ void ABP_Melee_Tier3_Actor_Character_C::AttachWeakpoint()
 		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "AttachWeakpoint");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Melee_Tier3_Actor_Character.BP_Melee_Tier3_Actor_Character_C.OnMeshVisibilityUpdated
+// (Event, Public, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// bool                                    bIsMeshHidden                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Melee_Tier3_Actor_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidden) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "OnMeshVisibilityUpdated");
+
+	Params::BP_Melee_Tier3_Actor_Character_C_OnMeshVisibilityUpdated Parms{};
+
+	Parms.bIsMeshHidden = bIsMeshHidden;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

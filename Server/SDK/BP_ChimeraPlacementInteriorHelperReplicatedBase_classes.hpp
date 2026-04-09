@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ChimeraPlacementInteriorHelperReplicatedBase.BP_ChimeraPlacementInteriorHelperReplicatedBase_C
-// 0x0000 (0x0820 - 0x0820)
+// 0x0000 (0x0890 - 0x0890)
 class ABP_ChimeraPlacementInteriorHelperReplicatedBase_C final : public ACrAPHelperActorCustomInterior
 {
 public:

@@ -26,7 +26,7 @@ public:
 	bool                                          NewHasAggroTarget;                                 // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          NewIsCoverActive;                                  // 0x000D(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          NewIsUpCover;                                      // 0x000E(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_F[0x1];                                        // 0x000F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          NewIsInSlowRotationRange;                          // 0x000F(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UCrAiActionModifyMeleeT3AnimData*       ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrAiActionModifyMeleeT3AnimData_Create_CrAiActionModifyMeleeT3AnimData;
@@ -66,6 +66,15 @@ public:
 	bool                                          bNewIsCoverActive;                                 // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrAiMeleeT3_SetIsCoverActive;
+
+// Function CrAiMeleeRuntime.CrAiMeleeT3.SetIsInSlowRotationRange
+// 0x0001 (0x0001 - 0x0000)
+struct CrAiMeleeT3_SetIsInSlowRotationRange final
+{
+public:
+	bool                                          bNewIsInSlowRotationRange;                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrAiMeleeT3_SetIsInSlowRotationRange;
 
 // Function CrAiMeleeRuntime.CrAiMeleeT3.SetIsUpCover
 // 0x0001 (0x0001 - 0x0000)

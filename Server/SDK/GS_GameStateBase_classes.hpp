@@ -18,23 +18,24 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GS_GameStateBase.GS_GameStateBase_C
-// 0x0030 (0x0A90 - 0x0A60)
+// 0x0030 (0x0A98 - 0x0A68)
 class AGS_GameStateBase_C final : public ACrGameStateBase
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0A60(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USharedQuestItemsListComponent*         SharedQuestItemsList;                              // 0x0A68(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UPropertiesHolderComponent*             PropertiesHolder;                                  // 0x0A70(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0A78(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	bool                                          bTalking;                                          // 0x0A80(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_A81[0x7];                                      // 0x0A81(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UDialogueWave*                          DialogueWave;                                      // 0x0A88(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Transient, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0A68(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USharedQuestItemsListComponent*         SharedQuestItemsList;                              // 0x0A70(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UPropertiesHolderComponent*             PropertiesHolder;                                  // 0x0A78(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0A80(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	bool                                          bTalking;                                          // 0x0A88(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_A89[0x7];                                      // 0x0A89(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UDialogueWave*                          DialogueWave;                                      // 0x0A90(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Transient, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void TalkingFinished();
 	void ReceiveBeginPlay();
 	void PlayContextualDialogueResponseMulticast(const struct FContextualResponsePayload& Response, class FName Main_Rule_Name);
 	bool OnResponseFinished(const struct FContextualResponsePayload& ResponseData, class FName RuleNameContainingResponseData);
+	void OnNoReplyDialogueRuleFound();
 	void OnLoaded_A12FDB953A422BD9EAFD018D9BCB7500(class UObject* Loaded);
 	bool IsCharacterTalking();
 	void InitAvailableWeaponMods();

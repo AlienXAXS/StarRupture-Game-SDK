@@ -35,7 +35,7 @@ public:
 DUMPER7_ASSERTS_BP_InventoryDropItem_C_CanPlaySound;
 
 // Function BP_InventoryDropItem.BP_InventoryDropItem_C.ExecuteUbergraph_BP_InventoryDropItem
-// 0x0088 (0x0088 - 0x0000)
+// 0x0068 (0x0068 - 0x0000)
 struct BP_InventoryDropItem_C_ExecuteUbergraph_BP_InventoryDropItem final
 {
 public:
@@ -50,9 +50,6 @@ public:
 	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_1;        // 0x0048(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0061(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_62[0x6];                                       // 0x0062(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_2;        // 0x0068(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_CanPlaySound_bRet_1;                      // 0x0080(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_InventoryDropItem_C_ExecuteUbergraph_BP_InventoryDropItem;
 

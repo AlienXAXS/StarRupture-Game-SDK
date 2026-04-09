@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_CoolerActive_Tiles.BP_CoolerActive_Tiles_C
-// 0x0008 (0x0878 - 0x0870)
+// 0x0008 (0x0888 - 0x0880)
 class ABP_CoolerActive_Tiles_C final : public ABP_Modular_Foundation_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_CoolerActive_Tiles_C;            // 0x0870(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_CoolerActive_Tiles_C;            // 0x0880(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ReceiveTick(float DeltaSeconds);

@@ -11,23 +11,15 @@
 #include "Basic.hpp"
 
 #include "BP_BaseAIController_classes.hpp"
-#include "Engine_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Animal_Crab_AiController.BP_Animal_Crab_AiController_C
-// 0x0008 (0x03F8 - 0x03F0)
+// 0x0000 (0x03F8 - 0x03F8)
 class ABP_Animal_Crab_AiController_C final : public ABP_BaseAIController_C
 {
-public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03F0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-
-public:
-	void ExecuteUbergraph_BP_Animal_Crab_AiController(int32 EntryPoint);
-	void ReceiveBeginPlay();
-
 public:
 	static class UClass* StaticClass()
 	{

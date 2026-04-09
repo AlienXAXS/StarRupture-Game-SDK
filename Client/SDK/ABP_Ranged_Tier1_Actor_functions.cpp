@@ -396,6 +396,28 @@ void UABP_Ranged_Tier1_Actor_C::AttackConduitOnUpdate(const struct FAnimUpdateCo
 }
 
 
+// Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.BPOnAttackTypeChanged
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// ECrEnemyAttackType                      OldAttackType                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrEnemyAttackType                      NewAttackType                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UABP_Ranged_Tier1_Actor_C::BPOnAttackTypeChanged(ECrEnemyAttackType OldAttackType, ECrEnemyAttackType NewAttackType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Ranged_Tier1_Actor_C", "BPOnAttackTypeChanged");
+
+	Params::ABP_Ranged_Tier1_Actor_C_BPOnAttackTypeChanged Parms{};
+
+	Parms.OldAttackType = OldAttackType;
+	Parms.NewAttackType = NewAttackType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.BPOnDamageReceived
 // (Event, Public, BlueprintEvent)
 
@@ -441,34 +463,6 @@ void UABP_Ranged_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("ABP_Ranged_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_BlendListByBool_0BC67F9F4A6531EA56FC4A8D10B35C89");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_BlendListByBool_769FFDEB40A85EBF4C3CBD95BAB656DC
-// (BlueprintEvent)
-
-void UABP_Ranged_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_BlendListByBool_769FFDEB40A85EBF4C3CBD95BAB656DC()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Ranged_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_BlendListByBool_769FFDEB40A85EBF4C3CBD95BAB656DC");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_BlendListByBool_8337232C40D734149AF5AD82916FC1E2
-// (BlueprintEvent)
-
-void UABP_Ranged_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_BlendListByBool_8337232C40D734149AF5AD82916FC1E2()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Ranged_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_BlendListByBool_8337232C40D734149AF5AD82916FC1E2");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -525,20 +519,6 @@ void UABP_Ranged_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("ABP_Ranged_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_TransitionResult_1DD34BAF45BE25EF1B85989E37E15659");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_TransitionResult_210765EC4C6E4EC92C27429DEAD62F4B
-// (BlueprintEvent)
-
-void UABP_Ranged_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_TransitionResult_210765EC4C6E4EC92C27429DEAD62F4B()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Ranged_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_TransitionResult_210765EC4C6E4EC92C27429DEAD62F4B");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -609,6 +589,20 @@ void UABP_Ranged_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("ABP_Ranged_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_TransitionResult_3FF39FBC443C4CB7223F1099AC277B7E");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_TransitionResult_40835CB94C2790CEDD05C482A927B3A2
+// (BlueprintEvent)
+
+void UABP_Ranged_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_TransitionResult_40835CB94C2790CEDD05C482A927B3A2()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Ranged_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_TransitionResult_40835CB94C2790CEDD05C482A927B3A2");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -707,20 +701,6 @@ void UABP_Ranged_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("ABP_Ranged_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_TransitionResult_7C3DCC1A4FD0E45888C1C6BABD413103");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_TransitionResult_7C6C98824ABFF7B3A6B73FB9AD8FC0A1
-// (BlueprintEvent)
-
-void UABP_Ranged_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_TransitionResult_7C6C98824ABFF7B3A6B73FB9AD8FC0A1()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Ranged_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_TransitionResult_7C6C98824ABFF7B3A6B73FB9AD8FC0A1");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -894,20 +874,6 @@ void UABP_Ranged_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_
 }
 
 
-// Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_TransitionResult_BB8F0657481C731E1A82339CD063D587
-// (BlueprintEvent)
-
-void UABP_Ranged_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_TransitionResult_BB8F0657481C731E1A82339CD063D587()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Ranged_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_TransitionResult_BB8F0657481C731E1A82339CD063D587");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_TransitionResult_C2B0FB914E69352A5EEE25913007FA06
 // (BlueprintEvent)
 
@@ -1020,20 +986,6 @@ void UABP_Ranged_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_
 }
 
 
-// Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_TransitionResult_F3D58B7F4EDFFC75B50CD18426E2E200
-// (BlueprintEvent)
-
-void UABP_Ranged_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_TransitionResult_F3D58B7F4EDFFC75B50CD18426E2E200()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Ranged_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_TransitionResult_F3D58B7F4EDFFC75B50CD18426E2E200");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_TransitionResult_F4C55DFF4CAC63C26D20CFB61E6EC685
 // (BlueprintEvent)
 
@@ -1063,6 +1015,72 @@ void UABP_Ranged_Tier1_Actor_C::ExecuteUbergraph_ABP_Ranged_Tier1_Actor(int32 En
 	Params::ABP_Ranged_Tier1_Actor_C_ExecuteUbergraph_ABP_Ranged_Tier1_Actor Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.ResetSyncedAnimProgress
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+
+void UABP_Ranged_Tier1_Actor_C::ResetSyncedAnimProgress(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Ranged_Tier1_Actor_C", "ResetSyncedAnimProgress");
+
+	Params::ABP_Ranged_Tier1_Actor_C_ResetSyncedAnimProgress Parms{};
+
+	Parms.Context = std::move(Context);
+	Parms.Node = std::move(Node);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.UpdateYawRotationRateForAttackType
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECrEnemyAttackType                      OldAttackType                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrEnemyAttackType                      NewAttackType                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UABP_Ranged_Tier1_Actor_C::UpdateYawRotationRateForAttackType(ECrEnemyAttackType OldAttackType, ECrEnemyAttackType NewAttackType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Ranged_Tier1_Actor_C", "UpdateYawRotationRateForAttackType");
+
+	Params::ABP_Ranged_Tier1_Actor_C_UpdateYawRotationRateForAttackType Parms{};
+
+	Parms.OldAttackType = OldAttackType;
+	Parms.NewAttackType = NewAttackType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.UpdateYawRotationRateForLocomotionState
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECrEnemyLocomotionType                  OldLocomotionType                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrEnemyLocomotionType                  NewLocomotionType                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UABP_Ranged_Tier1_Actor_C::UpdateYawRotationRateForLocomotionState(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Ranged_Tier1_Actor_C", "UpdateYawRotationRateForLocomotionState");
+
+	Params::ABP_Ranged_Tier1_Actor_C_UpdateYawRotationRateForLocomotionState Parms{};
+
+	Parms.OldLocomotionType = OldLocomotionType;
+	Parms.NewLocomotionType = NewLocomotionType;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

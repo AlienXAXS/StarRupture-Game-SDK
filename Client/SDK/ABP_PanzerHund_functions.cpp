@@ -66,35 +66,71 @@ void UABP_PanzerHund_C::AnimNotify_EndAnimAction()
 }
 
 
-// Function ABP_PanzerHund.ABP_PanzerHund_C.BlueprintUpdateAnimation
-// (Event, Public, BlueprintEvent)
+// Function ABP_PanzerHund.ABP_PanzerHund_C.BlueprintThreadSafeUpdateAnimation
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                                   DeltaTimeX                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UABP_PanzerHund_C::BlueprintUpdateAnimation(float DeltaTimeX)
+void UABP_PanzerHund_C::BlueprintThreadSafeUpdateAnimation(float DeltaTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_PanzerHund_C", "BlueprintUpdateAnimation");
+		Func = Class->GetFunction("ABP_PanzerHund_C", "BlueprintThreadSafeUpdateAnimation");
 
-	Params::ABP_PanzerHund_C_BlueprintUpdateAnimation Parms{};
+	Params::ABP_PanzerHund_C_BlueprintThreadSafeUpdateAnimation Parms{};
 
-	Parms.DeltaTimeX = DeltaTimeX;
+	Parms.DeltaTime = DeltaTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function ABP_PanzerHund.ABP_PanzerHund_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_BlendListByBool_02AE2C514348813F632D369ADA908DBF
-// (BlueprintEvent)
+// Function ABP_PanzerHund.ABP_PanzerHund_C.BPOnLocomotionTypeChanged
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// ECrEnemyLocomotionType                  OldLocomotionType                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrEnemyLocomotionType                  NewLocomotionType                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_BlendListByBool_02AE2C514348813F632D369ADA908DBF()
+void UABP_PanzerHund_C::BPOnLocomotionTypeChanged(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_PanzerHund_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_BlendListByBool_02AE2C514348813F632D369ADA908DBF");
+		Func = Class->GetFunction("ABP_PanzerHund_C", "BPOnLocomotionTypeChanged");
+
+	Params::ABP_PanzerHund_C_BPOnLocomotionTypeChanged Parms{};
+
+	Parms.OldLocomotionType = OldLocomotionType;
+	Parms.NewLocomotionType = NewLocomotionType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ABP_PanzerHund.ABP_PanzerHund_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_BlendListByBool_2B80C4C24105DC5A74E560BEC5E5B115
+// (BlueprintEvent)
+
+void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_BlendListByBool_2B80C4C24105DC5A74E560BEC5E5B115()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_PanzerHund_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_BlendListByBool_2B80C4C24105DC5A74E560BEC5E5B115");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_PanzerHund.ABP_PanzerHund_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_27A2A8374D0CA89334D57BAA78C89F53
+// (BlueprintEvent)
+
+void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_27A2A8374D0CA89334D57BAA78C89F53()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_PanzerHund_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_27A2A8374D0CA89334D57BAA78C89F53");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -142,6 +178,20 @@ void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHu
 }
 
 
+// Function ABP_PanzerHund.ABP_PanzerHund_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_71A78BD34FCCA8BD7E6FC98C8A2B5E3C
+// (BlueprintEvent)
+
+void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_71A78BD34FCCA8BD7E6FC98C8A2B5E3C()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_PanzerHund_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_71A78BD34FCCA8BD7E6FC98C8A2B5E3C");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function ABP_PanzerHund.ABP_PanzerHund_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_90CD82ED49415B8A4DEFA186CB86A8E8
 // (BlueprintEvent)
 
@@ -179,6 +229,20 @@ void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHu
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("ABP_PanzerHund_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_9A404664478112ED230BF8A28C3BA19D");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_PanzerHund.ABP_PanzerHund_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_B15AFD2C4A23111A3410BD9C57AE601F
+// (BlueprintEvent)
+
+void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_B15AFD2C4A23111A3410BD9C57AE601F()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_PanzerHund_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_B15AFD2C4A23111A3410BD9C57AE601F");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -226,6 +290,20 @@ void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHu
 }
 
 
+// Function ABP_PanzerHund.ABP_PanzerHund_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_CB8CD5034E8382664C4022A06E1E1429
+// (BlueprintEvent)
+
+void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_CB8CD5034E8382664C4022A06E1E1429()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_PanzerHund_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_CB8CD5034E8382664C4022A06E1E1429");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function ABP_PanzerHund.ABP_PanzerHund_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_FB8492694E4AD31DAC9BAFBE3ACB0BA7
 // (BlueprintEvent)
 
@@ -255,6 +333,28 @@ void UABP_PanzerHund_C::ExecuteUbergraph_ABP_PanzerHund(int32 EntryPoint)
 	Params::ABP_PanzerHund_C_ExecuteUbergraph_ABP_PanzerHund Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ABP_PanzerHund.ABP_PanzerHund_C.UpdateYawRotationRateForLocomotionState
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECrEnemyLocomotionType                  OldLocomotionType                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrEnemyLocomotionType                  NewLocomotionType                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UABP_PanzerHund_C::UpdateYawRotationRateForLocomotionState(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_PanzerHund_C", "UpdateYawRotationRateForLocomotionState");
+
+	Params::ABP_PanzerHund_C_UpdateYawRotationRateForLocomotionState Parms{};
+
+	Parms.OldLocomotionType = OldLocomotionType;
+	Parms.NewLocomotionType = NewLocomotionType;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "Chimera_structs.hpp"
 #include "ChimeraUI_classes.hpp"
+#include "Chimera_structs.hpp"
 
 
 namespace SDK

@@ -54,12 +54,12 @@ public:
 DUMPER7_ASSERTS_FMeleeFastArrayItem;
 
 // ScriptStruct CrAiMeleeRuntime.MeleeClientBubbleSerializer
-// 0x01C0 (0x02F8 - 0x0138)
+// 0x01D0 (0x0308 - 0x0138)
 struct FMeleeClientBubbleSerializer final : public FMassClientBubbleSerializerBase
 {
 public:
-	uint8                                         Pad_138[0x1B0];                                    // 0x0138(0x01B0)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FMeleeFastArrayItem>            Ais;                                               // 0x02E8(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_138[0x1C0];                                    // 0x0138(0x01C0)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FMeleeFastArrayItem>            Ais;                                               // 0x02F8(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
 };
 DUMPER7_ASSERTS_FMeleeClientBubbleSerializer;
 

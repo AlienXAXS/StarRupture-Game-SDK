@@ -19,13 +19,12 @@ namespace SDK::Params
 {
 
 // Function BP_Ranged_Tier1_PooledProjectile.BP_Ranged_Tier1_PooledProjectile_C.ExecuteUbergraph_BP_Ranged_Tier1_PooledProjectile
-// 0x02C0 (0x02C0 - 0x0000)
+// 0x02B0 (0x02B0 - 0x0000)
 struct BP_Ranged_Tier1_PooledProjectile_C_ExecuteUbergraph_BP_Ranged_Tier1_PooledProjectile final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsServer_ReturnValue;                     // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FHitResult                             K2Node_Event_HitResult;                            // 0x0008(0x0100)(ConstParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
 	bool                                          CallFunc_BreakHitResult_bBlockingHit;              // 0x0108(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_BreakHitResult_bInitialOverlap;           // 0x0109(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -50,11 +49,11 @@ public:
 	struct FVector                                CallFunc_BreakHitResult_TraceEnd;                  // 0x01C8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FTransform                             CallFunc_Conv_VectorToTransform_ReturnValue;       // 0x01E0(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UNiagaraComponent*                      CallFunc_SpawnSystemAtLocation_ReturnValue;        // 0x0240(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0248(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_249[0x7];                                      // 0x0249(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrAiProjectileParameters              K2Node_Event_InProjectileParameters;               // 0x0250(0x0060)(ConstParm, NoDestructor)
-	bool                                          CallFunc_DealDamageToEntityAtProjectileHitLocation_ReturnValue; // 0x02B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_DealDamageToActor_ReturnValue;            // 0x02B1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FCrAiProjectileParameters              K2Node_Event_InProjectileParameters;               // 0x0248(0x0060)(ConstParm, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x02A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_DealDamageToEntityAtProjectileHitLocation_ReturnValue; // 0x02A9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_DealDamageToActor_ReturnValue;            // 0x02AA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsServer_ReturnValue;                     // 0x02AB(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Ranged_Tier1_PooledProjectile_C_ExecuteUbergraph_BP_Ranged_Tier1_PooledProjectile;
 
@@ -75,6 +74,15 @@ public:
 	struct FCrAiProjectileParameters              InProjectileParameters;                            // 0x0000(0x0060)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_Ranged_Tier1_PooledProjectile_C_OnProjectileShot;
+
+// Function BP_Ranged_Tier1_PooledProjectile.BP_Ranged_Tier1_PooledProjectile_C.CanReturnToPoolAfterHit
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Ranged_Tier1_PooledProjectile_C_CanReturnToPoolAfterHit final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Ranged_Tier1_PooledProjectile_C_CanReturnToPoolAfterHit;
 
 }
 

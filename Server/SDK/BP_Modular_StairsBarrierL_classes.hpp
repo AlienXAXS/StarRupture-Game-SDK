@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Modular_StairsBarrierL.BP_Modular_StairsBarrierL_C
-// 0x0000 (0x0830 - 0x0830)
+// 0x0000 (0x0840 - 0x0840)
 class ABP_Modular_StairsBarrierL_C final : public ACrCustomBuilding
 {
 public:

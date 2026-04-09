@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_PlacementHelperReplicatedPlatform.BP_PlacementHelperReplicatedPlatform_C
-// 0x0000 (0x09E0 - 0x09E0)
+// 0x0000 (0x09A0 - 0x09A0)
 class ABP_PlacementHelperReplicatedPlatform_C final : public ACrAPHelperActorCustom
 {
 public:

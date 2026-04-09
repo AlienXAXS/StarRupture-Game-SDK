@@ -99,15 +99,6 @@ public:
 };
 DUMPER7_ASSERTS_FComputeGraphEdge;
 
-// ScriptStruct ComputeFramework.ShaderValueTypeHandle
-// 0x0008 (0x0008 - 0x0000)
-struct alignas(0x08) FShaderValueTypeHandle final
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FShaderValueTypeHandle;
-
 // ScriptStruct ComputeFramework.ComputeGraphInstance
 // 0x0018 (0x0018 - 0x0000)
 struct FComputeGraphInstance final
@@ -138,22 +129,6 @@ public:
 };
 DUMPER7_ASSERTS_FComputeKernelPermutationSet;
 
-// ScriptStruct ComputeFramework.ShaderParamTypeDefinition
-// 0x0030 (0x0030 - 0x0000)
-struct FShaderParamTypeDefinition final
-{
-public:
-	class FString                                 TypeDeclaration;                                   // 0x0000(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Name;                                              // 0x0010(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FShaderValueTypeHandle                 ValueType;                                         // 0x0020(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint16                                        ArrayElementCount;                                 // 0x0028(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EShaderParamBindingType                       BindingType;                                       // 0x002A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EShaderResourceType                           ResourceType;                                      // 0x002B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EShaderParamModifier                          Modifier;                                          // 0x002C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FShaderParamTypeDefinition;
-
 // ScriptStruct ComputeFramework.ComputeKernelDefinition
 // 0x0020 (0x0020 - 0x0000)
 struct FComputeKernelDefinition final
@@ -163,6 +138,15 @@ public:
 	class FString                                 Define;                                            // 0x0010(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FComputeKernelDefinition;
+
+// ScriptStruct ComputeFramework.ComputeKernelDefinitionSet
+// 0x0010 (0x0010 - 0x0000)
+struct FComputeKernelDefinitionSet final
+{
+public:
+	TArray<struct FComputeKernelDefinition>       Defines;                                           // 0x0000(0x0010)(Edit, EditFixedSize, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FComputeKernelDefinitionSet;
 
 // ScriptStruct ComputeFramework.ComputeKernelPermutationVector
 // 0x0058 (0x0058 - 0x0000)
@@ -175,14 +159,14 @@ public:
 };
 DUMPER7_ASSERTS_FComputeKernelPermutationVector;
 
-// ScriptStruct ComputeFramework.ComputeKernelDefinitionSet
-// 0x0010 (0x0010 - 0x0000)
-struct FComputeKernelDefinitionSet final
+// ScriptStruct ComputeFramework.ShaderValueTypeHandle
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x08) FShaderValueTypeHandle final
 {
 public:
-	TArray<struct FComputeKernelDefinition>       Defines;                                           // 0x0000(0x0010)(Edit, EditFixedSize, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FComputeKernelDefinitionSet;
+DUMPER7_ASSERTS_FShaderValueTypeHandle;
 
 // ScriptStruct ComputeFramework.ArrayShaderValue
 // 0x0010 (0x0010 - 0x0000)
@@ -216,6 +200,22 @@ public:
 	uint8                                         Pad_D[0x13];                                       // 0x000D(0x0013)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FShaderValueType;
+
+// ScriptStruct ComputeFramework.ShaderParamTypeDefinition
+// 0x0030 (0x0030 - 0x0000)
+struct FShaderParamTypeDefinition final
+{
+public:
+	class FString                                 TypeDeclaration;                                   // 0x0000(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0010(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FShaderValueTypeHandle                 ValueType;                                         // 0x0020(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint16                                        ArrayElementCount;                                 // 0x0028(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EShaderParamBindingType                       BindingType;                                       // 0x002A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EShaderResourceType                           ResourceType;                                      // 0x002B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EShaderParamModifier                          Modifier;                                          // 0x002C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FShaderParamTypeDefinition;
 
 // ScriptStruct ComputeFramework.ShaderFunctionDefinition
 // 0x0028 (0x0028 - 0x0000)

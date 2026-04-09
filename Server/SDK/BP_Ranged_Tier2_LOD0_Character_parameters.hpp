@@ -18,22 +18,17 @@ namespace SDK::Params
 {
 
 // Function BP_Ranged_Tier2_LOD0_Character.BP_Ranged_Tier2_LOD0_Character_C.UserConstructionScript
-// 0x0001 (0x0001 - 0x0000)
+// 0x0005 (0x0005 - 0x0000)
 struct BP_Ranged_Tier2_LOD0_Character_C_UserConstructionScript final
 {
 public:
-	bool                                          CallFunc_K2_AttachToComponent_ReturnValue;         // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsServer_ReturnValue;                     // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsStandalone_ReturnValue;                 // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0003(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_K2_AttachToComponent_ReturnValue;         // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Ranged_Tier2_LOD0_Character_C_UserConstructionScript;
-
-// Function BP_Ranged_Tier2_LOD0_Character.BP_Ranged_Tier2_LOD0_Character_C.SetIsBoostedEyeColor
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Ranged_Tier2_LOD0_Character_C_SetIsBoostedEyeColor final
-{
-public:
-	bool                                          NewIsBoosted;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Ranged_Tier2_LOD0_Character_C_SetIsBoostedEyeColor;
 
 // Function BP_Ranged_Tier2_LOD0_Character.BP_Ranged_Tier2_LOD0_Character_C.SetIsAggroEyeColor
 // 0x0001 (0x0001 - 0x0000)
@@ -54,6 +49,16 @@ public:
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Ranged_Tier2_LOD0_Character_C_OnRep_InjuryPoseAlpha;
+
+// Function BP_Ranged_Tier2_LOD0_Character.BP_Ranged_Tier2_LOD0_Character_C.OnExitActorPool
+// 0x0002 (0x0002 - 0x0000)
+struct BP_Ranged_Tier2_LOD0_Character_C_OnExitActorPool final
+{
+public:
+	bool                                          CallFunc_IsActive_ReturnValue;                     // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsActive_ReturnValue_1;                   // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Ranged_Tier2_LOD0_Character_C_OnExitActorPool;
 
 // Function BP_Ranged_Tier2_LOD0_Character.BP_Ranged_Tier2_LOD0_Character_C.OnDamage
 // 0x0110 (0x0110 - 0x0000)
@@ -76,32 +81,51 @@ public:
 };
 DUMPER7_ASSERTS_BP_Ranged_Tier2_LOD0_Character_C_OnAiDied;
 
+// Function BP_Ranged_Tier2_LOD0_Character.BP_Ranged_Tier2_LOD0_Character_C.GetNiagaraEyeSystem
+// 0x0008 (0x0008 - 0x0000)
+struct BP_Ranged_Tier2_LOD0_Character_C_GetNiagaraEyeSystem final
+{
+public:
+	class UNiagaraComponent*                      NewParam;                                          // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Ranged_Tier2_LOD0_Character_C_GetNiagaraEyeSystem;
+
 // Function BP_Ranged_Tier2_LOD0_Character.BP_Ranged_Tier2_LOD0_Character_C.ExecuteUbergraph_BP_Ranged_Tier2_LOD0_Character
-// 0x0260 (0x0260 - 0x0000)
+// 0x0268 (0x0268 - 0x0000)
 struct BP_Ranged_Tier2_LOD0_Character_C_ExecuteUbergraph_BP_Ranged_Tier2_LOD0_Character final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_NewIsBoosted;                         // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_NewIsAggro;                           // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          K2Node_Event_NewIsAggro;                           // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FHitResult                             K2Node_Event_HitResult_1;                          // 0x0008(0x0100)(ConstParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
 	struct FGameplayTag                           K2Node_Event_KillingDamageTag;                     // 0x0108(0x0008)(ConstParm, NoDestructor, HasGetValueTypeHash)
 	class AActor*                                 K2Node_Event_Actor;                                // 0x0110(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	struct FHitResult                             K2Node_Event_HitResult;                            // 0x0118(0x0100)(ConstParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
 	float                                         K2Node_Event_InDamage;                             // 0x0218(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_21C[0x4];                                      // 0x021C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMassEnemyFXEventSubsystem*             CallFunc_GetWorldSubsystem_ReturnValue;            // 0x0220(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_GetHP_ReturnValue;                        // 0x0228(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_GetMaxHP_ReturnValue;                     // 0x022C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetHP_ReturnValue;                        // 0x021C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetMaxHP_ReturnValue;                     // 0x0220(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_224[0x4];                                      // 0x0224(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMassEnemyFXEventSubsystem*             CallFunc_GetWorldSubsystem_ReturnValue;            // 0x0228(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_Divide_DoubleDouble_ReturnValue;          // 0x0230(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayTag                           CallFunc_MakeLiteralGameplayTag_ReturnValue;       // 0x0238(0x0008)(NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0238(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_239[0x7];                                      // 0x0239(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        CallFunc_Subtract_DoubleDouble_ReturnValue;        // 0x0240(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_FClamp_ReturnValue;                       // 0x0248(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Divide_DoubleDouble_A_ImplicitCast;       // 0x0250(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Divide_DoubleDouble_B_ImplicitCast;       // 0x0258(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTag                           CallFunc_MakeLiteralGameplayTag_ReturnValue;       // 0x0250(0x0008)(NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Divide_DoubleDouble_A_ImplicitCast;       // 0x0258(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Divide_DoubleDouble_B_ImplicitCast;       // 0x0260(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Ranged_Tier2_LOD0_Character_C_ExecuteUbergraph_BP_Ranged_Tier2_LOD0_Character;
+
+// Function BP_Ranged_Tier2_LOD0_Character.BP_Ranged_Tier2_LOD0_Character_C.OnMeshVisibilityUpdated
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Ranged_Tier2_LOD0_Character_C_OnMeshVisibilityUpdated final
+{
+public:
+	bool                                          bIsMeshHidden;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Ranged_Tier2_LOD0_Character_C_OnMeshVisibilityUpdated;
 
 }
 

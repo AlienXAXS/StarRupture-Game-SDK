@@ -10,57 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "RigVM_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "RigVM_structs.hpp"
 
 
 namespace SDK::Params
 {
-
-// Function RigVM.RigVMUserWorkflowOptions.ReportError
-// 0x0010 (0x0010 - 0x0000)
-struct RigVMUserWorkflowOptions_ReportError final
-{
-public:
-	class FString                                 InMessage;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_RigVMUserWorkflowOptions_ReportError;
-
-// Function RigVM.RigVMUserWorkflowOptions.ReportInfo
-// 0x0010 (0x0010 - 0x0000)
-struct RigVMUserWorkflowOptions_ReportInfo final
-{
-public:
-	class FString                                 InMessage;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_RigVMUserWorkflowOptions_ReportInfo;
-
-// Function RigVM.RigVMUserWorkflowOptions.ReportWarning
-// 0x0010 (0x0010 - 0x0000)
-struct RigVMUserWorkflowOptions_ReportWarning final
-{
-public:
-	class FString                                 InMessage;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_RigVMUserWorkflowOptions_ReportWarning;
-
-// Function RigVM.RigVMUserWorkflowOptions.IsValid
-// 0x0001 (0x0001 - 0x0000)
-struct RigVMUserWorkflowOptions_IsValid final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_RigVMUserWorkflowOptions_IsValid;
-
-// Function RigVM.RigVMUserWorkflowOptions.RequiresDialog
-// 0x0001 (0x0001 - 0x0000)
-struct RigVMUserWorkflowOptions_RequiresDialog final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_RigVMUserWorkflowOptions_RequiresDialog;
 
 // Function RigVM.RigVM.AddRigVMFunction
 // 0x0018 (0x0018 - 0x0000)
@@ -359,6 +314,51 @@ public:
 	TSoftObjectPtr<class UDataAsset>              ReturnValue;                                       // 0x0000(0x0028)(Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_DataAssetLink_GetDataAsset;
+
+// Function RigVM.RigVMUserWorkflowOptions.ReportError
+// 0x0010 (0x0010 - 0x0000)
+struct RigVMUserWorkflowOptions_ReportError final
+{
+public:
+	class FString                                 InMessage;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_RigVMUserWorkflowOptions_ReportError;
+
+// Function RigVM.RigVMUserWorkflowOptions.ReportInfo
+// 0x0010 (0x0010 - 0x0000)
+struct RigVMUserWorkflowOptions_ReportInfo final
+{
+public:
+	class FString                                 InMessage;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_RigVMUserWorkflowOptions_ReportInfo;
+
+// Function RigVM.RigVMUserWorkflowOptions.ReportWarning
+// 0x0010 (0x0010 - 0x0000)
+struct RigVMUserWorkflowOptions_ReportWarning final
+{
+public:
+	class FString                                 InMessage;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_RigVMUserWorkflowOptions_ReportWarning;
+
+// Function RigVM.RigVMUserWorkflowOptions.IsValid
+// 0x0001 (0x0001 - 0x0000)
+struct RigVMUserWorkflowOptions_IsValid final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_RigVMUserWorkflowOptions_IsValid;
+
+// Function RigVM.RigVMUserWorkflowOptions.RequiresDialog
+// 0x0001 (0x0001 - 0x0000)
+struct RigVMUserWorkflowOptions_RequiresDialog final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_RigVMUserWorkflowOptions_RequiresDialog;
 
 // Function RigVM.RigVMHost.FindRigVMHosts
 // 0x0020 (0x0020 - 0x0000)

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_PlacementHelperBase.BP_PlacementHelperBase_C
-// 0x0000 (0x0820 - 0x0820)
+// 0x0000 (0x0890 - 0x0890)
 class ABP_PlacementHelperBase_C final : public AAuAPHelperActor
 {
 public:

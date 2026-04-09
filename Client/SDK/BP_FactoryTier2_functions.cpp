@@ -88,11 +88,11 @@ void ABP_FactoryTier2_C::SetupSkeletalMesh()
 // Function BP_FactoryTier2.BP_FactoryTier2_C.Get Meshes
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// class USceneComponent*                  Static_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class USceneComponent*                  Static                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // class USceneComponent*                  Animated_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // TArray<class UMeshComponent*>*          NewParam                                               (Parm, OutParm, ContainsInstancedReference)
 
-void ABP_FactoryTier2_C::Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Animated_0, TArray<class UMeshComponent*>* NewParam) const
+void ABP_FactoryTier2_C::Get_Meshes(class USceneComponent* Static, class USceneComponent* Animated_0, TArray<class UMeshComponent*>* NewParam) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -101,7 +101,7 @@ void ABP_FactoryTier2_C::Get_Meshes(class USceneComponent* Static_0, class UScen
 
 	Params::BP_FactoryTier2_C_Get_Meshes Parms{};
 
-	Parms.Static_0 = Static_0;
+	Parms.Static = Static;
 	Parms.Animated_0 = Animated_0;
 
 	UObject::ProcessEvent(Func, &Parms);

@@ -45,7 +45,7 @@ DUMPER7_ASSERTS_UAnimationBudgetBlueprintLibrary;
 class USkeletalMeshComponentBudgeted final : public USkeletalMeshComponent
 {
 public:
-	uint8                                         Pad_1040[0x20];                                    // 0x1040(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1038[0x28];                                    // 0x1038(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
 	uint8                                         bAutoRegisterWithBudgetAllocator : 1;              // 0x1060(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate))
 	uint8                                         bAutoCalculateSignificance : 1;                    // 0x1060(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate))
 	uint8                                         bShouldUseActorRenderedFlag : 1;                   // 0x1060(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPrivate))

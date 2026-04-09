@@ -11,10 +11,10 @@
 #include "Basic.hpp"
 
 #include "GameplayTags_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "AuAbilities_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
 #include "AuItems_structs.hpp"
-#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
@@ -63,17 +63,6 @@ enum class ENxEquipWeapon : uint8
 	Swap                                     = 2,
 	ENxEquipWeapon_MAX                       = 3,
 };
-
-// ScriptStruct AuWeapon.AuWeaponAttachment
-// 0x0040 (0x0040 - 0x0000)
-struct FAuWeaponAttachment final
-{
-public:
-	TSoftClassPtr<class UClass>                   WeaponClass;                                       // 0x0000(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   UnholsterSocket;                                   // 0x0028(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class FName>                           HolsterSockets;                                    // 0x0030(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAuWeaponAttachment;
 
 // ScriptStruct AuWeapon.AuEquippedWeapon
 // 0x0100 (0x0100 - 0x0000)
@@ -150,6 +139,17 @@ public:
 	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FAuWeaponItemInstance;
+
+// ScriptStruct AuWeapon.AuWeaponAttachment
+// 0x0040 (0x0040 - 0x0000)
+struct FAuWeaponAttachment final
+{
+public:
+	TSoftClassPtr<class UClass>                   WeaponClass;                                       // 0x0000(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   UnholsterSocket;                                   // 0x0028(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FName>                           HolsterSockets;                                    // 0x0030(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAuWeaponAttachment;
 
 // ScriptStruct AuWeapon.AuWeaponItemComponent
 // 0x0038 (0x0038 - 0x0000)

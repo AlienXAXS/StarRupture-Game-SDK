@@ -18,12 +18,12 @@ namespace SDK
 {
 
 // Function GameSettings.GameSettingHeader.RegisterTab
-// (Event, Public, BlueprintCallable, BlueprintEvent)
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class FName                             TabCollection                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             TabName                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FText&                      TabName                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UGameSettingHeader::RegisterTab(class FName TabCollection, class FName TabName)
+void UGameSettingHeader::RegisterTab(class FName TabCollection, const class FText& TabName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -33,7 +33,7 @@ void UGameSettingHeader::RegisterTab(class FName TabCollection, class FName TabN
 	Params::GameSettingHeader_RegisterTab Parms{};
 
 	Parms.TabCollection = TabCollection;
-	Parms.TabName = TabName;
+	Parms.TabName = std::move(TabName);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_MainMenuWidget.WBP_MainMenuWidget_C
-// 0x0078 (0x0718 - 0x06A0)
+// 0x0080 (0x0720 - 0x06A0)
 class UWBP_MainMenuWidget_C final : public UCrUW_MainMenuWidget
 {
 public:
@@ -37,6 +37,7 @@ public:
 	class UButton*                                DiscordButton;                                     // 0x0700(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UVerticalBox*                           DebugBox;                                          // 0x0708(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UOverlay*                               ContentOverlay;                                    // 0x0710(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UButton*                                BenchmarkButton;                                   // 0x0718(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
 	void SetColors(const struct FLinearColor& OrangeColor);
@@ -48,6 +49,7 @@ public:
 	void BndEvt__WBP_MainMenuWidget_InstagramButton_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature();
 	void BndEvt__WBP_MainMenuWidget_FacebookButton_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature();
 	void BndEvt__WBP_MainMenuWidget_DiscordButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
+	void BndEvt__WBP_MainMenuWidget_BenchmarkButton_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature();
 
 public:
 	static class UClass* StaticClass()

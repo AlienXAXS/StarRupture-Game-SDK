@@ -26,6 +26,7 @@ public:
 	bool CanExecuteAnyContextualResponse(bool bIsImportant);
 	bool ExecuteContextualResponse(const struct FContextualResponsePayload& ResponseData, class FName RuleNameContainingResponseData);
 	bool IsCharacterTalking();
+	void OnNoReplyDialogueRuleFound();
 	bool OnResponseFinished(const struct FContextualResponsePayload& ResponseData, class FName RuleNameContainingResponseData);
 
 public:
@@ -123,7 +124,7 @@ public:
 DUMPER7_ASSERTS_UContextualDialogSettings;
 
 // Class ContextualDialog.ContextualDialogSubsystem
-// 0x0308 (0x0348 - 0x0040)
+// 0x0318 (0x0358 - 0x0040)
 class UContextualDialogSubsystem final : public UTickableWorldSubsystem
 {
 public:
@@ -151,6 +152,7 @@ public:
 	uint8                                         Pad_310[0x8];                                      // 0x0310(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TMulticastInlineDelegate<void(class AActor* TargetActor, const struct FContextualResponsePayload& ResponseData, class FName RuleRowName)> OnMatchingRuleFoundAndExecutedByActorDel; // 0x0318(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void(class AActor* Target, class FName ContextName, class FName ContextValue, class AActor* TargetActor)> OnContextualEventExecutedDel; // 0x0330(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_348[0x10];                                     // 0x0348(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void AddObjectLookingDurationDelta(class FName ObjectName, float DeltaSeconds);

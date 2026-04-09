@@ -17,6 +17,26 @@
 namespace SDK
 {
 
+// Function BP_BaseAI.BP_BaseAI_C.SetIsJumpEyeBehaviour
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    NewIsJumpEyeBehaviour                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_BaseAI_C::SetIsJumpEyeBehaviour(bool NewIsJumpEyeBehaviour)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseAI_C", "SetIsJumpEyeBehaviour");
+
+	Params::BP_BaseAI_C_SetIsJumpEyeBehaviour Parms{};
+
+	Parms.NewIsJumpEyeBehaviour = NewIsJumpEyeBehaviour;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_BaseAI.BP_BaseAI_C.SetIsBoostedEyeColor
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -71,6 +91,82 @@ void ABP_BaseAI_C::ReceiveBeginPlay()
 }
 
 
+// Function BP_BaseAI.BP_BaseAI_C.PostSetupPooledActorData
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bNewIsInPool                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_BaseAI_C::PostSetupPooledActorData(bool bNewIsInPool)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseAI_C", "PostSetupPooledActorData");
+
+	Params::BP_BaseAI_C_PostSetupPooledActorData Parms{};
+
+	Parms.bNewIsInPool = bNewIsInPool;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_BaseAI.BP_BaseAI_C.OnPrepareForPooling
+// (Event, Public, BlueprintEvent)
+
+void ABP_BaseAI_C::OnPrepareForPooling()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseAI_C", "OnPrepareForPooling");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_BaseAI.BP_BaseAI_C.OnPrepareForGame
+// (Event, Public, BlueprintEvent)
+
+void ABP_BaseAI_C::OnPrepareForGame()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseAI_C", "OnPrepareForGame");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_BaseAI.BP_BaseAI_C.OnExitActorPool
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_BaseAI_C::OnExitActorPool()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseAI_C", "OnExitActorPool");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_BaseAI.BP_BaseAI_C.OnEnterActorPool
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_BaseAI_C::OnEnterActorPool()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseAI_C", "OnEnterActorPool");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_BaseAI.BP_BaseAI_C.OnDamage
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
@@ -118,7 +214,7 @@ void ABP_BaseAI_C::OnAiDied(const struct FHitResult& HitResult, const struct FGa
 
 
 // Function BP_BaseAI.BP_BaseAI_C.NotifyNearbyPlayerCharactersAboutSpawn
-// (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -157,17 +253,24 @@ void ABP_BaseAI_C::NotifyAggroTargetChanged(bool bHasAggroTarget)
 }
 
 
-// Function BP_BaseAI.BP_BaseAI_C.HideAndDisableActor
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function BP_BaseAI.BP_BaseAI_C.GetNiagaraEyeSystem
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UNiagaraComponent**               NewParam                                               (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void ABP_BaseAI_C::HideAndDisableActor()
+void ABP_BaseAI_C::GetNiagaraEyeSystem(class UNiagaraComponent** NewParam)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseAI_C", "HideAndDisableActor");
+		Func = Class->GetFunction("BP_BaseAI_C", "GetNiagaraEyeSystem");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_BaseAI_C_GetNiagaraEyeSystem Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (NewParam != nullptr)
+		*NewParam = Parms.NewParam;
 }
 
 
@@ -191,41 +294,24 @@ void ABP_BaseAI_C::ExecuteUbergraph_BP_BaseAI(int32 EntryPoint)
 }
 
 
-// Function BP_BaseAI.BP_BaseAI_C.CalculateDeathSequenceData
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function BP_BaseAI.BP_BaseAI_C.CanChangeEyeColor
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// const struct FHitResult&                LastHitResult                                          (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-// bool                                    bIsLastHitGrenadeHit                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector*                         RagdollImpulseForce                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector*                         RagdollImpulseLocation                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FTransform*                      DeathSequenceActorWorldLocation                        (Parm, OutParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FTransform*                      DeathSequenceMeshWorldLocation                         (Parm, OutParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_BaseAI_C::CalculateDeathSequenceData(const struct FHitResult& LastHitResult, bool bIsLastHitGrenadeHit, struct FVector* RagdollImpulseForce, struct FVector* RagdollImpulseLocation, struct FTransform* DeathSequenceActorWorldLocation, struct FTransform* DeathSequenceMeshWorldLocation)
+void ABP_BaseAI_C::CanChangeEyeColor(bool* Result)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseAI_C", "CalculateDeathSequenceData");
+		Func = Class->GetFunction("BP_BaseAI_C", "CanChangeEyeColor");
 
-	Params::BP_BaseAI_C_CalculateDeathSequenceData Parms{};
-
-	Parms.LastHitResult = std::move(LastHitResult);
-	Parms.bIsLastHitGrenadeHit = bIsLastHitGrenadeHit;
+	Params::BP_BaseAI_C_CanChangeEyeColor Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (RagdollImpulseForce != nullptr)
-		*RagdollImpulseForce = std::move(Parms.RagdollImpulseForce);
-
-	if (RagdollImpulseLocation != nullptr)
-		*RagdollImpulseLocation = std::move(Parms.RagdollImpulseLocation);
-
-	if (DeathSequenceActorWorldLocation != nullptr)
-		*DeathSequenceActorWorldLocation = std::move(Parms.DeathSequenceActorWorldLocation);
-
-	if (DeathSequenceMeshWorldLocation != nullptr)
-		*DeathSequenceMeshWorldLocation = std::move(Parms.DeathSequenceMeshWorldLocation);
+	if (Result != nullptr)
+		*Result = Parms.Result;
 }
 
 

@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function WBP_WeaponSlot.WBP_WeaponSlot_C.AddModIcon
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class UCrWeaponModDataAsset*            ModDA                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void UWBP_WeaponSlot_C::AddModIcon(class UCrWeaponModDataAsset* ModDA)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_WeaponSlot_C", "AddModIcon");
-
-	Params::WBP_WeaponSlot_C_AddModIcon Parms{};
-
-	Parms.ModDA = ModDA;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function WBP_WeaponSlot.WBP_WeaponSlot_C.ExecuteUbergraph_WBP_WeaponSlot
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:

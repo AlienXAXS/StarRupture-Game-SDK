@@ -662,6 +662,20 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 }
 
 
+// Function ABP_Melee_Tier1_Actor.ABP_Melee_Tier1_Actor_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_F55E7EA94007B7853EA86EA6B02BB4DF
+// (BlueprintEvent)
+
+void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_F55E7EA94007B7853EA86EA6B02BB4DF()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_F55E7EA94007B7853EA86EA6B02BB4DF");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function ABP_Melee_Tier1_Actor.ABP_Melee_Tier1_Actor_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendSpacePlayer_80349342460E933F867466A5F3D019A1
 // (BlueprintEvent)
 
@@ -1180,20 +1194,6 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 }
 
 
-// Function ABP_Melee_Tier1_Actor.ABP_Melee_Tier1_Actor_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_BAD0462044E2738AF9CA19ABB8882046
-// (BlueprintEvent)
-
-void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_BAD0462044E2738AF9CA19ABB8882046()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_BAD0462044E2738AF9CA19ABB8882046");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function ABP_Melee_Tier1_Actor.ABP_Melee_Tier1_Actor_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_BDC83EA04C5D6B2C8AA6948B7B8CB523
 // (BlueprintEvent)
 
@@ -1335,6 +1335,72 @@ void UABP_Melee_Tier1_Actor_C::ExecuteUbergraph_ABP_Melee_Tier1_Actor(int32 Entr
 	Params::ABP_Melee_Tier1_Actor_C_ExecuteUbergraph_ABP_Melee_Tier1_Actor Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ABP_Melee_Tier1_Actor.ABP_Melee_Tier1_Actor_C.ResetSyncedAnimProgress
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+
+void UABP_Melee_Tier1_Actor_C::ResetSyncedAnimProgress(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "ResetSyncedAnimProgress");
+
+	Params::ABP_Melee_Tier1_Actor_C_ResetSyncedAnimProgress Parms{};
+
+	Parms.Context = std::move(Context);
+	Parms.Node = std::move(Node);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ABP_Melee_Tier1_Actor.ABP_Melee_Tier1_Actor_C.UpdateYawRotationRateForAttackType
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECrEnemyAttackType                      OldAttackType                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrEnemyAttackType                      NewAttackType                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UABP_Melee_Tier1_Actor_C::UpdateYawRotationRateForAttackType(ECrEnemyAttackType OldAttackType, ECrEnemyAttackType NewAttackType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "UpdateYawRotationRateForAttackType");
+
+	Params::ABP_Melee_Tier1_Actor_C_UpdateYawRotationRateForAttackType Parms{};
+
+	Parms.OldAttackType = OldAttackType;
+	Parms.NewAttackType = NewAttackType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ABP_Melee_Tier1_Actor.ABP_Melee_Tier1_Actor_C.UpdateYawRotationRateForLocomotionState
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECrEnemyLocomotionType                  OldLocomotionType                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrEnemyLocomotionType                  NewLocomotionType                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UABP_Melee_Tier1_Actor_C::UpdateYawRotationRateForLocomotionState(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "UpdateYawRotationRateForLocomotionState");
+
+	Params::ABP_Melee_Tier1_Actor_C_UpdateYawRotationRateForLocomotionState Parms{};
+
+	Parms.OldLocomotionType = OldLocomotionType;
+	Parms.NewLocomotionType = NewLocomotionType;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

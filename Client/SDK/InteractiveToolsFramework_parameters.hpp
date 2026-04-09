@@ -34,6 +34,24 @@ public:
 };
 DUMPER7_ASSERTS_GizmoBaseComponent_UpdateWorldLocalState;
 
+// Function InteractiveToolsFramework.GizmoTransformSource.SetTransform
+// 0x0060 (0x0060 - 0x0000)
+struct GizmoTransformSource_SetTransform final
+{
+public:
+	struct FTransform                             NewTransform;                                      // 0x0000(0x0060)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GizmoTransformSource_SetTransform;
+
+// Function InteractiveToolsFramework.GizmoTransformSource.GetTransform
+// 0x0060 (0x0060 - 0x0000)
+struct GizmoTransformSource_GetTransform final
+{
+public:
+	struct FTransform                             ReturnValue;                                       // 0x0000(0x0060)(Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GizmoTransformSource_GetTransform;
+
 // Function InteractiveToolsFramework.GizmoAxisSource.GetDirection
 // 0x0018 (0x0018 - 0x0000)
 struct GizmoAxisSource_GetDirection final
@@ -70,35 +88,6 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_GizmoAxisSource_HasTangentVectors;
-
-// Function InteractiveToolsFramework.GizmoRenderMultiTarget.UpdateVisibilityState
-// 0x0008 (0x0008 - 0x0000)
-struct GizmoRenderMultiTarget_UpdateVisibilityState final
-{
-public:
-	bool                                          bVisible;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	uint32                                        InPartIdentifier;                                  // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GizmoRenderMultiTarget_UpdateVisibilityState;
-
-// Function InteractiveToolsFramework.GizmoTransformSource.SetTransform
-// 0x0060 (0x0060 - 0x0000)
-struct GizmoTransformSource_SetTransform final
-{
-public:
-	struct FTransform                             NewTransform;                                      // 0x0000(0x0060)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GizmoTransformSource_SetTransform;
-
-// Function InteractiveToolsFramework.GizmoTransformSource.GetTransform
-// 0x0060 (0x0060 - 0x0000)
-struct GizmoTransformSource_GetTransform final
-{
-public:
-	struct FTransform                             ReturnValue;                                       // 0x0000(0x0060)(Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GizmoTransformSource_GetTransform;
 
 // Function InteractiveToolsFramework.GizmoClickTarget.UpdateHoverState
 // 0x0001 (0x0001 - 0x0000)
@@ -150,6 +139,17 @@ public:
 	uint32                                        InPartIdentifier;                                  // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_GizmoClickMultiTarget_UpdateInteractingState;
+
+// Function InteractiveToolsFramework.GizmoRenderMultiTarget.UpdateVisibilityState
+// 0x0008 (0x0008 - 0x0000)
+struct GizmoRenderMultiTarget_UpdateVisibilityState final
+{
+public:
+	bool                                          bVisible;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint32                                        InPartIdentifier;                                  // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GizmoRenderMultiTarget_UpdateVisibilityState;
 
 // Function InteractiveToolsFramework.GizmoFloatParameterSource.SetParameter
 // 0x0004 (0x0004 - 0x0000)

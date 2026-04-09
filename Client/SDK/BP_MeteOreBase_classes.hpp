@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 #include "Chimera_structs.hpp"
 #include "Chimera_classes.hpp"
 
@@ -101,6 +101,7 @@ public:
 	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 	void ReceiveTick(float DeltaSeconds);
 	void ShouldSpawnForListenServer(bool* bShouldSpawnForLS);
+	void TurnOffWalkableCollision();
 
 public:
 	static class UClass* StaticClass()

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // ScriptStruct ABP_Unarmed_FPP_AnimLayers.ABP_Unarmed_FPP_AnimLayers_C.AnimBlueprintGeneratedConstantData
-// 0x0000 (0x1BB0 - 0x1BB0)
+// 0x0000 (0x1BE8 - 0x1BE8)
 struct ABP_Unarmed_FPP_AnimLayers::FAnimBlueprintGeneratedConstantData final : public ABP_ItemAnimLayers_FPP_Base::FAnimBlueprintGeneratedConstantData
 {
 };

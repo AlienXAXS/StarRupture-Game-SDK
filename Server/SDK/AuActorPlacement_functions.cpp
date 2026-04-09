@@ -223,41 +223,6 @@ void UAuActorPlacementComponent::ServerSetHelperDynamicExtent(const struct FVect
 }
 
 
-// Function AuActorPlacement.AuActorPlacementComponent.ServerSpawnActorFromSubsystem
-// (Net, NetReliable, Native, Event, Protected, NetServer, HasDefaults)
-// Parameters:
-// const struct FAuAPPayloadDataHandle&    InPayloadHandle                                        (Parm, NativeAccessSpecifierPublic)
-// const struct FTransform&                InSpawnTransform                                       (Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const TArray<struct FVector>&           TilesLocations                                         (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                                    bCurrentFoundation                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bCurrentTiles                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const TArray<struct FCrMassEntityReplicationHelper>&InBuildingsToReplace                                   (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UAuActorPlacementComponent::ServerSpawnActorFromSubsystem(const struct FAuAPPayloadDataHandle& InPayloadHandle, const struct FTransform& InSpawnTransform, const TArray<struct FVector>& TilesLocations, bool bCurrentFoundation, bool bCurrentTiles, const TArray<struct FCrMassEntityReplicationHelper>& InBuildingsToReplace)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuActorPlacementComponent", "ServerSpawnActorFromSubsystem");
-
-	Params::AuActorPlacementComponent_ServerSpawnActorFromSubsystem Parms{};
-
-	Parms.InPayloadHandle = std::move(InPayloadHandle);
-	Parms.InSpawnTransform = std::move(InSpawnTransform);
-	Parms.TilesLocations = std::move(TilesLocations);
-	Parms.bCurrentFoundation = bCurrentFoundation;
-	Parms.bCurrentTiles = bCurrentTiles;
-	Parms.InBuildingsToReplace = std::move(InBuildingsToReplace);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function AuActorPlacement.AuActorPlacementComponent.ServerSpawnHelperActor
 // (Net, NetReliable, Native, Event, Protected, NetServer, HasDefaults)
 // Parameters:
@@ -651,6 +616,44 @@ void AAuAPHelperActor::OnRep_ActorToReplace()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("AuAPHelperActor", "OnRep_ActorToReplace");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AuActorPlacement.AuAPHelperActor.OnRep_AdditionalHelper
+// (Native, Protected)
+
+void AAuAPHelperActor::OnRep_AdditionalHelper()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AuAPHelperActor", "OnRep_AdditionalHelper");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AuActorPlacement.AuAPHelperActor.OnRep_BuildingID
+// (Native, Protected)
+
+void AAuAPHelperActor::OnRep_BuildingID()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AuAPHelperActor", "OnRep_BuildingID");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

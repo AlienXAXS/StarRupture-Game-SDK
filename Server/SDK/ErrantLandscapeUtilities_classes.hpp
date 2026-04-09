@@ -10,11 +10,50 @@
 
 #include "Basic.hpp"
 
+#include "PhysicsCore_structs.hpp"
 #include "Engine_classes.hpp"
 
 
 namespace SDK
 {
+
+// Class ErrantLandscapeUtilities.ElRtSplineStaticMeshComponent
+// 0x0030 (0x0640 - 0x0610)
+class UElRtSplineStaticMeshComponent final : public UStaticMeshComponent
+{
+public:
+	class USplineComponent*                       SplineComponent;                                   // 0x0608(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	int32                                         NumSubSteps;                                       // 0x0610(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         NumPointsWidth;                                    // 0x0614(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         Width;                                             // 0x0618(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         VerticalOffset;                                    // 0x061C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bAutoMoveToSplineTransform;                        // 0x0620(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_621[0x7];                                      // 0x0621(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UMaterialInterface*>             MeshMaterials;                                     // 0x0628(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	ECollisionTraceFlag                           CollisionType;                                     // 0x0638(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_639[0x7];                                      // 0x0639(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void MoveToSplineTransform();
+	void SetMeshMaterials(const TArray<class UMaterialInterface*>& InMaterials);
+	void SetSplineComponent(const class USplineComponent* InSplineComponent);
+	void UpdateSplineMesh(const bool bFastBuild, const bool bWaitUntilWorldInitializes);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ElRtSplineStaticMeshComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ElRtSplineStaticMeshComponent")
+	}
+	static class UElRtSplineStaticMeshComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UElRtSplineStaticMeshComponent>();
+	}
+};
+DUMPER7_ASSERTS_UElRtSplineStaticMeshComponent;
 
 // Class ErrantLandscapeUtilities.ElSplineStaticMeshComponent
 // 0x0000 (0x0610 - 0x0610)

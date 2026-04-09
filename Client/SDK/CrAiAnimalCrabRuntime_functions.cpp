@@ -92,6 +92,35 @@ void ICrAiAnimalCrabInterface::SetTentaclesHidden(bool bHidden)
 }
 
 
+// Function CrAiAnimalCrabRuntime.CrAiAnimalCrabUpdateStateComponent.OnGrowbackSubstageChanged
+// (Final, Native, Protected, HasOutParams)
+// Parameters:
+// const struct FCrEnviroWaveSettings&     Settings                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// EEnviroWaveGrowbackSubstage             Substage                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Progress                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrAiAnimalCrabUpdateStateComponent::OnGrowbackSubstageChanged(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveGrowbackSubstage Substage, float Progress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAiAnimalCrabUpdateStateComponent", "OnGrowbackSubstageChanged");
+
+	Params::CrAiAnimalCrabUpdateStateComponent_OnGrowbackSubstageChanged Parms{};
+
+	Parms.Settings = std::move(Settings);
+	Parms.Substage = Substage;
+	Parms.Progress = Progress;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function CrAiAnimalCrabRuntime.CrAiAnimalCrabUpdateStateComponent.OnShotInAwarenessZone
 // (Final, Native, Protected, HasOutParams)
 // Parameters:

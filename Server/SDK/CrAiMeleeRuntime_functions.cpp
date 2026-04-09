@@ -25,9 +25,10 @@ namespace SDK
 // bool                                    NewHasAggroTarget                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    NewIsCoverActive                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    NewIsUpCover                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    NewIsInSlowRotationRange                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UCrAiActionModifyMeleeT3AnimData* ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UCrAiActionModifyMeleeT3AnimData* UCrAiActionModifyMeleeT3AnimData::Create_CrAiActionModifyMeleeT3AnimData(TSubclassOf<class UCrAiActionModifyMeleeT3AnimData> ActionType, float NewMaxLifetimeS, bool NewHasAggroTarget, bool NewIsCoverActive, bool NewIsUpCover)
+class UCrAiActionModifyMeleeT3AnimData* UCrAiActionModifyMeleeT3AnimData::Create_CrAiActionModifyMeleeT3AnimData(TSubclassOf<class UCrAiActionModifyMeleeT3AnimData> ActionType, float NewMaxLifetimeS, bool NewHasAggroTarget, bool NewIsCoverActive, bool NewIsUpCover, bool NewIsInSlowRotationRange)
 {
 	static class UFunction* Func = nullptr;
 
@@ -41,6 +42,7 @@ class UCrAiActionModifyMeleeT3AnimData* UCrAiActionModifyMeleeT3AnimData::Create
 	Parms.NewHasAggroTarget = NewHasAggroTarget;
 	Parms.NewIsCoverActive = NewIsCoverActive;
 	Parms.NewIsUpCover = NewIsUpCover;
+	Parms.NewIsInSlowRotationRange = NewIsInSlowRotationRange;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -143,6 +145,31 @@ void ICrAiMeleeT3::SetIsCoverActive(bool bNewIsCoverActive)
 	Params::CrAiMeleeT3_SetIsCoverActive Parms{};
 
 	Parms.bNewIsCoverActive = bNewIsCoverActive;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CrAiMeleeRuntime.CrAiMeleeT3.SetIsInSlowRotationRange
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bNewIsInSlowRotationRange                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ICrAiMeleeT3::SetIsInSlowRotationRange(bool bNewIsInSlowRotationRange)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("CrAiMeleeT3", "SetIsInSlowRotationRange");
+
+	Params::CrAiMeleeT3_SetIsInSlowRotationRange Parms{};
+
+	Parms.bNewIsInSlowRotationRange = bNewIsInSlowRotationRange;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

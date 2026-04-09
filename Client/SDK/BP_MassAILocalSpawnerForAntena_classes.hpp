@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_MassAILocalSpawnerForAntena.BP_MassAILocalSpawnerForAntena_C
-// 0x0008 (0x0550 - 0x0548)
+// 0x0008 (0x0558 - 0x0550)
 class ABP_MassAILocalSpawnerForAntena_C final : public ABP_MassAILocalSpawnerWithPCG_Placeable_C
 {
 public:
-	class UMassEnemySpawnerTriggerSphere*         EnableSphereAggroEnabled;                          // 0x0548(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UMassEnemySpawnerTriggerSphere*         EnableSphereAggroEnabled;                          // 0x0550(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "Engine_classes.hpp"
+#include "UIExtension_structs.hpp"
 #include "UMG_classes.hpp"
 #include "GameplayTags_structs.hpp"
-#include "UIExtension_structs.hpp"
 
 
 namespace SDK

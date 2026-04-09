@@ -30,7 +30,6 @@ public:
 	class UImage*                                 Icon;                                              // 0x0628(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void AddModIcon(class UCrWeaponModDataAsset* ModDA);
 	void ExecuteUbergraph_WBP_WeaponSlot(int32 EntryPoint);
 	class UWidget* Get_ModsBox_ToolTipWidget_0();
 	class UWidget* GetTooltipWidget();

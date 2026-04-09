@@ -405,6 +405,27 @@ void IALI_ItemAnimLayers_C::FullBody_StopState(struct FPoseLink* FullBody_StopSt
 }
 
 
+// Function ALI_ItemAnimLayers.ALI_ItemAnimLayers_C.FullBody_ZiplineLoop
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FPoseLink*                       FullBody_ZiplineLoop_0                                 (Parm, OutParm, NoDestructor)
+
+void IALI_ItemAnimLayers_C::FullBody_ZiplineLoop(struct FPoseLink* FullBody_ZiplineLoop_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ALI_ItemAnimLayers_C", "FullBody_ZiplineLoop");
+
+	Params::ALI_ItemAnimLayers_C_FullBody_ZiplineLoop Parms{};
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	if (FullBody_ZiplineLoop_0 != nullptr)
+		*FullBody_ZiplineLoop_0 = std::move(Parms.FullBody_ZiplineLoop_0);
+}
+
+
 // Function ALI_ItemAnimLayers.ALI_ItemAnimLayers_C.FullBodyAdditives
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:

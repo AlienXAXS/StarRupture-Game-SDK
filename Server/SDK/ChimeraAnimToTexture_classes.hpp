@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
 #include "ChimeraAnimToTexture_structs.hpp"
 #include "AnimToTexture_classes.hpp"
-#include "CoreUObject_structs.hpp"
 
 
 namespace SDK

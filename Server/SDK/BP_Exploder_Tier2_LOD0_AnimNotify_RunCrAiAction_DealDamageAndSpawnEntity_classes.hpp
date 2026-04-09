@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "AuActorPlacement_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "AuActorPlacement_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
 
 

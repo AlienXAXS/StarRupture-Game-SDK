@@ -50,5 +50,25 @@ void ABP_FloatingDrone_C::ReceiveBeginPlay()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
+
+// Function BP_FloatingDrone.BP_FloatingDrone_C.ReceiveEndPlay
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_FloatingDrone_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_FloatingDrone_C", "ReceiveEndPlay");
+
+	Params::BP_FloatingDrone_C_ReceiveEndPlay Parms{};
+
+	Parms.EndPlayReason = EndPlayReason;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
 }
 

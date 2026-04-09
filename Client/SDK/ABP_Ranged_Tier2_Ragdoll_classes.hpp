@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "Chimera_classes.hpp"
 #include "Engine_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 #include "ABP_Ranged_Tier2_Ragdoll_structs.hpp"
-#include "Chimera_classes.hpp"
 
 
 namespace SDK

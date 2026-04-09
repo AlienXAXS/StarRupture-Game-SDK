@@ -10,6 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
+#include "Chimera_structs.hpp"
+#include "Engine_structs.hpp"
 #include "BP_BaseAI_classes.hpp"
 
 
@@ -17,14 +20,37 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Animal_PanzerHund_Character.BP_Animal_PanzerHund_Character_C
-// 0x0000 (0x0C00 - 0x0C00)
+// 0x0050 (0x0D50 - 0x0D00)
 class ABP_Animal_PanzerHund_Character_C final : public ABP_BaseAI_C
 {
 public:
-	class UCrAiAnimalPanzerHundUpdateStateComponent* CrAiAnimalPanzerHundUpdateState;                // 0x0BF8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Animal_PanzerHund_Character_C;   // 0x0D00(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USphereComponent*                       DustDamageSphere;                                  // 0x0D08(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UGroomComponent*                        Fur;                                               // 0x0D10(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCrAiAnimalPanzerHundUpdateStateComponent* CrAiAnimalPanzerHundUpdateState;                // 0x0D18(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      DustNiagaraComp;                                   // 0x0D20(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                HuntJumpVelocity;                                  // 0x0D28(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsMossVisible;                                     // 0x0D40(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void ActivateDust();
+	void BndEvt__BP_Animal_PanzerHund_Character_Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult);
+	void BndEvt__BP_Animal_PanzerHund_Character_Sphere_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+	void DeactivateDust();
+	void ExecuteUbergraph_BP_Animal_PanzerHund_Character(int32 EntryPoint);
 	class UCrAiAnimalPanzerHundUpdateStateComponent* GetPanzerHundUpdateStateComponent();
+	void OnPrepareForGame();
+	void OnPrepareForPooling();
+	void OnRep_IsMossVisible();
+	void OnWaveFadeoutSubstageChanged_Event(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveFadeoutSubstage Substage, float Progress);
+	void ReceiveBeginPlay();
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void SetAudioState(const struct FGameplayTag& EventTag);
+	void SetDustDamageActivity(bool Active);
+	void SetMossVisibility(bool Visible);
+	bool ShouldMossBeActive();
+
+	void OnMeshVisibilityUpdated(bool bIsMeshHidden) const;
 
 public:
 	static class UClass* StaticClass()

@@ -14,8 +14,8 @@
 #include "AIModule_structs.hpp"
 #include "AIModule_classes.hpp"
 #include "GameplayTags_structs.hpp"
-#include "Engine_classes.hpp"
 #include "Chimera_structs.hpp"
+#include "Engine_classes.hpp"
 
 
 namespace SDK
@@ -80,32 +80,59 @@ public:
 };
 DUMPER7_ASSERTS_ICrAiAnimalCrabInterface;
 
+// Class CrAiAnimalCrabRuntime.BTTask_CrabInitializeValueOfWave
+// 0x0050 (0x00C0 - 0x0070)
+class UBTTask_CrabInitializeValueOfWave final : public UBTTaskNode
+{
+public:
+	struct FBlackboardKeySelector                 SelfActorKey;                                      // 0x0070(0x0028)(Edit, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                 IsWaveStartedKey;                                  // 0x0098(0x0028)(Edit, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BTTask_CrabInitializeValueOfWave")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BTTask_CrabInitializeValueOfWave")
+	}
+	static class UBTTask_CrabInitializeValueOfWave* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTTask_CrabInitializeValueOfWave>();
+	}
+};
+DUMPER7_ASSERTS_UBTTask_CrabInitializeValueOfWave;
+
 // Class CrAiAnimalCrabRuntime.CrAiAnimalCrabUpdateStateComponent
-// 0x00E8 (0x01A0 - 0x00B8)
+// 0x00F8 (0x01B0 - 0x00B8)
 class UCrAiAnimalCrabUpdateStateComponent final : public UActorComponent
 {
 public:
-	struct FGameplayTag                           InWaterTag;                                        // 0x00B8(0x0008)(Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         ConsiderableRadius;                                // 0x00C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         AwarenessRadius;                                   // 0x00C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         DangerRadius;                                      // 0x00C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         WaterDangerRadius;                                 // 0x00CC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FName                                   IsAnyDamageRegistered_BBKeyName;                   // 0x00D0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FName                                   IsAnyoneInDangerZoneDetected_BBKeyName;            // 0x00D8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FName                                   IsShotInAwarenessZoneDetected_BBKeyName;           // 0x00E0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FName                                   IsShotToDangerZoneDetected_BBKeyName;              // 0x00E8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FName                                   IsPlayerInAwarenessZoneDetected_BBKeyName;         // 0x00F0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FName                                   IsInWater_BBKeyName;                               // 0x00F8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FName                                   IsWaveStarted_BBKeyName;                           // 0x0100(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FName                                   IsWaveFinished_BBKeyName;                          // 0x0108(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class AMassEnemyCharacterBase*                Crab;                                              // 0x0110(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UBlackboardComponent*                   CrabBlackboardComponent;                           // 0x0118(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UAbilitySystemComponent*                CrabAbilitySystemComponent;                        // 0x0120(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	TArray<class ACrCharacterPlayerBase*>         PlayersInConsiderableZone;                         // 0x0128(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
-	TArray<class ACrCharacterPlayerBase*>         PlayersInAwarenessZone;                            // 0x0138(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_148[0x58];                                     // 0x0148(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_B8[0x8];                                       // 0x00B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTag                           InWaterTag;                                        // 0x00C0(0x0008)(Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         ConsiderableRadius;                                // 0x00C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         AwarenessRadius;                                   // 0x00CC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         DangerRadius;                                      // 0x00D0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         WaterDangerRadius;                                 // 0x00D4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   IsAnyDamageRegistered_BBKeyName;                   // 0x00D8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   IsAnyoneInDangerZoneDetected_BBKeyName;            // 0x00E0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   IsShotInAwarenessZoneDetected_BBKeyName;           // 0x00E8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   IsShotToDangerZoneDetected_BBKeyName;              // 0x00F0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   IsPlayerInAwarenessZoneDetected_BBKeyName;         // 0x00F8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   IsInWater_BBKeyName;                               // 0x0100(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   IsWaveStarted_BBKeyName;                           // 0x0108(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   IsWaveFinished_BBKeyName;                          // 0x0110(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   SpawnLocation_BBKeyName;                           // 0x0118(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class AMassEnemyCharacterBase*                Crab;                                              // 0x0120(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	TWeakObjectPtr<class UBlackboardComponent>    CrabBlackboardComponent;                           // 0x0128(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UAbilitySystemComponent*                CrabAbilitySystemComponent;                        // 0x0130(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	TArray<TWeakObjectPtr<class ACrCharacterPlayerBase>> PlayersInConsiderableZone;                  // 0x0138(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate)
+	TArray<TWeakObjectPtr<class ACrCharacterPlayerBase>> PlayersInAwarenessZone;                     // 0x0148(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_158[0x58];                                     // 0x0158(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
+	void OnGrowbackSubstageChanged(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveGrowbackSubstage Substage, float Progress);
 	void OnShotInAwarenessZone(const struct FAuEquippedWeapon& EquippedWeapon);
 	void OnShotToDangerZone(const struct FAuEquippedWeapon& EquippedWeapon, const struct FAuTargetData& Hits, const struct FAuCustomTargetHandle& TargetingHandle, const struct FAuCustomTraceDataHandle& CustomData);
 	void OnWaveStateChanged(EEnviroWave Wave, EEnviroWaveStage Stage, const struct FCrEnviroWaveSettings& Settings, float Progress);

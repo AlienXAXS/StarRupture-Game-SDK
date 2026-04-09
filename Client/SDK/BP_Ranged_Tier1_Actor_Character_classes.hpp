@@ -12,36 +12,29 @@
 
 #include "Engine_structs.hpp"
 #include "BP_BaseAI_classes.hpp"
-#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Ranged_Tier1_Actor_Character.BP_Ranged_Tier1_Actor_Character_C
-// 0x0130 (0x0D30 - 0x0C00)
+// 0x0020 (0x0D20 - 0x0D00)
 class ABP_Ranged_Tier1_Actor_Character_C final : public ABP_BaseAI_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Ranged_Tier1_Actor_Character_C;  // 0x0BF8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UCrAiRangedAnimationStateSyncComponent* CrAiRangedAnimationStateSync;                      // 0x0C00(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UNiagaraComponent*                      NiagaraEyes;                                       // 0x0C08(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                Start_Location_Offset;                             // 0x0C10(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHitResult                             LastHit;                                           // 0x0C28(0x0100)(Edit, BlueprintVisible, Net, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, ContainsInstancedReference)
-	bool                                          Is_Grenade_Hit;                                    // 0x0D28(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Ranged_Tier1_Actor_Character_C;  // 0x0D00(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UCrAiRangedAnimationStateSyncComponent* CrAiRangedAnimationStateSync;                      // 0x0D08(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      NiagaraEyes;                                       // 0x0D10(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void CanChangeEyeColor(bool* Result);
 	void ExecuteUbergraph_BP_Ranged_Tier1_Actor_Character(int32 EntryPoint);
+	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
 	void OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag);
-	void OnDissolveValueSet(float NewDissolveProgress);
-	void OnRep_LastHit();
-	void SetIsAggroEyeColor(bool NewIsAggro);
-	void SetIsBoostedEyeColor(bool NewIsBoosted);
-	void SetupRagdollMesh();
-	void StartRagdoll(const struct FHitResult& LastHit_0, double MaxHitImpulseForce, double MinHitImpulseForce, double MaxImpulseDistance);
-	void StartRagdollEvent();
+	void OnEnterActorPool();
+	void OnExitActorPool();
 	void UserConstructionScript();
+
+	void OnMeshVisibilityUpdated(bool bIsMeshHidden) const;
 
 public:
 	static class UClass* StaticClass()

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Airlock_NonDeconstructible.BP_Airlock_NonDeconstructible_C
-// 0x0000 (0x0938 - 0x0938)
+// 0x0000 (0x0948 - 0x0948)
 class ABP_Airlock_NonDeconstructible_C final : public ABP_Airlock_C
 {
 public:

@@ -35,8 +35,9 @@ void ABP_Antena_C::StopLoopSound()
 // (Event, Protected, BlueprintEvent)
 // Parameters:
 // ECrAntennaState                         InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              InColor                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Antena_C::SetUI(ECrAntennaState InState)
+void ABP_Antena_C::SetUI(ECrAntennaState InState, const struct FLinearColor& InColor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -46,6 +47,7 @@ void ABP_Antena_C::SetUI(ECrAntennaState InState)
 	Params::BP_Antena_C_SetUI Parms{};
 
 	Parms.InState = InState;
+	Parms.InColor = std::move(InColor);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -147,6 +149,26 @@ bool ABP_Antena_C::PlayInteractionSuccessfulSound()
 }
 
 
+// Function BP_Antena.BP_Antena_C.OnStateChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// ECrAntennaState                         NewState                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Antena_C::OnStateChanged(ECrAntennaState NewState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Antena_C", "OnStateChanged");
+
+	Params::BP_Antena_C_OnStateChanged Parms{};
+
+	Parms.NewState = NewState;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_Antena.BP_Antena_C.OnInfectionTaken
 // (Event, Protected, BlueprintEvent)
 
@@ -156,48 +178,6 @@ void ABP_Antena_C::OnInfectionTaken()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_Antena_C", "OnInfectionTaken");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Antena.BP_Antena_C.OnInfectionRemoved
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Antena_C::OnInfectionRemoved()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Antena_C", "OnInfectionRemoved");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Antena.BP_Antena_C.OnInfected
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Antena_C::OnInfected()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Antena_C", "OnInfected");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Antena.BP_Antena_C.OnChargingStarted
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Antena_C::OnChargingStarted()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Antena_C", "OnChargingStarted");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -223,29 +203,15 @@ void ABP_Antena_C::OnChargingProgressUpdate(float Progress)
 }
 
 
-// Function BP_Antena.BP_Antena_C.OnChargingCompleted
+// Function BP_Antena.BP_Antena_C.OnActivatedFromLoad
 // (Event, Protected, BlueprintEvent)
 
-void ABP_Antena_C::OnChargingCompleted()
+void ABP_Antena_C::OnActivatedFromLoad()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Antena_C", "OnChargingCompleted");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Antena.BP_Antena_C.OnBeginPlayAsActivated
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Antena_C::OnBeginPlayAsActivated()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Antena_C", "OnBeginPlayAsActivated");
+		Func = Class->GetFunction("BP_Antena_C", "OnActivatedFromLoad");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -350,20 +316,6 @@ void ABP_Antena_C::Activation_progress__FinishedFunc()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_Antena_C", "Activation_progress__FinishedFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Antena.BP_Antena_C.Activate
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_Antena_C::Activate()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Antena_C", "Activate");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

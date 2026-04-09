@@ -17,6 +17,28 @@
 namespace SDK
 {
 
+// Function WBP_WeaponsToolsTab.WBP_WeaponsToolsTab_C.AddModIcon
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class UCrWeaponModDataAsset*            ModDA                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// int32                                   WeaponIndex                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_WeaponsToolsTab_C::AddModIcon(class UCrWeaponModDataAsset* ModDA, int32 WeaponIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_WeaponsToolsTab_C", "AddModIcon");
+
+	Params::WBP_WeaponsToolsTab_C_AddModIcon Parms{};
+
+	Parms.ModDA = ModDA;
+	Parms.WeaponIndex = WeaponIndex;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function WBP_WeaponsToolsTab.WBP_WeaponsToolsTab_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 

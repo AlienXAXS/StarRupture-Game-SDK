@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
-#include "MassSpawner_classes.hpp"
-#include "CrAiRangedRuntime_structs.hpp"
 #include "Chimera_classes.hpp"
+#include "Engine_classes.hpp"
+#include "CrAiRangedRuntime_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
+#include "MassSpawner_classes.hpp"
 
 
 namespace SDK
@@ -46,11 +46,11 @@ public:
 DUMPER7_ASSERTS_UCrAiRangedAnimationStateSyncComponent;
 
 // Class CrAiRangedRuntime.CrMassRangedBubbleReplicatedSerializerHolder
-// 0x0348 (0x0600 - 0x02B8)
+// 0x0358 (0x0610 - 0x02B8)
 class ACrMassRangedBubbleReplicatedSerializerHolder final : public ACrMassBubbleReplicatedSerializerHolder
 {
 public:
-	struct FRangedClientBubbleSerializer          Serializer;                                        // 0x02B8(0x0348)(Net, Transient, NativeAccessSpecifierPublic)
+	struct FRangedClientBubbleSerializer          Serializer;                                        // 0x02B8(0x0358)(Net, Transient, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()

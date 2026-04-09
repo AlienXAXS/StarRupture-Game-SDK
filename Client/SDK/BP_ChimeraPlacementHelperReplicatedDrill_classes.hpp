@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ChimeraPlacementHelperReplicatedDrill.BP_ChimeraPlacementHelperReplicatedDrill_C
-// 0x0000 (0x0820 - 0x0820)
+// 0x0000 (0x0890 - 0x0890)
 class ABP_ChimeraPlacementHelperReplicatedDrill_C final : public ACrAPHelperActorDrill
 {
 public:

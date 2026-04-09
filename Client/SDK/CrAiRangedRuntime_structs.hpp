@@ -54,12 +54,12 @@ public:
 DUMPER7_ASSERTS_FRangedFastArrayItem;
 
 // ScriptStruct CrAiRangedRuntime.RangedClientBubbleSerializer
-// 0x0210 (0x0348 - 0x0138)
+// 0x0220 (0x0358 - 0x0138)
 struct FRangedClientBubbleSerializer final : public FMassClientBubbleSerializerBase
 {
 public:
-	uint8                                         Pad_138[0x200];                                    // 0x0138(0x0200)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FRangedFastArrayItem>           Ais;                                               // 0x0338(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_138[0x210];                                    // 0x0138(0x0210)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FRangedFastArrayItem>           Ais;                                               // 0x0348(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
 };
 DUMPER7_ASSERTS_FRangedClientBubbleSerializer;
 

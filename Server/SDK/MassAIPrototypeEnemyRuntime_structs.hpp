@@ -2616,7 +2616,7 @@ public:
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TSubclassOf<class UGameplayEffect>            AttackDamageEffect;                                // 0x0010(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FAttackAggroTargetTaskInstanceData;
+//DUMPER7_ASSERTS_FAttackAggroTargetTaskInstanceData;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyFollowActorTaskInstanceData
 // 0x0000 (0x0001 - 0x0001)

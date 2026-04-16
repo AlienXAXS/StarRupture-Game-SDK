@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "AnimGraphRuntime_structs.hpp"
 #include "ABP_PanzerHund_Ragdoll_structs.hpp"
 #include "Chimera_classes.hpp"
 #include "Engine_structs.hpp"
-#include "AnimGraphRuntime_structs.hpp"
 
 
 namespace SDK

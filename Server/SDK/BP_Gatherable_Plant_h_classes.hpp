@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "BP_GatherableBaseActor_classes.hpp"
+#include "Engine_structs.hpp"
 #include "Chimera_structs.hpp"
 
 
@@ -19,11 +19,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Gatherable_Plant_h.BP_Gatherable_Plant_h_C
-// 0x0008 (0x0388 - 0x0380)
+// 0x0008 (0x03A8 - 0x03A0)
 class ABP_Gatherable_Plant_h_C final : public ABP_GatherableBaseActor_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Gatherable_Plant_h_C;            // 0x0380(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Gatherable_Plant_h_C;            // 0x03A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ReceiveEndPlay(EEndPlayReason EndPlayReason);

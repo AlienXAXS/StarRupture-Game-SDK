@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "ABP_Ranged_Tier2_LOD0_structs.hpp"
 #include "Engine_structs.hpp"
+#include "ABP_Ranged_Tier2_LOD0_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"

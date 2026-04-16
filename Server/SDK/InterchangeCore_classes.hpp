@@ -10,42 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_classes.hpp"
 #include "InterchangeCore_structs.hpp"
+#include "CoreUObject_classes.hpp"
 
 
 namespace SDK
 {
-
-// Class InterchangeCore.InterchangeFactoryBase
-// 0x0008 (0x0030 - 0x0028)
-class UInterchangeFactoryBase : public UObject
-{
-public:
-	class UInterchangeResultsContainer*           Results;                                           // 0x0028(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-
-public:
-	EInterchangeFactoryAssetType GetFactoryAssetType();
-
-	class UClass* GetFactoryClass() const;
-	bool GetSourceFilenames(const class UObject* Object, TArray<class FString>* OutSourceFilenames) const;
-	bool SetSourceFilename(const class UObject* Object, const class FString& SourceFilename, int32 SourceIndex) const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("InterchangeFactoryBase")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"InterchangeFactoryBase")
-	}
-	static class UInterchangeFactoryBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UInterchangeFactoryBase>();
-	}
-};
-DUMPER7_ASSERTS_UInterchangeFactoryBase;
 
 // Class InterchangeCore.InterchangeBaseNode
 // 0x0038 (0x0060 - 0x0028)
@@ -108,61 +78,84 @@ public:
 };
 DUMPER7_ASSERTS_UInterchangeBaseNode;
 
-// Class InterchangeCore.InterchangeSourceNode
-// 0x0138 (0x0198 - 0x0060)
-class UInterchangeSourceNode final : public UInterchangeBaseNode
+// Class InterchangeCore.InterchangeFactoryBaseNode
+// 0x0160 (0x01C0 - 0x0060)
+class UInterchangeFactoryBaseNode : public UInterchangeBaseNode
 {
 public:
-	uint8                                         Pad_60[0x138];                                     // 0x0060(0x0138)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_60[0xE0];                                      // 0x0060(0x00E0)(Fixing Size After Last Property [ Dumper-7 ])
+	TSet<class FString>                           AttributesAppliedThroughDelegatesKeySet;           // 0x0140(0x0050)(Transient, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_190[0x30];                                     // 0x0190(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	static const class UInterchangeSourceNode* GetUniqueInstance(const class UInterchangeBaseNodeContainer* NodeContainer);
+	bool AddFactoryDependencyUid(const class FString& DependencyUid);
+	bool RemoveFactoryDependencyUid(const class FString& DependencyUid);
+	bool SetCustomLevelUid(const class FString& AttributeValue);
+	bool SetCustomReferenceObject(const struct FSoftObjectPath& AttributeValue);
+	bool SetCustomSubPath(const class FString& AttributeValue);
+	bool SetForceNodeReimport();
+	bool SetReimportStrategyFlags(const EReimportStrategyFlags& ReimportStrategyFlags);
+	bool SetSkipNodeImport();
+	bool UnsetForceNodeReimport();
+	bool UnsetSkipNodeImport();
 
-	void InitializeSourceNode(const class FString& UniqueID, const class FString& DisplayLabel, class UInterchangeBaseNodeContainer* NodeContainer);
-	bool RemoveExtraInformation(const class FString& Name_0);
-	bool SetCustomAnimatedTimeEnd(const double& AttributeValue);
-	bool SetCustomAnimatedTimeStart(const double& AttributeValue);
-	bool SetCustomAxisConversionInverseTransform(const struct FTransform& AxisConversionInverseTransform);
-	bool SetCustomImportUnusedMaterial(const bool& AttributeValue);
-	bool SetCustomReimportStrategyFlags(uint8 StrategyFlag);
-	bool SetCustomSourceFrameRateDenominator(const int32& AttributeValue);
-	bool SetCustomSourceFrameRateNumerator(const int32& AttributeValue);
-	bool SetCustomSourceTimelineEnd(const double& AttributeValue);
-	bool SetCustomSourceTimelineStart(const double& AttributeValue);
-	bool SetCustomSubPathPrefix(const class FString& Prefix);
-	bool SetCustomUseAssetTypeSubPathSuffix(const bool& Suffix);
-	bool SetCustomUseLegacySkeletalMeshBakeTransform(const bool& AttributeValue);
-	bool SetExtraInformation(const class FString& Name_0, const class FString& Value);
-
-	bool GetCustomAnimatedTimeEnd(double* AttributeValue) const;
-	bool GetCustomAnimatedTimeStart(double* AttributeValue) const;
-	bool GetCustomAxisConversionInverseTransform(struct FTransform* AxisConversionInverseTransform) const;
-	bool GetCustomImportUnusedMaterial(bool* AttributeValue) const;
-	bool GetCustomReimportStrategyFlags(uint8* StrategyFlag) const;
-	bool GetCustomSourceFrameRateDenominator(int32* AttributeValue) const;
-	bool GetCustomSourceFrameRateNumerator(int32* AttributeValue) const;
-	bool GetCustomSourceTimelineEnd(double* AttributeValue) const;
-	bool GetCustomSourceTimelineStart(double* AttributeValue) const;
-	bool GetCustomSubPathPrefix(class FString* Prefix) const;
-	bool GetCustomUseAssetTypeSubPathSuffix(bool* Suffix) const;
-	bool GetCustomUseLegacySkeletalMeshBakeTransform(bool* AttributeValue) const;
-	void GetExtraInformation(TMap<class FString, class FString>* OutExtraInformation) const;
+	bool GetCustomLevelUid(class FString* AttributeValue) const;
+	bool GetCustomReferenceObject(struct FSoftObjectPath* AttributeValue) const;
+	bool GetCustomSubPath(class FString* AttributeValue) const;
+	void GetFactoryDependencies(TArray<class FString>* OutDependencies) const;
+	int32 GetFactoryDependenciesCount() const;
+	void GetFactoryDependency(const int32 Index_0, class FString* OutDependency) const;
+	class UClass* GetObjectClass() const;
+	EReimportStrategyFlags GetReimportStrategyFlags() const;
+	bool IsRuntimeImportAllowed() const;
+	bool ShouldForceNodeReimport() const;
+	bool ShouldSkipNodeImport() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("InterchangeSourceNode")
+		STATIC_CLASS_IMPL("InterchangeFactoryBaseNode")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"InterchangeSourceNode")
+		STATIC_NAME_IMPL(L"InterchangeFactoryBaseNode")
 	}
-	static class UInterchangeSourceNode* GetDefaultObj()
+	static class UInterchangeFactoryBaseNode* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UInterchangeSourceNode>();
+		return GetDefaultObjImpl<UInterchangeFactoryBaseNode>();
 	}
 };
-DUMPER7_ASSERTS_UInterchangeSourceNode;
+DUMPER7_ASSERTS_UInterchangeFactoryBaseNode;
+
+// Class InterchangeCore.InterchangeFactoryBase
+// 0x0008 (0x0030 - 0x0028)
+class UInterchangeFactoryBase : public UObject
+{
+public:
+	class UInterchangeResultsContainer*           Results;                                           // 0x0028(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+
+public:
+	EInterchangeFactoryAssetType GetFactoryAssetType();
+
+	class UClass* GetFactoryClass() const;
+	bool GetSourceFilenames(const class UObject* Object, TArray<class FString>* OutSourceFilenames) const;
+	bool SetSourceFilename(const class UObject* Object, const class FString& SourceFilename, int32 SourceIndex) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("InterchangeFactoryBase")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"InterchangeFactoryBase")
+	}
+	static class UInterchangeFactoryBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInterchangeFactoryBase>();
+	}
+};
+DUMPER7_ASSERTS_UInterchangeFactoryBase;
 
 // Class InterchangeCore.InterchangeWriterBase
 // 0x0000 (0x0028 - 0x0028)
@@ -319,6 +312,62 @@ public:
 };
 DUMPER7_ASSERTS_UInterchangeResultError;
 
+// Class InterchangeCore.InterchangeSourceNode
+// 0x0138 (0x0198 - 0x0060)
+class UInterchangeSourceNode final : public UInterchangeBaseNode
+{
+public:
+	uint8                                         Pad_60[0x138];                                     // 0x0060(0x0138)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static const class UInterchangeSourceNode* GetUniqueInstance(const class UInterchangeBaseNodeContainer* NodeContainer);
+
+	void InitializeSourceNode(const class FString& UniqueID, const class FString& DisplayLabel, class UInterchangeBaseNodeContainer* NodeContainer);
+	bool RemoveExtraInformation(const class FString& Name_0);
+	bool SetCustomAnimatedTimeEnd(const double& AttributeValue);
+	bool SetCustomAnimatedTimeStart(const double& AttributeValue);
+	bool SetCustomAxisConversionInverseTransform(const struct FTransform& AxisConversionInverseTransform);
+	bool SetCustomImportUnusedMaterial(const bool& AttributeValue);
+	bool SetCustomReimportStrategyFlags(uint8 StrategyFlag);
+	bool SetCustomSourceFrameRateDenominator(const int32& AttributeValue);
+	bool SetCustomSourceFrameRateNumerator(const int32& AttributeValue);
+	bool SetCustomSourceTimelineEnd(const double& AttributeValue);
+	bool SetCustomSourceTimelineStart(const double& AttributeValue);
+	bool SetCustomSubPathPrefix(const class FString& Prefix);
+	bool SetCustomUseAssetTypeSubPathSuffix(const bool& Suffix);
+	bool SetCustomUseLegacySkeletalMeshBakeTransform(const bool& AttributeValue);
+	bool SetExtraInformation(const class FString& Name_0, const class FString& Value);
+
+	bool GetCustomAnimatedTimeEnd(double* AttributeValue) const;
+	bool GetCustomAnimatedTimeStart(double* AttributeValue) const;
+	bool GetCustomAxisConversionInverseTransform(struct FTransform* AxisConversionInverseTransform) const;
+	bool GetCustomImportUnusedMaterial(bool* AttributeValue) const;
+	bool GetCustomReimportStrategyFlags(uint8* StrategyFlag) const;
+	bool GetCustomSourceFrameRateDenominator(int32* AttributeValue) const;
+	bool GetCustomSourceFrameRateNumerator(int32* AttributeValue) const;
+	bool GetCustomSourceTimelineEnd(double* AttributeValue) const;
+	bool GetCustomSourceTimelineStart(double* AttributeValue) const;
+	bool GetCustomSubPathPrefix(class FString* Prefix) const;
+	bool GetCustomUseAssetTypeSubPathSuffix(bool* Suffix) const;
+	bool GetCustomUseLegacySkeletalMeshBakeTransform(bool* AttributeValue) const;
+	void GetExtraInformation(TMap<class FString, class FString>* OutExtraInformation) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("InterchangeSourceNode")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"InterchangeSourceNode")
+	}
+	static class UInterchangeSourceNode* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInterchangeSourceNode>();
+	}
+};
+DUMPER7_ASSERTS_UInterchangeSourceNode;
+
 // Class InterchangeCore.InterchangeResultWarning_Generic
 // 0x0010 (0x0080 - 0x0070)
 class UInterchangeResultWarning_Generic final : public UInterchangeResultWarning
@@ -341,41 +390,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UInterchangeResultWarning_Generic;
-
-// Class InterchangeCore.InterchangeUserDefinedAttributesAPI
-// 0x0000 (0x0028 - 0x0028)
-class UInterchangeUserDefinedAttributesAPI final : public UObject
-{
-public:
-	static bool CreateUserDefinedAttribute_Boolean(class UInterchangeBaseNode* InterchangeNode, const class FString& UserDefinedAttributeName, const bool& Value, const class FString& PayloadKey, bool RequiresDelegate);
-	static bool CreateUserDefinedAttribute_Double(class UInterchangeBaseNode* InterchangeNode, const class FString& UserDefinedAttributeName, const double& Value, const class FString& PayloadKey, bool RequiresDelegate);
-	static bool CreateUserDefinedAttribute_Float(class UInterchangeBaseNode* InterchangeNode, const class FString& UserDefinedAttributeName, const float& Value, const class FString& PayloadKey, bool RequiresDelegate);
-	static bool CreateUserDefinedAttribute_FString(class UInterchangeBaseNode* InterchangeNode, const class FString& UserDefinedAttributeName, const class FString& Value, const class FString& PayloadKey, bool RequiresDelegate);
-	static bool CreateUserDefinedAttribute_Int32(class UInterchangeBaseNode* InterchangeNode, const class FString& UserDefinedAttributeName, const int32& Value, const class FString& PayloadKey, bool RequiresDelegate);
-	static void DuplicateAllUserDefinedAttribute(const class UInterchangeBaseNode* InterchangeSourceNode, class UInterchangeBaseNode* InterchangeDestinationNode, bool bAddSourceNodeName);
-	static bool GetUserDefinedAttribute_Boolean(const class UInterchangeBaseNode* InterchangeNode, const class FString& UserDefinedAttributeName, bool* OutValue, class FString* OutPayloadKey);
-	static bool GetUserDefinedAttribute_Double(const class UInterchangeBaseNode* InterchangeNode, const class FString& UserDefinedAttributeName, double* OutValue, class FString* OutPayloadKey);
-	static bool GetUserDefinedAttribute_Float(const class UInterchangeBaseNode* InterchangeNode, const class FString& UserDefinedAttributeName, float* OutValue, class FString* OutPayloadKey);
-	static bool GetUserDefinedAttribute_FString(const class UInterchangeBaseNode* InterchangeNode, const class FString& UserDefinedAttributeName, class FString* OutValue, class FString* OutPayloadKey);
-	static bool GetUserDefinedAttribute_Int32(const class UInterchangeBaseNode* InterchangeNode, const class FString& UserDefinedAttributeName, int32* OutValue, class FString* OutPayloadKey);
-	static void GetUserDefinedAttributeInfos(const class UInterchangeBaseNode* InterchangeNode, TArray<struct FInterchangeUserDefinedAttributeInfo>* UserDefinedAttributeInfos);
-	static bool RemoveUserDefinedAttribute(class UInterchangeBaseNode* InterchangeNode, const class FString& UserDefinedAttributeName);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("InterchangeUserDefinedAttributesAPI")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"InterchangeUserDefinedAttributesAPI")
-	}
-	static class UInterchangeUserDefinedAttributesAPI* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UInterchangeUserDefinedAttributesAPI>();
-	}
-};
-DUMPER7_ASSERTS_UInterchangeUserDefinedAttributesAPI;
 
 // Class InterchangeCore.InterchangeResultError_Generic
 // 0x0010 (0x0080 - 0x0070)
@@ -608,54 +622,40 @@ public:
 };
 DUMPER7_ASSERTS_UInterchangeBaseNodeContainer;
 
-// Class InterchangeCore.InterchangeFactoryBaseNode
-// 0x0160 (0x01C0 - 0x0060)
-class UInterchangeFactoryBaseNode : public UInterchangeBaseNode
+// Class InterchangeCore.InterchangeUserDefinedAttributesAPI
+// 0x0000 (0x0028 - 0x0028)
+class UInterchangeUserDefinedAttributesAPI final : public UObject
 {
 public:
-	uint8                                         Pad_60[0xE0];                                      // 0x0060(0x00E0)(Fixing Size After Last Property [ Dumper-7 ])
-	TSet<class FString>                           AttributesAppliedThroughDelegatesKeySet;           // 0x0140(0x0050)(Transient, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_190[0x30];                                     // 0x0190(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	bool AddFactoryDependencyUid(const class FString& DependencyUid);
-	bool RemoveFactoryDependencyUid(const class FString& DependencyUid);
-	bool SetCustomLevelUid(const class FString& AttributeValue);
-	bool SetCustomReferenceObject(const struct FSoftObjectPath& AttributeValue);
-	bool SetCustomSubPath(const class FString& AttributeValue);
-	bool SetForceNodeReimport();
-	bool SetReimportStrategyFlags(const EReimportStrategyFlags& ReimportStrategyFlags);
-	bool SetSkipNodeImport();
-	bool UnsetForceNodeReimport();
-	bool UnsetSkipNodeImport();
-
-	bool GetCustomLevelUid(class FString* AttributeValue) const;
-	bool GetCustomReferenceObject(struct FSoftObjectPath* AttributeValue) const;
-	bool GetCustomSubPath(class FString* AttributeValue) const;
-	void GetFactoryDependencies(TArray<class FString>* OutDependencies) const;
-	int32 GetFactoryDependenciesCount() const;
-	void GetFactoryDependency(const int32 Index_0, class FString* OutDependency) const;
-	class UClass* GetObjectClass() const;
-	EReimportStrategyFlags GetReimportStrategyFlags() const;
-	bool IsRuntimeImportAllowed() const;
-	bool ShouldForceNodeReimport() const;
-	bool ShouldSkipNodeImport() const;
+	static bool CreateUserDefinedAttribute_Boolean(class UInterchangeBaseNode* InterchangeNode, const class FString& UserDefinedAttributeName, const bool& Value, const class FString& PayloadKey, bool RequiresDelegate);
+	static bool CreateUserDefinedAttribute_Double(class UInterchangeBaseNode* InterchangeNode, const class FString& UserDefinedAttributeName, const double& Value, const class FString& PayloadKey, bool RequiresDelegate);
+	static bool CreateUserDefinedAttribute_Float(class UInterchangeBaseNode* InterchangeNode, const class FString& UserDefinedAttributeName, const float& Value, const class FString& PayloadKey, bool RequiresDelegate);
+	static bool CreateUserDefinedAttribute_FString(class UInterchangeBaseNode* InterchangeNode, const class FString& UserDefinedAttributeName, const class FString& Value, const class FString& PayloadKey, bool RequiresDelegate);
+	static bool CreateUserDefinedAttribute_Int32(class UInterchangeBaseNode* InterchangeNode, const class FString& UserDefinedAttributeName, const int32& Value, const class FString& PayloadKey, bool RequiresDelegate);
+	static void DuplicateAllUserDefinedAttribute(const class UInterchangeBaseNode* InterchangeSourceNode, class UInterchangeBaseNode* InterchangeDestinationNode, bool bAddSourceNodeName);
+	static bool GetUserDefinedAttribute_Boolean(const class UInterchangeBaseNode* InterchangeNode, const class FString& UserDefinedAttributeName, bool* OutValue, class FString* OutPayloadKey);
+	static bool GetUserDefinedAttribute_Double(const class UInterchangeBaseNode* InterchangeNode, const class FString& UserDefinedAttributeName, double* OutValue, class FString* OutPayloadKey);
+	static bool GetUserDefinedAttribute_Float(const class UInterchangeBaseNode* InterchangeNode, const class FString& UserDefinedAttributeName, float* OutValue, class FString* OutPayloadKey);
+	static bool GetUserDefinedAttribute_FString(const class UInterchangeBaseNode* InterchangeNode, const class FString& UserDefinedAttributeName, class FString* OutValue, class FString* OutPayloadKey);
+	static bool GetUserDefinedAttribute_Int32(const class UInterchangeBaseNode* InterchangeNode, const class FString& UserDefinedAttributeName, int32* OutValue, class FString* OutPayloadKey);
+	static void GetUserDefinedAttributeInfos(const class UInterchangeBaseNode* InterchangeNode, TArray<struct FInterchangeUserDefinedAttributeInfo>* UserDefinedAttributeInfos);
+	static bool RemoveUserDefinedAttribute(class UInterchangeBaseNode* InterchangeNode, const class FString& UserDefinedAttributeName);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("InterchangeFactoryBaseNode")
+		STATIC_CLASS_IMPL("InterchangeUserDefinedAttributesAPI")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"InterchangeFactoryBaseNode")
+		STATIC_NAME_IMPL(L"InterchangeUserDefinedAttributesAPI")
 	}
-	static class UInterchangeFactoryBaseNode* GetDefaultObj()
+	static class UInterchangeUserDefinedAttributesAPI* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UInterchangeFactoryBaseNode>();
+		return GetDefaultObjImpl<UInterchangeUserDefinedAttributesAPI>();
 	}
 };
-DUMPER7_ASSERTS_UInterchangeFactoryBaseNode;
+DUMPER7_ASSERTS_UInterchangeUserDefinedAttributesAPI;
 
 }
 

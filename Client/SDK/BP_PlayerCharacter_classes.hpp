@@ -10,15 +10,15 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "Chimera_structs.hpp"
 #include "Chimera_classes.hpp"
 #include "Engine_structs.hpp"
+#include "BS_WeaponFOV_structs.hpp"
+#include "GameplayTags_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "CommonInput_structs.hpp"
 #include "AuCamera_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
-#include "BS_WeaponFOV_structs.hpp"
-#include "GameplayTags_structs.hpp"
 #include "AuActorPlacement_structs.hpp"
 #include "EPlayerState_structs.hpp"
 
@@ -115,6 +115,7 @@ public:
 
 public:
 	bool BlockEnergyLoweringDuringSprint();
+	void BndEvt__BP_PlayerCharacter_CapsuleComponent_K2Node_ComponentBoundEvent_3_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, const struct FVector& NormalImpulse, const struct FHitResult& Hit);
 	void BndEvt__BP_PlayerCharacter_FlashlightComponent_K2Node_ComponentBoundEvent_0_OnFlashlightActivated__DelegateSignature();
 	void BndEvt__BP_PlayerCharacter_FlashlightComponent_K2Node_ComponentBoundEvent_1_OnFlashlightDeactivated__DelegateSignature();
 	void BndEvt__BP_PlayerCharacter_FlashlightComponent_K2Node_ComponentBoundEvent_2_OnFlashlightModeChanged__DelegateSignature();

@@ -109,6 +109,13 @@ enum class ECommonSwitcherTransitionFallbackStrategy : uint8
 	ECommonSwitcherTransitionFallbackStrategy_MAX = 5,
 };
 
+// ScriptStruct CommonUI.UITag
+// 0x0000 (0x0008 - 0x0008)
+struct FUITag : public FGameplayTag
+{
+};
+DUMPER7_ASSERTS_FUITag;
+
 // ScriptStruct CommonUI.UIActionBindingHandle
 // 0x0004 (0x0004 - 0x0000)
 struct alignas(0x04) FUIActionBindingHandle final
@@ -117,17 +124,6 @@ public:
 	uint8                                         Pad_0[0x4];                                        // 0x0000(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FUIActionBindingHandle;
-
-// ScriptStruct CommonUI.CommonInputActionHandlerData
-// 0x0020 (0x0020 - 0x0000)
-struct FCommonInputActionHandlerData final
-{
-public:
-	struct FDataTableRowHandle                    InputActionRow;                                    // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
-	EInputActionState                             State;                                             // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_11[0xF];                                       // 0x0011(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCommonInputActionHandlerData;
 
 // ScriptStruct CommonUI.CommonNumberFormattingOptions
 // 0x0014 (0x0014 - 0x0000)
@@ -144,42 +140,6 @@ public:
 	int32                                         MaximumFractionalDigits;                           // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCommonNumberFormattingOptions;
-
-// ScriptStruct CommonUI.UITag
-// 0x0000 (0x0008 - 0x0008)
-struct FUITag : public FGameplayTag
-{
-};
-DUMPER7_ASSERTS_FUITag;
-
-// ScriptStruct CommonUI.UIActionTag
-// 0x0000 (0x0008 - 0x0008)
-struct FUIActionTag final : public FUITag
-{
-};
-DUMPER7_ASSERTS_FUIActionTag;
-
-// ScriptStruct CommonUI.UIActionKeyMapping
-// 0x0020 (0x0020 - 0x0000)
-struct FUIActionKeyMapping final
-{
-public:
-	struct FKey                                   Key;                                               // 0x0000(0x0018)(Edit, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         HoldTime;                                          // 0x0018(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         HoldRollbackTime;                                  // 0x001C(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUIActionKeyMapping;
-
-// ScriptStruct CommonUI.UIInputAction
-// 0x0028 (0x0028 - 0x0000)
-struct FUIInputAction final
-{
-public:
-	struct FUIActionTag                           ActionTag;                                         // 0x0000(0x0008)(Edit, Config, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FText                                   DefaultDisplayName;                                // 0x0008(0x0010)(Edit, Config, NativeAccessSpecifierPublic)
-	TArray<struct FUIActionKeyMapping>            KeyMappings;                                       // 0x0018(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUIInputAction;
 
 // ScriptStruct CommonUI.CommonRegisteredTabInfo
 // 0x0020 (0x0020 - 0x0000)
@@ -207,6 +167,24 @@ public:
 	bool                                          bHideCursorDuringViewportCapture;                  // 0x0005(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
 DUMPER7_ASSERTS_FUIInputConfig;
+
+// ScriptStruct CommonUI.UIActionTag
+// 0x0000 (0x0008 - 0x0008)
+struct FUIActionTag final : public FUITag
+{
+};
+DUMPER7_ASSERTS_FUIActionTag;
+
+// ScriptStruct CommonUI.CommonInputActionHandlerData
+// 0x0020 (0x0020 - 0x0000)
+struct FCommonInputActionHandlerData final
+{
+public:
+	struct FDataTableRowHandle                    InputActionRow;                                    // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
+	EInputActionState                             State;                                             // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_11[0xF];                                       // 0x0011(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCommonInputActionHandlerData;
 
 // ScriptStruct CommonUI.CommonButtonStyleOptionalSlateSound
 // 0x0020 (0x0020 - 0x0000)
@@ -261,6 +239,28 @@ public:
 	struct FCommonInputTypeInfo                   TouchInputTypeInfo;                                // 0x0240(0x00E0)(Edit, Protected, NativeAccessSpecifierProtected)
 };
 DUMPER7_ASSERTS_FCommonInputActionDataBase;
+
+// ScriptStruct CommonUI.UIActionKeyMapping
+// 0x0020 (0x0020 - 0x0000)
+struct FUIActionKeyMapping final
+{
+public:
+	struct FKey                                   Key;                                               // 0x0000(0x0018)(Edit, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HoldTime;                                          // 0x0018(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HoldRollbackTime;                                  // 0x001C(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUIActionKeyMapping;
+
+// ScriptStruct CommonUI.UIInputAction
+// 0x0028 (0x0028 - 0x0000)
+struct FUIInputAction final
+{
+public:
+	struct FUIActionTag                           ActionTag;                                         // 0x0000(0x0008)(Edit, Config, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   DefaultDisplayName;                                // 0x0008(0x0010)(Edit, Config, NativeAccessSpecifierPublic)
+	TArray<struct FUIActionKeyMapping>            KeyMappings;                                       // 0x0018(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUIInputAction;
 
 // ScriptStruct CommonUI.CommonAnalogCursorSettings
 // 0x002C (0x002C - 0x0000)

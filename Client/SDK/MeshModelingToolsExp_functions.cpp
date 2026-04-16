@@ -67,6 +67,139 @@ const TArray<class FString> UBakeInputMeshProperties::GetTargetUVLayerNamesFunc(
 }
 
 
+// Function MeshModelingToolsExp.MirrorToolActionPropertySet.Backward
+// (Final, Native, Public)
+
+void UMirrorToolActionPropertySet::Backward()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MirrorToolActionPropertySet", "Backward");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.MirrorToolActionPropertySet.Down
+// (Final, Native, Public)
+
+void UMirrorToolActionPropertySet::Down()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MirrorToolActionPropertySet", "Down");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.MirrorToolActionPropertySet.Forward
+// (Final, Native, Public)
+
+void UMirrorToolActionPropertySet::Forward()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MirrorToolActionPropertySet", "Forward");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.MirrorToolActionPropertySet.Left
+// (Final, Native, Public)
+
+void UMirrorToolActionPropertySet::Left()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MirrorToolActionPropertySet", "Left");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.MirrorToolActionPropertySet.Right
+// (Final, Native, Public)
+
+void UMirrorToolActionPropertySet::Right()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MirrorToolActionPropertySet", "Right");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.MirrorToolActionPropertySet.ShiftToCenter
+// (Final, Native, Public)
+
+void UMirrorToolActionPropertySet::ShiftToCenter()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MirrorToolActionPropertySet", "ShiftToCenter");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.MirrorToolActionPropertySet.Up
+// (Final, Native, Public)
+
+void UMirrorToolActionPropertySet::Up()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MirrorToolActionPropertySet", "Up");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function MeshModelingToolsExp.BakeTexture2DProperties.GetUVLayerNamesFunc
 // (Final, Native, Public, Const)
 // Parameters:
@@ -114,196 +247,6 @@ const TArray<class FString> UBakeMultiTexture2DProperties::GetUVLayerNamesFunc()
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function MeshModelingToolsExp.MeshSelectionEditActions.Clear
-// (Final, Native, Public)
-
-void UMeshSelectionEditActions::Clear()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshSelectionEditActions", "Clear");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MeshSelectionEditActions.ExpandToMaterials
-// (Final, Native, Public)
-
-void UMeshSelectionEditActions::ExpandToMaterials()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshSelectionEditActions", "ExpandToMaterials");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MeshSelectionEditActions.FloodFill
-// (Final, Native, Public)
-
-void UMeshSelectionEditActions::FloodFill()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshSelectionEditActions", "FloodFill");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MeshSelectionEditActions.Grow
-// (Final, Native, Public)
-
-void UMeshSelectionEditActions::Grow()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshSelectionEditActions", "Grow");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MeshSelectionEditActions.Invert
-// (Final, Native, Public)
-
-void UMeshSelectionEditActions::Invert()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshSelectionEditActions", "Invert");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MeshSelectionEditActions.LargestAreaPart
-// (Final, Native, Public)
-
-void UMeshSelectionEditActions::LargestAreaPart()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshSelectionEditActions", "LargestAreaPart");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MeshSelectionEditActions.LargestTriCountPart
-// (Final, Native, Public)
-
-void UMeshSelectionEditActions::LargestTriCountPart()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshSelectionEditActions", "LargestTriCountPart");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MeshSelectionEditActions.OptimizeBorder
-// (Final, Native, Public)
-
-void UMeshSelectionEditActions::OptimizeBorder()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshSelectionEditActions", "OptimizeBorder");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MeshSelectionEditActions.SelectAll
-// (Final, Native, Public)
-
-void UMeshSelectionEditActions::SelectAll()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshSelectionEditActions", "SelectAll");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MeshSelectionEditActions.Shrink
-// (Final, Native, Public)
-
-void UMeshSelectionEditActions::Shrink()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshSelectionEditActions", "Shrink");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -730,6 +673,196 @@ const TArray<class FString> UMeshInspectorMaterialProperties::GetUVChannelNamesF
 }
 
 
+// Function MeshModelingToolsExp.MeshSelectionEditActions.Clear
+// (Final, Native, Public)
+
+void UMeshSelectionEditActions::Clear()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshSelectionEditActions", "Clear");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.MeshSelectionEditActions.ExpandToMaterials
+// (Final, Native, Public)
+
+void UMeshSelectionEditActions::ExpandToMaterials()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshSelectionEditActions", "ExpandToMaterials");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.MeshSelectionEditActions.FloodFill
+// (Final, Native, Public)
+
+void UMeshSelectionEditActions::FloodFill()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshSelectionEditActions", "FloodFill");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.MeshSelectionEditActions.Grow
+// (Final, Native, Public)
+
+void UMeshSelectionEditActions::Grow()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshSelectionEditActions", "Grow");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.MeshSelectionEditActions.Invert
+// (Final, Native, Public)
+
+void UMeshSelectionEditActions::Invert()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshSelectionEditActions", "Invert");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.MeshSelectionEditActions.LargestAreaPart
+// (Final, Native, Public)
+
+void UMeshSelectionEditActions::LargestAreaPart()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshSelectionEditActions", "LargestAreaPart");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.MeshSelectionEditActions.LargestTriCountPart
+// (Final, Native, Public)
+
+void UMeshSelectionEditActions::LargestTriCountPart()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshSelectionEditActions", "LargestTriCountPart");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.MeshSelectionEditActions.OptimizeBorder
+// (Final, Native, Public)
+
+void UMeshSelectionEditActions::OptimizeBorder()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshSelectionEditActions", "OptimizeBorder");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.MeshSelectionEditActions.SelectAll
+// (Final, Native, Public)
+
+void UMeshSelectionEditActions::SelectAll()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshSelectionEditActions", "SelectAll");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.MeshSelectionEditActions.Shrink
+// (Final, Native, Public)
+
+void UMeshSelectionEditActions::Shrink()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshSelectionEditActions", "Shrink");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function MeshModelingToolsExp.MeshSelectionMeshEditActions.CreatePolygroup
 // (Final, Native, Public)
 
@@ -853,139 +986,6 @@ void UMeshSelectionMeshEditActions::SmoothBorder()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("MeshSelectionMeshEditActions", "SmoothBorder");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MirrorToolActionPropertySet.Backward
-// (Final, Native, Public)
-
-void UMirrorToolActionPropertySet::Backward()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MirrorToolActionPropertySet", "Backward");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MirrorToolActionPropertySet.Down
-// (Final, Native, Public)
-
-void UMirrorToolActionPropertySet::Down()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MirrorToolActionPropertySet", "Down");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MirrorToolActionPropertySet.Forward
-// (Final, Native, Public)
-
-void UMirrorToolActionPropertySet::Forward()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MirrorToolActionPropertySet", "Forward");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MirrorToolActionPropertySet.Left
-// (Final, Native, Public)
-
-void UMirrorToolActionPropertySet::Left()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MirrorToolActionPropertySet", "Left");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MirrorToolActionPropertySet.Right
-// (Final, Native, Public)
-
-void UMirrorToolActionPropertySet::Right()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MirrorToolActionPropertySet", "Right");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MirrorToolActionPropertySet.ShiftToCenter
-// (Final, Native, Public)
-
-void UMirrorToolActionPropertySet::ShiftToCenter()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MirrorToolActionPropertySet", "ShiftToCenter");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MirrorToolActionPropertySet.Up
-// (Final, Native, Public)
-
-void UMirrorToolActionPropertySet::Up()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MirrorToolActionPropertySet", "Up");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

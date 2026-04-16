@@ -12,10 +12,10 @@
 
 #include "AnimGraphRuntime_structs.hpp"
 #include "Engine_structs.hpp"
-#include "ControlRig_structs.hpp"
-#include "ABP_PanzerHund_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
+#include "ABP_PanzerHund_structs.hpp"
+#include "ControlRig_structs.hpp"
 
 
 namespace SDK

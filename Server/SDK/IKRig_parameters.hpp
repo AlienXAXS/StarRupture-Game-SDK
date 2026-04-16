@@ -191,24 +191,6 @@ public:
 };
 DUMPER7_ASSERTS_IKRetargetPelvisMotionController_SetTargetPelvisBone;
 
-// Function IKRig.IKRigSolverControllerBase.GetEnabled
-// 0x0001 (0x0001 - 0x0000)
-struct IKRigSolverControllerBase_GetEnabled final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRigSolverControllerBase_GetEnabled;
-
-// Function IKRig.IKRigSolverControllerBase.SetEnabled
-// 0x0001 (0x0001 - 0x0000)
-struct IKRigSolverControllerBase_SetEnabled final
-{
-public:
-	bool                                          bIsEnabled;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRigSolverControllerBase_SetEnabled;
-
 // Function IKRig.IKRetargetPinBoneController.GetAllBonePairs
 // 0x0050 (0x0050 - 0x0000)
 struct IKRetargetPinBoneController_GetAllBonePairs final
@@ -246,42 +228,23 @@ public:
 };
 DUMPER7_ASSERTS_IKRetargetPinBoneController_SetSettings;
 
-// Function IKRig.IKRigComponent.SetIKRigGoal
-// 0x00B0 (0x00B0 - 0x0000)
-struct IKRigComponent_SetIKRigGoal final
+// Function IKRig.IKRetargetStrideWarpingController.GetSettings
+// 0x0060 (0x0060 - 0x0000)
+struct IKRetargetStrideWarpingController_GetSettings final
 {
 public:
-	struct FIKRigGoal                             Goal;                                              // 0x0000(0x00B0)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FIKRetargetStrideWarpingOpSettings     ReturnValue;                                       // 0x0000(0x0060)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_IKRigComponent_SetIKRigGoal;
+DUMPER7_ASSERTS_IKRetargetStrideWarpingController_GetSettings;
 
-// Function IKRig.IKRigComponent.SetIKRigGoalPositionAndRotation
-// 0x0050 (0x0050 - 0x0000)
-struct IKRigComponent_SetIKRigGoalPositionAndRotation final
+// Function IKRig.IKRetargetStrideWarpingController.SetSettings
+// 0x0060 (0x0060 - 0x0000)
+struct IKRetargetStrideWarpingController_SetSettings final
 {
 public:
-	class FName                                   GoalName;                                          // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Position;                                          // 0x0008(0x0018)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FQuat                                  Rotation;                                          // 0x0020(0x0020)(ConstParm, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PositionAlpha;                                     // 0x0040(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RotationAlpha;                                     // 0x0044(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_48[0x8];                                       // 0x0048(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FIKRetargetStrideWarpingOpSettings     InSettings;                                        // 0x0000(0x0060)(Parm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_IKRigComponent_SetIKRigGoalPositionAndRotation;
-
-// Function IKRig.IKRigComponent.SetIKRigGoalTransform
-// 0x0080 (0x0080 - 0x0000)
-struct IKRigComponent_SetIKRigGoalTransform final
-{
-public:
-	class FName                                   GoalName;                                          // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             Transform;                                         // 0x0010(0x0060)(ConstParm, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PositionAlpha;                                     // 0x0070(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RotationAlpha;                                     // 0x0074(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_78[0x8];                                       // 0x0078(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_IKRigComponent_SetIKRigGoalTransform;
+DUMPER7_ASSERTS_IKRetargetStrideWarpingController_SetSettings;
 
 // Function IKRig.IKRetargetAdditivePoseController.GetSettings
 // 0x0020 (0x0020 - 0x0000)
@@ -427,23 +390,42 @@ public:
 };
 DUMPER7_ASSERTS_IKRetargetSpeedPlantingController_SetSettings;
 
-// Function IKRig.IKRetargetStrideWarpingController.GetSettings
-// 0x0060 (0x0060 - 0x0000)
-struct IKRetargetStrideWarpingController_GetSettings final
+// Function IKRig.IKRigComponent.SetIKRigGoal
+// 0x00B0 (0x00B0 - 0x0000)
+struct IKRigComponent_SetIKRigGoal final
 {
 public:
-	struct FIKRetargetStrideWarpingOpSettings     ReturnValue;                                       // 0x0000(0x0060)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+	struct FIKRigGoal                             Goal;                                              // 0x0000(0x00B0)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_IKRetargetStrideWarpingController_GetSettings;
+DUMPER7_ASSERTS_IKRigComponent_SetIKRigGoal;
 
-// Function IKRig.IKRetargetStrideWarpingController.SetSettings
-// 0x0060 (0x0060 - 0x0000)
-struct IKRetargetStrideWarpingController_SetSettings final
+// Function IKRig.IKRigComponent.SetIKRigGoalPositionAndRotation
+// 0x0050 (0x0050 - 0x0000)
+struct IKRigComponent_SetIKRigGoalPositionAndRotation final
 {
 public:
-	struct FIKRetargetStrideWarpingOpSettings     InSettings;                                        // 0x0000(0x0060)(Parm, NativeAccessSpecifierPublic)
+	class FName                                   GoalName;                                          // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Position;                                          // 0x0008(0x0018)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FQuat                                  Rotation;                                          // 0x0020(0x0020)(ConstParm, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PositionAlpha;                                     // 0x0040(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RotationAlpha;                                     // 0x0044(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_48[0x8];                                       // 0x0048(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_IKRetargetStrideWarpingController_SetSettings;
+DUMPER7_ASSERTS_IKRigComponent_SetIKRigGoalPositionAndRotation;
+
+// Function IKRig.IKRigComponent.SetIKRigGoalTransform
+// 0x0080 (0x0080 - 0x0000)
+struct IKRigComponent_SetIKRigGoalTransform final
+{
+public:
+	class FName                                   GoalName;                                          // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Transform;                                         // 0x0010(0x0060)(ConstParm, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PositionAlpha;                                     // 0x0070(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RotationAlpha;                                     // 0x0074(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_78[0x8];                                       // 0x0078(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_IKRigComponent_SetIKRigGoalTransform;
 
 // Function IKRig.IKRetargeter.GetChainSettingsFromRetargetAsset
 // 0x00D0 (0x00D0 - 0x0000)
@@ -606,6 +588,24 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_IKRetargeter_HasTargetIKRig;
+
+// Function IKRig.IKRigSolverControllerBase.GetEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct IKRigSolverControllerBase_GetEnabled final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRigSolverControllerBase_GetEnabled;
+
+// Function IKRig.IKRigSolverControllerBase.SetEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct IKRigSolverControllerBase_SetEnabled final
+{
+public:
+	bool                                          bIsEnabled;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRigSolverControllerBase_SetEnabled;
 
 // Function IKRig.IKRigBodyMoverController.GetGoalSettings
 // 0x0028 (0x0028 - 0x0000)

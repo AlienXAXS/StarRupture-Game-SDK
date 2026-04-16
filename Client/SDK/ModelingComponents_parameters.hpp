@@ -17,15 +17,6 @@
 namespace SDK::Params
 {
 
-// Function ModelingComponents.OctreeDynamicMeshComponent.SetDynamicMesh
-// 0x0008 (0x0008 - 0x0000)
-struct OctreeDynamicMeshComponent_SetDynamicMesh final
-{
-public:
-	class UDynamicMesh*                           NewMesh;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_OctreeDynamicMeshComponent_SetDynamicMesh;
-
 // Function ModelingComponents.LineSetComponent.AddLines
 // 0x0030 (0x0030 - 0x0000)
 struct LineSetComponent_AddLines final
@@ -48,6 +39,15 @@ public:
 	class UMaterialInterface*                     InLineMaterial;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LineSetComponent_SetLineMaterial;
+
+// Function ModelingComponents.OctreeDynamicMeshComponent.SetDynamicMesh
+// 0x0008 (0x0008 - 0x0000)
+struct OctreeDynamicMeshComponent_SetDynamicMesh final
+{
+public:
+	class UDynamicMesh*                           NewMesh;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_OctreeDynamicMeshComponent_SetDynamicMesh;
 
 // Function ModelingComponents.PreviewGeometry.AddLineSet
 // 0x0018 (0x0018 - 0x0000)

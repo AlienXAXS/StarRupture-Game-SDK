@@ -64,21 +64,6 @@ enum class ENxEquipWeapon : uint8
 	ENxEquipWeapon_MAX                       = 3,
 };
 
-// ScriptStruct AuWeapon.AuShootData
-// 0x00B8 (0x00B8 - 0x0000)
-struct FAuShootData final
-{
-public:
-	uint8                                         Pad_0[0x78];                                       // 0x0000(0x0078)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAuCustomTargetHandle                  TargetingHandle;                                   // 0x0078(0x0001)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAuCustomTraceDataHandle               CustomData;                                        // 0x0080(0x0018)(NativeAccessSpecifierPublic)
-	uint8                                         Pad_98[0x18];                                      // 0x0098(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	uint8                                         ForceRep;                                          // 0x00B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B1[0x7];                                       // 0x00B1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAuShootData;
-
 // ScriptStruct AuWeapon.AuEquippedWeapon
 // 0x0100 (0x0100 - 0x0000)
 struct FAuEquippedWeapon final
@@ -95,6 +80,32 @@ public:
 	uint8                                         Pad_F8[0x8];                                       // 0x00F8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FAuEquippedWeapon;
+
+// ScriptStruct AuWeapon.AuWeaponAttachmentSpawned
+// 0x0020 (0x0020 - 0x0000)
+struct FAuWeaponAttachmentSpawned final
+{
+public:
+	class AAuWeaponActor*                         WeaponActor;                                       // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class FName                                   UnholsterSocket;                                   // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FName>                           HolsterSockets;                                    // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAuWeaponAttachmentSpawned;
+
+// ScriptStruct AuWeapon.AuShootData
+// 0x00B8 (0x00B8 - 0x0000)
+struct FAuShootData final
+{
+public:
+	uint8                                         Pad_0[0x78];                                       // 0x0000(0x0078)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FAuCustomTargetHandle                  TargetingHandle;                                   // 0x0078(0x0001)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FAuCustomTraceDataHandle               CustomData;                                        // 0x0080(0x0018)(NativeAccessSpecifierPublic)
+	uint8                                         Pad_98[0x18];                                      // 0x0098(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         ForceRep;                                          // 0x00B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B1[0x7];                                       // 0x00B1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAuShootData;
 
 // ScriptStruct AuWeapon.AuReloadStateRep
 // 0x0002 (0x0002 - 0x0000)
@@ -116,17 +127,6 @@ public:
 	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FAuWeaponInstanceSaveData;
-
-// ScriptStruct AuWeapon.AuWeaponAttachmentSpawned
-// 0x0020 (0x0020 - 0x0000)
-struct FAuWeaponAttachmentSpawned final
-{
-public:
-	class AAuWeaponActor*                         WeaponActor;                                       // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class FName                                   UnholsterSocket;                                   // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class FName>                           HolsterSockets;                                    // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAuWeaponAttachmentSpawned;
 
 // ScriptStruct AuWeapon.AuWeaponItemInstance
 // 0x0028 (0x0050 - 0x0028)

@@ -17,663 +17,6 @@
 namespace SDK
 {
 
-// Function MeshModelingTools.EditMeshPolygonsToolActions_Triangles.CutFaces
-// (Final, Native, Public)
-
-void UEditMeshPolygonsToolActions_Triangles::CutFaces()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EditMeshPolygonsToolActions_Triangles", "CutFaces");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.EditMeshPolygonsToolActions_Triangles.Delete
-// (Final, Native, Public)
-
-void UEditMeshPolygonsToolActions_Triangles::Delete()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EditMeshPolygonsToolActions_Triangles", "Delete");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.EditMeshPolygonsToolActions_Triangles.Disconnect
-// (Final, Native, Public)
-
-void UEditMeshPolygonsToolActions_Triangles::Disconnect()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EditMeshPolygonsToolActions_Triangles", "Disconnect");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.EditMeshPolygonsToolActions_Triangles.Duplicate
-// (Final, Native, Public)
-
-void UEditMeshPolygonsToolActions_Triangles::Duplicate()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EditMeshPolygonsToolActions_Triangles", "Duplicate");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.EditMeshPolygonsToolActions_Triangles.Extrude
-// (Final, Native, Public)
-
-void UEditMeshPolygonsToolActions_Triangles::Extrude()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EditMeshPolygonsToolActions_Triangles", "Extrude");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.EditMeshPolygonsToolActions_Triangles.Flip
-// (Final, Native, Public)
-
-void UEditMeshPolygonsToolActions_Triangles::Flip()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EditMeshPolygonsToolActions_Triangles", "Flip");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.EditMeshPolygonsToolActions_Triangles.Inset
-// (Final, Native, Public)
-
-void UEditMeshPolygonsToolActions_Triangles::Inset()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EditMeshPolygonsToolActions_Triangles", "Inset");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.EditMeshPolygonsToolActions_Triangles.Offset
-// (Final, Native, Public)
-
-void UEditMeshPolygonsToolActions_Triangles::Offset()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EditMeshPolygonsToolActions_Triangles", "Offset");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.EditMeshPolygonsToolActions_Triangles.Outset
-// (Final, Native, Public)
-
-void UEditMeshPolygonsToolActions_Triangles::Outset()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EditMeshPolygonsToolActions_Triangles", "Outset");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.EditMeshPolygonsToolActions_Triangles.Poke
-// (Final, Native, Public)
-
-void UEditMeshPolygonsToolActions_Triangles::Poke()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EditMeshPolygonsToolActions_Triangles", "Poke");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.EditMeshPolygonsToolActions_Triangles.PushPull
-// (Final, Native, Public)
-
-void UEditMeshPolygonsToolActions_Triangles::PushPull()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EditMeshPolygonsToolActions_Triangles", "PushPull");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.EditMeshPolygonsToolActions_Triangles.RecalcNormals
-// (Final, Native, Public)
-
-void UEditMeshPolygonsToolActions_Triangles::RecalcNormals()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EditMeshPolygonsToolActions_Triangles", "RecalcNormals");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.HoleFillToolActions.Clear
-// (Final, Native, Public)
-
-void UHoleFillToolActions::Clear()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("HoleFillToolActions", "Clear");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.HoleFillToolActions.SelectAll
-// (Final, Native, Public)
-
-void UHoleFillToolActions::SelectAll()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("HoleFillToolActions", "SelectAll");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.MeshVertexPaintToolQuickActions.EraseAll
-// (Final, Native, Public)
-
-void UMeshVertexPaintToolQuickActions::EraseAll()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshVertexPaintToolQuickActions", "EraseAll");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.MeshVertexPaintToolQuickActions.FillBlack
-// (Final, Native, Public)
-
-void UMeshVertexPaintToolQuickActions::FillBlack()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshVertexPaintToolQuickActions", "FillBlack");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.MeshVertexPaintToolQuickActions.FillWhite
-// (Final, Native, Public)
-
-void UMeshVertexPaintToolQuickActions::FillWhite()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshVertexPaintToolQuickActions", "FillWhite");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.MeshVertexPaintToolQuickActions.PaintAll
-// (Final, Native, Public)
-
-void UMeshVertexPaintToolQuickActions::PaintAll()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshVertexPaintToolQuickActions", "PaintAll");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.MeshGroupPaintToolFreezeActions.ClearAll
-// (Final, Native, Public)
-
-void UMeshGroupPaintToolFreezeActions::ClearAll()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshGroupPaintToolFreezeActions", "ClearAll");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.MeshGroupPaintToolFreezeActions.ClearCurrent
-// (Final, Native, Public)
-
-void UMeshGroupPaintToolFreezeActions::ClearCurrent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshGroupPaintToolFreezeActions", "ClearCurrent");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.MeshGroupPaintToolFreezeActions.FloodFillCurrent
-// (Final, Native, Public)
-
-void UMeshGroupPaintToolFreezeActions::FloodFillCurrent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshGroupPaintToolFreezeActions", "FloodFillCurrent");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.MeshGroupPaintToolFreezeActions.FreezeCurrent
-// (Final, Native, Public)
-
-void UMeshGroupPaintToolFreezeActions::FreezeCurrent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshGroupPaintToolFreezeActions", "FreezeCurrent");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.MeshGroupPaintToolFreezeActions.FreezeOthers
-// (Final, Native, Public)
-
-void UMeshGroupPaintToolFreezeActions::FreezeOthers()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshGroupPaintToolFreezeActions", "FreezeOthers");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.MeshGroupPaintToolFreezeActions.GrowCurrent
-// (Final, Native, Public)
-
-void UMeshGroupPaintToolFreezeActions::GrowCurrent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshGroupPaintToolFreezeActions", "GrowCurrent");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.MeshGroupPaintToolFreezeActions.ShrinkCurrent
-// (Final, Native, Public)
-
-void UMeshGroupPaintToolFreezeActions::ShrinkCurrent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshGroupPaintToolFreezeActions", "ShrinkCurrent");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.MeshGroupPaintToolFreezeActions.UnfreezeAll
-// (Final, Native, Public)
-
-void UMeshGroupPaintToolFreezeActions::UnfreezeAll()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshGroupPaintToolFreezeActions", "UnfreezeAll");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.MeshConstraintProperties.IsPreventNormalFlipsEnabled
-// (Native, Protected, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UMeshConstraintProperties::IsPreventNormalFlipsEnabled() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshConstraintProperties", "IsPreventNormalFlipsEnabled");
-
-	Params::MeshConstraintProperties_IsPreventNormalFlipsEnabled Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MeshModelingTools.MeshConstraintProperties.IsPreventTinyTrianglesEnabled
-// (Native, Protected, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UMeshConstraintProperties::IsPreventTinyTrianglesEnabled() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshConstraintProperties", "IsPreventTinyTrianglesEnabled");
-
-	Params::MeshConstraintProperties_IsPreventTinyTrianglesEnabled Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MeshModelingTools.ConvertToPolygonsToolProperties.GetGroupOptionsList
-// (Final, Native, Public)
-// Parameters:
-// TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<class FString> UConvertToPolygonsToolProperties::GetGroupOptionsList()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ConvertToPolygonsToolProperties", "GetGroupOptionsList");
-
-	Params::ConvertToPolygonsToolProperties_GetGroupOptionsList Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MeshModelingTools.DisplaceMeshCommonProperties.GetWeightMapsFunc
-// (Final, RequiredAPI, Native, Public)
-// Parameters:
-// TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<class FString> UDisplaceMeshCommonProperties::GetWeightMapsFunc()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DisplaceMeshCommonProperties", "GetWeightMapsFunc");
-
-	Params::DisplaceMeshCommonProperties_GetWeightMapsFunc Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MeshModelingTools.SelectiveTessellationProperties.GetMaterialIDsFunc
-// (Final, Native, Public)
-// Parameters:
-// TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<class FString> USelectiveTessellationProperties::GetMaterialIDsFunc()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SelectiveTessellationProperties", "GetMaterialIDsFunc");
-
-	Params::SelectiveTessellationProperties_GetMaterialIDsFunc Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MeshModelingTools.DynamicSculptToolActions.DiscardAttributes
-// (Final, RequiredAPI, Native, Public)
-
-void UDynamicSculptToolActions::DiscardAttributes()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DynamicSculptToolActions", "DiscardAttributes");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.PolyEditTopologyProperties.RegenerateExtraCorners
-// (Final, Native, Public)
-
-void UPolyEditTopologyProperties::RegenerateExtraCorners()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PolyEditTopologyProperties", "RegenerateExtraCorners");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function MeshModelingTools.EditMeshPolygonsToolActions.Bevel
 // (Final, Native, Public)
 
@@ -1006,6 +349,523 @@ void UEditMeshPolygonsToolActions::SimplifyByGroups()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("EditMeshPolygonsToolActions", "SimplifyByGroups");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingTools.LatticeDeformerToolProperties.ClearConstraints
+// (Final, Native, Public)
+
+void ULatticeDeformerToolProperties::ClearConstraints()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LatticeDeformerToolProperties", "ClearConstraints");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingTools.LatticeDeformerToolProperties.Constrain
+// (Final, Native, Public)
+
+void ULatticeDeformerToolProperties::Constrain()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LatticeDeformerToolProperties", "Constrain");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingTools.MeshSpaceDeformerToolActionPropertySet.ShiftToCenter
+// (Final, Native, Public)
+
+void UMeshSpaceDeformerToolActionPropertySet::ShiftToCenter()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshSpaceDeformerToolActionPropertySet", "ShiftToCenter");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingTools.MeshVertexPaintToolUtilityActions.ApplySelectedOperation
+// (Final, Native, Public)
+
+void UMeshVertexPaintToolUtilityActions::ApplySelectedOperation()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshVertexPaintToolUtilityActions", "ApplySelectedOperation");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingTools.MeshVertexPaintToolUtilityActions.GetWeightMapsFunc
+// (Final, Native, Public)
+// Parameters:
+// TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class FString> UMeshVertexPaintToolUtilityActions::GetWeightMapsFunc()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshVertexPaintToolUtilityActions", "GetWeightMapsFunc");
+
+	Params::MeshVertexPaintToolUtilityActions_GetWeightMapsFunc Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MeshModelingTools.MeshVertexPaintToolUtilityActions.GetLODNamesFunc
+// (Final, Native, Public, Const)
+// Parameters:
+// const TArray<class FString>             ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+const TArray<class FString> UMeshVertexPaintToolUtilityActions::GetLODNamesFunc() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshVertexPaintToolUtilityActions", "GetLODNamesFunc");
+
+	Params::MeshVertexPaintToolUtilityActions_GetLODNamesFunc Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MeshModelingTools.MeshConstraintProperties.IsPreventNormalFlipsEnabled
+// (Native, Protected, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UMeshConstraintProperties::IsPreventNormalFlipsEnabled() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshConstraintProperties", "IsPreventNormalFlipsEnabled");
+
+	Params::MeshConstraintProperties_IsPreventNormalFlipsEnabled Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MeshModelingTools.MeshConstraintProperties.IsPreventTinyTrianglesEnabled
+// (Native, Protected, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UMeshConstraintProperties::IsPreventTinyTrianglesEnabled() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshConstraintProperties", "IsPreventTinyTrianglesEnabled");
+
+	Params::MeshConstraintProperties_IsPreventTinyTrianglesEnabled Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MeshModelingTools.ConvertToPolygonsToolProperties.GetGroupOptionsList
+// (Final, Native, Public)
+// Parameters:
+// TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class FString> UConvertToPolygonsToolProperties::GetGroupOptionsList()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ConvertToPolygonsToolProperties", "GetGroupOptionsList");
+
+	Params::ConvertToPolygonsToolProperties_GetGroupOptionsList Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MeshModelingTools.DisplaceMeshCommonProperties.GetWeightMapsFunc
+// (Final, RequiredAPI, Native, Public)
+// Parameters:
+// TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class FString> UDisplaceMeshCommonProperties::GetWeightMapsFunc()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DisplaceMeshCommonProperties", "GetWeightMapsFunc");
+
+	Params::DisplaceMeshCommonProperties_GetWeightMapsFunc Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MeshModelingTools.SelectiveTessellationProperties.GetMaterialIDsFunc
+// (Final, Native, Public)
+// Parameters:
+// TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class FString> USelectiveTessellationProperties::GetMaterialIDsFunc()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SelectiveTessellationProperties", "GetMaterialIDsFunc");
+
+	Params::SelectiveTessellationProperties_GetMaterialIDsFunc Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MeshModelingTools.DynamicSculptToolActions.DiscardAttributes
+// (Final, RequiredAPI, Native, Public)
+
+void UDynamicSculptToolActions::DiscardAttributes()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DynamicSculptToolActions", "DiscardAttributes");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingTools.PolyEditTopologyProperties.RegenerateExtraCorners
+// (Final, Native, Public)
+
+void UPolyEditTopologyProperties::RegenerateExtraCorners()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PolyEditTopologyProperties", "RegenerateExtraCorners");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingTools.EditMeshPolygonsToolActions_Triangles.CutFaces
+// (Final, Native, Public)
+
+void UEditMeshPolygonsToolActions_Triangles::CutFaces()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EditMeshPolygonsToolActions_Triangles", "CutFaces");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingTools.EditMeshPolygonsToolActions_Triangles.Delete
+// (Final, Native, Public)
+
+void UEditMeshPolygonsToolActions_Triangles::Delete()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EditMeshPolygonsToolActions_Triangles", "Delete");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingTools.EditMeshPolygonsToolActions_Triangles.Disconnect
+// (Final, Native, Public)
+
+void UEditMeshPolygonsToolActions_Triangles::Disconnect()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EditMeshPolygonsToolActions_Triangles", "Disconnect");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingTools.EditMeshPolygonsToolActions_Triangles.Duplicate
+// (Final, Native, Public)
+
+void UEditMeshPolygonsToolActions_Triangles::Duplicate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EditMeshPolygonsToolActions_Triangles", "Duplicate");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingTools.EditMeshPolygonsToolActions_Triangles.Extrude
+// (Final, Native, Public)
+
+void UEditMeshPolygonsToolActions_Triangles::Extrude()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EditMeshPolygonsToolActions_Triangles", "Extrude");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingTools.EditMeshPolygonsToolActions_Triangles.Flip
+// (Final, Native, Public)
+
+void UEditMeshPolygonsToolActions_Triangles::Flip()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EditMeshPolygonsToolActions_Triangles", "Flip");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingTools.EditMeshPolygonsToolActions_Triangles.Inset
+// (Final, Native, Public)
+
+void UEditMeshPolygonsToolActions_Triangles::Inset()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EditMeshPolygonsToolActions_Triangles", "Inset");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingTools.EditMeshPolygonsToolActions_Triangles.Offset
+// (Final, Native, Public)
+
+void UEditMeshPolygonsToolActions_Triangles::Offset()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EditMeshPolygonsToolActions_Triangles", "Offset");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingTools.EditMeshPolygonsToolActions_Triangles.Outset
+// (Final, Native, Public)
+
+void UEditMeshPolygonsToolActions_Triangles::Outset()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EditMeshPolygonsToolActions_Triangles", "Outset");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingTools.EditMeshPolygonsToolActions_Triangles.Poke
+// (Final, Native, Public)
+
+void UEditMeshPolygonsToolActions_Triangles::Poke()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EditMeshPolygonsToolActions_Triangles", "Poke");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingTools.EditMeshPolygonsToolActions_Triangles.PushPull
+// (Final, Native, Public)
+
+void UEditMeshPolygonsToolActions_Triangles::PushPull()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EditMeshPolygonsToolActions_Triangles", "PushPull");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingTools.EditMeshPolygonsToolActions_Triangles.RecalcNormals
+// (Final, Native, Public)
+
+void UEditMeshPolygonsToolActions_Triangles::RecalcNormals()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EditMeshPolygonsToolActions_Triangles", "RecalcNormals");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1377,15 +1237,15 @@ void UEditMeshPolygonsToolEdgeActions_Triangles::WeldCentered()
 }
 
 
-// Function MeshModelingTools.LatticeDeformerToolProperties.ClearConstraints
+// Function MeshModelingTools.HoleFillToolActions.Clear
 // (Final, Native, Public)
 
-void ULatticeDeformerToolProperties::ClearConstraints()
+void UHoleFillToolActions::Clear()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("LatticeDeformerToolProperties", "ClearConstraints");
+		Func = Class->GetFunction("HoleFillToolActions", "Clear");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1396,15 +1256,15 @@ void ULatticeDeformerToolProperties::ClearConstraints()
 }
 
 
-// Function MeshModelingTools.LatticeDeformerToolProperties.Constrain
+// Function MeshModelingTools.HoleFillToolActions.SelectAll
 // (Final, Native, Public)
 
-void ULatticeDeformerToolProperties::Constrain()
+void UHoleFillToolActions::SelectAll()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("LatticeDeformerToolProperties", "Constrain");
+		Func = Class->GetFunction("HoleFillToolActions", "SelectAll");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1440,15 +1300,15 @@ const TArray<class FString> UMeshAttributePaintToolProperties::GetAttributeNames
 }
 
 
-// Function MeshModelingTools.MeshSpaceDeformerToolActionPropertySet.ShiftToCenter
+// Function MeshModelingTools.MeshGroupPaintToolFreezeActions.ClearAll
 // (Final, Native, Public)
 
-void UMeshSpaceDeformerToolActionPropertySet::ShiftToCenter()
+void UMeshGroupPaintToolFreezeActions::ClearAll()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MeshSpaceDeformerToolActionPropertySet", "ShiftToCenter");
+		Func = Class->GetFunction("MeshGroupPaintToolFreezeActions", "ClearAll");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1459,15 +1319,15 @@ void UMeshSpaceDeformerToolActionPropertySet::ShiftToCenter()
 }
 
 
-// Function MeshModelingTools.MeshVertexPaintToolUtilityActions.ApplySelectedOperation
+// Function MeshModelingTools.MeshGroupPaintToolFreezeActions.ClearCurrent
 // (Final, Native, Public)
 
-void UMeshVertexPaintToolUtilityActions::ApplySelectedOperation()
+void UMeshGroupPaintToolFreezeActions::ClearCurrent()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MeshVertexPaintToolUtilityActions", "ApplySelectedOperation");
+		Func = Class->GetFunction("MeshGroupPaintToolFreezeActions", "ClearCurrent");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1478,53 +1338,193 @@ void UMeshVertexPaintToolUtilityActions::ApplySelectedOperation()
 }
 
 
-// Function MeshModelingTools.MeshVertexPaintToolUtilityActions.GetWeightMapsFunc
+// Function MeshModelingTools.MeshGroupPaintToolFreezeActions.FloodFillCurrent
 // (Final, Native, Public)
-// Parameters:
-// TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class FString> UMeshVertexPaintToolUtilityActions::GetWeightMapsFunc()
+void UMeshGroupPaintToolFreezeActions::FloodFillCurrent()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MeshVertexPaintToolUtilityActions", "GetWeightMapsFunc");
-
-	Params::MeshVertexPaintToolUtilityActions_GetWeightMapsFunc Parms{};
+		Func = Class->GetFunction("MeshGroupPaintToolFreezeActions", "FloodFillCurrent");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function MeshModelingTools.MeshVertexPaintToolUtilityActions.GetLODNamesFunc
-// (Final, Native, Public, Const)
-// Parameters:
-// const TArray<class FString>             ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+// Function MeshModelingTools.MeshGroupPaintToolFreezeActions.FreezeCurrent
+// (Final, Native, Public)
 
-const TArray<class FString> UMeshVertexPaintToolUtilityActions::GetLODNamesFunc() const
+void UMeshGroupPaintToolFreezeActions::FreezeCurrent()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MeshVertexPaintToolUtilityActions", "GetLODNamesFunc");
-
-	Params::MeshVertexPaintToolUtilityActions_GetLODNamesFunc Parms{};
+		Func = Class->GetFunction("MeshGroupPaintToolFreezeActions", "FreezeCurrent");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
+}
 
-	return Parms.ReturnValue;
+
+// Function MeshModelingTools.MeshGroupPaintToolFreezeActions.FreezeOthers
+// (Final, Native, Public)
+
+void UMeshGroupPaintToolFreezeActions::FreezeOthers()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshGroupPaintToolFreezeActions", "FreezeOthers");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingTools.MeshGroupPaintToolFreezeActions.GrowCurrent
+// (Final, Native, Public)
+
+void UMeshGroupPaintToolFreezeActions::GrowCurrent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshGroupPaintToolFreezeActions", "GrowCurrent");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingTools.MeshGroupPaintToolFreezeActions.ShrinkCurrent
+// (Final, Native, Public)
+
+void UMeshGroupPaintToolFreezeActions::ShrinkCurrent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshGroupPaintToolFreezeActions", "ShrinkCurrent");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingTools.MeshGroupPaintToolFreezeActions.UnfreezeAll
+// (Final, Native, Public)
+
+void UMeshGroupPaintToolFreezeActions::UnfreezeAll()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshGroupPaintToolFreezeActions", "UnfreezeAll");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingTools.MeshVertexPaintToolQuickActions.EraseAll
+// (Final, Native, Public)
+
+void UMeshVertexPaintToolQuickActions::EraseAll()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshVertexPaintToolQuickActions", "EraseAll");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingTools.MeshVertexPaintToolQuickActions.FillBlack
+// (Final, Native, Public)
+
+void UMeshVertexPaintToolQuickActions::FillBlack()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshVertexPaintToolQuickActions", "FillBlack");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingTools.MeshVertexPaintToolQuickActions.FillWhite
+// (Final, Native, Public)
+
+void UMeshVertexPaintToolQuickActions::FillWhite()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshVertexPaintToolQuickActions", "FillWhite");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingTools.MeshVertexPaintToolQuickActions.PaintAll
+// (Final, Native, Public)
+
+void UMeshVertexPaintToolQuickActions::PaintAll()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshVertexPaintToolQuickActions", "PaintAll");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 

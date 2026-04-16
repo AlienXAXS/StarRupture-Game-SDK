@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "BP_BaseAI_classes.hpp"
 #include "E_Animal_Crab_TentaclesState_structs.hpp"
+#include "BP_BaseAI_classes.hpp"
 
 
 namespace SDK

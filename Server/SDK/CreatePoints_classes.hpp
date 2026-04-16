@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "PCGPointCreationMethod_structs.hpp"
 #include "PCG_structs.hpp"
 #include "PCG_classes.hpp"
-#include "PCGPointCreationMethod_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
 

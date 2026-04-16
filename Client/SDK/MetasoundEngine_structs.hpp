@@ -50,28 +50,6 @@ enum class EMetaSoundBuilderResult : uint8
 	EMetaSoundBuilderResult_MAX              = 2,
 };
 
-// ScriptStruct MetasoundEngine.DefaultMetaSoundAssetAutoUpdateSettings
-// 0x0020 (0x0020 - 0x0000)
-struct FDefaultMetaSoundAssetAutoUpdateSettings final
-{
-public:
-	struct FSoftObjectPath                        MetaSound;                                         // 0x0000(0x0020)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FDefaultMetaSoundAssetAutoUpdateSettings;
-
-// ScriptStruct MetasoundEngine.MetaSoundBuilderOptions
-// 0x0020 (0x0020 - 0x0000)
-struct FMetaSoundBuilderOptions final
-{
-public:
-	class FName                                   Name;                                              // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bForceUniqueClassName;                             // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAddToRegistry;                                    // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IMetaSoundDocumentInterface> ExistingMetaSound;                           // 0x0010(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMetaSoundBuilderOptions;
-
 // ScriptStruct MetasoundEngine.MetaSoundOutput
 // 0x0008 (0x0010 - 0x0008)
 struct alignas(0x08) FMetaSoundOutput final : public FSoundGeneratorOutput
@@ -80,6 +58,22 @@ public:
 	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FMetaSoundOutput;
+
+// ScriptStruct MetasoundEngine.MetaSoundBuilderNodeOutputHandle
+// 0x0000 (0x0020 - 0x0020)
+struct FMetaSoundBuilderNodeOutputHandle final : public FMetasoundFrontendVertexHandle
+{
+};
+DUMPER7_ASSERTS_FMetaSoundBuilderNodeOutputHandle;
+
+// ScriptStruct MetasoundEngine.DefaultMetaSoundAssetAutoUpdateSettings
+// 0x0020 (0x0020 - 0x0000)
+struct FDefaultMetaSoundAssetAutoUpdateSettings final
+{
+public:
+	struct FSoftObjectPath                        MetaSound;                                         // 0x0000(0x0020)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FDefaultMetaSoundAssetAutoUpdateSettings;
 
 // ScriptStruct MetasoundEngine.MetaSoundPageSettings
 // 0x0018 (0x0018 - 0x0000)
@@ -130,13 +124,6 @@ struct FMetaSoundBuilderNodeInputHandle final : public FMetasoundFrontendVertexH
 };
 DUMPER7_ASSERTS_FMetaSoundBuilderNodeInputHandle;
 
-// ScriptStruct MetasoundEngine.MetaSoundBuilderNodeOutputHandle
-// 0x0000 (0x0020 - 0x0020)
-struct FMetaSoundBuilderNodeOutputHandle final : public FMetasoundFrontendVertexHandle
-{
-};
-DUMPER7_ASSERTS_FMetaSoundBuilderNodeOutputHandle;
-
 // ScriptStruct MetasoundEngine.MetaSoundNodeHandle
 // 0x0010 (0x0010 - 0x0000)
 struct FMetaSoundNodeHandle final
@@ -145,6 +132,19 @@ public:
 	struct FGuid                                  NodeID;                                            // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FMetaSoundNodeHandle;
+
+// ScriptStruct MetasoundEngine.MetaSoundBuilderOptions
+// 0x0020 (0x0020 - 0x0000)
+struct FMetaSoundBuilderOptions final
+{
+public:
+	class FName                                   Name;                                              // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bForceUniqueClassName;                             // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAddToRegistry;                                    // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TScriptInterface<class IMetaSoundDocumentInterface> ExistingMetaSound;                           // 0x0010(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMetaSoundBuilderOptions;
 
 }
 

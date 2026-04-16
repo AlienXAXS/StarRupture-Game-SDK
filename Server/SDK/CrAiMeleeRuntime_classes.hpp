@@ -14,10 +14,10 @@
 #include "MassSpawner_classes.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "CoreUObject_classes.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
 #include "CrAiMeleeRuntime_structs.hpp"
-#include "CoreUObject_classes.hpp"
 
 
 namespace SDK

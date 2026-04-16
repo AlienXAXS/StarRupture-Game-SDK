@@ -131,49 +131,6 @@ public:
 };
 DUMPER7_ASSERTS_FAuTargetData;
 
-// ScriptStruct AuAbilities.AuMinimalActiveEffect
-// 0x0024 (0x0030 - 0x000C)
-struct FAuMinimalActiveEffect final : public FFastArraySerializerItem
-{
-public:
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGameplayEffect*                        Def;                                               // 0x0010(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	float                                         Duration;                                          // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Period;                                            // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Stack;                                             // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FActiveGameplayEffectHandle            Handle;                                            // 0x0024(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAuMinimalActiveEffect;
-
-// ScriptStruct AuAbilities.AuCustomTraceDataHandle
-// 0x0018 (0x0018 - 0x0000)
-struct FAuCustomTraceDataHandle final
-{
-public:
-	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	class UScriptStruct*                          Type;                                              // 0x0010(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-};
-DUMPER7_ASSERTS_FAuCustomTraceDataHandle;
-
-// ScriptStruct AuAbilities.AuGameplayAbilityActorInfo
-// 0x0010 (0x0058 - 0x0048)
-struct FAuGameplayAbilityActorInfo : public FGameplayAbilityActorInfo
-{
-public:
-	TScriptInterface<class IAuTargetingInterface> TargetingInterface;                                // 0x0048(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAuGameplayAbilityActorInfo;
-
-// ScriptStruct AuAbilities.AuGameplayEffectContext
-// 0x0018 (0x00D8 - 0x00C0)
-struct FAuGameplayEffectContext : public FAuItemGameplayEffectContext
-{
-public:
-	uint8                                         Pad_C0[0x18];                                      // 0x00C0(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAuGameplayEffectContext;
-
 // ScriptStruct AuAbilities.AuCountedGameplayTagItem
 // 0x000C (0x0018 - 0x000C)
 struct FAuCountedGameplayTagItem final : public FFastArraySerializerItem
@@ -196,6 +153,43 @@ public:
 };
 DUMPER7_ASSERTS_FAuCountedGameplayTagReplication;
 
+// ScriptStruct AuAbilities.AuGameplayEffectContext
+// 0x0018 (0x00D8 - 0x00C0)
+struct FAuGameplayEffectContext : public FAuItemGameplayEffectContext
+{
+public:
+	uint8                                         Pad_C0[0x18];                                      // 0x00C0(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAuGameplayEffectContext;
+
+// ScriptStruct AuAbilities.AuGCMTickFunction
+// 0x0008 (0x0030 - 0x0028)
+struct FAuGCMTickFunction final : public FTickFunction
+{
+public:
+	class UAuGameplayCueManager*                  CueManager;                                        // 0x0028(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+};
+DUMPER7_ASSERTS_FAuGCMTickFunction;
+
+// ScriptStruct AuAbilities.AuCustomTraceDataHandle
+// 0x0018 (0x0018 - 0x0000)
+struct FAuCustomTraceDataHandle final
+{
+public:
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	class UScriptStruct*                          Type;                                              // 0x0010(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+};
+DUMPER7_ASSERTS_FAuCustomTraceDataHandle;
+
+// ScriptStruct AuAbilities.AuGameplayAbilityActorInfo
+// 0x0010 (0x0058 - 0x0048)
+struct FAuGameplayAbilityActorInfo : public FGameplayAbilityActorInfo
+{
+public:
+	TScriptInterface<class IAuTargetingInterface> TargetingInterface;                                // 0x0048(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAuGameplayAbilityActorInfo;
+
 // ScriptStruct AuAbilities.AuAbilityReplicationHandle
 // 0x0014 (0x0014 - 0x0000)
 struct FAuAbilityReplicationHandle final
@@ -217,6 +211,21 @@ public:
 	TArray<class AAuAbilityProjectile*>           Projectiles;                                       // 0x0018(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
 };
 DUMPER7_ASSERTS_FAuReplicatedProjectile;
+
+// ScriptStruct AuAbilities.AuMinimalActiveEffect
+// 0x0024 (0x0030 - 0x000C)
+struct FAuMinimalActiveEffect final : public FFastArraySerializerItem
+{
+public:
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameplayEffect*                        Def;                                               // 0x0010(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	float                                         Duration;                                          // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Period;                                            // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Stack;                                             // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FActiveGameplayEffectHandle            Handle;                                            // 0x0024(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAuMinimalActiveEffect;
 
 // ScriptStruct AuAbilities.AuMinimalActiveEffectArray
 // 0x0010 (0x0118 - 0x0108)
@@ -337,15 +346,6 @@ public:
 	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FAuCustomTraceReplicatedData;
-
-// ScriptStruct AuAbilities.AuGCMTickFunction
-// 0x0008 (0x0030 - 0x0028)
-struct FAuGCMTickFunction final : public FTickFunction
-{
-public:
-	class UAuGameplayCueManager*                  CueManager;                                        // 0x0028(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-};
-DUMPER7_ASSERTS_FAuGCMTickFunction;
 
 // ScriptStruct AuAbilities.AuTargeting
 // 0x00A8 (0x00A8 - 0x0000)

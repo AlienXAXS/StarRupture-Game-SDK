@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "InteractiveToolsFramework_classes.hpp"
-#include "ModelingOperators_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "ModelingOperators_structs.hpp"
 
 
 namespace SDK

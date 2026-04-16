@@ -34,15 +34,6 @@ enum class EUIExtensionPointMatch : uint8
 	EUIExtensionPointMatch_MAX               = 2,
 };
 
-// ScriptStruct UIExtension.UIExtensionPointHandle
-// 0x0018 (0x0018 - 0x0000)
-struct alignas(0x08) FUIExtensionPointHandle final
-{
-public:
-	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FUIExtensionPointHandle;
-
 // ScriptStruct UIExtension.UIExtensionHandle
 // 0x0018 (0x0018 - 0x0000)
 struct alignas(0x08) FUIExtensionHandle final
@@ -65,6 +56,15 @@ public:
 	class UObject*                                ContextObject;                                     // 0x0030(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 };
 DUMPER7_ASSERTS_FUIExtensionRequest;
+
+// ScriptStruct UIExtension.UIExtensionPointHandle
+// 0x0018 (0x0018 - 0x0000)
+struct alignas(0x08) FUIExtensionPointHandle final
+{
+public:
+	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FUIExtensionPointHandle;
 
 }
 

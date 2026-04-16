@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "AnimGraphRuntime_structs.hpp"
-#include "ABP_Crab_structs.hpp"
 #include "Engine_structs.hpp"
+#include "ABP_Crab_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
 
 

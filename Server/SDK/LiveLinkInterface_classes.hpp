@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "LiveLinkInterface_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "LiveLinkInterface_structs.hpp"
 
 
 namespace SDK
@@ -277,6 +277,26 @@ public:
 };
 DUMPER7_ASSERTS_ULiveLinkDefaultSourceSettings;
 
+// Class LiveLinkInterface.LiveLinkLocatorRole
+// 0x0000 (0x0028 - 0x0028)
+class ULiveLinkLocatorRole final : public ULiveLinkBasicRole
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LiveLinkLocatorRole")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LiveLinkLocatorRole")
+	}
+	static class ULiveLinkLocatorRole* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULiveLinkLocatorRole>();
+	}
+};
+DUMPER7_ASSERTS_ULiveLinkLocatorRole;
+
 // Class LiveLinkInterface.LiveLinkDefaultSubjectSettings
 // 0x0008 (0x0030 - 0x0028)
 class ULiveLinkDefaultSubjectSettings final : public UObject
@@ -444,26 +464,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_ULiveLinkLightRole;
-
-// Class LiveLinkInterface.LiveLinkLocatorRole
-// 0x0000 (0x0028 - 0x0028)
-class ULiveLinkLocatorRole final : public ULiveLinkBasicRole
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("LiveLinkLocatorRole")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"LiveLinkLocatorRole")
-	}
-	static class ULiveLinkLocatorRole* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULiveLinkLocatorRole>();
-	}
-};
-DUMPER7_ASSERTS_ULiveLinkLocatorRole;
 
 }
 

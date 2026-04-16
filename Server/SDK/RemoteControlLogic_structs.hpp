@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "RemoteControl_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "RemoteControl_structs.hpp"
 
 
 namespace SDK

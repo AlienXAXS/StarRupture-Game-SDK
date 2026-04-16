@@ -10,27 +10,27 @@
 
 #include "Basic.hpp"
 
-#include "PacketHandler_classes.hpp"
-#include "RenderCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "Engine_structs.hpp"
 #include "FieldNotification_structs.hpp"
-#include "AudioPlatformConfiguration_structs.hpp"
 #include "InputCore_structs.hpp"
 #include "PhysicsCore_structs.hpp"
 #include "PhysicsCore_classes.hpp"
+#include "RenderCore_structs.hpp"
 #include "ClothingSystemRuntimeInterface_structs.hpp"
+#include "AudioPlatformConfiguration_structs.hpp"
 #include "DeveloperSettings_structs.hpp"
 #include "DeveloperSettings_classes.hpp"
-#include "NetCore_structs.hpp"
-#include "NetCore_classes.hpp"
+#include "AudioExtensions_structs.hpp"
+#include "AudioExtensions_classes.hpp"
 #include "Chaos_structs.hpp"
 #include "IrisCore_classes.hpp"
 #include "MeshDescription_classes.hpp"
-#include "AudioExtensions_structs.hpp"
-#include "AudioExtensions_classes.hpp"
 #include "SlateCore_structs.hpp"
+#include "NetCore_structs.hpp"
+#include "NetCore_classes.hpp"
+#include "PacketHandler_classes.hpp"
 
 
 namespace SDK
@@ -27626,7 +27626,7 @@ public:
 DUMPER7_ASSERTS_UWorldPartitionEditorLoaderAdapter;
 
 // Class Engine.WorldPartitionRuntimeCell
-// 0x0088 (0x00B0 - 0x0028)
+// 0x0090 (0x00B8 - 0x0028)
 class UWorldPartitionRuntimeCell : public UObject
 {
 public:
@@ -27643,8 +27643,8 @@ public:
 	struct FLinearColor                           CellDebugColor;                                    // 0x006C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	struct FGuid                                  CellGuid;                                          // 0x007C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	struct FGuid                                  SourceCellGuid;                                    // 0x008C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_9C[0xC];                                       // 0x009C(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	class UWorldPartitionRuntimeCellData*         RuntimeCellData;                                   // 0x00A8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_9C[0x14];                                      // 0x009C(0x0014)(Fixing Size After Last Property [ Dumper-7 ])
+	class UWorldPartitionRuntimeCellData*         RuntimeCellData;                                   // 0x00B0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 
 public:
 	static class UClass* StaticClass()
@@ -41951,11 +41951,11 @@ public:
 DUMPER7_ASSERTS_UWorldPartitionRuntimeCellDataSpatialHash;
 
 // Class Engine.WorldPartitionRuntimeLevelStreamingCell
-// 0x0008 (0x00B8 - 0x00B0)
+// 0x0008 (0x00C0 - 0x00B8)
 class UWorldPartitionRuntimeLevelStreamingCell final : public UWorldPartitionRuntimeCell
 {
 public:
-	class UWorldPartitionLevelStreamingDynamic*   LevelStreaming;                                    // 0x00B0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UWorldPartitionLevelStreamingDynamic*   LevelStreaming;                                    // 0x00B8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 
 public:
 	void OnLevelHidden();

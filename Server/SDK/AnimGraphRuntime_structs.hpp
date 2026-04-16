@@ -429,6 +429,13 @@ struct FAnimNode_MeshSpaceRefPose final : public FAnimNode_Base
 };
 DUMPER7_ASSERTS_FAnimNode_MeshSpaceRefPose;
 
+// ScriptStruct AnimGraphRuntime.MirrorAnimNodeReference
+// 0x0000 (0x0010 - 0x0010)
+struct FMirrorAnimNodeReference final : public FAnimNodeReference
+{
+};
+DUMPER7_ASSERTS_FMirrorAnimNodeReference;
+
 // ScriptStruct AnimGraphRuntime.AnimNode_BlendSpacePlayerBase
 // 0x0030 (0x0068 - 0x0038)
 struct FAnimNode_BlendSpacePlayerBase : public FAnimNode_AssetPlayerBase
@@ -483,30 +490,6 @@ public:
 };
 DUMPER7_ASSERTS_FAnimNode_BlendSpaceGraphBase;
 
-// ScriptStruct AnimGraphRuntime.RBFEntry
-// 0x0010 (0x0010 - 0x0000)
-struct FRBFEntry
-{
-public:
-	TArray<float>                                 Values;                                            // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRBFEntry;
-
-// ScriptStruct AnimGraphRuntime.RBFTarget
-// 0x0090 (0x00A0 - 0x0010)
-struct FRBFTarget final : public FRBFEntry
-{
-public:
-	float                                         ScaleFactor;                                       // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bApplyCustomCurve;                                 // 0x0014(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRichCurve                             CustomCurve;                                       // 0x0018(0x0080)(Edit, NativeAccessSpecifierPublic)
-	ERBFDistanceMethod                            DistanceMethod;                                    // 0x0098(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERBFFunctionType                              FunctionType;                                      // 0x0099(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9A[0x6];                                       // 0x009A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRBFTarget;
-
 // ScriptStruct AnimGraphRuntime.AnimNode_SequenceEvaluatorBase
 // 0x0008 (0x0040 - 0x0038)
 struct FAnimNode_SequenceEvaluatorBase : public FAnimNode_AssetPlayerBase
@@ -529,15 +512,6 @@ struct FAnimNode_BlendSpaceGraph final : public FAnimNode_BlendSpaceGraphBase
 {
 };
 DUMPER7_ASSERTS_FAnimNode_BlendSpaceGraph;
-
-// ScriptStruct AnimGraphRuntime.IKChainLink
-// 0x0070 (0x0070 - 0x0000)
-struct alignas(0x08) FIKChainLink final
-{
-public:
-	uint8                                         Pad_0[0x70];                                       // 0x0000(0x0070)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FIKChainLink;
 
 // ScriptStruct AnimGraphRuntime.AnimNode_SkeletalControlBase
 // 0x00B8 (0x00C8 - 0x0010)
@@ -640,6 +614,27 @@ public:
 };
 DUMPER7_ASSERTS_FAngularRangeLimit;
 
+// ScriptStruct AnimGraphRuntime.AnimNode_LookAt
+// 0x0188 (0x0250 - 0x00C8)
+struct FAnimNode_LookAt final : public FAnimNode_SkeletalControlBase
+{
+public:
+	struct FBoneReference                         BoneToModify;                                      // 0x00C8(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D8[0x8];                                       // 0x00D8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBoneSocketTarget                      LookAtTarget;                                      // 0x00E0(0x0090)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                LookAtLocation;                                    // 0x0170(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAxis                                  LookAt_Axis;                                       // 0x0188(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bUseLookUpAxis;                                    // 0x01A8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EInterpolationBlend                           InterpolationType;                                 // 0x01A9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1AA[0x6];                                      // 0x01AA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FAxis                                  LookUp_Axis;                                       // 0x01B0(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         LookAtClamp;                                       // 0x01D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InterpolationTime;                                 // 0x01D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InterpolationTriggerThreashold;                    // 0x01D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1DC[0x74];                                     // 0x01DC(0x0074)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAnimNode_LookAt;
+
 // ScriptStruct AnimGraphRuntime.RigidBodyAnimNodeReference
 // 0x0000 (0x0010 - 0x0010)
 struct FRigidBodyAnimNodeReference final : public FAnimNodeReference
@@ -667,25 +662,6 @@ struct FBlendSpaceReference final : public FAnimNodeReference
 {
 };
 DUMPER7_ASSERTS_FBlendSpaceReference;
-
-// ScriptStruct AnimGraphRuntime.SimSpaceSettings
-// 0x0068 (0x0068 - 0x0000)
-struct FSimSpaceSettings final
-{
-public:
-	float                                         WorldAlpha;                                        // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         VelocityScaleZ;                                    // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DampingAlpha;                                      // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxLinearVelocity;                                 // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxAngularVelocity;                                // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxLinearAcceleration;                             // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxAngularAcceleration;                            // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                ExternalLinearDragV;                               // 0x0020(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ExternalLinearVelocity;                            // 0x0038(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ExternalAngularVelocity;                           // 0x0050(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSimSpaceSettings;
 
 // ScriptStruct AnimGraphRuntime.RotationRetargetingInfo
 // 0x01A0 (0x01A0 - 0x0000)
@@ -715,6 +691,62 @@ public:
 	uint8                                         Pad_199[0x7];                                      // 0x0199(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FRotationRetargetingInfo;
+
+// ScriptStruct AnimGraphRuntime.SimSpaceSettings
+// 0x0068 (0x0068 - 0x0000)
+struct FSimSpaceSettings final
+{
+public:
+	float                                         WorldAlpha;                                        // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         VelocityScaleZ;                                    // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DampingAlpha;                                      // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxLinearVelocity;                                 // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxAngularVelocity;                                // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxLinearAcceleration;                             // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxAngularAcceleration;                            // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                ExternalLinearDragV;                               // 0x0020(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ExternalLinearVelocity;                            // 0x0038(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ExternalAngularVelocity;                           // 0x0050(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSimSpaceSettings;
+
+// ScriptStruct AnimGraphRuntime.AnimNode_RigidBody
+// 0x0868 (0x0930 - 0x00C8)
+struct alignas(0x10) FAnimNode_RigidBody final : public FAnimNode_SkeletalControlBase
+{
+public:
+	class UPhysicsAsset*                          OverridePhysicsAsset;                              // 0x00C8(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	bool                                          bDefaultToSkeletalMeshPhysicsAsset;                // 0x00D0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D1[0x137];                                     // 0x00D1(0x0137)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bUseLocalLODThresholdOnly;                         // 0x0208(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_209[0x7];                                      // 0x0209(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                OverrideWorldGravity;                              // 0x0210(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ExternalForce;                                     // 0x0228(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ComponentLinearAccScale;                           // 0x0240(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ComponentLinearVelScale;                           // 0x0258(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ComponentAppliedLinearAccClamp;                    // 0x0270(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSimSpaceSettings                      SimSpaceSettings;                                  // 0x0288(0x0068)(Edit, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         CachedBoundsScale;                                 // 0x02F0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBoneReference                         BaseBoneRef;                                       // 0x02F4(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	ECollisionChannel                             OverlapChannel;                                    // 0x0304(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESimulationSpace                              SimulationSpace;                                   // 0x0305(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bForceDisableCollisionBetweenConstraintBodies;     // 0x0306(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseExternalClothCollision;                        // 0x0307(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_308[0x1];                                      // 0x0308(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         bEnableWorldGeometry : 1;                          // 0x0309(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverrideWorldGravity : 1;                         // 0x0309(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bTransferBoneVelocities : 1;                       // 0x0309(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bFreezeIncomingPoseOnStart : 1;                    // 0x0309(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bClampLinearTranslationLimitToRefPose : 1;         // 0x0309(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_30A[0x2];                                      // 0x030A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         WorldSpaceMinimumScale;                            // 0x030C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         EvaluationResetTime;                               // 0x0310(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_314[0x1];                                      // 0x0314(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	ESimulationTiming                             SimulationTiming;                                  // 0x0315(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_316[0x61A];                                    // 0x0316(0x061A)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAnimNode_RigidBody;
 
 // ScriptStruct AnimGraphRuntime.PositionHistory
 // 0x0030 (0x0030 - 0x0000)
@@ -1483,6 +1515,15 @@ public:
 };
 DUMPER7_ASSERTS_FAnimNode_HandIKRetargeting;
 
+// ScriptStruct AnimGraphRuntime.IKChainLink
+// 0x0070 (0x0070 - 0x0000)
+struct alignas(0x08) FIKChainLink final
+{
+public:
+	uint8                                         Pad_0[0x70];                                       // 0x0000(0x0070)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FIKChainLink;
+
 // ScriptStruct AnimGraphRuntime.IKChain
 // 0x0050 (0x0050 - 0x0000)
 struct alignas(0x08) FIKChain final
@@ -1532,27 +1573,6 @@ public:
 };
 DUMPER7_ASSERTS_FAnimNode_LegIK;
 
-// ScriptStruct AnimGraphRuntime.AnimNode_LookAt
-// 0x0188 (0x0250 - 0x00C8)
-struct FAnimNode_LookAt final : public FAnimNode_SkeletalControlBase
-{
-public:
-	struct FBoneReference                         BoneToModify;                                      // 0x00C8(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D8[0x8];                                       // 0x00D8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBoneSocketTarget                      LookAtTarget;                                      // 0x00E0(0x0090)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                LookAtLocation;                                    // 0x0170(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAxis                                  LookAt_Axis;                                       // 0x0188(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bUseLookUpAxis;                                    // 0x01A8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EInterpolationBlend                           InterpolationType;                                 // 0x01A9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1AA[0x6];                                      // 0x01AA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAxis                                  LookUp_Axis;                                       // 0x01B0(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         LookAtClamp;                                       // 0x01D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         InterpolationTime;                                 // 0x01D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         InterpolationTriggerThreashold;                    // 0x01D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DC[0x74];                                     // 0x01DC(0x0074)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAnimNode_LookAt;
-
 // ScriptStruct AnimGraphRuntime.AnimNode_ObserveBone
 // 0x0060 (0x0128 - 0x00C8)
 struct FAnimNode_ObserveBone final : public FAnimNode_SkeletalControlBase
@@ -1576,43 +1596,6 @@ public:
 	uint8                                         Pad_C8[0x10];                                      // 0x00C8(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FAnimNode_ResetRoot;
-
-// ScriptStruct AnimGraphRuntime.AnimNode_RigidBody
-// 0x0868 (0x0930 - 0x00C8)
-struct alignas(0x10) FAnimNode_RigidBody final : public FAnimNode_SkeletalControlBase
-{
-public:
-	class UPhysicsAsset*                          OverridePhysicsAsset;                              // 0x00C8(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	bool                                          bDefaultToSkeletalMeshPhysicsAsset;                // 0x00D0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D1[0x137];                                     // 0x00D1(0x0137)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bUseLocalLODThresholdOnly;                         // 0x0208(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_209[0x7];                                      // 0x0209(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                OverrideWorldGravity;                              // 0x0210(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ExternalForce;                                     // 0x0228(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ComponentLinearAccScale;                           // 0x0240(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ComponentLinearVelScale;                           // 0x0258(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ComponentAppliedLinearAccClamp;                    // 0x0270(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSimSpaceSettings                      SimSpaceSettings;                                  // 0x0288(0x0068)(Edit, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         CachedBoundsScale;                                 // 0x02F0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBoneReference                         BaseBoneRef;                                       // 0x02F4(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	ECollisionChannel                             OverlapChannel;                                    // 0x0304(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESimulationSpace                              SimulationSpace;                                   // 0x0305(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bForceDisableCollisionBetweenConstraintBodies;     // 0x0306(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseExternalClothCollision;                        // 0x0307(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_308[0x1];                                      // 0x0308(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	uint8                                         bEnableWorldGeometry : 1;                          // 0x0309(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverrideWorldGravity : 1;                         // 0x0309(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bTransferBoneVelocities : 1;                       // 0x0309(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bFreezeIncomingPoseOnStart : 1;                    // 0x0309(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bClampLinearTranslationLimitToRefPose : 1;         // 0x0309(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_30A[0x2];                                      // 0x030A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         WorldSpaceMinimumScale;                            // 0x030C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         EvaluationResetTime;                               // 0x0310(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_314[0x1];                                      // 0x0314(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	ESimulationTiming                             SimulationTiming;                                  // 0x0315(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_316[0x61A];                                    // 0x0316(0x061A)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAnimNode_RigidBody;
 
 // ScriptStruct AnimGraphRuntime.AnimNode_ScaleChainLength
 // 0x0078 (0x0088 - 0x0010)
@@ -1821,19 +1804,36 @@ struct FLinkedAnimGraphReference final : public FAnimNodeReference
 };
 DUMPER7_ASSERTS_FLinkedAnimGraphReference;
 
-// ScriptStruct AnimGraphRuntime.MirrorAnimNodeReference
-// 0x0000 (0x0010 - 0x0010)
-struct FMirrorAnimNodeReference final : public FAnimNodeReference
-{
-};
-DUMPER7_ASSERTS_FMirrorAnimNodeReference;
-
 // ScriptStruct AnimGraphRuntime.ModifyCurveAnimNodeReference
 // 0x0000 (0x0010 - 0x0010)
 struct FModifyCurveAnimNodeReference final : public FAnimNodeReference
 {
 };
 DUMPER7_ASSERTS_FModifyCurveAnimNodeReference;
+
+// ScriptStruct AnimGraphRuntime.RBFEntry
+// 0x0010 (0x0010 - 0x0000)
+struct FRBFEntry
+{
+public:
+	TArray<float>                                 Values;                                            // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRBFEntry;
+
+// ScriptStruct AnimGraphRuntime.RBFTarget
+// 0x0090 (0x00A0 - 0x0010)
+struct FRBFTarget final : public FRBFEntry
+{
+public:
+	float                                         ScaleFactor;                                       // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bApplyCustomCurve;                                 // 0x0014(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRichCurve                             CustomCurve;                                       // 0x0018(0x0080)(Edit, NativeAccessSpecifierPublic)
+	ERBFDistanceMethod                            DistanceMethod;                                    // 0x0098(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERBFFunctionType                              FunctionType;                                      // 0x0099(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9A[0x6];                                       // 0x009A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRBFTarget;
 
 // ScriptStruct AnimGraphRuntime.SequenceEvaluatorReference
 // 0x0000 (0x0010 - 0x0010)

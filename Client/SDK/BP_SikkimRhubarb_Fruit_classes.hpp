@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_SikkimRhubarb_Fruit.BP_SikkimRhubarb_Fruit_C
-// 0x0000 (0x0380 - 0x0380)
+// 0x0000 (0x03A0 - 0x03A0)
 class ABP_SikkimRhubarb_Fruit_C final : public ABP_GatherableBaseActor_C
 {
 public:

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Gatherable_FoxEgg.BP_Gatherable_FoxEgg_C
-// 0x0000 (0x0380 - 0x0380)
+// 0x0000 (0x03A0 - 0x03A0)
 class ABP_Gatherable_FoxEgg_C final : public ABP_GatherableBaseActor_C
 {
 public:

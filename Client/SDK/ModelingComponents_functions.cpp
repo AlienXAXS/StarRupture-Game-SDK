@@ -17,69 +17,6 @@
 namespace SDK
 {
 
-// Function ModelingComponents.MeshTopologySelectionMechanicProperties.InvertSelection
-// (Final, RequiredAPI, Native, Public)
-
-void UMeshTopologySelectionMechanicProperties::InvertSelection()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshTopologySelectionMechanicProperties", "InvertSelection");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModelingComponents.MeshTopologySelectionMechanicProperties.SelectAll
-// (Final, RequiredAPI, Native, Public)
-
-void UMeshTopologySelectionMechanicProperties::SelectAll()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshTopologySelectionMechanicProperties", "SelectAll");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModelingComponents.OctreeDynamicMeshComponent.SetDynamicMesh
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// class UDynamicMesh*                     NewMesh                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UOctreeDynamicMeshComponent::SetDynamicMesh(class UDynamicMesh* NewMesh)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("OctreeDynamicMeshComponent", "SetDynamicMesh");
-
-	Params::OctreeDynamicMeshComponent_SetDynamicMesh Parms{};
-
-	Parms.NewMesh = NewMesh;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function ModelingComponents.LineSetComponent.AddLines
 // (Final, RequiredAPI, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -150,6 +87,69 @@ void ULineSetComponent::SetLineMaterial(class UMaterialInterface* InLineMaterial
 	Params::LineSetComponent_SetLineMaterial Parms{};
 
 	Parms.InLineMaterial = InLineMaterial;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModelingComponents.MeshTopologySelectionMechanicProperties.InvertSelection
+// (Final, RequiredAPI, Native, Public)
+
+void UMeshTopologySelectionMechanicProperties::InvertSelection()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshTopologySelectionMechanicProperties", "InvertSelection");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModelingComponents.MeshTopologySelectionMechanicProperties.SelectAll
+// (Final, RequiredAPI, Native, Public)
+
+void UMeshTopologySelectionMechanicProperties::SelectAll()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshTopologySelectionMechanicProperties", "SelectAll");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModelingComponents.OctreeDynamicMeshComponent.SetDynamicMesh
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// class UDynamicMesh*                     NewMesh                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UOctreeDynamicMeshComponent::SetDynamicMesh(class UDynamicMesh* NewMesh)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("OctreeDynamicMeshComponent", "SetDynamicMesh");
+
+	Params::OctreeDynamicMeshComponent_SetDynamicMesh Parms{};
+
+	Parms.NewMesh = NewMesh;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

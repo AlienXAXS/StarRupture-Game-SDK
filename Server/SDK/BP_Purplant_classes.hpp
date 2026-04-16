@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "BP_GatherableBaseActor_classes.hpp"
+#include "Engine_structs.hpp"
 #include "Chimera_structs.hpp"
 
 
@@ -19,12 +19,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Purplant.BP_Purplant_C
-// 0x0010 (0x0390 - 0x0380)
+// 0x0010 (0x03B0 - 0x03A0)
 class ABP_Purplant_C final : public ABP_GatherableBaseActor_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Purplant_C;                      // 0x0380(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UPointLightComponent*                   PointLight;                                        // 0x0388(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Purplant_C;                      // 0x03A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UPointLightComponent*                   PointLight;                                        // 0x03A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_Purplant(int32 EntryPoint);

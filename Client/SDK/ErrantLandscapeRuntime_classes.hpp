@@ -12,9 +12,9 @@
 
 #include "DeveloperSettings_classes.hpp"
 #include "Engine_classes.hpp"
-#include "ErrantLandscapeRuntime_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "ErrantLandscapeRuntime_structs.hpp"
 
 
 namespace SDK

@@ -17,12 +17,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Gatherable_CoralionEggs.BP_Gatherable_CoralionEggs_C
-// 0x0010 (0x0390 - 0x0380)
+// 0x0010 (0x03B0 - 0x03A0)
 class ABP_Gatherable_CoralionEggs_C final : public ABP_GatherableBaseActor_C
 {
 public:
-	class UDecalComponent*                        Decal;                                             // 0x0380(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   SM_Coralion_Egg_Slime_A;                           // 0x0388(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UDecalComponent*                        Decal;                                             // 0x03A0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_Coralion_Egg_Slime_A;                           // 0x03A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

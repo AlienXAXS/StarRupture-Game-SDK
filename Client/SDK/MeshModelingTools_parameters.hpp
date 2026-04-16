@@ -14,23 +14,14 @@
 namespace SDK::Params
 {
 
-// Function MeshModelingTools.MeshVertexPaintToolUtilityActions.GetWeightMapsFunc
+// Function MeshModelingTools.MeshAttributePaintToolProperties.GetAttributeNames
 // 0x0010 (0x0010 - 0x0000)
-struct MeshVertexPaintToolUtilityActions_GetWeightMapsFunc final
-{
-public:
-	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MeshVertexPaintToolUtilityActions_GetWeightMapsFunc;
-
-// Function MeshModelingTools.MeshVertexPaintToolUtilityActions.GetLODNamesFunc
-// 0x0010 (0x0010 - 0x0000)
-struct MeshVertexPaintToolUtilityActions_GetLODNamesFunc final
+struct MeshAttributePaintToolProperties_GetAttributeNames final
 {
 public:
 	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_MeshVertexPaintToolUtilityActions_GetLODNamesFunc;
+DUMPER7_ASSERTS_MeshAttributePaintToolProperties_GetAttributeNames;
 
 // Function MeshModelingTools.MeshConstraintProperties.IsPreventNormalFlipsEnabled
 // 0x0001 (0x0001 - 0x0000)
@@ -77,14 +68,23 @@ public:
 };
 DUMPER7_ASSERTS_SelectiveTessellationProperties_GetMaterialIDsFunc;
 
-// Function MeshModelingTools.MeshAttributePaintToolProperties.GetAttributeNames
+// Function MeshModelingTools.MeshVertexPaintToolUtilityActions.GetWeightMapsFunc
 // 0x0010 (0x0010 - 0x0000)
-struct MeshAttributePaintToolProperties_GetAttributeNames final
+struct MeshVertexPaintToolUtilityActions_GetWeightMapsFunc final
+{
+public:
+	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MeshVertexPaintToolUtilityActions_GetWeightMapsFunc;
+
+// Function MeshModelingTools.MeshVertexPaintToolUtilityActions.GetLODNamesFunc
+// 0x0010 (0x0010 - 0x0000)
+struct MeshVertexPaintToolUtilityActions_GetLODNamesFunc final
 {
 public:
 	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_MeshAttributePaintToolProperties_GetAttributeNames;
+DUMPER7_ASSERTS_MeshVertexPaintToolUtilityActions_GetLODNamesFunc;
 
 // Function MeshModelingTools.ExistingMeshMaterialProperties.GetUVChannelNamesFunc
 // 0x0010 (0x0010 - 0x0000)

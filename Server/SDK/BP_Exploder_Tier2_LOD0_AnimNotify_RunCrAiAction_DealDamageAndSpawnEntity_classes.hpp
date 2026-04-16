@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "MassAIPrototypeEnemyRuntime_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "AuActorPlacement_structs.hpp"
-#include "MassAIPrototypeEnemyRuntime_classes.hpp"
 
 
 namespace SDK

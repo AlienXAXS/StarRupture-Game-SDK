@@ -50,16 +50,6 @@ enum class EMetaSoundBuilderResult : uint8
 	EMetaSoundBuilderResult_MAX              = 2,
 };
 
-// ScriptStruct MetasoundEngine.MetaSoundPageSettings
-// 0x0018 (0x0018 - 0x0000)
-struct FMetaSoundPageSettings final
-{
-public:
-	struct FGuid                                  UniqueID;                                          // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Name;                                              // 0x0010(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMetaSoundPageSettings;
-
 // ScriptStruct MetasoundEngine.MetaSoundOutput
 // 0x0008 (0x0010 - 0x0008)
 struct alignas(0x08) FMetaSoundOutput final : public FSoundGeneratorOutput
@@ -77,6 +67,16 @@ public:
 	struct FSoftObjectPath                        MetaSound;                                         // 0x0000(0x0020)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FDefaultMetaSoundAssetAutoUpdateSettings;
+
+// ScriptStruct MetasoundEngine.MetaSoundPageSettings
+// 0x0018 (0x0018 - 0x0000)
+struct FMetaSoundPageSettings final
+{
+public:
+	struct FGuid                                  UniqueID;                                          // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name;                                              // 0x0010(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMetaSoundPageSettings;
 
 // ScriptStruct MetasoundEngine.MetaSoundQualitySettings
 // 0x0020 (0x0020 - 0x0000)

@@ -109,14 +109,14 @@ enum class EMassFragmentPresence : uint8
 	MAX                                      = 4,
 };
 
-// ScriptStruct MassEntity.MassFragment
-// 0x0000 (0x0000 - 0x0000)
-#pragma pack(push, 0x1)
-struct alignas(0x01) FMassFragment
+// ScriptStruct MassEntity.MassTag
+// 0x0001 (0x0001 - 0x0000)
+struct FMassTag
 {
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-#pragma pack(pop)
-DUMPER7_ASSERTS_FMassFragment;
+DUMPER7_ASSERTS_FMassTag;
 
 // ScriptStruct MassEntity.MassEntityHandle
 // 0x0008 (0x0008 - 0x0000)
@@ -137,6 +137,15 @@ public:
 };
 DUMPER7_ASSERTS_FMassGenericDebugEvent;
 
+// ScriptStruct MassEntity.MassFragment
+// 0x0000 (0x0000 - 0x0000)
+#pragma pack(push, 0x1)
+struct alignas(0x01) FMassFragment
+{
+};
+#pragma pack(pop)
+DUMPER7_ASSERTS_FMassFragment;
+
 // ScriptStruct MassEntity.MassDebugLogFragment
 // 0x0008 (0x0008 - 0x0000)
 struct FMassDebugLogFragment final : public FMassFragment
@@ -145,15 +154,6 @@ public:
 	TWeakObjectPtr<class UObject>                 LogOwner;                                          // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FMassDebugLogFragment;
-
-// ScriptStruct MassEntity.MassTag
-// 0x0001 (0x0001 - 0x0000)
-struct FMassTag
-{
-public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassTag;
 
 // ScriptStruct MassEntity.MassChunkFragment
 // 0x0000 (0x0000 - 0x0000)

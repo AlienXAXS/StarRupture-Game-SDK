@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "MassCommon_structs.hpp"
 #include "ZoneGraph_structs.hpp"
+#include "MassCommon_structs.hpp"
 #include "MassZoneGraphNavigation_structs.hpp"
 #include "MassNavigation_structs.hpp"
 

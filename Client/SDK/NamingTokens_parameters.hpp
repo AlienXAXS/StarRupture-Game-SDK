@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "NamingTokens_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "NamingTokens_structs.hpp"
 
 
 namespace SDK::Params

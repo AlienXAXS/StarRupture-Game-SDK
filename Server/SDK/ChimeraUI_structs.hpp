@@ -507,24 +507,17 @@ enum class ESoundToPlay : uint8
 	SoundToPlay_MAX                          = 5,
 };
 
-// ScriptStruct ChimeraUI.CrItemDataForUI
-// 0x0008 (0x0008 - 0x0000)
-struct FCrItemDataForUI final
+// ScriptStruct ChimeraUI.CrCraftingRecipeContentForUI
+// 0x00D0 (0x00D0 - 0x0000)
+struct FCrCraftingRecipeContentForUI final
 {
 public:
-	class UAuItemDataBase*                        Data;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FSlateBrush                            ItemIcon;                                          // 0x0000(0x00B0)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	class FText                                   ItemName;                                          // 0x00B0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	int32                                         ItemAmount;                                        // 0x00C0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C4[0xC];                                       // 0x00C4(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrItemDataForUI;
-
-// ScriptStruct ChimeraUI.CrItemGroupForUI
-// 0x0020 (0x0020 - 0x0000)
-struct FCrItemGroupForUI final
-{
-public:
-	class FText                                   Name;                                              // 0x0000(0x0010)(NativeAccessSpecifierPublic)
-	TArray<struct FCrItemDataForUI>               Items;                                             // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrItemGroupForUI;
+DUMPER7_ASSERTS_FCrCraftingRecipeContentForUI;
 
 // ScriptStruct ChimeraUI.CrTabDescriptor
 // 0x00F0 (0x00F0 - 0x0000)
@@ -553,18 +546,6 @@ public:
 	TMap<ECrBuildingState, class FText>           BuildingStatus;                                    // 0x0008(0x0050)(Edit, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCrWidgetData;
-
-// ScriptStruct ChimeraUI.CrCraftingRecipeContentForUI
-// 0x00D0 (0x00D0 - 0x0000)
-struct FCrCraftingRecipeContentForUI final
-{
-public:
-	struct FSlateBrush                            ItemIcon;                                          // 0x0000(0x00B0)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	class FText                                   ItemName;                                          // 0x00B0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	int32                                         ItemAmount;                                        // 0x00C0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C4[0xC];                                       // 0x00C4(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrCraftingRecipeContentForUI;
 
 // ScriptStruct ChimeraUI.CrCorporationContentForUI
 // 0x00D0 (0x00D0 - 0x0000)
@@ -910,6 +891,25 @@ public:
 	uint8                                         Pad_0[0x28];                                       // 0x0000(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCrMinimalSaveData;
+
+// ScriptStruct ChimeraUI.CrItemDataForUI
+// 0x0008 (0x0008 - 0x0000)
+struct FCrItemDataForUI final
+{
+public:
+	class UAuItemDataBase*                        Data;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrItemDataForUI;
+
+// ScriptStruct ChimeraUI.CrItemGroupForUI
+// 0x0020 (0x0020 - 0x0000)
+struct FCrItemGroupForUI final
+{
+public:
+	class FText                                   Name;                                              // 0x0000(0x0010)(NativeAccessSpecifierPublic)
+	TArray<struct FCrItemDataForUI>               Items;                                             // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrItemGroupForUI;
 
 // ScriptStruct ChimeraUI.CrAllItemsForUI
 // 0x0010 (0x0010 - 0x0000)

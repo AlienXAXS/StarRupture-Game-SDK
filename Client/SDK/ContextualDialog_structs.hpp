@@ -127,27 +127,6 @@ public:
 };
 DUMPER7_ASSERTS_FContextualResponsePayload;
 
-// ScriptStruct ContextualDialog.RuleResponseLocalCooldownData
-// 0x0050 (0x0058 - 0x0008)
-struct FRuleResponseLocalCooldownData final : public FTableRowBase
-{
-public:
-	TMap<class FName, float>                      ResponseCooldownTimeLeft;                          // 0x0008(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRuleResponseLocalCooldownData;
-
-// ScriptStruct ContextualDialog.Criterion
-// 0x0028 (0x0030 - 0x0008)
-struct FCriterion final : public FTableRowBase
-{
-public:
-	class FString                                 KeyName;                                           // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        AValueAsNumber;                                    // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        BValueAsNumber;                                    // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   ValueAsName;                                       // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCriterion;
-
 // ScriptStruct ContextualDialog.PropertiesSet
 // 0x0010 (0x0018 - 0x0008)
 struct FPropertiesSet final : public FTableRowBase
@@ -172,6 +151,27 @@ public:
 	class FString                                 ValueWantedString;                                 // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCondition;
+
+// ScriptStruct ContextualDialog.RuleResponseLocalCooldownData
+// 0x0050 (0x0058 - 0x0008)
+struct FRuleResponseLocalCooldownData final : public FTableRowBase
+{
+public:
+	TMap<class FName, float>                      ResponseCooldownTimeLeft;                          // 0x0008(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRuleResponseLocalCooldownData;
+
+// ScriptStruct ContextualDialog.Criterion
+// 0x0028 (0x0030 - 0x0008)
+struct FCriterion final : public FTableRowBase
+{
+public:
+	class FString                                 KeyName;                                           // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        AValueAsNumber;                                    // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        BValueAsNumber;                                    // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ValueAsName;                                       // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCriterion;
 
 // ScriptStruct ContextualDialog.LocalDynamicPropertiesMap
 // 0x0050 (0x0058 - 0x0008)

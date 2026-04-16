@@ -109,15 +109,6 @@ enum class EMassFragmentPresence : uint8
 	MAX                                      = 4,
 };
 
-// ScriptStruct MassEntity.MassTag
-// 0x0001 (0x0001 - 0x0000)
-struct FMassTag
-{
-public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassTag;
-
 // ScriptStruct MassEntity.MassEntityHandle
 // 0x0008 (0x0008 - 0x0000)
 struct alignas(0x08) FMassEntityHandle final
@@ -127,6 +118,15 @@ public:
 	int32                                         SerialNumber;                                      // 0x0004(0x0004)(Edit, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FMassEntityHandle;
+
+// ScriptStruct MassEntity.MassSharedFragment
+// 0x0000 (0x0000 - 0x0000)
+#pragma pack(push, 0x1)
+struct alignas(0x01) FMassSharedFragment
+{
+};
+#pragma pack(pop)
+DUMPER7_ASSERTS_FMassSharedFragment;
 
 // ScriptStruct MassEntity.MassGenericDebugEvent
 // 0x0001 (0x0001 - 0x0000)
@@ -155,6 +155,15 @@ public:
 };
 DUMPER7_ASSERTS_FMassDebugLogFragment;
 
+// ScriptStruct MassEntity.MassTag
+// 0x0001 (0x0001 - 0x0000)
+struct FMassTag
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassTag;
+
 // ScriptStruct MassEntity.MassChunkFragment
 // 0x0000 (0x0000 - 0x0000)
 #pragma pack(push, 0x1)
@@ -163,15 +172,6 @@ struct alignas(0x01) FMassChunkFragment
 };
 #pragma pack(pop)
 DUMPER7_ASSERTS_FMassChunkFragment;
-
-// ScriptStruct MassEntity.MassSharedFragment
-// 0x0000 (0x0000 - 0x0000)
-#pragma pack(push, 0x1)
-struct alignas(0x01) FMassSharedFragment
-{
-};
-#pragma pack(pop)
-DUMPER7_ASSERTS_FMassSharedFragment;
 
 // ScriptStruct MassEntity.MassConstSharedFragment
 // 0x0000 (0x0000 - 0x0000)

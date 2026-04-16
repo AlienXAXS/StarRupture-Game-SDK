@@ -15,60 +15,12 @@
 #include "ComputeFramework_structs.hpp"
 #include "ComputeFramework_classes.hpp"
 #include "Engine_classes.hpp"
-#include "OptimusCore_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "OptimusCore_structs.hpp"
 
 
 namespace SDK
 {
-
-// Class OptimusCore.OptimusGraphDataInterface
-// 0x0018 (0x0040 - 0x0028)
-class UOptimusGraphDataInterface final : public UComputeDataInterface
-{
-public:
-	TArray<struct FOptimusGraphVariableDescription> Variables;                                       // 0x0028(0x0010)(BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPrivate)
-	int32                                         ParameterBufferSize;                               // 0x0038(0x0004)(BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("OptimusGraphDataInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"OptimusGraphDataInterface")
-	}
-	static class UOptimusGraphDataInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UOptimusGraphDataInterface>();
-	}
-};
-DUMPER7_ASSERTS_UOptimusGraphDataInterface;
-
-// Class OptimusCore.OptimusValueContainerGeneratorClass
-// 0x0030 (0x0230 - 0x0200)
-class UOptimusValueContainerGeneratorClass final : public UClass
-{
-public:
-	struct FOptimusDataTypeRef                    DataType;                                          // 0x0200(0x0030)(NativeAccessSpecifierPrivate)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("OptimusValueContainerGeneratorClass")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"OptimusValueContainerGeneratorClass")
-	}
-	static class UOptimusValueContainerGeneratorClass* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UOptimusValueContainerGeneratorClass>();
-	}
-};
-DUMPER7_ASSERTS_UOptimusValueContainerGeneratorClass;
 
 // Class OptimusCore.OptimusAlternativeSelectedObjectProvider
 // 0x0000 (0x0000 - 0x0000)
@@ -99,6 +51,153 @@ public:
 };
 DUMPER7_ASSERTS_IOptimusAlternativeSelectedObjectProvider;
 
+// Class OptimusCore.OptimusCopyKernelDataProvider
+// 0x0088 (0x00B0 - 0x0028)
+class UOptimusCopyKernelDataProvider final : public UComputeDataProvider
+{
+public:
+	uint8                                         Pad_28[0x88];                                      // 0x0028(0x0088)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("OptimusCopyKernelDataProvider")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"OptimusCopyKernelDataProvider")
+	}
+	static class UOptimusCopyKernelDataProvider* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UOptimusCopyKernelDataProvider>();
+	}
+};
+DUMPER7_ASSERTS_UOptimusCopyKernelDataProvider;
+
+// Class OptimusCore.OptimusNodeGraph
+// 0x0070 (0x0098 - 0x0028)
+class UOptimusNodeGraph : public UObject
+{
+public:
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	EOptimusNodeGraphType                         GraphType;                                         // 0x0030(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UOptimusNode*>                   Nodes;                                             // 0x0038(0x0010)(ZeroConstructor, NonTransactional, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
+	TArray<class UOptimusNodeLink*>               Links;                                             // 0x0048(0x0010)(ZeroConstructor, NonTransactional, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
+	TArray<class UOptimusNodePair*>               NodePairs;                                         // 0x0058(0x0010)(ZeroConstructor, NonTransactional, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
+	TArray<class UOptimusNodeGraph*>              Subgraphs;                                         // 0x0068(0x0010)(ZeroConstructor, NonTransactional, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_78[0x20];                                      // 0x0078(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	class UOptimusNode* AddCommentNode(const struct FVector2D& InPosition, const struct FVector2D& InSize, const struct FLinearColor& InColor);
+	class UOptimusNode* AddComponentBindingGetNode(class UOptimusComponentSourceBinding* InComponentBinding, const struct FVector2D& InPosition);
+	class UOptimusNode* AddDataInterfaceNode(const TSubclassOf<class UOptimusComputeDataInterface> InDataInterfaceClass, const struct FVector2D& InPosition);
+	class UOptimusNode* AddFunctionReferenceNode(class UOptimusFunctionNodeGraph* InFunctionGraph, const struct FVector2D& InPosition);
+	bool AddLink(class UOptimusNodePin* InNodeOutputPin, class UOptimusNodePin* InNodeInputPin);
+	TArray<class UOptimusNode*> AddLoopTerminalNodes(const struct FVector2D& InPosition);
+	class UOptimusNode* AddNode(const TSubclassOf<class UOptimusNode> InNodeClass, const struct FVector2D& InPosition);
+	class UOptimusNode* AddResourceGetNode(class UOptimusResourceDescription* InResourceDesc, const struct FVector2D& InPosition);
+	class UOptimusNode* AddResourceNode(class UOptimusResourceDescription* InResourceDesc, const struct FVector2D& InPosition);
+	class UOptimusNode* AddResourceSetNode(class UOptimusResourceDescription* InResourceDesc, const struct FVector2D& InPosition);
+	class UOptimusNode* AddValueNode(const struct FOptimusDataTypeRef& InDataTypeRef, const struct FVector2D& InPosition);
+	class UOptimusNode* AddVariableGetNode(class UOptimusVariableDescription* InVariableDesc, const struct FVector2D& InPosition);
+	class UOptimusNode* CollapseNodesToFunction(const TArray<class UOptimusNode*>& InNodes);
+	class UOptimusNode* CollapseNodesToSubGraph(const TArray<class UOptimusNode*>& InNodes);
+	class UOptimusNode* ConvertCustomKernelToFunction(class UOptimusNode* InCustomKernel);
+	class UOptimusNode* ConvertFunctionToCustomKernel(class UOptimusNode* InKernelFunction);
+	bool ConvertToFunction(class UOptimusNode* InSubGraphNode);
+	bool ConvertToSubGraph(class UOptimusNode* InFunctionNode);
+	class UOptimusNode* DuplicateNode(class UOptimusNode* InNode, const struct FVector2D& InPosition);
+	bool DuplicateNodes(const TArray<class UOptimusNode*>& InNodes, const struct FVector2D& InPosition);
+	TArray<class UOptimusNode*> ExpandCollapsedNodes(class UOptimusNode* InGraphReferenceNode);
+	bool MoveGraphDirect(class UOptimusNodeGraph* InGraph, int32 InInsertBefore);
+	bool RemoveAllLinks(class UOptimusNodePin* InNodePin);
+	bool RemoveLink(class UOptimusNodePin* InNodeOutputPin, class UOptimusNodePin* InNodeInputPin);
+	bool RemoveNode(class UOptimusNode* InNode);
+	bool RemoveNodes(const TArray<class UOptimusNode*>& InNodes);
+	bool RenameGraph(class UOptimusNodeGraph* InGraph, const class FString& InNewName);
+	bool RenameGraphDirect(class UOptimusNodeGraph* InGraph, const class FString& InNewName);
+
+	int32 GetGraphIndex() const;
+	const TArray<class UOptimusNodeGraph*> GetGraphs() const;
+	EOptimusNodeGraphType GetGraphType() const;
+	bool IsCustomKernel(class UOptimusNode* InNode) const;
+	bool IsExecutionGraph() const;
+	bool IsFunctionGraph() const;
+	bool IsFunctionReference(class UOptimusNode* InNode) const;
+	bool IsKernelFunction(class UOptimusNode* InNode) const;
+	bool IsSubGraphReference(class UOptimusNode* InNode) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("OptimusNodeGraph")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"OptimusNodeGraph")
+	}
+	static class UOptimusNodeGraph* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UOptimusNodeGraph>();
+	}
+};
+DUMPER7_ASSERTS_UOptimusNodeGraph;
+
+// Class OptimusCore.OptimusNodeSubGraph
+// 0x00E8 (0x0180 - 0x0098)
+class UOptimusNodeSubGraph : public UOptimusNodeGraph
+{
+public:
+	uint8                                         Pad_98[0x8];                                       // 0x0098(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FOptimusParameterBindingArray          InputBindings;                                     // 0x00A0(0x0010)(Edit, NativeAccessSpecifierPublic)
+	struct FOptimusParameterBindingArray          OutputBindings;                                    // 0x00B0(0x0010)(Edit, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C0[0xC0];                                      // 0x00C0(0x00C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("OptimusNodeSubGraph")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"OptimusNodeSubGraph")
+	}
+	static class UOptimusNodeSubGraph* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UOptimusNodeSubGraph>();
+	}
+};
+DUMPER7_ASSERTS_UOptimusNodeSubGraph;
+
+// Class OptimusCore.OptimusFunctionNodeGraph
+// 0x0020 (0x01A0 - 0x0180)
+class UOptimusFunctionNodeGraph final : public UOptimusNodeSubGraph
+{
+public:
+	class FName                                   Category;                                          // 0x0180(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   AccessSpecifier;                                   // 0x0188(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGuid                                  Guid;                                              // 0x0190(0x0010)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	TArray<class FName> GetAccessSpecifierOptions() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("OptimusFunctionNodeGraph")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"OptimusFunctionNodeGraph")
+	}
+	static class UOptimusFunctionNodeGraph* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UOptimusFunctionNodeGraph>();
+	}
+};
+DUMPER7_ASSERTS_UOptimusFunctionNodeGraph;
+
 // Class OptimusCore.OptimusComponentBindingProvider
 // 0x0000 (0x0000 - 0x0000)
 class IOptimusComponentBindingProvider final
@@ -127,56 +226,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_IOptimusComponentBindingProvider;
-
-// Class OptimusCore.OptimusCustomComputeKernelDataInterface
-// 0x0038 (0x0060 - 0x0028)
-class UOptimusCustomComputeKernelDataInterface final : public UComputeDataInterface
-{
-public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TWeakObjectPtr<class UOptimusComponentSourceBinding> ComponentSourceBinding;                     // 0x0030(0x0008)(BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 NumThreadsExpression;                              // 0x0038(0x0010)(BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FOptimusConstantIdentifier             ExecutionDomainConstantIdentifier;                 // 0x0048(0x0018)(BlueprintReadOnly, Deprecated, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("OptimusCustomComputeKernelDataInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"OptimusCustomComputeKernelDataInterface")
-	}
-	static class UOptimusCustomComputeKernelDataInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UOptimusCustomComputeKernelDataInterface>();
-	}
-};
-DUMPER7_ASSERTS_UOptimusCustomComputeKernelDataInterface;
-
-// Class OptimusCore.OptimusNodeLink
-// 0x0010 (0x0038 - 0x0028)
-class UOptimusNodeLink final : public UObject
-{
-public:
-	class UOptimusNodePin*                        NodeOutputPin;                                     // 0x0028(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UOptimusNodePin*                        NodeInputPin;                                      // 0x0030(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("OptimusNodeLink")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"OptimusNodeLink")
-	}
-	static class UOptimusNodeLink* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UOptimusNodeLink>();
-	}
-};
-DUMPER7_ASSERTS_UOptimusNodeLink;
 
 // Class OptimusCore.OptimusComponentBindingReceiver
 // 0x0000 (0x0000 - 0x0000)
@@ -207,6 +256,31 @@ public:
 };
 DUMPER7_ASSERTS_IOptimusComponentBindingReceiver;
 
+// Class OptimusCore.OptimusHalfEdgeDataProvider
+// 0x0028 (0x0050 - 0x0028)
+class UOptimusHalfEdgeDataProvider final : public UComputeDataProvider
+{
+public:
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class USkinnedMeshComponent*                  SkinnedMesh;                                       // 0x0030(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_38[0x18];                                      // 0x0038(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("OptimusHalfEdgeDataProvider")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"OptimusHalfEdgeDataProvider")
+	}
+	static class UOptimusHalfEdgeDataProvider* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UOptimusHalfEdgeDataProvider>();
+	}
+};
+DUMPER7_ASSERTS_UOptimusHalfEdgeDataProvider;
+
 // Class OptimusCore.OptimusComputeKernelDataInterface
 // 0x0000 (0x0000 - 0x0000)
 class IOptimusComputeKernelDataInterface final
@@ -235,50 +309,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_IOptimusComputeKernelDataInterface;
-
-// Class OptimusCore.OptimusComputeDataInterface
-// 0x0000 (0x0028 - 0x0028)
-class UOptimusComputeDataInterface : public UComputeDataInterface
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("OptimusComputeDataInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"OptimusComputeDataInterface")
-	}
-	static class UOptimusComputeDataInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UOptimusComputeDataInterface>();
-	}
-};
-DUMPER7_ASSERTS_UOptimusComputeDataInterface;
-
-// Class OptimusCore.OptimusLoopTerminalDataInterface
-// 0x0008 (0x0030 - 0x0028)
-class UOptimusLoopTerminalDataInterface final : public UOptimusComputeDataInterface
-{
-public:
-	uint32                                        Index_0;                                           // 0x0028(0x0004)(BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint32                                        Count;                                             // 0x002C(0x0004)(BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("OptimusLoopTerminalDataInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"OptimusLoopTerminalDataInterface")
-	}
-	static class UOptimusLoopTerminalDataInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UOptimusLoopTerminalDataInterface>();
-	}
-};
-DUMPER7_ASSERTS_UOptimusLoopTerminalDataInterface;
 
 // Class OptimusCore.OptimusComputeKernelProvider
 // 0x0000 (0x0000 - 0x0000)
@@ -425,6 +455,53 @@ public:
 };
 DUMPER7_ASSERTS_IOptimusDeformerInstanceAccessor;
 
+// Class OptimusCore.OptimusGraphDataProvider
+// 0x0040 (0x0068 - 0x0028)
+class UOptimusGraphDataProvider final : public UComputeDataProvider
+{
+public:
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMeshComponent*                         MeshComponent;                                     // 0x0030(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	TArray<struct FOptimusGraphVariableDescription> Variables;                                       // 0x0038(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_48[0x18];                                      // 0x0048(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	class UOptimusDeformerInstance*               DeformerInstance;                                  // 0x0060(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("OptimusGraphDataProvider")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"OptimusGraphDataProvider")
+	}
+	static class UOptimusGraphDataProvider* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UOptimusGraphDataProvider>();
+	}
+};
+DUMPER7_ASSERTS_UOptimusGraphDataProvider;
+
+// Class OptimusCore.OptimusValueContainer
+// 0x0000 (0x0028 - 0x0028)
+class UOptimusValueContainer final : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("OptimusValueContainer")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"OptimusValueContainer")
+	}
+	static class UOptimusValueContainer* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UOptimusValueContainer>();
+	}
+};
+DUMPER7_ASSERTS_UOptimusValueContainer;
+
 // Class OptimusCore.OptimusDeprecatedExecutionDataInterface
 // 0x0000 (0x0000 - 0x0000)
 class IOptimusDeprecatedExecutionDataInterface final
@@ -453,55 +530,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_IOptimusDeprecatedExecutionDataInterface;
-
-// Class OptimusCore.OptimusHalfEdgeDataInterface
-// 0x0000 (0x0028 - 0x0028)
-class UOptimusHalfEdgeDataInterface final : public UOptimusComputeDataInterface
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("OptimusHalfEdgeDataInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"OptimusHalfEdgeDataInterface")
-	}
-	static class UOptimusHalfEdgeDataInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UOptimusHalfEdgeDataInterface>();
-	}
-};
-DUMPER7_ASSERTS_UOptimusHalfEdgeDataInterface;
-
-// Class OptimusCore.OptimusVariableDescription
-// 0x0090 (0x00B8 - 0x0028)
-class UOptimusVariableDescription final : public UObject
-{
-public:
-	struct FGuid                                  Guid;                                              // 0x0028(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   VariableName;                                      // 0x0038(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FOptimusDataTypeRef                    DataType;                                          // 0x0040(0x0030)(Edit, NativeAccessSpecifierPublic)
-	struct FOptimusValueContainerStruct           DefaultValueStruct;                                // 0x0070(0x0010)(Edit, NativeAccessSpecifierPublic)
-	struct FShaderValueContainer                  CachedShaderValue;                                 // 0x0080(0x0020)(Transient, NativeAccessSpecifierPublic)
-	TArray<uint8>                                 ValueData;                                         // 0x00A0(0x0010)(ZeroConstructor, Deprecated, NativeAccessSpecifierPrivate)
-	class UOptimusValueContainer*                 DefaultValue;                                      // 0x00B0(0x0008)(ZeroConstructor, Deprecated, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("OptimusVariableDescription")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"OptimusVariableDescription")
-	}
-	static class UOptimusVariableDescription* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UOptimusVariableDescription>();
-	}
-};
-DUMPER7_ASSERTS_UOptimusVariableDescription;
 
 // Class OptimusCore.OptimusExecutionDomainProvider
 // 0x0000 (0x0000 - 0x0000)
@@ -764,6 +792,29 @@ public:
 };
 DUMPER7_ASSERTS_IOptimusNodeSubGraphReferencer;
 
+// Class OptimusCore.OptimusSkeletonDataProvider
+// 0x0008 (0x0030 - 0x0028)
+class UOptimusSkeletonDataProvider final : public UComputeDataProvider
+{
+public:
+	class USkinnedMeshComponent*                  SkinnedMesh;                                       // 0x0028(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("OptimusSkeletonDataProvider")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"OptimusSkeletonDataProvider")
+	}
+	static class UOptimusSkeletonDataProvider* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UOptimusSkeletonDataProvider>();
+	}
+};
+DUMPER7_ASSERTS_UOptimusSkeletonDataProvider;
+
 // Class OptimusCore.OptimusNonCollapsibleNode
 // 0x0000 (0x0000 - 0x0000)
 class IOptimusNonCollapsibleNode final
@@ -792,26 +843,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_IOptimusNonCollapsibleNode;
-
-// Class OptimusCore.OptimusSkinnedMeshDataInterface
-// 0x0000 (0x0028 - 0x0028)
-class UOptimusSkinnedMeshDataInterface final : public UOptimusComputeDataInterface
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("OptimusSkinnedMeshDataInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"OptimusSkinnedMeshDataInterface")
-	}
-	static class UOptimusSkinnedMeshDataInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UOptimusSkinnedMeshDataInterface>();
-	}
-};
-DUMPER7_ASSERTS_UOptimusSkinnedMeshDataInterface;
 
 // Class OptimusCore.OptimusNonCopyableNode
 // 0x0000 (0x0000 - 0x0000)
@@ -900,6 +931,46 @@ public:
 };
 DUMPER7_ASSERTS_IOptimusParameterBindingProvider;
 
+// Class OptimusCore.OptimusComputeDataInterface
+// 0x0000 (0x0028 - 0x0028)
+class UOptimusComputeDataInterface : public UComputeDataInterface
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("OptimusComputeDataInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"OptimusComputeDataInterface")
+	}
+	static class UOptimusComputeDataInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UOptimusComputeDataInterface>();
+	}
+};
+DUMPER7_ASSERTS_UOptimusComputeDataInterface;
+
+// Class OptimusCore.OptimusSkinnedMeshReadDataInterface
+// 0x0000 (0x0028 - 0x0028)
+class UOptimusSkinnedMeshReadDataInterface final : public UOptimusComputeDataInterface
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("OptimusSkinnedMeshReadDataInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"OptimusSkinnedMeshReadDataInterface")
+	}
+	static class UOptimusSkinnedMeshReadDataInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UOptimusSkinnedMeshReadDataInterface>();
+	}
+};
+DUMPER7_ASSERTS_UOptimusSkinnedMeshReadDataInterface;
+
 // Class OptimusCore.OptimusPathResolver
 // 0x0000 (0x0000 - 0x0000)
 class IOptimusPathResolver final
@@ -928,32 +999,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_IOptimusPathResolver;
-
-// Class OptimusCore.OptimusSkinnedMeshReadDataProvider
-// 0x0028 (0x0050 - 0x0028)
-class UOptimusSkinnedMeshReadDataProvider final : public UComputeDataProvider
-{
-public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class USkinnedMeshComponent*                  SkinnedMesh;                                       // 0x0030(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_38[0x10];                                      // 0x0038(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	class UOptimusDeformerInstance*               DeformerInstance;                                  // 0x0048(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("OptimusSkinnedMeshReadDataProvider")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"OptimusSkinnedMeshReadDataProvider")
-	}
-	static class UOptimusSkinnedMeshReadDataProvider* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UOptimusSkinnedMeshReadDataProvider>();
-	}
-};
-DUMPER7_ASSERTS_UOptimusSkinnedMeshReadDataProvider;
 
 // Class OptimusCore.OptimusPersistentBufferProvider
 // 0x0000 (0x0000 - 0x0000)
@@ -984,6 +1029,29 @@ public:
 };
 DUMPER7_ASSERTS_IOptimusPersistentBufferProvider;
 
+// Class OptimusCore.OptimusSceneDataProvider
+// 0x0008 (0x0030 - 0x0028)
+class UOptimusSceneDataProvider final : public UComputeDataProvider
+{
+public:
+	class USceneComponent*                        SceneComponent;                                    // 0x0028(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("OptimusSceneDataProvider")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"OptimusSceneDataProvider")
+	}
+	static class UOptimusSceneDataProvider* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UOptimusSceneDataProvider>();
+	}
+};
+DUMPER7_ASSERTS_UOptimusSceneDataProvider;
+
 // Class OptimusCore.OptimusPinMutabilityDefiner
 // 0x0000 (0x0000 - 0x0000)
 class IOptimusPinMutabilityDefiner final
@@ -1012,26 +1080,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_IOptimusPinMutabilityDefiner;
-
-// Class OptimusCore.OptimusSkeletonDataInterface
-// 0x0000 (0x0028 - 0x0028)
-class UOptimusSkeletonDataInterface final : public UOptimusComputeDataInterface
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("OptimusSkeletonDataInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"OptimusSkeletonDataInterface")
-	}
-	static class UOptimusSkeletonDataInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UOptimusSkeletonDataInterface>();
-	}
-};
-DUMPER7_ASSERTS_UOptimusSkeletonDataInterface;
 
 // Class OptimusCore.OptimusPropertyPinProvider
 // 0x0000 (0x0000 - 0x0000)
@@ -1415,6 +1463,31 @@ public:
 };
 DUMPER7_ASSERTS_UOptimusAdvancedSkeletonDataInterface;
 
+// Class OptimusCore.OptimusGraphDataInterface
+// 0x0018 (0x0040 - 0x0028)
+class UOptimusGraphDataInterface final : public UComputeDataInterface
+{
+public:
+	TArray<struct FOptimusGraphVariableDescription> Variables;                                       // 0x0028(0x0010)(BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPrivate)
+	int32                                         ParameterBufferSize;                               // 0x0038(0x0004)(BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("OptimusGraphDataInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"OptimusGraphDataInterface")
+	}
+	static class UOptimusGraphDataInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UOptimusGraphDataInterface>();
+	}
+};
+DUMPER7_ASSERTS_UOptimusGraphDataInterface;
+
 // Class OptimusCore.OptimusAdvancedSkeletonDataProvider
 // 0x00B0 (0x00D8 - 0x0028)
 class UOptimusAdvancedSkeletonDataProvider final : public UComputeDataProvider
@@ -1442,33 +1515,6 @@ public:
 };
 DUMPER7_ASSERTS_UOptimusAdvancedSkeletonDataProvider;
 
-// Class OptimusCore.OptimusGraphDataProvider
-// 0x0040 (0x0068 - 0x0028)
-class UOptimusGraphDataProvider final : public UComputeDataProvider
-{
-public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMeshComponent*                         MeshComponent;                                     // 0x0030(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	TArray<struct FOptimusGraphVariableDescription> Variables;                                       // 0x0038(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_48[0x18];                                      // 0x0048(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	class UOptimusDeformerInstance*               DeformerInstance;                                  // 0x0060(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("OptimusGraphDataProvider")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"OptimusGraphDataProvider")
-	}
-	static class UOptimusGraphDataProvider* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UOptimusGraphDataProvider>();
-	}
-};
-DUMPER7_ASSERTS_UOptimusGraphDataProvider;
-
 // Class OptimusCore.OptimusAnimAttributeDataInterface
 // 0x0040 (0x0068 - 0x0028)
 class UOptimusAnimAttributeDataInterface final : public UOptimusComputeDataInterface
@@ -1493,6 +1539,32 @@ public:
 };
 DUMPER7_ASSERTS_UOptimusAnimAttributeDataInterface;
 
+// Class OptimusCore.OptimusCustomComputeKernelDataInterface
+// 0x0038 (0x0060 - 0x0028)
+class UOptimusCustomComputeKernelDataInterface final : public UComputeDataInterface
+{
+public:
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TWeakObjectPtr<class UOptimusComponentSourceBinding> ComponentSourceBinding;                     // 0x0030(0x0008)(BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 NumThreadsExpression;                              // 0x0038(0x0010)(BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FOptimusConstantIdentifier             ExecutionDomainConstantIdentifier;                 // 0x0048(0x0018)(BlueprintReadOnly, Deprecated, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("OptimusCustomComputeKernelDataInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"OptimusCustomComputeKernelDataInterface")
+	}
+	static class UOptimusCustomComputeKernelDataInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UOptimusCustomComputeKernelDataInterface>();
+	}
+};
+DUMPER7_ASSERTS_UOptimusCustomComputeKernelDataInterface;
+
 // Class OptimusCore.OptimusAnimAttributeDataProvider
 // 0x0020 (0x0048 - 0x0028)
 class UOptimusAnimAttributeDataProvider final : public UComputeDataProvider
@@ -1516,29 +1588,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UOptimusAnimAttributeDataProvider;
-
-// Class OptimusCore.OptimusCustomComputeKernelDataProvider
-// 0x0088 (0x00B0 - 0x0028)
-class UOptimusCustomComputeKernelDataProvider final : public UComputeDataProvider
-{
-public:
-	uint8                                         Pad_28[0x88];                                      // 0x0028(0x0088)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("OptimusCustomComputeKernelDataProvider")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"OptimusCustomComputeKernelDataProvider")
-	}
-	static class UOptimusCustomComputeKernelDataProvider* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UOptimusCustomComputeKernelDataProvider>();
-	}
-};
-DUMPER7_ASSERTS_UOptimusCustomComputeKernelDataProvider;
 
 // Class OptimusCore.OptimusClothDataInterface
 // 0x0000 (0x0028 - 0x0028)
@@ -1603,6 +1652,26 @@ public:
 };
 DUMPER7_ASSERTS_UOptimusConnectivityDataInterface;
 
+// Class OptimusCore.OptimusDuplicateVerticesDataInterface
+// 0x0000 (0x0028 - 0x0028)
+class UOptimusDuplicateVerticesDataInterface final : public UOptimusComputeDataInterface
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("OptimusDuplicateVerticesDataInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"OptimusDuplicateVerticesDataInterface")
+	}
+	static class UOptimusDuplicateVerticesDataInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UOptimusDuplicateVerticesDataInterface>();
+	}
+};
+DUMPER7_ASSERTS_UOptimusDuplicateVerticesDataInterface;
+
 // Class OptimusCore.OptimusConnectivityDataProvider
 // 0x0018 (0x0040 - 0x0028)
 class UOptimusConnectivityDataProvider final : public UComputeDataProvider
@@ -1626,29 +1695,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UOptimusConnectivityDataProvider;
-
-// Class OptimusCore.OptimusDuplicateVerticesDataProvider
-// 0x0008 (0x0030 - 0x0028)
-class UOptimusDuplicateVerticesDataProvider final : public UComputeDataProvider
-{
-public:
-	class USkinnedMeshComponent*                  SkinnedMesh;                                       // 0x0028(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("OptimusDuplicateVerticesDataProvider")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"OptimusDuplicateVerticesDataProvider")
-	}
-	static class UOptimusDuplicateVerticesDataProvider* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UOptimusDuplicateVerticesDataProvider>();
-	}
-};
-DUMPER7_ASSERTS_UOptimusDuplicateVerticesDataProvider;
 
 // Class OptimusCore.OptimusCopyKernelDataInterface
 // 0x0020 (0x0048 - 0x0028)
@@ -1675,9 +1721,9 @@ public:
 };
 DUMPER7_ASSERTS_UOptimusCopyKernelDataInterface;
 
-// Class OptimusCore.OptimusCopyKernelDataProvider
+// Class OptimusCore.OptimusCustomComputeKernelDataProvider
 // 0x0088 (0x00B0 - 0x0028)
-class UOptimusCopyKernelDataProvider final : public UComputeDataProvider
+class UOptimusCustomComputeKernelDataProvider final : public UComputeDataProvider
 {
 public:
 	uint8                                         Pad_28[0x88];                                      // 0x0028(0x0088)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -1685,18 +1731,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("OptimusCopyKernelDataProvider")
+		STATIC_CLASS_IMPL("OptimusCustomComputeKernelDataProvider")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"OptimusCopyKernelDataProvider")
+		STATIC_NAME_IMPL(L"OptimusCustomComputeKernelDataProvider")
 	}
-	static class UOptimusCopyKernelDataProvider* GetDefaultObj()
+	static class UOptimusCustomComputeKernelDataProvider* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UOptimusCopyKernelDataProvider>();
+		return GetDefaultObjImpl<UOptimusCustomComputeKernelDataProvider>();
 	}
 };
-DUMPER7_ASSERTS_UOptimusCopyKernelDataProvider;
+DUMPER7_ASSERTS_UOptimusCustomComputeKernelDataProvider;
 
 // Class OptimusCore.OptimusDebugDrawDataInterface
 // 0x0018 (0x0040 - 0x0028)
@@ -1748,50 +1794,72 @@ public:
 };
 DUMPER7_ASSERTS_UOptimusDebugDrawDataProvider;
 
-// Class OptimusCore.OptimusDuplicateVerticesDataInterface
+// Class OptimusCore.OptimusDuplicateVerticesDataProvider
+// 0x0008 (0x0030 - 0x0028)
+class UOptimusDuplicateVerticesDataProvider final : public UComputeDataProvider
+{
+public:
+	class USkinnedMeshComponent*                  SkinnedMesh;                                       // 0x0028(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("OptimusDuplicateVerticesDataProvider")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"OptimusDuplicateVerticesDataProvider")
+	}
+	static class UOptimusDuplicateVerticesDataProvider* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UOptimusDuplicateVerticesDataProvider>();
+	}
+};
+DUMPER7_ASSERTS_UOptimusDuplicateVerticesDataProvider;
+
+// Class OptimusCore.OptimusHalfEdgeDataInterface
 // 0x0000 (0x0028 - 0x0028)
-class UOptimusDuplicateVerticesDataInterface final : public UOptimusComputeDataInterface
+class UOptimusHalfEdgeDataInterface final : public UOptimusComputeDataInterface
 {
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("OptimusDuplicateVerticesDataInterface")
+		STATIC_CLASS_IMPL("OptimusHalfEdgeDataInterface")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"OptimusDuplicateVerticesDataInterface")
+		STATIC_NAME_IMPL(L"OptimusHalfEdgeDataInterface")
 	}
-	static class UOptimusDuplicateVerticesDataInterface* GetDefaultObj()
+	static class UOptimusHalfEdgeDataInterface* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UOptimusDuplicateVerticesDataInterface>();
+		return GetDefaultObjImpl<UOptimusHalfEdgeDataInterface>();
 	}
 };
-DUMPER7_ASSERTS_UOptimusDuplicateVerticesDataInterface;
+DUMPER7_ASSERTS_UOptimusHalfEdgeDataInterface;
 
-// Class OptimusCore.OptimusHalfEdgeDataProvider
-// 0x0028 (0x0050 - 0x0028)
-class UOptimusHalfEdgeDataProvider final : public UComputeDataProvider
+// Class OptimusCore.OptimusLoopTerminalDataInterface
+// 0x0008 (0x0030 - 0x0028)
+class UOptimusLoopTerminalDataInterface final : public UOptimusComputeDataInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class USkinnedMeshComponent*                  SkinnedMesh;                                       // 0x0030(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_38[0x18];                                      // 0x0038(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint32                                        Index_0;                                           // 0x0028(0x0004)(BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint32                                        Count;                                             // 0x002C(0x0004)(BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("OptimusHalfEdgeDataProvider")
+		STATIC_CLASS_IMPL("OptimusLoopTerminalDataInterface")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"OptimusHalfEdgeDataProvider")
+		STATIC_NAME_IMPL(L"OptimusLoopTerminalDataInterface")
 	}
-	static class UOptimusHalfEdgeDataProvider* GetDefaultObj()
+	static class UOptimusLoopTerminalDataInterface* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UOptimusHalfEdgeDataProvider>();
+		return GetDefaultObjImpl<UOptimusLoopTerminalDataInterface>();
 	}
 };
-DUMPER7_ASSERTS_UOptimusHalfEdgeDataProvider;
+DUMPER7_ASSERTS_UOptimusLoopTerminalDataInterface;
 
 // Class OptimusCore.OptimusLoopTerminalDataProvider
 // 0x0008 (0x0030 - 0x0028)
@@ -2068,51 +2136,45 @@ public:
 };
 DUMPER7_ASSERTS_UOptimusSceneDataInterface;
 
-// Class OptimusCore.OptimusSceneDataProvider
-// 0x0008 (0x0030 - 0x0028)
-class UOptimusSceneDataProvider final : public UComputeDataProvider
+// Class OptimusCore.OptimusSkeletonDataInterface
+// 0x0000 (0x0028 - 0x0028)
+class UOptimusSkeletonDataInterface final : public UOptimusComputeDataInterface
 {
-public:
-	class USceneComponent*                        SceneComponent;                                    // 0x0028(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("OptimusSceneDataProvider")
+		STATIC_CLASS_IMPL("OptimusSkeletonDataInterface")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"OptimusSceneDataProvider")
+		STATIC_NAME_IMPL(L"OptimusSkeletonDataInterface")
 	}
-	static class UOptimusSceneDataProvider* GetDefaultObj()
+	static class UOptimusSkeletonDataInterface* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UOptimusSceneDataProvider>();
+		return GetDefaultObjImpl<UOptimusSkeletonDataInterface>();
 	}
 };
-DUMPER7_ASSERTS_UOptimusSceneDataProvider;
+DUMPER7_ASSERTS_UOptimusSkeletonDataInterface;
 
-// Class OptimusCore.OptimusSkeletonDataProvider
-// 0x0008 (0x0030 - 0x0028)
-class UOptimusSkeletonDataProvider final : public UComputeDataProvider
+// Class OptimusCore.OptimusSkinnedMeshDataInterface
+// 0x0000 (0x0028 - 0x0028)
+class UOptimusSkinnedMeshDataInterface final : public UOptimusComputeDataInterface
 {
-public:
-	class USkinnedMeshComponent*                  SkinnedMesh;                                       // 0x0028(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("OptimusSkeletonDataProvider")
+		STATIC_CLASS_IMPL("OptimusSkinnedMeshDataInterface")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"OptimusSkeletonDataProvider")
+		STATIC_NAME_IMPL(L"OptimusSkinnedMeshDataInterface")
 	}
-	static class UOptimusSkeletonDataProvider* GetDefaultObj()
+	static class UOptimusSkinnedMeshDataInterface* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UOptimusSkeletonDataProvider>();
+		return GetDefaultObjImpl<UOptimusSkinnedMeshDataInterface>();
 	}
 };
-DUMPER7_ASSERTS_UOptimusSkeletonDataProvider;
+DUMPER7_ASSERTS_UOptimusSkinnedMeshDataInterface;
 
 // Class OptimusCore.OptimusSkinnedMeshDataProvider
 // 0x0008 (0x0030 - 0x0028)
@@ -2162,25 +2224,31 @@ public:
 };
 DUMPER7_ASSERTS_UOptimusSkinnedMeshExecDataInterface;
 
-// Class OptimusCore.OptimusSkinnedMeshReadDataInterface
-// 0x0000 (0x0028 - 0x0028)
-class UOptimusSkinnedMeshReadDataInterface final : public UOptimusComputeDataInterface
+// Class OptimusCore.OptimusSkinnedMeshReadDataProvider
+// 0x0028 (0x0050 - 0x0028)
+class UOptimusSkinnedMeshReadDataProvider final : public UComputeDataProvider
 {
+public:
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class USkinnedMeshComponent*                  SkinnedMesh;                                       // 0x0030(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_38[0x10];                                      // 0x0038(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	class UOptimusDeformerInstance*               DeformerInstance;                                  // 0x0048(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("OptimusSkinnedMeshReadDataInterface")
+		STATIC_CLASS_IMPL("OptimusSkinnedMeshReadDataProvider")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"OptimusSkinnedMeshReadDataInterface")
+		STATIC_NAME_IMPL(L"OptimusSkinnedMeshReadDataProvider")
 	}
-	static class UOptimusSkinnedMeshReadDataInterface* GetDefaultObj()
+	static class UOptimusSkinnedMeshReadDataProvider* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UOptimusSkinnedMeshReadDataInterface>();
+		return GetDefaultObjImpl<UOptimusSkinnedMeshReadDataProvider>();
 	}
 };
-DUMPER7_ASSERTS_UOptimusSkinnedMeshReadDataInterface;
+DUMPER7_ASSERTS_UOptimusSkinnedMeshReadDataProvider;
 
 // Class OptimusCore.OptimusSkinnedMeshWriteDataInterface
 // 0x0008 (0x0030 - 0x0028)
@@ -2979,129 +3047,29 @@ public:
 };
 DUMPER7_ASSERTS_UOptimusDeformerInstance;
 
-// Class OptimusCore.OptimusNodeGraph
-// 0x0070 (0x0098 - 0x0028)
-class UOptimusNodeGraph : public UObject
+// Class OptimusCore.OptimusNodeLink
+// 0x0010 (0x0038 - 0x0028)
+class UOptimusNodeLink final : public UObject
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	EOptimusNodeGraphType                         GraphType;                                         // 0x0030(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UOptimusNode*>                   Nodes;                                             // 0x0038(0x0010)(ZeroConstructor, NonTransactional, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
-	TArray<class UOptimusNodeLink*>               Links;                                             // 0x0048(0x0010)(ZeroConstructor, NonTransactional, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
-	TArray<class UOptimusNodePair*>               NodePairs;                                         // 0x0058(0x0010)(ZeroConstructor, NonTransactional, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
-	TArray<class UOptimusNodeGraph*>              Subgraphs;                                         // 0x0068(0x0010)(ZeroConstructor, NonTransactional, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_78[0x20];                                      // 0x0078(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	class UOptimusNode* AddCommentNode(const struct FVector2D& InPosition, const struct FVector2D& InSize, const struct FLinearColor& InColor);
-	class UOptimusNode* AddComponentBindingGetNode(class UOptimusComponentSourceBinding* InComponentBinding, const struct FVector2D& InPosition);
-	class UOptimusNode* AddDataInterfaceNode(const TSubclassOf<class UOptimusComputeDataInterface> InDataInterfaceClass, const struct FVector2D& InPosition);
-	class UOptimusNode* AddFunctionReferenceNode(class UOptimusFunctionNodeGraph* InFunctionGraph, const struct FVector2D& InPosition);
-	bool AddLink(class UOptimusNodePin* InNodeOutputPin, class UOptimusNodePin* InNodeInputPin);
-	TArray<class UOptimusNode*> AddLoopTerminalNodes(const struct FVector2D& InPosition);
-	class UOptimusNode* AddNode(const TSubclassOf<class UOptimusNode> InNodeClass, const struct FVector2D& InPosition);
-	class UOptimusNode* AddResourceGetNode(class UOptimusResourceDescription* InResourceDesc, const struct FVector2D& InPosition);
-	class UOptimusNode* AddResourceNode(class UOptimusResourceDescription* InResourceDesc, const struct FVector2D& InPosition);
-	class UOptimusNode* AddResourceSetNode(class UOptimusResourceDescription* InResourceDesc, const struct FVector2D& InPosition);
-	class UOptimusNode* AddValueNode(const struct FOptimusDataTypeRef& InDataTypeRef, const struct FVector2D& InPosition);
-	class UOptimusNode* AddVariableGetNode(class UOptimusVariableDescription* InVariableDesc, const struct FVector2D& InPosition);
-	class UOptimusNode* CollapseNodesToFunction(const TArray<class UOptimusNode*>& InNodes);
-	class UOptimusNode* CollapseNodesToSubGraph(const TArray<class UOptimusNode*>& InNodes);
-	class UOptimusNode* ConvertCustomKernelToFunction(class UOptimusNode* InCustomKernel);
-	class UOptimusNode* ConvertFunctionToCustomKernel(class UOptimusNode* InKernelFunction);
-	bool ConvertToFunction(class UOptimusNode* InSubGraphNode);
-	bool ConvertToSubGraph(class UOptimusNode* InFunctionNode);
-	class UOptimusNode* DuplicateNode(class UOptimusNode* InNode, const struct FVector2D& InPosition);
-	bool DuplicateNodes(const TArray<class UOptimusNode*>& InNodes, const struct FVector2D& InPosition);
-	TArray<class UOptimusNode*> ExpandCollapsedNodes(class UOptimusNode* InGraphReferenceNode);
-	bool MoveGraphDirect(class UOptimusNodeGraph* InGraph, int32 InInsertBefore);
-	bool RemoveAllLinks(class UOptimusNodePin* InNodePin);
-	bool RemoveLink(class UOptimusNodePin* InNodeOutputPin, class UOptimusNodePin* InNodeInputPin);
-	bool RemoveNode(class UOptimusNode* InNode);
-	bool RemoveNodes(const TArray<class UOptimusNode*>& InNodes);
-	bool RenameGraph(class UOptimusNodeGraph* InGraph, const class FString& InNewName);
-	bool RenameGraphDirect(class UOptimusNodeGraph* InGraph, const class FString& InNewName);
-
-	int32 GetGraphIndex() const;
-	const TArray<class UOptimusNodeGraph*> GetGraphs() const;
-	EOptimusNodeGraphType GetGraphType() const;
-	bool IsCustomKernel(class UOptimusNode* InNode) const;
-	bool IsExecutionGraph() const;
-	bool IsFunctionGraph() const;
-	bool IsFunctionReference(class UOptimusNode* InNode) const;
-	bool IsKernelFunction(class UOptimusNode* InNode) const;
-	bool IsSubGraphReference(class UOptimusNode* InNode) const;
+	class UOptimusNodePin*                        NodeOutputPin;                                     // 0x0028(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UOptimusNodePin*                        NodeInputPin;                                      // 0x0030(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("OptimusNodeGraph")
+		STATIC_CLASS_IMPL("OptimusNodeLink")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"OptimusNodeGraph")
+		STATIC_NAME_IMPL(L"OptimusNodeLink")
 	}
-	static class UOptimusNodeGraph* GetDefaultObj()
+	static class UOptimusNodeLink* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UOptimusNodeGraph>();
+		return GetDefaultObjImpl<UOptimusNodeLink>();
 	}
 };
-DUMPER7_ASSERTS_UOptimusNodeGraph;
-
-// Class OptimusCore.OptimusNodeSubGraph
-// 0x00E8 (0x0180 - 0x0098)
-class UOptimusNodeSubGraph : public UOptimusNodeGraph
-{
-public:
-	uint8                                         Pad_98[0x8];                                       // 0x0098(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FOptimusParameterBindingArray          InputBindings;                                     // 0x00A0(0x0010)(Edit, NativeAccessSpecifierPublic)
-	struct FOptimusParameterBindingArray          OutputBindings;                                    // 0x00B0(0x0010)(Edit, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C0[0xC0];                                      // 0x00C0(0x00C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("OptimusNodeSubGraph")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"OptimusNodeSubGraph")
-	}
-	static class UOptimusNodeSubGraph* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UOptimusNodeSubGraph>();
-	}
-};
-DUMPER7_ASSERTS_UOptimusNodeSubGraph;
-
-// Class OptimusCore.OptimusFunctionNodeGraph
-// 0x0020 (0x01A0 - 0x0180)
-class UOptimusFunctionNodeGraph final : public UOptimusNodeSubGraph
-{
-public:
-	class FName                                   Category;                                          // 0x0180(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   AccessSpecifier;                                   // 0x0188(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGuid                                  Guid;                                              // 0x0190(0x0010)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-
-public:
-	TArray<class FName> GetAccessSpecifierOptions() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("OptimusFunctionNodeGraph")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"OptimusFunctionNodeGraph")
-	}
-	static class UOptimusFunctionNodeGraph* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UOptimusFunctionNodeGraph>();
-	}
-};
-DUMPER7_ASSERTS_UOptimusFunctionNodeGraph;
+DUMPER7_ASSERTS_UOptimusNodeLink;
 
 // Class OptimusCore.OptimusNodePair
 // 0x0010 (0x0038 - 0x0028)
@@ -3239,25 +3207,57 @@ public:
 };
 DUMPER7_ASSERTS_UOptimusSource;
 
-// Class OptimusCore.OptimusValueContainer
-// 0x0000 (0x0028 - 0x0028)
-class UOptimusValueContainer final : public UObject
+// Class OptimusCore.OptimusValueContainerGeneratorClass
+// 0x0030 (0x0230 - 0x0200)
+class UOptimusValueContainerGeneratorClass final : public UClass
 {
+public:
+	struct FOptimusDataTypeRef                    DataType;                                          // 0x0200(0x0030)(NativeAccessSpecifierPrivate)
+
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("OptimusValueContainer")
+		STATIC_CLASS_IMPL("OptimusValueContainerGeneratorClass")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"OptimusValueContainer")
+		STATIC_NAME_IMPL(L"OptimusValueContainerGeneratorClass")
 	}
-	static class UOptimusValueContainer* GetDefaultObj()
+	static class UOptimusValueContainerGeneratorClass* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UOptimusValueContainer>();
+		return GetDefaultObjImpl<UOptimusValueContainerGeneratorClass>();
 	}
 };
-DUMPER7_ASSERTS_UOptimusValueContainer;
+DUMPER7_ASSERTS_UOptimusValueContainerGeneratorClass;
+
+// Class OptimusCore.OptimusVariableDescription
+// 0x0090 (0x00B8 - 0x0028)
+class UOptimusVariableDescription final : public UObject
+{
+public:
+	struct FGuid                                  Guid;                                              // 0x0028(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   VariableName;                                      // 0x0038(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FOptimusDataTypeRef                    DataType;                                          // 0x0040(0x0030)(Edit, NativeAccessSpecifierPublic)
+	struct FOptimusValueContainerStruct           DefaultValueStruct;                                // 0x0070(0x0010)(Edit, NativeAccessSpecifierPublic)
+	struct FShaderValueContainer                  CachedShaderValue;                                 // 0x0080(0x0020)(Transient, NativeAccessSpecifierPublic)
+	TArray<uint8>                                 ValueData;                                         // 0x00A0(0x0010)(ZeroConstructor, Deprecated, NativeAccessSpecifierPrivate)
+	class UOptimusValueContainer*                 DefaultValue;                                      // 0x00B0(0x0008)(ZeroConstructor, Deprecated, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("OptimusVariableDescription")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"OptimusVariableDescription")
+	}
+	static class UOptimusVariableDescription* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UOptimusVariableDescription>();
+	}
+};
+DUMPER7_ASSERTS_UOptimusVariableDescription;
 
 }
 

@@ -183,6 +183,138 @@ public:
 };
 DUMPER7_ASSERTS_MovieGraphNode_IsDisabled;
 
+// Function MovieRenderPipelineCore.MovieGraphQuickRenderSettings.GetSavedQuickRenderModeSettings
+// 0x0010 (0x0010 - 0x0000)
+struct MovieGraphQuickRenderSettings_GetSavedQuickRenderModeSettings final
+{
+public:
+	EMovieGraphQuickRenderMode                    SettingsMode;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMovieGraphQuickRenderModeSettings*     ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieGraphQuickRenderSettings_GetSavedQuickRenderModeSettings;
+
+// Function MovieRenderPipelineCore.MoviePipelineExecutorBase.ConnectSocket
+// 0x0018 (0x0018 - 0x0000)
+struct MoviePipelineExecutorBase_ConnectSocket final
+{
+public:
+	class FString                                 InHostName;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InPort;                                            // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0014(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MoviePipelineExecutorBase_ConnectSocket;
+
+// Function MovieRenderPipelineCore.MoviePipelineExecutorBase.Execute
+// 0x0008 (0x0008 - 0x0000)
+struct MoviePipelineExecutorBase_Execute final
+{
+public:
+	class UMoviePipelineQueue*                    InPipelineQueue;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MoviePipelineExecutorBase_Execute;
+
+// Function MovieRenderPipelineCore.MoviePipelineExecutorBase.OnExecutorErroredImpl
+// 0x0020 (0x0020 - 0x0000)
+struct MoviePipelineExecutorBase_OnExecutorErroredImpl final
+{
+public:
+	class UMoviePipeline*                         ErroredPipeline;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFatal;                                            // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   ErrorReason;                                       // 0x0010(0x0010)(Parm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MoviePipelineExecutorBase_OnExecutorErroredImpl;
+
+// Function MovieRenderPipelineCore.MoviePipelineExecutorBase.SendHTTPRequest
+// 0x0088 (0x0088 - 0x0000)
+struct MoviePipelineExecutorBase_SendHTTPRequest final
+{
+public:
+	class FString                                 InUrl;                                             // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 InVerb;                                            // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 InMessage;                                         // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<class FString, class FString>            InHeaders;                                         // 0x0030(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0080(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MoviePipelineExecutorBase_SendHTTPRequest;
+
+// Function MovieRenderPipelineCore.MoviePipelineExecutorBase.SendSocketMessage
+// 0x0018 (0x0018 - 0x0000)
+struct MoviePipelineExecutorBase_SendSocketMessage final
+{
+public:
+	class FString                                 InMessage;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MoviePipelineExecutorBase_SendSocketMessage;
+
+// Function MovieRenderPipelineCore.MoviePipelineExecutorBase.SetMoviePipelineClass
+// 0x0008 (0x0008 - 0x0000)
+struct MoviePipelineExecutorBase_SetMoviePipelineClass final
+{
+public:
+	class UClass*                                 InPipelineClass;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MoviePipelineExecutorBase_SetMoviePipelineClass;
+
+// Function MovieRenderPipelineCore.MoviePipelineExecutorBase.SetStatusMessage
+// 0x0010 (0x0010 - 0x0000)
+struct MoviePipelineExecutorBase_SetStatusMessage final
+{
+public:
+	class FString                                 InStatus;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MoviePipelineExecutorBase_SetStatusMessage;
+
+// Function MovieRenderPipelineCore.MoviePipelineExecutorBase.SetStatusProgress
+// 0x0004 (0x0004 - 0x0000)
+struct MoviePipelineExecutorBase_SetStatusProgress final
+{
+public:
+	float                                         InProgress;                                        // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MoviePipelineExecutorBase_SetStatusProgress;
+
+// Function MovieRenderPipelineCore.MoviePipelineExecutorBase.GetStatusMessage
+// 0x0010 (0x0010 - 0x0000)
+struct MoviePipelineExecutorBase_GetStatusMessage final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MoviePipelineExecutorBase_GetStatusMessage;
+
+// Function MovieRenderPipelineCore.MoviePipelineExecutorBase.GetStatusProgress
+// 0x0004 (0x0004 - 0x0000)
+struct MoviePipelineExecutorBase_GetStatusProgress final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MoviePipelineExecutorBase_GetStatusProgress;
+
+// Function MovieRenderPipelineCore.MoviePipelineExecutorBase.IsRendering
+// 0x0001 (0x0001 - 0x0000)
+struct MoviePipelineExecutorBase_IsRendering final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MoviePipelineExecutorBase_IsRendering;
+
+// Function MovieRenderPipelineCore.MoviePipelineExecutorBase.IsSocketConnected
+// 0x0001 (0x0001 - 0x0000)
+struct MoviePipelineExecutorBase_IsSocketConnected final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MoviePipelineExecutorBase_IsSocketConnected;
+
 // Function MovieRenderPipelineCore.MovieGraphBlueprintLibrary.GetBackbufferResolution
 // 0x0018 (0x0018 - 0x0000)
 struct MovieGraphBlueprintLibrary_GetBackbufferResolution final
@@ -535,55 +667,6 @@ public:
 	int32                                         ReturnValue;                                       // 0x015C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MovieGraphBlueprintLibrary_ResolveVersionNumber;
-
-// Function MovieRenderPipelineCore.MovieGraphQuickRenderModeSettings.RefreshVariableAssignments
-// 0x0008 (0x0008 - 0x0000)
-struct MovieGraphQuickRenderModeSettings_RefreshVariableAssignments final
-{
-public:
-	class UMovieGraphQuickRenderModeSettings*     InSettings;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieGraphQuickRenderModeSettings_RefreshVariableAssignments;
-
-// Function MovieRenderPipelineCore.MovieGraphQuickRenderModeSettings.GetVariableAssignmentsForGraph
-// 0x0030 (0x0030 - 0x0000)
-struct MovieGraphQuickRenderModeSettings_GetVariableAssignmentsForGraph final
-{
-public:
-	TSoftObjectPtr<class UMovieGraphConfig>       InGraphConfigPath;                                 // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMovieJobVariableAssignmentContainer*   ReturnValue;                                       // 0x0028(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieGraphQuickRenderModeSettings_GetVariableAssignmentsForGraph;
-
-// Function MovieRenderPipelineCore.MoviePipelineSetting.SetIsEnabled
-// 0x0001 (0x0001 - 0x0000)
-struct MoviePipelineSetting_SetIsEnabled final
-{
-public:
-	bool                                          bInEnabled;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MoviePipelineSetting_SetIsEnabled;
-
-// Function MovieRenderPipelineCore.MoviePipelineSetting.BuildNewProcessCommandLineArgs
-// 0x0040 (0x0040 - 0x0000)
-struct MoviePipelineSetting_BuildNewProcessCommandLineArgs final
-{
-public:
-	TArray<class FString>                         InOutUnrealURLParams;                              // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	TArray<class FString>                         InOutCommandLineArgs;                              // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	TArray<class FString>                         InOutDeviceProfileCvars;                           // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	TArray<class FString>                         InOutExecCmds;                                     // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MoviePipelineSetting_BuildNewProcessCommandLineArgs;
-
-// Function MovieRenderPipelineCore.MoviePipelineSetting.IsEnabled
-// 0x0001 (0x0001 - 0x0000)
-struct MoviePipelineSetting_IsEnabled final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MoviePipelineSetting_IsEnabled;
 
 // Function MovieRenderPipelineCore.MovieGraphBurnInWidget.UpdateForGraph
 // 0x0028 (0x0028 - 0x0000)
@@ -1832,16 +1915,24 @@ public:
 };
 DUMPER7_ASSERTS_MovieGraphPipeline_GetTimeStepInstance;
 
-// Function MovieRenderPipelineCore.MovieGraphQuickRenderSettings.GetSavedQuickRenderModeSettings
-// 0x0010 (0x0010 - 0x0000)
-struct MovieGraphQuickRenderSettings_GetSavedQuickRenderModeSettings final
+// Function MovieRenderPipelineCore.MovieGraphQuickRenderModeSettings.RefreshVariableAssignments
+// 0x0008 (0x0008 - 0x0000)
+struct MovieGraphQuickRenderModeSettings_RefreshVariableAssignments final
 {
 public:
-	EMovieGraphQuickRenderMode                    SettingsMode;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMovieGraphQuickRenderModeSettings*     ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMovieGraphQuickRenderModeSettings*     InSettings;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_MovieGraphQuickRenderSettings_GetSavedQuickRenderModeSettings;
+DUMPER7_ASSERTS_MovieGraphQuickRenderModeSettings_RefreshVariableAssignments;
+
+// Function MovieRenderPipelineCore.MovieGraphQuickRenderModeSettings.GetVariableAssignmentsForGraph
+// 0x0030 (0x0030 - 0x0000)
+struct MovieGraphQuickRenderModeSettings_GetVariableAssignmentsForGraph final
+{
+public:
+	TSoftObjectPtr<class UMovieGraphConfig>       InGraphConfigPath;                                 // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMovieJobVariableAssignmentContainer*   ReturnValue;                                       // 0x0028(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieGraphQuickRenderModeSettings_GetVariableAssignmentsForGraph;
 
 // Function MovieRenderPipelineCore.MovieGraphRerouteNode.SetPinProperties
 // 0x0020 (0x0020 - 0x0000)
@@ -2285,6 +2376,36 @@ public:
 	const class UObject*                          ReturnValue;                                       // 0x0008(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MovieJobVariableAssignmentContainer_GetValueTypeObject;
+
+// Function MovieRenderPipelineCore.MoviePipelineSetting.SetIsEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct MoviePipelineSetting_SetIsEnabled final
+{
+public:
+	bool                                          bInEnabled;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MoviePipelineSetting_SetIsEnabled;
+
+// Function MovieRenderPipelineCore.MoviePipelineSetting.BuildNewProcessCommandLineArgs
+// 0x0040 (0x0040 - 0x0000)
+struct MoviePipelineSetting_BuildNewProcessCommandLineArgs final
+{
+public:
+	TArray<class FString>                         InOutUnrealURLParams;                              // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<class FString>                         InOutCommandLineArgs;                              // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<class FString>                         InOutDeviceProfileCvars;                           // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<class FString>                         InOutExecCmds;                                     // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MoviePipelineSetting_BuildNewProcessCommandLineArgs;
+
+// Function MovieRenderPipelineCore.MoviePipelineSetting.IsEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct MoviePipelineSetting_IsEnabled final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MoviePipelineSetting_IsEnabled;
 
 // Function MovieRenderPipelineCore.MoviePipelineSetting_BlueprintBase.ReceiveSetupForPipelineImpl
 // 0x0008 (0x0008 - 0x0000)
@@ -3331,127 +3452,6 @@ public:
 	TArray<class UMoviePipelineSetting*>          ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MoviePipelineConfigBase_GetUserSettings;
-
-// Function MovieRenderPipelineCore.MoviePipelineExecutorBase.ConnectSocket
-// 0x0018 (0x0018 - 0x0000)
-struct MoviePipelineExecutorBase_ConnectSocket final
-{
-public:
-	class FString                                 InHostName;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         InPort;                                            // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0014(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MoviePipelineExecutorBase_ConnectSocket;
-
-// Function MovieRenderPipelineCore.MoviePipelineExecutorBase.Execute
-// 0x0008 (0x0008 - 0x0000)
-struct MoviePipelineExecutorBase_Execute final
-{
-public:
-	class UMoviePipelineQueue*                    InPipelineQueue;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MoviePipelineExecutorBase_Execute;
-
-// Function MovieRenderPipelineCore.MoviePipelineExecutorBase.OnExecutorErroredImpl
-// 0x0020 (0x0020 - 0x0000)
-struct MoviePipelineExecutorBase_OnExecutorErroredImpl final
-{
-public:
-	class UMoviePipeline*                         ErroredPipeline;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bFatal;                                            // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   ErrorReason;                                       // 0x0010(0x0010)(Parm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MoviePipelineExecutorBase_OnExecutorErroredImpl;
-
-// Function MovieRenderPipelineCore.MoviePipelineExecutorBase.SendHTTPRequest
-// 0x0088 (0x0088 - 0x0000)
-struct MoviePipelineExecutorBase_SendHTTPRequest final
-{
-public:
-	class FString                                 InUrl;                                             // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 InVerb;                                            // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 InMessage;                                         // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class FString, class FString>            InHeaders;                                         // 0x0030(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	int32                                         ReturnValue;                                       // 0x0080(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MoviePipelineExecutorBase_SendHTTPRequest;
-
-// Function MovieRenderPipelineCore.MoviePipelineExecutorBase.SendSocketMessage
-// 0x0018 (0x0018 - 0x0000)
-struct MoviePipelineExecutorBase_SendSocketMessage final
-{
-public:
-	class FString                                 InMessage;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MoviePipelineExecutorBase_SendSocketMessage;
-
-// Function MovieRenderPipelineCore.MoviePipelineExecutorBase.SetMoviePipelineClass
-// 0x0008 (0x0008 - 0x0000)
-struct MoviePipelineExecutorBase_SetMoviePipelineClass final
-{
-public:
-	class UClass*                                 InPipelineClass;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MoviePipelineExecutorBase_SetMoviePipelineClass;
-
-// Function MovieRenderPipelineCore.MoviePipelineExecutorBase.SetStatusMessage
-// 0x0010 (0x0010 - 0x0000)
-struct MoviePipelineExecutorBase_SetStatusMessage final
-{
-public:
-	class FString                                 InStatus;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MoviePipelineExecutorBase_SetStatusMessage;
-
-// Function MovieRenderPipelineCore.MoviePipelineExecutorBase.SetStatusProgress
-// 0x0004 (0x0004 - 0x0000)
-struct MoviePipelineExecutorBase_SetStatusProgress final
-{
-public:
-	float                                         InProgress;                                        // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MoviePipelineExecutorBase_SetStatusProgress;
-
-// Function MovieRenderPipelineCore.MoviePipelineExecutorBase.GetStatusMessage
-// 0x0010 (0x0010 - 0x0000)
-struct MoviePipelineExecutorBase_GetStatusMessage final
-{
-public:
-	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MoviePipelineExecutorBase_GetStatusMessage;
-
-// Function MovieRenderPipelineCore.MoviePipelineExecutorBase.GetStatusProgress
-// 0x0004 (0x0004 - 0x0000)
-struct MoviePipelineExecutorBase_GetStatusProgress final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MoviePipelineExecutorBase_GetStatusProgress;
-
-// Function MovieRenderPipelineCore.MoviePipelineExecutorBase.IsRendering
-// 0x0001 (0x0001 - 0x0000)
-struct MoviePipelineExecutorBase_IsRendering final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MoviePipelineExecutorBase_IsRendering;
-
-// Function MovieRenderPipelineCore.MoviePipelineExecutorBase.IsSocketConnected
-// 0x0001 (0x0001 - 0x0000)
-struct MoviePipelineExecutorBase_IsSocketConnected final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MoviePipelineExecutorBase_IsSocketConnected;
 
 // Function MovieRenderPipelineCore.MoviePipelinePrimaryConfig.GetAllSettings
 // 0x0018 (0x0018 - 0x0000)

@@ -2441,26 +2441,28 @@ class UCrAiActionAttack* UCrAiActionAttack::Create_CrAiActionAttack(TSubclassOf<
 }
 
 
-// Function MassAIPrototypeEnemyRuntime.MassEnemyPooledActorComponentInterface.OnPooledOwnerActivityChanged
-// (Native, Public)
+// Function MassAIPrototypeEnemyRuntime.MassEnemyFXEventSubsystem.RegisterEvent
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// bool                                    bNewEnabled                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class AMassEnemyCharacterBase*    Character                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              EventTag                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void IMassEnemyPooledActorComponentInterface::OnPooledOwnerActivityChanged(bool bNewEnabled)
+void UMassEnemyFXEventSubsystem::RegisterEvent(const class AMassEnemyCharacterBase* Character, const struct FGameplayTag& EventTag)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyPooledActorComponentInterface", "OnPooledOwnerActivityChanged");
+		Func = Class->GetFunction("MassEnemyFXEventSubsystem", "RegisterEvent");
 
-	Params::MassEnemyPooledActorComponentInterface_OnPooledOwnerActivityChanged Parms{};
+	Params::MassEnemyFXEventSubsystem_RegisterEvent Parms{};
 
-	Parms.bNewEnabled = bNewEnabled;
+	Parms.Character = Character;
+	Parms.EventTag = std::move(EventTag);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	AsUObject()->ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -3216,6 +3218,72 @@ class UCrAiActionSetFocus* UCrAiActionSetFocus::Create_CrAiActionSetFocus(TSubcl
 }
 
 
+// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerSphere.OnSphereBeginOverlap
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UMassEnemySpawnerTriggerSphere::OnSphereBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemySpawnerTriggerSphere", "OnSphereBeginOverlap");
+
+	Params::MassEnemySpawnerTriggerSphere_OnSphereBeginOverlap Parms{};
+
+	Parms.OverlappedComponent = OverlappedComponent;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.OtherBodyIndex = OtherBodyIndex;
+	Parms.bFromSweep = bFromSweep;
+	Parms.SweepResult = std::move(SweepResult);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerSphere.OnSphereEndOverlap
+// (Final, Native, Public)
+// Parameters:
+// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMassEnemySpawnerTriggerSphere::OnSphereEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemySpawnerTriggerSphere", "OnSphereEndOverlap");
+
+	Params::MassEnemySpawnerTriggerSphere_OnSphereEndOverlap Parms{};
+
+	Parms.OverlappedComponent = OverlappedComponent;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.OtherBodyIndex = OtherBodyIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function MassAIPrototypeEnemyRuntime.CrAiActionSetHasAggroTarget.Create_CrAiActionSetHasAggroTarget
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -3245,72 +3313,6 @@ class UCrAiActionSetHasAggroTarget* UCrAiActionSetHasAggroTarget::Create_CrAiAct
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerBox.OnBoxBeginOverlap
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void UMassEnemySpawnerTriggerBox::OnBoxBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemySpawnerTriggerBox", "OnBoxBeginOverlap");
-
-	Params::MassEnemySpawnerTriggerBox_OnBoxBeginOverlap Parms{};
-
-	Parms.OverlappedComponent = OverlappedComponent;
-	Parms.OtherActor = OtherActor;
-	Parms.OtherComp = OtherComp;
-	Parms.OtherBodyIndex = OtherBodyIndex;
-	Parms.bFromSweep = bFromSweep;
-	Parms.SweepResult = std::move(SweepResult);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerBox.OnBoxEndOverlap
-// (Final, Native, Public)
-// Parameters:
-// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMassEnemySpawnerTriggerBox::OnBoxEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemySpawnerTriggerBox", "OnBoxEndOverlap");
-
-	Params::MassEnemySpawnerTriggerBox_OnBoxEndOverlap Parms{};
-
-	Parms.OverlappedComponent = OverlappedComponent;
-	Parms.OtherActor = OtherActor;
-	Parms.OtherComp = OtherComp;
-	Parms.OtherBodyIndex = OtherBodyIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -3755,331 +3757,6 @@ void UCrAiActionUseNavlink::OnServerLanded(class AActor* Actor)
 }
 
 
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAllowedAttackConeHalfAngle
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   NewAttackConeHalfAngle                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyDamageInterface::SetAllowedAttackConeHalfAngle(float NewAttackConeHalfAngle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "SetAllowedAttackConeHalfAngle");
-
-	Params::MassEnemyDamageInterface_SetAllowedAttackConeHalfAngle Parms{};
-
-	Parms.NewAttackConeHalfAngle = NewAttackConeHalfAngle;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAllowedAttackDistance
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   NewAttackDistance                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyDamageInterface::SetAllowedAttackDistance(float NewAttackDistance)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "SetAllowedAttackDistance");
-
-	Params::MassEnemyDamageInterface_SetAllowedAttackDistance Parms{};
-
-	Parms.NewAttackDistance = NewAttackDistance;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAllowedBuildingAttackDistance
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   NewAttackDistance                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyDamageInterface::SetAllowedBuildingAttackDistance(float NewAttackDistance)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "SetAllowedBuildingAttackDistance");
-
-	Params::MassEnemyDamageInterface_SetAllowedBuildingAttackDistance Parms{};
-
-	Parms.NewAttackDistance = NewAttackDistance;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAttackTargetPosition
-// (Native, Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FVector&                   NewAttackTargetPosition                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyDamageInterface::SetAttackTargetPosition(const struct FVector& NewAttackTargetPosition)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "SetAttackTargetPosition");
-
-	Params::MassEnemyDamageInterface_SetAttackTargetPosition Parms{};
-
-	Parms.NewAttackTargetPosition = std::move(NewAttackTargetPosition);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetBuildingInfectionDamage
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   NewBuildingInfectionDamage                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyDamageInterface::SetBuildingInfectionDamage(float NewBuildingInfectionDamage)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "SetBuildingInfectionDamage");
-
-	Params::MassEnemyDamageInterface_SetBuildingInfectionDamage Parms{};
-
-	Parms.NewBuildingInfectionDamage = NewBuildingInfectionDamage;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetDamageGameplayEffect
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TSubclassOf<class UGameplayEffect>      DamageEffect                                           (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyDamageInterface::SetDamageGameplayEffect(TSubclassOf<class UGameplayEffect> DamageEffect)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "SetDamageGameplayEffect");
-
-	Params::MassEnemyDamageInterface_SetDamageGameplayEffect Parms{};
-
-	Parms.DamageEffect = DamageEffect;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAggroTargetActor
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AActor* IMassEnemyDamageInterface::GetAggroTargetActor() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "GetAggroTargetActor");
-
-	Params::MassEnemyDamageInterface_GetAggroTargetActor Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAllowedAttackConeHalfAngle
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float IMassEnemyDamageInterface::GetAllowedAttackConeHalfAngle() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "GetAllowedAttackConeHalfAngle");
-
-	Params::MassEnemyDamageInterface_GetAllowedAttackConeHalfAngle Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAllowedAttackDistance
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float IMassEnemyDamageInterface::GetAllowedAttackDistance() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "GetAllowedAttackDistance");
-
-	Params::MassEnemyDamageInterface_GetAllowedAttackDistance Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAllowedBuildingAttackDistance
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float IMassEnemyDamageInterface::GetAllowedBuildingAttackDistance() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "GetAllowedBuildingAttackDistance");
-
-	Params::MassEnemyDamageInterface_GetAllowedBuildingAttackDistance Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAttackTargetPosition
-// (Native, Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector IMassEnemyDamageInterface::GetAttackTargetPosition() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "GetAttackTargetPosition");
-
-	Params::MassEnemyDamageInterface_GetAttackTargetPosition Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetBuildingInfectionDamage
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float IMassEnemyDamageInterface::GetBuildingInfectionDamage() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "GetBuildingInfectionDamage");
-
-	Params::MassEnemyDamageInterface_GetBuildingInfectionDamage Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetDamageGameplayEffect
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// TSubclassOf<class UGameplayEffect>      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-TSubclassOf<class UGameplayEffect> IMassEnemyDamageInterface::GetDamageGameplayEffect() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "GetDamageGameplayEffect");
-
-	Params::MassEnemyDamageInterface_GetDamageGameplayEffect Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function MassAIPrototypeEnemyRuntime.CrAiPcgNavlinkSubsystem.InitNavlinkSubsystem
 // (Final, Native, Protected)
 
@@ -4194,107 +3871,6 @@ class UCrAiAction* UCrAnimNotify_RunAiAction::CreateAiAction(class AActor* Actor
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAiSpawner.DespawnAll
-// (Final, Native, Public, BlueprintCallable)
-
-void AMassEnemyAiSpawner::DespawnAll()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAiSpawner", "DespawnAll");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAiSpawner.DisableActivationTrigger
-// (Native, Public, BlueprintCallable)
-
-void AMassEnemyAiSpawner::DisableActivationTrigger()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAiSpawner", "DisableActivationTrigger");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAiSpawner.DisableSpawning
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bPermanently                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMassEnemyAiSpawner::DisableSpawning(bool bPermanently)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAiSpawner", "DisableSpawning");
-
-	Params::MassEnemyAiSpawner_DisableSpawning Parms{};
-
-	Parms.bPermanently = bPermanently;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAiSpawner.EnableActivationTrigger
-// (Native, Public, BlueprintCallable)
-
-void AMassEnemyAiSpawner::EnableActivationTrigger()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAiSpawner", "EnableActivationTrigger");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAiSpawner.EnableSpawning
-// (Native, Public, BlueprintCallable)
-
-void AMassEnemyAiSpawner::EnableSpawning()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAiSpawner", "EnableSpawning");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -5412,6 +4988,176 @@ struct FVector AMassEnemyAiController::GetNavAgentQueryExtent() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.NavLinkGeneratorBox.QueuePcgGeneration
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FIntPoint&                 Request                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ANavLinkGeneratorBox::QueuePcgGeneration(const struct FIntPoint& Request)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NavLinkGeneratorBox", "QueuePcgGeneration");
+
+	Params::NavLinkGeneratorBox_QueuePcgGeneration Parms{};
+
+	Parms.Request = std::move(Request);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.NavLinkGeneratorBox.StartPcgGeneration
+// (Final, Native, Public, BlueprintCallable)
+
+void ANavLinkGeneratorBox::StartPcgGeneration()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NavLinkGeneratorBox", "StartPcgGeneration");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.NavLinkGeneratorBox.IsGenerating
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ANavLinkGeneratorBox::IsGenerating() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NavLinkGeneratorBox", "IsGenerating");
+
+	Params::NavLinkGeneratorBox_IsGenerating Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAiSpawner.DespawnAll
+// (Final, Native, Public, BlueprintCallable)
+
+void AMassEnemyAiSpawner::DespawnAll()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyAiSpawner", "DespawnAll");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAiSpawner.DisableActivationTrigger
+// (Native, Public, BlueprintCallable)
+
+void AMassEnemyAiSpawner::DisableActivationTrigger()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyAiSpawner", "DisableActivationTrigger");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAiSpawner.DisableSpawning
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bPermanently                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyAiSpawner::DisableSpawning(bool bPermanently)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyAiSpawner", "DisableSpawning");
+
+	Params::MassEnemyAiSpawner_DisableSpawning Parms{};
+
+	Parms.bPermanently = bPermanently;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAiSpawner.EnableActivationTrigger
+// (Native, Public, BlueprintCallable)
+
+void AMassEnemyAiSpawner::EnableActivationTrigger()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyAiSpawner", "EnableActivationTrigger");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAiSpawner.EnableSpawning
+// (Native, Public, BlueprintCallable)
+
+void AMassEnemyAiSpawner::EnableSpawning()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyAiSpawner", "EnableSpawning");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -6712,6 +6458,331 @@ void AMassEnemyCharacterBase::OnRep_SpawnType() const
 }
 
 
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAllowedAttackConeHalfAngle
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   NewAttackConeHalfAngle                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyDamageInterface::SetAllowedAttackConeHalfAngle(float NewAttackConeHalfAngle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "SetAllowedAttackConeHalfAngle");
+
+	Params::MassEnemyDamageInterface_SetAllowedAttackConeHalfAngle Parms{};
+
+	Parms.NewAttackConeHalfAngle = NewAttackConeHalfAngle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAllowedAttackDistance
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   NewAttackDistance                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyDamageInterface::SetAllowedAttackDistance(float NewAttackDistance)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "SetAllowedAttackDistance");
+
+	Params::MassEnemyDamageInterface_SetAllowedAttackDistance Parms{};
+
+	Parms.NewAttackDistance = NewAttackDistance;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAllowedBuildingAttackDistance
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   NewAttackDistance                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyDamageInterface::SetAllowedBuildingAttackDistance(float NewAttackDistance)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "SetAllowedBuildingAttackDistance");
+
+	Params::MassEnemyDamageInterface_SetAllowedBuildingAttackDistance Parms{};
+
+	Parms.NewAttackDistance = NewAttackDistance;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAttackTargetPosition
+// (Native, Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FVector&                   NewAttackTargetPosition                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyDamageInterface::SetAttackTargetPosition(const struct FVector& NewAttackTargetPosition)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "SetAttackTargetPosition");
+
+	Params::MassEnemyDamageInterface_SetAttackTargetPosition Parms{};
+
+	Parms.NewAttackTargetPosition = std::move(NewAttackTargetPosition);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetBuildingInfectionDamage
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   NewBuildingInfectionDamage                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyDamageInterface::SetBuildingInfectionDamage(float NewBuildingInfectionDamage)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "SetBuildingInfectionDamage");
+
+	Params::MassEnemyDamageInterface_SetBuildingInfectionDamage Parms{};
+
+	Parms.NewBuildingInfectionDamage = NewBuildingInfectionDamage;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetDamageGameplayEffect
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TSubclassOf<class UGameplayEffect>      DamageEffect                                           (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyDamageInterface::SetDamageGameplayEffect(TSubclassOf<class UGameplayEffect> DamageEffect)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "SetDamageGameplayEffect");
+
+	Params::MassEnemyDamageInterface_SetDamageGameplayEffect Parms{};
+
+	Parms.DamageEffect = DamageEffect;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAggroTargetActor
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AActor* IMassEnemyDamageInterface::GetAggroTargetActor() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "GetAggroTargetActor");
+
+	Params::MassEnemyDamageInterface_GetAggroTargetActor Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAllowedAttackConeHalfAngle
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float IMassEnemyDamageInterface::GetAllowedAttackConeHalfAngle() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "GetAllowedAttackConeHalfAngle");
+
+	Params::MassEnemyDamageInterface_GetAllowedAttackConeHalfAngle Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAllowedAttackDistance
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float IMassEnemyDamageInterface::GetAllowedAttackDistance() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "GetAllowedAttackDistance");
+
+	Params::MassEnemyDamageInterface_GetAllowedAttackDistance Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAllowedBuildingAttackDistance
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float IMassEnemyDamageInterface::GetAllowedBuildingAttackDistance() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "GetAllowedBuildingAttackDistance");
+
+	Params::MassEnemyDamageInterface_GetAllowedBuildingAttackDistance Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAttackTargetPosition
+// (Native, Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector IMassEnemyDamageInterface::GetAttackTargetPosition() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "GetAttackTargetPosition");
+
+	Params::MassEnemyDamageInterface_GetAttackTargetPosition Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetBuildingInfectionDamage
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float IMassEnemyDamageInterface::GetBuildingInfectionDamage() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "GetBuildingInfectionDamage");
+
+	Params::MassEnemyDamageInterface_GetBuildingInfectionDamage Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetDamageGameplayEffect
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class UGameplayEffect>      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+TSubclassOf<class UGameplayEffect> IMassEnemyDamageInterface::GetDamageGameplayEffect() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "GetDamageGameplayEffect");
+
+	Params::MassEnemyDamageInterface_GetDamageGameplayEffect Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function MassAIPrototypeEnemyRuntime.MassEnemyEntityCollisionIsmWrapperSubsystem.GetEntityCollisionIsmWrapperActor
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -6823,34 +6894,32 @@ void UMassEnemyEventQueueSubsystem::NotifyAiSpawn(class ACrAIBase* SpawnedAiActo
 }
 
 
-// Function MassAIPrototypeEnemyRuntime.MassEnemyFXEventSubsystem.RegisterEvent
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Function MassAIPrototypeEnemyRuntime.MassEnemyPooledActorComponentInterface.OnPooledOwnerActivityChanged
+// (Native, Public)
 // Parameters:
-// const class AMassEnemyCharacterBase*    Character                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FGameplayTag&              EventTag                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewEnabled                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMassEnemyFXEventSubsystem::RegisterEvent(const class AMassEnemyCharacterBase* Character, const struct FGameplayTag& EventTag)
+void IMassEnemyPooledActorComponentInterface::OnPooledOwnerActivityChanged(bool bNewEnabled)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyFXEventSubsystem", "RegisterEvent");
+		Func = AsUObject()->Class->GetFunction("MassEnemyPooledActorComponentInterface", "OnPooledOwnerActivityChanged");
 
-	Params::MassEnemyFXEventSubsystem_RegisterEvent Parms{};
+	Params::MassEnemyPooledActorComponentInterface_OnPooledOwnerActivityChanged Parms{};
 
-	Parms.Character = Character;
-	Parms.EventTag = std::move(EventTag);
+	Parms.bNewEnabled = bNewEnabled;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerSphere.OnSphereBeginOverlap
+// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerBox.OnBoxBeginOverlap
 // (Final, Native, Public, HasOutParams)
 // Parameters:
 // class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -6860,14 +6929,14 @@ void UMassEnemyFXEventSubsystem::RegisterEvent(const class AMassEnemyCharacterBa
 // bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-void UMassEnemySpawnerTriggerSphere::OnSphereBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
+void UMassEnemySpawnerTriggerBox::OnBoxBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemySpawnerTriggerSphere", "OnSphereBeginOverlap");
+		Func = Class->GetFunction("MassEnemySpawnerTriggerBox", "OnBoxBeginOverlap");
 
-	Params::MassEnemySpawnerTriggerSphere_OnSphereBeginOverlap Parms{};
+	Params::MassEnemySpawnerTriggerBox_OnBoxBeginOverlap Parms{};
 
 	Parms.OverlappedComponent = OverlappedComponent;
 	Parms.OtherActor = OtherActor;
@@ -6885,7 +6954,7 @@ void UMassEnemySpawnerTriggerSphere::OnSphereBeginOverlap(class UPrimitiveCompon
 }
 
 
-// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerSphere.OnSphereEndOverlap
+// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerBox.OnBoxEndOverlap
 // (Final, Native, Public)
 // Parameters:
 // class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -6893,14 +6962,14 @@ void UMassEnemySpawnerTriggerSphere::OnSphereBeginOverlap(class UPrimitiveCompon
 // class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMassEnemySpawnerTriggerSphere::OnSphereEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+void UMassEnemySpawnerTriggerBox::OnBoxEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemySpawnerTriggerSphere", "OnSphereEndOverlap");
+		Func = Class->GetFunction("MassEnemySpawnerTriggerBox", "OnBoxEndOverlap");
 
-	Params::MassEnemySpawnerTriggerSphere_OnSphereEndOverlap Parms{};
+	Params::MassEnemySpawnerTriggerBox_OnBoxEndOverlap Parms{};
 
 	Parms.OverlappedComponent = OverlappedComponent;
 	Parms.OtherActor = OtherActor;
@@ -6951,75 +7020,6 @@ void UMassEnemySpawnSubsystem::OnPreSaveStart()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.NavLinkGeneratorBox.QueuePcgGeneration
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FIntPoint&                 Request                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ANavLinkGeneratorBox::QueuePcgGeneration(const struct FIntPoint& Request)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("NavLinkGeneratorBox", "QueuePcgGeneration");
-
-	Params::NavLinkGeneratorBox_QueuePcgGeneration Parms{};
-
-	Parms.Request = std::move(Request);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.NavLinkGeneratorBox.StartPcgGeneration
-// (Final, Native, Public, BlueprintCallable)
-
-void ANavLinkGeneratorBox::StartPcgGeneration()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("NavLinkGeneratorBox", "StartPcgGeneration");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.NavLinkGeneratorBox.IsGenerating
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ANavLinkGeneratorBox::IsGenerating() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("NavLinkGeneratorBox", "IsGenerating");
-
-	Params::NavLinkGeneratorBox_IsGenerating Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 }

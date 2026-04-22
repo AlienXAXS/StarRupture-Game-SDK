@@ -14,8 +14,7 @@
 #include "GA_GenericAutoFire_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GA_GenericAutoFire.GA_GenericAutoFire_C.Added_B8B45F6C4CA31C50D845FB90C5AC5AE9
 // (BlueprintCallable, BlueprintEvent)
@@ -583,5 +582,5 @@ void UGA_GenericAutoFire_C::Removed_BA9B6F24428A5AA9C8C82D82CBB42554()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_PlacementHelperRailingWalkway_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_PlacementHelperRailingWalkway.BP_PlacementHelperRailingWalkway_C.SetSplineSegment
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -220,5 +219,5 @@ void ABP_PlacementHelperRailingWalkway_C::ExecuteUbergraph_BP_PlacementHelperRai
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

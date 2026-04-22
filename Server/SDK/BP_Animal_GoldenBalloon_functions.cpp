@@ -14,8 +14,7 @@
 #include "BP_Animal_GoldenBalloon_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Animal_GoldenBalloon.BP_Animal_GoldenBalloon_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
@@ -92,5 +91,5 @@ void ABP_Animal_GoldenBalloon_C::Emissive__FinishedFunc()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

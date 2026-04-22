@@ -14,8 +14,7 @@
 #include "GA_UnequipWeapon_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GA_UnequipWeapon.GA_UnequipWeapon_C.ExecuteUbergraph_GA_UnequipWeapon
 // (Final, UbergraphFunction, HasDefaults)
@@ -204,5 +203,5 @@ void UGA_UnequipWeapon_C::OnNotLocallyControlledTppMontageBlendOut_B1E48B95BB4A6
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

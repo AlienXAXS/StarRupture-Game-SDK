@@ -14,8 +14,7 @@
 #include "BP_DroneRailHelperT1_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.UserConstructionScript
 // (Event, Public, BlueprintCallable, BlueprintEvent)
@@ -168,5 +167,5 @@ void ABP_DroneRailHelperT1_C::BP_OnCollisionHitsChanged()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

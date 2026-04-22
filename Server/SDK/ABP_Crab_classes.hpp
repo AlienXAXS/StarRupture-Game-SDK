@@ -16,8 +16,7 @@
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass ABP_Crab.ABP_Crab_C
 // 0x07A0 (0x0DA0 - 0x0600)
@@ -92,5 +91,4 @@ public:
 };
 DUMPER7_ASSERTS_UABP_Crab_C;
 
-}
-
+SDK_NAMESPACE_END

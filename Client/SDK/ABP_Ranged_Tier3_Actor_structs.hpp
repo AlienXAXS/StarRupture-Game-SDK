@@ -14,8 +14,7 @@
 #include "AnimGraphRuntime_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct ABP_Ranged_Tier3_Actor.ABP_Ranged_Tier3_Actor_C.AnimBlueprintGeneratedConstantData
 // 0x0D67 (0x0D68 - 0x0001)
@@ -141,5 +140,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Ranged_Tier3_Actor__FAnimBlueprintGeneratedMutableData;
 
-}
-
+SDK_NAMESPACE_END

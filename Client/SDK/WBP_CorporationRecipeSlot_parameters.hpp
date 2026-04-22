@@ -14,8 +14,8 @@
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function WBP_CorporationRecipeSlot.WBP_CorporationRecipeSlot_C.ExecuteUbergraph_WBP_CorporationRecipeSlot
 // 0x01C0 (0x01C0 - 0x0000)
@@ -139,5 +139,5 @@ public:
 };
 DUMPER7_ASSERTS_WBP_CorporationRecipeSlot_C_ShowSelection;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

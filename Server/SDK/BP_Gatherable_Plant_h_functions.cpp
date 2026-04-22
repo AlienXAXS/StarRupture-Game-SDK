@@ -14,8 +14,7 @@
 #include "BP_Gatherable_Plant_h_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Gatherable_Plant_h.BP_Gatherable_Plant_h_C.ReceiveEndPlay
 // (Event, Protected, BlueprintEvent)
@@ -82,5 +81,5 @@ void ABP_Gatherable_Plant_h_C::BP_OnWaveChangedUpdate(EEnviroWave WaveType, EEnv
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

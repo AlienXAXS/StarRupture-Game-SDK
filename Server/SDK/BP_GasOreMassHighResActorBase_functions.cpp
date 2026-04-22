@@ -14,8 +14,7 @@
 #include "BP_GasOreMassHighResActorBase_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_GasOreMassHighResActorBase.BP_GasOreMassHighResActorBase_C.OnResourceDepletedCosmeticsStart
 // (Event, Public, BlueprintEvent)
@@ -150,5 +149,5 @@ void ABP_GasOreMassHighResActorBase_C::BndEvt__BP_OreMassHighResActorBase_Deplet
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

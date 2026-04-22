@@ -14,8 +14,7 @@
 #include "BP_Ranged_Tier2_LOD0_DamageAura_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Ranged_Tier2_LOD0_DamageAura.BP_Ranged_Tier2_LOD0_DamageAura_C.ReceiveActorEndOverlap
 // (Event, Public, BlueprintEvent)
@@ -76,5 +75,5 @@ void ABP_Ranged_Tier2_LOD0_DamageAura_C::ExecuteUbergraph_BP_Ranged_Tier2_LOD0_D
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

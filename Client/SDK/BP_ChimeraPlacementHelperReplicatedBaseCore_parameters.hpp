@@ -13,8 +13,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_ChimeraPlacementHelperReplicatedBaseCore.BP_ChimeraPlacementHelperReplicatedBaseCore_C.ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedBaseCore
 // 0x0028 (0x0028 - 0x0000)
@@ -48,5 +48,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_ChimeraPlacementHelperReplicatedBaseCore_C_UserConstructionScript;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_AggroAttractorActor_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_AggroAttractorActor.BP_AggroAttractorActor_C.ExecuteUbergraph_BP_AggroAttractorActor
 // (Final, UbergraphFunction)
@@ -70,5 +69,5 @@ void ABP_AggroAttractorActor_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

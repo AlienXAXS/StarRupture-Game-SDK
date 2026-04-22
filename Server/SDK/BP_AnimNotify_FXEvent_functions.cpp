@@ -14,8 +14,7 @@
 #include "BP_AnimNotify_FXEvent_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_AnimNotify_FXEvent.BP_AnimNotify_FXEvent_C.Received_Notify
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
@@ -43,5 +42,5 @@ bool UBP_AnimNotify_FXEvent_C::Received_Notify(class USkeletalMeshComponent* Mes
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

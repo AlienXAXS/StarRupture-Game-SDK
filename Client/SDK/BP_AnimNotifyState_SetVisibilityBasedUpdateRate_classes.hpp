@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_AnimNotifyState_SetVisibilityBasedUpdateRate.BP_AnimNotifyState_SetVisibilityBasedUpdateRate_C
 // 0x0000 (0x0030 - 0x0030)
@@ -40,5 +39,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_AnimNotifyState_SetVisibilityBasedUpdateRate_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_InventoryItemContainer.WBP_InventoryItemContainer_C
 // 0x0018 (0x04C0 - 0x04A8)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_InventoryItemContainer_C;
 
-}
-
+SDK_NAMESPACE_END

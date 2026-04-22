@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
+#include "AnimGraphRuntime_structs.hpp"
 #include "ABP_Crab_Ragdoll_structs.hpp"
 #include "Engine_structs.hpp"
-#include "AnimGraphRuntime_structs.hpp"
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass ABP_Crab_Ragdoll.ABP_Crab_Ragdoll_C
 // 0x0120 (0x0540 - 0x0420)
@@ -51,5 +50,4 @@ public:
 };
 DUMPER7_ASSERTS_UABP_Crab_Ragdoll_C;
 
-}
-
+SDK_NAMESPACE_END

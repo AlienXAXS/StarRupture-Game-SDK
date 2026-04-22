@@ -14,8 +14,7 @@
 #include "WBP_SkillsTab_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_SkillsTab.WBP_SkillsTab_C.ExecuteUbergraph_WBP_SkillsTab
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void UWBP_SkillsTab_C::SetWarningIconColor(const struct FLinearColor& InColor)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

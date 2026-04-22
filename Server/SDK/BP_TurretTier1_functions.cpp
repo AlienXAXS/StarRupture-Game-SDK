@@ -14,8 +14,7 @@
 #include "BP_TurretTier1_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_TurretTier1.BP_TurretTier1_C.UpdateCosmeticsBasedOnAttackDirection
 // (Event, Public, HasOutParams, BlueprintEvent)
@@ -188,5 +187,5 @@ void ABP_TurretTier1_C::BP_OnInventoryChanged()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

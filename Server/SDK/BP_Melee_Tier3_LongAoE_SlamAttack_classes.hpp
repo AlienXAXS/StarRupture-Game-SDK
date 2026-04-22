@@ -14,8 +14,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Melee_Tier3_LongAoE_SlamAttack.BP_Melee_Tier3_LongAoE_SlamAttack_C
 // 0x00A8 (0x0350 - 0x02A8)
@@ -78,5 +77,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Melee_Tier3_LongAoE_SlamAttack_C;
 
-}
-
+SDK_NAMESPACE_END

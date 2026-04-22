@@ -14,8 +14,7 @@
 #include "BP_Modular_SafetyBarrierDiagonal_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Modular_SafetyBarrierDiagonal.BP_Modular_SafetyBarrierDiagonal_C.GetBuildingMeshes
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
@@ -69,5 +68,5 @@ void ABP_Modular_SafetyBarrierDiagonal_C::GetBuildingProgressMeshes(float Buildi
 		*OutMeshesToShow = std::move(Parms.OutMeshesToShow);
 }
 
-}
 
+SDK_NAMESPACE_END

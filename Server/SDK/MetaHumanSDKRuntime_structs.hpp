@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum MetaHumanSDKRuntime.EMetaHumanBodyType
 // NumValues: 0x0015
@@ -117,5 +116,4 @@ public:
 };
 DUMPER7_ASSERTS_FMetaHumanCustomizableBodyPart;
 
-}
-
+SDK_NAMESPACE_END

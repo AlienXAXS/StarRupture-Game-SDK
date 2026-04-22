@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct KiBLIICommonUI.KiBLIIKeysWidgetData
 // 0x0038 (0x0038 - 0x0000)
@@ -26,5 +25,4 @@ public:
 };
 DUMPER7_ASSERTS_FKiBLIIKeysWidgetData;
 
-}
-
+SDK_NAMESPACE_END

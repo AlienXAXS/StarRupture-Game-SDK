@@ -14,8 +14,7 @@
 #include "WBP_CraftingWidget_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_CraftingWidget.WBP_CraftingWidget_C.BndEvt__WBP_CrafterInterior_TransferRequiredItems_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature
 // (BlueprintEvent)
@@ -134,5 +133,5 @@ void UWBP_CraftingWidget_C::ExecuteUbergraph_WBP_CraftingWidget(int32 EntryPoint
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

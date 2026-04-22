@@ -14,8 +14,8 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function ABP_Exploder_Tier2_Actor.ABP_Exploder_Tier2_Actor_C.ExecuteUbergraph_ABP_Exploder_Tier2_Actor
 // 0x0050 (0x0050 - 0x0000)
@@ -83,5 +83,5 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Exploder_Tier2_Actor_C_AnimGraph;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

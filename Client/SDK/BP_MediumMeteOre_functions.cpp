@@ -14,8 +14,7 @@
 #include "BP_MediumMeteOre_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_MediumMeteOre.BP_MediumMeteOre_C.ExecuteUbergraph_BP_MediumMeteOre
 // (Final, UbergraphFunction, HasDefaults)
@@ -120,5 +119,5 @@ void ABP_MediumMeteOre_C::TurnOffWalkableCollision()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

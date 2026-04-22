@@ -14,8 +14,7 @@
 #include "SoundUtilities_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function SoundUtilities.SoundUtilitiesBPFunctionLibrary.ConvertDecibelsToLinear
 // (Final, Native, Static, Private, BlueprintCallable)
@@ -368,5 +367,5 @@ float USoundUtilitiesBPFunctionLibrary::GetQFromBandwidth(const float InBandwidt
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

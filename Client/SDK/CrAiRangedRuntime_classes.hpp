@@ -18,8 +18,7 @@
 #include "MassSpawner_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class CrAiRangedRuntime.CrAiRangedAnimationStateSyncComponent
 // 0x0008 (0x00C0 - 0x00B8)
@@ -255,5 +254,4 @@ public:
 };
 DUMPER7_ASSERTS_UCrArRangedRepresentationSubsystem;
 
-}
-
+SDK_NAMESPACE_END

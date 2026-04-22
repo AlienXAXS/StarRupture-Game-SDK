@@ -14,8 +14,7 @@
 #include "BP_MeteOreBase_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_MeteOreBase.BP_MeteOreBase_C.BP_OnEnviroWaveStarted
 // (Event, Protected, HasOutParams, BlueprintEvent)
@@ -241,5 +240,5 @@ void ABP_MeteOreBase_C::TurnOffWalkableCollision()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

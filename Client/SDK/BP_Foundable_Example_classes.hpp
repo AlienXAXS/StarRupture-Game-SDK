@@ -13,8 +13,7 @@
 #include "BP_Foundable_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Foundable_Example.BP_Foundable_Example_C
 // 0x0018 (0x0328 - 0x0310)
@@ -41,5 +40,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Foundable_Example_C;
 
-}
-
+SDK_NAMESPACE_END

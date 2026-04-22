@@ -10,12 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "BP_Modular_Foundation_Unique_classes.hpp"
+#include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_MechanicalDrillFoundation.BP_MechanicalDrillFoundation_C
 // 0x0018 (0x0890 - 0x0878)
@@ -48,5 +47,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_MechanicalDrillFoundation_C;
 
-}
-
+SDK_NAMESPACE_END

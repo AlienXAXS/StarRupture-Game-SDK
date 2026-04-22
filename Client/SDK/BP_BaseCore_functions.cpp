@@ -14,8 +14,7 @@
 #include "BP_BaseCore_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_BaseCore.BP_BaseCore_C.BP_OnActiveCoolingChanged
 // (Event, Protected, BlueprintEvent)
@@ -267,5 +266,5 @@ void ABP_BaseCore_C::SetBaseCoreAreaVisibility(bool Visible)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

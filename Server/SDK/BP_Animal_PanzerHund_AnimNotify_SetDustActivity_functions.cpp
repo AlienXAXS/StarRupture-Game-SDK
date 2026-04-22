@@ -14,8 +14,7 @@
 #include "BP_Animal_PanzerHund_AnimNotify_SetDustActivity_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Animal_PanzerHund_AnimNotify_SetDustActivity.BP_Animal_PanzerHund_AnimNotify_SetDustActivity_C.Received_Notify
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
@@ -43,5 +42,5 @@ bool UBP_Animal_PanzerHund_AnimNotify_SetDustActivity_C::Received_Notify(class U
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -11,12 +11,11 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "ChimeraUI_classes.hpp"
 #include "SlateCore_structs.hpp"
+#include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_InventoryScreen.WBP_InventoryScreen_C
 // 0x0030 (0x0780 - 0x0750)
@@ -58,5 +57,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_InventoryScreen_C;
 
-}
-
+SDK_NAMESPACE_END

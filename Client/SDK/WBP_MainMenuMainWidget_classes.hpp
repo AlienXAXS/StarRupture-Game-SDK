@@ -13,8 +13,7 @@
 #include "WBP_MenuMainScreen_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_MainMenuMainWidget.WBP_MainMenuMainWidget_C
 // 0x0000 (0x0A40 - 0x0A40)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_MainMenuMainWidget_C;
 
-}
-
+SDK_NAMESPACE_END

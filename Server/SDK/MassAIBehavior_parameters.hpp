@@ -15,8 +15,8 @@
 #include "MassAIBehavior_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function MassAIBehavior.MassComponentHitSubsystem.OnHitCallback
 // 0x0130 (0x0130 - 0x0000)
@@ -72,5 +72,5 @@ public:
 };
 DUMPER7_ASSERTS_MassLookAtSubsystem_DeleteRequest;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_AnimNotifyState_SetVisibilityBasedUpdateRate_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_AnimNotifyState_SetVisibilityBasedUpdateRate.BP_AnimNotifyState_SetVisibilityBasedUpdateRate_C.Received_NotifyEnd
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
@@ -72,5 +71,5 @@ bool UBP_AnimNotifyState_SetVisibilityBasedUpdateRate_C::Received_NotifyBegin(cl
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

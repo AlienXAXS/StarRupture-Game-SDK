@@ -14,8 +14,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_ActionBoundButton.WBP_ActionBoundButton_C
 // 0x0040 (0x16E0 - 0x16A0)
@@ -53,5 +52,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_ActionBoundButton_C;
 
-}
-
+SDK_NAMESPACE_END

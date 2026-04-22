@@ -14,8 +14,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GM_ChimeraDefault.GM_ChimeraDefault_C
 // 0x0010 (0x0370 - 0x0360)
@@ -45,5 +44,4 @@ public:
 };
 DUMPER7_ASSERTS_AGM_ChimeraDefault_C;
 
-}
-
+SDK_NAMESPACE_END

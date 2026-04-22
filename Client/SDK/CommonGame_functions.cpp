@@ -14,8 +14,7 @@
 #include "CommonGame_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function CommonGame.AsyncAction_CreateWidgetAsync.CreateWidgetAsync
 // (Final, RequiredAPI, BlueprintCosmetic, Native, Static, Public, BlueprintCallable)
@@ -851,5 +850,5 @@ void UPrimaryGameLayout::RegisterLayer(const struct FGameplayTag& LayerTag, clas
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

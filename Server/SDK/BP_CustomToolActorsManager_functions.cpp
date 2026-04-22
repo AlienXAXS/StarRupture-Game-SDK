@@ -14,8 +14,7 @@
 #include "BP_CustomToolActorsManager_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_CustomToolActorsManager.BP_CustomToolActorsManager_C.AddActor
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -60,5 +59,5 @@ void UBP_CustomToolActorsManager_C::SetActorVisibility(const struct FGameplayTag
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

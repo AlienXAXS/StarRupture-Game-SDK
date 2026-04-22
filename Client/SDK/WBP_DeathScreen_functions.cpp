@@ -14,8 +14,7 @@
 #include "WBP_DeathScreen_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_DeathScreen.WBP_DeathScreen_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -104,5 +103,5 @@ void UWBP_DeathScreen_C::SetDeathScreenCloningBedState(ECrDeathScreenCloningBedS
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -15,8 +15,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_MechanicalDrill.BP_MechanicalDrill_C
 // 0x0088 (0x0760 - 0x06D8)
@@ -63,5 +62,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_MechanicalDrill_C;
 
-}
-
+SDK_NAMESPACE_END

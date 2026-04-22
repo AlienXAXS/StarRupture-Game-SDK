@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum AuNotification.FAuNotificationType
 // NumValues: 0x000F
@@ -65,5 +64,4 @@ public:
 };
 DUMPER7_ASSERTS_FAuNotifyItem;
 
-}
-
+SDK_NAMESPACE_END

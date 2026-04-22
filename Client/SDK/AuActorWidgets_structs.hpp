@@ -13,8 +13,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum AuActorWidgets.EAuActorWidgetHideMode
 // NumValues: 0x0003
@@ -45,5 +44,4 @@ public:
 };
 DUMPER7_ASSERTS_FAuUISubsystemTickFunction;
 
-}
-
+SDK_NAMESPACE_END

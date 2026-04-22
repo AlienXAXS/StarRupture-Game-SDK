@@ -14,8 +14,7 @@
 #include "BP_HorizontalBridgeConnector_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_HorizontalBridgeConnector.BP_HorizontalBridgeConnector_C.GetBuildingMeshes
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
@@ -41,5 +40,5 @@ void ABP_HorizontalBridgeConnector_C::GetBuildingMeshes(class UMeshComponent** M
 		*AdditionalMeshes = std::move(Parms.AdditionalMeshes);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "AnimGraphRuntime_structs.hpp"
 #include "ABP_Melee_Tier3_Ragdoll_structs.hpp"
+#include "AnimGraphRuntime_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass ABP_Melee_Tier3_Ragdoll.ABP_Melee_Tier3_Ragdoll_C
 // 0x0170 (0x0590 - 0x0420)
@@ -55,5 +54,4 @@ public:
 };
 DUMPER7_ASSERTS_UABP_Melee_Tier3_Ragdoll_C;
 
-}
-
+SDK_NAMESPACE_END

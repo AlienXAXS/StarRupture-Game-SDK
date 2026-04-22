@@ -15,8 +15,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.BlockAllBeams
 // 0x0008 (0x0008 - 0x0000)
@@ -269,5 +269,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_ZipLine_OLD_C_UpdateAllBeamLocationsByActivity;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

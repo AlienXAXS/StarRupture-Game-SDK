@@ -14,8 +14,7 @@
 #include "WBP_Stat_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_Stat.WBP_Stat_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -50,5 +49,5 @@ void UWBP_Stat_C::ExecuteUbergraph_WBP_Stat(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

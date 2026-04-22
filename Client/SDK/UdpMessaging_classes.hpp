@@ -14,8 +14,7 @@
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class UdpMessaging.UdpMessagingSettings
 // 0x0098 (0x00C0 - 0x0028)
@@ -63,5 +62,4 @@ public:
 };
 DUMPER7_ASSERTS_UUdpMessagingSettings;
 
-}
-
+SDK_NAMESPACE_END

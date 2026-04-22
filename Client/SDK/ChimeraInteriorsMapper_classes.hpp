@@ -14,8 +14,7 @@
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ChimeraInteriorsMapper.CrInteriorsMapperBoxComponent
 // 0x0040 (0x05B0 - 0x0570)
@@ -161,7 +160,7 @@ public:
 DUMPER7_ASSERTS_UCrInteriorsMapperSphereComponent;
 
 // Class ChimeraInteriorsMapper.CrInteriorsMapperWorldSubsystem
-// 0x00A0 (0x00E0 - 0x0040)
+// 0x00B0 (0x00F0 - 0x0040)
 class UCrInteriorsMapperWorldSubsystem final : public UTickableWorldSubsystem
 {
 public:
@@ -182,7 +181,11 @@ public:
 	float                                         Interiors2dMapAreaMaxX;                            // 0x00B0(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	float                                         Interiors2dMapAreaMinY;                            // 0x00B4(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	float                                         Interiors2dMapAreaMaxY;                            // 0x00B8(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_BC[0x24];                                      // 0x00BC(0x0024)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         AlignedInteriors2dMapAreaMinX;                     // 0x00BC(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         AlignedInteriors2dMapAreaMaxX;                     // 0x00C0(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         AlignedInteriors2dMapAreaMinY;                     // 0x00C4(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         AlignedInteriors2dMapAreaMaxY;                     // 0x00C8(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_CC[0x24];                                      // 0x00CC(0x0024)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class UTextureRenderTarget2D* GetBoxMappersExtentRenderTarget() const;
@@ -205,5 +208,4 @@ public:
 };
 DUMPER7_ASSERTS_UCrInteriorsMapperWorldSubsystem;
 
-}
-
+SDK_NAMESPACE_END

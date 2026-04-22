@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedEnum EAnimEnum_CardinalDirection.EAnimEnum_CardinalDirection
 // NumValues: 0x0005
@@ -25,5 +24,4 @@ enum class EAnimEnum_CardinalDirection : uint8
 	EAnimEnum_MAX                            = 4,
 };
 
-}
-
+SDK_NAMESPACE_END

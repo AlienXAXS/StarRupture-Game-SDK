@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GE_HeatInstantIncrease.GE_HeatInstantIncrease_C
 // 0x0000 (0x0A90 - 0x0A90)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UGE_HeatInstantIncrease_C;
 
-}
-
+SDK_NAMESPACE_END

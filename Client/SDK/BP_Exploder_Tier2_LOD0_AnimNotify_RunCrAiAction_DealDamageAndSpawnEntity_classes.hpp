@@ -15,8 +15,7 @@
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Exploder_Tier2_LOD0_AnimNotify_RunCrAiAction_DealDamageAndSpawnEntity.BP_Exploder_Tier2_LOD0_AnimNotify_RunCrAiAction_DealDamageAndSpawnEntity_C
 // 0x0098 (0x00D0 - 0x0038)
@@ -49,5 +48,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_Exploder_Tier2_LOD0_AnimNotify_RunCrAiAction_DealDamageAndSpawnEntity_C;
 
-}
-
+SDK_NAMESPACE_END

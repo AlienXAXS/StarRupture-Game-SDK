@@ -15,8 +15,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_SonicDrill.BP_SonicDrill_C
 // 0x0038 (0x0710 - 0x06D8)
@@ -55,5 +54,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_SonicDrill_C;
 
-}
-
+SDK_NAMESPACE_END

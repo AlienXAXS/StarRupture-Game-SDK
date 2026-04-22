@@ -14,8 +14,7 @@
 #include "BP_RecipeTable_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_RecipeTable.BP_RecipeTable_C.ExecuteUbergraph_BP_RecipeTable
 // (Final, UbergraphFunction)
@@ -70,5 +69,5 @@ void ABP_RecipeTable_C::ReceiveBeginPlay()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "ABP_Melee_Tier3_Actor_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ABP_Melee_Tier3_Actor.ABP_Melee_Tier3_Actor_C.UpdateYawRotationRateForLocomotionState
 // (Event, Public, BlueprintCallable, BlueprintEvent)
@@ -1133,5 +1132,5 @@ void UABP_Melee_Tier3_Actor_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
 }
 
-}
 
+SDK_NAMESPACE_END

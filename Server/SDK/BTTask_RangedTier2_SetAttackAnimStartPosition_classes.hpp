@@ -14,8 +14,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BTTask_RangedTier2_SetAttackAnimStartPosition.BTTask_RangedTier2_SetAttackAnimStartPosition_C
 // 0x0010 (0x00B8 - 0x00A8)
@@ -45,5 +44,4 @@ public:
 };
 DUMPER7_ASSERTS_UBTTask_RangedTier2_SetAttackAnimStartPosition_C;
 
-}
-
+SDK_NAMESPACE_END

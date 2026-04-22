@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Animal_GoldenBalloon.BP_Animal_GoldenBalloon_C
 // 0x0020 (0x0390 - 0x0370)
@@ -52,5 +51,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Animal_GoldenBalloon_C;
 
-}
-
+SDK_NAMESPACE_END

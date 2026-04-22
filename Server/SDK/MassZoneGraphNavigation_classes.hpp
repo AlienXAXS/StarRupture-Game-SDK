@@ -15,8 +15,7 @@
 #include "MassSpawner_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MassZoneGraphNavigation.MassZoneGraphLocationInitializer
 // 0x0358 (0x0430 - 0x00D8)
@@ -112,5 +111,4 @@ public:
 };
 DUMPER7_ASSERTS_UMassZoneGraphNavigationTrait;
 
-}
-
+SDK_NAMESPACE_END

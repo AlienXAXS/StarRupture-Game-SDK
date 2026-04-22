@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BPFL_GenericWeaponAbilitiesHelpers.BPFL_GenericWeaponAbilitiesHelpers_C
 // 0x0000 (0x0028 - 0x0028)
@@ -40,5 +39,4 @@ public:
 };
 DUMPER7_ASSERTS_UBPFL_GenericWeaponAbilitiesHelpers_C;
 
-}
-
+SDK_NAMESPACE_END

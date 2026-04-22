@@ -14,8 +14,7 @@
 #include "BP_ExplosionSphereBase_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Exploder_Tier1_ExplosionSphereHuge.BP_Exploder_Tier1_ExplosionSphereHuge_C
 // 0x0020 (0x02F0 - 0x02D0)
@@ -49,5 +48,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Exploder_Tier1_ExplosionSphereHuge_C;
 
-}
-
+SDK_NAMESPACE_END

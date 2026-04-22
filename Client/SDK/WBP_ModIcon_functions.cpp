@@ -14,8 +14,7 @@
 #include "WBP_ModIcon_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_ModIcon.WBP_ModIcon_C.ExecuteUbergraph_WBP_ModIcon
 // (Final, UbergraphFunction, HasDefaults)
@@ -152,5 +151,5 @@ void UWBP_ModIcon_C::ShowTooltip()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

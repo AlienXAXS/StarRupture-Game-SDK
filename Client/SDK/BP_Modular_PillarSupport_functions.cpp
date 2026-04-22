@@ -14,8 +14,7 @@
 #include "BP_Modular_PillarSupport_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Modular_PillarSupport.BP_Modular_PillarSupport_C.ExecuteUbergraph_BP_Modular_PillarSupport
 // (Final, UbergraphFunction, HasDefaults)
@@ -50,5 +49,5 @@ void ABP_Modular_PillarSupport_C::ReceiveBeginPlay()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

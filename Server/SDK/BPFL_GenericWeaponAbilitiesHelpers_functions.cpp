@@ -14,8 +14,7 @@
 #include "BPFL_GenericWeaponAbilitiesHelpers_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BPFL_GenericWeaponAbilitiesHelpers.BPFL_GenericWeaponAbilitiesHelpers_C.CreateTraceDataBasedOnConfig
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
@@ -80,5 +79,5 @@ void UBPFL_GenericWeaponAbilitiesHelpers_C::CreateTraceDataBasedOnConfigForPierc
 		*OutTraceData = std::move(Parms.OutTraceData);
 }
 
-}
 
+SDK_NAMESPACE_END

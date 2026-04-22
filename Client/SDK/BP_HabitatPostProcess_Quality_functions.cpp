@@ -14,8 +14,7 @@
 #include "BP_HabitatPostProcess_Quality_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_HabitatPostProcess_Quality.BP_HabitatPostProcess_Quality_C.ExecuteUbergraph_BP_HabitatPostProcess_Quality
 // (Final, UbergraphFunction)
@@ -70,5 +69,5 @@ void ABP_HabitatPostProcess_Quality_C::ReceiveBeginPlay()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

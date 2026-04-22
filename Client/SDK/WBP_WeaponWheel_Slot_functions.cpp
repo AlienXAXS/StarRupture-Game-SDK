@@ -14,8 +14,7 @@
 #include "WBP_WeaponWheel_Slot_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_WeaponWheel_Slot.WBP_WeaponWheel_Slot_C.ExecuteUbergraph_WBP_WeaponWheel_Slot
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void UWBP_WeaponWheel_Slot_C::PreConstruct(bool IsDesignTime)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

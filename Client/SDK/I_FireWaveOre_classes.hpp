@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass I_FireWaveOre.I_FireWaveOre_C
 // 0x0000 (0x0400 - 0x0400)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UI_FireWaveOre_C;
 
-}
-
+SDK_NAMESPACE_END

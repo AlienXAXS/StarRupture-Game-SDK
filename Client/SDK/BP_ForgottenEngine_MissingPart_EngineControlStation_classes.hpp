@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ForgottenEngine_MissingPart_EngineControlStation.BP_ForgottenEngine_MissingPart_EngineControlStation_C
 // 0x0010 (0x06F8 - 0x06E8)
@@ -45,5 +44,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_ForgottenEngine_MissingPart_EngineControlStation_C;
 
-}
-
+SDK_NAMESPACE_END

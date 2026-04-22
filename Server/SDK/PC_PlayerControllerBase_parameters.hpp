@@ -15,8 +15,8 @@
 #include "EnhancedInput_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function PC_PlayerControllerBase.PC_PlayerControllerBase_C.InpActEvt_K_K2Node_InputDebugKeyEvent_0
 // 0x0038 (0x0038 - 0x0000)
@@ -105,5 +105,5 @@ public:
 };
 DUMPER7_ASSERTS_PC_PlayerControllerBase_C_CanInputKeyBePassedFromUIOnlyMode;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

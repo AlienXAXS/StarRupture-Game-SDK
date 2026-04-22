@@ -14,8 +14,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GE_CamEffect_Radiation.GE_CamEffect_Radiation_C
 // 0x0010 (0x0AB8 - 0x0AA8)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_UGE_CamEffect_Radiation_C;
 
-}
-
+SDK_NAMESPACE_END

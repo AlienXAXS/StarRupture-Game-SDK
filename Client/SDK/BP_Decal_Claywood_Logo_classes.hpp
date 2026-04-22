@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Decal_Claywood_Logo.BP_Decal_Claywood_Logo_C
 // 0x0010 (0x02B8 - 0x02A8)
@@ -40,5 +39,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Decal_Claywood_Logo_C;
 
-}
-
+SDK_NAMESPACE_END

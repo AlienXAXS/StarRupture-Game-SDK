@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_DeuteriumExtractor.BP_DeuteriumExtractor_C
 // 0x0018 (0x06F0 - 0x06D8)
@@ -44,5 +43,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_DeuteriumExtractor_C;
 
-}
-
+SDK_NAMESPACE_END

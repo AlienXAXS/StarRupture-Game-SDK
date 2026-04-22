@@ -15,8 +15,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_MarketingWidget.WBP_MarketingWidget_C
 // 0x0080 (0x04C8 - 0x0448)
@@ -65,5 +64,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_MarketingWidget_C;
 
-}
-
+SDK_NAMESPACE_END

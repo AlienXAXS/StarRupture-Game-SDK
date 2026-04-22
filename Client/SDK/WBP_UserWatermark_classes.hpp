@@ -14,8 +14,7 @@
 #include "UMG_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_UserWatermark.WBP_UserWatermark_C
 // 0x0030 (0x03D0 - 0x03A0)
@@ -49,5 +48,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_UserWatermark_C;
 
-}
-
+SDK_NAMESPACE_END

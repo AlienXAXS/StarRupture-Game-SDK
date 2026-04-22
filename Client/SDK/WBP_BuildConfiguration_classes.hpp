@@ -15,8 +15,7 @@
 #include "CommonUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_BuildConfiguration.WBP_BuildConfiguration_C
 // 0x0088 (0x0450 - 0x03C8)
@@ -50,5 +49,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_BuildConfiguration_C;
 
-}
-
+SDK_NAMESPACE_END

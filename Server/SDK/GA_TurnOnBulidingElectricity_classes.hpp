@@ -15,8 +15,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GA_TurnOnBulidingElectricity.GA_TurnOnBulidingElectricity_C
 // 0x0010 (0x0600 - 0x05F0)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_UGA_TurnOnBulidingElectricity_C;
 
-}
-
+SDK_NAMESPACE_END

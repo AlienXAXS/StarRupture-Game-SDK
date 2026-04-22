@@ -14,8 +14,7 @@
 #include "BP_AnimNotify_RunCrAiAction_DealLongAoeDamage_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_AnimNotify_RunCrAiAction_DealLongAoeDamage.BP_AnimNotify_RunCrAiAction_DealLongAoeDamage_C.CreateAiAction
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
@@ -39,5 +38,5 @@ class UCrAiAction* UBP_AnimNotify_RunCrAiAction_DealLongAoeDamage_C::CreateAiAct
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

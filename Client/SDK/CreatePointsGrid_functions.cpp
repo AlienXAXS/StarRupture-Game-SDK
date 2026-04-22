@@ -14,8 +14,7 @@
 #include "CreatePointsGrid_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function CreatePointsGrid.CreatePointsGrid_C.ExecuteWithContext
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -139,5 +138,5 @@ class FName UCreatePointsGrid_C::NodeTitleOverride() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

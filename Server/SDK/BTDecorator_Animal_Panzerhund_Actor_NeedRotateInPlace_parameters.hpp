@@ -13,8 +13,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BTDecorator_Animal_Panzerhund_Actor_NeedRotateInPlace.BTDecorator_Animal_Panzerhund_Actor_NeedRotateInPlace_C.PerformConditionCheckAI
 // 0x00C0 (0x00C0 - 0x0000)
@@ -36,5 +36,5 @@ public:
 };
 DUMPER7_ASSERTS_BTDecorator_Animal_Panzerhund_Actor_NeedRotateInPlace_C_PerformConditionCheckAI;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

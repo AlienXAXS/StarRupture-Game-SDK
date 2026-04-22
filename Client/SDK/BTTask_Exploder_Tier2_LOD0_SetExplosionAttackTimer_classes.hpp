@@ -15,8 +15,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BTTask_Exploder_Tier2_LOD0_SetExplosionAttackTimer.BTTask_Exploder_Tier2_LOD0_SetExplosionAttackTimer_C
 // 0x0038 (0x00E0 - 0x00A8)
@@ -48,5 +47,4 @@ public:
 };
 DUMPER7_ASSERTS_UBTTask_Exploder_Tier2_LOD0_SetExplosionAttackTimer_C;
 
-}
-
+SDK_NAMESPACE_END

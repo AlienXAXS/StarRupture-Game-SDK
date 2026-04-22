@@ -14,8 +14,7 @@
 #include "BP_BaseAI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Ranged_Tier3_Actor_Character.BP_Ranged_Tier3_Actor_Character_C
 // 0x0020 (0x0D20 - 0x0D00)
@@ -40,5 +39,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Ranged_Tier3_Actor_Character_C;
 
-}
-
+SDK_NAMESPACE_END

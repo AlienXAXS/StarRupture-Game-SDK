@@ -14,8 +14,7 @@
 #include "WBP_BuildConfiguration_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_BuildConfiguration.WBP_BuildConfiguration_C.ExecuteUbergraph_WBP_BuildConfiguration
 // (Final, UbergraphFunction, HasDefaults)
@@ -50,5 +49,5 @@ void UWBP_BuildConfiguration_C::Construct()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -15,8 +15,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function WBP_MenuPopupWarning.WBP_MenuPopupWarning_C.ExecuteUbergraph_WBP_MenuPopupWarning
 // 0x0030 (0x0030 - 0x0000)
@@ -52,5 +52,5 @@ public:
 };
 DUMPER7_ASSERTS_WBP_MenuPopupWarning_C_SetColors;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

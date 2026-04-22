@@ -14,8 +14,7 @@
 #include "BP_SolarPowerGeneratorTier2_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_SolarPowerGeneratorTier2.BP_SolarPowerGeneratorTier2_C.SetupSkeletalMesh
 // (Event, Public, BlueprintEvent)
@@ -110,5 +109,5 @@ void ABP_SolarPowerGeneratorTier2_C::Get_Meshes(class USceneComponent* Static_0,
 		*NewParam = std::move(Parms.NewParam);
 }
 
-}
 
+SDK_NAMESPACE_END

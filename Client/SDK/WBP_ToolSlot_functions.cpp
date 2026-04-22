@@ -14,8 +14,7 @@
 #include "WBP_ToolSlot_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_ToolSlot.WBP_ToolSlot_C.ExecuteUbergraph_WBP_ToolSlot
 // (Final, UbergraphFunction, HasDefaults)
@@ -104,5 +103,5 @@ void UWBP_ToolSlot_C::SetTitle(const class FText& InText)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

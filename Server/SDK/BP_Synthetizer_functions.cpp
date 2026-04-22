@@ -14,8 +14,7 @@
 #include "BP_Synthetizer_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Synthetizer.BP_Synthetizer_C.OnBuildingStateChanged
 // (Event, Public, BlueprintEvent)
@@ -56,5 +55,5 @@ void ABP_Synthetizer_C::ExecuteUbergraph_BP_Synthetizer(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

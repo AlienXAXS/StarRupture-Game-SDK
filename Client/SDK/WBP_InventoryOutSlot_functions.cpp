@@ -14,8 +14,7 @@
 #include "WBP_InventoryOutSlot_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_InventoryOutSlot.WBP_InventoryOutSlot_C.ExecuteUbergraph_WBP_InventoryOutSlot
 // (Final, UbergraphFunction, HasDefaults)
@@ -126,5 +125,5 @@ void UWBP_InventoryOutSlot_C::ShowItemNameInIcon(const class FText& InText, bool
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

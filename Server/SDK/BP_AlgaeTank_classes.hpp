@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_AlgaeTank.BP_AlgaeTank_C
 // 0x0008 (0x06E0 - 0x06D8)
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_AlgaeTank_C;
 
-}
-
+SDK_NAMESPACE_END

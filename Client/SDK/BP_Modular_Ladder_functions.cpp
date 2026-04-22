@@ -14,8 +14,7 @@
 #include "BP_Modular_Ladder_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Modular_Ladder.BP_Modular_Ladder_C.AddCharacterToLadder
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -220,5 +219,5 @@ void ABP_Modular_Ladder_C::UpdateCharactersHights()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

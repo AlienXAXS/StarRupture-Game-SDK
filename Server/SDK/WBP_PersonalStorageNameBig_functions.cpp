@@ -14,8 +14,7 @@
 #include "WBP_PersonalStorageNameBig_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_PersonalStorageNameBig.WBP_PersonalStorageNameBig_C.UpdateName
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -79,5 +78,5 @@ class FText UWBP_PersonalStorageNameBig_C::GetText()
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

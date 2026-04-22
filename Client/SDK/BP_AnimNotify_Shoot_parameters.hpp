@@ -13,8 +13,8 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_AnimNotify_Shoot.BP_AnimNotify_Shoot_C.CreateAiAction
 // 0x0028 (0x0028 - 0x0000)
@@ -45,5 +45,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_AnimNotify_Shoot_C_Received_Notify;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

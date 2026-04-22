@@ -14,8 +14,7 @@
 #include "BPI_SetWeakpointState_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BPI_SetWeakpointState.BPI_SetWeakpointState_C.SetWeakpointState
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -36,5 +35,5 @@ void IBPI_SetWeakpointState_C::SetWeakpointState(bool InIsActive)
 	AsUObject()->ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

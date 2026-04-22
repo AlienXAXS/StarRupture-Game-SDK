@@ -14,8 +14,7 @@
 #include "ABP_ItemAnimLayers_FPP_Base_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ABP_ItemAnimLayers_FPP_Base.ABP_ItemAnimLayers_FPP_Base_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -1839,5 +1838,5 @@ double UABP_ItemAnimLayers_FPP_Base_C::GetPredictedStopDistance() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

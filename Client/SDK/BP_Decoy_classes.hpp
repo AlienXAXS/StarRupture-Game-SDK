@@ -15,8 +15,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Decoy.BP_Decoy_C
 // 0x0030 (0x0678 - 0x0648)
@@ -50,5 +49,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Decoy_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_Airlock_Door_Base_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Airlock_Door_Base.BP_Airlock_Door_Base_C.UserConstructionScript
 // (Event, Public, BlueprintCallable, BlueprintEvent)
@@ -284,5 +283,5 @@ void ABP_Airlock_Door_Base_C::ExecuteUbergraph_BP_Airlock_Door_Base(int32 EntryP
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

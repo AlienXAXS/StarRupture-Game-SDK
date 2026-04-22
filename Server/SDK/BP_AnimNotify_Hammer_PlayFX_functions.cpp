@@ -14,8 +14,7 @@
 #include "BP_AnimNotify_Hammer_PlayFX_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_AnimNotify_Hammer_PlayFX.BP_AnimNotify_Hammer_PlayFX_C.Received_Notify
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
@@ -43,5 +42,5 @@ bool UBP_AnimNotify_Hammer_PlayFX_C::Received_Notify(class USkeletalMeshComponen
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

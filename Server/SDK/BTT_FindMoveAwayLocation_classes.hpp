@@ -15,8 +15,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BTT_FindMoveAwayLocation.BTT_FindMoveAwayLocation_C
 // 0x0088 (0x0130 - 0x00A8)
@@ -54,5 +53,4 @@ public:
 };
 DUMPER7_ASSERTS_UBTT_FindMoveAwayLocation_C;
 
-}
-
+SDK_NAMESPACE_END

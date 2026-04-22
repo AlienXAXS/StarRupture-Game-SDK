@@ -14,8 +14,7 @@
 #include "CrAiAnimalCrabRuntime_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function CrAiAnimalCrabRuntime.CrAiAnimalCrabInterface.AreTentaclesHidden
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
@@ -226,5 +225,5 @@ void UCrAiAnimalCrabUpdateStateComponent::ResetDamageTimestamp()
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

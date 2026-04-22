@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_WaveFreezer.BP_WaveFreezer_C
 // 0x0030 (0x0708 - 0x06D8)
@@ -49,5 +48,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_WaveFreezer_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_Synthetizer_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Synthetizer.BP_Synthetizer_C.ExecuteUbergraph_BP_Synthetizer
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void ABP_Synthetizer_C::OnBuildingStateChanged(ECrBuildingState InState)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

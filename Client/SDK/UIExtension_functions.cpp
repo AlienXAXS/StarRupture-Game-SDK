@@ -14,8 +14,7 @@
 #include "UIExtension_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UIExtension.UIExtensionSubsystem.K2_RegisterExtensionAsData
 // (Final, RequiredAPI, BlueprintCosmetic, Native, Protected, BlueprintCallable)
@@ -346,5 +345,5 @@ void UUIExtensionPointHandleFunctions::Unregister(struct FUIExtensionPointHandle
 	Handle = std::move(Parms.Handle);
 }
 
-}
 
+SDK_NAMESPACE_END

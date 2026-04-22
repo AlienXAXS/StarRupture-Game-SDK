@@ -14,8 +14,7 @@
 #include "BP_MilitaryAssembler_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_MilitaryAssembler.BP_MilitaryAssembler_C.ExecuteUbergraph_BP_MilitaryAssembler
 // (Final, UbergraphFunction, HasDefaults)
@@ -110,5 +109,5 @@ void ABP_MilitaryAssembler_C::SetupSkeletalMesh()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_RailDroneBase_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_RailDroneBase.BP_RailDroneBase_C.ExecuteUbergraph_BP_RailDroneBase
 // (Final, UbergraphFunction, HasDefaults)
@@ -138,5 +137,5 @@ class UStaticMeshComponent* ABP_RailDroneBase_C::GetCargoComponent() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

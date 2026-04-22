@@ -14,8 +14,7 @@
 #include "WBP_MenuButtonBase_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_MenuButtonBase.WBP_MenuButtonBase_C.BP_OnClicked
 // (Event, Protected, BlueprintEvent)
@@ -231,5 +230,5 @@ void UWBP_MenuButtonBase_C::UpdateStyle()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

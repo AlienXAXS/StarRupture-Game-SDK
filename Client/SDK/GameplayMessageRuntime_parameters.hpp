@@ -14,8 +14,8 @@
 #include "GameplayMessageRuntime_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function GameplayMessageRuntime.AsyncAction_ListenForGameplayMessage.ListenForGameplayMessages
 // 0x0028 (0x0028 - 0x0000)
@@ -52,5 +52,5 @@ public:
 };
 DUMPER7_ASSERTS_GameplayMessageSubsystem_K2_BroadcastMessage;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

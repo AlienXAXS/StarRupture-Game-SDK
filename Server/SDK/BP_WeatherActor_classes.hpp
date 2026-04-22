@@ -14,8 +14,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_WeatherActor.BP_WeatherActor_C
 // 0x0020 (0x15D0 - 0x15B0)
@@ -40,5 +39,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_WeatherActor_C;
 
-}
-
+SDK_NAMESPACE_END

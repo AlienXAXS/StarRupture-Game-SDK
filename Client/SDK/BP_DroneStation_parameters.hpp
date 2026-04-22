@@ -14,8 +14,8 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_DroneStation.BP_DroneStation_C.ExecuteUbergraph_BP_DroneStation
 // 0x02B8 (0x02B8 - 0x0000)
@@ -65,5 +65,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_DroneStation_C_PostPlayBuildingEffect;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

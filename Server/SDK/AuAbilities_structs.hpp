@@ -19,8 +19,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum AuAbilities.ENxAbilityAttribute
 // NumValues: 0x0006
@@ -77,6 +76,15 @@ enum class ENxDebugDrawType : uint8
 	ENxDebugDrawType_MAX                     = 2,
 };
 
+// ScriptStruct AuAbilities.AuCustomTraceStartLocation
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x08) FAuCustomTraceStartLocation final
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAuCustomTraceStartLocation;
+
 // ScriptStruct AuAbilities.AuCustomTargetHandle
 // 0x0001 (0x0001 - 0x0000)
 struct FAuCustomTargetHandle final
@@ -94,20 +102,6 @@ public:
 	uint16                                        Handle;                                            // 0x0000(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
 DUMPER7_ASSERTS_FAuTargetDataHandle;
-
-// ScriptStruct AuAbilities.AuGATD_HitResultArray
-// 0x00C8 (0x00D0 - 0x0008)
-struct FAuGATD_HitResultArray final : public FGameplayAbilityTargetData
-{
-public:
-	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayAbilityTargetingLocationInfo  SourceLocation;                                    // 0x0010(0x0090)(ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FHitResult>                     HitResults;                                        // 0x00A0(0x0010)(ZeroConstructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FCrMassEntityReplicationHelper> MassEntityHandles;                                 // 0x00B0(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	struct FAuTargetDataHandle                    Handle;                                            // 0x00C0(0x0002)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_C2[0xE];                                       // 0x00C2(0x000E)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAuGATD_HitResultArray;
 
 // ScriptStruct AuAbilities.AuHitResult
 // 0x0060 (0x0060 - 0x0000)
@@ -144,47 +138,6 @@ public:
 };
 DUMPER7_ASSERTS_FAuTargetRequest;
 
-// ScriptStruct AuAbilities.AuCountedGameplayTagItem
-// 0x000C (0x0018 - 0x000C)
-struct FAuCountedGameplayTagItem final : public FFastArraySerializerItem
-{
-public:
-	struct FGameplayTag                           Tag;                                               // 0x000C(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Count;                                             // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAuCountedGameplayTagItem;
-
-// ScriptStruct AuAbilities.AuTargeting
-// 0x00A8 (0x00A8 - 0x0000)
-struct FAuTargeting final
-{
-public:
-	TSubclassOf<class UAuCustomTickTargeting>     CustomTargeting;                                   // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ENxTargetingType                              TargetingType;                                     // 0x0008(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ENxTraceType                                  TraceType;                                         // 0x0009(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ETraceTypeQuery                               TraceChannel;                                      // 0x000A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B[0x5];                                        // 0x000B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<EObjectTypeQuery>                      ObjectTypes;                                       // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	ECollisionResponse                            CollisionResponse;                                 // 0x0020(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         MaxRange;                                          // 0x0024(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DefaultRange;                                      // 0x0028(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ENxTraceSync                                  UseAsyncTracing;                                   // 0x002C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bTraceComplex : 1;                                 // 0x002D(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bReturnPhysicalMaterial : 1;                       // 0x002D(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bIgnoreSelf : 1;                                   // 0x002D(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bActive : 1;                                       // 0x002D(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bClientOnly : 1;                                   // 0x002D(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_2E[0x2];                                       // 0x002E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTagContainer                  RequiredTags;                                      // 0x0030(0x0020)(Edit, NativeAccessSpecifierPublic)
-	struct FGameplayTagContainer                  IgnoreTags;                                        // 0x0050(0x0020)(Edit, NativeAccessSpecifierPublic)
-	struct FVector                                Extent;                                            // 0x0070(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseSecondTrace;                                   // 0x0088(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_89[0x7];                                       // 0x0089(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                SecondExtent;                                      // 0x0090(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAuTargeting;
-
 // ScriptStruct AuAbilities.AuCustomTraceDataHandle
 // 0x0018 (0x0018 - 0x0000)
 struct FAuCustomTraceDataHandle final
@@ -194,6 +147,33 @@ public:
 	class UScriptStruct*                          Type;                                              // 0x0010(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 };
 DUMPER7_ASSERTS_FAuCustomTraceDataHandle;
+
+// ScriptStruct AuAbilities.AuRequestCustomTargetsRPCBatch
+// 0x00A8 (0x00A8 - 0x0000)
+struct FAuRequestCustomTargetsRPCBatch final
+{
+public:
+	struct FAuTargetData                          ClientResult;                                      // 0x0000(0x0078)(ContainsInstancedReference, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAuCustomTargetHandle                  InHandle;                                          // 0x0078(0x0001)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_79[0x3];                                       // 0x0079(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FAuTargetRequest                       RequestHandle;                                     // 0x007C(0x0014)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAuCustomTraceDataHandle               CustomData;                                        // 0x0090(0x0018)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAuRequestCustomTargetsRPCBatch;
+
+// ScriptStruct AuAbilities.AuGATD_HitResultArray
+// 0x00C8 (0x00D0 - 0x0008)
+struct FAuGATD_HitResultArray final : public FGameplayAbilityTargetData
+{
+public:
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayAbilityTargetingLocationInfo  SourceLocation;                                    // 0x0010(0x0090)(ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FHitResult>                     HitResults;                                        // 0x00A0(0x0010)(ZeroConstructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FCrMassEntityReplicationHelper> MassEntityHandles;                                 // 0x00B0(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	struct FAuTargetDataHandle                    Handle;                                            // 0x00C0(0x0002)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_C2[0xE];                                       // 0x00C2(0x000E)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAuGATD_HitResultArray;
 
 // ScriptStruct AuAbilities.AuGameplayAbilityActorInfo
 // 0x0010 (0x0058 - 0x0048)
@@ -212,6 +192,16 @@ public:
 	uint8                                         Pad_C0[0x18];                                      // 0x00C0(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FAuGameplayEffectContext;
+
+// ScriptStruct AuAbilities.AuCountedGameplayTagItem
+// 0x000C (0x0018 - 0x000C)
+struct FAuCountedGameplayTagItem final : public FFastArraySerializerItem
+{
+public:
+	struct FGameplayTag                           Tag;                                               // 0x000C(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAuCountedGameplayTagItem;
 
 // ScriptStruct AuAbilities.AuCountedGameplayTagReplication
 // 0x0140 (0x0248 - 0x0108)
@@ -345,19 +335,6 @@ public:
 };
 DUMPER7_ASSERTS_FAuTargetingCameraNetUpdate;
 
-// ScriptStruct AuAbilities.AuRequestCustomTargetsRPCBatch
-// 0x00A8 (0x00A8 - 0x0000)
-struct FAuRequestCustomTargetsRPCBatch final
-{
-public:
-	struct FAuTargetData                          ClientResult;                                      // 0x0000(0x0078)(ContainsInstancedReference, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAuCustomTargetHandle                  InHandle;                                          // 0x0078(0x0001)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_79[0x3];                                       // 0x0079(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAuTargetRequest                       RequestHandle;                                     // 0x007C(0x0014)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAuCustomTraceDataHandle               CustomData;                                        // 0x0090(0x0018)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAuRequestCustomTargetsRPCBatch;
-
 // ScriptStruct AuAbilities.AuCustomTraceReplicatedData
 // 0x0040 (0x0040 - 0x0000)
 struct FAuCustomTraceReplicatedData final
@@ -380,6 +357,37 @@ public:
 	class UAuGameplayCueManager*                  CueManager;                                        // 0x0028(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 };
 DUMPER7_ASSERTS_FAuGCMTickFunction;
+
+// ScriptStruct AuAbilities.AuTargeting
+// 0x00A8 (0x00A8 - 0x0000)
+struct FAuTargeting final
+{
+public:
+	TSubclassOf<class UAuCustomTickTargeting>     CustomTargeting;                                   // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ENxTargetingType                              TargetingType;                                     // 0x0008(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ENxTraceType                                  TraceType;                                         // 0x0009(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ETraceTypeQuery                               TraceChannel;                                      // 0x000A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B[0x5];                                        // 0x000B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<EObjectTypeQuery>                      ObjectTypes;                                       // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	ECollisionResponse                            CollisionResponse;                                 // 0x0020(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         MaxRange;                                          // 0x0024(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DefaultRange;                                      // 0x0028(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ENxTraceSync                                  UseAsyncTracing;                                   // 0x002C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bTraceComplex : 1;                                 // 0x002D(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bReturnPhysicalMaterial : 1;                       // 0x002D(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bIgnoreSelf : 1;                                   // 0x002D(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bActive : 1;                                       // 0x002D(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bClientOnly : 1;                                   // 0x002D(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_2E[0x2];                                       // 0x002E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTagContainer                  RequiredTags;                                      // 0x0030(0x0020)(Edit, NativeAccessSpecifierPublic)
+	struct FGameplayTagContainer                  IgnoreTags;                                        // 0x0050(0x0020)(Edit, NativeAccessSpecifierPublic)
+	struct FVector                                Extent;                                            // 0x0070(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseSecondTrace;                                   // 0x0088(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_89[0x7];                                       // 0x0089(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                SecondExtent;                                      // 0x0090(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAuTargeting;
 
 // ScriptStruct AuAbilities.AuTickTargetingHandle
 // 0x0004 (0x0004 - 0x0000)
@@ -469,15 +477,6 @@ public:
 };
 DUMPER7_ASSERTS_FAuTraceDebugParams;
 
-// ScriptStruct AuAbilities.AuCustomTraceStartLocation
-// 0x0008 (0x0008 - 0x0000)
-struct alignas(0x08) FAuCustomTraceStartLocation final
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAuCustomTraceStartLocation;
-
 // ScriptStruct AuAbilities.AuCustomTraceRequest
 // 0x0038 (0x0038 - 0x0000)
 struct FAuCustomTraceRequest final
@@ -497,5 +496,4 @@ public:
 };
 DUMPER7_ASSERTS_FAuCustomTraceRequest;
 
-}
-
+SDK_NAMESPACE_END

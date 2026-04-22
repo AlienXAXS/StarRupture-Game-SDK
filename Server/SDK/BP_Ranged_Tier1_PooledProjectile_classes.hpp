@@ -14,8 +14,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Ranged_Tier1_PooledProjectile.BP_Ranged_Tier1_PooledProjectile_C
 // 0x0010 (0x0340 - 0x0330)
@@ -48,5 +47,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Ranged_Tier1_PooledProjectile_C;
 
-}
-
+SDK_NAMESPACE_END

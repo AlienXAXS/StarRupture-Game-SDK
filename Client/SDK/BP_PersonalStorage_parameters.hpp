@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_PersonalStorage.BP_PersonalStorage_C.ExecuteUbergraph_BP_PersonalStorage
 // 0x0098 (0x0098 - 0x0000)
@@ -69,5 +69,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_PersonalStorage_C_OnUIOpened;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

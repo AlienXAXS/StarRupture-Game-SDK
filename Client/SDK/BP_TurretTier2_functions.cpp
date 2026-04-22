@@ -14,8 +14,7 @@
 #include "BP_TurretTier2_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_TurretTier2.BP_TurretTier2_C.BP_OnInventoryChanged
 // (Event, Protected, BlueprintEvent)
@@ -174,5 +173,5 @@ void ABP_TurretTier2_C::UpdateCosmeticsBasedOnAttackDirection(const struct FVect
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "CommonUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ButtonStyle-Clear16.BP_ButtonStyle-Clear16_C
 // 0x0000 (0x0710 - 0x0710)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_ButtonStyle_Clear16_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_WorldSpawnerRegion.BP_WorldSpawnerRegion_C
 // 0x0020 (0x02F8 - 0x02D8)
@@ -48,5 +47,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_WorldSpawnerRegion_C;
 
-}
-
+SDK_NAMESPACE_END

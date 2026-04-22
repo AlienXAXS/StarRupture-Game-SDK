@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_UniversalStorage.BP_UniversalStorage_C
 // 0x0110 (0x0768 - 0x0658)
@@ -82,5 +81,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_UniversalStorage_C;
 
-}
-
+SDK_NAMESPACE_END

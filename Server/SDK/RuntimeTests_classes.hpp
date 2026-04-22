@@ -14,8 +14,7 @@
 #include "MassEntity_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class RuntimeTests.EngineTestTickActor
 // 0x0020 (0x02C8 - 0x02A8)
@@ -71,5 +70,4 @@ public:
 };
 DUMPER7_ASSERTS_UEngineTickTestProcessor;
 
-}
-
+SDK_NAMESPACE_END

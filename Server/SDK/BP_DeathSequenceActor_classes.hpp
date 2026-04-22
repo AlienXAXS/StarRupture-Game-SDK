@@ -13,13 +13,12 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_DeathSequenceActor.BP_DeathSequenceActor_C
 // 0x0010 (0x0420 - 0x0410)
 #pragma pack(push, 0x1)
-class alignas(0x10) ABP_DeathSequenceActor_C : public ACrAiDeathSequenceActor
+class SDK_ALIGN(0x10) ABP_DeathSequenceActor_C : public ACrAiDeathSequenceActor
 {
 public:
 	class USkeletalMeshComponent*                 SkeletalMesh;                                      // 0x0410(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
@@ -41,5 +40,4 @@ public:
 #pragma pack(pop)
 DUMPER7_ASSERTS_ABP_DeathSequenceActor_C;
 
-}
-
+SDK_NAMESPACE_END

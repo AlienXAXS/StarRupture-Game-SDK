@@ -14,8 +14,7 @@
 #include "WBP_FoodEffectProgress_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_FoodEffectProgress.WBP_FoodEffectProgress_C.ExecuteUbergraph_WBP_FoodEffectProgress
 // (Final, UbergraphFunction)
@@ -118,5 +117,5 @@ void UWBP_FoodEffectProgress_C::SetWhiteTint()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

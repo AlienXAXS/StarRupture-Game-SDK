@@ -13,8 +13,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function WBP_MainMenuWidget.WBP_MainMenuWidget_C.SetColors
 // 0x0010 (0x0010 - 0x0000)
@@ -40,5 +40,5 @@ public:
 };
 DUMPER7_ASSERTS_WBP_MainMenuWidget_C_ExecuteUbergraph_WBP_MainMenuWidget;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

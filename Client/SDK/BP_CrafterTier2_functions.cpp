@@ -14,8 +14,7 @@
 #include "BP_CrafterTier2_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_CrafterTier2.BP_CrafterTier2_C.ExecuteUbergraph_BP_CrafterTier2
 // (Final, UbergraphFunction, HasDefaults)
@@ -110,5 +109,5 @@ void ABP_CrafterTier2_C::SetupSkeletalMesh()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

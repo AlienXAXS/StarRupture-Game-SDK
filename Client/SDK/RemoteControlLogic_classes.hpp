@@ -10,15 +10,14 @@
 
 #include "Basic.hpp"
 
-#include "RemoteControlLogic_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "Engine_classes.hpp"
+#include "RemoteControlLogic_structs.hpp"
 #include "RemoteControl_classes.hpp"
+#include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class RemoteControlLogic.RCAction
 // 0x0028 (0x0050 - 0x0028)
@@ -593,5 +592,4 @@ public:
 };
 DUMPER7_ASSERTS_URemoteControlLogicTestData;
 
-}
-
+SDK_NAMESPACE_END

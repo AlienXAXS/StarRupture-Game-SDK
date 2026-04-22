@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct ABP_PanzerHund.ABP_PanzerHund_C.AnimBlueprintGeneratedMutableData
 // 0x0017 (0x0018 - 0x0001)
@@ -133,5 +132,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_PanzerHund__FAnimBlueprintGeneratedConstantData;
 
-}
-
+SDK_NAMESPACE_END

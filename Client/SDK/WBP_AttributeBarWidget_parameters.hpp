@@ -13,8 +13,8 @@
 #include "ChimeraUI_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function WBP_AttributeBarWidget.WBP_AttributeBarWidget_C.ExecuteUbergraph_WBP_AttributeBarWidget
 // 0x0008 (0x0008 - 0x0000)
@@ -36,5 +36,5 @@ public:
 };
 DUMPER7_ASSERTS_WBP_AttributeBarWidget_C_SetAttributeIcon;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

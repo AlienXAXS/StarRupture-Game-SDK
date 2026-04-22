@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_MontageCameraNotify.BP_MontageCameraNotify_C
 // 0x0008 (0x0038 - 0x0030)
@@ -44,5 +43,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_MontageCameraNotify_C;
 
-}
-
+SDK_NAMESPACE_END

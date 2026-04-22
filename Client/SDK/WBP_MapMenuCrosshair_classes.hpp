@@ -13,8 +13,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_MapMenuCrosshair.WBP_MapMenuCrosshair_C
 // 0x0000 (0x0510 - 0x0510)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_MapMenuCrosshair_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "WBP_InventoryBackgound_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_InventoryBackgound.WBP_InventoryBackgound_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -50,5 +49,5 @@ void UWBP_InventoryBackgound_C::ExecuteUbergraph_WBP_InventoryBackgound(int32 En
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "GC_Damage_Player_Acid_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GC_Damage_Player_Acid.GC_Damage_Player_Acid_C.OnExecute
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
@@ -41,5 +40,5 @@ bool UGC_Damage_Player_Acid_C::OnExecute(class AActor* MyTarget, const struct FG
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

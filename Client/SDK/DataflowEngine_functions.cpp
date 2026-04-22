@@ -14,8 +14,7 @@
 #include "DataflowEngine_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function DataflowEngine.DataflowBlueprintLibrary.EvaluateTerminalNodeByName
 // (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
@@ -331,5 +330,5 @@ bool UDataflowBlueprintLibrary::RegenerateAssetFromDataflow(class UObject* Asset
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

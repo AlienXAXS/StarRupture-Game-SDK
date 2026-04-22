@@ -14,8 +14,7 @@
 #include "EnhancedInput_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function EnhancedInput.EnhancedPlayerMappableKeyProfile.ResetMappingToDefault
 // (Final, RequiredAPI, Native, Public, BlueprintCallable)
@@ -2669,5 +2668,5 @@ const bool UPlayerMappableInputConfig::IsDeprecated() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

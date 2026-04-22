@@ -14,8 +14,7 @@
 #include "BP_ViewportMiddle_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_ViewportMiddle.BP_ViewportMiddle_C.GetBuildingMeshes
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
@@ -41,5 +40,5 @@ void ABP_ViewportMiddle_C::GetBuildingMeshes(class UMeshComponent** MainBody, TA
 		*AdditionalMeshes = std::move(Parms.AdditionalMeshes);
 }
 
-}
 
+SDK_NAMESPACE_END

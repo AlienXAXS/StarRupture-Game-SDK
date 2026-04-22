@@ -14,8 +14,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_EncyclopediaSubcategoryGrid.WBP_EncyclopediaSubcategoryGrid_C
 // 0x0030 (0x0410 - 0x03E0)
@@ -55,5 +54,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_EncyclopediaSubcategoryGrid_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "BP_StandaloneMeteOreChunkBase_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_WolframMeteOreChunk.BP_WolframMeteOreChunk_C
 // 0x0000 (0x0538 - 0x0538)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_WolframMeteOreChunk_C;
 
-}
-
+SDK_NAMESPACE_END

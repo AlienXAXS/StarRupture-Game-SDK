@@ -14,8 +14,7 @@
 #include "BP_SonicDrill_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_SonicDrill.BP_SonicDrill_C.ExecuteUbergraph_BP_SonicDrill
 // (Final, UbergraphFunction)
@@ -115,5 +114,5 @@ void ABP_SonicDrill_C::GetBuildingMeshes(class UMeshComponent** MainBody, TArray
 		*AdditionalMeshes = std::move(Parms.AdditionalMeshes);
 }
 
-}
 
+SDK_NAMESPACE_END

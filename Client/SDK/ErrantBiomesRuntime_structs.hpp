@@ -13,8 +13,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum ErrantBiomesRuntime.EBiomesBrushBlendingMode
 // NumValues: 0x0006
@@ -263,5 +262,4 @@ public:
 };
 DUMPER7_ASSERTS_FBiomesInstanceableBpInfo;
 
-}
-
+SDK_NAMESPACE_END

@@ -10,16 +10,15 @@
 
 #include "Basic.hpp"
 
-#include "ControlRig_structs.hpp"
 #include "Engine_structs.hpp"
+#include "ControlRig_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 #include "ABP_PanzerHund_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass ABP_PanzerHund.ABP_PanzerHund_C
 // 0x1200 (0x1800 - 0x0600)
@@ -122,5 +121,4 @@ public:
 };
 DUMPER7_ASSERTS_UABP_PanzerHund_C;
 
-}
-
+SDK_NAMESPACE_END

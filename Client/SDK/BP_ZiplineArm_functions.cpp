@@ -14,8 +14,7 @@
 #include "BP_ZiplineArm_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_ZiplineArm.BP_ZiplineArm_C.ExecuteUbergraph_BP_ZiplineArm
 // (Final, UbergraphFunction)
@@ -50,5 +49,5 @@ void ABP_ZiplineArm_C::ReceiveBeginPlay()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

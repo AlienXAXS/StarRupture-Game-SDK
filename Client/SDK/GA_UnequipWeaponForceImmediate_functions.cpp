@@ -14,8 +14,7 @@
 #include "GA_UnequipWeaponForceImmediate_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GA_UnequipWeaponForceImmediate.GA_UnequipWeaponForceImmediate_C.ExecuteUbergraph_GA_UnequipWeaponForceImmediate
 // (Final, UbergraphFunction)
@@ -50,5 +49,5 @@ void UGA_UnequipWeaponForceImmediate_C::K2_ActivateAbility()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

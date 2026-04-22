@@ -14,8 +14,7 @@
 #include "ABP_Ranged_Tier2_LOD0_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ABP_Ranged_Tier2_LOD0.ABP_Ranged_Tier2_LOD0_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -859,5 +858,5 @@ void UABP_Ranged_Tier2_LOD0_C::UpdateYawRotationRateForLocomotionState(ECrEnemyL
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

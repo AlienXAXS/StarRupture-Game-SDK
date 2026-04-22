@@ -14,8 +14,7 @@
 #include "AuCrafting_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AuCrafting.AuItemRecipeData.GetItemDataBase
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
@@ -116,5 +115,5 @@ TArray<struct FAuSimpleItem> UAuItemRecipeData::GetOutputItems() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

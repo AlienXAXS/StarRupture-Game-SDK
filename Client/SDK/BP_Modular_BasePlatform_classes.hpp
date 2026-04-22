@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Modular_BasePlatform.BP_Modular_BasePlatform_C
 // 0x0030 (0x0870 - 0x0840)
@@ -52,5 +51,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Modular_BasePlatform_C;
 
-}
-
+SDK_NAMESPACE_END

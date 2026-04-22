@@ -10,12 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "NISBlueprint_structs.hpp"
 #include "Engine_classes.hpp"
+#include "NISBlueprint_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class NISBlueprint.NISLibrary
 // 0x0000 (0x0028 - 0x0028)
@@ -48,5 +47,4 @@ public:
 };
 DUMPER7_ASSERTS_UNISLibrary;
 
-}
-
+SDK_NAMESPACE_END

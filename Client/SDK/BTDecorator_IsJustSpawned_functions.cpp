@@ -14,8 +14,7 @@
 #include "BTDecorator_IsJustSpawned_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTDecorator_IsJustSpawned.BTDecorator_IsJustSpawned_C.PerformConditionCheckAI
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -41,5 +40,5 @@ bool UBTDecorator_IsJustSpawned_C::PerformConditionCheckAI(class AAIController* 
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

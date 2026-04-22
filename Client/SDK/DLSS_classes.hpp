@@ -14,8 +14,7 @@
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class DLSS.DLSSOverrideSettings
 // 0x0008 (0x0030 - 0x0028)
@@ -101,5 +100,4 @@ public:
 };
 DUMPER7_ASSERTS_UDLSSSettings;
 
-}
-
+SDK_NAMESPACE_END

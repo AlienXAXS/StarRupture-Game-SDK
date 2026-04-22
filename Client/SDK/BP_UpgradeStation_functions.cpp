@@ -14,8 +14,7 @@
 #include "BP_UpgradeStation_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_UpgradeStation.BP_UpgradeStation_C.ExecuteUbergraph_BP_UpgradeStation
 // (Final, UbergraphFunction)
@@ -70,5 +69,5 @@ void ABP_UpgradeStation_C::ReceiveBeginPlay()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

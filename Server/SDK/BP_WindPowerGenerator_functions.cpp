@@ -14,8 +14,7 @@
 #include "BP_WindPowerGenerator_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_WindPowerGenerator.BP_WindPowerGenerator_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
@@ -70,5 +69,5 @@ void ABP_WindPowerGenerator_C::ExecuteUbergraph_BP_WindPowerGenerator(int32 Entr
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

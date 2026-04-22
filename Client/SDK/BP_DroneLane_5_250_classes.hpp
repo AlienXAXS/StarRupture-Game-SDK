@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_DroneLane_5_250.BP_DroneLane_5_250_C
 // 0x0020 (0x0668 - 0x0648)
@@ -42,5 +41,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_DroneLane_5_250_C;
 
-}
-
+SDK_NAMESPACE_END

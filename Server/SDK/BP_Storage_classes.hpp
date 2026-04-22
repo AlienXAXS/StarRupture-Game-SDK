@@ -14,8 +14,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Storage.BP_Storage_C
 // 0x0130 (0x0788 - 0x0658)
@@ -88,5 +87,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Storage_C;
 
-}
-
+SDK_NAMESPACE_END

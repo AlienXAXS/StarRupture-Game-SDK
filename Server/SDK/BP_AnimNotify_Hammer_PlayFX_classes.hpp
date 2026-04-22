@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_AnimNotify_Hammer_PlayFX.BP_AnimNotify_Hammer_PlayFX_C
 // 0x0000 (0x0038 - 0x0038)
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_AnimNotify_Hammer_PlayFX_C;
 
-}
-
+SDK_NAMESPACE_END

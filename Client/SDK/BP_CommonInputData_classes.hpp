@@ -13,8 +13,7 @@
 #include "CommonInput_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_CommonInputData.BP_CommonInputData_C
 // 0x0000 (0x0080 - 0x0080)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_CommonInputData_C;
 
-}
-
+SDK_NAMESPACE_END

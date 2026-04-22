@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum InterchangeNodes.EInterchangePropertyTracks
 // NumValues: 0x0142
@@ -499,5 +498,4 @@ public:
 };
 DUMPER7_ASSERTS_FInterchangeMeshPayLoadKey;
 
-}
-
+SDK_NAMESPACE_END

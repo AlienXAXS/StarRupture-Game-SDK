@@ -13,8 +13,7 @@
 #include "BP_ItemPrinter_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ForgottenMachine_01_AmmoCrafter.BP_ForgottenMachine_01_AmmoCrafter_C
 // 0x0000 (0x0750 - 0x0750)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_ForgottenMachine_01_AmmoCrafter_C;
 
-}
-
+SDK_NAMESPACE_END

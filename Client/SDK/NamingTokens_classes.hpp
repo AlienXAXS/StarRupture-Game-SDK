@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_classes.hpp"
 #include "NamingTokens_structs.hpp"
+#include "CoreUObject_classes.hpp"
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class NamingTokens.NamingTokens
 // 0x00E0 (0x0108 - 0x0028)
@@ -109,5 +108,4 @@ public:
 };
 DUMPER7_ASSERTS_UNamingTokensEngineSubsystem;
 
-}
-
+SDK_NAMESPACE_END

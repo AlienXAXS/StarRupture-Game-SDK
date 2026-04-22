@@ -13,8 +13,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum MassEntity.EMassCommandOperationType
 // NumValues: 0x0008
@@ -140,7 +139,7 @@ DUMPER7_ASSERTS_FMassGenericDebugEvent;
 // ScriptStruct MassEntity.MassFragment
 // 0x0000 (0x0000 - 0x0000)
 #pragma pack(push, 0x1)
-struct alignas(0x01) FMassFragment
+struct SDK_ALIGN(0x01) FMassFragment
 {
 };
 #pragma pack(pop)
@@ -158,7 +157,7 @@ DUMPER7_ASSERTS_FMassDebugLogFragment;
 // ScriptStruct MassEntity.MassChunkFragment
 // 0x0000 (0x0000 - 0x0000)
 #pragma pack(push, 0x1)
-struct alignas(0x01) FMassChunkFragment
+struct SDK_ALIGN(0x01) FMassChunkFragment
 {
 };
 #pragma pack(pop)
@@ -167,7 +166,7 @@ DUMPER7_ASSERTS_FMassChunkFragment;
 // ScriptStruct MassEntity.MassSharedFragment
 // 0x0000 (0x0000 - 0x0000)
 #pragma pack(push, 0x1)
-struct alignas(0x01) FMassSharedFragment
+struct SDK_ALIGN(0x01) FMassSharedFragment
 {
 };
 #pragma pack(pop)
@@ -176,7 +175,7 @@ DUMPER7_ASSERTS_FMassSharedFragment;
 // ScriptStruct MassEntity.MassConstSharedFragment
 // 0x0000 (0x0000 - 0x0000)
 #pragma pack(push, 0x1)
-struct alignas(0x01) FMassConstSharedFragment
+struct SDK_ALIGN(0x01) FMassConstSharedFragment
 {
 };
 #pragma pack(pop)
@@ -311,5 +310,4 @@ public:
 };
 DUMPER7_ASSERTS_FMassSubsystemRequirements;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "MassEntity_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct ChimeraMassCommon.CrMassPersistentEntityID
 // 0x0010 (0x0010 - 0x0000)
@@ -38,6 +37,15 @@ public:
 	struct FCrMassPersistentEntityID              Entity;                                            // 0x0008(0x0010)(RepSkip, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
 DUMPER7_ASSERTS_FCrMassEntityReplicationHelper;
+
+// ScriptStruct ChimeraMassCommon.CrMassSavableFragment
+// 0x0000 (0x0000 - 0x0000)
+#pragma pack(push, 0x1)
+struct SDK_ALIGN(0x01) FCrMassSavableFragment : public FMassFragment
+{
+};
+#pragma pack(pop)
+DUMPER7_ASSERTS_FCrMassSavableFragment;
 
 // ScriptStruct ChimeraMassCommon.CrMassActorReplicationHelper
 // 0x0018 (0x0018 - 0x0000)
@@ -62,15 +70,6 @@ public:
 	TWeakObjectPtr<class UActorComponent>         Component;                                         // 0x0010(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
 DUMPER7_ASSERTS_FCrMassComponentReplicationHelper;
-
-// ScriptStruct ChimeraMassCommon.CrMassSavableFragment
-// 0x0000 (0x0000 - 0x0000)
-#pragma pack(push, 0x1)
-struct alignas(0x01) FCrMassSavableFragment : public FMassFragment
-{
-};
-#pragma pack(pop)
-DUMPER7_ASSERTS_FCrMassSavableFragment;
 
 // ScriptStruct ChimeraMassCommon.CrMassSavableTag
 // 0x0000 (0x0001 - 0x0001)
@@ -106,5 +105,4 @@ public:
 };
 DUMPER7_ASSERTS_FCrReplicatedSoftObjectPtr;
 
-}
-
+SDK_NAMESPACE_END

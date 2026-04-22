@@ -14,8 +14,7 @@
 #include "BP_Foundable_OutsDeadBody_1_light_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Foundable_OutsDeadBody_1_light.BP_Foundable_OutsDeadBody_1_light_C.OnStorageEmptied
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -36,5 +35,5 @@ bool ABP_Foundable_OutsDeadBody_1_light_C::OnStorageEmptied()
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

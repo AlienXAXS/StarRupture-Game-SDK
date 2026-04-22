@@ -11,13 +11,12 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "AuItems_structs.hpp"
 #include "ChimeraUI_classes.hpp"
+#include "AuItems_structs.hpp"
 #include "UMG_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_ToolTipWidget.WBP_ToolTipWidget_C
 // 0x00A8 (0x0550 - 0x04A8)
@@ -75,5 +74,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_ToolTipWidget_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -26,8 +26,7 @@
 #include "ZoneGraphAnnotations_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MassCrowd.MassCrowdClientBubbleInfo
 // 0x0238 (0x04F8 - 0x02C0)
@@ -589,5 +588,4 @@ public:
 };
 DUMPER7_ASSERTS_UZoneGraphCrowdLaneAnnotations;
 
-}
-
+SDK_NAMESPACE_END

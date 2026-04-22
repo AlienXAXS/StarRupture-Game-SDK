@@ -14,8 +14,7 @@
 #include "WBP_HeaderLine_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_HeaderLine.WBP_HeaderLine_C.HideItemType
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -98,5 +97,5 @@ void UWBP_HeaderLine_C::SetupResizeStackVersion(const class FText& Title)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

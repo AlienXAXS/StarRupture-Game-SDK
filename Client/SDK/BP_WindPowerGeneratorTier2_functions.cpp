@@ -14,8 +14,7 @@
 #include "BP_WindPowerGeneratorTier2_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_WindPowerGeneratorTier2.BP_WindPowerGeneratorTier2_C.ExecuteUbergraph_BP_WindPowerGeneratorTier2
 // (Final, UbergraphFunction)
@@ -70,5 +69,5 @@ void ABP_WindPowerGeneratorTier2_C::ReceiveBeginPlay()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

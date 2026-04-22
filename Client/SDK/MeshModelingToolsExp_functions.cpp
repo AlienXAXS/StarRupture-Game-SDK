@@ -14,8 +14,7 @@
 #include "MeshModelingToolsExp_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function MeshModelingToolsExp.BakeInputMeshProperties.GetSourceUVLayerNamesFunc
 // (Final, Native, Public, Const)
@@ -67,139 +66,6 @@ const TArray<class FString> UBakeInputMeshProperties::GetTargetUVLayerNamesFunc(
 }
 
 
-// Function MeshModelingToolsExp.MirrorToolActionPropertySet.Backward
-// (Final, Native, Public)
-
-void UMirrorToolActionPropertySet::Backward()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MirrorToolActionPropertySet", "Backward");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MirrorToolActionPropertySet.Down
-// (Final, Native, Public)
-
-void UMirrorToolActionPropertySet::Down()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MirrorToolActionPropertySet", "Down");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MirrorToolActionPropertySet.Forward
-// (Final, Native, Public)
-
-void UMirrorToolActionPropertySet::Forward()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MirrorToolActionPropertySet", "Forward");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MirrorToolActionPropertySet.Left
-// (Final, Native, Public)
-
-void UMirrorToolActionPropertySet::Left()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MirrorToolActionPropertySet", "Left");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MirrorToolActionPropertySet.Right
-// (Final, Native, Public)
-
-void UMirrorToolActionPropertySet::Right()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MirrorToolActionPropertySet", "Right");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MirrorToolActionPropertySet.ShiftToCenter
-// (Final, Native, Public)
-
-void UMirrorToolActionPropertySet::ShiftToCenter()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MirrorToolActionPropertySet", "ShiftToCenter");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MirrorToolActionPropertySet.Up
-// (Final, Native, Public)
-
-void UMirrorToolActionPropertySet::Up()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MirrorToolActionPropertySet", "Up");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function MeshModelingToolsExp.BakeTexture2DProperties.GetUVLayerNamesFunc
 // (Final, Native, Public, Const)
 // Parameters:
@@ -238,6 +104,31 @@ const TArray<class FString> UBakeMultiTexture2DProperties::GetUVLayerNamesFunc()
 		Func = Class->GetFunction("BakeMultiTexture2DProperties", "GetUVLayerNamesFunc");
 
 	Params::BakeMultiTexture2DProperties_GetUVLayerNamesFunc Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MeshModelingToolsExp.MeshInspectorMaterialProperties.GetUVChannelNamesFunc
+// (Final, RequiredAPI, Native, Public, Const)
+// Parameters:
+// const TArray<class FString>             ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+const TArray<class FString> UMeshInspectorMaterialProperties::GetUVChannelNamesFunc() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshInspectorMaterialProperties", "GetUVChannelNamesFunc");
+
+	Params::MeshInspectorMaterialProperties_GetUVChannelNamesFunc Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -648,31 +539,6 @@ void UEditPivotToolActionPropertySet::WorldOrigin()
 }
 
 
-// Function MeshModelingToolsExp.MeshInspectorMaterialProperties.GetUVChannelNamesFunc
-// (Final, RequiredAPI, Native, Public, Const)
-// Parameters:
-// const TArray<class FString>             ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-const TArray<class FString> UMeshInspectorMaterialProperties::GetUVChannelNamesFunc() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshInspectorMaterialProperties", "GetUVChannelNamesFunc");
-
-	Params::MeshInspectorMaterialProperties_GetUVChannelNamesFunc Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function MeshModelingToolsExp.MeshSelectionEditActions.Clear
 // (Final, Native, Public)
 
@@ -996,6 +862,139 @@ void UMeshSelectionMeshEditActions::SmoothBorder()
 }
 
 
+// Function MeshModelingToolsExp.MirrorToolActionPropertySet.Backward
+// (Final, Native, Public)
+
+void UMirrorToolActionPropertySet::Backward()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MirrorToolActionPropertySet", "Backward");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.MirrorToolActionPropertySet.Down
+// (Final, Native, Public)
+
+void UMirrorToolActionPropertySet::Down()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MirrorToolActionPropertySet", "Down");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.MirrorToolActionPropertySet.Forward
+// (Final, Native, Public)
+
+void UMirrorToolActionPropertySet::Forward()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MirrorToolActionPropertySet", "Forward");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.MirrorToolActionPropertySet.Left
+// (Final, Native, Public)
+
+void UMirrorToolActionPropertySet::Left()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MirrorToolActionPropertySet", "Left");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.MirrorToolActionPropertySet.Right
+// (Final, Native, Public)
+
+void UMirrorToolActionPropertySet::Right()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MirrorToolActionPropertySet", "Right");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.MirrorToolActionPropertySet.ShiftToCenter
+// (Final, Native, Public)
+
+void UMirrorToolActionPropertySet::ShiftToCenter()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MirrorToolActionPropertySet", "ShiftToCenter");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.MirrorToolActionPropertySet.Up
+// (Final, Native, Public)
+
+void UMirrorToolActionPropertySet::Up()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MirrorToolActionPropertySet", "Up");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function MeshModelingToolsExp.SimpleCollisionEditorToolActionProperties.AddBox
 // (Final, Native, Public)
 
@@ -1197,5 +1196,5 @@ const TArray<class FString> UTransferMeshToolProperties::GetTargetLODNamesFunc()
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

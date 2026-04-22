@@ -14,8 +14,7 @@
 #include "ABP_Mannequin_Base_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ABP_Mannequin_Base.ABP_Mannequin_Base_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -1482,5 +1481,5 @@ EAnimEnum_CardinalDirection UABP_Mannequin_Base_C::GetOppositeCardinalDirection(
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

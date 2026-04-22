@@ -14,8 +14,7 @@
 #include "WBP_BuildingInfo_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_BuildingInfo.WBP_BuildingInfo_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -78,5 +77,5 @@ void UWBP_BuildingInfo_C::HideSendersBox()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

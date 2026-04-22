@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "OptimusCore_classes.hpp"
 #include "HairStrandsDeformer_structs.hpp"
+#include "OptimusCore_classes.hpp"
 #include "ComputeFramework_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class HairStrandsDeformer.OptimusGroomAttributeReadDataInterface
 // 0x0028 (0x0050 - 0x0028)
@@ -427,5 +426,4 @@ public:
 };
 DUMPER7_ASSERTS_UOptimusGroomStrandsWriteDataProvider;
 
-}
-
+SDK_NAMESPACE_END

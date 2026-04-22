@@ -13,8 +13,8 @@
 #include "Chimera_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function GA_DeinfectBuilding.GA_DeinfectBuilding_C.ExecuteUbergraph_GA_DeinfectBuilding
 // 0x0138 (0x0138 - 0x0000)
@@ -116,5 +116,5 @@ public:
 };
 DUMPER7_ASSERTS_GA_DeinfectBuilding_C_OnNotLocallyControlledTppMontageBlendOut_57494E2FE74B6B0D1551DEA3D318E1ED;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_MaterializedItemCrate_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_MaterializedItemCrate.BP_MaterializedItemCrate_C.UserConstructionScript
 // (Event, Public, BlueprintCallable, BlueprintEvent)
@@ -138,5 +137,5 @@ void ABP_MaterializedItemCrate_C::ExecuteUbergraph_BP_MaterializedItemCrate(int3
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

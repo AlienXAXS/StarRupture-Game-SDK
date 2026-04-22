@@ -18,12 +18,11 @@
 #include "DeveloperSettings_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "AuItems_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "AuItems_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class AuAbilities.AuAbilitiesBPF
 // 0x0000 (0x0028 - 0x0028)
@@ -156,7 +155,7 @@ DUMPER7_ASSERTS_AAuAbilityPersistentActor;
 // Class AuAbilities.AuAbilityPMC
 // 0x0000 (0x0280 - 0x0280)
 #pragma pack(push, 0x1)
-class alignas(0x10) UAuAbilityPMC : public UProjectileMovementComponent
+class SDK_ALIGN(0x10) UAuAbilityPMC : public UProjectileMovementComponent
 {
 public:
 	static class UClass* StaticClass()
@@ -1476,5 +1475,4 @@ public:
 };
 DUMPER7_ASSERTS_UAuTriggerGameplayAbility;
 
-}
-
+SDK_NAMESPACE_END

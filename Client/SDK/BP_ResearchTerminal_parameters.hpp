@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_ResearchTerminal.BP_ResearchTerminal_C.ExecuteUbergraph_BP_ResearchTerminal
 // 0x0020 (0x0020 - 0x0000)
@@ -37,5 +37,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_ResearchTerminal_C_OnUIOpened;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

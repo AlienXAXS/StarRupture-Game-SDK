@@ -13,8 +13,7 @@
 #include "BP_GatherableBaseActor_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Gatherable_Sulheart.BP_Gatherable_Sulheart_C
 // 0x0040 (0x03E0 - 0x03A0)
@@ -46,5 +45,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Gatherable_Sulheart_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_Hammer_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Hammer.BP_Hammer_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
@@ -84,5 +83,5 @@ void ABP_Hammer_C::ExecuteUbergraph_BP_Hammer(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

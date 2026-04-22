@@ -14,8 +14,7 @@
 #include "BP_HeadBobbingComp_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_HeadBobbingComp.BP_HeadBobbingComp_C.ColdWave
 // (BlueprintCallable, BlueprintEvent)
@@ -308,5 +307,5 @@ void UBP_HeadBobbingComp_C::Zipline()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

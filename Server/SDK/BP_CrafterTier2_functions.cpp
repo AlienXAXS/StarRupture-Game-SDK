@@ -14,8 +14,7 @@
 #include "BP_CrafterTier2_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_CrafterTier2.BP_CrafterTier2_C.SetupSkeletalMesh
 // (Event, Public, BlueprintEvent)
@@ -110,5 +109,5 @@ void ABP_CrafterTier2_C::ExecuteUbergraph_BP_CrafterTier2(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

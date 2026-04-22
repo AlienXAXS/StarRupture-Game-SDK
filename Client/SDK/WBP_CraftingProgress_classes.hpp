@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
-#include "SlateCore_structs.hpp"
 #include "ChimeraUI_classes.hpp"
+#include "SlateCore_structs.hpp"
+#include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_CraftingProgress.WBP_CraftingProgress_C
 // 0x0770 (0x0D50 - 0x05E0)
@@ -60,5 +59,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_CraftingProgress_C;
 
-}
-
+SDK_NAMESPACE_END

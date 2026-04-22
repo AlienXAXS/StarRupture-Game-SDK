@@ -15,8 +15,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_FoodProcessor.BP_FoodProcessor_C
 // 0x0078 (0x0750 - 0x06D8)
@@ -66,5 +65,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_FoodProcessor_C;
 
-}
-
+SDK_NAMESPACE_END

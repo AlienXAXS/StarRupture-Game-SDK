@@ -14,8 +14,7 @@
 #include "BP_CoolerActive_Tiles_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_CoolerActive_Tiles.BP_CoolerActive_Tiles_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
@@ -90,5 +89,5 @@ void ABP_CoolerActive_Tiles_C::ExecuteUbergraph_BP_CoolerActive_Tiles(int32 Entr
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

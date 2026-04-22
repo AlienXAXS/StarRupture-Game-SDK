@@ -14,8 +14,7 @@
 #include "BP_UniversalStorage_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_UniversalStorage.BP_UniversalStorage_C.ExecuteUbergraph_BP_UniversalStorage
 // (Final, UbergraphFunction, HasDefaults)
@@ -112,5 +111,5 @@ void ABP_UniversalStorage_C::Timeline_shelves__UpdateFunc()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

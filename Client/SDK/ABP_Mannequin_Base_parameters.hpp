@@ -11,13 +11,13 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "EAnimEnum_CardinalDirection_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "EAnimEnum_CardinalDirection_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function ABP_Mannequin_Base.ABP_Mannequin_Base_C.AnimGraph
 // 0x0010 (0x0010 - 0x0000)
@@ -946,5 +946,5 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Mannequin_Base_C_GetOppositeCardinalDirection;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

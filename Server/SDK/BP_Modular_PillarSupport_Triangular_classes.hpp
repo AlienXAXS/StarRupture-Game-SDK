@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Modular_PillarSupport_Triangular.BP_Modular_PillarSupport_Triangular_C
 // 0x0018 (0x0858 - 0x0840)
@@ -41,5 +40,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Modular_PillarSupport_Triangular_C;
 
-}
-
+SDK_NAMESPACE_END

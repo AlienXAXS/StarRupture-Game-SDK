@@ -14,8 +14,7 @@
 #include "BP_Melee_Tier2_Actor_AiController_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Melee_Tier2_Actor_AiController.BP_Melee_Tier2_Actor_AiController_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
@@ -50,5 +49,5 @@ void ABP_Melee_Tier2_Actor_AiController_C::ExecuteUbergraph_BP_Melee_Tier2_Actor
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

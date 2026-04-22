@@ -14,8 +14,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_HabitatPostProcess_Quality.BP_HabitatPostProcess_Quality_C
 // 0x0018 (0x02C0 - 0x02A8)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_HabitatPostProcess_Quality_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_WeaponActor_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_WeaponActor.BP_WeaponActor_C.ExecuteUbergraph_BP_WeaponActor
 // (Final, UbergraphFunction)
@@ -247,5 +246,5 @@ void ABP_WeaponActor_C::GetRateOfFireInSeconds(double* ROFInSeconds) const
 		*ROFInSeconds = Parms.ROFInSeconds;
 }
 
-}
 
+SDK_NAMESPACE_END

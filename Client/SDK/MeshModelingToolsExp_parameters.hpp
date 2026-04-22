@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function MeshModelingToolsExp.BakeInputMeshProperties.GetSourceUVLayerNamesFunc
 // 0x0010 (0x0010 - 0x0000)
@@ -50,6 +50,15 @@ public:
 };
 DUMPER7_ASSERTS_BakeMultiTexture2DProperties_GetUVLayerNamesFunc;
 
+// Function MeshModelingToolsExp.MeshInspectorMaterialProperties.GetUVChannelNamesFunc
+// 0x0010 (0x0010 - 0x0000)
+struct MeshInspectorMaterialProperties_GetUVChannelNamesFunc final
+{
+public:
+	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MeshInspectorMaterialProperties_GetUVChannelNamesFunc;
+
 // Function MeshModelingToolsExp.BakeMeshAttributeMapsToolProperties.GetMapPreviewNamesFunc
 // 0x0010 (0x0010 - 0x0000)
 struct BakeMeshAttributeMapsToolProperties_GetMapPreviewNamesFunc final
@@ -77,15 +86,6 @@ public:
 };
 DUMPER7_ASSERTS_BakeMultiMeshInputToolProperties_GetTargetUVLayerNamesFunc;
 
-// Function MeshModelingToolsExp.MeshInspectorMaterialProperties.GetUVChannelNamesFunc
-// 0x0010 (0x0010 - 0x0000)
-struct MeshInspectorMaterialProperties_GetUVChannelNamesFunc final
-{
-public:
-	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MeshInspectorMaterialProperties_GetUVChannelNamesFunc;
-
 // Function MeshModelingToolsExp.TransferMeshToolProperties.GetSourceLODNamesFunc
 // 0x0010 (0x0010 - 0x0000)
 struct TransferMeshToolProperties_GetSourceLODNamesFunc final
@@ -104,5 +104,5 @@ public:
 };
 DUMPER7_ASSERTS_TransferMeshToolProperties_GetTargetLODNamesFunc;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C
 // 0x00D8 (0x03A0 - 0x02C8)
@@ -97,5 +96,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_StandaloneInfectionCyst_C;
 
-}
-
+SDK_NAMESPACE_END

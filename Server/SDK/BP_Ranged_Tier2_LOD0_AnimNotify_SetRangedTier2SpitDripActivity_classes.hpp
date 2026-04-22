@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Ranged_Tier2_LOD0_AnimNotify_SetRangedTier2SpitDripActivity.BP_Ranged_Tier2_LOD0_AnimNotify_SetRangedTier2SpitDripActivity_C
 // 0x0008 (0x0040 - 0x0038)
@@ -42,5 +41,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_Ranged_Tier2_LOD0_AnimNotify_SetRangedTier2SpitDripActivity_C;
 
-}
-
+SDK_NAMESPACE_END

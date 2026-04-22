@@ -14,8 +14,7 @@
 #include "CrAiAnimalPanzerHundRuntime_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function CrAiAnimalPanzerHundRuntime.CrAiAnimalPanzerHundInterface.GetPanzerHundUpdateStateComponent
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
@@ -147,5 +146,5 @@ void UCrAiAnimalPanzerHundUpdateStateComponent::ResetDamageTimestamp()
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

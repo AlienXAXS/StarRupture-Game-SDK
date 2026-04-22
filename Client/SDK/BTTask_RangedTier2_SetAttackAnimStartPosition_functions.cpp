@@ -14,8 +14,7 @@
 #include "BTTask_RangedTier2_SetAttackAnimStartPosition_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTTask_RangedTier2_SetAttackAnimStartPosition.BTTask_RangedTier2_SetAttackAnimStartPosition_C.ExecuteUbergraph_BTTask_RangedTier2_SetAttackAnimStartPosition
 // (Final, UbergraphFunction)
@@ -58,5 +57,5 @@ void UBTTask_RangedTier2_SetAttackAnimStartPosition_C::ReceiveExecuteAI(class AA
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

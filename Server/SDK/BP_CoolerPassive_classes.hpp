@@ -15,8 +15,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_CoolerPassive.BP_CoolerPassive_C
 // 0x00B0 (0x0710 - 0x0660)
@@ -68,5 +67,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_CoolerPassive_C;
 
-}
-
+SDK_NAMESPACE_END

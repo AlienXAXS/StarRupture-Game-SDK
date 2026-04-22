@@ -13,8 +13,8 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_AggressivePlant_Logic.BP_AggressivePlant_Logic_C.BndEvt__BP_AggressivePlant_CapsuleCollision_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature
 // 0x0120 (0x0120 - 0x0000)
@@ -119,5 +119,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_AggressivePlant_Logic_C_SetHidden;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

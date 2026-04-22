@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Walkway.BP_Walkway_C
 // 0x0080 (0x0720 - 0x06A0)
@@ -56,5 +55,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Walkway_C;
 
-}
-
+SDK_NAMESPACE_END

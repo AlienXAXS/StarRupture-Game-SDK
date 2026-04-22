@@ -13,8 +13,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_FoodEffectsPlayer.WBP_FoodEffectsPlayer_C
 // 0x0078 (0x0440 - 0x03C8)
@@ -53,5 +52,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_FoodEffectsPlayer_C;
 
-}
-
+SDK_NAMESPACE_END

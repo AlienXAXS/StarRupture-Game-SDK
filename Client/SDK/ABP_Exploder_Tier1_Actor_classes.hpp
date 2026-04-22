@@ -10,15 +10,14 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
-#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "ABP_Exploder_Tier1_Actor_structs.hpp"
+#include "Engine_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 #include "CrAiExploderRuntime_classes.hpp"
+#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass ABP_Exploder_Tier1_Actor.ABP_Exploder_Tier1_Actor_C
 // 0x1AC0 (0x20C0 - 0x0600)
@@ -223,5 +222,4 @@ public:
 };
 DUMPER7_ASSERTS_UABP_Exploder_Tier1_Actor_C;
 
-}
-
+SDK_NAMESPACE_END

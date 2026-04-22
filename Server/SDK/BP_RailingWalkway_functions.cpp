@@ -14,8 +14,7 @@
 #include "BP_RailingWalkway_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_RailingWalkway.BP_RailingWalkway_C.OnSplineReady
 // (Event, Public, BlueprintEvent)
@@ -116,5 +115,5 @@ void ABP_RailingWalkway_C::ExecuteUbergraph_BP_RailingWalkway(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

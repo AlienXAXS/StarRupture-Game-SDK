@@ -14,8 +14,7 @@
 #include "GC_Health_Damage_Player_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GC_Health_Damage_Player.GC_Health_Damage_Player_C.OnExecute
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
@@ -41,5 +40,5 @@ bool UGC_Health_Damage_Player_C::OnExecute(class AActor* MyTarget, const struct 
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

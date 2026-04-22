@@ -15,8 +15,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ResearchLab.BP_ResearchLab_C
 // 0x0100 (0x07D8 - 0x06D8)
@@ -77,5 +76,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_ResearchLab_C;
 
-}
-
+SDK_NAMESPACE_END

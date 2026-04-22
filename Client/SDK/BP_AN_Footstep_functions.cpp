@@ -14,8 +14,7 @@
 #include "BP_AN_Footstep_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_AN_Footstep.BP_AN_Footstep_C.GetWaterType
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
@@ -141,5 +140,5 @@ bool UBP_AN_Footstep_C::Received_Notify(class USkeletalMeshComponent* MeshComp, 
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

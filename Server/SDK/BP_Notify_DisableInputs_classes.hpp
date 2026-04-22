@@ -14,8 +14,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Notify_DisableInputs.BP_Notify_DisableInputs_C
 // 0x0020 (0x0050 - 0x0030)
@@ -44,5 +43,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_Notify_DisableInputs_C;
 
-}
-
+SDK_NAMESPACE_END

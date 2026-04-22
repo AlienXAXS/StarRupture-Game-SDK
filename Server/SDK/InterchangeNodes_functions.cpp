@@ -14,8 +14,7 @@
 #include "InterchangeNodes_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function InterchangeNodes.InterchangeAnimationTrackSetNode.AddCustomAnimationTrackUid
 // (Final, RequiredAPI, Native, Public, BlueprintCallable)
@@ -8554,5 +8553,5 @@ TMap<int32, class FString> UInterchangeTexture2DNode::GetSourceBlocks() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

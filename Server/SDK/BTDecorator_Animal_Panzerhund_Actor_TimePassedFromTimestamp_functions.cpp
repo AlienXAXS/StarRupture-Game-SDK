@@ -14,8 +14,7 @@
 #include "BTDecorator_Animal_Panzerhund_Actor_TimePassedFromTimestamp_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTDecorator_Animal_Panzerhund_Actor_TimePassedFromTimestamp.BTDecorator_Animal_Panzerhund_Actor_TimePassedFromTimestamp_C.PerformConditionCheckAI
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -41,5 +40,5 @@ bool UBTDecorator_Animal_Panzerhund_Actor_TimePassedFromTimestamp_C::PerformCond
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -11,13 +11,13 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "Engine_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "Engine_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.ExecuteUbergraph_BP_Exploder_Tier1_Actor_Character
 // 0x0280 (0x0280 - 0x0000)
@@ -185,5 +185,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_ShouldSpawnHugeCollision;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

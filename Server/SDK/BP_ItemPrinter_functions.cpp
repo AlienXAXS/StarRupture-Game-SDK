@@ -14,8 +14,7 @@
 #include "BP_ItemPrinter_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_ItemPrinter.BP_ItemPrinter_C.SetupSkeletalMesh
 // (Event, Public, BlueprintEvent)
@@ -144,5 +143,5 @@ void ABP_ItemPrinter_C::ExecuteUbergraph_BP_ItemPrinter(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

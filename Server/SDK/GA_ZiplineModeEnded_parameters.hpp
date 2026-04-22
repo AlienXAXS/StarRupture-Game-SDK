@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function GA_ZiplineModeEnded.GA_ZiplineModeEnded_C.ExecuteUbergraph_GA_ZiplineModeEnded
 // 0x0100 (0x0100 - 0x0000)
@@ -104,5 +104,5 @@ public:
 };
 DUMPER7_ASSERTS_GA_ZiplineModeEnded_C_OnNotLocallyControlledTppMontageBlendOut_E69301A24324A74EE4BE35829B6C31CF;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

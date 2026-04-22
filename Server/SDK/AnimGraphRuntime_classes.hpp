@@ -16,8 +16,7 @@
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class AnimGraphRuntime.AnimNotify_PlayMontageNotifyWindow
 // 0x0008 (0x0038 - 0x0030)
@@ -594,5 +593,4 @@ public:
 };
 DUMPER7_ASSERTS_USkeletalControlLibrary;
 
-}
-
+SDK_NAMESPACE_END

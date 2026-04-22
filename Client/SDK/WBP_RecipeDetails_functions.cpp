@@ -14,8 +14,7 @@
 #include "WBP_RecipeDetails_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_RecipeDetails.WBP_RecipeDetails_C.AddOrderName
 // (Event, Protected, HasOutParams, BlueprintEvent)
@@ -90,5 +89,5 @@ void UWBP_RecipeDetails_C::SetRecipeName(const class FText& InName)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

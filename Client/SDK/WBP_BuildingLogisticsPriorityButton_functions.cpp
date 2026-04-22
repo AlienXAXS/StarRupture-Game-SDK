@@ -14,8 +14,7 @@
 #include "WBP_BuildingLogisticsPriorityButton_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_BuildingLogisticsPriorityButton.WBP_BuildingLogisticsPriorityButton_C.BP_OnClicked
 // (Event, Protected, BlueprintEvent)
@@ -140,5 +139,5 @@ void UWBP_BuildingLogisticsPriorityButton_C::UpdateVisuals(ECrLogisticsRequestPr
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

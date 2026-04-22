@@ -15,8 +15,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_PackageReceiver.BP_PackageReceiver_C
 // 0x01C8 (0x0810 - 0x0648)
@@ -114,5 +113,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_PackageReceiver_C;
 
-}
-
+SDK_NAMESPACE_END

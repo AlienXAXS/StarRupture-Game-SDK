@@ -20,8 +20,7 @@
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class CrAiMeleeRuntime.CrAiActionModifyMeleeT3AnimData
 // 0x0008 (0x0090 - 0x0088)
@@ -459,5 +458,4 @@ public:
 };
 DUMPER7_ASSERTS_ACrMeleeT3MoveTargetActor;
 
-}
-
+SDK_NAMESPACE_END

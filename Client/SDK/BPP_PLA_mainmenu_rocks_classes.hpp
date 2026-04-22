@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BPP_PLA_mainmenu_rocks.BPP_PLA_mainmenu_rocks_C
 // 0x0010 (0x0358 - 0x0348)
@@ -40,5 +39,4 @@ public:
 };
 DUMPER7_ASSERTS_ABPP_PLA_mainmenu_rocks_C;
 
-}
-
+SDK_NAMESPACE_END

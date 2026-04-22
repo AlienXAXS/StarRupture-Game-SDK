@@ -15,8 +15,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Modular_Foundation_Unique.BP_Modular_Foundation_Unique_C
 // 0x0038 (0x0878 - 0x0840)
@@ -53,5 +52,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Modular_Foundation_Unique_C;
 
-}
-
+SDK_NAMESPACE_END

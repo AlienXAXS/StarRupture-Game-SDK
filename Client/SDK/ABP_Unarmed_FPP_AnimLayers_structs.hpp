@@ -13,8 +13,7 @@
 #include "ABP_ItemAnimLayers_FPP_Base_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct ABP_Unarmed_FPP_AnimLayers.ABP_Unarmed_FPP_AnimLayers_C.AnimBlueprintGeneratedConstantData
 // 0x0000 (0x1BE8 - 0x1BE8)
@@ -23,5 +22,4 @@ struct ABP_Unarmed_FPP_AnimLayers::FAnimBlueprintGeneratedConstantData final : p
 };
 DUMPER7_ASSERTS_ABP_Unarmed_FPP_AnimLayers__FAnimBlueprintGeneratedConstantData;
 
-}
-
+SDK_NAMESPACE_END

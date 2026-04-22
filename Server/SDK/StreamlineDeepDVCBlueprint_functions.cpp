@@ -14,8 +14,7 @@
 #include "StreamlineDeepDVCBlueprint_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function StreamlineDeepDVCBlueprint.StreamlineLibraryDeepDVC.GetDeepDVCIntensity
 // (Final, RequiredAPI, Native, Static, Public, BlueprintCallable, BlueprintPure)
@@ -294,5 +293,5 @@ void UStreamlineLibraryDeepDVC::SetDeepDVCSaturationBoost(float Intensity)
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

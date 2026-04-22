@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum InterchangeCommon.EInterchangeMaterialXShaders
 // NumValues: 0x000A
@@ -88,5 +87,4 @@ enum class EInterchangeSparseVolumeTextureFormat : uint8
 	EInterchangeSparseVolumeTextureFormat_MAX = 3,
 };
 
-}
-
+SDK_NAMESPACE_END

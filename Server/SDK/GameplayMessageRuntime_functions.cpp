@@ -14,8 +14,7 @@
 #include "GameplayMessageRuntime_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GameplayMessageRuntime.AsyncAction_ListenForGameplayMessage.ListenForGameplayMessages
 // (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
@@ -107,5 +106,5 @@ void UGameplayMessageSubsystem::K2_BroadcastMessage(const struct FGameplayTag& C
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

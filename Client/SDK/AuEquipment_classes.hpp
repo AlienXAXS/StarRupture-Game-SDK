@@ -16,8 +16,7 @@
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class AuEquipment.AuEquipmentBPF
 // 0x0000 (0x0028 - 0x0028)
@@ -125,5 +124,4 @@ public:
 };
 DUMPER7_ASSERTS_UAuGameplayEffectDataProvider;
 
-}
-
+SDK_NAMESPACE_END

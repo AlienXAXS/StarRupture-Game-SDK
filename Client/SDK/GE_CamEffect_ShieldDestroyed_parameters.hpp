@@ -13,8 +13,8 @@
 #include "GameplayAbilities_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function GE_CamEffect_ShieldDestroyed.GE_CamEffect_ShieldDestroyed_C.ExecuteUbergraph_GE_CamEffect_ShieldDestroyed
 // 0x00E8 (0x00E8 - 0x0000)
@@ -67,5 +67,5 @@ public:
 };
 DUMPER7_ASSERTS_GE_CamEffect_ShieldDestroyed_C_OnInitialized;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

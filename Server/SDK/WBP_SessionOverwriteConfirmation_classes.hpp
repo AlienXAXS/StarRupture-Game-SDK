@@ -15,8 +15,7 @@
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_SessionOverwriteConfirmation.WBP_SaveOverwriteConfirmation_C
 // 0x0020 (0x03C0 - 0x03A0)
@@ -97,5 +96,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_SessionOverwriteConfirmation_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -16,8 +16,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Assembler.BP_Assembler_C
 // 0x0158 (0x0830 - 0x06D8)
@@ -80,5 +79,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Assembler_C;
 
-}
-
+SDK_NAMESPACE_END

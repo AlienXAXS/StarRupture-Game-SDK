@@ -14,8 +14,7 @@
 #include "BP_Modular_BasePlatform_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Modular_BasePlatform.BP_Modular_BasePlatform_C.ExecuteUbergraph_BP_Modular_BasePlatform
 // (Final, UbergraphFunction, HasDefaults)
@@ -89,5 +88,5 @@ void ABP_Modular_BasePlatform_C::GetBuildingMeshes(class UMeshComponent** MainBo
 		*AdditionalMeshes = std::move(Parms.AdditionalMeshes);
 }
 
-}
 
+SDK_NAMESPACE_END

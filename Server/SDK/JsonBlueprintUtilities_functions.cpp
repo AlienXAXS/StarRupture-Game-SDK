@@ -14,8 +14,7 @@
 #include "JsonBlueprintUtilities_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function JsonBlueprintUtilities.JsonBlueprintFunctionLibrary.FromFile
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
@@ -302,5 +301,5 @@ bool UJsonBlueprintFunctionLibrary::ToString(const struct FJsonObjectWrapper& Js
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

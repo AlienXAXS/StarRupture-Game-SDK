@@ -13,8 +13,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition.BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C.ExecuteUbergraph_BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition
 // 0x0018 (0x0018 - 0x0000)
@@ -67,5 +67,5 @@ public:
 };
 DUMPER7_ASSERTS_BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C_UpdateAfterShotFiredPosition;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

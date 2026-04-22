@@ -14,8 +14,7 @@
 #include "WBP_AntennaDisplay_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_AntennaDisplay.WBP_AntennaDisplay_C.SetState
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -146,5 +145,5 @@ void UWBP_AntennaDisplay_C::Init(double Percent_0)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -15,8 +15,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_FPP_CameraAnimsComp.BP_FPP_CameraAnimsComp_C
 // 0x0078 (0x0130 - 0x00B8)
@@ -63,5 +62,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_FPP_CameraAnimsComp_C;
 
-}
-
+SDK_NAMESPACE_END

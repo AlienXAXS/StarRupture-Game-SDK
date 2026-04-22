@@ -14,8 +14,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BTTask_Animal_Panzerhund_NavmeshTest.BTTask_Animal_Panzerhund_NavmeshTest_C
 // 0x0018 (0x00C0 - 0x00A8)
@@ -46,5 +45,4 @@ public:
 };
 DUMPER7_ASSERTS_UBTTask_Animal_Panzerhund_NavmeshTest_C;
 
-}
-
+SDK_NAMESPACE_END

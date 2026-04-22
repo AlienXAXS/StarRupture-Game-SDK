@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_CrDefaultExperience.BP_CrDefaultExperience_C
 // 0x0000 (0x00D0 - 0x00D0)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_CrDefaultExperience_C;
 
-}
-
+SDK_NAMESPACE_END

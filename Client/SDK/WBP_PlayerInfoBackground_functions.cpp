@@ -14,8 +14,7 @@
 #include "WBP_PlayerInfoBackground_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_PlayerInfoBackground.WBP_PlayerInfoBackground_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -50,5 +49,5 @@ void UWBP_PlayerInfoBackground_C::ExecuteUbergraph_WBP_PlayerInfoBackground(int3
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

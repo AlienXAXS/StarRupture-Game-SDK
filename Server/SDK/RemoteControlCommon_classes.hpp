@@ -17,8 +17,7 @@
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class RemoteControlCommon.RCPropertyContainerBase
 // 0x0028 (0x0050 - 0x0028)
@@ -163,5 +162,4 @@ public:
 };
 DUMPER7_ASSERTS_URemoteControlSettings;
 
-}
-
+SDK_NAMESPACE_END

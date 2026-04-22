@@ -13,8 +13,7 @@
 #include "CommonUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_TextStyleMedium12.BP_TextStyleMedium12_C
 // 0x0000 (0x0190 - 0x0190)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_TextStyleMedium12_C;
 
-}
-
+SDK_NAMESPACE_END

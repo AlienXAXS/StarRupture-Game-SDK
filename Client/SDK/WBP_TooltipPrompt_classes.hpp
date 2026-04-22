@@ -15,8 +15,7 @@
 #include "UMG_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_TooltipPrompt.WBP_TooltipPrompt_C
 // 0x0058 (0x03F8 - 0x03A0)
@@ -60,5 +59,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_TooltipPrompt_C;
 
-}
-
+SDK_NAMESPACE_END

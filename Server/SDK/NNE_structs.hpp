@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum NNE.ENNETensorDataType
 // NumValues: 0x0012
@@ -38,5 +37,4 @@ enum class ENNETensorDataType : uint8
 	ENNETensorDataType_MAX                   = 17,
 };
 
-}
-
+SDK_NAMESPACE_END

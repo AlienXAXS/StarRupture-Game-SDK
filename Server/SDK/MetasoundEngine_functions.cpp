@@ -14,8 +14,7 @@
 #include "MetasoundEngine_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function MetasoundEngine.MetasoundFrontendLiteralBlueprintAccess.Conv_MetaSoundLiteralToString
 // (Final, Native, Static, Private, HasOutParams, BlueprintCallable, BlueprintPure)
@@ -4586,5 +4585,5 @@ bool UMetaSoundBuilderSubsystem::IsInterfaceRegistered(class FName InInterfaceNa
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

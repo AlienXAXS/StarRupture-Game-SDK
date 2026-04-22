@@ -13,8 +13,7 @@
 #include "UMG_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_RecipeItemName.WBP_RecipeItemName_C
 // 0x0008 (0x03A8 - 0x03A0)
@@ -42,5 +41,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_RecipeItemName_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "BP_PlacementHelperReplicatedCustom_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_PlacementHelperReplicatedCustom_Ladder.BP_PlacementHelperReplicatedCustom_Ladder_C
 // 0x0000 (0x09A0 - 0x09A0)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_PlacementHelperReplicatedCustom_Ladder_C;
 
-}
-
+SDK_NAMESPACE_END

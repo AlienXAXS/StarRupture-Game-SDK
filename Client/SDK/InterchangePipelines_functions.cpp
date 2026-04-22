@@ -14,8 +14,7 @@
 #include "InterchangePipelines_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function InterchangePipelines.InterchangeGenericMeshPipeline.SetCombineSkeletalMeshes
 // (Final, Native, Public, BlueprintCallable)
@@ -550,5 +549,5 @@ void UInterchangePipelineMeshesUtilities::SetContext(const struct FInterchangePi
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

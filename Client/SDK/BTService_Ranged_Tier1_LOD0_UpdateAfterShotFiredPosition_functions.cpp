@@ -14,8 +14,7 @@
 #include "BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition.BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C.ExecuteUbergraph_BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition
 // (Final, UbergraphFunction)
@@ -80,5 +79,5 @@ void UBTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C::UpdateAfterSho
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -15,8 +15,7 @@
 #include "CoreUObject_structs.hpp"
 #include "Engine_classes.hpp"
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 uintptr_t InSDKUtils::GetImageBase()
 {
 	return reinterpret_cast<uintptr_t>(GetModuleHandle(0));
@@ -139,5 +138,4 @@ bool FWeakObjectPtr::operator!=(const class UObject* Other) const
 }
 
 
-}
-
+SDK_NAMESPACE_END

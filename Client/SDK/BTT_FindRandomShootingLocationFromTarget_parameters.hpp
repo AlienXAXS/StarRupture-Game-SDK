@@ -13,8 +13,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BTT_FindRandomShootingLocationFromTarget.BTT_FindRandomShootingLocationFromTarget_C.ExecuteUbergraph_BTT_FindRandomShootingLocationFromTarget
 // 0x0228 (0x0228 - 0x0000)
@@ -74,5 +74,5 @@ public:
 };
 DUMPER7_ASSERTS_BTT_FindRandomShootingLocationFromTarget_C_ReceiveExecuteAI;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

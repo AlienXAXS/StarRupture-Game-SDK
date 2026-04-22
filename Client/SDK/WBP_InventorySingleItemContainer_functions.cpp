@@ -14,8 +14,7 @@
 #include "WBP_InventorySingleItemContainer_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_InventorySingleItemContainer.WBP_InventorySingleItemContainer_C.ExecuteUbergraph_WBP_InventorySingleItemContainer
 // (Final, UbergraphFunction, HasDefaults)
@@ -106,5 +105,5 @@ void UWBP_InventorySingleItemContainer_C::SetRecipeOutSlot(const struct FSlateBr
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

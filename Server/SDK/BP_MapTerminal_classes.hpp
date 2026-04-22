@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_MapTerminal.BP_MapTerminal_C
 // 0x0010 (0x0658 - 0x0648)
@@ -40,5 +39,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_MapTerminal_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "GameplayAbilities_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GC_Damage_Player_Claws.GC_Damage_Player_Claws_C
 // 0x0000 (0x0040 - 0x0040)
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_UGC_Damage_Player_Claws_C;
 
-}
-
+SDK_NAMESPACE_END

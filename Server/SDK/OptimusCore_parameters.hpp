@@ -14,8 +14,8 @@
 #include "OptimusCore_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function OptimusCore.OptimusNodeGraph.AddCommentNode
 // 0x0038 (0x0038 - 0x0000)
@@ -414,15 +414,6 @@ public:
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_OptimusNodeGraph_IsSubGraphReference;
-
-// Function OptimusCore.OptimusFunctionNodeGraph.GetAccessSpecifierOptions
-// 0x0010 (0x0010 - 0x0000)
-struct OptimusFunctionNodeGraph_GetAccessSpecifierOptions final
-{
-public:
-	TArray<class FName>                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_OptimusFunctionNodeGraph_GetAccessSpecifierOptions;
 
 // Function OptimusCore.OptimusNode.SetGraphPosition
 // 0x0018 (0x0018 - 0x0000)
@@ -857,5 +848,14 @@ public:
 };
 DUMPER7_ASSERTS_OptimusDeformerInstance_SetVectorVariable;
 
-}
+// Function OptimusCore.OptimusFunctionNodeGraph.GetAccessSpecifierOptions
+// 0x0010 (0x0010 - 0x0000)
+struct OptimusFunctionNodeGraph_GetAccessSpecifierOptions final
+{
+public:
+	TArray<class FName>                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_OptimusFunctionNodeGraph_GetAccessSpecifierOptions;
 
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

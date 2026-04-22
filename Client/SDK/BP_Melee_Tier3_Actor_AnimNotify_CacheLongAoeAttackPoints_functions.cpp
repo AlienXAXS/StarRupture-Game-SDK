@@ -14,8 +14,7 @@
 #include "BP_Melee_Tier3_Actor_AnimNotify_CacheLongAoeAttackPoints_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Melee_Tier3_Actor_AnimNotify_CacheLongAoeAttackPoints.BP_Melee_Tier3_Actor_AnimNotify_CacheLongAoeAttackPoints_C.Received_Notify
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
@@ -43,5 +42,5 @@ bool UBP_Melee_Tier3_Actor_AnimNotify_CacheLongAoeAttackPoints_C::Received_Notif
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

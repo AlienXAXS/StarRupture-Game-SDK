@@ -14,8 +14,7 @@
 #include "BP_Modular_AnchoredPlatform_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Modular_AnchoredPlatform.BP_Modular_AnchoredPlatform_C.UserConstructionScript
 // (Event, Public, BlueprintCallable, BlueprintEvent)
@@ -55,5 +54,5 @@ void ABP_Modular_AnchoredPlatform_C::GetBuildingMeshes(class UMeshComponent** Ma
 		*AdditionalMeshes = std::move(Parms.AdditionalMeshes);
 }
 
-}
 
+SDK_NAMESPACE_END

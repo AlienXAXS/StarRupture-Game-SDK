@@ -14,8 +14,7 @@
 #include "BP_Foundable_OutsDeadBody_Oil_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Foundable_OutsDeadBody_Oil.BP_Foundable_OutsDeadBody_Oil_C.UpdateFoundableVisibilityForStorageState
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -56,5 +55,5 @@ bool ABP_Foundable_OutsDeadBody_Oil_C::OnStorageEmptied()
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

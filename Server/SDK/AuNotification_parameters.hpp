@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function AuNotification.AuUW_NotificationContainer.OnNotificationAdded
 // 0x0008 (0x0008 - 0x0000)
@@ -32,5 +32,5 @@ public:
 };
 DUMPER7_ASSERTS_AuUW_NotificationContainer_OnNotificationRemoved;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

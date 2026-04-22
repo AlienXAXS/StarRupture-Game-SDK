@@ -14,8 +14,7 @@
 #include "GE_CamEffect_HealthDamage_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GE_CamEffect_HealthDamage.GE_CamEffect_HealthDamage_C.ExecuteUbergraph_GE_CamEffect_HealthDamage
 // (Final, UbergraphFunction, HasDefaults)
@@ -84,5 +83,5 @@ void UGE_CamEffect_HealthDamage_C::OnInitialized(class UAbilitySystemComponent* 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

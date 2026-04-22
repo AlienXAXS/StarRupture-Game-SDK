@@ -14,8 +14,7 @@
 #include "BP_AN_HideWeaponOnZipline_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_AN_HideWeaponOnZipline.BP_AN_HideWeaponOnZipline_C.Received_Notify
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
@@ -43,5 +42,5 @@ bool UBP_AN_HideWeaponOnZipline_C::Received_Notify(class USkeletalMeshComponent*
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

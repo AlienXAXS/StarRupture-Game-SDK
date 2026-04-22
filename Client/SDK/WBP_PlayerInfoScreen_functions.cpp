@@ -14,8 +14,7 @@
 #include "WBP_PlayerInfoScreen_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_PlayerInfoScreen.WBP_PlayerInfoScreen_C.ExecuteUbergraph_WBP_PlayerInfoScreen
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void UWBP_PlayerInfoScreen_C::InitPlayerState(EProfessionType CurrentProfession)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

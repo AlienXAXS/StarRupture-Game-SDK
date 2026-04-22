@@ -15,8 +15,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GA_MiningToolPassiveCooling.GA_MiningToolPassiveCooling_C
 // 0x0040 (0x0548 - 0x0508)
@@ -62,5 +61,4 @@ public:
 };
 DUMPER7_ASSERTS_UGA_MiningToolPassiveCooling_C;
 
-}
-
+SDK_NAMESPACE_END

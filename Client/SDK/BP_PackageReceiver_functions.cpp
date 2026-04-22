@@ -14,8 +14,7 @@
 #include "BP_PackageReceiver_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_PackageReceiver.BP_PackageReceiver_C.DoorsClose
 // (BlueprintCallable, BlueprintEvent)
@@ -202,5 +201,5 @@ void ABP_PackageReceiver_C::Timeline__UpdateFunc()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

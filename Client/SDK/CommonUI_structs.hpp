@@ -19,8 +19,7 @@
 #include "Slate_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum CommonUI.ERotatorDirection
 // NumValues: 0x0003
@@ -109,105 +108,6 @@ enum class ECommonSwitcherTransitionFallbackStrategy : uint8
 	ECommonSwitcherTransitionFallbackStrategy_MAX = 5,
 };
 
-// ScriptStruct CommonUI.UITag
-// 0x0000 (0x0008 - 0x0008)
-struct FUITag : public FGameplayTag
-{
-};
-DUMPER7_ASSERTS_FUITag;
-
-// ScriptStruct CommonUI.UIActionBindingHandle
-// 0x0004 (0x0004 - 0x0000)
-struct alignas(0x04) FUIActionBindingHandle final
-{
-public:
-	uint8                                         Pad_0[0x4];                                        // 0x0000(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FUIActionBindingHandle;
-
-// ScriptStruct CommonUI.CommonNumberFormattingOptions
-// 0x0014 (0x0014 - 0x0000)
-struct FCommonNumberFormattingOptions final
-{
-public:
-	ERoundingMode                                 RoundingMode;                                      // 0x0000(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          AlwaysSign;                                        // 0x0001(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          UseGrouping;                                       // 0x0002(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         MinimumIntegralDigits;                             // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaximumIntegralDigits;                             // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MinimumFractionalDigits;                           // 0x000C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaximumFractionalDigits;                           // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCommonNumberFormattingOptions;
-
-// ScriptStruct CommonUI.CommonRegisteredTabInfo
-// 0x0020 (0x0020 - 0x0000)
-struct FCommonRegisteredTabInfo final
-{
-public:
-	int32                                         TabIndex;                                          // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UCommonButtonBase>          TabButtonClass;                                    // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCommonButtonBase*                      TabButton;                                         // 0x0010(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UWidget*                                ContentInstance;                                   // 0x0018(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCommonRegisteredTabInfo;
-
-// ScriptStruct CommonUI.UIInputConfig
-// 0x0006 (0x0006 - 0x0000)
-struct FUIInputConfig final
-{
-public:
-	bool                                          bIgnoreMoveInput;                                  // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIgnoreLookInput;                                  // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECommonInputMode                              InputMode;                                         // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EMouseCaptureMode                             MouseCaptureMode;                                  // 0x0003(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EMouseLockMode                                MouseLockMode;                                     // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bHideCursorDuringViewportCapture;                  // 0x0005(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-};
-DUMPER7_ASSERTS_FUIInputConfig;
-
-// ScriptStruct CommonUI.UIActionTag
-// 0x0000 (0x0008 - 0x0008)
-struct FUIActionTag final : public FUITag
-{
-};
-DUMPER7_ASSERTS_FUIActionTag;
-
-// ScriptStruct CommonUI.CommonInputActionHandlerData
-// 0x0020 (0x0020 - 0x0000)
-struct FCommonInputActionHandlerData final
-{
-public:
-	struct FDataTableRowHandle                    InputActionRow;                                    // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
-	EInputActionState                             State;                                             // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_11[0xF];                                       // 0x0011(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCommonInputActionHandlerData;
-
-// ScriptStruct CommonUI.CommonButtonStyleOptionalSlateSound
-// 0x0020 (0x0020 - 0x0000)
-struct FCommonButtonStyleOptionalSlateSound final
-{
-public:
-	bool                                          bHasSound;                                         // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateSound                            Sound;                                             // 0x0008(0x0018)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCommonButtonStyleOptionalSlateSound;
-
-// ScriptStruct CommonUI.RichTextIconData
-// 0x0048 (0x0050 - 0x0008)
-struct FRichTextIconData final : public FTableRowBase
-{
-public:
-	class FText                                   DisplayName;                                       // 0x0008(0x0010)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UObject>                 ResourceObject;                                    // 0x0018(0x0028)(Edit, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              ImageSize;                                         // 0x0040(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRichTextIconData;
-
 // ScriptStruct CommonUI.CommonInputTypeInfo
 // 0x00E0 (0x00E0 - 0x0000)
 struct FCommonInputTypeInfo final
@@ -239,6 +139,105 @@ public:
 	struct FCommonInputTypeInfo                   TouchInputTypeInfo;                                // 0x0240(0x00E0)(Edit, Protected, NativeAccessSpecifierProtected)
 };
 DUMPER7_ASSERTS_FCommonInputActionDataBase;
+
+// ScriptStruct CommonUI.UIActionBindingHandle
+// 0x0004 (0x0004 - 0x0000)
+struct alignas(0x04) FUIActionBindingHandle final
+{
+public:
+	uint8                                         Pad_0[0x4];                                        // 0x0000(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FUIActionBindingHandle;
+
+// ScriptStruct CommonUI.CommonNumberFormattingOptions
+// 0x0014 (0x0014 - 0x0000)
+struct FCommonNumberFormattingOptions final
+{
+public:
+	ERoundingMode                                 RoundingMode;                                      // 0x0000(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          AlwaysSign;                                        // 0x0001(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          UseGrouping;                                       // 0x0002(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         MinimumIntegralDigits;                             // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaximumIntegralDigits;                             // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MinimumFractionalDigits;                           // 0x000C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaximumFractionalDigits;                           // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCommonNumberFormattingOptions;
+
+// ScriptStruct CommonUI.CommonInputActionHandlerData
+// 0x0020 (0x0020 - 0x0000)
+struct FCommonInputActionHandlerData final
+{
+public:
+	struct FDataTableRowHandle                    InputActionRow;                                    // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
+	EInputActionState                             State;                                             // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_11[0xF];                                       // 0x0011(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCommonInputActionHandlerData;
+
+// ScriptStruct CommonUI.CommonRegisteredTabInfo
+// 0x0020 (0x0020 - 0x0000)
+struct FCommonRegisteredTabInfo final
+{
+public:
+	int32                                         TabIndex;                                          // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UCommonButtonBase>          TabButtonClass;                                    // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCommonButtonBase*                      TabButton;                                         // 0x0010(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UWidget*                                ContentInstance;                                   // 0x0018(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCommonRegisteredTabInfo;
+
+// ScriptStruct CommonUI.UIInputConfig
+// 0x0006 (0x0006 - 0x0000)
+struct FUIInputConfig final
+{
+public:
+	bool                                          bIgnoreMoveInput;                                  // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIgnoreLookInput;                                  // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECommonInputMode                              InputMode;                                         // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EMouseCaptureMode                             MouseCaptureMode;                                  // 0x0003(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EMouseLockMode                                MouseLockMode;                                     // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bHideCursorDuringViewportCapture;                  // 0x0005(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+};
+DUMPER7_ASSERTS_FUIInputConfig;
+
+// ScriptStruct CommonUI.UITag
+// 0x0000 (0x0008 - 0x0008)
+struct FUITag : public FGameplayTag
+{
+};
+DUMPER7_ASSERTS_FUITag;
+
+// ScriptStruct CommonUI.UIActionTag
+// 0x0000 (0x0008 - 0x0008)
+struct FUIActionTag final : public FUITag
+{
+};
+DUMPER7_ASSERTS_FUIActionTag;
+
+// ScriptStruct CommonUI.CommonButtonStyleOptionalSlateSound
+// 0x0020 (0x0020 - 0x0000)
+struct FCommonButtonStyleOptionalSlateSound final
+{
+public:
+	bool                                          bHasSound;                                         // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateSound                            Sound;                                             // 0x0008(0x0018)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCommonButtonStyleOptionalSlateSound;
+
+// ScriptStruct CommonUI.RichTextIconData
+// 0x0048 (0x0050 - 0x0008)
+struct FRichTextIconData final : public FTableRowBase
+{
+public:
+	class FText                                   DisplayName;                                       // 0x0008(0x0010)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UObject>                 ResourceObject;                                    // 0x0018(0x0028)(Edit, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              ImageSize;                                         // 0x0040(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRichTextIconData;
 
 // ScriptStruct CommonUI.UIActionKeyMapping
 // 0x0020 (0x0020 - 0x0000)
@@ -281,5 +280,4 @@ public:
 };
 DUMPER7_ASSERTS_FCommonAnalogCursorSettings;
 
-}
-
+SDK_NAMESPACE_END

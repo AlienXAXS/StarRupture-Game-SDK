@@ -14,8 +14,8 @@
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function WBP_MarketingElement.WBP_MarketingElement_C.ExecuteUbergraph_WBP_MarketingElement
 // 0x0030 (0x0030 - 0x0000)
@@ -41,5 +41,5 @@ public:
 };
 DUMPER7_ASSERTS_WBP_MarketingElement_C_BndEvt__WBP_MarketingElement_ScrollBox_K2Node_ComponentBoundEvent_0_OnScrollBarVisibilityChangedEvent__DelegateSignature;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

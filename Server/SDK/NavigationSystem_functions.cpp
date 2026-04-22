@@ -14,8 +14,7 @@
 #include "NavigationSystem_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function NavigationSystem.NavigationPath.EnableDebugDrawing
 // (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
@@ -1227,5 +1226,5 @@ void USplineNavModifierComponent::UpdateNavigationWithComponentData()
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

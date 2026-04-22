@@ -14,8 +14,7 @@
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_MassAILocalSpawnerWithPCG_Placeable.BP_MassAILocalSpawnerWithPCG_Placeable_C
 // 0x0038 (0x0550 - 0x0518)
@@ -52,5 +51,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_MassAILocalSpawnerWithPCG_Placeable_C;
 
-}
-
+SDK_NAMESPACE_END

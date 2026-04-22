@@ -14,8 +14,7 @@
 #include "BP_Purplant_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Purplant.BP_Purplant_C.BP_OnWaveChangedUpdate
 // (Event, Protected, BlueprintEvent)
@@ -62,5 +61,5 @@ void ABP_Purplant_C::ExecuteUbergraph_BP_Purplant(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

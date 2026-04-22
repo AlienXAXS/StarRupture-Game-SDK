@@ -13,8 +13,7 @@
 #include "BP_MassAILocalSpawnerWithPCG_Placeable_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_MassAILocalSpawner_MeleeSingleBOSSTemplate.BP_MassAILocalSpawner_MeleeSingleBOSSTemplate_C
 // 0x0000 (0x0550 - 0x0550)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_MassAILocalSpawner_MeleeSingleBOSSTemplate_C;
 
-}
-
+SDK_NAMESPACE_END

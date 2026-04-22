@@ -14,8 +14,7 @@
 #include "BP_ResourceRedistributor_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_ResourceRedistributor.BP_ResourceRedistributor_C.ExecuteUbergraph_BP_ResourceRedistributor
 // (Final, UbergraphFunction)
@@ -120,5 +119,5 @@ void ABP_ResourceRedistributor_C::UpdateItemCount(int32 Count, int32 MaxCount)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

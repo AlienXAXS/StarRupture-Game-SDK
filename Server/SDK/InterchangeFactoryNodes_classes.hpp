@@ -11,15 +11,14 @@
 #include "Basic.hpp"
 
 #include "InterchangeCore_classes.hpp"
-#include "CinematicCamera_structs.hpp"
-#include "InterchangeNodes_structs.hpp"
-#include "Engine_structs.hpp"
 #include "InterchangeCommon_structs.hpp"
+#include "CinematicCamera_structs.hpp"
+#include "Engine_structs.hpp"
+#include "InterchangeNodes_structs.hpp"
 #include "InterchangeFactoryNodes_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class InterchangeFactoryNodes.InterchangeActorFactoryNode
 // 0x00A0 (0x0260 - 0x01C0)
@@ -1692,5 +1691,4 @@ public:
 };
 DUMPER7_ASSERTS_UInterchangeStaticMeshLodDataNode;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_FloatingDrone_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_FloatingDrone.BP_FloatingDrone_C.ExecuteUbergraph_BP_FloatingDrone
 // (Final, UbergraphFunction)
@@ -70,5 +69,5 @@ void ABP_FloatingDrone_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

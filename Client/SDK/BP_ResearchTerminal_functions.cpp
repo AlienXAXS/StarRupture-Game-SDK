@@ -14,8 +14,7 @@
 #include "BP_ResearchTerminal_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_ResearchTerminal.BP_ResearchTerminal_C.ExecuteUbergraph_BP_ResearchTerminal
 // (Final, UbergraphFunction)
@@ -70,5 +69,5 @@ void ABP_ResearchTerminal_C::ReceiveBeginPlay()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

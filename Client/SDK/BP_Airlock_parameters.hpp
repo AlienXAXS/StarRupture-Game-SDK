@@ -14,8 +14,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_Airlock.BP_Airlock_C.ExecuteUbergraph_BP_Airlock
 // 0x0290 (0x0290 - 0x0000)
@@ -171,5 +171,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_Airlock_C_GetAirlockInteriorComponent;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

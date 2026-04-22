@@ -15,8 +15,8 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_WeaponActor.BP_WeaponActor_C.ExecuteUbergraph_BP_WeaponActor
 // 0x0040 (0x0040 - 0x0000)
@@ -345,5 +345,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_WeaponActor_C_GetRateOfFireInSeconds;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

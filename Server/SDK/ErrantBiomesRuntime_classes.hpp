@@ -17,8 +17,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ErrantBiomesRuntime.BiomesMaskBase
 // 0x0068 (0x0090 - 0x0028)
@@ -114,7 +113,7 @@ DUMPER7_ASSERTS_UBiomesCustomMask;
 // Class ErrantBiomesRuntime.BiomesHierarchicalInstancedStaticMeshComponent
 // 0x0000 (0x0B40 - 0x0B40)
 #pragma pack(push, 0x1)
-class alignas(0x10) UBiomesHierarchicalInstancedStaticMeshComponent : public UHierarchicalInstancedStaticMeshComponent
+class SDK_ALIGN(0x10) UBiomesHierarchicalInstancedStaticMeshComponent : public UHierarchicalInstancedStaticMeshComponent
 {
 public:
 	static class UClass* StaticClass()
@@ -682,5 +681,4 @@ public:
 };
 DUMPER7_ASSERTS_UBiomesWorldInfo;
 
-}
-
+SDK_NAMESPACE_END

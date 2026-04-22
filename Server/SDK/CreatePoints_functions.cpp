@@ -14,8 +14,7 @@
 #include "CreatePoints_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function CreatePoints.CreatePoints_C.ExecuteWithContext
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -139,5 +138,5 @@ bool UCreatePoints_C::IsCacheableOverride() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

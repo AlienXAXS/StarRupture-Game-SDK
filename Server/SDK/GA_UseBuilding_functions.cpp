@@ -14,8 +14,7 @@
 #include "GA_UseBuilding_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GA_UseBuilding.GA_UseBuilding_C.ExecuteUbergraph_GA_UseBuilding
 // (Final, UbergraphFunction)
@@ -50,5 +49,5 @@ void UGA_UseBuilding_C::K2_ActivateAbility()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

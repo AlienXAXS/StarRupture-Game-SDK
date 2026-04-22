@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedEnum E_Animal_Crab_TentaclesState.E_Animal_Crab_TentaclesState
 // NumValues: 0x0005
@@ -25,5 +24,4 @@ enum class E_Animal_Crab_TentaclesState : uint8
 	E_Animal_Crab_MAX                        = 4,
 };
 
-}
-
+SDK_NAMESPACE_END

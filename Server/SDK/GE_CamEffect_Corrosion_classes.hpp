@@ -14,8 +14,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GE_CamEffect_Corrosion.GE_CamEffect_Corrosion_C
 // 0x0018 (0x0AC0 - 0x0AA8)
@@ -49,5 +48,4 @@ public:
 };
 DUMPER7_ASSERTS_UGE_CamEffect_Corrosion_C;
 
-}
-
+SDK_NAMESPACE_END

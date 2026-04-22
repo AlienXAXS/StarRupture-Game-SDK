@@ -27,8 +27,7 @@
 #include "AuCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class AuWeapon.AuAnimNotify_Holster
 // 0x0008 (0x0040 - 0x0038)
@@ -938,5 +937,4 @@ public:
 };
 DUMPER7_ASSERTS_UAuWeaponStatsBaseGE;
 
-}
-
+SDK_NAMESPACE_END

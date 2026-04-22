@@ -14,8 +14,7 @@
 #include "LiveLinkInterface_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum LiveLinkMessageBusFramework.ELiveLinkCompressionMethod
 // NumValues: 0x0004
@@ -165,5 +164,4 @@ public:
 };
 DUMPER7_ASSERTS_FLiveLinkSubjectFrameMessage;
 
-}
-
+SDK_NAMESPACE_END

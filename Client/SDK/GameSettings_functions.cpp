@@ -14,8 +14,7 @@
 #include "GameSettings_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GameSettings.GameSettingHeader.RegisterTab
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -986,5 +985,5 @@ class UGameResponsivePanelSlot* UGameResponsivePanel::AddChildToGameResponsivePa
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

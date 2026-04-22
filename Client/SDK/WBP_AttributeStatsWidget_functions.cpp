@@ -14,8 +14,7 @@
 #include "WBP_AttributeStatsWidget_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_AttributeStatsWidget.WBP_AttributeStatsWidget_C.Destruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -50,5 +49,5 @@ void UWBP_AttributeStatsWidget_C::ExecuteUbergraph_WBP_AttributeStatsWidget(int3
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_CoolerPassive_Foundation_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_CoolerPassive_Foundation.BP_CoolerPassive_Foundation_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
@@ -90,5 +89,5 @@ void ABP_CoolerPassive_Foundation_C::ExecuteUbergraph_BP_CoolerPassive_Foundatio
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

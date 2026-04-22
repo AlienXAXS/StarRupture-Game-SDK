@@ -13,8 +13,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_CrInputActionWidget.WBP_CrInputActionWidget_C
 // 0x0010 (0x05C0 - 0x05B0)
@@ -42,5 +41,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_CrInputActionWidget_C;
 
-}
-
+SDK_NAMESPACE_END

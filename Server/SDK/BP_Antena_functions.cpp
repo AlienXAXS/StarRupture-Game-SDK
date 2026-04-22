@@ -14,8 +14,7 @@
 #include "BP_Antena_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Antena.BP_Antena_C.StopLoopSound
 // (BlueprintCallable, BlueprintEvent)
@@ -320,5 +319,5 @@ void ABP_Antena_C::Activation_progress__FinishedFunc()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

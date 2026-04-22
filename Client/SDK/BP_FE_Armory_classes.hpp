@@ -15,8 +15,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_FE_Armory.BP_FE_Armory_C
 // 0x0120 (0x0768 - 0x0648)
@@ -89,5 +88,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_FE_Armory_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -18,8 +18,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum ChimeraUI.EUIWidgetType
 // NumValues: 0x0028
@@ -966,5 +965,4 @@ public:
 };
 DUMPER7_ASSERTS_FCrHUDElementEntry;
 
-}
-
+SDK_NAMESPACE_END

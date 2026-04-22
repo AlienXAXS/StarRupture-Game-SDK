@@ -12,15 +12,14 @@
 
 #include "MassAIBehavior_structs.hpp"
 #include "MassReplication_structs.hpp"
-#include "MassEntity_structs.hpp"
-#include "MassAIReplication_structs.hpp"
 #include "ZoneGraph_structs.hpp"
+#include "MassAIReplication_structs.hpp"
+#include "MassEntity_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "ZoneGraphAnnotations_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum MassCrowd.ECrowdLaneState
 // NumValues: 0x0003
@@ -194,5 +193,4 @@ public:
 };
 DUMPER7_ASSERTS_FZoneGraphCrowdLaneStateChangeEvent;
 
-}
-
+SDK_NAMESPACE_END

@@ -15,18 +15,17 @@
 #include "Chimera_classes.hpp"
 #include "AuActorPlacement_structs.hpp"
 #include "MassReplication_classes.hpp"
-#include "MassAIPrototypeEnemyRuntime_structs.hpp"
-#include "MassAIPrototypeEnemyRuntime_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "CrAiExploderRuntime_structs.hpp"
+#include "MassAIPrototypeEnemyRuntime_structs.hpp"
+#include "MassAIPrototypeEnemyRuntime_classes.hpp"
 #include "Engine_classes.hpp"
 #include "MassSpawner_classes.hpp"
+#include "CrAiExploderRuntime_structs.hpp"
 #include "MassEntity_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class CrAiExploderRuntime.CrAiActionBtTaskExploderStartExplosionTimer
 // 0x0000 (0x00D0 - 0x00D0)
@@ -696,5 +695,4 @@ public:
 };
 DUMPER7_ASSERTS_UMassEnemyExploderTier1Trait;
 
-}
-
+SDK_NAMESPACE_END

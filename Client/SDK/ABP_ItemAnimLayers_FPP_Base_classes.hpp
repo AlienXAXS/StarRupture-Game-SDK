@@ -12,15 +12,14 @@
 
 #include "Chimera_classes.hpp"
 #include "Engine_structs.hpp"
-#include "AnimGraphRuntime_structs.hpp"
 #include "ABP_ItemAnimLayers_FPP_Base_structs.hpp"
-#include "EAnimEnum_CardinalDirection_structs.hpp"
+#include "AnimGraphRuntime_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "FAnimStruct_CardinalDirections_structs.hpp"
+#include "EAnimEnum_CardinalDirection_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass ABP_ItemAnimLayers_FPP_Base.ABP_ItemAnimLayers_FPP_Base_C
 // 0x2FC0 (0x3410 - 0x0450)
@@ -445,5 +444,4 @@ public:
 };
 DUMPER7_ASSERTS_UABP_ItemAnimLayers_FPP_Base_C;
 
-}
-
+SDK_NAMESPACE_END

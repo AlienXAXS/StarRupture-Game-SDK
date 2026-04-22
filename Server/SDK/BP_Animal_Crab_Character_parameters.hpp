@@ -16,8 +16,8 @@
 #include "GameplayAbilities_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_Animal_Crab_Character.BP_Animal_Crab_Character_C.SetTentaclesHidden
 // 0x0001 (0x0001 - 0x0000)
@@ -247,5 +247,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_Animal_Crab_Character_C_OnMeshVisibilityUpdated;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

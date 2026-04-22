@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Sulphur_Logic.BP_Sulphur_Logic_C
 // 0x0048 (0x02F0 - 0x02A8)
@@ -56,5 +55,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Sulphur_Logic_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_DroneRailSupportHelper_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_DroneRailSupportHelper.BP_DroneRailSupportHelper_C.UserConstructionScript
 // (Event, Public, BlueprintCallable, BlueprintEvent)
@@ -90,5 +89,5 @@ void ABP_DroneRailSupportHelper_C::ExecuteUbergraph_BP_DroneRailSupportHelper(in
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

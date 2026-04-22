@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class WebSocketNetworking.WebSocketConnection
 // 0x0010 (0x1E50 - 0x1E40)
@@ -63,5 +62,4 @@ public:
 };
 DUMPER7_ASSERTS_UWebSocketNetDriver;
 
-}
-
+SDK_NAMESPACE_END

@@ -18,8 +18,8 @@
 #include "GameplayAbilities_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function GA_GenericAutoFire.GA_GenericAutoFire_C.CheckDPSEvaluatorHit
 // 0x0240 (0x0240 - 0x0000)
@@ -502,5 +502,5 @@ public:
 };
 DUMPER7_ASSERTS_GA_GenericAutoFire_C_OnTick_0E6849794CE62F5F48580D82ABC44E88;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

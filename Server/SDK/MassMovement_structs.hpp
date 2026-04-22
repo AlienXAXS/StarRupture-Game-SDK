@@ -14,8 +14,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct MassMovement.MassVelocityFragment
 // 0x0018 (0x0018 - 0x0000)
@@ -117,5 +116,4 @@ struct FMassSimpleMovementTag final : public FMassTag
 };
 DUMPER7_ASSERTS_FMassSimpleMovementTag;
 
-}
-
+SDK_NAMESPACE_END

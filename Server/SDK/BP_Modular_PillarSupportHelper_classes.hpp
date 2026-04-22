@@ -13,8 +13,7 @@
 #include "BP_PlacementHelperReplicatedCustom_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Modular_PillarSupportHelper.BP_Modular_PillarSupportHelper_C
 // 0x0010 (0x09B0 - 0x09A0)
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Modular_PillarSupportHelper_C;
 
-}
-
+SDK_NAMESPACE_END

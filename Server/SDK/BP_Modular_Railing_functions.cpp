@@ -14,8 +14,7 @@
 #include "BP_Modular_Railing_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Modular_Railing.BP_Modular_Railing_C.GetBuildingProgressMeshes
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
@@ -69,5 +68,5 @@ void ABP_Modular_Railing_C::GetBuildingMeshes(class UMeshComponent** MainBody, T
 		*AdditionalMeshes = std::move(Parms.AdditionalMeshes);
 }
 
-}
 
+SDK_NAMESPACE_END

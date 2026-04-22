@@ -14,8 +14,7 @@
 #include "MediaPlate_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function MediaPlate.MediaPlate.SetHoldoutCompositeEnabled
 // (Final, RequiredAPI, Native, Public, BlueprintCallable)
@@ -793,5 +792,5 @@ bool UMediaPlateComponent::IsMediaPlatePlaying() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

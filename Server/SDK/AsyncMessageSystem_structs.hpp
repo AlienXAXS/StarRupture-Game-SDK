@@ -14,8 +14,7 @@
 #include "GameplayTags_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct AsyncMessageSystem.AsyncMessageId
 // 0x0008 (0x0008 - 0x0000)
@@ -74,5 +73,4 @@ public:
 };
 DUMPER7_ASSERTS_FNested_Payload;
 
-}
-
+SDK_NAMESPACE_END

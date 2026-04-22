@@ -13,8 +13,7 @@
 #include "DataflowCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct DataflowEnginePlugin.CollectionAttributeKey
 // 0x0020 (0x0020 - 0x0000)
@@ -35,5 +34,4 @@ public:
 };
 DUMPER7_ASSERTS_FDataflowDynamicMeshArray;
 
-}
-
+SDK_NAMESPACE_END

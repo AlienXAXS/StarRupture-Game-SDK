@@ -13,8 +13,7 @@
 #include "OnlineSubsystemUtils_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class SocketSubsystemEOS.NetDriverEOS
 // 0x0008 (0x09E0 - 0x09D8)
@@ -84,5 +83,4 @@ public:
 };
 DUMPER7_ASSERTS_UNetConnectionEOS;
 
-}
-
+SDK_NAMESPACE_END

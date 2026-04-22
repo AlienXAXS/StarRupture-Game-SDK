@@ -14,8 +14,7 @@
 #include "BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor.BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C.ExecuteUbergraph_BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor
 // (Final, UbergraphFunction, HasDefaults)
@@ -70,5 +69,5 @@ void ABP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C::OnRagdollStart()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

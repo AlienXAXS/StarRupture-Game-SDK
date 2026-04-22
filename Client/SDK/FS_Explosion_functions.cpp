@@ -14,8 +14,7 @@
 #include "FS_Explosion_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function FS_Explosion.FS_Explosion_C.ExecuteUbergraph_FS_Explosion
 // (Final, UbergraphFunction)
@@ -50,5 +49,5 @@ void AFS_Explosion_C::Explode()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

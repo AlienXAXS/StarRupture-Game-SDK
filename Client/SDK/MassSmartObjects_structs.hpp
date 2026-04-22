@@ -10,16 +10,15 @@
 
 #include "Basic.hpp"
 
+#include "SmartObjectsModule_structs.hpp"
 #include "ZoneGraph_structs.hpp"
 #include "GameplayTags_structs.hpp"
-#include "SmartObjectsModule_structs.hpp"
 #include "Engine_structs.hpp"
 #include "MassEntity_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum MassSmartObjects.EMassSmartObjectInteractionStatus
 // NumValues: 0x0006
@@ -197,5 +196,4 @@ public:
 };
 DUMPER7_ASSERTS_FSmartObjectZoneAnnotationsInstanceData;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_ForgottenEngine_MissingPart_EngineControlStation_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_ForgottenEngine_MissingPart_EngineControlStation.BP_ForgottenEngine_MissingPart_EngineControlStation_C.OnMachineActivated
 // (Event, Public, BlueprintEvent)
@@ -50,5 +49,5 @@ void ABP_ForgottenEngine_MissingPart_EngineControlStation_C::ExecuteUbergraph_BP
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

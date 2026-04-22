@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "AIModule_structs.hpp"
 #include "AIModule_classes.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection.BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection_C
 // 0x00E0 (0x0188 - 0x00A8)
@@ -56,5 +55,4 @@ public:
 };
 DUMPER7_ASSERTS_UBTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection_C;
 
-}
-
+SDK_NAMESPACE_END

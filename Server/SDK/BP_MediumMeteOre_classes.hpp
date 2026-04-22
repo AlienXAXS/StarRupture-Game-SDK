@@ -14,8 +14,7 @@
 #include "BP_MeteOreBase_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_MediumMeteOre.BP_MediumMeteOre_C
 // 0x0050 (0x0950 - 0x0900)
@@ -60,5 +59,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_MediumMeteOre_C;
 
-}
-
+SDK_NAMESPACE_END

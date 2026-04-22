@@ -14,8 +14,7 @@
 #include "WBP_CrInputActionWidget_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_CrInputActionWidget.WBP_CrInputActionWidget_C.SetFontSize
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -36,5 +35,5 @@ void UWBP_CrInputActionWidget_C::SetFontSize(int32 InSize)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

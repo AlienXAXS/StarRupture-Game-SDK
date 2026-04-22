@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_BrushBase_DecalOnly.BP_BrushBase_DecalOnly_C
 // 0x0020 (0x02C8 - 0x02A8)
@@ -46,5 +45,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_BrushBase_DecalOnly_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_FurnaceTier2.BP_FurnaceTier2_C
 // 0x0068 (0x0740 - 0x06D8)
@@ -54,5 +53,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_FurnaceTier2_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "StateTreeModule_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function StateTreeModule.StateTreeFunctionLibrary.K2_GetParametersProperty
 // (Final, RequiredAPI, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
@@ -609,5 +608,5 @@ void UStateTreeTaskBlueprintBase::UnbindDelegate(const struct FStateTreeDelegate
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

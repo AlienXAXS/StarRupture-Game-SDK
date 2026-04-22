@@ -14,8 +14,7 @@
 #include "BP_PersonalStorage_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_PersonalStorage.BP_PersonalStorage_C.UpdateDisplayedPersonalStorageName
 // (BlueprintCallable, BlueprintEvent)
@@ -104,5 +103,5 @@ void ABP_PersonalStorage_C::ExecuteUbergraph_BP_PersonalStorage(int32 EntryPoint
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

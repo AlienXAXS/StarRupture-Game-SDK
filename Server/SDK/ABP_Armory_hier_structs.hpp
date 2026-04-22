@@ -13,8 +13,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct ABP_Armory_hier.ABP_Armory_hier_C.AnimBlueprintGeneratedConstantData
 // 0x01EF (0x01F0 - 0x0001)
@@ -42,5 +41,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Armory_hier__FAnimBlueprintGeneratedConstantData;
 
-}
-
+SDK_NAMESPACE_END

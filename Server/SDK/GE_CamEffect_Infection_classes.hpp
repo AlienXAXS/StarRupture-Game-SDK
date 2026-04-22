@@ -14,8 +14,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GE_CamEffect_Infection.GE_CamEffect_Infection_C
 // 0x0028 (0x0AD0 - 0x0AA8)
@@ -53,5 +52,4 @@ public:
 };
 DUMPER7_ASSERTS_UGE_CamEffect_Infection_C;
 
-}
-
+SDK_NAMESPACE_END

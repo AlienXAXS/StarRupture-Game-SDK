@@ -10,14 +10,14 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "MediaUtils_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "MediaAssets_structs.hpp"
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function MediaAssets.MediaTexture.SetMediaPlayer
 // 0x0008 (0x0008 - 0x0000)
@@ -1205,5 +1205,5 @@ public:
 };
 DUMPER7_ASSERTS_MediaBlueprintFunctionLibrary_EnumerateWebcamCaptureDevices;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

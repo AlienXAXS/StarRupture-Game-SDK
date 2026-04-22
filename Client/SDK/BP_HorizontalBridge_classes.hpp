@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_HorizontalBridge.BP_HorizontalBridge_C
 // 0x0030 (0x0870 - 0x0840)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_HorizontalBridge_C;
 
-}
-
+SDK_NAMESPACE_END

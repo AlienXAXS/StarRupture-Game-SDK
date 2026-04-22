@@ -13,13 +13,12 @@
 #include "BP_PlacementHelperReplicatedBase_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ChimeraPlacementHelperReplicatedBase.BP_ChimeraPlacementHelperReplicatedBase_C
 // 0x0000 (0x08B0 - 0x08B0)
 #pragma pack(push, 0x1)
-class alignas(0x10) ABP_ChimeraPlacementHelperReplicatedBase_C : public ABP_PlacementHelperReplicatedBase_C
+class SDK_ALIGN(0x10) ABP_ChimeraPlacementHelperReplicatedBase_C : public ABP_PlacementHelperReplicatedBase_C
 {
 public:
 	static class UClass* StaticClass()
@@ -38,5 +37,4 @@ public:
 #pragma pack(pop)
 DUMPER7_ASSERTS_ABP_ChimeraPlacementHelperReplicatedBase_C;
 
-}
-
+SDK_NAMESPACE_END

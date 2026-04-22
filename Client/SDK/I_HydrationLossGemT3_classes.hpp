@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass I_HydrationLossGemT3.I_HydrationLossGemT3_C
 // 0x0000 (0x0420 - 0x0420)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UI_HydrationLossGemT3_C;
 
-}
-
+SDK_NAMESPACE_END

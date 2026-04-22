@@ -16,8 +16,7 @@
 #include "AuItems_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GA_UseEdibleItem.GA_UseEdibleItem_C
 // 0x0090 (0x0680 - 0x05F0)
@@ -66,5 +65,4 @@ public:
 };
 DUMPER7_ASSERTS_UGA_UseEdibleItem_C;
 
-}
-
+SDK_NAMESPACE_END

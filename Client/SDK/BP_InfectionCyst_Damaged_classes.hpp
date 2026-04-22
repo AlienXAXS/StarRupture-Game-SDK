@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_InfectionCyst_Damaged.BP_InfectionCyst_Damaged_C
 // 0x0038 (0x02E0 - 0x02A8)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_InfectionCyst_Damaged_C;
 
-}
-
+SDK_NAMESPACE_END

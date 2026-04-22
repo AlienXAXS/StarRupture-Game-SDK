@@ -14,8 +14,7 @@
 #include "BP_EncyclopediaRTD_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_EncyclopediaRTD.BP_EncyclopediaRTD_C.ExecuteUbergraph_BP_EncyclopediaRTD
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void UBP_EncyclopediaRTD_C::RichTextBlockClickHyperlinkBP(const class FString& I
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

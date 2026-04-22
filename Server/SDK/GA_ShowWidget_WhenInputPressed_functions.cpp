@@ -14,8 +14,7 @@
 #include "GA_ShowWidget_WhenInputPressed_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GA_ShowWidget_WhenInputPressed.GA_ShowWidget_WhenInputPressed_C.OnWidgetDeactivated
 // (BlueprintCallable, BlueprintEvent)
@@ -138,5 +137,5 @@ void UGA_ShowWidget_WhenInputPressed_C::AfterPush_07A5E8B54EF4795F874768B89DFB5B
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

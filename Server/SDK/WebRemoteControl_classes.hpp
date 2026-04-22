@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class WebRemoteControl.WebRCStructRegistry
 // 0x0050 (0x0080 - 0x0030)
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_UWebRCStructRegistry;
 
-}
-
+SDK_NAMESPACE_END

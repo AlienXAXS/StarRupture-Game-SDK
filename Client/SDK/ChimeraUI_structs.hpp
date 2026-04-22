@@ -18,8 +18,7 @@
 #include "GameplayTags_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum ChimeraUI.EUIWidgetType
 // NumValues: 0x0028
@@ -520,6 +519,15 @@ public:
 };
 DUMPER7_ASSERTS_FCrCorporationContentForUI;
 
+// ScriptStruct ChimeraUI.FoodActiveEffect
+// 0x00F0 (0x00F0 - 0x0000)
+struct alignas(0x10) FFoodActiveEffect final
+{
+public:
+	uint8                                         Pad_0[0xF0];                                       // 0x0000(0x00F0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FFoodActiveEffect;
+
 // ScriptStruct ChimeraUI.CrTabDescriptor
 // 0x00F0 (0x00F0 - 0x0000)
 struct FCrTabDescriptor final
@@ -560,6 +568,18 @@ public:
 };
 DUMPER7_ASSERTS_FCrCraftingRecipeContentForUI;
 
+// ScriptStruct ChimeraUI.CrStatusIconData
+// 0x00C0 (0x00C0 - 0x0000)
+struct FCrStatusIconData final
+{
+public:
+	struct FGameplayTag                           StatusTag;                                         // 0x0000(0x0008)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Priority;                                          // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            StatusIcon;                                        // 0x0010(0x00B0)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrStatusIconData;
+
 // ScriptStruct ChimeraUI.CrMarkerFilterApperance
 // 0x0120 (0x0120 - 0x0000)
 struct FCrMarkerFilterApperance final
@@ -598,18 +618,6 @@ public:
 	int32                                         MipMap;                                            // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCrTerrainMipMapByZoomValueData;
-
-// ScriptStruct ChimeraUI.CrStatusIconData
-// 0x00C0 (0x00C0 - 0x0000)
-struct FCrStatusIconData final
-{
-public:
-	struct FGameplayTag                           StatusTag;                                         // 0x0000(0x0008)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Priority;                                          // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            StatusIcon;                                        // 0x0010(0x00B0)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrStatusIconData;
 
 // ScriptStruct ChimeraUI.CrAlienObeliskWarningTickFunction
 // 0x0008 (0x0030 - 0x0028)
@@ -696,15 +704,6 @@ public:
 	class FText                                   Description;                                       // 0x00D0(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FFoodEffectData;
-
-// ScriptStruct ChimeraUI.FoodActiveEffect
-// 0x00F0 (0x00F0 - 0x0000)
-struct alignas(0x10) FFoodActiveEffect final
-{
-public:
-	uint8                                         Pad_0[0xF0];                                       // 0x0000(0x00F0)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FFoodActiveEffect;
 
 // ScriptStruct ChimeraUI.CrHitReactionData
 // 0x0010 (0x0010 - 0x0000)
@@ -966,5 +965,4 @@ public:
 };
 DUMPER7_ASSERTS_FCrHUDElementEntry;
 
-}
-
+SDK_NAMESPACE_END

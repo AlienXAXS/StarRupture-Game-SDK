@@ -14,8 +14,8 @@
 #include "RemoteControl_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function RemoteControl.RCVirtualPropertyBase.SetValueBool
 // 0x0002 (0x0002 - 0x0000)
@@ -582,5 +582,5 @@ public:
 };
 DUMPER7_ASSERTS_RemoteControlInterceptionTestObject_TestFunction;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

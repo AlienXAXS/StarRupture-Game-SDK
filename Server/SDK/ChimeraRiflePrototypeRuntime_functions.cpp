@@ -14,8 +14,7 @@
 #include "ChimeraRiflePrototypeRuntime_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ChimeraRiflePrototypeRuntime.CrRifleAmmoWidgetComponent.GetAllAvailableAmmo
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
@@ -141,5 +140,5 @@ bool UCrRiflePrototypeAdderComponent::IsAnyAmmoLeft() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

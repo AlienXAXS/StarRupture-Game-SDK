@@ -14,8 +14,7 @@
 #include "BP_BaseCore_Tiles4x4_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_BaseCore_Tiles4x4.BP_BaseCore_Tiles4x4_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
@@ -90,5 +89,5 @@ void ABP_BaseCore_Tiles4x4_C::ExecuteUbergraph_BP_BaseCore_Tiles4x4(int32 EntryP
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

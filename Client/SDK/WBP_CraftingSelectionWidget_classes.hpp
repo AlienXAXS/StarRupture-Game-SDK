@@ -15,8 +15,7 @@
 #include "UMG_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_CraftingSelectionWidget.WBP_CraftingSelectionWidget_C
 // 0x0008 (0x0648 - 0x0640)
@@ -46,5 +45,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_CraftingSelectionWidget_C;
 
-}
-
+SDK_NAMESPACE_END

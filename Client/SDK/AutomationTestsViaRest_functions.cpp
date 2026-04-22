@@ -14,8 +14,7 @@
 #include "AutomationTestsViaRest_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AutomationTestsViaRest.AutomationTestsViaRestBPLibrary.SendAutomationHTTPPostRequestStringsMap
 // (Final, Native, Static, Public, BlueprintCallable)
@@ -45,5 +44,5 @@ void UAutomationTestsViaRestBPLibrary::SendAutomationHTTPPostRequestStringsMap(c
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_Melee_Tier3_Actor_AnimNotify_CacheLongAoeAttackPoints.BP_Melee_Tier3_Actor_AnimNotify_CacheLongAoeAttackPoints_C.Received_Notify
 // 0x0098 (0x0098 - 0x0000)
@@ -41,5 +41,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_Melee_Tier3_Actor_AnimNotify_CacheLongAoeAttackPoints_C_Received_Notify;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

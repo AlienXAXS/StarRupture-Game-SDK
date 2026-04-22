@@ -15,8 +15,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_TurretTier1.BP_TurretTier1_C
 // 0x0090 (0x0768 - 0x06D8)
@@ -71,5 +70,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_TurretTier1_C;
 
-}
-
+SDK_NAMESPACE_END

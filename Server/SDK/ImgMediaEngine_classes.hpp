@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ImgMediaEngine.ImgMediaPlaybackComponent
 // 0x0028 (0x00E0 - 0x00B8)
@@ -40,5 +39,4 @@ public:
 };
 DUMPER7_ASSERTS_UImgMediaPlaybackComponent;
 
-}
-
+SDK_NAMESPACE_END

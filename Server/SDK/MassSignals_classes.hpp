@@ -13,13 +13,12 @@
 #include "MassEntity_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MassSignals.MassSignalProcessorBase
 // 0x03C8 (0x0488 - 0x00C0)
 #pragma pack(push, 0x1)
-class alignas(0x08) UMassSignalProcessorBase : public UMassProcessor
+class SDK_ALIGN(0x08) UMassSignalProcessorBase : public UMassProcessor
 {
 public:
 	uint8                                         Pad_C0[0x3C8];                                     // 0x00C0(0x03C8)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -66,5 +65,4 @@ public:
 };
 DUMPER7_ASSERTS_UMassSignalSubsystem;
 
-}
-
+SDK_NAMESPACE_END

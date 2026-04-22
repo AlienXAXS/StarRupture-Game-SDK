@@ -14,8 +14,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_StoryItemSlot.WBP_StoryItemSlot_C
 // 0x0010 (0x0438 - 0x0428)
@@ -45,5 +44,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_StoryItemSlot_C;
 
-}
-
+SDK_NAMESPACE_END

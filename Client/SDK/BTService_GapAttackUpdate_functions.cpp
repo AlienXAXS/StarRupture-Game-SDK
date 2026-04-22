@@ -14,8 +14,7 @@
 #include "BTService_GapAttackUpdate_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTService_GapAttackUpdate.BTService_GapAttackUpdate_C.CanPerformGapAttack
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
@@ -109,5 +108,5 @@ void UBTService_GapAttackUpdate_C::ReceiveTickAI(class AAIController* OwnerContr
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

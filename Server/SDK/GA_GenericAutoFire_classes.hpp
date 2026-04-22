@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "AuAbilities_structs.hpp"
+#include "Engine_structs.hpp"
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GA_GenericAutoFire.GA_GenericAutoFire_C
 // 0x0070 (0x0578 - 0x0508)
@@ -85,5 +84,4 @@ public:
 };
 DUMPER7_ASSERTS_UGA_GenericAutoFire_C;
 
-}
-
+SDK_NAMESPACE_END

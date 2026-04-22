@@ -14,8 +14,7 @@
 #include "BP_Animal_Crab_Character_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Animal_Crab_Character.BP_Animal_Crab_Character_C.StopCatach
 // (BlueprintCallable, BlueprintEvent)
@@ -336,5 +335,5 @@ void ABP_Animal_Crab_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidden) co
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

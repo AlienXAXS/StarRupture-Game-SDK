@@ -14,8 +14,7 @@
 #include "W_ChimeraHitmark_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function W_ChimeraHitmark.W_ChimeraHitmark_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -138,5 +137,5 @@ void UW_ChimeraHitmark_C::StopSound(double Fade_Out_Duration)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

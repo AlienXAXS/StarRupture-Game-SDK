@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass I_Anti-RadiationCoversBlueprint.I_Anti-RadiationCoversBlueprint_C
 // 0x0000 (0x04B0 - 0x04B0)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UI_Anti_RadiationCoversBlueprint_C;
 
-}
-
+SDK_NAMESPACE_END

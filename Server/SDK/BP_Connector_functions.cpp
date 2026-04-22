@@ -14,8 +14,7 @@
 #include "BP_Connector_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Connector.BP_Connector_C.OnSplineReady
 // (Event, Public, BlueprintEvent)
@@ -116,5 +115,5 @@ void ABP_Connector_C::ExecuteUbergraph_BP_Connector(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

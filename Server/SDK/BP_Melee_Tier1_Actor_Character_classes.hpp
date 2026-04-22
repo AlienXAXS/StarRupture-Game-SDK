@@ -15,8 +15,7 @@
 #include "BP_BaseAI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Melee_Tier1_Actor_Character.BP_Melee_Tier1_Actor_Character_C
 // 0x0050 (0x0D50 - 0x0D00)
@@ -58,5 +57,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Melee_Tier1_Actor_Character_C;
 
-}
-
+SDK_NAMESPACE_END

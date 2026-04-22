@@ -14,8 +14,7 @@
 #include "BP_Recycler_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Recycler.BP_Recycler_C.UserConstructionScript
 // (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -132,5 +131,5 @@ void ABP_Recycler_C::Arms_timeline__FinishedFunc()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

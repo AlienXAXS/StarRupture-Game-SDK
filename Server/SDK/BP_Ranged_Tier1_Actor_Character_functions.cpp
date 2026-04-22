@@ -14,8 +14,7 @@
 #include "BP_Ranged_Tier1_Actor_Character_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Ranged_Tier1_Actor_Character.BP_Ranged_Tier1_Actor_Character_C.UserConstructionScript
 // (Event, Public, BlueprintCallable, BlueprintEvent)
@@ -141,5 +140,5 @@ void ABP_Ranged_Tier1_Actor_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHid
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

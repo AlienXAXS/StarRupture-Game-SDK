@@ -14,8 +14,7 @@
 #include "Qos_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Qos.QosBeaconClient.ClientQosResponse
 // (RequiredAPI, Net, NetReliable, Native, Event, Protected, NetClient)
@@ -66,5 +65,5 @@ void AQosBeaconClient::ServerQosRequest(const class FString& InSessionId)
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function GA_ShowWidget_WhenInputPressed.GA_ShowWidget_WhenInputPressed_C.K2_OnEndAbility
 // 0x0001 (0x0001 - 0x0000)
@@ -71,5 +71,5 @@ public:
 };
 DUMPER7_ASSERTS_GA_ShowWidget_WhenInputPressed_C_AfterPush_07A5E8B54EF4795F874768B89DFB5B45;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "GA_InsetResourceToBuilding_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GA_InsetResourceToBuilding.GA_InsetResourceToBuilding_C.ExecuteUbergraph_GA_InsetResourceToBuilding
 // (Final, UbergraphFunction)
@@ -50,5 +49,5 @@ void UGA_InsetResourceToBuilding_C::K2_ActivateAbility()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

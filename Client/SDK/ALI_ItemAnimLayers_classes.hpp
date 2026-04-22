@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass ALI_ItemAnimLayers.ALI_ItemAnimLayers_C
 // 0x0000 (0x0000 - 0x0000)
@@ -69,5 +68,4 @@ public:
 };
 DUMPER7_ASSERTS_IALI_ItemAnimLayers_C;
 
-}
-
+SDK_NAMESPACE_END

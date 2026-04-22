@@ -16,8 +16,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class Lobby.LobbyBeaconClient
 // 0x00B8 (0x03F8 - 0x0340)
@@ -155,5 +154,4 @@ public:
 };
 DUMPER7_ASSERTS_ALobbyBeaconState;
 
-}
-
+SDK_NAMESPACE_END

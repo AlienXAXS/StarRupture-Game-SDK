@@ -14,8 +14,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Modular_ConnectingPlatform.BP_Modular_ConnectingPlatform_C
 // 0x0058 (0x0898 - 0x0840)
@@ -57,5 +56,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Modular_ConnectingPlatform_C;
 
-}
-
+SDK_NAMESPACE_END

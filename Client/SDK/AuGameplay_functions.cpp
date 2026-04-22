@@ -14,8 +14,7 @@
 #include "AuGameplay_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AuGameplay.AuGameplayBPF.ActorMassLessThan
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
@@ -185,5 +184,5 @@ void UAuGameplayBPF::MoveStaticMeshActor(class AActor* From, class AActor* To)
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

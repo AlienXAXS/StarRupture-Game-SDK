@@ -14,8 +14,7 @@
 #include "BP_PersonalStorage_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_PersonalStorage.BP_PersonalStorage_C.ExecuteUbergraph_BP_PersonalStorage
 // (Final, UbergraphFunction, HasDefaults)
@@ -104,5 +103,5 @@ void ABP_PersonalStorage_C::UpdateDisplayedPersonalStorageName()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

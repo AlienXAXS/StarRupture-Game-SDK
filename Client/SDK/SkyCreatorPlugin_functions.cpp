@@ -14,8 +14,7 @@
 #include "SkyCreatorPlugin_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function SkyCreatorPlugin.SkyCreatorFunctionLibrary.CentimetersToKilometers
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
@@ -2878,5 +2877,5 @@ struct FSkyCreatorWindSettings ASkyCreator::GetWindSettings() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

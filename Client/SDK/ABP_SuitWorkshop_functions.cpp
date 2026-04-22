@@ -14,8 +14,7 @@
 #include "ABP_SuitWorkshop_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ABP_SuitWorkshop.ABP_SuitWorkshop_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -309,5 +308,5 @@ void UABP_SuitWorkshop_C::ExecuteUbergraph_ABP_SuitWorkshop(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "WBP_MainMenuWidget_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_MainMenuWidget.WBP_MainMenuWidget_C.SetColors
 // (Event, Protected, BlueprintEvent)
@@ -168,5 +167,5 @@ void UWBP_MainMenuWidget_C::BndEvt__WBP_MainMenuWidget_BenchmarkButton_K2Node_Co
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

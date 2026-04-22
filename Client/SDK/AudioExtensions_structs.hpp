@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum AudioExtensions.ESoundWaveCloudStreamingPlatformProjectEnableType
 // NumValues: 0x0003
@@ -121,5 +120,4 @@ public:
 };
 DUMPER7_ASSERTS_FSoundWaveCuePoint;
 
-}
-
+SDK_NAMESPACE_END

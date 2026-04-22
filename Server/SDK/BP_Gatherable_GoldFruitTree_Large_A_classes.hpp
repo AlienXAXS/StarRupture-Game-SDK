@@ -13,8 +13,7 @@
 #include "BP_GatherableBaseActor_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Gatherable_GoldFruitTree_Large_A.BP_Gatherable_GoldFruitTree_Large_A_C
 // 0x00C0 (0x0460 - 0x03A0)
@@ -62,5 +61,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Gatherable_GoldFruitTree_Large_A_C;
 
-}
-
+SDK_NAMESPACE_END

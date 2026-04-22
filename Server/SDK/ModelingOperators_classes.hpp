@@ -16,8 +16,7 @@
 #include "ModelingOperators_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ModelingOperators.GenerateCrossSectionOpFactory
 // 0x00A0 (0x00C8 - 0x0028)
@@ -220,5 +219,4 @@ public:
 };
 DUMPER7_ASSERTS_UUVLayoutOperatorFactory;
 
-}
-
+SDK_NAMESPACE_END

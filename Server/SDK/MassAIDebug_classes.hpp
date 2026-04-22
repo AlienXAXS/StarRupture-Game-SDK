@@ -13,8 +13,7 @@
 #include "MassEntity_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MassAIDebug.MassDebugStateTreeProcessor
 // 0x0350 (0x0410 - 0x00C0)
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_UMassDebugStateTreeProcessor;
 
-}
-
+SDK_NAMESPACE_END

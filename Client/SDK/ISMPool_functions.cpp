@@ -14,8 +14,7 @@
 #include "ISMPool_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ISMPool.ISMPoolSubSystem.OnActorEndPlay
 // (Final, Native, Protected)
@@ -43,5 +42,5 @@ void UISMPoolSubSystem::OnActorEndPlay(class AActor* InSource, EEndPlayReason Re
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

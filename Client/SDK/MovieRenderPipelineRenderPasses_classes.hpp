@@ -10,17 +10,16 @@
 
 #include "Basic.hpp"
 
-#include "MovieRenderPipelineRenderPasses_structs.hpp"
+#include "ActorLayerUtilities_structs.hpp"
 #include "MovieRenderPipelineCore_structs.hpp"
 #include "MovieRenderPipelineCore_classes.hpp"
 #include "Engine_structs.hpp"
+#include "MovieRenderPipelineRenderPasses_structs.hpp"
 #include "OpenColorIO_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "ActorLayerUtilities_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MovieRenderPipelineRenderPasses.MovieGraphImagePassBaseNode
 // 0x0020 (0x00D0 - 0x00B0)
@@ -655,5 +654,4 @@ public:
 };
 DUMPER7_ASSERTS_UMoviePipelineWaveOutput;
 
-}
-
+SDK_NAMESPACE_END

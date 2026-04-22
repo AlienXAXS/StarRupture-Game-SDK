@@ -14,8 +14,7 @@
 #include "CommonUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_MiningBoost_Counter.WBP_MiningBoost_Counter_C
 // 0x0058 (0x0420 - 0x03C8)
@@ -58,5 +57,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_MiningBoost_Counter_C;
 
-}
-
+SDK_NAMESPACE_END

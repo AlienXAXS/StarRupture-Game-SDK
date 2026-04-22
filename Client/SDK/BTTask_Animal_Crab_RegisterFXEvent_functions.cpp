@@ -14,8 +14,7 @@
 #include "BTTask_Animal_Crab_RegisterFXEvent_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTTask_Animal_Crab_RegisterFXEvent.BTTask_Animal_Crab_RegisterFXEvent_C.ExecuteUbergraph_BTTask_Animal_Crab_RegisterFXEvent
 // (Final, UbergraphFunction)
@@ -58,5 +57,5 @@ void UBTTask_Animal_Crab_RegisterFXEvent_C::ReceiveExecuteAI(class AAIController
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_HarvesterCoolingBonusThresholds.BP_HarvesterCoolingBonusThresholds_C
 // 0x0018 (0x0048 - 0x0030)
@@ -41,5 +40,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_HarvesterCoolingBonusThresholds_C;
 
-}
-
+SDK_NAMESPACE_END

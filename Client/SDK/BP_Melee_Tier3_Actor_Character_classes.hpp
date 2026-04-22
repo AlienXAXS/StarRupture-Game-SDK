@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "Engine_structs.hpp"
-#include "BP_BaseAI_classes.hpp"
 #include "CoreUObject_structs.hpp"
+#include "MassAIPrototypeEnemyRuntime_structs.hpp"
+#include "BP_BaseAI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Melee_Tier3_Actor_Character.BP_Melee_Tier3_Actor_Character_C
 // 0x00E0 (0x0DE0 - 0x0D00)
@@ -106,5 +105,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Melee_Tier3_Actor_Character_C;
 
-}
-
+SDK_NAMESPACE_END

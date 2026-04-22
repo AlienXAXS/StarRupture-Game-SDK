@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ExplosionSphereBase.BP_ExplosionSphereBase_C
 // 0x0028 (0x02D0 - 0x02A8)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_ExplosionSphereBase_C;
 
-}
-
+SDK_NAMESPACE_END

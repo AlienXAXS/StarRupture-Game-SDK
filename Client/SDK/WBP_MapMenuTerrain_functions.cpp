@@ -14,8 +14,7 @@
 #include "WBP_MapMenuTerrain_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_MapMenuTerrain.WBP_MapMenuTerrain_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -50,5 +49,5 @@ void UWBP_MapMenuTerrain_C::ExecuteUbergraph_WBP_MapMenuTerrain(int32 EntryPoint
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

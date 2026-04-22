@@ -14,8 +14,7 @@
 #include "BP_HabitatPostProcess_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_HabitatPostProcess.BP_HabitatPostProcess_C.ExecuteUbergraph_BP_HabitatPostProcess
 // (Final, UbergraphFunction, HasDefaults)
@@ -76,5 +75,5 @@ void ABP_HabitatPostProcess_C::UserConstructionScript()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

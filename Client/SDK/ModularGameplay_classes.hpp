@@ -14,8 +14,7 @@
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ModularGameplay.GameFrameworkComponent
 // 0x0000 (0x00B8 - 0x00B8)
@@ -186,5 +185,4 @@ public:
 };
 DUMPER7_ASSERTS_UPlayerStateComponent;
 
-}
-
+SDK_NAMESPACE_END

@@ -15,8 +15,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_CoolerActive.BP_CoolerActive_C
 // 0x0148 (0x07A8 - 0x0660)
@@ -86,5 +85,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_CoolerActive_C;
 
-}
-
+SDK_NAMESPACE_END

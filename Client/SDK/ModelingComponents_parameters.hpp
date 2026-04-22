@@ -14,8 +14,17 @@
 #include "ModelingComponents_structs.hpp"
 
 
-namespace SDK::Params
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
+
+// Function ModelingComponents.OctreeDynamicMeshComponent.SetDynamicMesh
+// 0x0008 (0x0008 - 0x0000)
+struct OctreeDynamicMeshComponent_SetDynamicMesh final
 {
+public:
+	class UDynamicMesh*                           NewMesh;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_OctreeDynamicMeshComponent_SetDynamicMesh;
 
 // Function ModelingComponents.LineSetComponent.AddLines
 // 0x0030 (0x0030 - 0x0000)
@@ -39,15 +48,6 @@ public:
 	class UMaterialInterface*                     InLineMaterial;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LineSetComponent_SetLineMaterial;
-
-// Function ModelingComponents.OctreeDynamicMeshComponent.SetDynamicMesh
-// 0x0008 (0x0008 - 0x0000)
-struct OctreeDynamicMeshComponent_SetDynamicMesh final
-{
-public:
-	class UDynamicMesh*                           NewMesh;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_OctreeDynamicMeshComponent_SetDynamicMesh;
 
 // Function ModelingComponents.PreviewGeometry.AddLineSet
 // 0x0018 (0x0018 - 0x0000)
@@ -375,5 +375,5 @@ public:
 };
 DUMPER7_ASSERTS_WeightMapSetProperties_GetWeightMapsFunc;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

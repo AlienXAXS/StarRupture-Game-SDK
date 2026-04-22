@@ -11,15 +11,14 @@
 #include "Basic.hpp"
 
 #include "MassSpawner_classes.hpp"
-#include "Engine_classes.hpp"
 #include "CrAiRangedRuntime_structs.hpp"
+#include "Engine_classes.hpp"
 #include "Chimera_classes.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class CrAiRangedRuntime.CrAiRangedAnimationStateSyncComponent
 // 0x0008 (0x00C0 - 0x00B8)
@@ -255,5 +254,4 @@ public:
 };
 DUMPER7_ASSERTS_UCrArRangedRepresentationSubsystem;
 
-}
-
+SDK_NAMESPACE_END

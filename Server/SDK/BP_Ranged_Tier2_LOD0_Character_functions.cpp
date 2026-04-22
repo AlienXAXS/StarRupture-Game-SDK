@@ -14,8 +14,7 @@
 #include "BP_Ranged_Tier2_LOD0_Character_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Ranged_Tier2_LOD0_Character.BP_Ranged_Tier2_LOD0_Character_C.UserConstructionScript
 // (Event, Public, BlueprintCallable, BlueprintEvent)
@@ -213,5 +212,5 @@ void ABP_Ranged_Tier2_LOD0_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidd
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

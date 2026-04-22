@@ -14,8 +14,7 @@
 #include "UMG_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_CraftingRoundProgressBar.WBP_CraftingRoundProgressBar_C
 // 0x0028 (0x03C8 - 0x03A0)
@@ -57,5 +56,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_CraftingRoundProgressBar_C;
 
-}
-
+SDK_NAMESPACE_END

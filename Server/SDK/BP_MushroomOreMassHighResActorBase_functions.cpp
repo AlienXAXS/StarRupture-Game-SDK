@@ -14,8 +14,7 @@
 #include "BP_MushroomOreMassHighResActorBase_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_MushroomOreMassHighResActorBase.BP_MushroomOreMassHighResActorBase_C.OnResourceDepletedCosmeticsStart
 // (Event, Public, BlueprintEvent)
@@ -150,5 +149,5 @@ void ABP_MushroomOreMassHighResActorBase_C::BndEvt__BP_OreMassHighResActorBase_D
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

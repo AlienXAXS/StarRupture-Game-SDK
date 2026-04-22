@@ -14,8 +14,7 @@
 #include "ApplyScaleToBounds_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ApplyScaleToBounds.ApplyScaleToBounds_C.ExecuteWithContext
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -119,5 +118,5 @@ struct FLinearColor UApplyScaleToBounds_C::NodeColorOverride() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

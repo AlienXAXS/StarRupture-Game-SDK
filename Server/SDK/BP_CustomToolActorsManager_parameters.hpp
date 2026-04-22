@@ -13,8 +13,8 @@
 #include "GameplayTags_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_CustomToolActorsManager.BP_CustomToolActorsManager_C.AddActor
 // 0x0010 (0x0010 - 0x0000)
@@ -40,5 +40,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_CustomToolActorsManager_C_SetActorVisibility;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "UMG_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_PersonalStorageName.WBP_PersonalStorageName_C
 // 0x0018 (0x03B8 - 0x03A0)
@@ -46,5 +45,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_PersonalStorageName_C;
 
-}
-
+SDK_NAMESPACE_END

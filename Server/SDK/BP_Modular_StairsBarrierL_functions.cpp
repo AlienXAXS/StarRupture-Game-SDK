@@ -14,8 +14,7 @@
 #include "BP_Modular_StairsBarrierL_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Modular_StairsBarrierL.BP_Modular_StairsBarrierL_C.GetBuildingProgressMeshes
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
@@ -69,5 +68,5 @@ void ABP_Modular_StairsBarrierL_C::GetBuildingMeshes(class UMeshComponent** Main
 		*AdditionalMeshes = std::move(Parms.AdditionalMeshes);
 }
 
-}
 
+SDK_NAMESPACE_END

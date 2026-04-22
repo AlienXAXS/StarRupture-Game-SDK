@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Pole.BP_Pole_C
 // 0x0020 (0x0678 - 0x0658)
@@ -45,5 +44,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Pole_C;
 
-}
-
+SDK_NAMESPACE_END

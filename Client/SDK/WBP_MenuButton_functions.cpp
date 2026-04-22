@@ -14,8 +14,7 @@
 #include "WBP_MenuButton_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_MenuButton.WBP_MenuButton_C.BP_OnClicked
 // (Event, Protected, BlueprintEvent)
@@ -98,5 +97,5 @@ void UWBP_MenuButton_C::UpdateButton(ECommonMessagingResult Action)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

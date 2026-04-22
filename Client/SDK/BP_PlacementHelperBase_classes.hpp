@@ -13,8 +13,7 @@
 #include "AuActorPlacement_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_PlacementHelperBase.BP_PlacementHelperBase_C
 // 0x0000 (0x0890 - 0x0890)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_PlacementHelperBase_C;
 
-}
-
+SDK_NAMESPACE_END

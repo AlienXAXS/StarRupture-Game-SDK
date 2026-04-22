@@ -14,8 +14,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum Slate.EVirtualKeyboardTrigger
 // NumValues: 0x0003
@@ -273,25 +272,15 @@ enum class EScrollIntoViewAlignment : uint8
 	EScrollIntoViewAlignment_MAX             = 4,
 };
 
-// ScriptStruct Slate.VirtualKeyboardOptions
-// 0x0001 (0x0001 - 0x0000)
-struct FVirtualKeyboardOptions final
+// ScriptStruct Slate.CharRange
+// 0x0004 (0x0004 - 0x0000)
+struct FCharRange final
 {
 public:
-	bool                                          bEnableAutocorrect;                                // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint16                                        First;                                             // 0x0000(0x0002)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint16                                        Last;                                              // 0x0002(0x0002)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FVirtualKeyboardOptions;
-
-// ScriptStruct Slate.InputPreprocessorRegistrationKey
-// 0x0008 (0x0008 - 0x0000)
-struct FInputPreprocessorRegistrationKey final
-{
-public:
-	EInputPreProcessorType                        Type;                                              // 0x0000(0x0001)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Priority;                                          // 0x0004(0x0004)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FInputPreprocessorRegistrationKey;
+DUMPER7_ASSERTS_FCharRange;
 
 // ScriptStruct Slate.Anchors
 // 0x0020 (0x0020 - 0x0000)
@@ -302,6 +291,15 @@ public:
 	struct FVector2D                              Maximum;                                           // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FAnchors;
+
+// ScriptStruct Slate.VirtualKeyboardOptions
+// 0x0001 (0x0001 - 0x0000)
+struct FVirtualKeyboardOptions final
+{
+public:
+	bool                                          bEnableAutocorrect;                                // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FVirtualKeyboardOptions;
 
 // ScriptStruct Slate.InputChord
 // 0x0020 (0x0020 - 0x0000)
@@ -317,16 +315,6 @@ public:
 };
 DUMPER7_ASSERTS_FInputChord;
 
-// ScriptStruct Slate.CharRange
-// 0x0004 (0x0004 - 0x0000)
-struct FCharRange final
-{
-public:
-	uint16                                        First;                                             // 0x0000(0x0002)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint16                                        Last;                                              // 0x0002(0x0002)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCharRange;
-
 // ScriptStruct Slate.CharRangeList
 // 0x0010 (0x0010 - 0x0000)
 struct FCharRangeList final
@@ -335,6 +323,17 @@ public:
 	TArray<struct FCharRange>                     Ranges;                                            // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCharRangeList;
+
+// ScriptStruct Slate.InputPreprocessorRegistrationKey
+// 0x0008 (0x0008 - 0x0000)
+struct FInputPreprocessorRegistrationKey final
+{
+public:
+	EInputPreProcessorType                        Type;                                              // 0x0000(0x0001)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Priority;                                          // 0x0004(0x0004)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FInputPreprocessorRegistrationKey;
 
 // ScriptStruct Slate.CustomizedToolMenuEntry
 // 0x0004 (0x0004 - 0x0000)
@@ -386,5 +385,4 @@ public:
 };
 DUMPER7_ASSERTS_FCustomizedToolMenu;
 
-}
-
+SDK_NAMESPACE_END

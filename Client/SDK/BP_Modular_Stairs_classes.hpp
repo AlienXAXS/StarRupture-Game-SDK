@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Modular_Stairs.BP_Modular_Stairs_C
 // 0x0028 (0x0868 - 0x0840)
@@ -46,5 +45,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Modular_Stairs_C;
 
-}
-
+SDK_NAMESPACE_END

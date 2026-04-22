@@ -14,8 +14,7 @@
 #include "BP_SkyboxWithStar_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_SkyboxWithStar.BP_SkyboxWithStar_C.UserConstructionScript
 // (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -192,5 +191,5 @@ void ABP_SkyboxWithStar_C::EveryFrameEvent()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

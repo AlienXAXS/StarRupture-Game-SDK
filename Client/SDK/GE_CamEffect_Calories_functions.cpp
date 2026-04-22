@@ -14,8 +14,7 @@
 #include "GE_CamEffect_Calories_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GE_CamEffect_Calories.GE_CamEffect_Calories_C.ExecuteUbergraph_GE_CamEffect_Calories
 // (Final, UbergraphFunction, HasDefaults)
@@ -84,5 +83,5 @@ void UGE_CamEffect_Calories_C::OnInitialized(class UAbilitySystemComponent* Abil
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -21,8 +21,7 @@
 #include "MassMovement_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum MassAIBehavior.EMassLookAtMode
 // NumValues: 0x0004
@@ -636,5 +635,4 @@ public:
 };
 DUMPER7_ASSERTS_FZoneGraphTagCondition;
 
-}
-
+SDK_NAMESPACE_END

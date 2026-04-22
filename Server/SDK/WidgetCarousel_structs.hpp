@@ -13,8 +13,7 @@
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct WidgetCarousel.WidgetCarouselNavigationButtonStyle
 // 0x04F8 (0x0500 - 0x0008)
@@ -41,5 +40,4 @@ public:
 };
 DUMPER7_ASSERTS_FWidgetCarouselNavigationBarStyle;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_CloudsHorizon_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_CloudsHorizon.BP_CloudsHorizon_C.UserConstructionScript
 // (Event, Public, BlueprintCallable, BlueprintEvent)
@@ -204,5 +203,5 @@ void ABP_CloudsHorizon_C::ExecuteUbergraph_BP_CloudsHorizon(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

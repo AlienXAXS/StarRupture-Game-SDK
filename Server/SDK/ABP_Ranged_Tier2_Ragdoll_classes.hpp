@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "AnimGraphRuntime_structs.hpp"
 #include "Engine_structs.hpp"
+#include "AnimGraphRuntime_structs.hpp"
 #include "ABP_Ranged_Tier2_Ragdoll_structs.hpp"
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass ABP_Ranged_Tier2_Ragdoll.ABP_Ranged_Tier2_Ragdoll_C
 // 0x0160 (0x0580 - 0x0420)
@@ -52,5 +51,4 @@ public:
 };
 DUMPER7_ASSERTS_UABP_Ranged_Tier2_Ragdoll_C;
 
-}
-
+SDK_NAMESPACE_END

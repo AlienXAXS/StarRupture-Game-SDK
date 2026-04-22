@@ -14,8 +14,7 @@
 #include "BP_ChemicalProcessor_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_ChemicalProcessor.BP_ChemicalProcessor_C.Get Meshes
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -63,5 +62,5 @@ void ABP_ChemicalProcessor_C::GetBuildingMeshes(class UMeshComponent** MainBody,
 		*AdditionalMeshes = std::move(Parms.AdditionalMeshes);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -13,8 +13,8 @@
 #include "Chimera_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_FoodProcessor.BP_FoodProcessor_C.ExecuteUbergraph_BP_FoodProcessor
 // 0x0050 (0x0050 - 0x0000)
@@ -49,5 +49,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_FoodProcessor_C_OnBuildingStateChanged;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

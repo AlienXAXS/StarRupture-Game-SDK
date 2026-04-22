@@ -14,8 +14,7 @@
 #include "BP_FireWaveMeteOreChunk_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_FireWaveMeteOreChunk.BP_FireWaveMeteOreChunk_C.BP_OnEnviroWaveStarted
 // (Event, Protected, HasOutParams, BlueprintEvent)
@@ -176,5 +175,5 @@ void ABP_FireWaveMeteOreChunk_C::ReceiveBeginPlay()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "AuActorPlacement_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AuActorPlacement.AuActorPlacementComponent.GetActorPlacementRotation
 // (Native, Public, HasDefaults)
@@ -1440,5 +1439,5 @@ void AAuEvaporatingWaterActor::BP_OnPostBecameSignificant()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

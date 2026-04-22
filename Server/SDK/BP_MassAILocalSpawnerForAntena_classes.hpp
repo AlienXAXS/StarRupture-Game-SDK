@@ -13,8 +13,7 @@
 #include "BP_MassAILocalSpawnerWithPCG_Placeable_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_MassAILocalSpawnerForAntena.BP_MassAILocalSpawnerForAntena_C
 // 0x0008 (0x0558 - 0x0550)
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_MassAILocalSpawnerForAntena_C;
 
-}
-
+SDK_NAMESPACE_END

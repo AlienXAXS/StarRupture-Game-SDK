@@ -14,8 +14,7 @@
 #include "MeshModelingToolsExp_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function MeshModelingToolsExp.BakeInputMeshProperties.GetSourceUVLayerNamesFunc
 // (Final, Native, Public, Const)
@@ -114,6 +113,139 @@ const TArray<class FString> UBakeMultiTexture2DProperties::GetUVLayerNamesFunc()
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function MeshModelingToolsExp.MeshSelectionMeshEditActions.CreatePolygroup
+// (Final, Native, Public)
+
+void UMeshSelectionMeshEditActions::CreatePolygroup()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshSelectionMeshEditActions", "CreatePolygroup");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.MeshSelectionMeshEditActions.Delete
+// (Final, Native, Public)
+
+void UMeshSelectionMeshEditActions::Delete()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshSelectionMeshEditActions", "Delete");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.MeshSelectionMeshEditActions.Disconnect
+// (Final, Native, Public)
+
+void UMeshSelectionMeshEditActions::Disconnect()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshSelectionMeshEditActions", "Disconnect");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.MeshSelectionMeshEditActions.Duplicate
+// (Final, Native, Public)
+
+void UMeshSelectionMeshEditActions::Duplicate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshSelectionMeshEditActions", "Duplicate");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.MeshSelectionMeshEditActions.FlipNormals
+// (Final, Native, Public)
+
+void UMeshSelectionMeshEditActions::FlipNormals()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshSelectionMeshEditActions", "FlipNormals");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.MeshSelectionMeshEditActions.Separate
+// (Final, Native, Public)
+
+void UMeshSelectionMeshEditActions::Separate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshSelectionMeshEditActions", "Separate");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.MeshSelectionMeshEditActions.SmoothBorder
+// (Final, Native, Public)
+
+void UMeshSelectionMeshEditActions::SmoothBorder()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MeshSelectionMeshEditActions", "SmoothBorder");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -730,139 +862,6 @@ void UMeshSelectionEditActions::Shrink()
 }
 
 
-// Function MeshModelingToolsExp.MeshSelectionMeshEditActions.CreatePolygroup
-// (Final, Native, Public)
-
-void UMeshSelectionMeshEditActions::CreatePolygroup()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshSelectionMeshEditActions", "CreatePolygroup");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MeshSelectionMeshEditActions.Delete
-// (Final, Native, Public)
-
-void UMeshSelectionMeshEditActions::Delete()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshSelectionMeshEditActions", "Delete");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MeshSelectionMeshEditActions.Disconnect
-// (Final, Native, Public)
-
-void UMeshSelectionMeshEditActions::Disconnect()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshSelectionMeshEditActions", "Disconnect");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MeshSelectionMeshEditActions.Duplicate
-// (Final, Native, Public)
-
-void UMeshSelectionMeshEditActions::Duplicate()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshSelectionMeshEditActions", "Duplicate");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MeshSelectionMeshEditActions.FlipNormals
-// (Final, Native, Public)
-
-void UMeshSelectionMeshEditActions::FlipNormals()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshSelectionMeshEditActions", "FlipNormals");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MeshSelectionMeshEditActions.Separate
-// (Final, Native, Public)
-
-void UMeshSelectionMeshEditActions::Separate()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshSelectionMeshEditActions", "Separate");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.MeshSelectionMeshEditActions.SmoothBorder
-// (Final, Native, Public)
-
-void UMeshSelectionMeshEditActions::SmoothBorder()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshSelectionMeshEditActions", "SmoothBorder");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function MeshModelingToolsExp.MirrorToolActionPropertySet.Backward
 // (Final, Native, Public)
 
@@ -1197,5 +1196,5 @@ const TArray<class FString> UTransferMeshToolProperties::GetTargetLODNamesFunc()
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

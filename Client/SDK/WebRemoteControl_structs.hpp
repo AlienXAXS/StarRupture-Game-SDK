@@ -13,8 +13,7 @@
 #include "RemoteControl_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum WebRemoteControl.ERemoteControlEvent
 // NumValues: 0x0004
@@ -813,5 +812,4 @@ public:
 };
 DUMPER7_ASSERTS_FRCCompressionChangedEvent;
 
-}
-
+SDK_NAMESPACE_END

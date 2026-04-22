@@ -13,9 +13,9 @@
 #include "Chimera_structs.hpp"
 #include "Chimera_classes.hpp"
 #include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "BS_WeaponFOV_structs.hpp"
 #include "GameplayTags_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "CommonInput_structs.hpp"
 #include "AuCamera_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
@@ -23,8 +23,7 @@
 #include "EPlayerState_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_PlayerCharacter.BP_PlayerCharacter_C
 // 0x03C0 (0x1910 - 0x1550)
@@ -249,5 +248,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_PlayerCharacter_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
-#include "E_FootstepType_structs.hpp"
 #include "PhysicsCore_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "E_FootstepType_structs.hpp"
+#include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_AN_Footstep.BP_AN_Footstep_C
 // 0x0060 (0x0098 - 0x0038)
@@ -52,5 +51,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_AN_Footstep_C;
 
-}
-
+SDK_NAMESPACE_END

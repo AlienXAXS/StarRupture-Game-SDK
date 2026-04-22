@@ -14,8 +14,7 @@
 #include "BP_Modular_ConnectingPlatform_Triangular_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Modular_ConnectingPlatform_Triangular.BP_Modular_ConnectingPlatform_Triangular_C.GetBuildingMeshes
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
@@ -41,5 +40,5 @@ void ABP_Modular_ConnectingPlatform_Triangular_C::GetBuildingMeshes(class UMeshC
 		*AdditionalMeshes = std::move(Parms.AdditionalMeshes);
 }
 
-}
 
+SDK_NAMESPACE_END

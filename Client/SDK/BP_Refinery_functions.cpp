@@ -14,8 +14,7 @@
 #include "BP_Refinery_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Refinery.BP_Refinery_C.ExecuteUbergraph_BP_Refinery
 // (Final, UbergraphFunction, HasDefaults)
@@ -124,5 +123,5 @@ void ABP_Refinery_C::Get_Meshes(class USceneComponent* Static_0, class USceneCom
 		*NewParam = std::move(Parms.NewParam);
 }
 
-}
 
+SDK_NAMESPACE_END

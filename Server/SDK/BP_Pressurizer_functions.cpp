@@ -14,8 +14,7 @@
 #include "BP_Pressurizer_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Pressurizer.BP_Pressurizer_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
@@ -96,5 +95,5 @@ void ABP_Pressurizer_C::Get_Meshes(class USceneComponent* Static_0, class UScene
 		*NewParam = std::move(Parms.NewParam);
 }
 
-}
 
+SDK_NAMESPACE_END

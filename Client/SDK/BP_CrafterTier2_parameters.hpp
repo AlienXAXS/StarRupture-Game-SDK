@@ -13,8 +13,8 @@
 #include "Chimera_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_CrafterTier2.BP_CrafterTier2_C.ExecuteUbergraph_BP_CrafterTier2
 // 0x0070 (0x0070 - 0x0000)
@@ -101,5 +101,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_CrafterTier2_C_OnBuildingStateChanged;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

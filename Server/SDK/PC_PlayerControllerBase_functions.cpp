@@ -14,8 +14,7 @@
 #include "PC_PlayerControllerBase_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PC_PlayerControllerBase.PC_PlayerControllerBase_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
@@ -143,5 +142,5 @@ bool APC_PlayerControllerBase_C::CanInputKeyBePassedFromUIOnlyMode(const struct 
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

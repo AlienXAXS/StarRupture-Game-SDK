@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_PlacementHelperIgnoreOverlaps.BP_PlacementHelperIgnoreOverlaps_C
 // 0x0000 (0x0900 - 0x0900)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_PlacementHelperIgnoreOverlaps_C;
 
-}
-
+SDK_NAMESPACE_END

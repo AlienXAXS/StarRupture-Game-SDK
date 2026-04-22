@@ -14,8 +14,7 @@
 #include "GE_CamEffect_Toxicity_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GE_CamEffect_Toxicity.GE_CamEffect_Toxicity_C.ExecuteUbergraph_GE_CamEffect_Toxicity
 // (Final, UbergraphFunction, HasDefaults)
@@ -84,5 +83,5 @@ void UGE_CamEffect_Toxicity_C::OnInitialized(class UAbilitySystemComponent* Abil
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

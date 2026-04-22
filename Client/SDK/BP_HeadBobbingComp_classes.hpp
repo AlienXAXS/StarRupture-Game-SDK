@@ -15,8 +15,7 @@
 #include "EPlayerState_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_HeadBobbingComp.BP_HeadBobbingComp_C
 // 0x0040 (0x0290 - 0x0250)
@@ -68,5 +67,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_HeadBobbingComp_C;
 
-}
-
+SDK_NAMESPACE_END

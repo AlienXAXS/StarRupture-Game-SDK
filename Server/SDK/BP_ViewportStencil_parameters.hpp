@@ -13,8 +13,8 @@
 #include "Chimera_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_ViewportStencil.BP_ViewportStencil_C.OnEnviroWaveTick
 // 0x0034 (0x0034 - 0x0000)
@@ -140,5 +140,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_ViewportStencil_C_ExecuteUbergraph_BP_ViewportStencil;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_LaserDrill_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_LaserDrill.BP_LaserDrill_C.SetupSkeletalMesh
 // (Event, Public, BlueprintEvent)
@@ -110,5 +109,5 @@ void ABP_LaserDrill_C::Get_Meshes(class USceneComponent* Static_0, class USceneC
 		*NewParam = std::move(Parms.NewParam);
 }
 
-}
 
+SDK_NAMESPACE_END

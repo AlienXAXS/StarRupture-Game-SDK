@@ -14,8 +14,7 @@
 #include "BP_Exploder_Tier2_Actor_Character_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.ExecuteUbergraph_BP_Exploder_Tier2_Actor_Character
 // (Final, UbergraphFunction)
@@ -126,5 +125,5 @@ void ABP_Exploder_Tier2_Actor_Character_C::UserConstructionScript()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

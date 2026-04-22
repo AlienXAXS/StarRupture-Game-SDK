@@ -14,8 +14,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_MaterializedItemCrate.BP_MaterializedItemCrate_C
 // 0x0050 (0x02F8 - 0x02A8)
@@ -61,5 +60,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_MaterializedItemCrate_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_PlantGrower_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_PlantGrower.BP_PlantGrower_C.Timeline__UpdateFunc
 // (BlueprintEvent)
@@ -78,5 +77,5 @@ void ABP_PlantGrower_C::ExecuteUbergraph_BP_PlantGrower(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

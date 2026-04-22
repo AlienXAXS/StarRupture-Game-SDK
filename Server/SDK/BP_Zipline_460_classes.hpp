@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Zipline_460.BP_Zipline_460_C
 // 0x0020 (0x0668 - 0x0648)
@@ -42,5 +41,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Zipline_460_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BTDecorator_IsPlayerOrGrenadeOrAttractor.BTDecorator_IsPlayerOrGrenadeOrAttractor_C
 // 0x0030 (0x00D0 - 0x00A0)
@@ -44,5 +43,4 @@ public:
 };
 DUMPER7_ASSERTS_UBTDecorator_IsPlayerOrGrenadeOrAttractor_C;
 
-}
-
+SDK_NAMESPACE_END

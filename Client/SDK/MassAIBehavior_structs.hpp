@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SmartObjectsModule_structs.hpp"
 #include "StateTreeModule_structs.hpp"
+#include "SmartObjectsModule_structs.hpp"
 #include "MassEntity_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "MassSmartObjects_structs.hpp"
@@ -21,8 +21,7 @@
 #include "MassMovement_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum MassAIBehavior.EMassLookAtMode
 // NumValues: 0x0004
@@ -636,5 +635,4 @@ public:
 };
 DUMPER7_ASSERTS_FZoneGraphTagCondition;
 
-}
-
+SDK_NAMESPACE_END

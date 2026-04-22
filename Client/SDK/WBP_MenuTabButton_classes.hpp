@@ -15,8 +15,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_MenuTabButton.WBP_MenuTabButton_C
 // 0x0020 (0x07A0 - 0x0780)
@@ -51,5 +50,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_MenuTabButton_C;
 
-}
-
+SDK_NAMESPACE_END

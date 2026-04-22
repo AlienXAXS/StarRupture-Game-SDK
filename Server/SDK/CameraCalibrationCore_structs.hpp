@@ -15,8 +15,7 @@
 #include "CinematicCamera_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum CameraCalibrationCore.ECalibratedMapPixelOrigin
 // NumValues: 0x0003
@@ -113,7 +112,7 @@ DUMPER7_ASSERTS_FBaseFocusPoint;
 // ScriptStruct CameraCalibrationCore.BaseFocusCurve
 // 0x0000 (0x0000 - 0x0000)
 #pragma pack(push, 0x1)
-struct alignas(0x01) FBaseFocusCurve
+struct SDK_ALIGN(0x01) FBaseFocusCurve
 {
 };
 #pragma pack(pop)
@@ -173,6 +172,15 @@ public:
 };
 DUMPER7_ASSERTS_FImageCenterInfo;
 
+// ScriptStruct CameraCalibrationCore.DistortionInfo
+// 0x0010 (0x0010 - 0x0000)
+struct FDistortionInfo final
+{
+public:
+	TArray<float>                                 Parameters;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Interp, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FDistortionInfo;
+
 // ScriptStruct CameraCalibrationCore.NodalPointOffset
 // 0x0040 (0x0040 - 0x0000)
 struct FNodalPointOffset final
@@ -183,15 +191,6 @@ public:
 	struct FQuat                                  RotationOffset;                                    // 0x0020(0x0020)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FNodalPointOffset;
-
-// ScriptStruct CameraCalibrationCore.DistortionInfo
-// 0x0010 (0x0010 - 0x0000)
-struct FDistortionInfo final
-{
-public:
-	TArray<float>                                 Parameters;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Interp, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FDistortionInfo;
 
 // ScriptStruct CameraCalibrationCore.STMapInfo
 // 0x0010 (0x0010 - 0x0000)
@@ -616,5 +615,4 @@ public:
 };
 DUMPER7_ASSERTS_FSTMapTable;
 
-}
-
+SDK_NAMESPACE_END

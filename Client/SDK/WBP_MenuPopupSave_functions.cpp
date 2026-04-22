@@ -14,8 +14,7 @@
 #include "WBP_MenuPopupSave_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_MenuPopupSave.WBP_MenuPopupSave_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -95,5 +94,5 @@ void UWBP_MenuPopupSave_C::SetColors(const struct FLinearColor& Orange)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

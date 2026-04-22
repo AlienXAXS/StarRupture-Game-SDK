@@ -14,8 +14,7 @@
 #include "GeometryScriptingCore_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GeometryScriptingCore.GeometryScriptLibrary_CollisionFunctions.ApproximateConvexHullsWithSimplerCollisionShapes
 // (Final, RequiredAPI, Native, Static, Public, HasOutParams, BlueprintCallable)
@@ -20569,5 +20568,5 @@ bool UGeometryScriptLibrary_VolumeTextureBakeFunctions::BakeSignedDistanceToVolu
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

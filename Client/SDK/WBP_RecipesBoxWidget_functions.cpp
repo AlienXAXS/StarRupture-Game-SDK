@@ -14,8 +14,7 @@
 #include "WBP_RecipesBoxWidget_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_RecipesBoxWidget.WBP_RecipesBoxWidget_C.BndEvt__WBP_CorporationRecipes_DropDownButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -320,5 +319,5 @@ void UWBP_RecipesBoxWidget_C::SetWidth(double InSize)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

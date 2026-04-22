@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum DLSS.EDLSSSettingOverride
 // NumValues: 0x0004
@@ -94,5 +93,4 @@ public:
 };
 DUMPER7_ASSERTS_FDLSSUpscalerModularFeatureSettings;
 
-}
-
+SDK_NAMESPACE_END

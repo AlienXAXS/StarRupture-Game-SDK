@@ -13,8 +13,7 @@
 #include "BP_Foundable_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Foundable_OutsDeadBody_sitting.BP_Foundable_OutsDeadBody_sitting_C
 // 0x0078 (0x0388 - 0x0310)
@@ -57,5 +56,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Foundable_OutsDeadBody_sitting_C;
 
-}
-
+SDK_NAMESPACE_END

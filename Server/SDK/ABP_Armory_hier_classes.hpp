@@ -15,8 +15,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass ABP_Armory_hier.ABP_Armory_hier_C
 // 0x01A0 (0x05C0 - 0x0420)
@@ -64,5 +63,4 @@ public:
 };
 DUMPER7_ASSERTS_UABP_Armory_hier_C;
 
-}
-
+SDK_NAMESPACE_END

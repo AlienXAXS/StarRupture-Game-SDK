@@ -13,8 +13,8 @@
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function WBP_CraftingProgress.WBP_CraftingProgress_C.ExecuteUbergraph_WBP_CraftingProgress
 // 0x0048 (0x0048 - 0x0000)
@@ -66,5 +66,5 @@ public:
 };
 DUMPER7_ASSERTS_WBP_CraftingProgress_C_UpdateProgressByDigits;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

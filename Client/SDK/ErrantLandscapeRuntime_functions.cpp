@@ -14,8 +14,7 @@
 #include "ErrantLandscapeRuntime_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ErrantLandscapeRuntime.ElRtBrushComponent.SetBrushPriority
 // (Native, Public, BlueprintCallable)
@@ -525,5 +524,5 @@ class ALandscape* UElRtWorldSubsystem::GetDefaultLandscape() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

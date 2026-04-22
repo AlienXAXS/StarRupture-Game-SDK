@@ -14,8 +14,7 @@
 #include "AnimGraphRuntime_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct ABP_Melee_Tier3_Ragdoll.ABP_Melee_Tier3_Ragdoll_C.AnimBlueprintGeneratedConstantData
 // 0x021F (0x0220 - 0x0001)
@@ -62,5 +61,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Melee_Tier3_Ragdoll__FAnimBlueprintGeneratedMutableData;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "WBP_EncyclopediaEntryButton_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_EncyclopediaEntryButton.WBP_EncyclopediaEntryButton_C.BP_OnSelectionChange
 // (Event, Public, BlueprintEvent)
@@ -106,5 +105,5 @@ void UWBP_EncyclopediaEntryButton_C::UpdateFocusAndSelection()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

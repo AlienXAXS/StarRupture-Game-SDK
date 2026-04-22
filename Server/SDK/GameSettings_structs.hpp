@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct GameSettings.GameSettingFilterState
 // 0x03A0 (0x03A0 - 0x0000)
@@ -49,5 +48,4 @@ public:
 };
 DUMPER7_ASSERTS_FGameSettingNameExtensions;
 
-}
-
+SDK_NAMESPACE_END

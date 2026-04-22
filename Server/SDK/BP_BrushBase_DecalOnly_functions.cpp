@@ -14,8 +14,7 @@
 #include "BP_BrushBase_DecalOnly_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_BrushBase_DecalOnly.BP_BrushBase_DecalOnly_C.SetTranslucency
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -44,5 +43,5 @@ void ABP_BrushBase_DecalOnly_C::AlignToGround()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

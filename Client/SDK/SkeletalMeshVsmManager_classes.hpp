@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class SkeletalMeshVsmManager.SkeletalMeshVsmRegisterActor
 // 0x0000 (0x0328 - 0x0328)
@@ -127,5 +126,4 @@ public:
 };
 DUMPER7_ASSERTS_UStaticMeshVsmRegisterComponent;
 
-}
-
+SDK_NAMESPACE_END

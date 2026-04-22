@@ -15,8 +15,7 @@
 #include "ClothingSystemRuntimeInterface_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ClothingSystemRuntimeInterface.ClothingAssetBase
 // 0x0010 (0x0038 - 0x0028)
@@ -197,5 +196,4 @@ public:
 };
 DUMPER7_ASSERTS_UClothPhysicalMeshDataBase_Legacy;
 
-}
-
+SDK_NAMESPACE_END

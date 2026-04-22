@@ -14,8 +14,7 @@
 #include "WBP_CraftingProgress_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_CraftingProgress.WBP_CraftingProgress_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -126,5 +125,5 @@ void UWBP_CraftingProgress_C::UpdateProgressByDigits(int32 Tens, int32 Ones)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

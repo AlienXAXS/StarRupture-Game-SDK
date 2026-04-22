@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Animal_PanzerHund_AnimNotify_Launch.BP_Animal_PanzerHund_AnimNotify_Launch_C
 // 0x0000 (0x0038 - 0x0038)
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_Animal_PanzerHund_AnimNotify_Launch_C;
 
-}
-
+SDK_NAMESPACE_END

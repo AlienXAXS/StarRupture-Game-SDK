@@ -14,8 +14,7 @@
 #include "GC_Damage_Player_Default_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GC_Damage_Player_Default.GC_Damage_Player_Default_C.OnExecute
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
@@ -41,5 +40,5 @@ bool UGC_Damage_Player_Default_C::OnExecute(class AActor* MyTarget, const struct
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

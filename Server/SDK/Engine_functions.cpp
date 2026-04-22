@@ -14,8 +14,7 @@
 #include "Engine_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Engine.Actor.AddComponent
 // (Final, RequiredAPI, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
@@ -103587,21 +103586,21 @@ struct FVector UKismetMathLibrary::ProjectPointOnToPlane(const struct FVector& P
 }
 
 
-// Function Engine.KismetMathLibrary.ProjectVectorOntoPlane
+// Function Engine.KismetMathLibrary.ProjectVectorOnToPlane
 // (Final, RequiredAPI, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
 // const struct FVector&                   V                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FVector&                   PlaneNormal                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector UKismetMathLibrary::ProjectVectorOntoPlane(const struct FVector& V, const struct FVector& PlaneNormal)
+struct FVector UKismetMathLibrary::ProjectVectorOnToPlane(const struct FVector& V, const struct FVector& PlaneNormal)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KismetMathLibrary", "ProjectVectorOntoPlane");
+		Func = StaticClass()->GetFunction("KismetMathLibrary", "ProjectVectorOnToPlane");
 
-	Params::KismetMathLibrary_ProjectVectorOntoPlane Parms{};
+	Params::KismetMathLibrary_ProjectVectorOnToPlane Parms{};
 
 	Parms.V = std::move(V);
 	Parms.PlaneNormal = std::move(PlaneNormal);
@@ -127274,5 +127273,5 @@ void UWorldPartitionRuntimeLevelStreamingCell::OnLevelShown()
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class SoundCueTemplates.SoundCueTemplate
 // 0x0000 (0x0570 - 0x0570)
@@ -97,5 +96,4 @@ public:
 };
 DUMPER7_ASSERTS_USoundCueTemplateSettings;
 
-}
-
+SDK_NAMESPACE_END

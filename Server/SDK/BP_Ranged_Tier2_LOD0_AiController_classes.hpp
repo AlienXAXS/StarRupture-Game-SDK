@@ -13,8 +13,7 @@
 #include "BP_BaseAIController_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Ranged_Tier2_LOD0_AiController.BP_Ranged_Tier2_LOD0_AiController_C
 // 0x0000 (0x03F8 - 0x03F8)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Ranged_Tier2_LOD0_AiController_C;
 
-}
-
+SDK_NAMESPACE_END

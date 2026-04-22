@@ -14,8 +14,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GA_TestUseItem.GA_TestUseItem_C
 // 0x0008 (0x0510 - 0x0508)
@@ -44,5 +43,4 @@ public:
 };
 DUMPER7_ASSERTS_UGA_TestUseItem_C;
 
-}
-
+SDK_NAMESPACE_END

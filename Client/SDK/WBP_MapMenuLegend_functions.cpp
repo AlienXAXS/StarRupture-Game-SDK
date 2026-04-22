@@ -14,8 +14,7 @@
 #include "WBP_MapMenuLegend_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_MapMenuLegend.WBP_MapMenuLegend_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -50,5 +49,5 @@ void UWBP_MapMenuLegend_C::ExecuteUbergraph_WBP_MapMenuLegend(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

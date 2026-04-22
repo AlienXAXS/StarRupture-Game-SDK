@@ -14,8 +14,7 @@
 #include "AuWeapon_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AuWeapon.AuAT_WaitObserveReloadWeapon.WaitObserveReloadWeapon
 // (Final, Native, Static, Public, BlueprintCallable)
@@ -1696,5 +1695,5 @@ bool UAuWeaponItemDataBase::K2_IsTool() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

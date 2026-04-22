@@ -14,8 +14,7 @@
 #include "BP_Melee_Tier1_Actor_AnimNotifyState_StopMovement_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Melee_Tier1_Actor_AnimNotifyState_StopMovement.BP_Melee_Tier1_Actor_AnimNotifyState_StopMovement_C.Received_NotifyBegin
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
@@ -72,5 +71,5 @@ bool UBP_Melee_Tier1_Actor_AnimNotifyState_StopMovement_C::Received_NotifyEnd(cl
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

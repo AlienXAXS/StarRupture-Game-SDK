@@ -14,8 +14,7 @@
 #include "ABP_Melee_Tier3_Ragdoll_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ABP_Melee_Tier3_Ragdoll.ABP_Melee_Tier3_Ragdoll_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -71,5 +70,5 @@ void UABP_Melee_Tier3_Ragdoll_C::ExecuteUbergraph_ABP_Melee_Tier3_Ragdoll(int32 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

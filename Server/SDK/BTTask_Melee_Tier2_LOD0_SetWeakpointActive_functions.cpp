@@ -14,8 +14,7 @@
 #include "BTTask_Melee_Tier2_LOD0_SetWeakpointActive_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTTask_Melee_Tier2_LOD0_SetWeakpointActive.BTTask_Melee_Tier2_LOD0_SetWeakpointActive_C.ReceiveExecuteAI
 // (Event, Protected, BlueprintEvent)
@@ -58,5 +57,5 @@ void UBTTask_Melee_Tier2_LOD0_SetWeakpointActive_C::ExecuteUbergraph_BTTask_Mele
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

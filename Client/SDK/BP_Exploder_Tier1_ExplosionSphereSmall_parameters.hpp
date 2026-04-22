@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_Exploder_Tier1_ExplosionSphereSmall.BP_Exploder_Tier1_ExplosionSphereSmall_C.ExecuteUbergraph_BP_Exploder_Tier1_ExplosionSphereSmall
 // 0x0150 (0x0150 - 0x0000)
@@ -52,5 +52,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_Exploder_Tier1_ExplosionSphereSmall_C_SetSphereRadius;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

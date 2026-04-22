@@ -13,8 +13,8 @@
 #include "GameplayAbilities_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function GA_DemolishBuilding.GA_DemolishBuilding_C.ExecuteUbergraph_GA_DemolishBuilding
 // 0x00D0 (0x00D0 - 0x0000)
@@ -41,5 +41,5 @@ public:
 };
 DUMPER7_ASSERTS_GA_DemolishBuilding_C_K2_ActivateAbilityFromEvent;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

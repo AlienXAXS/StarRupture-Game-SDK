@@ -16,8 +16,7 @@
 #include "UMG_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_HeaderLineEncyclopedia.WBP_HeaderLineEncyclopedia_C
 // 0x0068 (0x0408 - 0x03A0)
@@ -57,5 +56,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_HeaderLineEncyclopedia_C;
 
-}
-
+SDK_NAMESPACE_END

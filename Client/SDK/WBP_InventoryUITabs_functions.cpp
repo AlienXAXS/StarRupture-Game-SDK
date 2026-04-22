@@ -14,8 +14,7 @@
 #include "WBP_InventoryUITabs_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_InventoryUITabs.WBP_InventoryUITabs_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -124,5 +123,5 @@ void UWBP_InventoryUITabs_C::SetDataPointValue(int32 InPoints)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

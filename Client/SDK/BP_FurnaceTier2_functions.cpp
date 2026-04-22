@@ -14,8 +14,7 @@
 #include "BP_FurnaceTier2_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_FurnaceTier2.BP_FurnaceTier2_C.Get Meshes
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -38,5 +37,5 @@ void ABP_FurnaceTier2_C::Get_Meshes(class USceneComponent* Static, class USceneC
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

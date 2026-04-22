@@ -14,8 +14,7 @@
 #include "BP_Animal_Crab_AnimNotify_Rotate_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Animal_Crab_AnimNotify_Rotate.BP_Animal_Crab_AnimNotify_Rotate_C.Received_NotifyTick
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
@@ -45,5 +44,5 @@ bool UBP_Animal_Crab_AnimNotify_Rotate_C::Received_NotifyTick(class USkeletalMes
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

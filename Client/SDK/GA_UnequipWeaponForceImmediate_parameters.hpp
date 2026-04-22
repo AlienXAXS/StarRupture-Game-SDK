@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function GA_UnequipWeaponForceImmediate.GA_UnequipWeaponForceImmediate_C.ExecuteUbergraph_GA_UnequipWeaponForceImmediate
 // 0x0028 (0x0028 - 0x0000)
@@ -29,5 +29,5 @@ public:
 };
 DUMPER7_ASSERTS_GA_UnequipWeaponForceImmediate_C_ExecuteUbergraph_GA_UnequipWeaponForceImmediate;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

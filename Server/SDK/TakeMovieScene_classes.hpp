@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
+#include "MovieSceneTracks_structs.hpp"
 #include "MovieScene_structs.hpp"
 #include "MovieScene_classes.hpp"
-#include "MovieSceneTracks_structs.hpp"
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class TakeMovieScene.MovieSceneTakeSection
 // 0x07F8 (0x0908 - 0x0110)
@@ -100,5 +99,4 @@ public:
 };
 DUMPER7_ASSERTS_UMovieSceneTakeTrack;
 
-}
-
+SDK_NAMESPACE_END

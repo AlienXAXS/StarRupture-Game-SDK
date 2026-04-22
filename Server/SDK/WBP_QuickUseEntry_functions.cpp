@@ -14,8 +14,7 @@
 #include "WBP_QuickUseEntry_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_QuickUseEntry.WBP_QuickUseEntry_C.OnDataRefresh
 // (Event, Public, BlueprintEvent)
@@ -56,5 +55,5 @@ void UWBP_QuickUseEntry_C::ExecuteUbergraph_WBP_QuickUseEntry(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

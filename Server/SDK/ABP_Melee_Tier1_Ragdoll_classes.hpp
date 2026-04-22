@@ -16,8 +16,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass ABP_Melee_Tier1_Ragdoll.ABP_Melee_Tier1_Ragdoll_C
 // 0x0120 (0x0540 - 0x0420)
@@ -51,5 +50,4 @@ public:
 };
 DUMPER7_ASSERTS_UABP_Melee_Tier1_Ragdoll_C;
 
-}
-
+SDK_NAMESPACE_END

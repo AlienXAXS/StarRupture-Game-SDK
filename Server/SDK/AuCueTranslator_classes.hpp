@@ -15,8 +15,7 @@
 #include "GameplayAbilities_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class AuCueTranslator.AuCueTranslatorSettings
 // 0x0020 (0x0058 - 0x0038)
@@ -65,5 +64,4 @@ public:
 };
 DUMPER7_ASSERTS_UAuGameplayCueTranslator;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "GeometryFramework_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GeometryFramework.DynamicMeshProcessorBlueprint.ProcessDynamicMesh
 // (RequiredAPI, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -1606,5 +1605,5 @@ void UDynamicMeshPool::ReturnMesh(class UDynamicMesh* Mesh)
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

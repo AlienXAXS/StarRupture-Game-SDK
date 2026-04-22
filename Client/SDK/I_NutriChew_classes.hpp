@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass I_NutriChew.I_NutriChew_C
 // 0x0000 (0x0420 - 0x0420)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UI_NutriChew_C;
 
-}
-
+SDK_NAMESPACE_END

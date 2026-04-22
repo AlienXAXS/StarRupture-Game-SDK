@@ -14,8 +14,7 @@
 #include "BP_MassCropHiResActorBase_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_MassCropHiResActorBase.BP_MassCropHiResActorBase_C.OnResourceReplenishedCosmeticsStart
 // (Event, Public, BlueprintEvent)
@@ -64,5 +63,5 @@ void ABP_MassCropHiResActorBase_C::ExecuteUbergraph_BP_MassCropHiResActorBase(in
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

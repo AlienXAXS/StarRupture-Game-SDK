@@ -14,8 +14,7 @@
 #include "BTDecorator_Random_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTDecorator_Random.BTDecorator_Random_C.PerformConditionCheckAI
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -41,5 +40,5 @@ bool UBTDecorator_Random_C::PerformConditionCheckAI(class AAIController* OwnerCo
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

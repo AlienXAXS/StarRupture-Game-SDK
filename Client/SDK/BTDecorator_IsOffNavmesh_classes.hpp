@@ -14,8 +14,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BTDecorator_IsOffNavmesh.BTDecorator_IsOffNavmesh_C
 // 0x0030 (0x00D0 - 0x00A0)
@@ -45,5 +44,4 @@ public:
 };
 DUMPER7_ASSERTS_UBTDecorator_IsOffNavmesh_C;
 
-}
-
+SDK_NAMESPACE_END

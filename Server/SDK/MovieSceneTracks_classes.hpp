@@ -21,8 +21,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MovieSceneTracks.MovieSceneTransformOrigin
 // 0x0000 (0x0000 - 0x0000)
@@ -59,7 +58,7 @@ DUMPER7_ASSERTS_IMovieSceneTransformOrigin;
 // Class MovieSceneTracks.MovieSceneCommonAnimationTrack
 // 0x00A8 (0x01C0 - 0x0118)
 #pragma pack(push, 0x1)
-class alignas(0x10) UMovieSceneCommonAnimationTrack : public UMovieSceneNameableTrack
+class SDK_ALIGN(0x10) UMovieSceneCommonAnimationTrack : public UMovieSceneNameableTrack
 {
 public:
 	TArray<class UMovieSceneSection*>             AnimationSections;                                 // 0x0118(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
@@ -4166,5 +4165,4 @@ public:
 };
 DUMPER7_ASSERTS_UMovieSceneDoubleVectorTrack;
 
-}
-
+SDK_NAMESPACE_END

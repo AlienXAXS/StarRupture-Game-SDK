@@ -14,8 +14,7 @@
 #include "BTDecorator_Exploder_Tier1_LOD0_ShouldSpawnHugeCollision_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTDecorator_Exploder_Tier1_LOD0_ShouldSpawnHugeCollision.BTDecorator_Exploder_Tier1_LOD0_ShouldSpawnHugeCollision_C.PerformConditionCheckAI
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -41,5 +40,5 @@ bool UBTDecorator_Exploder_Tier1_LOD0_ShouldSpawnHugeCollision_C::PerformConditi
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

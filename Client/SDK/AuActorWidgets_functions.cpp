@@ -14,8 +14,7 @@
 #include "AuActorWidgets_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AuActorWidgets.AuActorWidgetBase.BP_OnHideWidget
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -102,5 +101,5 @@ void UAuActorWidgetsSubsystem::HideWidgetsByContexts(const TArray<class FName>& 
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "CommonUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_TextStyleRegular14_Red.BP_TextStyleRegular14_Red_C
 // 0x0000 (0x0190 - 0x0190)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_TextStyleRegular14_Red_C;
 
-}
-
+SDK_NAMESPACE_END

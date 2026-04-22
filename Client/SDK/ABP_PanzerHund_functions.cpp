@@ -14,8 +14,7 @@
 #include "ABP_PanzerHund_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ABP_PanzerHund.ABP_PanzerHund_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -359,5 +358,5 @@ void UABP_PanzerHund_C::UpdateYawRotationRateForLocomotionState(ECrEnemyLocomoti
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

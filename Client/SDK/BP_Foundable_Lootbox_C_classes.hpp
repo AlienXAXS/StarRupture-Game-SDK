@@ -13,8 +13,7 @@
 #include "BP_Foundable_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Foundable_Lootbox_C.BP_Foundable_Lootbox_C_C
 // 0x0020 (0x0330 - 0x0310)
@@ -42,5 +41,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Foundable_Lootbox_C_C;
 
-}
-
+SDK_NAMESPACE_END

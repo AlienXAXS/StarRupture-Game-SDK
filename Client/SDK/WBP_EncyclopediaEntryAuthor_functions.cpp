@@ -14,8 +14,7 @@
 #include "WBP_EncyclopediaEntryAuthor_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_EncyclopediaEntryAuthor.WBP_EncyclopediaEntryAuthor_C.ExecuteUbergraph_WBP_EncyclopediaEntryAuthor
 // (Final, UbergraphFunction, HasDefaults)
@@ -56,5 +55,5 @@ void UWBP_EncyclopediaEntryAuthor_C::SetEntryAuthorBP(const struct FEncyclopedia
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

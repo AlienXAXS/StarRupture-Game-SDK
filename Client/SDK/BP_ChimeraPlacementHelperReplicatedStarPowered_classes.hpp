@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ChimeraPlacementHelperReplicatedStarPowered.BP_ChimeraPlacementHelperReplicatedStarPowered_C
 // 0x0020 (0x08C0 - 0x08A0)
@@ -48,5 +47,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_ChimeraPlacementHelperReplicatedStarPowered_C;
 
-}
-
+SDK_NAMESPACE_END

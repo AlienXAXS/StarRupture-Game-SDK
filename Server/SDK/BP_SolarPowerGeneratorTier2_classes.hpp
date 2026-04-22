@@ -15,8 +15,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_SolarPowerGeneratorTier2.BP_SolarPowerGeneratorTier2_C
 // 0x0090 (0x06D8 - 0x0648)
@@ -63,5 +62,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_SolarPowerGeneratorTier2_C;
 
-}
-
+SDK_NAMESPACE_END

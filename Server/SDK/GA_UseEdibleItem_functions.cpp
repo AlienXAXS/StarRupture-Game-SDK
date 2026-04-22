@@ -14,8 +14,7 @@
 #include "GA_UseEdibleItem_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GA_UseEdibleItem.GA_UseEdibleItem_C.clamp
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -156,5 +155,5 @@ void UGA_UseEdibleItem_C::K2_OnEndAbility(bool bWasCancelled)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

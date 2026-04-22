@@ -14,8 +14,7 @@
 #include "BP_AggressivePlant_Logic_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_AggressivePlant_Logic.BP_AggressivePlant_Logic_C.BndEvt__BP_AggressivePlant_CapsuleCollision_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature
 // (HasOutParams, BlueprintEvent)
@@ -166,5 +165,5 @@ void ABP_AggressivePlant_Logic_C::SetHidden(bool IsHidden)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

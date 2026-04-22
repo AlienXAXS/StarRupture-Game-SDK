@@ -14,8 +14,7 @@
 #include "BTTask_Exploder_Tier2_LOD0_RunCrAiActionBlueprintBase_DealDamageAndSpawnEntity_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTTask_Exploder_Tier2_LOD0_RunCrAiActionBlueprintBase_DealDamageAndSpawnEntity.BTTask_Exploder_Tier2_LOD0_RunCrAiActionBlueprintBase_DealDamageAndSpawnEntity_C.CreateAiAction
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -36,5 +35,5 @@ class UCrAiAction* UBTTask_Exploder_Tier2_LOD0_RunCrAiActionBlueprintBase_DealDa
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

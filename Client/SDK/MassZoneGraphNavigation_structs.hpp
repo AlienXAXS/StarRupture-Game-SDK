@@ -13,12 +13,11 @@
 #include "MassCommon_structs.hpp"
 #include "ZoneGraph_structs.hpp"
 #include "MassEntity_structs.hpp"
-#include "MassNavigation_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "MassNavigation_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct MassZoneGraphNavigation.MassZoneGraphNavigationParameters
 // 0x0010 (0x0010 - 0x0000)
@@ -106,5 +105,4 @@ public:
 };
 DUMPER7_ASSERTS_FMassLaneCacheBoundaryFragment;
 
-}
-
+SDK_NAMESPACE_END

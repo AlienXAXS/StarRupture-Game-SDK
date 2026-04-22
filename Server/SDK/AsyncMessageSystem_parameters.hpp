@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "AsyncMessageSystem_structs.hpp"
 #include "Engine_structs.hpp"
+#include "AsyncMessageSystem_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function AsyncMessageSystem.AsyncAction_ListenForAsyncMessage.StartListeningForAsyncMessage
 // 0x0030 (0x0030 - 0x0000)
@@ -76,5 +76,5 @@ public:
 };
 DUMPER7_ASSERTS_AsyncMessageSystemBlueprintLibrary_QueueAsyncMessageForBroadcast;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

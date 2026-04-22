@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum ChaosCloth.EChaosWeightMapTarget
 // NumValues: 0x0014
@@ -61,5 +60,4 @@ public:
 };
 DUMPER7_ASSERTS_FChaosClothWeightedValue;
 
-}
-
+SDK_NAMESPACE_END

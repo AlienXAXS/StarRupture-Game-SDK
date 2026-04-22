@@ -15,8 +15,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum ModelingComponents.EBakeTextureResolution
 // NumValues: 0x000B
@@ -404,5 +403,4 @@ public:
 };
 DUMPER7_ASSERTS_FMeshElementSelectionParams;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "AnimGraphRuntime_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct ABP_ItemAnimLayers_FPP_Base.ABP_ItemAnimLayers_FPP_Base_C.AnimBlueprintGeneratedConstantData
 // 0x1BE7 (0x1BE8 - 0x0001)
@@ -271,5 +270,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_ItemAnimLayers_FPP_Base__FAnimBlueprintGeneratedMutableData;
 
-}
-
+SDK_NAMESPACE_END

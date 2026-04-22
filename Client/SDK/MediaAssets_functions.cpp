@@ -14,8 +14,7 @@
 #include "MediaAssets_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function MediaAssets.MediaSource.SetMediaOptionBool
 // (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
@@ -3228,5 +3227,5 @@ void UMediaBlueprintFunctionLibrary::EnumerateWebcamCaptureDevices(TArray<struct
 		*OutDevices = std::move(Parms.OutDevices);
 }
 
-}
 
+SDK_NAMESPACE_END

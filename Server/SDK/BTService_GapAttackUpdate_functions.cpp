@@ -14,8 +14,7 @@
 #include "BTService_GapAttackUpdate_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTService_GapAttackUpdate.BTService_GapAttackUpdate_C.ReceiveTickAI
 // (Event, Protected, BlueprintEvent)
@@ -109,5 +108,5 @@ void UBTService_GapAttackUpdate_C::CanPerformGapAttack(bool* Result)
 		*Result = Parms.Result;
 }
 
-}
 
+SDK_NAMESPACE_END

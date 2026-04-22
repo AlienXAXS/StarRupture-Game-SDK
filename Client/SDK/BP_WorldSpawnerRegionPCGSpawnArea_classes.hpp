@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_WorldSpawnerRegionPCGSpawnArea.BP_WorldSpawnerRegionPCGSpawnArea_C
 // 0x0018 (0x0310 - 0x02F8)
@@ -41,5 +40,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_WorldSpawnerRegionPCGSpawnArea_C;
 
-}
-
+SDK_NAMESPACE_END

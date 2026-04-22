@@ -14,8 +14,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Modular_MagneticLift.BP_Modular_MagneticLift_C
 // 0x0020 (0x0860 - 0x0840)
@@ -48,5 +47,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Modular_MagneticLift_C;
 
-}
-
+SDK_NAMESPACE_END

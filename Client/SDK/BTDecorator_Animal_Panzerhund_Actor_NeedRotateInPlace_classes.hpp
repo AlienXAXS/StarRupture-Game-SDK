@@ -14,8 +14,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BTDecorator_Animal_Panzerhund_Actor_NeedRotateInPlace.BTDecorator_Animal_Panzerhund_Actor_NeedRotateInPlace_C
 // 0x0030 (0x00D0 - 0x00A0)
@@ -44,5 +43,4 @@ public:
 };
 DUMPER7_ASSERTS_UBTDecorator_Animal_Panzerhund_Actor_NeedRotateInPlace_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "WBP_OnlineStatus_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_OnlineStatus.WBP_OnlineStatus_C.ExecuteUbergraph_WBP_OnlineStatus
 // (Final, UbergraphFunction, HasDefaults)
@@ -50,5 +49,5 @@ void UWBP_OnlineStatus_C::Construct()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "ALI_ItemAnimLayers_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ALI_ItemAnimLayers.ALI_ItemAnimLayers_C.FullBody_Aiming
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -491,5 +490,5 @@ void IALI_ItemAnimLayers_C::LeftHandPose_OverrideState(const struct FPoseLink& I
 		*LeftHandPose_OverrideState_0 = std::move(Parms.LeftHandPose_OverrideState_0);
 }
 
-}
 
+SDK_NAMESPACE_END

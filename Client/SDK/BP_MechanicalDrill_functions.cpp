@@ -14,8 +14,7 @@
 #include "BP_MechanicalDrill_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_MechanicalDrill.BP_MechanicalDrill_C.ExecuteUbergraph_BP_MechanicalDrill
 // (Final, UbergraphFunction)
@@ -104,5 +103,5 @@ void ABP_MechanicalDrill_C::ReceiveBeginPlay()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BTDecorator_Exploder_Tier1_LOD0_ShouldSpawnHugeCollision.BTDecorator_Exploder_Tier1_LOD0_ShouldSpawnHugeCollision_C
 // 0x0028 (0x00C8 - 0x00A0)
@@ -43,5 +42,4 @@ public:
 };
 DUMPER7_ASSERTS_UBTDecorator_Exploder_Tier1_LOD0_ShouldSpawnHugeCollision_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "ControlRig_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // RigVMBlueprintGeneratedClass CR_PanzerHund.CR_PanzerHund_C
 // 0x00A8 (0x0CB0 - 0x0C08)
@@ -51,5 +50,4 @@ public:
 };
 DUMPER7_ASSERTS_UCR_PanzerHund_C;
 
-}
-
+SDK_NAMESPACE_END

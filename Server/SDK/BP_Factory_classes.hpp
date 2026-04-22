@@ -15,8 +15,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Factory.BP_Factory_C
 // 0x00E0 (0x07B8 - 0x06D8)
@@ -76,5 +75,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Factory_C;
 
-}
-
+SDK_NAMESPACE_END

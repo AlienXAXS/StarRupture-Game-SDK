@@ -14,8 +14,7 @@
 #include "BP_SealingDoor_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_SealingDoor.BP_SealingDoor_C.BndEvt__BP_SealingDoor_DoorTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature
 // (HasOutParams, BlueprintEvent)
@@ -134,5 +133,5 @@ void ABP_SealingDoor_C::ReceiveBeginPlay()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

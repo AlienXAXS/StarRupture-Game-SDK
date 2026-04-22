@@ -15,8 +15,7 @@
 #include "CommonUser_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_UserLoginButton.WBP_UserLoginButton_C
 // 0x0030 (0x03D0 - 0x03A0)
@@ -57,5 +56,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_UserLoginButton_C;
 
-}
-
+SDK_NAMESPACE_END

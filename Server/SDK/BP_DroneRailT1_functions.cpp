@@ -14,8 +14,7 @@
 #include "BP_DroneRailT1_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_DroneRailT1.BP_DroneRailT1_C.UpdateMaterialForSelectedFilter
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -86,5 +85,5 @@ void ABP_DroneRailT1_C::ExecuteUbergraph_BP_DroneRailT1(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

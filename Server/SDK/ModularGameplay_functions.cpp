@@ -14,8 +14,7 @@
 #include "ModularGameplay_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ModularGameplay.GameFrameworkComponentManager.AddReceiver
 // (Final, RequiredAPI, Native, Public, BlueprintCallable)
@@ -367,5 +366,5 @@ bool IGameFrameworkInitStateInterface::HasReachedInitState(const struct FGamepla
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

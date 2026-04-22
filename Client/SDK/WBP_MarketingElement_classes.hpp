@@ -15,8 +15,7 @@
 #include "UMG_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_MarketingElement.WBP_MarketingElement_C
 // 0x0018 (0x03F0 - 0x03D8)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_MarketingElement_C;
 
-}
-
+SDK_NAMESPACE_END

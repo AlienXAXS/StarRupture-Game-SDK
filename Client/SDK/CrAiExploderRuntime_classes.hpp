@@ -25,8 +25,7 @@
 #include "MassEntity_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class CrAiExploderRuntime.CrAiActionBtTaskExploderStartExplosionTimer
 // 0x0000 (0x00D0 - 0x00D0)
@@ -696,5 +695,4 @@ public:
 };
 DUMPER7_ASSERTS_UMassEnemyExploderTier1Trait;
 
-}
-
+SDK_NAMESPACE_END

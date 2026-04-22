@@ -14,8 +14,7 @@
 #include "Niagara_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Niagara.NiagaraPreviewAxis.ApplyToPreview
 // (Native, Event, Public, HasOutParams, BlueprintEvent)
@@ -7580,5 +7579,5 @@ class UAsyncNiagaraCaptureSimCache* UAsyncNiagaraCaptureSimCache::CaptureNiagara
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

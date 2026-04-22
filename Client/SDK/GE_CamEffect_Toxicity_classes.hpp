@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GE_CamEffect_Toxicity.GE_CamEffect_Toxicity_C
 // 0x0008 (0x0AB0 - 0x0AA8)
@@ -45,5 +44,4 @@ public:
 };
 DUMPER7_ASSERTS_UGE_CamEffect_Toxicity_C;
 
-}
-
+SDK_NAMESPACE_END

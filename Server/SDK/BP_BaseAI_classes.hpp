@@ -11,12 +11,11 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "MassAIPrototypeEnemyRuntime_classes.hpp"
 #include "CoreUObject_structs.hpp"
+#include "MassAIPrototypeEnemyRuntime_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_BaseAI.BP_BaseAI_C
 // 0x0020 (0x0D00 - 0x0CE0)
@@ -63,5 +62,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_BaseAI_C;
 
-}
-
+SDK_NAMESPACE_END

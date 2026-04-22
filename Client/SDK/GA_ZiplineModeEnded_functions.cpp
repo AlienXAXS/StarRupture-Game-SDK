@@ -14,8 +14,7 @@
 #include "GA_ZiplineModeEnded_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GA_ZiplineModeEnded.GA_ZiplineModeEnded_C.ExecuteUbergraph_GA_ZiplineModeEnded
 // (Final, UbergraphFunction)
@@ -190,5 +189,5 @@ void UGA_ZiplineModeEnded_C::OnNotLocallyControlledTppMontageBlendOut_E69301A243
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

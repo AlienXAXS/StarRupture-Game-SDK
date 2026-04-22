@@ -14,8 +14,7 @@
 #include "BP_ZipRail_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_ZipRail.BP_ZipRail_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
@@ -270,5 +269,5 @@ bool ABP_ZipRail_C::CanBePooled()
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

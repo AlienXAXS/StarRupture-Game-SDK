@@ -14,8 +14,7 @@
 #include "BP_PlacementHelperReplicatedZipline_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_PlacementHelperReplicatedZipline.BP_PlacementHelperReplicatedZipline_C.ExecuteUbergraph_BP_PlacementHelperReplicatedZipline
 // (Final, UbergraphFunction, HasDefaults)
@@ -130,5 +129,5 @@ void ABP_PlacementHelperReplicatedZipline_C::UpdateBlockedBeamLocations()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

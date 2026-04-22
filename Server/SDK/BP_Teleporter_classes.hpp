@@ -15,8 +15,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Teleporter.BP_Teleporter_C
 // 0x00E8 (0x0730 - 0x0648)
@@ -84,5 +83,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Teleporter_C;
 
-}
-
+SDK_NAMESPACE_END

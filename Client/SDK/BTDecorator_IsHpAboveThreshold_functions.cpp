@@ -14,8 +14,7 @@
 #include "BTDecorator_IsHpAboveThreshold_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTDecorator_IsHpAboveThreshold.BTDecorator_IsHpAboveThreshold_C.PerformConditionCheckAI
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -41,5 +40,5 @@ bool UBTDecorator_IsHpAboveThreshold_C::PerformConditionCheckAI(class AAIControl
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

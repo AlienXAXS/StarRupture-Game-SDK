@@ -14,8 +14,8 @@
 #include "InputCore_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function WBP_UserLoginButton.WBP_UserLoginButton_C.SetListenForLoginInput
 // 0x0088 (0x0088 - 0x0000)
@@ -111,5 +111,5 @@ public:
 };
 DUMPER7_ASSERTS_WBP_UserLoginButton_C_BndEvt__W_UserLoginButton_W_LyraMenuButton_Modal_K2Node_ComponentBoundEvent_0_CommonButtonBaseClicked__DelegateSignature;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

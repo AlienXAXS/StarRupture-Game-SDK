@@ -15,8 +15,7 @@
 #include "PBIK_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum IKRig.EFKChainTranslationMode
 // NumValues: 0x0006
@@ -1218,5 +1217,4 @@ public:
 };
 DUMPER7_ASSERTS_FLimbSolver;
 
-}
-
+SDK_NAMESPACE_END

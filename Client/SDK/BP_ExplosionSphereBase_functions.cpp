@@ -14,8 +14,7 @@
 #include "BP_ExplosionSphereBase_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_ExplosionSphereBase.BP_ExplosionSphereBase_C.SetSphereRadius
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -36,5 +35,5 @@ void ABP_ExplosionSphereBase_C::SetSphereRadius(double SphereRadius)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

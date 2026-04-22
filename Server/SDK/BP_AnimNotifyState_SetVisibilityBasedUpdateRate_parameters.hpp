@@ -13,8 +13,8 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_AnimNotifyState_SetVisibilityBasedUpdateRate.BP_AnimNotifyState_SetVisibilityBasedUpdateRate_C.Received_NotifyEnd
 // 0x0068 (0x0068 - 0x0000)
@@ -52,5 +52,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_AnimNotifyState_SetVisibilityBasedUpdateRate_C_Received_NotifyBegin;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

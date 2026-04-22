@@ -15,8 +15,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_LaserDrill.BP_LaserDrill_C
 // 0x0098 (0x0770 - 0x06D8)
@@ -66,5 +65,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_LaserDrill_C;
 
-}
-
+SDK_NAMESPACE_END

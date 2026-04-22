@@ -14,8 +14,7 @@
 #include "ABP_Exploder_Tier2_Actor_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ABP_Exploder_Tier2_Actor.ABP_Exploder_Tier2_Actor_C.ExecuteUbergraph_ABP_Exploder_Tier2_Actor
 // (Final, UbergraphFunction)
@@ -401,5 +400,5 @@ void UABP_Exploder_Tier2_Actor_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
 }
 
-}
 
+SDK_NAMESPACE_END

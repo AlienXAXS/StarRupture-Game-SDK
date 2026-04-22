@@ -14,8 +14,7 @@
 #include "WBP_CraftingRoundProgressBar_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_CraftingRoundProgressBar.WBP_CraftingRoundProgressBar_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -188,5 +187,5 @@ void UWBP_CraftingRoundProgressBar_C::UpdateProgress()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

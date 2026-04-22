@@ -13,8 +13,8 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_Animal_PanzerHund_AnimNotify_Stop.BP_Animal_PanzerHund_AnimNotify_Stop_C.Received_Notify
 // 0x0058 (0x0058 - 0x0000)
@@ -31,5 +31,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_Animal_PanzerHund_AnimNotify_Stop_C_Received_Notify;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

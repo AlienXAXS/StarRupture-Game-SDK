@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GM_MainMenu2.GM_MainMenu2_C
 // 0x0018 (0x0378 - 0x0360)
@@ -46,5 +45,4 @@ public:
 };
 DUMPER7_ASSERTS_AGM_MainMenu2_C;
 
-}
-
+SDK_NAMESPACE_END

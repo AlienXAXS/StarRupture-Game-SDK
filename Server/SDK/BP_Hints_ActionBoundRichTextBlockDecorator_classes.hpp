@@ -13,8 +13,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Hints_ActionBoundRichTextBlockDecorator.BP_Hints_ActionBoundRichTextBlockDecorator_C
 // 0x0000 (0x0048 - 0x0048)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_Hints_ActionBoundRichTextBlockDecorator_C;
 
-}
-
+SDK_NAMESPACE_END

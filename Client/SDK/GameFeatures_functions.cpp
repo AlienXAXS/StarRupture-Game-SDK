@@ -14,8 +14,7 @@
 #include "GameFeatures_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GameFeatures.GameFeatureData.GetPluginName
 // (Final, RequiredAPI, Native, Static, Public, HasOutParams, BlueprintCallable)
@@ -45,5 +44,5 @@ void UGameFeatureData::GetPluginName(const class UGameFeatureData* GFD, class FS
 		*PluginName = std::move(Parms.PluginName);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BTService_EnsureMeshIsVisible.BTService_EnsureMeshIsVisible_C.ReceiveTickAI
 // 0x0018 (0x0018 - 0x0000)
@@ -38,5 +38,5 @@ public:
 };
 DUMPER7_ASSERTS_BTService_EnsureMeshIsVisible_C_ExecuteUbergraph_BTService_EnsureMeshIsVisible;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

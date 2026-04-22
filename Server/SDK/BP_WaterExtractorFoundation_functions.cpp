@@ -14,8 +14,7 @@
 #include "BP_WaterExtractorFoundation_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_WaterExtractorFoundation.BP_WaterExtractorFoundation_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
@@ -90,5 +89,5 @@ void ABP_WaterExtractorFoundation_C::ExecuteUbergraph_BP_WaterExtractorFoundatio
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

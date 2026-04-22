@@ -14,8 +14,7 @@
 #include "WBP_CorporationRecipeSlot_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_CorporationRecipeSlot.WBP_CorporationRecipeSlot_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -220,5 +219,5 @@ void UWBP_CorporationRecipeSlot_C::ShowSelection(bool bSelected)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

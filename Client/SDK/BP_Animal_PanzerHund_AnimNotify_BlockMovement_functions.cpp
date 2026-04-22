@@ -14,8 +14,7 @@
 #include "BP_Animal_PanzerHund_AnimNotify_BlockMovement_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Animal_PanzerHund_AnimNotify_BlockMovement.BP_Animal_PanzerHund_AnimNotify_BlockMovement_C.Received_NotifyBegin
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
@@ -72,5 +71,5 @@ bool UBP_Animal_PanzerHund_AnimNotify_BlockMovement_C::Received_NotifyEnd(class 
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

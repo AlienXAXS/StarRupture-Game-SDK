@@ -13,8 +13,7 @@
 #include "BP_CloningBed_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_CloningBed_NonDeconstructible.BP_CloningBed_NonDeconstructible_C
 // 0x0030 (0x0708 - 0x06D8)
@@ -44,5 +43,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_CloningBed_NonDeconstructible_C;
 
-}
-
+SDK_NAMESPACE_END

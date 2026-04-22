@@ -14,8 +14,7 @@
 #include "GA_RemovingTemperatureFromBuildingEnd_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GA_RemovingTemperatureFromBuildingEnd.GA_RemovingTemperatureFromBuildingEnd_C.ExecuteUbergraph_GA_RemovingTemperatureFromBuildingEnd
 // (Final, UbergraphFunction, HasDefaults)
@@ -190,5 +189,5 @@ void UGA_RemovingTemperatureFromBuildingEnd_C::OnNotLocallyControlledTppMontageB
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

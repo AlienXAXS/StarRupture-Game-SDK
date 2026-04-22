@@ -14,8 +14,7 @@
 #include "PlayersNetIdOverride_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PlayersNetIdOverride.PlayersNetIdOverrideLibrary.GetClientUniqueNetIdOverride
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
@@ -129,5 +128,5 @@ void UPlayersNetIdOverrideLibrary::OverridePlayerNetIdForListenServer(const clas
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

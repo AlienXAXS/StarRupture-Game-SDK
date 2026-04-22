@@ -14,8 +14,7 @@
 #include "AsyncMessageSystem_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AsyncMessageSystem.AsyncAction_ListenForAsyncMessage.StartListeningForAsyncMessage
 // (Final, Native, Static, Public, BlueprintCallable)
@@ -187,5 +186,5 @@ bool UAsyncMessageSystemBlueprintLibrary::QueueAsyncMessageForBroadcast(class UO
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

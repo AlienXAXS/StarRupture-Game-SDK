@@ -14,8 +14,7 @@
 #include "BP_HabitatBig_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_HabitatBig.BP_HabitatBig_C.GetBuildingMeshes
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
@@ -37,5 +36,5 @@ void ABP_HabitatBig_C::GetBuildingMeshes(class UMeshComponent** MainBody) const
 		*MainBody = Parms.MainBody;
 }
 
-}
 
+SDK_NAMESPACE_END

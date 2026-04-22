@@ -13,8 +13,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BTDecorator_IsHpAboveThreshold.BTDecorator_IsHpAboveThreshold_C
 // 0x0008 (0x00A8 - 0x00A0)
@@ -42,5 +41,4 @@ public:
 };
 DUMPER7_ASSERTS_UBTDecorator_IsHpAboveThreshold_C;
 
-}
-
+SDK_NAMESPACE_END

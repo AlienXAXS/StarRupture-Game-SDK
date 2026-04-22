@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "AuItems_structs.hpp"
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct AuUI.AuUIFloatingTextSettings
 // 0x00B8 (0x00B8 - 0x0000)
@@ -124,5 +123,4 @@ public:
 };
 DUMPER7_ASSERTS_FAuNotificationManager;
 
-}
-
+SDK_NAMESPACE_END

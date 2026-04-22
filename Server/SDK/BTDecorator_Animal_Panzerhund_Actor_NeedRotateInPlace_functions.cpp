@@ -14,8 +14,7 @@
 #include "BTDecorator_Animal_Panzerhund_Actor_NeedRotateInPlace_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTDecorator_Animal_Panzerhund_Actor_NeedRotateInPlace.BTDecorator_Animal_Panzerhund_Actor_NeedRotateInPlace_C.PerformConditionCheckAI
 // (Event, Protected, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -41,5 +40,5 @@ bool UBTDecorator_Animal_Panzerhund_Actor_NeedRotateInPlace_C::PerformConditionC
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "WBP_WeaponTooltip_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_WeaponTooltip.WBP_WeaponTooltip_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -70,5 +69,5 @@ void UWBP_WeaponTooltip_C::SetItemName(const class FText& InText)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

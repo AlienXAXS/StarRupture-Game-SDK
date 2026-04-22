@@ -14,8 +14,7 @@
 #include "BP_ResearchLab_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_ResearchLab.BP_ResearchLab_C.ExecuteUbergraph_BP_ResearchLab
 // (Final, UbergraphFunction, HasDefaults)
@@ -96,5 +95,5 @@ void ABP_ResearchLab_C::SetupSkeletalMesh()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

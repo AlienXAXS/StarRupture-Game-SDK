@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum FFXFSRSettings.EFFXFSRQualityMode
 // NumValues: 0x0006
@@ -73,5 +72,4 @@ enum class EFFXFSRPaceRHIFrameMode : uint8
 	EFFXFSRPaceRHIFrameMode_MAX              = 2,
 };
 
-}
-
+SDK_NAMESPACE_END

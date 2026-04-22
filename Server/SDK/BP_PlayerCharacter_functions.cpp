@@ -14,8 +14,7 @@
 #include "BP_PlayerCharacter_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_PlayerCharacter.BP_PlayerCharacter_C.BlockEnergyLoweringDuringSprint
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -2341,5 +2340,5 @@ bool ABP_PlayerCharacter_C::IsPlayingDialogue() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

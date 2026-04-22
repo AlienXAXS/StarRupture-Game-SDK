@@ -14,8 +14,7 @@
 #include "WBP_TooltipPrompt_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_TooltipPrompt.WBP_TooltipPrompt_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -191,5 +190,5 @@ void UWBP_TooltipPrompt_C::ShowTransfer(bool Show)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

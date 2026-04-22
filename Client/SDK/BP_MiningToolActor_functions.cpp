@@ -14,8 +14,7 @@
 #include "BP_MiningToolActor_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_MiningToolActor.BP_MiningToolActor_C.Activate_NS_Harvester
 // (BlueprintCallable, BlueprintEvent)
@@ -762,5 +761,5 @@ void ABP_MiningToolActor_C::UserConstructionScript()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

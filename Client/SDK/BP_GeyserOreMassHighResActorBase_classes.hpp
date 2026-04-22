@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_GeyserOreMassHighResActorBase.BP_GeyserOreMassHighResActorBase_C
 // 0x0080 (0x03B8 - 0x0338)
@@ -56,5 +55,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_GeyserOreMassHighResActorBase_C;
 
-}
-
+SDK_NAMESPACE_END

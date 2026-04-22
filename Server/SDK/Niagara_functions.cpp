@@ -14,8 +14,7 @@
 #include "Niagara_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Niagara.NiagaraDataChannelReader.InitAccess
 // (Final, RequiredAPI, Native, Public, BlueprintCallable)
@@ -7580,5 +7579,5 @@ class UNiagaraSimCache* UNiagaraSimCacheFunctionLibrary::CreateNiagaraSimCache(c
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

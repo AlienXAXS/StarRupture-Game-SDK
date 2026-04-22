@@ -15,8 +15,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C
 // 0x0050 (0x0538 - 0x04E8)
@@ -66,5 +65,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_StandaloneMeteOreChunkBase_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GA_DeinfectBuilding.GA_DeinfectBuilding_C
 // 0x0008 (0x0510 - 0x0508)
@@ -51,5 +50,4 @@ public:
 };
 DUMPER7_ASSERTS_UGA_DeinfectBuilding_C;
 
-}
-
+SDK_NAMESPACE_END

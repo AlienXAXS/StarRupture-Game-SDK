@@ -14,8 +14,7 @@
 #include "BP_Ranged_Tier1_PooledProjectile_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Ranged_Tier1_PooledProjectile.BP_Ranged_Tier1_PooledProjectile_C.ExecuteUbergraph_BP_Ranged_Tier1_PooledProjectile
 // (Final, UbergraphFunction, HasDefaults)
@@ -96,5 +95,5 @@ bool ABP_Ranged_Tier1_PooledProjectile_C::CanReturnToPoolAfterHit() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

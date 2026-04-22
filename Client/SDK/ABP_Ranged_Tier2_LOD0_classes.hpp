@@ -17,8 +17,7 @@
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass ABP_Ranged_Tier2_LOD0.ABP_Ranged_Tier2_LOD0_C
 // 0x23B0 (0x29B0 - 0x0600)
@@ -249,5 +248,4 @@ public:
 };
 DUMPER7_ASSERTS_UABP_Ranged_Tier2_LOD0_C;
 
-}
-
+SDK_NAMESPACE_END

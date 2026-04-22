@@ -14,8 +14,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_AlienObieliskActor.BP_AlienObieliskActor_C
 // 0x0050 (0x0310 - 0x02C0)
@@ -60,5 +59,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_AlienObieliskActor_C;
 
-}
-
+SDK_NAMESPACE_END

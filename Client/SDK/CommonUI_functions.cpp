@@ -14,8 +14,7 @@
 #include "CommonUI_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function CommonUI.CommonActionWidget.GetIconDynamicMaterial
 // (Final, RequiredAPI, Native, Public, BlueprintCallable)
@@ -7075,5 +7074,5 @@ float UCommonActivatableWidgetContainerBase::GetTransitionDuration() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

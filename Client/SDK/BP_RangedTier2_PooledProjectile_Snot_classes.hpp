@@ -15,8 +15,7 @@
 #include "GameplayTags_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_RangedTier2_PooledProjectile_Snot.BP_RangedTier2_PooledProjectile_Snot_C
 // 0x0050 (0x0380 - 0x0330)
@@ -61,5 +60,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_RangedTier2_PooledProjectile_Snot_C;
 
-}
-
+SDK_NAMESPACE_END

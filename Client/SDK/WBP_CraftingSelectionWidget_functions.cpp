@@ -14,8 +14,7 @@
 #include "WBP_CraftingSelectionWidget_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_CraftingSelectionWidget.WBP_CraftingSelectionWidget_C.BndEvt__WBP_CraftingSelectionWidget_ScrollBox_0_K2Node_ComponentBoundEvent_0_OnScrollBarVisibilityChangedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -70,5 +69,5 @@ void UWBP_CraftingSelectionWidget_C::ExecuteUbergraph_WBP_CraftingSelectionWidge
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

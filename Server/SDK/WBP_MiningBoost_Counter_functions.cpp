@@ -14,8 +14,7 @@
 #include "WBP_MiningBoost_Counter_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_MiningBoost_Counter.WBP_MiningBoost_Counter_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -92,5 +91,5 @@ void UWBP_MiningBoost_Counter_C::UpdateBoostDurationProgressBarRound()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

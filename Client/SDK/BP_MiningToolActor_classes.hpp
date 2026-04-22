@@ -16,8 +16,7 @@
 #include "GameplayTags_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_MiningToolActor.BP_MiningToolActor_C
 // 0x0188 (0x0500 - 0x0378)
@@ -138,5 +137,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_MiningToolActor_C;
 
-}
-
+SDK_NAMESPACE_END

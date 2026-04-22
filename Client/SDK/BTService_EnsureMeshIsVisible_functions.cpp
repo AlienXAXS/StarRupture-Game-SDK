@@ -14,8 +14,7 @@
 #include "BTService_EnsureMeshIsVisible_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTService_EnsureMeshIsVisible.BTService_EnsureMeshIsVisible_C.ExecuteUbergraph_BTService_EnsureMeshIsVisible
 // (Final, UbergraphFunction)
@@ -60,5 +59,5 @@ void UBTService_EnsureMeshIsVisible_C::ReceiveTickAI(class AAIController* OwnerC
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

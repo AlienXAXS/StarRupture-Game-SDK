@@ -24,8 +24,7 @@
 #include "InputCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class UMG.Visual
 // 0x0000 (0x0028 - 0x0028)
@@ -413,7 +412,7 @@ DUMPER7_ASSERTS_UListViewBase;
 // Class UMG.ListView
 // 0x0970 (0x0C60 - 0x02F0)
 #pragma pack(push, 0x1)
-class alignas(0x10) UListView : public UListViewBase
+class SDK_ALIGN(0x10) UListView : public UListViewBase
 {
 public:
 	uint8                                         Pad_2F0[0x140];                                    // 0x02F0(0x0140)(Fixing Size After Last Property [ Dumper-7 ])
@@ -1927,7 +1926,7 @@ DUMPER7_ASSERTS_UBackgroundBlurSlot;
 // Class UMG.Border
 // 0x01C8 (0x0370 - 0x01A8)
 #pragma pack(push, 0x1)
-class alignas(0x10) UBorder : public UContentWidget
+class SDK_ALIGN(0x10) UBorder : public UContentWidget
 {
 public:
 	EHorizontalAlignment                          HorizontalAlignment;                               // 0x01A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -3739,7 +3738,7 @@ DUMPER7_ASSERTS_USizeBoxSlot;
 // Class UMG.Slider
 // 0x0530 (0x06C0 - 0x0190)
 #pragma pack(push, 0x1)
-class alignas(0x10) USlider : public UWidget
+class SDK_ALIGN(0x10) USlider : public UWidget
 {
 public:
 	float                                         Value;                                             // 0x0190(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -4968,5 +4967,4 @@ public:
 };
 DUMPER7_ASSERTS_UWidgetTree;
 
-}
-
+SDK_NAMESPACE_END

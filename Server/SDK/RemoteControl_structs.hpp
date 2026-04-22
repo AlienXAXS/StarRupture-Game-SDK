@@ -15,8 +15,7 @@
 #include "RemoteControlCommon_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum RemoteControl.ERCTransactionMode
 // NumValues: 0x0004
@@ -110,23 +109,6 @@ enum class ERCBindingStatus : uint8
 	Bound                                    = 2,
 	ERCBindingStatus_MAX                     = 3,
 };
-
-// ScriptStruct RemoteControl.RemoteControlTestStruct
-// 0x0048 (0x0048 - 0x0000)
-struct FRemoteControlTestStruct final
-{
-public:
-	bool                                          bSomeBool;                                         // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	uint32                                        SomeUInt32;                                        // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SomeFloat;                                         // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                SomeVector;                                        // 0x0010(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               SomeRotator;                                       // 0x0028(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         SomeClampedInt;                                    // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SomeClampedFloat;                                  // 0x0044(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRemoteControlTestStruct;
 
 // ScriptStruct RemoteControl.RCFieldPathSegment
 // 0x0050 (0x0050 - 0x0000)
@@ -490,17 +472,6 @@ public:
 };
 DUMPER7_ASSERTS_FRCMetadata_bool;
 
-// ScriptStruct RemoteControl.RCMetadata_FVector
-// 0x0048 (0x0050 - 0x0008)
-struct FRCMetadata_FVector final : public FRCFieldMetadata
-{
-public:
-	struct FVector                                DefaultValue;                                      // 0x0008(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                MinimumValue;                                      // 0x0020(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                MaximumValue;                                      // 0x0038(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRCMetadata_FVector;
-
 // ScriptStruct RemoteControl.RemoteControlProtocolMapping
 // 0x0078 (0x0078 - 0x0000)
 struct FRemoteControlProtocolMapping final
@@ -517,21 +488,16 @@ public:
 };
 DUMPER7_ASSERTS_FRemoteControlProtocolMapping;
 
-// ScriptStruct RemoteControl.RemoteControlProtocolEntity
-// 0x0088 (0x0088 - 0x0000)
-struct FRemoteControlProtocolEntity final
+// ScriptStruct RemoteControl.RCMetadata_FVector
+// 0x0048 (0x0050 - 0x0008)
+struct FRCMetadata_FVector final : public FRCFieldMetadata
 {
 public:
-	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TWeakObjectPtr<class URemoteControlPreset>    Owner;                                             // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FGuid                                  PropertyId;                                        // 0x0018(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TSet<struct FRemoteControlProtocolMapping>    Mappings;                                          // 0x0030(0x0050)(Protected, NativeAccessSpecifierProtected)
-	ERCMask                                       OverridenMasks;                                    // 0x0080(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	ERCBindingStatus                              BindingStatus;                                     // 0x0081(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_82[0x6];                                       // 0x0082(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FVector                                DefaultValue;                                      // 0x0008(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                MinimumValue;                                      // 0x0020(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                MaximumValue;                                      // 0x0038(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRemoteControlProtocolEntity;
+DUMPER7_ASSERTS_FRCMetadata_FVector;
 
 // ScriptStruct RemoteControl.RemoteControlOptionalExposeArgs
 // 0x0020 (0x0020 - 0x0000)
@@ -542,16 +508,6 @@ public:
 	class FString                                 GroupName;                                         // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRemoteControlOptionalExposeArgs;
-
-// ScriptStruct RemoteControl.ColorWheelColorBase
-// 0x0018 (0x0018 - 0x0000)
-struct FColorWheelColorBase
-{
-public:
-	struct FVector2D                              Position;                                          // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        Value;                                             // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FColorWheelColorBase;
 
 // ScriptStruct RemoteControl.RemoteControlPresetGroup
 // 0x0038 (0x0038 - 0x0000)
@@ -565,17 +521,15 @@ public:
 };
 DUMPER7_ASSERTS_FRemoteControlPresetGroup;
 
-// ScriptStruct RemoteControl.RemoteControlPresetLayout
-// 0x0108 (0x0108 - 0x0000)
-struct FRemoteControlPresetLayout final
+// ScriptStruct RemoteControl.ColorWheelColorBase
+// 0x0018 (0x0018 - 0x0000)
+struct FColorWheelColorBase
 {
 public:
-	TArray<struct FGuid>                          DefaultGroupOrder;                                 // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	TArray<struct FRemoteControlPresetGroup>      Groups;                                            // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	TWeakObjectPtr<class URemoteControlPreset>    Owner;                                             // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_28[0xE0];                                      // 0x0028(0x00E0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              Position;                                          // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        Value;                                             // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRemoteControlPresetLayout;
+DUMPER7_ASSERTS_FColorWheelColorBase;
 
 // ScriptStruct RemoteControl.ColorWheelColor
 // 0x0008 (0x0020 - 0x0018)
@@ -606,49 +560,6 @@ public:
 	struct FSoftObjectPath                        InstancePath;                                      // 0x0180(0x0020)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRemoteControlInstanceMaterial;
-
-// ScriptStruct RemoteControl.RemoteControlInterceptionTestStruct
-// 0x0004 (0x0004 - 0x0000)
-struct FRemoteControlInterceptionTestStruct final
-{
-public:
-	int32                                         Int32Value;                                        // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRemoteControlInterceptionTestStruct;
-
-// ScriptStruct RemoteControl.RCPropertyIdWrapper
-// 0x0028 (0x0028 - 0x0000)
-struct FRCPropertyIdWrapper final
-{
-public:
-	struct FGuid                                  EntityID;                                          // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class FName                                   PropertyId;                                        // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class FName                                   SuperType;                                         // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class FName                                   SubType;                                           // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-};
-DUMPER7_ASSERTS_FRCPropertyIdWrapper;
-
-// ScriptStruct RemoteControl.RemoteControlInterceptionFunctionParamStruct
-// 0x0028 (0x0028 - 0x0000)
-struct FRemoteControlInterceptionFunctionParamStruct final
-{
-public:
-	int32                                         Int32Value;                                        // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 IntArray;                                          // 0x0008(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	class FString                                 IntString;                                         // 0x0018(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRemoteControlInterceptionFunctionParamStruct;
-
-// ScriptStruct RemoteControl.RCCachedFieldData
-// 0x0018 (0x0018 - 0x0000)
-struct FRCCachedFieldData final
-{
-public:
-	struct FGuid                                  LayoutGroupId;                                     // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   OwnerObjectAlias;                                  // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRCCachedFieldData;
 
 // ScriptStruct RemoteControl.RemoteControlTestStructInnerSimple
 // 0x0004 (0x0004 - 0x0000)
@@ -685,6 +596,94 @@ public:
 };
 DUMPER7_ASSERTS_FRemoteControlTestStructOuter;
 
+// ScriptStruct RemoteControl.RemoteControlInterceptionTestStruct
+// 0x0004 (0x0004 - 0x0000)
+struct FRemoteControlInterceptionTestStruct final
+{
+public:
+	int32                                         Int32Value;                                        // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRemoteControlInterceptionTestStruct;
+
+// ScriptStruct RemoteControl.RemoteControlInterceptionFunctionParamStruct
+// 0x0028 (0x0028 - 0x0000)
+struct FRemoteControlInterceptionFunctionParamStruct final
+{
+public:
+	int32                                         Int32Value;                                        // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 IntArray;                                          // 0x0008(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FString                                 IntString;                                         // 0x0018(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRemoteControlInterceptionFunctionParamStruct;
+
+// ScriptStruct RemoteControl.RCCachedFieldData
+// 0x0018 (0x0018 - 0x0000)
+struct FRCCachedFieldData final
+{
+public:
+	struct FGuid                                  LayoutGroupId;                                     // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   OwnerObjectAlias;                                  // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRCCachedFieldData;
+
+// ScriptStruct RemoteControl.RemoteControlPresetLayout
+// 0x0108 (0x0108 - 0x0000)
+struct FRemoteControlPresetLayout final
+{
+public:
+	TArray<struct FGuid>                          DefaultGroupOrder;                                 // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	TArray<struct FRemoteControlPresetGroup>      Groups;                                            // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	TWeakObjectPtr<class URemoteControlPreset>    Owner;                                             // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_28[0xE0];                                      // 0x0028(0x00E0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRemoteControlPresetLayout;
+
+// ScriptStruct RemoteControl.RCPropertyIdWrapper
+// 0x0028 (0x0028 - 0x0000)
+struct FRCPropertyIdWrapper final
+{
+public:
+	struct FGuid                                  EntityID;                                          // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class FName                                   PropertyId;                                        // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class FName                                   SuperType;                                         // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class FName                                   SubType;                                           // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+};
+DUMPER7_ASSERTS_FRCPropertyIdWrapper;
+
+// ScriptStruct RemoteControl.RemoteControlProtocolEntity
+// 0x0088 (0x0088 - 0x0000)
+struct FRemoteControlProtocolEntity final
+{
+public:
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TWeakObjectPtr<class URemoteControlPreset>    Owner;                                             // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FGuid                                  PropertyId;                                        // 0x0018(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TSet<struct FRemoteControlProtocolMapping>    Mappings;                                          // 0x0030(0x0050)(Protected, NativeAccessSpecifierProtected)
+	ERCMask                                       OverridenMasks;                                    // 0x0080(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	ERCBindingStatus                              BindingStatus;                                     // 0x0081(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_82[0x6];                                       // 0x0082(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRemoteControlProtocolEntity;
+
+// ScriptStruct RemoteControl.RemoteControlTestStruct
+// 0x0048 (0x0048 - 0x0000)
+struct FRemoteControlTestStruct final
+{
+public:
+	bool                                          bSomeBool;                                         // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint32                                        SomeUInt32;                                        // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SomeFloat;                                         // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                SomeVector;                                        // 0x0010(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               SomeRotator;                                       // 0x0028(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         SomeClampedInt;                                    // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SomeClampedFloat;                                  // 0x0044(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRemoteControlTestStruct;
+
 // ScriptStruct RemoteControl.RemoteControlTestInnerStruct
 // 0x0028 (0x0028 - 0x0000)
 struct FRemoteControlTestInnerStruct final
@@ -697,5 +696,4 @@ public:
 };
 DUMPER7_ASSERTS_FRemoteControlTestInnerStruct;
 
-}
-
+SDK_NAMESPACE_END

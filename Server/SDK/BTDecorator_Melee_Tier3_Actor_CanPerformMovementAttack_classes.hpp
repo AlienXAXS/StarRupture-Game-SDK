@@ -14,8 +14,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BTDecorator_Melee_Tier3_Actor_CanPerformMovementAttack.BTDecorator_Melee_Tier3_Actor_CanPerformMovementAttack_C
 // 0x0028 (0x00C8 - 0x00A0)
@@ -43,5 +42,4 @@ public:
 };
 DUMPER7_ASSERTS_UBTDecorator_Melee_Tier3_Actor_CanPerformMovementAttack_C;
 
-}
-
+SDK_NAMESPACE_END

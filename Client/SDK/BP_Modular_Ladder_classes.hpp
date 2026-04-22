@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Modular_Ladder.BP_Modular_Ladder_C
 // 0x00A8 (0x08E8 - 0x0840)
@@ -62,5 +61,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Modular_Ladder_C;
 
-}
-
+SDK_NAMESPACE_END

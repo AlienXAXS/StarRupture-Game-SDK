@@ -14,8 +14,7 @@
 #include "BP_FoodProcessor_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_FoodProcessor.BP_FoodProcessor_C.CustomEvent
 // (BlueprintCallable, BlueprintEvent)
@@ -126,5 +125,5 @@ void ABP_FoodProcessor_C::Timeline__UpdateFunc()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -13,8 +13,8 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function WBP_BuildConfiguration.WBP_BuildConfiguration_C.ExecuteUbergraph_WBP_BuildConfiguration
 // 0x00F8 (0x00F8 - 0x0000)
@@ -35,5 +35,5 @@ public:
 };
 DUMPER7_ASSERTS_WBP_BuildConfiguration_C_ExecuteUbergraph_WBP_BuildConfiguration;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

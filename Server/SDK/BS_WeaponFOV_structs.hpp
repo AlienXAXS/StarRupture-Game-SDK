@@ -13,8 +13,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedStruct BS_WeaponFOV.BS_WeaponFOV
 // 0x0028 (0x0028 - 0x0000)
@@ -29,5 +28,4 @@ public:
 };
 DUMPER7_ASSERTS_FBS_WeaponFOV;
 
-}
-
+SDK_NAMESPACE_END

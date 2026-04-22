@@ -14,8 +14,7 @@
 #include "ChimeraRichText_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ChimeraRichText.CrRichTextBlockHyperlinkDecorator.RichTextBlockClickHyperlinkBP
 // (Event, Public, BlueprintEvent)
@@ -36,5 +35,5 @@ void UCrRichTextBlockHyperlinkDecorator::RichTextBlockClickHyperlinkBP(const cla
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

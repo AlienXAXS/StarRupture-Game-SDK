@@ -16,8 +16,7 @@
 #include "AudioExtensions_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class AudioGameplay.AudioAssetUserData
 // 0x0020 (0x0048 - 0x0028)
@@ -316,5 +315,4 @@ public:
 };
 DUMPER7_ASSERTS_UAudioParameterComponent;
 
-}
-
+SDK_NAMESPACE_END

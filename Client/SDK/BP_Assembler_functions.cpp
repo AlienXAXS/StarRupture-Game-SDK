@@ -14,8 +14,7 @@
 #include "BP_Assembler_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Assembler.BP_Assembler_C.ExecuteUbergraph_BP_Assembler
 // (Final, UbergraphFunction, HasDefaults)
@@ -110,5 +109,5 @@ void ABP_Assembler_C::Get_Meshes(class USceneComponent* Static_0, class USceneCo
 		*NewParam = std::move(Parms.NewParam);
 }
 
-}
 
+SDK_NAMESPACE_END

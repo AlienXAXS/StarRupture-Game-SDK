@@ -14,8 +14,7 @@
 #include "MassSpawner_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MassNavMeshNavigation.MassNavMeshNavigationBoundaryProcessor
 // 0x0350 (0x0410 - 0x00C0)
@@ -85,5 +84,4 @@ public:
 };
 DUMPER7_ASSERTS_UMassNavMeshNavigationTrait;
 
-}
-
+SDK_NAMESPACE_END

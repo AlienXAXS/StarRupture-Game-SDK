@@ -14,8 +14,8 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_Modular_Foundation_Base.BP_Modular_Foundation_Base_C.ExecuteUbergraph_BP_Modular_Foundation_Base
 // 0x0380 (0x0380 - 0x0000)
@@ -178,5 +178,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_Modular_Foundation_Base_C_GetBuildingMeshes;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

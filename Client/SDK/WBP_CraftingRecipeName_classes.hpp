@@ -13,8 +13,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_CraftingRecipeName.WBP_CraftingRecipeName_C
 // 0x0000 (0x05E8 - 0x05E8)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_CraftingRecipeName_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -15,8 +15,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GA_TurnOffBulidingElectricity.GA_TurnOffBulidingElectricity_C
 // 0x0010 (0x0600 - 0x05F0)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_UGA_TurnOffBulidingElectricity_C;
 
-}
-
+SDK_NAMESPACE_END

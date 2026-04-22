@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GA_ZiplineTravelStarted.GA_ZiplineTravelStarted_C
 // 0x0008 (0x0510 - 0x0508)
@@ -51,5 +50,4 @@ public:
 };
 DUMPER7_ASSERTS_UGA_ZiplineTravelStarted_C;
 
-}
-
+SDK_NAMESPACE_END

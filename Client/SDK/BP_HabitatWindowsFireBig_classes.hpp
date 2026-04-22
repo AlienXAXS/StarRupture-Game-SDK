@@ -15,8 +15,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_HabitatWindowsFireBig.BP_HabitatWindowsFireBig_C
 // 0x0038 (0x02E0 - 0x02A8)
@@ -57,5 +56,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_HabitatWindowsFireBig_C;
 
-}
-
+SDK_NAMESPACE_END

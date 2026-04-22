@@ -14,8 +14,7 @@
 #include "GeometryCollectionEngine_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GeometryCollectionEngine.GeometryCollectionBlueprintLibrary.SetCustomInstanceDataByIndex
 // (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
@@ -2163,5 +2162,5 @@ class UDataflow* UGeometryCollection::GetDataflowAsset() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

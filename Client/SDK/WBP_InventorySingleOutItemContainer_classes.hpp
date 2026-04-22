@@ -11,12 +11,11 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "AuItems_structs.hpp"
 #include "ChimeraUI_classes.hpp"
+#include "AuItems_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_InventorySingleOutItemContainer.WBP_InventorySingleOutItemContainer_C
 // 0x0018 (0x04C0 - 0x04A8)
@@ -48,5 +47,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_InventorySingleOutItemContainer_C;
 
-}
-
+SDK_NAMESPACE_END

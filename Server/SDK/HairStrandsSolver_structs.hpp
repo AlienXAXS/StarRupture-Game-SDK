@@ -14,8 +14,7 @@
 #include "DataflowSimulation_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct HairStrandsSolver.GroomSolverSettings
 // 0x0068 (0x0068 - 0x0000)
@@ -62,5 +61,4 @@ public:
 };
 DUMPER7_ASSERTS_FAddSolverDeformerDataflowNode;
 
-}
-
+SDK_NAMESPACE_END

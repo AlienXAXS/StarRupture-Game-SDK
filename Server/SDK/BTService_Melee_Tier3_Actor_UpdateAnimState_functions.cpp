@@ -14,8 +14,7 @@
 #include "BTService_Melee_Tier3_Actor_UpdateAnimState_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTService_Melee_Tier3_Actor_UpdateAnimState.BTService_Melee_Tier3_Actor_UpdateAnimState_C.ReceiveTickAI
 // (Event, Protected, BlueprintEvent)
@@ -60,5 +59,5 @@ void UBTService_Melee_Tier3_Actor_UpdateAnimState_C::ExecuteUbergraph_BTService_
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

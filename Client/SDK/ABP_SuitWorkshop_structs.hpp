@@ -13,8 +13,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct ABP_SuitWorkshop.ABP_SuitWorkshop_C.AnimBlueprintGeneratedConstantData
 // 0x0167 (0x0168 - 0x0001)
@@ -51,5 +50,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_SuitWorkshop__FAnimBlueprintGeneratedMutableData;
 
-}
-
+SDK_NAMESPACE_END

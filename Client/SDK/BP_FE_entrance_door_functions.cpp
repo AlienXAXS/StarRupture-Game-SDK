@@ -14,8 +14,7 @@
 #include "BP_FE_entrance_door_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_FE_entrance_door.BP_FE_entrance_door_C.ExecuteUbergraph_BP_FE_entrance_door
 // (Final, UbergraphFunction, HasDefaults)
@@ -252,5 +251,5 @@ void ABP_FE_entrance_door_C::Timeline__UpdateFunc()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

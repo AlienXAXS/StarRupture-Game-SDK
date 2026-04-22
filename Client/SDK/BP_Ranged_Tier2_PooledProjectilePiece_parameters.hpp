@@ -16,8 +16,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_Ranged_Tier2_PooledProjectilePiece.BP_Ranged_Tier2_PooledProjectilePiece_C.AddInstantHeatToCharacter
 // 0x0040 (0x0040 - 0x0000)
@@ -92,5 +92,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_Ranged_Tier2_PooledProjectilePiece_C_OnProjectileShot;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

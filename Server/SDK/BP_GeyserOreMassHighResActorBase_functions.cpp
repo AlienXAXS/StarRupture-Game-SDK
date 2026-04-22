@@ -14,8 +14,7 @@
 #include "BP_GeyserOreMassHighResActorBase_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_GeyserOreMassHighResActorBase.BP_GeyserOreMassHighResActorBase_C.OnResourceDepletedCosmeticsStart
 // (Event, Public, BlueprintEvent)
@@ -150,5 +149,5 @@ void ABP_GeyserOreMassHighResActorBase_C::BndEvt__BP_OreMassHighResActorBase_Dep
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

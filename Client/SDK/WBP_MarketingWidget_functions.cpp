@@ -14,8 +14,7 @@
 #include "WBP_MarketingWidget_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_MarketingWidget.WBP_MarketingWidget_C.HighlightDot
 // (Event, Protected, BlueprintEvent)
@@ -142,5 +141,5 @@ void UWBP_MarketingWidget_C::BndEvt__WBP_MarketingWidget_ButtonReadMore_K2Node_C
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

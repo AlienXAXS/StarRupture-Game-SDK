@@ -14,8 +14,7 @@
 #include "GE_CamEffect_ShieldInfectionDamage_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GE_CamEffect_ShieldInfectionDamage.GE_CamEffect_ShieldInfectionDamage_C.ExecuteUbergraph_GE_CamEffect_ShieldInfectionDamage
 // (Final, UbergraphFunction, HasDefaults)
@@ -84,5 +83,5 @@ void UGE_CamEffect_ShieldInfectionDamage_C::OnInitialized(class UAbilitySystemCo
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

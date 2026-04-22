@@ -17,8 +17,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MRMesh.MockDataMeshTrackerComponent
 // 0x0080 (0x02D0 - 0x0250)
@@ -161,5 +160,4 @@ public:
 };
 DUMPER7_ASSERTS_UMeshReconstructorBase;
 
-}
-
+SDK_NAMESPACE_END

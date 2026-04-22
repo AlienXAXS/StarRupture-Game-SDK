@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BTTask_Melee_Tier2_LOD0_SetWeakpointActive.BTTask_Melee_Tier2_LOD0_SetWeakpointActive_C.ReceiveExecuteAI
 // 0x0010 (0x0010 - 0x0000)
@@ -38,5 +38,5 @@ public:
 };
 DUMPER7_ASSERTS_BTTask_Melee_Tier2_LOD0_SetWeakpointActive_C_ExecuteUbergraph_BTTask_Melee_Tier2_LOD0_SetWeakpointActive;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

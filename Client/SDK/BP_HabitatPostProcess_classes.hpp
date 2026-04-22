@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Chimera_structs.hpp"
 #include "Chimera_classes.hpp"
+#include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_HabitatPostProcess.BP_HabitatPostProcess_C
 // 0x0080 (0x0328 - 0x02A8)
@@ -52,5 +51,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_HabitatPostProcess_C;
 
-}
-
+SDK_NAMESPACE_END

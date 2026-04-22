@@ -15,8 +15,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_DroneRailHelperT1.BP_DroneRailHelperT1_C
 // 0x0060 (0x09E0 - 0x0980)
@@ -60,5 +59,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_DroneRailHelperT1_C;
 
-}
-
+SDK_NAMESPACE_END

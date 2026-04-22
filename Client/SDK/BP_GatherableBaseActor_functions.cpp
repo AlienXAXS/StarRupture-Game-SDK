@@ -14,8 +14,7 @@
 #include "BP_GatherableBaseActor_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.BP_DebugToggleRegularVisualization
 // (Event, Public, BlueprintEvent)
@@ -252,5 +251,5 @@ void ABP_GatherableBaseActor_C::ProcessOnInstaceAdded(class UInstancedStaticMesh
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

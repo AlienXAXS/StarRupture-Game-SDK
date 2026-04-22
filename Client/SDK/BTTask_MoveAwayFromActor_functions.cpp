@@ -14,8 +14,7 @@
 #include "BTTask_MoveAwayFromActor_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTTask_MoveAwayFromActor.BTTask_MoveAwayFromActor_C.ExecuteUbergraph_BTTask_MoveAwayFromActor
 // (Final, UbergraphFunction)
@@ -58,5 +57,5 @@ void UBTTask_MoveAwayFromActor_C::ReceiveExecuteAI(class AAIController* OwnerCon
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

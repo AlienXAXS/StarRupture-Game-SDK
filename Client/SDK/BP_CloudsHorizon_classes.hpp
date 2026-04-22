@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Chimera_structs.hpp"
 #include "Chimera_classes.hpp"
+#include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_CloudsHorizon.BP_CloudsHorizon_C
 // 0x0120 (0x03D0 - 0x02B0)
@@ -72,5 +71,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_CloudsHorizon_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -16,8 +16,7 @@
 #include "Qos_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class Qos.QosBeaconClient
 // 0x0040 (0x0380 - 0x0340)
@@ -136,5 +135,4 @@ public:
 };
 DUMPER7_ASSERTS_UQosRegionManager;
 
-}
-
+SDK_NAMESPACE_END

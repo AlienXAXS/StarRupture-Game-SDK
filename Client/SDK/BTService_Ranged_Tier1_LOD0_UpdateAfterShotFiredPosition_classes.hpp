@@ -15,8 +15,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition.BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C
 // 0x0038 (0x00D0 - 0x0098)
@@ -48,5 +47,4 @@ public:
 };
 DUMPER7_ASSERTS_UBTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C;
 
-}
-
+SDK_NAMESPACE_END

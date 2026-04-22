@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct ABP_Melee_Tier2_Actor.ABP_Melee_Tier2_Actor_C.AnimBlueprintGeneratedMutableData
 // 0x000B (0x000C - 0x0001)
@@ -165,5 +164,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Melee_Tier2_Actor__FAnimBlueprintGeneratedConstantData;
 
-}
-
+SDK_NAMESPACE_END

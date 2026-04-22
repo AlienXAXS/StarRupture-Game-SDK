@@ -14,8 +14,7 @@
 #include "BTTask_Animal_Crab_SetTentaclesState_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTTask_Animal_Crab_SetTentaclesState.BTTask_Animal_Crab_SetTentaclesState_C.ExecuteUbergraph_BTTask_Animal_Crab_SetTentaclesState
 // (Final, UbergraphFunction)
@@ -58,5 +57,5 @@ void UBTTask_Animal_Crab_SetTentaclesState_C::ReceiveExecuteAI(class AAIControll
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

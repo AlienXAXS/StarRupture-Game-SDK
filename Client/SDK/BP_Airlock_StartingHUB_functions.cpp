@@ -14,8 +14,7 @@
 #include "BP_Airlock_StartingHUB_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Airlock_StartingHUB.BP_Airlock_StartingHUB_C.ExecuteUbergraph_BP_Airlock_StartingHUB
 // (Final, UbergraphFunction, HasDefaults)
@@ -90,5 +89,5 @@ void ABP_Airlock_StartingHUB_C::ReceiveBeginPlay()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct AnimationSharing.AnimationSetup
 // 0x0018 (0x0018 - 0x0000)
@@ -91,5 +90,4 @@ public:
 };
 DUMPER7_ASSERTS_FTickAnimationSharingFunction;
 
-}
-
+SDK_NAMESPACE_END

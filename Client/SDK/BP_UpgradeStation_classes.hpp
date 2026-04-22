@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "Chimera_classes.hpp"
 #include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_UpgradeStation.BP_UpgradeStation_C
 // 0x0070 (0x06B8 - 0x0648)
@@ -60,5 +59,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_UpgradeStation_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "CrAiMeleeRuntime_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function CrAiMeleeRuntime.CrAiActionModifyMeleeT3AnimData.Create_CrAiActionModifyMeleeT3AnimData
 // (Final, Native, Static, Public, BlueprintCallable)
@@ -267,5 +266,5 @@ void ACrMeleeT3MoveTargetActor::LockOnTargetForDuration(float Duration)
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

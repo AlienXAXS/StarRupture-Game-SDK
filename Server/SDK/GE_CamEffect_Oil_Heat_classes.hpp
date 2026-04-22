@@ -14,8 +14,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GE_CamEffect_Oil_Heat.GE_CamEffect_Oil_Heat_C
 // 0x0020 (0x0AC8 - 0x0AA8)
@@ -50,5 +49,4 @@ public:
 };
 DUMPER7_ASSERTS_UGE_CamEffect_Oil_Heat_C;
 
-}
-
+SDK_NAMESPACE_END

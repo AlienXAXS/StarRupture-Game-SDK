@@ -13,8 +13,7 @@
 #include "CommonInput_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_CommonInput_KeyboardMouse.BP_CommonInput_KeyboardMouse_C
 // 0x0000 (0x00E8 - 0x00E8)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_CommonInput_KeyboardMouse_C;
 
-}
-
+SDK_NAMESPACE_END

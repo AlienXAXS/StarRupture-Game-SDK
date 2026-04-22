@@ -14,8 +14,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_RecipesBoxWidget.WBP_RecipesBoxWidget_C
 // 0x0058 (0x0470 - 0x0418)
@@ -67,5 +66,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_RecipesBoxWidget_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -15,8 +15,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_MilitaryAssembler.BP_MilitaryAssembler_C
 // 0x0160 (0x0838 - 0x06D8)
@@ -90,5 +89,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_MilitaryAssembler_C;
 
-}
-
+SDK_NAMESPACE_END

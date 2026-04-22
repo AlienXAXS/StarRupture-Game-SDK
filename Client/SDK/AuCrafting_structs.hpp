@@ -13,8 +13,7 @@
 #include "AuItems_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct AuCrafting.AuItemRecipeOrder
 // 0x0010 (0x0010 - 0x0000)
@@ -40,5 +39,4 @@ public:
 };
 DUMPER7_ASSERTS_FAuCraftItem;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "GE_CamEffect_Hydration_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GE_CamEffect_Hydration.GE_CamEffect_Hydration_C.ExecuteUbergraph_GE_CamEffect_Hydration
 // (Final, UbergraphFunction, HasDefaults)
@@ -84,5 +83,5 @@ void UGE_CamEffect_Hydration_C::OnInitialized(class UAbilitySystemComponent* Abi
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

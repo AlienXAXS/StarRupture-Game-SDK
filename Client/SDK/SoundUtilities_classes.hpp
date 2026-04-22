@@ -14,8 +14,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class SoundUtilities.SoundSimple
 // 0x0018 (0x0190 - 0x0178)
@@ -75,5 +74,4 @@ public:
 };
 DUMPER7_ASSERTS_USoundUtilitiesBPFunctionLibrary;
 
-}
-
+SDK_NAMESPACE_END

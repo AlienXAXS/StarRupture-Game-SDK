@@ -14,8 +14,7 @@
 #include "BP_FE_SuitWorkshop_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_FE_SuitWorkshop.BP_FE_SuitWorkshop_C.Arm_A_VFX
 // (BlueprintCallable, BlueprintEvent)
@@ -188,5 +187,5 @@ void ABP_FE_SuitWorkshop_C::Timeline__UpdateFunc()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

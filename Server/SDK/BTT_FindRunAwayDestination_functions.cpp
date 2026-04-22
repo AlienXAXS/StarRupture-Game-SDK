@@ -14,8 +14,7 @@
 #include "BTT_FindRunAwayDestination_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTT_FindRunAwayDestination.BTT_FindRunAwayDestination_C.ReceiveExecuteAI
 // (Event, Protected, BlueprintEvent)
@@ -58,5 +57,5 @@ void UBTT_FindRunAwayDestination_C::ExecuteUbergraph_BTT_FindRunAwayDestination(
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

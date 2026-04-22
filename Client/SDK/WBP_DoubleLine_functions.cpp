@@ -14,8 +14,7 @@
 #include "WBP_DoubleLine_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_DoubleLine.WBP_DoubleLine_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -110,5 +109,5 @@ void UWBP_DoubleLine_C::SetTitle(const class FText& InTitle)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

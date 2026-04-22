@@ -14,8 +14,7 @@
 #include "BP_ChimeranPowerGenerator_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_ChimeranPowerGenerator.BP_ChimeranPowerGenerator_C.GetBuildingMeshes
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
@@ -41,5 +40,5 @@ void ABP_ChimeranPowerGenerator_C::GetBuildingMeshes(class UMeshComponent** Main
 		*AdditionalMeshes = std::move(Parms.AdditionalMeshes);
 }
 
-}
 
+SDK_NAMESPACE_END

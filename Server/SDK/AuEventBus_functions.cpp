@@ -14,8 +14,7 @@
 #include "AuEventBus_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AuEventBus.AuEventBusBPF.PublishMessageSync
 // (Final, Native, Static, Public, BlueprintCallable)
@@ -71,5 +70,5 @@ class UAuEventBusSyncProxy* UAuEventBusSyncProxy::CreateProxyObjectForEventBusSy
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

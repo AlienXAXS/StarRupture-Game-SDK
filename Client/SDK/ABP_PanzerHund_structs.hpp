@@ -14,8 +14,7 @@
 #include "AnimGraphRuntime_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct ABP_PanzerHund.ABP_PanzerHund_C.AnimBlueprintGeneratedConstantData
 // 0x0AC7 (0x0AC8 - 0x0001)
@@ -133,5 +132,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_PanzerHund__FAnimBlueprintGeneratedMutableData;
 
-}
-
+SDK_NAMESPACE_END

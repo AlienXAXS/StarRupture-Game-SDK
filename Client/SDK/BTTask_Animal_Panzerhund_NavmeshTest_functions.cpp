@@ -14,8 +14,7 @@
 #include "BTTask_Animal_Panzerhund_NavmeshTest_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTTask_Animal_Panzerhund_NavmeshTest.BTTask_Animal_Panzerhund_NavmeshTest_C.ExecuteUbergraph_BTTask_Animal_Panzerhund_NavmeshTest
 // (Final, UbergraphFunction)
@@ -58,5 +57,5 @@ void UBTTask_Animal_Panzerhund_NavmeshTest_C::ReceiveExecuteAI(class AAIControll
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

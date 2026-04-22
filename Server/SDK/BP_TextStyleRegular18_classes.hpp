@@ -13,8 +13,7 @@
 #include "CommonUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_TextStyleRegular18.BP_TextStyleRegular18_C
 // 0x0000 (0x0190 - 0x0190)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_TextStyleRegular18_C;
 
-}
-
+SDK_NAMESPACE_END

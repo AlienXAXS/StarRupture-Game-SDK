@@ -14,8 +14,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_SkillsTab.WBP_SkillsTab_C
 // 0x0010 (0x05F0 - 0x05E0)
@@ -45,5 +44,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_SkillsTab_C;
 
-}
-
+SDK_NAMESPACE_END

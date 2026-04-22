@@ -12,12 +12,11 @@
 
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "ProceduralMeshComponent_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ProceduralMeshComponent_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ProceduralMeshComponent.KismetProceduralMeshLibrary
 // 0x0000 (0x0028 - 0x0028)
@@ -54,7 +53,7 @@ DUMPER7_ASSERTS_UKismetProceduralMeshLibrary;
 // Class ProceduralMeshComponent.ProceduralMeshComponent
 // 0x0080 (0x0600 - 0x0580)
 #pragma pack(push, 0x1)
-class alignas(0x10) UProceduralMeshComponent : public UMeshComponent
+class SDK_ALIGN(0x10) UProceduralMeshComponent : public UMeshComponent
 {
 public:
 	uint8                                         Pad_578[0x8];                                      // 0x0578(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -98,5 +97,4 @@ public:
 #pragma pack(pop)
 DUMPER7_ASSERTS_UProceduralMeshComponent;
 
-}
-
+SDK_NAMESPACE_END

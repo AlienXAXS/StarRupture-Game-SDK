@@ -15,8 +15,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_SuitWorkshop.BP_SuitWorkshop_C
 // 0x0118 (0x0760 - 0x0648)
@@ -90,5 +89,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_SuitWorkshop_C;
 
-}
-
+SDK_NAMESPACE_END

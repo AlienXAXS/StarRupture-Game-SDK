@@ -14,8 +14,7 @@
 #include "GE_CamEffect_ShieldRegeneration_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GE_CamEffect_ShieldRegeneration.GE_CamEffect_ShieldRegeneration_C.ExecuteUbergraph_GE_CamEffect_ShieldRegeneration
 // (Final, UbergraphFunction, HasDefaults)
@@ -84,5 +83,5 @@ void UGE_CamEffect_ShieldRegeneration_C::OnInitialized(class UAbilitySystemCompo
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

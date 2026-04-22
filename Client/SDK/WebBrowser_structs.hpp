@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct WebBrowser.WebJSCallbackBase
 // 0x0020 (0x0020 - 0x0000)
@@ -37,5 +36,4 @@ struct FWebJSResponse final : public FWebJSCallbackBase
 };
 DUMPER7_ASSERTS_FWebJSResponse;
 
-}
-
+SDK_NAMESPACE_END

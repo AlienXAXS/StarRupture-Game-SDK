@@ -14,8 +14,7 @@
 #include "BP_ChimeraPlacementHelperReplicatedBase_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ChimeraPlacementHelperReplicatedBaseCore.BP_ChimeraPlacementHelperReplicatedBaseCore_C
 // 0x0020 (0x08D0 - 0x08B0)
@@ -50,5 +49,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_ChimeraPlacementHelperReplicatedBaseCore_C;
 
-}
-
+SDK_NAMESPACE_END

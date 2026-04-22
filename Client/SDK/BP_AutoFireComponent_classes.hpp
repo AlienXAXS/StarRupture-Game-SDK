@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_AutoFireComponent.BP_AutoFireComponent_C
 // 0x0000 (0x0410 - 0x0410)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_AutoFireComponent_C;
 
-}
-
+SDK_NAMESPACE_END

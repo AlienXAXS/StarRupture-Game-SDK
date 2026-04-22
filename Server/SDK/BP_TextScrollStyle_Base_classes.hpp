@@ -13,8 +13,7 @@
 #include "CommonUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_TextScrollStyle-Base.BP_TextScrollStyle-Base_C
 // 0x0000 (0x0040 - 0x0040)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_TextScrollStyle_Base_C;
 
-}
-
+SDK_NAMESPACE_END

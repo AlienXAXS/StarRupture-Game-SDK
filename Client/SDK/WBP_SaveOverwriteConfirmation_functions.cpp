@@ -14,8 +14,7 @@
 #include "WBP_SaveOverwriteConfirmation_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_SaveOverwriteConfirmation.WBP_SaveOverwriteConfirmation_C.BndEvt__WBP_SaveOverwriteConfirmation_NO_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -245,5 +244,5 @@ class UWidget* WBP_SaveOverwriteConfirmation::UWBP_SaveOverwriteConfirmation_C::
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -13,8 +13,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_Melee_Tier3_Ragdoll_DeathSequenceActor.BP_Melee_Tier3_Ragdoll_DeathSequenceActor_C.ExecuteUbergraph_BP_Melee_Tier3_Ragdoll_DeathSequenceActor
 // 0x01A0 (0x01A0 - 0x0000)
@@ -87,5 +87,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_Melee_Tier3_Ragdoll_DeathSequenceActor_C_OnVisualVariationSeedChanged;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

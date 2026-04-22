@@ -14,8 +14,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_CustomToolActorsManager.BP_CustomToolActorsManager_C
 // 0x0050 (0x0108 - 0x00B8)
@@ -44,5 +43,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_CustomToolActorsManager_C;
 
-}
-
+SDK_NAMESPACE_END

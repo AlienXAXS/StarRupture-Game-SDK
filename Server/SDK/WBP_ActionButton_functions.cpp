@@ -14,8 +14,7 @@
 #include "WBP_ActionButton_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_ActionButton.WBP_ActionButton_C.SetTextStyle
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -349,5 +348,5 @@ void UWBP_ActionButton_C::BndEvt__WBP_ActionButton_InputActionWidget_K2Node_Comp
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

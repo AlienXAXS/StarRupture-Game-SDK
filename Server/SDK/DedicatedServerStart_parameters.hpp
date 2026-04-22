@@ -14,8 +14,8 @@
 #include "EnhancedInput_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function DedicatedServerStart.DedicatedServerStart_C.InpActEvt_NumPadZero_K2Node_InputDebugKeyEvent_2
 // 0x0038 (0x0038 - 0x0000)
@@ -137,5 +137,5 @@ public:
 };
 DUMPER7_ASSERTS_DedicatedServerStart_C_ExecuteUbergraph_DedicatedServerStart;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

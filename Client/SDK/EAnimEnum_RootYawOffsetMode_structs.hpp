@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedEnum EAnimEnum_RootYawOffsetMode.EAnimEnum_RootYawOffsetMode
 // NumValues: 0x0004
@@ -24,5 +23,4 @@ enum class EAnimEnum_RootYawOffsetMode : uint8
 	EAnimEnum_MAX                            = 3,
 };
 
-}
-
+SDK_NAMESPACE_END

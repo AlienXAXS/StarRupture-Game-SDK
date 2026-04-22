@@ -14,8 +14,7 @@
 #include "AuUI_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AuUI.AuWidget_AbilitySlot.OnAbilityInputPressed
 // (Final, Native, Protected, HasOutParams)
@@ -594,5 +593,5 @@ void UAuWidget_Notification::OnNotificationPreRemove()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_InventoryDragDropVisual.WBP_InventoryDragDropVisual_C
 // 0x0000 (0x03D8 - 0x03D8)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_InventoryDragDropVisual_C;
 
-}
-
+SDK_NAMESPACE_END

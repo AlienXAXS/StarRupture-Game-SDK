@@ -15,8 +15,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_FE_entrance_door.BP_FE_entrance_door_C.ExecuteUbergraph_BP_FE_entrance_door
 // 0x0640 (0x0640 - 0x0000)
@@ -136,5 +136,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_FE_entrance_door_C_OnUnlocked;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

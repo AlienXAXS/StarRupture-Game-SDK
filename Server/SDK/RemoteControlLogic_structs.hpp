@@ -14,8 +14,7 @@
 #include "RemoteControl_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum RemoteControlLogic.ERCBehaviourConditionType
 // NumValues: 0x0008
@@ -113,5 +112,4 @@ struct FRCSignatureControllerBindAction final : public FRCSignatureControllerAct
 };
 DUMPER7_ASSERTS_FRCSignatureControllerBindAction;
 
-}
-
+SDK_NAMESPACE_END

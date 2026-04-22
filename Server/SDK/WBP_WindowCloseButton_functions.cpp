@@ -14,8 +14,7 @@
 #include "WBP_WindowCloseButton_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_WindowCloseButton.WBP_WindowCloseButton_C.OnButtonClicked
 // (BlueprintCallable, BlueprintEvent)
@@ -120,5 +119,5 @@ void UWBP_WindowCloseButton_C::Construct()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

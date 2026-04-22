@@ -14,8 +14,7 @@
 #include "WBP_EncyclopediaDatapadInfoMenu_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_EncyclopediaDatapadInfoMenu.WBP_EncyclopediaDatapadInfoMenu_C.ExecuteUbergraph_WBP_EncyclopediaDatapadInfoMenu
 // (Final, UbergraphFunction, HasDefaults)
@@ -76,5 +75,5 @@ void UWBP_EncyclopediaDatapadInfoMenu_C::SetEntryTitleBP(const class FText& Titl
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "AudioModulation_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AudioModulation.AudioModulationStyle.GetControlBusColor
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
@@ -1221,5 +1220,5 @@ void USoundControlBusMix::SoloMix()
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

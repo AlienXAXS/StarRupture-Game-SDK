@@ -14,8 +14,7 @@
 #include "BTDecorator_IsMoving_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTDecorator_IsMoving.BTDecorator_IsMoving_C.PerformConditionCheckAI
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -41,5 +40,5 @@ bool UBTDecorator_IsMoving_C::PerformConditionCheckAI(class AAIController* Owner
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

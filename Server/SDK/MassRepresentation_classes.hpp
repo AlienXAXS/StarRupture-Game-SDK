@@ -17,8 +17,7 @@
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MassRepresentation.MassDistanceLODProcessor
 // 0x0A00 (0x0AC0 - 0x00C0)
@@ -425,5 +424,4 @@ public:
 };
 DUMPER7_ASSERTS_AMassVisualizer;
 
-}
-
+SDK_NAMESPACE_END

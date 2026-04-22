@@ -15,8 +15,7 @@
 #include "UMG_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_MapMenuLegendButton.WBP_MapMenuLegendButton_C
 // 0x0018 (0x03E0 - 0x03C8)
@@ -48,5 +47,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_MapMenuLegendButton_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_SealingDoor.BP_SealingDoor_C.BndEvt__BP_SealingDoor_DoorTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature
 // 0x0120 (0x0120 - 0x0000)
@@ -101,5 +101,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_SealingDoor_C_ExecuteUbergraph_BP_SealingDoor;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

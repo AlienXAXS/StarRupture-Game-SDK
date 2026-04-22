@@ -14,8 +14,7 @@
 #include "BP_Exploder_Tier2_LOD0_AnimNotify_RunCrAiAction_DealDamageAndSpawnEntity_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Exploder_Tier2_LOD0_AnimNotify_RunCrAiAction_DealDamageAndSpawnEntity.BP_Exploder_Tier2_LOD0_AnimNotify_RunCrAiAction_DealDamageAndSpawnEntity_C.CreateAiAction
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
@@ -39,5 +38,5 @@ class UCrAiAction* UBP_Exploder_Tier2_LOD0_AnimNotify_RunCrAiAction_DealDamageAn
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

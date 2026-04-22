@@ -14,8 +14,7 @@
 #include "BP_Melee_Tier3_Ragdoll_ReplicatedCollision_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Melee_Tier3_Ragdoll_ReplicatedCollision.BP_Melee_Tier3_Ragdoll_ReplicatedCollision_C.AttachToRagdoll
 // (BlueprintCallable, BlueprintEvent)
@@ -76,5 +75,5 @@ void ABP_Melee_Tier3_Ragdoll_ReplicatedCollision_C::ReceiveTick(float DeltaSecon
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

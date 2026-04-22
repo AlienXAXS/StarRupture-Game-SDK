@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_DeconstructionDropItem.BP_DeconstructionDropItem_C
 // 0x0018 (0x0300 - 0x02E8)
@@ -41,5 +40,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_DeconstructionDropItem_C;
 
-}
-
+SDK_NAMESPACE_END

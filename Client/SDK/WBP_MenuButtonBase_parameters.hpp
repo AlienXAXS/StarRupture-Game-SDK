@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "UMG_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function WBP_MenuButtonBase.WBP_MenuButtonBase_C.ExecuteUbergraph_WBP_MenuButtonBase
 // 0x0100 (0x0100 - 0x0000)
@@ -75,5 +75,5 @@ public:
 };
 DUMPER7_ASSERTS_WBP_MenuButtonBase_C_UpdateButtonStyles;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

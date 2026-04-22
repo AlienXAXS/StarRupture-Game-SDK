@@ -14,8 +14,7 @@
 #include "GE_CamEffect_ShieldDestroyed_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GE_CamEffect_ShieldDestroyed.GE_CamEffect_ShieldDestroyed_C.ExecuteUbergraph_GE_CamEffect_ShieldDestroyed
 // (Final, UbergraphFunction, HasDefaults)
@@ -84,5 +83,5 @@ void UGE_CamEffect_ShieldDestroyed_C::OnInitialized(class UAbilitySystemComponen
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

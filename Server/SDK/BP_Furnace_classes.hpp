@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Furnace.BP_Furnace_C
 // 0x0060 (0x0738 - 0x06D8)
@@ -53,5 +52,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Furnace_C;
 
-}
-
+SDK_NAMESPACE_END

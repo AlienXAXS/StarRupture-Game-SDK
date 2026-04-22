@@ -21,8 +21,7 @@
 #include "ChimeraMassCommon_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ChimeraMassCommon.CrMassActorComponent
 // 0x0058 (0x0110 - 0x00B8)
@@ -330,5 +329,4 @@ public:
 };
 DUMPER7_ASSERTS_UCrReplicatedSoftObjectPtrSettings;
 
-}
-
+SDK_NAMESPACE_END

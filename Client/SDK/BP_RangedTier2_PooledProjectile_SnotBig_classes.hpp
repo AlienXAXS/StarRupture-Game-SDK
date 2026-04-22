@@ -13,8 +13,7 @@
 #include "BP_RangedTier2_PooledProjectile_Snot_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_RangedTier2_PooledProjectile_SnotBig.BP_RangedTier2_PooledProjectile_SnotBig_C
 // 0x0000 (0x0380 - 0x0380)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_RangedTier2_PooledProjectile_SnotBig_C;
 
-}
-
+SDK_NAMESPACE_END

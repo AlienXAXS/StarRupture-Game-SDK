@@ -14,8 +14,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function IKRig.IKRetargetAlignPoleVectorController.GetSettings
 // 0x0028 (0x0028 - 0x0000)
@@ -191,6 +191,24 @@ public:
 };
 DUMPER7_ASSERTS_IKRetargetPelvisMotionController_SetTargetPelvisBone;
 
+// Function IKRig.IKRetargetSpeedPlantingController.GetSettings
+// 0x0038 (0x0038 - 0x0000)
+struct IKRetargetSpeedPlantingController_GetSettings final
+{
+public:
+	struct FIKRetargetSpeedPlantingOpSettings     ReturnValue;                                       // 0x0000(0x0038)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetSpeedPlantingController_GetSettings;
+
+// Function IKRig.IKRetargetSpeedPlantingController.SetSettings
+// 0x0038 (0x0038 - 0x0000)
+struct IKRetargetSpeedPlantingController_SetSettings final
+{
+public:
+	struct FIKRetargetSpeedPlantingOpSettings     InSettings;                                        // 0x0000(0x0038)(Parm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetSpeedPlantingController_SetSettings;
+
 // Function IKRig.IKRetargetPinBoneController.GetAllBonePairs
 // 0x0050 (0x0050 - 0x0000)
 struct IKRetargetPinBoneController_GetAllBonePairs final
@@ -227,24 +245,6 @@ public:
 	struct FIKRetargetPinBoneOpSettings           InSettings;                                        // 0x0000(0x00F0)(Parm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_IKRetargetPinBoneController_SetSettings;
-
-// Function IKRig.IKRetargetStrideWarpingController.GetSettings
-// 0x0060 (0x0060 - 0x0000)
-struct IKRetargetStrideWarpingController_GetSettings final
-{
-public:
-	struct FIKRetargetStrideWarpingOpSettings     ReturnValue;                                       // 0x0000(0x0060)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetStrideWarpingController_GetSettings;
-
-// Function IKRig.IKRetargetStrideWarpingController.SetSettings
-// 0x0060 (0x0060 - 0x0000)
-struct IKRetargetStrideWarpingController_SetSettings final
-{
-public:
-	struct FIKRetargetStrideWarpingOpSettings     InSettings;                                        // 0x0000(0x0060)(Parm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetStrideWarpingController_SetSettings;
 
 // Function IKRig.IKRetargetAdditivePoseController.GetSettings
 // 0x0020 (0x0020 - 0x0000)
@@ -372,23 +372,23 @@ public:
 };
 DUMPER7_ASSERTS_IKRetargetScaleSourceController_SetSettings;
 
-// Function IKRig.IKRetargetSpeedPlantingController.GetSettings
-// 0x0038 (0x0038 - 0x0000)
-struct IKRetargetSpeedPlantingController_GetSettings final
+// Function IKRig.IKRetargetStrideWarpingController.GetSettings
+// 0x0060 (0x0060 - 0x0000)
+struct IKRetargetStrideWarpingController_GetSettings final
 {
 public:
-	struct FIKRetargetSpeedPlantingOpSettings     ReturnValue;                                       // 0x0000(0x0038)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+	struct FIKRetargetStrideWarpingOpSettings     ReturnValue;                                       // 0x0000(0x0060)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_IKRetargetSpeedPlantingController_GetSettings;
+DUMPER7_ASSERTS_IKRetargetStrideWarpingController_GetSettings;
 
-// Function IKRig.IKRetargetSpeedPlantingController.SetSettings
-// 0x0038 (0x0038 - 0x0000)
-struct IKRetargetSpeedPlantingController_SetSettings final
+// Function IKRig.IKRetargetStrideWarpingController.SetSettings
+// 0x0060 (0x0060 - 0x0000)
+struct IKRetargetStrideWarpingController_SetSettings final
 {
 public:
-	struct FIKRetargetSpeedPlantingOpSettings     InSettings;                                        // 0x0000(0x0038)(Parm, NativeAccessSpecifierPublic)
+	struct FIKRetargetStrideWarpingOpSettings     InSettings;                                        // 0x0000(0x0060)(Parm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_IKRetargetSpeedPlantingController_SetSettings;
+DUMPER7_ASSERTS_IKRetargetStrideWarpingController_SetSettings;
 
 // Function IKRig.IKRigComponent.SetIKRigGoal
 // 0x00B0 (0x00B0 - 0x0000)
@@ -775,5 +775,5 @@ public:
 };
 DUMPER7_ASSERTS_IKRigSetTransformController_SetSolverSettings;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

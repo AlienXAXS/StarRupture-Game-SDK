@@ -14,8 +14,7 @@
 #include "ErrantLandscapeUtilities_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ErrantLandscapeUtilities.ElRtSplineStaticMeshComponent.MoveToSplineTransform
 // (Final, Native, Public, BlueprintCallable)
@@ -112,5 +111,5 @@ void UElRtSplineStaticMeshComponent::UpdateSplineMesh(const bool bFastBuild, con
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

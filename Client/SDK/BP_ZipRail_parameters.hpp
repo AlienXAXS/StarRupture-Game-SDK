@@ -15,8 +15,8 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_ZipRail.BP_ZipRail_C.CanBePooled
 // 0x0001 (0x0001 - 0x0000)
@@ -178,5 +178,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_ZipRail_C_ReceiveTick;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

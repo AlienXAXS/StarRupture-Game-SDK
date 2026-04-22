@@ -14,8 +14,7 @@
 #include "GA_GenericSingleFire_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GA_GenericSingleFire.GA_GenericSingleFire_C.ExecuteUbergraph_GA_GenericSingleFire
 // (Final, UbergraphFunction, HasDefaults)
@@ -538,5 +537,5 @@ void UGA_GenericSingleFire_C::CreateTraceDataBasedOnConfig(const struct FAuCusto
 		*OutTraceData = std::move(Parms.OutTraceData);
 }
 
-}
 
+SDK_NAMESPACE_END

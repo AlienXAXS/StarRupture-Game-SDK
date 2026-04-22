@@ -14,8 +14,7 @@
 #include "FieldSystemEngine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass FS_Explosion.FS_Explosion_C
 // 0x0028 (0x02D8 - 0x02B0)
@@ -48,5 +47,4 @@ public:
 };
 DUMPER7_ASSERTS_AFS_Explosion_C;
 
-}
-
+SDK_NAMESPACE_END

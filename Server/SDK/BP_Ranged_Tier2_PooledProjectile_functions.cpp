@@ -14,8 +14,7 @@
 #include "BP_Ranged_Tier2_PooledProjectile_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Ranged_Tier2_PooledProjectile.BP_Ranged_Tier2_PooledProjectile_C.AddInstantHeatToCharacter
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -188,5 +187,5 @@ void ABP_Ranged_Tier2_PooledProjectile_C::UserConstructionScript()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

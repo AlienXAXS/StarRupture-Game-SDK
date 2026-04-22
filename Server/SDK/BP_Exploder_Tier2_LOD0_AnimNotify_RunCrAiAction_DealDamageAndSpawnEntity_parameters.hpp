@@ -13,8 +13,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_Exploder_Tier2_LOD0_AnimNotify_RunCrAiAction_DealDamageAndSpawnEntity.BP_Exploder_Tier2_LOD0_AnimNotify_RunCrAiAction_DealDamageAndSpawnEntity_C.CreateAiAction
 // 0x01A0 (0x01A0 - 0x0000)
@@ -51,5 +51,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_Exploder_Tier2_LOD0_AnimNotify_RunCrAiAction_DealDamageAndSpawnEntity_C_CreateAiAction;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

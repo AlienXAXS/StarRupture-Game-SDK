@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_TechnologyKeeper.BP_TechnologyKeeper_C
 // 0x0008 (0x03C8 - 0x03C0)
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_TechnologyKeeper_C;
 
-}
-
+SDK_NAMESPACE_END

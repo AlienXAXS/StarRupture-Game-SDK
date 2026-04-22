@@ -13,8 +13,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct AuCamera.AuCameraConfig
 // 0x0050 (0x0050 - 0x0000)
@@ -60,5 +59,4 @@ public:
 };
 DUMPER7_ASSERTS_FAuCameraInfo;
 
-}
-
+SDK_NAMESPACE_END

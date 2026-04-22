@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct NaniteDisplacedMesh.NaniteDisplacedMeshDisplacementMap
 // 0x0010 (0x0010 - 0x0000)
@@ -34,5 +33,4 @@ public:
 };
 DUMPER7_ASSERTS_FNaniteDisplacedMeshParams;
 
-}
-
+SDK_NAMESPACE_END

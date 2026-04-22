@@ -14,8 +14,7 @@
 #include "BP_ZipLine_OLD_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.UpdateDetailedBeamActivity
 // (BlueprintCallable, BlueprintEvent)
@@ -462,5 +461,5 @@ void ABP_ZipLine_OLD_C::BlockAllBeams(class UNiagaraComponent* NiagaraSystem)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

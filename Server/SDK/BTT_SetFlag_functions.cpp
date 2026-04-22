@@ -14,8 +14,7 @@
 #include "BTT_SetFlag_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTT_SetFlag.BTT_SetFlag_C.ReceiveExecuteAI
 // (Event, Protected, BlueprintEvent)
@@ -58,5 +57,5 @@ void UBTT_SetFlag_C::ExecuteUbergraph_BTT_SetFlag(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

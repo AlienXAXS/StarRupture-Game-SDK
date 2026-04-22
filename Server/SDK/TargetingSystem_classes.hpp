@@ -19,8 +19,7 @@
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class TargetingSystem.AbilityTask_PerformTargeting
 // 0x0038 (0x00B8 - 0x0080)
@@ -447,5 +446,4 @@ public:
 };
 DUMPER7_ASSERTS_UTargetingFilterTask_SortByDistance;
 
-}
-
+SDK_NAMESPACE_END

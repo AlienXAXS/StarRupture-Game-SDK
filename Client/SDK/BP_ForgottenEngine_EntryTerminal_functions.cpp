@@ -14,8 +14,7 @@
 #include "BP_ForgottenEngine_EntryTerminal_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_ForgottenEngine_EntryTerminal.BP_ForgottenEngine_EntryTerminal_C.ExecuteUbergraph_BP_ForgottenEngine_EntryTerminal
 // (Final, UbergraphFunction)
@@ -64,5 +63,5 @@ void ABP_ForgottenEngine_EntryTerminal_C::ReceiveBeginPlay()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

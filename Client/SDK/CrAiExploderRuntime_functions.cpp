@@ -14,8 +14,7 @@
 #include "CrAiExploderRuntime_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function CrAiExploderRuntime.CrAiActionDealDamageAndSpawnEntity.Create_CrAiDealDamageAndSpawnEntity
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
@@ -205,5 +204,5 @@ void UExploderStateSyncComponent::Reset()
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

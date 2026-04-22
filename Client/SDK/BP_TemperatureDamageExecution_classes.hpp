@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_TemperatureDamageExecution.BP_TemperatureDamageExecution_C
 // 0x0000 (0x00F0 - 0x00F0)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_TemperatureDamageExecution_C;
 
-}
-
+SDK_NAMESPACE_END

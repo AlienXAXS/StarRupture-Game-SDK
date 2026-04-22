@@ -14,8 +14,7 @@
 #include "WBP_DentLine_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_DentLine.WBP_DentLine_C.SetCurrentColor
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -78,5 +77,5 @@ void UWBP_DentLine_C::OnPaint(struct FPaintContext& Context) const
 	Context = std::move(Parms.Context);
 }
 
-}
 
+SDK_NAMESPACE_END

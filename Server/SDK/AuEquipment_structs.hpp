@@ -13,8 +13,7 @@
 #include "GameplayTags_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct AuEquipment.NxDummyStructDefi
 // 0x0001 (0x0001 - 0x0000)
@@ -35,5 +34,4 @@ public:
 };
 DUMPER7_ASSERTS_FAuProviderData;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.AnimBlueprintGeneratedMutableData
 // 0x0063 (0x0064 - 0x0001)
@@ -273,5 +272,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Ranged_Tier1_Actor__FAnimBlueprintGeneratedConstantData;
 
-}
-
+SDK_NAMESPACE_END

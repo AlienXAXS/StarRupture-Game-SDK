@@ -11,16 +11,15 @@
 #include "Basic.hpp"
 
 #include "Chimera_classes.hpp"
-#include "EAnimEnum_RootYawOffsetMode_structs.hpp"
-#include "Engine_structs.hpp"
 #include "ABP_Mannequin_FPP_Base_structs.hpp"
-#include "EAnimEnum_CardinalDirection_structs.hpp"
-#include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "EAnimEnum_RootYawOffsetMode_structs.hpp"
+#include "EAnimEnum_CardinalDirection_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass ABP_Mannequin_FPP_Base.ABP_Mannequin_FPP_Base_C
 // 0x38D0 (0x3D20 - 0x0450)
@@ -417,5 +416,4 @@ public:
 };
 DUMPER7_ASSERTS_UABP_Mannequin_FPP_Base_C;
 
-}
-
+SDK_NAMESPACE_END

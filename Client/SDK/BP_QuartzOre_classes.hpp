@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_QuartzOre.BP_QuartzOre_C
 // 0x0170 (0x0658 - 0x04E8)
@@ -97,5 +96,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_QuartzOre_C;
 
-}
-
+SDK_NAMESPACE_END

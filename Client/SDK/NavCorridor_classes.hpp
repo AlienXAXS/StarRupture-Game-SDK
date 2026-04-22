@@ -15,8 +15,7 @@
 #include "NavCorridor_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class NavCorridor.NavCorridorTestingComponent
 // 0x0150 (0x06F0 - 0x05A0)
@@ -78,5 +77,4 @@ public:
 };
 DUMPER7_ASSERTS_ANavCorridorTestingActor;
 
-}
-
+SDK_NAMESPACE_END

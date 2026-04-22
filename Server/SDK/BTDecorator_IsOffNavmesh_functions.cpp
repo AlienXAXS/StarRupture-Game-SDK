@@ -14,8 +14,7 @@
 #include "BTDecorator_IsOffNavmesh_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTDecorator_IsOffNavmesh.BTDecorator_IsOffNavmesh_C.PerformConditionCheckAI
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -41,5 +40,5 @@ bool UBTDecorator_IsOffNavmesh_C::PerformConditionCheckAI(class AAIController* O
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

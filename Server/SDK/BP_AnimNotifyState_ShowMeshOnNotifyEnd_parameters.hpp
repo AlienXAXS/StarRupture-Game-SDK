@@ -13,8 +13,8 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_AnimNotifyState_ShowMeshOnNotifyEnd.BP_AnimNotifyState_ShowMeshOnNotifyEnd_C.Received_NotifyEnd
 // 0x0060 (0x0060 - 0x0000)
@@ -33,5 +33,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_AnimNotifyState_ShowMeshOnNotifyEnd_C_Received_NotifyEnd;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

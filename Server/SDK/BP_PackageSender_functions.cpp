@@ -14,8 +14,7 @@
 #include "BP_PackageSender_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_PackageSender.BP_PackageSender_C.Timeline__UpdateFunc
 // (BlueprintEvent)
@@ -194,5 +193,5 @@ void ABP_PackageSender_C::Door_Timeline__FinishedFunc()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

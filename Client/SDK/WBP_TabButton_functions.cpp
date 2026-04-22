@@ -14,8 +14,7 @@
 #include "WBP_TabButton_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_TabButton.WBP_TabButton_C.BndEvt__WBP_TabButton_TabButton_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature
 // (BlueprintEvent)
@@ -104,5 +103,5 @@ void UWBP_TabButton_C::ShowWarningIcon(bool Show)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

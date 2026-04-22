@@ -14,8 +14,7 @@
 #include "WBP_HeaderLineCorporationLevel_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_HeaderLineCorporationLevel.WBP_HeaderLineCorporationLevel_C.ExecuteUbergraph_WBP_HeaderLineCorporationLevel
 // (Final, UbergraphFunction)
@@ -160,5 +159,5 @@ void UWBP_HeaderLineCorporationLevel_C::ShowUnclaimedStatusFlag()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

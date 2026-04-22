@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass I_StaminaRegenGem.I_StaminaRegenGem_C
 // 0x0000 (0x0420 - 0x0420)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UI_StaminaRegenGem_C;
 
-}
-
+SDK_NAMESPACE_END

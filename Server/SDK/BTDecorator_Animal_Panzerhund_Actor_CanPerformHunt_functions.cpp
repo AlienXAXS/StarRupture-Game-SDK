@@ -14,8 +14,7 @@
 #include "BTDecorator_Animal_Panzerhund_Actor_CanPerformHunt_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTDecorator_Animal_Panzerhund_Actor_CanPerformHunt.BTDecorator_Animal_Panzerhund_Actor_CanPerformHunt_C.PerformConditionCheckAI
 // (Event, Protected, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -41,5 +40,5 @@ bool UBTDecorator_Animal_Panzerhund_Actor_CanPerformHunt_C::PerformConditionChec
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

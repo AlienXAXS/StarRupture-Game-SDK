@@ -14,8 +14,7 @@
 #include "WBP_CharacterWidget_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_CharacterWidget.WBP_CharacterWidget_C.SetupProfession
 // (Event, Protected, BlueprintEvent)
@@ -168,5 +167,5 @@ void UWBP_CharacterWidget_C::BndEvt__WBP_CharacterWidget_ShowBioButton_K2Node_Co
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

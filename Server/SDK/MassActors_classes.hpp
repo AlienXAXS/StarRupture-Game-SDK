@@ -20,8 +20,7 @@
 #include "MassSpawner_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MassActors.MassActorPoolableInterface
 // 0x0000 (0x0000 - 0x0000)
@@ -483,5 +482,4 @@ public:
 };
 DUMPER7_ASSERTS_UMassTranslator_BehaviorTree;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "WBP_QuickActionsContextMenu_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_QuickActionsContextMenu.WBP_QuickActionsContextMenu_C.AddAction
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -107,5 +106,5 @@ void UWBP_QuickActionsContextMenu_C::SetUsableWidget(bool InUsable)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

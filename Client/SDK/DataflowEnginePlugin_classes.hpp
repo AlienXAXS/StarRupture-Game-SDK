@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class DataflowEnginePlugin.DataflowActor
 // 0x0008 (0x02B0 - 0x02A8)
@@ -62,5 +61,4 @@ public:
 };
 DUMPER7_ASSERTS_UDataflowComponent;
 
-}
-
+SDK_NAMESPACE_END

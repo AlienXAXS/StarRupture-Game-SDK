@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
 #include "HairStrandsSolver_structs.hpp"
 #include "DataflowSimulation_structs.hpp"
+#include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class HairStrandsSolver.GroomSolverComponent
 // 0x0280 (0x0800 - 0x0580)
@@ -54,5 +53,4 @@ public:
 };
 DUMPER7_ASSERTS_UGroomSolverComponent;
 
-}
-
+SDK_NAMESPACE_END

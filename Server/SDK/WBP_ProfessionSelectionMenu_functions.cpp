@@ -14,8 +14,7 @@
 #include "WBP_ProfessionSelectionMenu_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_ProfessionSelectionMenu.WBP_ProfessionSelectionMenu_C.ExecuteUbergraph_WBP_ProfessionSelectionMenu
 // (Final, UbergraphFunction)
@@ -50,5 +49,5 @@ void UWBP_ProfessionSelectionMenu_C::Construct()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_EncyclopediaRTD.BP_EncyclopediaRTD_C
 // 0x0010 (0x0790 - 0x0780)
@@ -44,5 +43,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_EncyclopediaRTD_C;
 
-}
-
+SDK_NAMESPACE_END

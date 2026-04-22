@@ -14,8 +14,7 @@
 #include "OptimusCore_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function OptimusCore.OptimusNodeGraph.AddCommentNode
 // (Final, RequiredAPI, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
@@ -1062,31 +1061,6 @@ bool UOptimusNodeGraph::IsSubGraphReference(class UOptimusNode* InNode) const
 	Params::OptimusNodeGraph_IsSubGraphReference Parms{};
 
 	Parms.InNode = InNode;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function OptimusCore.OptimusFunctionNodeGraph.GetAccessSpecifierOptions
-// (Final, RequiredAPI, Native, Public, Const)
-// Parameters:
-// TArray<class FName>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<class FName> UOptimusFunctionNodeGraph::GetAccessSpecifierOptions() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("OptimusFunctionNodeGraph", "GetAccessSpecifierOptions");
-
-	Params::OptimusFunctionNodeGraph_GetAccessSpecifierOptions Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2194,5 +2168,30 @@ bool UOptimusDeformerInstance::SetVectorVariable(class FName InVariableName, con
 	return Parms.ReturnValue;
 }
 
+
+// Function OptimusCore.OptimusFunctionNodeGraph.GetAccessSpecifierOptions
+// (Final, RequiredAPI, Native, Public, Const)
+// Parameters:
+// TArray<class FName>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class FName> UOptimusFunctionNodeGraph::GetAccessSpecifierOptions() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("OptimusFunctionNodeGraph", "GetAccessSpecifierOptions");
+
+	Params::OptimusFunctionNodeGraph_GetAccessSpecifierOptions Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
+
+SDK_NAMESPACE_END

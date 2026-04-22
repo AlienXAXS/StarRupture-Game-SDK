@@ -13,8 +13,8 @@
 #include "Chimera_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_Purplant.BP_Purplant_C.ExecuteUbergraph_BP_Purplant
 // 0x0008 (0x0008 - 0x0000)
@@ -41,5 +41,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_Purplant_C_BP_OnWaveChangedUpdate;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

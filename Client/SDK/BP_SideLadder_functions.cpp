@@ -14,8 +14,7 @@
 #include "BP_SideLadder_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_SideLadder.BP_SideLadder_C.AddCharacterToLadder
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -225,5 +224,5 @@ void ABP_SideLadder_C::GetBuildingMeshes(class UMeshComponent** MainBody, TArray
 		*AdditionalMeshes = std::move(Parms.AdditionalMeshes);
 }
 
-}
 
+SDK_NAMESPACE_END

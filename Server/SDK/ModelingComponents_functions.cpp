@@ -14,86 +14,7 @@
 #include "ModelingComponents_parameters.hpp"
 
 
-namespace SDK
-{
-
-// Function ModelingComponents.PointSetComponent.AddPoints
-// (Final, RequiredAPI, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// const TArray<struct FVector>&           Positions                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// const struct FColor&                    InColor                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const float                             InSize                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const float                             InDepthBias                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UPointSetComponent::AddPoints(const TArray<struct FVector>& Positions, const struct FColor& InColor, const float InSize, const float InDepthBias)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PointSetComponent", "AddPoints");
-
-	Params::PointSetComponent_AddPoints Parms{};
-
-	Parms.Positions = std::move(Positions);
-	Parms.InColor = std::move(InColor);
-	Parms.InSize = InSize;
-	Parms.InDepthBias = InDepthBias;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModelingComponents.PointSetComponent.Clear
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-
-void UPointSetComponent::Clear()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PointSetComponent", "Clear");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModelingComponents.PointSetComponent.SetPointMaterial
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// class UMaterialInterface*               InPointMaterial                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPointSetComponent::SetPointMaterial(class UMaterialInterface* InPointMaterial)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PointSetComponent", "SetPointMaterial");
-
-	Params::PointSetComponent_SetPointMaterial Parms{};
-
-	Parms.InPointMaterial = InPointMaterial;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
+SDK_NAMESPACE_START
 
 // Function ModelingComponents.MeshTopologySelectionMechanicProperties.InvertSelection
 // (Final, RequiredAPI, Native, Public)
@@ -812,6 +733,84 @@ class APreviewGeometryActor* UPreviewGeometry::GetActor() const
 }
 
 
+// Function ModelingComponents.PointSetComponent.AddPoints
+// (Final, RequiredAPI, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const TArray<struct FVector>&           Positions                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FColor&                    InColor                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             InSize                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             InDepthBias                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UPointSetComponent::AddPoints(const TArray<struct FVector>& Positions, const struct FColor& InColor, const float InSize, const float InDepthBias)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PointSetComponent", "AddPoints");
+
+	Params::PointSetComponent_AddPoints Parms{};
+
+	Parms.Positions = std::move(Positions);
+	Parms.InColor = std::move(InColor);
+	Parms.InSize = InSize;
+	Parms.InDepthBias = InDepthBias;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ModelingComponents.PointSetComponent.Clear
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+
+void UPointSetComponent::Clear()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PointSetComponent", "Clear");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModelingComponents.PointSetComponent.SetPointMaterial
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// class UMaterialInterface*               InPointMaterial                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPointSetComponent::SetPointMaterial(class UMaterialInterface* InPointMaterial)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PointSetComponent", "SetPointMaterial");
+
+	Params::PointSetComponent_SetPointMaterial Parms{};
+
+	Parms.InPointMaterial = InPointMaterial;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function ModelingComponents.ModelingObjectsCreationAPI.CreateMaterialObject
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -1076,5 +1075,5 @@ TArray<class FString> UWeightMapSetProperties::GetWeightMapsFunc()
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

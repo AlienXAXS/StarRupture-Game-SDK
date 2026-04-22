@@ -16,8 +16,7 @@
 #include "ABP_SuitWorkshop_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass ABP_SuitWorkshop.ABP_SuitWorkshop_C
 // 0x00C0 (0x04E0 - 0x0420)
@@ -73,5 +72,4 @@ public:
 };
 DUMPER7_ASSERTS_UABP_SuitWorkshop_C;
 
-}
-
+SDK_NAMESPACE_END

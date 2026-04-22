@@ -14,8 +14,7 @@
 #include "MassAIBehavior_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function MassAIBehavior.MassComponentHitSubsystem.OnHitCallback
 // (Final, RequiredAPI, Native, Protected, HasOutParams, HasDefaults)
@@ -146,5 +145,5 @@ void UMassLookAtSubsystem::DeleteRequest(const struct FMassLookAtRequestHandle& 
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

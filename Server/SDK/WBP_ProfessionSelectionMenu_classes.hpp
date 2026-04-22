@@ -14,8 +14,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_ProfessionSelectionMenu.WBP_ProfessionSelectionMenu_C
 // 0x0058 (0x0630 - 0x05D8)
@@ -54,5 +53,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_ProfessionSelectionMenu_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "ABP_Armory_hier_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ABP_Armory_hier.ABP_Armory_hier_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -183,5 +182,5 @@ void UABP_Armory_hier_C::ExecuteUbergraph_ABP_Armory_hier(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

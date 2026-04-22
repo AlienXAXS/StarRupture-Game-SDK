@@ -15,8 +15,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Exporter.BP_Exporter_C
 // 0x00D8 (0x07B8 - 0x06E0)
@@ -74,5 +73,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Exporter_C;
 
-}
-
+SDK_NAMESPACE_END

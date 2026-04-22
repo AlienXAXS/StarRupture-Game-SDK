@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass I_HeliumOre.I_HeliumOre_C
 // 0x0000 (0x0400 - 0x0400)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UI_HeliumOre_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "BP_BrushBase_DecalOnly_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Decal_Meteorite.BP_Decal_Meteorite_C
 // 0x0000 (0x02C8 - 0x02C8)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Decal_Meteorite_C;
 
-}
-
+SDK_NAMESPACE_END

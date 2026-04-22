@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_DeathDropItem_Medic.BP_DeathDropItem_Medic_C
 // 0x0038 (0x0320 - 0x02E8)
@@ -45,5 +44,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_DeathDropItem_Medic_C;
 
-}
-
+SDK_NAMESPACE_END

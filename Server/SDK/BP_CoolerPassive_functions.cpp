@@ -14,8 +14,7 @@
 #include "BP_CoolerPassive_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_CoolerPassive.BP_CoolerPassive_C.OnSocketDisconnected
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -116,5 +115,5 @@ void ABP_CoolerPassive_C::ExecuteUbergraph_BP_CoolerPassive(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

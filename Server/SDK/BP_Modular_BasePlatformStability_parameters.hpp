@@ -14,8 +14,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_Modular_BasePlatformStability.BP_Modular_BasePlatformStability_C.ExecuteUbergraph_BP_Modular_BasePlatformStability
 // 0x0338 (0x0338 - 0x0000)
@@ -95,5 +95,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_Modular_BasePlatformStability_C_GetBuildingMeshes;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ModularGameplayActors.ModularAIController
 // 0x0000 (0x03E8 - 0x03E8)
@@ -197,5 +196,4 @@ public:
 };
 DUMPER7_ASSERTS_AModularPlayerState;
 
-}
-
+SDK_NAMESPACE_END

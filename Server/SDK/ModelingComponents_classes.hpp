@@ -15,36 +15,42 @@
 #include "CoreUObject_classes.hpp"
 #include "Engine_classes.hpp"
 #include "ModelingComponents_structs.hpp"
-#include "GeometryFramework_classes.hpp"
 #include "DeveloperSettings_classes.hpp"
 #include "PhysicsCore_structs.hpp"
+#include "GeometryFramework_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
-// Class ModelingComponents.CollectSurfacePathMechanic
-// 0x0560 (0x0590 - 0x0030)
-class UCollectSurfacePathMechanic final : public UInteractionMechanic
+// Class ModelingComponents.UVLayoutPreview
+// 0x0148 (0x0170 - 0x0028)
+class alignas(0x10) UUVLayoutPreview final : public UObject
 {
 public:
-	uint8                                         Pad_30[0x560];                                     // 0x0030(0x0560)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UUVLayoutPreviewProperties*             Settings;                                          // 0x0028(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UPreviewMesh*                           PreviewMesh;                                       // 0x0030(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UMeshElementsVisualizer*                MeshElementsVisualizer;                            // 0x0038(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UTriangleSetComponent*                  TriangleComponent;                                 // 0x0040(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	bool                                          bShowBackingRectangle;                             // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInterface*                     BackingRectangleMaterial;                          // 0x0050(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_58[0x118];                                     // 0x0058(0x0118)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CollectSurfacePathMechanic")
+		STATIC_CLASS_IMPL("UVLayoutPreview")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CollectSurfacePathMechanic")
+		STATIC_NAME_IMPL(L"UVLayoutPreview")
 	}
-	static class UCollectSurfacePathMechanic* GetDefaultObj()
+	static class UUVLayoutPreview* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCollectSurfacePathMechanic>();
+		return GetDefaultObjImpl<UUVLayoutPreview>();
 	}
 };
-DUMPER7_ASSERTS_UCollectSurfacePathMechanic;
+DUMPER7_ASSERTS_UUVLayoutPreview;
 
 // Class ModelingComponents.DynamicMeshProvider
 // 0x0000 (0x0000 - 0x0000)
@@ -74,6 +80,88 @@ public:
 	}
 };
 DUMPER7_ASSERTS_IDynamicMeshProvider;
+
+// Class ModelingComponents.MeshWireframeComponent
+// 0x00A0 (0x0600 - 0x0560)
+class UMeshWireframeComponent final : public UMeshComponent
+{
+public:
+	float                                         LineDepthBias;                                     // 0x0558(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LineDepthBiasSizeScale;                            // 0x055C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ThicknessScale;                                    // 0x0560(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableWireframe;                                  // 0x0564(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_565[0x3];                                      // 0x0565(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FColor                                 WireframeColor;                                    // 0x0568(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WireframeThickness;                                // 0x056C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableBoundaryEdges;                              // 0x0570(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_571[0x3];                                      // 0x0571(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FColor                                 BoundaryEdgeColor;                                 // 0x0574(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BoundaryEdgeThickness;                             // 0x0578(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableUVSeams;                                    // 0x057C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_57D[0x3];                                      // 0x057D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FColor                                 UVSeamColor;                                       // 0x0580(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         UVSeamThickness;                                   // 0x0584(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableNormalSeams;                                // 0x0588(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_589[0x3];                                      // 0x0589(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FColor                                 NormalSeamColor;                                   // 0x058C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NormalSeamThickness;                               // 0x0590(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableTangentSeams;                               // 0x0594(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_595[0x3];                                      // 0x0595(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FColor                                 TangentSeamColor;                                  // 0x0598(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TangentSeamThickness;                              // 0x059C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableColorSeams;                                 // 0x05A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5A1[0x3];                                      // 0x05A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FColor                                 ColorSeamColor;                                    // 0x05A4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ColorSeamThickness;                                // 0x05A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5AC[0x4];                                      // 0x05AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInterface*                     LineMaterial;                                      // 0x05B0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	struct FBoxSphereBounds                       LocalBounds;                                       // 0x05B8(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_5F0[0x10];                                     // 0x05F0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MeshWireframeComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MeshWireframeComponent")
+	}
+	static class UMeshWireframeComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMeshWireframeComponent>();
+	}
+};
+DUMPER7_ASSERTS_UMeshWireframeComponent;
+
+// Class ModelingComponents.DynamicMeshCommitter
+// 0x0000 (0x0000 - 0x0000)
+class IDynamicMeshCommitter final
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("DynamicMeshCommitter")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"DynamicMeshCommitter")
+	}
+	static class IDynamicMeshCommitter* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IDynamicMeshCommitter>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IDynamicMeshCommitter;
 
 // Class ModelingComponents.MeshTopologySelectionMechanic
 // 0x0AC0 (0x0AF0 - 0x0030)
@@ -109,66 +197,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMeshTopologySelectionMechanic;
-
-// Class ModelingComponents.PointSetComponent
-// 0x0080 (0x05E0 - 0x0560)
-class UPointSetComponent final : public UMeshComponent
-{
-public:
-	class UMaterialInterface*                     PointMaterial;                                     // 0x0558(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	struct FBoxSphereBounds                       Bounds;                                            // 0x0560(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPrivate)
-	bool                                          bBoundsDirty;                                      // 0x0598(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_599[0x47];                                     // 0x0599(0x0047)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	int32 AddPoints(const TArray<struct FVector>& Positions, const struct FColor& InColor, const float InSize, const float InDepthBias);
-	void Clear();
-	void SetPointMaterial(class UMaterialInterface* InPointMaterial);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("PointSetComponent")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"PointSetComponent")
-	}
-	static class UPointSetComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPointSetComponent>();
-	}
-};
-DUMPER7_ASSERTS_UPointSetComponent;
-
-// Class ModelingComponents.DynamicMeshCommitter
-// 0x0000 (0x0000 - 0x0000)
-class IDynamicMeshCommitter final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("DynamicMeshCommitter")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"DynamicMeshCommitter")
-	}
-	static class IDynamicMeshCommitter* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IDynamicMeshCommitter>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IDynamicMeshCommitter;
 
 // Class ModelingComponents.BoundarySelectionMechanic
 // 0x0000 (0x0AF0 - 0x0AF0)
@@ -1164,58 +1192,36 @@ public:
 };
 DUMPER7_ASSERTS_UMeshElementsVisualizer;
 
-// Class ModelingComponents.MeshWireframeComponent
-// 0x00A0 (0x0600 - 0x0560)
-class UMeshWireframeComponent final : public UMeshComponent
+// Class ModelingComponents.PointSetComponent
+// 0x0080 (0x05E0 - 0x0560)
+class UPointSetComponent final : public UMeshComponent
 {
 public:
-	float                                         LineDepthBias;                                     // 0x0558(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LineDepthBiasSizeScale;                            // 0x055C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ThicknessScale;                                    // 0x0560(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnableWireframe;                                  // 0x0564(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_565[0x3];                                      // 0x0565(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FColor                                 WireframeColor;                                    // 0x0568(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WireframeThickness;                                // 0x056C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnableBoundaryEdges;                              // 0x0570(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_571[0x3];                                      // 0x0571(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FColor                                 BoundaryEdgeColor;                                 // 0x0574(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BoundaryEdgeThickness;                             // 0x0578(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnableUVSeams;                                    // 0x057C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_57D[0x3];                                      // 0x057D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FColor                                 UVSeamColor;                                       // 0x0580(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         UVSeamThickness;                                   // 0x0584(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnableNormalSeams;                                // 0x0588(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_589[0x3];                                      // 0x0589(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FColor                                 NormalSeamColor;                                   // 0x058C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NormalSeamThickness;                               // 0x0590(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnableTangentSeams;                               // 0x0594(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_595[0x3];                                      // 0x0595(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FColor                                 TangentSeamColor;                                  // 0x0598(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TangentSeamThickness;                              // 0x059C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnableColorSeams;                                 // 0x05A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5A1[0x3];                                      // 0x05A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FColor                                 ColorSeamColor;                                    // 0x05A4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ColorSeamThickness;                                // 0x05A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5AC[0x4];                                      // 0x05AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInterface*                     LineMaterial;                                      // 0x05B0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	struct FBoxSphereBounds                       LocalBounds;                                       // 0x05B8(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_5F0[0x10];                                     // 0x05F0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UMaterialInterface*                     PointMaterial;                                     // 0x0558(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	struct FBoxSphereBounds                       Bounds;                                            // 0x0560(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPrivate)
+	bool                                          bBoundsDirty;                                      // 0x0598(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_599[0x47];                                     // 0x0599(0x0047)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	int32 AddPoints(const TArray<struct FVector>& Positions, const struct FColor& InColor, const float InSize, const float InDepthBias);
+	void Clear();
+	void SetPointMaterial(class UMaterialInterface* InPointMaterial);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MeshWireframeComponent")
+		STATIC_CLASS_IMPL("PointSetComponent")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MeshWireframeComponent")
+		STATIC_NAME_IMPL(L"PointSetComponent")
 	}
-	static class UMeshWireframeComponent* GetDefaultObj()
+	static class UPointSetComponent* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMeshWireframeComponent>();
+		return GetDefaultObjImpl<UPointSetComponent>();
 	}
 };
-DUMPER7_ASSERTS_UMeshWireframeComponent;
+DUMPER7_ASSERTS_UPointSetComponent;
 
 // Class ModelingComponents.PreviewMesh
 // 0x0108 (0x0130 - 0x0028)
@@ -1342,35 +1348,28 @@ public:
 };
 DUMPER7_ASSERTS_UUVLayoutPreviewProperties;
 
-// Class ModelingComponents.UVLayoutPreview
-// 0x0148 (0x0170 - 0x0028)
-class alignas(0x10) UUVLayoutPreview final : public UObject
+// Class ModelingComponents.CollectSurfacePathMechanic
+// 0x0560 (0x0590 - 0x0030)
+class UCollectSurfacePathMechanic final : public UInteractionMechanic
 {
 public:
-	class UUVLayoutPreviewProperties*             Settings;                                          // 0x0028(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UPreviewMesh*                           PreviewMesh;                                       // 0x0030(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UMeshElementsVisualizer*                MeshElementsVisualizer;                            // 0x0038(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UTriangleSetComponent*                  TriangleComponent;                                 // 0x0040(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	bool                                          bShowBackingRectangle;                             // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInterface*                     BackingRectangleMaterial;                          // 0x0050(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_58[0x118];                                     // 0x0058(0x0118)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x560];                                     // 0x0030(0x0560)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("UVLayoutPreview")
+		STATIC_CLASS_IMPL("CollectSurfacePathMechanic")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"UVLayoutPreview")
+		STATIC_NAME_IMPL(L"CollectSurfacePathMechanic")
 	}
-	static class UUVLayoutPreview* GetDefaultObj()
+	static class UCollectSurfacePathMechanic* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUVLayoutPreview>();
+		return GetDefaultObjImpl<UCollectSurfacePathMechanic>();
 	}
 };
-DUMPER7_ASSERTS_UUVLayoutPreview;
+DUMPER7_ASSERTS_UCollectSurfacePathMechanic;
 
 // Class ModelingComponents.CollisionPrimitivesMechanic
 // 0x0570 (0x05A0 - 0x0030)
@@ -2128,5 +2127,4 @@ public:
 };
 DUMPER7_ASSERTS_UMultiTransformer;
 
-}
-
+SDK_NAMESPACE_END

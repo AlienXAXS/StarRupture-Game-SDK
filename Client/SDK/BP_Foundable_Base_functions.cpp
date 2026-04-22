@@ -14,8 +14,7 @@
 #include "BP_Foundable_Base_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Foundable_Base.BP_Foundable_Base_C.ExecuteUbergraph_BP_Foundable_Base
 // (Final, UbergraphFunction)
@@ -118,5 +117,5 @@ void ABP_Foundable_Base_C::UpdateMaterialsForStorageState()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

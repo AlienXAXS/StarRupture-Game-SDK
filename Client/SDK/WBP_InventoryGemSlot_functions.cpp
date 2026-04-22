@@ -14,8 +14,7 @@
 #include "WBP_InventoryGemSlot_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_InventoryGemSlot.WBP_InventoryGemSlot_C.ConvertToGrayScale
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -265,5 +264,5 @@ void UWBP_InventoryGemSlot_C::UpdateVisuals(bool bInLocked, int32 Level_0)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "WBP_RecipeItemName_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_RecipeItemName.WBP_RecipeItemName_C.SetName
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -36,5 +35,5 @@ void UWBP_RecipeItemName_C::SetName(const class FText& Text)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

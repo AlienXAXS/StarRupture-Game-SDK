@@ -15,8 +15,8 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function GS_GameStateBase.GS_GameStateBase_C.PlayContextualDialogueResponseMulticast
 // 0x0120 (0x0120 - 0x0000)
@@ -144,5 +144,5 @@ public:
 };
 DUMPER7_ASSERTS_GS_GameStateBase_C_CanExecuteAnyContextualResponse;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

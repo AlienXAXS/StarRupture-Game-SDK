@@ -14,8 +14,7 @@
 #include "BTDecorator_CanRunAway_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTDecorator_CanRunAway.BTDecorator_CanRunAway_C.PerformConditionCheckAI
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -41,5 +40,5 @@ bool UBTDecorator_CanRunAway_C::PerformConditionCheckAI(class AAIController* Own
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

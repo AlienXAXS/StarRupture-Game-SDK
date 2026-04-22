@@ -14,8 +14,7 @@
 #include "GA_TurnOffBulidingElectricity_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GA_TurnOffBulidingElectricity.GA_TurnOffBulidingElectricity_C.ExecuteUbergraph_GA_TurnOffBulidingElectricity
 // (Final, UbergraphFunction, HasDefaults)
@@ -106,5 +105,5 @@ void UGA_TurnOffBulidingElectricity_C::K2_ActivateAbilityFromEvent(const struct 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

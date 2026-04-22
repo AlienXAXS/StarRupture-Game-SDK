@@ -14,8 +14,7 @@
 #include "BP_Teleporter_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Teleporter.BP_Teleporter_C.BndEvt__BP_Teleporter_OpenBoxCollision_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature
 // (HasOutParams, BlueprintEvent)
@@ -206,5 +205,5 @@ void ABP_Teleporter_C::UserConstructionScript()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

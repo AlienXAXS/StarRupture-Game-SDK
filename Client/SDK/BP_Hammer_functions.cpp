@@ -14,8 +14,7 @@
 #include "BP_Hammer_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Hammer.BP_Hammer_C.ExecuteUbergraph_BP_Hammer
 // (Final, UbergraphFunction, HasDefaults)
@@ -84,5 +83,5 @@ void ABP_Hammer_C::ReceiveBeginPlay()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

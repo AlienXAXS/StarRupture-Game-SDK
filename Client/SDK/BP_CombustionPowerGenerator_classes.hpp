@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_CombustionPowerGenerator.BP_CombustionPowerGenerator_C
 // 0x0040 (0x0688 - 0x0648)
@@ -46,5 +45,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_CombustionPowerGenerator_C;
 
-}
-
+SDK_NAMESPACE_END

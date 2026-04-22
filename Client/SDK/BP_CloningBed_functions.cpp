@@ -14,8 +14,7 @@
 #include "BP_CloningBed_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_CloningBed.BP_CloningBed_C.BedFree value__FinishedFunc
 // (BlueprintEvent)
@@ -197,5 +196,5 @@ class FText ABP_CloningBed_C::GetInteractionAdditionalTextFromOwnership(ECrBuild
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

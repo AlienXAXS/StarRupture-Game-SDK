@@ -13,8 +13,7 @@
 #include "WaveTable_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum AudioModulation.ESoundModulationLFOShape
 // NumValues: 0x0009
@@ -143,5 +142,4 @@ public:
 };
 DUMPER7_ASSERTS_FSoundControlModulationPatch;
 
-}
-
+SDK_NAMESPACE_END

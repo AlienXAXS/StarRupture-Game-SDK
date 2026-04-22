@@ -16,8 +16,8 @@
 #include "UMG_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function WBP_ActionButton.WBP_ActionButton_C.BndEvt__WBP_ActionButton_InputActionWidget_K2Node_ComponentBoundEvent_2_OnInputMethodChanged__DelegateSignature
 // 0x0001 (0x0001 - 0x0000)
@@ -217,5 +217,5 @@ public:
 };
 DUMPER7_ASSERTS_WBP_ActionButton_C_SetTextStyle;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

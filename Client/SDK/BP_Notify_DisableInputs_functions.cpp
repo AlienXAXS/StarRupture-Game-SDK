@@ -14,8 +14,7 @@
 #include "BP_Notify_DisableInputs_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Notify_DisableInputs.BP_Notify_DisableInputs_C.Received_NotifyBegin
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
@@ -72,5 +71,5 @@ bool UBP_Notify_DisableInputs_C::Received_NotifyEnd(class USkeletalMeshComponent
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

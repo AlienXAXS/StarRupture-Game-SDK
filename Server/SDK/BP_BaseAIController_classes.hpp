@@ -13,8 +13,7 @@
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_BaseAIController.BP_BaseAIController_C
 // 0x0000 (0x03F8 - 0x03F8)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_BaseAIController_C;
 
-}
-
+SDK_NAMESPACE_END

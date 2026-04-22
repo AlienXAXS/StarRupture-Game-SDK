@@ -14,8 +14,7 @@
 #include "BP_TipMeteOre_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_TipMeteOre.BP_TipMeteOre_C.ExecuteUbergraph_BP_TipMeteOre
 // (Final, UbergraphFunction, HasDefaults)
@@ -120,5 +119,5 @@ void ABP_TipMeteOre_C::TurnOffWalkableCollision()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

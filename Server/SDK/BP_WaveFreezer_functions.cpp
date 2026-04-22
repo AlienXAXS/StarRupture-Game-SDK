@@ -14,8 +14,7 @@
 #include "BP_WaveFreezer_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_WaveFreezer.BP_WaveFreezer_C.Get Meshes
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -63,5 +62,5 @@ void ABP_WaveFreezer_C::GetBuildingMeshes(class UMeshComponent** MainBody, TArra
 		*AdditionalMeshes = std::move(Parms.AdditionalMeshes);
 }
 
-}
 
+SDK_NAMESPACE_END

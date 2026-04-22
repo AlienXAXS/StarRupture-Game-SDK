@@ -14,8 +14,7 @@
 #include "RemoteControlLogic_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function RemoteControlLogic.RCBehaviourBindNode.Execute
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
@@ -496,5 +495,5 @@ void URemoteControlLogicTestData::TestIntFunction()
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

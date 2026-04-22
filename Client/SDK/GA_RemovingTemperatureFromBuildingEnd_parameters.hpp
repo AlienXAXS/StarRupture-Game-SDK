@@ -13,8 +13,8 @@
 #include "Chimera_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function GA_RemovingTemperatureFromBuildingEnd.GA_RemovingTemperatureFromBuildingEnd_C.ExecuteUbergraph_GA_RemovingTemperatureFromBuildingEnd
 // 0x0140 (0x0140 - 0x0000)
@@ -123,5 +123,5 @@ public:
 };
 DUMPER7_ASSERTS_GA_RemovingTemperatureFromBuildingEnd_C_OnNotLocallyControlledTppMontageBlendOut_C22D93BE9F4555EB078547BCF0D735B9;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

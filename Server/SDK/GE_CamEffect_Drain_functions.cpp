@@ -14,8 +14,7 @@
 #include "GE_CamEffect_Drain_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GE_CamEffect_Drain.GE_CamEffect_Drain_C.ExecuteUbergraph_GE_CamEffect_Drain
 // (Final, UbergraphFunction, HasDefaults)
@@ -84,5 +83,5 @@ void UGE_CamEffect_Drain_C::OnInitialized(class UAbilitySystemComponent* Ability
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

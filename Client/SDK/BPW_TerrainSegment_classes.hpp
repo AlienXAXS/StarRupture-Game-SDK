@@ -13,8 +13,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass BPW_TerrainSegment.BPW_TerrainSegment_C
 // 0x0000 (0x03C8 - 0x03C8)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UBPW_TerrainSegment_C;
 
-}
-
+SDK_NAMESPACE_END

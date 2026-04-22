@@ -15,8 +15,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_PlayerInfoScreen.WBP_PlayerInfoScreen_C
 // 0x0030 (0x0608 - 0x05D8)
@@ -50,5 +49,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_PlayerInfoScreen_C;
 
-}
-
+SDK_NAMESPACE_END

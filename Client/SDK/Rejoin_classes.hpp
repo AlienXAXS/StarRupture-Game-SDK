@@ -14,8 +14,7 @@
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class Rejoin.RejoinCheck
 // 0x0180 (0x01A8 - 0x0028)
@@ -43,5 +42,4 @@ public:
 };
 DUMPER7_ASSERTS_URejoinCheck;
 
-}
-
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "ABP_ItemAnimLayers_FPP_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass ABP_Unarmed_FPP_AnimLayers.ABP_Unarmed_FPP_AnimLayers_C
 // 0x0000 (0x3410 - 0x3410)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UABP_Unarmed_FPP_AnimLayers_C;
 
-}
-
+SDK_NAMESPACE_END

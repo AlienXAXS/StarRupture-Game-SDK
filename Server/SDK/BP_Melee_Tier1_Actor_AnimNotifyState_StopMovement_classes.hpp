@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Melee_Tier1_Actor_AnimNotifyState_StopMovement.BP_Melee_Tier1_Actor_AnimNotifyState_StopMovement_C
 // 0x0000 (0x0030 - 0x0030)
@@ -40,5 +39,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_Melee_Tier1_Actor_AnimNotifyState_StopMovement_C;
 
-}
-
+SDK_NAMESPACE_END

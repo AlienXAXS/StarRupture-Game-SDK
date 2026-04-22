@@ -14,8 +14,7 @@
 #include "WBP_InventoryScreen_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_InventoryScreen.WBP_InventoryScreen_C.AddAdditionalWidget
 // (Event, Public, BlueprintEvent)
@@ -190,5 +189,5 @@ void UWBP_InventoryScreen_C::ShowInventoryAndRemoveRightWidgets()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

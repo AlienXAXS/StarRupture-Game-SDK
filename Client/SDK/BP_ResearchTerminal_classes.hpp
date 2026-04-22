@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "Chimera_classes.hpp"
 #include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ResearchTerminal.BP_ResearchTerminal_C
 // 0x0048 (0x0690 - 0x0648)
@@ -55,5 +54,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_ResearchTerminal_C;
 
-}
-
+SDK_NAMESPACE_END

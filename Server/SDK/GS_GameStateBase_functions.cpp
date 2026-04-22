@@ -14,8 +14,7 @@
 #include "GS_GameStateBase_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GS_GameStateBase.GS_GameStateBase_C.TalkingFinished
 // (BlueprintCallable, BlueprintEvent)
@@ -227,5 +226,5 @@ bool AGS_GameStateBase_C::CanExecuteAnyContextualResponse(bool bIsImportant)
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

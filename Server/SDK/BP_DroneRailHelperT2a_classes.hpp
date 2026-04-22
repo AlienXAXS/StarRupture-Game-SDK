@@ -13,8 +13,7 @@
 #include "BP_DroneRailHelperT1_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_DroneRailHelperT2a.BP_DroneRailHelperT2a_C
 // 0x0000 (0x09E0 - 0x09E0)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_DroneRailHelperT2a_C;
 
-}
-
+SDK_NAMESPACE_END

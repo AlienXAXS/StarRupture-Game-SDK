@@ -14,8 +14,7 @@
 #include "BP_FactoryTier2_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_FactoryTier2.BP_FactoryTier2_C.ExecuteUbergraph_BP_FactoryTier2
 // (Final, UbergraphFunction, HasDefaults)
@@ -110,5 +109,5 @@ void ABP_FactoryTier2_C::Get_Meshes(class USceneComponent* Static, class USceneC
 		*NewParam = std::move(Parms.NewParam);
 }
 
-}
 
+SDK_NAMESPACE_END

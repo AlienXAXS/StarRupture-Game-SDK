@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_ForgottenEngine_EntryTerminal.BP_ForgottenEngine_EntryTerminal_C.ExecuteUbergraph_BP_ForgottenEngine_EntryTerminal
 // 0x0004 (0x0004 - 0x0000)
@@ -23,5 +23,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_ForgottenEngine_EntryTerminal_C_ExecuteUbergraph_BP_ForgottenEngine_EntryTerminal;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

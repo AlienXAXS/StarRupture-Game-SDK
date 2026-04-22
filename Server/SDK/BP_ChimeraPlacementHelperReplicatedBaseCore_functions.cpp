@@ -14,8 +14,7 @@
 #include "BP_ChimeraPlacementHelperReplicatedBaseCore_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_ChimeraPlacementHelperReplicatedBaseCore.BP_ChimeraPlacementHelperReplicatedBaseCore_C.UserConstructionScript
 // (Event, Public, BlueprintCallable, BlueprintEvent)
@@ -84,5 +83,5 @@ void ABP_ChimeraPlacementHelperReplicatedBaseCore_C::ExecuteUbergraph_BP_Chimera
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

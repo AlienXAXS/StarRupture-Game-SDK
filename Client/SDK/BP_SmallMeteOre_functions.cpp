@@ -14,8 +14,7 @@
 #include "BP_SmallMeteOre_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_SmallMeteOre.BP_SmallMeteOre_C.ExecuteUbergraph_BP_SmallMeteOre
 // (Final, UbergraphFunction, HasDefaults)
@@ -106,5 +105,5 @@ void ABP_SmallMeteOre_C::Timeline__UpdateFunc()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

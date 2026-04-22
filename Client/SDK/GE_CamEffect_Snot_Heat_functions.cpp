@@ -14,8 +14,7 @@
 #include "GE_CamEffect_Snot_Heat_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GE_CamEffect_Snot_Heat.GE_CamEffect_Snot_Heat_C.ExecuteUbergraph_GE_CamEffect_Snot_Heat
 // (Final, UbergraphFunction, HasDefaults)
@@ -84,5 +83,5 @@ void UGE_CamEffect_Snot_Heat_C::OnInitialized(class UAbilitySystemComponent* Abi
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

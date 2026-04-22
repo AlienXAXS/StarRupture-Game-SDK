@@ -16,8 +16,7 @@
 #include "CommonGame_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_MenuButton.WBP_MenuButton_C
 // 0x0020 (0x16C0 - 0x16A0)
@@ -52,5 +51,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_MenuButton_C;
 
-}
-
+SDK_NAMESPACE_END

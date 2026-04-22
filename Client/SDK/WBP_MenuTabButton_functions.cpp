@@ -14,8 +14,7 @@
 #include "WBP_MenuTabButton_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_MenuTabButton.WBP_MenuTabButton_C.SetSelected
 // (Event, Public, BlueprintEvent)
@@ -104,5 +103,5 @@ void UWBP_MenuTabButton_C::BndEvt__WBP_MenuTabButton_TabButton_K2Node_ComponentB
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

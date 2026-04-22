@@ -15,8 +15,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_AttributeBarWidget.WBP_AttributeBarWidget_C
 // 0x0028 (0x04D8 - 0x04B0)
@@ -49,5 +48,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_AttributeBarWidget_C;
 
-}
-
+SDK_NAMESPACE_END

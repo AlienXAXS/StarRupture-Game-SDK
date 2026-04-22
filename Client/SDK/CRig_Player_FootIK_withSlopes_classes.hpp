@@ -14,8 +14,7 @@
 #include "ControlRig_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // RigVMBlueprintGeneratedClass CRig_Player_FootIK_withSlopes.CRig_Player_FootIK_withSlopes_C
 // 0x0108 (0x0D10 - 0x0C08)
@@ -67,5 +66,4 @@ public:
 };
 DUMPER7_ASSERTS_UCRig_Player_FootIK_withSlopes_C;
 
-}
-
+SDK_NAMESPACE_END

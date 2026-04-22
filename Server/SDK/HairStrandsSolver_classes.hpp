@@ -15,8 +15,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class HairStrandsSolver.GroomSolverComponent
 // 0x0280 (0x07E0 - 0x0560)
@@ -54,5 +53,4 @@ public:
 };
 DUMPER7_ASSERTS_UGroomSolverComponent;
 
-}
-
+SDK_NAMESPACE_END

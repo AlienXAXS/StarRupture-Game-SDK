@@ -14,8 +14,7 @@
 #include "WBP_AttributeBarWidget_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_AttributeBarWidget.WBP_AttributeBarWidget_C.ExecuteUbergraph_WBP_AttributeBarWidget
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void UWBP_AttributeBarWidget_C::SetAttributeIcon(EAttributeType InType)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

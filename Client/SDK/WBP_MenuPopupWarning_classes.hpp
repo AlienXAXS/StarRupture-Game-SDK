@@ -14,8 +14,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_MenuPopupWarning.WBP_MenuPopupWarning_C
 // 0x0030 (0x05C0 - 0x0590)
@@ -51,5 +50,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_MenuPopupWarning_C;
 
-}
-
+SDK_NAMESPACE_END

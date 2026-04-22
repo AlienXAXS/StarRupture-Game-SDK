@@ -14,8 +14,7 @@
 #include "BTT_FindRandomShootingLocationFromTarget_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTT_FindRandomShootingLocationFromTarget.BTT_FindRandomShootingLocationFromTarget_C.ExecuteUbergraph_BTT_FindRandomShootingLocationFromTarget
 // (Final, UbergraphFunction)
@@ -58,5 +57,5 @@ void UBTT_FindRandomShootingLocationFromTarget_C::ReceiveExecuteAI(class AAICont
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

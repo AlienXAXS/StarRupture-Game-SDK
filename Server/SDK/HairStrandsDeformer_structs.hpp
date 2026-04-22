@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum HairStrandsDeformer.EOptimusGroomAttributeTypes
 // NumValues: 0x0011
@@ -53,5 +52,4 @@ enum class EOptimusGroomExecDomain : uint8
 	EOptimusGroomExecDomain_MAX              = 9,
 };
 
-}
-
+SDK_NAMESPACE_END

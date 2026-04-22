@@ -11,12 +11,12 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "Chimera_structs.hpp"
 #include "ST_GatherablePlantIstnacedData_structs.hpp"
+#include "Chimera_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.BP_OnDepletedCosmetics
 // 0x0020 (0x0020 - 0x0000)
@@ -196,5 +196,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_GatherableBaseActor_C_ProcessOnInstaceAdded;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

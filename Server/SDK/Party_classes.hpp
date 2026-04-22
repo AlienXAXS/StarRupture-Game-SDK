@@ -11,12 +11,11 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_classes.hpp"
-#include "Engine_structs.hpp"
 #include "Party_structs.hpp"
+#include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class Party.Chatroom
 // 0x0030 (0x0058 - 0x0028)
@@ -416,5 +415,4 @@ public:
 };
 DUMPER7_ASSERTS_USocialUser;
 
-}
-
+SDK_NAMESPACE_END

@@ -15,8 +15,7 @@
 #include "GameplayTags_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GE_CamEffect_Heat.GE_CamEffect_Heat_C
 // 0x0038 (0x0AE0 - 0x0AA8)
@@ -51,5 +50,4 @@ public:
 };
 DUMPER7_ASSERTS_UGE_CamEffect_Heat_C;
 
-}
-
+SDK_NAMESPACE_END

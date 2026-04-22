@@ -15,8 +15,7 @@
 #include "MassSpawner_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MassGameplayDebug.AssignDebugVisProcessor
 // 0x0358 (0x0430 - 0x00D8)
@@ -173,5 +172,4 @@ public:
 };
 DUMPER7_ASSERTS_AMassDebugVisualizer;
 
-}
-
+SDK_NAMESPACE_END

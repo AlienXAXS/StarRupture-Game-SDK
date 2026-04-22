@@ -11,12 +11,11 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "SlateCore_structs.hpp"
 #include "ChimeraUI_classes.hpp"
+#include "SlateCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_MenuButtonBase.WBP_MenuButtonBase_C
 // 0x0230 (0x18D0 - 0x16A0)
@@ -79,5 +78,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_MenuButtonBase_C;
 
-}
-
+SDK_NAMESPACE_END

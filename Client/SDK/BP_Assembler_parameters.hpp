@@ -13,8 +13,8 @@
 #include "Chimera_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_Assembler.BP_Assembler_C.ExecuteUbergraph_BP_Assembler
 // 0x00D8 (0x00D8 - 0x0000)
@@ -112,5 +112,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_Assembler_C_Get_Meshes;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

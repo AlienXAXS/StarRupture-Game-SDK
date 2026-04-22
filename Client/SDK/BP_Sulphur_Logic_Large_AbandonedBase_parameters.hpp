@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_Sulphur_Logic_Large_AbandonedBase.BP_Sulphur_Logic_Large_AbandonedBase_C.ExecuteUbergraph_BP_Sulphur_Logic_Large_AbandonedBase
 // 0x0008 (0x0008 - 0x0000)
@@ -33,5 +33,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_Sulphur_Logic_Large_AbandonedBase_C_OnSulphurActivityChanged;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

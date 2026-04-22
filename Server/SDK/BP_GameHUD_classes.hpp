@@ -13,8 +13,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_GameHUD.BP_GameHUD_C
 // 0x0008 (0x0458 - 0x0450)
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_GameHUD_C;
 
-}
-
+SDK_NAMESPACE_END

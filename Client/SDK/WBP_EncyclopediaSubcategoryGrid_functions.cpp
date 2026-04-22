@@ -14,8 +14,7 @@
 #include "WBP_EncyclopediaSubcategoryGrid_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_EncyclopediaSubcategoryGrid.WBP_EncyclopediaSubcategoryGrid_C.BndEvt__WBP_EncyclopediaSubcategoryGrid_DropDownButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -158,5 +157,5 @@ void UWBP_EncyclopediaSubcategoryGrid_C::SwitchExpand()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

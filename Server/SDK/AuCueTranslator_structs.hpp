@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct AuCueTranslator.AuTranslationUnit
 // 0x0018 (0x0018 - 0x0000)
@@ -43,5 +42,4 @@ public:
 };
 DUMPER7_ASSERTS_FAuCueName;
 
-}
-
+SDK_NAMESPACE_END

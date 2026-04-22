@@ -11,17 +11,16 @@
 #include "Basic.hpp"
 
 #include "AnimationCore_structs.hpp"
-#include "RigVM_structs.hpp"
-#include "RigVM_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "ControlRig_structs.hpp"
 #include "ControlRig_classes.hpp"
 #include "Engine_structs.hpp"
 #include "PBIK_structs.hpp"
+#include "RigVM_structs.hpp"
+#include "RigVM_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // RigVMMemoryStorageGeneratorClass CR_PanzerHund.RigVMMemory_Work
 // 0x0E78 (0x0EA0 - 0x0028)
@@ -358,5 +357,4 @@ public:
 };
 DUMPER7_ASSERTS_UCR_PanzerHund_C;
 
-}
-
+SDK_NAMESPACE_END

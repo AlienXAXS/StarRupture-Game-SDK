@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class FacialAnimation.AudioCurveSourceComponent
 // 0x0040 (0x0D80 - 0x0D40)
@@ -41,5 +40,4 @@ public:
 };
 DUMPER7_ASSERTS_UAudioCurveSourceComponent;
 
-}
-
+SDK_NAMESPACE_END

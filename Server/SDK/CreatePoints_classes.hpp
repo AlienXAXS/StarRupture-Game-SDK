@@ -16,8 +16,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass CreatePoints.CreatePoints_C
 // 0x0138 (0x01A0 - 0x0068)
@@ -64,5 +63,4 @@ public:
 };
 DUMPER7_ASSERTS_UCreatePoints_C;
 
-}
-
+SDK_NAMESPACE_END

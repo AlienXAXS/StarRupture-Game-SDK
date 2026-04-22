@@ -15,18 +15,18 @@
 #include "GameplayAbilities_structs.hpp"
 #include "Chimera_structs.hpp"
 #include "Engine_structs.hpp"
+#include "EPlayerState_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "ModularGameplay_structs.hpp"
 #include "AuActorPlacement_structs.hpp"
-#include "EPlayerState_structs.hpp"
 #include "InputCore_structs.hpp"
 #include "EnhancedInput_structs.hpp"
 #include "AuItems_structs.hpp"
 #include "CommonInput_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_PlayerCharacter.BP_PlayerCharacter_C.BlockEnergyLoweringDuringSprint
 // 0x0048 (0x0048 - 0x0000)
@@ -2202,5 +2202,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_PlayerCharacter_C_IsPlayingDialogue;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_BuildingCollisionIndicator_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_BuildingCollisionIndicator.BP_BuildingCollisionIndicator_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
@@ -50,5 +49,5 @@ void ABP_BuildingCollisionIndicator_C::ExecuteUbergraph_BP_BuildingCollisionIndi
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

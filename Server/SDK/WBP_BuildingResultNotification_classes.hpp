@@ -15,8 +15,7 @@
 #include "AuActorPlacement_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_BuildingResultNotification.WBP_BuildingResultNotification_C
 // 0x0018 (0x03C8 - 0x03B0)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_BuildingResultNotification_C;
 
-}
-
+SDK_NAMESPACE_END

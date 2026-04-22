@@ -13,8 +13,7 @@
 #include "BP_Airlock_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Airlock_NonDeconstructible.BP_Airlock_NonDeconstructible_C
 // 0x0000 (0x0948 - 0x0948)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Airlock_NonDeconstructible_C;
 
-}
-
+SDK_NAMESPACE_END

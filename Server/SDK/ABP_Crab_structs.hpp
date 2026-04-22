@@ -13,8 +13,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct ABP_Crab.ABP_Crab_C.AnimBlueprintGeneratedMutableData
 // 0x000B (0x000C - 0x0001)
@@ -100,5 +99,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Crab__FAnimBlueprintGeneratedConstantData;
 
-}
-
+SDK_NAMESPACE_END

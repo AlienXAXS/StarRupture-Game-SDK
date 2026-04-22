@@ -14,8 +14,7 @@
 #include "BP_SealingDoor_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_SealingDoor.BP_SealingDoor_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
@@ -134,5 +133,5 @@ void ABP_SealingDoor_C::BndEvt__BP_SealingDoor_DoorTrigger_K2Node_ComponentBound
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

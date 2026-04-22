@@ -14,8 +14,7 @@
 #include "BP_StorageDepot_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_StorageDepot.BP_StorageDepot_C.ExecuteUbergraph_BP_StorageDepot
 // (Final, UbergraphFunction, HasDefaults)
@@ -161,5 +160,5 @@ void ABP_StorageDepot_C::UpdateItemCount(int32 Count, int32 MaxCount)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

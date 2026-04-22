@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_InventoryGemSlot.WBP_InventoryGemSlot_C
 // 0x0048 (0x0578 - 0x0530)
@@ -64,5 +63,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_InventoryGemSlot_C;
 
-}
-
+SDK_NAMESPACE_END

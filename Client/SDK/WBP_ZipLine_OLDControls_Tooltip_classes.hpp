@@ -13,8 +13,7 @@
 #include "UMG_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_ZipLine_OLDControls_Tooltip.WBP_ZipLine_OLDControls_Tooltip_C
 // 0x0028 (0x03C8 - 0x03A0)
@@ -43,5 +42,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_ZipLine_OLDControls_Tooltip_C;
 
-}
-
+SDK_NAMESPACE_END

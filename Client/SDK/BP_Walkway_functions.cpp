@@ -14,8 +14,7 @@
 #include "BP_Walkway_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Walkway.BP_Walkway_C.CanBePooled
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -150,5 +149,5 @@ void ABP_Walkway_C::PrepareForGame()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_HabitatBig.BP_HabitatBig_C
 // 0x0358 (0x0B98 - 0x0840)
@@ -148,5 +147,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_HabitatBig_C;
 
-}
-
+SDK_NAMESPACE_END

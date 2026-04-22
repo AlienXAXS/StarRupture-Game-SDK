@@ -14,8 +14,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_TurretTier2.BP_TurretTier2_C.CosmeticHit
 // 0x0100 (0x0100 - 0x0000)
@@ -142,5 +142,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_TurretTier2_C_UpdateCosmeticsBasedOnAttackDirection;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

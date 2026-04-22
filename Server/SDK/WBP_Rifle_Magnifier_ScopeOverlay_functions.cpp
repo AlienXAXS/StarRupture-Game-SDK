@@ -14,8 +14,7 @@
 #include "WBP_Rifle_Magnifier_ScopeOverlay_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_Rifle_Magnifier_ScopeOverlay.WBP_Rifle_Magnifier_ScopeOverlay_C.UpdateOverlayColors
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -202,5 +201,5 @@ void UWBP_Rifle_Magnifier_ScopeOverlay_C::Construct()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

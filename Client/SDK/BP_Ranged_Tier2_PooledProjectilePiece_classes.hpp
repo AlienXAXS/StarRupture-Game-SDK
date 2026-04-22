@@ -15,8 +15,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Ranged_Tier2_PooledProjectilePiece.BP_Ranged_Tier2_PooledProjectilePiece_C
 // 0x0030 (0x0360 - 0x0330)
@@ -50,5 +49,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Ranged_Tier2_PooledProjectilePiece_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Decal_Calywood_Sign_a.BP_Decal_Calywood_Sign_a_C
 // 0x0018 (0x02C0 - 0x02A8)
@@ -41,5 +40,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Decal_Calywood_Sign_a_C;
 
-}
-
+SDK_NAMESPACE_END

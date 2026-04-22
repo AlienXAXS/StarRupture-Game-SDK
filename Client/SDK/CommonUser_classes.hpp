@@ -17,8 +17,7 @@
 #include "GameplayTags_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class CommonUser.CommonUserBasicPresence
 // 0x0058 (0x0088 - 0x0030)
@@ -317,5 +316,4 @@ public:
 };
 DUMPER7_ASSERTS_UCommonUserSubsystem;
 
-}
-
+SDK_NAMESPACE_END

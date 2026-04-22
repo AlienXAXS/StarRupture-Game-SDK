@@ -13,8 +13,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_MapMenuMarkerDetails.WBP_MapMenuMarkerDetails_C
 // 0x0000 (0x03B0 - 0x03B0)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_MapMenuMarkerDetails_C;
 
-}
-
+SDK_NAMESPACE_END

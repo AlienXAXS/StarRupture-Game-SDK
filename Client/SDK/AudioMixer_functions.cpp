@@ -14,8 +14,7 @@
 #include "AudioMixer_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AudioMixer.SynthComponent.GetModulators
 // (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure)
@@ -3364,5 +3363,5 @@ void UQuartzSubsystem::SetQuartzSubsystemTickableWhenPaused(const bool bInTickab
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

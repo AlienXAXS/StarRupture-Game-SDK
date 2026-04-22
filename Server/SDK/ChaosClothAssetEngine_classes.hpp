@@ -19,8 +19,7 @@
 #include "DataflowEngine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ChaosClothAssetEngine.ChaosClothComponent
 // 0x0150 (0x0A40 - 0x08F0)
@@ -230,5 +229,4 @@ public:
 };
 DUMPER7_ASSERTS_UChaosClothAssetInteractor;
 
-}
-
+SDK_NAMESPACE_END

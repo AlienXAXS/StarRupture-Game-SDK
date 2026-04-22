@@ -14,8 +14,8 @@
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function WBP_InventoryGemSlot.WBP_InventoryGemSlot_C.ConvertToGrayScale
 // 0x0014 (0x0014 - 0x0000)
@@ -155,5 +155,5 @@ public:
 };
 DUMPER7_ASSERTS_WBP_InventoryGemSlot_C_UpdateVisuals;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

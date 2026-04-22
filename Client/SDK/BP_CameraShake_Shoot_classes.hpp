@@ -13,8 +13,7 @@
 #include "EngineCameras_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_CameraShake_Shoot.BP_CameraShake_Shoot_C
 // 0x0000 (0x01F0 - 0x01F0)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_CameraShake_Shoot_C;
 
-}
-
+SDK_NAMESPACE_END

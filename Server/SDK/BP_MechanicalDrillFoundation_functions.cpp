@@ -14,8 +14,7 @@
 #include "BP_MechanicalDrillFoundation_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_MechanicalDrillFoundation.BP_MechanicalDrillFoundation_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
@@ -90,5 +89,5 @@ void ABP_MechanicalDrillFoundation_C::ExecuteUbergraph_BP_MechanicalDrillFoundat
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

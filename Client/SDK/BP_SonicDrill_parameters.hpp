@@ -14,8 +14,8 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_SonicDrill.BP_SonicDrill_C.ExecuteUbergraph_BP_SonicDrill
 // 0x0008 (0x0008 - 0x0000)
@@ -57,5 +57,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_SonicDrill_C_GetBuildingMeshes;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

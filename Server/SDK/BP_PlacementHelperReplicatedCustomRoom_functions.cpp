@@ -14,8 +14,7 @@
 #include "BP_PlacementHelperReplicatedCustomRoom_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_PlacementHelperReplicatedCustomRoom.BP_PlacementHelperReplicatedCustomRoom_C.UserConstructionScript
 // (Event, Public, BlueprintCallable, BlueprintEvent)
@@ -90,5 +89,5 @@ void ABP_PlacementHelperReplicatedCustomRoom_C::ExecuteUbergraph_BP_PlacementHel
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

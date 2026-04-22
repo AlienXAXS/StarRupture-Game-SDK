@@ -14,8 +14,7 @@
 #include "ApplyScaleToBounds_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ApplyScaleToBounds.ApplyScaleToBounds_C.ExecuteWithContext
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -119,5 +118,5 @@ bool UApplyScaleToBounds_C::PointLoopBody(const struct FPCGContext& InContext, c
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

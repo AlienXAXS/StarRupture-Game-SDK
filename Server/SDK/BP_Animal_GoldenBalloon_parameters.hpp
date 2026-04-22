@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_Animal_GoldenBalloon.BP_Animal_GoldenBalloon_C.ExecuteUbergraph_BP_Animal_GoldenBalloon
 // 0x0018 (0x0018 - 0x0000)
@@ -26,5 +26,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_Animal_GoldenBalloon_C_ExecuteUbergraph_BP_Animal_GoldenBalloon;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

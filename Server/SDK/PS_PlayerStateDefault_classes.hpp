@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PS_PlayerStateDefault.PS_PlayerStateDefault_C
 // 0x0008 (0x0400 - 0x03F8)
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_APS_PlayerStateDefault_C;
 
-}
-
+SDK_NAMESPACE_END

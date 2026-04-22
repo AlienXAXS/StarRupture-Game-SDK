@@ -14,8 +14,7 @@
 #include "HttpBlueprint_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function HttpBlueprint.HttpBlueprintFunctionLibrary.AddHeader
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
@@ -232,5 +231,5 @@ class UHttpRequestProxyObject* UHttpRequestProxyObject::CreateHttpRequestProxyOb
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

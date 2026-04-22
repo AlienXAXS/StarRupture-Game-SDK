@@ -14,8 +14,7 @@
 #include "GA_DemolishBuilding_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GA_DemolishBuilding.GA_DemolishBuilding_C.ExecuteUbergraph_GA_DemolishBuilding
 // (Final, UbergraphFunction, HasDefaults)
@@ -56,5 +55,5 @@ void UGA_DemolishBuilding_C::K2_ActivateAbilityFromEvent(const struct FGameplayE
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ForgottenEngine_EntryTerminal.BP_ForgottenEngine_EntryTerminal_C
 // 0x0018 (0x0700 - 0x06E8)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_ForgottenEngine_EntryTerminal_C;
 
-}
-
+SDK_NAMESPACE_END

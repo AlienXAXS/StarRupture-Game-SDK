@@ -14,8 +14,7 @@
 #include "ABP_Melee_Tier2_Actor_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ABP_Melee_Tier2_Actor.ABP_Melee_Tier2_Actor_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -527,5 +526,5 @@ void UABP_Melee_Tier2_Actor_C::ExecuteUbergraph_ABP_Melee_Tier2_Actor(int32 Entr
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

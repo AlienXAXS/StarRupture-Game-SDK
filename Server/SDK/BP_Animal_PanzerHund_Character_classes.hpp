@@ -16,8 +16,7 @@
 #include "Chimera_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Animal_PanzerHund_Character.BP_Animal_PanzerHund_Character_C
 // 0x0050 (0x0D50 - 0x0D00)
@@ -68,5 +67,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Animal_PanzerHund_Character_C;
 
-}
-
+SDK_NAMESPACE_END

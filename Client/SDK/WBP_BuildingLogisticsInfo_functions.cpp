@@ -14,8 +14,7 @@
 #include "WBP_BuildingLogisticsInfo_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_BuildingLogisticsInfo.WBP_BuildingLogisticsInfo_C.BndEvt__WBP_BuildingLogisticsInfo_High_K2Node_ComponentBoundEvent_2_CommonButtonBaseClicked__DelegateSignature
 // (BlueprintEvent)
@@ -96,5 +95,5 @@ void UWBP_BuildingLogisticsInfo_C::ExecuteUbergraph_WBP_BuildingLogisticsInfo(in
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

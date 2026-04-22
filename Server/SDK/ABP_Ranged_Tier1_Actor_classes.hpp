@@ -12,13 +12,12 @@
 
 #include "AnimGraphRuntime_structs.hpp"
 #include "Engine_structs.hpp"
+#include "ABP_Ranged_Tier1_Actor_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
-#include "ABP_Ranged_Tier1_Actor_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C
 // 0x20E0 (0x26E0 - 0x0600)
@@ -254,5 +253,4 @@ public:
 };
 DUMPER7_ASSERTS_UABP_Ranged_Tier1_Actor_C;
 
-}
-
+SDK_NAMESPACE_END

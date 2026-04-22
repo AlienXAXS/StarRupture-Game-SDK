@@ -10,12 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
+#include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct ABP_Mannequin_FPP_Base.ABP_Mannequin_FPP_Base_C.AnimBlueprintGeneratedConstantData
 // 0x2037 (0x2038 - 0x0001)
@@ -270,5 +269,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Mannequin_FPP_Base__FAnimBlueprintGeneratedMutableData;
 
-}
-
+SDK_NAMESPACE_END

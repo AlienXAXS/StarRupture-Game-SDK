@@ -13,8 +13,7 @@
 #include "GA_ShowWidget_WhenInputPressed_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GA_ShowProfessionSelectionMenu.GA_ShowProfessionSelectionMenu_C
 // 0x0000 (0x0560 - 0x0560)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UGA_ShowProfessionSelectionMenu_C;
 
-}
-
+SDK_NAMESPACE_END

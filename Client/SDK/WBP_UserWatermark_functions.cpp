@@ -14,8 +14,7 @@
 #include "WBP_UserWatermark_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_UserWatermark.WBP_UserWatermark_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -58,5 +57,5 @@ void UWBP_UserWatermark_C::ExecuteUbergraph_WBP_UserWatermark(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

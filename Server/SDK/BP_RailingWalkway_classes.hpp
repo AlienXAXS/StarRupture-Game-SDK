@@ -14,8 +14,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_RailingWalkway.BP_RailingWalkway_C
 // 0x0080 (0x06E8 - 0x0668)
@@ -54,5 +53,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_RailingWalkway_C;
 
-}
-
+SDK_NAMESPACE_END

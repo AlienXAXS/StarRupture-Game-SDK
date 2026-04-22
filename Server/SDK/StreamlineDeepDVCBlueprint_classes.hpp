@@ -15,8 +15,7 @@
 #include "StreamlineDeepDVCBlueprint_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class StreamlineDeepDVCBlueprint.StreamlineLibraryDeepDVC
 // 0x0000 (0x0028 - 0x0028)
@@ -51,5 +50,4 @@ public:
 };
 DUMPER7_ASSERTS_UStreamlineLibraryDeepDVC;
 
-}
-
+SDK_NAMESPACE_END

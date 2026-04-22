@@ -13,8 +13,7 @@
 #include "BP_StandaloneMeteOreChunkBase_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_CalciumMeteOreChunk.BP_CalciumMeteOreChunk_C
 // 0x0000 (0x0538 - 0x0538)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_CalciumMeteOreChunk_C;
 
-}
-
+SDK_NAMESPACE_END

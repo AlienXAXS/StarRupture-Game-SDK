@@ -14,8 +14,7 @@
 #include "WBP_EncyclopediaMenu_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_EncyclopediaMenu.WBP_EncyclopediaMenu_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -70,5 +69,5 @@ void UWBP_EncyclopediaMenu_C::OnCategorySelected(class FName Category)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

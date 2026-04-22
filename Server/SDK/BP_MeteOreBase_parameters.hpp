@@ -15,8 +15,8 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_MeteOreBase.BP_MeteOreBase_C.ShouldSpawnForListenServer
 // 0x0078 (0x0078 - 0x0000)
@@ -136,5 +136,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_MeteOreBase_C_BP_OnEnviroWaveStarted;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

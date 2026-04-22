@@ -14,8 +14,7 @@
 #include "BP_Melee_Tier0_Ragdoll_DeathSequenceActor_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Melee_Tier0_Ragdoll_DeathSequenceActor.BP_Melee_Tier0_Ragdoll_DeathSequenceActor_C.ExecuteUbergraph_BP_Melee_Tier0_Ragdoll_DeathSequenceActor
 // (Final, UbergraphFunction, HasDefaults)
@@ -90,5 +89,5 @@ void ABP_Melee_Tier0_Ragdoll_DeathSequenceActor_C::OnVisualVariationSeedChanged(
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

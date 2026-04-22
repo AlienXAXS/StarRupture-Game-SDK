@@ -15,8 +15,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class AuTooltips.AuTooltipSettings
 // 0x00A0 (0x00D8 - 0x0038)
@@ -102,5 +101,4 @@ public:
 };
 DUMPER7_ASSERTS_UAuUW_ItemTooltipBase;
 
-}
-
+SDK_NAMESPACE_END

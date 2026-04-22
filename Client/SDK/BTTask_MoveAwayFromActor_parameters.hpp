@@ -13,8 +13,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BTTask_MoveAwayFromActor.BTTask_MoveAwayFromActor_C.ExecuteUbergraph_BTTask_MoveAwayFromActor
 // 0x00D0 (0x00D0 - 0x0000)
@@ -48,5 +48,5 @@ public:
 };
 DUMPER7_ASSERTS_BTTask_MoveAwayFromActor_C_ReceiveExecuteAI;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

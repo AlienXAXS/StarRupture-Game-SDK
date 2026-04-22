@@ -11,12 +11,12 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "PCGPointCreationMethod_structs.hpp"
 #include "PCG_structs.hpp"
+#include "PCGPointCreationMethod_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function CreatePoints.CreatePoints_C.ExecuteWithContext
 // 0x05C0 (0x05C0 - 0x0000)
@@ -196,5 +196,5 @@ public:
 };
 DUMPER7_ASSERTS_CreatePoints_C_IsCacheableOverride;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

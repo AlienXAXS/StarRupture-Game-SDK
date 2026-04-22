@@ -15,8 +15,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_TurretTier2.BP_TurretTier2_C
 // 0x00A8 (0x0780 - 0x06D8)
@@ -73,5 +72,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_TurretTier2_C;
 
-}
-
+SDK_NAMESPACE_END

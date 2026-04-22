@@ -14,8 +14,7 @@
 #include "BP_VerticalBridge_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_VerticalBridge.BP_VerticalBridge_C.UpdateCharactersHights
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -220,5 +219,5 @@ void ABP_VerticalBridge_C::AddCharacterToLadder(const class ACrCharacterPlayerBa
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

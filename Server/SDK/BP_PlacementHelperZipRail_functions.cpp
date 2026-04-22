@@ -14,8 +14,7 @@
 #include "BP_PlacementHelperZipRail_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.UserConstructionScript
 // (Event, Public, BlueprintCallable, BlueprintEvent)
@@ -254,5 +253,5 @@ void ABP_PlacementHelperZipRail_C::ExecuteUbergraph_BP_PlacementHelperZipRail(in
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

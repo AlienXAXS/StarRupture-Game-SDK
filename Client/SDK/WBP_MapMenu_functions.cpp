@@ -14,8 +14,7 @@
 #include "WBP_MapMenu_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_MapMenu.WBP_MapMenu_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -72,5 +71,5 @@ void UWBP_MapMenu_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

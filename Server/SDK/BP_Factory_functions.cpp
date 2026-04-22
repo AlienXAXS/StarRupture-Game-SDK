@@ -14,8 +14,7 @@
 #include "BP_Factory_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Factory.BP_Factory_C.SetupSkeletalMesh
 // (Event, Public, BlueprintEvent)
@@ -110,5 +109,5 @@ void ABP_Factory_C::Get_Meshes(class USceneComponent* Static_0, class USceneComp
 		*NewParam = std::move(Parms.NewParam);
 }
 
-}
 
+SDK_NAMESPACE_END

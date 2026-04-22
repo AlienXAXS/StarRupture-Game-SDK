@@ -13,8 +13,7 @@
 #include "BP_Foundable_Enemy_Loot_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Exploder_Tier1_Foundable_Loot.BP_Exploder_Tier1_Foundable_Loot_C
 // 0x0000 (0x0348 - 0x0348)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Exploder_Tier1_Foundable_Loot_C;
 
-}
-
+SDK_NAMESPACE_END

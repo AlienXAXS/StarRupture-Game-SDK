@@ -14,8 +14,7 @@
 #include "WBP_Inventory_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_Inventory.WBP_Inventory_C.MakeButtonBrush
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -40,5 +39,5 @@ void UWBP_Inventory_C::MakeButtonBrush(ETabIcon Icon, struct FSlateBrush* Brush)
 		*Brush = std::move(Parms.Brush);
 }
 
-}
 
+SDK_NAMESPACE_END

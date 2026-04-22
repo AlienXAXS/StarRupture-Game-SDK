@@ -14,8 +14,7 @@
 #include "BP_Modular_Foundation_Unique_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_WaterExtractorFoundation.BP_WaterExtractorFoundation_C
 // 0x0008 (0x0880 - 0x0878)
@@ -46,5 +45,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_WaterExtractorFoundation_C;
 
-}
-
+SDK_NAMESPACE_END

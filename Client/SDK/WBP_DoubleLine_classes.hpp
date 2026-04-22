@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "UMG_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_DoubleLine.WBP_DoubleLine_C
 // 0x0040 (0x03E0 - 0x03A0)
@@ -56,5 +55,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_DoubleLine_C;
 
-}
-
+SDK_NAMESPACE_END

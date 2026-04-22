@@ -12,12 +12,11 @@
 
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "SkyCreatorPlugin_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "SkyCreatorPlugin_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class SkyCreatorPlugin.SkyCreatorFunctionLibrary
 // 0x0000 (0x0028 - 0x0028)
@@ -578,5 +577,4 @@ public:
 };
 DUMPER7_ASSERTS_ASkyCreator;
 
-}
-
+SDK_NAMESPACE_END

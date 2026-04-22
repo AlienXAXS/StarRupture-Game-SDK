@@ -13,8 +13,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BTT_FindRunAwayDestination.BTT_FindRunAwayDestination_C.ExecuteUbergraph_BTT_FindRunAwayDestination
 // 0x0060 (0x0060 - 0x0000)
@@ -44,5 +44,5 @@ public:
 };
 DUMPER7_ASSERTS_BTT_FindRunAwayDestination_C_ReceiveExecuteAI;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

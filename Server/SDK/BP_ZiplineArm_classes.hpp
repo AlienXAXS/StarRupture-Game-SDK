@@ -14,8 +14,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ZiplineArm.BP_ZiplineArm_C
 // 0x0018 (0x02C0 - 0x02A8)
@@ -46,5 +45,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_ZiplineArm_C;
 
-}
-
+SDK_NAMESPACE_END

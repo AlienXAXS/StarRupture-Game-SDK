@@ -14,8 +14,7 @@
 #include "BP_EngineControlStation_ItemPrinter_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_EngineControlStation_ItemPrinter.BP_EngineControlStation_ItemPrinter_C.ExecuteUbergraph_BP_EngineControlStation_ItemPrinter
 // (Final, UbergraphFunction, HasDefaults)
@@ -144,5 +143,5 @@ void ABP_EngineControlStation_ItemPrinter_C::SetupSkeletalMesh()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

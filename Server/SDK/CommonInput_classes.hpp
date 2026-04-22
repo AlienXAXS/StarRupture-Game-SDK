@@ -18,8 +18,7 @@
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class CommonInput.CommonInputActionDomain
 // 0x0010 (0x0040 - 0x0030)
@@ -288,5 +287,4 @@ public:
 };
 DUMPER7_ASSERTS_UCommonInputSubsystem;
 
-}
-
+SDK_NAMESPACE_END

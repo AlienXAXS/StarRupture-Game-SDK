@@ -17,8 +17,7 @@
 #include "Chaos_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class FieldSystemEngine.FieldSystemActor
 // 0x0008 (0x02B0 - 0x02A8)
@@ -759,5 +758,4 @@ public:
 };
 DUMPER7_ASSERTS_UReturnResultsTerminal;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_ChimeraPlacementHelperReplicatedStarPowered_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_ChimeraPlacementHelperReplicatedStarPowered.BP_ChimeraPlacementHelperReplicatedStarPowered_C.ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedStarPowered
 // (Final, UbergraphFunction, HasDefaults)
@@ -90,5 +89,5 @@ void ABP_ChimeraPlacementHelperReplicatedStarPowered_C::UserConstructionScript()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

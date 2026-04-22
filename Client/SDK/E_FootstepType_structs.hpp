@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedEnum E_FootstepType.E_FootstepType
 // NumValues: 0x0005
@@ -25,5 +24,4 @@ enum class E_FootstepType : uint8
 	E_MAX                                    = 4,
 };
 
-}
-
+SDK_NAMESPACE_END

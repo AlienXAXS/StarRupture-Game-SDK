@@ -13,8 +13,7 @@
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_AnimNotify_RunCrAiAction_DealDamage.BP_AnimNotify_RunCrAiAction_DealDamage_C
 // 0x0018 (0x0050 - 0x0038)
@@ -46,5 +45,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_AnimNotify_RunCrAiAction_DealDamage_C;
 
-}
-
+SDK_NAMESPACE_END

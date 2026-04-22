@@ -14,8 +14,7 @@
 #include "BP_StandaloneInfectionCyst_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.Set_half_time
 // (BlueprintCallable, BlueprintEvent)
@@ -316,5 +315,5 @@ void ABP_StandaloneInfectionCyst_C::BP_OnDamageProtectionChanged(bool IsActive)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

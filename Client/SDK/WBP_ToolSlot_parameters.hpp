@@ -13,8 +13,8 @@
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function WBP_ToolSlot.WBP_ToolSlot_C.ExecuteUbergraph_WBP_ToolSlot
 // 0x00D0 (0x00D0 - 0x0000)
@@ -47,5 +47,5 @@ public:
 };
 DUMPER7_ASSERTS_WBP_ToolSlot_C_SetTitle;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

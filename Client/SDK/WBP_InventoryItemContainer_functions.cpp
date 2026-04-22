@@ -14,8 +14,7 @@
 #include "WBP_InventoryItemContainer_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_InventoryItemContainer.WBP_InventoryItemContainer_C.ExecuteUbergraph_WBP_InventoryItemContainer
 // (Final, UbergraphFunction)
@@ -70,5 +69,5 @@ void UWBP_InventoryItemContainer_C::SetSlotOffset(class UGridSlot* InSlot)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "AIModule_structs.hpp"
 #include "AIModule_classes.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BTT_CalculateBuildingShootAtLocation.BTT_CalculateBuildingShootAtLocation_C
 // 0x0100 (0x01A8 - 0x00A8)
@@ -57,5 +56,4 @@ public:
 };
 DUMPER7_ASSERTS_UBTT_CalculateBuildingShootAtLocation_C;
 
-}
-
+SDK_NAMESPACE_END

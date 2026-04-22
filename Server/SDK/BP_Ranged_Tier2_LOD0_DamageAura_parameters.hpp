@@ -13,8 +13,8 @@
 #include "GameplayAbilities_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_Ranged_Tier2_LOD0_DamageAura.BP_Ranged_Tier2_LOD0_DamageAura_C.ReceiveActorEndOverlap
 // 0x0008 (0x0008 - 0x0000)
@@ -56,5 +56,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_Ranged_Tier2_LOD0_DamageAura_C_ExecuteUbergraph_BP_Ranged_Tier2_LOD0_DamageAura;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

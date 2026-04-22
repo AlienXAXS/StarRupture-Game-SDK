@@ -16,8 +16,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_SkyboxWithStar.BP_SkyboxWithStar_C
 // 0x08A8 (0x0B98 - 0x02F0)
@@ -120,5 +119,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_SkyboxWithStar_C;
 
-}
-
+SDK_NAMESPACE_END

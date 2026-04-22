@@ -11,6 +11,30 @@
 #define VC_EXTRALEAN
 #define WIN32_LEAN_AND_MEAN
 
+
+/*
+* Macros for opening and closing namespaces, in order to allow to remove the SDK namespace when importing the SDK into IDA.
+*
+* In IDA under "Options>Compiler" set "SourceParser" to "clang" and add the following arguments 
+* 
+*	-std=c++20 -Wno-invalid-offsetof -Wno-c++11-narrowing -D IMPORT_CPP_SDK_INTO_IDA=1 
+* 
+* Omit the '-D IMPORT_CPP_SDK_INTO_IDA=1' if you want to keep the SDK namespace in IDA
+*/
+#ifndef IMPORT_CPP_SDK_INTO_IDA
+	#define SDK_NAMESPACE_START namespace SDK {
+	#define SDK_NAMESPACE_END }
+	#define SDK_ALIGN(x) alignas(x)
+#else
+	#define SDK_NAMESPACE_START
+	#define SDK_NAMESPACE_END
+	#define SDK_ALIGN(x)
+#endif
+
+#define SDK_PARAM_NAMESPACE_START namespace Params {
+#define SDK_PARAM_NAMESPACE_END }
+
+
 #include <string>
 #include <functional>
 #include <type_traits>
@@ -19,8 +43,7 @@
 #include "../UnrealContainers.hpp"
 #include "../Assertions.inl"
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 using namespace UC;
 
@@ -33,11 +56,11 @@ using namespace UC;
 */
 namespace Offsets
 {
-	constexpr int32 GObjects          = 0x0D229350;
-	constexpr int32 AppendString      = 0x0141E330;
-	constexpr int32 GNames            = 0x0D0EBD00;
-	constexpr int32 GWorld            = 0x0CF15EA0;
-	constexpr int32 ProcessEvent      = 0x016E8CE0;
+	constexpr int32 GObjects          = 0x0D21F350;
+	constexpr int32 AppendString      = 0x0141D960;
+	constexpr int32 GNames            = 0x0D0E1D00;
+	constexpr int32 GWorld            = 0x0CF0BEA0;
+	constexpr int32 ProcessEvent      = 0x016E8310;
 	constexpr int32 ProcessEventIdx   = 0x0000004C;
 }
 
@@ -758,7 +781,7 @@ template<typename FunctionSignature>
 class TDelegate
 {
 public:
-	struct InvalidUseOfTDelegate                  TemplateParamIsNotAFunctionSignature;              // 0x0000(0x0000)(NOT AUTO-GENERATED PROPERTY)
+	static_assert(false, "TDelegate should be used with a function signature. Something might be wrong in the SDK-Generator.");
 	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
@@ -778,8 +801,8 @@ template<typename FunctionSignature>
 class TMulticastInlineDelegate
 {
 public:
-	struct InvalidUseOfTMulticastInlineDelegate   TemplateParamIsNotAFunctionSignature;              // 0x0000(0x0010)(NOT AUTO-GENERATED PROPERTY)
-	uint8                                         Pad_10[0x8];                                       // 0x0010(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	static_assert(false, "TMulticastInlineDelegate should be used with a function signature. Something might be wrong in the SDK-Generator.");
+	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // Predefined struct TMulticastInlineDelegate<Ret(Args...)>
@@ -792,22 +815,29 @@ public:
 	TArray<FScriptDelegate>                       InvocationList;                                    // 0x0008(0x0010)(NOT AUTO-GENERATED PROPERTY)
 };
 
-#define UE_ENUM_OPERATORS(EEnumClass)																																	\
-																																										\
-inline constexpr EEnumClass operator|(EEnumClass Left, EEnumClass Right)																								\
-{																																										\
-	return (EEnumClass)((std::underlying_type<EEnumClass>::type)(Left) | (std::underlying_type<EEnumClass>::type)(Right));												\
-}																																										\
-																																										\
-inline constexpr EEnumClass& operator|=(EEnumClass& Left, EEnumClass Right)																								\
-{																																										\
-	return (EEnumClass&)((std::underlying_type<EEnumClass>::type&)(Left) |= (std::underlying_type<EEnumClass>::type)(Right));											\
-}																																										\
-																																										\
-inline bool operator&(EEnumClass Left, EEnumClass Right)																												\
-{																																										\
-	return (((std::underlying_type<EEnumClass>::type)(Left) & (std::underlying_type<EEnumClass>::type)(Right)) == (std::underlying_type<EEnumClass>::type)(Right));		\
-}																																										
+#define UE_ENUM_OPERATORS(EEnumClassType)																													\
+																																							\
+inline constexpr EEnumClassType operator|(EEnumClassType Left, EEnumClassType Right)															 			\
+{																																							\
+	using EnumUnderlayingType = std::underlying_type<EEnumClassType>::type;																					\
+																																							\
+	return static_cast<EEnumClassType>(static_cast<EnumUnderlayingType>(Left) | static_cast<EnumUnderlayingType>(Right));									\
+}																																							\
+																																							\
+inline EEnumClassType& operator|=(EEnumClassType& Left, EEnumClassType Right)																				\
+{																																							\
+    using EnumUnderlayingType = std::underlying_type<EEnumClassType>::type;																					\
+																																							\
+    reinterpret_cast<EnumUnderlayingType&>(Left) |= static_cast<EnumUnderlayingType>(Right);																\
+	return Left;																																			\
+}																																							\
+																																							\
+inline bool operator&(EEnumClassType Left, EEnumClassType Right)																							\
+{																																							\
+	using EnumUnderlayingType = std::underlying_type<EEnumClassType>::type;																					\
+																																							\
+	return ((static_cast<EnumUnderlayingType>(Left) & static_cast<EnumUnderlayingType>(Right)) == static_cast<EnumUnderlayingType>(Right));					\
+}
 
 enum class EObjectFlags : uint32
 {
@@ -1273,5 +1303,4 @@ using TObjectBasedCycleFixup = CyclicDependencyFixupImpl::TCyclicClassFixup<Unde
 template<typename UnderlayingClassType, int32 Size, int32 Align = 0x8>
 using TActorBasedCycleFixup = CyclicDependencyFixupImpl::TCyclicClassFixup<UnderlayingClassType, Size, Align, class AActor>;
 
-}
-
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_AnimNotifyState_SetYawRotationRate.BP_AnimNotifyState_SetYawRotationRate_C
 // 0x0018 (0x0048 - 0x0030)
@@ -48,5 +47,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_AnimNotifyState_SetYawRotationRate_C;
 
-}
-
+SDK_NAMESPACE_END

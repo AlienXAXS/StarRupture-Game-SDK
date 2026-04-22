@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "SlateCore_structs.hpp"
 #include "Engine_structs.hpp"
+#include "SlateCore_structs.hpp"
 #include "CommonUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_Rifle_Magnifier_ScopeOverlay.WBP_Rifle_Magnifier_ScopeOverlay_C
 // 0x0188 (0x0550 - 0x03C8)
@@ -79,5 +78,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_Rifle_Magnifier_ScopeOverlay_C;
 
-}
-
+SDK_NAMESPACE_END

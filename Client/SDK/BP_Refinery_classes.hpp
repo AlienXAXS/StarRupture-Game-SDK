@@ -15,8 +15,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Refinery.BP_Refinery_C
 // 0x0108 (0x07E0 - 0x06D8)
@@ -81,5 +80,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Refinery_C;
 
-}
-
+SDK_NAMESPACE_END

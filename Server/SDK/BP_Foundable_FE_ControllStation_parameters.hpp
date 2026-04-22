@@ -14,8 +14,8 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_Foundable_FE_ControllStation.BP_Foundable_FE_ControllStation_C.OnStorageEmptied
 // 0x0002 (0x0002 - 0x0000)
@@ -46,5 +46,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_Foundable_FE_ControllStation_C_ExecuteUbergraph_BP_Foundable_FE_ControllStation;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

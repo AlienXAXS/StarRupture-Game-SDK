@@ -14,8 +14,7 @@
 #include "GameSubtitles_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GameSubtitles.MediaSubtitlesPlayer.BindToMediaPlayer
 // (Final, Native, Public, BlueprintCallable)
@@ -129,5 +128,5 @@ bool USubtitleDisplay::HasSubtitles() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

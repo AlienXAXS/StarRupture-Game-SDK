@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_DPS_Target.BP_DPS_Target_C
 // 0x0010 (0x02B8 - 0x02A8)
@@ -40,5 +39,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_DPS_Target_C;
 
-}
-
+SDK_NAMESPACE_END

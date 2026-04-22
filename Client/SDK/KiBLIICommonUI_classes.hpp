@@ -16,8 +16,7 @@
 #include "UMG_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class KiBLIICommonUI.KiBLIICommonInputBaseControllerData
 // 0x0020 (0x0108 - 0x00E8)
@@ -67,5 +66,4 @@ public:
 };
 DUMPER7_ASSERTS_UKiBLIIKeysWidget;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_QuartzOre_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_QuartzOre.BP_QuartzOre_C.Timeline__UpdateFunc
 // (BlueprintEvent)
@@ -148,5 +147,5 @@ void ABP_QuartzOre_C::BP_OnSpawnedWithResourceDepleted()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

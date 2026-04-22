@@ -14,8 +14,7 @@
 #include "CameraCalibrationCore_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function CameraCalibrationCore.LensDistortionModelHandlerBase.SetDistortionState
 // (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
@@ -1711,5 +1710,5 @@ bool ULensFile::HasSamples(ELensDataCategory InDataCategory) const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

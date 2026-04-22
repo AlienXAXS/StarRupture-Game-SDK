@@ -14,8 +14,7 @@
 #include "BP_OreMassHighResActorBase_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_OreMassHighResActorBase.BP_OreMassHighResActorBase_C.BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature
 // (BlueprintEvent)
@@ -150,5 +149,5 @@ void ABP_OreMassHighResActorBase_C::OnResourceDepletedCosmeticsStart()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

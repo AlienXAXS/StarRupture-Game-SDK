@@ -14,8 +14,7 @@
 #include "WBP_CorporationScreenWidget_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_CorporationScreenWidget.WBP_CorporationScreenWidget_C.UpdateCorporationPercent
 // (Event, Public, BlueprintEvent)
@@ -176,5 +175,5 @@ void UWBP_CorporationScreenWidget_C::ExecuteUbergraph_WBP_CorporationScreenWidge
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

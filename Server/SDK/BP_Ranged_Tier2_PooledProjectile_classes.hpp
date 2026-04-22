@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Ranged_Tier2_PooledProjectile.BP_Ranged_Tier2_PooledProjectile_C
 // 0x00B8 (0x03E8 - 0x0330)
@@ -69,5 +68,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Ranged_Tier2_PooledProjectile_C;
 
-}
-
+SDK_NAMESPACE_END

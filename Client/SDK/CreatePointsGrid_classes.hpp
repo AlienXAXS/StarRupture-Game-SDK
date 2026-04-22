@@ -15,8 +15,7 @@
 #include "PCGCoordinatePlaneAxes_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass CreatePointsGrid.CreatePointsGrid_C
 // 0x0088 (0x00F0 - 0x0068)
@@ -61,5 +60,4 @@ public:
 };
 DUMPER7_ASSERTS_UCreatePointsGrid_C;
 
-}
-
+SDK_NAMESPACE_END

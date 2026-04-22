@@ -15,8 +15,7 @@
 #include "Hotfix_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class Hotfix.OnlineHotfixManager
 // 0x02D0 (0x02F8 - 0x0028)
@@ -96,5 +95,4 @@ public:
 };
 DUMPER7_ASSERTS_UUpdateManager;
 
-}
-
+SDK_NAMESPACE_END

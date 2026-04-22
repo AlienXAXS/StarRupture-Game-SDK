@@ -14,8 +14,7 @@
 #include "WBP_ButtonsTab_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_ButtonsTab.WBP_ButtonsTab_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -94,5 +93,5 @@ void UWBP_ButtonsTab_C::Set_Alignment(EHorizontalAlignment InAlignment)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_CloningBed_Lander_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_CloningBed_Lander.BP_CloningBed_Lander_C.K2_GetInteractionActionText
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -36,5 +35,5 @@ class FText ABP_CloningBed_Lander_C::K2_GetInteractionActionText()
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

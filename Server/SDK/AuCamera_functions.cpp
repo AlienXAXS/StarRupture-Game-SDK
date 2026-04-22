@@ -14,8 +14,7 @@
 #include "AuCamera_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AuCamera.AuCameraInterface.AddAdditiveModifier
 // (Native, Public, HasOutParams, BlueprintCallable)
@@ -110,5 +109,5 @@ void IAuCameraInterface::SetCameraDefaults()
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

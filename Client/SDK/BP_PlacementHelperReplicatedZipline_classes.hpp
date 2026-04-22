@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "Chimera_classes.hpp"
 #include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_PlacementHelperReplicatedZipline.BP_PlacementHelperReplicatedZipline_C
 // 0x00B0 (0x0A80 - 0x09D0)
@@ -64,5 +63,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_PlacementHelperReplicatedZipline_C;
 
-}
-
+SDK_NAMESPACE_END

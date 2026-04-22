@@ -14,8 +14,7 @@
 #include "WBP_SessionOverwriteConfirmation_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_SessionOverwriteConfirmation.WBP_SaveOverwriteConfirmation_C.BndEvt__WBP_SaveOverwriteConfirmation_NO_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -486,5 +485,5 @@ class UWidget* UWBP_SessionOverwriteConfirmation_C::Up(EUINavigation Navigation_
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

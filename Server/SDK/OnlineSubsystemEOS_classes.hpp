@@ -14,8 +14,7 @@
 #include "OnlineSubsystemEOS_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class OnlineSubsystemEOS.EOSArtifactSettings
 // 0x0000 (0x0030 - 0x0030)
@@ -82,5 +81,4 @@ public:
 };
 DUMPER7_ASSERTS_UEOSSettings;
 
-}
-
+SDK_NAMESPACE_END

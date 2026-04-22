@@ -14,8 +14,7 @@
 #include "BP_ExporterTier2_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_ExporterTier2.BP_ExporterTier2_C.UserConstructionScript
 // (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -132,5 +131,5 @@ void ABP_ExporterTier2_C::Attach_meshes()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

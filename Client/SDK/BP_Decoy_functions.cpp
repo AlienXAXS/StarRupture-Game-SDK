@@ -14,8 +14,7 @@
 #include "BP_Decoy_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Decoy.BP_Decoy_C.ExecuteUbergraph_BP_Decoy
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void ABP_Decoy_C::OnBuildingStateChanged(ECrBuildingState InState)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

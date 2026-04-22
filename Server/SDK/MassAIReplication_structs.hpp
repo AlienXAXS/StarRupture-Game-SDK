@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "ZoneGraph_structs.hpp"
 #include "MassCommon_structs.hpp"
+#include "ZoneGraph_structs.hpp"
 #include "MassZoneGraphNavigation_structs.hpp"
 #include "MassNavigation_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct MassAIReplication.ReplicatedAgentPathData
 // 0x0068 (0x0068 - 0x0000)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_FReplicatedAgentPathData;
 
-}
-
+SDK_NAMESPACE_END

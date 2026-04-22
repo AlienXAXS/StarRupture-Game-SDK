@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_WorldSpawnerRegion.BP_WorldSpawnerRegion_C.ExecuteUbergraph_BP_WorldSpawnerRegion
 // 0x0010 (0x0010 - 0x0000)
@@ -34,5 +34,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_WorldSpawnerRegion_C_ReceiveActorBeginOverlap;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

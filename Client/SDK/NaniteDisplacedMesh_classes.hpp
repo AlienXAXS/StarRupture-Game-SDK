@@ -14,8 +14,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class NaniteDisplacedMesh.NaniteDisplacedMesh
 // 0x0048 (0x0070 - 0x0028)
@@ -63,5 +62,4 @@ public:
 };
 DUMPER7_ASSERTS_UNaniteDisplacedMeshComponent;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_InventoryDropItem_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_InventoryDropItem.BP_InventoryDropItem_C.CanPlaySound
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
@@ -139,5 +138,5 @@ void ABP_InventoryDropItem_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

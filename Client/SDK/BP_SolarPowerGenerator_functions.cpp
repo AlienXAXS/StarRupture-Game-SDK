@@ -14,8 +14,7 @@
 #include "BP_SolarPowerGenerator_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_SolarPowerGenerator.BP_SolarPowerGenerator_C.ExecuteUbergraph_BP_SolarPowerGenerator
 // (Final, UbergraphFunction, HasDefaults)
@@ -96,5 +95,5 @@ void ABP_SolarPowerGenerator_C::Get_Meshes(class USceneComponent* Static_0, clas
 		*NewParam = std::move(Parms.NewParam);
 }
 
-}
 
+SDK_NAMESPACE_END

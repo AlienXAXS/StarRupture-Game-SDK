@@ -14,8 +14,7 @@
 #include "Player_DPS_Evaluation_Comp_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Player_DPS_Evaluation_Comp.Player_DPS_Evaluation_Comp_C.ExecuteUbergraph_Player_DPS_Evaluation_Comp
 // (Final, UbergraphFunction)
@@ -92,5 +91,5 @@ void UPlayer_DPS_Evaluation_Comp_C::ResetTimer()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

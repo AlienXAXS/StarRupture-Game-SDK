@@ -15,8 +15,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ItemPrinter.BP_ItemPrinter_C
 // 0x0078 (0x0750 - 0x06D8)
@@ -63,5 +62,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_ItemPrinter_C;
 
-}
-
+SDK_NAMESPACE_END

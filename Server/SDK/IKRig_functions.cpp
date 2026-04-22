@@ -14,8 +14,7 @@
 #include "IKRig_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function IKRig.IKRetargetAlignPoleVectorController.GetSettings
 // (Final, RequiredAPI, Native, Public, BlueprintCallable)
@@ -503,6 +502,56 @@ void UIKRetargetPelvisMotionController::SetTargetPelvisBone(const class FName In
 }
 
 
+// Function IKRig.IKRetargetSpeedPlantingController.GetSettings
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// struct FIKRetargetSpeedPlantingOpSettingsReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FIKRetargetSpeedPlantingOpSettings UIKRetargetSpeedPlantingController::GetSettings()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("IKRetargetSpeedPlantingController", "GetSettings");
+
+	Params::IKRetargetSpeedPlantingController_GetSettings Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function IKRig.IKRetargetSpeedPlantingController.SetSettings
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// const struct FIKRetargetSpeedPlantingOpSettings&InSettings                                             (Parm, NativeAccessSpecifierPublic)
+
+void UIKRetargetSpeedPlantingController::SetSettings(const struct FIKRetargetSpeedPlantingOpSettings& InSettings)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("IKRetargetSpeedPlantingController", "SetSettings");
+
+	Params::IKRetargetSpeedPlantingController_SetSettings Parms{};
+
+	Parms.InSettings = std::move(InSettings);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function IKRig.IKRetargetPinBoneController.ClearAllBonePairs
 // (Final, RequiredAPI, Native, Public, BlueprintCallable)
 
@@ -612,56 +661,6 @@ void UIKRetargetPinBoneController::SetSettings(const struct FIKRetargetPinBoneOp
 		Func = Class->GetFunction("IKRetargetPinBoneController", "SetSettings");
 
 	Params::IKRetargetPinBoneController_SetSettings Parms{};
-
-	Parms.InSettings = std::move(InSettings);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function IKRig.IKRetargetStrideWarpingController.GetSettings
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FIKRetargetStrideWarpingOpSettingsReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-struct FIKRetargetStrideWarpingOpSettings UIKRetargetStrideWarpingController::GetSettings()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("IKRetargetStrideWarpingController", "GetSettings");
-
-	Params::IKRetargetStrideWarpingController_GetSettings Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function IKRig.IKRetargetStrideWarpingController.SetSettings
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// const struct FIKRetargetStrideWarpingOpSettings&InSettings                                             (Parm, NativeAccessSpecifierPublic)
-
-void UIKRetargetStrideWarpingController::SetSettings(const struct FIKRetargetStrideWarpingOpSettings& InSettings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("IKRetargetStrideWarpingController", "SetSettings");
-
-	Params::IKRetargetStrideWarpingController_SetSettings Parms{};
 
 	Parms.InSettings = std::move(InSettings);
 
@@ -1024,19 +1023,19 @@ void UIKRetargetScaleSourceController::SetSettings(const struct FIKRetargetScale
 }
 
 
-// Function IKRig.IKRetargetSpeedPlantingController.GetSettings
+// Function IKRig.IKRetargetStrideWarpingController.GetSettings
 // (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
-// struct FIKRetargetSpeedPlantingOpSettingsReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+// struct FIKRetargetStrideWarpingOpSettingsReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FIKRetargetSpeedPlantingOpSettings UIKRetargetSpeedPlantingController::GetSettings()
+struct FIKRetargetStrideWarpingOpSettings UIKRetargetStrideWarpingController::GetSettings()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("IKRetargetSpeedPlantingController", "GetSettings");
+		Func = Class->GetFunction("IKRetargetStrideWarpingController", "GetSettings");
 
-	Params::IKRetargetSpeedPlantingController_GetSettings Parms{};
+	Params::IKRetargetStrideWarpingController_GetSettings Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1049,19 +1048,19 @@ struct FIKRetargetSpeedPlantingOpSettings UIKRetargetSpeedPlantingController::Ge
 }
 
 
-// Function IKRig.IKRetargetSpeedPlantingController.SetSettings
+// Function IKRig.IKRetargetStrideWarpingController.SetSettings
 // (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
-// const struct FIKRetargetSpeedPlantingOpSettings&InSettings                                             (Parm, NativeAccessSpecifierPublic)
+// const struct FIKRetargetStrideWarpingOpSettings&InSettings                                             (Parm, NativeAccessSpecifierPublic)
 
-void UIKRetargetSpeedPlantingController::SetSettings(const struct FIKRetargetSpeedPlantingOpSettings& InSettings)
+void UIKRetargetStrideWarpingController::SetSettings(const struct FIKRetargetStrideWarpingOpSettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("IKRetargetSpeedPlantingController", "SetSettings");
+		Func = Class->GetFunction("IKRetargetStrideWarpingController", "SetSettings");
 
-	Params::IKRetargetSpeedPlantingController_SetSettings Parms{};
+	Params::IKRetargetStrideWarpingController_SetSettings Parms{};
 
 	Parms.InSettings = std::move(InSettings);
 
@@ -2144,5 +2143,5 @@ void UIKRigSetTransformController::SetSolverSettings(const struct FIKRigSetTrans
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

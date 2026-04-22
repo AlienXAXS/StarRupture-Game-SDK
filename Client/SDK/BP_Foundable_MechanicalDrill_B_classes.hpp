@@ -13,8 +13,7 @@
 #include "BP_Foundable_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Foundable_MechanicalDrill_B.BP_Foundable_MechanicalDrill_B_C
 // 0x0058 (0x0368 - 0x0310)
@@ -49,5 +48,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Foundable_MechanicalDrill_B_C;
 
-}
-
+SDK_NAMESPACE_END

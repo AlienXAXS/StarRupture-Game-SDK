@@ -15,8 +15,7 @@
 #include "BP_GatherableBaseActor_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Purplant.BP_Purplant_C
 // 0x0010 (0x03B0 - 0x03A0)
@@ -46,5 +45,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Purplant_C;
 
-}
-
+SDK_NAMESPACE_END

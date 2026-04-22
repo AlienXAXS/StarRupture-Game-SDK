@@ -14,8 +14,7 @@
 #include "BP_HabitatWindowsFireBig_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_HabitatWindowsFireBig.BP_HabitatWindowsFireBig_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
@@ -174,5 +173,5 @@ void ABP_HabitatWindowsFireBig_C::ExecuteUbergraph_BP_HabitatWindowsFireBig(int3
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

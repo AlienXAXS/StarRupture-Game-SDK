@@ -14,8 +14,7 @@
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum TypedElementFramework.ESCCModification
 // NumValues: 0x0005
@@ -46,23 +45,23 @@ public:
 };
 DUMPER7_ASSERTS_FScriptTypedElementHandle;
 
+// ScriptStruct TypedElementFramework.TedsRowHandle
+// 0x0008 (0x0008 - 0x0000)
+struct FTedsRowHandle final
+{
+public:
+	uint64                                        RowHandle;                                         // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FTedsRowHandle;
+
 // ScriptStruct TypedElementFramework.EditorDataStorageColumn
 // 0x0000 (0x0000 - 0x0000)
 #pragma pack(push, 0x1)
-struct alignas(0x01) FEditorDataStorageColumn
+struct SDK_ALIGN(0x01) FEditorDataStorageColumn
 {
 };
 #pragma pack(pop)
 DUMPER7_ASSERTS_FEditorDataStorageColumn;
-
-// ScriptStruct TypedElementFramework.TypedElementPackagePathColumn
-// 0x0010 (0x0010 - 0x0000)
-struct FTypedElementPackagePathColumn final : public FEditorDataStorageColumn
-{
-public:
-	class FString                                 Path;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FTypedElementPackagePathColumn;
 
 // ScriptStruct TypedElementFramework.TypedElementUObjectColumn
 // 0x0008 (0x0008 - 0x0000)
@@ -187,15 +186,6 @@ struct FFolderTag final : public FEditorDataStorageTag
 {
 };
 DUMPER7_ASSERTS_FFolderTag;
-
-// ScriptStruct TypedElementFramework.TedsRowHandle
-// 0x0008 (0x0008 - 0x0000)
-struct FTedsRowHandle final
-{
-public:
-	uint64                                        RowHandle;                                         // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FTedsRowHandle;
 
 // ScriptStruct TypedElementFramework.TableRowParentColumn
 // 0x0008 (0x0008 - 0x0000)
@@ -323,6 +313,15 @@ struct FTypedElementPackageUpdatedTag final : public FEditorDataStorageTag
 {
 };
 DUMPER7_ASSERTS_FTypedElementPackageUpdatedTag;
+
+// ScriptStruct TypedElementFramework.TypedElementPackagePathColumn
+// 0x0010 (0x0010 - 0x0000)
+struct FTypedElementPackagePathColumn final : public FEditorDataStorageColumn
+{
+public:
+	class FString                                 Path;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FTypedElementPackagePathColumn;
 
 // ScriptStruct TypedElementFramework.TypedElementPackageLoadedPathColumn
 // 0x000C (0x000C - 0x0000)
@@ -821,5 +820,4 @@ public:
 };
 DUMPER7_ASSERTS_FWidgetFactoryConditionsColumn;
 
-}
-
+SDK_NAMESPACE_END

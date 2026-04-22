@@ -18,8 +18,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class CrAiAnimalCrabRuntime.BTService_CrAiAnimalCrabUpdateState
 // 0x0030 (0x00A0 - 0x0070)
@@ -154,5 +153,4 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiAnimalCrabUpdateStateComponent;
 
-}
-
+SDK_NAMESPACE_END

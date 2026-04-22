@@ -14,8 +14,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BTTask_Animal_Panzerhund_SetDustDamageActivity.BTTask_Animal_Panzerhund_SetDustDamageActivity_C
 // 0x0010 (0x00B8 - 0x00A8)
@@ -45,5 +44,4 @@ public:
 };
 DUMPER7_ASSERTS_UBTTask_Animal_Panzerhund_SetDustDamageActivity_C;
 
-}
-
+SDK_NAMESPACE_END

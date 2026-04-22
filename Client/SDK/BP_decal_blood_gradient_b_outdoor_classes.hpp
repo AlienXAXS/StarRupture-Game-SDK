@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_decal_blood_gradient_b_outdoor.BP_decal_blood_gradient_b_outdoor_C
 // 0x0018 (0x02C0 - 0x02A8)
@@ -41,5 +40,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_decal_blood_gradient_b_outdoor_C;
 
-}
-
+SDK_NAMESPACE_END

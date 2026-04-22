@@ -10,12 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "SlateCore_structs.hpp"
 #include "ChimeraUI_classes.hpp"
+#include "SlateCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_ResearchTerminalWidget.WBP_ResearchTerminalWidget_C
 // 0x0090 (0x0478 - 0x03E8)
@@ -53,5 +52,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_ResearchTerminalWidget_C;
 
-}
-
+SDK_NAMESPACE_END

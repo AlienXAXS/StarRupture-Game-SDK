@@ -14,8 +14,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_InventoryDropItem.BP_InventoryDropItem_C
 // 0x0050 (0x0338 - 0x02E8)
@@ -58,5 +57,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_InventoryDropItem_C;
 
-}
-
+SDK_NAMESPACE_END

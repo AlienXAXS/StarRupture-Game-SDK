@@ -14,14 +14,13 @@
 #include "CoreUObject_classes.hpp"
 #include "Engine_classes.hpp"
 #include "MassEntity_classes.hpp"
-#include "MassCommon_structs.hpp"
 #include "MassSpawner_structs.hpp"
 #include "MassSpawner_classes.hpp"
+#include "MassCommon_structs.hpp"
 #include "MassActors_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MassActors.MassActorPoolableInterface
 // 0x0000 (0x0000 - 0x0000)
@@ -483,5 +482,4 @@ public:
 };
 DUMPER7_ASSERTS_UMassTranslator_BehaviorTree;
 
-}
-
+SDK_NAMESPACE_END

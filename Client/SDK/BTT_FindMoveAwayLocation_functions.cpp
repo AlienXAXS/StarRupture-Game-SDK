@@ -14,8 +14,7 @@
 #include "BTT_FindMoveAwayLocation_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTT_FindMoveAwayLocation.BTT_FindMoveAwayLocation_C.ExecuteUbergraph_BTT_FindMoveAwayLocation
 // (Final, UbergraphFunction)
@@ -58,5 +57,5 @@ void UBTT_FindMoveAwayLocation_C::ReceiveExecuteAI(class AAIController* OwnerCon
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

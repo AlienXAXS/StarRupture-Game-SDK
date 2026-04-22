@@ -13,8 +13,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct ChimeraAnimToTexture.CrAnimToTextureMeshWithBone
 // 0x0090 (0x0090 - 0x0000)
@@ -27,5 +26,4 @@ public:
 };
 DUMPER7_ASSERTS_FCrAnimToTextureMeshWithBone;
 
-}
-
+SDK_NAMESPACE_END

@@ -11,12 +11,12 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "EVolumeTextureDimensions_structs.hpp"
 #include "Engine_structs.hpp"
+#include "EVolumeTextureDimensions_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function VolumetricsBPLIbrary.VolumetricsBPLIbrary_C.RT Size Compare
 // 0x0038 (0x0038 - 0x0000)
@@ -173,5 +173,5 @@ public:
 };
 DUMPER7_ASSERTS_VolumetricsBPLIbrary_C_Create_and_Assign_MID;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

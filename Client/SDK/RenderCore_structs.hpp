@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum RenderCore.EVTProducerPriority
 // NumValues: 0x000A
@@ -40,5 +39,4 @@ enum class EVTInvalidatePriority : uint8
 	EVTInvalidatePriority_MAX                = 3,
 };
 
-}
-
+SDK_NAMESPACE_END

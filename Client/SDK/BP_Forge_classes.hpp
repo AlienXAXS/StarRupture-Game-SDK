@@ -15,8 +15,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Forge.BP_Forge_C
 // 0x00C8 (0x07A0 - 0x06D8)
@@ -71,5 +70,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Forge_C;
 
-}
-
+SDK_NAMESPACE_END

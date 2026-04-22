@@ -14,8 +14,7 @@
 #include "BTDecorator_IsPlayerOrGrenadeOrAttractor_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTDecorator_IsPlayerOrGrenadeOrAttractor.BTDecorator_IsPlayerOrGrenadeOrAttractor_C.PerformConditionCheckAI
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -41,5 +40,5 @@ bool UBTDecorator_IsPlayerOrGrenadeOrAttractor_C::PerformConditionCheckAI(class 
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

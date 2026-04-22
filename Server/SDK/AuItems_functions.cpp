@@ -14,8 +14,7 @@
 #include "AuItems_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AuItems.AuEquipmentItemBarComponent.BP_SelectBar
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
@@ -1782,5 +1781,5 @@ bool IAuUseableItemOwnerInterface::HaveSpace(const class UAuItemDataBase* InItem
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

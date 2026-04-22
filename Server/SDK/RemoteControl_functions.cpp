@@ -14,8 +14,7 @@
 #include "RemoteControl_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function RemoteControl.RCVirtualPropertyBase.SetValueBool
 // (Final, Native, Public, BlueprintCallable)
@@ -1487,5 +1486,5 @@ struct FRemoteControlInterceptionFunctionParamStruct URemoteControlInterceptionT
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

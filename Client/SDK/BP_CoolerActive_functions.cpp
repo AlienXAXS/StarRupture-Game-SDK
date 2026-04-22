@@ -14,8 +14,7 @@
 #include "BP_CoolerActive_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_CoolerActive.BP_CoolerActive_C.ExecuteUbergraph_BP_CoolerActive
 // (Final, UbergraphFunction, HasDefaults)
@@ -136,5 +135,5 @@ void ABP_CoolerActive_C::OnSocketDisconnected(class FName SocketName)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

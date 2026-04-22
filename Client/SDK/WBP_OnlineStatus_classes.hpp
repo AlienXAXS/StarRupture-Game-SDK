@@ -14,8 +14,7 @@
 #include "CommonUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_OnlineStatus.WBP_OnlineStatus_C
 // 0x0010 (0x03D8 - 0x03C8)
@@ -45,5 +44,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_OnlineStatus_C;
 
-}
-
+SDK_NAMESPACE_END

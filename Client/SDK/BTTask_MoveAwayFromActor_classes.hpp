@@ -15,8 +15,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BTTask_MoveAwayFromActor.BTTask_MoveAwayFromActor_C
 // 0x0088 (0x0130 - 0x00A8)
@@ -49,5 +48,4 @@ public:
 };
 DUMPER7_ASSERTS_UBTTask_MoveAwayFromActor_C;
 
-}
-
+SDK_NAMESPACE_END

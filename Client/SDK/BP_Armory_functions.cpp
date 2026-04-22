@@ -14,8 +14,7 @@
 #include "BP_Armory_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Armory.BP_Armory_C.Attach_meshes
 // (BlueprintCallable, BlueprintEvent)
@@ -172,5 +171,5 @@ void ABP_Armory_C::RightArmVFX(double LaserLength)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

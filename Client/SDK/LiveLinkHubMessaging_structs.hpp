@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "LiveLink_structs.hpp"
 #include "LiveLinkInterface_structs.hpp"
-#include "LiveLinkMessageBusFramework_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "LiveLink_structs.hpp"
+#include "LiveLinkMessageBusFramework_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum LiveLinkHubMessaging.ELiveLinkHubAutoConnectMode
 // NumValues: 0x0004
@@ -130,5 +129,4 @@ public:
 };
 DUMPER7_ASSERTS_FLiveLinkHubDiscoveryMessage;
 
-}
-
+SDK_NAMESPACE_END

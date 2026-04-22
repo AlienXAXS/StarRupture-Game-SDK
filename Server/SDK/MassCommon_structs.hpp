@@ -15,19 +15,16 @@
 #include "MassEntity_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
-// ScriptStruct MassCommon.MassSnorm8Vector
-// 0x0003 (0x0003 - 0x0000)
-struct FMassSnorm8Vector final
+// ScriptStruct MassCommon.MassInt16Real
+// 0x0002 (0x0002 - 0x0000)
+struct FMassInt16Real final
 {
 public:
-	int8                                          X;                                                 // 0x0000(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int8                                          Y;                                                 // 0x0001(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int8                                          Z;                                                 // 0x0002(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int16                                         Value;                                             // 0x0000(0x0002)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
-DUMPER7_ASSERTS_FMassSnorm8Vector;
+DUMPER7_ASSERTS_FMassInt16Real;
 
 // ScriptStruct MassCommon.MassNetworkID
 // 0x0000 (0x0004 - 0x0004)
@@ -55,22 +52,15 @@ public:
 DUMPER7_ASSERTS_FAgentRadiusFragment;
 
 // ScriptStruct MassCommon.ObjectWrapperFragment
-// 0x0000 (0x0000 - 0x0000)
+// 0x0001 (0x0001 - 0x0000)
 #pragma pack(push, 0x1)
-struct alignas(0x01) FObjectWrapperFragment : public FMassFragment
+struct SDK_ALIGN(0x01) FObjectWrapperFragment : public FMassFragment
 {
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 #pragma pack(pop)
 DUMPER7_ASSERTS_FObjectWrapperFragment;
-
-// ScriptStruct MassCommon.MassInt16Real
-// 0x0002 (0x0002 - 0x0000)
-struct FMassInt16Real final
-{
-public:
-	int16                                         Value;                                             // 0x0000(0x0002)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-};
-DUMPER7_ASSERTS_FMassInt16Real;
 
 // ScriptStruct MassCommon.MassInt16Real10
 // 0x0002 (0x0002 - 0x0000)
@@ -80,6 +70,17 @@ public:
 	int16                                         Value;                                             // 0x0000(0x0002)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
 DUMPER7_ASSERTS_FMassInt16Real10;
+
+// ScriptStruct MassCommon.MassSnorm8Vector
+// 0x0003 (0x0003 - 0x0000)
+struct FMassSnorm8Vector final
+{
+public:
+	int8                                          X;                                                 // 0x0000(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int8                                          Y;                                                 // 0x0001(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int8                                          Z;                                                 // 0x0002(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+};
+DUMPER7_ASSERTS_FMassSnorm8Vector;
 
 // ScriptStruct MassCommon.MassSnorm8Vector2D
 // 0x0002 (0x0002 - 0x0000)
@@ -121,5 +122,4 @@ public:
 };
 DUMPER7_ASSERTS_FMassInt16Vector2D;
 
-}
-
+SDK_NAMESPACE_END

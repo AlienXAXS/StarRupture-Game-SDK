@@ -14,8 +14,7 @@
 #include "WBP_UserLoginButton_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_UserLoginButton.WBP_UserLoginButton_C.SetListenForLoginInput
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -167,5 +166,5 @@ void UWBP_UserLoginButton_C::BndEvt__W_UserLoginButton_W_LyraMenuButton_Modal_K2
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

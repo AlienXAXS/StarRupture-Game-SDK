@@ -16,8 +16,7 @@
 #include "AuItems_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class AuGameplayTests.AuTestAttributeSet
 // 0x0030 (0x0060 - 0x0030)
@@ -252,5 +251,4 @@ public:
 };
 DUMPER7_ASSERTS_UAuItemTest02ComponentDataBase;
 
-}
-
+SDK_NAMESPACE_END

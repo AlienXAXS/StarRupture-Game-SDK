@@ -15,8 +15,7 @@
 #include "MovieScene_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum HairStrandsCore.EGroomBindingAssetBuildResult
 // NumValues: 0x0003
@@ -948,5 +947,4 @@ public:
 };
 DUMPER7_ASSERTS_FMovieSceneGroomCacheSectionTemplate;
 
-}
-
+SDK_NAMESPACE_END

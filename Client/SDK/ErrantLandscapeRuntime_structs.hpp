@@ -13,8 +13,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum ErrantLandscapeRuntime.EElRtStampBrushShape
 // NumValues: 0x0003
@@ -167,5 +166,4 @@ public:
 };
 DUMPER7_ASSERTS_FElRtStampBrushTextureSettings;
 
-}
-
+SDK_NAMESPACE_END

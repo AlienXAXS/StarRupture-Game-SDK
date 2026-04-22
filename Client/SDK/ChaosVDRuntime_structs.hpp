@@ -13,8 +13,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum ChaosVDRuntime.EChaosVDAABBTreeNodeFlags
 // NumValues: 0x0004
@@ -451,31 +450,28 @@ public:
 };
 DUMPER7_ASSERTS_FChaosVDWrapperDataBase;
 
-// ScriptStruct ChaosVDRuntime.ChaosVDQueryFastData
-// 0x0048 (0x0058 - 0x0010)
-struct FChaosVDQueryFastData final : public FChaosVDWrapperDataBase
+// ScriptStruct ChaosVDRuntime.ChaosVDCollisionQueryParams
+// 0x0058 (0x0068 - 0x0010)
+struct FChaosVDCollisionQueryParams final : public FChaosVDWrapperDataBase
 {
 public:
-	struct FVector                                Dir;                                               // 0x0010(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                InvDir;                                            // 0x0028(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        CurrentLength;                                     // 0x0040(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        InvCurrentLength;                                  // 0x0048(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bParallel0 : 1;                                    // 0x0050(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bParallel1 : 1;                                    // 0x0050(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bParallel2 : 1;                                    // 0x0050(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FName                                   TraceTag;                                          // 0x0010(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   OwnerTag;                                          // 0x0018(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bTraceComplex : 1;                                 // 0x0020(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bFindInitialOverlaps : 1;                          // 0x0020(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bReturnFaceIndex : 1;                              // 0x0020(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bReturnPhysicalMaterial : 1;                       // 0x0020(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bIgnoreBlocks : 1;                                 // 0x0020(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bIgnoreTouches : 1;                                // 0x0020(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bSkipNarrowPhase : 1;                              // 0x0020(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bTraceIntoSubComponents : 1;                       // 0x0020(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bReplaceHitWithSubComponents : 1;                  // 0x0021(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         IgnoreMask;                                        // 0x0022(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_23[0x25];                                      // 0x0023(0x0025)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FName>                           IgnoredActorsNames;                                // 0x0048(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
+	TArray<class FName>                           IgnoredComponentsNames;                            // 0x0058(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FChaosVDQueryFastData;
-
-// ScriptStruct ChaosVDRuntime.ChaosVDAccelerationStructureBase
-// 0x0008 (0x0018 - 0x0010)
-struct FChaosVDAccelerationStructureBase : public FChaosVDWrapperDataBase
-{
-public:
-	int32                                         SolverId;                                          // 0x0010(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EChaosVDAccelerationStructureType             Type;                                              // 0x0014(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FChaosVDAccelerationStructureBase;
+DUMPER7_ASSERTS_FChaosVDCollisionQueryParams;
 
 // ScriptStruct ChaosVDRuntime.ChaosVDCollisionMaterial
 // 0x0030 (0x0030 - 0x0000)
@@ -497,6 +493,90 @@ public:
 };
 DUMPER7_ASSERTS_FChaosVDCollisionMaterial;
 
+// ScriptStruct ChaosVDRuntime.ChaosVDAccelerationStructureBase
+// 0x0008 (0x0018 - 0x0010)
+struct FChaosVDAccelerationStructureBase : public FChaosVDWrapperDataBase
+{
+public:
+	int32                                         SolverId;                                          // 0x0010(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EChaosVDAccelerationStructureType             Type;                                              // 0x0014(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FChaosVDAccelerationStructureBase;
+
+// ScriptStruct ChaosVDRuntime.ChaosVDBVCellElementDataWrapper
+// 0x0058 (0x0068 - 0x0010)
+struct FChaosVDBVCellElementDataWrapper final : public FChaosVDWrapperDataBase
+{
+public:
+	struct FBox                                   Bounds;                                            // 0x0010(0x0038)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ParticleIndex;                                     // 0x0048(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4C[0x1C];                                      // 0x004C(0x001C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FChaosVDBVCellElementDataWrapper;
+
+// ScriptStruct ChaosVDRuntime.ChaosVDCharacterGroundConstraintSettingsDataWrapper
+// 0x0058 (0x0068 - 0x0010)
+struct FChaosVDCharacterGroundConstraintSettingsDataWrapper final : public FChaosVDWrapperDataBase
+{
+public:
+	struct FVector                                VerticalAxis;                                      // 0x0010(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        TargetHeight;                                      // 0x0028(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        RadialForceLimit;                                  // 0x0030(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        FrictionForceLimit;                                // 0x0038(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        TwistTorqueLimit;                                  // 0x0040(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        SwingTorqueLimit;                                  // 0x0048(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        CosMaxWalkableSlopeAngle;                          // 0x0050(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        DampingFactor;                                     // 0x0058(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        AssumedOnGroundHeight;                             // 0x0060(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FChaosVDCharacterGroundConstraintSettingsDataWrapper;
+
+// ScriptStruct ChaosVDRuntime.ChaosVDBoundingVolumeDataWrapper
+// 0x0028 (0x0040 - 0x0018)
+struct FChaosVDBoundingVolumeDataWrapper final : public FChaosVDAccelerationStructureBase
+{
+public:
+	uint8                                         Pad_18[0x20];                                      // 0x0018(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        MaxPayloadBounds;                                  // 0x0038(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FChaosVDBoundingVolumeDataWrapper;
+
+// ScriptStruct ChaosVDRuntime.ChaosVDAABBTreeNodeDataWrapper
+// 0x0080 (0x0090 - 0x0010)
+struct FChaosVDAABBTreeNodeDataWrapper final : public FChaosVDWrapperDataBase
+{
+public:
+	struct FBox                                   ChildrenBounds[0x2];                               // 0x0010(0x0038)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ChildrenNodes[0x2];                                // 0x0080(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ParentNode;                                        // 0x0088(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bLeaf : 1;                                         // 0x008C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bDirtyNode : 1;                                    // 0x008C(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_8D[0x3];                                       // 0x008D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FChaosVDAABBTreeNodeDataWrapper;
+
+// ScriptStruct ChaosVDRuntime.ChaosVDAABBTreePayloadBoundsElement
+// 0x0078 (0x0088 - 0x0010)
+struct FChaosVDAABBTreePayloadBoundsElement final : public FChaosVDWrapperDataBase
+{
+public:
+	int32                                         ParticleIndex;                                     // 0x0010(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBox                                   Bounds;                                            // 0x0018(0x0038)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_50[0x38];                                      // 0x0050(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FChaosVDAABBTreePayloadBoundsElement;
+
+// ScriptStruct ChaosVDRuntime.ChaosVDAABBTreeLeafDataWrapper
+// 0x0048 (0x0058 - 0x0010)
+struct FChaosVDAABBTreeLeafDataWrapper final : public FChaosVDWrapperDataBase
+{
+public:
+	TArray<struct FChaosVDAABBTreePayloadBoundsElement> Elements;                                    // 0x0010(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
+	struct FBox                                   Bounds;                                            // 0x0020(0x0038)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FChaosVDAABBTreeLeafDataWrapper;
+
 // ScriptStruct ChaosVDRuntime.ChaosVDContactPoint
 // 0x0058 (0x0058 - 0x0000)
 struct FChaosVDContactPoint final
@@ -510,6 +590,81 @@ public:
 	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FChaosVDContactPoint;
+
+// ScriptStruct ChaosVDRuntime.ChaosVDAccelerationStructureContainer
+// 0x0050 (0x0050 - 0x0000)
+struct alignas(0x08) FChaosVDAccelerationStructureContainer final
+{
+public:
+	uint8                                         Pad_0[0x50];                                       // 0x0000(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FChaosVDAccelerationStructureContainer;
+
+// ScriptStruct ChaosVDRuntime.ChaosVDAABBTreeDataWrapper
+// 0x0058 (0x0070 - 0x0018)
+struct FChaosVDAABBTreeDataWrapper final : public FChaosVDAccelerationStructureBase
+{
+public:
+	int32                                         RootNodeIndex;                                     // 0x0018(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TreeDepth;                                         // 0x001C(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NodesNum;                                          // 0x0020(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         LeavesNum;                                         // 0x0024(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDynamicTree;                                      // 0x0028(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         MaxChildrenInLeaf;                                 // 0x002C(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxTreeDepth;                                      // 0x0030(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        MaxPayloadBounds;                                  // 0x0038(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_40[0x30];                                      // 0x0040(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FChaosVDAABBTreeDataWrapper;
+
+// ScriptStruct ChaosVDRuntime.ChaosVDCharacterGroundConstraintStateDataWrapper
+// 0x0048 (0x0058 - 0x0010)
+struct FChaosVDCharacterGroundConstraintStateDataWrapper final : public FChaosVDWrapperDataBase
+{
+public:
+	uint8                                         Pad_10[0x10];                                      // 0x0010(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bDisabled;                                         // 0x0020(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                SolverAppliedForce;                                // 0x0028(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                SolverAppliedTorque;                               // 0x0040(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FChaosVDCharacterGroundConstraintStateDataWrapper;
+
+// ScriptStruct ChaosVDRuntime.ChaosVDCharacterGroundConstraintDataDataWrapper
+// 0x0048 (0x0058 - 0x0010)
+struct FChaosVDCharacterGroundConstraintDataDataWrapper final : public FChaosVDWrapperDataBase
+{
+public:
+	struct FVector                                GroundNormal;                                      // 0x0010(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                TargetDeltaPosition;                               // 0x0028(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        TargetDeltaFacing;                                 // 0x0040(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        GroundDistance;                                    // 0x0048(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        CosMaxWalkableSlopeAngle;                          // 0x0050(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FChaosVDCharacterGroundConstraintDataDataWrapper;
+
+// ScriptStruct ChaosVDRuntime.ChaosVDConstraintDataWrapperBase
+// 0x0000 (0x0010 - 0x0010)
+struct FChaosVDConstraintDataWrapperBase : public FChaosVDWrapperDataBase
+{
+};
+DUMPER7_ASSERTS_FChaosVDConstraintDataWrapperBase;
+
+// ScriptStruct ChaosVDRuntime.ChaosVDCharacterGroundConstraint
+// 0x0128 (0x0138 - 0x0010)
+struct FChaosVDCharacterGroundConstraint final : public FChaosVDConstraintDataWrapperBase
+{
+public:
+	uint8                                         Pad_10[0x4];                                       // 0x0010(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ConstraintIndex;                                   // 0x0014(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FChaosVDCharacterGroundConstraintStateDataWrapper State;                                  // 0x0020(0x0058)(Edit, EditConst, NativeAccessSpecifierPublic)
+	struct FChaosVDCharacterGroundConstraintSettingsDataWrapper Settings;                            // 0x0078(0x0068)(Edit, EditConst, NativeAccessSpecifierPublic)
+	struct FChaosVDCharacterGroundConstraintDataDataWrapper Data;                                    // 0x00E0(0x0058)(Edit, EditConst, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FChaosVDCharacterGroundConstraint;
 
 // ScriptStruct ChaosVDRuntime.ChaosVDManifoldPoint
 // 0x0130 (0x0130 - 0x0000)
@@ -583,155 +738,6 @@ public:
 	uint8                                         Pad_274[0xC];                                      // 0x0274(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FChaosVDConstraint;
-
-// ScriptStruct ChaosVDRuntime.ChaosVDBVCellElementDataWrapper
-// 0x0058 (0x0068 - 0x0010)
-struct FChaosVDBVCellElementDataWrapper final : public FChaosVDWrapperDataBase
-{
-public:
-	struct FBox                                   Bounds;                                            // 0x0010(0x0038)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ParticleIndex;                                     // 0x0048(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4C[0x1C];                                      // 0x004C(0x001C)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FChaosVDBVCellElementDataWrapper;
-
-// ScriptStruct ChaosVDRuntime.ChaosVDBoundingVolumeDataWrapper
-// 0x0028 (0x0040 - 0x0018)
-struct FChaosVDBoundingVolumeDataWrapper final : public FChaosVDAccelerationStructureBase
-{
-public:
-	uint8                                         Pad_18[0x20];                                      // 0x0018(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        MaxPayloadBounds;                                  // 0x0038(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FChaosVDBoundingVolumeDataWrapper;
-
-// ScriptStruct ChaosVDRuntime.ChaosVDCharacterGroundConstraintDataDataWrapper
-// 0x0048 (0x0058 - 0x0010)
-struct FChaosVDCharacterGroundConstraintDataDataWrapper final : public FChaosVDWrapperDataBase
-{
-public:
-	struct FVector                                GroundNormal;                                      // 0x0010(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                TargetDeltaPosition;                               // 0x0028(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        TargetDeltaFacing;                                 // 0x0040(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        GroundDistance;                                    // 0x0048(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        CosMaxWalkableSlopeAngle;                          // 0x0050(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FChaosVDCharacterGroundConstraintDataDataWrapper;
-
-// ScriptStruct ChaosVDRuntime.ChaosVDAABBTreeNodeDataWrapper
-// 0x0080 (0x0090 - 0x0010)
-struct FChaosVDAABBTreeNodeDataWrapper final : public FChaosVDWrapperDataBase
-{
-public:
-	struct FBox                                   ChildrenBounds[0x2];                               // 0x0010(0x0038)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ChildrenNodes[0x2];                                // 0x0080(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ParentNode;                                        // 0x0088(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bLeaf : 1;                                         // 0x008C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bDirtyNode : 1;                                    // 0x008C(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_8D[0x3];                                       // 0x008D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FChaosVDAABBTreeNodeDataWrapper;
-
-// ScriptStruct ChaosVDRuntime.ChaosVDAABBTreePayloadBoundsElement
-// 0x0078 (0x0088 - 0x0010)
-struct FChaosVDAABBTreePayloadBoundsElement final : public FChaosVDWrapperDataBase
-{
-public:
-	int32                                         ParticleIndex;                                     // 0x0010(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBox                                   Bounds;                                            // 0x0018(0x0038)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_50[0x38];                                      // 0x0050(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FChaosVDAABBTreePayloadBoundsElement;
-
-// ScriptStruct ChaosVDRuntime.ChaosVDAABBTreeLeafDataWrapper
-// 0x0048 (0x0058 - 0x0010)
-struct FChaosVDAABBTreeLeafDataWrapper final : public FChaosVDWrapperDataBase
-{
-public:
-	TArray<struct FChaosVDAABBTreePayloadBoundsElement> Elements;                                    // 0x0010(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
-	struct FBox                                   Bounds;                                            // 0x0020(0x0038)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FChaosVDAABBTreeLeafDataWrapper;
-
-// ScriptStruct ChaosVDRuntime.ChaosVDAccelerationStructureContainer
-// 0x0050 (0x0050 - 0x0000)
-struct alignas(0x08) FChaosVDAccelerationStructureContainer final
-{
-public:
-	uint8                                         Pad_0[0x50];                                       // 0x0000(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FChaosVDAccelerationStructureContainer;
-
-// ScriptStruct ChaosVDRuntime.ChaosVDAABBTreeDataWrapper
-// 0x0058 (0x0070 - 0x0018)
-struct FChaosVDAABBTreeDataWrapper final : public FChaosVDAccelerationStructureBase
-{
-public:
-	int32                                         RootNodeIndex;                                     // 0x0018(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TreeDepth;                                         // 0x001C(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         NodesNum;                                          // 0x0020(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         LeavesNum;                                         // 0x0024(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bDynamicTree;                                      // 0x0028(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         MaxChildrenInLeaf;                                 // 0x002C(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxTreeDepth;                                      // 0x0030(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        MaxPayloadBounds;                                  // 0x0038(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_40[0x30];                                      // 0x0040(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FChaosVDAABBTreeDataWrapper;
-
-// ScriptStruct ChaosVDRuntime.ChaosVDCharacterGroundConstraintStateDataWrapper
-// 0x0048 (0x0058 - 0x0010)
-struct FChaosVDCharacterGroundConstraintStateDataWrapper final : public FChaosVDWrapperDataBase
-{
-public:
-	uint8                                         Pad_10[0x10];                                      // 0x0010(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bDisabled;                                         // 0x0020(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                SolverAppliedForce;                                // 0x0028(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                SolverAppliedTorque;                               // 0x0040(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FChaosVDCharacterGroundConstraintStateDataWrapper;
-
-// ScriptStruct ChaosVDRuntime.ChaosVDCharacterGroundConstraintSettingsDataWrapper
-// 0x0058 (0x0068 - 0x0010)
-struct FChaosVDCharacterGroundConstraintSettingsDataWrapper final : public FChaosVDWrapperDataBase
-{
-public:
-	struct FVector                                VerticalAxis;                                      // 0x0010(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        TargetHeight;                                      // 0x0028(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        RadialForceLimit;                                  // 0x0030(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        FrictionForceLimit;                                // 0x0038(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        TwistTorqueLimit;                                  // 0x0040(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        SwingTorqueLimit;                                  // 0x0048(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        CosMaxWalkableSlopeAngle;                          // 0x0050(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        DampingFactor;                                     // 0x0058(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        AssumedOnGroundHeight;                             // 0x0060(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FChaosVDCharacterGroundConstraintSettingsDataWrapper;
-
-// ScriptStruct ChaosVDRuntime.ChaosVDConstraintDataWrapperBase
-// 0x0000 (0x0010 - 0x0010)
-struct FChaosVDConstraintDataWrapperBase : public FChaosVDWrapperDataBase
-{
-};
-DUMPER7_ASSERTS_FChaosVDConstraintDataWrapperBase;
-
-// ScriptStruct ChaosVDRuntime.ChaosVDCharacterGroundConstraint
-// 0x0128 (0x0138 - 0x0010)
-struct FChaosVDCharacterGroundConstraint final : public FChaosVDConstraintDataWrapperBase
-{
-public:
-	uint8                                         Pad_10[0x4];                                       // 0x0010(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ConstraintIndex;                                   // 0x0014(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FChaosVDCharacterGroundConstraintStateDataWrapper State;                                  // 0x0020(0x0058)(Edit, EditConst, NativeAccessSpecifierPublic)
-	struct FChaosVDCharacterGroundConstraintSettingsDataWrapper Settings;                            // 0x0078(0x0068)(Edit, EditConst, NativeAccessSpecifierPublic)
-	struct FChaosVDCharacterGroundConstraintDataDataWrapper Data;                                    // 0x00E0(0x0058)(Edit, EditConst, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FChaosVDCharacterGroundConstraint;
 
 // ScriptStruct ChaosVDRuntime.ChaosVDParticlePairMidPhase
 // 0x0028 (0x0028 - 0x0000)
@@ -1249,28 +1255,21 @@ public:
 };
 DUMPER7_ASSERTS_FChaosVDCollisionObjectQueryParams;
 
-// ScriptStruct ChaosVDRuntime.ChaosVDCollisionQueryParams
-// 0x0058 (0x0068 - 0x0010)
-struct FChaosVDCollisionQueryParams final : public FChaosVDWrapperDataBase
+// ScriptStruct ChaosVDRuntime.ChaosVDQueryFastData
+// 0x0048 (0x0058 - 0x0010)
+struct FChaosVDQueryFastData final : public FChaosVDWrapperDataBase
 {
 public:
-	class FName                                   TraceTag;                                          // 0x0010(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   OwnerTag;                                          // 0x0018(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bTraceComplex : 1;                                 // 0x0020(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bFindInitialOverlaps : 1;                          // 0x0020(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bReturnFaceIndex : 1;                              // 0x0020(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bReturnPhysicalMaterial : 1;                       // 0x0020(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bIgnoreBlocks : 1;                                 // 0x0020(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bIgnoreTouches : 1;                                // 0x0020(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bSkipNarrowPhase : 1;                              // 0x0020(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bTraceIntoSubComponents : 1;                       // 0x0020(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bReplaceHitWithSubComponents : 1;                  // 0x0021(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         IgnoreMask;                                        // 0x0022(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_23[0x25];                                      // 0x0023(0x0025)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FName>                           IgnoredActorsNames;                                // 0x0048(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
-	TArray<class FName>                           IgnoredComponentsNames;                            // 0x0058(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
+	struct FVector                                Dir;                                               // 0x0010(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                InvDir;                                            // 0x0028(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        CurrentLength;                                     // 0x0040(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        InvCurrentLength;                                  // 0x0048(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bParallel0 : 1;                                    // 0x0050(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bParallel1 : 1;                                    // 0x0050(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bParallel2 : 1;                                    // 0x0050(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FChaosVDCollisionQueryParams;
+DUMPER7_ASSERTS_FChaosVDQueryFastData;
 
 // ScriptStruct ChaosVDRuntime.ChaosVDQueryHitData
 // 0x0058 (0x0068 - 0x0010)
@@ -1355,5 +1354,4 @@ public:
 };
 DUMPER7_ASSERTS_FChaosVDTraceDetails;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_CoolerPassive_Tiles_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_CoolerPassive_Tiles.BP_CoolerPassive_Tiles_C.ExecuteUbergraph_BP_CoolerPassive_Tiles
 // (Final, UbergraphFunction)
@@ -90,5 +89,5 @@ void ABP_CoolerPassive_Tiles_C::ReceiveTick(float DeltaSeconds)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

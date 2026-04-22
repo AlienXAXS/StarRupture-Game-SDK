@@ -14,8 +14,7 @@
 #include "GA_DeinfectBuildingEnd_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GA_DeinfectBuildingEnd.GA_DeinfectBuildingEnd_C.ExecuteUbergraph_GA_DeinfectBuildingEnd
 // (Final, UbergraphFunction, HasDefaults)
@@ -190,5 +189,5 @@ void UGA_DeinfectBuildingEnd_C::OnNotLocallyControlledTppMontageBlendOut_ACD85B0
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

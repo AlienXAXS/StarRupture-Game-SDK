@@ -12,13 +12,12 @@
 
 #include "Engine_structs.hpp"
 #include "ABP_Melee_Tier1_Actor_structs.hpp"
-#include "CrAiMeleeRuntime_classes.hpp"
 #include "AnimGraphRuntime_structs.hpp"
+#include "CrAiMeleeRuntime_classes.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass ABP_Melee_Tier1_Actor.ABP_Melee_Tier1_Actor_C
 // 0x36E0 (0x3CE0 - 0x0600)
@@ -365,5 +364,4 @@ public:
 };
 DUMPER7_ASSERTS_UABP_Melee_Tier1_Actor_C;
 
-}
-
+SDK_NAMESPACE_END

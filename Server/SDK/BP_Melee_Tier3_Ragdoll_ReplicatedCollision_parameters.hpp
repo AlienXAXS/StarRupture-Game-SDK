@@ -14,8 +14,8 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_Melee_Tier3_Ragdoll_ReplicatedCollision.BP_Melee_Tier3_Ragdoll_ReplicatedCollision_C.AttachToRagdoll
 // 0x0008 (0x0008 - 0x0000)
@@ -56,5 +56,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_Melee_Tier3_Ragdoll_ReplicatedCollision_C_ReceiveTick;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

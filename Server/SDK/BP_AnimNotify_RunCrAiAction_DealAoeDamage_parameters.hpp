@@ -13,8 +13,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_AnimNotify_RunCrAiAction_DealAoeDamage.BP_AnimNotify_RunCrAiAction_DealAoeDamage_C.CreateAiAction
 // 0x00A8 (0x00A8 - 0x0000)
@@ -33,5 +33,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_AnimNotify_RunCrAiAction_DealAoeDamage_C_CreateAiAction;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

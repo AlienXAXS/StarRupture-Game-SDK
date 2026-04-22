@@ -14,8 +14,7 @@
 #include "WBP_ExporterCorporationLogo_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_ExporterCorporationLogo.WBP_ExporterCorporationLogo_C.ExecuteUbergraph_WBP_ExporterCorporationLogo
 // (Final, UbergraphFunction, HasDefaults)
@@ -101,5 +100,5 @@ class FText UWBP_ExporterCorporationLogo_C::UpdateName(class ACrBuildingActorBas
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

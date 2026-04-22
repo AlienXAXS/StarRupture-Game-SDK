@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
+#include "AuGameplay_structs.hpp"
 #include "Engine_classes.hpp"
 #include "GameplayAbilities_structs.hpp"
-#include "AuGameplay_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class AuGameplay.AuAddEffectVolume
 // 0x0018 (0x0308 - 0x02F0)
@@ -95,5 +94,4 @@ public:
 };
 DUMPER7_ASSERTS_UAuGameplayBPF;
 
-}
-
+SDK_NAMESPACE_END

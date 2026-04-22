@@ -13,8 +13,7 @@
 #include "BP_Modular_Foundation_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Modular_Foundation6x4.BP_Modular_Foundation6x4_C
 // 0x0098 (0x0918 - 0x0880)
@@ -57,5 +56,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Modular_Foundation6x4_C;
 
-}
-
+SDK_NAMESPACE_END

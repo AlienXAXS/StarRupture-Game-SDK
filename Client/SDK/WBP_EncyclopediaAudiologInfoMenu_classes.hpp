@@ -14,8 +14,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_EncyclopediaAudiologInfoMenu.WBP_EncyclopediaAudiologInfoMenu_C
 // 0x0020 (0x0820 - 0x0800)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_EncyclopediaAudiologInfoMenu_C;
 
-}
-
+SDK_NAMESPACE_END

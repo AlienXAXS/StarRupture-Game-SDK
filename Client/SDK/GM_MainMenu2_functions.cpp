@@ -14,8 +14,7 @@
 #include "GM_MainMenu2_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GM_MainMenu2.GM_MainMenu2_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
@@ -50,5 +49,5 @@ void AGM_MainMenu2_C::ExecuteUbergraph_GM_MainMenu2(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

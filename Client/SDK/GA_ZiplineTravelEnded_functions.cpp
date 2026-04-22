@@ -14,8 +14,7 @@
 #include "GA_ZiplineTravelEnded_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GA_ZiplineTravelEnded.GA_ZiplineTravelEnded_C.ExecuteUbergraph_GA_ZiplineTravelEnded
 // (Final, UbergraphFunction)
@@ -190,5 +189,5 @@ void UGA_ZiplineTravelEnded_C::OnNotLocallyControlledTppMontageBlendOut_4CE1C4C3
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

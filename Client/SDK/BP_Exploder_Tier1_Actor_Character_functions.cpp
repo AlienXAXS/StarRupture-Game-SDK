@@ -14,8 +14,7 @@
 #include "BP_Exploder_Tier1_Actor_Character_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.ExecuteUbergraph_BP_Exploder_Tier1_Actor_Character
 // (Final, UbergraphFunction, HasDefaults)
@@ -335,5 +334,5 @@ bool ABP_Exploder_Tier1_Actor_Character_C::ShouldSpawnHugeCollision() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

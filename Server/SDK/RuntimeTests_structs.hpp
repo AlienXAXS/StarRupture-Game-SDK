@@ -13,8 +13,7 @@
 #include "MassEntity_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct RuntimeTests.EngineTestTickPayload
 // 0x0008 (0x0008 - 0x0000)
@@ -25,5 +24,4 @@ public:
 };
 DUMPER7_ASSERTS_FEngineTestTickPayload;
 
-}
-
+SDK_NAMESPACE_END

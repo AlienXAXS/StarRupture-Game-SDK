@@ -11,13 +11,12 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "ControlRig_structs.hpp"
 #include "ComputeFramework_structs.hpp"
 #include "RigVM_structs.hpp"
+#include "ControlRig_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum OptimusCore.EOptimusPinMutability
 // NumValues: 0x0004
@@ -1328,5 +1327,4 @@ public:
 };
 DUMPER7_ASSERTS_FOptimusVariableMetaDataEntry;
 
-}
-
+SDK_NAMESPACE_END

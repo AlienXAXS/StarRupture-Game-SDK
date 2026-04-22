@@ -14,8 +14,7 @@
 #include "MassEntity_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct ChimeraMassCommon.CrMassPersistentEntityID
 // 0x0010 (0x0010 - 0x0000)
@@ -39,14 +38,12 @@ public:
 };
 DUMPER7_ASSERTS_FCrMassEntityReplicationHelper;
 
-// ScriptStruct ChimeraMassCommon.CrMassSavableFragment
-// 0x0000 (0x0000 - 0x0000)
-#pragma pack(push, 0x1)
-struct alignas(0x01) FCrMassSavableFragment : public FMassFragment
+// ScriptStruct ChimeraMassCommon.CrMassSavableTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassSavableTag : public FMassTag
 {
 };
-#pragma pack(pop)
-DUMPER7_ASSERTS_FCrMassSavableFragment;
+DUMPER7_ASSERTS_FCrMassSavableTag;
 
 // ScriptStruct ChimeraMassCommon.CrMassActorReplicationHelper
 // 0x0018 (0x0018 - 0x0000)
@@ -72,12 +69,14 @@ public:
 };
 DUMPER7_ASSERTS_FCrMassComponentReplicationHelper;
 
-// ScriptStruct ChimeraMassCommon.CrMassSavableTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassSavableTag : public FMassTag
+// ScriptStruct ChimeraMassCommon.CrMassSavableFragment
+// 0x0000 (0x0000 - 0x0000)
+#pragma pack(push, 0x1)
+struct SDK_ALIGN(0x01) FCrMassSavableFragment : public FMassFragment
 {
 };
-DUMPER7_ASSERTS_FCrMassSavableTag;
+#pragma pack(pop)
+DUMPER7_ASSERTS_FCrMassSavableFragment;
 
 // ScriptStruct ChimeraMassCommon.CrMassGenericVisualizationTag
 // 0x0000 (0x0001 - 0x0001)
@@ -106,5 +105,4 @@ public:
 };
 DUMPER7_ASSERTS_FCrReplicatedSoftObjectPtr;
 
-}
-
+SDK_NAMESPACE_END

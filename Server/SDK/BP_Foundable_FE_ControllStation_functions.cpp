@@ -14,8 +14,7 @@
 #include "BP_Foundable_FE_ControllStation_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Foundable_FE_ControllStation.BP_Foundable_FE_ControllStation_C.Timeline__UpdateFunc
 // (BlueprintEvent)
@@ -140,5 +139,5 @@ void ABP_Foundable_FE_ControllStation_C::ExecuteUbergraph_BP_Foundable_FE_Contro
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

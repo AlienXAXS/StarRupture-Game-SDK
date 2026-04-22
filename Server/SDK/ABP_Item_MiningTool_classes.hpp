@@ -11,14 +11,13 @@
 #include "Basic.hpp"
 
 #include "AnimGraphRuntime_structs.hpp"
-#include "Engine_structs.hpp"
 #include "ABP_Item_MiningTool_structs.hpp"
+#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass ABP_Item_MiningTool.ABP_Item_MiningTool_C
 // 0x0FD0 (0x1420 - 0x0450)
@@ -92,5 +91,4 @@ public:
 };
 DUMPER7_ASSERTS_UABP_Item_MiningTool_C;
 
-}
-
+SDK_NAMESPACE_END

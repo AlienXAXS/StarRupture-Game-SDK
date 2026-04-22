@@ -15,8 +15,7 @@
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class CompositeCore.CompositeCoreSubsystem
 // 0x0010 (0x0050 - 0x0040)
@@ -103,5 +102,4 @@ public:
 };
 DUMPER7_ASSERTS_UCompositeCorePluginSettings;
 
-}
-
+SDK_NAMESPACE_END

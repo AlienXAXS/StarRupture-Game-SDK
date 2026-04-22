@@ -14,8 +14,7 @@
 #include "WBP_BuildingResultNotification_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_BuildingResultNotification.WBP_BuildingResultNotification_C.OnPlacementResultNotif
 // (Event, Public, BlueprintEvent)
@@ -56,5 +55,5 @@ void UWBP_BuildingResultNotification_C::ExecuteUbergraph_WBP_BuildingResultNotif
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

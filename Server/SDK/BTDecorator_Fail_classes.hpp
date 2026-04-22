@@ -13,8 +13,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BTDecorator_Fail.BTDecorator_Fail_C
 // 0x0000 (0x00A0 - 0x00A0)
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_UBTDecorator_Fail_C;
 
-}
-
+SDK_NAMESPACE_END

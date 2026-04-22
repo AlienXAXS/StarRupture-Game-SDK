@@ -14,8 +14,7 @@
 #include "BP_BaseAI_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_BaseAI.BP_BaseAI_C.CanChangeEyeColor
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -334,5 +333,5 @@ struct FColor ABP_BaseAI_C::GetIdleEyeColor() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

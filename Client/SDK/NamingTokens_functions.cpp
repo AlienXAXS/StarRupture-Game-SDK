@@ -14,8 +14,7 @@
 #include "NamingTokens_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function NamingTokens.NamingTokens.OnPostEvaluate
 // (RequiredAPI, Native, Event, Protected, BlueprintEvent)
@@ -405,5 +404,5 @@ bool UNamingTokensEngineSubsystem::IsGlobalNamespaceRegistered(const class FStri
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

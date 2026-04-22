@@ -13,8 +13,7 @@
 #include "BP_GatherableBaseActor_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Gatherable_Oxallop_Fruit.BP_Gatherable_Oxallop_Fruit_C
 // 0x0000 (0x03A0 - 0x03A0)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Gatherable_Oxallop_Fruit_C;
 
-}
-
+SDK_NAMESPACE_END

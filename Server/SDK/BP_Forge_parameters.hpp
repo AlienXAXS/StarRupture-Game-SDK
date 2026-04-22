@@ -13,8 +13,8 @@
 #include "Chimera_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_Forge.BP_Forge_C.OnBuildingStateChanged
 // 0x0001 (0x0001 - 0x0000)
@@ -78,5 +78,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_Forge_C_ExecuteUbergraph_BP_Forge;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

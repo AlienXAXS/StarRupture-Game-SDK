@@ -14,8 +14,7 @@
 #include "WBP_MenuMainScreen_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_MenuMainScreen.WBP_MenuMainScreen_C.ExecuteUbergraph_WBP_MenuMainScreen
 // (Final, UbergraphFunction)
@@ -90,5 +89,5 @@ void UWBP_MenuMainScreen_C::Construct()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

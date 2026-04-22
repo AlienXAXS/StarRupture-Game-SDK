@@ -16,8 +16,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_BuildingLogisticsPriorityButton.WBP_BuildingLogisticsPriorityButton_C
 // 0x0040 (0x16F0 - 0x16B0)
@@ -59,5 +58,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_BuildingLogisticsPriorityButton_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_ViewportStencil_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_ViewportStencil.BP_ViewportStencil_C.ExecuteUbergraph_BP_ViewportStencil
 // (Final, UbergraphFunction, HasDefaults)
@@ -188,5 +187,5 @@ void ABP_ViewportStencil_C::UserConstructionScript()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

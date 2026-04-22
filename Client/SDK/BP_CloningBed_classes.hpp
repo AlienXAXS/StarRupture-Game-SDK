@@ -15,8 +15,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_CloningBed.BP_CloningBed_C
 // 0x0070 (0x06D8 - 0x0668)
@@ -74,5 +73,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_CloningBed_C;
 
-}
-
+SDK_NAMESPACE_END

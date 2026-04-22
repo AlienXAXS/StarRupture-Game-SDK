@@ -15,8 +15,7 @@
 #include "Chimera_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_FireWaveMeteOreChunk.BP_FireWaveMeteOreChunk_C
 // 0x0040 (0x0578 - 0x0538)
@@ -61,5 +60,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_FireWaveMeteOreChunk_C;
 
-}
-
+SDK_NAMESPACE_END

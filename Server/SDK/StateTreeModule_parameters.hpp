@@ -14,8 +14,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function StateTreeModule.StateTreeFunctionLibrary.K2_GetParametersProperty
 // 0x0040 (0x0040 - 0x0000)
@@ -247,5 +247,5 @@ public:
 };
 DUMPER7_ASSERTS_StateTreeTaskBlueprintBase_UnbindDelegate;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

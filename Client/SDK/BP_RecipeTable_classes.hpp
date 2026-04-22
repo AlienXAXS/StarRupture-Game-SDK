@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "Chimera_classes.hpp"
 #include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_RecipeTable.BP_RecipeTable_C
 // 0x0040 (0x0688 - 0x0648)
@@ -54,5 +53,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_RecipeTable_C;
 
-}
-
+SDK_NAMESPACE_END

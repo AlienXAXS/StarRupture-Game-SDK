@@ -14,8 +14,7 @@
 #include "BP_Modular_ConnectingPlatform_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Modular_ConnectingPlatform.BP_Modular_ConnectingPlatform_C.ExecuteUbergraph_BP_Modular_ConnectingPlatform
 // (Final, UbergraphFunction, HasDefaults)
@@ -89,5 +88,5 @@ void ABP_Modular_ConnectingPlatform_C::GetBuildingMeshes(class UMeshComponent** 
 		*AdditionalMeshes = std::move(Parms.AdditionalMeshes);
 }
 
-}
 
+SDK_NAMESPACE_END

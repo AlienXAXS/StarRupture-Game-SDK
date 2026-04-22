@@ -13,8 +13,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct GeometryFlowCore.Int32Setting
 // 0x0004 (0x0004 - 0x0000)
@@ -70,5 +69,4 @@ public:
 };
 DUMPER7_ASSERTS_FNameSetting;
 
-}
-
+SDK_NAMESPACE_END

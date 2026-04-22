@@ -15,8 +15,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_QuickActionsContextMenu.WBP_QuickActionsContextMenu_C
 // 0x0018 (0x0440 - 0x0428)
@@ -49,5 +48,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_QuickActionsContextMenu_C;
 
-}
-
+SDK_NAMESPACE_END

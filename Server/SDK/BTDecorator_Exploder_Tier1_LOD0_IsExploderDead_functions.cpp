@@ -14,8 +14,7 @@
 #include "BTDecorator_Exploder_Tier1_LOD0_IsExploderDead_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTDecorator_Exploder_Tier1_LOD0_IsExploderDead.BTDecorator_Exploder_Tier1_LOD0_IsExploderDead_C.PerformConditionCheckAI
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -41,5 +40,5 @@ bool UBTDecorator_Exploder_Tier1_LOD0_IsExploderDead_C::PerformConditionCheckAI(
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

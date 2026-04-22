@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_Foundable_OutsDeadBody_2_light.BP_Foundable_OutsDeadBody_2_light_C.OnStorageEmptied
 // 0x0002 (0x0002 - 0x0000)
@@ -24,5 +24,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_Foundable_OutsDeadBody_2_light_C_OnStorageEmptied;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

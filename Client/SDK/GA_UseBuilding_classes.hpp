@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GA_UseBuilding.GA_UseBuilding_C
 // 0x0010 (0x0600 - 0x05F0)
@@ -44,5 +43,4 @@ public:
 };
 DUMPER7_ASSERTS_UGA_UseBuilding_C;
 
-}
-
+SDK_NAMESPACE_END

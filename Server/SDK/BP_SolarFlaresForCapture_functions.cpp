@@ -14,8 +14,7 @@
 #include "BP_SolarFlaresForCapture_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_SolarFlaresForCapture.BP_SolarFlaresForCapture_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
@@ -70,5 +69,5 @@ void ABP_SolarFlaresForCapture_C::ExecuteUbergraph_BP_SolarFlaresForCapture(int3
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

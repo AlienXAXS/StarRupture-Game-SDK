@@ -11,12 +11,11 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "SlateCore_structs.hpp"
 #include "ChimeraUI_classes.hpp"
+#include "SlateCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_CorporationScreenWidget.WBP_CorporationScreenWidget_C
 // 0x04C8 (0x0870 - 0x03A8)
@@ -66,5 +65,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_CorporationScreenWidget_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "BP_Foundable_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Foundable_GasExtractor_A.BP_Foundable_GasExtractor_A_C
 // 0x0038 (0x0348 - 0x0310)
@@ -45,5 +44,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Foundable_GasExtractor_A_C;
 
-}
-
+SDK_NAMESPACE_END

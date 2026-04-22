@@ -14,8 +14,7 @@
 #include "AudioGameplay_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AudioGameplay.AudioGameplayCondition.ConditionMet
 // (RequiredAPI, Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
@@ -703,5 +702,5 @@ const TArray<struct FAudioParameter> UAudioParameterComponent::GetParameters() c
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

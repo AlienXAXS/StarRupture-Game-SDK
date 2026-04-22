@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_PlantGrower.BP_PlantGrower_C
 // 0x0028 (0x0700 - 0x06D8)
@@ -52,5 +51,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_PlantGrower_C;
 
-}
-
+SDK_NAMESPACE_END

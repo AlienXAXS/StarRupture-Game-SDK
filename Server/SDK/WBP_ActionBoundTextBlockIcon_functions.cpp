@@ -14,8 +14,7 @@
 #include "WBP_ActionBoundTextBlockIcon_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_ActionBoundTextBlockIcon.WBP_ActionBoundTextBlockIcon_C.SetTemporaryIconVisibility
 // (Event, Protected, BlueprintEvent)
@@ -137,5 +136,5 @@ void UWBP_ActionBoundTextBlockIcon_C::ExecuteUbergraph_WBP_ActionBoundTextBlockI
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

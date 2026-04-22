@@ -14,8 +14,7 @@
 #include "BP_PlacementHelperConnector_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_PlacementHelperConnector.BP_PlacementHelperConnector_C.SetSplineSegment
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -220,5 +219,5 @@ void ABP_PlacementHelperConnector_C::ExecuteUbergraph_BP_PlacementHelperConnecto
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

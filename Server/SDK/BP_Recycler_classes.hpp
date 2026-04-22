@@ -15,8 +15,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Recycler.BP_Recycler_C
 // 0x0080 (0x0758 - 0x06D8)
@@ -66,5 +65,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Recycler_C;
 
-}
-
+SDK_NAMESPACE_END

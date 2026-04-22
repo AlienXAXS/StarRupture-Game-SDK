@@ -11,13 +11,12 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
+#include "DataflowEnginePlugin_structs.hpp"
 #include "DataflowCore_structs.hpp"
 #include "Chaos_structs.hpp"
-#include "DataflowEnginePlugin_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum DataflowNodes.EDataflowWeightMapOverrideType
 // NumValues: 0x0004
@@ -209,5 +208,4 @@ public:
 };
 DUMPER7_ASSERTS_FGetStaticMeshDataflowNode;
 
-}
-
+SDK_NAMESPACE_END

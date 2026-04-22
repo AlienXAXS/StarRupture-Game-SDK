@@ -14,8 +14,7 @@
 #include "BP_AnimNotify_Shoot_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_AnimNotify_Shoot.BP_AnimNotify_Shoot_C.Received_Notify
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
@@ -66,5 +65,5 @@ class UCrAiAction* UBP_AnimNotify_Shoot_C::CreateAiAction(class AActor* Actor) c
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

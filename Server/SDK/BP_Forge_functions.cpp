@@ -14,8 +14,7 @@
 #include "BP_Forge_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Forge.BP_Forge_C.SetupSkeletalMesh
 // (Event, Public, BlueprintEvent)
@@ -84,5 +83,5 @@ void ABP_Forge_C::ExecuteUbergraph_BP_Forge(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

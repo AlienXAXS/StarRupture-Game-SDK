@@ -15,8 +15,7 @@
 #include "AuItems_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class AuGear.AuGearInterface
 // 0x0000 (0x0000 - 0x0000)
@@ -71,5 +70,4 @@ public:
 };
 DUMPER7_ASSERTS_UAuGearItemData;
 
-}
-
+SDK_NAMESPACE_END

@@ -15,8 +15,7 @@
 #include "UMG_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_ActionBoundTextBlockIcon.WBP_ActionBoundTextBlockIcon_C
 // 0x0030 (0x16D0 - 0x16A0)
@@ -54,5 +53,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_ActionBoundTextBlockIcon_C;
 
-}
-
+SDK_NAMESPACE_END

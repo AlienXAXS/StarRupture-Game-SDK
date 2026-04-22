@@ -13,8 +13,7 @@
 #include "MassEntity_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct MassNavMeshNavigation.MassNavMeshPathPoint
 // 0x0050 (0x0050 - 0x0000)
@@ -52,5 +51,4 @@ public:
 };
 DUMPER7_ASSERTS_FMassNavMeshBoundaryFragment;
 
-}
-
+SDK_NAMESPACE_END

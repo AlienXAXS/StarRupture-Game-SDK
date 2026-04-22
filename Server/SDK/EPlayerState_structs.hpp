@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedEnum EPlayerState.EPlayerState
 // NumValues: 0x0010
@@ -36,5 +35,4 @@ enum class EPlayerState : uint8
 	EPlayerState_MAX                         = 15,
 };
 
-}
-
+SDK_NAMESPACE_END

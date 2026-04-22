@@ -14,8 +14,7 @@
 #include "BP_Exploder_Tier1_ExplosionSphereHuge_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Exploder_Tier1_ExplosionSphereHuge.BP_Exploder_Tier1_ExplosionSphereHuge_C.DisableFx
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -84,5 +83,5 @@ void ABP_Exploder_Tier1_ExplosionSphereHuge_C::SetSphereRadius(double SphereRadi
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

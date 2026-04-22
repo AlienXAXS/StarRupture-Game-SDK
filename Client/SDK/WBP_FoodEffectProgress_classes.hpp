@@ -14,8 +14,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_FoodEffectProgress.WBP_FoodEffectProgress_C
 // 0x0028 (0x03D0 - 0x03A8)
@@ -53,5 +52,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_FoodEffectProgress_C;
 
-}
-
+SDK_NAMESPACE_END

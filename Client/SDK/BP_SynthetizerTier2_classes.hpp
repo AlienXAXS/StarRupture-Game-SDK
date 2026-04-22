@@ -15,8 +15,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_SynthetizerTier2.BP_SynthetizerTier2_C
 // 0x00B0 (0x0788 - 0x06D8)
@@ -66,5 +65,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_SynthetizerTier2_C;
 
-}
-
+SDK_NAMESPACE_END

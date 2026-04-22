@@ -15,8 +15,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ViewportStencil.BP_ViewportStencil_C
 // 0x00D8 (0x0380 - 0x02A8)
@@ -60,5 +59,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_ViewportStencil_C;
 
-}
-
+SDK_NAMESPACE_END

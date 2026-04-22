@@ -14,8 +14,7 @@
 #include "GA_MiningToolPassiveCooling_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GA_MiningToolPassiveCooling.GA_MiningToolPassiveCooling_C.ExecuteUbergraph_GA_MiningToolPassiveCooling
 // (Final, UbergraphFunction, HasDefaults)
@@ -172,5 +171,5 @@ void UGA_MiningToolPassiveCooling_C::OnSync_EE69512141AAD78978DD38B58E109ECC()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

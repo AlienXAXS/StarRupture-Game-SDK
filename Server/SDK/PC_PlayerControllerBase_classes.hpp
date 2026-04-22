@@ -14,8 +14,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PC_PlayerControllerBase.PC_PlayerControllerBase_C
 // 0x0010 (0x1158 - 0x1148)
@@ -50,5 +49,4 @@ public:
 };
 DUMPER7_ASSERTS_APC_PlayerControllerBase_C;
 
-}
-
+SDK_NAMESPACE_END

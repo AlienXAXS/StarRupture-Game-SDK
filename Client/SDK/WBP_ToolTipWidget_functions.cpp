@@ -14,8 +14,7 @@
 #include "WBP_ToolTipWidget_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_ToolTipWidget.WBP_ToolTipWidget_C.AddDefaultActions
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -270,5 +269,5 @@ void UWBP_ToolTipWidget_C::SetupMinimalVersion(bool bHideItemType)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

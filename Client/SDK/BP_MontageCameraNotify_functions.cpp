@@ -14,8 +14,7 @@
 #include "BP_MontageCameraNotify_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_MontageCameraNotify.BP_MontageCameraNotify_C.Received_NotifyBegin
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
@@ -101,5 +100,5 @@ bool UBP_MontageCameraNotify_C::Received_NotifyTick(class USkeletalMeshComponent
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

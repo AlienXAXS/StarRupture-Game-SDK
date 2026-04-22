@@ -19,8 +19,7 @@
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class PCG.PCGNodeSourceTextProvider
 // 0x0000 (0x0000 - 0x0000)
@@ -2958,7 +2957,7 @@ DUMPER7_ASSERTS_UPCGElevationIsolinesSettings;
 // Class PCG.PCGSurfaceData
 // 0x00A0 (0x01B0 - 0x0110)
 #pragma pack(push, 0x1)
-class alignas(0x10) UPCGSurfaceData : public UPCGSpatialDataWithPointCache
+class SDK_ALIGN(0x10) UPCGSurfaceData : public UPCGSpatialDataWithPointCache
 {
 public:
 	struct FTransform                             Transform;                                         // 0x0110(0x0060)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -9891,5 +9890,4 @@ public:
 };
 DUMPER7_ASSERTS_UPCGGenSourcePlayer;
 
-}
-
+SDK_NAMESPACE_END

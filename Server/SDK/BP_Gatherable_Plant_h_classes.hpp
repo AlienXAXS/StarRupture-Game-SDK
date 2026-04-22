@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "BP_GatherableBaseActor_classes.hpp"
 #include "Engine_structs.hpp"
+#include "BP_GatherableBaseActor_classes.hpp"
 #include "Chimera_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Gatherable_Plant_h.BP_Gatherable_Plant_h_C
 // 0x0008 (0x03A8 - 0x03A0)
@@ -46,5 +45,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Gatherable_Plant_h_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -22,8 +22,7 @@
 #include "CommonInput_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class CommonUI.CommonBoundActionButtonInterface
 // 0x0000 (0x0000 - 0x0000)
@@ -110,7 +109,7 @@ DUMPER7_ASSERTS_ICommonActionHandlerInterface;
 // Class CommonUI.CommonActionWidget
 // 0x02D0 (0x0460 - 0x0190)
 #pragma pack(push, 0x1)
-class alignas(0x10) UCommonActionWidget : public UWidget
+class SDK_ALIGN(0x10) UCommonActionWidget : public UWidget
 {
 public:
 	TMulticastInlineDelegate<void(bool bUsingGamepad)> OnInputMethodChanged;                         // 0x0190(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
@@ -344,7 +343,7 @@ DUMPER7_ASSERTS_UCommonBorderStyle;
 // Class CommonUI.CommonBorder
 // 0x0020 (0x0390 - 0x0370)
 #pragma pack(push, 0x1)
-class alignas(0x10) UCommonBorder : public UBorder
+class SDK_ALIGN(0x10) UCommonBorder : public UBorder
 {
 public:
 	TSubclassOf<class UCommonBorderStyle>         Style;                                             // 0x0368(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, ExposeOnSpawn, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -477,7 +476,7 @@ DUMPER7_ASSERTS_UCommonButtonInternalBase;
 // Class CommonUI.CommonButtonBase
 // 0x1288 (0x1650 - 0x03C8)
 #pragma pack(push, 0x1)
-class alignas(0x10) UCommonButtonBase : public UCommonUserWidget
+class SDK_ALIGN(0x10) UCommonButtonBase : public UCommonUserWidget
 {
 public:
 	struct FWidgetEventField                      ClickEvent;                                        // 0x03C8(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
@@ -921,7 +920,7 @@ DUMPER7_ASSERTS_UCommonLazyWidget;
 // Class CommonUI.CommonListView
 // 0x0000 (0x0C60 - 0x0C60)
 #pragma pack(push, 0x1)
-class alignas(0x10) UCommonListView : public UListView
+class SDK_ALIGN(0x10) UCommonListView : public UListView
 {
 public:
 	void SetEntrySpacing(float InEntrySpacing);
@@ -2154,5 +2153,4 @@ public:
 };
 DUMPER7_ASSERTS_UCommonActivatableWidgetQueue;
 
-}
-
+SDK_NAMESPACE_END

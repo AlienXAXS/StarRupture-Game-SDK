@@ -13,12 +13,12 @@
 #include "SlateCore_structs.hpp"
 #include "AuItems_structs.hpp"
 #include "UMG_structs.hpp"
-#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function WBP_ToolTipWidget.WBP_ToolTipWidget_C.AddEffect
 // 0x00D0 (0x00D0 - 0x0000)
@@ -166,5 +166,5 @@ public:
 };
 DUMPER7_ASSERTS_WBP_ToolTipWidget_C_SetupMinimalVersion;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

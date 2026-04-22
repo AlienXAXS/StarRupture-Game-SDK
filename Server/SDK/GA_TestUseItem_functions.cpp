@@ -14,8 +14,7 @@
 #include "GA_TestUseItem_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GA_TestUseItem.GA_TestUseItem_C.ExecuteUbergraph_GA_TestUseItem
 // (Final, UbergraphFunction, HasDefaults)
@@ -56,5 +55,5 @@ void UGA_TestUseItem_C::K2_ActivateAbilityFromEvent(const struct FGameplayEventD
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

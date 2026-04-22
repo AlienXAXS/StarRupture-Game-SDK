@@ -16,15 +16,14 @@
 #include "InputCore_structs.hpp"
 #include "CommonGame_structs.hpp"
 #include "CommonUser_structs.hpp"
+#include "SlateCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "SlateCore_structs.hpp"
 #include "CommonUI_classes.hpp"
 #include "GameplayTags_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class CommonGame.AsyncAction_CreateWidgetAsync
 // 0x0078 (0x00A8 - 0x0030)
@@ -422,5 +421,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimaryGameLayout;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_Modular_StairsFlat_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Modular_StairsFlat.BP_Modular_StairsFlat_C.GetBuildingMeshes
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
@@ -41,5 +40,5 @@ void ABP_Modular_StairsFlat_C::GetBuildingMeshes(class UMeshComponent** MainBody
 		*AdditionalMeshes = std::move(Parms.AdditionalMeshes);
 }
 
-}
 
+SDK_NAMESPACE_END

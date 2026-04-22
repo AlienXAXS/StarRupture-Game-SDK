@@ -15,8 +15,7 @@
 #include "BP_Airlock_Door_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_FE_entrance_door.BP_FE_entrance_door_C
 // 0x00A0 (0x0480 - 0x03E0)
@@ -78,5 +77,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_FE_entrance_door_C;
 
-}
-
+SDK_NAMESPACE_END

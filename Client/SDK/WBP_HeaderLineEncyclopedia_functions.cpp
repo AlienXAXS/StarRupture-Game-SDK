@@ -14,8 +14,7 @@
 #include "WBP_HeaderLineEncyclopedia_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_HeaderLineEncyclopedia.WBP_HeaderLineEncyclopedia_C.ExecuteUbergraph_WBP_HeaderLineEncyclopedia
 // (Final, UbergraphFunction)
@@ -116,5 +115,5 @@ void UWBP_HeaderLineEncyclopedia_C::SetTitle(const class FText& InTitle)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

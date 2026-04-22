@@ -14,8 +14,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_WeaponTooltip.WBP_WeaponTooltip_C
 // 0x0018 (0x03C0 - 0x03A8)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_WeaponTooltip_C;
 
-}
-
+SDK_NAMESPACE_END

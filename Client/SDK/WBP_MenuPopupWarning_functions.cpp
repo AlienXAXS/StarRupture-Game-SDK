@@ -14,8 +14,7 @@
 #include "WBP_MenuPopupWarning_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_MenuPopupWarning.WBP_MenuPopupWarning_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -95,5 +94,5 @@ void UWBP_MenuPopupWarning_C::SetColors(const struct FLinearColor& Orange)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

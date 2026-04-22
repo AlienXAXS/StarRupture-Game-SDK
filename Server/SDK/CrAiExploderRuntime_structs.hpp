@@ -18,8 +18,7 @@
 #include "MassEntity_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct CrAiExploderRuntime.CrAnimState_ExploderTaunt
 // 0x0000 (0x0068 - 0x0068)
@@ -219,5 +218,4 @@ public:
 };
 DUMPER7_ASSERTS_FCrMassInfectionCloudNiagaraParameterDriver;
 
-}
-
+SDK_NAMESPACE_END

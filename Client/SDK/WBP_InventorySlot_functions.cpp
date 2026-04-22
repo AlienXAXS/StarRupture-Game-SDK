@@ -14,8 +14,7 @@
 #include "WBP_InventorySlot_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_InventorySlot.WBP_InventorySlot_C.ConvertToGrayScale
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -263,5 +262,5 @@ void UWBP_InventorySlot_C::ShowItemNameInIcon(const class FText& InText, bool Sh
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

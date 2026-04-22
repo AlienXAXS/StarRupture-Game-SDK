@@ -10,12 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "ControlRig_structs.hpp"
 #include "Engine_structs.hpp"
+#include "ControlRig_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum RigLogicModule.EArchetype
 // NumValues: 0x0007
@@ -333,5 +332,4 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_RigLogic;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_CraftingBottomPanelNew.WBP_CraftingBottomPanelNew_C
 // 0x0020 (0x0620 - 0x0600)
@@ -46,5 +45,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_CraftingBottomPanelNew_C;
 
-}
-
+SDK_NAMESPACE_END

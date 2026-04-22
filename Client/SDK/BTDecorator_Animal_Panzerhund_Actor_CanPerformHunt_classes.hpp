@@ -13,8 +13,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BTDecorator_Animal_Panzerhund_Actor_CanPerformHunt.BTDecorator_Animal_Panzerhund_Actor_CanPerformHunt_C
 // 0x0020 (0x00C0 - 0x00A0)
@@ -45,5 +44,4 @@ public:
 };
 DUMPER7_ASSERTS_UBTDecorator_Animal_Panzerhund_Actor_CanPerformHunt_C;
 
-}
-
+SDK_NAMESPACE_END

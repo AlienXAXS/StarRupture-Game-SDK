@@ -14,8 +14,7 @@
 #include "ChimeraInteriorsMapper_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ChimeraInteriorsMapper.CrInteriorsMapperWorldSubsystem.GetBoxMappersExtentRenderTarget
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
@@ -91,5 +90,5 @@ class UTextureRenderTarget2D* UCrInteriorsMapperWorldSubsystem::GetSphereMappers
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

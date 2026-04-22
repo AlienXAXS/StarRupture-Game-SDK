@@ -15,8 +15,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum ChaosVehicles.EInputFunctionType
 // NumValues: 0x0004
@@ -147,6 +146,15 @@ public:
 };
 DUMPER7_ASSERTS_FVehicleInputs;
 
+// ScriptStruct ChaosVehicles.VehicleAnimationInstanceProxy
+// 0x0020 (0x07C0 - 0x07A0)
+struct FVehicleAnimationInstanceProxy final : public FAnimInstanceProxy
+{
+public:
+	uint8                                         Pad_798[0x28];                                     // 0x0798(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FVehicleAnimationInstanceProxy;
+
 // ScriptStruct ChaosVehicles.ControlInputs
 // 0x0004 (0x0020 - 0x001C)
 struct FControlInputs final : public FVehicleInputs
@@ -158,49 +166,6 @@ public:
 	bool                                          GearDownInput;                                     // 0x001F(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FControlInputs;
-
-// ScriptStruct ChaosVehicles.NetworkVehicleInputs
-// 0x0030 (0x0058 - 0x0028)
-struct FNetworkVehicleInputs final : public FNetworkPhysicsData
-{
-public:
-	struct FControlInputs                         VehicleInputs;                                     // 0x0028(0x0020)(NoDestructor, NativeAccessSpecifierPublic)
-	float                                         TransmissionChangeTime;                            // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TransmissionCurrentGear;                           // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TransmissionTargetGear;                            // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FNetworkVehicleInputs;
-
-// ScriptStruct ChaosVehicles.VehicleDifferentialConfig
-// 0x0010 (0x0010 - 0x0000)
-struct FVehicleDifferentialConfig final
-{
-public:
-	EVehicleDifferential                          DifferentialType;                                  // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         FrontRearSplit;                                    // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FVehicleDifferentialConfig;
-
-// ScriptStruct ChaosVehicles.NetworkVehicleStates
-// 0x0090 (0x00B8 - 0x0028)
-struct FNetworkVehicleStates final : public FNetworkPhysicsData
-{
-public:
-	struct FVector                                StateLastVelocity;                                 // 0x0028(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<float>                                 WheelsOmega;                                       // 0x0040(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<float>                                 WheelsAngularPosition;                             // 0x0050(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<float>                                 SuspensionLastDisplacement;                        // 0x0060(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<float>                                 SuspensionLastSpringLength;                        // 0x0070(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<float>                                 SuspensionAveragedLength;                          // 0x0080(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 SuspensionAveragedCount;                           // 0x0090(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 SuspensionAveragedNum;                             // 0x00A0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	float                                         EngineOmega;                                       // 0x00B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B4[0x4];                                       // 0x00B4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FNetworkVehicleStates;
 
 // ScriptStruct ChaosVehicles.WheelStatus
 // 0x0088 (0x0088 - 0x0000)
@@ -230,6 +195,65 @@ public:
 };
 DUMPER7_ASSERTS_FWheelStatus;
 
+// ScriptStruct ChaosVehicles.NetworkVehicleInputs
+// 0x0030 (0x0058 - 0x0028)
+struct FNetworkVehicleInputs final : public FNetworkPhysicsData
+{
+public:
+	struct FControlInputs                         VehicleInputs;                                     // 0x0028(0x0020)(NoDestructor, NativeAccessSpecifierPublic)
+	float                                         TransmissionChangeTime;                            // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TransmissionCurrentGear;                           // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TransmissionTargetGear;                            // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FNetworkVehicleInputs;
+
+// ScriptStruct ChaosVehicles.VehicleThrustConfig
+// 0x00A0 (0x00A0 - 0x0000)
+struct FVehicleThrustConfig final
+{
+public:
+	EVehicleThrustType                            ThrustType;                                        // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   BoneName;                                          // 0x0004(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                Offset;                                            // 0x0010(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ThrustAxis;                                        // 0x0028(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxThrustForce;                                    // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxControlAngle;                                   // 0x0044(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_48[0x58];                                      // 0x0048(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FVehicleThrustConfig;
+
+// ScriptStruct ChaosVehicles.NetworkVehicleStates
+// 0x0090 (0x00B8 - 0x0028)
+struct FNetworkVehicleStates final : public FNetworkPhysicsData
+{
+public:
+	struct FVector                                StateLastVelocity;                                 // 0x0028(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<float>                                 WheelsOmega;                                       // 0x0040(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<float>                                 WheelsAngularPosition;                             // 0x0050(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<float>                                 SuspensionLastDisplacement;                        // 0x0060(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<float>                                 SuspensionLastSpringLength;                        // 0x0070(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<float>                                 SuspensionAveragedLength;                          // 0x0080(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 SuspensionAveragedCount;                           // 0x0090(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 SuspensionAveragedNum;                             // 0x00A0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         EngineOmega;                                       // 0x00B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B4[0x4];                                       // 0x00B4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FNetworkVehicleStates;
+
+// ScriptStruct ChaosVehicles.BaseSnapshotData
+// 0x0090 (0x0090 - 0x0000)
+struct FBaseSnapshotData
+{
+public:
+	struct FTransform                             Transform;                                         // 0x0000(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                LinearVelocity;                                    // 0x0060(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                AngularVelocity;                                   // 0x0078(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FBaseSnapshotData;
+
 // ScriptStruct ChaosVehicles.VehicleReplicatedState
 // 0x000C (0x0028 - 0x001C)
 struct FVehicleReplicatedState final : public FVehicleInputs
@@ -241,18 +265,16 @@ public:
 };
 DUMPER7_ASSERTS_FVehicleReplicatedState;
 
-// ScriptStruct ChaosVehicles.WheelSnapshot
-// 0x0014 (0x0014 - 0x0000)
-struct FWheelSnapshot final
+// ScriptStruct ChaosVehicles.ChaosWheelSetup
+// 0x0028 (0x0028 - 0x0000)
+struct FChaosWheelSetup final
 {
 public:
-	float                                         SuspensionOffset;                                  // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WheelRotationAngle;                                // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SteeringAngle;                                     // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WheelRadius;                                       // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WheelAngularVelocity;                              // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UChaosVehicleWheel>         WheelClass;                                        // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   BoneName;                                          // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                AdditionalOffset;                                  // 0x0010(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FWheelSnapshot;
+DUMPER7_ASSERTS_FChaosWheelSetup;
 
 // ScriptStruct ChaosVehicles.VehicleTorqueControlConfig
 // 0x0040 (0x0040 - 0x0000)
@@ -271,17 +293,6 @@ public:
 	uint8                                         Pad_20[0x20];                                      // 0x0020(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FVehicleTorqueControlConfig;
-
-// ScriptStruct ChaosVehicles.BaseSnapshotData
-// 0x0090 (0x0090 - 0x0000)
-struct FBaseSnapshotData
-{
-public:
-	struct FTransform                             Transform;                                         // 0x0000(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                LinearVelocity;                                    // 0x0060(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                AngularVelocity;                                   // 0x0078(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FBaseSnapshotData;
 
 // ScriptStruct ChaosVehicles.VehicleTargetRotationControlConfig
 // 0x0058 (0x0058 - 0x0000)
@@ -352,22 +363,17 @@ public:
 };
 DUMPER7_ASSERTS_FVehicleAerofoilConfig;
 
-// ScriptStruct ChaosVehicles.VehicleThrustConfig
-// 0x00A0 (0x00A0 - 0x0000)
-struct FVehicleThrustConfig final
+// ScriptStruct ChaosVehicles.VehicleDifferentialConfig
+// 0x0010 (0x0010 - 0x0000)
+struct FVehicleDifferentialConfig final
 {
 public:
-	EVehicleThrustType                            ThrustType;                                        // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EVehicleDifferential                          DifferentialType;                                  // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   BoneName;                                          // 0x0004(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                Offset;                                            // 0x0010(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ThrustAxis;                                        // 0x0028(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxThrustForce;                                    // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxControlAngle;                                   // 0x0044(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_48[0x58];                                      // 0x0048(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         FrontRearSplit;                                    // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FVehicleThrustConfig;
+DUMPER7_ASSERTS_FVehicleDifferentialConfig;
 
 // ScriptStruct ChaosVehicles.VehicleEngineConfig
 // 0x00C8 (0x00C8 - 0x0000)
@@ -417,16 +423,18 @@ public:
 };
 DUMPER7_ASSERTS_FVehicleSteeringConfig;
 
-// ScriptStruct ChaosVehicles.ChaosWheelSetup
-// 0x0028 (0x0028 - 0x0000)
-struct FChaosWheelSetup final
+// ScriptStruct ChaosVehicles.WheelSnapshot
+// 0x0014 (0x0014 - 0x0000)
+struct FWheelSnapshot final
 {
 public:
-	TSubclassOf<class UChaosVehicleWheel>         WheelClass;                                        // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   BoneName;                                          // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                AdditionalOffset;                                  // 0x0010(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SuspensionOffset;                                  // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WheelRotationAngle;                                // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SteeringAngle;                                     // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WheelRadius;                                       // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WheelAngularVelocity;                              // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FChaosWheelSetup;
+DUMPER7_ASSERTS_FWheelSnapshot;
 
 // ScriptStruct ChaosVehicles.WheeledSnaphotData
 // 0x0020 (0x00B0 - 0x0090)
@@ -440,14 +448,4 @@ public:
 };
 DUMPER7_ASSERTS_FWheeledSnaphotData;
 
-// ScriptStruct ChaosVehicles.VehicleAnimationInstanceProxy
-// 0x0020 (0x07C0 - 0x07A0)
-struct FVehicleAnimationInstanceProxy final : public FAnimInstanceProxy
-{
-public:
-	uint8                                         Pad_798[0x28];                                     // 0x0798(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FVehicleAnimationInstanceProxy;
-
-}
-
+SDK_NAMESPACE_END

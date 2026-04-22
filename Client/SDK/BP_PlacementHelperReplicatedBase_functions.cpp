@@ -14,8 +14,7 @@
 #include "BP_PlacementHelperReplicatedBase_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_PlacementHelperReplicatedBase.BP_PlacementHelperReplicatedBase_C.ExecuteUbergraph_BP_PlacementHelperReplicatedBase
 // (Final, UbergraphFunction, HasDefaults)
@@ -90,5 +89,5 @@ void ABP_PlacementHelperReplicatedBase_C::UserConstructionScript()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

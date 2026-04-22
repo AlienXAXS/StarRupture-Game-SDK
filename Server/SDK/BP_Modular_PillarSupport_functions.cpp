@@ -14,8 +14,7 @@
 #include "BP_Modular_PillarSupport_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Modular_PillarSupport.BP_Modular_PillarSupport_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
@@ -50,5 +49,5 @@ void ABP_Modular_PillarSupport_C::ExecuteUbergraph_BP_Modular_PillarSupport(int3
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

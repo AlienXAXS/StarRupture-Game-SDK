@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_LootableCorpsePose1_Outdoor.BP_LootableCorpsePose1_Outdoor_C
 // 0x0070 (0x0318 - 0x02A8)
@@ -52,5 +51,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_LootableCorpsePose1_Outdoor_C;
 
-}
-
+SDK_NAMESPACE_END

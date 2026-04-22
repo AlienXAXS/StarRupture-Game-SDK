@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_RailDroneBase.BP_RailDroneBase_C
 // 0x0060 (0x04A0 - 0x0440)
@@ -61,5 +60,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_RailDroneBase_C;
 
-}
-
+SDK_NAMESPACE_END

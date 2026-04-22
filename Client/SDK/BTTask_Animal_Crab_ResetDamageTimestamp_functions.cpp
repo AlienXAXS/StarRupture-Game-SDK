@@ -14,8 +14,7 @@
 #include "BTTask_Animal_Crab_ResetDamageTimestamp_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTTask_Animal_Crab_ResetDamageTimestamp.BTTask_Animal_Crab_ResetDamageTimestamp_C.ExecuteUbergraph_BTTask_Animal_Crab_ResetDamageTimestamp
 // (Final, UbergraphFunction)
@@ -58,5 +57,5 @@ void UBTTask_Animal_Crab_ResetDamageTimestamp_C::ReceiveExecuteAI(class AAIContr
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BTTask_Melee_Tier3_Actor_LockMoveTargetForDuration_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTTask_Melee_Tier3_Actor_LockMoveTargetForDuration.BTTask_Melee_Tier3_Actor_LockMoveTargetForDuration_C.ReceiveExecuteAI
 // (Event, Protected, BlueprintEvent)
@@ -58,5 +57,5 @@ void UBTTask_Melee_Tier3_Actor_LockMoveTargetForDuration_C::ExecuteUbergraph_BTT
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "AuInventory_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AuInventory.AuInventoryBPF.ClearSlot
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
@@ -101,5 +100,5 @@ bool UAuInventoryBPF::IsSlotValid(const struct FAuItemSlot& Slot)
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

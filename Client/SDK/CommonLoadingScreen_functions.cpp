@@ -14,8 +14,7 @@
 #include "CommonLoadingScreen_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function CommonLoadingScreen.LoadingScreenManager.GetDebugReasonForShowingOrHidingLoadingScreen
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
@@ -115,5 +114,5 @@ void ULoadingProcessTask::Unregister()
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

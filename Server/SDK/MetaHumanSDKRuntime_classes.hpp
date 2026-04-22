@@ -10,12 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "MetaHumanSDKRuntime_structs.hpp"
 #include "Engine_classes.hpp"
+#include "MetaHumanSDKRuntime_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MetaHumanSDKRuntime.MetaHumanComponentBase
 // 0x00D0 (0x0188 - 0x00B8)
@@ -78,5 +77,4 @@ public:
 };
 DUMPER7_ASSERTS_UMetaHumanComponentUE;
 
-}
-
+SDK_NAMESPACE_END

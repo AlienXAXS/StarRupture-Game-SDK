@@ -18,8 +18,7 @@
 #include "Landscape_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class Landscape.MaterialExpressionLandscapeLayerSwitch
 // 0x0060 (0x0110 - 0x00B0)
@@ -829,7 +828,7 @@ DUMPER7_ASSERTS_ULandscapeGrassType;
 // Class Landscape.LandscapeHeightfieldCollisionComponent
 // 0x0100 (0x0610 - 0x0510)
 #pragma pack(push, 0x1)
-class alignas(0x10) ULandscapeHeightfieldCollisionComponent : public UPrimitiveComponent
+class SDK_ALIGN(0x10) ULandscapeHeightfieldCollisionComponent : public UPrimitiveComponent
 {
 public:
 	TArray<class ULandscapeLayerInfoObject*>      ComponentLayerInfos;                               // 0x0510(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
@@ -1594,5 +1593,4 @@ public:
 };
 DUMPER7_ASSERTS_UMaterialExpressionLandscapeLayerSample;
 
-}
-
+SDK_NAMESPACE_END

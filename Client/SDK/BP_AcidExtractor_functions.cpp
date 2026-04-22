@@ -14,8 +14,7 @@
 #include "BP_AcidExtractor_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_AcidExtractor.BP_AcidExtractor_C.ExecuteUbergraph_BP_AcidExtractor
 // (Final, UbergraphFunction, HasDefaults)
@@ -70,5 +69,5 @@ void ABP_AcidExtractor_C::SetupSkeletalMesh()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

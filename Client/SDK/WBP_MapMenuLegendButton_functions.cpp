@@ -14,8 +14,7 @@
 #include "WBP_MapMenuLegendButton_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_MapMenuLegendButton.WBP_MapMenuLegendButton_C.ExecuteUbergraph_WBP_MapMenuLegendButton
 // (Final, UbergraphFunction)
@@ -76,5 +75,5 @@ void UWBP_MapMenuLegendButton_C::SetTopSpace(bool TopSpace)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

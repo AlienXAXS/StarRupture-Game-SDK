@@ -14,8 +14,7 @@
 #include "BP_Sulphur_Logic_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Sulphur_Logic.BP_Sulphur_Logic_C.BndEvt__BP_Ore_Sulphur_A_SulphurGasCollision_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature
 // (HasOutParams, BlueprintEvent)
@@ -126,5 +125,5 @@ void ABP_Sulphur_Logic_C::UserConstructionScript()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

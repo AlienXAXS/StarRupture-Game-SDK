@@ -13,8 +13,7 @@
 #include "BP_Sulphur_Logic_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Sulphur_Logic_Large.BP_Sulphur_Logic_Large_C
 // 0x0000 (0x02F0 - 0x02F0)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Sulphur_Logic_Large_C;
 
-}
-
+SDK_NAMESPACE_END

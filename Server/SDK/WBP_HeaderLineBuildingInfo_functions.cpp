@@ -14,8 +14,7 @@
 #include "WBP_HeaderLineBuildingInfo_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_HeaderLineBuildingInfo.WBP_HeaderLineBuildingInfo_C.SetTitleFieldSize
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -118,5 +117,5 @@ void UWBP_HeaderLineBuildingInfo_C::SetColors(const struct FLinearColor& Highlig
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

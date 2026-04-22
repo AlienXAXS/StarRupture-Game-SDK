@@ -14,8 +14,7 @@
 #include "CommonInput_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function CommonInput.CommonInputBaseControllerData.GetRegisteredGamepads
 // (Final, RequiredAPI, Native, Static, Public)
@@ -288,5 +287,5 @@ bool UCommonInputSubsystem::ShouldShowInputKeys() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

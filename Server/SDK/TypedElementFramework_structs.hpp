@@ -14,8 +14,7 @@
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum TypedElementFramework.ESCCModification
 // NumValues: 0x0005
@@ -31,7 +30,7 @@ enum class ESCCModification : uint32
 // ScriptStruct TypedElementFramework.EditorDataStorageColumn
 // 0x0000 (0x0000 - 0x0000)
 #pragma pack(push, 0x1)
-struct alignas(0x01) FEditorDataStorageColumn
+struct SDK_ALIGN(0x01) FEditorDataStorageColumn
 {
 };
 #pragma pack(pop)
@@ -46,12 +45,12 @@ public:
 };
 DUMPER7_ASSERTS_FEditorDataStorageTag;
 
-// ScriptStruct TypedElementFramework.TypedElementPackageUpdatedTag
+// ScriptStruct TypedElementFramework.TypedElementSyncBackToWorldTag
 // 0x0000 (0x0001 - 0x0001)
-struct FTypedElementPackageUpdatedTag final : public FEditorDataStorageTag
+struct FTypedElementSyncBackToWorldTag final : public FEditorDataStorageTag
 {
 };
-DUMPER7_ASSERTS_FTypedElementPackageUpdatedTag;
+DUMPER7_ASSERTS_FTypedElementSyncBackToWorldTag;
 
 // ScriptStruct TypedElementFramework.ScriptTypedElementHandle
 // 0x0008 (0x0008 - 0x0000)
@@ -249,13 +248,6 @@ public:
 };
 DUMPER7_ASSERTS_FScriptTypedElementListProxy;
 
-// ScriptStruct TypedElementFramework.TypedElementSyncBackToWorldTag
-// 0x0000 (0x0001 - 0x0001)
-struct FTypedElementSyncBackToWorldTag final : public FEditorDataStorageTag
-{
-};
-DUMPER7_ASSERTS_FTypedElementSyncBackToWorldTag;
-
 // ScriptStruct TypedElementFramework.TypedElementSyncFromWorldTag
 // 0x0000 (0x0001 - 0x0001)
 struct FTypedElementSyncFromWorldTag final : public FEditorDataStorageTag
@@ -314,6 +306,13 @@ public:
 	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FTypedElementPackageReference;
+
+// ScriptStruct TypedElementFramework.TypedElementPackageUpdatedTag
+// 0x0000 (0x0001 - 0x0001)
+struct FTypedElementPackageUpdatedTag final : public FEditorDataStorageTag
+{
+};
+DUMPER7_ASSERTS_FTypedElementPackageUpdatedTag;
 
 // ScriptStruct TypedElementFramework.TypedElementPackagePathColumn
 // 0x0010 (0x0010 - 0x0000)
@@ -821,5 +820,4 @@ public:
 };
 DUMPER7_ASSERTS_FWidgetFactoryConditionsColumn;
 
-}
-
+SDK_NAMESPACE_END

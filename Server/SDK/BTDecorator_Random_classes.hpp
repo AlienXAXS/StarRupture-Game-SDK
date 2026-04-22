@@ -13,8 +13,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BTDecorator_Random.BTDecorator_Random_C
 // 0x0008 (0x00A8 - 0x00A0)
@@ -42,5 +41,4 @@ public:
 };
 DUMPER7_ASSERTS_UBTDecorator_Random_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,8 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_PackageSender.BP_PackageSender_C.ExecuteUbergraph_BP_PackageSender
 // 0x0418 (0x0418 - 0x0000)
@@ -110,5 +110,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_PackageSender_C_PostPlayBuildingEffect;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

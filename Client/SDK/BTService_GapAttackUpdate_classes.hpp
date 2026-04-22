@@ -15,8 +15,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BTService_GapAttackUpdate.BTService_GapAttackUpdate_C
 // 0x0148 (0x01E0 - 0x0098)
@@ -61,5 +60,4 @@ public:
 };
 DUMPER7_ASSERTS_UBTService_GapAttackUpdate_C;
 
-}
-
+SDK_NAMESPACE_END

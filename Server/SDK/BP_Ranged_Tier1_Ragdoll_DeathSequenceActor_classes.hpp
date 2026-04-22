@@ -14,8 +14,7 @@
 #include "BP_DeathSequenceActor_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Ranged_Tier1_Ragdoll_DeathSequenceActor.BP_Ranged_Tier1_Ragdoll_DeathSequenceActor_C
 // 0x0010 (0x0430 - 0x0420)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Ranged_Tier1_Ragdoll_DeathSequenceActor_C;
 
-}
-
+SDK_NAMESPACE_END

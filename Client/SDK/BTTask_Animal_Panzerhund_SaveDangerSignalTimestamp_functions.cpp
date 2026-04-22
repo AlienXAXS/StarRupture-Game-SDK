@@ -14,8 +14,7 @@
 #include "BTTask_Animal_Panzerhund_SaveDangerSignalTimestamp_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTTask_Animal_Panzerhund_SaveDangerSignalTimestamp.BTTask_Animal_Panzerhund_SaveDangerSignalTimestamp_C.ExecuteUbergraph_BTTask_Animal_Panzerhund_SaveDangerSignalTimestamp
 // (Final, UbergraphFunction)
@@ -58,5 +57,5 @@ void UBTTask_Animal_Panzerhund_SaveDangerSignalTimestamp_C::ReceiveExecuteAI(cla
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

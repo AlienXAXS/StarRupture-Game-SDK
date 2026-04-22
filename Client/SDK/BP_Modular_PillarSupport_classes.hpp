@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Modular_PillarSupport.BP_Modular_PillarSupport_C
 // 0x0020 (0x0860 - 0x0840)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Modular_PillarSupport_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -13,8 +13,8 @@
 #include "Chimera_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_ItemPrinter.BP_ItemPrinter_C.ExecuteUbergraph_BP_ItemPrinter
 // 0x00D0 (0x00D0 - 0x0000)
@@ -121,5 +121,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_ItemPrinter_C_OnUIOpened;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

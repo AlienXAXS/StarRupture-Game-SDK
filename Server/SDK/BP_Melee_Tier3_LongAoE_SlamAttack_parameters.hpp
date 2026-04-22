@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_Melee_Tier3_LongAoE_SlamAttack.BP_Melee_Tier3_LongAoE_SlamAttack_C.ExecuteUbergraph_BP_Melee_Tier3_LongAoE_SlamAttack
 // 0x0040 (0x0040 - 0x0000)
@@ -36,5 +36,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_Melee_Tier3_LongAoE_SlamAttack_C_ExecuteUbergraph_BP_Melee_Tier3_LongAoE_SlamAttack;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

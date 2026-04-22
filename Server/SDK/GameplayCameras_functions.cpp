@@ -14,8 +14,7 @@
 #include "GameplayCameras_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GameplayCameras.BlueprintCameraEvaluationDataFunctionLibrary.BlendCameraEvaluationData
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
@@ -3321,5 +3320,5 @@ void UBlueprintCameraNodeEvaluator::SetDefaultOwningCameraRigParameters(const st
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

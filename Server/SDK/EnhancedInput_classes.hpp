@@ -10,18 +10,17 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
-#include "CoreUObject_classes.hpp"
 #include "DeveloperSettings_structs.hpp"
 #include "DeveloperSettings_classes.hpp"
 #include "GameplayTags_structs.hpp"
 #include "EnhancedInput_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "CoreUObject_classes.hpp"
 #include "Engine_classes.hpp"
 #include "InputCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class EnhancedInput.EnhancedPlayerMappableKeyProfile
 // 0x0080 (0x00A8 - 0x0028)
@@ -1234,5 +1233,4 @@ public:
 };
 DUMPER7_ASSERTS_UPlayerMappableKeySettings;
 
-}
-
+SDK_NAMESPACE_END

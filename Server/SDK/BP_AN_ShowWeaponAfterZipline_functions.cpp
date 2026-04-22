@@ -14,8 +14,7 @@
 #include "BP_AN_ShowWeaponAfterZipline_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_AN_ShowWeaponAfterZipline.BP_AN_ShowWeaponAfterZipline_C.Received_Notify
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
@@ -43,5 +42,5 @@ bool UBP_AN_ShowWeaponAfterZipline_C::Received_Notify(class USkeletalMeshCompone
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

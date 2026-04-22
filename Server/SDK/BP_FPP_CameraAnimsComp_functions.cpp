@@ -14,8 +14,7 @@
 #include "BP_FPP_CameraAnimsComp_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_FPP_CameraAnimsComp.BP_FPP_CameraAnimsComp_C.ExecuteUbergraph_BP_FPP_CameraAnimsComp
 // (Final, UbergraphFunction, HasDefaults)
@@ -207,5 +206,5 @@ void UBP_FPP_CameraAnimsComp_C::ZeroBlendPitchTimer()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum GameFeatures.EGameFeatureTargetState
 // NumValues: 0x0006
@@ -84,5 +83,4 @@ public:
 };
 DUMPER7_ASSERTS_FInstallBundlePluginProtocolOptions;
 
-}
-
+SDK_NAMESPACE_END

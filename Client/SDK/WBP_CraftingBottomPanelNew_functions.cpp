@@ -14,8 +14,7 @@
 #include "WBP_CraftingBottomPanelNew_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_CraftingBottomPanelNew.WBP_CraftingBottomPanelNew_C.ExecuteUbergraph_WBP_CraftingBottomPanelNew
 // (Final, UbergraphFunction)
@@ -50,5 +49,5 @@ void UWBP_CraftingBottomPanelNew_C::SetEmptyOutItem()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

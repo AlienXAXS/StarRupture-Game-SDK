@@ -10,18 +10,17 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "AnimToTexture_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class AnimToTexture.AnimToTextureDataAsset
 // 0x0230 (0x0260 - 0x0030)
 #pragma pack(push, 0x1)
-class alignas(0x10) UAnimToTextureDataAsset : public UPrimaryDataAsset
+class SDK_ALIGN(0x10) UAnimToTextureDataAsset : public UPrimaryDataAsset
 {
 public:
 	TSoftObjectPtr<class USkeletalMesh>           SkeletalMesh;                                      // 0x0030(0x0028)(Edit, BlueprintVisible, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -122,5 +121,4 @@ public:
 };
 DUMPER7_ASSERTS_UAnimToTextureInstancePlaybackLibrary;
 
-}
-
+SDK_NAMESPACE_END

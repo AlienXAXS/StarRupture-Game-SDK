@@ -14,8 +14,7 @@
 #include "BP_MassAILocalSpawnerWithPCG_Placeable_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_MassAILocalSpawnerWithPCG_Placeable.BP_MassAILocalSpawnerWithPCG_Placeable_C.ExecuteUbergraph_BP_MassAILocalSpawnerWithPCG_Placeable
 // (Final, UbergraphFunction)
@@ -98,5 +97,5 @@ void ABP_MassAILocalSpawnerWithPCG_Placeable_C::UpdateStatusText()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

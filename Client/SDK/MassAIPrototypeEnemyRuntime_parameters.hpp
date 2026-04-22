@@ -10,7 +10,6 @@
 
 #include "Basic.hpp"
 
-#include "GameplayAbilities_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "Engine_structs.hpp"
 #include "MassEntity_structs.hpp"
@@ -18,10 +17,11 @@
 #include "AuActorPlacement_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "GameplayAbilities_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function MassAIPrototypeEnemyRuntime.AbstractMassEnemySpawner.ActivateSpawner
 // 0x0001 (0x0001 - 0x0000)
@@ -76,16 +76,6 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_AbstractMassEnemySpawner_IsTriggerActive;
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyEntityCollisionIsmWrapperSubsystem.GetEntityCollisionIsmWrapperActor
-// 0x0010 (0x0010 - 0x0000)
-struct MassEnemyEntityCollisionIsmWrapperSubsystem_GetEntityCollisionIsmWrapperActor final
-{
-public:
-	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AMassEnemyEntityCollisionIsmWrapperActor* ReturnValue;                                     // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MassEnemyEntityCollisionIsmWrapperSubsystem_GetEntityCollisionIsmWrapperActor;
 
 // Function MassAIPrototypeEnemyRuntime.AiFunctionLibrary.AddLooseGameplayTagToEnemyCharacter
 // 0x0010 (0x0010 - 0x0000)
@@ -816,6 +806,16 @@ public:
 };
 DUMPER7_ASSERTS_DonutVisualizationActor_UpdateFallingTrails;
 
+// Function MassAIPrototypeEnemyRuntime.MassEnemyFXEventSubsystem.RegisterEvent
+// 0x0010 (0x0010 - 0x0000)
+struct MassEnemyFXEventSubsystem_RegisterEvent final
+{
+public:
+	const class AMassEnemyCharacterBase*          Character;                                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           EventTag;                                          // 0x0008(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MassEnemyFXEventSubsystem_RegisterEvent;
+
 // Function MassAIPrototypeEnemyRuntime.BaseSiteAttackSubsystem.OnBaseCoreInfected
 // 0x0008 (0x0008 - 0x0000)
 struct BaseSiteAttackSubsystem_OnBaseCoreInfected final
@@ -879,15 +879,6 @@ public:
 };
 DUMPER7_ASSERTS_BaseSiteAttackSubsystem_OnWaveStarted;
 
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAiSpawner.DisableSpawning
-// 0x0001 (0x0001 - 0x0000)
-struct MassEnemyAiSpawner_DisableSpawning final
-{
-public:
-	bool                                          bPermanently;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MassEnemyAiSpawner_DisableSpawning;
-
 // Function MassAIPrototypeEnemyRuntime.CrAiActionAttack.Create_CrAiActionAttack
 // 0x0058 (0x0058 - 0x0000)
 struct CrAiActionAttack_Create_CrAiActionAttack final
@@ -911,15 +902,6 @@ public:
 	class UCrAiActionAttack*                      ReturnValue;                                       // 0x0050(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrAiActionAttack_Create_CrAiActionAttack;
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyPooledActorComponentInterface.OnPooledOwnerActivityChanged
-// 0x0001 (0x0001 - 0x0000)
-struct MassEnemyPooledActorComponentInterface_OnPooledOwnerActivityChanged final
-{
-public:
-	bool                                          bNewEnabled;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MassEnemyPooledActorComponentInterface_OnPooledOwnerActivityChanged;
 
 // Function MassAIPrototypeEnemyRuntime.CrAiActionDealAoeDamage.Create_CrAiDealAoeDamage
 // 0x0060 (0x0060 - 0x0000)
@@ -1041,6 +1023,34 @@ public:
 };
 DUMPER7_ASSERTS_CrAiActionHitReaction_Create_CrAiActionHitReaction;
 
+// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerSphere.OnSphereBeginOverlap
+// 0x0120 (0x0120 - 0x0000)
+struct MassEnemySpawnerTriggerSphere_OnSphereBeginOverlap final
+{
+public:
+	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFromSweep;                                        // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             SweepResult;                                       // 0x0020(0x0100)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MassEnemySpawnerTriggerSphere_OnSphereBeginOverlap;
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerSphere.OnSphereEndOverlap
+// 0x0020 (0x0020 - 0x0000)
+struct MassEnemySpawnerTriggerSphere_OnSphereEndOverlap final
+{
+public:
+	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MassEnemySpawnerTriggerSphere_OnSphereEndOverlap;
+
 // Function MassAIPrototypeEnemyRuntime.CrAiActionJumpAttack.Create_CrAiActionJumpAttack
 // 0x0050 (0x0050 - 0x0000)
 struct CrAiActionJumpAttack_Create_CrAiActionJumpAttack final
@@ -1099,34 +1109,6 @@ public:
 	struct FHitResult                             Hit;                                               // 0x0028(0x0100)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrAiActionJumpAttack_OnOwnerHit;
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerBox.OnBoxBeginOverlap
-// 0x0120 (0x0120 - 0x0000)
-struct MassEnemySpawnerTriggerBox_OnBoxBeginOverlap final
-{
-public:
-	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bFromSweep;                                        // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FHitResult                             SweepResult;                                       // 0x0020(0x0100)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MassEnemySpawnerTriggerBox_OnBoxBeginOverlap;
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerBox.OnBoxEndOverlap
-// 0x0020 (0x0020 - 0x0000)
-struct MassEnemySpawnerTriggerBox_OnBoxEndOverlap final
-{
-public:
-	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MassEnemySpawnerTriggerBox_OnBoxEndOverlap;
 
 // Function MassAIPrototypeEnemyRuntime.CrAiMovementAttackInstigator.GetMovementAttackStage
 // 0x0001 (0x0001 - 0x0000)
@@ -1466,6 +1448,24 @@ public:
 	class UCrAiAction*                            ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrAnimNotify_RunAiAction_CreateAiAction;
+
+// Function MassAIPrototypeEnemyRuntime.NavLinkGeneratorBox.QueuePcgGeneration
+// 0x0008 (0x0008 - 0x0000)
+struct NavLinkGeneratorBox_QueuePcgGeneration final
+{
+public:
+	struct FIntPoint                              Request;                                           // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NavLinkGeneratorBox_QueuePcgGeneration;
+
+// Function MassAIPrototypeEnemyRuntime.NavLinkGeneratorBox.IsGenerating
+// 0x0001 (0x0001 - 0x0000)
+struct NavLinkGeneratorBox_IsGenerating final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NavLinkGeneratorBox_IsGenerating;
 
 // Function MassAIPrototypeEnemyRuntime.MassEnemyActor.ClearFocus
 // 0x0004 (0x0004 - 0x0000)
@@ -1836,6 +1836,15 @@ public:
 	struct FVector                                ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MassEnemyAiController_GetNavAgentQueryExtent;
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAiSpawner.DisableSpawning
+// 0x0001 (0x0001 - 0x0000)
+struct MassEnemyAiSpawner_DisableSpawning final
+{
+public:
+	bool                                          bPermanently;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MassEnemyAiSpawner_DisableSpawning;
 
 // Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.AddAnimDebugData
 // 0x0010 (0x0010 - 0x0000)
@@ -2311,6 +2320,16 @@ public:
 };
 DUMPER7_ASSERTS_MassEnemyDamageInterface_GetDamageGameplayEffect;
 
+// Function MassAIPrototypeEnemyRuntime.MassEnemyEntityCollisionIsmWrapperSubsystem.GetEntityCollisionIsmWrapperActor
+// 0x0010 (0x0010 - 0x0000)
+struct MassEnemyEntityCollisionIsmWrapperSubsystem_GetEntityCollisionIsmWrapperActor final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AMassEnemyEntityCollisionIsmWrapperActor* ReturnValue;                                     // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MassEnemyEntityCollisionIsmWrapperSubsystem_GetEntityCollisionIsmWrapperActor;
+
 // Function MassAIPrototypeEnemyRuntime.MassEnemyEventQueueSubsystem.DealDamageToAiActor
 // 0x0018 (0x0018 - 0x0000)
 struct MassEnemyEventQueueSubsystem_DealDamageToAiActor final
@@ -2342,19 +2361,18 @@ public:
 };
 DUMPER7_ASSERTS_MassEnemyEventQueueSubsystem_NotifyAiSpawn;
 
-// Function MassAIPrototypeEnemyRuntime.MassEnemyFXEventSubsystem.RegisterEvent
-// 0x0010 (0x0010 - 0x0000)
-struct MassEnemyFXEventSubsystem_RegisterEvent final
+// Function MassAIPrototypeEnemyRuntime.MassEnemyPooledActorComponentInterface.OnPooledOwnerActivityChanged
+// 0x0001 (0x0001 - 0x0000)
+struct MassEnemyPooledActorComponentInterface_OnPooledOwnerActivityChanged final
 {
 public:
-	const class AMassEnemyCharacterBase*          Character;                                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           EventTag;                                          // 0x0008(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNewEnabled;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_MassEnemyFXEventSubsystem_RegisterEvent;
+DUMPER7_ASSERTS_MassEnemyPooledActorComponentInterface_OnPooledOwnerActivityChanged;
 
-// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerSphere.OnSphereBeginOverlap
+// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerBox.OnBoxBeginOverlap
 // 0x0120 (0x0120 - 0x0000)
-struct MassEnemySpawnerTriggerSphere_OnSphereBeginOverlap final
+struct MassEnemySpawnerTriggerBox_OnBoxBeginOverlap final
 {
 public:
 	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -2365,11 +2383,11 @@ public:
 	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FHitResult                             SweepResult;                                       // 0x0020(0x0100)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_MassEnemySpawnerTriggerSphere_OnSphereBeginOverlap;
+DUMPER7_ASSERTS_MassEnemySpawnerTriggerBox_OnBoxBeginOverlap;
 
-// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerSphere.OnSphereEndOverlap
+// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerBox.OnBoxEndOverlap
 // 0x0020 (0x0020 - 0x0000)
-struct MassEnemySpawnerTriggerSphere_OnSphereEndOverlap final
+struct MassEnemySpawnerTriggerBox_OnBoxEndOverlap final
 {
 public:
 	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -2378,25 +2396,7 @@ public:
 	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_MassEnemySpawnerTriggerSphere_OnSphereEndOverlap;
+DUMPER7_ASSERTS_MassEnemySpawnerTriggerBox_OnBoxEndOverlap;
 
-// Function MassAIPrototypeEnemyRuntime.NavLinkGeneratorBox.QueuePcgGeneration
-// 0x0008 (0x0008 - 0x0000)
-struct NavLinkGeneratorBox_QueuePcgGeneration final
-{
-public:
-	struct FIntPoint                              Request;                                           // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NavLinkGeneratorBox_QueuePcgGeneration;
-
-// Function MassAIPrototypeEnemyRuntime.NavLinkGeneratorBox.IsGenerating
-// 0x0001 (0x0001 - 0x0000)
-struct NavLinkGeneratorBox_IsGenerating final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NavLinkGeneratorBox_IsGenerating;
-
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

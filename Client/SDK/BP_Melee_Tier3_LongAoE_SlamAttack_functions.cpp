@@ -14,8 +14,7 @@
 #include "BP_Melee_Tier3_LongAoE_SlamAttack_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Melee_Tier3_LongAoE_SlamAttack.BP_Melee_Tier3_LongAoE_SlamAttack_C.DecalDarkTimeline__FinishedFunc
 // (BlueprintEvent)
@@ -162,5 +161,5 @@ void ABP_Melee_Tier3_LongAoE_SlamAttack_C::ReceiveBeginPlay()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

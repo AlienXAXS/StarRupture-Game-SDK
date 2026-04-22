@@ -16,8 +16,7 @@
 #include "MassEntity_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct CrAiRangedRuntime.ReplicatedRangedVertexAnimationData
 // 0x0008 (0x0008 - 0x0000)
@@ -132,5 +131,4 @@ struct FCrAnimState_RangedTaunt final : public FCrAnimState_Taunt
 };
 DUMPER7_ASSERTS_FCrAnimState_RangedTaunt;
 
-}
-
+SDK_NAMESPACE_END

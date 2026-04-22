@@ -14,8 +14,7 @@
 #include "BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection.BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection_C.ReceiveExecuteAI
 // (Event, Protected, BlueprintEvent)
@@ -58,5 +57,5 @@ void UBTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection_C::ExecuteUber
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

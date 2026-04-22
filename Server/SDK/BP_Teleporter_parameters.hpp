@@ -14,8 +14,8 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_Teleporter.BP_Teleporter_C.OnTeleporterUsed
 // 0x0001 (0x0001 - 0x0000)
@@ -150,5 +150,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_Teleporter_C_BndEvt__BP_Teleporter_OpenBoxCollision_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

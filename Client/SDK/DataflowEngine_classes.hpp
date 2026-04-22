@@ -16,8 +16,7 @@
 #include "DataflowEngine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class DataflowEngine.DataflowDebugDrawComponent
 // 0x0000 (0x05A0 - 0x05A0)
@@ -317,5 +316,4 @@ public:
 };
 DUMPER7_ASSERTS_UDataflow;
 
-}
-
+SDK_NAMESPACE_END

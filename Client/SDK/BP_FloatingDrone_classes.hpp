@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_FloatingDrone.BP_FloatingDrone_C
 // 0x0028 (0x04F0 - 0x04C8)
@@ -49,5 +48,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_FloatingDrone_C;
 
-}
-
+SDK_NAMESPACE_END

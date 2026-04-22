@@ -14,8 +14,7 @@
 #include "VolumetricsBPLIbrary_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function VolumetricsBPLIbrary.VolumetricsBPLIbrary_C.RT Size Compare
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -189,5 +188,5 @@ void UVolumetricsBPLIbrary_C::Create_and_Assign_MID(class UMaterialInstanceDynam
 	Mid = Parms.Mid;
 }
 
-}
 
+SDK_NAMESPACE_END

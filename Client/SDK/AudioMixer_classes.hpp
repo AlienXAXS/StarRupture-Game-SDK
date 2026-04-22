@@ -16,8 +16,7 @@
 #include "AudioMixer_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class AudioMixer.SynthComponent
 // 0x0670 (0x08C0 - 0x0250)
@@ -476,5 +475,4 @@ public:
 };
 DUMPER7_ASSERTS_UQuartzSubsystem;
 
-}
-
+SDK_NAMESPACE_END

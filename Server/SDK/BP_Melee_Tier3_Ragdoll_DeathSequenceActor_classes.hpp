@@ -14,8 +14,7 @@
 #include "BP_DeathSequenceActor_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Melee_Tier3_Ragdoll_DeathSequenceActor.BP_Melee_Tier3_Ragdoll_DeathSequenceActor_C
 // 0x0050 (0x0470 - 0x0420)
@@ -53,5 +52,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Melee_Tier3_Ragdoll_DeathSequenceActor_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -16,8 +16,7 @@
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MassEntity.MassSubsystemBase
 // 0x0008 (0x0038 - 0x0030)
@@ -265,5 +264,4 @@ public:
 };
 DUMPER7_ASSERTS_UMassSettings;
 
-}
-
+SDK_NAMESPACE_END

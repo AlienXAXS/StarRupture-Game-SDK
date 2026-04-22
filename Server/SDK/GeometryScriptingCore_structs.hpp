@@ -14,8 +14,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum GeometryScriptingCore.EGeometryScriptOutcomePins
 // NumValues: 0x0003
@@ -834,18 +833,6 @@ enum class EDistanceFieldUnits : uint8
 	EDistanceFieldUnits_MAX                  = 2,
 };
 
-// ScriptStruct GeometryScriptingCore.GeometryScriptBakeSourceMeshOptions
-// 0x0010 (0x0010 - 0x0000)
-struct FGeometryScriptBakeSourceMeshOptions final
-{
-public:
-	class UTexture2D*                             SourceNormalMap;                                   // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	int32                                         SourceNormalUVLayer;                               // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGeometryScriptBakeNormalSpace                SourceNormalSpace;                                 // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FGeometryScriptBakeSourceMeshOptions;
-
 // ScriptStruct GeometryScriptingCore.GeometryScriptMeshReadLOD
 // 0x0008 (0x0008 - 0x0000)
 struct FGeometryScriptMeshReadLOD final
@@ -856,6 +843,16 @@ public:
 	int32                                         LODIndex;                                          // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FGeometryScriptMeshReadLOD;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptBoneWeight
+// 0x0008 (0x0008 - 0x0000)
+struct FGeometryScriptBoneWeight final
+{
+public:
+	int32                                         BoneIndex;                                         // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Weight;                                            // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGeometryScriptBoneWeight;
 
 // ScriptStruct GeometryScriptingCore.GeometryScriptMeshWriteLOD
 // 0x0008 (0x0008 - 0x0000)
@@ -868,15 +865,6 @@ public:
 };
 DUMPER7_ASSERTS_FGeometryScriptMeshWriteLOD;
 
-// ScriptStruct GeometryScriptingCore.GeometryScriptBoneWeightProfile
-// 0x0008 (0x0008 - 0x0000)
-struct FGeometryScriptBoneWeightProfile final
-{
-public:
-	class FName                                   ProfileName;                                       // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGeometryScriptBoneWeightProfile;
-
 // ScriptStruct GeometryScriptingCore.GeometryScriptSimpleCollision
 // 0x00A0 (0x00A0 - 0x0000)
 struct FGeometryScriptSimpleCollision final
@@ -885,6 +873,26 @@ public:
 	struct FKAggregateGeom                        AggGeom;                                           // 0x0000(0x00A0)(NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FGeometryScriptSimpleCollision;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptBakeTextureOptions
+// 0x0028 (0x0028 - 0x0000)
+struct FGeometryScriptBakeTextureOptions final
+{
+public:
+	EGeometryScriptBakeResolution                 Resolution;                                        // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGeometryScriptBakeBitDepth                   BitDepth;                                          // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         GutterSize;                                        // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGeometryScriptBakeSamplesPerPixel            SamplesPerPixel;                                   // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             SampleFilterMask;                                  // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	EGeometryScriptBakeFilteringType              FilteringType;                                     // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ProjectionDistance;                                // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bProjectionInWorldSpace;                           // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FGeometryScriptBakeTextureOptions;
 
 // ScriptStruct GeometryScriptingCore.GeometryScriptSphereCovering
 // 0x0010 (0x0010 - 0x0000)
@@ -895,20 +903,60 @@ public:
 };
 DUMPER7_ASSERTS_FGeometryScriptSphereCovering;
 
-// ScriptStruct GeometryScriptingCore.GeometryScriptBakeVertexOptions
-// 0x000C (0x000C - 0x0000)
-struct FGeometryScriptBakeVertexOptions final
+// ScriptStruct GeometryScriptingCore.GeometryScriptRenderCaptureTextures
+// 0x0090 (0x0090 - 0x0000)
+struct FGeometryScriptRenderCaptureTextures final
 {
 public:
-	EGeometryScriptBakeVertexTopology             TopologyMode;                                      // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSplitAtNormalSeams;                               // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSplitAtUVSeams;                                   // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ProjectionDistance;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bProjectionInWorldSpace;                           // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             BaseColorMap;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	bool                                          bHasBaseColorMap;                                  // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             NormalMap;                                         // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	bool                                          bHasNormalMap;                                     // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             PackedMRSMap;                                      // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	bool                                          bHasPackedMRSMap;                                  // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             MetallicMap;                                       // 0x0030(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	bool                                          bHasMetallicMap;                                   // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             RoughnessMap;                                      // 0x0040(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	bool                                          bHasRoughnessMap;                                  // 0x0048(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             SpecularMap;                                       // 0x0050(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	bool                                          bHasSpecularMap;                                   // 0x0058(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             EmissiveMap;                                       // 0x0060(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	bool                                          bHasEmissiveMap;                                   // 0x0068(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             OpacityMap;                                        // 0x0070(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	bool                                          bHasOpacityMap;                                    // 0x0078(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             SubsurfaceColorMap;                                // 0x0080(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	bool                                          bHasSubsurfaceColorMap;                            // 0x0088(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_89[0x7];                                       // 0x0089(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FGeometryScriptBakeVertexOptions;
+DUMPER7_ASSERTS_FGeometryScriptRenderCaptureTextures;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptLayoutUVsOptions
+// 0x0078 (0x0078 - 0x0000)
+struct FGeometryScriptLayoutUVsOptions final
+{
+public:
+	EGeometryScriptUVLayoutType                   LayoutType;                                        // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         TextureResolution;                                 // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Scale;                                             // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              Translation;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPreserveScale;                                    // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPreserveRotation;                                 // 0x0021(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAllowFlips;                                       // 0x0022(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableUDIMLayout;                                 // 0x0023(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<int32, int32>                            UDIMResolutions;                                   // 0x0028(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGeometryScriptLayoutUVsOptions;
 
 // ScriptStruct GeometryScriptingCore.GeometryScriptSimpleCollisionTriangulationOptions
 // 0x0010 (0x0010 - 0x0000)
@@ -922,37 +970,6 @@ public:
 	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FGeometryScriptSimpleCollisionTriangulationOptions;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptSimpleMeshBuffers
-// 0x00D0 (0x00D0 - 0x0000)
-struct FGeometryScriptSimpleMeshBuffers final
-{
-public:
-	TArray<struct FVector>                        Vertices;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FVector>                        Normals;                                           // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FVector2D>                      UV0;                                               // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FVector2D>                      UV1;                                               // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FVector2D>                      UV2;                                               // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FVector2D>                      UV3;                                               // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FVector2D>                      UV4;                                               // 0x0060(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FVector2D>                      UV5;                                               // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FVector2D>                      UV6;                                               // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FVector2D>                      UV7;                                               // 0x0090(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FLinearColor>                   VertexColors;                                      // 0x00A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FIntVector>                     Triangles;                                         // 0x00B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 TriGroupIDs;                                       // 0x00C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGeometryScriptSimpleMeshBuffers;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptExpMapUVOptions
-// 0x0008 (0x0008 - 0x0000)
-struct FGeometryScriptExpMapUVOptions final
-{
-public:
-	int32                                         NormalSmoothingRounds;                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NormalSmoothingAlpha;                              // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGeometryScriptExpMapUVOptions;
 
 // ScriptStruct GeometryScriptingCore.GeometryScriptTriangle
 // 0x0048 (0x0048 - 0x0000)
@@ -978,6 +995,15 @@ public:
 };
 DUMPER7_ASSERTS_FGeometryScriptTrianglePoint;
 
+// ScriptStruct GeometryScriptingCore.GeometryScriptBoneWeightProfile
+// 0x0008 (0x0008 - 0x0000)
+struct FGeometryScriptBoneWeightProfile final
+{
+public:
+	class FName                                   ProfileName;                                       // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGeometryScriptBoneWeightProfile;
+
 // ScriptStruct GeometryScriptingCore.GeometryScriptUVTriangle
 // 0x0030 (0x0030 - 0x0000)
 struct FGeometryScriptUVTriangle final
@@ -989,15 +1015,48 @@ public:
 };
 DUMPER7_ASSERTS_FGeometryScriptUVTriangle;
 
-// ScriptStruct GeometryScriptingCore.GeometryScriptPruneBoneWeightsOptions
-// 0x0002 (0x0002 - 0x0000)
-struct FGeometryScriptPruneBoneWeightsOptions final
+// ScriptStruct GeometryScriptingCore.GeometryScriptMeshSelfUnionOptions
+// 0x000C (0x000C - 0x0000)
+struct FGeometryScriptMeshSelfUnionOptions final
 {
 public:
-	EGeometryScriptPruneBoneWeightsAssignmentType ReassignmentType;                                  // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIgnoredInvalidBones;                              // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFillHoles;                                        // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bTrimFlaps;                                        // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSimplifyOutput;                                   // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         SimplifyPlanarTolerance;                           // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WindingThreshold;                                  // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FGeometryScriptPruneBoneWeightsOptions;
+DUMPER7_ASSERTS_FGeometryScriptMeshSelfUnionOptions;
+
+// ScriptStruct GeometryScriptingCore.GeometryScript3DGridParameters
+// 0x000C (0x000C - 0x0000)
+struct FGeometryScript3DGridParameters final
+{
+public:
+	EGeometryScriptGridSizingMethod               SizeMethod;                                        // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         GridCellSize;                                      // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         GridResolution;                                    // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGeometryScript3DGridParameters;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptMorphologyOptions
+// 0x0060 (0x0060 - 0x0000)
+struct FGeometryScriptMorphologyOptions final
+{
+public:
+	struct FGeometryScript3DGridParameters        SDFGridParameters;                                 // 0x0000(0x000C)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bUseSeparateMeshGrid;                              // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGeometryScript3DGridParameters        MeshGridParameters;                                // 0x0010(0x000C)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBox                                   CustomBounds;                                      // 0x0020(0x0038)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGeometryScriptMorphologicalOpType            Operation;                                         // 0x0058(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_59[0x3];                                       // 0x0059(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Distance;                                          // 0x005C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGeometryScriptMorphologyOptions;
 
 // ScriptStruct GeometryScriptingCore.GeometryScriptColorFlags
 // 0x0004 (0x0004 - 0x0000)
@@ -1010,6 +1069,173 @@ public:
 	bool                                          bAlpha;                                            // 0x0003(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FGeometryScriptColorFlags;
+
+// ScriptStruct GeometryScriptingCore.NegativeSpaceDirectionalToleranceScale
+// 0x0028 (0x0028 - 0x0000)
+struct FNegativeSpaceDirectionalToleranceScale final
+{
+public:
+	struct FVector                                Direction;                                         // 0x0000(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        AngleRange;                                        // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        ScaleFactor;                                       // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FNegativeSpaceDirectionalToleranceScale;
+
+// ScriptStruct GeometryScriptingCore.NavigableConvexDecompositionOptions
+// 0x0048 (0x0048 - 0x0000)
+struct FNavigableConvexDecompositionOptions final
+{
+public:
+	double                                        MinRadius;                                         // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        Tolerance;                                         // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIgnoreUnreachableInternalSpace;                   // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FVector>                        CustomNavigablePositions;                          // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FPlane>                         UnreachablePlanes;                                 // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FNegativeSpaceDirectionalToleranceScale> ToleranceDirectionalScales;               // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FNavigableConvexDecompositionOptions;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptGroupLayer
+// 0x0008 (0x0008 - 0x0000)
+struct FGeometryScriptGroupLayer final
+{
+public:
+	bool                                          bDefaultLayer;                                     // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ExtendedLayerIndex;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGeometryScriptGroupLayer;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptIndexList
+// 0x0018 (0x0018 - 0x0000)
+struct alignas(0x08) FGeometryScriptIndexList final
+{
+public:
+	EGeometryScriptIndexType                      IndexType;                                         // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x17];                                       // 0x0001(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FGeometryScriptIndexList;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptAppendMeshOptions
+// 0x0001 (0x0001 - 0x0000)
+struct FGeometryScriptAppendMeshOptions final
+{
+public:
+	EGeometryScriptCombineAttributesMode          CombineMode;                                       // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGeometryScriptAppendMeshOptions;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptSweptHullOptions
+// 0x0018 (0x0018 - 0x0000)
+struct FGeometryScriptSweptHullOptions final
+{
+public:
+	bool                                          bPrefilterVertices;                                // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         PrefilterGridResolution;                           // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MinThickness;                                      // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSimplify;                                         // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         MinEdgeLength;                                     // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SimplifyTolerance;                                 // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGeometryScriptSweptHullOptions;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptTriangleList
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FGeometryScriptTriangleList final
+{
+public:
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FGeometryScriptTriangleList;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptTransferBoneWeightsOptions
+// 0x0040 (0x0040 - 0x0000)
+struct FGeometryScriptTransferBoneWeightsOptions final
+{
+public:
+	ETransferBoneWeightsMethod                    TransferMethod;                                    // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EOutputTargetMeshBones                        OutputTargetMeshBones;                             // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGeometryScriptBoneWeightProfile       SourceProfile;                                     // 0x0004(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptBoneWeightProfile       TargetProfile;                                     // 0x000C(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        RadiusPercentage;                                  // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        NormalThreshold;                                   // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          LayeredMeshSupport;                                // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         NumSmoothingIterations;                            // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SmoothingStrength;                                 // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   InpaintMask;                                       // 0x0034(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FGeometryScriptTransferBoneWeightsOptions;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptBlurMeshVertexColorsOptions
+// 0x0004 (0x0004 - 0x0000)
+struct FGeometryScriptBlurMeshVertexColorsOptions final
+{
+public:
+	bool                                          Red;                                               // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Green;                                             // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Blue;                                              // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Alpha;                                             // 0x0003(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGeometryScriptBlurMeshVertexColorsOptions;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptScalarList
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FGeometryScriptScalarList final
+{
+public:
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FGeometryScriptScalarList;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptVectorList
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FGeometryScriptVectorList final
+{
+public:
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FGeometryScriptVectorList;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptConvexHullApproximationOptions
+// 0x000C (0x000C - 0x0000)
+struct FGeometryScriptConvexHullApproximationOptions final
+{
+public:
+	bool                                          bFitSpheres;                                       // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFitBoxes;                                         // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFitCapsules;                                      // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         DistanceThreshold;                                 // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         VolumeDiffThreshold_Fraction;                      // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGeometryScriptConvexHullApproximationOptions;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptWeldEdgesOptions
+// 0x0008 (0x0008 - 0x0000)
+struct FGeometryScriptWeldEdgesOptions final
+{
+public:
+	float                                         Tolerance;                                         // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOnlyUniquePairs;                                  // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FGeometryScriptWeldEdgesOptions;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptUVList
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FGeometryScriptUVList final
+{
+public:
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FGeometryScriptUVList;
 
 // ScriptStruct GeometryScriptingCore.GeometryScriptMeshPlaneCutOptions
 // 0x0010 (0x0010 - 0x0000)
@@ -1026,204 +1252,6 @@ public:
 };
 DUMPER7_ASSERTS_FGeometryScriptMeshPlaneCutOptions;
 
-// ScriptStruct GeometryScriptingCore.GeometryScriptPointClusteringOptions
-// 0x0020 (0x0020 - 0x0000)
-struct FGeometryScriptPointClusteringOptions final
-{
-public:
-	TArray<struct FVector>                        InitialClusterCenters;                             // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         TargetNumClusters;                                 // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGeometryScriptInitKMeansMethod               InitializeMethod;                                  // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         RandomSeed;                                        // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxIterations;                                     // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGeometryScriptPointClusteringOptions;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptGroupLayer
-// 0x0008 (0x0008 - 0x0000)
-struct FGeometryScriptGroupLayer final
-{
-public:
-	bool                                          bDefaultLayer;                                     // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ExtendedLayerIndex;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGeometryScriptGroupLayer;
-
-// ScriptStruct GeometryScriptingCore.NegativeSpaceDirectionalToleranceScale
-// 0x0028 (0x0028 - 0x0000)
-struct FNegativeSpaceDirectionalToleranceScale final
-{
-public:
-	struct FVector                                Direction;                                         // 0x0000(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        AngleRange;                                        // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        ScaleFactor;                                       // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FNegativeSpaceDirectionalToleranceScale;
-
-// ScriptStruct GeometryScriptingCore.ComputeNegativeSpaceOptions
-// 0x0038 (0x0038 - 0x0000)
-struct FComputeNegativeSpaceOptions final
-{
-public:
-	ENegativeSpaceSampleMethod                    SampleMethod;                                      // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRequireSearchSampleCoverage;                      // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bOnlyConnectedToHull;                              // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         MaxVoxelsPerDim;                                   // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TargetNumSamples;                                  // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        MinSampleSpacing;                                  // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        NegativeSpaceTolerance;                            // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FNegativeSpaceDirectionalToleranceScale> ToleranceDirectionalScales;               // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, AdvancedDisplay, NativeAccessSpecifierPublic)
-	double                                        MinRadius;                                         // 0x0030(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FComputeNegativeSpaceOptions;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptMergeSimpleCollisionOptions
-// 0x0080 (0x0080 - 0x0000)
-struct FGeometryScriptMergeSimpleCollisionOptions final
-{
-public:
-	int32                                         MaxShapeCount;                                     // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        ErrorTolerance;                                    // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        MinThicknessTolerance;                             // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bConsiderAllPossibleMerges;                        // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGeometryScriptSphereCovering          PrecomputedNegativeSpace;                          // 0x0020(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	bool                                          bComputeNegativeSpace;                             // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FComputeNegativeSpaceOptions           ComputeNegativeSpaceOptions;                       // 0x0038(0x0038)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FGeometryScriptSimpleCollisionTriangulationOptions ShapeToHullTriangulation;              // 0x0070(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGeometryScriptMergeSimpleCollisionOptions;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptIndexList
-// 0x0018 (0x0018 - 0x0000)
-struct alignas(0x08) FGeometryScriptIndexList final
-{
-public:
-	EGeometryScriptIndexType                      IndexType;                                         // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x17];                                       // 0x0001(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FGeometryScriptIndexList;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptTriangleList
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FGeometryScriptTriangleList final
-{
-public:
-	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FGeometryScriptTriangleList;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptMergeVertexOptions
-// 0x0002 (0x0002 - 0x0000)
-struct FGeometryScriptMergeVertexOptions final
-{
-public:
-	bool                                          bOnlyBoundary;                                     // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAllowNonBoundaryBowties;                          // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGeometryScriptMergeVertexOptions;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptConvexDecompositionOptions
-// 0x0028 (0x0028 - 0x0000)
-struct FGeometryScriptConvexDecompositionOptions final
-{
-public:
-	int32                                         NumHulls;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        SearchFactor;                                      // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        ErrorTolerance;                                    // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        MinPartThickness;                                  // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SimplifyToFaceCount;                               // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FGeometryScriptConvexDecompositionOptions;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptScalarList
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FGeometryScriptScalarList final
-{
-public:
-	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FGeometryScriptScalarList;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptBoneInfo
-// 0x00E0 (0x00E0 - 0x0000)
-struct FGeometryScriptBoneInfo final
-{
-public:
-	int32                                         Index;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Name;                                              // 0x0004(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ParentIndex;                                       // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             LocalTransform;                                    // 0x0010(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             WorldTransform;                                    // 0x0070(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           Color;                                             // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGeometryScriptBoneInfo;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptTransferMeshVertexColorsOptions
-// 0x0030 (0x0030 - 0x0000)
-struct FGeometryScriptTransferMeshVertexColorsOptions final
-{
-public:
-	ETransferVertexColorMethod                    TransferMethod;                                    // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        RadiusPercentage;                                  // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        NormalThreshold;                                   // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          LayeredMeshSupport;                                // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         NumSmoothingIterations;                            // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SmoothingStrength;                                 // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHardEdges;                                        // 0x0024(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         BiasRatio;                                         // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FGeometryScriptTransferMeshVertexColorsOptions;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptVectorList
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FGeometryScriptVectorList final
-{
-public:
-	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FGeometryScriptVectorList;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptUVList
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FGeometryScriptUVList final
-{
-public:
-	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FGeometryScriptUVList;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptTransformCollisionOptions
-// 0x0002 (0x0002 - 0x0000)
-struct FGeometryScriptTransformCollisionOptions final
-{
-public:
-	bool                                          bWarnOnInvalidTransforms;                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCenterTransformPivotPerShape;                     // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGeometryScriptTransformCollisionOptions;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptResolveTJunctionOptions
-// 0x0004 (0x0004 - 0x0000)
-struct FGeometryScriptResolveTJunctionOptions final
-{
-public:
-	float                                         Tolerance;                                         // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGeometryScriptResolveTJunctionOptions;
-
 // ScriptStruct GeometryScriptingCore.GeometryScriptColorList
 // 0x0010 (0x0010 - 0x0000)
 struct alignas(0x08) FGeometryScriptColorList final
@@ -1233,20 +1261,17 @@ public:
 };
 DUMPER7_ASSERTS_FGeometryScriptColorList;
 
-// ScriptStruct GeometryScriptingCore.GeometryScriptMeshPlaneSliceOptions
-// 0x0014 (0x0014 - 0x0000)
-struct FGeometryScriptMeshPlaneSliceOptions final
+// ScriptStruct GeometryScriptingCore.GeometryScriptDetermineMeshOcclusionOptions
+// 0x0010 (0x0010 - 0x0000)
+struct FGeometryScriptDetermineMeshOcclusionOptions final
 {
 public:
-	bool                                          bFillHoles;                                        // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         HoleFillMaterialID;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bFillSpans;                                        // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        SamplingDensity;                                   // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDoubleSided;                                      // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         GapWidth;                                          // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         UVWorldDimension;                                  // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NumSearchDirections;                               // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FGeometryScriptMeshPlaneSliceOptions;
+DUMPER7_ASSERTS_FGeometryScriptDetermineMeshOcclusionOptions;
 
 // ScriptStruct GeometryScriptingCore.GeometryScriptPolyPath
 // 0x0018 (0x0018 - 0x0000)
@@ -1259,18 +1284,14 @@ public:
 };
 DUMPER7_ASSERTS_FGeometryScriptPolyPath;
 
-// ScriptStruct GeometryScriptingCore.GeometryScriptSampleTextureOptions
-// 0x0028 (0x0028 - 0x0000)
-struct FGeometryScriptSampleTextureOptions final
+// ScriptStruct GeometryScriptingCore.GeometryScriptMeshSelection
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FGeometryScriptMeshSelection final
 {
 public:
-	EGeometryScriptPixelSamplingMethod            SamplingMethod;                                    // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bWrap;                                             // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2D                              UVScale;                                           // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              UVOffset;                                          // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FGeometryScriptSampleTextureOptions;
+DUMPER7_ASSERTS_FGeometryScriptMeshSelection;
 
 // ScriptStruct GeometryScriptingCore.GeometryScriptSimplePolygon
 // 0x0010 (0x0010 - 0x0000)
@@ -1281,18 +1302,6 @@ public:
 };
 DUMPER7_ASSERTS_FGeometryScriptSimplePolygon;
 
-// ScriptStruct GeometryScriptingCore.GeometryScriptCopyMeshFromAssetOptions
-// 0x0004 (0x0004 - 0x0000)
-struct FGeometryScriptCopyMeshFromAssetOptions final
-{
-public:
-	bool                                          bApplyBuildSettings;                               // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRequestTangents;                                  // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIgnoreRemoveDegenerates;                          // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseBuildScale;                                    // 0x0003(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGeometryScriptCopyMeshFromAssetOptions;
-
 // ScriptStruct GeometryScriptingCore.GeometryScriptGeneralPolygonList
 // 0x0010 (0x0010 - 0x0000)
 struct alignas(0x08) FGeometryScriptGeneralPolygonList final
@@ -1302,6 +1311,26 @@ public:
 };
 DUMPER7_ASSERTS_FGeometryScriptGeneralPolygonList;
 
+// ScriptStruct GeometryScriptingCore.GeometryScriptCopyBonesFromMeshOptions
+// 0x0002 (0x0002 - 0x0000)
+struct FGeometryScriptCopyBonesFromMeshOptions final
+{
+public:
+	bool                                          ReindexWeights;                                    // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EBonesToCopyFromSource                        BonesToCopyFromSource;                             // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGeometryScriptCopyBonesFromMeshOptions;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptBakeTypeOptions
+// 0x0018 (0x0018 - 0x0000)
+struct alignas(0x08) FGeometryScriptBakeTypeOptions final
+{
+public:
+	EGeometryScriptBakeTypes                      BakeType;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x17];                                       // 0x0001(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FGeometryScriptBakeTypeOptions;
+
 // ScriptStruct GeometryScriptingCore.GeometryScriptDynamicMeshBVH
 // 0x0020 (0x0020 - 0x0000)
 struct alignas(0x08) FGeometryScriptDynamicMeshBVH final
@@ -1310,41 +1339,6 @@ public:
 	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FGeometryScriptDynamicMeshBVH;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptMeshBooleanOptions
-// 0x000C (0x000C - 0x0000)
-struct FGeometryScriptMeshBooleanOptions final
-{
-public:
-	bool                                          bFillHoles;                                        // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSimplifyOutput;                                   // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         SimplifyPlanarTolerance;                           // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAllowEmptyResult;                                 // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGeometryScriptBooleanOutputSpace             OutputTransformSpace;                              // 0x0009(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A[0x2];                                        // 0x000A(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FGeometryScriptMeshBooleanOptions;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptBakeTextureOptions
-// 0x0028 (0x0028 - 0x0000)
-struct FGeometryScriptBakeTextureOptions final
-{
-public:
-	EGeometryScriptBakeResolution                 Resolution;                                        // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGeometryScriptBakeBitDepth                   BitDepth;                                          // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         GutterSize;                                        // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGeometryScriptBakeSamplesPerPixel            SamplesPerPixel;                                   // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture2D*                             SampleFilterMask;                                  // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	EGeometryScriptBakeFilteringType              FilteringType;                                     // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ProjectionDistance;                                // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bProjectionInWorldSpace;                           // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FGeometryScriptBakeTextureOptions;
 
 // ScriptStruct GeometryScriptingCore.GeometryScriptRenderCaptureCamera
 // 0x0048 (0x0048 - 0x0000)
@@ -1359,6 +1353,16 @@ public:
 	double                                        NearPlaneDist;                                     // 0x0040(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FGeometryScriptRenderCaptureCamera;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptTransformCollisionOptions
+// 0x0002 (0x0002 - 0x0000)
+struct FGeometryScriptTransformCollisionOptions final
+{
+public:
+	bool                                          bWarnOnInvalidTransforms;                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCenterTransformPivotPerShape;                     // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGeometryScriptTransformCollisionOptions;
 
 // ScriptStruct GeometryScriptingCore.GeometryScriptRenderCaptureCamerasForBoxOptions
 // 0x0028 (0x0028 - 0x0000)
@@ -1378,210 +1382,6 @@ public:
 	TArray<struct FVector>                        ExtraViewFromPositions;                            // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FGeometryScriptRenderCaptureCamerasForBoxOptions;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptConvexHullOptions
-// 0x000C (0x000C - 0x0000)
-struct FGeometryScriptConvexHullOptions final
-{
-public:
-	bool                                          bPrefilterVertices;                                // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         PrefilterGridResolution;                           // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SimplifyToFaceCount;                               // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGeometryScriptConvexHullOptions;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptDebugMessage
-// 0x0018 (0x0018 - 0x0000)
-struct FGeometryScriptDebugMessage final
-{
-public:
-	EGeometryScriptDebugMessageType               MessageType;                                       // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGeometryScriptErrorType                      ErrorType;                                         // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   Message;                                           // 0x0008(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGeometryScriptDebugMessage;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptCopyMorphTargetToAssetOptions
-// 0x0004 (0x0004 - 0x0000)
-struct FGeometryScriptCopyMorphTargetToAssetOptions final
-{
-public:
-	bool                                          bOverwriteExistingTarget;                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEmitTransaction;                                  // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bDeferMeshPostEditChange;                          // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCopyNormals;                                      // 0x0003(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGeometryScriptCopyMorphTargetToAssetOptions;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptSculptLayerUpdateOptions
-// 0x0001 (0x0001 - 0x0000)
-struct FGeometryScriptSculptLayerUpdateOptions final
-{
-public:
-	bool                                          bRecomputeNormals;                                 // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGeometryScriptSculptLayerUpdateOptions;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptCollisionFromMeshOptions
-// 0x0030 (0x0030 - 0x0000)
-struct FGeometryScriptCollisionFromMeshOptions final
-{
-public:
-	bool                                          bEmitTransaction;                                  // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGeometryScriptCollisionGenerationMethod      Method;                                            // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAutoDetectSpheres;                                // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAutoDetectBoxes;                                  // 0x0003(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAutoDetectCapsules;                               // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         MinThickness;                                      // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSimplifyHulls;                                    // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ConvexHullTargetFaceCount;                         // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxConvexHullsPerMesh;                             // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ConvexDecompositionSearchFactor;                   // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ConvexDecompositionErrorTolerance;                 // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ConvexDecompositionMinPartThickness;               // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SweptHullSimplifyTolerance;                        // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGeometryScriptSweptHullAxis                  SweptHullAxis;                                     // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRemoveFullyContainedShapes;                       // 0x0029(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A[0x2];                                       // 0x002A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         MaxShapeCount;                                     // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGeometryScriptCollisionFromMeshOptions;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptSetSimpleCollisionOptions
-// 0x0001 (0x0001 - 0x0000)
-struct FGeometryScriptSetSimpleCollisionOptions final
-{
-public:
-	bool                                          bEmitTransaction;                                  // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGeometryScriptSetSimpleCollisionOptions;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptSetStaticMeshCollisionOptions
-// 0x0001 (0x0001 - 0x0000)
-struct FGeometryScriptSetStaticMeshCollisionOptions final
-{
-public:
-	bool                                          bMarkAsCustomized;                                 // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGeometryScriptSetStaticMeshCollisionOptions;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptBakeTypeOptions
-// 0x0018 (0x0018 - 0x0000)
-struct alignas(0x08) FGeometryScriptBakeTypeOptions final
-{
-public:
-	EGeometryScriptBakeTypes                      BakeType;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x17];                                       // 0x0001(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FGeometryScriptBakeTypeOptions;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptBakeOutputType
-// 0x0080 (0x0080 - 0x0000)
-struct FGeometryScriptBakeOutputType final
-{
-public:
-	EGeometryScriptBakeOutputMode                 OutputMode;                                        // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGeometryScriptBakeTypeOptions         RGBA;                                              // 0x0008(0x0018)(BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FGeometryScriptBakeTypeOptions         R;                                                 // 0x0020(0x0018)(BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FGeometryScriptBakeTypeOptions         G;                                                 // 0x0038(0x0018)(BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FGeometryScriptBakeTypeOptions         B;                                                 // 0x0050(0x0018)(BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FGeometryScriptBakeTypeOptions         A;                                                 // 0x0068(0x0018)(BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGeometryScriptBakeOutputType;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptCopyMeshFromComponentOptions
-// 0x000C (0x000C - 0x0000)
-struct FGeometryScriptCopyMeshFromComponentOptions final
-{
-public:
-	bool                                          bWantNormals;                                      // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bWantTangents;                                     // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bWantInstanceColors;                               // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGeometryScriptMeshReadLOD             RequestedLOD;                                      // 0x0004(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGeometryScriptCopyMeshFromComponentOptions;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptAppendMeshOptions
-// 0x0001 (0x0001 - 0x0000)
-struct FGeometryScriptAppendMeshOptions final
-{
-public:
-	EGeometryScriptCombineAttributesMode          CombineMode;                                       // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGeometryScriptAppendMeshOptions;
-
-// ScriptStruct GeometryScriptingCore.NavigableConvexDecompositionOptions
-// 0x0048 (0x0048 - 0x0000)
-struct FNavigableConvexDecompositionOptions final
-{
-public:
-	double                                        MinRadius;                                         // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        Tolerance;                                         // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIgnoreUnreachableInternalSpace;                   // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FVector>                        CustomNavigablePositions;                          // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FPlane>                         UnreachablePlanes;                                 // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FNegativeSpaceDirectionalToleranceScale> ToleranceDirectionalScales;               // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, AdvancedDisplay, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FNavigableConvexDecompositionOptions;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptConvexHullSimplificationOptions
-// 0x0010 (0x0010 - 0x0000)
-struct FGeometryScriptConvexHullSimplificationOptions final
-{
-public:
-	EGeometryScriptConvexHullSimplifyMethod       SimplificationMethod;                              // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         SimplificationDistanceThreshold;                   // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SimplificationAngleThreshold;                      // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MinTargetFaceCount;                                // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGeometryScriptConvexHullSimplificationOptions;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptConvexHullApproximationOptions
-// 0x000C (0x000C - 0x0000)
-struct FGeometryScriptConvexHullApproximationOptions final
-{
-public:
-	bool                                          bFitSpheres;                                       // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bFitBoxes;                                         // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bFitCapsules;                                      // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         DistanceThreshold;                                 // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         VolumeDiffThreshold_Fraction;                      // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGeometryScriptConvexHullApproximationOptions;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptSweptHullOptions
-// 0x0018 (0x0018 - 0x0000)
-struct FGeometryScriptSweptHullOptions final
-{
-public:
-	bool                                          bPrefilterVertices;                                // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         PrefilterGridResolution;                           // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MinThickness;                                      // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSimplify;                                         // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         MinEdgeLength;                                     // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SimplifyTolerance;                                 // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGeometryScriptSweptHullOptions;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptMeshSelection
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FGeometryScriptMeshSelection final
-{
-public:
-	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FGeometryScriptMeshSelection;
 
 // ScriptStruct GeometryScriptingCore.GeometryScriptNaniteOptions
 // 0x000C (0x000C - 0x0000)
@@ -1622,6 +1422,232 @@ public:
 };
 DUMPER7_ASSERTS_FGeometryScriptCopyMeshToAssetOptions;
 
+// ScriptStruct GeometryScriptingCore.GeometryScriptNonUniformPointSamplingOptions
+// 0x0018 (0x0018 - 0x0000)
+struct FGeometryScriptNonUniformPointSamplingOptions final
+{
+public:
+	float                                         MaxSamplingRadius;                                 // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGeometryScriptSamplingDistributionMode       SizeDistribution;                                  // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        SizeDistributionPower;                             // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGeometryScriptSamplingWeightMode             WeightMode;                                        // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInvertWeights;                                    // 0x0011(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FGeometryScriptNonUniformPointSamplingOptions;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptDebugMessage
+// 0x0018 (0x0018 - 0x0000)
+struct FGeometryScriptDebugMessage final
+{
+public:
+	EGeometryScriptDebugMessageType               MessageType;                                       // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGeometryScriptErrorType                      ErrorType;                                         // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   Message;                                           // 0x0008(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGeometryScriptDebugMessage;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptCollisionFromMeshOptions
+// 0x0030 (0x0030 - 0x0000)
+struct FGeometryScriptCollisionFromMeshOptions final
+{
+public:
+	bool                                          bEmitTransaction;                                  // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGeometryScriptCollisionGenerationMethod      Method;                                            // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAutoDetectSpheres;                                // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAutoDetectBoxes;                                  // 0x0003(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAutoDetectCapsules;                               // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         MinThickness;                                      // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSimplifyHulls;                                    // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ConvexHullTargetFaceCount;                         // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxConvexHullsPerMesh;                             // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ConvexDecompositionSearchFactor;                   // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ConvexDecompositionErrorTolerance;                 // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ConvexDecompositionMinPartThickness;               // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SweptHullSimplifyTolerance;                        // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGeometryScriptSweptHullAxis                  SweptHullAxis;                                     // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRemoveFullyContainedShapes;                       // 0x0029(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2A[0x2];                                       // 0x002A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         MaxShapeCount;                                     // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGeometryScriptCollisionFromMeshOptions;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptSetSimpleCollisionOptions
+// 0x0001 (0x0001 - 0x0000)
+struct FGeometryScriptSetSimpleCollisionOptions final
+{
+public:
+	bool                                          bEmitTransaction;                                  // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGeometryScriptSetSimpleCollisionOptions;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptBakeVertexOptions
+// 0x000C (0x000C - 0x0000)
+struct FGeometryScriptBakeVertexOptions final
+{
+public:
+	EGeometryScriptBakeVertexTopology             TopologyMode;                                      // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSplitAtNormalSeams;                               // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSplitAtUVSeams;                                   // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ProjectionDistance;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bProjectionInWorldSpace;                           // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FGeometryScriptBakeVertexOptions;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptSetStaticMeshCollisionOptions
+// 0x0001 (0x0001 - 0x0000)
+struct FGeometryScriptSetStaticMeshCollisionOptions final
+{
+public:
+	bool                                          bMarkAsCustomized;                                 // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGeometryScriptSetStaticMeshCollisionOptions;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptSplineSamplingOptions
+// 0x0014 (0x0014 - 0x0000)
+struct FGeometryScriptSplineSamplingOptions final
+{
+public:
+	int32                                         NumSamples;                                        // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ErrorTolerance;                                    // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGeometryScriptSampleSpacing                  SampleSpacing;                                     // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESplineCoordinateSpace                        CoordinateSpace;                                   // 0x0009(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGeometryScriptEvaluateSplineRange            RangeMethod;                                       // 0x000A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B[0x1];                                        // 0x000B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         RangeStart;                                        // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RangeEnd;                                          // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGeometryScriptSplineSamplingOptions;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptSimpleMeshBuffers
+// 0x00D0 (0x00D0 - 0x0000)
+struct FGeometryScriptSimpleMeshBuffers final
+{
+public:
+	TArray<struct FVector>                        Vertices;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FVector>                        Normals;                                           // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FVector2D>                      UV0;                                               // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FVector2D>                      UV1;                                               // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FVector2D>                      UV2;                                               // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FVector2D>                      UV3;                                               // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FVector2D>                      UV4;                                               // 0x0060(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FVector2D>                      UV5;                                               // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FVector2D>                      UV6;                                               // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FVector2D>                      UV7;                                               // 0x0090(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLinearColor>                   VertexColors;                                      // 0x00A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FIntVector>                     Triangles;                                         // 0x00B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 TriGroupIDs;                                       // 0x00C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGeometryScriptSimpleMeshBuffers;
+
+// ScriptStruct GeometryScriptingCore.ComputeNegativeSpaceOptions
+// 0x0038 (0x0038 - 0x0000)
+struct FComputeNegativeSpaceOptions final
+{
+public:
+	ENegativeSpaceSampleMethod                    SampleMethod;                                      // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRequireSearchSampleCoverage;                      // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOnlyConnectedToHull;                              // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         MaxVoxelsPerDim;                                   // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TargetNumSamples;                                  // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        MinSampleSpacing;                                  // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        NegativeSpaceTolerance;                            // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FNegativeSpaceDirectionalToleranceScale> ToleranceDirectionalScales;               // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+	double                                        MinRadius;                                         // 0x0030(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FComputeNegativeSpaceOptions;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptMergeSimpleCollisionOptions
+// 0x0080 (0x0080 - 0x0000)
+struct FGeometryScriptMergeSimpleCollisionOptions final
+{
+public:
+	int32                                         MaxShapeCount;                                     // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        ErrorTolerance;                                    // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        MinThicknessTolerance;                             // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bConsiderAllPossibleMerges;                        // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGeometryScriptSphereCovering          PrecomputedNegativeSpace;                          // 0x0020(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	bool                                          bComputeNegativeSpace;                             // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FComputeNegativeSpaceOptions           ComputeNegativeSpaceOptions;                       // 0x0038(0x0038)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FGeometryScriptSimpleCollisionTriangulationOptions ShapeToHullTriangulation;              // 0x0070(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGeometryScriptMergeSimpleCollisionOptions;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptConvexHullSimplificationOptions
+// 0x0010 (0x0010 - 0x0000)
+struct FGeometryScriptConvexHullSimplificationOptions final
+{
+public:
+	EGeometryScriptConvexHullSimplifyMethod       SimplificationMethod;                              // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         SimplificationDistanceThreshold;                   // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SimplificationAngleThreshold;                      // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MinTargetFaceCount;                                // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGeometryScriptConvexHullSimplificationOptions;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptConvexHullOptions
+// 0x000C (0x000C - 0x0000)
+struct FGeometryScriptConvexHullOptions final
+{
+public:
+	bool                                          bPrefilterVertices;                                // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         PrefilterGridResolution;                           // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SimplifyToFaceCount;                               // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGeometryScriptConvexHullOptions;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptConvexDecompositionOptions
+// 0x0028 (0x0028 - 0x0000)
+struct FGeometryScriptConvexDecompositionOptions final
+{
+public:
+	int32                                         NumHulls;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        SearchFactor;                                      // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        ErrorTolerance;                                    // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        MinPartThickness;                                  // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SimplifyToFaceCount;                               // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FGeometryScriptConvexDecompositionOptions;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptCopyMeshFromAssetOptions
+// 0x0004 (0x0004 - 0x0000)
+struct FGeometryScriptCopyMeshFromAssetOptions final
+{
+public:
+	bool                                          bApplyBuildSettings;                               // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRequestTangents;                                  // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIgnoreRemoveDegenerates;                          // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseBuildScale;                                    // 0x0003(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGeometryScriptCopyMeshFromAssetOptions;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptCopyMorphTargetToAssetOptions
+// 0x0004 (0x0004 - 0x0000)
+struct FGeometryScriptCopyMorphTargetToAssetOptions final
+{
+public:
+	bool                                          bOverwriteExistingTarget;                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEmitTransaction;                                  // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDeferMeshPostEditChange;                          // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCopyNormals;                                      // 0x0003(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGeometryScriptCopyMorphTargetToAssetOptions;
+
 // ScriptStruct GeometryScriptingCore.GeometryScriptCopySkinWeightProfileToAssetOptions
 // 0x0003 (0x0003 - 0x0000)
 struct FGeometryScriptCopySkinWeightProfileToAssetOptions final
@@ -1633,6 +1659,21 @@ public:
 };
 DUMPER7_ASSERTS_FGeometryScriptCopySkinWeightProfileToAssetOptions;
 
+// ScriptStruct GeometryScriptingCore.GeometryScriptBakeOutputType
+// 0x0080 (0x0080 - 0x0000)
+struct FGeometryScriptBakeOutputType final
+{
+public:
+	EGeometryScriptBakeOutputMode                 OutputMode;                                        // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGeometryScriptBakeTypeOptions         RGBA;                                              // 0x0008(0x0018)(BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FGeometryScriptBakeTypeOptions         R;                                                 // 0x0020(0x0018)(BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FGeometryScriptBakeTypeOptions         G;                                                 // 0x0038(0x0018)(BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FGeometryScriptBakeTypeOptions         B;                                                 // 0x0050(0x0018)(BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FGeometryScriptBakeTypeOptions         A;                                                 // 0x0068(0x0018)(BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGeometryScriptBakeOutputType;
+
 // ScriptStruct GeometryScriptingCore.GeometryScriptBakeTargetMeshOptions
 // 0x0004 (0x0004 - 0x0000)
 struct FGeometryScriptBakeTargetMeshOptions final
@@ -1641,6 +1682,18 @@ public:
 	int32                                         TargetUVLayer;                                     // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FGeometryScriptBakeTargetMeshOptions;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptBakeSourceMeshOptions
+// 0x0010 (0x0010 - 0x0000)
+struct FGeometryScriptBakeSourceMeshOptions final
+{
+public:
+	class UTexture2D*                             SourceNormalMap;                                   // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	int32                                         SourceNormalUVLayer;                               // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGeometryScriptBakeNormalSpace                SourceNormalSpace;                                 // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FGeometryScriptBakeSourceMeshOptions;
 
 // ScriptStruct GeometryScriptingCore.GeometryScriptBakeRenderCaptureOptions
 // 0x0040 (0x0040 - 0x0000)
@@ -1670,50 +1723,25 @@ public:
 };
 DUMPER7_ASSERTS_FGeometryScriptBakeRenderCaptureOptions;
 
-// ScriptStruct GeometryScriptingCore.GeometryScriptRenderCaptureTextures
-// 0x0090 (0x0090 - 0x0000)
-struct FGeometryScriptRenderCaptureTextures final
+// ScriptStruct GeometryScriptingCore.GeometryScriptMergeVertexOptions
+// 0x0002 (0x0002 - 0x0000)
+struct FGeometryScriptMergeVertexOptions final
 {
 public:
-	class UTexture2D*                             BaseColorMap;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	bool                                          bHasBaseColorMap;                                  // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture2D*                             NormalMap;                                         // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	bool                                          bHasNormalMap;                                     // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture2D*                             PackedMRSMap;                                      // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	bool                                          bHasPackedMRSMap;                                  // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture2D*                             MetallicMap;                                       // 0x0030(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	bool                                          bHasMetallicMap;                                   // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture2D*                             RoughnessMap;                                      // 0x0040(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	bool                                          bHasRoughnessMap;                                  // 0x0048(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture2D*                             SpecularMap;                                       // 0x0050(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	bool                                          bHasSpecularMap;                                   // 0x0058(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture2D*                             EmissiveMap;                                       // 0x0060(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	bool                                          bHasEmissiveMap;                                   // 0x0068(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture2D*                             OpacityMap;                                        // 0x0070(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	bool                                          bHasOpacityMap;                                    // 0x0078(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture2D*                             SubsurfaceColorMap;                                // 0x0080(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	bool                                          bHasSubsurfaceColorMap;                            // 0x0088(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_89[0x7];                                       // 0x0089(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bOnlyBoundary;                                     // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAllowNonBoundaryBowties;                          // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FGeometryScriptRenderCaptureTextures;
+DUMPER7_ASSERTS_FGeometryScriptMergeVertexOptions;
 
-// ScriptStruct GeometryScriptingCore.GeometryScriptBoneWeight
-// 0x0008 (0x0008 - 0x0000)
-struct FGeometryScriptBoneWeight final
+// ScriptStruct GeometryScriptingCore.GeometryScriptPruneBoneWeightsOptions
+// 0x0002 (0x0002 - 0x0000)
+struct FGeometryScriptPruneBoneWeightsOptions final
 {
 public:
-	int32                                         BoneIndex;                                         // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Weight;                                            // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGeometryScriptPruneBoneWeightsAssignmentType ReassignmentType;                                  // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIgnoredInvalidBones;                              // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FGeometryScriptBoneWeight;
+DUMPER7_ASSERTS_FGeometryScriptPruneBoneWeightsOptions;
 
 // ScriptStruct GeometryScriptingCore.GeometryScriptSmoothBoneWeightsOptions
 // 0x0010 (0x0010 - 0x0000)
@@ -1728,51 +1756,49 @@ public:
 };
 DUMPER7_ASSERTS_FGeometryScriptSmoothBoneWeightsOptions;
 
-// ScriptStruct GeometryScriptingCore.GeometryScriptTransferBoneWeightsOptions
-// 0x0040 (0x0040 - 0x0000)
-struct FGeometryScriptTransferBoneWeightsOptions final
+// ScriptStruct GeometryScriptingCore.GeometryScriptBoneInfo
+// 0x00E0 (0x00E0 - 0x0000)
+struct FGeometryScriptBoneInfo final
 {
 public:
-	ETransferBoneWeightsMethod                    TransferMethod;                                    // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EOutputTargetMeshBones                        OutputTargetMeshBones;                             // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGeometryScriptBoneWeightProfile       SourceProfile;                                     // 0x0004(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FGeometryScriptBoneWeightProfile       TargetProfile;                                     // 0x000C(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        RadiusPercentage;                                  // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        NormalThreshold;                                   // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          LayeredMeshSupport;                                // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         NumSmoothingIterations;                            // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SmoothingStrength;                                 // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   InpaintMask;                                       // 0x0034(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         Index;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name;                                              // 0x0004(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ParentIndex;                                       // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             LocalTransform;                                    // 0x0010(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             WorldTransform;                                    // 0x0070(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           Color;                                             // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FGeometryScriptTransferBoneWeightsOptions;
+DUMPER7_ASSERTS_FGeometryScriptBoneInfo;
 
-// ScriptStruct GeometryScriptingCore.GeometryScriptCopyBonesFromMeshOptions
-// 0x0002 (0x0002 - 0x0000)
-struct FGeometryScriptCopyBonesFromMeshOptions final
-{
-public:
-	bool                                          ReindexWeights;                                    // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EBonesToCopyFromSource                        BonesToCopyFromSource;                             // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGeometryScriptCopyBonesFromMeshOptions;
-
-// ScriptStruct GeometryScriptingCore.GeometryScriptMeshSelfUnionOptions
+// ScriptStruct GeometryScriptingCore.GeometryScriptMeshBooleanOptions
 // 0x000C (0x000C - 0x0000)
-struct FGeometryScriptMeshSelfUnionOptions final
+struct FGeometryScriptMeshBooleanOptions final
 {
 public:
 	bool                                          bFillHoles;                                        // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bTrimFlaps;                                        // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSimplifyOutput;                                   // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bSimplifyOutput;                                   // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         SimplifyPlanarTolerance;                           // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WindingThreshold;                                  // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAllowEmptyResult;                                 // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGeometryScriptBooleanOutputSpace             OutputTransformSpace;                              // 0x0009(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x2];                                        // 0x000A(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FGeometryScriptMeshSelfUnionOptions;
+DUMPER7_ASSERTS_FGeometryScriptMeshBooleanOptions;
+
+// ScriptStruct GeometryScriptingCore.GeometryScriptMeshPlaneSliceOptions
+// 0x0014 (0x0014 - 0x0000)
+struct FGeometryScriptMeshPlaneSliceOptions final
+{
+public:
+	bool                                          bFillHoles;                                        // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         HoleFillMaterialID;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFillSpans;                                        // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         GapWidth;                                          // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         UVWorldDimension;                                  // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGeometryScriptMeshPlaneSliceOptions;
 
 // ScriptStruct GeometryScriptingCore.GeometryScriptMeshMirrorOptions
 // 0x0003 (0x0003 - 0x0000)
@@ -2203,16 +2229,14 @@ public:
 };
 DUMPER7_ASSERTS_FGeometryScriptUniformRemeshOptions;
 
-// ScriptStruct GeometryScriptingCore.GeometryScriptWeldEdgesOptions
-// 0x0008 (0x0008 - 0x0000)
-struct FGeometryScriptWeldEdgesOptions final
+// ScriptStruct GeometryScriptingCore.GeometryScriptResolveTJunctionOptions
+// 0x0004 (0x0004 - 0x0000)
+struct FGeometryScriptResolveTJunctionOptions final
 {
 public:
 	float                                         Tolerance;                                         // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bOnlyUniquePairs;                                  // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FGeometryScriptWeldEdgesOptions;
+DUMPER7_ASSERTS_FGeometryScriptResolveTJunctionOptions;
 
 // ScriptStruct GeometryScriptingCore.GeometryScriptSnapBoundariesOptions
 // 0x000C (0x000C - 0x0000)
@@ -2293,20 +2317,14 @@ public:
 };
 DUMPER7_ASSERTS_FGeometryScriptMeshPointSamplingOptions;
 
-// ScriptStruct GeometryScriptingCore.GeometryScriptNonUniformPointSamplingOptions
-// 0x0018 (0x0018 - 0x0000)
-struct FGeometryScriptNonUniformPointSamplingOptions final
+// ScriptStruct GeometryScriptingCore.GeometryScriptSculptLayerUpdateOptions
+// 0x0001 (0x0001 - 0x0000)
+struct FGeometryScriptSculptLayerUpdateOptions final
 {
 public:
-	float                                         MaxSamplingRadius;                                 // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGeometryScriptSamplingDistributionMode       SizeDistribution;                                  // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        SizeDistributionPower;                             // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGeometryScriptSamplingWeightMode             WeightMode;                                        // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInvertWeights;                                    // 0x0011(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bRecomputeNormals;                                 // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FGeometryScriptNonUniformPointSamplingOptions;
+DUMPER7_ASSERTS_FGeometryScriptSculptLayerUpdateOptions;
 
 // ScriptStruct GeometryScriptingCore.GeometryScriptPlanarSimplifyOptions
 // 0x0008 (0x0008 - 0x0000)
@@ -2402,25 +2420,15 @@ public:
 };
 DUMPER7_ASSERTS_FGeometryScriptRepackUVsOptions;
 
-// ScriptStruct GeometryScriptingCore.GeometryScriptLayoutUVsOptions
-// 0x0078 (0x0078 - 0x0000)
-struct FGeometryScriptLayoutUVsOptions final
+// ScriptStruct GeometryScriptingCore.GeometryScriptExpMapUVOptions
+// 0x0008 (0x0008 - 0x0000)
+struct FGeometryScriptExpMapUVOptions final
 {
 public:
-	EGeometryScriptUVLayoutType                   LayoutType;                                        // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         TextureResolution;                                 // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Scale;                                             // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2D                              Translation;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPreserveScale;                                    // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPreserveRotation;                                 // 0x0021(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAllowFlips;                                       // 0x0022(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnableUDIMLayout;                                 // 0x0023(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<int32, int32>                            UDIMResolutions;                                   // 0x0028(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	int32                                         NormalSmoothingRounds;                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NormalSmoothingAlpha;                              // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FGeometryScriptLayoutUVsOptions;
+DUMPER7_ASSERTS_FGeometryScriptExpMapUVOptions;
 
 // ScriptStruct GeometryScriptingCore.GeometryScriptSpectralConformalUVOptions
 // 0x0001 (0x0001 - 0x0000)
@@ -2507,29 +2515,25 @@ public:
 };
 DUMPER7_ASSERTS_FGeometryScriptMeshProjectionSettings;
 
-// ScriptStruct GeometryScriptingCore.GeometryScriptBlurMeshVertexColorsOptions
-// 0x0004 (0x0004 - 0x0000)
-struct FGeometryScriptBlurMeshVertexColorsOptions final
+// ScriptStruct GeometryScriptingCore.GeometryScriptTransferMeshVertexColorsOptions
+// 0x0030 (0x0030 - 0x0000)
+struct FGeometryScriptTransferMeshVertexColorsOptions final
 {
 public:
-	bool                                          Red;                                               // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Green;                                             // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Blue;                                              // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Alpha;                                             // 0x0003(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ETransferVertexColorMethod                    TransferMethod;                                    // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        RadiusPercentage;                                  // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        NormalThreshold;                                   // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          LayeredMeshSupport;                                // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         NumSmoothingIterations;                            // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SmoothingStrength;                                 // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHardEdges;                                        // 0x0024(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         BiasRatio;                                         // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FGeometryScriptBlurMeshVertexColorsOptions;
-
-// ScriptStruct GeometryScriptingCore.GeometryScript3DGridParameters
-// 0x000C (0x000C - 0x0000)
-struct FGeometryScript3DGridParameters final
-{
-public:
-	EGeometryScriptGridSizingMethod               SizeMethod;                                        // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         GridCellSize;                                      // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         GridResolution;                                    // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGeometryScript3DGridParameters;
+DUMPER7_ASSERTS_FGeometryScriptTransferMeshVertexColorsOptions;
 
 // ScriptStruct GeometryScriptingCore.GeometryScriptSolidifyOptions
 // 0x0068 (0x0068 - 0x0000)
@@ -2550,22 +2554,19 @@ public:
 };
 DUMPER7_ASSERTS_FGeometryScriptSolidifyOptions;
 
-// ScriptStruct GeometryScriptingCore.GeometryScriptMorphologyOptions
-// 0x0060 (0x0060 - 0x0000)
-struct FGeometryScriptMorphologyOptions final
+// ScriptStruct GeometryScriptingCore.GeometryScriptPointClusteringOptions
+// 0x0020 (0x0020 - 0x0000)
+struct FGeometryScriptPointClusteringOptions final
 {
 public:
-	struct FGeometryScript3DGridParameters        SDFGridParameters;                                 // 0x0000(0x000C)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bUseSeparateMeshGrid;                              // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGeometryScript3DGridParameters        MeshGridParameters;                                // 0x0010(0x000C)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBox                                   CustomBounds;                                      // 0x0020(0x0038)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGeometryScriptMorphologicalOpType            Operation;                                         // 0x0058(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_59[0x3];                                       // 0x0059(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Distance;                                          // 0x005C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FVector>                        InitialClusterCenters;                             // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         TargetNumClusters;                                 // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGeometryScriptInitKMeansMethod               InitializeMethod;                                  // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         RandomSeed;                                        // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxIterations;                                     // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FGeometryScriptMorphologyOptions;
+DUMPER7_ASSERTS_FGeometryScriptPointClusteringOptions;
 
 // ScriptStruct GeometryScriptingCore.GeometryScriptPointPriorityOptions
 // 0x0018 (0x0018 - 0x0000)
@@ -2619,33 +2620,31 @@ public:
 };
 DUMPER7_ASSERTS_FGeometryScriptOpenPathOffsetOptions;
 
-// ScriptStruct GeometryScriptingCore.GeometryScriptSplineSamplingOptions
-// 0x0014 (0x0014 - 0x0000)
-struct FGeometryScriptSplineSamplingOptions final
+// ScriptStruct GeometryScriptingCore.GeometryScriptCopyMeshFromComponentOptions
+// 0x000C (0x000C - 0x0000)
+struct FGeometryScriptCopyMeshFromComponentOptions final
 {
 public:
-	int32                                         NumSamples;                                        // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ErrorTolerance;                                    // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGeometryScriptSampleSpacing                  SampleSpacing;                                     // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESplineCoordinateSpace                        CoordinateSpace;                                   // 0x0009(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGeometryScriptEvaluateSplineRange            RangeMethod;                                       // 0x000A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B[0x1];                                        // 0x000B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         RangeStart;                                        // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RangeEnd;                                          // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bWantNormals;                                      // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bWantTangents;                                     // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bWantInstanceColors;                               // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGeometryScriptMeshReadLOD             RequestedLOD;                                      // 0x0004(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FGeometryScriptSplineSamplingOptions;
+DUMPER7_ASSERTS_FGeometryScriptCopyMeshFromComponentOptions;
 
-// ScriptStruct GeometryScriptingCore.GeometryScriptDetermineMeshOcclusionOptions
-// 0x0010 (0x0010 - 0x0000)
-struct FGeometryScriptDetermineMeshOcclusionOptions final
+// ScriptStruct GeometryScriptingCore.GeometryScriptSampleTextureOptions
+// 0x0028 (0x0028 - 0x0000)
+struct FGeometryScriptSampleTextureOptions final
 {
 public:
-	double                                        SamplingDensity;                                   // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bDoubleSided;                                      // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         NumSearchDirections;                               // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGeometryScriptPixelSamplingMethod            SamplingMethod;                                    // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bWrap;                                             // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              UVScale;                                           // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              UVOffset;                                          // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FGeometryScriptDetermineMeshOcclusionOptions;
+DUMPER7_ASSERTS_FGeometryScriptSampleTextureOptions;
 
 // ScriptStruct GeometryScriptingCore.ComputeDistanceFieldSettings
 // 0x001C (0x001C - 0x0000)
@@ -2673,5 +2672,4 @@ public:
 };
 DUMPER7_ASSERTS_FDistanceFieldToTextureSettings;
 
-}
-
+SDK_NAMESPACE_END

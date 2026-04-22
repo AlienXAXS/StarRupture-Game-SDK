@@ -14,8 +14,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_SolarFlaresForCapture.BP_SolarFlaresForCapture_C
 // 0x01F0 (0x0498 - 0x02A8)
@@ -106,5 +105,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_SolarFlaresForCapture_C;
 
-}
-
+SDK_NAMESPACE_END

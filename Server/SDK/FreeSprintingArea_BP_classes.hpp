@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass FreeSprintingArea_BP.FreeSprintingArea_BP_C
 // 0x0010 (0x0388 - 0x0378)
@@ -40,5 +39,4 @@ public:
 };
 DUMPER7_ASSERTS_AFreeSprintingArea_BP_C;
 
-}
-
+SDK_NAMESPACE_END

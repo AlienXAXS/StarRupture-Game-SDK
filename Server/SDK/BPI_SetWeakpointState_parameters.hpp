@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BPI_SetWeakpointState.BPI_SetWeakpointState_C.SetWeakpointState
 // 0x0001 (0x0001 - 0x0000)
@@ -23,5 +23,5 @@ public:
 };
 DUMPER7_ASSERTS_BPI_SetWeakpointState_C_SetWeakpointState;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

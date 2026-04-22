@@ -14,8 +14,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ZipRail.BP_ZipRail_C
 // 0x00A0 (0x0740 - 0x06A0)
@@ -68,5 +67,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_ZipRail_C;
 
-}
-
+SDK_NAMESPACE_END

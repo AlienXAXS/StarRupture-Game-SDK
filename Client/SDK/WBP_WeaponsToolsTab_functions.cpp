@@ -14,8 +14,7 @@
 #include "WBP_WeaponsToolsTab_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_WeaponsToolsTab.WBP_WeaponsToolsTab_C.AddModIcon
 // (Event, Protected, BlueprintEvent)
@@ -72,5 +71,5 @@ void UWBP_WeaponsToolsTab_C::ExecuteUbergraph_WBP_WeaponsToolsTab(int32 EntryPoi
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

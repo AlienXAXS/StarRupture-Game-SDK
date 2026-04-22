@@ -15,8 +15,8 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function GA_MiningToolPassiveCooling.GA_MiningToolPassiveCooling_C.ExecuteUbergraph_GA_MiningToolPassiveCooling
 // 0x0228 (0x0228 - 0x0000)
@@ -114,5 +114,5 @@ public:
 };
 DUMPER7_ASSERTS_GA_MiningToolPassiveCooling_C_OnPerformAction_6A05B7EC444B9F45205F41900B8FE392;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

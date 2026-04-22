@@ -14,8 +14,7 @@
 #include "BP_Melee_Tier3_Actor_Character_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Melee_Tier3_Actor_Character.BP_Melee_Tier3_Actor_Character_C.AttachWeakpoint
 // (BlueprintCallable, BlueprintEvent)
@@ -481,5 +480,5 @@ void ABP_Melee_Tier3_Actor_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidd
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

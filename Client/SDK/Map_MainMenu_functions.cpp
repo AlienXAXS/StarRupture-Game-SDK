@@ -14,8 +14,7 @@
 #include "Map_MainMenu_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Map_MainMenu.Map_MainMenu_C.ReceiveEndPlay
 // (Event, Protected, BlueprintEvent)
@@ -112,5 +111,5 @@ void AMap_MainMenu_C::droneFPV()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

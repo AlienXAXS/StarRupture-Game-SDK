@@ -14,8 +14,7 @@
 #include "WBP_QuickUseMenu_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_QuickUseMenu.WBP_QuickUseMenu_C.OnMenuOpened
 // (Event, Public, BlueprintEvent)
@@ -74,5 +73,5 @@ void UWBP_QuickUseMenu_C::ExecuteUbergraph_WBP_QuickUseMenu(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

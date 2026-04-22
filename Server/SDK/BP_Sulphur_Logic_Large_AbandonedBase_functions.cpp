@@ -14,8 +14,7 @@
 #include "BP_Sulphur_Logic_Large_AbandonedBase_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Sulphur_Logic_Large_AbandonedBase.BP_Sulphur_Logic_Large_AbandonedBase_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
@@ -70,5 +69,5 @@ void ABP_Sulphur_Logic_Large_AbandonedBase_C::ExecuteUbergraph_BP_Sulphur_Logic_
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

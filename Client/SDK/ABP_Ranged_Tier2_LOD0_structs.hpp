@@ -14,8 +14,7 @@
 #include "AnimGraphRuntime_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct ABP_Ranged_Tier2_LOD0.ABP_Ranged_Tier2_LOD0_C.AnimBlueprintGeneratedConstantData
 // 0x1CCF (0x1CD0 - 0x0001)
@@ -275,5 +274,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Ranged_Tier2_LOD0__FAnimBlueprintGeneratedMutableData;
 
-}
-
+SDK_NAMESPACE_END

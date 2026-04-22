@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum AudioSynesthesia.EConstantQNormalizationEnum
 // NumValues: 0x0004
@@ -123,5 +122,4 @@ public:
 };
 DUMPER7_ASSERTS_FSynesthesiaSpectrumResults;
 
-}
-
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ParticleCatcher.BP_ParticleCatcher_C
 // 0x0020 (0x0668 - 0x0648)
@@ -45,5 +44,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_ParticleCatcher_C;
 
-}
-
+SDK_NAMESPACE_END

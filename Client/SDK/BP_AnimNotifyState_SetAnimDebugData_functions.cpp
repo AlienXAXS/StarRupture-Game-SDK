@@ -14,8 +14,7 @@
 #include "BP_AnimNotifyState_SetAnimDebugData_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_AnimNotifyState_SetAnimDebugData.BP_AnimNotifyState_SetAnimDebugData_C.Received_NotifyBegin
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
@@ -72,5 +71,5 @@ bool UBP_AnimNotifyState_SetAnimDebugData_C::Received_NotifyEnd(class USkeletalM
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

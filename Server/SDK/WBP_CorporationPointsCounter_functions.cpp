@@ -14,8 +14,7 @@
 #include "WBP_CorporationPointsCounter_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_CorporationPointsCounter.WBP_CorporationPointsCounter_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -56,5 +55,5 @@ void UWBP_CorporationPointsCounter_C::ExecuteUbergraph_WBP_CorporationPointsCoun
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

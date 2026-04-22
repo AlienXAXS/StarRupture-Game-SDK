@@ -16,8 +16,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ZipLine_OLD.BP_ZipLine_OLD_C
 // 0x0180 (0x0828 - 0x06A8)
@@ -114,5 +113,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_ZipLine_OLD_C;
 
-}
-
+SDK_NAMESPACE_END

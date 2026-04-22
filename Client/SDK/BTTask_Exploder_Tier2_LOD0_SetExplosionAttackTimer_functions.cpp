@@ -14,8 +14,7 @@
 #include "BTTask_Exploder_Tier2_LOD0_SetExplosionAttackTimer_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTTask_Exploder_Tier2_LOD0_SetExplosionAttackTimer.BTTask_Exploder_Tier2_LOD0_SetExplosionAttackTimer_C.ExecuteUbergraph_BTTask_Exploder_Tier2_LOD0_SetExplosionAttackTimer
 // (Final, UbergraphFunction)
@@ -58,5 +57,5 @@ void UBTTask_Exploder_Tier2_LOD0_SetExplosionAttackTimer_C::ReceiveExecuteAI(cla
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

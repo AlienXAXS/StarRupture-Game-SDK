@@ -13,8 +13,7 @@
 #include "BP_PlacementHelperReplicatedBase_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Zipline_460_Helper.BP_Zipline_460_Helper_C
 // 0x0000 (0x08B0 - 0x08B0)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Zipline_460_Helper_C;
 
-}
-
+SDK_NAMESPACE_END

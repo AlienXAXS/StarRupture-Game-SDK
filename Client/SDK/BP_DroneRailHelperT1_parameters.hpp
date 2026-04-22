@@ -15,8 +15,8 @@
 #include "AuActorPlacement_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.BP_OnCollisionHitsChanged
 // 0x01D0 (0x01D0 - 0x0000)
@@ -185,5 +185,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_DroneRailHelperT1_C_SetSplineSegment;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

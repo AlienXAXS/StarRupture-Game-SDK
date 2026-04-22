@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_DeliveryStorage.BP_DeliveryStorage_C
 // 0x0010 (0x0668 - 0x0658)
@@ -40,5 +39,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_DeliveryStorage_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -13,8 +13,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_DroneRailSupportHelper.BP_DroneRailSupportHelper_C.UserConstructionScript
 // 0x0010 (0x0010 - 0x0000)
@@ -56,5 +56,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_DroneRailSupportHelper_C_ExecuteUbergraph_BP_DroneRailSupportHelper;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

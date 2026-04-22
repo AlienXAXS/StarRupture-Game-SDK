@@ -14,8 +14,7 @@
 #include "WBP_WeaponWheel_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_WeaponWheel.WBP_WeaponWheel_C.ExecuteUbergraph_WBP_WeaponWheel
 // (Final, UbergraphFunction, HasDefaults)
@@ -56,5 +55,5 @@ void UWBP_WeaponWheel_C::PreConstruct(bool IsDesignTime)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

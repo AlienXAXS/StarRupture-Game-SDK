@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_FrontendStateComponent.BP_FrontendStateComponent_C
 // 0x0000 (0x0140 - 0x0140)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_FrontendStateComponent_C;
 
-}
-
+SDK_NAMESPACE_END

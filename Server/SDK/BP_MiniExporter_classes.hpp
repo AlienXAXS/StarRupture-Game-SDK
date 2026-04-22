@@ -14,8 +14,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_MiniExporter.BP_MiniExporter_C
 // 0x00C8 (0x07A8 - 0x06E0)
@@ -74,5 +73,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_MiniExporter_C;
 
-}
-
+SDK_NAMESPACE_END

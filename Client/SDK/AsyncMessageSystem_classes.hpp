@@ -10,15 +10,14 @@
 
 #include "Basic.hpp"
 
-#include "DeveloperSettings_classes.hpp"
 #include "AsyncMessageSystem_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_classes.hpp"
+#include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class AsyncMessageSystem.AsyncAction_ListenForAsyncMessage
 // 0x0068 (0x0098 - 0x0030)
@@ -206,5 +205,4 @@ public:
 };
 DUMPER7_ASSERTS_UAsyncMessageWorldSubsystem;
 
-}
-
+SDK_NAMESPACE_END

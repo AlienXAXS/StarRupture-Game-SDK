@@ -14,8 +14,7 @@
 #include "CommonUser_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function CommonUser.AsyncAction_CommonUserInitialize.InitializeForLocalPlay
 // (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
@@ -1248,5 +1247,5 @@ bool UCommonUserSubsystem::ShouldWaitForStartInput() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

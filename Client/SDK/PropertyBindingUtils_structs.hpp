@@ -13,8 +13,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum PropertyBindingUtils.EPropertyBindingAccessType
 // NumValues: 0x0008
@@ -200,5 +199,4 @@ public:
 };
 DUMPER7_ASSERTS_FPropertyBindingBindingCollection;
 
-}
-
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_GenericItemPickup.BP_GenericItemPickup_C
 // 0x0018 (0x04C8 - 0x04B0)
@@ -41,5 +40,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_GenericItemPickup_C;
 
-}
-
+SDK_NAMESPACE_END

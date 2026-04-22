@@ -11,16 +11,15 @@
 #include "Basic.hpp"
 
 #include "CameraCalibrationCore_structs.hpp"
+#include "CinematicCamera_structs.hpp"
+#include "ProceduralMeshComponent_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "ProceduralMeshComponent_classes.hpp"
-#include "CinematicCamera_structs.hpp"
 #include "Engine_classes.hpp"
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class CameraCalibrationCore.LensDistortionModelHandlerBase
 // 0x00A8 (0x00D0 - 0x0028)
@@ -500,5 +499,4 @@ public:
 };
 DUMPER7_ASSERTS_USphericalLensModel;
 
-}
-
+SDK_NAMESPACE_END

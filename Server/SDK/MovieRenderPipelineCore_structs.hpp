@@ -13,8 +13,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum MovieRenderPipelineCore.EMovieGraphValueType
 // NumValues: 0x0014
@@ -406,15 +405,6 @@ public:
 };
 DUMPER7_ASSERTS_FMovieGraphEvaluatedSettingsStack;
 
-// ScriptStruct MovieRenderPipelineCore.MovieGraphEvaluatedBranchConfig
-// 0x0050 (0x0050 - 0x0000)
-struct FMovieGraphEvaluatedBranchConfig final
-{
-public:
-	TMap<class FString, struct FMovieGraphEvaluatedSettingsStack> NamedNodes;                        // 0x0000(0x0050)(Transient, NativeAccessSpecifierPrivate)
-};
-DUMPER7_ASSERTS_FMovieGraphEvaluatedBranchConfig;
-
 // ScriptStruct MovieRenderPipelineCore.MovieGraphPostRenderVideoPlayOptions
 // 0x0030 (0x0030 - 0x0000)
 struct FMovieGraphPostRenderVideoPlayOptions
@@ -441,20 +431,14 @@ public:
 };
 DUMPER7_ASSERTS_FMovieGraphPostRenderImageSequencePlayOptions;
 
-// ScriptStruct MovieRenderPipelineCore.MovieGraphPostRenderSettings
-// 0x00E0 (0x00E0 - 0x0000)
-struct FMovieGraphPostRenderSettings final
+// ScriptStruct MovieRenderPipelineCore.MovieGraphEvaluatedBranchConfig
+// 0x0050 (0x0050 - 0x0000)
+struct FMovieGraphEvaluatedBranchConfig final
 {
 public:
-	TArray<class FString>                         OutputTypePriorityOrder;                           // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	EMovieGraphOutputTypePlayback                 OutputTypePlayback;                                // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMovieGraphPostRenderImageSequencePlayOptions PostRenderImageSequencePlayOptions;         // 0x0018(0x0038)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FMovieGraphPostRenderVideoPlayOptions  PostRenderAppleProResPlayOptions;                  // 0x0050(0x0030)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FMovieGraphPostRenderVideoPlayOptions  PostRenderAvidDNxHRPlayOptions;                    // 0x0080(0x0030)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FMovieGraphPostRenderVideoPlayOptions  PostRenderMP4PlayOptions;                          // 0x00B0(0x0030)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<class FString, struct FMovieGraphEvaluatedSettingsStack> NamedNodes;                        // 0x0000(0x0050)(Transient, NativeAccessSpecifierPrivate)
 };
-DUMPER7_ASSERTS_FMovieGraphPostRenderSettings;
+DUMPER7_ASSERTS_FMovieGraphEvaluatedBranchConfig;
 
 // ScriptStruct MovieRenderPipelineCore.MovieGraphEvaluationContext_VisitedNodeInfo
 // 0x0050 (0x0050 - 0x0000)
@@ -528,17 +512,16 @@ public:
 };
 DUMPER7_ASSERTS_FMovieGraphEvaluationContext;
 
-// ScriptStruct MovieRenderPipelineCore.MoviePipelineConsoleVariableEntry
-// 0x0018 (0x0018 - 0x0000)
-struct FMoviePipelineConsoleVariableEntry final
+// ScriptStruct MovieRenderPipelineCore.MoviePipelineSidecarCamera
+// 0x0028 (0x0028 - 0x0000)
+struct FMoviePipelineSidecarCamera final
 {
 public:
-	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Value;                                             // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsEnabled;                                        // 0x0014(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FGuid                                  BindingID;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_10[0x8];                                       // 0x0010(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Name;                                              // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FMoviePipelineConsoleVariableEntry;
+DUMPER7_ASSERTS_FMoviePipelineSidecarCamera;
 
 // ScriptStruct MovieRenderPipelineCore.MovieGraphImagePreviewData
 // 0x0058 (0x0058 - 0x0000)
@@ -565,6 +548,21 @@ public:
 };
 DUMPER7_ASSERTS_FMovieGraphInitConfig;
 
+// ScriptStruct MovieRenderPipelineCore.MovieGraphPostRenderSettings
+// 0x00E0 (0x00E0 - 0x0000)
+struct FMovieGraphPostRenderSettings final
+{
+public:
+	TArray<class FString>                         OutputTypePriorityOrder;                           // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	EMovieGraphOutputTypePlayback                 OutputTypePlayback;                                // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMovieGraphPostRenderImageSequencePlayOptions PostRenderImageSequencePlayOptions;         // 0x0018(0x0038)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FMovieGraphPostRenderVideoPlayOptions  PostRenderAppleProResPlayOptions;                  // 0x0050(0x0030)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FMovieGraphPostRenderVideoPlayOptions  PostRenderAvidDNxHRPlayOptions;                    // 0x0080(0x0030)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FMovieGraphPostRenderVideoPlayOptions  PostRenderMP4PlayOptions;                          // 0x00B0(0x0030)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMovieGraphPostRenderSettings;
+
 // ScriptStruct MovieRenderPipelineCore.MovieGraphResolveArgs
 // 0x00A0 (0x00A0 - 0x0000)
 struct FMovieGraphResolveArgs final
@@ -575,15 +573,16 @@ public:
 };
 DUMPER7_ASSERTS_FMovieGraphResolveArgs;
 
-// ScriptStruct MovieRenderPipelineCore.MovieGraphActorQueryEntry
-// 0x0038 (0x0038 - 0x0000)
-struct FMovieGraphActorQueryEntry final
+// ScriptStruct MovieRenderPipelineCore.MoviePipelineFormatArgs
+// 0x00A8 (0x00A8 - 0x0000)
+struct FMoviePipelineFormatArgs final
 {
 public:
-	TSoftObjectPtr<class AActor>                  ActorToMatch;                                      // 0x0000(0x0028)(Edit, BlueprintVisible, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<TSoftObjectPtr<class UActorComponent>> ComponentsToMatch;                                 // 0x0028(0x0010)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic)
+	TMap<class FString, class FString>            FilenameArguments;                                 // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<class FString, class FString>            FileMetadata;                                      // 0x0050(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class UMoviePipelineExecutorJob*              InJob;                                             // 0x00A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 };
-DUMPER7_ASSERTS_FMovieGraphActorQueryEntry;
+DUMPER7_ASSERTS_FMoviePipelineFormatArgs;
 
 // ScriptStruct MovieRenderPipelineCore.MovieGraphFilenameResolveParams
 // 0x0158 (0x0158 - 0x0000)
@@ -615,35 +614,6 @@ public:
 	uint8                                         Pad_154[0x4];                                      // 0x0154(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FMovieGraphFilenameResolveParams;
-
-// ScriptStruct MovieRenderPipelineCore.MoviePipelineFilenameResolveParams
-// 0x0120 (0x0120 - 0x0000)
-struct FMoviePipelineFilenameResolveParams final
-{
-public:
-	int32                                         FrameNumber;                                       // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         FrameNumberShot;                                   // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         FrameNumberRel;                                    // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         FrameNumberShotRel;                                // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 CameraNameOverride;                                // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ShotNameOverride;                                  // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ZeroPadFrameNumberCount;                           // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bForceRelativeFrameNumbers;                        // 0x0034(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_35[0x3];                                       // 0x0035(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 FileNameOverride;                                  // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class FString, class FString>            FileNameFormatOverrides;                           // 0x0048(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TMap<class FString, class FString>            FileMetadata;                                      // 0x0098(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FDateTime                              InitializationTime;                                // 0x00E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTimespan                              InitializationTimeOffset;                          // 0x00F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         InitializationVersion;                             // 0x00F8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_FC[0x4];                                       // 0x00FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMoviePipelineExecutorJob*              Job;                                               // 0x0100(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_108[0x8];                                      // 0x0108(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMoviePipelineExecutorShot*             ShotOverride;                                      // 0x0110(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	int32                                         AdditionalFrameNumberOffset;                       // 0x0118(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11C[0x4];                                      // 0x011C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMoviePipelineFilenameResolveParams;
 
 // ScriptStruct MovieRenderPipelineCore.MovieGraphVersioningSettings
 // 0x0008 (0x0008 - 0x0000)
@@ -733,6 +703,16 @@ public:
 };
 DUMPER7_ASSERTS_FMovieGraphBranch;
 
+// ScriptStruct MovieRenderPipelineCore.MovieGraphActorQueryEntry
+// 0x0038 (0x0038 - 0x0000)
+struct FMovieGraphActorQueryEntry final
+{
+public:
+	TSoftObjectPtr<class AActor>                  ActorToMatch;                                      // 0x0000(0x0028)(Edit, BlueprintVisible, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<TSoftObjectPtr<class UActorComponent>> ComponentsToMatch;                                 // 0x0028(0x0010)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMovieGraphActorQueryEntry;
+
 // ScriptStruct MovieRenderPipelineCore.MovieGraphEvaluationResult
 // 0x00A0 (0x00A0 - 0x0000)
 struct FMovieGraphEvaluationResult final
@@ -743,16 +723,17 @@ public:
 };
 DUMPER7_ASSERTS_FMovieGraphEvaluationResult;
 
-// ScriptStruct MovieRenderPipelineCore.MoviePipelineSidecarCamera
-// 0x0028 (0x0028 - 0x0000)
-struct FMoviePipelineSidecarCamera final
+// ScriptStruct MovieRenderPipelineCore.MoviePipelineConsoleVariableEntry
+// 0x0018 (0x0018 - 0x0000)
+struct FMoviePipelineConsoleVariableEntry final
 {
 public:
-	struct FGuid                                  BindingID;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10[0x8];                                       // 0x0010(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Name;                                              // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Value;                                             // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsEnabled;                                        // 0x0014(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FMoviePipelineSidecarCamera;
+DUMPER7_ASSERTS_FMoviePipelineConsoleVariableEntry;
 
 // ScriptStruct MovieRenderPipelineCore.MoviePipelineSegmentWorkMetrics
 // 0x0028 (0x0028 - 0x0000)
@@ -778,16 +759,33 @@ public:
 };
 DUMPER7_ASSERTS_FMoviePipelineCameraCutInfo;
 
-// ScriptStruct MovieRenderPipelineCore.MoviePipelineFormatArgs
-// 0x00A8 (0x00A8 - 0x0000)
-struct FMoviePipelineFormatArgs final
+// ScriptStruct MovieRenderPipelineCore.MoviePipelineFilenameResolveParams
+// 0x0120 (0x0120 - 0x0000)
+struct FMoviePipelineFilenameResolveParams final
 {
 public:
-	TMap<class FString, class FString>            FilenameArguments;                                 // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TMap<class FString, class FString>            FileMetadata;                                      // 0x0050(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class UMoviePipelineExecutorJob*              InJob;                                             // 0x00A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	int32                                         FrameNumber;                                       // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         FrameNumberShot;                                   // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         FrameNumberRel;                                    // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         FrameNumberShotRel;                                // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 CameraNameOverride;                                // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ShotNameOverride;                                  // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ZeroPadFrameNumberCount;                           // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bForceRelativeFrameNumbers;                        // 0x0034(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_35[0x3];                                       // 0x0035(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 FileNameOverride;                                  // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<class FString, class FString>            FileNameFormatOverrides;                           // 0x0048(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<class FString, class FString>            FileMetadata;                                      // 0x0098(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FDateTime                              InitializationTime;                                // 0x00E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTimespan                              InitializationTimeOffset;                          // 0x00F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InitializationVersion;                             // 0x00F8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_FC[0x4];                                       // 0x00FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMoviePipelineExecutorJob*              Job;                                               // 0x0100(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_108[0x8];                                      // 0x0108(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMoviePipelineExecutorShot*             ShotOverride;                                      // 0x0110(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	int32                                         AdditionalFrameNumberOffset;                       // 0x0118(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11C[0x4];                                      // 0x011C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FMoviePipelineFormatArgs;
+DUMPER7_ASSERTS_FMoviePipelineFilenameResolveParams;
 
-}
-
+SDK_NAMESPACE_END

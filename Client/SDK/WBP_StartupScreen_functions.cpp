@@ -14,8 +14,7 @@
 #include "WBP_StartupScreen_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_StartupScreen.WBP_StartupScreen_C.BndEvt__BW_LyraFrontEnd_PressStartButton_K2Node_ComponentBoundEvent_5_CommonButtonBaseClicked__DelegateSignature
 // (BlueprintEvent)
@@ -194,5 +193,5 @@ class UWidget* UWBP_StartupScreen_C::BP_GetDesiredFocusTarget() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

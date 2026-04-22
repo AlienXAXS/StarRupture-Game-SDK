@@ -14,8 +14,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GS_GameStateBase.GS_GameStateBase_C
 // 0x0030 (0x0A98 - 0x0A68)
@@ -59,5 +58,4 @@ public:
 };
 DUMPER7_ASSERTS_AGS_GameStateBase_C;
 
-}
-
+SDK_NAMESPACE_END

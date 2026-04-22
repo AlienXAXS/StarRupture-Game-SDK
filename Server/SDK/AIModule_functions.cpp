@@ -14,8 +14,7 @@
 #include "AIModule_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AIModule.AIAsyncTaskBlueprintProxy.OnMoveCompleted
 // (Final, RequiredAPI, Native, Public)
@@ -5866,5 +5865,5 @@ class UAITask_MoveTo* UAITask_MoveTo::AIMoveTo(class AAIController* Controller, 
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

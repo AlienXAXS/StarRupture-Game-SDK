@@ -14,8 +14,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ISMPool.ISMPoolSubSystem
 // 0x0050 (0x0080 - 0x0030)
@@ -118,5 +117,4 @@ public:
 };
 DUMPER7_ASSERTS_UISMPoolDebugDrawComponent;
 
-}
-
+SDK_NAMESPACE_END

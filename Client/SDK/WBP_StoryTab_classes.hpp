@@ -13,8 +13,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_StoryTab.WBP_StoryTab_C
 // 0x0008 (0x0600 - 0x05F8)
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_StoryTab_C;
 
-}
-
+SDK_NAMESPACE_END

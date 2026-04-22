@@ -14,8 +14,7 @@
 #include "WBP_EncyclopediaAudiologInfoMenu_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_EncyclopediaAudiologInfoMenu.WBP_EncyclopediaAudiologInfoMenu_C.ExecuteUbergraph_WBP_EncyclopediaAudiologInfoMenu
 // (Final, UbergraphFunction, HasDefaults)
@@ -56,5 +55,5 @@ void UWBP_EncyclopediaAudiologInfoMenu_C::SetEntryTitleBP(const class FText& Tit
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

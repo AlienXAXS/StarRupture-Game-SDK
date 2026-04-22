@@ -10,15 +10,14 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
 #include "AudioWidgets_structs.hpp"
 #include "UMG_classes.hpp"
 #include "SlateCore_structs.hpp"
 #include "SlateCore_classes.hpp"
-#include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class AudioWidgets.AudioMaterialButton
 // 0x00B8 (0x0248 - 0x0190)
@@ -651,5 +650,4 @@ public:
 };
 DUMPER7_ASSERTS_UAudioVectorscope;
 
-}
-
+SDK_NAMESPACE_END

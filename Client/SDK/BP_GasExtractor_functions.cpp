@@ -14,8 +14,7 @@
 #include "BP_GasExtractor_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_GasExtractor.BP_GasExtractor_C.ExecuteUbergraph_BP_GasExtractor
 // (Final, UbergraphFunction, HasDefaults)
@@ -130,5 +129,5 @@ void ABP_GasExtractor_C::Get_Meshes(class USceneComponent* Static_0, class UScen
 		*NewParam = std::move(Parms.NewParam);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_Modular_Foundation_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_CoolerPassive_Foundation.BP_CoolerPassive_Foundation_C
 // 0x0010 (0x0890 - 0x0880)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_CoolerPassive_Foundation_C;
 
-}
-
+SDK_NAMESPACE_END

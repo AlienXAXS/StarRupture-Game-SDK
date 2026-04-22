@@ -14,8 +14,7 @@
 #include "BTTask_Animal_Panzerhund_SetDustDamageActivity_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTTask_Animal_Panzerhund_SetDustDamageActivity.BTTask_Animal_Panzerhund_SetDustDamageActivity_C.ReceiveExecuteAI
 // (Event, Protected, BlueprintEvent)
@@ -58,5 +57,5 @@ void UBTTask_Animal_Panzerhund_SetDustDamageActivity_C::ExecuteUbergraph_BTTask_
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

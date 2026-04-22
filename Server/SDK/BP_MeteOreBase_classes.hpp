@@ -16,13 +16,12 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_MeteOreBase.BP_MeteOreBase_C
 // 0x03C0 (0x0900 - 0x0540)
 #pragma pack(push, 0x1)
-class alignas(0x10) ABP_MeteOreBase_C : public ACrMeteOreActor
+class SDK_ALIGN(0x10) ABP_MeteOreBase_C : public ACrMeteOreActor
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0540(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -120,5 +119,4 @@ public:
 #pragma pack(pop)
 DUMPER7_ASSERTS_ABP_MeteOreBase_C;
 
-}
-
+SDK_NAMESPACE_END

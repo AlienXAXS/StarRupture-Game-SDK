@@ -15,8 +15,7 @@
 #include "CommonUser_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_StartupScreen.WBP_StartupScreen_C
 // 0x0068 (0x0630 - 0x05C8)
@@ -66,5 +65,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_StartupScreen_C;
 
-}
-
+SDK_NAMESPACE_END

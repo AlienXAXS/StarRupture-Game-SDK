@@ -13,8 +13,8 @@
 #include "Chimera_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_HabitatWindowsFireSmall.BP_HabitatWindowsFireSmall_C.ExecuteUbergraph_BP_HabitatWindowsFireSmall
 // 0x0118 (0x0118 - 0x0000)
@@ -135,5 +135,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_HabitatWindowsFireSmall_C_OnEnviroWaveTick;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

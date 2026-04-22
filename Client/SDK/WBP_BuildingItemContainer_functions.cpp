@@ -14,8 +14,7 @@
 #include "WBP_BuildingItemContainer_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_BuildingItemContainer.WBP_BuildingItemContainer_C.SetAllSlotsEmptyBackground
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -30,5 +29,5 @@ void UWBP_BuildingItemContainer_C::SetAllSlotsEmptyBackground()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "GA_ExploderTier1_Speedup_TempVis_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GA_ExploderTier1_Speedup_TempVis.GA_ExploderTier1_Speedup_TempVis_C.ExecuteUbergraph_GA_ExploderTier1_Speedup_TempVis
 // (Final, UbergraphFunction)
@@ -94,5 +93,5 @@ void UGA_ExploderTier1_Speedup_TempVis_C::K2_OnEndAbility(bool bWasCancelled)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_Ranged_Tier2_LOD0_AnimNotify_SetRangedTier2SpitDripActivity_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Ranged_Tier2_LOD0_AnimNotify_SetRangedTier2SpitDripActivity.BP_Ranged_Tier2_LOD0_AnimNotify_SetRangedTier2SpitDripActivity_C.Received_Notify
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
@@ -43,5 +42,5 @@ bool UBP_Ranged_Tier2_LOD0_AnimNotify_SetRangedTier2SpitDripActivity_C::Received
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

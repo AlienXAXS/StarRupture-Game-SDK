@@ -12,14 +12,13 @@
 
 #include "CommonInput_structs.hpp"
 #include "Engine_structs.hpp"
+#include "ChimeraUI_classes.hpp"
 #include "SlateCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "ChimeraUI_classes.hpp"
 #include "UMG_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_ActionButton.WBP_ActionButton_C
 // 0x0768 (0x0B80 - 0x0418)
@@ -75,5 +74,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_ActionButton_C;
 
-}
-
+SDK_NAMESPACE_END

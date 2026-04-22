@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Melee_Tier3_Actor_AnimNotify_ShowLongAoeAttackWarning.BP_Melee_Tier3_Actor_AnimNotify_ShowLongAoeAttackWarning_C
 // 0x0000 (0x0038 - 0x0038)
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_Melee_Tier3_Actor_AnimNotify_ShowLongAoeAttackWarning_C;
 
-}
-
+SDK_NAMESPACE_END

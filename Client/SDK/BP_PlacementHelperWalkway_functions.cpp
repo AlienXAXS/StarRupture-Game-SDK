@@ -14,8 +14,7 @@
 #include "BP_PlacementHelperWalkway_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_PlacementHelperWalkway.BP_PlacementHelperWalkway_C.ExecuteUbergraph_BP_PlacementHelperWalkway
 // (Final, UbergraphFunction, HasDefaults)
@@ -254,5 +253,5 @@ void ABP_PlacementHelperWalkway_C::UserConstructionScript()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

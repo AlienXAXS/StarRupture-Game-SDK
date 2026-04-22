@@ -10,18 +10,17 @@
 
 #include "Basic.hpp"
 
+#include "CrAiMeleeRuntime_structs.hpp"
 #include "Chimera_classes.hpp"
 #include "MassSpawner_classes.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "CoreUObject_classes.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
-#include "CrAiMeleeRuntime_structs.hpp"
+#include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class CrAiMeleeRuntime.CrAiActionModifyMeleeT3AnimData
 // 0x0008 (0x0090 - 0x0088)
@@ -459,5 +458,4 @@ public:
 };
 DUMPER7_ASSERTS_ACrMeleeT3MoveTargetActor;
 
-}
-
+SDK_NAMESPACE_END

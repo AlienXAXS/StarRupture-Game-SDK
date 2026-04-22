@@ -14,8 +14,7 @@
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class LiveLinkAnimationCore.LiveLinkInstance
 // 0x0000 (0x0420 - 0x0420)
@@ -93,5 +92,4 @@ public:
 };
 DUMPER7_ASSERTS_ULiveLinkRemapAsset;
 
-}
-
+SDK_NAMESPACE_END

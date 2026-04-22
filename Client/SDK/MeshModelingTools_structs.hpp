@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum MeshModelingTools.EPlaneBrushSideMode
 // NumValues: 0x0004
@@ -911,5 +910,4 @@ public:
 };
 DUMPER7_ASSERTS_FBrushToolRadius;
 
-}
-
+SDK_NAMESPACE_END

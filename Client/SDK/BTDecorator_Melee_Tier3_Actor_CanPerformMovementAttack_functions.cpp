@@ -14,8 +14,7 @@
 #include "BTDecorator_Melee_Tier3_Actor_CanPerformMovementAttack_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTDecorator_Melee_Tier3_Actor_CanPerformMovementAttack.BTDecorator_Melee_Tier3_Actor_CanPerformMovementAttack_C.PerformConditionCheckAI
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -41,5 +40,5 @@ bool UBTDecorator_Melee_Tier3_Actor_CanPerformMovementAttack_C::PerformCondition
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

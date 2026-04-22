@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_SideLadder.BP_SideLadder_C
 // 0x0090 (0x08D0 - 0x0840)
@@ -60,5 +59,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_SideLadder_C;
 
-}
-
+SDK_NAMESPACE_END

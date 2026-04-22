@@ -17,8 +17,7 @@
 #include "Chimera_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class CrAiAnimalPanzerHundRuntime.BTService_CrAiAnimalPanzerHundUpdateState
 // 0x0030 (0x00A0 - 0x0070)
@@ -157,5 +156,4 @@ public:
 };
 DUMPER7_ASSERTS_UBTTask_CrAiAnimalPanzerHundRollSignal;
 
-}
-
+SDK_NAMESPACE_END

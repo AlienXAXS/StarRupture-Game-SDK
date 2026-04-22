@@ -15,8 +15,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_DeathScreen.WBP_DeathScreen_C
 // 0x00C0 (0x06C0 - 0x0600)
@@ -70,5 +69,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_DeathScreen_C;
 
-}
-
+SDK_NAMESPACE_END

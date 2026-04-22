@@ -14,8 +14,7 @@
 #include "BP_Modular_ConnectingPlatformStability_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Modular_ConnectingPlatformStability.BP_Modular_ConnectingPlatformStability_C.UserConstructionScript
 // (Event, Public, BlueprintCallable, BlueprintEvent)
@@ -89,5 +88,5 @@ void ABP_Modular_ConnectingPlatformStability_C::GetBuildingMeshes(class UMeshCom
 		*AdditionalMeshes = std::move(Parms.AdditionalMeshes);
 }
 
-}
 
+SDK_NAMESPACE_END

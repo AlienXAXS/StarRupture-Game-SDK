@@ -14,8 +14,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_VerticalBridge.BP_VerticalBridge_C
 // 0x00F0 (0x0930 - 0x0840)
@@ -72,5 +71,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_VerticalBridge_C;
 
-}
-
+SDK_NAMESPACE_END

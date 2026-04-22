@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Airlock_StartingHUB.BP_Airlock_StartingHUB_C
 // 0x00E0 (0x0930 - 0x0850)
@@ -72,5 +71,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Airlock_StartingHUB_C;
 
-}
-
+SDK_NAMESPACE_END

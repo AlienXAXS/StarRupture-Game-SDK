@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass I_Shotgun_Mod_StockRunner.I_Shotgun_Mod_StockRunner_C
 // 0x0000 (0x0410 - 0x0410)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UI_Shotgun_Mod_StockRunner_C;
 
-}
-
+SDK_NAMESPACE_END

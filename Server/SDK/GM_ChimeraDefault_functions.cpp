@@ -14,8 +14,7 @@
 #include "GM_ChimeraDefault_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GM_ChimeraDefault.GM_ChimeraDefault_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
@@ -50,5 +49,5 @@ void AGM_ChimeraDefault_C::ExecuteUbergraph_GM_ChimeraDefault(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

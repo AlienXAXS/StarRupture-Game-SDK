@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass DA_SoundConfig.DA_SoundConfig_C
 // 0x0000 (0x0068 - 0x0068)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UDA_SoundConfig_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Connector.BP_Connector_C
 // 0x0080 (0x06E8 - 0x0668)
@@ -54,5 +53,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Connector_C;
 
-}
-
+SDK_NAMESPACE_END

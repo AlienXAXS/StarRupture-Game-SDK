@@ -14,8 +14,7 @@
 #include "HairStrandsSolver_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function HairStrandsSolver.GroomSolverComponent.AddGroomComponent
 // (Final, RequiredAPI, Native, Public, BlueprintCallable)
@@ -110,5 +109,5 @@ void UGroomSolverComponent::SetDeformerSolver(class UMeshDeformer* DeformerSolve
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

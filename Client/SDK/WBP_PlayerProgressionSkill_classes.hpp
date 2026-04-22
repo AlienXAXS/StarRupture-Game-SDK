@@ -12,12 +12,11 @@
 
 #include "Chimera_structs.hpp"
 #include "Engine_structs.hpp"
-#include "SlateCore_structs.hpp"
 #include "ChimeraUI_classes.hpp"
+#include "SlateCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_PlayerProgressionSkill.WBP_PlayerProgressionSkill_C
 // 0x0278 (0x06D0 - 0x0458)
@@ -57,5 +56,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_PlayerProgressionSkill_C;
 
-}
-
+SDK_NAMESPACE_END

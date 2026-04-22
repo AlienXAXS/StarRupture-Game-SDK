@@ -14,8 +14,7 @@
 #include "BP_Foundable_Enemy_Loot_Base_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Foundable_Enemy_Loot_Base.BP_Foundable_Enemy_Loot_Base_C.ExecuteUbergraph_BP_Foundable_Enemy_Loot_Base
 // (Final, UbergraphFunction, HasDefaults)
@@ -90,5 +89,5 @@ void ABP_Foundable_Enemy_Loot_Base_C::SimulateDrop(const struct FVector& StartLo
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

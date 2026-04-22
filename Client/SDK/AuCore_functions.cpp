@@ -14,8 +14,7 @@
 #include "AuCore_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AuCore.AuNiagaraFL.SpawnSystemAtLocation
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
@@ -106,5 +105,5 @@ class UNiagaraComponent* UAuNiagaraFL::SpawnSystemAttached(const struct FAuNiaga
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

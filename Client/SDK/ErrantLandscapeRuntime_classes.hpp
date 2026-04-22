@@ -11,14 +11,13 @@
 #include "Basic.hpp"
 
 #include "DeveloperSettings_classes.hpp"
+#include "ErrantLandscapeRuntime_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "ErrantLandscapeRuntime_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ErrantLandscapeRuntime.ElProjectSettings
 // 0x0008 (0x0040 - 0x0038)
@@ -48,7 +47,7 @@ DUMPER7_ASSERTS_UElProjectSettings;
 // Class ErrantLandscapeRuntime.ElRtBrushComponent
 // 0x0020 (0x0550 - 0x0530)
 #pragma pack(push, 0x1)
-class alignas(0x10) UElRtBrushComponent : public UPrimitiveComponent
+class SDK_ALIGN(0x10) UElRtBrushComponent : public UPrimitiveComponent
 {
 public:
 	uint8                                         Pad_530[0x8];                                      // 0x0530(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -209,7 +208,7 @@ DUMPER7_ASSERTS_UElRtEditorUserSettings;
 // Class ErrantLandscapeRuntime.ElRtStampBrushComponent
 // 0x0000 (0x0550 - 0x0550)
 #pragma pack(push, 0x1)
-class alignas(0x10) UElRtStampBrushComponent : public UElRtBrushComponent
+class SDK_ALIGN(0x10) UElRtStampBrushComponent : public UElRtBrushComponent
 {
 public:
 	static class UClass* StaticClass()
@@ -437,5 +436,4 @@ public:
 };
 DUMPER7_ASSERTS_UElRtWorldSubsystem;
 
-}
-
+SDK_NAMESPACE_END

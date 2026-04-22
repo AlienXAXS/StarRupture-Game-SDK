@@ -13,8 +13,8 @@
 #include "Chimera_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_Pressurizer.BP_Pressurizer_C.ExecuteUbergraph_BP_Pressurizer
 // 0x0008 (0x0008 - 0x0000)
@@ -79,5 +79,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_Pressurizer_C_Get_Meshes;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

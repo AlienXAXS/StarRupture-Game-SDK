@@ -16,8 +16,7 @@
 #include "UMG_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class AdvancedWidgets.RadialSlider
 // 0x0600 (0x0790 - 0x0190)
@@ -98,5 +97,4 @@ public:
 };
 DUMPER7_ASSERTS_URadialSlider;
 
-}
-
+SDK_NAMESPACE_END

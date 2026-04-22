@@ -15,8 +15,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_MechanicalDrillTier2.BP_MechanicalDrillTier2_C
 // 0x0060 (0x0738 - 0x06D8)
@@ -58,5 +57,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_MechanicalDrillTier2_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "AnimGraphRuntime_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct ABP_Exploder_Tier2_Actor.ABP_Exploder_Tier2_Actor_C.AnimBlueprintGeneratedConstantData
 // 0x0B6F (0x0B70 - 0x0001)
@@ -117,5 +116,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Exploder_Tier2_Actor__FAnimBlueprintGeneratedConstantData;
 
-}
-
+SDK_NAMESPACE_END

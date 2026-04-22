@@ -14,8 +14,7 @@
 #include "WBP_ActionBoundButton_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_ActionBoundButton.WBP_ActionBoundButton_C.ExecuteUbergraph_WBP_ActionBoundButton
 // (Final, UbergraphFunction, HasDefaults)
@@ -117,5 +116,5 @@ void UWBP_ActionBoundButton_C::SetTemporaryIconVisibility(bool bVisible)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

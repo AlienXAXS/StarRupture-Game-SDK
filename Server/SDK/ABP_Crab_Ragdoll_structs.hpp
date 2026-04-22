@@ -10,12 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
+#include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct ABP_Crab_Ragdoll.ABP_Crab_Ragdoll_C.AnimBlueprintGeneratedConstantData
 // 0x01B7 (0x01B8 - 0x0001)
@@ -53,5 +52,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Crab_Ragdoll__FAnimBlueprintGeneratedMutableData;
 
-}
-
+SDK_NAMESPACE_END

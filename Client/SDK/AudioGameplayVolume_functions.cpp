@@ -14,8 +14,7 @@
 #include "AudioGameplayVolume_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AudioGameplayVolume.AudioGameplayVolumeMutator.SetPriority
 // (Final, RequiredAPI, Native, Public, BlueprintCallable)
@@ -306,5 +305,5 @@ void USubmixSendVolumeComponent::SetSubmixSendSettings(const TArray<struct FAudi
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

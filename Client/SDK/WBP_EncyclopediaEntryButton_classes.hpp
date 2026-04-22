@@ -14,8 +14,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_EncyclopediaEntryButton.WBP_EncyclopediaEntryButton_C
 // 0x0028 (0x0470 - 0x0448)
@@ -51,5 +50,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_EncyclopediaEntryButton_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -15,8 +15,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum MetasoundEngine.EMetaSoundMessageLevel
 // NumValues: 0x0004
@@ -50,6 +49,13 @@ enum class EMetaSoundBuilderResult : uint8
 	EMetaSoundBuilderResult_MAX              = 2,
 };
 
+// ScriptStruct MetasoundEngine.MetaSoundBuilderNodeOutputHandle
+// 0x0000 (0x0020 - 0x0020)
+struct FMetaSoundBuilderNodeOutputHandle final : public FMetasoundFrontendVertexHandle
+{
+};
+DUMPER7_ASSERTS_FMetaSoundBuilderNodeOutputHandle;
+
 // ScriptStruct MetasoundEngine.MetaSoundOutput
 // 0x0008 (0x0010 - 0x0008)
 struct alignas(0x08) FMetaSoundOutput final : public FSoundGeneratorOutput
@@ -58,13 +64,6 @@ public:
 	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FMetaSoundOutput;
-
-// ScriptStruct MetasoundEngine.MetaSoundBuilderNodeOutputHandle
-// 0x0000 (0x0020 - 0x0020)
-struct FMetaSoundBuilderNodeOutputHandle final : public FMetasoundFrontendVertexHandle
-{
-};
-DUMPER7_ASSERTS_FMetaSoundBuilderNodeOutputHandle;
 
 // ScriptStruct MetasoundEngine.DefaultMetaSoundAssetAutoUpdateSettings
 // 0x0020 (0x0020 - 0x0000)
@@ -146,5 +145,4 @@ public:
 };
 DUMPER7_ASSERTS_FMetaSoundBuilderOptions;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BTService_Melee_Tier3_Actor_UpdateAnimState.BTService_Melee_Tier3_Actor_UpdateAnimState_C
 // 0x0008 (0x00A0 - 0x0098)
@@ -44,5 +43,4 @@ public:
 };
 DUMPER7_ASSERTS_UBTService_Melee_Tier3_Actor_UpdateAnimState_C;
 
-}
-
+SDK_NAMESPACE_END

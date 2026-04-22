@@ -14,8 +14,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C
 // 0x0060 (0x09E0 - 0x0980)
@@ -64,5 +63,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_PlacementHelperZipRail_C;
 
-}
-
+SDK_NAMESPACE_END

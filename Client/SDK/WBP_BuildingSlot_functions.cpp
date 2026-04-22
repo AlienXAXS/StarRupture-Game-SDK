@@ -14,8 +14,7 @@
 #include "WBP_BuildingSlot_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_BuildingSlot.WBP_BuildingSlot_C.ExecuteUbergraph_WBP_BuildingSlot
 // (Final, UbergraphFunction, HasDefaults)
@@ -160,5 +159,5 @@ void UWBP_BuildingSlot_C::ShowItemNameInIcon(const class FText& InText, bool Sho
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_Modular_Foundation_Unique_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Modular_Foundation_Unique.BP_Modular_Foundation_Unique_C.ExecuteUbergraph_BP_Modular_Foundation_Unique
 // (Final, UbergraphFunction, HasDefaults)
@@ -89,5 +88,5 @@ void ABP_Modular_Foundation_Unique_C::GetBuildingMeshes(class UMeshComponent** M
 		*AdditionalMeshes = std::move(Parms.AdditionalMeshes);
 }
 
-}
 
+SDK_NAMESPACE_END

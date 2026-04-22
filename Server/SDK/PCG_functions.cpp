@@ -14,8 +14,7 @@
 #include "PCG_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PCG.PCGData.MutableMetadata
 // (Native, Public, BlueprintCallable)
@@ -11321,5 +11320,5 @@ void UPCGPinPropertiesBlueprintHelpers::SetRequiredPin(struct FPCGPinProperties&
 	PinProperties = std::move(Parms.PinProperties);
 }
 
-}
 
+SDK_NAMESPACE_END

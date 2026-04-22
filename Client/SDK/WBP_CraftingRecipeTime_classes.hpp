@@ -13,8 +13,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_CraftingRecipeTime.WBP_CraftingRecipeTime_C
 // 0x0018 (0x0608 - 0x05F0)
@@ -41,5 +40,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_CraftingRecipeTime_C;
 
-}
-
+SDK_NAMESPACE_END

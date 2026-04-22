@@ -14,8 +14,7 @@
 #include "BP_WorldSpawnerRegion_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_WorldSpawnerRegion.BP_WorldSpawnerRegion_C.ExecuteUbergraph_BP_WorldSpawnerRegion
 // (Final, UbergraphFunction)
@@ -70,5 +69,5 @@ void ABP_WorldSpawnerRegion_C::ReceiveBeginPlay()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

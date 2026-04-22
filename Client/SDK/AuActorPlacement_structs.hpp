@@ -16,8 +16,7 @@
 #include "MassSpawner_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum AuActorPlacement.EPlacementSoundType
 // NumValues: 0x000A
@@ -818,5 +817,4 @@ public:
 };
 DUMPER7_ASSERTS_FAuMassPlacementSpawnData;
 
-}
-
+SDK_NAMESPACE_END

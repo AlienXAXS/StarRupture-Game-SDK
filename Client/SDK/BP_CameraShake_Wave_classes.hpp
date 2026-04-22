@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_CameraShake_Wave.BP_CameraShake_Wave_C
 // 0x0000 (0x00E0 - 0x00E0)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_CameraShake_Wave_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BTTask_Animal_Panzerhund_SetAudioState_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTTask_Animal_Panzerhund_SetAudioState.BTTask_Animal_Panzerhund_SetAudioState_C.ExecuteUbergraph_BTTask_Animal_Panzerhund_SetAudioState
 // (Final, UbergraphFunction)
@@ -58,5 +57,5 @@ void UBTTask_Animal_Panzerhund_SetAudioState_C::ReceiveExecuteAI(class AAIContro
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

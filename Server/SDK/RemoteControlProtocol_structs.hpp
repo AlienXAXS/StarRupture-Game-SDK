@@ -14,8 +14,7 @@
 #include "RemoteControl_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum RemoteControlProtocol.ERCSignatureProtocolActionMappingSpace
 // NumValues: 0x0004
@@ -46,5 +45,4 @@ public:
 };
 DUMPER7_ASSERTS_FRCSignatureProtocolAction;
 
-}
-
+SDK_NAMESPACE_END

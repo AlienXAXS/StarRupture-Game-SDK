@@ -13,8 +13,7 @@
 #include "BP_Modular_Tiles_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Modular_Tiles10x6.BP_Modular_Tiles10x6_C
 // 0x0000 (0x0880 - 0x0880)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Modular_Tiles10x6_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "AuAbilities_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AuAbilities.AuAbilitiesBPF.AddInstigator
 // (Final, Native, Static, Public, BlueprintCallable)
@@ -4274,5 +4273,5 @@ struct FGameplayAbilityTargetDataHandle IAuTargetingInterface::GetTargetDataHand
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

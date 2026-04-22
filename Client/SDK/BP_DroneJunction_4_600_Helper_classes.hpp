@@ -13,8 +13,7 @@
 #include "BP_PlacementHelperReplicatedBase_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_DroneJunction_4_600_Helper.BP_DroneJunction_4_600_Helper_C
 // 0x0000 (0x08B0 - 0x08B0)
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_DroneJunction_4_600_Helper_C;
 
-}
-
+SDK_NAMESPACE_END

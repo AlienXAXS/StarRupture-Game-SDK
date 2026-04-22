@@ -15,8 +15,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_Recycler.BP_Recycler_C.ExecuteUbergraph_BP_Recycler
 // 0x0288 (0x0288 - 0x0000)
@@ -73,5 +73,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_Recycler_C_UserConstructionScript;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

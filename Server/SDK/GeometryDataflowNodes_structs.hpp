@@ -13,8 +13,7 @@
 #include "DataflowCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum GeometryDataflowNodes.EMeshBooleanOperationEnum
 // NumValues: 0x0004
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_FMeshBooleanDataflowNode;
 
-}
-
+SDK_NAMESPACE_END

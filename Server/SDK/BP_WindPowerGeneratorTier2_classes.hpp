@@ -14,8 +14,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_WindPowerGeneratorTier2.BP_WindPowerGeneratorTier2_C
 // 0x0050 (0x0698 - 0x0648)
@@ -54,5 +53,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_WindPowerGeneratorTier2_C;
 
-}
-
+SDK_NAMESPACE_END

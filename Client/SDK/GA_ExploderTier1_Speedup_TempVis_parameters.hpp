@@ -14,8 +14,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function GA_ExploderTier1_Speedup_TempVis.GA_ExploderTier1_Speedup_TempVis_C.ExecuteUbergraph_GA_ExploderTier1_Speedup_TempVis
 // 0x0090 (0x0090 - 0x0000)
@@ -74,5 +74,5 @@ public:
 };
 DUMPER7_ASSERTS_GA_ExploderTier1_Speedup_TempVis_C_K2_OnEndAbility;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

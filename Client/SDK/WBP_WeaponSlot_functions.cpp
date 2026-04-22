@@ -14,8 +14,7 @@
 #include "WBP_WeaponSlot_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_WeaponSlot.WBP_WeaponSlot_C.ExecuteUbergraph_WBP_WeaponSlot
 // (Final, UbergraphFunction, HasDefaults)
@@ -130,5 +129,5 @@ void UWBP_WeaponSlot_C::SetTitle(const class FText& InText)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "AuNotification_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AuNotification.AuUW_NotificationContainer.OnNotificationAdded
 // (Event, Public, BlueprintEvent)
@@ -56,5 +55,5 @@ void UAuUW_NotificationContainer::OnNotificationRemoved(class UAuUW_Notification
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

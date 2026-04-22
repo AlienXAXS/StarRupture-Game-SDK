@@ -14,8 +14,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_MapMenuTerrain.WBP_MapMenuTerrain_C
 // 0x0030 (0x04D0 - 0x04A0)
@@ -48,5 +47,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_MapMenuTerrain_C;
 
-}
-
+SDK_NAMESPACE_END

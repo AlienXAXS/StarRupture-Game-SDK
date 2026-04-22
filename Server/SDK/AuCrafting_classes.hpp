@@ -14,8 +14,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class AuCrafting.AuItemRecipeData
 // 0x0028 (0x0058 - 0x0030)
@@ -49,5 +48,4 @@ public:
 };
 DUMPER7_ASSERTS_UAuItemRecipeData;
 
-}
-
+SDK_NAMESPACE_END

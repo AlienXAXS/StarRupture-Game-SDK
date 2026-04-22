@@ -14,8 +14,7 @@
 #include "BP_Analyzer_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Analyzer.BP_Analyzer_C.OnUIOpened
 // (Event, Public, BlueprintEvent)
@@ -56,5 +55,5 @@ void ABP_Analyzer_C::ExecuteUbergraph_BP_Analyzer(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

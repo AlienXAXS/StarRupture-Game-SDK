@@ -15,8 +15,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ChimeraRiflePrototypeRuntime.CrProtoReloadExecutionCalc
 // 0x0000 (0x0040 - 0x0040)
@@ -163,5 +162,4 @@ public:
 };
 DUMPER7_ASSERTS_UCrRiflePrototypeAdderComponent;
 
-}
-
+SDK_NAMESPACE_END

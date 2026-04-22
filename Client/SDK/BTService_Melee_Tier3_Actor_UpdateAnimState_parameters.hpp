@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BTService_Melee_Tier3_Actor_UpdateAnimState.BTService_Melee_Tier3_Actor_UpdateAnimState_C.ExecuteUbergraph_BTService_Melee_Tier3_Actor_UpdateAnimState
 // 0x0038 (0x0038 - 0x0000)
@@ -41,5 +41,5 @@ public:
 };
 DUMPER7_ASSERTS_BTService_Melee_Tier3_Actor_UpdateAnimState_C_ReceiveTickAI;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

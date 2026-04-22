@@ -14,8 +14,7 @@
 #include "BP_Modular_Tiles_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_BaseCore_Tiles4x4.BP_BaseCore_Tiles4x4_C
 // 0x0008 (0x0888 - 0x0880)
@@ -46,5 +45,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_BaseCore_Tiles4x4_C;
 
-}
-
+SDK_NAMESPACE_END

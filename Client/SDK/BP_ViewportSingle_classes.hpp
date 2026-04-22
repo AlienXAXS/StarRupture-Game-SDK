@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ViewportSingle.BP_ViewportSingle_C
 // 0x0020 (0x0860 - 0x0840)
@@ -45,5 +44,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_ViewportSingle_C;
 
-}
-
+SDK_NAMESPACE_END

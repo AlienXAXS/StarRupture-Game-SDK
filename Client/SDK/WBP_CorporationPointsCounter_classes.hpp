@@ -15,8 +15,7 @@
 #include "UMG_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_CorporationPointsCounter.WBP_CorporationPointsCounter_C
 // 0x0260 (0x0600 - 0x03A0)
@@ -58,5 +57,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_CorporationPointsCounter_C;
 
-}
-
+SDK_NAMESPACE_END

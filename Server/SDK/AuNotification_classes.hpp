@@ -16,8 +16,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class AuNotification.AuNotificationSettings
 // 0x0050 (0x0088 - 0x0038)
@@ -121,5 +120,4 @@ public:
 };
 DUMPER7_ASSERTS_UAuUW_NotificationContainer;
 
-}
-
+SDK_NAMESPACE_END

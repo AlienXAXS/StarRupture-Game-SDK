@@ -15,8 +15,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_SolarPowerGenerator.BP_SolarPowerGenerator_C
 // 0x0090 (0x06D8 - 0x0648)
@@ -62,5 +61,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_SolarPowerGenerator_C;
 
-}
-
+SDK_NAMESPACE_END

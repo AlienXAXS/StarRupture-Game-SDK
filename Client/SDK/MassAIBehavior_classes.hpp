@@ -20,8 +20,7 @@
 #include "StateTreeModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MassAIBehavior.MassBehaviorSettings
 // 0x0038 (0x0060 - 0x0028)
@@ -511,5 +510,4 @@ public:
 };
 DUMPER7_ASSERTS_UMassZoneGraphAnnotationTrait;
 
-}
-
+SDK_NAMESPACE_END

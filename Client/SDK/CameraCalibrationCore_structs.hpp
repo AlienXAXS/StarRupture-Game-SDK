@@ -15,8 +15,7 @@
 #include "CinematicCamera_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum CameraCalibrationCore.ECalibratedMapPixelOrigin
 // NumValues: 0x0003
@@ -113,7 +112,7 @@ DUMPER7_ASSERTS_FBaseFocusPoint;
 // ScriptStruct CameraCalibrationCore.BaseFocusCurve
 // 0x0000 (0x0000 - 0x0000)
 #pragma pack(push, 0x1)
-struct alignas(0x01) FBaseFocusCurve
+struct SDK_ALIGN(0x01) FBaseFocusCurve
 {
 };
 #pragma pack(pop)
@@ -616,5 +615,4 @@ public:
 };
 DUMPER7_ASSERTS_FSTMapTable;
 
-}
-
+SDK_NAMESPACE_END

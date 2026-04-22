@@ -17,8 +17,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class AuActorWidgets.AuActorWidgetSetting
 // 0x0040 (0x0070 - 0x0030)
@@ -137,5 +136,4 @@ public:
 };
 DUMPER7_ASSERTS_UAuActorWidgetsSubsystem;
 
-}
-
+SDK_NAMESPACE_END

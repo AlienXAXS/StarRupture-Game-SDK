@@ -16,8 +16,7 @@
 #include "BP_BaseAI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C
 // 0x00A0 (0x0DA0 - 0x0D00)
@@ -56,5 +55,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Exploder_Tier2_Actor_Character_C;
 
-}
-
+SDK_NAMESPACE_END

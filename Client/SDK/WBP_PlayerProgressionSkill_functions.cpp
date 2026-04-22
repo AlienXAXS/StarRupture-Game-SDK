@@ -14,8 +14,7 @@
 #include "WBP_PlayerProgressionSkill_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_PlayerProgressionSkill.WBP_PlayerProgressionSkill_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -84,5 +83,5 @@ void UWBP_PlayerProgressionSkill_C::SetSkillIcon(ECrPlayerProgressionSkill InSki
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

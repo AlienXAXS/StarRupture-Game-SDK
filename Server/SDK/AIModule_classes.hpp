@@ -20,8 +20,7 @@
 #include "GameplayTasks_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class AIModule.AIAsyncTaskBlueprintProxy
 // 0x0050 (0x0078 - 0x0028)
@@ -4021,7 +4020,7 @@ DUMPER7_ASSERTS_UEQSRenderingComponent;
 // Class AIModule.EQSTestingPawn
 // 0x00A0 (0x0710 - 0x0670)
 #pragma pack(push, 0x1)
-class alignas(0x10) AEQSTestingPawn : public ACharacter
+class SDK_ALIGN(0x10) AEQSTestingPawn : public ACharacter
 {
 public:
 	uint8                                         Pad_668[0x8];                                      // 0x0668(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -4896,5 +4895,4 @@ public:
 };
 DUMPER7_ASSERTS_UVisualLoggerExtension;
 
-}
-
+SDK_NAMESPACE_END

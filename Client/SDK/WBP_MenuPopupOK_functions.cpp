@@ -14,8 +14,7 @@
 #include "WBP_MenuPopupOK_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_MenuPopupOK.WBP_MenuPopupOK_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -75,5 +74,5 @@ struct FEventReply UWBP_MenuPopupOK_C::OnMouseButtonDown_0(const struct FGeometr
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

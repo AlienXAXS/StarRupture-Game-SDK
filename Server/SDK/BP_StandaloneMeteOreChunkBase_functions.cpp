@@ -14,8 +14,7 @@
 #include "BP_StandaloneMeteOreChunkBase_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.Timeline__UpdateFunc
 // (BlueprintEvent)
@@ -169,5 +168,5 @@ void ABP_StandaloneMeteOreChunkBase_C::BP_OnSpawnedWithResourceDepleted()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

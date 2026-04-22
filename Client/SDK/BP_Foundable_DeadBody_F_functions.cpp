@@ -14,8 +14,7 @@
 #include "BP_Foundable_DeadBody_F_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Foundable_DeadBody_F.BP_Foundable_DeadBody_F_C.OnStorageEmptied
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -56,5 +55,5 @@ void ABP_Foundable_DeadBody_F_C::UpdateFoundableVisibilityForStorageState(bool B
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

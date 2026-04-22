@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Chair.BP_Chair_C
 // 0x0008 (0x0650 - 0x0648)
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Chair_C;
 
-}
-
+SDK_NAMESPACE_END

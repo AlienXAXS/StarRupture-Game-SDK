@@ -14,8 +14,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_AnimNotify_StartRagdoll.BP_AnimNotify_StartRagdoll_C
 // 0x0020 (0x0058 - 0x0038)
@@ -48,5 +47,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_AnimNotify_StartRagdoll_C;
 
-}
-
+SDK_NAMESPACE_END

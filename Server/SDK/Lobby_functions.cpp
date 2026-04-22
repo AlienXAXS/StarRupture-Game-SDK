@@ -14,8 +14,7 @@
 #include "Lobby_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Lobby.LobbyBeaconClient.ClientAckJoiningServer
 // (RequiredAPI, Net, NetReliable, Native, Event, Protected, NetClient)
@@ -424,5 +423,5 @@ void ALobbyBeaconState::OnRep_WaitForPlayersTimeRemaining()
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

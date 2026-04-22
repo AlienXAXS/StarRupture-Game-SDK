@@ -15,8 +15,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_EngineControlStation_ItemPrinter.BP_EngineControlStation_ItemPrinter_C
 // 0x0070 (0x0748 - 0x06D8)
@@ -62,5 +61,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_EngineControlStation_ItemPrinter_C;
 
-}
-
+SDK_NAMESPACE_END

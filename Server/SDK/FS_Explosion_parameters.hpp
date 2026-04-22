@@ -13,8 +13,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function FS_Explosion.FS_Explosion_C.ExecuteUbergraph_FS_Explosion
 // 0x0040 (0x0040 - 0x0000)
@@ -32,5 +32,5 @@ public:
 };
 DUMPER7_ASSERTS_FS_Explosion_C_ExecuteUbergraph_FS_Explosion;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

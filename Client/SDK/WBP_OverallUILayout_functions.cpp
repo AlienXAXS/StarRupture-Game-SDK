@@ -14,8 +14,7 @@
 #include "WBP_OverallUILayout_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_OverallUILayout.WBP_OverallUILayout_C.ExecuteUbergraph_WBP_OverallUILayout
 // (Final, UbergraphFunction)
@@ -50,5 +49,5 @@ void UWBP_OverallUILayout_C::OnInitialized()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

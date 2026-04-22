@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_OreMassHighResActorBase.BP_OreMassHighResActorBase_C
 // 0x0078 (0x03B0 - 0x0338)
@@ -55,5 +54,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_OreMassHighResActorBase_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct OnlineSubsystemEOS.ArtifactSettings
 // 0x0070 (0x0070 - 0x0000)
@@ -29,5 +28,4 @@ public:
 };
 DUMPER7_ASSERTS_FArtifactSettings;
 
-}
-
+SDK_NAMESPACE_END

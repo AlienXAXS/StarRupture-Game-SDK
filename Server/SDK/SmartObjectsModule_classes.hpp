@@ -21,8 +21,7 @@
 #include "WorldConditions_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class SmartObjectsModule.EnvQueryGenerator_SmartObjects
 // 0x00F0 (0x0140 - 0x0050)
@@ -763,5 +762,4 @@ public:
 };
 DUMPER7_ASSERTS_USmartObjectWorldConditionSchema;
 
-}
-
+SDK_NAMESPACE_END

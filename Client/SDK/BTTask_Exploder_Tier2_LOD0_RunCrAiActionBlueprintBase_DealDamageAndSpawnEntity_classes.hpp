@@ -16,8 +16,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BTTask_Exploder_Tier2_LOD0_RunCrAiActionBlueprintBase_DealDamageAndSpawnEntity.BTTask_Exploder_Tier2_LOD0_RunCrAiActionBlueprintBase_DealDamageAndSpawnEntity_C
 // 0x00B8 (0x01A0 - 0x00E8)
@@ -53,5 +52,4 @@ public:
 };
 DUMPER7_ASSERTS_UBTTask_Exploder_Tier2_LOD0_RunCrAiActionBlueprintBase_DealDamageAndSpawnEntity_C;
 
-}
-
+SDK_NAMESPACE_END

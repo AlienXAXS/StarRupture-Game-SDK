@@ -14,8 +14,7 @@
 #include "BP_WaterExtractor_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_WaterExtractor.BP_WaterExtractor_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
@@ -70,5 +69,5 @@ void ABP_WaterExtractor_C::ExecuteUbergraph_BP_WaterExtractor(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

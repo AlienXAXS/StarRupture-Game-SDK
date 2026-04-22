@@ -14,8 +14,7 @@
 #include "WBP_HeaderLineInfoScreen_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_HeaderLineInfoScreen.WBP_HeaderLineInfoScreen_C.BndEvt__WBP_HeaderLineInfoScreen_Button_277_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -174,5 +173,5 @@ void UWBP_HeaderLineInfoScreen_C::ShowRenameButton(bool ShowButton)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

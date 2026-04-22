@@ -14,14 +14,13 @@
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "Chaos_structs.hpp"
 #include "GeometryCollectionEngine_structs.hpp"
 #include "ChaosSolverEngine_structs.hpp"
-#include "Chaos_structs.hpp"
 #include "DataflowEngine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class GeometryCollectionEngine.GeometryCollectionBlueprintLibrary
 // 0x0000 (0x0028 - 0x0028)
@@ -781,5 +780,4 @@ public:
 };
 DUMPER7_ASSERTS_UGeometryCollectionISMPoolDebugDrawComponent;
 
-}
-
+SDK_NAMESPACE_END

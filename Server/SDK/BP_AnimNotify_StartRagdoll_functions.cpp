@@ -14,8 +14,7 @@
 #include "BP_AnimNotify_StartRagdoll_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_AnimNotify_StartRagdoll.BP_AnimNotify_StartRagdoll_C.Received_Notify
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
@@ -43,5 +42,5 @@ bool UBP_AnimNotify_StartRagdoll_C::Received_Notify(class USkeletalMeshComponent
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

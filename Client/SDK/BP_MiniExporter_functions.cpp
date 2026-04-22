@@ -14,8 +14,7 @@
 #include "BP_MiniExporter_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_MiniExporter.BP_MiniExporter_C.Attach_meshes
 // (BlueprintCallable, BlueprintEvent)
@@ -145,5 +144,5 @@ void ABP_MiniExporter_C::GetBuildingMeshes(class UMeshComponent** MainBody, TArr
 		*AdditionalMeshes = std::move(Parms.AdditionalMeshes);
 }
 
-}
 
+SDK_NAMESPACE_END

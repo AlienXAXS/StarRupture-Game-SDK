@@ -14,8 +14,7 @@
 #include "BTT_FindRandomLocation_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTT_FindRandomLocation.BTT_FindRandomLocation_C.ExecuteUbergraph_BTT_FindRandomLocation
 // (Final, UbergraphFunction)
@@ -58,5 +57,5 @@ void UBTT_FindRandomLocation_C::ReceiveExecuteAI(class AAIController* OwnerContr
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

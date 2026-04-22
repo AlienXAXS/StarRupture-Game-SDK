@@ -14,8 +14,7 @@
 #include "WBP_MarketingElement_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_MarketingElement.WBP_MarketingElement_C.ExecuteUbergraph_WBP_MarketingElement
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void UWBP_MarketingElement_C::BndEvt__WBP_MarketingElement_ScrollBox_K2Node_Comp
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

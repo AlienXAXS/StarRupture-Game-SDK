@@ -14,8 +14,7 @@
 #include "WBP_InventorySplitWindow_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_InventorySplitWindow.WBP_InventorySplitWindow_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -137,5 +136,5 @@ void UWBP_InventorySplitWindow_C::UpdateAmountText(int32 Amount)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

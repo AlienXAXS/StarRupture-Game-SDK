@@ -14,8 +14,7 @@
 #include "BP_Airlock_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Airlock.BP_Airlock_C.ExecuteUbergraph_BP_Airlock
 // (Final, UbergraphFunction, HasDefaults)
@@ -150,5 +149,5 @@ const class UShapeComponent* ABP_Airlock_C::GetAirlockInteriorComponent() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

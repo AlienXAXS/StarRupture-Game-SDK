@@ -14,8 +14,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_WeaponSlot.WBP_WeaponSlot_C
 // 0x0030 (0x0630 - 0x0600)
@@ -53,5 +52,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_WeaponSlot_C;
 
-}
-
+SDK_NAMESPACE_END

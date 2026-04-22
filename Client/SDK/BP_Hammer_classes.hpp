@@ -15,8 +15,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Hammer.BP_Hammer_C
 // 0x00D8 (0x07B0 - 0x06D8)
@@ -73,5 +72,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Hammer_C;
 
-}
-
+SDK_NAMESPACE_END

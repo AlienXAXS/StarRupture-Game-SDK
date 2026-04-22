@@ -22,8 +22,7 @@
 #include "MassEntity_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class AuActorPlacement.AuActorPlacementComponent
 // 0x0640 (0x06F8 - 0x00B8)
@@ -475,7 +474,7 @@ DUMPER7_ASSERTS_UAuActorPlacingConditionsData;
 // Class AuActorPlacement.AuAPHelperActor
 // 0x05E8 (0x0890 - 0x02A8)
 #pragma pack(push, 0x1)
-class alignas(0x10) AAuAPHelperActor : public AActor
+class SDK_ALIGN(0x10) AAuAPHelperActor : public AActor
 {
 public:
 	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -644,7 +643,7 @@ DUMPER7_ASSERTS_AAuAPHelperActorMultiConfirm;
 // Class AuActorPlacement.AuAPHelperActorSpline
 // 0x0070 (0x0960 - 0x08F0)
 #pragma pack(push, 0x1)
-class alignas(0x10) AAuAPHelperActorSpline : public AAuAPHelperActorMultiConfirm
+class SDK_ALIGN(0x10) AAuAPHelperActorSpline : public AAuAPHelperActorMultiConfirm
 {
 public:
 	class USplineComponent*                       Spline;                                            // 0x08F0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
@@ -854,5 +853,4 @@ public:
 };
 DUMPER7_ASSERTS_UAuPlaceActorCustom;
 
-}
-
+SDK_NAMESPACE_END

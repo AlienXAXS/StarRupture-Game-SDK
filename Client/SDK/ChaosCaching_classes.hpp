@@ -11,16 +11,15 @@
 #include "Basic.hpp"
 
 #include "MovieSceneTracks_classes.hpp"
+#include "Engine_structs.hpp"
+#include "Engine_classes.hpp"
 #include "ChaosCaching_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "Engine_structs.hpp"
-#include "Engine_classes.hpp"
 #include "MovieScene_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ChaosCaching.MovieSceneSpawnableChaosCacheBinding
 // 0x0000 (0x0048 - 0x0048)
@@ -250,5 +249,4 @@ public:
 };
 DUMPER7_ASSERTS_UMovieSceneChaosCacheTrack;
 
-}
-
+SDK_NAMESPACE_END

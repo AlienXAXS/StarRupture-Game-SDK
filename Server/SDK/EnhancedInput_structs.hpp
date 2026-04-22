@@ -10,15 +10,14 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "Slate_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "InputCore_structs.hpp"
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum EnhancedInput.EPlayerMappableKeySlot
 // NumValues: 0x0009
@@ -290,6 +289,20 @@ public:
 };
 DUMPER7_ASSERTS_FPlayerMappableKeyProfileCreationArgs;
 
+// ScriptStruct EnhancedInput.BlueprintInputDebugKeyDelegateBinding
+// 0x0030 (0x0030 - 0x0000)
+struct FBlueprintInputDebugKeyDelegateBinding final
+{
+public:
+	struct FInputChord                            InputChord;                                        // 0x0000(0x0020)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EInputEvent                                   InputKeyEvent;                                     // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   FunctionNameToBind;                                // 0x0024(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bExecuteWhenPaused;                                // 0x002C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FBlueprintInputDebugKeyDelegateBinding;
+
 // ScriptStruct EnhancedInput.MapPlayerKeyArgs
 // 0x0050 (0x0050 - 0x0000)
 struct FMapPlayerKeyArgs final
@@ -428,20 +441,6 @@ public:
 };
 DUMPER7_ASSERTS_FInputActionInstance;
 
-// ScriptStruct EnhancedInput.BlueprintInputDebugKeyDelegateBinding
-// 0x0030 (0x0030 - 0x0000)
-struct FBlueprintInputDebugKeyDelegateBinding final
-{
-public:
-	struct FInputChord                            InputChord;                                        // 0x0000(0x0020)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EInputEvent                                   InputKeyEvent;                                     // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   FunctionNameToBind;                                // 0x0024(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bExecuteWhenPaused;                                // 0x002C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FBlueprintInputDebugKeyDelegateBinding;
-
 // ScriptStruct EnhancedInput.InputComboStepData
 // 0x0010 (0x0010 - 0x0000)
 struct FInputComboStepData final
@@ -465,5 +464,4 @@ public:
 };
 DUMPER7_ASSERTS_FInputCancelAction;
 
-}
-
+SDK_NAMESPACE_END

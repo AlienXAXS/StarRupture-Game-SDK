@@ -14,8 +14,7 @@
 #include "ContextualDialog_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ContextualDialog.ContextualDialogInterface.CanExecuteAnyContextualResponse
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
@@ -2133,5 +2132,5 @@ TArray<struct FContextualEventCounter> UPropertiesHolderComponent::GetAllExecute
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_Ranged_Tier3_Actor_AiController_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Ranged_Tier3_Actor_AiController.BP_Ranged_Tier3_Actor_AiController_C.ExecuteUbergraph_BP_Ranged_Tier3_Actor_AiController
 // (Final, UbergraphFunction)
@@ -50,5 +49,5 @@ void ABP_Ranged_Tier3_Actor_AiController_C::ReceiveBeginPlay()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

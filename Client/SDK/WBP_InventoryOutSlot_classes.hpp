@@ -14,8 +14,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_InventoryOutSlot.WBP_InventoryOutSlot_C
 // 0x0010 (0x0528 - 0x0518)
@@ -49,5 +48,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_InventoryOutSlot_C;
 
-}
-
+SDK_NAMESPACE_END

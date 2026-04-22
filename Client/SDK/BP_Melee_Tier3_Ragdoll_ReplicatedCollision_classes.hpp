@@ -14,8 +14,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Melee_Tier3_Ragdoll_ReplicatedCollision.BP_Melee_Tier3_Ragdoll_ReplicatedCollision_C
 // 0x0018 (0x02C0 - 0x02A8)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Melee_Tier3_Ragdoll_ReplicatedCollision_C;
 
-}
-
+SDK_NAMESPACE_END

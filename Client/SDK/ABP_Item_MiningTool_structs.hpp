@@ -14,8 +14,7 @@
 #include "AnimGraphRuntime_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct ABP_Item_MiningTool.ABP_Item_MiningTool_C.AnimBlueprintGeneratedConstantData
 // 0x0757 (0x0758 - 0x0001)
@@ -96,5 +95,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Item_MiningTool__FAnimBlueprintGeneratedMutableData;
 
-}
-
+SDK_NAMESPACE_END

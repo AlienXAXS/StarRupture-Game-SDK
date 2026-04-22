@@ -14,8 +14,7 @@
 #include "BP_DeathSequenceActor_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor.BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C
 // 0x0010 (0x0430 - 0x0420)
@@ -49,5 +48,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C;
 
-}
-
+SDK_NAMESPACE_END

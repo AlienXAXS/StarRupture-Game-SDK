@@ -14,8 +14,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_BuildingLogisticsInfo.WBP_BuildingLogisticsInfo_C
 // 0x0028 (0x03E8 - 0x03C0)
@@ -50,5 +49,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_BuildingLogisticsInfo_C;
 
-}
-
+SDK_NAMESPACE_END

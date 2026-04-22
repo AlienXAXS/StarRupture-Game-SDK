@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum AssetRegistry.EAssetRegistrySortOrder
 // NumValues: 0x0003
@@ -22,16 +21,6 @@ enum class EAssetRegistrySortOrder : uint8
 	Descending                               = 1,
 	EAssetRegistrySortOrder_MAX              = 2,
 };
-
-// ScriptStruct AssetRegistry.TagAndValue
-// 0x0018 (0x0018 - 0x0000)
-struct FTagAndValue final
-{
-public:
-	class FName                                   Tag;                                               // 0x0000(0x0008)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Value;                                             // 0x0008(0x0010)(BlueprintVisible, ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FTagAndValue;
 
 // ScriptStruct AssetRegistry.AssetRegistryDependencyOptions
 // 0x0005 (0x0005 - 0x0000)
@@ -46,5 +35,14 @@ public:
 };
 DUMPER7_ASSERTS_FAssetRegistryDependencyOptions;
 
-}
+// ScriptStruct AssetRegistry.TagAndValue
+// 0x0018 (0x0018 - 0x0000)
+struct FTagAndValue final
+{
+public:
+	class FName                                   Tag;                                               // 0x0000(0x0008)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Value;                                             // 0x0008(0x0010)(BlueprintVisible, ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FTagAndValue;
 
+SDK_NAMESPACE_END

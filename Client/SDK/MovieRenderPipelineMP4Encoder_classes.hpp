@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "MovieRenderPipelineCore_classes.hpp"
 #include "MovieRenderPipelineMP4Encoder_structs.hpp"
 #include "OpenColorIO_structs.hpp"
+#include "MovieRenderPipelineCore_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MovieRenderPipelineMP4Encoder.MovieGraphMP4EncoderNode
 // 0x0118 (0x01E8 - 0x00D0)
@@ -92,5 +91,4 @@ public:
 };
 DUMPER7_ASSERTS_UMoviePipelineMP4EncoderOutput;
 
-}
-
+SDK_NAMESPACE_END

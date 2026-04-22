@@ -14,8 +14,7 @@
 #include "BTDecorator_Fail_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BTDecorator_Fail.BTDecorator_Fail_C.PerformConditionCheck
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -39,5 +38,5 @@ bool UBTDecorator_Fail_C::PerformConditionCheck(class AActor* OwnerActor)
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

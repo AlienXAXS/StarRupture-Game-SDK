@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_DroneJunction_4.BP_DroneJunction_4_C
 // 0x0018 (0x0660 - 0x0648)
@@ -41,5 +40,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_DroneJunction_4_C;
 
-}
-
+SDK_NAMESPACE_END

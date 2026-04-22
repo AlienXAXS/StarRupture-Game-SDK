@@ -14,8 +14,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GA_ShowWidget_WhenInputPressed.GA_ShowWidget_WhenInputPressed_C
 // 0x0058 (0x0560 - 0x0508)
@@ -55,5 +54,4 @@ public:
 };
 DUMPER7_ASSERTS_UGA_ShowWidget_WhenInputPressed_C;
 
-}
-
+SDK_NAMESPACE_END

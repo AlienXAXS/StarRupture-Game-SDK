@@ -14,8 +14,8 @@
 #include "CommonUser_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function WBP_StartupScreen.WBP_StartupScreen_C.BndEvt__BW_LyraFrontEnd_PressStartButton_K2Node_ComponentBoundEvent_5_CommonButtonBaseClicked__DelegateSignature
 // 0x0008 (0x0008 - 0x0000)
@@ -109,5 +109,5 @@ public:
 };
 DUMPER7_ASSERTS_WBP_StartupScreen_C_BP_GetDesiredFocusTarget;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

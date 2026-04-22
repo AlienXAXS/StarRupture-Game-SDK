@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "ImgMedia_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "MediaAssets_classes.hpp"
+#include "ImgMedia_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ImgMedia.ImgMediaSource
 // 0x00C0 (0x0148 - 0x0088)
@@ -61,5 +60,4 @@ public:
 };
 DUMPER7_ASSERTS_UImgMediaSource;
 
-}
-
+SDK_NAMESPACE_END

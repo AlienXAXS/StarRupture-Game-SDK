@@ -10,17 +10,16 @@
 
 #include "Basic.hpp"
 
-#include "DataflowSimulation_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "CoreUObject_classes.hpp"
 #include "ChaosClothAssetEngine_structs.hpp"
+#include "DataflowSimulation_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "CoreUObject_structs.hpp"
+#include "CoreUObject_classes.hpp"
 #include "DataflowEngine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ChaosClothAssetEngine.ChaosClothComponent
 // 0x0150 (0x0A60 - 0x0910)
@@ -230,5 +229,4 @@ public:
 };
 DUMPER7_ASSERTS_UChaosClothAssetInteractor;
 
-}
-
+SDK_NAMESPACE_END

@@ -16,8 +16,8 @@
 #include "GameplayTags_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function ABP_Ranged_Tier2_LOD0.ABP_Ranged_Tier2_LOD0_C.UpdateYawRotationRateForLocomotionState
 // 0x0002 (0x0002 - 0x0000)
@@ -302,5 +302,5 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Ranged_Tier2_LOD0_C_AnimGraph;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

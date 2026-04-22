@@ -11,14 +11,13 @@
 #include "Basic.hpp"
 
 #include "PCG_classes.hpp"
+#include "ErrantBiomesPCG_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "ErrantBiomesPCG_structs.hpp"
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ErrantBiomesPCG.BiomesPCGComponentData
 // 0x0100 (0x0128 - 0x0028)
@@ -158,5 +157,4 @@ public:
 };
 DUMPER7_ASSERTS_UBiomesPCGWorldSubsystem;
 
-}
-
+SDK_NAMESPACE_END

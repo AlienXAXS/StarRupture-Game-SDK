@@ -14,8 +14,7 @@
 #include "CommonGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_OverallUILayout.WBP_OverallUILayout_C
 // 0x0028 (0x0458 - 0x0430)
@@ -48,5 +47,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_OverallUILayout_C;
 
-}
-
+SDK_NAMESPACE_END

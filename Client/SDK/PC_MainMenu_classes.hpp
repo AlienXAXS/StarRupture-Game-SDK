@@ -13,8 +13,7 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PC_MainMenu.PC_MainMenu_C
 // 0x0000 (0x07E0 - 0x07E0)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_APC_MainMenu_C;
 
-}
-
+SDK_NAMESPACE_END

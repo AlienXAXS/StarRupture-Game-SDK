@@ -13,8 +13,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_BuildingInfoRow.WBP_BuildingInfoRow_C
 // 0x0000 (0x03F0 - 0x03F0)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_BuildingInfoRow_C;
 
-}
-
+SDK_NAMESPACE_END

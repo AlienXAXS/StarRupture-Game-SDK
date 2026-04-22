@@ -10,16 +10,15 @@
 
 #include "Basic.hpp"
 
-#include "SlateCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "SlateCore_structs.hpp"
 #include "Engine_classes.hpp"
 #include "UMG_classes.hpp"
 #include "GameSubtitles_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class GameSubtitles.SubtitleDisplayOptions
 // 0x0170 (0x01A0 - 0x0030)
@@ -142,5 +141,4 @@ public:
 };
 DUMPER7_ASSERTS_USubtitleDisplay;
 
-}
-
+SDK_NAMESPACE_END

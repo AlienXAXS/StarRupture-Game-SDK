@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "GameplayCameras_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "GameplayCameras_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function GameplayCameras.BlueprintCameraEvaluationDataFunctionLibrary.BlendCameraEvaluationData
 // 0x0038 (0x0038 - 0x0000)
@@ -1261,5 +1261,5 @@ public:
 };
 DUMPER7_ASSERTS_BlueprintCameraNodeEvaluator_SetDefaultOwningCameraRigParameters;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

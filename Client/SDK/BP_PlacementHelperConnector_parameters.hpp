@@ -13,8 +13,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_PlacementHelperConnector.BP_PlacementHelperConnector_C.ExecuteUbergraph_BP_PlacementHelperConnector
 // 0x0110 (0x0110 - 0x0000)
@@ -175,5 +175,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_PlacementHelperConnector_C_SetSplineSegment;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "BP_DroneStation_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_DroneStation.BP_DroneStation_C.Timeline__UpdateFunc
 // (BlueprintEvent)
@@ -126,5 +125,5 @@ void ABP_DroneStation_C::ExecuteUbergraph_BP_DroneStation(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

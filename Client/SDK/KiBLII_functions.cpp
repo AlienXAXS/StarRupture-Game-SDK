@@ -14,8 +14,7 @@
 #include "KiBLII_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function KiBLII.KiBLIIFunctionLibrary.GetKeyboardLayoutsChars
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
@@ -125,5 +124,5 @@ struct FKeyEvent UKiBLIIFunctionLibrary::RemapKeyEvent_SystemToQwerty(const stru
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -19,8 +19,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class GameSettings.GameSettingHeader
 // 0x0020 (0x03E8 - 0x03C8)
@@ -931,5 +930,4 @@ public:
 };
 DUMPER7_ASSERTS_UGameResponsivePanelSlot;
 
-}
-
+SDK_NAMESPACE_END

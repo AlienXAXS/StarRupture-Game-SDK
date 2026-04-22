@@ -15,8 +15,7 @@
 #include "ClothingSystemRuntimeInterface_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum ChaosClothAssetEngine.EClothAssetAsyncProperties
 // NumValues: 0x0008
@@ -84,5 +83,4 @@ public:
 };
 DUMPER7_ASSERTS_FChaosClothSimulationModel;
 
-}
-
+SDK_NAMESPACE_END

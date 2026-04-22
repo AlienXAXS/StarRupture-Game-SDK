@@ -15,8 +15,7 @@
 #include "StateTreeModule_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum GameplayCameras.EBuiltInDoubleCameraVariable
 // NumValues: 0x0006
@@ -341,6 +340,49 @@ public:
 };
 DUMPER7_ASSERTS_FCameraContextDataTableAllocationInfo;
 
+// ScriptStruct GameplayCameras.CameraVariableID
+// 0x0004 (0x0004 - 0x0000)
+struct FCameraVariableID final
+{
+public:
+	uint32                                        Value;                                             // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+};
+DUMPER7_ASSERTS_FCameraVariableID;
+
+// ScriptStruct GameplayCameras.DoubleCameraParameter
+// 0x0018 (0x0018 - 0x0000)
+struct FDoubleCameraParameter final
+{
+public:
+	double                                        Value;                                             // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCameraVariableID                      VariableID;                                        // 0x0008(0x0004)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UDoubleCameraVariable*                  Variable;                                          // 0x0010(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FDoubleCameraParameter;
+
+// ScriptStruct GameplayCameras.CameraRigParameterOverrideBase
+// 0x0038 (0x0038 - 0x0000)
+struct FCameraRigParameterOverrideBase
+{
+public:
+	struct FGuid                                  InterfaceParameterGuid;                            // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGuid                                  PrivateVariableGuid;                               // 0x0010(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 InterfaceParameterName;                            // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInvalid;                                          // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCameraRigParameterOverrideBase;
+
+// ScriptStruct GameplayCameras.DoubleCameraRigParameterOverride
+// 0x0018 (0x0050 - 0x0038)
+struct FDoubleCameraRigParameterOverride final : public FCameraRigParameterOverrideBase
+{
+public:
+	struct FDoubleCameraParameter                 Value;                                             // 0x0038(0x0018)(NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FDoubleCameraRigParameterOverride;
+
 // ScriptStruct GameplayCameras.CameraFramingZone
 // 0x0020 (0x0020 - 0x0000)
 struct FCameraFramingZone final
@@ -352,15 +394,6 @@ public:
 	double                                        Bottom;                                            // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCameraFramingZone;
-
-// ScriptStruct GameplayCameras.CameraVariableID
-// 0x0004 (0x0004 - 0x0000)
-struct FCameraVariableID final
-{
-public:
-	uint32                                        Value;                                             // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-};
-DUMPER7_ASSERTS_FCameraVariableID;
 
 // ScriptStruct GameplayCameras.CameraFramingZoneParameter
 // 0x0028 (0x0028 - 0x0000)
@@ -427,6 +460,15 @@ public:
 };
 DUMPER7_ASSERTS_FInteger32CameraParameter;
 
+// ScriptStruct GameplayCameras.Integer32CameraRigParameterOverride
+// 0x0010 (0x0048 - 0x0038)
+struct FInteger32CameraRigParameterOverride final : public FCameraRigParameterOverrideBase
+{
+public:
+	struct FInteger32CameraParameter              Value;                                             // 0x0038(0x0010)(NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FInteger32CameraRigParameterOverride;
+
 // ScriptStruct GameplayCameras.FloatCameraParameter
 // 0x0010 (0x0010 - 0x0000)
 struct FFloatCameraParameter final
@@ -437,40 +479,6 @@ public:
 	class UFloatCameraVariable*                   Variable;                                          // 0x0008(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 };
 DUMPER7_ASSERTS_FFloatCameraParameter;
-
-// ScriptStruct GameplayCameras.CameraRigParameterOverrideBase
-// 0x0038 (0x0038 - 0x0000)
-struct FCameraRigParameterOverrideBase
-{
-public:
-	struct FGuid                                  InterfaceParameterGuid;                            // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGuid                                  PrivateVariableGuid;                               // 0x0010(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 InterfaceParameterName;                            // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInvalid;                                          // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCameraRigParameterOverrideBase;
-
-// ScriptStruct GameplayCameras.FloatCameraRigParameterOverride
-// 0x0010 (0x0048 - 0x0038)
-struct FFloatCameraRigParameterOverride final : public FCameraRigParameterOverrideBase
-{
-public:
-	struct FFloatCameraParameter                  Value;                                             // 0x0038(0x0010)(NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FFloatCameraRigParameterOverride;
-
-// ScriptStruct GameplayCameras.DoubleCameraParameter
-// 0x0018 (0x0018 - 0x0000)
-struct FDoubleCameraParameter final
-{
-public:
-	double                                        Value;                                             // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCameraVariableID                      VariableID;                                        // 0x0008(0x0004)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UDoubleCameraVariable*                  Variable;                                          // 0x0010(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FDoubleCameraParameter;
 
 // ScriptStruct GameplayCameras.Vector2fCameraParameter
 // 0x0018 (0x0018 - 0x0000)
@@ -644,6 +652,15 @@ public:
 };
 DUMPER7_ASSERTS_FCameraRotatorCurve;
 
+// ScriptStruct GameplayCameras.GameplayCamerasActivateCameraRigViaProxyTaskInstanceData
+// 0x0008 (0x0008 - 0x0000)
+struct FGameplayCamerasActivateCameraRigViaProxyTaskInstanceData final
+{
+public:
+	class UCameraRigProxyAsset*                   CameraRigProxy;                                    // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FGameplayCamerasActivateCameraRigViaProxyTaskInstanceData;
+
 // ScriptStruct GameplayCameras.CameraSingleCurve
 // 0x0080 (0x0080 - 0x0000)
 struct FCameraSingleCurve final
@@ -652,24 +669,6 @@ public:
 	struct FRichCurve                             Curve;                                             // 0x0000(0x0080)(NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCameraSingleCurve;
-
-// ScriptStruct GameplayCameras.GameplayCamerasStateTreeTask
-// 0x0000 (0x0028 - 0x0028)
-struct FGameplayCamerasStateTreeTask : public FStateTreeTaskBase
-{
-};
-DUMPER7_ASSERTS_FGameplayCamerasStateTreeTask;
-
-// ScriptStruct GameplayCameras.GameplayCamerasActivateCameraRigViaProxyTask
-// 0x0008 (0x0030 - 0x0028)
-struct FGameplayCamerasActivateCameraRigViaProxyTask final : public FGameplayCamerasStateTreeTask
-{
-public:
-	uint8                                         Pad_28[0x6];                                       // 0x0028(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bRunOnce;                                          // 0x002E(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2F[0x1];                                       // 0x002F(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FGameplayCamerasActivateCameraRigViaProxyTask;
 
 // ScriptStruct GameplayCameras.BooleanCameraVariableReference
 // 0x0010 (0x0010 - 0x0000)
@@ -704,6 +703,19 @@ public:
 };
 DUMPER7_ASSERTS_FFloatCameraVariableReference;
 
+// ScriptStruct GameplayCameras.SplineOrbitControlPoint
+// 0x0050 (0x0050 - 0x0000)
+struct FSplineOrbitControlPoint final
+{
+public:
+	struct FVector3d                              LocationOffset;                                    // 0x0000(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector3d                              TargetOffset;                                      // 0x0018(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator3d                             RotationOffset;                                    // 0x0030(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         PitchAngle;                                        // 0x0048(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSplineOrbitControlPoint;
+
 // ScriptStruct GameplayCameras.DoubleCameraVariableReference
 // 0x0010 (0x0010 - 0x0000)
 struct FDoubleCameraVariableReference final
@@ -726,6 +738,15 @@ public:
 };
 DUMPER7_ASSERTS_FVector2fCameraVariableReference;
 
+// ScriptStruct GameplayCameras.GameplayCamerasActivateCameraRigTaskInstanceData
+// 0x0008 (0x0008 - 0x0000)
+struct FGameplayCamerasActivateCameraRigTaskInstanceData final
+{
+public:
+	class UCameraRigAsset*                        CameraRig;                                         // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FGameplayCamerasActivateCameraRigTaskInstanceData;
+
 // ScriptStruct GameplayCameras.Vector2dCameraVariableReference
 // 0x0010 (0x0010 - 0x0000)
 struct FVector2dCameraVariableReference final
@@ -736,17 +757,6 @@ public:
 	class UVector2dCameraVariable*                Variable;                                          // 0x0008(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 };
 DUMPER7_ASSERTS_FVector2dCameraVariableReference;
-
-// ScriptStruct GameplayCameras.GameplayCamerasActivateCameraRigTask
-// 0x0008 (0x0030 - 0x0028)
-struct FGameplayCamerasActivateCameraRigTask final : public FGameplayCamerasStateTreeTask
-{
-public:
-	uint8                                         Pad_28[0x6];                                       // 0x0028(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bRunOnce;                                          // 0x002E(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2F[0x1];                                       // 0x002F(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FGameplayCamerasActivateCameraRigTask;
 
 // ScriptStruct GameplayCameras.Vector3fCameraVariableReference
 // 0x0010 (0x0010 - 0x0000)
@@ -955,6 +965,15 @@ public:
 };
 DUMPER7_ASSERTS_FBaseCameraObjectReference;
 
+// ScriptStruct GameplayCameras.FloatCameraRigParameterOverride
+// 0x0010 (0x0048 - 0x0038)
+struct FFloatCameraRigParameterOverride final : public FCameraRigParameterOverrideBase
+{
+public:
+	struct FFloatCameraParameter                  Value;                                             // 0x0038(0x0010)(NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FFloatCameraRigParameterOverride;
+
 // ScriptStruct GameplayCameras.CameraAssetAllocationInfo
 // 0x0020 (0x0020 - 0x0000)
 struct FCameraAssetAllocationInfo final
@@ -964,15 +983,6 @@ public:
 	struct FCameraContextDataTableAllocationInfo  ContextDataTableInfo;                              // 0x0010(0x0010)(NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCameraAssetAllocationInfo;
-
-// ScriptStruct GameplayCameras.DoubleCameraRigParameterOverride
-// 0x0018 (0x0050 - 0x0038)
-struct FDoubleCameraRigParameterOverride final : public FCameraRigParameterOverrideBase
-{
-public:
-	struct FDoubleCameraParameter                 Value;                                             // 0x0038(0x0018)(NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FDoubleCameraRigParameterOverride;
 
 // ScriptStruct GameplayCameras.CameraAssetReference
 // 0x0038 (0x0038 - 0x0000)
@@ -1039,15 +1049,6 @@ public:
 	struct FBooleanCameraParameter                Value;                                             // 0x0038(0x0010)(NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FBooleanCameraRigParameterOverride;
-
-// ScriptStruct GameplayCameras.Integer32CameraRigParameterOverride
-// 0x0010 (0x0048 - 0x0038)
-struct FInteger32CameraRigParameterOverride final : public FCameraRigParameterOverrideBase
-{
-public:
-	struct FInteger32CameraParameter              Value;                                             // 0x0038(0x0010)(NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FInteger32CameraRigParameterOverride;
 
 // ScriptStruct GameplayCameras.Vector2fCameraRigParameterOverride
 // 0x0018 (0x0050 - 0x0038)
@@ -1243,6 +1244,13 @@ public:
 };
 DUMPER7_ASSERTS_FCameraDirectorStateTreeEvaluationData;
 
+// ScriptStruct GameplayCameras.GameplayCamerasStateTreeTask
+// 0x0000 (0x0028 - 0x0028)
+struct FGameplayCamerasStateTreeTask : public FStateTreeTaskBase
+{
+};
+DUMPER7_ASSERTS_FGameplayCamerasStateTreeTask;
+
 // ScriptStruct GameplayCameras.GameplayCamerasStateTreeCondition
 // 0x0000 (0x0028 - 0x0028)
 struct FGameplayCamerasStateTreeCondition final : public FStateTreeConditionBase
@@ -1250,23 +1258,27 @@ struct FGameplayCamerasStateTreeCondition final : public FStateTreeConditionBase
 };
 DUMPER7_ASSERTS_FGameplayCamerasStateTreeCondition;
 
-// ScriptStruct GameplayCameras.GameplayCamerasActivateCameraRigTaskInstanceData
-// 0x0008 (0x0008 - 0x0000)
-struct FGameplayCamerasActivateCameraRigTaskInstanceData final
+// ScriptStruct GameplayCameras.GameplayCamerasActivateCameraRigTask
+// 0x0008 (0x0030 - 0x0028)
+struct FGameplayCamerasActivateCameraRigTask final : public FGameplayCamerasStateTreeTask
 {
 public:
-	class UCameraRigAsset*                        CameraRig;                                         // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_28[0x6];                                       // 0x0028(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bRunOnce;                                          // 0x002E(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2F[0x1];                                       // 0x002F(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FGameplayCamerasActivateCameraRigTaskInstanceData;
+DUMPER7_ASSERTS_FGameplayCamerasActivateCameraRigTask;
 
-// ScriptStruct GameplayCameras.GameplayCamerasActivateCameraRigViaProxyTaskInstanceData
-// 0x0008 (0x0008 - 0x0000)
-struct FGameplayCamerasActivateCameraRigViaProxyTaskInstanceData final
+// ScriptStruct GameplayCameras.GameplayCamerasActivateCameraRigViaProxyTask
+// 0x0008 (0x0030 - 0x0028)
+struct FGameplayCamerasActivateCameraRigViaProxyTask final : public FGameplayCamerasStateTreeTask
 {
 public:
-	class UCameraRigProxyAsset*                   CameraRigProxy;                                    // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_28[0x6];                                       // 0x0028(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bRunOnce;                                          // 0x002E(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2F[0x1];                                       // 0x002F(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FGameplayCamerasActivateCameraRigViaProxyTaskInstanceData;
+DUMPER7_ASSERTS_FGameplayCamerasActivateCameraRigViaProxyTask;
 
 // ScriptStruct GameplayCameras.BlueprintCameraPose
 // 0x0088 (0x0088 - 0x0000)
@@ -1312,18 +1324,4 @@ public:
 };
 DUMPER7_ASSERTS_FPerlinNoiseData;
 
-// ScriptStruct GameplayCameras.SplineOrbitControlPoint
-// 0x0050 (0x0050 - 0x0000)
-struct FSplineOrbitControlPoint final
-{
-public:
-	struct FVector3d                              LocationOffset;                                    // 0x0000(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector3d                              TargetOffset;                                      // 0x0018(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator3d                             RotationOffset;                                    // 0x0030(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         PitchAngle;                                        // 0x0048(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSplineOrbitControlPoint;
-
-}
-
+SDK_NAMESPACE_END

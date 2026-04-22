@@ -14,8 +14,7 @@
 #include "WBP_BuildingTabsLine_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_BuildingTabsLine.WBP_BuildingTabsLine_C.SetTitle
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -36,5 +35,5 @@ void UWBP_BuildingTabsLine_C::SetTitle(const class FText& InTitle)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

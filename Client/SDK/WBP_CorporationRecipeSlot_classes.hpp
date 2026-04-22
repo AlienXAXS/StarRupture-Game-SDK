@@ -14,8 +14,7 @@
 #include "ChimeraUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_CorporationRecipeSlot.WBP_CorporationRecipeSlot_C
 // 0x00B0 (0x0970 - 0x08C0)
@@ -71,5 +70,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_CorporationRecipeSlot_C;
 
-}
-
+SDK_NAMESPACE_END

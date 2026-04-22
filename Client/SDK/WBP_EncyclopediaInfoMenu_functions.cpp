@@ -14,8 +14,7 @@
 #include "WBP_EncyclopediaInfoMenu_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_EncyclopediaInfoMenu.WBP_EncyclopediaInfoMenu_C.ClearEntryAuthorBP
 // (Event, Public, BlueprintEvent)
@@ -104,5 +103,5 @@ void UWBP_EncyclopediaInfoMenu_C::SetEntryTitleBP(const class FText& Title)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "CommonUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_CommonUIRichTextData.BP_CommonUIRichTextData_C
 // 0x0000 (0x0030 - 0x0030)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_CommonUIRichTextData_C;
 
-}
-
+SDK_NAMESPACE_END

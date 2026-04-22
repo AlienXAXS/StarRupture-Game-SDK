@@ -14,8 +14,7 @@
 #include "WBP_PopupInfoWindow_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WBP_PopupInfoWindow.WBP_PopupInfoWindow_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -90,5 +89,5 @@ class UWidget* UWBP_PopupInfoWindow_C::BP_GetDesiredFocusTarget() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

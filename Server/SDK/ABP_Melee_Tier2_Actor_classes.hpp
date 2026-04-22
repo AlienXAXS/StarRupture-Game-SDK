@@ -16,8 +16,7 @@
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass ABP_Melee_Tier2_Actor.ABP_Melee_Tier2_Actor_C
 // 0x0FA0 (0x15A0 - 0x0600)
@@ -151,5 +150,4 @@ public:
 };
 DUMPER7_ASSERTS_UABP_Melee_Tier2_Actor_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -15,8 +15,7 @@
 #include "UMG_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass W_ChimeraHitmark.W_ChimeraHitmark_C
 // 0x0038 (0x03D8 - 0x03A0)
@@ -58,5 +57,4 @@ public:
 };
 DUMPER7_ASSERTS_UW_ChimeraHitmark_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -15,8 +15,7 @@
 #include "BP_BaseAI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Animal_Crab_Character.BP_Animal_Crab_Character_C
 // 0x0130 (0x0E30 - 0x0D00)
@@ -93,5 +92,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Animal_Crab_Character_C;
 
-}
-
+SDK_NAMESPACE_END

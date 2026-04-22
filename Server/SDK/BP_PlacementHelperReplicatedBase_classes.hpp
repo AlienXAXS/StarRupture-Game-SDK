@@ -14,13 +14,12 @@
 #include "Chimera_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_PlacementHelperReplicatedBase.BP_PlacementHelperReplicatedBase_C
 // 0x0020 (0x08B0 - 0x0890)
 #pragma pack(push, 0x1)
-class alignas(0x10) ABP_PlacementHelperReplicatedBase_C : public ACrAPHelperActorBase
+class SDK_ALIGN(0x10) ABP_PlacementHelperReplicatedBase_C : public ACrAPHelperActorBase
 {
 public:
 	uint8                                         Pad_888[0x8];                                      // 0x0888(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -51,5 +50,4 @@ public:
 #pragma pack(pop)
 DUMPER7_ASSERTS_ABP_PlacementHelperReplicatedBase_C;
 
-}
-
+SDK_NAMESPACE_END

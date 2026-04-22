@@ -14,8 +14,7 @@
 #include "BP_RangedTier2_PooledProjectile_Snot_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_RangedTier2_PooledProjectile_Snot.BP_RangedTier2_PooledProjectile_Snot_C.BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature
 // (HasOutParams, BlueprintEvent)
@@ -214,5 +213,5 @@ bool ABP_RangedTier2_PooledProjectile_Snot_C::ShouldForceReturnToPool() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

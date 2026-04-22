@@ -14,8 +14,7 @@
 #include "BP_MechanicalDrillTier2_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_MechanicalDrillTier2.BP_MechanicalDrillTier2_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
@@ -104,5 +103,5 @@ void ABP_MechanicalDrillTier2_C::CustomEvent()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

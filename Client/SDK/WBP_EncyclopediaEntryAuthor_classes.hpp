@@ -14,8 +14,7 @@
 #include "UMG_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_EncyclopediaEntryAuthor.WBP_EncyclopediaEntryAuthor_C
 // 0x0020 (0x03C0 - 0x03A0)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_EncyclopediaEntryAuthor_C;
 
-}
-
+SDK_NAMESPACE_END

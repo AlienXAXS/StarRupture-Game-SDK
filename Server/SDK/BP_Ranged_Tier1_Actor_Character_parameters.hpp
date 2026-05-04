@@ -17,43 +17,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_Ranged_Tier1_Actor_Character.BP_Ranged_Tier1_Actor_Character_C.UserConstructionScript
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Ranged_Tier1_Actor_Character_C_UserConstructionScript final
-{
-public:
-	bool                                          CallFunc_K2_AttachToComponent_ReturnValue;         // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Ranged_Tier1_Actor_Character_C_UserConstructionScript;
-
-// Function BP_Ranged_Tier1_Actor_Character.BP_Ranged_Tier1_Actor_Character_C.OnExitActorPool
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Ranged_Tier1_Actor_Character_C_OnExitActorPool final
-{
-public:
-	bool                                          CallFunc_IsActive_ReturnValue;                     // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Ranged_Tier1_Actor_Character_C_OnExitActorPool;
-
-// Function BP_Ranged_Tier1_Actor_Character.BP_Ranged_Tier1_Actor_Character_C.OnAiDied
-// 0x0108 (0x0108 - 0x0000)
-struct BP_Ranged_Tier1_Actor_Character_C_OnAiDied final
-{
-public:
-	struct FHitResult                             HitResult;                                         // 0x0000(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	struct FGameplayTag                           KillingDamageTag;                                  // 0x0100(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Ranged_Tier1_Actor_Character_C_OnAiDied;
-
-// Function BP_Ranged_Tier1_Actor_Character.BP_Ranged_Tier1_Actor_Character_C.GetNiagaraEyeSystem
-// 0x0008 (0x0008 - 0x0000)
-struct BP_Ranged_Tier1_Actor_Character_C_GetNiagaraEyeSystem final
-{
-public:
-	class UNiagaraComponent*                      NewParam;                                          // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Ranged_Tier1_Actor_Character_C_GetNiagaraEyeSystem;
-
 // Function BP_Ranged_Tier1_Actor_Character.BP_Ranged_Tier1_Actor_Character_C.ExecuteUbergraph_BP_Ranged_Tier1_Actor_Character
 // 0x0128 (0x0128 - 0x0000)
 struct BP_Ranged_Tier1_Actor_Character_C_ExecuteUbergraph_BP_Ranged_Tier1_Actor_Character final
@@ -69,6 +32,43 @@ public:
 	struct FGameplayTag                           CallFunc_MakeLiteralGameplayTag_ReturnValue;       // 0x0120(0x0008)(NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Ranged_Tier1_Actor_Character_C_ExecuteUbergraph_BP_Ranged_Tier1_Actor_Character;
+
+// Function BP_Ranged_Tier1_Actor_Character.BP_Ranged_Tier1_Actor_Character_C.GetNiagaraEyeSystem
+// 0x0008 (0x0008 - 0x0000)
+struct BP_Ranged_Tier1_Actor_Character_C_GetNiagaraEyeSystem final
+{
+public:
+	class UNiagaraComponent*                      NewParam;                                          // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Ranged_Tier1_Actor_Character_C_GetNiagaraEyeSystem;
+
+// Function BP_Ranged_Tier1_Actor_Character.BP_Ranged_Tier1_Actor_Character_C.OnAiDied
+// 0x0108 (0x0108 - 0x0000)
+struct BP_Ranged_Tier1_Actor_Character_C_OnAiDied final
+{
+public:
+	struct FHitResult                             HitResult;                                         // 0x0000(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	struct FGameplayTag                           KillingDamageTag;                                  // 0x0100(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Ranged_Tier1_Actor_Character_C_OnAiDied;
+
+// Function BP_Ranged_Tier1_Actor_Character.BP_Ranged_Tier1_Actor_Character_C.OnExitActorPool
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Ranged_Tier1_Actor_Character_C_OnExitActorPool final
+{
+public:
+	bool                                          CallFunc_IsActive_ReturnValue;                     // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Ranged_Tier1_Actor_Character_C_OnExitActorPool;
+
+// Function BP_Ranged_Tier1_Actor_Character.BP_Ranged_Tier1_Actor_Character_C.UserConstructionScript
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Ranged_Tier1_Actor_Character_C_UserConstructionScript final
+{
+public:
+	bool                                          CallFunc_K2_AttachToComponent_ReturnValue;         // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Ranged_Tier1_Actor_Character_C_UserConstructionScript;
 
 // Function BP_Ranged_Tier1_Actor_Character.BP_Ranged_Tier1_Actor_Character_C.OnMeshVisibilityUpdated
 // 0x0001 (0x0001 - 0x0000)

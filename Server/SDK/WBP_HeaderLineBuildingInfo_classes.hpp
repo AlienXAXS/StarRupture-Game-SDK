@@ -31,11 +31,11 @@ public:
 	struct FLinearColor                           NormalColor;                                       // 0x03E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void SetTitleFieldSize(int32 Size);
-	void SetTitle(const class FText& InTitle);
-	void SetTextStyle(bool isHighlight);
-	void SetLinesEnabled(bool Enabled);
 	void SetColors(const struct FLinearColor& Highlight, const struct FLinearColor& Default);
+	void SetLinesEnabled(bool Enabled);
+	void SetTextStyle(bool isHighlight);
+	void SetTitle(const class FText& InTitle);
+	void SetTitleFieldSize(int32 Size);
 
 public:
 	static class UClass* StaticClass()

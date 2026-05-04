@@ -18,74 +18,26 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function GS_GameStateBase.GS_GameStateBase_C.PlayContextualDialogueResponseMulticast
-// 0x0120 (0x0120 - 0x0000)
-struct GS_GameStateBase_C_PlayContextualDialogueResponseMulticast final
+// Function GS_GameStateBase.GS_GameStateBase_C.CanExecuteAnyContextualResponse
+// 0x0002 (0x0002 - 0x0000)
+struct GS_GameStateBase_C_CanExecuteAnyContextualResponse final
 {
 public:
-	struct FContextualResponsePayload             Response;                                          // 0x0000(0x0118)(BlueprintVisible, BlueprintReadOnly, Parm)
-	class FName                                   Main_Rule_Name;                                    // 0x0118(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bIsImportant;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_GS_GameStateBase_C_PlayContextualDialogueResponseMulticast;
+DUMPER7_ASSERTS_GS_GameStateBase_C_CanExecuteAnyContextualResponse;
 
-// Function GS_GameStateBase.GS_GameStateBase_C.OnResponseFinished
+// Function GS_GameStateBase.GS_GameStateBase_C.ExecuteContextualResponse
 // 0x0128 (0x0128 - 0x0000)
-struct GS_GameStateBase_C_OnResponseFinished final
+struct GS_GameStateBase_C_ExecuteContextualResponse final
 {
 public:
 	struct FContextualResponsePayload             ResponseData;                                      // 0x0000(0x0118)(BlueprintVisible, BlueprintReadOnly, Parm)
 	class FName                                   RuleNameContainingResponseData;                    // 0x0118(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0120(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_GS_GameStateBase_C_OnResponseFinished;
-
-// Function GS_GameStateBase.GS_GameStateBase_C.OnLoaded_A12FDB953A422BD9EAFD018D9BCB7500
-// 0x0008 (0x0008 - 0x0000)
-struct GS_GameStateBase_C_OnLoaded_A12FDB953A422BD9EAFD018D9BCB7500 final
-{
-public:
-	class UObject*                                Loaded;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_GS_GameStateBase_C_OnLoaded_A12FDB953A422BD9EAFD018D9BCB7500;
-
-// Function GS_GameStateBase.GS_GameStateBase_C.IsCharacterTalking
-// 0x0001 (0x0001 - 0x0000)
-struct GS_GameStateBase_C_IsCharacterTalking final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_GS_GameStateBase_C_IsCharacterTalking;
-
-// Function GS_GameStateBase.GS_GameStateBase_C.InitAvailableWeaponMods
-// 0x0128 (0x0128 - 0x0000)
-struct GS_GameStateBase_C_InitAvailableWeaponMods final
-{
-public:
-	int32                                         Temp_int_Array_Index_Variable;                     // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_HasAuthority_ReturnValue;                 // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FTopLevelAssetPath                     CallFunc_MakeTopLevelAssetPath_ReturnValue;        // 0x0010(0x0010)(NoDestructor, HasGetValueTypeHash)
-	TScriptInterface<class IAssetRegistry>        CallFunc_GetAssetRegistry_ReturnValue;             // 0x0020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	TArray<struct FAssetData>                     CallFunc_GetAssetsByClass_OutAssetData;            // 0x0030(0x0010)(ReferenceParm)
-	bool                                          CallFunc_GetAssetsByClass_ReturnValue;             // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_41[0x3];                                       // 0x0041(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0044(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FAssetData                             CallFunc_Array_Get_Item;                           // 0x0048(0x0068)(HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x00B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_B1[0x7];                                       // 0x00B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSoftObjectPath                        CallFunc_ToSoftObjectPath_ReturnValue;             // 0x00B8(0x0020)(ZeroConstructor, HasGetValueTypeHash)
-	TSoftObjectPtr<class UObject>                 CallFunc_Conv_SoftObjPathToSoftObjRef_ReturnValue; // 0x00D8(0x0028)(UObjectWrapper, HasGetValueTypeHash)
-	class UObject*                                CallFunc_LoadAsset_Blocking_ReturnValue;           // 0x0100(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UCrWeaponModDataAsset*                  K2Node_DynamicCast_AsCr_Weapon_Mod_Data_Asset;     // 0x0108(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0110(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_111[0x7];                                      // 0x0111(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UClass*                                 K2Node_ClassDynamicCast_AsCr_Weapon_Mod_Blueprint_Item_Base; // 0x0118(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_ClassDynamicCast_bSuccess;                  // 0x0120(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_GS_GameStateBase_C_InitAvailableWeaponMods;
+DUMPER7_ASSERTS_GS_GameStateBase_C_ExecuteContextualResponse;
 
 // Function GS_GameStateBase.GS_GameStateBase_C.ExecuteUbergraph_GS_GameStateBase
 // 0x01E0 (0x01E0 - 0x0000)
@@ -123,26 +75,74 @@ public:
 };
 DUMPER7_ASSERTS_GS_GameStateBase_C_ExecuteUbergraph_GS_GameStateBase;
 
-// Function GS_GameStateBase.GS_GameStateBase_C.ExecuteContextualResponse
+// Function GS_GameStateBase.GS_GameStateBase_C.InitAvailableWeaponMods
 // 0x0128 (0x0128 - 0x0000)
-struct GS_GameStateBase_C_ExecuteContextualResponse final
+struct GS_GameStateBase_C_InitAvailableWeaponMods final
+{
+public:
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_HasAuthority_ReturnValue;                 // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FTopLevelAssetPath                     CallFunc_MakeTopLevelAssetPath_ReturnValue;        // 0x0010(0x0010)(NoDestructor, HasGetValueTypeHash)
+	TScriptInterface<class IAssetRegistry>        CallFunc_GetAssetRegistry_ReturnValue;             // 0x0020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	TArray<struct FAssetData>                     CallFunc_GetAssetsByClass_OutAssetData;            // 0x0030(0x0010)(ReferenceParm)
+	bool                                          CallFunc_GetAssetsByClass_ReturnValue;             // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_41[0x3];                                       // 0x0041(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0044(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FAssetData                             CallFunc_Array_Get_Item;                           // 0x0048(0x0068)(HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x00B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_B1[0x7];                                       // 0x00B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSoftObjectPath                        CallFunc_ToSoftObjectPath_ReturnValue;             // 0x00B8(0x0020)(ZeroConstructor, HasGetValueTypeHash)
+	TSoftObjectPtr<class UObject>                 CallFunc_Conv_SoftObjPathToSoftObjRef_ReturnValue; // 0x00D8(0x0028)(UObjectWrapper, HasGetValueTypeHash)
+	class UObject*                                CallFunc_LoadAsset_Blocking_ReturnValue;           // 0x0100(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UCrWeaponModDataAsset*                  K2Node_DynamicCast_AsCr_Weapon_Mod_Data_Asset;     // 0x0108(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0110(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_111[0x7];                                      // 0x0111(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UClass*                                 K2Node_ClassDynamicCast_AsCr_Weapon_Mod_Blueprint_Item_Base; // 0x0118(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_ClassDynamicCast_bSuccess;                  // 0x0120(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_GS_GameStateBase_C_InitAvailableWeaponMods;
+
+// Function GS_GameStateBase.GS_GameStateBase_C.IsCharacterTalking
+// 0x0001 (0x0001 - 0x0000)
+struct GS_GameStateBase_C_IsCharacterTalking final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_GS_GameStateBase_C_IsCharacterTalking;
+
+// Function GS_GameStateBase.GS_GameStateBase_C.OnLoaded_A12FDB953A422BD9EAFD018D9BCB7500
+// 0x0008 (0x0008 - 0x0000)
+struct GS_GameStateBase_C_OnLoaded_A12FDB953A422BD9EAFD018D9BCB7500 final
+{
+public:
+	class UObject*                                Loaded;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_GS_GameStateBase_C_OnLoaded_A12FDB953A422BD9EAFD018D9BCB7500;
+
+// Function GS_GameStateBase.GS_GameStateBase_C.OnResponseFinished
+// 0x0128 (0x0128 - 0x0000)
+struct GS_GameStateBase_C_OnResponseFinished final
 {
 public:
 	struct FContextualResponsePayload             ResponseData;                                      // 0x0000(0x0118)(BlueprintVisible, BlueprintReadOnly, Parm)
 	class FName                                   RuleNameContainingResponseData;                    // 0x0118(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0120(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_GS_GameStateBase_C_ExecuteContextualResponse;
+DUMPER7_ASSERTS_GS_GameStateBase_C_OnResponseFinished;
 
-// Function GS_GameStateBase.GS_GameStateBase_C.CanExecuteAnyContextualResponse
-// 0x0002 (0x0002 - 0x0000)
-struct GS_GameStateBase_C_CanExecuteAnyContextualResponse final
+// Function GS_GameStateBase.GS_GameStateBase_C.PlayContextualDialogueResponseMulticast
+// 0x0120 (0x0120 - 0x0000)
+struct GS_GameStateBase_C_PlayContextualDialogueResponseMulticast final
 {
 public:
-	bool                                          bIsImportant;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FContextualResponsePayload             Response;                                          // 0x0000(0x0118)(BlueprintVisible, BlueprintReadOnly, Parm)
+	class FName                                   Main_Rule_Name;                                    // 0x0118(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_GS_GameStateBase_C_CanExecuteAnyContextualResponse;
+DUMPER7_ASSERTS_GS_GameStateBase_C_PlayContextualDialogueResponseMulticast;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

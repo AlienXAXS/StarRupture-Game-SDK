@@ -16,21 +16,21 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_SolarFlaresForCapture.BP_SolarFlaresForCapture_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
+// Function BP_SolarFlaresForCapture.BP_SolarFlaresForCapture_C.ExecuteUbergraph_BP_SolarFlaresForCapture
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_SolarFlaresForCapture_C::ReceiveTick(float DeltaSeconds)
+void ABP_SolarFlaresForCapture_C::ExecuteUbergraph_BP_SolarFlaresForCapture(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SolarFlaresForCapture_C", "ReceiveTick");
+		Func = Class->GetFunction("BP_SolarFlaresForCapture_C", "ExecuteUbergraph_BP_SolarFlaresForCapture");
 
-	Params::BP_SolarFlaresForCapture_C_ReceiveTick Parms{};
+	Params::BP_SolarFlaresForCapture_C_ExecuteUbergraph_BP_SolarFlaresForCapture Parms{};
 
-	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -50,21 +50,21 @@ void ABP_SolarFlaresForCapture_C::ReceiveBeginPlay()
 }
 
 
-// Function BP_SolarFlaresForCapture.BP_SolarFlaresForCapture_C.ExecuteUbergraph_BP_SolarFlaresForCapture
-// (Final, UbergraphFunction, HasDefaults)
+// Function BP_SolarFlaresForCapture.BP_SolarFlaresForCapture_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_SolarFlaresForCapture_C::ExecuteUbergraph_BP_SolarFlaresForCapture(int32 EntryPoint)
+void ABP_SolarFlaresForCapture_C::ReceiveTick(float DeltaSeconds)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SolarFlaresForCapture_C", "ExecuteUbergraph_BP_SolarFlaresForCapture");
+		Func = Class->GetFunction("BP_SolarFlaresForCapture_C", "ReceiveTick");
 
-	Params::BP_SolarFlaresForCapture_C_ExecuteUbergraph_BP_SolarFlaresForCapture Parms{};
+	Params::BP_SolarFlaresForCapture_C_ReceiveTick Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.DeltaSeconds = DeltaSeconds;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

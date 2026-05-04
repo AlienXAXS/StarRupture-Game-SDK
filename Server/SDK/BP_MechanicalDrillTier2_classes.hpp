@@ -35,11 +35,11 @@ public:
 	TArray<class UClass*>                         OreTypes;                                          // 0x0728(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
-	void ReceiveBeginPlay();
-	void OnResourceDetected(TSubclassOf<class UCrItemDataBase> OreItemClass);
-	void OnBuildingStateChanged(ECrBuildingState InState);
-	void ExecuteUbergraph_BP_MechanicalDrillTier2(int32 EntryPoint);
 	void CustomEvent();
+	void ExecuteUbergraph_BP_MechanicalDrillTier2(int32 EntryPoint);
+	void OnBuildingStateChanged(ECrBuildingState InState);
+	void OnResourceDetected(TSubclassOf<class UCrItemDataBase> OreItemClass);
+	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

@@ -16,17 +16,117 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.BP_OnCollisionHitsChanged
+// (Event, Protected, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void ABP_DroneRailHelperT1_C::UserConstructionScript()
+void ABP_DroneRailHelperT1_C::BP_OnCollisionHitsChanged()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneRailHelperT1_C", "UserConstructionScript");
+		Func = Class->GetFunction("BP_DroneRailHelperT1_C", "BP_OnCollisionHitsChanged");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.ExecuteUbergraph_BP_DroneRailHelperT1
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_DroneRailHelperT1_C::ExecuteUbergraph_BP_DroneRailHelperT1(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_DroneRailHelperT1_C", "ExecuteUbergraph_BP_DroneRailHelperT1");
+
+	Params::BP_DroneRailHelperT1_C_ExecuteUbergraph_BP_DroneRailHelperT1 Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.OnConfirmedPoint
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// const struct FAuAPConfirmPointData&     NewPoint                                               (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, ContainsInstancedReference)
+
+void ABP_DroneRailHelperT1_C::OnConfirmedPoint(const struct FAuAPConfirmPointData& NewPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_DroneRailHelperT1_C", "OnConfirmedPoint");
+
+	Params::BP_DroneRailHelperT1_C_OnConfirmedPoint Parms{};
+
+	Parms.NewPoint = std::move(NewPoint);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.OnSetReplacingExistingActor
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bSet                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_DroneRailHelperT1_C::OnSetReplacingExistingActor(bool bSet)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_DroneRailHelperT1_C", "OnSetReplacingExistingActor");
+
+	Params::BP_DroneRailHelperT1_C_OnSetReplacingExistingActor Parms{};
+
+	Parms.bSet = bSet;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_DroneRailHelperT1_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_DroneRailHelperT1_C", "ReceiveTick");
+
+	Params::BP_DroneRailHelperT1_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.SetMeshColor
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_DroneRailHelperT1_C::SetMeshColor(const struct FLinearColor& Color)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_DroneRailHelperT1_C", "SetMeshColor");
+
+	Params::BP_DroneRailHelperT1_C_SetMeshColor Parms{};
+
+	Parms.Color = std::move(Color);
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -54,115 +154,15 @@ void ABP_DroneRailHelperT1_C::SetSplineSegment(class USplineMeshComponent* Splin
 }
 
 
-// Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.SetMeshColor
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_DroneRailHelperT1_C::SetMeshColor(const struct FLinearColor& Color)
+void ABP_DroneRailHelperT1_C::UserConstructionScript()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneRailHelperT1_C", "SetMeshColor");
-
-	Params::BP_DroneRailHelperT1_C_SetMeshColor Parms{};
-
-	Parms.Color = std::move(Color);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_DroneRailHelperT1_C::ReceiveTick(float DeltaSeconds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneRailHelperT1_C", "ReceiveTick");
-
-	Params::BP_DroneRailHelperT1_C_ReceiveTick Parms{};
-
-	Parms.DeltaSeconds = DeltaSeconds;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.OnSetReplacingExistingActor
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bSet                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_DroneRailHelperT1_C::OnSetReplacingExistingActor(bool bSet)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneRailHelperT1_C", "OnSetReplacingExistingActor");
-
-	Params::BP_DroneRailHelperT1_C_OnSetReplacingExistingActor Parms{};
-
-	Parms.bSet = bSet;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.OnConfirmedPoint
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// const struct FAuAPConfirmPointData&     NewPoint                                               (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, ContainsInstancedReference)
-
-void ABP_DroneRailHelperT1_C::OnConfirmedPoint(const struct FAuAPConfirmPointData& NewPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneRailHelperT1_C", "OnConfirmedPoint");
-
-	Params::BP_DroneRailHelperT1_C_OnConfirmedPoint Parms{};
-
-	Parms.NewPoint = std::move(NewPoint);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.ExecuteUbergraph_BP_DroneRailHelperT1
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_DroneRailHelperT1_C::ExecuteUbergraph_BP_DroneRailHelperT1(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneRailHelperT1_C", "ExecuteUbergraph_BP_DroneRailHelperT1");
-
-	Params::BP_DroneRailHelperT1_C_ExecuteUbergraph_BP_DroneRailHelperT1 Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.BP_OnCollisionHitsChanged
-// (Event, Protected, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void ABP_DroneRailHelperT1_C::BP_OnCollisionHitsChanged()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneRailHelperT1_C", "BP_OnCollisionHitsChanged");
+		Func = Class->GetFunction("BP_DroneRailHelperT1_C", "UserConstructionScript");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

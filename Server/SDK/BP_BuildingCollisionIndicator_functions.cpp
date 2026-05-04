@@ -16,20 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_BuildingCollisionIndicator.BP_BuildingCollisionIndicator_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_BuildingCollisionIndicator_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BuildingCollisionIndicator_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_BuildingCollisionIndicator.BP_BuildingCollisionIndicator_C.ExecuteUbergraph_BP_BuildingCollisionIndicator
 // (Final, UbergraphFunction)
 // Parameters:
@@ -47,6 +33,20 @@ void ABP_BuildingCollisionIndicator_C::ExecuteUbergraph_BP_BuildingCollisionIndi
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_BuildingCollisionIndicator.BP_BuildingCollisionIndicator_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_BuildingCollisionIndicator_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BuildingCollisionIndicator_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

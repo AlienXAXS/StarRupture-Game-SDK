@@ -16,65 +16,44 @@
 
 SDK_NAMESPACE_START
 
-// Function PC_PlayerControllerBase.PC_PlayerControllerBase_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void APC_PlayerControllerBase_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PC_PlayerControllerBase_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function PC_PlayerControllerBase.PC_PlayerControllerBase_C.OnServerExecuteConsoleCommand
-// (BlueprintEvent)
-
-void APC_PlayerControllerBase_C::OnServerExecuteConsoleCommand()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PC_PlayerControllerBase_C", "OnServerExecuteConsoleCommand");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function PC_PlayerControllerBase.PC_PlayerControllerBase_C.K2_ShowProfessionMenu
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void APC_PlayerControllerBase_C::K2_ShowProfessionMenu()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PC_PlayerControllerBase_C", "K2_ShowProfessionMenu");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function PC_PlayerControllerBase.PC_PlayerControllerBase_C.InpActEvt_K_K2Node_InputDebugKeyEvent_0
-// (BlueprintEvent)
+// Function PC_PlayerControllerBase.PC_PlayerControllerBase_C.CanInputKeyBePassedFromUIOnlyMode
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
-// const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void APC_PlayerControllerBase_C::InpActEvt_K_K2Node_InputDebugKeyEvent_0(const struct FKey& Key, const struct FInputActionValue& ActionValue)
+bool APC_PlayerControllerBase_C::CanInputKeyBePassedFromUIOnlyMode(const struct FKey& Key)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PC_PlayerControllerBase_C", "InpActEvt_K_K2Node_InputDebugKeyEvent_0");
+		Func = Class->GetFunction("PC_PlayerControllerBase_C", "CanInputKeyBePassedFromUIOnlyMode");
 
-	Params::PC_PlayerControllerBase_C_InpActEvt_K_K2Node_InputDebugKeyEvent_0 Parms{};
+	Params::PC_PlayerControllerBase_C_CanInputKeyBePassedFromUIOnlyMode Parms{};
 
 	Parms.Key = std::move(Key);
-	Parms.ActionValue = std::move(ActionValue);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function PC_PlayerControllerBase.PC_PlayerControllerBase_C.cheat_Teleport2player
+// (Exec, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   PlayerId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void APC_PlayerControllerBase_C::cheat_Teleport2player(int32 PlayerId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PC_PlayerControllerBase_C", "cheat_Teleport2player");
+
+	Params::PC_PlayerControllerBase_C_cheat_Teleport2player Parms{};
+
+	Parms.PlayerId = PlayerId;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -100,46 +79,67 @@ void APC_PlayerControllerBase_C::ExecuteUbergraph_PC_PlayerControllerBase(int32 
 }
 
 
-// Function PC_PlayerControllerBase.PC_PlayerControllerBase_C.cheat_Teleport2player
-// (Exec, Public, BlueprintCallable, BlueprintEvent)
+// Function PC_PlayerControllerBase.PC_PlayerControllerBase_C.InpActEvt_K_K2Node_InputDebugKeyEvent_0
+// (BlueprintEvent)
 // Parameters:
-// int32                                   PlayerId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
 
-void APC_PlayerControllerBase_C::cheat_Teleport2player(int32 PlayerId)
+void APC_PlayerControllerBase_C::InpActEvt_K_K2Node_InputDebugKeyEvent_0(const struct FKey& Key, const struct FInputActionValue& ActionValue)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PC_PlayerControllerBase_C", "cheat_Teleport2player");
+		Func = Class->GetFunction("PC_PlayerControllerBase_C", "InpActEvt_K_K2Node_InputDebugKeyEvent_0");
 
-	Params::PC_PlayerControllerBase_C_cheat_Teleport2player Parms{};
+	Params::PC_PlayerControllerBase_C_InpActEvt_K_K2Node_InputDebugKeyEvent_0 Parms{};
 
-	Parms.PlayerId = PlayerId;
+	Parms.Key = std::move(Key);
+	Parms.ActionValue = std::move(ActionValue);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function PC_PlayerControllerBase.PC_PlayerControllerBase_C.CanInputKeyBePassedFromUIOnlyMode
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function PC_PlayerControllerBase.PC_PlayerControllerBase_C.K2_ShowProfessionMenu
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
-bool APC_PlayerControllerBase_C::CanInputKeyBePassedFromUIOnlyMode(const struct FKey& Key)
+void APC_PlayerControllerBase_C::K2_ShowProfessionMenu()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PC_PlayerControllerBase_C", "CanInputKeyBePassedFromUIOnlyMode");
+		Func = Class->GetFunction("PC_PlayerControllerBase_C", "K2_ShowProfessionMenu");
 
-	Params::PC_PlayerControllerBase_C_CanInputKeyBePassedFromUIOnlyMode Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.Key = std::move(Key);
 
-	UObject::ProcessEvent(Func, &Parms);
+// Function PC_PlayerControllerBase.PC_PlayerControllerBase_C.OnServerExecuteConsoleCommand
+// (BlueprintEvent)
 
-	return Parms.ReturnValue;
+void APC_PlayerControllerBase_C::OnServerExecuteConsoleCommand()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PC_PlayerControllerBase_C", "OnServerExecuteConsoleCommand");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function PC_PlayerControllerBase.PC_PlayerControllerBase_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void APC_PlayerControllerBase_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PC_PlayerControllerBase_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

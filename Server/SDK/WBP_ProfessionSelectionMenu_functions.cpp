@@ -16,6 +16,20 @@
 
 SDK_NAMESPACE_START
 
+// Function WBP_ProfessionSelectionMenu.WBP_ProfessionSelectionMenu_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UWBP_ProfessionSelectionMenu_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_ProfessionSelectionMenu_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function WBP_ProfessionSelectionMenu.WBP_ProfessionSelectionMenu_C.ExecuteUbergraph_WBP_ProfessionSelectionMenu
 // (Final, UbergraphFunction)
 // Parameters:
@@ -33,20 +47,6 @@ void UWBP_ProfessionSelectionMenu_C::ExecuteUbergraph_WBP_ProfessionSelectionMen
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_ProfessionSelectionMenu.WBP_ProfessionSelectionMenu_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UWBP_ProfessionSelectionMenu_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ProfessionSelectionMenu_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 

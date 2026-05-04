@@ -16,6 +16,26 @@
 
 SDK_NAMESPACE_START
 
+// Function BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection.BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection_C.ExecuteUbergraph_BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection_C::ExecuteUbergraph_BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection_C", "ExecuteUbergraph_BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection");
+
+	Params::BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection_C_ExecuteUbergraph_BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection.BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection_C.ReceiveExecuteAI
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -33,26 +53,6 @@ void UBTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection_C::ReceiveExec
 
 	Parms.OwnerController = OwnerController;
 	Parms.ControlledPawn = ControlledPawn;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection.BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection_C.ExecuteUbergraph_BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UBTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection_C::ExecuteUbergraph_BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection_C", "ExecuteUbergraph_BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection");
-
-	Params::BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection_C_ExecuteUbergraph_BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection Parms{};
-
-	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

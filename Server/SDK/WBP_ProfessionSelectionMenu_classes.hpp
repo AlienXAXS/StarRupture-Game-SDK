@@ -34,8 +34,8 @@ public:
 	class UImage*                                 Image;                                             // 0x0628(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_WBP_ProfessionSelectionMenu(int32 EntryPoint);
 	void Construct();
+	void ExecuteUbergraph_WBP_ProfessionSelectionMenu(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

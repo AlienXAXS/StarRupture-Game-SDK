@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "AuGameplay_structs.hpp"
 #include "Engine_classes.hpp"
 #include "GameplayAbilities_structs.hpp"
+#include "AuGameplay_structs.hpp"
 
 
 SDK_NAMESPACE_START

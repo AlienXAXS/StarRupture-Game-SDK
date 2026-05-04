@@ -16,21 +16,21 @@
 
 SDK_NAMESPACE_START
 
-// Function WBP_PopupInfoWindow.WBP_PopupInfoWindow_C.PreConstruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Function WBP_PopupInfoWindow.WBP_PopupInfoWindow_C.ExecuteUbergraph_WBP_PopupInfoWindow
+// (Final, UbergraphFunction)
 // Parameters:
-// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_PopupInfoWindow_C::PreConstruct(bool IsDesignTime)
+void UWBP_PopupInfoWindow_C::ExecuteUbergraph_WBP_PopupInfoWindow(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_PopupInfoWindow_C", "PreConstruct");
+		Func = Class->GetFunction("WBP_PopupInfoWindow_C", "ExecuteUbergraph_WBP_PopupInfoWindow");
 
-	Params::WBP_PopupInfoWindow_C_PreConstruct Parms{};
+	Params::WBP_PopupInfoWindow_C_ExecuteUbergraph_WBP_PopupInfoWindow Parms{};
 
-	Parms.IsDesignTime = IsDesignTime;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -50,21 +50,21 @@ void UWBP_PopupInfoWindow_C::OnCloseButtonClicked()
 }
 
 
-// Function WBP_PopupInfoWindow.WBP_PopupInfoWindow_C.ExecuteUbergraph_WBP_PopupInfoWindow
-// (Final, UbergraphFunction)
+// Function WBP_PopupInfoWindow.WBP_PopupInfoWindow_C.PreConstruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_PopupInfoWindow_C::ExecuteUbergraph_WBP_PopupInfoWindow(int32 EntryPoint)
+void UWBP_PopupInfoWindow_C::PreConstruct(bool IsDesignTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_PopupInfoWindow_C", "ExecuteUbergraph_WBP_PopupInfoWindow");
+		Func = Class->GetFunction("WBP_PopupInfoWindow_C", "PreConstruct");
 
-	Params::WBP_PopupInfoWindow_C_ExecuteUbergraph_WBP_PopupInfoWindow Parms{};
+	Params::WBP_PopupInfoWindow_C_PreConstruct Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.IsDesignTime = IsDesignTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

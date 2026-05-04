@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Animal_Crab_Foundable_Loot.BP_Animal_Crab_Foundable_Loot_C
-// 0x0000 (0x0348 - 0x0348)
+// 0x0000 (0x0350 - 0x0350)
 class ABP_Animal_Crab_Foundable_Loot_C final : public ABP_Foundable_Enemy_Loot_Base_C
 {
 public:

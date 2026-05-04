@@ -17,10 +17,10 @@
 #include "MassReplication_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "MassAIPrototypeEnemyRuntime_structs.hpp"
-#include "MassAIPrototypeEnemyRuntime_classes.hpp"
 #include "Engine_classes.hpp"
 #include "MassSpawner_classes.hpp"
+#include "MassAIPrototypeEnemyRuntime_structs.hpp"
+#include "MassAIPrototypeEnemyRuntime_classes.hpp"
 #include "CrAiExploderRuntime_structs.hpp"
 #include "MassEntity_classes.hpp"
 

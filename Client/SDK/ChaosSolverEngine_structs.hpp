@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "ChaosVDRuntime_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "DataflowSimulation_structs.hpp"
 
 
@@ -51,14 +51,17 @@ enum class EClusterConnectionTypeEnum : uint8
 	Chaos_MAX                                = 7,
 };
 
-// ScriptStruct ChaosSolverEngine.ChaosVDStopRecordingCommandMessage
-// 0x0001 (0x0001 - 0x0000)
-struct FChaosVDStopRecordingCommandMessage final
+// ScriptStruct ChaosSolverEngine.ChaosVDDataChannelState
+// 0x0018 (0x0018 - 0x0000)
+struct FChaosVDDataChannelState final
 {
 public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 ChannelName;                                       // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsEnabled;                                        // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCanChangeChannelState;                            // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FChaosVDStopRecordingCommandMessage;
+DUMPER7_ASSERTS_FChaosVDDataChannelState;
 
 // ScriptStruct ChaosSolverEngine.ChaosPhysicsCollisionInfo
 // 0x00C0 (0x00C0 - 0x0000)
@@ -112,6 +115,15 @@ public:
 };
 DUMPER7_ASSERTS_FChaosVDStartRecordingCommandMessage;
 
+// ScriptStruct ChaosSolverEngine.ChaosVDStopRecordingCommandMessage
+// 0x0001 (0x0001 - 0x0000)
+struct FChaosVDStopRecordingCommandMessage final
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FChaosVDStopRecordingCommandMessage;
+
 // ScriptStruct ChaosSolverEngine.ChaosVDRecordingStatusMessage
 // 0x0050 (0x0050 - 0x0000)
 struct FChaosVDRecordingStatusMessage final
@@ -124,18 +136,6 @@ public:
 	struct FChaosVDTraceDetails                   TraceDetails;                                      // 0x0018(0x0038)(NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FChaosVDRecordingStatusMessage;
-
-// ScriptStruct ChaosSolverEngine.ChaosVDDataChannelState
-// 0x0018 (0x0018 - 0x0000)
-struct FChaosVDDataChannelState final
-{
-public:
-	class FString                                 ChannelName;                                       // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsEnabled;                                        // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCanChangeChannelState;                            // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FChaosVDDataChannelState;
 
 // ScriptStruct ChaosSolverEngine.ChaosVDChannelStateChangeCommandMessage
 // 0x0018 (0x0018 - 0x0000)

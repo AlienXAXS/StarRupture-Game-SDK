@@ -31,9 +31,9 @@ public:
 	TMap<EEnviroWave, struct FCrEnviroWaveCurveFloatMap> VolumeBlendingCurves;                       // 0x02D8(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance)
 
 public:
-	void UserConstructionScript();
-	void OnEnviroWaveTick(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress);
 	void ExecuteUbergraph_BP_HabitatPostProcess(int32 EntryPoint);
+	void OnEnviroWaveTick(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress);
+	void UserConstructionScript();
 
 public:
 	static class UClass* StaticClass()

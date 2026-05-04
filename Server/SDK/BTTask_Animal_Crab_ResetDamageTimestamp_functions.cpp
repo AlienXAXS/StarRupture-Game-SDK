@@ -16,6 +16,26 @@
 
 SDK_NAMESPACE_START
 
+// Function BTTask_Animal_Crab_ResetDamageTimestamp.BTTask_Animal_Crab_ResetDamageTimestamp_C.ExecuteUbergraph_BTTask_Animal_Crab_ResetDamageTimestamp
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBTTask_Animal_Crab_ResetDamageTimestamp_C::ExecuteUbergraph_BTTask_Animal_Crab_ResetDamageTimestamp(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BTTask_Animal_Crab_ResetDamageTimestamp_C", "ExecuteUbergraph_BTTask_Animal_Crab_ResetDamageTimestamp");
+
+	Params::BTTask_Animal_Crab_ResetDamageTimestamp_C_ExecuteUbergraph_BTTask_Animal_Crab_ResetDamageTimestamp Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BTTask_Animal_Crab_ResetDamageTimestamp.BTTask_Animal_Crab_ResetDamageTimestamp_C.ReceiveExecuteAI
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -33,26 +53,6 @@ void UBTTask_Animal_Crab_ResetDamageTimestamp_C::ReceiveExecuteAI(class AAIContr
 
 	Parms.OwnerController = OwnerController;
 	Parms.ControlledPawn = ControlledPawn;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BTTask_Animal_Crab_ResetDamageTimestamp.BTTask_Animal_Crab_ResetDamageTimestamp_C.ExecuteUbergraph_BTTask_Animal_Crab_ResetDamageTimestamp
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UBTTask_Animal_Crab_ResetDamageTimestamp_C::ExecuteUbergraph_BTTask_Animal_Crab_ResetDamageTimestamp(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTTask_Animal_Crab_ResetDamageTimestamp_C", "ExecuteUbergraph_BTTask_Animal_Crab_ResetDamageTimestamp");
-
-	Params::BTTask_Animal_Crab_ResetDamageTimestamp_C_ExecuteUbergraph_BTTask_Animal_Crab_ResetDamageTimestamp Parms{};
-
-	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

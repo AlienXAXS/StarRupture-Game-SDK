@@ -16,17 +16,23 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_HabitatPostProcess.BP_HabitatPostProcess_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Function BP_HabitatPostProcess.BP_HabitatPostProcess_C.ExecuteUbergraph_BP_HabitatPostProcess
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_HabitatPostProcess_C::UserConstructionScript()
+void ABP_HabitatPostProcess_C::ExecuteUbergraph_BP_HabitatPostProcess(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HabitatPostProcess_C", "UserConstructionScript");
+		Func = Class->GetFunction("BP_HabitatPostProcess_C", "ExecuteUbergraph_BP_HabitatPostProcess");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_HabitatPostProcess_C_ExecuteUbergraph_BP_HabitatPostProcess Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -56,23 +62,17 @@ void ABP_HabitatPostProcess_C::OnEnviroWaveTick(EEnviroWave WaveType, EEnviroWav
 }
 
 
-// Function BP_HabitatPostProcess.BP_HabitatPostProcess_C.ExecuteUbergraph_BP_HabitatPostProcess
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_HabitatPostProcess.BP_HabitatPostProcess_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_HabitatPostProcess_C::ExecuteUbergraph_BP_HabitatPostProcess(int32 EntryPoint)
+void ABP_HabitatPostProcess_C::UserConstructionScript()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HabitatPostProcess_C", "ExecuteUbergraph_BP_HabitatPostProcess");
+		Func = Class->GetFunction("BP_HabitatPostProcess_C", "UserConstructionScript");
 
-	Params::BP_HabitatPostProcess_C_ExecuteUbergraph_BP_HabitatPostProcess Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

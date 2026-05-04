@@ -37,19 +37,19 @@ public:
 	double                                        TravelDirection;                                   // 0x0738(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveTick(float DeltaSeconds);
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
-	void ReceiveBeginPlay();
-	void PrepareForGame();
-	void OnSplineReady(class USplineComponent* InSpline);
-	void OnInteract(class APlayerController* InPc);
-	bool IsRamp();
-	bool IsLadder();
-	void InpActEvt_Jump_K2Node_EnhancedInputActionEvent_0(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
-	double GetRampAngle();
-	void ExecuteUbergraph_BP_ZipRail(int32 EntryPoint);
-	void EndZiprail(bool Jump_Off);
 	bool CanBePooled();
+	void EndZiprail(bool Jump_Off);
+	void ExecuteUbergraph_BP_ZipRail(int32 EntryPoint);
+	double GetRampAngle();
+	void InpActEvt_Jump_K2Node_EnhancedInputActionEvent_0(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
+	bool IsLadder();
+	bool IsRamp();
+	void OnInteract(class APlayerController* InPc);
+	void OnSplineReady(class USplineComponent* InSpline);
+	void PrepareForGame();
+	void ReceiveBeginPlay();
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void ReceiveTick(float DeltaSeconds);
 
 public:
 	static class UClass* StaticClass()

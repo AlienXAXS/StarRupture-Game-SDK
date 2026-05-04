@@ -16,37 +16,23 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_BaseCore_Tiles4x4.BP_BaseCore_Tiles4x4_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
+// Function BP_BaseCore_Tiles4x4.BP_BaseCore_Tiles4x4_C.ExecuteUbergraph_BP_BaseCore_Tiles4x4
+// (Final, UbergraphFunction)
 // Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_BaseCore_Tiles4x4_C::ReceiveTick(float DeltaSeconds)
+void ABP_BaseCore_Tiles4x4_C::ExecuteUbergraph_BP_BaseCore_Tiles4x4(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_Tiles4x4_C", "ReceiveTick");
+		Func = Class->GetFunction("BP_BaseCore_Tiles4x4_C", "ExecuteUbergraph_BP_BaseCore_Tiles4x4");
 
-	Params::BP_BaseCore_Tiles4x4_C_ReceiveTick Parms{};
+	Params::BP_BaseCore_Tiles4x4_C_ExecuteUbergraph_BP_BaseCore_Tiles4x4 Parms{};
 
-	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_BaseCore_Tiles4x4.BP_BaseCore_Tiles4x4_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_BaseCore_Tiles4x4_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_Tiles4x4_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -70,21 +56,35 @@ void ABP_BaseCore_Tiles4x4_C::ReceiveActorBeginOverlap(class AActor* OtherActor)
 }
 
 
-// Function BP_BaseCore_Tiles4x4.BP_BaseCore_Tiles4x4_C.ExecuteUbergraph_BP_BaseCore_Tiles4x4
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_BaseCore_Tiles4x4.BP_BaseCore_Tiles4x4_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ABP_BaseCore_Tiles4x4_C::ExecuteUbergraph_BP_BaseCore_Tiles4x4(int32 EntryPoint)
+void ABP_BaseCore_Tiles4x4_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_Tiles4x4_C", "ExecuteUbergraph_BP_BaseCore_Tiles4x4");
+		Func = Class->GetFunction("BP_BaseCore_Tiles4x4_C", "ReceiveBeginPlay");
 
-	Params::BP_BaseCore_Tiles4x4_C_ExecuteUbergraph_BP_BaseCore_Tiles4x4 Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
+
+// Function BP_BaseCore_Tiles4x4.BP_BaseCore_Tiles4x4_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_BaseCore_Tiles4x4_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseCore_Tiles4x4_C", "ReceiveTick");
+
+	Params::BP_BaseCore_Tiles4x4_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

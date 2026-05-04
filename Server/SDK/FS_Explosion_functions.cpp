@@ -16,20 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function FS_Explosion.FS_Explosion_C.Explode
-// (BlueprintCallable, BlueprintEvent)
-
-void AFS_Explosion_C::Explode()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("FS_Explosion_C", "Explode");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function FS_Explosion.FS_Explosion_C.ExecuteUbergraph_FS_Explosion
 // (Final, UbergraphFunction)
 // Parameters:
@@ -47,6 +33,20 @@ void AFS_Explosion_C::ExecuteUbergraph_FS_Explosion(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function FS_Explosion.FS_Explosion_C.Explode
+// (BlueprintCallable, BlueprintEvent)
+
+void AFS_Explosion_C::Explode()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FS_Explosion_C", "Explode");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

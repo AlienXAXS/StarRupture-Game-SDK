@@ -67,11 +67,11 @@ public:
 	double                                        Last_Time_Stamp;                                   // 0x0830(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void SetupSkeletalMesh();
-	void ReceiveBeginPlay();
-	void OnBuildingStateChanged(ECrBuildingState InState);
-	void Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Animated_0, TArray<class UMeshComponent*>* NewParam);
 	void ExecuteUbergraph_BP_MilitaryAssembler(int32 EntryPoint);
+	void Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Animated_0, TArray<class UMeshComponent*>* NewParam);
+	void OnBuildingStateChanged(ECrBuildingState InState);
+	void ReceiveBeginPlay();
+	void SetupSkeletalMesh();
 
 public:
 	static class UClass* StaticClass()

@@ -16,26 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Purplant.BP_Purplant_C.ExecuteUbergraph_BP_Purplant
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Purplant_C::ExecuteUbergraph_BP_Purplant(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Purplant_C", "ExecuteUbergraph_BP_Purplant");
-
-	Params::BP_Purplant_C_ExecuteUbergraph_BP_Purplant Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_Purplant.BP_Purplant_C.BP_OnWaveChangedUpdate
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -57,6 +37,26 @@ void ABP_Purplant_C::BP_OnWaveChangedUpdate(EEnviroWave WaveType, EEnviroWaveSta
 	Parms.WaveStage = WaveStage;
 	Parms.FadeoutSubstage = FadeoutSubstage;
 	Parms.GrowbackSubstage = GrowbackSubstage;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Purplant.BP_Purplant_C.ExecuteUbergraph_BP_Purplant
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Purplant_C::ExecuteUbergraph_BP_Purplant(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Purplant_C", "ExecuteUbergraph_BP_Purplant");
+
+	Params::BP_Purplant_C_ExecuteUbergraph_BP_Purplant Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

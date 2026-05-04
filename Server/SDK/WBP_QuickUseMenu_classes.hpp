@@ -26,9 +26,9 @@ public:
 	class UWidgetAnimation*                       OpenAnim;                                          // 0x03F8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, RepSkip, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnMenuOpened();
-	void OnCurrentEntryIndexChange(int32 Index_0, int32 NumberOfEntries, bool bActive);
 	void ExecuteUbergraph_WBP_QuickUseMenu(int32 EntryPoint);
+	void OnCurrentEntryIndexChange(int32 Index_0, int32 NumberOfEntries, bool bActive);
+	void OnMenuOpened();
 
 public:
 	static class UClass* StaticClass()

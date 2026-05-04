@@ -45,12 +45,12 @@ public:
 };
 DUMPER7_ASSERTS_FEditorDataStorageTag;
 
-// ScriptStruct TypedElementFramework.TypedElementSyncBackToWorldTag
+// ScriptStruct TypedElementFramework.TypedElementPropertyBagPlaceholderTag
 // 0x0000 (0x0001 - 0x0001)
-struct FTypedElementSyncBackToWorldTag final : public FEditorDataStorageTag
+struct FTypedElementPropertyBagPlaceholderTag final : public FEditorDataStorageTag
 {
 };
-DUMPER7_ASSERTS_FTypedElementSyncBackToWorldTag;
+DUMPER7_ASSERTS_FTypedElementPropertyBagPlaceholderTag;
 
 // ScriptStruct TypedElementFramework.ScriptTypedElementHandle
 // 0x0008 (0x0008 - 0x0000)
@@ -111,13 +111,6 @@ public:
 	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FTypedElementWorldColumn;
-
-// ScriptStruct TypedElementFramework.TypedElementPropertyBagPlaceholderTag
-// 0x0000 (0x0001 - 0x0001)
-struct FTypedElementPropertyBagPlaceholderTag final : public FEditorDataStorageTag
-{
-};
-DUMPER7_ASSERTS_FTypedElementPropertyBagPlaceholderTag;
 
 // ScriptStruct TypedElementFramework.TypedElementLoosePropertyTag
 // 0x0000 (0x0001 - 0x0001)
@@ -247,6 +240,13 @@ public:
 	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FScriptTypedElementListProxy;
+
+// ScriptStruct TypedElementFramework.TypedElementSyncBackToWorldTag
+// 0x0000 (0x0001 - 0x0001)
+struct FTypedElementSyncBackToWorldTag final : public FEditorDataStorageTag
+{
+};
+DUMPER7_ASSERTS_FTypedElementSyncBackToWorldTag;
 
 // ScriptStruct TypedElementFramework.TypedElementSyncFromWorldTag
 // 0x0000 (0x0001 - 0x0001)

@@ -16,15 +16,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_SynthetizerTier2.BP_SynthetizerTier2_C.OnBuildingStateChanged
-// 0x0001 (0x0001 - 0x0000)
-struct BP_SynthetizerTier2_C_OnBuildingStateChanged final
-{
-public:
-	ECrBuildingState                              InState;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_SynthetizerTier2_C_OnBuildingStateChanged;
-
 // Function BP_SynthetizerTier2.BP_SynthetizerTier2_C.ExecuteUbergraph_BP_SynthetizerTier2
 // 0x0008 (0x0008 - 0x0000)
 struct BP_SynthetizerTier2_C_ExecuteUbergraph_BP_SynthetizerTier2 final
@@ -34,6 +25,15 @@ public:
 	ECrBuildingState                              K2Node_Event_InState;                              // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_SynthetizerTier2_C_ExecuteUbergraph_BP_SynthetizerTier2;
+
+// Function BP_SynthetizerTier2.BP_SynthetizerTier2_C.OnBuildingStateChanged
+// 0x0001 (0x0001 - 0x0000)
+struct BP_SynthetizerTier2_C_OnBuildingStateChanged final
+{
+public:
+	ECrBuildingState                              InState;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_SynthetizerTier2_C_OnBuildingStateChanged;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

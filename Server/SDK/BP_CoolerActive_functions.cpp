@@ -16,81 +16,21 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_CoolerActive.BP_CoolerActive_C.OnSocketDisconnected
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function BP_CoolerActive.BP_CoolerActive_C.ExecuteUbergraph_BP_CoolerActive
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// class FName                             SocketName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_CoolerActive_C::OnSocketDisconnected(class FName SocketName)
+void ABP_CoolerActive_C::ExecuteUbergraph_BP_CoolerActive(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CoolerActive_C", "OnSocketDisconnected");
+		Func = Class->GetFunction("BP_CoolerActive_C", "ExecuteUbergraph_BP_CoolerActive");
 
-	Params::BP_CoolerActive_C_OnSocketDisconnected Parms{};
+	Params::BP_CoolerActive_C_ExecuteUbergraph_BP_CoolerActive Parms{};
 
-	Parms.SocketName = SocketName;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_CoolerActive.BP_CoolerActive_C.OnSocketConnected
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class FName                             SocketName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_CoolerActive_C::OnSocketConnected(class FName SocketName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CoolerActive_C", "OnSocketConnected");
-
-	Params::BP_CoolerActive_C_OnSocketConnected Parms{};
-
-	Parms.SocketName = SocketName;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_CoolerActive.BP_CoolerActive_C.OnHeaterCoolerStateChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// ECrMassHeaterCoolerState                State                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_CoolerActive_C::OnHeaterCoolerStateChanged(ECrMassHeaterCoolerState State)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CoolerActive_C", "OnHeaterCoolerStateChanged");
-
-	Params::BP_CoolerActive_C_OnHeaterCoolerStateChanged Parms{};
-
-	Parms.State = State;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_CoolerActive.BP_CoolerActive_C.OnHeaterCoolerInventoryChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   UsedSpaceNormalized                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_CoolerActive_C::OnHeaterCoolerInventoryChanged(float UsedSpaceNormalized)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CoolerActive_C", "OnHeaterCoolerInventoryChanged");
-
-	Params::BP_CoolerActive_C_OnHeaterCoolerInventoryChanged Parms{};
-
-	Parms.UsedSpaceNormalized = UsedSpaceNormalized;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -116,21 +56,81 @@ void ABP_CoolerActive_C::OnHeaterCoolerConnectionsChanged(const TArray<class FNa
 }
 
 
-// Function BP_CoolerActive.BP_CoolerActive_C.ExecuteUbergraph_BP_CoolerActive
-// (Final, UbergraphFunction, HasDefaults)
+// Function BP_CoolerActive.BP_CoolerActive_C.OnHeaterCoolerInventoryChanged
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   UsedSpaceNormalized                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_CoolerActive_C::ExecuteUbergraph_BP_CoolerActive(int32 EntryPoint)
+void ABP_CoolerActive_C::OnHeaterCoolerInventoryChanged(float UsedSpaceNormalized)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CoolerActive_C", "ExecuteUbergraph_BP_CoolerActive");
+		Func = Class->GetFunction("BP_CoolerActive_C", "OnHeaterCoolerInventoryChanged");
 
-	Params::BP_CoolerActive_C_ExecuteUbergraph_BP_CoolerActive Parms{};
+	Params::BP_CoolerActive_C_OnHeaterCoolerInventoryChanged Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.UsedSpaceNormalized = UsedSpaceNormalized;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_CoolerActive.BP_CoolerActive_C.OnHeaterCoolerStateChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// ECrMassHeaterCoolerState                State                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_CoolerActive_C::OnHeaterCoolerStateChanged(ECrMassHeaterCoolerState State)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_CoolerActive_C", "OnHeaterCoolerStateChanged");
+
+	Params::BP_CoolerActive_C_OnHeaterCoolerStateChanged Parms{};
+
+	Parms.State = State;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_CoolerActive.BP_CoolerActive_C.OnSocketConnected
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FName                             SocketName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_CoolerActive_C::OnSocketConnected(class FName SocketName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_CoolerActive_C", "OnSocketConnected");
+
+	Params::BP_CoolerActive_C_OnSocketConnected Parms{};
+
+	Parms.SocketName = SocketName;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_CoolerActive.BP_CoolerActive_C.OnSocketDisconnected
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FName                             SocketName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_CoolerActive_C::OnSocketDisconnected(class FName SocketName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_CoolerActive_C", "OnSocketDisconnected");
+
+	Params::BP_CoolerActive_C_OnSocketDisconnected Parms{};
+
+	Parms.SocketName = SocketName;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -88,19 +88,19 @@ public:
 	struct FTimerHandle                           WaitForStreamingCompleteTimerHandle;               // 0x08F0(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void TurnOffWalkableCollision();
-	void ShouldSpawnForListenServer(bool* bShouldSpawnForLS);
-	void ReceiveTick(float DeltaSeconds);
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
-	void OnResourceDepletedCosmeticsStart();
-	void OnMiningWeakSpotDepletedCosmeticsStart(const struct FTransform& CosmeticTransform);
-	void ExecuteUbergraph_BP_MeteOreBase(int32 EntryPoint);
-	void CheckIfStreamingIsComplete();
-	void BP_OnSpawnedWithResourceDepleted();
-	void BP_OnPostBecameSignificant();
-	void BP_OnPostBecameInsignificant();
-	void BP_OnOreActivated();
 	void BP_OnEnviroWaveStarted(EEnviroWave InWaveType, EEnviroWaveStage InWaveStage, const struct FCrEnviroWaveSettings& InWaveSettings, float InWaveProgress);
+	void BP_OnOreActivated();
+	void BP_OnPostBecameInsignificant();
+	void BP_OnPostBecameSignificant();
+	void BP_OnSpawnedWithResourceDepleted();
+	void CheckIfStreamingIsComplete();
+	void ExecuteUbergraph_BP_MeteOreBase(int32 EntryPoint);
+	void OnMiningWeakSpotDepletedCosmeticsStart(const struct FTransform& CosmeticTransform);
+	void OnResourceDepletedCosmeticsStart();
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void ReceiveTick(float DeltaSeconds);
+	void ShouldSpawnForListenServer(bool* bShouldSpawnForLS);
+	void TurnOffWalkableCollision();
 
 public:
 	static class UClass* StaticClass()

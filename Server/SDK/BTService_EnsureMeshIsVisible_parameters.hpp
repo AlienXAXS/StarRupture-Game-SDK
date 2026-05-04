@@ -14,17 +14,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BTService_EnsureMeshIsVisible.BTService_EnsureMeshIsVisible_C.ReceiveTickAI
-// 0x0018 (0x0018 - 0x0000)
-struct BTService_EnsureMeshIsVisible_C_ReceiveTickAI final
-{
-public:
-	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	float                                         DeltaSeconds;                                      // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BTService_EnsureMeshIsVisible_C_ReceiveTickAI;
-
 // Function BTService_EnsureMeshIsVisible.BTService_EnsureMeshIsVisible_C.ExecuteUbergraph_BTService_EnsureMeshIsVisible
 // 0x0020 (0x0020 - 0x0000)
 struct BTService_EnsureMeshIsVisible_C_ExecuteUbergraph_BTService_EnsureMeshIsVisible final
@@ -37,6 +26,17 @@ public:
 	float                                         K2Node_Event_DeltaSeconds;                         // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BTService_EnsureMeshIsVisible_C_ExecuteUbergraph_BTService_EnsureMeshIsVisible;
+
+// Function BTService_EnsureMeshIsVisible.BTService_EnsureMeshIsVisible_C.ReceiveTickAI
+// 0x0018 (0x0018 - 0x0000)
+struct BTService_EnsureMeshIsVisible_C_ReceiveTickAI final
+{
+public:
+	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	float                                         DeltaSeconds;                                      // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BTService_EnsureMeshIsVisible_C_ReceiveTickAI;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

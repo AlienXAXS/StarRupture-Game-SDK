@@ -34,16 +34,16 @@ public:
 	class FName                                   LadderSurfaceID;                                   // 0x08E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UpdateCharactersHights();
-	void TryTriggerFootstep(class ACrCharacterPlayerBase* Character);
-	void RemoveCharacterFromLadder(const class ACrCharacterPlayerBase*& Character);
-	void ReceiveTick(float DeltaSeconds);
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
-	void ReceiveBeginPlay();
-	void ExecuteUbergraph_BP_Modular_Ladder(int32 EntryPoint);
-	void BndEvt__BP_Ladder_LadderTrigger_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
-	void BndEvt__BP_Ladder_LadderTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult);
 	void AddCharacterToLadder(const class ACrCharacterPlayerBase*& NewCharacter);
+	void BndEvt__BP_Ladder_LadderTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult);
+	void BndEvt__BP_Ladder_LadderTrigger_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+	void ExecuteUbergraph_BP_Modular_Ladder(int32 EntryPoint);
+	void ReceiveBeginPlay();
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void ReceiveTick(float DeltaSeconds);
+	void RemoveCharacterFromLadder(const class ACrCharacterPlayerBase*& Character);
+	void TryTriggerFootstep(class ACrCharacterPlayerBase* Character);
+	void UpdateCharactersHights();
 
 public:
 	static class UClass* StaticClass()

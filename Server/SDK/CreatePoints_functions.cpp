@@ -44,39 +44,19 @@ void UCreatePoints_C::ExecuteWithContext(struct FPCGContext& InContext, const st
 }
 
 
-// Function CreatePoints.CreatePoints_C.NodeTitleOverride
+// Function CreatePoints.CreatePoints_C.IsCacheableOverride
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-class FName UCreatePoints_C::NodeTitleOverride() const
+bool UCreatePoints_C::IsCacheableOverride() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CreatePoints_C", "NodeTitleOverride");
+		Func = Class->GetFunction("CreatePoints_C", "IsCacheableOverride");
 
-	Params::CreatePoints_C_NodeTitleOverride Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function CreatePoints.CreatePoints_C.NodeColorOverride
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// struct FLinearColor                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-struct FLinearColor UCreatePoints_C::NodeColorOverride() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CreatePoints_C", "NodeColorOverride");
-
-	Params::CreatePoints_C_NodeColorOverride Parms{};
+	Params::CreatePoints_C_IsCacheableOverride Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -119,19 +99,39 @@ bool UCreatePoints_C::IterationLoopBody(const struct FPCGContext& InContext, int
 }
 
 
-// Function CreatePoints.CreatePoints_C.IsCacheableOverride
+// Function CreatePoints.CreatePoints_C.NodeColorOverride
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FLinearColor                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-bool UCreatePoints_C::IsCacheableOverride() const
+struct FLinearColor UCreatePoints_C::NodeColorOverride() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CreatePoints_C", "IsCacheableOverride");
+		Func = Class->GetFunction("CreatePoints_C", "NodeColorOverride");
 
-	Params::CreatePoints_C_IsCacheableOverride Parms{};
+	Params::CreatePoints_C_NodeColorOverride Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CreatePoints.CreatePoints_C.NodeTitleOverride
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+class FName UCreatePoints_C::NodeTitleOverride() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CreatePoints_C", "NodeTitleOverride");
+
+	Params::CreatePoints_C_NodeTitleOverride Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 

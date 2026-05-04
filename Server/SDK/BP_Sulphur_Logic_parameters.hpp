@@ -16,24 +16,32 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_Sulphur_Logic.BP_Sulphur_Logic_C.UserConstructionScript
-// 0x0010 (0x0010 - 0x0000)
-struct BP_Sulphur_Logic_C_UserConstructionScript final
+// Function BP_Sulphur_Logic.BP_Sulphur_Logic_C.BndEvt__BP_Ore_Sulphur_A_SulphurGasCollision_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature
+// 0x0120 (0x0120 - 0x0000)
+struct BP_Sulphur_Logic_C_BndEvt__BP_Ore_Sulphur_A_SulphurGasCollision_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature final
 {
 public:
-	double                                        CallFunc_Multiply_DoubleDouble_ReturnValue;        // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_SetSphereRadius_InSphereRadius_ImplicitCast; // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bFromSweep;                                        // 0x001C(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             SweepResult;                                       // 0x0020(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
 };
-DUMPER7_ASSERTS_BP_Sulphur_Logic_C_UserConstructionScript;
+DUMPER7_ASSERTS_BP_Sulphur_Logic_C_BndEvt__BP_Ore_Sulphur_A_SulphurGasCollision_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature;
 
-// Function BP_Sulphur_Logic.BP_Sulphur_Logic_C.OnSulphurActivityChanged
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Sulphur_Logic_C_OnSulphurActivityChanged final
+// Function BP_Sulphur_Logic.BP_Sulphur_Logic_C.BndEvt__BP_Ore_Sulphur_A_SulphurGasCollision_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature
+// 0x0020 (0x0020 - 0x0000)
+struct BP_Sulphur_Logic_C_BndEvt__BP_Ore_Sulphur_A_SulphurGasCollision_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature final
 {
 public:
-	bool                                          bActive;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_Sulphur_Logic_C_OnSulphurActivityChanged;
+DUMPER7_ASSERTS_BP_Sulphur_Logic_C_BndEvt__BP_Ore_Sulphur_A_SulphurGasCollision_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature;
 
 // Function BP_Sulphur_Logic.BP_Sulphur_Logic_C.ExecuteUbergraph_BP_Sulphur_Logic
 // 0x0168 (0x0168 - 0x0000)
@@ -65,32 +73,24 @@ public:
 };
 DUMPER7_ASSERTS_BP_Sulphur_Logic_C_ExecuteUbergraph_BP_Sulphur_Logic;
 
-// Function BP_Sulphur_Logic.BP_Sulphur_Logic_C.BndEvt__BP_Ore_Sulphur_A_SulphurGasCollision_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature
-// 0x0020 (0x0020 - 0x0000)
-struct BP_Sulphur_Logic_C_BndEvt__BP_Ore_Sulphur_A_SulphurGasCollision_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature final
+// Function BP_Sulphur_Logic.BP_Sulphur_Logic_C.OnSulphurActivityChanged
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Sulphur_Logic_C_OnSulphurActivityChanged final
 {
 public:
-	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bActive;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_Sulphur_Logic_C_BndEvt__BP_Ore_Sulphur_A_SulphurGasCollision_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature;
+DUMPER7_ASSERTS_BP_Sulphur_Logic_C_OnSulphurActivityChanged;
 
-// Function BP_Sulphur_Logic.BP_Sulphur_Logic_C.BndEvt__BP_Ore_Sulphur_A_SulphurGasCollision_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature
-// 0x0120 (0x0120 - 0x0000)
-struct BP_Sulphur_Logic_C_BndEvt__BP_Ore_Sulphur_A_SulphurGasCollision_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature final
+// Function BP_Sulphur_Logic.BP_Sulphur_Logic_C.UserConstructionScript
+// 0x0010 (0x0010 - 0x0000)
+struct BP_Sulphur_Logic_C_UserConstructionScript final
 {
 public:
-	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bFromSweep;                                        // 0x001C(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FHitResult                             SweepResult;                                       // 0x0020(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	double                                        CallFunc_Multiply_DoubleDouble_ReturnValue;        // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_SetSphereRadius_InSphereRadius_ImplicitCast; // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_Sulphur_Logic_C_BndEvt__BP_Ore_Sulphur_A_SulphurGasCollision_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature;
+DUMPER7_ASSERTS_BP_Sulphur_Logic_C_UserConstructionScript;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

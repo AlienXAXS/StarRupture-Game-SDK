@@ -16,15 +16,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_Smelter.BP_Smelter_C.OnBuildingStateChanged
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Smelter_C_OnBuildingStateChanged final
-{
-public:
-	ECrBuildingState                              InState;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Smelter_C_OnBuildingStateChanged;
-
 // Function BP_Smelter.BP_Smelter_C.ExecuteUbergraph_BP_Smelter
 // 0x00B8 (0x00B8 - 0x0000)
 struct BP_Smelter_C_ExecuteUbergraph_BP_Smelter final
@@ -63,6 +54,15 @@ public:
 	bool                                          CallFunc_Contains_ReturnValue;                     // 0x00B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Smelter_C_ExecuteUbergraph_BP_Smelter;
+
+// Function BP_Smelter.BP_Smelter_C.OnBuildingStateChanged
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Smelter_C_OnBuildingStateChanged final
+{
+public:
+	ECrBuildingState                              InState;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Smelter_C_OnBuildingStateChanged;
 
 // Function BP_Smelter.BP_Smelter_C.Get Meshes
 // 0x00B0 (0x00B0 - 0x0000)

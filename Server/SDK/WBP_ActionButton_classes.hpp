@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
+#include "SlateCore_structs.hpp"
 #include "CommonInput_structs.hpp"
 #include "Engine_structs.hpp"
-#include "ChimeraUI_classes.hpp"
-#include "SlateCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "UMG_structs.hpp"
+#include "ChimeraUI_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -40,23 +40,23 @@ public:
 	bool                                          NewVar;                                            // 0x0B71(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void SetTextStyle(int32 FontSize, bool ToUpper, bool BlackFont, const struct FLinearColor& FontColor);
-	void SetTextMaxWidth(int32 Size);
-	void SetText(const class FText& InText);
-	void SetSize(int32 Width, int32 Height);
-	void SetFontSize(int32 FontSize, bool BoldFont);
-	void SetDefault(bool bInDefault);
-	void SetColors(const class UCrCommonUIColorsDevSettings* Settings);
-	void SetButtonEnabled(bool bEnabled);
-	void SetAlignment(EHorizontalAlignment Alignment);
-	void SetActionNamePadding(bool bSet);
-	void PreConstruct(bool IsDesignTime);
-	void GetHeightSize(double* Height);
-	void ExecuteUbergraph_WBP_ActionButton(int32 EntryPoint);
-	void Construct();
-	void BndEvt__WBP_ActionButton_OverlayButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();
-	void BndEvt__WBP_ActionButton_OverlayButton_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature();
 	void BndEvt__WBP_ActionButton_InputActionWidget_K2Node_ComponentBoundEvent_2_OnInputMethodChanged__DelegateSignature(bool bUsingGamepad);
+	void BndEvt__WBP_ActionButton_OverlayButton_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature();
+	void BndEvt__WBP_ActionButton_OverlayButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();
+	void Construct();
+	void ExecuteUbergraph_WBP_ActionButton(int32 EntryPoint);
+	void GetHeightSize(double* Height);
+	void PreConstruct(bool IsDesignTime);
+	void SetActionNamePadding(bool bSet);
+	void SetAlignment(EHorizontalAlignment Alignment);
+	void SetButtonEnabled(bool bEnabled);
+	void SetColors(const class UCrCommonUIColorsDevSettings* Settings);
+	void SetDefault(bool bInDefault);
+	void SetFontSize(int32 FontSize, bool BoldFont);
+	void SetSize(int32 Width, int32 Height);
+	void SetText(const class FText& InText);
+	void SetTextMaxWidth(int32 Size);
+	void SetTextStyle(int32 FontSize, bool ToUpper, bool BlackFont, const struct FLinearColor& FontColor);
 
 public:
 	static class UClass* StaticClass()

@@ -16,15 +16,35 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_ChimeraPlacementHelperReplicatedBaseCore.BP_ChimeraPlacementHelperReplicatedBaseCore_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Function BP_ChimeraPlacementHelperReplicatedBaseCore.BP_ChimeraPlacementHelperReplicatedBaseCore_C.ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedBaseCore
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ChimeraPlacementHelperReplicatedBaseCore_C::UserConstructionScript()
+void ABP_ChimeraPlacementHelperReplicatedBaseCore_C::ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedBaseCore(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ChimeraPlacementHelperReplicatedBaseCore_C", "UserConstructionScript");
+		Func = Class->GetFunction("BP_ChimeraPlacementHelperReplicatedBaseCore_C", "ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedBaseCore");
+
+	Params::BP_ChimeraPlacementHelperReplicatedBaseCore_C_ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedBaseCore Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_ChimeraPlacementHelperReplicatedBaseCore.BP_ChimeraPlacementHelperReplicatedBaseCore_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_ChimeraPlacementHelperReplicatedBaseCore_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ChimeraPlacementHelperReplicatedBaseCore_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -50,37 +70,17 @@ void ABP_ChimeraPlacementHelperReplicatedBaseCore_C::SetMeshColor(const struct F
 }
 
 
-// Function BP_ChimeraPlacementHelperReplicatedBaseCore.BP_ChimeraPlacementHelperReplicatedBaseCore_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_ChimeraPlacementHelperReplicatedBaseCore.BP_ChimeraPlacementHelperReplicatedBaseCore_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_ChimeraPlacementHelperReplicatedBaseCore_C::ReceiveBeginPlay()
+void ABP_ChimeraPlacementHelperReplicatedBaseCore_C::UserConstructionScript()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ChimeraPlacementHelperReplicatedBaseCore_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_ChimeraPlacementHelperReplicatedBaseCore_C", "UserConstructionScript");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_ChimeraPlacementHelperReplicatedBaseCore.BP_ChimeraPlacementHelperReplicatedBaseCore_C.ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedBaseCore
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_ChimeraPlacementHelperReplicatedBaseCore_C::ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedBaseCore(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ChimeraPlacementHelperReplicatedBaseCore_C", "ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedBaseCore");
-
-	Params::BP_ChimeraPlacementHelperReplicatedBaseCore_C_ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedBaseCore Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 

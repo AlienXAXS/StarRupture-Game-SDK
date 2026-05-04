@@ -63,13 +63,13 @@ public:
 	TArray<class UStaticMeshComponent*>           Array_shelves;                                     // 0x0780(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 
 public:
-	void Timeline__UpdateFunc();
-	void Timeline__FinishedFunc();
-	void SetupSkeletalMesh();
-	void ReceiveBeginPlay();
-	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed);
-	void PlayBuildingEffect();
 	void ExecuteUbergraph_BP_DroneStation(int32 EntryPoint);
+	void PlayBuildingEffect();
+	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed);
+	void ReceiveBeginPlay();
+	void SetupSkeletalMesh();
+	void Timeline__FinishedFunc();
+	void Timeline__UpdateFunc();
 
 public:
 	static class UClass* StaticClass()

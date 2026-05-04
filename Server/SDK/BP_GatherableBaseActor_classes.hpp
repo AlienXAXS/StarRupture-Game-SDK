@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "Chimera_classes.hpp"
 #include "ST_GatherablePlantIstnacedData_structs.hpp"
+#include "Chimera_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -37,20 +37,20 @@ public:
 	TArray<struct FST_GatherablePlantIstnacedData> LocalVisualizationRefs;                           // 0x0390(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 
 public:
-	void ProcessOnInstaceAdded(class UInstancedStaticMeshComponent* InVisualInstancedVisualsComponent, int32 InVisualDataInstanceIdx);
-	void ProcessMeshInstancing();
-	void ProcessMeshInstanceRemoval();
-	void ProcessDataFloatsAfterDepletion(const struct FVector& InInteractingActorLocation);
-	void PostPCGSpawnInstanceInitialize();
-	void InitializeInstance();
-	void ExecuteUbergraph_BP_GatherableBaseActor(int32 EntryPoint);
-	void DebugProcessRegularVisualization();
-	void BP_ShowInitVisuals();
-	void BP_ShowDepletedVisuals(const struct FVector& InInteractingActorLocation);
-	void BP_OnVisualInstanceAdded(const struct FCrGatherableInstancedVisualsData& InVisualData);
-	void BP_OnRemoveInstancedVisualsRequested();
-	void BP_OnDepletedCosmetics(const struct FVector& InInteractingActorLocation, const class ACrCharacterPlayerBase* InInteractingPlayer);
 	void BP_DebugToggleRegularVisualization();
+	void BP_OnDepletedCosmetics(const struct FVector& InInteractingActorLocation, const class ACrCharacterPlayerBase* InInteractingPlayer);
+	void BP_OnRemoveInstancedVisualsRequested();
+	void BP_OnVisualInstanceAdded(const struct FCrGatherableInstancedVisualsData& InVisualData);
+	void BP_ShowDepletedVisuals(const struct FVector& InInteractingActorLocation);
+	void BP_ShowInitVisuals();
+	void DebugProcessRegularVisualization();
+	void ExecuteUbergraph_BP_GatherableBaseActor(int32 EntryPoint);
+	void InitializeInstance();
+	void PostPCGSpawnInstanceInitialize();
+	void ProcessDataFloatsAfterDepletion(const struct FVector& InInteractingActorLocation);
+	void ProcessMeshInstanceRemoval();
+	void ProcessMeshInstancing();
+	void ProcessOnInstaceAdded(class UInstancedStaticMeshComponent* InVisualInstancedVisualsComponent, int32 InVisualDataInstanceIdx);
 
 public:
 	static class UClass* StaticClass()

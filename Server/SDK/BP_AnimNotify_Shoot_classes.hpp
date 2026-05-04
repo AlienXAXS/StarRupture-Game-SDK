@@ -20,8 +20,8 @@ SDK_NAMESPACE_START
 class UBP_AnimNotify_Shoot_C final : public UAnimNotify
 {
 public:
-	bool Received_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, const struct FAnimNotifyEventReference& EventReference) const;
 	class UCrAiAction* CreateAiAction(class AActor* Actor) const;
+	bool Received_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, const struct FAnimNotifyEventReference& EventReference) const;
 
 public:
 	static class UClass* StaticClass()

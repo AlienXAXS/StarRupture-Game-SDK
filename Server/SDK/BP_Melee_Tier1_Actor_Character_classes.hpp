@@ -32,12 +32,12 @@ public:
 	double                                        FakeStrafeMagnitudeMod;                            // 0x0D40(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UserConstructionScript();
-	void OnVisualVariationChanged(const struct FVector& NewVisualVariationSeed);
-	void OnExitActorPool();
-	void OnEnterActorPool();
-	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
 	void ExecuteUbergraph_BP_Melee_Tier1_Actor_Character(int32 EntryPoint);
+	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
+	void OnEnterActorPool();
+	void OnExitActorPool();
+	void OnVisualVariationChanged(const struct FVector& NewVisualVariationSeed);
+	void UserConstructionScript();
 
 	void OnMeshVisibilityUpdated(bool bIsMeshHidden) const;
 

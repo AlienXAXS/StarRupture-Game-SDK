@@ -61,31 +61,31 @@ public:
 	class FName                                   Is_In_Slow_Rotation_Range;                         // 0x0DCC(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UserConstructionScript();
-	void UpdateAnimState();
-	void ShowLongAoeAttackEffect();
-	void SetRangedAttackTimer(bool SetTimerActive, double TimeToRangedAttack);
-	void SetMovementAttackStage(EMovementAttackStage MovementAttackStage_0);
-	void SetIsUpCover(bool bNewIsUpCover);
-	void SetIsInSlowRotationRange(bool bNewIsInSlowRotationRange);
-	void SetIsCoverActive(bool bNewIsCoverActive);
-	void SetHasAggroTarget(bool bNewHasAggroTarget);
-	void ReceiveTick(float DeltaSeconds);
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
-	void ReceiveBeginPlay();
-	void OnRangedAttackTimerFinished();
-	void OnPrepareForPooling();
-	void OnPrepareForGame();
-	void OnExitActorPool();
-	void OnEnterActorPool();
-	void OnBlackboardConfigured(class UMassEnemyDataAsset* Config);
-	void OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag);
-	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
-	EMovementAttackStage GetMovementAttackStage();
-	TArray<struct FVector> GetCachedLongAoePoints();
-	void ExecuteUbergraph_BP_Melee_Tier3_Actor_Character(int32 EntryPoint);
-	void CacheLongAoePoints(const TArray<struct FVector>& Points);
 	void AttachWeakpoint();
+	void CacheLongAoePoints(const TArray<struct FVector>& Points);
+	void ExecuteUbergraph_BP_Melee_Tier3_Actor_Character(int32 EntryPoint);
+	TArray<struct FVector> GetCachedLongAoePoints();
+	EMovementAttackStage GetMovementAttackStage();
+	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
+	void OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag);
+	void OnBlackboardConfigured(class UMassEnemyDataAsset* Config);
+	void OnEnterActorPool();
+	void OnExitActorPool();
+	void OnPrepareForGame();
+	void OnPrepareForPooling();
+	void OnRangedAttackTimerFinished();
+	void ReceiveBeginPlay();
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void ReceiveTick(float DeltaSeconds);
+	void SetHasAggroTarget(bool bNewHasAggroTarget);
+	void SetIsCoverActive(bool bNewIsCoverActive);
+	void SetIsInSlowRotationRange(bool bNewIsInSlowRotationRange);
+	void SetIsUpCover(bool bNewIsUpCover);
+	void SetMovementAttackStage(EMovementAttackStage MovementAttackStage_0);
+	void SetRangedAttackTimer(bool SetTimerActive, double TimeToRangedAttack);
+	void ShowLongAoeAttackEffect();
+	void UpdateAnimState();
+	void UserConstructionScript();
 
 	void OnMeshVisibilityUpdated(bool bIsMeshHidden) const;
 

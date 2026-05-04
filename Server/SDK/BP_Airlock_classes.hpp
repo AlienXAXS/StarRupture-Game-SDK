@@ -54,14 +54,14 @@ public:
 	TArray<class UStaticMeshComponent*>           StaticMeshesIn;                                    // 0x0938(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 
 public:
-	void ReceiveBeginPlay();
-	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed);
-	void PlayInteractionUnSuccessfulSound(EDoorState DoorState);
-	void OnOpenStateChanged(bool bInOpen);
 	void ExecuteUbergraph_BP_Airlock(int32 EntryPoint);
+	void OnOpenStateChanged(bool bInOpen);
+	void PlayInteractionUnSuccessfulSound(EDoorState DoorState);
+	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed);
+	void ReceiveBeginPlay();
 
-	const class UShapeComponent* GetAirlockInteriorComponent() const;
 	const class UShapeComponent* GetAirlockHabitatExteriorComponent() const;
+	const class UShapeComponent* GetAirlockInteriorComponent() const;
 
 public:
 	static class UClass* StaticClass()

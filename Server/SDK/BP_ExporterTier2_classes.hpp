@@ -57,13 +57,13 @@ public:
 	bool                                          IsDefault;                                         // 0x07F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UserConstructionScript();
-	void ReceiveBeginPlay();
-	void OnItemCraftingComplete();
-	void OnCorporationChanged(class FName NewCorporation);
-	void OnBuildingStateChanged(ECrBuildingState InState);
-	void ExecuteUbergraph_BP_ExporterTier2(int32 EntryPoint);
 	void Attach_meshes();
+	void ExecuteUbergraph_BP_ExporterTier2(int32 EntryPoint);
+	void OnBuildingStateChanged(ECrBuildingState InState);
+	void OnCorporationChanged(class FName NewCorporation);
+	void OnItemCraftingComplete();
+	void ReceiveBeginPlay();
+	void UserConstructionScript();
 
 public:
 	static class UClass* StaticClass()

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_classes.hpp"
 #include "AuGear_structs.hpp"
+#include "CoreUObject_classes.hpp"
 #include "AuItems_classes.hpp"
 
 

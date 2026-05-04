@@ -16,166 +16,26 @@
 
 SDK_NAMESPACE_START
 
-// Function GS_GameStateBase.GS_GameStateBase_C.TalkingFinished
-// (BlueprintCallable, BlueprintEvent)
-
-void AGS_GameStateBase_C::TalkingFinished()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GS_GameStateBase_C", "TalkingFinished");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GS_GameStateBase.GS_GameStateBase_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void AGS_GameStateBase_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GS_GameStateBase_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GS_GameStateBase.GS_GameStateBase_C.PlayContextualDialogueResponseMulticast
-// (Net, NetMulticast, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FContextualResponsePayload&Response                                               (BlueprintVisible, BlueprintReadOnly, Parm)
-// class FName                             Main_Rule_Name                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void AGS_GameStateBase_C::PlayContextualDialogueResponseMulticast(const struct FContextualResponsePayload& Response, class FName Main_Rule_Name)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GS_GameStateBase_C", "PlayContextualDialogueResponseMulticast");
-
-	Params::GS_GameStateBase_C_PlayContextualDialogueResponseMulticast Parms{};
-
-	Parms.Response = std::move(Response);
-	Parms.Main_Rule_Name = Main_Rule_Name;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function GS_GameStateBase.GS_GameStateBase_C.OnResponseFinished
+// Function GS_GameStateBase.GS_GameStateBase_C.CanExecuteAnyContextualResponse
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// const struct FContextualResponsePayload&ResponseData                                           (BlueprintVisible, BlueprintReadOnly, Parm)
-// class FName                             RuleNameContainingResponseData                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bIsImportant                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-bool AGS_GameStateBase_C::OnResponseFinished(const struct FContextualResponsePayload& ResponseData, class FName RuleNameContainingResponseData)
+bool AGS_GameStateBase_C::CanExecuteAnyContextualResponse(bool bIsImportant)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GS_GameStateBase_C", "OnResponseFinished");
+		Func = Class->GetFunction("GS_GameStateBase_C", "CanExecuteAnyContextualResponse");
 
-	Params::GS_GameStateBase_C_OnResponseFinished Parms{};
+	Params::GS_GameStateBase_C_CanExecuteAnyContextualResponse Parms{};
 
-	Parms.ResponseData = std::move(ResponseData);
-	Parms.RuleNameContainingResponseData = RuleNameContainingResponseData;
+	Parms.bIsImportant = bIsImportant;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
-}
-
-
-// Function GS_GameStateBase.GS_GameStateBase_C.OnNoReplyDialogueRuleFound
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void AGS_GameStateBase_C::OnNoReplyDialogueRuleFound()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GS_GameStateBase_C", "OnNoReplyDialogueRuleFound");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GS_GameStateBase.GS_GameStateBase_C.OnLoaded_A12FDB953A422BD9EAFD018D9BCB7500
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UObject*                          Loaded                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void AGS_GameStateBase_C::OnLoaded_A12FDB953A422BD9EAFD018D9BCB7500(class UObject* Loaded)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GS_GameStateBase_C", "OnLoaded_A12FDB953A422BD9EAFD018D9BCB7500");
-
-	Params::GS_GameStateBase_C_OnLoaded_A12FDB953A422BD9EAFD018D9BCB7500 Parms{};
-
-	Parms.Loaded = Loaded;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function GS_GameStateBase.GS_GameStateBase_C.IsCharacterTalking
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-bool AGS_GameStateBase_C::IsCharacterTalking()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GS_GameStateBase_C", "IsCharacterTalking");
-
-	Params::GS_GameStateBase_C_IsCharacterTalking Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GS_GameStateBase.GS_GameStateBase_C.InitAvailableWeaponMods
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void AGS_GameStateBase_C::InitAvailableWeaponMods()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GS_GameStateBase_C", "InitAvailableWeaponMods");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GS_GameStateBase.GS_GameStateBase_C.ExecuteUbergraph_GS_GameStateBase
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void AGS_GameStateBase_C::ExecuteUbergraph_GS_GameStateBase(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GS_GameStateBase_C", "ExecuteUbergraph_GS_GameStateBase");
-
-	Params::GS_GameStateBase_C_ExecuteUbergraph_GS_GameStateBase Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -204,26 +64,166 @@ bool AGS_GameStateBase_C::ExecuteContextualResponse(const struct FContextualResp
 }
 
 
-// Function GS_GameStateBase.GS_GameStateBase_C.CanExecuteAnyContextualResponse
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function GS_GameStateBase.GS_GameStateBase_C.ExecuteUbergraph_GS_GameStateBase
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// bool                                    bIsImportant                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-bool AGS_GameStateBase_C::CanExecuteAnyContextualResponse(bool bIsImportant)
+void AGS_GameStateBase_C::ExecuteUbergraph_GS_GameStateBase(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GS_GameStateBase_C", "CanExecuteAnyContextualResponse");
+		Func = Class->GetFunction("GS_GameStateBase_C", "ExecuteUbergraph_GS_GameStateBase");
 
-	Params::GS_GameStateBase_C_CanExecuteAnyContextualResponse Parms{};
+	Params::GS_GameStateBase_C_ExecuteUbergraph_GS_GameStateBase Parms{};
 
-	Parms.bIsImportant = bIsImportant;
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GS_GameStateBase.GS_GameStateBase_C.InitAvailableWeaponMods
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void AGS_GameStateBase_C::InitAvailableWeaponMods()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GS_GameStateBase_C", "InitAvailableWeaponMods");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GS_GameStateBase.GS_GameStateBase_C.IsCharacterTalking
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool AGS_GameStateBase_C::IsCharacterTalking()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GS_GameStateBase_C", "IsCharacterTalking");
+
+	Params::GS_GameStateBase_C_IsCharacterTalking Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
+}
+
+
+// Function GS_GameStateBase.GS_GameStateBase_C.OnLoaded_A12FDB953A422BD9EAFD018D9BCB7500
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          Loaded                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void AGS_GameStateBase_C::OnLoaded_A12FDB953A422BD9EAFD018D9BCB7500(class UObject* Loaded)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GS_GameStateBase_C", "OnLoaded_A12FDB953A422BD9EAFD018D9BCB7500");
+
+	Params::GS_GameStateBase_C_OnLoaded_A12FDB953A422BD9EAFD018D9BCB7500 Parms{};
+
+	Parms.Loaded = Loaded;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GS_GameStateBase.GS_GameStateBase_C.OnNoReplyDialogueRuleFound
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void AGS_GameStateBase_C::OnNoReplyDialogueRuleFound()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GS_GameStateBase_C", "OnNoReplyDialogueRuleFound");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GS_GameStateBase.GS_GameStateBase_C.OnResponseFinished
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FContextualResponsePayload&ResponseData                                           (BlueprintVisible, BlueprintReadOnly, Parm)
+// class FName                             RuleNameContainingResponseData                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool AGS_GameStateBase_C::OnResponseFinished(const struct FContextualResponsePayload& ResponseData, class FName RuleNameContainingResponseData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GS_GameStateBase_C", "OnResponseFinished");
+
+	Params::GS_GameStateBase_C_OnResponseFinished Parms{};
+
+	Parms.ResponseData = std::move(ResponseData);
+	Parms.RuleNameContainingResponseData = RuleNameContainingResponseData;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GS_GameStateBase.GS_GameStateBase_C.PlayContextualDialogueResponseMulticast
+// (Net, NetMulticast, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FContextualResponsePayload&Response                                               (BlueprintVisible, BlueprintReadOnly, Parm)
+// class FName                             Main_Rule_Name                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AGS_GameStateBase_C::PlayContextualDialogueResponseMulticast(const struct FContextualResponsePayload& Response, class FName Main_Rule_Name)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GS_GameStateBase_C", "PlayContextualDialogueResponseMulticast");
+
+	Params::GS_GameStateBase_C_PlayContextualDialogueResponseMulticast Parms{};
+
+	Parms.Response = std::move(Response);
+	Parms.Main_Rule_Name = Main_Rule_Name;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GS_GameStateBase.GS_GameStateBase_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void AGS_GameStateBase_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GS_GameStateBase_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GS_GameStateBase.GS_GameStateBase_C.TalkingFinished
+// (BlueprintCallable, BlueprintEvent)
+
+void AGS_GameStateBase_C::TalkingFinished()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GS_GameStateBase_C", "TalkingFinished");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

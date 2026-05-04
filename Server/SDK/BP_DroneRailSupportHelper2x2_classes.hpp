@@ -27,10 +27,10 @@ public:
 	class UMaterialInstanceDynamic*               TileIndicatorISMDynamicMaterial;                   // 0x08A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UserConstructionScript();
-	void SetMeshColor(const struct FLinearColor& Color);
-	void OnFoundationSetUp(const TArray<struct FTransform>& FoundationTransforms);
 	void ExecuteUbergraph_BP_DroneRailSupportHelper2x2(int32 EntryPoint);
+	void OnFoundationSetUp(const TArray<struct FTransform>& FoundationTransforms);
+	void SetMeshColor(const struct FLinearColor& Color);
+	void UserConstructionScript();
 
 public:
 	static class UClass* StaticClass()

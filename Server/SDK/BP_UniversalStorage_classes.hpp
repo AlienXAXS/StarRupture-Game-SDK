@@ -58,12 +58,12 @@ public:
 	class UMaterial*                              IconMat;                                           // 0x0760(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void Timeline_shelves__UpdateFunc();
-	void Timeline_shelves__FinishedFunc();
-	void ReceiveBeginPlay();
-	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed);
-	void GetMaterialInstance();
 	void ExecuteUbergraph_BP_UniversalStorage(int32 EntryPoint);
+	void GetMaterialInstance();
+	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed);
+	void ReceiveBeginPlay();
+	void Timeline_shelves__FinishedFunc();
+	void Timeline_shelves__UpdateFunc();
 
 public:
 	static class UClass* StaticClass()

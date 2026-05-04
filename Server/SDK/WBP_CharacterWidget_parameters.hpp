@@ -16,35 +16,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function WBP_CharacterWidget.WBP_CharacterWidget_C.SetSelectedStyles
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_CharacterWidget_C_SetSelectedStyles final
-{
-public:
-	bool                                          bSelected;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_CharacterWidget_C_SetSelectedStyles;
-
-// Function WBP_CharacterWidget.WBP_CharacterWidget_C.SetSelectedRemote
-// 0x0018 (0x0018 - 0x0000)
-struct WBP_CharacterWidget_C_SetSelectedRemote final
-{
-public:
-	bool                                          bSelected;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   Name_0;                                            // 0x0008(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-};
-DUMPER7_ASSERTS_WBP_CharacterWidget_C_SetSelectedRemote;
-
-// Function WBP_CharacterWidget.WBP_CharacterWidget_C.SetHighlightStyles
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_CharacterWidget_C_SetHighlightStyles final
-{
-public:
-	bool                                          bHighlight;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_CharacterWidget_C_SetHighlightStyles;
-
 // Function WBP_CharacterWidget.WBP_CharacterWidget_C.ExecuteUbergraph_WBP_CharacterWidget
 // 0x0670 (0x0670 - 0x0000)
 struct WBP_CharacterWidget_C_ExecuteUbergraph_WBP_CharacterWidget final
@@ -79,6 +50,35 @@ public:
 	bool                                          K2Node_Event_bSelected;                            // 0x066A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_CharacterWidget_C_ExecuteUbergraph_WBP_CharacterWidget;
+
+// Function WBP_CharacterWidget.WBP_CharacterWidget_C.SetHighlightStyles
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_CharacterWidget_C_SetHighlightStyles final
+{
+public:
+	bool                                          bHighlight;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_CharacterWidget_C_SetHighlightStyles;
+
+// Function WBP_CharacterWidget.WBP_CharacterWidget_C.SetSelectedRemote
+// 0x0018 (0x0018 - 0x0000)
+struct WBP_CharacterWidget_C_SetSelectedRemote final
+{
+public:
+	bool                                          bSelected;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   Name_0;                                            // 0x0008(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
+DUMPER7_ASSERTS_WBP_CharacterWidget_C_SetSelectedRemote;
+
+// Function WBP_CharacterWidget.WBP_CharacterWidget_C.SetSelectedStyles
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_CharacterWidget_C_SetSelectedStyles final
+{
+public:
+	bool                                          bSelected;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_CharacterWidget_C_SetSelectedStyles;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

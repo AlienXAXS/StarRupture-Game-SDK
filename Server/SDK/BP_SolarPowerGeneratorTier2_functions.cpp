@@ -16,31 +16,23 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_SolarPowerGeneratorTier2.BP_SolarPowerGeneratorTier2_C.SetupSkeletalMesh
-// (Event, Public, BlueprintEvent)
+// Function BP_SolarPowerGeneratorTier2.BP_SolarPowerGeneratorTier2_C.ExecuteUbergraph_BP_SolarPowerGeneratorTier2
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_SolarPowerGeneratorTier2_C::SetupSkeletalMesh()
+void ABP_SolarPowerGeneratorTier2_C::ExecuteUbergraph_BP_SolarPowerGeneratorTier2(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SolarPowerGeneratorTier2_C", "SetupSkeletalMesh");
+		Func = Class->GetFunction("BP_SolarPowerGeneratorTier2_C", "ExecuteUbergraph_BP_SolarPowerGeneratorTier2");
 
-	UObject::ProcessEvent(Func, nullptr);
-}
+	Params::BP_SolarPowerGeneratorTier2_C_ExecuteUbergraph_BP_SolarPowerGeneratorTier2 Parms{};
 
+	Parms.EntryPoint = EntryPoint;
 
-// Function BP_SolarPowerGeneratorTier2.BP_SolarPowerGeneratorTier2_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_SolarPowerGeneratorTier2_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SolarPowerGeneratorTier2_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -64,23 +56,31 @@ void ABP_SolarPowerGeneratorTier2_C::PostPlayBuildingEffect(bool bWasBuildingEff
 }
 
 
-// Function BP_SolarPowerGeneratorTier2.BP_SolarPowerGeneratorTier2_C.ExecuteUbergraph_BP_SolarPowerGeneratorTier2
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_SolarPowerGeneratorTier2.BP_SolarPowerGeneratorTier2_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ABP_SolarPowerGeneratorTier2_C::ExecuteUbergraph_BP_SolarPowerGeneratorTier2(int32 EntryPoint)
+void ABP_SolarPowerGeneratorTier2_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SolarPowerGeneratorTier2_C", "ExecuteUbergraph_BP_SolarPowerGeneratorTier2");
+		Func = Class->GetFunction("BP_SolarPowerGeneratorTier2_C", "ReceiveBeginPlay");
 
-	Params::BP_SolarPowerGeneratorTier2_C_ExecuteUbergraph_BP_SolarPowerGeneratorTier2 Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
 
-	UObject::ProcessEvent(Func, &Parms);
+// Function BP_SolarPowerGeneratorTier2.BP_SolarPowerGeneratorTier2_C.SetupSkeletalMesh
+// (Event, Public, BlueprintEvent)
+
+void ABP_SolarPowerGeneratorTier2_C::SetupSkeletalMesh()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SolarPowerGeneratorTier2_C", "SetupSkeletalMesh");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

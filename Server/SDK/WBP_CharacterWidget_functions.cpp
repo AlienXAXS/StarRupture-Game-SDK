@@ -16,35 +16,97 @@
 
 SDK_NAMESPACE_START
 
-// Function WBP_CharacterWidget.WBP_CharacterWidget_C.SetupProfession
-// (Event, Protected, BlueprintEvent)
+// Function WBP_CharacterWidget.WBP_CharacterWidget_C.BndEvt__WBP_CharacterWidget_ShowBioButton_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature
+// (BlueprintEvent)
 
-void UWBP_CharacterWidget_C::SetupProfession()
+void UWBP_CharacterWidget_C::BndEvt__WBP_CharacterWidget_ShowBioButton_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CharacterWidget_C", "SetupProfession");
+		Func = Class->GetFunction("WBP_CharacterWidget_C", "BndEvt__WBP_CharacterWidget_ShowBioButton_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function WBP_CharacterWidget.WBP_CharacterWidget_C.SetSelectedStyles
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bSelected                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function WBP_CharacterWidget.WBP_CharacterWidget_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
-void UWBP_CharacterWidget_C::SetSelectedStyles(bool bSelected)
+void UWBP_CharacterWidget_C::Construct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CharacterWidget_C", "SetSelectedStyles");
+		Func = Class->GetFunction("WBP_CharacterWidget_C", "Construct");
 
-	Params::WBP_CharacterWidget_C_SetSelectedStyles Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.bSelected = bSelected;
+
+// Function WBP_CharacterWidget.WBP_CharacterWidget_C.ExecuteUbergraph_WBP_CharacterWidget
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_CharacterWidget_C::ExecuteUbergraph_WBP_CharacterWidget(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_CharacterWidget_C", "ExecuteUbergraph_WBP_CharacterWidget");
+
+	Params::WBP_CharacterWidget_C_ExecuteUbergraph_WBP_CharacterWidget Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_CharacterWidget.WBP_CharacterWidget_C.OnShowBioButtonPressed
+// (Event, Protected, BlueprintEvent)
+
+void UWBP_CharacterWidget_C::OnShowBioButtonPressed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_CharacterWidget_C", "OnShowBioButtonPressed");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_CharacterWidget.WBP_CharacterWidget_C.SetColorsInternal
+// (Event, Protected, BlueprintEvent)
+
+void UWBP_CharacterWidget_C::SetColorsInternal()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_CharacterWidget_C", "SetColorsInternal");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_CharacterWidget.WBP_CharacterWidget_C.SetHighlightStyles
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bHighlight                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_CharacterWidget_C::SetHighlightStyles(bool bHighlight)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_CharacterWidget_C", "SetHighlightStyles");
+
+	Params::WBP_CharacterWidget_C_SetHighlightStyles Parms{};
+
+	Parms.bHighlight = bHighlight;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -72,97 +134,35 @@ void UWBP_CharacterWidget_C::SetSelectedRemote(bool bSelected, const class FText
 }
 
 
-// Function WBP_CharacterWidget.WBP_CharacterWidget_C.SetHighlightStyles
+// Function WBP_CharacterWidget.WBP_CharacterWidget_C.SetSelectedStyles
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool                                    bHighlight                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bSelected                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_CharacterWidget_C::SetHighlightStyles(bool bHighlight)
+void UWBP_CharacterWidget_C::SetSelectedStyles(bool bSelected)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CharacterWidget_C", "SetHighlightStyles");
+		Func = Class->GetFunction("WBP_CharacterWidget_C", "SetSelectedStyles");
 
-	Params::WBP_CharacterWidget_C_SetHighlightStyles Parms{};
+	Params::WBP_CharacterWidget_C_SetSelectedStyles Parms{};
 
-	Parms.bHighlight = bHighlight;
+	Parms.bSelected = bSelected;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function WBP_CharacterWidget.WBP_CharacterWidget_C.SetColorsInternal
+// Function WBP_CharacterWidget.WBP_CharacterWidget_C.SetupProfession
 // (Event, Protected, BlueprintEvent)
 
-void UWBP_CharacterWidget_C::SetColorsInternal()
+void UWBP_CharacterWidget_C::SetupProfession()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CharacterWidget_C", "SetColorsInternal");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_CharacterWidget.WBP_CharacterWidget_C.OnShowBioButtonPressed
-// (Event, Protected, BlueprintEvent)
-
-void UWBP_CharacterWidget_C::OnShowBioButtonPressed()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CharacterWidget_C", "OnShowBioButtonPressed");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_CharacterWidget.WBP_CharacterWidget_C.ExecuteUbergraph_WBP_CharacterWidget
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UWBP_CharacterWidget_C::ExecuteUbergraph_WBP_CharacterWidget(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CharacterWidget_C", "ExecuteUbergraph_WBP_CharacterWidget");
-
-	Params::WBP_CharacterWidget_C_ExecuteUbergraph_WBP_CharacterWidget Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_CharacterWidget.WBP_CharacterWidget_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UWBP_CharacterWidget_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CharacterWidget_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_CharacterWidget.WBP_CharacterWidget_C.BndEvt__WBP_CharacterWidget_ShowBioButton_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UWBP_CharacterWidget_C::BndEvt__WBP_CharacterWidget_ShowBioButton_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CharacterWidget_C", "BndEvt__WBP_CharacterWidget_ShowBioButton_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature");
+		Func = Class->GetFunction("WBP_CharacterWidget_C", "SetupProfession");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

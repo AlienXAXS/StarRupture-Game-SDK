@@ -19,148 +19,14 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function WBP_ActionButton.WBP_ActionButton_C.SetTextStyle
-// 0x00B0 (0x00B0 - 0x0000)
-struct WBP_ActionButton_C_SetTextStyle final
-{
-public:
-	int32                                         FontSize;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ToUpper;                                           // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          BlackFont;                                         // 0x0005(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLinearColor                           FontColor;                                         // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSlateColor                            K2Node_MakeStruct_SlateColor;                      // 0x0018(0x0014)()
-	bool                                          CallFunc_NotEqual_IntInt_ReturnValue;              // 0x002C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        CallFunc_Conv_IntToDouble_ReturnValue;             // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSlateFontInfo                         K2Node_MakeStruct_SlateFontInfo;                   // 0x0038(0x0060)(HasGetValueTypeHash)
-	struct FSlateColor                            K2Node_MakeStruct_SlateColor_1;                    // 0x0098(0x0014)()
-	float                                         K2Node_MakeStruct_Size_ImplicitCast;               // 0x00AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_ActionButton_C_SetTextStyle;
-
-// Function WBP_ActionButton.WBP_ActionButton_C.SetTextMaxWidth
-// 0x0018 (0x0018 - 0x0000)
-struct WBP_ActionButton_C_SetTextMaxWidth final
-{
-public:
-	int32                                         Size;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        CallFunc_Conv_IntToDouble_ReturnValue;             // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_SetMaxDesiredWidth_InMaxDesiredWidth_ImplicitCast; // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_ActionButton_C_SetTextMaxWidth;
-
-// Function WBP_ActionButton.WBP_ActionButton_C.SetText
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_ActionButton_C_SetText final
-{
-public:
-	class FText                                   InText;                                            // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm)
-};
-DUMPER7_ASSERTS_WBP_ActionButton_C_SetText;
-
-// Function WBP_ActionButton.WBP_ActionButton_C.SetSize
-// 0x0028 (0x0028 - 0x0000)
-struct WBP_ActionButton_C_SetSize final
-{
-public:
-	int32                                         Width;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Height;                                            // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Conv_IntToDouble_ReturnValue;             // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Conv_IntToDouble_ReturnValue_1;           // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_SetHeightOverride_InHeightOverride_ImplicitCast; // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_SetWidthOverride_InWidthOverride_ImplicitCast; // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_SetHeightOverride_InHeightOverride_ImplicitCast_1; // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_SetWidthOverride_InWidthOverride_ImplicitCast_1; // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_ActionButton_C_SetSize;
-
-// Function WBP_ActionButton.WBP_ActionButton_C.SetFontSize
-// 0x00D8 (0x00D8 - 0x0000)
-struct WBP_ActionButton_C_SetFontSize final
-{
-public:
-	int32                                         FontSize;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          BoldFont;                                          // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        CallFunc_Conv_IntToDouble_ReturnValue;             // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSlateFontInfo                         K2Node_MakeStruct_SlateFontInfo;                   // 0x0010(0x0060)(HasGetValueTypeHash)
-	struct FSlateFontInfo                         K2Node_MakeStruct_SlateFontInfo_1;                 // 0x0070(0x0060)(HasGetValueTypeHash)
-	float                                         K2Node_MakeStruct_Size_ImplicitCast;               // 0x00D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_MakeStruct_Size_ImplicitCast_1;             // 0x00D4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_ActionButton_C_SetFontSize;
-
-// Function WBP_ActionButton.WBP_ActionButton_C.SetDefault
-// 0x0018 (0x0018 - 0x0000)
-struct WBP_ActionButton_C_SetDefault final
-{
-public:
-	bool                                          bInDefault;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCommonInputSubsystem*                  CallFunc_GetLocalPlayerSubsystem_ReturnValue;      // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	ECommonInputType                              CallFunc_GetCurrentInputType_ReturnValue;          // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_ActionButton_C_SetDefault;
-
-// Function WBP_ActionButton.WBP_ActionButton_C.SetColors
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_ActionButton_C_SetColors final
-{
-public:
-	const class UCrCommonUIColorsDevSettings*     Settings;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_ActionButton_C_SetColors;
-
-// Function WBP_ActionButton.WBP_ActionButton_C.SetButtonEnabled
+// Function WBP_ActionButton.WBP_ActionButton_C.BndEvt__WBP_ActionButton_InputActionWidget_K2Node_ComponentBoundEvent_2_OnInputMethodChanged__DelegateSignature
 // 0x0001 (0x0001 - 0x0000)
-struct WBP_ActionButton_C_SetButtonEnabled final
+struct WBP_ActionButton_C_BndEvt__WBP_ActionButton_InputActionWidget_K2Node_ComponentBoundEvent_2_OnInputMethodChanged__DelegateSignature final
 {
 public:
-	bool                                          bEnabled;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bUsingGamepad;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_WBP_ActionButton_C_SetButtonEnabled;
-
-// Function WBP_ActionButton.WBP_ActionButton_C.SetAlignment
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_ActionButton_C_SetAlignment final
-{
-public:
-	EHorizontalAlignment                          Alignment;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UOverlaySlot*                           CallFunc_SlotAsOverlaySlot_ReturnValue;            // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_ActionButton_C_SetAlignment;
-
-// Function WBP_ActionButton.WBP_ActionButton_C.SetActionNamePadding
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_ActionButton_C_SetActionNamePadding final
-{
-public:
-	bool                                          bSet;                                              // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_ActionButton_C_SetActionNamePadding;
-
-// Function WBP_ActionButton.WBP_ActionButton_C.PreConstruct
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_ActionButton_C_PreConstruct final
-{
-public:
-	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_ActionButton_C_PreConstruct;
-
-// Function WBP_ActionButton.WBP_ActionButton_C.GetHeightSize
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_ActionButton_C_GetHeightSize final
-{
-public:
-	double                                        Height;                                            // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        K2Node_FunctionResult_Height_ImplicitCast;         // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_ActionButton_C_GetHeightSize;
+DUMPER7_ASSERTS_WBP_ActionButton_C_BndEvt__WBP_ActionButton_InputActionWidget_K2Node_ComponentBoundEvent_2_OnInputMethodChanged__DelegateSignature;
 
 // Function WBP_ActionButton.WBP_ActionButton_C.ExecuteUbergraph_WBP_ActionButton
 // 0x0F30 (0x0F30 - 0x0000)
@@ -208,14 +74,148 @@ public:
 };
 DUMPER7_ASSERTS_WBP_ActionButton_C_ExecuteUbergraph_WBP_ActionButton;
 
-// Function WBP_ActionButton.WBP_ActionButton_C.BndEvt__WBP_ActionButton_InputActionWidget_K2Node_ComponentBoundEvent_2_OnInputMethodChanged__DelegateSignature
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_ActionButton_C_BndEvt__WBP_ActionButton_InputActionWidget_K2Node_ComponentBoundEvent_2_OnInputMethodChanged__DelegateSignature final
+// Function WBP_ActionButton.WBP_ActionButton_C.GetHeightSize
+// 0x0010 (0x0010 - 0x0000)
+struct WBP_ActionButton_C_GetHeightSize final
 {
 public:
-	bool                                          bUsingGamepad;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        Height;                                            // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        K2Node_FunctionResult_Height_ImplicitCast;         // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_WBP_ActionButton_C_BndEvt__WBP_ActionButton_InputActionWidget_K2Node_ComponentBoundEvent_2_OnInputMethodChanged__DelegateSignature;
+DUMPER7_ASSERTS_WBP_ActionButton_C_GetHeightSize;
+
+// Function WBP_ActionButton.WBP_ActionButton_C.PreConstruct
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_ActionButton_C_PreConstruct final
+{
+public:
+	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_ActionButton_C_PreConstruct;
+
+// Function WBP_ActionButton.WBP_ActionButton_C.SetActionNamePadding
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_ActionButton_C_SetActionNamePadding final
+{
+public:
+	bool                                          bSet;                                              // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_ActionButton_C_SetActionNamePadding;
+
+// Function WBP_ActionButton.WBP_ActionButton_C.SetAlignment
+// 0x0010 (0x0010 - 0x0000)
+struct WBP_ActionButton_C_SetAlignment final
+{
+public:
+	EHorizontalAlignment                          Alignment;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UOverlaySlot*                           CallFunc_SlotAsOverlaySlot_ReturnValue;            // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_ActionButton_C_SetAlignment;
+
+// Function WBP_ActionButton.WBP_ActionButton_C.SetButtonEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_ActionButton_C_SetButtonEnabled final
+{
+public:
+	bool                                          bEnabled;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_ActionButton_C_SetButtonEnabled;
+
+// Function WBP_ActionButton.WBP_ActionButton_C.SetColors
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_ActionButton_C_SetColors final
+{
+public:
+	const class UCrCommonUIColorsDevSettings*     Settings;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_ActionButton_C_SetColors;
+
+// Function WBP_ActionButton.WBP_ActionButton_C.SetDefault
+// 0x0018 (0x0018 - 0x0000)
+struct WBP_ActionButton_C_SetDefault final
+{
+public:
+	bool                                          bInDefault;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCommonInputSubsystem*                  CallFunc_GetLocalPlayerSubsystem_ReturnValue;      // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	ECommonInputType                              CallFunc_GetCurrentInputType_ReturnValue;          // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_ActionButton_C_SetDefault;
+
+// Function WBP_ActionButton.WBP_ActionButton_C.SetFontSize
+// 0x00D8 (0x00D8 - 0x0000)
+struct WBP_ActionButton_C_SetFontSize final
+{
+public:
+	int32                                         FontSize;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          BoldFont;                                          // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_Conv_IntToDouble_ReturnValue;             // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSlateFontInfo                         K2Node_MakeStruct_SlateFontInfo;                   // 0x0010(0x0060)(HasGetValueTypeHash)
+	struct FSlateFontInfo                         K2Node_MakeStruct_SlateFontInfo_1;                 // 0x0070(0x0060)(HasGetValueTypeHash)
+	float                                         K2Node_MakeStruct_Size_ImplicitCast;               // 0x00D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_MakeStruct_Size_ImplicitCast_1;             // 0x00D4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_ActionButton_C_SetFontSize;
+
+// Function WBP_ActionButton.WBP_ActionButton_C.SetSize
+// 0x0028 (0x0028 - 0x0000)
+struct WBP_ActionButton_C_SetSize final
+{
+public:
+	int32                                         Width;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Height;                                            // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Conv_IntToDouble_ReturnValue;             // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Conv_IntToDouble_ReturnValue_1;           // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_SetHeightOverride_InHeightOverride_ImplicitCast; // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_SetWidthOverride_InWidthOverride_ImplicitCast; // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_SetHeightOverride_InHeightOverride_ImplicitCast_1; // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_SetWidthOverride_InWidthOverride_ImplicitCast_1; // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_ActionButton_C_SetSize;
+
+// Function WBP_ActionButton.WBP_ActionButton_C.SetText
+// 0x0010 (0x0010 - 0x0000)
+struct WBP_ActionButton_C_SetText final
+{
+public:
+	class FText                                   InText;                                            // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm)
+};
+DUMPER7_ASSERTS_WBP_ActionButton_C_SetText;
+
+// Function WBP_ActionButton.WBP_ActionButton_C.SetTextMaxWidth
+// 0x0018 (0x0018 - 0x0000)
+struct WBP_ActionButton_C_SetTextMaxWidth final
+{
+public:
+	int32                                         Size;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_Conv_IntToDouble_ReturnValue;             // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_SetMaxDesiredWidth_InMaxDesiredWidth_ImplicitCast; // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_ActionButton_C_SetTextMaxWidth;
+
+// Function WBP_ActionButton.WBP_ActionButton_C.SetTextStyle
+// 0x00B0 (0x00B0 - 0x0000)
+struct WBP_ActionButton_C_SetTextStyle final
+{
+public:
+	int32                                         FontSize;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ToUpper;                                           // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          BlackFont;                                         // 0x0005(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           FontColor;                                         // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSlateColor                            K2Node_MakeStruct_SlateColor;                      // 0x0018(0x0014)()
+	bool                                          CallFunc_NotEqual_IntInt_ReturnValue;              // 0x002C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_Conv_IntToDouble_ReturnValue;             // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSlateFontInfo                         K2Node_MakeStruct_SlateFontInfo;                   // 0x0038(0x0060)(HasGetValueTypeHash)
+	struct FSlateColor                            K2Node_MakeStruct_SlateColor_1;                    // 0x0098(0x0014)()
+	float                                         K2Node_MakeStruct_Size_ImplicitCast;               // 0x00AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_ActionButton_C_SetTextStyle;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

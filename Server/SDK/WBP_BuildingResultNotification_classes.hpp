@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "ChimeraUI_classes.hpp"
 #include "AuActorPlacement_structs.hpp"
+#include "ChimeraUI_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -27,8 +27,8 @@ public:
 	class UWidgetAnimation*                       Show;                                              // 0x03C0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, RepSkip, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnPlacementResultNotif(EAuAPPlacementResult PlacementResult);
 	void ExecuteUbergraph_WBP_BuildingResultNotification(int32 EntryPoint);
+	void OnPlacementResultNotif(EAuAPPlacementResult PlacementResult);
 
 public:
 	static class UClass* StaticClass()

@@ -16,61 +16,23 @@
 
 SDK_NAMESPACE_START
 
-// Function WBP_HeaderLineBuildingInfo.WBP_HeaderLineBuildingInfo_C.SetTitleFieldSize
+// Function WBP_HeaderLineBuildingInfo.WBP_HeaderLineBuildingInfo_C.SetColors
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Size                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              Highlight                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              Default                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_HeaderLineBuildingInfo_C::SetTitleFieldSize(int32 Size)
+void UWBP_HeaderLineBuildingInfo_C::SetColors(const struct FLinearColor& Highlight, const struct FLinearColor& Default)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineBuildingInfo_C", "SetTitleFieldSize");
+		Func = Class->GetFunction("WBP_HeaderLineBuildingInfo_C", "SetColors");
 
-	Params::WBP_HeaderLineBuildingInfo_C_SetTitleFieldSize Parms{};
+	Params::WBP_HeaderLineBuildingInfo_C_SetColors Parms{};
 
-	Parms.Size = Size;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_HeaderLineBuildingInfo.WBP_HeaderLineBuildingInfo_C.SetTitle
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const class FText&                      InTitle                                                (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UWBP_HeaderLineBuildingInfo_C::SetTitle(const class FText& InTitle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineBuildingInfo_C", "SetTitle");
-
-	Params::WBP_HeaderLineBuildingInfo_C_SetTitle Parms{};
-
-	Parms.InTitle = std::move(InTitle);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_HeaderLineBuildingInfo.WBP_HeaderLineBuildingInfo_C.SetTextStyle
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    isHighlight                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UWBP_HeaderLineBuildingInfo_C::SetTextStyle(bool isHighlight)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineBuildingInfo_C", "SetTextStyle");
-
-	Params::WBP_HeaderLineBuildingInfo_C_SetTextStyle Parms{};
-
-	Parms.isHighlight = isHighlight;
+	Parms.Highlight = std::move(Highlight);
+	Parms.Default = std::move(Default);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -96,23 +58,61 @@ void UWBP_HeaderLineBuildingInfo_C::SetLinesEnabled(bool Enabled)
 }
 
 
-// Function WBP_HeaderLineBuildingInfo.WBP_HeaderLineBuildingInfo_C.SetColors
+// Function WBP_HeaderLineBuildingInfo.WBP_HeaderLineBuildingInfo_C.SetTextStyle
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// const struct FLinearColor&              Highlight                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FLinearColor&              Default                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    isHighlight                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_HeaderLineBuildingInfo_C::SetColors(const struct FLinearColor& Highlight, const struct FLinearColor& Default)
+void UWBP_HeaderLineBuildingInfo_C::SetTextStyle(bool isHighlight)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineBuildingInfo_C", "SetColors");
+		Func = Class->GetFunction("WBP_HeaderLineBuildingInfo_C", "SetTextStyle");
 
-	Params::WBP_HeaderLineBuildingInfo_C_SetColors Parms{};
+	Params::WBP_HeaderLineBuildingInfo_C_SetTextStyle Parms{};
 
-	Parms.Highlight = std::move(Highlight);
-	Parms.Default = std::move(Default);
+	Parms.isHighlight = isHighlight;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_HeaderLineBuildingInfo.WBP_HeaderLineBuildingInfo_C.SetTitle
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class FText&                      InTitle                                                (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UWBP_HeaderLineBuildingInfo_C::SetTitle(const class FText& InTitle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_HeaderLineBuildingInfo_C", "SetTitle");
+
+	Params::WBP_HeaderLineBuildingInfo_C_SetTitle Parms{};
+
+	Parms.InTitle = std::move(InTitle);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_HeaderLineBuildingInfo.WBP_HeaderLineBuildingInfo_C.SetTitleFieldSize
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   Size                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_HeaderLineBuildingInfo_C::SetTitleFieldSize(int32 Size)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_HeaderLineBuildingInfo_C", "SetTitleFieldSize");
+
+	Params::WBP_HeaderLineBuildingInfo_C_SetTitleFieldSize Parms{};
+
+	Parms.Size = Size;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

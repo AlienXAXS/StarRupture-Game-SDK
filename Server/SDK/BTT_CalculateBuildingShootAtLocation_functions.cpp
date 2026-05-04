@@ -16,6 +16,26 @@
 
 SDK_NAMESPACE_START
 
+// Function BTT_CalculateBuildingShootAtLocation.BTT_CalculateBuildingShootAtLocation_C.ExecuteUbergraph_BTT_CalculateBuildingShootAtLocation
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBTT_CalculateBuildingShootAtLocation_C::ExecuteUbergraph_BTT_CalculateBuildingShootAtLocation(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BTT_CalculateBuildingShootAtLocation_C", "ExecuteUbergraph_BTT_CalculateBuildingShootAtLocation");
+
+	Params::BTT_CalculateBuildingShootAtLocation_C_ExecuteUbergraph_BTT_CalculateBuildingShootAtLocation Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BTT_CalculateBuildingShootAtLocation.BTT_CalculateBuildingShootAtLocation_C.ReceiveExecuteAI
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -33,26 +53,6 @@ void UBTT_CalculateBuildingShootAtLocation_C::ReceiveExecuteAI(class AAIControll
 
 	Parms.OwnerController = OwnerController;
 	Parms.ControlledPawn = ControlledPawn;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BTT_CalculateBuildingShootAtLocation.BTT_CalculateBuildingShootAtLocation_C.ExecuteUbergraph_BTT_CalculateBuildingShootAtLocation
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UBTT_CalculateBuildingShootAtLocation_C::ExecuteUbergraph_BTT_CalculateBuildingShootAtLocation(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTT_CalculateBuildingShootAtLocation_C", "ExecuteUbergraph_BTT_CalculateBuildingShootAtLocation");
-
-	Params::BTT_CalculateBuildingShootAtLocation_C_ExecuteUbergraph_BTT_CalculateBuildingShootAtLocation Parms{};
-
-	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

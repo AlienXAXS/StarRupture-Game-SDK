@@ -16,144 +16,40 @@
 
 SDK_NAMESPACE_START
 
-// Function DedicatedServerStart.DedicatedServerStart_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ADedicatedServerStart_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DedicatedServerStart_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function DedicatedServerStart.DedicatedServerStart_C.InpActEvt_NumPadZero_K2Node_InputDebugKeyEvent_2
-// (BlueprintEvent)
+// Function DedicatedServerStart.DedicatedServerStart_C.ExecuteUbergraph_DedicatedServerStart
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
-// const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ADedicatedServerStart_C::InpActEvt_NumPadZero_K2Node_InputDebugKeyEvent_2(const struct FKey& Key, const struct FInputActionValue& ActionValue)
+void ADedicatedServerStart_C::ExecuteUbergraph_DedicatedServerStart(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("DedicatedServerStart_C", "InpActEvt_NumPadZero_K2Node_InputDebugKeyEvent_2");
+		Func = Class->GetFunction("DedicatedServerStart_C", "ExecuteUbergraph_DedicatedServerStart");
 
-	Params::DedicatedServerStart_C_InpActEvt_NumPadZero_K2Node_InputDebugKeyEvent_2 Parms{};
+	Params::DedicatedServerStart_C_ExecuteUbergraph_DedicatedServerStart Parms{};
 
-	Parms.Key = std::move(Key);
-	Parms.ActionValue = std::move(ActionValue);
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function DedicatedServerStart.DedicatedServerStart_C.InpActEvt_NumPadZero_K2Node_InputDebugKeyEvent_1
+// Function DedicatedServerStart.DedicatedServerStart_C.InpActEvt_End_K2Node_InputDebugKeyEvent_6
 // (BlueprintEvent)
 // Parameters:
 // const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
 
-void ADedicatedServerStart_C::InpActEvt_NumPadZero_K2Node_InputDebugKeyEvent_1(const struct FKey& Key, const struct FInputActionValue& ActionValue)
+void ADedicatedServerStart_C::InpActEvt_End_K2Node_InputDebugKeyEvent_6(const struct FKey& Key, const struct FInputActionValue& ActionValue)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("DedicatedServerStart_C", "InpActEvt_NumPadZero_K2Node_InputDebugKeyEvent_1");
+		Func = Class->GetFunction("DedicatedServerStart_C", "InpActEvt_End_K2Node_InputDebugKeyEvent_6");
 
-	Params::DedicatedServerStart_C_InpActEvt_NumPadZero_K2Node_InputDebugKeyEvent_1 Parms{};
-
-	Parms.Key = std::move(Key);
-	Parms.ActionValue = std::move(ActionValue);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function DedicatedServerStart.DedicatedServerStart_C.InpActEvt_NumPadOne_K2Node_InputDebugKeyEvent_0
-// (BlueprintEvent)
-// Parameters:
-// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
-// const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-
-void ADedicatedServerStart_C::InpActEvt_NumPadOne_K2Node_InputDebugKeyEvent_0(const struct FKey& Key, const struct FInputActionValue& ActionValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DedicatedServerStart_C", "InpActEvt_NumPadOne_K2Node_InputDebugKeyEvent_0");
-
-	Params::DedicatedServerStart_C_InpActEvt_NumPadOne_K2Node_InputDebugKeyEvent_0 Parms{};
-
-	Parms.Key = std::move(Key);
-	Parms.ActionValue = std::move(ActionValue);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function DedicatedServerStart.DedicatedServerStart_C.InpActEvt_Insert_K2Node_InputDebugKeyEvent_3
-// (BlueprintEvent)
-// Parameters:
-// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
-// const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-
-void ADedicatedServerStart_C::InpActEvt_Insert_K2Node_InputDebugKeyEvent_3(const struct FKey& Key, const struct FInputActionValue& ActionValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DedicatedServerStart_C", "InpActEvt_Insert_K2Node_InputDebugKeyEvent_3");
-
-	Params::DedicatedServerStart_C_InpActEvt_Insert_K2Node_InputDebugKeyEvent_3 Parms{};
-
-	Parms.Key = std::move(Key);
-	Parms.ActionValue = std::move(ActionValue);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function DedicatedServerStart.DedicatedServerStart_C.InpActEvt_F9_K2Node_InputDebugKeyEvent_5
-// (BlueprintEvent)
-// Parameters:
-// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
-// const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-
-void ADedicatedServerStart_C::InpActEvt_F9_K2Node_InputDebugKeyEvent_5(const struct FKey& Key, const struct FInputActionValue& ActionValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DedicatedServerStart_C", "InpActEvt_F9_K2Node_InputDebugKeyEvent_5");
-
-	Params::DedicatedServerStart_C_InpActEvt_F9_K2Node_InputDebugKeyEvent_5 Parms{};
-
-	Parms.Key = std::move(Key);
-	Parms.ActionValue = std::move(ActionValue);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function DedicatedServerStart.DedicatedServerStart_C.InpActEvt_F7_K2Node_InputDebugKeyEvent_4
-// (BlueprintEvent)
-// Parameters:
-// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
-// const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-
-void ADedicatedServerStart_C::InpActEvt_F7_K2Node_InputDebugKeyEvent_4(const struct FKey& Key, const struct FInputActionValue& ActionValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DedicatedServerStart_C", "InpActEvt_F7_K2Node_InputDebugKeyEvent_4");
-
-	Params::DedicatedServerStart_C_InpActEvt_F7_K2Node_InputDebugKeyEvent_4 Parms{};
+	Params::DedicatedServerStart_C_InpActEvt_End_K2Node_InputDebugKeyEvent_6 Parms{};
 
 	Parms.Key = std::move(Key);
 	Parms.ActionValue = std::move(ActionValue);
@@ -184,20 +80,20 @@ void ADedicatedServerStart_C::InpActEvt_F6_K2Node_InputDebugKeyEvent_7(const str
 }
 
 
-// Function DedicatedServerStart.DedicatedServerStart_C.InpActEvt_End_K2Node_InputDebugKeyEvent_6
+// Function DedicatedServerStart.DedicatedServerStart_C.InpActEvt_F7_K2Node_InputDebugKeyEvent_4
 // (BlueprintEvent)
 // Parameters:
 // const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
 
-void ADedicatedServerStart_C::InpActEvt_End_K2Node_InputDebugKeyEvent_6(const struct FKey& Key, const struct FInputActionValue& ActionValue)
+void ADedicatedServerStart_C::InpActEvt_F7_K2Node_InputDebugKeyEvent_4(const struct FKey& Key, const struct FInputActionValue& ActionValue)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("DedicatedServerStart_C", "InpActEvt_End_K2Node_InputDebugKeyEvent_6");
+		Func = Class->GetFunction("DedicatedServerStart_C", "InpActEvt_F7_K2Node_InputDebugKeyEvent_4");
 
-	Params::DedicatedServerStart_C_InpActEvt_End_K2Node_InputDebugKeyEvent_6 Parms{};
+	Params::DedicatedServerStart_C_InpActEvt_F7_K2Node_InputDebugKeyEvent_4 Parms{};
 
 	Parms.Key = std::move(Key);
 	Parms.ActionValue = std::move(ActionValue);
@@ -206,23 +102,127 @@ void ADedicatedServerStart_C::InpActEvt_End_K2Node_InputDebugKeyEvent_6(const st
 }
 
 
-// Function DedicatedServerStart.DedicatedServerStart_C.ExecuteUbergraph_DedicatedServerStart
-// (Final, UbergraphFunction, HasDefaults)
+// Function DedicatedServerStart.DedicatedServerStart_C.InpActEvt_F9_K2Node_InputDebugKeyEvent_5
+// (BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
 
-void ADedicatedServerStart_C::ExecuteUbergraph_DedicatedServerStart(int32 EntryPoint)
+void ADedicatedServerStart_C::InpActEvt_F9_K2Node_InputDebugKeyEvent_5(const struct FKey& Key, const struct FInputActionValue& ActionValue)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("DedicatedServerStart_C", "ExecuteUbergraph_DedicatedServerStart");
+		Func = Class->GetFunction("DedicatedServerStart_C", "InpActEvt_F9_K2Node_InputDebugKeyEvent_5");
 
-	Params::DedicatedServerStart_C_ExecuteUbergraph_DedicatedServerStart Parms{};
+	Params::DedicatedServerStart_C_InpActEvt_F9_K2Node_InputDebugKeyEvent_5 Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.Key = std::move(Key);
+	Parms.ActionValue = std::move(ActionValue);
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function DedicatedServerStart.DedicatedServerStart_C.InpActEvt_Insert_K2Node_InputDebugKeyEvent_3
+// (BlueprintEvent)
+// Parameters:
+// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+
+void ADedicatedServerStart_C::InpActEvt_Insert_K2Node_InputDebugKeyEvent_3(const struct FKey& Key, const struct FInputActionValue& ActionValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DedicatedServerStart_C", "InpActEvt_Insert_K2Node_InputDebugKeyEvent_3");
+
+	Params::DedicatedServerStart_C_InpActEvt_Insert_K2Node_InputDebugKeyEvent_3 Parms{};
+
+	Parms.Key = std::move(Key);
+	Parms.ActionValue = std::move(ActionValue);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function DedicatedServerStart.DedicatedServerStart_C.InpActEvt_NumPadOne_K2Node_InputDebugKeyEvent_0
+// (BlueprintEvent)
+// Parameters:
+// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+
+void ADedicatedServerStart_C::InpActEvt_NumPadOne_K2Node_InputDebugKeyEvent_0(const struct FKey& Key, const struct FInputActionValue& ActionValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DedicatedServerStart_C", "InpActEvt_NumPadOne_K2Node_InputDebugKeyEvent_0");
+
+	Params::DedicatedServerStart_C_InpActEvt_NumPadOne_K2Node_InputDebugKeyEvent_0 Parms{};
+
+	Parms.Key = std::move(Key);
+	Parms.ActionValue = std::move(ActionValue);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function DedicatedServerStart.DedicatedServerStart_C.InpActEvt_NumPadZero_K2Node_InputDebugKeyEvent_1
+// (BlueprintEvent)
+// Parameters:
+// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+
+void ADedicatedServerStart_C::InpActEvt_NumPadZero_K2Node_InputDebugKeyEvent_1(const struct FKey& Key, const struct FInputActionValue& ActionValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DedicatedServerStart_C", "InpActEvt_NumPadZero_K2Node_InputDebugKeyEvent_1");
+
+	Params::DedicatedServerStart_C_InpActEvt_NumPadZero_K2Node_InputDebugKeyEvent_1 Parms{};
+
+	Parms.Key = std::move(Key);
+	Parms.ActionValue = std::move(ActionValue);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function DedicatedServerStart.DedicatedServerStart_C.InpActEvt_NumPadZero_K2Node_InputDebugKeyEvent_2
+// (BlueprintEvent)
+// Parameters:
+// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+
+void ADedicatedServerStart_C::InpActEvt_NumPadZero_K2Node_InputDebugKeyEvent_2(const struct FKey& Key, const struct FInputActionValue& ActionValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DedicatedServerStart_C", "InpActEvt_NumPadZero_K2Node_InputDebugKeyEvent_2");
+
+	Params::DedicatedServerStart_C_InpActEvt_NumPadZero_K2Node_InputDebugKeyEvent_2 Parms{};
+
+	Parms.Key = std::move(Key);
+	Parms.ActionValue = std::move(ActionValue);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function DedicatedServerStart.DedicatedServerStart_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ADedicatedServerStart_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DedicatedServerStart_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

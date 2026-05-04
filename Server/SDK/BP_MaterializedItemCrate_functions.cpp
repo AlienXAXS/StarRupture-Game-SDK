@@ -16,83 +16,21 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_MaterializedItemCrate.BP_MaterializedItemCrate_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_MaterializedItemCrate_C::UserConstructionScript()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MaterializedItemCrate_C", "UserConstructionScript");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_MaterializedItemCrate.BP_MaterializedItemCrate_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_MaterializedItemCrate_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MaterializedItemCrate_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_MaterializedItemCrate.BP_MaterializedItemCrate_C.PlaySound
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_MaterializedItemCrate_C::PlaySound()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MaterializedItemCrate_C", "PlaySound");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_MaterializedItemCrate.BP_MaterializedItemCrate_C.MaterializePackageOnce
-// (BlueprintCallable, BlueprintEvent)
+// Function BP_MaterializedItemCrate.BP_MaterializedItemCrate_C.ExecuteUbergraph_BP_MaterializedItemCrate
+// (Final, UbergraphFunction)
 // Parameters:
-// double                                  Duration_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_MaterializedItemCrate_C::MaterializePackageOnce(double Duration_0)
+void ABP_MaterializedItemCrate_C::ExecuteUbergraph_BP_MaterializedItemCrate(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MaterializedItemCrate_C", "MaterializePackageOnce");
+		Func = Class->GetFunction("BP_MaterializedItemCrate_C", "ExecuteUbergraph_BP_MaterializedItemCrate");
 
-	Params::BP_MaterializedItemCrate_C_MaterializePackageOnce Parms{};
+	Params::BP_MaterializedItemCrate_C_ExecuteUbergraph_BP_MaterializedItemCrate Parms{};
 
-	Parms.Duration_0 = Duration_0;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_MaterializedItemCrate.BP_MaterializedItemCrate_C.Materialize Package In Loop
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// double                                  Duration_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_MaterializedItemCrate_C::Materialize_Package_In_Loop(double Duration_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MaterializedItemCrate_C", "Materialize Package In Loop");
-
-	Params::BP_MaterializedItemCrate_C_Materialize_Package_In_Loop Parms{};
-
-	Parms.Duration_0 = Duration_0;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -118,23 +56,85 @@ void ABP_MaterializedItemCrate_C::Interrupt(bool Visibility)
 }
 
 
-// Function BP_MaterializedItemCrate.BP_MaterializedItemCrate_C.ExecuteUbergraph_BP_MaterializedItemCrate
-// (Final, UbergraphFunction)
+// Function BP_MaterializedItemCrate.BP_MaterializedItemCrate_C.Materialize Package In Loop
+// (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double                                  Duration_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_MaterializedItemCrate_C::ExecuteUbergraph_BP_MaterializedItemCrate(int32 EntryPoint)
+void ABP_MaterializedItemCrate_C::Materialize_Package_In_Loop(double Duration_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MaterializedItemCrate_C", "ExecuteUbergraph_BP_MaterializedItemCrate");
+		Func = Class->GetFunction("BP_MaterializedItemCrate_C", "Materialize Package In Loop");
 
-	Params::BP_MaterializedItemCrate_C_ExecuteUbergraph_BP_MaterializedItemCrate Parms{};
+	Params::BP_MaterializedItemCrate_C_Materialize_Package_In_Loop Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.Duration_0 = Duration_0;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_MaterializedItemCrate.BP_MaterializedItemCrate_C.MaterializePackageOnce
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// double                                  Duration_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_MaterializedItemCrate_C::MaterializePackageOnce(double Duration_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MaterializedItemCrate_C", "MaterializePackageOnce");
+
+	Params::BP_MaterializedItemCrate_C_MaterializePackageOnce Parms{};
+
+	Parms.Duration_0 = Duration_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_MaterializedItemCrate.BP_MaterializedItemCrate_C.PlaySound
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_MaterializedItemCrate_C::PlaySound()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MaterializedItemCrate_C", "PlaySound");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_MaterializedItemCrate.BP_MaterializedItemCrate_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_MaterializedItemCrate_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MaterializedItemCrate_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_MaterializedItemCrate.BP_MaterializedItemCrate_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_MaterializedItemCrate_C::UserConstructionScript()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MaterializedItemCrate_C", "UserConstructionScript");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

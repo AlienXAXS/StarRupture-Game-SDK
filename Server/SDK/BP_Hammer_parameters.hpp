@@ -16,15 +16,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_Hammer.BP_Hammer_C.OnBuildingStateChanged
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Hammer_C_OnBuildingStateChanged final
-{
-public:
-	ECrBuildingState                              InState;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Hammer_C_OnBuildingStateChanged;
-
 // Function BP_Hammer.BP_Hammer_C.ExecuteUbergraph_BP_Hammer
 // 0x0078 (0x0078 - 0x0000)
 struct BP_Hammer_C_ExecuteUbergraph_BP_Hammer final
@@ -57,6 +48,15 @@ public:
 	float                                         CallFunc_SetPosition_InPos_ImplicitCast;           // 0x0070(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Hammer_C_ExecuteUbergraph_BP_Hammer;
+
+// Function BP_Hammer.BP_Hammer_C.OnBuildingStateChanged
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Hammer_C_OnBuildingStateChanged final
+{
+public:
+	ECrBuildingState                              InState;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Hammer_C_OnBuildingStateChanged;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

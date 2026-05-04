@@ -63,15 +63,16 @@ enum class ENxEquipWeapon : uint8
 	ENxEquipWeapon_MAX                       = 3,
 };
 
-// ScriptStruct AuWeapon.AuWeaponItemComponent
-// 0x0038 (0x0038 - 0x0000)
-struct FAuWeaponItemComponent final
+// ScriptStruct AuWeapon.AuWeaponAttachmentSpawned
+// 0x0020 (0x0020 - 0x0000)
+struct FAuWeaponAttachmentSpawned final
 {
 public:
-	struct FAuItemSlot                            Slot;                                              // 0x0000(0x0030)(Edit, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UAuItemComponentData>       DefaultComponent;                                  // 0x0030(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AAuWeaponActor*                         WeaponActor;                                       // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class FName                                   UnholsterSocket;                                   // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FName>                           HolsterSockets;                                    // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FAuWeaponItemComponent;
+DUMPER7_ASSERTS_FAuWeaponAttachmentSpawned;
 
 // ScriptStruct AuWeapon.AuEquippedWeapon
 // 0x0100 (0x0100 - 0x0000)
@@ -126,17 +127,6 @@ public:
 };
 DUMPER7_ASSERTS_FAuWeaponInstanceSaveData;
 
-// ScriptStruct AuWeapon.AuWeaponAttachmentSpawned
-// 0x0020 (0x0020 - 0x0000)
-struct FAuWeaponAttachmentSpawned final
-{
-public:
-	class AAuWeaponActor*                         WeaponActor;                                       // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class FName                                   UnholsterSocket;                                   // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class FName>                           HolsterSockets;                                    // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAuWeaponAttachmentSpawned;
-
 // ScriptStruct AuWeapon.AuWeaponItemInstance
 // 0x0028 (0x0050 - 0x0028)
 struct FAuWeaponItemInstance : public FAuItemInstance
@@ -159,6 +149,16 @@ public:
 	TArray<class FName>                           HolsterSockets;                                    // 0x0030(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FAuWeaponAttachment;
+
+// ScriptStruct AuWeapon.AuWeaponItemComponent
+// 0x0038 (0x0038 - 0x0000)
+struct FAuWeaponItemComponent final
+{
+public:
+	struct FAuItemSlot                            Slot;                                              // 0x0000(0x0030)(Edit, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UAuItemComponentData>       DefaultComponent;                                  // 0x0030(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAuWeaponItemComponent;
 
 // ScriptStruct AuWeapon.AuAttributeRequirement
 // 0x0080 (0x0080 - 0x0000)

@@ -16,29 +16,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_HabitatPostProcess.BP_HabitatPostProcess_C.UserConstructionScript
-// 0x0008 (0x0008 - 0x0000)
-struct BP_HabitatPostProcess_C_UserConstructionScript final
-{
-public:
-	float                                         K2Node_VariableSet_BlendRadius_ImplicitCast;       // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_VariableSet_BlendRadius_ImplicitCast_1;     // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_HabitatPostProcess_C_UserConstructionScript;
-
-// Function BP_HabitatPostProcess.BP_HabitatPostProcess_C.OnEnviroWaveTick
-// 0x0034 (0x0034 - 0x0000)
-struct BP_HabitatPostProcess_C_OnEnviroWaveTick final
-{
-public:
-	EEnviroWave                                   WaveType;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EEnviroWaveStage                              WaveStage;                                         // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrEnviroWaveSettings                  WaveSettings;                                      // 0x0004(0x002C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-	float                                         WaveProgress;                                      // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_HabitatPostProcess_C_OnEnviroWaveTick;
-
 // Function BP_HabitatPostProcess.BP_HabitatPostProcess_C.ExecuteUbergraph_BP_HabitatPostProcess
 // 0x0044 (0x0044 - 0x0000)
 struct BP_HabitatPostProcess_C_ExecuteUbergraph_BP_HabitatPostProcess final
@@ -57,6 +34,29 @@ public:
 	float                                         CallFunc_EvaluateFloatCurve_ReturnValue;           // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_HabitatPostProcess_C_ExecuteUbergraph_BP_HabitatPostProcess;
+
+// Function BP_HabitatPostProcess.BP_HabitatPostProcess_C.OnEnviroWaveTick
+// 0x0034 (0x0034 - 0x0000)
+struct BP_HabitatPostProcess_C_OnEnviroWaveTick final
+{
+public:
+	EEnviroWave                                   WaveType;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEnviroWaveStage                              WaveStage;                                         // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCrEnviroWaveSettings                  WaveSettings;                                      // 0x0004(0x002C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+	float                                         WaveProgress;                                      // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_HabitatPostProcess_C_OnEnviroWaveTick;
+
+// Function BP_HabitatPostProcess.BP_HabitatPostProcess_C.UserConstructionScript
+// 0x0008 (0x0008 - 0x0000)
+struct BP_HabitatPostProcess_C_UserConstructionScript final
+{
+public:
+	float                                         K2Node_VariableSet_BlendRadius_ImplicitCast;       // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_VariableSet_BlendRadius_ImplicitCast_1;     // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_HabitatPostProcess_C_UserConstructionScript;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

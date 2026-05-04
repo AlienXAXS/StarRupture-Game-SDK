@@ -14,16 +14,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BTTask_Animal_Crab_ResetDamageTimestamp.BTTask_Animal_Crab_ResetDamageTimestamp_C.ReceiveExecuteAI
-// 0x0010 (0x0010 - 0x0000)
-struct BTTask_Animal_Crab_ResetDamageTimestamp_C_ReceiveExecuteAI final
-{
-public:
-	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BTTask_Animal_Crab_ResetDamageTimestamp_C_ReceiveExecuteAI;
-
 // Function BTTask_Animal_Crab_ResetDamageTimestamp.BTTask_Animal_Crab_ResetDamageTimestamp_C.ExecuteUbergraph_BTTask_Animal_Crab_ResetDamageTimestamp
 // 0x0038 (0x0038 - 0x0000)
 struct BTTask_Animal_Crab_ResetDamageTimestamp_C_ExecuteUbergraph_BTTask_Animal_Crab_ResetDamageTimestamp final
@@ -39,6 +29,16 @@ public:
 	class UCrAiAnimalCrabUpdateStateComponent*    CallFunc_GetCrabUpdateStateComponent_ReturnValue;  // 0x0030(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BTTask_Animal_Crab_ResetDamageTimestamp_C_ExecuteUbergraph_BTTask_Animal_Crab_ResetDamageTimestamp;
+
+// Function BTTask_Animal_Crab_ResetDamageTimestamp.BTTask_Animal_Crab_ResetDamageTimestamp_C.ReceiveExecuteAI
+// 0x0010 (0x0010 - 0x0000)
+struct BTTask_Animal_Crab_ResetDamageTimestamp_C_ReceiveExecuteAI final
+{
+public:
+	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BTTask_Animal_Crab_ResetDamageTimestamp_C_ReceiveExecuteAI;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

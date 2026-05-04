@@ -16,123 +16,15 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Armory.BP_Armory_C.RightArmVFX
+// Function BP_Armory.BP_Armory_C.Attach_meshes
 // (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// double                                  LaserLength                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Armory_C::RightArmVFX(double LaserLength)
+void ABP_Armory_C::Attach_meshes()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Armory_C", "RightArmVFX");
-
-	Params::BP_Armory_C_RightArmVFX Parms{};
-
-	Parms.LaserLength = LaserLength;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Armory.BP_Armory_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Armory_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Armory_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Armory.BP_Armory_C.OnUIOpened
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bOpened                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Armory_C::OnUIOpened(bool bOpened)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Armory_C", "OnUIOpened");
-
-	Params::BP_Armory_C_OnUIOpened Parms{};
-
-	Parms.bOpened = bOpened;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Armory.BP_Armory_C.OnBuildingStateChanged
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Armory_C::OnBuildingStateChanged(ECrBuildingState InState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Armory_C", "OnBuildingStateChanged");
-
-	Params::BP_Armory_C_OnBuildingStateChanged Parms{};
-
-	Parms.InState = InState;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Armory.BP_Armory_C.LeftArmVFX
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// double                                  LaserLength                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Armory_C::LeftArmVFX(double LaserLength)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Armory_C", "LeftArmVFX");
-
-	Params::BP_Armory_C_LeftArmVFX Parms{};
-
-	Parms.LaserLength = LaserLength;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Armory.BP_Armory_C.Idle_timeline__UpdateFunc
-// (BlueprintEvent)
-
-void ABP_Armory_C::Idle_timeline__UpdateFunc()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Armory_C", "Idle_timeline__UpdateFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Armory.BP_Armory_C.Idle_timeline__FinishedFunc
-// (BlueprintEvent)
-
-void ABP_Armory_C::Idle_timeline__FinishedFunc()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Armory_C", "Idle_timeline__FinishedFunc");
+		Func = Class->GetFunction("BP_Armory_C", "Attach_meshes");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -158,17 +50,125 @@ void ABP_Armory_C::ExecuteUbergraph_BP_Armory(int32 EntryPoint)
 }
 
 
-// Function BP_Armory.BP_Armory_C.Attach_meshes
-// (BlueprintCallable, BlueprintEvent)
+// Function BP_Armory.BP_Armory_C.Idle_timeline__FinishedFunc
+// (BlueprintEvent)
 
-void ABP_Armory_C::Attach_meshes()
+void ABP_Armory_C::Idle_timeline__FinishedFunc()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Armory_C", "Attach_meshes");
+		Func = Class->GetFunction("BP_Armory_C", "Idle_timeline__FinishedFunc");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Armory.BP_Armory_C.Idle_timeline__UpdateFunc
+// (BlueprintEvent)
+
+void ABP_Armory_C::Idle_timeline__UpdateFunc()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Armory_C", "Idle_timeline__UpdateFunc");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Armory.BP_Armory_C.LeftArmVFX
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// double                                  LaserLength                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Armory_C::LeftArmVFX(double LaserLength)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Armory_C", "LeftArmVFX");
+
+	Params::BP_Armory_C_LeftArmVFX Parms{};
+
+	Parms.LaserLength = LaserLength;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Armory.BP_Armory_C.OnBuildingStateChanged
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Armory_C::OnBuildingStateChanged(ECrBuildingState InState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Armory_C", "OnBuildingStateChanged");
+
+	Params::BP_Armory_C_OnBuildingStateChanged Parms{};
+
+	Parms.InState = InState;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Armory.BP_Armory_C.OnUIOpened
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bOpened                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Armory_C::OnUIOpened(bool bOpened)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Armory_C", "OnUIOpened");
+
+	Params::BP_Armory_C_OnUIOpened Parms{};
+
+	Parms.bOpened = bOpened;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Armory.BP_Armory_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Armory_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Armory_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Armory.BP_Armory_C.RightArmVFX
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// double                                  LaserLength                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Armory_C::RightArmVFX(double LaserLength)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Armory_C", "RightArmVFX");
+
+	Params::BP_Armory_C_RightArmVFX Parms{};
+
+	Parms.LaserLength = LaserLength;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

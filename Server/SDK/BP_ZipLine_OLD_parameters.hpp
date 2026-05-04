@@ -18,125 +18,14 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.UpdateAllBeamLocationsByActivity
-// 0x0001 (0x0001 - 0x0000)
-struct BP_ZipLine_OLD_C_UpdateAllBeamLocationsByActivity final
-{
-public:
-	bool                                          bActiveConnections;                                // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_ZipLine_OLD_C_UpdateAllBeamLocationsByActivity;
-
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.TurnOnBeams
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.BlockAllBeams
 // 0x0008 (0x0008 - 0x0000)
-struct BP_ZipLine_OLD_C_TurnOnBeams final
+struct BP_ZipLine_OLD_C_BlockAllBeams final
 {
 public:
 	class UNiagaraComponent*                      NiagaraSystem;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_ZipLine_OLD_C_TurnOnBeams;
-
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.TurnOffBeams
-// 0x0008 (0x0008 - 0x0000)
-struct BP_ZipLine_OLD_C_TurnOffBeams final
-{
-public:
-	class UNiagaraComponent*                      Niagara_System;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_ZipLine_OLD_C_TurnOffBeams;
-
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.SetDetailedBeamLocation
-// 0x0018 (0x0018 - 0x0000)
-struct BP_ZipLine_OLD_C_SetDetailedBeamLocation final
-{
-public:
-	struct FVector                                Target_Location;                                   // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_ZipLine_OLD_C_SetDetailedBeamLocation;
-
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnUntargeted
-// 0x0008 (0x0008 - 0x0000)
-struct BP_ZipLine_OLD_C_OnUntargeted final
-{
-public:
-	class ACrCharacterPlayerBase*                 InPlayer;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnUntargeted;
-
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnUnoccupied
-// 0x0008 (0x0008 - 0x0000)
-struct BP_ZipLine_OLD_C_OnUnoccupied final
-{
-public:
-	class ACrCharacterPlayerBase*                 InPlayer;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnUnoccupied;
-
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnTravellingTo
-// 0x0008 (0x0008 - 0x0000)
-struct BP_ZipLine_OLD_C_OnTravellingTo final
-{
-public:
-	class ACrCharacterPlayerBase*                 InPlayer;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnTravellingTo;
-
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnTargeted
-// 0x0008 (0x0008 - 0x0000)
-struct BP_ZipLine_OLD_C_OnTargeted final
-{
-public:
-	class ACrCharacterPlayerBase*                 InPlayer;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnTargeted;
-
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnStopTravellingTo
-// 0x0010 (0x0010 - 0x0000)
-struct BP_ZipLine_OLD_C_OnStopTravellingTo final
-{
-public:
-	class ACrCharacterPlayerBase*                 InPlayer;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          bCancelled;                                        // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnStopTravellingTo;
-
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnPlayerRotationFinished
-// 0x0030 (0x0030 - 0x0000)
-struct BP_ZipLine_OLD_C_OnPlayerRotationFinished final
-{
-public:
-	struct FVector_NetQuantize                    NewTargetLocation;                                 // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               NewRotation;                                       // 0x0018(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnPlayerRotationFinished;
-
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnConnectionsModified
-// 0x0020 (0x0020 - 0x0000)
-struct BP_ZipLine_OLD_C_OnConnectionsModified final
-{
-public:
-	TArray<struct FVector_NetQuantize>            ActiveLocations;                                   // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	TArray<struct FVector_NetQuantize>            InactiveLocations;                                 // 0x0010(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-};
-DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnConnectionsModified;
-
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnBuildingStateChanged
-// 0x0001 (0x0001 - 0x0000)
-struct BP_ZipLine_OLD_C_OnBuildingStateChanged final
-{
-public:
-	ECrBuildingState                              InState;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnBuildingStateChanged;
-
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnActivityModified
-// 0x0001 (0x0001 - 0x0000)
-struct BP_ZipLine_OLD_C_OnActivityModified final
-{
-public:
-	bool                                          bActive;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnActivityModified;
+DUMPER7_ASSERTS_BP_ZipLine_OLD_C_BlockAllBeams;
 
 // Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.ExecuteUbergraph_BP_ZipLine_OLD
 // 0x0490 (0x0490 - 0x0000)
@@ -260,14 +149,125 @@ public:
 };
 DUMPER7_ASSERTS_BP_ZipLine_OLD_C_ExecuteUbergraph_BP_ZipLine_OLD;
 
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.BlockAllBeams
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnActivityModified
+// 0x0001 (0x0001 - 0x0000)
+struct BP_ZipLine_OLD_C_OnActivityModified final
+{
+public:
+	bool                                          bActive;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnActivityModified;
+
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnBuildingStateChanged
+// 0x0001 (0x0001 - 0x0000)
+struct BP_ZipLine_OLD_C_OnBuildingStateChanged final
+{
+public:
+	ECrBuildingState                              InState;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnBuildingStateChanged;
+
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnConnectionsModified
+// 0x0020 (0x0020 - 0x0000)
+struct BP_ZipLine_OLD_C_OnConnectionsModified final
+{
+public:
+	TArray<struct FVector_NetQuantize>            ActiveLocations;                                   // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	TArray<struct FVector_NetQuantize>            InactiveLocations;                                 // 0x0010(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
+DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnConnectionsModified;
+
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnPlayerRotationFinished
+// 0x0030 (0x0030 - 0x0000)
+struct BP_ZipLine_OLD_C_OnPlayerRotationFinished final
+{
+public:
+	struct FVector_NetQuantize                    NewTargetLocation;                                 // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               NewRotation;                                       // 0x0018(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnPlayerRotationFinished;
+
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnStopTravellingTo
+// 0x0010 (0x0010 - 0x0000)
+struct BP_ZipLine_OLD_C_OnStopTravellingTo final
+{
+public:
+	class ACrCharacterPlayerBase*                 InPlayer;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          bCancelled;                                        // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnStopTravellingTo;
+
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnTargeted
 // 0x0008 (0x0008 - 0x0000)
-struct BP_ZipLine_OLD_C_BlockAllBeams final
+struct BP_ZipLine_OLD_C_OnTargeted final
+{
+public:
+	class ACrCharacterPlayerBase*                 InPlayer;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnTargeted;
+
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnTravellingTo
+// 0x0008 (0x0008 - 0x0000)
+struct BP_ZipLine_OLD_C_OnTravellingTo final
+{
+public:
+	class ACrCharacterPlayerBase*                 InPlayer;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnTravellingTo;
+
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnUnoccupied
+// 0x0008 (0x0008 - 0x0000)
+struct BP_ZipLine_OLD_C_OnUnoccupied final
+{
+public:
+	class ACrCharacterPlayerBase*                 InPlayer;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnUnoccupied;
+
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnUntargeted
+// 0x0008 (0x0008 - 0x0000)
+struct BP_ZipLine_OLD_C_OnUntargeted final
+{
+public:
+	class ACrCharacterPlayerBase*                 InPlayer;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnUntargeted;
+
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.SetDetailedBeamLocation
+// 0x0018 (0x0018 - 0x0000)
+struct BP_ZipLine_OLD_C_SetDetailedBeamLocation final
+{
+public:
+	struct FVector                                Target_Location;                                   // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_ZipLine_OLD_C_SetDetailedBeamLocation;
+
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.TurnOffBeams
+// 0x0008 (0x0008 - 0x0000)
+struct BP_ZipLine_OLD_C_TurnOffBeams final
+{
+public:
+	class UNiagaraComponent*                      Niagara_System;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_ZipLine_OLD_C_TurnOffBeams;
+
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.TurnOnBeams
+// 0x0008 (0x0008 - 0x0000)
+struct BP_ZipLine_OLD_C_TurnOnBeams final
 {
 public:
 	class UNiagaraComponent*                      NiagaraSystem;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_ZipLine_OLD_C_BlockAllBeams;
+DUMPER7_ASSERTS_BP_ZipLine_OLD_C_TurnOnBeams;
+
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.UpdateAllBeamLocationsByActivity
+// 0x0001 (0x0001 - 0x0000)
+struct BP_ZipLine_OLD_C_UpdateAllBeamLocationsByActivity final
+{
+public:
+	bool                                          bActiveConnections;                                // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_ZipLine_OLD_C_UpdateAllBeamLocationsByActivity;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

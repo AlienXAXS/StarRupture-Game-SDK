@@ -30,17 +30,17 @@ public:
 	class UDialogueWave*                          DialogueWave;                                      // 0x0A90(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Transient, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void TalkingFinished();
-	void ReceiveBeginPlay();
-	void PlayContextualDialogueResponseMulticast(const struct FContextualResponsePayload& Response, class FName Main_Rule_Name);
-	bool OnResponseFinished(const struct FContextualResponsePayload& ResponseData, class FName RuleNameContainingResponseData);
-	void OnNoReplyDialogueRuleFound();
-	void OnLoaded_A12FDB953A422BD9EAFD018D9BCB7500(class UObject* Loaded);
-	bool IsCharacterTalking();
-	void InitAvailableWeaponMods();
-	void ExecuteUbergraph_GS_GameStateBase(int32 EntryPoint);
-	bool ExecuteContextualResponse(const struct FContextualResponsePayload& ResponseData, class FName RuleNameContainingResponseData);
 	bool CanExecuteAnyContextualResponse(bool bIsImportant);
+	bool ExecuteContextualResponse(const struct FContextualResponsePayload& ResponseData, class FName RuleNameContainingResponseData);
+	void ExecuteUbergraph_GS_GameStateBase(int32 EntryPoint);
+	void InitAvailableWeaponMods();
+	bool IsCharacterTalking();
+	void OnLoaded_A12FDB953A422BD9EAFD018D9BCB7500(class UObject* Loaded);
+	void OnNoReplyDialogueRuleFound();
+	bool OnResponseFinished(const struct FContextualResponsePayload& ResponseData, class FName RuleNameContainingResponseData);
+	void PlayContextualDialogueResponseMulticast(const struct FContextualResponsePayload& Response, class FName Main_Rule_Name);
+	void ReceiveBeginPlay();
+	void TalkingFinished();
 
 public:
 	static class UClass* StaticClass()

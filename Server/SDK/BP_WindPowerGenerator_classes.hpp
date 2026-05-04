@@ -33,9 +33,9 @@ public:
 	class USceneComponent*                        Meshes;                                            // 0x0690(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveBeginPlay();
-	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed);
 	void ExecuteUbergraph_BP_WindPowerGenerator(int32 EntryPoint);
+	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed);
+	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

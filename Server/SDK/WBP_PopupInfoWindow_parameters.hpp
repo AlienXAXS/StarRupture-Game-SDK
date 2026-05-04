@@ -14,15 +14,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function WBP_PopupInfoWindow.WBP_PopupInfoWindow_C.PreConstruct
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_PopupInfoWindow_C_PreConstruct final
-{
-public:
-	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_PopupInfoWindow_C_PreConstruct;
-
 // Function WBP_PopupInfoWindow.WBP_PopupInfoWindow_C.ExecuteUbergraph_WBP_PopupInfoWindow
 // 0x0028 (0x0028 - 0x0000)
 struct alignas(0x08) WBP_PopupInfoWindow_C_ExecuteUbergraph_WBP_PopupInfoWindow final
@@ -34,6 +25,15 @@ public:
 	bool                                          K2Node_Event_IsDesignTime;                         // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_PopupInfoWindow_C_ExecuteUbergraph_WBP_PopupInfoWindow;
+
+// Function WBP_PopupInfoWindow.WBP_PopupInfoWindow_C.PreConstruct
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_PopupInfoWindow_C_PreConstruct final
+{
+public:
+	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_PopupInfoWindow_C_PreConstruct;
 
 // Function WBP_PopupInfoWindow.WBP_PopupInfoWindow_C.BP_GetDesiredFocusTarget
 // 0x0008 (0x0008 - 0x0000)

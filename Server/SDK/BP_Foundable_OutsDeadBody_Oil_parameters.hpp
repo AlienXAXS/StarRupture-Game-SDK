@@ -14,16 +14,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_Foundable_OutsDeadBody_Oil.BP_Foundable_OutsDeadBody_Oil_C.UpdateFoundableVisibilityForStorageState
-// 0x0002 (0x0002 - 0x0000)
-struct BP_Foundable_OutsDeadBody_Oil_C_UpdateFoundableVisibilityForStorageState final
-{
-public:
-	bool                                          BeginPlay;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsStorageEmpty_ReturnValue;               // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Foundable_OutsDeadBody_Oil_C_UpdateFoundableVisibilityForStorageState;
-
 // Function BP_Foundable_OutsDeadBody_Oil.BP_Foundable_OutsDeadBody_Oil_C.OnStorageEmptied
 // 0x0002 (0x0002 - 0x0000)
 struct BP_Foundable_OutsDeadBody_Oil_C_OnStorageEmptied final
@@ -33,6 +23,16 @@ public:
 	bool                                          CallFunc_OnStorageEmptied_ReturnValue;             // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Foundable_OutsDeadBody_Oil_C_OnStorageEmptied;
+
+// Function BP_Foundable_OutsDeadBody_Oil.BP_Foundable_OutsDeadBody_Oil_C.UpdateFoundableVisibilityForStorageState
+// 0x0002 (0x0002 - 0x0000)
+struct BP_Foundable_OutsDeadBody_Oil_C_UpdateFoundableVisibilityForStorageState final
+{
+public:
+	bool                                          BeginPlay;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsStorageEmpty_ReturnValue;               // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Foundable_OutsDeadBody_Oil_C_UpdateFoundableVisibilityForStorageState;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

@@ -16,6 +16,26 @@
 
 SDK_NAMESPACE_START
 
+// Function BTService_Melee_Tier3_Actor_UpdateAnimState.BTService_Melee_Tier3_Actor_UpdateAnimState_C.ExecuteUbergraph_BTService_Melee_Tier3_Actor_UpdateAnimState
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBTService_Melee_Tier3_Actor_UpdateAnimState_C::ExecuteUbergraph_BTService_Melee_Tier3_Actor_UpdateAnimState(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BTService_Melee_Tier3_Actor_UpdateAnimState_C", "ExecuteUbergraph_BTService_Melee_Tier3_Actor_UpdateAnimState");
+
+	Params::BTService_Melee_Tier3_Actor_UpdateAnimState_C_ExecuteUbergraph_BTService_Melee_Tier3_Actor_UpdateAnimState Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BTService_Melee_Tier3_Actor_UpdateAnimState.BTService_Melee_Tier3_Actor_UpdateAnimState_C.ReceiveTickAI
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -35,26 +55,6 @@ void UBTService_Melee_Tier3_Actor_UpdateAnimState_C::ReceiveTickAI(class AAICont
 	Parms.OwnerController = OwnerController;
 	Parms.ControlledPawn = ControlledPawn;
 	Parms.DeltaSeconds = DeltaSeconds;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BTService_Melee_Tier3_Actor_UpdateAnimState.BTService_Melee_Tier3_Actor_UpdateAnimState_C.ExecuteUbergraph_BTService_Melee_Tier3_Actor_UpdateAnimState
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UBTService_Melee_Tier3_Actor_UpdateAnimState_C::ExecuteUbergraph_BTService_Melee_Tier3_Actor_UpdateAnimState(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTService_Melee_Tier3_Actor_UpdateAnimState_C", "ExecuteUbergraph_BTService_Melee_Tier3_Actor_UpdateAnimState");
-
-	Params::BTService_Melee_Tier3_Actor_UpdateAnimState_C_ExecuteUbergraph_BTService_Melee_Tier3_Actor_UpdateAnimState Parms{};
-
-	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

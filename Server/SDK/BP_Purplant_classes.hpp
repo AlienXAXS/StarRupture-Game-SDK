@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "BP_GatherableBaseActor_classes.hpp"
 #include "Chimera_structs.hpp"
+#include "BP_GatherableBaseActor_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -26,8 +26,8 @@ public:
 	class UPointLightComponent*                   PointLight;                                        // 0x03A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_BP_Purplant(int32 EntryPoint);
 	void BP_OnWaveChangedUpdate(EEnviroWave WaveType, EEnviroWaveStage WaveStage, EEnviroWaveFadeoutSubstage FadeoutSubstage, EEnviroWaveGrowbackSubstage GrowbackSubstage);
+	void ExecuteUbergraph_BP_Purplant(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

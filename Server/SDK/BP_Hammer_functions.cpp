@@ -16,31 +16,23 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Hammer.BP_Hammer_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_Hammer.BP_Hammer_C.ExecuteUbergraph_BP_Hammer
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Hammer_C::ReceiveBeginPlay()
+void ABP_Hammer_C::ExecuteUbergraph_BP_Hammer(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Hammer_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_Hammer_C", "ExecuteUbergraph_BP_Hammer");
 
-	UObject::ProcessEvent(Func, nullptr);
-}
+	Params::BP_Hammer_C_ExecuteUbergraph_BP_Hammer Parms{};
 
+	Parms.EntryPoint = EntryPoint;
 
-// Function BP_Hammer.BP_Hammer_C.PlayFX
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_Hammer_C::PlayFX()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Hammer_C", "PlayFX");
-
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -64,23 +56,31 @@ void ABP_Hammer_C::OnBuildingStateChanged(ECrBuildingState InState)
 }
 
 
-// Function BP_Hammer.BP_Hammer_C.ExecuteUbergraph_BP_Hammer
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_Hammer.BP_Hammer_C.PlayFX
+// (BlueprintCallable, BlueprintEvent)
 
-void ABP_Hammer_C::ExecuteUbergraph_BP_Hammer(int32 EntryPoint)
+void ABP_Hammer_C::PlayFX()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Hammer_C", "ExecuteUbergraph_BP_Hammer");
+		Func = Class->GetFunction("BP_Hammer_C", "PlayFX");
 
-	Params::BP_Hammer_C_ExecuteUbergraph_BP_Hammer Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
 
-	UObject::ProcessEvent(Func, &Parms);
+// Function BP_Hammer.BP_Hammer_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Hammer_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Hammer_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

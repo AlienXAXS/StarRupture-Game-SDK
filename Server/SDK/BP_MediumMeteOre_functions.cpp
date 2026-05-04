@@ -16,57 +16,35 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_MediumMeteOre.BP_MediumMeteOre_C.TurnOffWalkableCollision
-// (BlueprintCallable, BlueprintEvent)
+// Function BP_MediumMeteOre.BP_MediumMeteOre_C.ExecuteUbergraph_BP_MediumMeteOre
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_MediumMeteOre_C::TurnOffWalkableCollision()
+void ABP_MediumMeteOre_C::ExecuteUbergraph_BP_MediumMeteOre(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MediumMeteOre_C", "TurnOffWalkableCollision");
+		Func = Class->GetFunction("BP_MediumMeteOre_C", "ExecuteUbergraph_BP_MediumMeteOre");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_MediumMeteOre_C_ExecuteUbergraph_BP_MediumMeteOre Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_MediumMeteOre.BP_MediumMeteOre_C.Timeline__UpdateFunc
-// (BlueprintEvent)
+// Function BP_MediumMeteOre.BP_MediumMeteOre_C.OnBeginPlayDepletedStateStarted
+// (Event, Public, BlueprintEvent)
 
-void ABP_MediumMeteOre_C::Timeline__UpdateFunc()
+void ABP_MediumMeteOre_C::OnBeginPlayDepletedStateStarted()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MediumMeteOre_C", "Timeline__UpdateFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_MediumMeteOre.BP_MediumMeteOre_C.Timeline__FinishedFunc
-// (BlueprintEvent)
-
-void ABP_MediumMeteOre_C::Timeline__FinishedFunc()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MediumMeteOre_C", "Timeline__FinishedFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_MediumMeteOre.BP_MediumMeteOre_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_MediumMeteOre_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MediumMeteOre_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_MediumMeteOre_C", "OnBeginPlayDepletedStateStarted");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -86,37 +64,59 @@ void ABP_MediumMeteOre_C::OnResourceDepletedCosmeticsStart()
 }
 
 
-// Function BP_MediumMeteOre.BP_MediumMeteOre_C.OnBeginPlayDepletedStateStarted
-// (Event, Public, BlueprintEvent)
+// Function BP_MediumMeteOre.BP_MediumMeteOre_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ABP_MediumMeteOre_C::OnBeginPlayDepletedStateStarted()
+void ABP_MediumMeteOre_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MediumMeteOre_C", "OnBeginPlayDepletedStateStarted");
+		Func = Class->GetFunction("BP_MediumMeteOre_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_MediumMeteOre.BP_MediumMeteOre_C.ExecuteUbergraph_BP_MediumMeteOre
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_MediumMeteOre.BP_MediumMeteOre_C.Timeline__FinishedFunc
+// (BlueprintEvent)
 
-void ABP_MediumMeteOre_C::ExecuteUbergraph_BP_MediumMeteOre(int32 EntryPoint)
+void ABP_MediumMeteOre_C::Timeline__FinishedFunc()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MediumMeteOre_C", "ExecuteUbergraph_BP_MediumMeteOre");
+		Func = Class->GetFunction("BP_MediumMeteOre_C", "Timeline__FinishedFunc");
 
-	Params::BP_MediumMeteOre_C_ExecuteUbergraph_BP_MediumMeteOre Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
 
-	UObject::ProcessEvent(Func, &Parms);
+// Function BP_MediumMeteOre.BP_MediumMeteOre_C.Timeline__UpdateFunc
+// (BlueprintEvent)
+
+void ABP_MediumMeteOre_C::Timeline__UpdateFunc()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MediumMeteOre_C", "Timeline__UpdateFunc");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_MediumMeteOre.BP_MediumMeteOre_C.TurnOffWalkableCollision
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_MediumMeteOre_C::TurnOffWalkableCollision()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MediumMeteOre_C", "TurnOffWalkableCollision");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

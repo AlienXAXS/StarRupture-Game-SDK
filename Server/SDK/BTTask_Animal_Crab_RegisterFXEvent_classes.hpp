@@ -26,8 +26,8 @@ public:
 	struct FGameplayTag                           FXEventTag;                                        // 0x00B0(0x0008)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 	void ExecuteUbergraph_BTTask_Animal_Crab_RegisterFXEvent(int32 EntryPoint);
+	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 
 public:
 	static class UClass* StaticClass()

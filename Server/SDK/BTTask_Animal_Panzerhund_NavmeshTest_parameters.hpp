@@ -16,16 +16,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BTTask_Animal_Panzerhund_NavmeshTest.BTTask_Animal_Panzerhund_NavmeshTest_C.ReceiveExecuteAI
-// 0x0010 (0x0010 - 0x0000)
-struct BTTask_Animal_Panzerhund_NavmeshTest_C_ReceiveExecuteAI final
-{
-public:
-	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BTTask_Animal_Panzerhund_NavmeshTest_C_ReceiveExecuteAI;
-
 // Function BTTask_Animal_Panzerhund_NavmeshTest.BTTask_Animal_Panzerhund_NavmeshTest_C.ExecuteUbergraph_BTTask_Animal_Panzerhund_NavmeshTest
 // 0x0098 (0x0098 - 0x0000)
 struct BTTask_Animal_Panzerhund_NavmeshTest_C_ExecuteUbergraph_BTTask_Animal_Panzerhund_NavmeshTest final
@@ -51,6 +41,16 @@ public:
 	double                                        CallFunc_Multiply_DoubleDouble_A_ImplicitCast;     // 0x0090(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BTTask_Animal_Panzerhund_NavmeshTest_C_ExecuteUbergraph_BTTask_Animal_Panzerhund_NavmeshTest;
+
+// Function BTTask_Animal_Panzerhund_NavmeshTest.BTTask_Animal_Panzerhund_NavmeshTest_C.ReceiveExecuteAI
+// 0x0010 (0x0010 - 0x0000)
+struct BTTask_Animal_Panzerhund_NavmeshTest_C_ReceiveExecuteAI final
+{
+public:
+	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BTTask_Animal_Panzerhund_NavmeshTest_C_ReceiveExecuteAI;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

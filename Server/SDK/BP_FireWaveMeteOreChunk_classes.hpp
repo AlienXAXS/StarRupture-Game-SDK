@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "BP_StandaloneMeteOreChunkBase_classes.hpp"
+#include "Engine_structs.hpp"
 #include "Chimera_structs.hpp"
 
 
@@ -34,15 +34,15 @@ public:
 	float                                         Dissolve_Duration_Rock;                            // 0x0570(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveBeginPlay();
-	void OnResourceDepletedCosmeticsStart();
-	void FireDecalTimeline__UpdateFunc();
-	void FireDecalTimeline__FinishedFunc();
-	void FireDecalFade(const bool bIsFadeOut);
-	void ExecuteUbergraph_BP_FireWaveMeteOreChunk(int32 EntryPoint);
-	void BP_OnSpawnedWithResourceDepleted();
-	void BP_OnGrowbackSubstageChanged(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveGrowbackSubstage Substage, float Progress);
 	void BP_OnEnviroWaveStarted(EEnviroWave InWaveType, EEnviroWaveStage InWaveStage, const struct FCrEnviroWaveSettings& InWaveSettings, float InWaveProgress);
+	void BP_OnGrowbackSubstageChanged(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveGrowbackSubstage Substage, float Progress);
+	void BP_OnSpawnedWithResourceDepleted();
+	void ExecuteUbergraph_BP_FireWaveMeteOreChunk(int32 EntryPoint);
+	void FireDecalFade(const bool bIsFadeOut);
+	void FireDecalTimeline__FinishedFunc();
+	void FireDecalTimeline__UpdateFunc();
+	void OnResourceDepletedCosmeticsStart();
+	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

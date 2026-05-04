@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_classes.hpp"
-#include "Party_structs.hpp"
 #include "Engine_structs.hpp"
+#include "Party_structs.hpp"
 
 
 SDK_NAMESPACE_START

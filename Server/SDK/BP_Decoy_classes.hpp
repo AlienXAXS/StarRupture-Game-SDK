@@ -30,8 +30,8 @@ public:
 	class UStaticMeshComponent*                   base;                                              // 0x0670(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnBuildingStateChanged(ECrBuildingState InState);
 	void ExecuteUbergraph_BP_Decoy(int32 EntryPoint);
+	void OnBuildingStateChanged(ECrBuildingState InState);
 
 public:
 	static class UClass* StaticClass()

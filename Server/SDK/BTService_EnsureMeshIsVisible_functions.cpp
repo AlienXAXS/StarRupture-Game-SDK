@@ -16,6 +16,26 @@
 
 SDK_NAMESPACE_START
 
+// Function BTService_EnsureMeshIsVisible.BTService_EnsureMeshIsVisible_C.ExecuteUbergraph_BTService_EnsureMeshIsVisible
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBTService_EnsureMeshIsVisible_C::ExecuteUbergraph_BTService_EnsureMeshIsVisible(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BTService_EnsureMeshIsVisible_C", "ExecuteUbergraph_BTService_EnsureMeshIsVisible");
+
+	Params::BTService_EnsureMeshIsVisible_C_ExecuteUbergraph_BTService_EnsureMeshIsVisible Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BTService_EnsureMeshIsVisible.BTService_EnsureMeshIsVisible_C.ReceiveTickAI
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -35,26 +55,6 @@ void UBTService_EnsureMeshIsVisible_C::ReceiveTickAI(class AAIController* OwnerC
 	Parms.OwnerController = OwnerController;
 	Parms.ControlledPawn = ControlledPawn;
 	Parms.DeltaSeconds = DeltaSeconds;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BTService_EnsureMeshIsVisible.BTService_EnsureMeshIsVisible_C.ExecuteUbergraph_BTService_EnsureMeshIsVisible
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UBTService_EnsureMeshIsVisible_C::ExecuteUbergraph_BTService_EnsureMeshIsVisible(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTService_EnsureMeshIsVisible_C", "ExecuteUbergraph_BTService_EnsureMeshIsVisible");
-
-	Params::BTService_EnsureMeshIsVisible_C_ExecuteUbergraph_BTService_EnsureMeshIsVisible Parms{};
-
-	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

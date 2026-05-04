@@ -16,17 +16,23 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_WindPowerGeneratorTier2.BP_WindPowerGeneratorTier2_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_WindPowerGeneratorTier2.BP_WindPowerGeneratorTier2_C.ExecuteUbergraph_BP_WindPowerGeneratorTier2
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_WindPowerGeneratorTier2_C::ReceiveBeginPlay()
+void ABP_WindPowerGeneratorTier2_C::ExecuteUbergraph_BP_WindPowerGeneratorTier2(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WindPowerGeneratorTier2_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_WindPowerGeneratorTier2_C", "ExecuteUbergraph_BP_WindPowerGeneratorTier2");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_WindPowerGeneratorTier2_C_ExecuteUbergraph_BP_WindPowerGeneratorTier2 Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -50,23 +56,17 @@ void ABP_WindPowerGeneratorTier2_C::PostPlayBuildingEffect(bool bWasBuildingEffe
 }
 
 
-// Function BP_WindPowerGeneratorTier2.BP_WindPowerGeneratorTier2_C.ExecuteUbergraph_BP_WindPowerGeneratorTier2
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_WindPowerGeneratorTier2.BP_WindPowerGeneratorTier2_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ABP_WindPowerGeneratorTier2_C::ExecuteUbergraph_BP_WindPowerGeneratorTier2(int32 EntryPoint)
+void ABP_WindPowerGeneratorTier2_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WindPowerGeneratorTier2_C", "ExecuteUbergraph_BP_WindPowerGeneratorTier2");
+		Func = Class->GetFunction("BP_WindPowerGeneratorTier2_C", "ReceiveBeginPlay");
 
-	Params::BP_WindPowerGeneratorTier2_C_ExecuteUbergraph_BP_WindPowerGeneratorTier2 Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

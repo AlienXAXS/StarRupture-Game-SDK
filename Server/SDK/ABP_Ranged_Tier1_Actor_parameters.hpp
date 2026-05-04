@@ -10,44 +10,56 @@
 
 #include "Basic.hpp"
 
+#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 #include "Engine_structs.hpp"
-#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "GameplayTags_structs.hpp"
 
 
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.UpdateYawRotationRateForLocomotionState
-// 0x0002 (0x0002 - 0x0000)
-struct ABP_Ranged_Tier1_Actor_C_UpdateYawRotationRateForLocomotionState final
+// Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.AnimGraph
+// 0x0010 (0x0010 - 0x0000)
+struct ABP_Ranged_Tier1_Actor_C_AnimGraph final
 {
 public:
-	ECrEnemyLocomotionType                        OldLocomotionType;                                 // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ECrEnemyLocomotionType                        NewLocomotionType;                                 // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPoseLink                              AnimGraph_0;                                       // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
 };
-DUMPER7_ASSERTS_ABP_Ranged_Tier1_Actor_C_UpdateYawRotationRateForLocomotionState;
+DUMPER7_ASSERTS_ABP_Ranged_Tier1_Actor_C_AnimGraph;
 
-// Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.UpdateYawRotationRateForAttackType
+// Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.AttackConduitOnUpdate
+// 0x0038 (0x0038 - 0x0000)
+struct ABP_Ranged_Tier1_Actor_C_AttackConduitOnUpdate final
+{
+public:
+	struct FAnimUpdateContext                     Context;                                           // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FAnimNodeReference                     Node;                                              // 0x0010(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+	struct FAnimationStateResultReference         CallFunc_ConvertToAnimationStateResultPure_AnimationState; // 0x0020(0x0010)(NoDestructor)
+	bool                                          CallFunc_ConvertToAnimationStateResultPure_Result; // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsStateBlendingOut_ReturnValue;           // 0x0031(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_ABP_Ranged_Tier1_Actor_C_AttackConduitOnUpdate;
+
+// Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.BPOnAttackTypeChanged
 // 0x0002 (0x0002 - 0x0000)
-struct ABP_Ranged_Tier1_Actor_C_UpdateYawRotationRateForAttackType final
+struct ABP_Ranged_Tier1_Actor_C_BPOnAttackTypeChanged final
 {
 public:
 	ECrEnemyAttackType                            OldAttackType;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ECrEnemyAttackType                            NewAttackType;                                     // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_ABP_Ranged_Tier1_Actor_C_UpdateYawRotationRateForAttackType;
+DUMPER7_ASSERTS_ABP_Ranged_Tier1_Actor_C_BPOnAttackTypeChanged;
 
-// Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.ResetSyncedAnimProgress
-// 0x0020 (0x0020 - 0x0000)
-struct ABP_Ranged_Tier1_Actor_C_ResetSyncedAnimProgress final
+// Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.BPOnLocomotionTypeChanged
+// 0x0002 (0x0002 - 0x0000)
+struct ABP_Ranged_Tier1_Actor_C_BPOnLocomotionTypeChanged final
 {
 public:
-	struct FAnimUpdateContext                     Context;                                           // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	struct FAnimNodeReference                     Node;                                              // 0x0010(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+	ECrEnemyLocomotionType                        OldLocomotionType;                                 // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECrEnemyLocomotionType                        NewLocomotionType;                                 // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_ABP_Ranged_Tier1_Actor_C_ResetSyncedAnimProgress;
+DUMPER7_ASSERTS_ABP_Ranged_Tier1_Actor_C_BPOnLocomotionTypeChanged;
 
 // Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.ExecuteUbergraph_ABP_Ranged_Tier1_Actor
 // 0x0238 (0x0238 - 0x0000)
@@ -231,47 +243,35 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Ranged_Tier1_Actor_C_ExecuteUbergraph_ABP_Ranged_Tier1_Actor;
 
-// Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.BPOnLocomotionTypeChanged
-// 0x0002 (0x0002 - 0x0000)
-struct ABP_Ranged_Tier1_Actor_C_BPOnLocomotionTypeChanged final
+// Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.ResetSyncedAnimProgress
+// 0x0020 (0x0020 - 0x0000)
+struct ABP_Ranged_Tier1_Actor_C_ResetSyncedAnimProgress final
 {
 public:
-	ECrEnemyLocomotionType                        OldLocomotionType;                                 // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ECrEnemyLocomotionType                        NewLocomotionType;                                 // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FAnimUpdateContext                     Context;                                           // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FAnimNodeReference                     Node;                                              // 0x0010(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
 };
-DUMPER7_ASSERTS_ABP_Ranged_Tier1_Actor_C_BPOnLocomotionTypeChanged;
+DUMPER7_ASSERTS_ABP_Ranged_Tier1_Actor_C_ResetSyncedAnimProgress;
 
-// Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.BPOnAttackTypeChanged
+// Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.UpdateYawRotationRateForAttackType
 // 0x0002 (0x0002 - 0x0000)
-struct ABP_Ranged_Tier1_Actor_C_BPOnAttackTypeChanged final
+struct ABP_Ranged_Tier1_Actor_C_UpdateYawRotationRateForAttackType final
 {
 public:
 	ECrEnemyAttackType                            OldAttackType;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ECrEnemyAttackType                            NewAttackType;                                     // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_ABP_Ranged_Tier1_Actor_C_BPOnAttackTypeChanged;
+DUMPER7_ASSERTS_ABP_Ranged_Tier1_Actor_C_UpdateYawRotationRateForAttackType;
 
-// Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.AttackConduitOnUpdate
-// 0x0038 (0x0038 - 0x0000)
-struct ABP_Ranged_Tier1_Actor_C_AttackConduitOnUpdate final
+// Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.UpdateYawRotationRateForLocomotionState
+// 0x0002 (0x0002 - 0x0000)
+struct ABP_Ranged_Tier1_Actor_C_UpdateYawRotationRateForLocomotionState final
 {
 public:
-	struct FAnimUpdateContext                     Context;                                           // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	struct FAnimNodeReference                     Node;                                              // 0x0010(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-	struct FAnimationStateResultReference         CallFunc_ConvertToAnimationStateResultPure_AnimationState; // 0x0020(0x0010)(NoDestructor)
-	bool                                          CallFunc_ConvertToAnimationStateResultPure_Result; // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsStateBlendingOut_ReturnValue;           // 0x0031(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECrEnemyLocomotionType                        OldLocomotionType;                                 // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECrEnemyLocomotionType                        NewLocomotionType;                                 // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_ABP_Ranged_Tier1_Actor_C_AttackConduitOnUpdate;
-
-// Function ABP_Ranged_Tier1_Actor.ABP_Ranged_Tier1_Actor_C.AnimGraph
-// 0x0010 (0x0010 - 0x0000)
-struct ABP_Ranged_Tier1_Actor_C_AnimGraph final
-{
-public:
-	struct FPoseLink                              AnimGraph_0;                                       // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
-};
-DUMPER7_ASSERTS_ABP_Ranged_Tier1_Actor_C_AnimGraph;
+DUMPER7_ASSERTS_ABP_Ranged_Tier1_Actor_C_UpdateYawRotationRateForLocomotionState;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

@@ -16,31 +16,23 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_FactoryTier2.BP_FactoryTier2_C.SetupSkeletalMesh
-// (Event, Public, BlueprintEvent)
+// Function BP_FactoryTier2.BP_FactoryTier2_C.ExecuteUbergraph_BP_FactoryTier2
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_FactoryTier2_C::SetupSkeletalMesh()
+void ABP_FactoryTier2_C::ExecuteUbergraph_BP_FactoryTier2(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FactoryTier2_C", "SetupSkeletalMesh");
+		Func = Class->GetFunction("BP_FactoryTier2_C", "ExecuteUbergraph_BP_FactoryTier2");
 
-	UObject::ProcessEvent(Func, nullptr);
-}
+	Params::BP_FactoryTier2_C_ExecuteUbergraph_BP_FactoryTier2 Parms{};
 
+	Parms.EntryPoint = EntryPoint;
 
-// Function BP_FactoryTier2.BP_FactoryTier2_C.OnItemCraftingComplete
-// (Event, Public, BlueprintEvent)
-
-void ABP_FactoryTier2_C::OnItemCraftingComplete()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FactoryTier2_C", "OnItemCraftingComplete");
-
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -64,23 +56,31 @@ void ABP_FactoryTier2_C::OnBuildingStateChanged(ECrBuildingState InState)
 }
 
 
-// Function BP_FactoryTier2.BP_FactoryTier2_C.ExecuteUbergraph_BP_FactoryTier2
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_FactoryTier2.BP_FactoryTier2_C.OnItemCraftingComplete
+// (Event, Public, BlueprintEvent)
 
-void ABP_FactoryTier2_C::ExecuteUbergraph_BP_FactoryTier2(int32 EntryPoint)
+void ABP_FactoryTier2_C::OnItemCraftingComplete()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FactoryTier2_C", "ExecuteUbergraph_BP_FactoryTier2");
+		Func = Class->GetFunction("BP_FactoryTier2_C", "OnItemCraftingComplete");
 
-	Params::BP_FactoryTier2_C_ExecuteUbergraph_BP_FactoryTier2 Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
 
-	UObject::ProcessEvent(Func, &Parms);
+// Function BP_FactoryTier2.BP_FactoryTier2_C.SetupSkeletalMesh
+// (Event, Public, BlueprintEvent)
+
+void ABP_FactoryTier2_C::SetupSkeletalMesh()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_FactoryTier2_C", "SetupSkeletalMesh");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

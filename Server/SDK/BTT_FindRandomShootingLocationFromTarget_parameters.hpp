@@ -16,16 +16,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BTT_FindRandomShootingLocationFromTarget.BTT_FindRandomShootingLocationFromTarget_C.ReceiveExecuteAI
-// 0x0010 (0x0010 - 0x0000)
-struct BTT_FindRandomShootingLocationFromTarget_C_ReceiveExecuteAI final
-{
-public:
-	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BTT_FindRandomShootingLocationFromTarget_C_ReceiveExecuteAI;
-
 // Function BTT_FindRandomShootingLocationFromTarget.BTT_FindRandomShootingLocationFromTarget_C.ExecuteUbergraph_BTT_FindRandomShootingLocationFromTarget
 // 0x0228 (0x0228 - 0x0000)
 struct BTT_FindRandomShootingLocationFromTarget_C_ExecuteUbergraph_BTT_FindRandomShootingLocationFromTarget final
@@ -73,6 +63,16 @@ public:
 	float                                         CallFunc_RotateAngleAxis_AngleDeg_ImplicitCast_1;  // 0x0220(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BTT_FindRandomShootingLocationFromTarget_C_ExecuteUbergraph_BTT_FindRandomShootingLocationFromTarget;
+
+// Function BTT_FindRandomShootingLocationFromTarget.BTT_FindRandomShootingLocationFromTarget_C.ReceiveExecuteAI
+// 0x0010 (0x0010 - 0x0000)
+struct BTT_FindRandomShootingLocationFromTarget_C_ReceiveExecuteAI final
+{
+public:
+	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BTT_FindRandomShootingLocationFromTarget_C_ReceiveExecuteAI;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

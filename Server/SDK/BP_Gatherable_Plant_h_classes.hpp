@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "BP_GatherableBaseActor_classes.hpp"
 #include "Chimera_structs.hpp"
+#include "BP_GatherableBaseActor_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -25,9 +25,9 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Gatherable_Plant_h_C;            // 0x03A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
-	void ExecuteUbergraph_BP_Gatherable_Plant_h(int32 EntryPoint);
 	void BP_OnWaveChangedUpdate(EEnviroWave WaveType, EEnviroWaveStage WaveStage, EEnviroWaveFadeoutSubstage FadeoutSubstage, EEnviroWaveGrowbackSubstage GrowbackSubstage);
+	void ExecuteUbergraph_BP_Gatherable_Plant_h(int32 EntryPoint);
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 
 public:
 	static class UClass* StaticClass()

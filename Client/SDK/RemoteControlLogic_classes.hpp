@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "RemoteControl_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "RemoteControlLogic_structs.hpp"
-#include "RemoteControl_classes.hpp"
 #include "Engine_classes.hpp"
 
 

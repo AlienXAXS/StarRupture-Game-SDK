@@ -30,13 +30,13 @@ public:
 	class UAsyncAction_PushContentToLayerForPlayer* PushContentAsyncAction;                          // 0x0558(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnWidgetDeactivated();
-	void K2_OnEndAbility(bool bWasCancelled);
-	void K2_ActivateAbility();
-	void ExecuteUbergraph_GA_ShowWidget_WhenInputPressed(int32 EntryPoint);
-	void BeforePush_07A5E8B54EF4795F874768B89DFB5B45(class UCommonActivatableWidget* UserWidget);
-	void AfterPushCheck();
 	void AfterPush_07A5E8B54EF4795F874768B89DFB5B45(class UCommonActivatableWidget* UserWidget);
+	void AfterPushCheck();
+	void BeforePush_07A5E8B54EF4795F874768B89DFB5B45(class UCommonActivatableWidget* UserWidget);
+	void ExecuteUbergraph_GA_ShowWidget_WhenInputPressed(int32 EntryPoint);
+	void K2_ActivateAbility();
+	void K2_OnEndAbility(bool bWasCancelled);
+	void OnWidgetDeactivated();
 
 public:
 	static class UClass* StaticClass()

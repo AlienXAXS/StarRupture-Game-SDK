@@ -28,8 +28,8 @@ public:
 	class UCullingField*                          CullingField;                                      // 0x02D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void Explode();
 	void ExecuteUbergraph_FS_Explosion(int32 EntryPoint);
+	void Explode();
 
 public:
 	static class UClass* StaticClass()

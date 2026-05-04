@@ -26,8 +26,8 @@ public:
 	struct FBlackboardKeySelector                 Timestamp_BBKey;                                   // 0x00B0(0x0028)(Edit, BlueprintVisible)
 
 public:
-	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 	void ExecuteUbergraph_BTTask_Animal_Panzerhund_SaveDangerSignalTimestamp(int32 EntryPoint);
+	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 
 public:
 	static class UClass* StaticClass()

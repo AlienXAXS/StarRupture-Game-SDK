@@ -16,16 +16,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BTT_CalculateBuildingShootAtLocation.BTT_CalculateBuildingShootAtLocation_C.ReceiveExecuteAI
-// 0x0010 (0x0010 - 0x0000)
-struct BTT_CalculateBuildingShootAtLocation_C_ReceiveExecuteAI final
-{
-public:
-	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BTT_CalculateBuildingShootAtLocation_C_ReceiveExecuteAI;
-
 // Function BTT_CalculateBuildingShootAtLocation.BTT_CalculateBuildingShootAtLocation_C.ExecuteUbergraph_BTT_CalculateBuildingShootAtLocation
 // 0x01B0 (0x01B0 - 0x0000)
 struct BTT_CalculateBuildingShootAtLocation_C_ExecuteUbergraph_BTT_CalculateBuildingShootAtLocation final
@@ -69,6 +59,16 @@ public:
 	struct FVector                                CallFunc_GetClosestPointOnBounds_ReturnValue_1;    // 0x0198(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BTT_CalculateBuildingShootAtLocation_C_ExecuteUbergraph_BTT_CalculateBuildingShootAtLocation;
+
+// Function BTT_CalculateBuildingShootAtLocation.BTT_CalculateBuildingShootAtLocation_C.ReceiveExecuteAI
+// 0x0010 (0x0010 - 0x0000)
+struct BTT_CalculateBuildingShootAtLocation_C_ReceiveExecuteAI final
+{
+public:
+	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BTT_CalculateBuildingShootAtLocation_C_ReceiveExecuteAI;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

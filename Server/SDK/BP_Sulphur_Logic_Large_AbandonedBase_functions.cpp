@@ -16,17 +16,23 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Sulphur_Logic_Large_AbandonedBase.BP_Sulphur_Logic_Large_AbandonedBase_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_Sulphur_Logic_Large_AbandonedBase.BP_Sulphur_Logic_Large_AbandonedBase_C.ExecuteUbergraph_BP_Sulphur_Logic_Large_AbandonedBase
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Sulphur_Logic_Large_AbandonedBase_C::ReceiveBeginPlay()
+void ABP_Sulphur_Logic_Large_AbandonedBase_C::ExecuteUbergraph_BP_Sulphur_Logic_Large_AbandonedBase(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Sulphur_Logic_Large_AbandonedBase_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_Sulphur_Logic_Large_AbandonedBase_C", "ExecuteUbergraph_BP_Sulphur_Logic_Large_AbandonedBase");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_Sulphur_Logic_Large_AbandonedBase_C_ExecuteUbergraph_BP_Sulphur_Logic_Large_AbandonedBase Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -50,23 +56,17 @@ void ABP_Sulphur_Logic_Large_AbandonedBase_C::OnSulphurActivityChanged(bool bAct
 }
 
 
-// Function BP_Sulphur_Logic_Large_AbandonedBase.BP_Sulphur_Logic_Large_AbandonedBase_C.ExecuteUbergraph_BP_Sulphur_Logic_Large_AbandonedBase
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_Sulphur_Logic_Large_AbandonedBase.BP_Sulphur_Logic_Large_AbandonedBase_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ABP_Sulphur_Logic_Large_AbandonedBase_C::ExecuteUbergraph_BP_Sulphur_Logic_Large_AbandonedBase(int32 EntryPoint)
+void ABP_Sulphur_Logic_Large_AbandonedBase_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Sulphur_Logic_Large_AbandonedBase_C", "ExecuteUbergraph_BP_Sulphur_Logic_Large_AbandonedBase");
+		Func = Class->GetFunction("BP_Sulphur_Logic_Large_AbandonedBase_C", "ReceiveBeginPlay");
 
-	Params::BP_Sulphur_Logic_Large_AbandonedBase_C_ExecuteUbergraph_BP_Sulphur_Logic_Large_AbandonedBase Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

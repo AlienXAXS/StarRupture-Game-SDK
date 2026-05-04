@@ -62,17 +62,17 @@ enum class EContextualResponsePolicy : uint8
 	EContextualResponsePolicy_MAX            = 5,
 };
 
-// ScriptStruct ContextualDialog.Criterion
-// 0x0028 (0x0030 - 0x0008)
-struct FCriterion final : public FTableRowBase
+// ScriptStruct ContextualDialog.PropertyDefinition
+// 0x0038 (0x0040 - 0x0008)
+struct FPropertyDefinition final : public FTableRowBase
 {
 public:
-	class FString                                 KeyName;                                           // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        AValueAsNumber;                                    // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        BValueAsNumber;                                    // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   ValueAsName;                                       // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PropertyName;                                      // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ValueType;                                         // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Description;                                       // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         Values;                                            // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCriterion;
+DUMPER7_ASSERTS_FPropertyDefinition;
 
 // ScriptStruct ContextualDialog.ContextualResponseVoiceResponse
 // 0x0078 (0x0080 - 0x0008)
@@ -126,6 +126,17 @@ public:
 };
 DUMPER7_ASSERTS_FContextualResponsePayload;
 
+// ScriptStruct ContextualDialog.PropertiesSet
+// 0x0010 (0x0018 - 0x0008)
+struct FPropertiesSet final : public FTableRowBase
+{
+public:
+	class UDataTable*                             PropertiesDefinition;                              // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	bool                                          bShowPropertiesDescriptions;                       // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FPropertiesSet;
+
 // ScriptStruct ContextualDialog.Condition
 // 0x0030 (0x0038 - 0x0008)
 struct FCondition final : public FTableRowBase
@@ -140,16 +151,6 @@ public:
 };
 DUMPER7_ASSERTS_FCondition;
 
-// ScriptStruct ContextualDialog.ContextNameAndValues
-// 0x0020 (0x0028 - 0x0008)
-struct FContextNameAndValues final : public FTableRowBase
-{
-public:
-	class FString                                 ContextName;                                       // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class FString>                         Values;                                            // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FContextNameAndValues;
-
 // ScriptStruct ContextualDialog.RuleResponseLocalCooldownData
 // 0x0050 (0x0058 - 0x0008)
 struct FRuleResponseLocalCooldownData final : public FTableRowBase
@@ -159,28 +160,17 @@ public:
 };
 DUMPER7_ASSERTS_FRuleResponseLocalCooldownData;
 
-// ScriptStruct ContextualDialog.PropertiesSet
-// 0x0010 (0x0018 - 0x0008)
-struct FPropertiesSet final : public FTableRowBase
+// ScriptStruct ContextualDialog.Criterion
+// 0x0028 (0x0030 - 0x0008)
+struct FCriterion final : public FTableRowBase
 {
 public:
-	class UDataTable*                             PropertiesDefinition;                              // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	bool                                          bShowPropertiesDescriptions;                       // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 KeyName;                                           // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        AValueAsNumber;                                    // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        BValueAsNumber;                                    // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ValueAsName;                                       // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FPropertiesSet;
-
-// ScriptStruct ContextualDialog.PropertyDefinition
-// 0x0038 (0x0040 - 0x0008)
-struct FPropertyDefinition final : public FTableRowBase
-{
-public:
-	class FString                                 PropertyName;                                      // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   ValueType;                                         // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Description;                                       // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class FString>                         Values;                                            // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FPropertyDefinition;
+DUMPER7_ASSERTS_FCriterion;
 
 // ScriptStruct ContextualDialog.LocalDynamicPropertiesMap
 // 0x0050 (0x0058 - 0x0008)
@@ -190,6 +180,16 @@ public:
 	TMap<class FName, float>                      LocalDynamicPropertiesMap;                         // 0x0008(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLocalDynamicPropertiesMap;
+
+// ScriptStruct ContextualDialog.ContextNameAndValues
+// 0x0020 (0x0028 - 0x0008)
+struct FContextNameAndValues final : public FTableRowBase
+{
+public:
+	class FString                                 ContextName;                                       // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         Values;                                            // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FContextNameAndValues;
 
 // ScriptStruct ContextualDialog.QueuedResponseData
 // 0x0130 (0x0130 - 0x0000)

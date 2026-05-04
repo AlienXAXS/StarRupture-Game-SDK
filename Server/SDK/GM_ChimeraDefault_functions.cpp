@@ -16,20 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function GM_ChimeraDefault.GM_ChimeraDefault_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void AGM_ChimeraDefault_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GM_ChimeraDefault_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function GM_ChimeraDefault.GM_ChimeraDefault_C.ExecuteUbergraph_GM_ChimeraDefault
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -47,6 +33,20 @@ void AGM_ChimeraDefault_C::ExecuteUbergraph_GM_ChimeraDefault(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GM_ChimeraDefault.GM_ChimeraDefault_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void AGM_ChimeraDefault_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GM_ChimeraDefault_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

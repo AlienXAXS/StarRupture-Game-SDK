@@ -16,15 +16,71 @@
 
 SDK_NAMESPACE_START
 
-// Function WBP_WindowCloseButton.WBP_WindowCloseButton_C.OnButtonClicked
-// (BlueprintCallable, BlueprintEvent)
+// Function WBP_WindowCloseButton.WBP_WindowCloseButton_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
-void UWBP_WindowCloseButton_C::OnButtonClicked()
+void UWBP_WindowCloseButton_C::Construct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_WindowCloseButton_C", "OnButtonClicked");
+		Func = Class->GetFunction("WBP_WindowCloseButton_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_WindowCloseButton.WBP_WindowCloseButton_C.CustomEvent
+// (BlueprintCallable, BlueprintEvent)
+
+void UWBP_WindowCloseButton_C::CustomEvent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_WindowCloseButton_C", "CustomEvent");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_WindowCloseButton.WBP_WindowCloseButton_C.CustomEvent_0
+// (BlueprintCallable, BlueprintEvent)
+
+void UWBP_WindowCloseButton_C::CustomEvent_0()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_WindowCloseButton_C", "CustomEvent_0");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_WindowCloseButton.WBP_WindowCloseButton_C.CustomEvent_1
+// (BlueprintCallable, BlueprintEvent)
+
+void UWBP_WindowCloseButton_C::CustomEvent_1()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_WindowCloseButton_C", "CustomEvent_1");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_WindowCloseButton.WBP_WindowCloseButton_C.CustomEvent_2
+// (BlueprintCallable, BlueprintEvent)
+
+void UWBP_WindowCloseButton_C::CustomEvent_2()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_WindowCloseButton_C", "CustomEvent_2");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -50,71 +106,15 @@ void UWBP_WindowCloseButton_C::ExecuteUbergraph_WBP_WindowCloseButton(int32 Entr
 }
 
 
-// Function WBP_WindowCloseButton.WBP_WindowCloseButton_C.CustomEvent_2
+// Function WBP_WindowCloseButton.WBP_WindowCloseButton_C.OnButtonClicked
 // (BlueprintCallable, BlueprintEvent)
 
-void UWBP_WindowCloseButton_C::CustomEvent_2()
+void UWBP_WindowCloseButton_C::OnButtonClicked()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_WindowCloseButton_C", "CustomEvent_2");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_WindowCloseButton.WBP_WindowCloseButton_C.CustomEvent_1
-// (BlueprintCallable, BlueprintEvent)
-
-void UWBP_WindowCloseButton_C::CustomEvent_1()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_WindowCloseButton_C", "CustomEvent_1");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_WindowCloseButton.WBP_WindowCloseButton_C.CustomEvent_0
-// (BlueprintCallable, BlueprintEvent)
-
-void UWBP_WindowCloseButton_C::CustomEvent_0()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_WindowCloseButton_C", "CustomEvent_0");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_WindowCloseButton.WBP_WindowCloseButton_C.CustomEvent
-// (BlueprintCallable, BlueprintEvent)
-
-void UWBP_WindowCloseButton_C::CustomEvent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_WindowCloseButton_C", "CustomEvent");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_WindowCloseButton.WBP_WindowCloseButton_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UWBP_WindowCloseButton_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_WindowCloseButton_C", "Construct");
+		Func = Class->GetFunction("WBP_WindowCloseButton_C", "OnButtonClicked");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

@@ -16,25 +16,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_ChimeraPlacementHelperReplicatedBaseCore.BP_ChimeraPlacementHelperReplicatedBaseCore_C.UserConstructionScript
-// 0x0010 (0x0010 - 0x0000)
-struct BP_ChimeraPlacementHelperReplicatedBaseCore_C_UserConstructionScript final
-{
-public:
-	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0000(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_1; // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_ChimeraPlacementHelperReplicatedBaseCore_C_UserConstructionScript;
-
-// Function BP_ChimeraPlacementHelperReplicatedBaseCore.BP_ChimeraPlacementHelperReplicatedBaseCore_C.SetMeshColor
-// 0x0010 (0x0010 - 0x0000)
-struct BP_ChimeraPlacementHelperReplicatedBaseCore_C_SetMeshColor final
-{
-public:
-	struct FLinearColor                           Color;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_ChimeraPlacementHelperReplicatedBaseCore_C_SetMeshColor;
-
 // Function BP_ChimeraPlacementHelperReplicatedBaseCore.BP_ChimeraPlacementHelperReplicatedBaseCore_C.ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedBaseCore
 // 0x0028 (0x0028 - 0x0000)
 struct BP_ChimeraPlacementHelperReplicatedBaseCore_C_ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedBaseCore final
@@ -47,6 +28,25 @@ public:
 	bool                                          CallFunc_GetCheatShowBaseCoreRange_ReturnValue;    // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_ChimeraPlacementHelperReplicatedBaseCore_C_ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedBaseCore;
+
+// Function BP_ChimeraPlacementHelperReplicatedBaseCore.BP_ChimeraPlacementHelperReplicatedBaseCore_C.SetMeshColor
+// 0x0010 (0x0010 - 0x0000)
+struct BP_ChimeraPlacementHelperReplicatedBaseCore_C_SetMeshColor final
+{
+public:
+	struct FLinearColor                           Color;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_ChimeraPlacementHelperReplicatedBaseCore_C_SetMeshColor;
+
+// Function BP_ChimeraPlacementHelperReplicatedBaseCore.BP_ChimeraPlacementHelperReplicatedBaseCore_C.UserConstructionScript
+// 0x0010 (0x0010 - 0x0000)
+struct BP_ChimeraPlacementHelperReplicatedBaseCore_C_UserConstructionScript final
+{
+public:
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0000(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_1; // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_ChimeraPlacementHelperReplicatedBaseCore_C_UserConstructionScript;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

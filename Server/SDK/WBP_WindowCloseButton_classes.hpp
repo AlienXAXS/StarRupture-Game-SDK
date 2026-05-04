@@ -33,13 +33,13 @@ public:
 	struct FLinearColor                           PressedColor;                                      // 0x0404(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnButtonClicked();
-	void ExecuteUbergraph_WBP_WindowCloseButton(int32 EntryPoint);
-	void CustomEvent_2();
-	void CustomEvent_1();
-	void CustomEvent_0();
-	void CustomEvent();
 	void Construct();
+	void CustomEvent();
+	void CustomEvent_0();
+	void CustomEvent_1();
+	void CustomEvent_2();
+	void ExecuteUbergraph_WBP_WindowCloseButton(int32 EntryPoint);
+	void OnButtonClicked();
 
 public:
 	static class UClass* StaticClass()

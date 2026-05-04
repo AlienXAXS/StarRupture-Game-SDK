@@ -16,37 +16,23 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_CoolerPassive_Foundation.BP_CoolerPassive_Foundation_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
+// Function BP_CoolerPassive_Foundation.BP_CoolerPassive_Foundation_C.ExecuteUbergraph_BP_CoolerPassive_Foundation
+// (Final, UbergraphFunction)
 // Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_CoolerPassive_Foundation_C::ReceiveTick(float DeltaSeconds)
+void ABP_CoolerPassive_Foundation_C::ExecuteUbergraph_BP_CoolerPassive_Foundation(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CoolerPassive_Foundation_C", "ReceiveTick");
+		Func = Class->GetFunction("BP_CoolerPassive_Foundation_C", "ExecuteUbergraph_BP_CoolerPassive_Foundation");
 
-	Params::BP_CoolerPassive_Foundation_C_ReceiveTick Parms{};
+	Params::BP_CoolerPassive_Foundation_C_ExecuteUbergraph_BP_CoolerPassive_Foundation Parms{};
 
-	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_CoolerPassive_Foundation.BP_CoolerPassive_Foundation_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_CoolerPassive_Foundation_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CoolerPassive_Foundation_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -70,21 +56,35 @@ void ABP_CoolerPassive_Foundation_C::ReceiveActorBeginOverlap(class AActor* Othe
 }
 
 
-// Function BP_CoolerPassive_Foundation.BP_CoolerPassive_Foundation_C.ExecuteUbergraph_BP_CoolerPassive_Foundation
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_CoolerPassive_Foundation.BP_CoolerPassive_Foundation_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ABP_CoolerPassive_Foundation_C::ExecuteUbergraph_BP_CoolerPassive_Foundation(int32 EntryPoint)
+void ABP_CoolerPassive_Foundation_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CoolerPassive_Foundation_C", "ExecuteUbergraph_BP_CoolerPassive_Foundation");
+		Func = Class->GetFunction("BP_CoolerPassive_Foundation_C", "ReceiveBeginPlay");
 
-	Params::BP_CoolerPassive_Foundation_C_ExecuteUbergraph_BP_CoolerPassive_Foundation Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
+
+// Function BP_CoolerPassive_Foundation.BP_CoolerPassive_Foundation_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_CoolerPassive_Foundation_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_CoolerPassive_Foundation_C", "ReceiveTick");
+
+	Params::BP_CoolerPassive_Foundation_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

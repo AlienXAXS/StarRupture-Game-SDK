@@ -36,6 +36,13 @@ public:
 };
 DUMPER7_ASSERTS_FEditorDataStorageTag;
 
+// ScriptStruct TypedElementFramework.TypedElementLoosePropertyTag
+// 0x0000 (0x0001 - 0x0001)
+struct FTypedElementLoosePropertyTag final : public FEditorDataStorageTag
+{
+};
+DUMPER7_ASSERTS_FTypedElementLoosePropertyTag;
+
 // ScriptStruct TypedElementFramework.ScriptTypedElementHandle
 // 0x0008 (0x0008 - 0x0000)
 struct alignas(0x08) FScriptTypedElementHandle final
@@ -44,15 +51,6 @@ public:
 	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FScriptTypedElementHandle;
-
-// ScriptStruct TypedElementFramework.TedsRowHandle
-// 0x0008 (0x0008 - 0x0000)
-struct FTedsRowHandle final
-{
-public:
-	uint64                                        RowHandle;                                         // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FTedsRowHandle;
 
 // ScriptStruct TypedElementFramework.EditorDataStorageColumn
 // 0x0000 (0x0000 - 0x0000)
@@ -121,13 +119,6 @@ struct FTypedElementPropertyBagPlaceholderTag final : public FEditorDataStorageT
 };
 DUMPER7_ASSERTS_FTypedElementPropertyBagPlaceholderTag;
 
-// ScriptStruct TypedElementFramework.TypedElementLoosePropertyTag
-// 0x0000 (0x0001 - 0x0001)
-struct FTypedElementLoosePropertyTag final : public FEditorDataStorageTag
-{
-};
-DUMPER7_ASSERTS_FTypedElementLoosePropertyTag;
-
 // ScriptStruct TypedElementFramework.TypedElementPropertyBagPlaceholderTypeInfoColumn
 // 0x0008 (0x0008 - 0x0000)
 struct alignas(0x04) FTypedElementPropertyBagPlaceholderTypeInfoColumn final : public FEditorDataStorageColumn
@@ -186,6 +177,15 @@ struct FFolderTag final : public FEditorDataStorageTag
 {
 };
 DUMPER7_ASSERTS_FFolderTag;
+
+// ScriptStruct TypedElementFramework.TedsRowHandle
+// 0x0008 (0x0008 - 0x0000)
+struct FTedsRowHandle final
+{
+public:
+	uint64                                        RowHandle;                                         // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FTedsRowHandle;
 
 // ScriptStruct TypedElementFramework.TableRowParentColumn
 // 0x0008 (0x0008 - 0x0000)

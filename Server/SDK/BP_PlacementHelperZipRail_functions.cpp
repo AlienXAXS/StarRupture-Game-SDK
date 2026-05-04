@@ -16,177 +16,39 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_PlacementHelperZipRail_C::UserConstructionScript()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperZipRail_C", "UserConstructionScript");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.SetSplineSegment
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.ExecuteUbergraph_BP_PlacementHelperZipRail
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// class USplineMeshComponent*             SplineMeshComponent                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// int32                                   FirstPointIndex                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   SecondPointIndex                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PlacementHelperZipRail_C::SetSplineSegment(class USplineMeshComponent* SplineMeshComponent, int32 FirstPointIndex, int32 SecondPointIndex)
+void ABP_PlacementHelperZipRail_C::ExecuteUbergraph_BP_PlacementHelperZipRail(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperZipRail_C", "SetSplineSegment");
+		Func = Class->GetFunction("BP_PlacementHelperZipRail_C", "ExecuteUbergraph_BP_PlacementHelperZipRail");
 
-	Params::BP_PlacementHelperZipRail_C_SetSplineSegment Parms{};
+	Params::BP_PlacementHelperZipRail_C_ExecuteUbergraph_BP_PlacementHelperZipRail Parms{};
 
-	Parms.SplineMeshComponent = SplineMeshComponent;
-	Parms.FirstPointIndex = FirstPointIndex;
-	Parms.SecondPointIndex = SecondPointIndex;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.SetMeshColor
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_PlacementHelperZipRail_C::SetMeshColor(const struct FLinearColor& Color)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperZipRail_C", "SetMeshColor");
-
-	Params::BP_PlacementHelperZipRail_C_SetMeshColor Parms{};
-
-	Parms.Color = std::move(Color);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.RemoveSteps
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   Amount                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_PlacementHelperZipRail_C::RemoveSteps(int32 Amount)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperZipRail_C", "RemoveSteps");
-
-	Params::BP_PlacementHelperZipRail_C_RemoveSteps Parms{};
-
-	Parms.Amount = Amount;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_PlacementHelperZipRail_C::ReceiveTick(float DeltaSeconds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperZipRail_C", "ReceiveTick");
-
-	Params::BP_PlacementHelperZipRail_C_ReceiveTick Parms{};
-
-	Parms.DeltaSeconds = DeltaSeconds;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.OnSplinePointRemoved
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// int32                                   PointIndex                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_PlacementHelperZipRail_C::OnSplinePointRemoved(int32 PointIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperZipRail_C", "OnSplinePointRemoved");
-
-	Params::BP_PlacementHelperZipRail_C_OnSplinePointRemoved Parms{};
-
-	Parms.PointIndex = PointIndex;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.OnSplinePointAdded
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// int32                                   PointIndex                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_PlacementHelperZipRail_C::OnSplinePointAdded(int32 PointIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperZipRail_C", "OnSplinePointAdded");
-
-	Params::BP_PlacementHelperZipRail_C_OnSplinePointAdded Parms{};
-
-	Parms.PointIndex = PointIndex;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.OnConfirmedPoint
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// const struct FAuAPConfirmPointData&     NewPoint                                               (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, ContainsInstancedReference)
-
-void ABP_PlacementHelperZipRail_C::OnConfirmedPoint(const struct FAuAPConfirmPointData& NewPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperZipRail_C", "OnConfirmedPoint");
-
-	Params::BP_PlacementHelperZipRail_C_OnConfirmedPoint Parms{};
-
-	Parms.NewPoint = std::move(NewPoint);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.IsRamp
+// Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.GetRampAngle
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double                                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-bool ABP_PlacementHelperZipRail_C::IsRamp()
+double ABP_PlacementHelperZipRail_C::GetRampAngle()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperZipRail_C", "IsRamp");
+		Func = Class->GetFunction("BP_PlacementHelperZipRail_C", "GetRampAngle");
 
-	Params::BP_PlacementHelperZipRail_C_IsRamp Parms{};
+	Params::BP_PlacementHelperZipRail_C_GetRampAngle Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -214,19 +76,19 @@ bool ABP_PlacementHelperZipRail_C::IsLadder()
 }
 
 
-// Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.GetRampAngle
+// Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.IsRamp
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// double                                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-double ABP_PlacementHelperZipRail_C::GetRampAngle()
+bool ABP_PlacementHelperZipRail_C::IsRamp()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperZipRail_C", "GetRampAngle");
+		Func = Class->GetFunction("BP_PlacementHelperZipRail_C", "IsRamp");
 
-	Params::BP_PlacementHelperZipRail_C_GetRampAngle Parms{};
+	Params::BP_PlacementHelperZipRail_C_IsRamp Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -234,23 +96,161 @@ double ABP_PlacementHelperZipRail_C::GetRampAngle()
 }
 
 
-// Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.ExecuteUbergraph_BP_PlacementHelperZipRail
-// (Final, UbergraphFunction, HasDefaults)
+// Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.OnConfirmedPoint
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FAuAPConfirmPointData&     NewPoint                                               (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, ContainsInstancedReference)
 
-void ABP_PlacementHelperZipRail_C::ExecuteUbergraph_BP_PlacementHelperZipRail(int32 EntryPoint)
+void ABP_PlacementHelperZipRail_C::OnConfirmedPoint(const struct FAuAPConfirmPointData& NewPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperZipRail_C", "ExecuteUbergraph_BP_PlacementHelperZipRail");
+		Func = Class->GetFunction("BP_PlacementHelperZipRail_C", "OnConfirmedPoint");
 
-	Params::BP_PlacementHelperZipRail_C_ExecuteUbergraph_BP_PlacementHelperZipRail Parms{};
+	Params::BP_PlacementHelperZipRail_C_OnConfirmedPoint Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.NewPoint = std::move(NewPoint);
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.OnSplinePointAdded
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   PointIndex                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_PlacementHelperZipRail_C::OnSplinePointAdded(int32 PointIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PlacementHelperZipRail_C", "OnSplinePointAdded");
+
+	Params::BP_PlacementHelperZipRail_C_OnSplinePointAdded Parms{};
+
+	Parms.PointIndex = PointIndex;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.OnSplinePointRemoved
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   PointIndex                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_PlacementHelperZipRail_C::OnSplinePointRemoved(int32 PointIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PlacementHelperZipRail_C", "OnSplinePointRemoved");
+
+	Params::BP_PlacementHelperZipRail_C_OnSplinePointRemoved Parms{};
+
+	Parms.PointIndex = PointIndex;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_PlacementHelperZipRail_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PlacementHelperZipRail_C", "ReceiveTick");
+
+	Params::BP_PlacementHelperZipRail_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.RemoveSteps
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   Amount                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_PlacementHelperZipRail_C::RemoveSteps(int32 Amount)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PlacementHelperZipRail_C", "RemoveSteps");
+
+	Params::BP_PlacementHelperZipRail_C_RemoveSteps Parms{};
+
+	Parms.Amount = Amount;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.SetMeshColor
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_PlacementHelperZipRail_C::SetMeshColor(const struct FLinearColor& Color)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PlacementHelperZipRail_C", "SetMeshColor");
+
+	Params::BP_PlacementHelperZipRail_C_SetMeshColor Parms{};
+
+	Parms.Color = std::move(Color);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.SetSplineSegment
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class USplineMeshComponent*             SplineMeshComponent                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// int32                                   FirstPointIndex                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   SecondPointIndex                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_PlacementHelperZipRail_C::SetSplineSegment(class USplineMeshComponent* SplineMeshComponent, int32 FirstPointIndex, int32 SecondPointIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PlacementHelperZipRail_C", "SetSplineSegment");
+
+	Params::BP_PlacementHelperZipRail_C_SetSplineSegment Parms{};
+
+	Parms.SplineMeshComponent = SplineMeshComponent;
+	Parms.FirstPointIndex = FirstPointIndex;
+	Parms.SecondPointIndex = SecondPointIndex;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_PlacementHelperZipRail_C::UserConstructionScript()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PlacementHelperZipRail_C", "UserConstructionScript");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

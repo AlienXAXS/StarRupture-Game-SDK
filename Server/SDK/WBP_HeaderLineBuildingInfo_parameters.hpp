@@ -16,35 +16,15 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function WBP_HeaderLineBuildingInfo.WBP_HeaderLineBuildingInfo_C.SetTitleFieldSize
-// 0x0018 (0x0018 - 0x0000)
-struct WBP_HeaderLineBuildingInfo_C_SetTitleFieldSize final
+// Function WBP_HeaderLineBuildingInfo.WBP_HeaderLineBuildingInfo_C.SetColors
+// 0x0020 (0x0020 - 0x0000)
+struct WBP_HeaderLineBuildingInfo_C_SetColors final
 {
 public:
-	int32                                         Size;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        CallFunc_Conv_IntToDouble_ReturnValue;             // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_SetWidthOverride_InWidthOverride_ImplicitCast; // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           Highlight;                                         // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           Default;                                           // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_WBP_HeaderLineBuildingInfo_C_SetTitleFieldSize;
-
-// Function WBP_HeaderLineBuildingInfo.WBP_HeaderLineBuildingInfo_C.SetTitle
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_HeaderLineBuildingInfo_C_SetTitle final
-{
-public:
-	class FText                                   InTitle;                                           // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm)
-};
-DUMPER7_ASSERTS_WBP_HeaderLineBuildingInfo_C_SetTitle;
-
-// Function WBP_HeaderLineBuildingInfo.WBP_HeaderLineBuildingInfo_C.SetTextStyle
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_HeaderLineBuildingInfo_C_SetTextStyle final
-{
-public:
-	bool                                          isHighlight;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_HeaderLineBuildingInfo_C_SetTextStyle;
+DUMPER7_ASSERTS_WBP_HeaderLineBuildingInfo_C_SetColors;
 
 // Function WBP_HeaderLineBuildingInfo.WBP_HeaderLineBuildingInfo_C.SetLinesEnabled
 // 0x0024 (0x0024 - 0x0000)
@@ -58,15 +38,35 @@ public:
 };
 DUMPER7_ASSERTS_WBP_HeaderLineBuildingInfo_C_SetLinesEnabled;
 
-// Function WBP_HeaderLineBuildingInfo.WBP_HeaderLineBuildingInfo_C.SetColors
-// 0x0020 (0x0020 - 0x0000)
-struct WBP_HeaderLineBuildingInfo_C_SetColors final
+// Function WBP_HeaderLineBuildingInfo.WBP_HeaderLineBuildingInfo_C.SetTextStyle
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_HeaderLineBuildingInfo_C_SetTextStyle final
 {
 public:
-	struct FLinearColor                           Highlight;                                         // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           Default;                                           // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          isHighlight;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_WBP_HeaderLineBuildingInfo_C_SetColors;
+DUMPER7_ASSERTS_WBP_HeaderLineBuildingInfo_C_SetTextStyle;
+
+// Function WBP_HeaderLineBuildingInfo.WBP_HeaderLineBuildingInfo_C.SetTitle
+// 0x0010 (0x0010 - 0x0000)
+struct WBP_HeaderLineBuildingInfo_C_SetTitle final
+{
+public:
+	class FText                                   InTitle;                                           // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm)
+};
+DUMPER7_ASSERTS_WBP_HeaderLineBuildingInfo_C_SetTitle;
+
+// Function WBP_HeaderLineBuildingInfo.WBP_HeaderLineBuildingInfo_C.SetTitleFieldSize
+// 0x0018 (0x0018 - 0x0000)
+struct WBP_HeaderLineBuildingInfo_C_SetTitleFieldSize final
+{
+public:
+	int32                                         Size;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_Conv_IntToDouble_ReturnValue;             // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_SetWidthOverride_InWidthOverride_ImplicitCast; // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_HeaderLineBuildingInfo_C_SetTitleFieldSize;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

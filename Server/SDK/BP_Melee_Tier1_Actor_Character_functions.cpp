@@ -16,15 +16,70 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Melee_Tier1_Actor_Character.BP_Melee_Tier1_Actor_Character_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Function BP_Melee_Tier1_Actor_Character.BP_Melee_Tier1_Actor_Character_C.ExecuteUbergraph_BP_Melee_Tier1_Actor_Character
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Melee_Tier1_Actor_Character_C::UserConstructionScript()
+void ABP_Melee_Tier1_Actor_Character_C::ExecuteUbergraph_BP_Melee_Tier1_Actor_Character(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier1_Actor_Character_C", "UserConstructionScript");
+		Func = Class->GetFunction("BP_Melee_Tier1_Actor_Character_C", "ExecuteUbergraph_BP_Melee_Tier1_Actor_Character");
+
+	Params::BP_Melee_Tier1_Actor_Character_C_ExecuteUbergraph_BP_Melee_Tier1_Actor_Character Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Melee_Tier1_Actor_Character.BP_Melee_Tier1_Actor_Character_C.GetNiagaraEyeSystem
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UNiagaraComponent**               NewParam                                               (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Melee_Tier1_Actor_Character_C::GetNiagaraEyeSystem(class UNiagaraComponent** NewParam)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Melee_Tier1_Actor_Character_C", "GetNiagaraEyeSystem");
+
+	Params::BP_Melee_Tier1_Actor_Character_C_GetNiagaraEyeSystem Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (NewParam != nullptr)
+		*NewParam = Parms.NewParam;
+}
+
+
+// Function BP_Melee_Tier1_Actor_Character.BP_Melee_Tier1_Actor_Character_C.OnEnterActorPool
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Melee_Tier1_Actor_Character_C::OnEnterActorPool()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Melee_Tier1_Actor_Character_C", "OnEnterActorPool");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Melee_Tier1_Actor_Character.BP_Melee_Tier1_Actor_Character_C.OnExitActorPool
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Melee_Tier1_Actor_Character_C::OnExitActorPool()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Melee_Tier1_Actor_Character_C", "OnExitActorPool");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -50,72 +105,17 @@ void ABP_Melee_Tier1_Actor_Character_C::OnVisualVariationChanged(const struct FV
 }
 
 
-// Function BP_Melee_Tier1_Actor_Character.BP_Melee_Tier1_Actor_Character_C.OnExitActorPool
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function BP_Melee_Tier1_Actor_Character.BP_Melee_Tier1_Actor_Character_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_Melee_Tier1_Actor_Character_C::OnExitActorPool()
+void ABP_Melee_Tier1_Actor_Character_C::UserConstructionScript()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier1_Actor_Character_C", "OnExitActorPool");
+		Func = Class->GetFunction("BP_Melee_Tier1_Actor_Character_C", "UserConstructionScript");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Melee_Tier1_Actor_Character.BP_Melee_Tier1_Actor_Character_C.OnEnterActorPool
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Melee_Tier1_Actor_Character_C::OnEnterActorPool()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier1_Actor_Character_C", "OnEnterActorPool");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Melee_Tier1_Actor_Character.BP_Melee_Tier1_Actor_Character_C.GetNiagaraEyeSystem
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UNiagaraComponent**               NewParam                                               (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Melee_Tier1_Actor_Character_C::GetNiagaraEyeSystem(class UNiagaraComponent** NewParam)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier1_Actor_Character_C", "GetNiagaraEyeSystem");
-
-	Params::BP_Melee_Tier1_Actor_Character_C_GetNiagaraEyeSystem Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (NewParam != nullptr)
-		*NewParam = Parms.NewParam;
-}
-
-
-// Function BP_Melee_Tier1_Actor_Character.BP_Melee_Tier1_Actor_Character_C.ExecuteUbergraph_BP_Melee_Tier1_Actor_Character
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Melee_Tier1_Actor_Character_C::ExecuteUbergraph_BP_Melee_Tier1_Actor_Character(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier1_Actor_Character_C", "ExecuteUbergraph_BP_Melee_Tier1_Actor_Character");
-
-	Params::BP_Melee_Tier1_Actor_Character_C_ExecuteUbergraph_BP_Melee_Tier1_Actor_Character Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 

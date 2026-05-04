@@ -59,6 +59,15 @@ public:
 };
 DUMPER7_ASSERTS_BakeMeshAttributeMapsToolProperties_GetMapPreviewNamesFunc;
 
+// Function MeshModelingToolsExp.MeshInspectorMaterialProperties.GetUVChannelNamesFunc
+// 0x0010 (0x0010 - 0x0000)
+struct MeshInspectorMaterialProperties_GetUVChannelNamesFunc final
+{
+public:
+	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MeshInspectorMaterialProperties_GetUVChannelNamesFunc;
+
 // Function MeshModelingToolsExp.BakeMultiMeshAttributeMapsToolProperties.GetMapPreviewNamesFunc
 // 0x0010 (0x0010 - 0x0000)
 struct BakeMultiMeshAttributeMapsToolProperties_GetMapPreviewNamesFunc final
@@ -76,15 +85,6 @@ public:
 	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_BakeMultiMeshInputToolProperties_GetTargetUVLayerNamesFunc;
-
-// Function MeshModelingToolsExp.MeshInspectorMaterialProperties.GetUVChannelNamesFunc
-// 0x0010 (0x0010 - 0x0000)
-struct MeshInspectorMaterialProperties_GetUVChannelNamesFunc final
-{
-public:
-	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MeshInspectorMaterialProperties_GetUVChannelNamesFunc;
 
 // Function MeshModelingToolsExp.TransferMeshToolProperties.GetSourceLODNamesFunc
 // 0x0010 (0x0010 - 0x0000)

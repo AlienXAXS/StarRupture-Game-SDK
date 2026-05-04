@@ -16,17 +16,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function WBP_QuickUseMenu.WBP_QuickUseMenu_C.OnCurrentEntryIndexChange
-// 0x000C (0x000C - 0x0000)
-struct WBP_QuickUseMenu_C_OnCurrentEntryIndexChange final
-{
-public:
-	int32                                         Index_0;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         NumberOfEntries;                                   // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bActive;                                           // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_QuickUseMenu_C_OnCurrentEntryIndexChange;
-
 // Function WBP_QuickUseMenu.WBP_QuickUseMenu_C.ExecuteUbergraph_WBP_QuickUseMenu
 // 0x0050 (0x0050 - 0x0000)
 struct WBP_QuickUseMenu_C_ExecuteUbergraph_WBP_QuickUseMenu final
@@ -47,6 +36,17 @@ public:
 	float                                         CallFunc_SetScalarParameterValue_Value_ImplicitCast_2; // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_QuickUseMenu_C_ExecuteUbergraph_WBP_QuickUseMenu;
+
+// Function WBP_QuickUseMenu.WBP_QuickUseMenu_C.OnCurrentEntryIndexChange
+// 0x000C (0x000C - 0x0000)
+struct WBP_QuickUseMenu_C_OnCurrentEntryIndexChange final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         NumberOfEntries;                                   // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bActive;                                           // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_QuickUseMenu_C_OnCurrentEntryIndexChange;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

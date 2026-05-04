@@ -92,16 +92,16 @@ public:
 	TMap<EEnviroWave, struct FCrEnviroWaveCurveFloatMap> StarRaysSteps;                              // 0x0B48(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
-	void UserConstructionScript();
-	void UpdateStarMaterial();
-	void UpdateRTMaterials();
-	void ReceiveBeginPlay();
-	void OnEnviroWaveTick(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress);
-	void OnEnviroWaveFinished(EEnviroWave WaveType, const struct FCrEnviroWaveSettings& WaveSettings);
-	void OnEnviroWaveCanceled(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings);
-	void InitializeRTMaterials();
-	void ExecuteUbergraph_BP_SkyboxWithStar(int32 EntryPoint);
 	void EveryFrameEvent();
+	void ExecuteUbergraph_BP_SkyboxWithStar(int32 EntryPoint);
+	void InitializeRTMaterials();
+	void OnEnviroWaveCanceled(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings);
+	void OnEnviroWaveFinished(EEnviroWave WaveType, const struct FCrEnviroWaveSettings& WaveSettings);
+	void OnEnviroWaveTick(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress);
+	void ReceiveBeginPlay();
+	void UpdateRTMaterials();
+	void UpdateStarMaterial();
+	void UserConstructionScript();
 
 public:
 	static class UClass* StaticClass()

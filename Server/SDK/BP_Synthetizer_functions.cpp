@@ -16,26 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Synthetizer.BP_Synthetizer_C.OnBuildingStateChanged
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Synthetizer_C::OnBuildingStateChanged(ECrBuildingState InState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Synthetizer_C", "OnBuildingStateChanged");
-
-	Params::BP_Synthetizer_C_OnBuildingStateChanged Parms{};
-
-	Parms.InState = InState;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_Synthetizer.BP_Synthetizer_C.ExecuteUbergraph_BP_Synthetizer
 // (Final, UbergraphFunction)
 // Parameters:
@@ -51,6 +31,26 @@ void ABP_Synthetizer_C::ExecuteUbergraph_BP_Synthetizer(int32 EntryPoint)
 	Params::BP_Synthetizer_C_ExecuteUbergraph_BP_Synthetizer Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Synthetizer.BP_Synthetizer_C.OnBuildingStateChanged
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Synthetizer_C::OnBuildingStateChanged(ECrBuildingState InState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Synthetizer_C", "OnBuildingStateChanged");
+
+	Params::BP_Synthetizer_C_OnBuildingStateChanged Parms{};
+
+	Parms.InState = InState;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

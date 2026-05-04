@@ -578,6 +578,17 @@ public:
 };
 DUMPER7_ASSERTS_FSequentialIDBase;
 
+// ScriptStruct AIModule.AIPredictionEvent
+// 0x0018 (0x0018 - 0x0000)
+struct FAIPredictionEvent final
+{
+public:
+	class AActor*                                 Requestor;                                         // 0x0000(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class AActor*                                 PredictedActor;                                    // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_10[0x8];                                       // 0x0010(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAIPredictionEvent;
+
 // ScriptStruct AIModule.AIRequestID
 // 0x0004 (0x0004 - 0x0000)
 struct FAIRequestID final
@@ -1098,17 +1109,6 @@ public:
 	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FAINoiseEvent;
-
-// ScriptStruct AIModule.AIPredictionEvent
-// 0x0018 (0x0018 - 0x0000)
-struct FAIPredictionEvent final
-{
-public:
-	class AActor*                                 Requestor;                                         // 0x0000(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class AActor*                                 PredictedActor;                                    // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_10[0x8];                                       // 0x0010(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAIPredictionEvent;
 
 // ScriptStruct AIModule.AISightEvent
 // 0x0018 (0x0018 - 0x0000)

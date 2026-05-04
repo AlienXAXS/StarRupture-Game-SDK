@@ -16,35 +16,21 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_ResearchLab.BP_ResearchLab_C.SetupSkeletalMesh
-// (Event, Public, BlueprintEvent)
-
-void ABP_ResearchLab_C::SetupSkeletalMesh()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ResearchLab_C", "SetupSkeletalMesh");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_ResearchLab.BP_ResearchLab_C.OnBuildingStateChanged
-// (Event, Public, BlueprintEvent)
+// Function BP_ResearchLab.BP_ResearchLab_C.ExecuteUbergraph_BP_ResearchLab
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ResearchLab_C::OnBuildingStateChanged(ECrBuildingState InState)
+void ABP_ResearchLab_C::ExecuteUbergraph_BP_ResearchLab(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ResearchLab_C", "OnBuildingStateChanged");
+		Func = Class->GetFunction("BP_ResearchLab_C", "ExecuteUbergraph_BP_ResearchLab");
 
-	Params::BP_ResearchLab_C_OnBuildingStateChanged Parms{};
+	Params::BP_ResearchLab_C_ExecuteUbergraph_BP_ResearchLab Parms{};
 
-	Parms.InState = InState;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -76,23 +62,37 @@ void ABP_ResearchLab_C::Get_Meshes(class USceneComponent* Static_0, class UScene
 }
 
 
-// Function BP_ResearchLab.BP_ResearchLab_C.ExecuteUbergraph_BP_ResearchLab
-// (Final, UbergraphFunction, HasDefaults)
+// Function BP_ResearchLab.BP_ResearchLab_C.OnBuildingStateChanged
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ResearchLab_C::ExecuteUbergraph_BP_ResearchLab(int32 EntryPoint)
+void ABP_ResearchLab_C::OnBuildingStateChanged(ECrBuildingState InState)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ResearchLab_C", "ExecuteUbergraph_BP_ResearchLab");
+		Func = Class->GetFunction("BP_ResearchLab_C", "OnBuildingStateChanged");
 
-	Params::BP_ResearchLab_C_ExecuteUbergraph_BP_ResearchLab Parms{};
+	Params::BP_ResearchLab_C_OnBuildingStateChanged Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.InState = InState;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_ResearchLab.BP_ResearchLab_C.SetupSkeletalMesh
+// (Event, Public, BlueprintEvent)
+
+void ABP_ResearchLab_C::SetupSkeletalMesh()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ResearchLab_C", "SetupSkeletalMesh");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

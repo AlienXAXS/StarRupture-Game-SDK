@@ -16,17 +16,23 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_LiquidExtractor.BP_LiquidExtractor_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_LiquidExtractor.BP_LiquidExtractor_C.ExecuteUbergraph_BP_LiquidExtractor
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_LiquidExtractor_C::ReceiveBeginPlay()
+void ABP_LiquidExtractor_C::ExecuteUbergraph_BP_LiquidExtractor(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LiquidExtractor_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_LiquidExtractor_C", "ExecuteUbergraph_BP_LiquidExtractor");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_LiquidExtractor_C_ExecuteUbergraph_BP_LiquidExtractor Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -50,23 +56,17 @@ void ABP_LiquidExtractor_C::OnBuildingStateChanged(ECrBuildingState InState)
 }
 
 
-// Function BP_LiquidExtractor.BP_LiquidExtractor_C.ExecuteUbergraph_BP_LiquidExtractor
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_LiquidExtractor.BP_LiquidExtractor_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ABP_LiquidExtractor_C::ExecuteUbergraph_BP_LiquidExtractor(int32 EntryPoint)
+void ABP_LiquidExtractor_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LiquidExtractor_C", "ExecuteUbergraph_BP_LiquidExtractor");
+		Func = Class->GetFunction("BP_LiquidExtractor_C", "ReceiveBeginPlay");
 
-	Params::BP_LiquidExtractor_C_ExecuteUbergraph_BP_LiquidExtractor Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

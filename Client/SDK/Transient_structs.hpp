@@ -27,9 +27,9 @@ struct FPropertyBag_0 final
 };
 DUMPER7_ASSERTS_FPropertyBag_0;
 
-// PropertyBag Transient.PropertyBag_15e318596c917aca
+// PropertyBag Transient.PropertyBag_3c1a49ce0ad7594c
 // 0x0540 (0x0540 - 0x0000)
-struct FPropertyBag_15e318596c917aca final
+struct FPropertyBag_3c1a49ce0ad7594c final
 {
 public:
 	struct FRigElementKey                         RigVMModel___Set_Transform_Item__Const;            // 0x0000(0x000C)(Edit, NoDestructor, HasGetValueTypeHash)
@@ -135,11 +135,29 @@ public:
 	class FName                                   RigVMModel___SetControlOffset_1_Control__Const;    // 0x0528(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                   RigVMModel___SetControlOffset_2_Control__Const;    // 0x0530(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_FPropertyBag_15e318596c917aca;
+DUMPER7_ASSERTS_FPropertyBag_3c1a49ce0ad7594c;
 
-// PropertyBag Transient.PropertyBag_2db3605b292db292
+// PropertyBag Transient.PropertyBag_4db632a4d434e563
+// 0x0010 (0x0010 - 0x0000)
+struct FPropertyBag_4db632a4d434e563 final
+{
+public:
+	TArray<class UClass*>                         Actors;                                            // 0x0000(0x0010)(Edit)
+};
+DUMPER7_ASSERTS_FPropertyBag_4db632a4d434e563;
+
+// PropertyBag Transient.PropertyBag_f281b1ee2055a56
+// 0x0008 (0x0008 - 0x0000)
+struct FPropertyBag_f281b1ee2055a56 final
+{
+public:
+	double                                        EntityRadius;                                      // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_FPropertyBag_f281b1ee2055a56;
+
+// PropertyBag Transient.PropertyBag_b5fc7e79f0b68ef7
 // 0x27A0 (0x27A0 - 0x0000)
-struct FPropertyBag_2db3605b292db292 final
+struct FPropertyBag_b5fc7e79f0b68ef7 final
 {
 public:
 	struct FTransform                             RigVMModel___GetTransform_2_Transform;             // 0x0000(0x0060)(Edit, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -507,7 +525,16 @@ public:
 	TArray<struct FCachedRigElement>              RigVMModel___GetTransform_10_CachedIndex;          // 0x2780(0x0010)(Edit)
 	TArray<struct FCachedRigElement>              RigVMModel___SetControlOffset_2_CachedControlIndex; // 0x2790(0x0010)(Edit)
 };
-DUMPER7_ASSERTS_FPropertyBag_2db3605b292db292;
+DUMPER7_ASSERTS_FPropertyBag_b5fc7e79f0b68ef7;
+
+// PropertyBag Transient.PropertyBag_ccd904ea5a07d46
+// 0x0018 (0x0018 - 0x0000)
+struct FPropertyBag_ccd904ea5a07d46 final
+{
+public:
+	struct FVector                                TraceHeightOffset;                                 // 0x0000(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_FPropertyBag_ccd904ea5a07d46;
 
 // ScriptStruct Transient.ChaosDestructionEvent_SWC
 // 0x0044 (0x0044 - 0x0000)
@@ -526,27 +553,9 @@ public:
 };
 DUMPER7_ASSERTS_FChaosDestructionEvent_SWC;
 
-// PropertyBag Transient.PropertyBag_db2f7e1ebc498285
-// 0x0008 (0x0008 - 0x0000)
-struct FPropertyBag_db2f7e1ebc498285 final
-{
-public:
-	double                                        EntityRadius;                                      // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_FPropertyBag_db2f7e1ebc498285;
-
-// PropertyBag Transient.PropertyBag_50ecd52af078700b
-// 0x0010 (0x0010 - 0x0000)
-struct FPropertyBag_50ecd52af078700b final
-{
-public:
-	TArray<class UClass*>                         Actors;                                            // 0x0000(0x0010)(Edit)
-};
-DUMPER7_ASSERTS_FPropertyBag_50ecd52af078700b;
-
-// PropertyBag Transient.PropertyBag_30653103e1b917dd
+// PropertyBag Transient.PropertyBag_3d534a8e50abc1f3
 // 0x0040 (0x0040 - 0x0000)
-struct FPropertyBag_30653103e1b917dd final
+struct FPropertyBag_3d534a8e50abc1f3 final
 {
 public:
 	double                                        InRangeMinDensityValue;                            // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -554,20 +563,11 @@ public:
 	struct FVector                                InRangeMinScaleValue;                              // 0x0010(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                InRangeMaxScaleValue;                              // 0x0028(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_FPropertyBag_30653103e1b917dd;
+DUMPER7_ASSERTS_FPropertyBag_3d534a8e50abc1f3;
 
-// PropertyBag Transient.PropertyBag_2d44fe1b7d35e5a2
-// 0x0018 (0x0018 - 0x0000)
-struct FPropertyBag_2d44fe1b7d35e5a2 final
-{
-public:
-	struct FVector                                TraceHeightOffset;                                 // 0x0000(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_FPropertyBag_2d44fe1b7d35e5a2;
-
-// PropertyBag Transient.PropertyBag_c576671bdce075bc
+// PropertyBag Transient.PropertyBag_cf55be8a2df33e39
 // 0x02E0 (0x02E0 - 0x0000)
-struct FPropertyBag_c576671bdce075bc final
+struct FPropertyBag_cf55be8a2df33e39 final
 {
 public:
 	struct FRigElementKey                         RigVMModel___ParentConstraint_3_Child__Const;      // 0x0000(0x000C)(Edit, NoDestructor, HasGetValueTypeHash)
@@ -621,11 +621,11 @@ public:
 	struct FPBIKSolverSettings                    RigVMModel___PBIK_Settings__Const;                 // 0x0298(0x0040)(Edit, NoDestructor)
 	struct FPBIKDebug                             RigVMModel___PBIK_Debug__Const;                    // 0x02D8(0x0008)(Edit, NoDestructor)
 };
-DUMPER7_ASSERTS_FPropertyBag_c576671bdce075bc;
+DUMPER7_ASSERTS_FPropertyBag_cf55be8a2df33e39;
 
-// PropertyBag Transient.PropertyBag_e89c71e1b1916f8a
+// PropertyBag Transient.PropertyBag_e70df3393a1c8874
 // 0x0880 (0x0880 - 0x0000)
-struct FPropertyBag_e89c71e1b1916f8a final
+struct FPropertyBag_e70df3393a1c8874 final
 {
 public:
 	TArray<struct FCachedRigElement>              RigVMModel___ParentConstraint_3_ChildCache;        // 0x0000(0x0010)(Edit)
@@ -724,6 +724,6 @@ public:
 	TArray<struct FPBIKWorkData>                  RigVMModel___PBIK_WorkData;                        // 0x0868(0x0010)(Edit)
 	class FName                                   RigVMModel___RigVMFunction_ControlFlowBranch_1_BlockToRun; // 0x0878(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_FPropertyBag_e89c71e1b1916f8a;
+DUMPER7_ASSERTS_FPropertyBag_e70df3393a1c8874;
 
 SDK_NAMESPACE_END

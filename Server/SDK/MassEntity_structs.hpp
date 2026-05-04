@@ -108,14 +108,14 @@ enum class EMassFragmentPresence : uint8
 	MAX                                      = 4,
 };
 
-// ScriptStruct MassEntity.MassSharedFragment
+// ScriptStruct MassEntity.MassFragment
 // 0x0000 (0x0000 - 0x0000)
 #pragma pack(push, 0x1)
-struct SDK_ALIGN(0x01) FMassSharedFragment
+struct SDK_ALIGN(0x01) FMassFragment
 {
 };
 #pragma pack(pop)
-DUMPER7_ASSERTS_FMassSharedFragment;
+DUMPER7_ASSERTS_FMassFragment;
 
 // ScriptStruct MassEntity.MassEntityHandle
 // 0x0008 (0x0008 - 0x0000)
@@ -135,15 +135,6 @@ public:
 	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FMassGenericDebugEvent;
-
-// ScriptStruct MassEntity.MassFragment
-// 0x0000 (0x0000 - 0x0000)
-#pragma pack(push, 0x1)
-struct SDK_ALIGN(0x01) FMassFragment
-{
-};
-#pragma pack(pop)
-DUMPER7_ASSERTS_FMassFragment;
 
 // ScriptStruct MassEntity.MassDebugLogFragment
 // 0x0008 (0x0008 - 0x0000)
@@ -171,6 +162,15 @@ struct SDK_ALIGN(0x01) FMassChunkFragment
 };
 #pragma pack(pop)
 DUMPER7_ASSERTS_FMassChunkFragment;
+
+// ScriptStruct MassEntity.MassSharedFragment
+// 0x0000 (0x0000 - 0x0000)
+#pragma pack(push, 0x1)
+struct SDK_ALIGN(0x01) FMassSharedFragment
+{
+};
+#pragma pack(pop)
+DUMPER7_ASSERTS_FMassSharedFragment;
 
 // ScriptStruct MassEntity.MassConstSharedFragment
 // 0x0000 (0x0000 - 0x0000)

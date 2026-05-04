@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "CommonInput_classes.hpp"
 #include "KiBLIICommonUI_structs.hpp"
+#include "CommonInput_classes.hpp"
 #include "InputCore_structs.hpp"
 #include "UMG_classes.hpp"
 

@@ -55,6 +55,24 @@ public:
 };
 DUMPER7_ASSERTS_ApplyScaleToBounds_C_ExecuteWithContext;
 
+// Function ApplyScaleToBounds.ApplyScaleToBounds_C.NodeColorOverride
+// 0x0010 (0x0010 - 0x0000)
+struct ApplyScaleToBounds_C_NodeColorOverride final
+{
+public:
+	struct FLinearColor                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_ApplyScaleToBounds_C_NodeColorOverride;
+
+// Function ApplyScaleToBounds.ApplyScaleToBounds_C.NodeTitleOverride
+// 0x0008 (0x0008 - 0x0000)
+struct ApplyScaleToBounds_C_NodeTitleOverride final
+{
+public:
+	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_ApplyScaleToBounds_C_NodeTitleOverride;
+
 // Function ApplyScaleToBounds.ApplyScaleToBounds_C.PointLoopBody
 // 0x04F0 (0x04F0 - 0x0000)
 struct ApplyScaleToBounds_C_PointLoopBody final
@@ -76,24 +94,6 @@ public:
 	struct FVector                                CallFunc_Multiply_VectorVector_ReturnValue_1;      // 0x04D8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_ApplyScaleToBounds_C_PointLoopBody;
-
-// Function ApplyScaleToBounds.ApplyScaleToBounds_C.NodeTitleOverride
-// 0x0008 (0x0008 - 0x0000)
-struct ApplyScaleToBounds_C_NodeTitleOverride final
-{
-public:
-	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_ApplyScaleToBounds_C_NodeTitleOverride;
-
-// Function ApplyScaleToBounds.ApplyScaleToBounds_C.NodeColorOverride
-// 0x0010 (0x0010 - 0x0000)
-struct ApplyScaleToBounds_C_NodeColorOverride final
-{
-public:
-	struct FLinearColor                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_ApplyScaleToBounds_C_NodeColorOverride;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

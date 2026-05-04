@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "BP_Sulphur_Logic_classes.hpp"
 #include "Engine_structs.hpp"
+#include "BP_Sulphur_Logic_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -25,9 +25,9 @@ public:
 	class UGEBoxComponent*                        GEBox;                                             // 0x02F8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveBeginPlay();
-	void OnSulphurActivityChanged(bool bActive);
 	void ExecuteUbergraph_BP_Sulphur_Logic_Large_AbandonedBase(int32 EntryPoint);
+	void OnSulphurActivityChanged(bool bActive);
+	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

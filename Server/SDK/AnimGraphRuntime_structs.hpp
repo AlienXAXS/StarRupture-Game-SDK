@@ -421,6 +421,15 @@ public:
 };
 DUMPER7_ASSERTS_FAnimPhysBodyDefinition;
 
+// ScriptStruct AnimGraphRuntime.AnimLegIKData
+// 0x00F0 (0x00F0 - 0x0000)
+struct alignas(0x10) FAnimLegIKData final
+{
+public:
+	uint8                                         Pad_0[0xF0];                                       // 0x0000(0x00F0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAnimLegIKData;
+
 // ScriptStruct AnimGraphRuntime.AnimNode_MeshSpaceRefPose
 // 0x0000 (0x0010 - 0x0010)
 struct FAnimNode_MeshSpaceRefPose final : public FAnimNode_Base
@@ -505,15 +514,6 @@ struct FAnimNode_BlendSpaceGraph final : public FAnimNode_BlendSpaceGraphBase
 };
 DUMPER7_ASSERTS_FAnimNode_BlendSpaceGraph;
 
-// ScriptStruct AnimGraphRuntime.IKChainLink
-// 0x0070 (0x0070 - 0x0000)
-struct alignas(0x08) FIKChainLink final
-{
-public:
-	uint8                                         Pad_0[0x70];                                       // 0x0000(0x0070)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FIKChainLink;
-
 // ScriptStruct AnimGraphRuntime.AnimNode_SkeletalControlBase
 // 0x00B8 (0x00C8 - 0x0010)
 struct FAnimNode_SkeletalControlBase : public FAnimNode_Base
@@ -584,6 +584,13 @@ public:
 };
 DUMPER7_ASSERTS_FAnimNode_Sync;
 
+// ScriptStruct AnimGraphRuntime.SkeletalControlReference
+// 0x0000 (0x0010 - 0x0010)
+struct FSkeletalControlReference final : public FAnimNodeReference
+{
+};
+DUMPER7_ASSERTS_FSkeletalControlReference;
+
 // ScriptStruct AnimGraphRuntime.AnimPhysSphericalLimit
 // 0x0030 (0x0030 - 0x0000)
 struct FAnimPhysSphericalLimit final
@@ -636,31 +643,21 @@ public:
 };
 DUMPER7_ASSERTS_FAnimNode_RotationMultiplier;
 
+// ScriptStruct AnimGraphRuntime.AnimNode_ResetRoot
+// 0x0010 (0x00D8 - 0x00C8)
+struct FAnimNode_ResetRoot final : public FAnimNode_SkeletalControlBase
+{
+public:
+	uint8                                         Pad_C8[0x10];                                      // 0x00C8(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAnimNode_ResetRoot;
+
 // ScriptStruct AnimGraphRuntime.BlendSpaceReference
 // 0x0000 (0x0010 - 0x0010)
 struct FBlendSpaceReference final : public FAnimNodeReference
 {
 };
 DUMPER7_ASSERTS_FBlendSpaceReference;
-
-// ScriptStruct AnimGraphRuntime.SimSpaceSettings
-// 0x0068 (0x0068 - 0x0000)
-struct FSimSpaceSettings final
-{
-public:
-	float                                         WorldAlpha;                                        // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         VelocityScaleZ;                                    // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DampingAlpha;                                      // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxLinearVelocity;                                 // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxAngularVelocity;                                // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxLinearAcceleration;                             // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxAngularAcceleration;                            // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                ExternalLinearDragV;                               // 0x0020(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ExternalLinearVelocity;                            // 0x0038(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ExternalAngularVelocity;                           // 0x0050(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSimSpaceSettings;
 
 // ScriptStruct AnimGraphRuntime.RotationRetargetingInfo
 // 0x01A0 (0x01A0 - 0x0000)
@@ -1127,6 +1124,13 @@ public:
 };
 DUMPER7_ASSERTS_FRandomPlayerSequenceEntry;
 
+// ScriptStruct AnimGraphRuntime.LayeredBoneBlendReference
+// 0x0000 (0x0010 - 0x0010)
+struct FLayeredBoneBlendReference final : public FAnimNodeReference
+{
+};
+DUMPER7_ASSERTS_FLayeredBoneBlendReference;
+
 // ScriptStruct AnimGraphRuntime.AnimNode_RandomPlayer
 // 0x0068 (0x0078 - 0x0010)
 struct FAnimNode_RandomPlayer final : public FAnimNode_AssetPlayerRelevancyBase
@@ -1139,13 +1143,6 @@ public:
 	uint8                                         Pad_75[0x3];                                       // 0x0075(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FAnimNode_RandomPlayer;
-
-// ScriptStruct AnimGraphRuntime.LinkedAnimGraphReference
-// 0x0000 (0x0010 - 0x0010)
-struct FLinkedAnimGraphReference final : public FAnimNodeReference
-{
-};
-DUMPER7_ASSERTS_FLinkedAnimGraphReference;
 
 // ScriptStruct AnimGraphRuntime.AnimNode_RotateRootBone
 // 0x00A0 (0x00B0 - 0x0010)
@@ -1465,6 +1462,15 @@ public:
 };
 DUMPER7_ASSERTS_FAnimNode_HandIKRetargeting;
 
+// ScriptStruct AnimGraphRuntime.IKChainLink
+// 0x0070 (0x0070 - 0x0000)
+struct alignas(0x08) FIKChainLink final
+{
+public:
+	uint8                                         Pad_0[0x70];                                       // 0x0000(0x0070)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FIKChainLink;
+
 // ScriptStruct AnimGraphRuntime.IKChain
 // 0x0050 (0x0050 - 0x0000)
 struct alignas(0x08) FIKChain final
@@ -1490,15 +1496,6 @@ public:
 	class FName                                   TwistOffsetCurveName;                              // 0x002C(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FAnimLegIKDefinition;
-
-// ScriptStruct AnimGraphRuntime.AnimLegIKData
-// 0x00F0 (0x00F0 - 0x0000)
-struct alignas(0x10) FAnimLegIKData final
-{
-public:
-	uint8                                         Pad_0[0xF0];                                       // 0x0000(0x00F0)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAnimLegIKData;
 
 // ScriptStruct AnimGraphRuntime.AnimNode_LegIK
 // 0x0038 (0x0100 - 0x00C8)
@@ -1550,14 +1547,24 @@ public:
 };
 DUMPER7_ASSERTS_FAnimNode_ObserveBone;
 
-// ScriptStruct AnimGraphRuntime.AnimNode_ResetRoot
-// 0x0010 (0x00D8 - 0x00C8)
-struct FAnimNode_ResetRoot final : public FAnimNode_SkeletalControlBase
+// ScriptStruct AnimGraphRuntime.SimSpaceSettings
+// 0x0068 (0x0068 - 0x0000)
+struct FSimSpaceSettings final
 {
 public:
-	uint8                                         Pad_C8[0x10];                                      // 0x00C8(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         WorldAlpha;                                        // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         VelocityScaleZ;                                    // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DampingAlpha;                                      // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxLinearVelocity;                                 // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxAngularVelocity;                                // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxLinearAcceleration;                             // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxAngularAcceleration;                            // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                ExternalLinearDragV;                               // 0x0020(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ExternalLinearVelocity;                            // 0x0038(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ExternalAngularVelocity;                           // 0x0050(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FAnimNode_ResetRoot;
+DUMPER7_ASSERTS_FSimSpaceSettings;
 
 // ScriptStruct AnimGraphRuntime.AnimNode_RigidBody
 // 0x0868 (0x0930 - 0x00C8)
@@ -1789,12 +1796,12 @@ public:
 };
 DUMPER7_ASSERTS_FWarpingVectorValue;
 
-// ScriptStruct AnimGraphRuntime.LayeredBoneBlendReference
+// ScriptStruct AnimGraphRuntime.LinkedAnimGraphReference
 // 0x0000 (0x0010 - 0x0010)
-struct FLayeredBoneBlendReference final : public FAnimNodeReference
+struct FLinkedAnimGraphReference final : public FAnimNodeReference
 {
 };
-DUMPER7_ASSERTS_FLayeredBoneBlendReference;
+DUMPER7_ASSERTS_FLinkedAnimGraphReference;
 
 // ScriptStruct AnimGraphRuntime.MirrorAnimNodeReference
 // 0x0000 (0x0010 - 0x0010)
@@ -1847,12 +1854,5 @@ struct FSequencePlayerReference final : public FAnimNodeReference
 {
 };
 DUMPER7_ASSERTS_FSequencePlayerReference;
-
-// ScriptStruct AnimGraphRuntime.SkeletalControlReference
-// 0x0000 (0x0010 - 0x0010)
-struct FSkeletalControlReference final : public FAnimNodeReference
-{
-};
-DUMPER7_ASSERTS_FSkeletalControlReference;
 
 SDK_NAMESPACE_END

@@ -16,66 +16,23 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_ResourceRedistributor.BP_ResourceRedistributor_C.UpdateItemCount
-// (Event, Public, BlueprintEvent)
+// Function BP_ResourceRedistributor.BP_ResourceRedistributor_C.ExecuteUbergraph_BP_ResourceRedistributor
+// (Final, UbergraphFunction)
 // Parameters:
-// int32                                   Count                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   MaxCount                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ResourceRedistributor_C::UpdateItemCount(int32 Count, int32 MaxCount)
+void ABP_ResourceRedistributor_C::ExecuteUbergraph_BP_ResourceRedistributor(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ResourceRedistributor_C", "UpdateItemCount");
+		Func = Class->GetFunction("BP_ResourceRedistributor_C", "ExecuteUbergraph_BP_ResourceRedistributor");
 
-	Params::BP_ResourceRedistributor_C_UpdateItemCount Parms{};
+	Params::BP_ResourceRedistributor_C_ExecuteUbergraph_BP_ResourceRedistributor Parms{};
 
-	Parms.Count = Count;
-	Parms.MaxCount = MaxCount;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_ResourceRedistributor.BP_ResourceRedistributor_C.UpdateFilter
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// const class UAuItemDataBase*            ItemFilter                                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void ABP_ResourceRedistributor_C::UpdateFilter(const class UAuItemDataBase* ItemFilter)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ResourceRedistributor_C", "UpdateFilter");
-
-	Params::BP_ResourceRedistributor_C_UpdateFilter Parms{};
-
-	Parms.ItemFilter = ItemFilter;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_ResourceRedistributor.BP_ResourceRedistributor_C.GetMaterialInstanceIcon
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UMaterialInstanceDynamic**        MaterialInstance                                       (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void ABP_ResourceRedistributor_C::GetMaterialInstanceIcon(class UMaterialInstanceDynamic** MaterialInstance)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ResourceRedistributor_C", "GetMaterialInstanceIcon");
-
-	Params::BP_ResourceRedistributor_C_GetMaterialInstanceIcon Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (MaterialInstance != nullptr)
-		*MaterialInstance = Parms.MaterialInstance;
 }
 
 
@@ -100,21 +57,64 @@ void ABP_ResourceRedistributor_C::GetMaterialInstance(class UMaterialInstanceDyn
 }
 
 
-// Function BP_ResourceRedistributor.BP_ResourceRedistributor_C.ExecuteUbergraph_BP_ResourceRedistributor
-// (Final, UbergraphFunction)
+// Function BP_ResourceRedistributor.BP_ResourceRedistributor_C.GetMaterialInstanceIcon
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UMaterialInstanceDynamic**        MaterialInstance                                       (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ResourceRedistributor_C::ExecuteUbergraph_BP_ResourceRedistributor(int32 EntryPoint)
+void ABP_ResourceRedistributor_C::GetMaterialInstanceIcon(class UMaterialInstanceDynamic** MaterialInstance)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ResourceRedistributor_C", "ExecuteUbergraph_BP_ResourceRedistributor");
+		Func = Class->GetFunction("BP_ResourceRedistributor_C", "GetMaterialInstanceIcon");
 
-	Params::BP_ResourceRedistributor_C_ExecuteUbergraph_BP_ResourceRedistributor Parms{};
+	Params::BP_ResourceRedistributor_C_GetMaterialInstanceIcon Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (MaterialInstance != nullptr)
+		*MaterialInstance = Parms.MaterialInstance;
+}
+
+
+// Function BP_ResourceRedistributor.BP_ResourceRedistributor_C.UpdateFilter
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// const class UAuItemDataBase*            ItemFilter                                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void ABP_ResourceRedistributor_C::UpdateFilter(const class UAuItemDataBase* ItemFilter)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ResourceRedistributor_C", "UpdateFilter");
+
+	Params::BP_ResourceRedistributor_C_UpdateFilter Parms{};
+
+	Parms.ItemFilter = ItemFilter;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_ResourceRedistributor.BP_ResourceRedistributor_C.UpdateItemCount
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   Count                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   MaxCount                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_ResourceRedistributor_C::UpdateItemCount(int32 Count, int32 MaxCount)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ResourceRedistributor_C", "UpdateItemCount");
+
+	Params::BP_ResourceRedistributor_C_UpdateItemCount Parms{};
+
+	Parms.Count = Count;
+	Parms.MaxCount = MaxCount;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

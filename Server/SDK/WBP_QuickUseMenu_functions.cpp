@@ -16,17 +16,23 @@
 
 SDK_NAMESPACE_START
 
-// Function WBP_QuickUseMenu.WBP_QuickUseMenu_C.OnMenuOpened
-// (Event, Public, BlueprintEvent)
+// Function WBP_QuickUseMenu.WBP_QuickUseMenu_C.ExecuteUbergraph_WBP_QuickUseMenu
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_QuickUseMenu_C::OnMenuOpened()
+void UWBP_QuickUseMenu_C::ExecuteUbergraph_WBP_QuickUseMenu(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_QuickUseMenu_C", "OnMenuOpened");
+		Func = Class->GetFunction("WBP_QuickUseMenu_C", "ExecuteUbergraph_WBP_QuickUseMenu");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::WBP_QuickUseMenu_C_ExecuteUbergraph_WBP_QuickUseMenu Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -54,23 +60,17 @@ void UWBP_QuickUseMenu_C::OnCurrentEntryIndexChange(int32 Index_0, int32 NumberO
 }
 
 
-// Function WBP_QuickUseMenu.WBP_QuickUseMenu_C.ExecuteUbergraph_WBP_QuickUseMenu
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function WBP_QuickUseMenu.WBP_QuickUseMenu_C.OnMenuOpened
+// (Event, Public, BlueprintEvent)
 
-void UWBP_QuickUseMenu_C::ExecuteUbergraph_WBP_QuickUseMenu(int32 EntryPoint)
+void UWBP_QuickUseMenu_C::OnMenuOpened()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_QuickUseMenu_C", "ExecuteUbergraph_WBP_QuickUseMenu");
+		Func = Class->GetFunction("WBP_QuickUseMenu_C", "OnMenuOpened");
 
-	Params::WBP_QuickUseMenu_C_ExecuteUbergraph_WBP_QuickUseMenu Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

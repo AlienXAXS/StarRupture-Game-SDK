@@ -34,14 +34,14 @@ public:
 	struct FColor                                 ArrowsColor;                                       // 0x09D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UserConstructionScript();
-	void SetSplineSegment(class USplineMeshComponent* SplineMeshComponent, int32 FirstPointIndex, int32 SecondPointIndex);
-	void SetMeshColor(const struct FLinearColor& Color);
-	void ReceiveTick(float DeltaSeconds);
-	void OnSetReplacingExistingActor(bool bSet);
-	void OnConfirmedPoint(const struct FAuAPConfirmPointData& NewPoint);
-	void ExecuteUbergraph_BP_DroneRailHelperT1(int32 EntryPoint);
 	void BP_OnCollisionHitsChanged();
+	void ExecuteUbergraph_BP_DroneRailHelperT1(int32 EntryPoint);
+	void OnConfirmedPoint(const struct FAuAPConfirmPointData& NewPoint);
+	void OnSetReplacingExistingActor(bool bSet);
+	void ReceiveTick(float DeltaSeconds);
+	void SetMeshColor(const struct FLinearColor& Color);
+	void SetSplineSegment(class USplineMeshComponent* SplineMeshComponent, int32 FirstPointIndex, int32 SecondPointIndex);
+	void UserConstructionScript();
 
 public:
 	static class UClass* StaticClass()

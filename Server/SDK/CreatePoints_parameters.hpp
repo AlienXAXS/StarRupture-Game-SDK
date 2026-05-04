@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "PCGPointCreationMethod_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "PCG_structs.hpp"
-#include "PCGPointCreationMethod_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -82,23 +82,15 @@ public:
 };
 DUMPER7_ASSERTS_CreatePoints_C_ExecuteWithContext;
 
-// Function CreatePoints.CreatePoints_C.NodeTitleOverride
-// 0x0008 (0x0008 - 0x0000)
-struct CreatePoints_C_NodeTitleOverride final
+// Function CreatePoints.CreatePoints_C.IsCacheableOverride
+// 0x0002 (0x0002 - 0x0000)
+struct CreatePoints_C_IsCacheableOverride final
 {
 public:
-	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_CreatePoints_C_NodeTitleOverride;
-
-// Function CreatePoints.CreatePoints_C.NodeColorOverride
-// 0x0010 (0x0010 - 0x0000)
-struct CreatePoints_C_NodeColorOverride final
-{
-public:
-	struct FLinearColor                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_CreatePoints_C_NodeColorOverride;
+DUMPER7_ASSERTS_CreatePoints_C_IsCacheableOverride;
 
 // Function CreatePoints.CreatePoints_C.IterationLoopBody
 // 0x0BE0 (0x0BE0 - 0x0000)
@@ -186,15 +178,23 @@ public:
 };
 DUMPER7_ASSERTS_CreatePoints_C_IterationLoopBody;
 
-// Function CreatePoints.CreatePoints_C.IsCacheableOverride
-// 0x0002 (0x0002 - 0x0000)
-struct CreatePoints_C_IsCacheableOverride final
+// Function CreatePoints.CreatePoints_C.NodeColorOverride
+// 0x0010 (0x0010 - 0x0000)
+struct CreatePoints_C_NodeColorOverride final
 {
 public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_CreatePoints_C_IsCacheableOverride;
+DUMPER7_ASSERTS_CreatePoints_C_NodeColorOverride;
+
+// Function CreatePoints.CreatePoints_C.NodeTitleOverride
+// 0x0008 (0x0008 - 0x0000)
+struct CreatePoints_C_NodeTitleOverride final
+{
+public:
+	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_CreatePoints_C_NodeTitleOverride;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

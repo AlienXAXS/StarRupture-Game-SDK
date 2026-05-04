@@ -16,35 +16,21 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Airlock_StartingHUB.BP_Airlock_StartingHUB_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Airlock_StartingHUB_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_StartingHUB_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Airlock_StartingHUB.BP_Airlock_StartingHUB_C.PostPlayBuildingEffect
-// (Event, Public, BlueprintEvent)
+// Function BP_Airlock_StartingHUB.BP_Airlock_StartingHUB_C.ExecuteUbergraph_BP_Airlock_StartingHUB
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// bool                                    bWasBuildingEffectPlayed                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Airlock_StartingHUB_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
+void ABP_Airlock_StartingHUB_C::ExecuteUbergraph_BP_Airlock_StartingHUB(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_StartingHUB_C", "PostPlayBuildingEffect");
+		Func = Class->GetFunction("BP_Airlock_StartingHUB_C", "ExecuteUbergraph_BP_Airlock_StartingHUB");
 
-	Params::BP_Airlock_StartingHUB_C_PostPlayBuildingEffect Parms{};
+	Params::BP_Airlock_StartingHUB_C_ExecuteUbergraph_BP_Airlock_StartingHUB Parms{};
 
-	Parms.bWasBuildingEffectPlayed = bWasBuildingEffectPlayed;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -70,23 +56,37 @@ void ABP_Airlock_StartingHUB_C::OnOpenStateChanged(bool bInOpen)
 }
 
 
-// Function BP_Airlock_StartingHUB.BP_Airlock_StartingHUB_C.ExecuteUbergraph_BP_Airlock_StartingHUB
-// (Final, UbergraphFunction, HasDefaults)
+// Function BP_Airlock_StartingHUB.BP_Airlock_StartingHUB_C.PostPlayBuildingEffect
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bWasBuildingEffectPlayed                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Airlock_StartingHUB_C::ExecuteUbergraph_BP_Airlock_StartingHUB(int32 EntryPoint)
+void ABP_Airlock_StartingHUB_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_StartingHUB_C", "ExecuteUbergraph_BP_Airlock_StartingHUB");
+		Func = Class->GetFunction("BP_Airlock_StartingHUB_C", "PostPlayBuildingEffect");
 
-	Params::BP_Airlock_StartingHUB_C_ExecuteUbergraph_BP_Airlock_StartingHUB Parms{};
+	Params::BP_Airlock_StartingHUB_C_PostPlayBuildingEffect Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.bWasBuildingEffectPlayed = bWasBuildingEffectPlayed;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Airlock_StartingHUB.BP_Airlock_StartingHUB_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Airlock_StartingHUB_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Airlock_StartingHUB_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

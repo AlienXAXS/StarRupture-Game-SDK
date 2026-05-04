@@ -506,28 +506,6 @@ enum class ESoundToPlay : uint8
 	SoundToPlay_MAX                          = 5,
 };
 
-// ScriptStruct ChimeraUI.CrCorporationContentForUI
-// 0x00D0 (0x00D0 - 0x0000)
-struct FCrCorporationContentForUI final
-{
-public:
-	struct FSlateBrush                            CorporationIcon;                                   // 0x0000(0x00B0)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	class FText                                   CorporationName;                                   // 0x00B0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	int32                                         NextLevel;                                         // 0x00C0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LevelProgress;                                     // 0x00C4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C8[0x8];                                       // 0x00C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrCorporationContentForUI;
-
-// ScriptStruct ChimeraUI.FoodActiveEffect
-// 0x00F0 (0x00F0 - 0x0000)
-struct alignas(0x10) FFoodActiveEffect final
-{
-public:
-	uint8                                         Pad_0[0xF0];                                       // 0x0000(0x00F0)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FFoodActiveEffect;
-
 // ScriptStruct ChimeraUI.CrTabDescriptor
 // 0x00F0 (0x00F0 - 0x0000)
 struct FCrTabDescriptor final
@@ -556,6 +534,18 @@ public:
 };
 DUMPER7_ASSERTS_FCrWidgetData;
 
+// ScriptStruct ChimeraUI.CrStatusIconData
+// 0x00C0 (0x00C0 - 0x0000)
+struct FCrStatusIconData final
+{
+public:
+	struct FGameplayTag                           StatusTag;                                         // 0x0000(0x0008)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Priority;                                          // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            StatusIcon;                                        // 0x0010(0x00B0)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrStatusIconData;
+
 // ScriptStruct ChimeraUI.CrCraftingRecipeContentForUI
 // 0x00D0 (0x00D0 - 0x0000)
 struct FCrCraftingRecipeContentForUI final
@@ -568,17 +558,28 @@ public:
 };
 DUMPER7_ASSERTS_FCrCraftingRecipeContentForUI;
 
-// ScriptStruct ChimeraUI.CrStatusIconData
-// 0x00C0 (0x00C0 - 0x0000)
-struct FCrStatusIconData final
+// ScriptStruct ChimeraUI.CrTerrainMipMapByZoomValueData
+// 0x0008 (0x0008 - 0x0000)
+struct FCrTerrainMipMapByZoomValueData final
 {
 public:
-	struct FGameplayTag                           StatusTag;                                         // 0x0000(0x0008)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Priority;                                          // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            StatusIcon;                                        // 0x0010(0x00B0)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	float                                         MaximalZoomValue;                                  // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MipMap;                                            // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrStatusIconData;
+DUMPER7_ASSERTS_FCrTerrainMipMapByZoomValueData;
+
+// ScriptStruct ChimeraUI.CrCorporationContentForUI
+// 0x00D0 (0x00D0 - 0x0000)
+struct FCrCorporationContentForUI final
+{
+public:
+	struct FSlateBrush                            CorporationIcon;                                   // 0x0000(0x00B0)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	class FText                                   CorporationName;                                   // 0x00B0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	int32                                         NextLevel;                                         // 0x00C0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LevelProgress;                                     // 0x00C4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C8[0x8];                                       // 0x00C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrCorporationContentForUI;
 
 // ScriptStruct ChimeraUI.CrMarkerFilterApperance
 // 0x0120 (0x0120 - 0x0000)
@@ -608,16 +609,6 @@ public:
 	struct FSlateBrush                            TerrainSegmentTextureRadiation2;                   // 0x00C0(0x00B0)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCrTerrainSegmentData;
-
-// ScriptStruct ChimeraUI.CrTerrainMipMapByZoomValueData
-// 0x0008 (0x0008 - 0x0000)
-struct FCrTerrainMipMapByZoomValueData final
-{
-public:
-	float                                         MaximalZoomValue;                                  // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MipMap;                                            // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrTerrainMipMapByZoomValueData;
 
 // ScriptStruct ChimeraUI.CrAlienObeliskWarningTickFunction
 // 0x0008 (0x0030 - 0x0028)
@@ -704,6 +695,15 @@ public:
 	class FText                                   Description;                                       // 0x00D0(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FFoodEffectData;
+
+// ScriptStruct ChimeraUI.FoodActiveEffect
+// 0x00F0 (0x00F0 - 0x0000)
+struct alignas(0x10) FFoodActiveEffect final
+{
+public:
+	uint8                                         Pad_0[0xF0];                                       // 0x0000(0x00F0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FFoodActiveEffect;
 
 // ScriptStruct ChimeraUI.CrHitReactionData
 // 0x0010 (0x0010 - 0x0000)

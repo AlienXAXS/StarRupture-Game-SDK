@@ -14,15 +14,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_SolarPowerGeneratorTier2.BP_SolarPowerGeneratorTier2_C.PostPlayBuildingEffect
-// 0x0001 (0x0001 - 0x0000)
-struct BP_SolarPowerGeneratorTier2_C_PostPlayBuildingEffect final
-{
-public:
-	bool                                          bWasBuildingEffectPlayed;                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_SolarPowerGeneratorTier2_C_PostPlayBuildingEffect;
-
 // Function BP_SolarPowerGeneratorTier2.BP_SolarPowerGeneratorTier2_C.ExecuteUbergraph_BP_SolarPowerGeneratorTier2
 // 0x00B0 (0x00B0 - 0x0000)
 struct BP_SolarPowerGeneratorTier2_C_ExecuteUbergraph_BP_SolarPowerGeneratorTier2 final
@@ -58,6 +49,15 @@ public:
 	bool                                          CallFunc_Contains_ReturnValue;                     // 0x00A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_SolarPowerGeneratorTier2_C_ExecuteUbergraph_BP_SolarPowerGeneratorTier2;
+
+// Function BP_SolarPowerGeneratorTier2.BP_SolarPowerGeneratorTier2_C.PostPlayBuildingEffect
+// 0x0001 (0x0001 - 0x0000)
+struct BP_SolarPowerGeneratorTier2_C_PostPlayBuildingEffect final
+{
+public:
+	bool                                          bWasBuildingEffectPlayed;                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_SolarPowerGeneratorTier2_C_PostPlayBuildingEffect;
 
 // Function BP_SolarPowerGeneratorTier2.BP_SolarPowerGeneratorTier2_C.Get Meshes
 // 0x00B0 (0x00B0 - 0x0000)

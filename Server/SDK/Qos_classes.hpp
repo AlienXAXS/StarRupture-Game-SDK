@@ -12,8 +12,8 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "OnlineSubsystemUtils_classes.hpp"
 #include "Qos_structs.hpp"
+#include "OnlineSubsystemUtils_classes.hpp"
 
 
 SDK_NAMESPACE_START

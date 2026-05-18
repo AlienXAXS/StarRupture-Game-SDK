@@ -10,7 +10,6 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
 #include "Chimera_structs.hpp"
@@ -18,6 +17,7 @@
 #include "AuActorPlacement_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "MassEntity_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -806,16 +806,6 @@ public:
 };
 DUMPER7_ASSERTS_DonutVisualizationActor_UpdateFallingTrails;
 
-// Function MassAIPrototypeEnemyRuntime.MassEnemyFXEventSubsystem.RegisterEvent
-// 0x0010 (0x0010 - 0x0000)
-struct MassEnemyFXEventSubsystem_RegisterEvent final
-{
-public:
-	const class AMassEnemyCharacterBase*          Character;                                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           EventTag;                                          // 0x0008(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MassEnemyFXEventSubsystem_RegisterEvent;
-
 // Function MassAIPrototypeEnemyRuntime.BaseSiteAttackSubsystem.OnBaseCoreInfected
 // 0x0008 (0x0008 - 0x0000)
 struct BaseSiteAttackSubsystem_OnBaseCoreInfected final
@@ -879,6 +869,24 @@ public:
 };
 DUMPER7_ASSERTS_BaseSiteAttackSubsystem_OnWaveStarted;
 
+// Function MassAIPrototypeEnemyRuntime.NavLinkGeneratorBox.QueuePcgGeneration
+// 0x0008 (0x0008 - 0x0000)
+struct NavLinkGeneratorBox_QueuePcgGeneration final
+{
+public:
+	struct FIntPoint                              Request;                                           // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NavLinkGeneratorBox_QueuePcgGeneration;
+
+// Function MassAIPrototypeEnemyRuntime.NavLinkGeneratorBox.IsGenerating
+// 0x0001 (0x0001 - 0x0000)
+struct NavLinkGeneratorBox_IsGenerating final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NavLinkGeneratorBox_IsGenerating;
+
 // Function MassAIPrototypeEnemyRuntime.CrAiActionAttack.Create_CrAiActionAttack
 // 0x0058 (0x0058 - 0x0000)
 struct CrAiActionAttack_Create_CrAiActionAttack final
@@ -902,24 +910,6 @@ public:
 	class UCrAiActionAttack*                      ReturnValue;                                       // 0x0050(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrAiActionAttack_Create_CrAiActionAttack;
-
-// Function MassAIPrototypeEnemyRuntime.NavLinkGeneratorBox.QueuePcgGeneration
-// 0x0008 (0x0008 - 0x0000)
-struct NavLinkGeneratorBox_QueuePcgGeneration final
-{
-public:
-	struct FIntPoint                              Request;                                           // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NavLinkGeneratorBox_QueuePcgGeneration;
-
-// Function MassAIPrototypeEnemyRuntime.NavLinkGeneratorBox.IsGenerating
-// 0x0001 (0x0001 - 0x0000)
-struct NavLinkGeneratorBox_IsGenerating final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NavLinkGeneratorBox_IsGenerating;
 
 // Function MassAIPrototypeEnemyRuntime.CrAiActionDealAoeDamage.Create_CrAiDealAoeDamage
 // 0x0060 (0x0060 - 0x0000)
@@ -2332,6 +2322,16 @@ public:
 	class ACrAIBase*                              SpawnedAiActor;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MassEnemyEventQueueSubsystem_NotifyAiSpawn;
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyFXEventSubsystem.RegisterEvent
+// 0x0010 (0x0010 - 0x0000)
+struct MassEnemyFXEventSubsystem_RegisterEvent final
+{
+public:
+	const class AMassEnemyCharacterBase*          Character;                                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           EventTag;                                          // 0x0008(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MassEnemyFXEventSubsystem_RegisterEvent;
 
 // Function MassAIPrototypeEnemyRuntime.MassEnemyPooledActorComponentInterface.OnPooledOwnerActivityChanged
 // 0x0001 (0x0001 - 0x0000)

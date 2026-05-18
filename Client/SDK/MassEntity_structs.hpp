@@ -108,16 +108,23 @@ enum class EMassFragmentPresence : uint8
 	MAX                                      = 4,
 };
 
-// ScriptStruct MassEntity.MassProcessingPhaseConfig
-// 0x0020 (0x0020 - 0x0000)
-struct FMassProcessingPhaseConfig final
+// ScriptStruct MassEntity.MassFragment
+// 0x0000 (0x0000 - 0x0000)
+#pragma pack(push, 0x1)
+struct SDK_ALIGN(0x01) FMassFragment
+{
+};
+#pragma pack(pop)
+DUMPER7_ASSERTS_FMassFragment;
+
+// ScriptStruct MassEntity.MassDebugLogFragment
+// 0x0008 (0x0008 - 0x0000)
+struct FMassDebugLogFragment final : public FMassFragment
 {
 public:
-	class FName                                   PhaseName;                                         // 0x0000(0x0008)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UMassCompositeProcessor>    PhaseGroupClass;                                   // 0x0008(0x0008)(Edit, ZeroConstructor, Config, NoClear, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class UMassProcessor*>                 ProcessorCDOs;                                     // 0x0010(0x0010)(ZeroConstructor, Transient, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	TWeakObjectPtr<class UObject>                 LogOwner;                                          // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FMassProcessingPhaseConfig;
+DUMPER7_ASSERTS_FMassDebugLogFragment;
 
 // ScriptStruct MassEntity.MassEntityHandle
 // 0x0008 (0x0008 - 0x0000)
@@ -137,24 +144,6 @@ public:
 	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FMassGenericDebugEvent;
-
-// ScriptStruct MassEntity.MassFragment
-// 0x0000 (0x0000 - 0x0000)
-#pragma pack(push, 0x1)
-struct SDK_ALIGN(0x01) FMassFragment
-{
-};
-#pragma pack(pop)
-DUMPER7_ASSERTS_FMassFragment;
-
-// ScriptStruct MassEntity.MassDebugLogFragment
-// 0x0008 (0x0008 - 0x0000)
-struct FMassDebugLogFragment final : public FMassFragment
-{
-public:
-	TWeakObjectPtr<class UObject>                 LogOwner;                                          // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMassDebugLogFragment;
 
 // ScriptStruct MassEntity.MassTag
 // 0x0001 (0x0001 - 0x0000)
@@ -267,6 +256,17 @@ public:
 	TMap<class UScriptStruct*, struct FMassProcessorClassCollection> Container;                      // 0x0000(0x0050)(NativeAccessSpecifierPrivate)
 };
 DUMPER7_ASSERTS_FMassEntityObserverClassesMap;
+
+// ScriptStruct MassEntity.MassProcessingPhaseConfig
+// 0x0020 (0x0020 - 0x0000)
+struct FMassProcessingPhaseConfig final
+{
+public:
+	class FName                                   PhaseName;                                         // 0x0000(0x0008)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UMassCompositeProcessor>    PhaseGroupClass;                                   // 0x0008(0x0008)(Edit, ZeroConstructor, Config, NoClear, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class UMassProcessor*>                 ProcessorCDOs;                                     // 0x0010(0x0010)(ZeroConstructor, Transient, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FMassProcessingPhaseConfig;
 
 // ScriptStruct MassEntity.ProcessorAuxDataBase
 // 0x0001 (0x0001 - 0x0000)

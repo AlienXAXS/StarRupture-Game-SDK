@@ -22,64 +22,70 @@
 
 SDK_NAMESPACE_START
 
-// Class ModelingComponents.ToolActivityHost
-// 0x0000 (0x0000 - 0x0000)
-class IToolActivityHost final
+// Class ModelingComponents.GeometrySelectionVisualizationProperties
+// 0x0060 (0x0110 - 0x00B0)
+class UGeometrySelectionVisualizationProperties final : public UInteractiveToolPropertySet
 {
 public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("ToolActivityHost")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"ToolActivityHost")
-	}
-	static class IToolActivityHost* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IToolActivityHost>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IToolActivityHost;
-
-// Class ModelingComponents.UVLayoutPreviewProperties
-// 0x0028 (0x00D8 - 0x00B0)
-class UUVLayoutPreviewProperties final : public UInteractiveToolPropertySet
-{
-public:
-	bool                                          bEnabled;                                          // 0x00B0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B1[0x3];                                       // 0x00B1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	EUVLayoutPreviewSide                          Side;                                              // 0x00B4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Scale;                                             // 0x00B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_BC[0x4];                                       // 0x00BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2D                              Offset;                                            // 0x00C0(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShowWireframe;                                    // 0x00D0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D1[0x7];                                       // 0x00D1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bEnableShowTriangleROIBorder;                      // 0x00B0(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableShowEdgeSelectionVertices;                  // 0x00B1(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGeometrySelectionElementType                 SelectionElementType;                              // 0x00B2(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGeometrySelectionTopologyType                SelectionTopologyType;                             // 0x00B3(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowSelection;                                    // 0x00B4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowTriangleROIBorder;                            // 0x00B5(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowHidden;                                       // 0x00B6(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowEdgeSelectionVertices;                        // 0x00B7(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LineThickness;                                     // 0x00B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PointSize;                                         // 0x00BC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DepthBias;                                         // 0x00C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FColor                                 FaceColor;                                         // 0x00C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FColor                                 LineColor;                                         // 0x00C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FColor                                 PointColor;                                        // 0x00CC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FColor                                 TriangleROIBorderColor;                            // 0x00D0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D4[0x4];                                       // 0x00D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInterface*                     TriangleMaterial;                                  // 0x00D8(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UMaterialInterface*                     LineMaterial;                                      // 0x00E0(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UMaterialInterface*                     PointMaterial;                                     // 0x00E8(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UMaterialInterface*                     TriangleMaterialShowingHidden;                     // 0x00F0(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UMaterialInterface*                     LineMaterialShowingHidden;                         // 0x00F8(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UMaterialInterface*                     PointMaterialShowingHidden;                        // 0x0100(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_108[0x8];                                      // 0x0108(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("UVLayoutPreviewProperties")
+		STATIC_CLASS_IMPL("GeometrySelectionVisualizationProperties")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"UVLayoutPreviewProperties")
+		STATIC_NAME_IMPL(L"GeometrySelectionVisualizationProperties")
 	}
-	static class UUVLayoutPreviewProperties* GetDefaultObj()
+	static class UGeometrySelectionVisualizationProperties* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUVLayoutPreviewProperties>();
+		return GetDefaultObjImpl<UGeometrySelectionVisualizationProperties>();
 	}
 };
-DUMPER7_ASSERTS_UUVLayoutPreviewProperties;
+DUMPER7_ASSERTS_UGeometrySelectionVisualizationProperties;
+
+// Class ModelingComponents.PreviewGeometryActor
+// 0x0000 (0x02B0 - 0x02B0)
+class APreviewGeometryActor final : public AInternalToolFrameworkActor
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PreviewGeometryActor")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PreviewGeometryActor")
+	}
+	static class APreviewGeometryActor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<APreviewGeometryActor>();
+	}
+};
+DUMPER7_ASSERTS_APreviewGeometryActor;
 
 // Class ModelingComponents.DynamicMeshProvider
 // 0x0000 (0x0000 - 0x0000)
@@ -110,80 +116,65 @@ public:
 };
 DUMPER7_ASSERTS_IDynamicMeshProvider;
 
-// Class ModelingComponents.PreviewGeometry
-// 0x00F8 (0x0120 - 0x0028)
-class UPreviewGeometry : public UObject
+// Class ModelingComponents.InteractiveToolActivity
+// 0x0000 (0x0030 - 0x0030)
+class UInteractiveToolActivity : public UInteractionMechanic
 {
 public:
-	class APreviewGeometryActor*                  ParentActor;                                       // 0x0028(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	TMap<class FString, class UTriangleSetComponent*> TriangleSets;                                  // 0x0030(0x0050)(ExportObject, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-	TMap<class FString, class ULineSetComponent*> LineSets;                                          // 0x0080(0x0050)(ExportObject, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-	TMap<class FString, class UPointSetComponent*> PointSets;                                        // 0x00D0(0x0050)(ExportObject, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("InteractiveToolActivity")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"InteractiveToolActivity")
+	}
+	static class UInteractiveToolActivity* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInteractiveToolActivity>();
+	}
+};
+DUMPER7_ASSERTS_UInteractiveToolActivity;
 
+// Class ModelingComponents.MeshElementsVisualizerProperties
+// 0x0030 (0x00E0 - 0x00B0)
+class UMeshElementsVisualizerProperties final : public UInteractiveToolPropertySet
+{
 public:
-	class ULineSetComponent* AddLineSet(const class FString& LineSetIdentifier);
-	class UPointSetComponent* AddPointSet(const class FString& PointSetIdentifier);
-	class UTriangleSetComponent* AddTriangleSet(const class FString& TriangleSetIdentifier);
-	void CreateInWorld(class UWorld* World, const struct FTransform& WithTransform);
-	void Disconnect();
-	class ULineSetComponent* FindLineSet(const class FString& LineSetIdentifier);
-	class UPointSetComponent* FindPointSet(const class FString& PointSetIdentifier);
-	class UTriangleSetComponent* FindTriangleSet(const class FString& TriangleSetIdentifier);
-	void RemoveAllLineSets(bool bDestroy);
-	void RemoveAllPointSets(bool bDestroy);
-	void RemoveAllTriangleSets(bool bDestroy);
-	bool RemoveLineSet(const class FString& LineSetIdentifier, bool bDestroy);
-	bool RemovePointSet(const class FString& PointSetIdentifier, bool bDestroy);
-	bool RemoveTriangleSet(const class FString& TriangleSetIdentifier, bool bDestroy);
-	void SetAllLineSetsMaterial(class UMaterialInterface* Material);
-	void SetAllPointSetsMaterial(class UMaterialInterface* Material);
-	bool SetLineSetMaterial(const class FString& LineSetIdentifier, class UMaterialInterface* NewMaterial);
-	bool SetLineSetVisibility(const class FString& LineSetIdentifier, bool bVisible);
-	bool SetPointSetMaterial(const class FString& PointSetIdentifier, class UMaterialInterface* NewMaterial);
-	bool SetPointSetVisibility(const class FString& PointSetIdentifier, bool bVisible);
-
-	class APreviewGeometryActor* GetActor() const;
+	bool                                          bVisible;                                          // 0x00B0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowWireframe;                                    // 0x00B1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowBorders;                                      // 0x00B2(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowUVSeams;                                      // 0x00B3(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowNormalSeams;                                  // 0x00B4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowTangentSeams;                                 // 0x00B5(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowColorSeams;                                   // 0x00B6(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B7[0x1];                                       // 0x00B7(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ThicknessScale;                                    // 0x00B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FColor                                 WireframeColor;                                    // 0x00BC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FColor                                 BoundaryEdgeColor;                                 // 0x00C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FColor                                 UVSeamColor;                                       // 0x00C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FColor                                 NormalSeamColor;                                   // 0x00C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FColor                                 TangentSeamColor;                                  // 0x00CC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FColor                                 ColorSeamColor;                                    // 0x00D0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DepthBias;                                         // 0x00D4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAdjustDepthBiasUsingMeshSize;                     // 0x00D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D9[0x7];                                       // 0x00D9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("PreviewGeometry")
+		STATIC_CLASS_IMPL("MeshElementsVisualizerProperties")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"PreviewGeometry")
+		STATIC_NAME_IMPL(L"MeshElementsVisualizerProperties")
 	}
-	static class UPreviewGeometry* GetDefaultObj()
+	static class UMeshElementsVisualizerProperties* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPreviewGeometry>();
+		return GetDefaultObjImpl<UMeshElementsVisualizerProperties>();
 	}
 };
-DUMPER7_ASSERTS_UPreviewGeometry;
-
-// Class ModelingComponents.MeshElementsVisualizer
-// 0x0028 (0x0148 - 0x0120)
-class UMeshElementsVisualizer final : public UPreviewGeometry
-{
-public:
-	class UMeshElementsVisualizerProperties*      Settings;                                          // 0x0120(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UMeshWireframeComponent*                WireframeComponent;                                // 0x0128(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_130[0x18];                                     // 0x0130(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MeshElementsVisualizer")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MeshElementsVisualizer")
-	}
-	static class UMeshElementsVisualizer* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMeshElementsVisualizer>();
-	}
-};
-DUMPER7_ASSERTS_UMeshElementsVisualizer;
+DUMPER7_ASSERTS_UMeshElementsVisualizerProperties;
 
 // Class ModelingComponents.DynamicMeshCommitter
 // 0x0000 (0x0000 - 0x0000)
@@ -298,70 +289,34 @@ public:
 };
 DUMPER7_ASSERTS_IPersistentDynamicMeshSource;
 
-// Class ModelingComponents.GeometrySelectionVisualizationProperties
-// 0x0060 (0x0110 - 0x00B0)
-class UGeometrySelectionVisualizationProperties final : public UInteractiveToolPropertySet
-{
-public:
-	bool                                          bEnableShowTriangleROIBorder;                      // 0x00B0(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnableShowEdgeSelectionVertices;                  // 0x00B1(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGeometrySelectionElementType                 SelectionElementType;                              // 0x00B2(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGeometrySelectionTopologyType                SelectionTopologyType;                             // 0x00B3(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShowSelection;                                    // 0x00B4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShowTriangleROIBorder;                            // 0x00B5(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShowHidden;                                       // 0x00B6(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShowEdgeSelectionVertices;                        // 0x00B7(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LineThickness;                                     // 0x00B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PointSize;                                         // 0x00BC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DepthBias;                                         // 0x00C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FColor                                 FaceColor;                                         // 0x00C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FColor                                 LineColor;                                         // 0x00C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FColor                                 PointColor;                                        // 0x00CC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FColor                                 TriangleROIBorderColor;                            // 0x00D0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D4[0x4];                                       // 0x00D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInterface*                     TriangleMaterial;                                  // 0x00D8(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UMaterialInterface*                     LineMaterial;                                      // 0x00E0(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UMaterialInterface*                     PointMaterial;                                     // 0x00E8(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UMaterialInterface*                     TriangleMaterialShowingHidden;                     // 0x00F0(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UMaterialInterface*                     LineMaterialShowingHidden;                         // 0x00F8(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UMaterialInterface*                     PointMaterialShowingHidden;                        // 0x0100(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_108[0x8];                                      // 0x0108(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("GeometrySelectionVisualizationProperties")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"GeometrySelectionVisualizationProperties")
-	}
-	static class UGeometrySelectionVisualizationProperties* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UGeometrySelectionVisualizationProperties>();
-	}
-};
-DUMPER7_ASSERTS_UGeometrySelectionVisualizationProperties;
-
-// Class ModelingComponents.InteractiveToolActivity
-// 0x0000 (0x0030 - 0x0030)
-class UInteractiveToolActivity : public UInteractionMechanic
+// Class ModelingComponents.ToolActivityHost
+// 0x0000 (0x0000 - 0x0000)
+class IToolActivityHost final
 {
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("InteractiveToolActivity")
+		STATIC_CLASS_IMPL("ToolActivityHost")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"InteractiveToolActivity")
+		STATIC_NAME_IMPL(L"ToolActivityHost")
 	}
-	static class UInteractiveToolActivity* GetDefaultObj()
+	static class IToolActivityHost* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UInteractiveToolActivity>();
+		return GetDefaultObjImpl<IToolActivityHost>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
-DUMPER7_ASSERTS_UInteractiveToolActivity;
+DUMPER7_ASSERTS_IToolActivityHost;
 
 // Class ModelingComponents.MeshSculptLayersManager
 // 0x0000 (0x0000 - 0x0000)
@@ -1099,45 +1054,80 @@ public:
 };
 DUMPER7_ASSERTS_ULineSetComponent;
 
-// Class ModelingComponents.MeshElementsVisualizerProperties
-// 0x0030 (0x00E0 - 0x00B0)
-class UMeshElementsVisualizerProperties final : public UInteractiveToolPropertySet
+// Class ModelingComponents.PreviewGeometry
+// 0x00F8 (0x0120 - 0x0028)
+class UPreviewGeometry : public UObject
 {
 public:
-	bool                                          bVisible;                                          // 0x00B0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShowWireframe;                                    // 0x00B1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShowBorders;                                      // 0x00B2(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShowUVSeams;                                      // 0x00B3(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShowNormalSeams;                                  // 0x00B4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShowTangentSeams;                                 // 0x00B5(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShowColorSeams;                                   // 0x00B6(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B7[0x1];                                       // 0x00B7(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ThicknessScale;                                    // 0x00B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FColor                                 WireframeColor;                                    // 0x00BC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FColor                                 BoundaryEdgeColor;                                 // 0x00C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FColor                                 UVSeamColor;                                       // 0x00C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FColor                                 NormalSeamColor;                                   // 0x00C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FColor                                 TangentSeamColor;                                  // 0x00CC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FColor                                 ColorSeamColor;                                    // 0x00D0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DepthBias;                                         // 0x00D4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAdjustDepthBiasUsingMeshSize;                     // 0x00D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D9[0x7];                                       // 0x00D9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class APreviewGeometryActor*                  ParentActor;                                       // 0x0028(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	TMap<class FString, class UTriangleSetComponent*> TriangleSets;                                  // 0x0030(0x0050)(ExportObject, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	TMap<class FString, class ULineSetComponent*> LineSets;                                          // 0x0080(0x0050)(ExportObject, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	TMap<class FString, class UPointSetComponent*> PointSets;                                        // 0x00D0(0x0050)(ExportObject, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+
+public:
+	class ULineSetComponent* AddLineSet(const class FString& LineSetIdentifier);
+	class UPointSetComponent* AddPointSet(const class FString& PointSetIdentifier);
+	class UTriangleSetComponent* AddTriangleSet(const class FString& TriangleSetIdentifier);
+	void CreateInWorld(class UWorld* World, const struct FTransform& WithTransform);
+	void Disconnect();
+	class ULineSetComponent* FindLineSet(const class FString& LineSetIdentifier);
+	class UPointSetComponent* FindPointSet(const class FString& PointSetIdentifier);
+	class UTriangleSetComponent* FindTriangleSet(const class FString& TriangleSetIdentifier);
+	void RemoveAllLineSets(bool bDestroy);
+	void RemoveAllPointSets(bool bDestroy);
+	void RemoveAllTriangleSets(bool bDestroy);
+	bool RemoveLineSet(const class FString& LineSetIdentifier, bool bDestroy);
+	bool RemovePointSet(const class FString& PointSetIdentifier, bool bDestroy);
+	bool RemoveTriangleSet(const class FString& TriangleSetIdentifier, bool bDestroy);
+	void SetAllLineSetsMaterial(class UMaterialInterface* Material);
+	void SetAllPointSetsMaterial(class UMaterialInterface* Material);
+	bool SetLineSetMaterial(const class FString& LineSetIdentifier, class UMaterialInterface* NewMaterial);
+	bool SetLineSetVisibility(const class FString& LineSetIdentifier, bool bVisible);
+	bool SetPointSetMaterial(const class FString& PointSetIdentifier, class UMaterialInterface* NewMaterial);
+	bool SetPointSetVisibility(const class FString& PointSetIdentifier, bool bVisible);
+
+	class APreviewGeometryActor* GetActor() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MeshElementsVisualizerProperties")
+		STATIC_CLASS_IMPL("PreviewGeometry")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MeshElementsVisualizerProperties")
+		STATIC_NAME_IMPL(L"PreviewGeometry")
 	}
-	static class UMeshElementsVisualizerProperties* GetDefaultObj()
+	static class UPreviewGeometry* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMeshElementsVisualizerProperties>();
+		return GetDefaultObjImpl<UPreviewGeometry>();
 	}
 };
-DUMPER7_ASSERTS_UMeshElementsVisualizerProperties;
+DUMPER7_ASSERTS_UPreviewGeometry;
+
+// Class ModelingComponents.MeshElementsVisualizer
+// 0x0028 (0x0148 - 0x0120)
+class UMeshElementsVisualizer final : public UPreviewGeometry
+{
+public:
+	class UMeshElementsVisualizerProperties*      Settings;                                          // 0x0120(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UMeshWireframeComponent*                WireframeComponent;                                // 0x0128(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_130[0x18];                                     // 0x0130(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MeshElementsVisualizer")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MeshElementsVisualizer")
+	}
+	static class UMeshElementsVisualizer* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMeshElementsVisualizer>();
+	}
+};
+DUMPER7_ASSERTS_UMeshElementsVisualizer;
 
 // Class ModelingComponents.MeshWireframeComponent
 // 0x00A0 (0x0600 - 0x0560)
@@ -1273,26 +1263,6 @@ public:
 };
 DUMPER7_ASSERTS_UPolyEditPreviewMesh;
 
-// Class ModelingComponents.PreviewGeometryActor
-// 0x0000 (0x02B0 - 0x02B0)
-class APreviewGeometryActor final : public AInternalToolFrameworkActor
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("PreviewGeometryActor")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"PreviewGeometryActor")
-	}
-	static class APreviewGeometryActor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<APreviewGeometryActor>();
-	}
-};
-DUMPER7_ASSERTS_APreviewGeometryActor;
-
 // Class ModelingComponents.TriangleSetComponent
 // 0x0100 (0x0660 - 0x0560)
 class UTriangleSetComponent final : public UMeshComponent
@@ -1317,6 +1287,36 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UTriangleSetComponent;
+
+// Class ModelingComponents.UVLayoutPreviewProperties
+// 0x0028 (0x00D8 - 0x00B0)
+class UUVLayoutPreviewProperties final : public UInteractiveToolPropertySet
+{
+public:
+	bool                                          bEnabled;                                          // 0x00B0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B1[0x3];                                       // 0x00B1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	EUVLayoutPreviewSide                          Side;                                              // 0x00B4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Scale;                                             // 0x00B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_BC[0x4];                                       // 0x00BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              Offset;                                            // 0x00C0(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowWireframe;                                    // 0x00D0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D1[0x7];                                       // 0x00D1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("UVLayoutPreviewProperties")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"UVLayoutPreviewProperties")
+	}
+	static class UUVLayoutPreviewProperties* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUVLayoutPreviewProperties>();
+	}
+};
+DUMPER7_ASSERTS_UUVLayoutPreviewProperties;
 
 // Class ModelingComponents.UVLayoutPreview
 // 0x0148 (0x0170 - 0x0028)

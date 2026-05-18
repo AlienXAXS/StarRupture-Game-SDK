@@ -70,213 +70,6 @@ class UCrAiAction* UBTTask_RunCrAiActionBlueprintBase::CreateAiAction()
 }
 
 
-// Function Chimera.CrMiningLockingComponent.BP_RemoveLockOnAll
-// (Final, Native, Public, BlueprintCallable)
-
-void UCrMiningLockingComponent::BP_RemoveLockOnAll()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrMiningLockingComponent", "BP_RemoveLockOnAll");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrMiningLockingComponent.BP_RemoveLockOnAllLocalClientOnly
-// (Final, Native, Public, BlueprintCallable)
-
-void UCrMiningLockingComponent::BP_RemoveLockOnAllLocalClientOnly()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrMiningLockingComponent", "BP_RemoveLockOnAllLocalClientOnly");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrMiningLockingComponent.ServerRemoveLockOnAll
-// (Final, Net, NetReliable, Native, Event, Private, NetServer)
-
-void UCrMiningLockingComponent::ServerRemoveLockOnAll()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrMiningLockingComponent", "ServerRemoveLockOnAll");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrMiningLockingComponent.ServerTryLockingMineableTarget
-// (Final, Net, NetReliable, Native, Event, Private, NetServer)
-// Parameters:
-// const struct FCrMineableLockedTargetData&InMineableTargetData                                   (Parm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UCrMiningLockingComponent::ServerTryLockingMineableTarget(const struct FCrMineableLockedTargetData& InMineableTargetData)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrMiningLockingComponent", "ServerTryLockingMineableTarget");
-
-	Params::CrMiningLockingComponent_ServerTryLockingMineableTarget Parms{};
-
-	Parms.InMineableTargetData = std::move(InMineableTargetData);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrMiningLockingComponent.TryLockingForLocallyControlledCharacter
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FHitResult&                InHtResults                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void UCrMiningLockingComponent::TryLockingForLocallyControlledCharacter(const struct FHitResult& InHtResults)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrMiningLockingComponent", "TryLockingForLocallyControlledCharacter");
-
-	Params::CrMiningLockingComponent_TryLockingForLocallyControlledCharacter Parms{};
-
-	Parms.InHtResults = std::move(InHtResults);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrMiningLockingComponent.GetLockedOnActor
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AActor* UCrMiningLockingComponent::GetLockedOnActor() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrMiningLockingComponent", "GetLockedOnActor");
-
-	Params::CrMiningLockingComponent_GetLockedOnActor Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrMiningLockingComponent.GetLockedOnISMPhysicalMaterial
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const class UPhysicalMaterial*          ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-const class UPhysicalMaterial* UCrMiningLockingComponent::GetLockedOnISMPhysicalMaterial() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrMiningLockingComponent", "GetLockedOnISMPhysicalMaterial");
-
-	Params::CrMiningLockingComponent_GetLockedOnISMPhysicalMaterial Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrMiningLockingComponent.GetWeakSpotName
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FName UCrMiningLockingComponent::GetWeakSpotName() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrMiningLockingComponent", "GetWeakSpotName");
-
-	Params::CrMiningLockingComponent_GetWeakSpotName Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrMiningLockingComponent.IsWeakSpotLockedOn
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UCrMiningLockingComponent::IsWeakSpotLockedOn() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrMiningLockingComponent", "IsWeakSpotLockedOn");
-
-	Params::CrMiningLockingComponent_IsWeakSpotLockedOn Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function Chimera.ClipboardBPFunctionLibrary.CopyString
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
@@ -1619,48 +1412,6 @@ struct FVector ACrBaseCore::GetCoreAreaSize() const
 }
 
 
-// Function Chimera.CrResourceRedistributor.UpdateFilter
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// const class UAuItemDataBase*            ItemFilter                                             (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrResourceRedistributor::UpdateFilter(const class UAuItemDataBase* ItemFilter)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrResourceRedistributor", "UpdateFilter");
-
-	Params::CrResourceRedistributor_UpdateFilter Parms{};
-
-	Parms.ItemFilter = ItemFilter;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Chimera.CrResourceRedistributor.UpdateItemCount
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   MaxCount                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrResourceRedistributor::UpdateItemCount(int32 Count, int32 MaxCount)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrResourceRedistributor", "UpdateItemCount");
-
-	Params::CrResourceRedistributor_UpdateItemCount Parms{};
-
-	Parms.Count = Count;
-	Parms.MaxCount = MaxCount;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function Chimera.CrAbilitiesBPFL.GetPlayRateForDuration
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
@@ -1744,6 +1495,31 @@ TArray<struct FHitResult> UCrAbilitiesBPFL::MakeTargetHitResultsFromDataHandle(c
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrMassCustomOnRepInterface.OnRep_CustomState
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FInstancedStruct&          CustomFragment                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void ICrMassCustomOnRepInterface::OnRep_CustomState(const struct FInstancedStruct& CustomFragment)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("CrMassCustomOnRepInterface", "OnRep_CustomState");
+
+	Params::CrMassCustomOnRepInterface_OnRep_CustomState Parms{};
+
+	Parms.CustomFragment = std::move(CustomFragment);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -1844,31 +1620,6 @@ struct FAuItemSlot ACrAbilityProjectile::GetSourceWeaponItemSlot() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrBuildingSplineActorBase.OnSplineReady
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// class USplineComponent*                 InSpline                                               (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrBuildingSplineActorBase::OnSplineReady(class USplineComponent* InSpline)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrBuildingSplineActorBase", "OnSplineReady");
-
-	Params::CrBuildingSplineActorBase_OnSplineReady Parms{};
-
-	Parms.InSpline = InSpline;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -2030,58 +1781,76 @@ void UCrAbilitySystemComponent::RemoveGameplayLooseTag(const struct FGameplayTag
 }
 
 
-// Function Chimera.CrMultisample.DestroyWithFade
-// (Final, Native, Public, BlueprintCallable)
+// Function Chimera.CrMovementSpeedMultiplierAttributeSet.OnRep_CurrentMovementSpeedMultiplier
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldCurrentMovementSpeedMultiplier                      (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void ACrMultisample::DestroyWithFade()
+void UCrMovementSpeedMultiplierAttributeSet::OnRep_CurrentMovementSpeedMultiplier(const struct FGameplayAttributeData& OldCurrentMovementSpeedMultiplier)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrMultisample", "DestroyWithFade");
+		Func = Class->GetFunction("CrMovementSpeedMultiplierAttributeSet", "OnRep_CurrentMovementSpeedMultiplier");
+
+	Params::CrMovementSpeedMultiplierAttributeSet_OnRep_CurrentMovementSpeedMultiplier Parms{};
+
+	Parms.OldCurrentMovementSpeedMultiplier = std::move(OldCurrentMovementSpeedMultiplier);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function Chimera.CrMultisample.PauseAll
-// (Final, Native, Public, BlueprintCallable)
+// Function Chimera.CrMovementSpeedMultiplierAttributeSet.OnRep_MaxMovementSpeedMultiplier
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldMaxMovementSpeedMultiplier                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void ACrMultisample::PauseAll()
+void UCrMovementSpeedMultiplierAttributeSet::OnRep_MaxMovementSpeedMultiplier(const struct FGameplayAttributeData& OldMaxMovementSpeedMultiplier)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrMultisample", "PauseAll");
+		Func = Class->GetFunction("CrMovementSpeedMultiplierAttributeSet", "OnRep_MaxMovementSpeedMultiplier");
+
+	Params::CrMovementSpeedMultiplierAttributeSet_OnRep_MaxMovementSpeedMultiplier Parms{};
+
+	Parms.OldMaxMovementSpeedMultiplier = std::move(OldMaxMovementSpeedMultiplier);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function Chimera.CrMultisample.ResumeAll
-// (Final, Native, Public, BlueprintCallable)
+// Function Chimera.CrMovementSpeedMultiplierAttributeSet.OnRep_MinMovementSpeedMultiplier
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldMinMovementSpeedMultiplier                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void ACrMultisample::ResumeAll()
+void UCrMovementSpeedMultiplierAttributeSet::OnRep_MinMovementSpeedMultiplier(const struct FGameplayAttributeData& OldMinMovementSpeedMultiplier)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrMultisample", "ResumeAll");
+		Func = Class->GetFunction("CrMovementSpeedMultiplierAttributeSet", "OnRep_MinMovementSpeedMultiplier");
+
+	Params::CrMovementSpeedMultiplierAttributeSet_OnRep_MinMovementSpeedMultiplier Parms{};
+
+	Parms.OldMinMovementSpeedMultiplier = std::move(OldMinMovementSpeedMultiplier);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -2125,410 +1894,6 @@ float UCrBindableProgressBar::GetValue() const
 		Func = Class->GetFunction("CrBindableProgressBar", "GetValue");
 
 	Params::CrBindableProgressBar_GetValue Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSessionSubsystem.ClientCreateSearchRequest
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UCommonSession_SearchSessionRequest*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCommonSession_SearchSessionRequest* UCrSessionSubsystem::ClientCreateSearchRequest()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSessionSubsystem", "ClientCreateSearchRequest");
-
-	Params::CrSessionSubsystem_ClientCreateSearchRequest Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSessionSubsystem.ClientFindSessions
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UCommonSession_SearchSessionRequest*Request                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    InIPAddress                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    InPort                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSessionSubsystem::ClientFindSessions(class UCommonSession_SearchSessionRequest* Request, const class FString& InIPAddress, const class FString& InPort)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSessionSubsystem", "ClientFindSessions");
-
-	Params::CrSessionSubsystem_ClientFindSessions Parms{};
-
-	Parms.Request = Request;
-	Parms.InIPAddress = std::move(InIPAddress);
-	Parms.InPort = std::move(InPort);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSessionSubsystem.ClientJoinSession
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UCommonSession_SearchResult*      SearchResult                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSessionSubsystem::ClientJoinSession(class UCommonSession_SearchResult* SearchResult)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSessionSubsystem", "ClientJoinSession");
-
-	Params::CrSessionSubsystem_ClientJoinSession Parms{};
-
-	Parms.SearchResult = SearchResult;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSessionSubsystem.ClientTryToLogin
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UCrSessionSubsystem::ClientTryToLogin()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSessionSubsystem", "ClientTryToLogin");
-
-	Params::CrSessionSubsystem_ClientTryToLogin Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSessionSubsystem.HandleNetworkFailure
-// (Final, Native, Protected)
-// Parameters:
-// class UWorld*                           InWorld                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UNetDriver*                       NetDriver                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ENetworkFailure                         FailureType                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    ErrorString                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSessionSubsystem::HandleNetworkFailure(class UWorld* InWorld, class UNetDriver* NetDriver, ENetworkFailure FailureType, const class FString& ErrorString)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSessionSubsystem", "HandleNetworkFailure");
-
-	Params::CrSessionSubsystem_HandleNetworkFailure Parms{};
-
-	Parms.InWorld = InWorld;
-	Parms.NetDriver = NetDriver;
-	Parms.FailureType = FailureType;
-	Parms.ErrorString = std::move(ErrorString);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSessionSubsystem.HandleTravelFailure
-// (Final, Native, Protected)
-// Parameters:
-// class UWorld*                           World                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ETravelFailure                          FailureType                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    ErrorString                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSessionSubsystem::HandleTravelFailure(class UWorld* World, ETravelFailure FailureType, const class FString& ErrorString)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSessionSubsystem", "HandleTravelFailure");
-
-	Params::CrSessionSubsystem_HandleTravelFailure Parms{};
-
-	Parms.World = World;
-	Parms.FailureType = FailureType;
-	Parms.ErrorString = std::move(ErrorString);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSessionSubsystem.OnlineSetUsingDedicatedSessions
-// (Final, Exec, Native, Protected)
-
-void UCrSessionSubsystem::OnlineSetUsingDedicatedSessions()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSessionSubsystem", "OnlineSetUsingDedicatedSessions");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSessionSubsystem.OnlineSetUsingP2PLobbies
-// (Final, Exec, Native, Protected)
-
-void UCrSessionSubsystem::OnlineSetUsingP2PLobbies()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSessionSubsystem", "OnlineSetUsingP2PLobbies");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSessionSubsystem.OnUserInitialized
-// (Final, Native, Protected)
-// Parameters:
-// const class UCommonUserInfo*            UserInfo                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bSuccess                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FText&                      Error                                                  (Parm, NativeAccessSpecifierPublic)
-// ECommonUserPrivilege                    RequestedPrivilege                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECommonUserOnlineContext                OnlineContext                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSessionSubsystem::OnUserInitialized(const class UCommonUserInfo* UserInfo, bool bSuccess, const class FText& Error, ECommonUserPrivilege RequestedPrivilege, ECommonUserOnlineContext OnlineContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSessionSubsystem", "OnUserInitialized");
-
-	Params::CrSessionSubsystem_OnUserInitialized Parms{};
-
-	Parms.UserInfo = UserInfo;
-	Parms.bSuccess = bSuccess;
-	Parms.Error = std::move(Error);
-	Parms.RequestedPrivilege = RequestedPrivilege;
-	Parms.OnlineContext = OnlineContext;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSessionSubsystem.ServerCreateSession
-// (Final, Native, Public, BlueprintCallable)
-
-void UCrSessionSubsystem::ServerCreateSession()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSessionSubsystem", "ServerCreateSession");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSessionSubsystem.SetCommonSessionOnlineMode
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// ECommonSessionOnlineMode                Mode                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSessionSubsystem::SetCommonSessionOnlineMode(ECommonSessionOnlineMode Mode)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSessionSubsystem", "SetCommonSessionOnlineMode");
-
-	Params::CrSessionSubsystem_SetCommonSessionOnlineMode Parms{};
-
-	Parms.Mode = Mode;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSessionSubsystem.SetOnlineConnectionMode
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// ECrOnlineConnectionMode                 Mode                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSessionSubsystem::SetOnlineConnectionMode(ECrOnlineConnectionMode Mode)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSessionSubsystem", "SetOnlineConnectionMode");
-
-	Params::CrSessionSubsystem_SetOnlineConnectionMode Parms{};
-
-	Parms.Mode = Mode;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSessionSubsystem.SetOnlineMode
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// ECrOnlineSessionMode                    InMode                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSessionSubsystem::SetOnlineMode(ECrOnlineSessionMode InMode)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSessionSubsystem", "SetOnlineMode");
-
-	Params::CrSessionSubsystem_SetOnlineMode Parms{};
-
-	Parms.InMode = InMode;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSessionSubsystem.GetDefaultExperience
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const class UCrExperienceDefinition*    ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-const class UCrExperienceDefinition* UCrSessionSubsystem::GetDefaultExperience() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSessionSubsystem", "GetDefaultExperience");
-
-	Params::CrSessionSubsystem_GetDefaultExperience Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSessionSubsystem.GetDefaultMapPath
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString UCrSessionSubsystem::GetDefaultMapPath() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSessionSubsystem", "GetDefaultMapPath");
-
-	Params::CrSessionSubsystem_GetDefaultMapPath Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSessionSubsystem.GetIsLoggedIn
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UCrSessionSubsystem::GetIsLoggedIn() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSessionSubsystem", "GetIsLoggedIn");
-
-	Params::CrSessionSubsystem_GetIsLoggedIn Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2778,6 +2143,69 @@ class AActor* UCrActorLookupSubsystem::ResolveActor(const struct FActorInstanceH
 }
 
 
+// Function Chimera.CrMultisampleMultiSensor.DecreaseOverlapNum
+// (Final, Native, Public, BlueprintCallable)
+
+void UCrMultisampleMultiSensor::DecreaseOverlapNum()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrMultisampleMultiSensor", "DecreaseOverlapNum");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrMultisampleMultiSensor.IncreaseOverlapNum
+// (Final, Native, Public, BlueprintCallable)
+
+void UCrMultisampleMultiSensor::IncreaseOverlapNum()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrMultisampleMultiSensor", "IncreaseOverlapNum");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrMultisampleMultiSensor.IsInAnySensor
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCrMultisampleMultiSensor::IsInAnySensor() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrMultisampleMultiSensor", "IsInAnySensor");
+
+	Params::CrMultisampleMultiSensor_IsInAnySensor Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function Chimera.CrBaseAttackStateSubsystem.OnAttackedCoreInfectionChanged
 // (Final, Native, Protected)
 // Parameters:
@@ -2939,6 +2367,303 @@ void UCrAggroSubsystem::RemoveCustomAggroModifierFromActor(class AActor* Actor, 
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSystemStatics.FindComponentsByClass
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UActorComponent>      ComponentClass                                         (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIncludeChildActors                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class UActorComponent*>          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+TArray<class UActorComponent*> UCrSystemStatics::FindComponentsByClass(class AActor* TargetActor, TSubclassOf<class UActorComponent> ComponentClass, bool bIncludeChildActors)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrSystemStatics", "FindComponentsByClass");
+
+	Params::CrSystemStatics_FindComponentsByClass Parms{};
+
+	Parms.TargetActor = TargetActor;
+	Parms.ComponentClass = ComponentClass;
+	Parms.bIncludeChildActors = bIncludeChildActors;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSystemStatics.GetBlueprintComponents
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UBlueprint*                       Blueprint                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              ExcludeInherited                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class UActorComponent*>          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+TArray<class UActorComponent*> UCrSystemStatics::GetBlueprintComponents(class UBlueprint* Blueprint, const bool ExcludeInherited)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrSystemStatics", "GetBlueprintComponents");
+
+	Params::CrSystemStatics_GetBlueprintComponents Parms{};
+
+	Parms.Blueprint = Blueprint;
+	Parms.ExcludeInherited = ExcludeInherited;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSystemStatics.GetBlueprintComponentsOfClass
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UBlueprint*                       Blueprint                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UActorComponent>      ComponentClass                                         (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ExcludeInherited                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class UActorComponent*>          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+TArray<class UActorComponent*> UCrSystemStatics::GetBlueprintComponentsOfClass(class UBlueprint* Blueprint, TSubclassOf<class UActorComponent> ComponentClass, bool ExcludeInherited)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrSystemStatics", "GetBlueprintComponentsOfClass");
+
+	Params::CrSystemStatics_GetBlueprintComponentsOfClass Parms{};
+
+	Parms.Blueprint = Blueprint;
+	Parms.ComponentClass = ComponentClass;
+	Parms.ExcludeInherited = ExcludeInherited;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSystemStatics.GetPrimaryAssetIdFromUserFacingExperienceName
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const class FString&                    AdvertisedExperienceID                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FPrimaryAssetId                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FPrimaryAssetId UCrSystemStatics::GetPrimaryAssetIdFromUserFacingExperienceName(const class FString& AdvertisedExperienceID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrSystemStatics", "GetPrimaryAssetIdFromUserFacingExperienceName");
+
+	Params::CrSystemStatics_GetPrimaryAssetIdFromUserFacingExperienceName Parms{};
+
+	Parms.AdvertisedExperienceID = std::move(AdvertisedExperienceID);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSystemStatics.GetTypedSoftObjectReferenceFromPrimaryAssetId
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FPrimaryAssetId&           PrimaryAssetId                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UObject>              ExpectedAssetType                                      (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSoftObjectPtr<class UObject>           ReturnValue                                            (Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+TSoftObjectPtr<class UObject> UCrSystemStatics::GetTypedSoftObjectReferenceFromPrimaryAssetId(const struct FPrimaryAssetId& PrimaryAssetId, TSubclassOf<class UObject> ExpectedAssetType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrSystemStatics", "GetTypedSoftObjectReferenceFromPrimaryAssetId");
+
+	Params::CrSystemStatics_GetTypedSoftObjectReferenceFromPrimaryAssetId Parms{};
+
+	Parms.PrimaryAssetId = std::move(PrimaryAssetId);
+	Parms.ExpectedAssetType = ExpectedAssetType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSystemStatics.PlayNextGame
+// (Final, BlueprintAuthorityOnly, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSystemStatics::PlayNextGame(const class UObject* WorldContextObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrSystemStatics", "PlayNextGame");
+
+	Params::CrSystemStatics_PlayNextGame Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSystemStatics.ReplaceStaticMeshSockets
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UStaticMesh*                      Source                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UStaticMesh*                      Dest                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSystemStatics::ReplaceStaticMeshSockets(class UStaticMesh* Source, class UStaticMesh* Dest)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrSystemStatics", "ReplaceStaticMeshSockets");
+
+	Params::CrSystemStatics_ReplaceStaticMeshSockets Parms{};
+
+	Parms.Source = Source;
+	Parms.Dest = Dest;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSystemStatics.SetColorParameterValueOnAllMeshComponents
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       ParameterName                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLinearColor&              ParameterValue                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIncludeChildActors                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSystemStatics::SetColorParameterValueOnAllMeshComponents(class AActor* TargetActor, const class FName ParameterName, const struct FLinearColor& ParameterValue, bool bIncludeChildActors)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrSystemStatics", "SetColorParameterValueOnAllMeshComponents");
+
+	Params::CrSystemStatics_SetColorParameterValueOnAllMeshComponents Parms{};
+
+	Parms.TargetActor = TargetActor;
+	Parms.ParameterName = ParameterName;
+	Parms.ParameterValue = std::move(ParameterValue);
+	Parms.bIncludeChildActors = bIncludeChildActors;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSystemStatics.SetScalarParameterValueOnAllMeshComponents
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       ParameterName                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             ParameterValue                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIncludeChildActors                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSystemStatics::SetScalarParameterValueOnAllMeshComponents(class AActor* TargetActor, const class FName ParameterName, const float ParameterValue, bool bIncludeChildActors)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrSystemStatics", "SetScalarParameterValueOnAllMeshComponents");
+
+	Params::CrSystemStatics_SetScalarParameterValueOnAllMeshComponents Parms{};
+
+	Parms.TargetActor = TargetActor;
+	Parms.ParameterName = ParameterName;
+	Parms.ParameterValue = ParameterValue;
+	Parms.bIncludeChildActors = bIncludeChildActors;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSystemStatics.SetVectorParameterValueOnAllMeshComponents
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       ParameterName                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   ParameterValue                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIncludeChildActors                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSystemStatics::SetVectorParameterValueOnAllMeshComponents(class AActor* TargetActor, const class FName ParameterName, const struct FVector& ParameterValue, bool bIncludeChildActors)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrSystemStatics", "SetVectorParameterValueOnAllMeshComponents");
+
+	Params::CrSystemStatics_SetVectorParameterValueOnAllMeshComponents Parms{};
+
+	Parms.TargetActor = TargetActor;
+	Parms.ParameterName = ParameterName;
+	Parms.ParameterValue = std::move(ParameterValue);
+	Parms.bIncludeChildActors = bIncludeChildActors;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -3169,6 +2894,81 @@ void UCrAiAction::OnUpdateOnClient(class AActor* AiActor)
 	Params::CrAiAction_OnUpdateOnClient Parms{};
 
 	Parms.AiActor = AiActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrToxicityAttributeSet.OnRep_CurrentToxicity
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldCurrentToxicity                                     (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrToxicityAttributeSet::OnRep_CurrentToxicity(const struct FGameplayAttributeData& OldCurrentToxicity)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrToxicityAttributeSet", "OnRep_CurrentToxicity");
+
+	Params::CrToxicityAttributeSet_OnRep_CurrentToxicity Parms{};
+
+	Parms.OldCurrentToxicity = std::move(OldCurrentToxicity);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrToxicityAttributeSet.OnRep_MaxToxicity
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldMaxToxicity                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrToxicityAttributeSet::OnRep_MaxToxicity(const struct FGameplayAttributeData& OldMaxToxicity)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrToxicityAttributeSet", "OnRep_MaxToxicity");
+
+	Params::CrToxicityAttributeSet_OnRep_MaxToxicity Parms{};
+
+	Parms.OldMaxToxicity = std::move(OldMaxToxicity);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrToxicityAttributeSet.OnRep_MinToxicity
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldMinToxicity                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrToxicityAttributeSet::OnRep_MinToxicity(const struct FGameplayAttributeData& OldMinToxicity)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrToxicityAttributeSet", "OnRep_MinToxicity");
+
+	Params::CrToxicityAttributeSet_OnRep_MinToxicity Parms{};
+
+	Parms.OldMinToxicity = std::move(OldMinToxicity);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3491,249 +3291,45 @@ void UCrBpMaterialUtilities::SetMaterialInstanceStaticSwitchParameterValue(class
 }
 
 
-// Function Chimera.CrDefenseTurretBase.BP_OnInventoryChanged
-// (Event, Protected, BlueprintEvent)
-
-void ACrDefenseTurretBase::BP_OnInventoryChanged()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrDefenseTurretBase", "BP_OnInventoryChanged");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Chimera.CrDefenseTurretBase.GetAmmoInInventoryCount
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 ACrDefenseTurretBase::GetAmmoInInventoryCount() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrDefenseTurretBase", "GetAmmoInInventoryCount");
-
-	Params::CrDefenseTurretBase_GetAmmoInInventoryCount Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrDefenseTurretBase.GetMuzzleTransformInWorldSpace
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FTransform ACrDefenseTurretBase::GetMuzzleTransformInWorldSpace() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrDefenseTurretBase", "GetMuzzleTransformInWorldSpace");
-
-	Params::CrDefenseTurretBase_GetMuzzleTransformInWorldSpace Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrDefenseTurretBase.HasAmmo
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ACrDefenseTurretBase::HasAmmo() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrDefenseTurretBase", "HasAmmo");
-
-	Params::CrDefenseTurretBase_HasAmmo Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrRifleTurretBase.CosmeticDryFire
+// Function Chimera.CrResourceRedistributor.UpdateFilter
 // (Event, Public, BlueprintEvent)
-
-void ACrRifleTurretBase::CosmeticDryFire()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrRifleTurretBase", "CosmeticDryFire");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Chimera.CrRifleTurretBase.CosmeticHit
-// (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// const struct FHitResult&                InHit                                                  (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const class UAuItemDataBase*            ItemFilter                                             (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ACrRifleTurretBase::CosmeticHit(const struct FHitResult& InHit)
+void ACrResourceRedistributor::UpdateFilter(const class UAuItemDataBase* ItemFilter)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrRifleTurretBase", "CosmeticHit");
+		Func = Class->GetFunction("CrResourceRedistributor", "UpdateFilter");
 
-	Params::CrRifleTurretBase_CosmeticHit Parms{};
+	Params::CrResourceRedistributor_UpdateFilter Parms{};
 
-	Parms.InHit = std::move(InHit);
+	Parms.ItemFilter = ItemFilter;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function Chimera.CrRifleTurretBase.CosmeticTurretMalfunctionEnded
+// Function Chimera.CrResourceRedistributor.UpdateItemCount
 // (Event, Public, BlueprintEvent)
-
-void ACrRifleTurretBase::CosmeticTurretMalfunctionEnded()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrRifleTurretBase", "CosmeticTurretMalfunctionEnded");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Chimera.CrRifleTurretBase.CosmeticTurretMalfunctionStarted
-// (Event, Public, BlueprintEvent)
-
-void ACrRifleTurretBase::CosmeticTurretMalfunctionStarted()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrRifleTurretBase", "CosmeticTurretMalfunctionStarted");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Chimera.CrRifleTurretBase.UpdateCosmeticsBasedOnAttackDirection
-// (Event, Public, HasOutParams, HasDefaults, BlueprintEvent)
 // Parameters:
-// const struct FVector&                   OutCurrentAttackDirection                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   MaxCount                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ACrRifleTurretBase::UpdateCosmeticsBasedOnAttackDirection(const struct FVector& OutCurrentAttackDirection)
+void ACrResourceRedistributor::UpdateItemCount(int32 Count, int32 MaxCount)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrRifleTurretBase", "UpdateCosmeticsBasedOnAttackDirection");
+		Func = Class->GetFunction("CrResourceRedistributor", "UpdateItemCount");
 
-	Params::CrRifleTurretBase_UpdateCosmeticsBasedOnAttackDirection Parms{};
+	Params::CrResourceRedistributor_UpdateItemCount Parms{};
 
-	Parms.OutCurrentAttackDirection = std::move(OutCurrentAttackDirection);
+	Parms.Count = Count;
+	Parms.MaxCount = MaxCount;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Chimera.CrRifleTurretBase.GetImpactHitNiagaraSystem
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UNiagaraSystem*                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UNiagaraSystem* ACrRifleTurretBase::GetImpactHitNiagaraSystem() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrRifleTurretBase", "GetImpactHitNiagaraSystem");
-
-	Params::CrRifleTurretBase_GetImpactHitNiagaraSystem Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrRifleTurretBase.GetShootSound
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class USoundBase*                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class USoundBase* ACrRifleTurretBase::GetShootSound() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrRifleTurretBase", "GetShootSound");
-
-	Params::CrRifleTurretBase_GetShootSound Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrRifleTurretBase.GetShootTracerNiagaraSystem
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UNiagaraSystem*                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UNiagaraSystem* ACrRifleTurretBase::GetShootTracerNiagaraSystem() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrRifleTurretBase", "GetShootTracerNiagaraSystem");
-
-	Params::CrRifleTurretBase_GetShootTracerNiagaraSystem Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -3837,303 +3433,6 @@ class UNiagaraSystem* ACrAIBase::GetHitNiagaraEffects(const struct FHitResult& H
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSystemStatics.FindComponentsByClass
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UActorComponent>      ComponentClass                                         (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIncludeChildActors                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class UActorComponent*>          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-TArray<class UActorComponent*> UCrSystemStatics::FindComponentsByClass(class AActor* TargetActor, TSubclassOf<class UActorComponent> ComponentClass, bool bIncludeChildActors)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrSystemStatics", "FindComponentsByClass");
-
-	Params::CrSystemStatics_FindComponentsByClass Parms{};
-
-	Parms.TargetActor = TargetActor;
-	Parms.ComponentClass = ComponentClass;
-	Parms.bIncludeChildActors = bIncludeChildActors;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSystemStatics.GetBlueprintComponents
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UBlueprint*                       Blueprint                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const bool                              ExcludeInherited                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class UActorComponent*>          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-TArray<class UActorComponent*> UCrSystemStatics::GetBlueprintComponents(class UBlueprint* Blueprint, const bool ExcludeInherited)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrSystemStatics", "GetBlueprintComponents");
-
-	Params::CrSystemStatics_GetBlueprintComponents Parms{};
-
-	Parms.Blueprint = Blueprint;
-	Parms.ExcludeInherited = ExcludeInherited;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSystemStatics.GetBlueprintComponentsOfClass
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UBlueprint*                       Blueprint                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UActorComponent>      ComponentClass                                         (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ExcludeInherited                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class UActorComponent*>          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-TArray<class UActorComponent*> UCrSystemStatics::GetBlueprintComponentsOfClass(class UBlueprint* Blueprint, TSubclassOf<class UActorComponent> ComponentClass, bool ExcludeInherited)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrSystemStatics", "GetBlueprintComponentsOfClass");
-
-	Params::CrSystemStatics_GetBlueprintComponentsOfClass Parms{};
-
-	Parms.Blueprint = Blueprint;
-	Parms.ComponentClass = ComponentClass;
-	Parms.ExcludeInherited = ExcludeInherited;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSystemStatics.GetPrimaryAssetIdFromUserFacingExperienceName
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const class FString&                    AdvertisedExperienceID                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPrimaryAssetId                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FPrimaryAssetId UCrSystemStatics::GetPrimaryAssetIdFromUserFacingExperienceName(const class FString& AdvertisedExperienceID)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrSystemStatics", "GetPrimaryAssetIdFromUserFacingExperienceName");
-
-	Params::CrSystemStatics_GetPrimaryAssetIdFromUserFacingExperienceName Parms{};
-
-	Parms.AdvertisedExperienceID = std::move(AdvertisedExperienceID);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSystemStatics.GetTypedSoftObjectReferenceFromPrimaryAssetId
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
-// Parameters:
-// const struct FPrimaryAssetId&           PrimaryAssetId                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UObject>              ExpectedAssetType                                      (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSoftObjectPtr<class UObject>           ReturnValue                                            (Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-TSoftObjectPtr<class UObject> UCrSystemStatics::GetTypedSoftObjectReferenceFromPrimaryAssetId(const struct FPrimaryAssetId& PrimaryAssetId, TSubclassOf<class UObject> ExpectedAssetType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrSystemStatics", "GetTypedSoftObjectReferenceFromPrimaryAssetId");
-
-	Params::CrSystemStatics_GetTypedSoftObjectReferenceFromPrimaryAssetId Parms{};
-
-	Parms.PrimaryAssetId = std::move(PrimaryAssetId);
-	Parms.ExpectedAssetType = ExpectedAssetType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSystemStatics.PlayNextGame
-// (Final, BlueprintAuthorityOnly, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSystemStatics::PlayNextGame(const class UObject* WorldContextObject)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrSystemStatics", "PlayNextGame");
-
-	Params::CrSystemStatics_PlayNextGame Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSystemStatics.ReplaceStaticMeshSockets
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UStaticMesh*                      Source                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UStaticMesh*                      Dest                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSystemStatics::ReplaceStaticMeshSockets(class UStaticMesh* Source, class UStaticMesh* Dest)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrSystemStatics", "ReplaceStaticMeshSockets");
-
-	Params::CrSystemStatics_ReplaceStaticMeshSockets Parms{};
-
-	Parms.Source = Source;
-	Parms.Dest = Dest;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSystemStatics.SetColorParameterValueOnAllMeshComponents
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FName                       ParameterName                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FLinearColor&              ParameterValue                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIncludeChildActors                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSystemStatics::SetColorParameterValueOnAllMeshComponents(class AActor* TargetActor, const class FName ParameterName, const struct FLinearColor& ParameterValue, bool bIncludeChildActors)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrSystemStatics", "SetColorParameterValueOnAllMeshComponents");
-
-	Params::CrSystemStatics_SetColorParameterValueOnAllMeshComponents Parms{};
-
-	Parms.TargetActor = TargetActor;
-	Parms.ParameterName = ParameterName;
-	Parms.ParameterValue = std::move(ParameterValue);
-	Parms.bIncludeChildActors = bIncludeChildActors;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSystemStatics.SetScalarParameterValueOnAllMeshComponents
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FName                       ParameterName                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const float                             ParameterValue                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIncludeChildActors                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSystemStatics::SetScalarParameterValueOnAllMeshComponents(class AActor* TargetActor, const class FName ParameterName, const float ParameterValue, bool bIncludeChildActors)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrSystemStatics", "SetScalarParameterValueOnAllMeshComponents");
-
-	Params::CrSystemStatics_SetScalarParameterValueOnAllMeshComponents Parms{};
-
-	Parms.TargetActor = TargetActor;
-	Parms.ParameterName = ParameterName;
-	Parms.ParameterValue = ParameterValue;
-	Parms.bIncludeChildActors = bIncludeChildActors;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSystemStatics.SetVectorParameterValueOnAllMeshComponents
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FName                       ParameterName                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   ParameterValue                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIncludeChildActors                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSystemStatics::SetVectorParameterValueOnAllMeshComponents(class AActor* TargetActor, const class FName ParameterName, const struct FVector& ParameterValue, bool bIncludeChildActors)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrSystemStatics", "SetVectorParameterValueOnAllMeshComponents");
-
-	Params::CrSystemStatics_SetVectorParameterValueOnAllMeshComponents Parms{};
-
-	Parms.TargetActor = TargetActor;
-	Parms.ParameterName = ParameterName;
-	Parms.ParameterValue = std::move(ParameterValue);
-	Parms.bIncludeChildActors = bIncludeChildActors;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -4262,101 +3561,55 @@ void UCrAIBaseAttributeSet::OnRep_MovementSpeedBoost(const struct FGameplayAttri
 }
 
 
-// Function Chimera.CrSulphurLogic.BP_SulphurActivityChanged
+// Function Chimera.CrUW_BuildingCost.DeleteAllEntries
+// (Event, Public, BlueprintEvent)
+
+void UCrUW_BuildingCost::DeleteAllEntries()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_BuildingCost", "DeleteAllEntries");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Chimera.CrUW_BuildingCost.OnEntryCreated
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class UCrUW_BuildingCostEntry*          CreatedEntry                                           (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_BuildingCost::OnEntryCreated(class UCrUW_BuildingCostEntry* CreatedEntry)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_BuildingCost", "OnEntryCreated");
+
+	Params::CrUW_BuildingCost_OnEntryCreated Parms{};
+
+	Parms.CreatedEntry = CreatedEntry;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Chimera.CrUW_BuildingCost.SetupInfo
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    bActive                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ACrBuildingActorBase*             InBuilding                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ACrSulphurLogic::BP_SulphurActivityChanged(bool bActive)
+void UCrUW_BuildingCost::SetupInfo(class ACrBuildingActorBase* InBuilding)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrSulphurLogic", "BP_SulphurActivityChanged");
+		Func = Class->GetFunction("CrUW_BuildingCost", "SetupInfo");
 
-	Params::CrSulphurLogic_BP_SulphurActivityChanged Parms{};
+	Params::CrUW_BuildingCost_SetupInfo Parms{};
 
-	Parms.bActive = bActive;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSulphurLogic.Multicast_OnSulphurActivityChanged
-// (Net, NetReliable, Native, Event, NetMulticast, Public)
-// Parameters:
-// bool                                    bActive                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrSulphurLogic::Multicast_OnSulphurActivityChanged(bool bActive)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSulphurLogic", "Multicast_OnSulphurActivityChanged");
-
-	Params::CrSulphurLogic_Multicast_OnSulphurActivityChanged Parms{};
-
-	Parms.bActive = bActive;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSulphurLogic.OnSulphurActivityChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bActive                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrSulphurLogic::OnSulphurActivityChanged(bool bActive)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSulphurLogic", "OnSulphurActivityChanged");
-
-	Params::CrSulphurLogic_OnSulphurActivityChanged Parms{};
-
-	Parms.bActive = bActive;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Chimera.CrUW_FEMapLegend.SetTextArray
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const TArray<class FText>&              InTexts                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// const class FText&                      InFloorText                                            (ConstParm, Parm, NativeAccessSpecifierPublic)
-// float                                   LeftMargin                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   BottomMargin                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const TMap<int32, float>&               FixedBottomMargin                                      (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// const float                             LegendVerticalOffset                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_FEMapLegend::SetTextArray(const TArray<class FText>& InTexts, const class FText& InFloorText, float LeftMargin, float BottomMargin, const TMap<int32, float>& FixedBottomMargin, const float LegendVerticalOffset)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_FEMapLegend", "SetTextArray");
-
-	Params::CrUW_FEMapLegend_SetTextArray Parms{};
-
-	Parms.InTexts = std::move(InTexts);
-	Parms.InFloorText = std::move(InFloorText);
-	Parms.LeftMargin = LeftMargin;
-	Parms.BottomMargin = BottomMargin;
-	Parms.FixedBottomMargin = std::move(FixedBottomMargin);
-	Parms.LegendVerticalOffset = LegendVerticalOffset;
+	Parms.InBuilding = InBuilding;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4687,71 +3940,23 @@ void ACrAiDeathSequenceActor::OnVisualVariationSeedChanged(const struct FVector&
 }
 
 
-// Function Chimera.CrTemperatureAttributeSet.OnRep_CurrentTemperature
-// (Native, Protected, HasOutParams)
+// Function Chimera.CrTeleportingSubsystem.OnTeleporterStateChanged
+// (Final, Native, Private)
 // Parameters:
-// const struct FGameplayAttributeData&    OldCurrentTemperature                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FMassEntityHandle&         InTeleporter                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrTemperatureAttributeSet::OnRep_CurrentTemperature(const struct FGameplayAttributeData& OldCurrentTemperature)
+void UCrTeleportingSubsystem::OnTeleporterStateChanged(const struct FMassEntityHandle& InTeleporter, class FName InName)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrTemperatureAttributeSet", "OnRep_CurrentTemperature");
+		Func = Class->GetFunction("CrTeleportingSubsystem", "OnTeleporterStateChanged");
 
-	Params::CrTemperatureAttributeSet_OnRep_CurrentTemperature Parms{};
+	Params::CrTeleportingSubsystem_OnTeleporterStateChanged Parms{};
 
-	Parms.OldCurrentTemperature = std::move(OldCurrentTemperature);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrTemperatureAttributeSet.OnRep_MaxTemperature
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldMaxTemperature                                      (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrTemperatureAttributeSet::OnRep_MaxTemperature(const struct FGameplayAttributeData& OldMaxTemperature)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrTemperatureAttributeSet", "OnRep_MaxTemperature");
-
-	Params::CrTemperatureAttributeSet_OnRep_MaxTemperature Parms{};
-
-	Parms.OldMaxTemperature = std::move(OldMaxTemperature);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrTemperatureAttributeSet.OnRep_MinTemperature
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldMinTemperature                                      (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrTemperatureAttributeSet::OnRep_MinTemperature(const struct FGameplayAttributeData& OldMinTemperature)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrTemperatureAttributeSet", "OnRep_MinTemperature");
-
-	Params::CrTemperatureAttributeSet_OnRep_MinTemperature Parms{};
-
-	Parms.OldMinTemperature = std::move(OldMinTemperature);
+	Parms.InTeleporter = std::move(InTeleporter);
+	Parms.InName = InName;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4912,6 +4117,238 @@ bool UCrBPAimAnalysisCustomCriterion::BP_IsCriterionMet(const class ACrCharacter
 	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrAbilityTask_PlayMontage.CreatePlayMontageAndWaitProxy
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             TaskInstanceName                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAnimMontage*                     TppMontageToPlay_0                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAnimMontage*                     FppMontageToPlay_0                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Rate_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bStopWhenAbilityEnds_0                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             StartSection_0                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAbilityTask_PlayMontage*       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAbilityTask_PlayMontage* UCrAbilityTask_PlayMontage::CreatePlayMontageAndWaitProxy(class UGameplayAbility* OwningAbility, class FName TaskInstanceName, class UAnimMontage* TppMontageToPlay_0, class UAnimMontage* FppMontageToPlay_0, float Rate_0, bool bStopWhenAbilityEnds_0, class FName StartSection_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAbilityTask_PlayMontage", "CreatePlayMontageAndWaitProxy");
+
+	Params::CrAbilityTask_PlayMontage_CreatePlayMontageAndWaitProxy Parms{};
+
+	Parms.OwningAbility = OwningAbility;
+	Parms.TaskInstanceName = TaskInstanceName;
+	Parms.TppMontageToPlay_0 = TppMontageToPlay_0;
+	Parms.FppMontageToPlay_0 = FppMontageToPlay_0;
+	Parms.Rate_0 = Rate_0;
+	Parms.bStopWhenAbilityEnds_0 = bStopWhenAbilityEnds_0;
+	Parms.StartSection_0 = StartSection_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrAbilityTask_PlayMontage.CreatePlayMontagePairAndWaitProxy
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             TaskInstanceName                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrMontagePair&            MontagePair                                            (Parm, NoDestructor, NativeAccessSpecifierPublic)
+// float                                   Rate_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bStopWhenAbilityEnds_0                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             StartSection_0                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAbilityTask_PlayMontage*       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAbilityTask_PlayMontage* UCrAbilityTask_PlayMontage::CreatePlayMontagePairAndWaitProxy(class UGameplayAbility* OwningAbility, class FName TaskInstanceName, const struct FCrMontagePair& MontagePair, float Rate_0, bool bStopWhenAbilityEnds_0, class FName StartSection_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAbilityTask_PlayMontage", "CreatePlayMontagePairAndWaitProxy");
+
+	Params::CrAbilityTask_PlayMontage_CreatePlayMontagePairAndWaitProxy Parms{};
+
+	Parms.OwningAbility = OwningAbility;
+	Parms.TaskInstanceName = TaskInstanceName;
+	Parms.MontagePair = std::move(MontagePair);
+	Parms.Rate_0 = Rate_0;
+	Parms.bStopWhenAbilityEnds_0 = bStopWhenAbilityEnds_0;
+	Parms.StartSection_0 = StartSection_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrAbilityTask_PlayMontage.OnAbilityCancelled
+// (Final, Native, Public)
+
+void UCrAbilityTask_PlayMontage::OnAbilityCancelled()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAbilityTask_PlayMontage", "OnAbilityCancelled");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrAbilityTask_PlayMontage.OnFPPMontageBlendOut
+// (Final, Native, Public)
+// Parameters:
+// class UAnimMontage*                     Montage                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInterrupted                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrAbilityTask_PlayMontage::OnFPPMontageBlendOut_0(class UAnimMontage* Montage, bool bInterrupted)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAbilityTask_PlayMontage", "OnFPPMontageBlendOut");
+
+	Params::CrAbilityTask_PlayMontage_OnFPPMontageBlendOut_0 Parms{};
+
+	Parms.Montage = Montage;
+	Parms.bInterrupted = bInterrupted;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrAbilityTask_PlayMontage.OnMontageEnded
+// (Final, Native, Public)
+// Parameters:
+// class UAnimMontage*                     Montage                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInterrupted                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrAbilityTask_PlayMontage::OnMontageEnded(class UAnimMontage* Montage, bool bInterrupted)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAbilityTask_PlayMontage", "OnMontageEnded");
+
+	Params::CrAbilityTask_PlayMontage_OnMontageEnded Parms{};
+
+	Parms.Montage = Montage;
+	Parms.bInterrupted = bInterrupted;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrAbilityTask_PlayMontage.OnNotifyBeginReceived
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// class FName                             NotifyName                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FBranchingPointNotifyPayload&BranchingPointNotifyPayload                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UCrAbilityTask_PlayMontage::OnNotifyBeginReceived(class FName NotifyName, const struct FBranchingPointNotifyPayload& BranchingPointNotifyPayload)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAbilityTask_PlayMontage", "OnNotifyBeginReceived");
+
+	Params::CrAbilityTask_PlayMontage_OnNotifyBeginReceived Parms{};
+
+	Parms.NotifyName = NotifyName;
+	Parms.BranchingPointNotifyPayload = std::move(BranchingPointNotifyPayload);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrAbilityTask_PlayMontage.OnNotifyEndReceived
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// class FName                             NotifyName                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FBranchingPointNotifyPayload&BranchingPointNotifyPayload                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UCrAbilityTask_PlayMontage::OnNotifyEndReceived(class FName NotifyName, const struct FBranchingPointNotifyPayload& BranchingPointNotifyPayload)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAbilityTask_PlayMontage", "OnNotifyEndReceived");
+
+	Params::CrAbilityTask_PlayMontage_OnNotifyEndReceived Parms{};
+
+	Parms.NotifyName = NotifyName;
+	Parms.BranchingPointNotifyPayload = std::move(BranchingPointNotifyPayload);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrAbilityTask_PlayMontage.OnTPPMontageBlendOut
+// (Final, Native, Public)
+// Parameters:
+// class UAnimMontage*                     Montage                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInterrupted                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrAbilityTask_PlayMontage::OnTPPMontageBlendOut(class UAnimMontage* Montage, bool bInterrupted)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAbilityTask_PlayMontage", "OnTPPMontageBlendOut");
+
+	Params::CrAbilityTask_PlayMontage_OnTPPMontageBlendOut Parms{};
+
+	Parms.Montage = Montage;
+	Parms.bInterrupted = bInterrupted;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -5957,52 +5394,19 @@ bool ICrAISpawnerTriggerInterface::IsSphereShape() const
 }
 
 
-// Function Chimera.CrWorldInteractablesLibrary.GetCookedEnvelopeDataForSoundWave
-// (Final, Native, Static, Public, BlueprintCallable)
+// Function Chimera.CrGlassDecalActorBase.GetGlassPlaneMutable
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class USoundWave*                       SoundWave                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnCount                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<float>                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+// class UStaticMeshComponent*             ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-TArray<float> UCrWorldInteractablesLibrary::GetCookedEnvelopeDataForSoundWave(class USoundWave* SoundWave, int32 ReturnCount)
+class UStaticMeshComponent* ACrGlassDecalActorBase::GetGlassPlaneMutable()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrWorldInteractablesLibrary", "GetCookedEnvelopeDataForSoundWave");
+		Func = Class->GetFunction("CrGlassDecalActorBase", "GetGlassPlaneMutable");
 
-	Params::CrWorldInteractablesLibrary_GetCookedEnvelopeDataForSoundWave Parms{};
-
-	Parms.SoundWave = SoundWave;
-	Parms.ReturnCount = ReturnCount;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrGameModeBase.GetPawnDataForController
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const class AController*                InController                                           (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class UCrPawnData*                ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-const class UCrPawnData* ACrGameModeBase::GetPawnDataForController(const class AController* InController) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGameModeBase", "GetPawnDataForController");
-
-	Params::CrGameModeBase_GetPawnDataForController Parms{};
-
-	Parms.InController = InController;
+	Params::CrGlassDecalActorBase_GetGlassPlaneMutable Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6040,35 +5444,28 @@ void ICrAISpawnerEditorVisibilityInterface::SetEditorVisibility(bool bIsVisible)
 }
 
 
-// Function Chimera.CrAiActionBool.Create_CrAiActionBool
-// (Final, Native, Static, Public, BlueprintCallable)
+// Function Chimera.CrBuildingSplineActorBase.OnSplineReady
+// (Native, Event, Public, BlueprintEvent)
 // Parameters:
-// TSubclassOf<class UCrAiActionBool>      ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    NewInputVariable                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAiActionBool*                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class USplineComponent*                 InSpline                                               (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UCrAiActionBool* UCrAiActionBool::Create_CrAiActionBool(TSubclassOf<class UCrAiActionBool> ActionType, float NewMaxLifetimeS, bool NewInputVariable)
+void ACrBuildingSplineActorBase::OnSplineReady(class USplineComponent* InSpline)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionBool", "Create_CrAiActionBool");
+		Func = Class->GetFunction("CrBuildingSplineActorBase", "OnSplineReady");
 
-	Params::CrAiActionBool_Create_CrAiActionBool Parms{};
+	Params::CrBuildingSplineActorBase_OnSplineReady Parms{};
 
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-	Parms.NewInputVariable = NewInputVariable;
+	Parms.InSpline = InSpline;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -6147,39 +5544,303 @@ void UCrCaloriesAttributeSet::OnRep_MinCalories(const struct FGameplayAttributeD
 }
 
 
-// Function Chimera.CrZiplineReplicator.OnPreSaveStart
-// (Final, Native, Private)
+// Function Chimera.CrZiplineActorsManagerWorldSubsystem.DestroyZiplineProxiesForOwner
+// (Final, Native, Public)
+// Parameters:
+// class AActor*                           Owner                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ACrZiplineReplicator::OnPreSaveStart()
+void UCrZiplineActorsManagerWorldSubsystem::DestroyZiplineProxiesForOwner(class AActor* Owner)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplineReplicator", "OnPreSaveStart");
+		Func = Class->GetFunction("CrZiplineActorsManagerWorldSubsystem", "DestroyZiplineProxiesForOwner");
+
+	Params::CrZiplineActorsManagerWorldSubsystem_DestroyZiplineProxiesForOwner Parms{};
+
+	Parms.Owner = Owner;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function Chimera.CrZiplineReplicator.OnSaveLoaded
-// (Final, Native, Private)
+// Function Chimera.CrZiplineActorsManagerWorldSubsystem.GetNextSplineComponent
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class USplineComponent*                 InSplineComponent                                      (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InDirection                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class USplineComponent**                OutSplineComponent                                     (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  OutDirection                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class USplineComponent*                 InIgnoreSplineComponent                                (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ACrZiplineReplicator::OnSaveLoaded()
+bool UCrZiplineActorsManagerWorldSubsystem::GetNextSplineComponent(class USplineComponent* InSplineComponent, float InDirection, class USplineComponent** OutSplineComponent, float* OutDirection, class USplineComponent* InIgnoreSplineComponent)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplineReplicator", "OnSaveLoaded");
+		Func = Class->GetFunction("CrZiplineActorsManagerWorldSubsystem", "GetNextSplineComponent");
+
+	Params::CrZiplineActorsManagerWorldSubsystem_GetNextSplineComponent Parms{};
+
+	Parms.InSplineComponent = InSplineComponent;
+	Parms.InDirection = InDirection;
+	Parms.InIgnoreSplineComponent = InIgnoreSplineComponent;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutSplineComponent != nullptr)
+		*OutSplineComponent = Parms.OutSplineComponent;
+
+	if (OutDirection != nullptr)
+		*OutDirection = Parms.OutDirection;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrZiplineActorsManagerWorldSubsystem.OnZiplineActorEndPlay
+// (Final, Native, Public)
+// Parameters:
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EEndPlayReason                          Reason                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrZiplineActorsManagerWorldSubsystem::OnZiplineActorEndPlay(class AActor* Actor, EEndPlayReason Reason)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplineActorsManagerWorldSubsystem", "OnZiplineActorEndPlay");
+
+	Params::CrZiplineActorsManagerWorldSubsystem_OnZiplineActorEndPlay Parms{};
+
+	Parms.Actor = Actor;
+	Parms.Reason = Reason;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrZiplineActorsManagerWorldSubsystem.RebuildZiplineFullSplineProxy
+// (Final, Native, Public)
+// Parameters:
+// const struct FZiplineFullSplineProxy&   ProxyToRebuild                                         (Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UCrZiplineActorsManagerWorldSubsystem::RebuildZiplineFullSplineProxy(const struct FZiplineFullSplineProxy& ProxyToRebuild)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplineActorsManagerWorldSubsystem", "RebuildZiplineFullSplineProxy");
+
+	Params::CrZiplineActorsManagerWorldSubsystem_RebuildZiplineFullSplineProxy Parms{};
+
+	Parms.ProxyToRebuild = std::move(ProxyToRebuild);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrZiplineActorsManagerWorldSubsystem.RebuildZiplineSplineProxy
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class AActor*                           Owner                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ACrBuildingSplineActorBase*       StartingZiplineActor                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InDirection                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FZiplineFullSplineProxy*         OutNewProxyData                                        (Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// int32                                   MaxAmountOfZiplineActorsToMerge                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrZiplineActorsManagerWorldSubsystem::RebuildZiplineSplineProxy(class AActor* Owner, class ACrBuildingSplineActorBase* StartingZiplineActor, float InDirection, struct FZiplineFullSplineProxy* OutNewProxyData, int32 MaxAmountOfZiplineActorsToMerge)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplineActorsManagerWorldSubsystem", "RebuildZiplineSplineProxy");
+
+	Params::CrZiplineActorsManagerWorldSubsystem_RebuildZiplineSplineProxy Parms{};
+
+	Parms.Owner = Owner;
+	Parms.StartingZiplineActor = StartingZiplineActor;
+	Parms.InDirection = InDirection;
+	Parms.MaxAmountOfZiplineActorsToMerge = MaxAmountOfZiplineActorsToMerge;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutNewProxyData != nullptr)
+		*OutNewProxyData = std::move(Parms.OutNewProxyData);
+}
+
+
+// Function Chimera.CrZiplineActorsManagerWorldSubsystem.RegisterZiplineActor
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class ACrBuildingSplineActorBase*       InZiplineActor                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrZiplineActorsManagerWorldSubsystem::RegisterZiplineActor(class ACrBuildingSplineActorBase* InZiplineActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplineActorsManagerWorldSubsystem", "RegisterZiplineActor");
+
+	Params::CrZiplineActorsManagerWorldSubsystem_RegisterZiplineActor Parms{};
+
+	Parms.InZiplineActor = InZiplineActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrZiplineActorsManagerWorldSubsystem.SpawnSpline
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class ACrSplineActor*                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ACrSplineActor* UCrZiplineActorsManagerWorldSubsystem::SpawnSpline()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplineActorsManagerWorldSubsystem", "SpawnSpline");
+
+	Params::CrZiplineActorsManagerWorldSubsystem_SpawnSpline Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrZiplineActorsManagerWorldSubsystem.UnRegisterZiplineActor
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class ACrBuildingSplineActorBase*       InZiplineActor                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrZiplineActorsManagerWorldSubsystem::UnRegisterZiplineActor(class ACrBuildingSplineActorBase* InZiplineActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplineActorsManagerWorldSubsystem", "UnRegisterZiplineActor");
+
+	Params::CrZiplineActorsManagerWorldSubsystem_UnRegisterZiplineActor Parms{};
+
+	Parms.InZiplineActor = InZiplineActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrHeatAttributeSet.OnRep_CurrentHeat
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldCurrentHeat                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrHeatAttributeSet::OnRep_CurrentHeat(const struct FGameplayAttributeData& OldCurrentHeat)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrHeatAttributeSet", "OnRep_CurrentHeat");
+
+	Params::CrHeatAttributeSet_OnRep_CurrentHeat Parms{};
+
+	Parms.OldCurrentHeat = std::move(OldCurrentHeat);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrHeatAttributeSet.OnRep_MaxHeat
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldMaxHeat                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrHeatAttributeSet::OnRep_MaxHeat(const struct FGameplayAttributeData& OldMaxHeat)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrHeatAttributeSet", "OnRep_MaxHeat");
+
+	Params::CrHeatAttributeSet_OnRep_MaxHeat Parms{};
+
+	Parms.OldMaxHeat = std::move(OldMaxHeat);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrHeatAttributeSet.OnRep_MinHeat
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldMinHeat                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrHeatAttributeSet::OnRep_MinHeat(const struct FGameplayAttributeData& OldMinHeat)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrHeatAttributeSet", "OnRep_MinHeat");
+
+	Params::CrHeatAttributeSet_OnRep_MinHeat Parms{};
+
+	Parms.OldMinHeat = std::move(OldMinHeat);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -6211,6 +5872,106 @@ void ICrCharacterTraceInterface::GatherAllIgnoredActors(TArray<class AActor*>* O
 }
 
 
+// Function Chimera.CrGlobalAbilitiesSubsystem.ApplyAbilityToAll
+// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UGameplayAbility>     Ability                                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrGlobalAbilitiesSubsystem::ApplyAbilityToAll(TSubclassOf<class UGameplayAbility> Ability)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGlobalAbilitiesSubsystem", "ApplyAbilityToAll");
+
+	Params::CrGlobalAbilitiesSubsystem_ApplyAbilityToAll Parms{};
+
+	Parms.Ability = Ability;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGlobalAbilitiesSubsystem.ApplyEffectToAll
+// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UGameplayEffect>      Effect                                                 (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrGlobalAbilitiesSubsystem::ApplyEffectToAll(TSubclassOf<class UGameplayEffect> Effect)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGlobalAbilitiesSubsystem", "ApplyEffectToAll");
+
+	Params::CrGlobalAbilitiesSubsystem_ApplyEffectToAll Parms{};
+
+	Parms.Effect = Effect;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGlobalAbilitiesSubsystem.RemoveAbilityFromAll
+// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UGameplayAbility>     Ability                                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrGlobalAbilitiesSubsystem::RemoveAbilityFromAll(TSubclassOf<class UGameplayAbility> Ability)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGlobalAbilitiesSubsystem", "RemoveAbilityFromAll");
+
+	Params::CrGlobalAbilitiesSubsystem_RemoveAbilityFromAll Parms{};
+
+	Parms.Ability = Ability;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGlobalAbilitiesSubsystem.RemoveEffectFromAll
+// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UGameplayEffect>      Effect                                                 (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrGlobalAbilitiesSubsystem::RemoveEffectFromAll(TSubclassOf<class UGameplayEffect> Effect)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGlobalAbilitiesSubsystem", "RemoveEffectFromAll");
+
+	Params::CrGlobalAbilitiesSubsystem_RemoveEffectFromAll Parms{};
+
+	Parms.Effect = Effect;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Chimera.CrCharacterBase.IsCharacterGameplayReady
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
@@ -6236,35 +5997,528 @@ bool ACrCharacterBase::IsCharacterGameplayReady() const
 }
 
 
-// Function Chimera.CrAiActionFloat.Create_CrAiActionFloat
-// (Final, Native, Static, Public, BlueprintCallable)
+// Function Chimera.CrGemAttributeSet.OnRep_CaloriesLossMultiplier
+// (Native, Protected, HasOutParams)
 // Parameters:
-// TSubclassOf<class UCrAiActionFloat>     ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewInputVariable                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAiActionFloat*                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAttributeData&    OldCaloriesLossMultiplier                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-class UCrAiActionFloat* UCrAiActionFloat::Create_CrAiActionFloat(TSubclassOf<class UCrAiActionFloat> ActionType, float NewMaxLifetimeS, float NewInputVariable)
+void UCrGemAttributeSet::OnRep_CaloriesLossMultiplier(const struct FGameplayAttributeData& OldCaloriesLossMultiplier)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionFloat", "Create_CrAiActionFloat");
+		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_CaloriesLossMultiplier");
 
-	Params::CrAiActionFloat_Create_CrAiActionFloat Parms{};
+	Params::CrGemAttributeSet_OnRep_CaloriesLossMultiplier Parms{};
 
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-	Parms.NewInputVariable = NewInputVariable;
+	Parms.OldCaloriesLossMultiplier = std::move(OldCaloriesLossMultiplier);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
 
-	return Parms.ReturnValue;
+
+// Function Chimera.CrGemAttributeSet.OnRep_ConsumableStatsMultiplier
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldConsumableStatsMultiplier                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrGemAttributeSet::OnRep_ConsumableStatsMultiplier(const struct FGameplayAttributeData& OldConsumableStatsMultiplier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_ConsumableStatsMultiplier");
+
+	Params::CrGemAttributeSet_OnRep_ConsumableStatsMultiplier Parms{};
+
+	Parms.OldConsumableStatsMultiplier = std::move(OldConsumableStatsMultiplier);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGemAttributeSet.OnRep_ConsumableToxicityMultiplier
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldConsumableToxicityMultiplier                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrGemAttributeSet::OnRep_ConsumableToxicityMultiplier(const struct FGameplayAttributeData& OldConsumableToxicityMultiplier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_ConsumableToxicityMultiplier");
+
+	Params::CrGemAttributeSet_OnRep_ConsumableToxicityMultiplier Parms{};
+
+	Parms.OldConsumableToxicityMultiplier = std::move(OldConsumableToxicityMultiplier);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGemAttributeSet.OnRep_DodgeCostMultiplier
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldDodgeCostMultiplier                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrGemAttributeSet::OnRep_DodgeCostMultiplier(const struct FGameplayAttributeData& OldDodgeCostMultiplier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_DodgeCostMultiplier");
+
+	Params::CrGemAttributeSet_OnRep_DodgeCostMultiplier Parms{};
+
+	Parms.OldDodgeCostMultiplier = std::move(OldDodgeCostMultiplier);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGemAttributeSet.OnRep_DoubleJumpCostMultiplier
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldDoubleJumpCostMultiplier                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrGemAttributeSet::OnRep_DoubleJumpCostMultiplier(const struct FGameplayAttributeData& OldDoubleJumpCostMultiplier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_DoubleJumpCostMultiplier");
+
+	Params::CrGemAttributeSet_OnRep_DoubleJumpCostMultiplier Parms{};
+
+	Parms.OldDoubleJumpCostMultiplier = std::move(OldDoubleJumpCostMultiplier);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGemAttributeSet.OnRep_EnemyDropChanceMultiplier
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldEnemyDropChanceMultiplier                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrGemAttributeSet::OnRep_EnemyDropChanceMultiplier(const struct FGameplayAttributeData& OldEnemyDropChanceMultiplier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_EnemyDropChanceMultiplier");
+
+	Params::CrGemAttributeSet_OnRep_EnemyDropChanceMultiplier Parms{};
+
+	Parms.OldEnemyDropChanceMultiplier = std::move(OldEnemyDropChanceMultiplier);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGemAttributeSet.OnRep_FallDamageMultiplier
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldFallDamageMultiplier                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrGemAttributeSet::OnRep_FallDamageMultiplier(const struct FGameplayAttributeData& OldFallDamageMultiplier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_FallDamageMultiplier");
+
+	Params::CrGemAttributeSet_OnRep_FallDamageMultiplier Parms{};
+
+	Parms.OldFallDamageMultiplier = std::move(OldFallDamageMultiplier);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGemAttributeSet.OnRep_FogOfWarRadiusMultiplier
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldFogOfWarRadiusMultiplier                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrGemAttributeSet::OnRep_FogOfWarRadiusMultiplier(const struct FGameplayAttributeData& OldFogOfWarRadiusMultiplier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_FogOfWarRadiusMultiplier");
+
+	Params::CrGemAttributeSet_OnRep_FogOfWarRadiusMultiplier Parms{};
+
+	Parms.OldFogOfWarRadiusMultiplier = std::move(OldFogOfWarRadiusMultiplier);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGemAttributeSet.OnRep_FriendlyFireMultiplier
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldFriendlyFireMultiplier                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrGemAttributeSet::OnRep_FriendlyFireMultiplier(const struct FGameplayAttributeData& OldFriendlyFireMultiplier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_FriendlyFireMultiplier");
+
+	Params::CrGemAttributeSet_OnRep_FriendlyFireMultiplier Parms{};
+
+	Parms.OldFriendlyFireMultiplier = std::move(OldFriendlyFireMultiplier);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGemAttributeSet.OnRep_HarvesterMiningDamageMultiplier
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldHarvesterMiningDamageMultiplier                     (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrGemAttributeSet::OnRep_HarvesterMiningDamageMultiplier(const struct FGameplayAttributeData& OldHarvesterMiningDamageMultiplier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_HarvesterMiningDamageMultiplier");
+
+	Params::CrGemAttributeSet_OnRep_HarvesterMiningDamageMultiplier Parms{};
+
+	Parms.OldHarvesterMiningDamageMultiplier = std::move(OldHarvesterMiningDamageMultiplier);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGemAttributeSet.OnRep_HydrationLossMultiplier
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldHydrationLossMultiplier                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrGemAttributeSet::OnRep_HydrationLossMultiplier(const struct FGameplayAttributeData& OldHydrationLossMultiplier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_HydrationLossMultiplier");
+
+	Params::CrGemAttributeSet_OnRep_HydrationLossMultiplier Parms{};
+
+	Parms.OldHydrationLossMultiplier = std::move(OldHydrationLossMultiplier);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGemAttributeSet.OnRep_InfectionGainMultiplier
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldInfectionGainMultiplier                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrGemAttributeSet::OnRep_InfectionGainMultiplier(const struct FGameplayAttributeData& OldInfectionGainMultiplier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_InfectionGainMultiplier");
+
+	Params::CrGemAttributeSet_OnRep_InfectionGainMultiplier Parms{};
+
+	Parms.OldInfectionGainMultiplier = std::move(OldInfectionGainMultiplier);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGemAttributeSet.OnRep_NegativeStatsGainMultiplier
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldNegativeStatsGainMultiplier                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrGemAttributeSet::OnRep_NegativeStatsGainMultiplier(const struct FGameplayAttributeData& OldNegativeStatsGainMultiplier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_NegativeStatsGainMultiplier");
+
+	Params::CrGemAttributeSet_OnRep_NegativeStatsGainMultiplier Parms{};
+
+	Parms.OldNegativeStatsGainMultiplier = std::move(OldNegativeStatsGainMultiplier);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGemAttributeSet.OnRep_ReviveDurationMultiplier
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldReviveDurationMultiplier                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrGemAttributeSet::OnRep_ReviveDurationMultiplier(const struct FGameplayAttributeData& OldReviveDurationMultiplier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_ReviveDurationMultiplier");
+
+	Params::CrGemAttributeSet_OnRep_ReviveDurationMultiplier Parms{};
+
+	Parms.OldReviveDurationMultiplier = std::move(OldReviveDurationMultiplier);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGemAttributeSet.OnRep_ShieldRechargeCooldownMultiplier
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldShieldRechargeCooldownMultiplier                    (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrGemAttributeSet::OnRep_ShieldRechargeCooldownMultiplier(const struct FGameplayAttributeData& OldShieldRechargeCooldownMultiplier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_ShieldRechargeCooldownMultiplier");
+
+	Params::CrGemAttributeSet_OnRep_ShieldRechargeCooldownMultiplier Parms{};
+
+	Parms.OldShieldRechargeCooldownMultiplier = std::move(OldShieldRechargeCooldownMultiplier);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGemAttributeSet.OnRep_SlideStaminaRegenMultiplier
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldSlideStaminaRegenMultiplier                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrGemAttributeSet::OnRep_SlideStaminaRegenMultiplier(const struct FGameplayAttributeData& OldSlideStaminaRegenMultiplier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_SlideStaminaRegenMultiplier");
+
+	Params::CrGemAttributeSet_OnRep_SlideStaminaRegenMultiplier Parms{};
+
+	Parms.OldSlideStaminaRegenMultiplier = std::move(OldSlideStaminaRegenMultiplier);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGemAttributeSet.OnRep_StaminaRegenMultiplier
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldStaminaRegenMultiplier                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrGemAttributeSet::OnRep_StaminaRegenMultiplier(const struct FGameplayAttributeData& OldStaminaRegenMultiplier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_StaminaRegenMultiplier");
+
+	Params::CrGemAttributeSet_OnRep_StaminaRegenMultiplier Parms{};
+
+	Parms.OldStaminaRegenMultiplier = std::move(OldStaminaRegenMultiplier);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGemAttributeSet.OnRep_WeaponADSSpeedMultiplier
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldWeaponADSSpeedMultiplier                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrGemAttributeSet::OnRep_WeaponADSSpeedMultiplier(const struct FGameplayAttributeData& OldWeaponADSSpeedMultiplier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_WeaponADSSpeedMultiplier");
+
+	Params::CrGemAttributeSet_OnRep_WeaponADSSpeedMultiplier Parms{};
+
+	Parms.OldWeaponADSSpeedMultiplier = std::move(OldWeaponADSSpeedMultiplier);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGemAttributeSet.OnRep_WeaponReloadSpeedMultiplier
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldWeaponReloadSpeedMultiplier                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrGemAttributeSet::OnRep_WeaponReloadSpeedMultiplier(const struct FGameplayAttributeData& OldWeaponReloadSpeedMultiplier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_WeaponReloadSpeedMultiplier");
+
+	Params::CrGemAttributeSet_OnRep_WeaponReloadSpeedMultiplier Parms{};
+
+	Parms.OldWeaponReloadSpeedMultiplier = std::move(OldWeaponReloadSpeedMultiplier);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGemAttributeSet.OnRep_WeaponSwapSpeedMultiplier
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldWeaponSwapSpeedMultiplier                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrGemAttributeSet::OnRep_WeaponSwapSpeedMultiplier(const struct FGameplayAttributeData& OldWeaponSwapSpeedMultiplier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_WeaponSwapSpeedMultiplier");
+
+	Params::CrGemAttributeSet_OnRep_WeaponSwapSpeedMultiplier Parms{};
+
+	Parms.OldWeaponSwapSpeedMultiplier = std::move(OldWeaponSwapSpeedMultiplier);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGemAttributeSet.OnRep_ZiplineSpeedMultiplier
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldZiplineSpeedMultiplier                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrGemAttributeSet::OnRep_ZiplineSpeedMultiplier(const struct FGameplayAttributeData& OldZiplineSpeedMultiplier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_ZiplineSpeedMultiplier");
+
+	Params::CrGemAttributeSet_OnRep_ZiplineSpeedMultiplier Parms{};
+
+	Parms.OldZiplineSpeedMultiplier = std::move(OldZiplineSpeedMultiplier);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -6401,6 +6655,76 @@ float ACrAlienObeliskSpawner::BP_GetBaseSpawnSearchRadius() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSulphurLogic.BP_SulphurActivityChanged
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bActive                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrSulphurLogic::BP_SulphurActivityChanged(bool bActive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSulphurLogic", "BP_SulphurActivityChanged");
+
+	Params::CrSulphurLogic_BP_SulphurActivityChanged Parms{};
+
+	Parms.bActive = bActive;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSulphurLogic.Multicast_OnSulphurActivityChanged
+// (Net, NetReliable, Native, Event, NetMulticast, Public)
+// Parameters:
+// bool                                    bActive                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrSulphurLogic::Multicast_OnSulphurActivityChanged(bool bActive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSulphurLogic", "Multicast_OnSulphurActivityChanged");
+
+	Params::CrSulphurLogic_Multicast_OnSulphurActivityChanged Parms{};
+
+	Parms.bActive = bActive;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSulphurLogic.OnSulphurActivityChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bActive                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrSulphurLogic::OnSulphurActivityChanged(bool bActive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSulphurLogic", "OnSulphurActivityChanged");
+
+	Params::CrSulphurLogic_OnSulphurActivityChanged Parms{};
+
+	Parms.bActive = bActive;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -6655,28 +6979,39 @@ void UCrContextEffectComponent::UpdateLibraries(const TSet<TSoftObjectPtr<class 
 }
 
 
-// Function Chimera.CrTeleportingSubsystem.OnTeleporterStateChanged
+// Function Chimera.CrTechnologyKeeper.OnRep_AllBuildings
 // (Final, Native, Private)
-// Parameters:
-// const struct FMassEntityHandle&         InTeleporter                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrTeleportingSubsystem::OnTeleporterStateChanged(const struct FMassEntityHandle& InTeleporter, class FName InName)
+void ACrTechnologyKeeper::OnRep_AllBuildings()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrTeleportingSubsystem", "OnTeleporterStateChanged");
-
-	Params::CrTeleportingSubsystem_OnTeleporterStateChanged Parms{};
-
-	Parms.InTeleporter = std::move(InTeleporter);
-	Parms.InName = InName;
+		Func = Class->GetFunction("CrTechnologyKeeper", "OnRep_AllBuildings");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrTechnologyKeeper.OnRep_AvailableBuildings
+// (Final, Native, Private)
+
+void ACrTechnologyKeeper::OnRep_AvailableBuildings()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrTechnologyKeeper", "OnRep_AvailableBuildings");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -6859,206 +7194,50 @@ void ACrDestroyableActor::SetCollisionForEntrance(bool bCollEnabled)
 }
 
 
-// Function Chimera.CrOreActor.BP_OnEnviroWaveStarted
-// (Event, Protected, HasOutParams, BlueprintEvent)
-// Parameters:
-// EEnviroWave                             InWaveType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EEnviroWaveStage                        InWaveStage                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FCrEnviroWaveSettings&     InWaveSettings                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// float                                   InWaveProgress                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrOreActor::BP_OnEnviroWaveStarted(EEnviroWave InWaveType, EEnviroWaveStage InWaveStage, const struct FCrEnviroWaveSettings& InWaveSettings, float InWaveProgress)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrOreActor", "BP_OnEnviroWaveStarted");
-
-	Params::CrOreActor_BP_OnEnviroWaveStarted Parms{};
-
-	Parms.InWaveType = InWaveType;
-	Parms.InWaveStage = InWaveStage;
-	Parms.InWaveSettings = std::move(InWaveSettings);
-	Parms.InWaveProgress = InWaveProgress;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Chimera.CrOreActor.BP_OnFadeoutSubstageChanged
-// (Event, Protected, HasOutParams, BlueprintEvent)
+// Function Chimera.CrStandaloneInfectionSpawnSubsystem.OnFadeoutSubstageChanged
+// (Final, Native, Private, HasOutParams)
 // Parameters:
 // const struct FCrEnviroWaveSettings&     Settings                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // EEnviroWaveFadeoutSubstage              Substage                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Progress                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ACrOreActor::BP_OnFadeoutSubstageChanged(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveFadeoutSubstage Substage, float Progress)
+void UCrStandaloneInfectionSpawnSubsystem::OnFadeoutSubstageChanged(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveFadeoutSubstage Substage, float Progress)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrOreActor", "BP_OnFadeoutSubstageChanged");
+		Func = Class->GetFunction("CrStandaloneInfectionSpawnSubsystem", "OnFadeoutSubstageChanged");
 
-	Params::CrOreActor_BP_OnFadeoutSubstageChanged Parms{};
+	Params::CrStandaloneInfectionSpawnSubsystem_OnFadeoutSubstageChanged Parms{};
 
 	Parms.Settings = std::move(Settings);
 	Parms.Substage = Substage;
 	Parms.Progress = Progress;
 
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
-// Function Chimera.CrOreActor.BP_OnGrowbackSubstageChanged
-// (Event, Protected, HasOutParams, BlueprintEvent)
+// Function Chimera.CrStandaloneInfectionSpawnSubsystem.OnGrowbackSubstageChanged
+// (Final, Native, Private, HasOutParams)
 // Parameters:
 // const struct FCrEnviroWaveSettings&     Settings                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // EEnviroWaveGrowbackSubstage             Substage                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Progress                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ACrOreActor::BP_OnGrowbackSubstageChanged(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveGrowbackSubstage Substage, float Progress)
+void UCrStandaloneInfectionSpawnSubsystem::OnGrowbackSubstageChanged(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveGrowbackSubstage Substage, float Progress)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrOreActor", "BP_OnGrowbackSubstageChanged");
+		Func = Class->GetFunction("CrStandaloneInfectionSpawnSubsystem", "OnGrowbackSubstageChanged");
 
-	Params::CrOreActor_BP_OnGrowbackSubstageChanged Parms{};
-
-	Parms.Settings = std::move(Settings);
-	Parms.Substage = Substage;
-	Parms.Progress = Progress;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Chimera.CrOreActor.BP_OnOreActivated
-// (Event, Public, BlueprintEvent)
-
-void ACrOreActor::BP_OnOreActivated()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrOreActor", "BP_OnOreActivated");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Chimera.CrOreActor.BP_OnSpawnedWithResourceDepleted
-// (Event, Public, BlueprintEvent)
-
-void ACrOreActor::BP_OnSpawnedWithResourceDepleted()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrOreActor", "BP_OnSpawnedWithResourceDepleted");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Chimera.CrOreActor.MulticastOnWeakSpotDepletedCosmeticsStart
-// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
-// Parameters:
-// class FName                             InWeakSpotSocketName                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrOreActor::MulticastOnWeakSpotDepletedCosmeticsStart(class FName InWeakSpotSocketName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrOreActor", "MulticastOnWeakSpotDepletedCosmeticsStart");
-
-	Params::CrOreActor_MulticastOnWeakSpotDepletedCosmeticsStart Parms{};
-
-	Parms.InWeakSpotSocketName = InWeakSpotSocketName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrOreActor.OnEnviroWaveFinished
-// (Native, Protected, HasOutParams)
-// Parameters:
-// EEnviroWave                             WaveType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void ACrOreActor::OnEnviroWaveFinished(EEnviroWave WaveType, const struct FCrEnviroWaveSettings& WaveSettings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrOreActor", "OnEnviroWaveFinished");
-
-	Params::CrOreActor_OnEnviroWaveFinished Parms{};
-
-	Parms.WaveType = WaveType;
-	Parms.WaveSettings = std::move(WaveSettings);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrOreActor.OnEnviroWaveStarted
-// (Native, Protected, HasOutParams)
-// Parameters:
-// EEnviroWave                             InWaveType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EEnviroWaveStage                        InWaveStage                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FCrEnviroWaveSettings&     InWaveSettings                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// float                                   InWaveProgress                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrOreActor::OnEnviroWaveStarted(EEnviroWave InWaveType, EEnviroWaveStage InWaveStage, const struct FCrEnviroWaveSettings& InWaveSettings, float InWaveProgress)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrOreActor", "OnEnviroWaveStarted");
-
-	Params::CrOreActor_OnEnviroWaveStarted Parms{};
-
-	Parms.InWaveType = InWaveType;
-	Parms.InWaveStage = InWaveStage;
-	Parms.InWaveSettings = std::move(InWaveSettings);
-	Parms.InWaveProgress = InWaveProgress;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrOreActor.OnFadeoutSubstageChanged
-// (Final, Native, Protected, HasOutParams)
-// Parameters:
-// const struct FCrEnviroWaveSettings&     Settings                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// EEnviroWaveFadeoutSubstage              Substage                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Progress                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrOreActor::OnFadeoutSubstageChanged(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveFadeoutSubstage Substage, float Progress)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrOreActor", "OnFadeoutSubstageChanged");
-
-	Params::CrOreActor_OnFadeoutSubstageChanged Parms{};
+	Params::CrStandaloneInfectionSpawnSubsystem_OnGrowbackSubstageChanged Parms{};
 
 	Parms.Settings = std::move(Settings);
 	Parms.Substage = Substage;
@@ -7073,64 +7252,15 @@ void ACrOreActor::OnFadeoutSubstageChanged(const struct FCrEnviroWaveSettings& S
 }
 
 
-// Function Chimera.CrOreActor.OnGrowbackSubstageChanged
-// (Final, Native, Protected, HasOutParams)
-// Parameters:
-// const struct FCrEnviroWaveSettings&     Settings                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// EEnviroWaveGrowbackSubstage             Substage                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Progress                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Chimera.CrStandaloneInfectionSpawnSubsystem.OnPostSaveLoaded
+// (Final, Native, Public)
 
-void ACrOreActor::OnGrowbackSubstageChanged(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveGrowbackSubstage Substage, float Progress)
+void UCrStandaloneInfectionSpawnSubsystem::OnPostSaveLoaded()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrOreActor", "OnGrowbackSubstageChanged");
-
-	Params::CrOreActor_OnGrowbackSubstageChanged Parms{};
-
-	Parms.Settings = std::move(Settings);
-	Parms.Substage = Substage;
-	Parms.Progress = Progress;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrOreActor.OnMiningWeakSpotDepletedCosmeticsStart
-// (Event, Public, HasDefaults, BlueprintEvent)
-// Parameters:
-// const struct FTransform&                CosmeticTransform                                      (Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrOreActor::OnMiningWeakSpotDepletedCosmeticsStart(const struct FTransform& CosmeticTransform)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrOreActor", "OnMiningWeakSpotDepletedCosmeticsStart");
-
-	Params::CrOreActor_OnMiningWeakSpotDepletedCosmeticsStart Parms{};
-
-	Parms.CosmeticTransform = std::move(CosmeticTransform);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Chimera.CrOreActor.OnRep_OreData
-// (Native, Protected)
-
-void ACrOreActor::OnRep_OreData()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrOreActor", "OnRep_OreData");
+		Func = Class->GetFunction("CrStandaloneInfectionSpawnSubsystem", "OnPostSaveLoaded");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -7141,29 +7271,15 @@ void ACrOreActor::OnRep_OreData()
 }
 
 
-// Function Chimera.CrOreActor.OnResourceDepletedCosmeticsStart
-// (Event, Public, BlueprintEvent)
+// Function Chimera.CrStandaloneInfectionSpawnSubsystem.OnSaveLoaded
+// (Final, Native, Public)
 
-void ACrOreActor::OnResourceDepletedCosmeticsStart()
+void UCrStandaloneInfectionSpawnSubsystem::OnSaveLoaded()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrOreActor", "OnResourceDepletedCosmeticsStart");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Chimera.CrStandaloneMeteOreChunk.BP_SetAsMineableChunk
-// (Final, Native, Public, BlueprintCallable)
-
-void ACrStandaloneMeteOreChunk::BP_SetAsMineableChunk()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrStandaloneMeteOreChunk", "BP_SetAsMineableChunk");
+		Func = Class->GetFunction("CrStandaloneInfectionSpawnSubsystem", "OnSaveLoaded");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -7171,88 +7287,6 @@ void ACrStandaloneMeteOreChunk::BP_SetAsMineableChunk()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrStandaloneMeteOreChunk.BP_SetAsNonMineableChunk
-// (Final, Native, Public, BlueprintCallable)
-
-void ACrStandaloneMeteOreChunk::BP_SetAsNonMineableChunk()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrStandaloneMeteOreChunk", "BP_SetAsNonMineableChunk");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrStandaloneMeteOreChunk.MulticastStandaloneMeteOreChunkDepleted
-// (Net, Native, Event, NetMulticast, Public)
-
-void ACrStandaloneMeteOreChunk::MulticastStandaloneMeteOreChunkDepleted()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrStandaloneMeteOreChunk", "MulticastStandaloneMeteOreChunkDepleted");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrStandaloneMeteOreChunk.OnResourceDepletedBehaviour
-// (Final, Native, Private)
-
-void ACrStandaloneMeteOreChunk::OnResourceDepletedBehaviour()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrStandaloneMeteOreChunk", "OnResourceDepletedBehaviour");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrStandaloneMeteOreChunk.IsMineableChunk
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ACrStandaloneMeteOreChunk::IsMineableChunk() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrStandaloneMeteOreChunk", "IsMineableChunk");
-
-	Params::CrStandaloneMeteOreChunk_IsMineableChunk Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -7618,34 +7652,6 @@ void UCrAnimInstance::K2_InitializeWithAbilitySystem(class UAbilitySystemCompone
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.SurfaceTypesFunctionLibrary.GetSurfaceTypeName
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const EPhysicalSurface&                 Surface                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FName USurfaceTypesFunctionLibrary::GetSurfaceTypeName(const EPhysicalSurface& Surface)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("SurfaceTypesFunctionLibrary", "GetSurfaceTypeName");
-
-	Params::SurfaceTypesFunctionLibrary_GetSurfaceTypeName Parms{};
-
-	Parms.Surface = Surface;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -8071,63 +8077,6 @@ void UCrAntennaSubsystem::RegisterSpawner(class ACrAISpawner* InSpawner)
 }
 
 
-// Function Chimera.IdentificationLibrary.GetActorUniqueName
-// (Final, Native, Static, Private, HasOutParams, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName*                            OutName                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UIdentificationLibrary::GetActorUniqueName(class AActor* TargetActor, class FName* OutName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("IdentificationLibrary", "GetActorUniqueName");
-
-	Params::IdentificationLibrary_GetActorUniqueName Parms{};
-
-	Parms.TargetActor = TargetActor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutName != nullptr)
-		*OutName = Parms.OutName;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.IdentificationLibrary.GetAllCategoriesNames
-// (Final, Native, Static, Private, BlueprintCallable, BlueprintPure)
-// Parameters:
-// TArray<class FName>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<class FName> UIdentificationLibrary::GetAllCategoriesNames()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("IdentificationLibrary", "GetAllCategoriesNames");
-
-	Params::IdentificationLibrary_GetAllCategoriesNames Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function Chimera.CrCraftingRecipeOwner.OnContextualEventExecuted
 // (Final, Native, Private)
 // Parameters:
@@ -8289,6 +8238,34 @@ void ACrAPHelperActorCustom::ServerSetDynamicPositions(const struct FCrDynamicHe
 }
 
 
+// Function Chimera.SurfaceTypesFunctionLibrary.GetSurfaceTypeName
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const EPhysicalSurface&                 Surface                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FName USurfaceTypesFunctionLibrary::GetSurfaceTypeName(const EPhysicalSurface& Surface)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("SurfaceTypesFunctionLibrary", "GetSurfaceTypeName");
+
+	Params::SurfaceTypesFunctionLibrary_GetSurfaceTypeName Parms{};
+
+	Parms.Surface = Surface;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function Chimera.CrCustomPlaceCustom.SpawnOnStart
 // (Final, Native, Public)
 // Parameters:
@@ -8311,20 +8288,6 @@ void UCrCustomPlaceCustom::SpawnOnStart(const class UAuActorPlacementData* InPla
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrItemSenderBuilding.OnItemsSent
-// (Event, Public, BlueprintEvent)
-
-void ACrItemSenderBuilding::OnItemsSent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrItemSenderBuilding", "OnItemsSent");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -8377,23 +8340,75 @@ void ACrAPHelperActorZipline::OnConnectionsModified(const TArray<struct FVector>
 }
 
 
-// Function Chimera.CrWaveTimerActor.MulticastOnEnviroWaveFinished
-// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
+// Function Chimera.CrIvy.CallIvyHide
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// EEnviroWave                             WaveType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// float                                   InDuration                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ACrWaveTimerActor::MulticastOnEnviroWaveFinished(EEnviroWave WaveType, const struct FCrEnviroWaveSettings& WaveSettings)
+void ACrIvy::CallIvyHide(float InDuration)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrWaveTimerActor", "MulticastOnEnviroWaveFinished");
+		Func = Class->GetFunction("CrIvy", "CallIvyHide");
 
-	Params::CrWaveTimerActor_MulticastOnEnviroWaveFinished Parms{};
+	Params::CrIvy_CallIvyHide Parms{};
 
-	Parms.WaveType = WaveType;
-	Parms.WaveSettings = std::move(WaveSettings);
+	Parms.InDuration = InDuration;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Chimera.CrIvy.CallIvyHideInstant
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   InDuration                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrIvy::CallIvyHideInstant(float InDuration)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrIvy", "CallIvyHideInstant");
+
+	Params::CrIvy_CallIvyHideInstant Parms{};
+
+	Parms.InDuration = InDuration;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Chimera.CrIvy.CallIvyUnhide
+// (Event, Public, BlueprintEvent)
+
+void ACrIvy::CallIvyUnhide()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrIvy", "CallIvyUnhide");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Chimera.CrIvy.SetIvyProgress
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InProgress                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrIvy::SetIvyProgress(float InProgress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrIvy", "SetIvyProgress");
+
+	Params::CrIvy_SetIvyProgress Parms{};
+
+	Parms.InProgress = InProgress;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -8404,27 +8419,21 @@ void ACrWaveTimerActor::MulticastOnEnviroWaveFinished(EEnviroWave WaveType, cons
 }
 
 
-// Function Chimera.CrWaveTimerActor.MulticastOnEnviroWaveStarted
-// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
+// Function Chimera.CrIvy.SetState
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// EEnviroWave                             InWaveType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EEnviroWaveStage                        InWaveStage                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FCrEnviroWaveSettings&     InWaveSettings                                         (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// float                                   InWaveProgress                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EIvyState                               InState                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ACrWaveTimerActor::MulticastOnEnviroWaveStarted(EEnviroWave InWaveType, EEnviroWaveStage InWaveStage, const struct FCrEnviroWaveSettings& InWaveSettings, float InWaveProgress)
+void ACrIvy::SetState(EIvyState InState)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrWaveTimerActor", "MulticastOnEnviroWaveStarted");
+		Func = Class->GetFunction("CrIvy", "SetState");
 
-	Params::CrWaveTimerActor_MulticastOnEnviroWaveStarted Parms{};
+	Params::CrIvy_SetState Parms{};
 
-	Parms.InWaveType = InWaveType;
-	Parms.InWaveStage = InWaveStage;
-	Parms.InWaveSettings = std::move(InWaveSettings);
-	Parms.InWaveProgress = InWaveProgress;
+	Parms.InState = InState;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -8435,135 +8444,36 @@ void ACrWaveTimerActor::MulticastOnEnviroWaveStarted(EEnviroWave InWaveType, EEn
 }
 
 
-// Function Chimera.CrWaveTimerActor.OnEnviroWaveFinished
-// (Native, Protected, HasOutParams)
+// Function Chimera.CrUW_FEMapLegend.SetTextArray
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// EEnviroWave                             WaveType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const TArray<class FText>&              InTexts                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FText&                      InFloorText                                            (ConstParm, Parm, NativeAccessSpecifierPublic)
+// float                                   LeftMargin                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   BottomMargin                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TMap<int32, float>&               FixedBottomMargin                                      (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const float                             LegendVerticalOffset                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ACrWaveTimerActor::OnEnviroWaveFinished(EEnviroWave WaveType, const struct FCrEnviroWaveSettings& WaveSettings)
+void UCrUW_FEMapLegend::SetTextArray(const TArray<class FText>& InTexts, const class FText& InFloorText, float LeftMargin, float BottomMargin, const TMap<int32, float>& FixedBottomMargin, const float LegendVerticalOffset)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrWaveTimerActor", "OnEnviroWaveFinished");
+		Func = Class->GetFunction("CrUW_FEMapLegend", "SetTextArray");
 
-	Params::CrWaveTimerActor_OnEnviroWaveFinished Parms{};
+	Params::CrUW_FEMapLegend_SetTextArray Parms{};
 
-	Parms.WaveType = WaveType;
-	Parms.WaveSettings = std::move(WaveSettings);
+	Parms.InTexts = std::move(InTexts);
+	Parms.InFloorText = std::move(InFloorText);
+	Parms.LeftMargin = LeftMargin;
+	Parms.BottomMargin = BottomMargin;
+	Parms.FixedBottomMargin = std::move(FixedBottomMargin);
+	Parms.LegendVerticalOffset = LegendVerticalOffset;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrWaveTimerActor.OnEnviroWaveStarted
-// (Native, Protected, HasOutParams)
-// Parameters:
-// EEnviroWave                             InWaveType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EEnviroWaveStage                        InWaveStage                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FCrEnviroWaveSettings&     InWaveSettings                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// float                                   InWaveProgress                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrWaveTimerActor::OnEnviroWaveStarted(EEnviroWave InWaveType, EEnviroWaveStage InWaveStage, const struct FCrEnviroWaveSettings& InWaveSettings, float InWaveProgress)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWaveTimerActor", "OnEnviroWaveStarted");
-
-	Params::CrWaveTimerActor_OnEnviroWaveStarted Parms{};
-
-	Parms.InWaveType = InWaveType;
-	Parms.InWaveStage = InWaveStage;
-	Parms.InWaveSettings = std::move(InWaveSettings);
-	Parms.InWaveProgress = InWaveProgress;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrWaveTimerActor.OnPreSaveStart
-// (Final, Native, Private)
-
-void ACrWaveTimerActor::OnPreSaveStart()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWaveTimerActor", "OnPreSaveStart");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrWaveTimerActor.OnRep_Pause
-// (Final, Native, Private)
-
-void ACrWaveTimerActor::OnRep_Pause()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWaveTimerActor", "OnRep_Pause");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrWaveTimerActor.OnRep_Phase
-// (Final, Native, Private)
-
-void ACrWaveTimerActor::OnRep_Phase()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWaveTimerActor", "OnRep_Phase");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrWaveTimerActor.OnRep_Time
-// (Final, Native, Private)
-
-void ACrWaveTimerActor::OnRep_Time()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWaveTimerActor", "OnRep_Time");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -8585,6 +8495,81 @@ void ACrAPOreSocket::EquipItemChanged()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrLocalPlayer.OnCompletedAudioDeviceSwap
+// (Final, Native, Protected, HasOutParams)
+// Parameters:
+// const struct FSwapAudioOutputResult&    SwapResult                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrLocalPlayer::OnCompletedAudioDeviceSwap(const struct FSwapAudioOutputResult& SwapResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrLocalPlayer", "OnCompletedAudioDeviceSwap");
+
+	Params::CrLocalPlayer_OnCompletedAudioDeviceSwap Parms{};
+
+	Parms.SwapResult = std::move(SwapResult);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrLocalPlayer.GetLocalSettings
+// (Final, Native, Public, Const)
+// Parameters:
+// class UCrGameUserSettings*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrGameUserSettings* UCrLocalPlayer::GetLocalSettings() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrLocalPlayer", "GetLocalSettings");
+
+	Params::CrLocalPlayer_GetLocalSettings Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrLocalPlayer.GetSharedSettings
+// (Final, Native, Public, Const)
+// Parameters:
+// class UCrSettingsShared*                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrSettingsShared* UCrLocalPlayer::GetSharedSettings() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrLocalPlayer", "GetSharedSettings");
+
+	Params::CrLocalPlayer_GetSharedSettings Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -9007,102 +8992,6 @@ class FText ACrAudiologBase::GetInteractionText() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrStandaloneInfectionSpawnSubsystem.OnFadeoutSubstageChanged
-// (Final, Native, Private, HasOutParams)
-// Parameters:
-// const struct FCrEnviroWaveSettings&     Settings                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// EEnviroWaveFadeoutSubstage              Substage                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Progress                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrStandaloneInfectionSpawnSubsystem::OnFadeoutSubstageChanged(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveFadeoutSubstage Substage, float Progress)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrStandaloneInfectionSpawnSubsystem", "OnFadeoutSubstageChanged");
-
-	Params::CrStandaloneInfectionSpawnSubsystem_OnFadeoutSubstageChanged Parms{};
-
-	Parms.Settings = std::move(Settings);
-	Parms.Substage = Substage;
-	Parms.Progress = Progress;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrStandaloneInfectionSpawnSubsystem.OnGrowbackSubstageChanged
-// (Final, Native, Private, HasOutParams)
-// Parameters:
-// const struct FCrEnviroWaveSettings&     Settings                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// EEnviroWaveGrowbackSubstage             Substage                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Progress                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrStandaloneInfectionSpawnSubsystem::OnGrowbackSubstageChanged(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveGrowbackSubstage Substage, float Progress)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrStandaloneInfectionSpawnSubsystem", "OnGrowbackSubstageChanged");
-
-	Params::CrStandaloneInfectionSpawnSubsystem_OnGrowbackSubstageChanged Parms{};
-
-	Parms.Settings = std::move(Settings);
-	Parms.Substage = Substage;
-	Parms.Progress = Progress;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrStandaloneInfectionSpawnSubsystem.OnPostSaveLoaded
-// (Final, Native, Public)
-
-void UCrStandaloneInfectionSpawnSubsystem::OnPostSaveLoaded()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrStandaloneInfectionSpawnSubsystem", "OnPostSaveLoaded");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrStandaloneInfectionSpawnSubsystem.OnSaveLoaded
-// (Final, Native, Public)
-
-void UCrStandaloneInfectionSpawnSubsystem::OnSaveLoaded()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrStandaloneInfectionSpawnSubsystem", "OnSaveLoaded");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -9751,67 +9640,193 @@ void UCrBaseCoreSubsystem::OnPostSaveLoaded()
 }
 
 
-// Function Chimera.CrInteractiveFunBox.K2_OnInteract
-// (Event, Protected, BlueprintEvent)
+// Function Chimera.CrInteractionInterface.K2_GetInteractionActionText
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class APlayerController*                InPc                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-void ACrInteractiveFunBox::K2_OnInteract(class APlayerController* InPc)
+class FText ICrInteractionInterface::K2_GetInteractionActionText()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrInteractiveFunBox", "K2_OnInteract");
+		Func = AsUObject()->Class->GetFunction("CrInteractionInterface", "K2_GetInteractionActionText");
 
-	Params::CrInteractiveFunBox_K2_OnInteract Parms{};
+	Params::CrInteractionInterface_K2_GetInteractionActionText Parms{};
 
-	Parms.InPc = InPc;
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function Chimera.CrInteractiveFunBox.MulticastInteract
-// (Net, Native, Event, NetMulticast, Protected)
+// Function Chimera.CrInteractionInterface.K2_GetInteractionProgress
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class APlayerController*                InPc                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ACrInteractiveFunBox::MulticastInteract(class APlayerController* InPc)
+float ICrInteractionInterface::K2_GetInteractionProgress()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrInteractiveFunBox", "MulticastInteract");
+		Func = AsUObject()->Class->GetFunction("CrInteractionInterface", "K2_GetInteractionProgress");
 
-	Params::CrInteractiveFunBox_MulticastInteract Parms{};
+	Params::CrInteractionInterface_K2_GetInteractionProgress Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrInteractionInterface.K2_GetInteractionText
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+class FText ICrInteractionInterface::K2_GetInteractionText()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("CrInteractionInterface", "K2_GetInteractionText");
+
+	Params::CrInteractionInterface_K2_GetInteractionText Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrInteractionInterface.K2_GetRequiredInteractionDuration
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class APlayerController*                InPc                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float ICrInteractionInterface::K2_GetRequiredInteractionDuration(class APlayerController* InPc)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("CrInteractionInterface", "K2_GetRequiredInteractionDuration");
+
+	Params::CrInteractionInterface_K2_GetRequiredInteractionDuration Parms{};
 
 	Parms.InPc = InPc;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function Chimera.CrInteractiveFunBox.OnRep_IsOpen
-// (Final, Native, Protected)
+// Function Chimera.CrInteractionInterface.GetItemRequiredForInteraction
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class UAuItemDataBase>*     OutRequiredItem                                        (Parm, OutParm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ACrInteractiveFunBox::OnRep_IsOpen()
+bool ICrInteractionInterface::GetItemRequiredForInteraction(TSubclassOf<class UAuItemDataBase>* OutRequiredItem) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrInteractiveFunBox", "OnRep_IsOpen");
+		Func = AsUObject()->Class->GetFunction("CrInteractionInterface", "GetItemRequiredForInteraction");
+
+	Params::CrInteractionInterface_GetItemRequiredForInteraction Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	if (OutRequiredItem != nullptr)
+		*OutRequiredItem = Parms.OutRequiredItem;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrInteractionInterface.GetItemsRequiredForInteraction
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// TArray<TSubclassOf<class UAuItemDataBase>>*OutRequiredItems                                       (Parm, OutParm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ICrInteractionInterface::GetItemsRequiredForInteraction(TArray<TSubclassOf<class UAuItemDataBase>>* OutRequiredItems) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("CrInteractionInterface", "GetItemsRequiredForInteraction");
+
+	Params::CrInteractionInterface_GetItemsRequiredForInteraction Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutRequiredItems != nullptr)
+		*OutRequiredItems = std::move(Parms.OutRequiredItems);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrInteractionInterface.HasCustomInteractionWidget
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class UUserWidget>*         OutInteractionWidget                                   (Parm, OutParm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ICrInteractionInterface::HasCustomInteractionWidget(TSubclassOf<class UUserWidget>* OutInteractionWidget) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("CrInteractionInterface", "HasCustomInteractionWidget");
+
+	Params::CrInteractionInterface_HasCustomInteractionWidget Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutInteractionWidget != nullptr)
+		*OutInteractionWidget = Parms.OutInteractionWidget;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -9830,6 +9845,33 @@ void UCrBuildingComponent::ServerDestructBuildingActorInternal(const struct FMas
 	Params::CrBuildingComponent_ServerDestructBuildingActorInternal Parms{};
 
 	Parms.InActor = std::move(InActor);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrBuildingComponent.ServerElectricityConnectEntities
+// (Net, NetReliable, Native, Event, Public, NetServer)
+// Parameters:
+// const struct FCrMassEntityReplicationHelper&Entity0                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrMassEntityReplicationHelper&Entity1                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrBuildingComponent::ServerElectricityConnectEntities(const struct FCrMassEntityReplicationHelper& Entity0, const struct FCrMassEntityReplicationHelper& Entity1)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrBuildingComponent", "ServerElectricityConnectEntities");
+
+	Params::CrBuildingComponent_ServerElectricityConnectEntities Parms{};
+
+	Parms.Entity0 = std::move(Entity0);
+	Parms.Entity1 = std::move(Entity1);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -10020,6 +10062,403 @@ void UCrBuildingCustomNameSubsystem::SetBuildingCustomNameReplicated(class AActo
 }
 
 
+// Function Chimera.CrOreActor.BP_OnEnviroWaveStarted
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// EEnviroWave                             InWaveType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EEnviroWaveStage                        InWaveStage                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrEnviroWaveSettings&     InWaveSettings                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// float                                   InWaveProgress                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrOreActor::BP_OnEnviroWaveStarted(EEnviroWave InWaveType, EEnviroWaveStage InWaveStage, const struct FCrEnviroWaveSettings& InWaveSettings, float InWaveProgress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrOreActor", "BP_OnEnviroWaveStarted");
+
+	Params::CrOreActor_BP_OnEnviroWaveStarted Parms{};
+
+	Parms.InWaveType = InWaveType;
+	Parms.InWaveStage = InWaveStage;
+	Parms.InWaveSettings = std::move(InWaveSettings);
+	Parms.InWaveProgress = InWaveProgress;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Chimera.CrOreActor.BP_OnFadeoutSubstageChanged
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// const struct FCrEnviroWaveSettings&     Settings                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// EEnviroWaveFadeoutSubstage              Substage                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Progress                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrOreActor::BP_OnFadeoutSubstageChanged(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveFadeoutSubstage Substage, float Progress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrOreActor", "BP_OnFadeoutSubstageChanged");
+
+	Params::CrOreActor_BP_OnFadeoutSubstageChanged Parms{};
+
+	Parms.Settings = std::move(Settings);
+	Parms.Substage = Substage;
+	Parms.Progress = Progress;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Chimera.CrOreActor.BP_OnGrowbackSubstageChanged
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// const struct FCrEnviroWaveSettings&     Settings                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// EEnviroWaveGrowbackSubstage             Substage                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Progress                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrOreActor::BP_OnGrowbackSubstageChanged(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveGrowbackSubstage Substage, float Progress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrOreActor", "BP_OnGrowbackSubstageChanged");
+
+	Params::CrOreActor_BP_OnGrowbackSubstageChanged Parms{};
+
+	Parms.Settings = std::move(Settings);
+	Parms.Substage = Substage;
+	Parms.Progress = Progress;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Chimera.CrOreActor.BP_OnOreActivated
+// (Event, Public, BlueprintEvent)
+
+void ACrOreActor::BP_OnOreActivated()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrOreActor", "BP_OnOreActivated");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Chimera.CrOreActor.BP_OnSpawnedWithResourceDepleted
+// (Event, Public, BlueprintEvent)
+
+void ACrOreActor::BP_OnSpawnedWithResourceDepleted()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrOreActor", "BP_OnSpawnedWithResourceDepleted");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Chimera.CrOreActor.MulticastOnWeakSpotDepletedCosmeticsStart
+// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
+// Parameters:
+// class FName                             InWeakSpotSocketName                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrOreActor::MulticastOnWeakSpotDepletedCosmeticsStart(class FName InWeakSpotSocketName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrOreActor", "MulticastOnWeakSpotDepletedCosmeticsStart");
+
+	Params::CrOreActor_MulticastOnWeakSpotDepletedCosmeticsStart Parms{};
+
+	Parms.InWeakSpotSocketName = InWeakSpotSocketName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrOreActor.OnEnviroWaveFinished
+// (Native, Protected, HasOutParams)
+// Parameters:
+// EEnviroWave                             WaveType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void ACrOreActor::OnEnviroWaveFinished(EEnviroWave WaveType, const struct FCrEnviroWaveSettings& WaveSettings)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrOreActor", "OnEnviroWaveFinished");
+
+	Params::CrOreActor_OnEnviroWaveFinished Parms{};
+
+	Parms.WaveType = WaveType;
+	Parms.WaveSettings = std::move(WaveSettings);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrOreActor.OnEnviroWaveStarted
+// (Native, Protected, HasOutParams)
+// Parameters:
+// EEnviroWave                             InWaveType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EEnviroWaveStage                        InWaveStage                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrEnviroWaveSettings&     InWaveSettings                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// float                                   InWaveProgress                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrOreActor::OnEnviroWaveStarted(EEnviroWave InWaveType, EEnviroWaveStage InWaveStage, const struct FCrEnviroWaveSettings& InWaveSettings, float InWaveProgress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrOreActor", "OnEnviroWaveStarted");
+
+	Params::CrOreActor_OnEnviroWaveStarted Parms{};
+
+	Parms.InWaveType = InWaveType;
+	Parms.InWaveStage = InWaveStage;
+	Parms.InWaveSettings = std::move(InWaveSettings);
+	Parms.InWaveProgress = InWaveProgress;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrOreActor.OnFadeoutSubstageChanged
+// (Final, Native, Protected, HasOutParams)
+// Parameters:
+// const struct FCrEnviroWaveSettings&     Settings                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// EEnviroWaveFadeoutSubstage              Substage                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Progress                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrOreActor::OnFadeoutSubstageChanged(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveFadeoutSubstage Substage, float Progress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrOreActor", "OnFadeoutSubstageChanged");
+
+	Params::CrOreActor_OnFadeoutSubstageChanged Parms{};
+
+	Parms.Settings = std::move(Settings);
+	Parms.Substage = Substage;
+	Parms.Progress = Progress;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrOreActor.OnGrowbackSubstageChanged
+// (Final, Native, Protected, HasOutParams)
+// Parameters:
+// const struct FCrEnviroWaveSettings&     Settings                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// EEnviroWaveGrowbackSubstage             Substage                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Progress                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrOreActor::OnGrowbackSubstageChanged(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveGrowbackSubstage Substage, float Progress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrOreActor", "OnGrowbackSubstageChanged");
+
+	Params::CrOreActor_OnGrowbackSubstageChanged Parms{};
+
+	Parms.Settings = std::move(Settings);
+	Parms.Substage = Substage;
+	Parms.Progress = Progress;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrOreActor.OnMiningWeakSpotDepletedCosmeticsStart
+// (Event, Public, HasDefaults, BlueprintEvent)
+// Parameters:
+// const struct FTransform&                CosmeticTransform                                      (Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrOreActor::OnMiningWeakSpotDepletedCosmeticsStart(const struct FTransform& CosmeticTransform)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrOreActor", "OnMiningWeakSpotDepletedCosmeticsStart");
+
+	Params::CrOreActor_OnMiningWeakSpotDepletedCosmeticsStart Parms{};
+
+	Parms.CosmeticTransform = std::move(CosmeticTransform);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Chimera.CrOreActor.OnRep_OreData
+// (Native, Protected)
+
+void ACrOreActor::OnRep_OreData()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrOreActor", "OnRep_OreData");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrOreActor.OnResourceDepletedCosmeticsStart
+// (Event, Public, BlueprintEvent)
+
+void ACrOreActor::OnResourceDepletedCosmeticsStart()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrOreActor", "OnResourceDepletedCosmeticsStart");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Chimera.CrStandaloneMeteOreChunk.BP_SetAsMineableChunk
+// (Final, Native, Public, BlueprintCallable)
+
+void ACrStandaloneMeteOreChunk::BP_SetAsMineableChunk()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrStandaloneMeteOreChunk", "BP_SetAsMineableChunk");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrStandaloneMeteOreChunk.BP_SetAsNonMineableChunk
+// (Final, Native, Public, BlueprintCallable)
+
+void ACrStandaloneMeteOreChunk::BP_SetAsNonMineableChunk()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrStandaloneMeteOreChunk", "BP_SetAsNonMineableChunk");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrStandaloneMeteOreChunk.MulticastStandaloneMeteOreChunkDepleted
+// (Net, Native, Event, NetMulticast, Public)
+
+void ACrStandaloneMeteOreChunk::MulticastStandaloneMeteOreChunkDepleted()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrStandaloneMeteOreChunk", "MulticastStandaloneMeteOreChunkDepleted");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrStandaloneMeteOreChunk.OnResourceDepletedBehaviour
+// (Final, Native, Private)
+
+void ACrStandaloneMeteOreChunk::OnResourceDepletedBehaviour()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrStandaloneMeteOreChunk", "OnResourceDepletedBehaviour");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrStandaloneMeteOreChunk.IsMineableChunk
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ACrStandaloneMeteOreChunk::IsMineableChunk() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrStandaloneMeteOreChunk", "IsMineableChunk");
+
+	Params::CrStandaloneMeteOreChunk_IsMineableChunk Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function Chimera.CrBuildingData.GetTagsOptions
 // (Final, Native, Private, Const)
 // Parameters:
@@ -10042,63 +10481,6 @@ TArray<class FName> UCrBuildingData::GetTagsOptions() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrItemPickupGeneric.OnRep_ItemClass
-// (Final, Native, Private)
-
-void ACrItemPickupGeneric::OnRep_ItemClass()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrItemPickupGeneric", "OnRep_ItemClass");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrTechnologyKeeper.OnRep_AllBuildings
-// (Final, Native, Private)
-
-void ACrTechnologyKeeper::OnRep_AllBuildings()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrTechnologyKeeper", "OnRep_AllBuildings");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrTechnologyKeeper.OnRep_AvailableBuildings
-// (Final, Native, Private)
-
-void ACrTechnologyKeeper::OnRep_AvailableBuildings()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrTechnologyKeeper", "OnRep_AvailableBuildings");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -10257,6 +10639,34 @@ void UCrBuildingInfectionComponent::OnGrowbackSubstageChanged(const struct FCrEn
 }
 
 
+// Function Chimera.CrItemRecipeCollection.GetRecipes
+// (Final, Native, Public, Const)
+// Parameters:
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class UCrItemRecipeData*>        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class UCrItemRecipeData*> UCrItemRecipeCollection::GetRecipes(const class UObject* WorldContextObject) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrItemRecipeCollection", "GetRecipes");
+
+	Params::CrItemRecipeCollection_GetRecipes Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function Chimera.CrBuildingSelectWidgetComponent.IsBuildingActive
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -10307,40 +10717,19 @@ bool UCrBuildingSelectWidgetComponent::IsWeaponEquipped() const
 }
 
 
-// Function Chimera.CrMassBuildingInfectionAlarmSubsystem.Update
-// (Final, Native, Protected)
-
-void UCrMassBuildingInfectionAlarmSubsystem::Update()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrMassBuildingInfectionAlarmSubsystem", "Update");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrPlayerAggroComponent.OnBuildingToolUsed
-// (Final, Native, Public, BlueprintCallable, Const)
+// Function Chimera.CrPlatformEmulationSettings.GetKnownDeviceProfiles
+// (Final, Native, Private, Const)
 // Parameters:
-// bool                                    bConstructed                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class FName>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-void UCrPlayerAggroComponent::OnBuildingToolUsed(bool bConstructed) const
+TArray<class FName> UCrPlatformEmulationSettings::GetKnownDeviceProfiles() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrPlayerAggroComponent", "OnBuildingToolUsed");
+		Func = Class->GetFunction("CrPlatformEmulationSettings", "GetKnownDeviceProfiles");
 
-	Params::CrPlayerAggroComponent_OnBuildingToolUsed Parms{};
-
-	Parms.bConstructed = bConstructed;
+	Params::CrPlatformEmulationSettings_GetKnownDeviceProfiles Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -10348,6 +10737,33 @@ void UCrPlayerAggroComponent::OnBuildingToolUsed(bool bConstructed) const
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrPlatformEmulationSettings.GetKnownPlatformIds
+// (Final, Native, Private, Const)
+// Parameters:
+// TArray<class FName>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class FName> UCrPlatformEmulationSettings::GetKnownPlatformIds() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrPlatformEmulationSettings", "GetKnownPlatformIds");
+
+	Params::CrPlatformEmulationSettings_GetKnownPlatformIds Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -10616,56 +11032,6 @@ void ACrCharacterDroneBase::ServerSetDroneTransform(const struct FVector& Locati
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrPlatformEmulationSettings.GetKnownDeviceProfiles
-// (Final, Native, Private, Const)
-// Parameters:
-// TArray<class FName>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<class FName> UCrPlatformEmulationSettings::GetKnownDeviceProfiles() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrPlatformEmulationSettings", "GetKnownDeviceProfiles");
-
-	Params::CrPlatformEmulationSettings_GetKnownDeviceProfiles Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrPlatformEmulationSettings.GetKnownPlatformIds
-// (Final, Native, Private, Const)
-// Parameters:
-// TArray<class FName>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<class FName> UCrPlatformEmulationSettings::GetKnownPlatformIds() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrPlatformEmulationSettings", "GetKnownPlatformIds");
-
-	Params::CrPlatformEmulationSettings_GetKnownPlatformIds Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -12014,6 +12380,25 @@ bool UCrCharacterMovementComponent::IsWalkableOnExtendedSlopeAngle(const struct 
 }
 
 
+// Function Chimera.CrPlayerDialogueComponent.OnDialogueFinished
+// (Final, Native, Protected)
+
+void UCrPlayerDialogueComponent::OnDialogueFinished()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrPlayerDialogueComponent", "OnDialogueFinished");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Chimera.CrCharacterSpawnPointBase.MulticastSetOccupied
 // (Net, NetReliable, Native, Event, NetMulticast, Public)
 // Parameters:
@@ -12294,15 +12679,15 @@ void UCrCharacterSpawnPointSubsystem::RegisterDefaultSpawnPoint(class ACrCharact
 }
 
 
-// Function Chimera.CrWorldSpawnerRegionActor.Generate
-// (Final, Native, Public, BlueprintCallable)
+// Function Chimera.CrLogisticsRequestSubsystem.OnPreSaveStart
+// (Final, Native, Protected)
 
-void ACrWorldSpawnerRegionActor::Generate()
+void UCrLogisticsRequestSubsystem::OnPreSaveStart()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrWorldSpawnerRegionActor", "Generate");
+		Func = Class->GetFunction("CrLogisticsRequestSubsystem", "OnPreSaveStart");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -12313,81 +12698,15 @@ void ACrWorldSpawnerRegionActor::Generate()
 }
 
 
-// Function Chimera.CrWorldSpawnerRegionActor.OnBeginOverlap
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// class UPrimitiveComponent*              OverlappedComp                                         (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// Function Chimera.CrLogisticsRequestSubsystem.OnSaveLoaded
+// (Final, Native, Protected)
 
-void ACrWorldSpawnerRegionActor::OnBeginOverlap(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
+void UCrLogisticsRequestSubsystem::OnSaveLoaded()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrWorldSpawnerRegionActor", "OnBeginOverlap");
-
-	Params::CrWorldSpawnerRegionActor_OnBeginOverlap Parms{};
-
-	Parms.OverlappedComp = OverlappedComp;
-	Parms.OtherActor = OtherActor;
-	Parms.OtherComp = OtherComp;
-	Parms.OtherBodyIndex = OtherBodyIndex;
-	Parms.bFromSweep = bFromSweep;
-	Parms.SweepResult = std::move(SweepResult);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrWorldSpawnerRegionActor.OnEndOverlap
-// (Final, Native, Public)
-// Parameters:
-// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrWorldSpawnerRegionActor::OnEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWorldSpawnerRegionActor", "OnEndOverlap");
-
-	Params::CrWorldSpawnerRegionActor_OnEndOverlap Parms{};
-
-	Parms.OverlappedComponent = OverlappedComponent;
-	Parms.OtherActor = OtherActor;
-	Parms.OtherComp = OtherComp;
-	Parms.OtherBodyIndex = OtherBodyIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrWorldSpawnerRegionActor.TriggerGeneration
-// (Final, Native, Private)
-
-void ACrWorldSpawnerRegionActor::TriggerGeneration()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWorldSpawnerRegionActor", "TriggerGeneration");
+		Func = Class->GetFunction("CrLogisticsRequestSubsystem", "OnSaveLoaded");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -12395,6 +12714,36 @@ void ACrWorldSpawnerRegionActor::TriggerGeneration()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrWorldInteractablesLibrary.GetCookedEnvelopeDataForSoundWave
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class USoundWave*                       SoundWave                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnCount                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<float>                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<float> UCrWorldInteractablesLibrary::GetCookedEnvelopeDataForSoundWave(class USoundWave* SoundWave, int32 ReturnCount)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrWorldInteractablesLibrary", "GetCookedEnvelopeDataForSoundWave");
+
+	Params::CrWorldInteractablesLibrary_GetCookedEnvelopeDataForSoundWave Parms{};
+
+	Parms.SoundWave = SoundWave;
+	Parms.ReturnCount = ReturnCount;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -12433,22 +12782,31 @@ void ACrElectricityConnectionHelper::NativeOverlapBeginEvent(class UPrimitiveCom
 }
 
 
-// Function Chimera.CrPlayerDialogueComponent.OnDialogueFinished
-// (Final, Native, Protected)
+// Function Chimera.CrPlayerCharacterSettings.GetSoundForHitmarkType
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// ECrHitmarkType                          Hitmark                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSoftObjectPtr<class USoundCue>         ReturnValue                                            (Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrPlayerDialogueComponent::OnDialogueFinished()
+TSoftObjectPtr<class USoundCue> UCrPlayerCharacterSettings::GetSoundForHitmarkType(ECrHitmarkType Hitmark)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrPlayerDialogueComponent", "OnDialogueFinished");
+		Func = Class->GetFunction("CrPlayerCharacterSettings", "GetSoundForHitmarkType");
+
+	Params::CrPlayerCharacterSettings_GetSoundForHitmarkType Parms{};
+
+	Parms.Hitmark = Hitmark;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -13276,6 +13634,31 @@ void UCrDamageFeedbackComponent::OnGEAppliedToSelf(class UAbilitySystemComponent
 }
 
 
+// Function Chimera.CrPlayerAggroComponent.OnBuildingToolUsed
+// (Final, Native, Public, BlueprintCallable, Const)
+// Parameters:
+// bool                                    bConstructed                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrPlayerAggroComponent::OnBuildingToolUsed(bool bConstructed) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrPlayerAggroComponent", "OnBuildingToolUsed");
+
+	Params::CrPlayerAggroComponent_OnBuildingToolUsed Parms{};
+
+	Parms.bConstructed = bConstructed;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Chimera.CrDataLayerEventInterface.OnDataLayerActivate
 // (Native, Public)
 // Parameters:
@@ -13454,51 +13837,31 @@ bool UCrDataLayerEventSubsystem::IsDataLayerActive(class UDataLayerAsset* DataLa
 }
 
 
-// Function Chimera.CrNativeInputBPHandler.BP_InputCompleted
-// (Event, Public, HasOutParams, BlueprintEvent)
+// Function Chimera.CrInputActionGroupMappingDataAsset.GetOtherActionMappingsFromGroup
+// (Final, Native, Public, HasOutParams, Const)
 // Parameters:
-// const struct FInputActionValue&         InputActionValue                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// class APawn*                            InPawn                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FGameplayTag&              InputTag                                               (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      InActionMappingName                                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class FName>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-void UCrNativeInputBPHandler::BP_InputCompleted(const struct FInputActionValue& InputActionValue, class APawn* InPawn, const struct FGameplayTag& InputTag)
+TArray<class FName> UCrInputActionGroupMappingDataAsset::GetOtherActionMappingsFromGroup(const class FName& InActionMappingName) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrNativeInputBPHandler", "BP_InputCompleted");
+		Func = Class->GetFunction("CrInputActionGroupMappingDataAsset", "GetOtherActionMappingsFromGroup");
 
-	Params::CrNativeInputBPHandler_BP_InputCompleted Parms{};
+	Params::CrInputActionGroupMappingDataAsset_GetOtherActionMappingsFromGroup Parms{};
 
-	Parms.InputActionValue = std::move(InputActionValue);
-	Parms.InPawn = InPawn;
-	Parms.InputTag = std::move(InputTag);
+	Parms.InActionMappingName = InActionMappingName;
 
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Chimera.CrNativeInputBPHandler.BP_InputPressed
-// (Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const struct FInputActionValue&         InputActionValue                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// class APawn*                            InPawn                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FGameplayTag&              InputTag                                               (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrNativeInputBPHandler::BP_InputPressed(const struct FInputActionValue& InputActionValue, class APawn* InPawn, const struct FGameplayTag& InputTag)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrNativeInputBPHandler", "BP_InputPressed");
-
-	Params::CrNativeInputBPHandler_BP_InputPressed Parms{};
-
-	Parms.InputActionValue = std::move(InputActionValue);
-	Parms.InPawn = InPawn;
-	Parms.InputTag = std::move(InputTag);
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -13822,6 +14185,282 @@ bool ACrDatapadBase::WereAllNotesRead() const
 }
 
 
+// Function Chimera.CrGatherableSpawnersSubsystem.BlockGeneration
+// (Final, Native, Public, BlueprintCallable)
+
+void UCrGatherableSpawnersSubsystem::BlockGeneration()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGatherableSpawnersSubsystem", "BlockGeneration");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGatherableSpawnersSubsystem.OnEnviroWaveStarted
+// (Final, Native, Private, HasOutParams)
+// Parameters:
+// EEnviroWave                             InWaveType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EEnviroWaveStage                        InWaveStage                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrEnviroWaveSettings&     InWaveSettings                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// float                                   InWaveProgress                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrGatherableSpawnersSubsystem::OnEnviroWaveStarted(EEnviroWave InWaveType, EEnviroWaveStage InWaveStage, const struct FCrEnviroWaveSettings& InWaveSettings, float InWaveProgress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGatherableSpawnersSubsystem", "OnEnviroWaveStarted");
+
+	Params::CrGatherableSpawnersSubsystem_OnEnviroWaveStarted Parms{};
+
+	Parms.InWaveType = InWaveType;
+	Parms.InWaveStage = InWaveStage;
+	Parms.InWaveSettings = std::move(InWaveSettings);
+	Parms.InWaveProgress = InWaveProgress;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGatherableSpawnersSubsystem.OnPreSaveStart
+// (Final, Native, Private)
+
+void UCrGatherableSpawnersSubsystem::OnPreSaveStart()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGatherableSpawnersSubsystem", "OnPreSaveStart");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGatherableSpawnersSubsystem.RegisterConditionallyErasedDepletedGatherable
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class AActor*                     InDepletedGatherable                                   (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrGatherableSpawnersSubsystem::RegisterConditionallyErasedDepletedGatherable(const class AActor* InDepletedGatherable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGatherableSpawnersSubsystem", "RegisterConditionallyErasedDepletedGatherable");
+
+	Params::CrGatherableSpawnersSubsystem_RegisterConditionallyErasedDepletedGatherable Parms{};
+
+	Parms.InDepletedGatherable = InDepletedGatherable;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGatherableSpawnersSubsystem.RegisterDepletedGatherable
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class AActor*                     InDepletedGatherable                                   (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrGatherableSpawnersSubsystem::RegisterDepletedGatherable(const class AActor* InDepletedGatherable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGatherableSpawnersSubsystem", "RegisterDepletedGatherable");
+
+	Params::CrGatherableSpawnersSubsystem_RegisterDepletedGatherable Parms{};
+
+	Parms.InDepletedGatherable = InDepletedGatherable;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGatherableSpawnersSubsystem.ToggleGenerationEnabled
+// (Final, Native, Public, BlueprintCallable)
+
+void UCrGatherableSpawnersSubsystem::ToggleGenerationEnabled()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGatherableSpawnersSubsystem", "ToggleGenerationEnabled");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGatherableSpawnersSubsystem.TriggerGenerationWithCurrentSeed
+// (Final, Native, Public, BlueprintCallable)
+
+void UCrGatherableSpawnersSubsystem::TriggerGenerationWithCurrentSeed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGatherableSpawnersSubsystem", "TriggerGenerationWithCurrentSeed");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGatherableSpawnersSubsystem.TryLoading
+// (Final, Native, Public)
+
+void UCrGatherableSpawnersSubsystem::TryLoading()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGatherableSpawnersSubsystem", "TryLoading");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGatherableSpawnersSubsystem.UnblockGeneration
+// (Final, Native, Public, BlueprintCallable)
+
+void UCrGatherableSpawnersSubsystem::UnblockGeneration()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGatherableSpawnersSubsystem", "UnblockGeneration");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrGatherableSpawnersSubsystem.BP_DidSpawnBoxAlreadyGeneratedEntities
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const class AActor*                     InSpawnBoxActor                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCrGatherableSpawnersSubsystem::BP_DidSpawnBoxAlreadyGeneratedEntities(const class AActor* InSpawnBoxActor) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGatherableSpawnersSubsystem", "BP_DidSpawnBoxAlreadyGeneratedEntities");
+
+	Params::CrGatherableSpawnersSubsystem_BP_DidSpawnBoxAlreadyGeneratedEntities Parms{};
+
+	Parms.InSpawnBoxActor = InSpawnBoxActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrGatherableSpawnersSubsystem.BP_IsGatherableDepleted
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const class AActor*                     InGatherable                                           (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCrGatherableSpawnersSubsystem::BP_IsGatherableDepleted(const class AActor* InGatherable) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGatherableSpawnersSubsystem", "BP_IsGatherableDepleted");
+
+	Params::CrGatherableSpawnersSubsystem_BP_IsGatherableDepleted Parms{};
+
+	Parms.InGatherable = InGatherable;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrGatherableSpawnersSubsystem.IsGenerationEnabled
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCrGatherableSpawnersSubsystem::IsGenerationEnabled() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGatherableSpawnersSubsystem", "IsGenerationEnabled");
+
+	Params::CrGatherableSpawnersSubsystem_IsGenerationEnabled Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function Chimera.CrStorageAsBuilding.GetItemData
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -13912,31 +14551,6 @@ bool ACrStorageAsBuilding::OnStorageEmptied()
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrPCGVolume.OnCleanupFinished
-// (Final, Native, Private)
-// Parameters:
-// class UPCGComponent*                    InPCGComponent                                         (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrPCGVolume::OnCleanupFinished(class UPCGComponent* InPCGComponent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrPCGVolume", "OnCleanupFinished");
-
-	Params::CrPCGVolume_OnCleanupFinished Parms{};
-
-	Parms.InPCGComponent = InPCGComponent;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -14331,34 +14945,6 @@ void UCrDeconstructionHelperComponent::OnRep_SimulatedEntitiesToDeconstruct()
 }
 
 
-// Function Chimera.CrPlayerCharacterSettings.GetSoundForHitmarkType
-// (Final, Native, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// ECrHitmarkType                          Hitmark                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSoftObjectPtr<class USoundCue>         ReturnValue                                            (Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-TSoftObjectPtr<class USoundCue> UCrPlayerCharacterSettings::GetSoundForHitmarkType(ECrHitmarkType Hitmark)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrPlayerCharacterSettings", "GetSoundForHitmarkType");
-
-	Params::CrPlayerCharacterSettings_GetSoundForHitmarkType Parms{};
-
-	Parms.Hitmark = Hitmark;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function Chimera.CrDedicatedServerSettingsComp.AdminConnect
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -14729,217 +15315,22 @@ void UCrDedicatedServerSettingsComp::TestMethod()
 }
 
 
-// Function Chimera.CrGatherableSpawnersSubsystem.BlockGeneration
-// (Final, Native, Public, BlueprintCallable)
-
-void UCrGatherableSpawnersSubsystem::BlockGeneration()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGatherableSpawnersSubsystem", "BlockGeneration");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGatherableSpawnersSubsystem.OnEnviroWaveStarted
-// (Final, Native, Private, HasOutParams)
-// Parameters:
-// EEnviroWave                             InWaveType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EEnviroWaveStage                        InWaveStage                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FCrEnviroWaveSettings&     InWaveSettings                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// float                                   InWaveProgress                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrGatherableSpawnersSubsystem::OnEnviroWaveStarted(EEnviroWave InWaveType, EEnviroWaveStage InWaveStage, const struct FCrEnviroWaveSettings& InWaveSettings, float InWaveProgress)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGatherableSpawnersSubsystem", "OnEnviroWaveStarted");
-
-	Params::CrGatherableSpawnersSubsystem_OnEnviroWaveStarted Parms{};
-
-	Parms.InWaveType = InWaveType;
-	Parms.InWaveStage = InWaveStage;
-	Parms.InWaveSettings = std::move(InWaveSettings);
-	Parms.InWaveProgress = InWaveProgress;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGatherableSpawnersSubsystem.OnPreSaveStart
-// (Final, Native, Private)
-
-void UCrGatherableSpawnersSubsystem::OnPreSaveStart()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGatherableSpawnersSubsystem", "OnPreSaveStart");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGatherableSpawnersSubsystem.RegisterConditionallyErasedDepletedGatherable
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class AActor*                     InDepletedGatherable                                   (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrGatherableSpawnersSubsystem::RegisterConditionallyErasedDepletedGatherable(const class AActor* InDepletedGatherable)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGatherableSpawnersSubsystem", "RegisterConditionallyErasedDepletedGatherable");
-
-	Params::CrGatherableSpawnersSubsystem_RegisterConditionallyErasedDepletedGatherable Parms{};
-
-	Parms.InDepletedGatherable = InDepletedGatherable;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGatherableSpawnersSubsystem.RegisterDepletedGatherable
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class AActor*                     InDepletedGatherable                                   (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrGatherableSpawnersSubsystem::RegisterDepletedGatherable(const class AActor* InDepletedGatherable)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGatherableSpawnersSubsystem", "RegisterDepletedGatherable");
-
-	Params::CrGatherableSpawnersSubsystem_RegisterDepletedGatherable Parms{};
-
-	Parms.InDepletedGatherable = InDepletedGatherable;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGatherableSpawnersSubsystem.ToggleGenerationEnabled
-// (Final, Native, Public, BlueprintCallable)
-
-void UCrGatherableSpawnersSubsystem::ToggleGenerationEnabled()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGatherableSpawnersSubsystem", "ToggleGenerationEnabled");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGatherableSpawnersSubsystem.TriggerGenerationWithCurrentSeed
-// (Final, Native, Public, BlueprintCallable)
-
-void UCrGatherableSpawnersSubsystem::TriggerGenerationWithCurrentSeed()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGatherableSpawnersSubsystem", "TriggerGenerationWithCurrentSeed");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGatherableSpawnersSubsystem.TryLoading
-// (Final, Native, Public)
-
-void UCrGatherableSpawnersSubsystem::TryLoading()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGatherableSpawnersSubsystem", "TryLoading");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGatherableSpawnersSubsystem.UnblockGeneration
-// (Final, Native, Public, BlueprintCallable)
-
-void UCrGatherableSpawnersSubsystem::UnblockGeneration()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGatherableSpawnersSubsystem", "UnblockGeneration");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGatherableSpawnersSubsystem.BP_DidSpawnBoxAlreadyGeneratedEntities
+// Function Chimera.CrGameModeBase.GetPawnDataForController
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// const class AActor*                     InSpawnBoxActor                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class AController*                InController                                           (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UCrPawnData*                ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UCrGatherableSpawnersSubsystem::BP_DidSpawnBoxAlreadyGeneratedEntities(const class AActor* InSpawnBoxActor) const
+const class UCrPawnData* ACrGameModeBase::GetPawnDataForController(const class AController* InController) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrGatherableSpawnersSubsystem", "BP_DidSpawnBoxAlreadyGeneratedEntities");
+		Func = Class->GetFunction("CrGameModeBase", "GetPawnDataForController");
 
-	Params::CrGatherableSpawnersSubsystem_BP_DidSpawnBoxAlreadyGeneratedEntities Parms{};
+	Params::CrGameModeBase_GetPawnDataForController Parms{};
 
-	Parms.InSpawnBoxActor = InSpawnBoxActor;
+	Parms.InController = InController;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -14952,22 +15343,33 @@ bool UCrGatherableSpawnersSubsystem::BP_DidSpawnBoxAlreadyGeneratedEntities(cons
 }
 
 
-// Function Chimera.CrGatherableSpawnersSubsystem.BP_IsGatherableDepleted
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const class AActor*                     InGatherable                                           (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Chimera.CrDefenseTurretBase.BP_OnInventoryChanged
+// (Event, Protected, BlueprintEvent)
 
-bool UCrGatherableSpawnersSubsystem::BP_IsGatherableDepleted(const class AActor* InGatherable) const
+void ACrDefenseTurretBase::BP_OnInventoryChanged()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrGatherableSpawnersSubsystem", "BP_IsGatherableDepleted");
+		Func = Class->GetFunction("CrDefenseTurretBase", "BP_OnInventoryChanged");
 
-	Params::CrGatherableSpawnersSubsystem_BP_IsGatherableDepleted Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.InGatherable = InGatherable;
+
+// Function Chimera.CrDefenseTurretBase.GetAmmoInInventoryCount
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 ACrDefenseTurretBase::GetAmmoInInventoryCount() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrDefenseTurretBase", "GetAmmoInInventoryCount");
+
+	Params::CrDefenseTurretBase_GetAmmoInInventoryCount Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -14980,19 +15382,44 @@ bool UCrGatherableSpawnersSubsystem::BP_IsGatherableDepleted(const class AActor*
 }
 
 
-// Function Chimera.CrGatherableSpawnersSubsystem.IsGenerationEnabled
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function Chimera.CrDefenseTurretBase.GetMuzzleTransformInWorldSpace
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UCrGatherableSpawnersSubsystem::IsGenerationEnabled() const
+struct FTransform ACrDefenseTurretBase::GetMuzzleTransformInWorldSpace() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrGatherableSpawnersSubsystem", "IsGenerationEnabled");
+		Func = Class->GetFunction("CrDefenseTurretBase", "GetMuzzleTransformInWorldSpace");
 
-	Params::CrGatherableSpawnersSubsystem_IsGenerationEnabled Parms{};
+	Params::CrDefenseTurretBase_GetMuzzleTransformInWorldSpace Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrDefenseTurretBase.HasAmmo
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ACrDefenseTurretBase::HasAmmo() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrDefenseTurretBase", "HasAmmo");
+
+	Params::CrDefenseTurretBase_HasAmmo Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -15414,6 +15841,108 @@ void UCrGameplayAbility::ScriptOnAbilityFailedToActivate(const struct FGameplayT
 }
 
 
+// Function Chimera.CrSettingValueDiscreteDynamic_AudioOutputDevice.DefaultDeviceChanged
+// (Final, Native, Public)
+// Parameters:
+// EAudioDeviceChangedRole                 InRole                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    DeviceID                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingValueDiscreteDynamic_AudioOutputDevice::DefaultDeviceChanged(EAudioDeviceChangedRole InRole, const class FString& DeviceID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingValueDiscreteDynamic_AudioOutputDevice", "DefaultDeviceChanged");
+
+	Params::CrSettingValueDiscreteDynamic_AudioOutputDevice_DefaultDeviceChanged Parms{};
+
+	Parms.InRole = InRole;
+	Parms.DeviceID = std::move(DeviceID);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingValueDiscreteDynamic_AudioOutputDevice.DeviceAddedOrRemoved
+// (Final, Native, Public)
+// Parameters:
+// const class FString&                    DeviceID                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingValueDiscreteDynamic_AudioOutputDevice::DeviceAddedOrRemoved(const class FString& DeviceID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingValueDiscreteDynamic_AudioOutputDevice", "DeviceAddedOrRemoved");
+
+	Params::CrSettingValueDiscreteDynamic_AudioOutputDevice_DeviceAddedOrRemoved Parms{};
+
+	Parms.DeviceID = std::move(DeviceID);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingValueDiscreteDynamic_AudioOutputDevice.OnAudioOutputDevicesObtained
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// const TArray<struct FAudioOutputDeviceInfo>&AvailableDevices                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrSettingValueDiscreteDynamic_AudioOutputDevice::OnAudioOutputDevicesObtained(const TArray<struct FAudioOutputDeviceInfo>& AvailableDevices)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingValueDiscreteDynamic_AudioOutputDevice", "OnAudioOutputDevicesObtained");
+
+	Params::CrSettingValueDiscreteDynamic_AudioOutputDevice_OnAudioOutputDevicesObtained Parms{};
+
+	Parms.AvailableDevices = std::move(AvailableDevices);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingValueDiscreteDynamic_AudioOutputDevice.OnCompletedDeviceSwap
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// const struct FSwapAudioOutputResult&    SwapResult                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrSettingValueDiscreteDynamic_AudioOutputDevice::OnCompletedDeviceSwap(const struct FSwapAudioOutputResult& SwapResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingValueDiscreteDynamic_AudioOutputDevice", "OnCompletedDeviceSwap");
+
+	Params::CrSettingValueDiscreteDynamic_AudioOutputDevice_OnCompletedDeviceSwap Parms{};
+
+	Parms.SwapResult = std::move(SwapResult);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Chimera.CrSystemAbility.IsActivable
 // (Native, Event, Public, BlueprintEvent)
 // Parameters:
@@ -15474,21 +16003,20 @@ bool UCrSystemAbility::IsVisible(class AActor* Avatar, class ACrPlayerController
 }
 
 
-// Function Chimera.CrGemAttributeSet.OnRep_CaloriesLossMultiplier
-// (Native, Protected, HasOutParams)
+// Function Chimera.CrWeaponModDataAsset.GetAttributesModifiersWithValuesAndDescriptions
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// const struct FGameplayAttributeData&    OldCaloriesLossMultiplier                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<class FText>*                    OutAttributesDescription                               (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TMap<struct FGameplayAttribute, float>  ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-void UCrGemAttributeSet::OnRep_CaloriesLossMultiplier(const struct FGameplayAttributeData& OldCaloriesLossMultiplier)
+TMap<struct FGameplayAttribute, float> UCrWeaponModDataAsset::GetAttributesModifiersWithValuesAndDescriptions(TArray<class FText>* OutAttributesDescription)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_CaloriesLossMultiplier");
+		Func = Class->GetFunction("CrWeaponModDataAsset", "GetAttributesModifiersWithValuesAndDescriptions");
 
-	Params::CrGemAttributeSet_OnRep_CaloriesLossMultiplier Parms{};
-
-	Parms.OldCaloriesLossMultiplier = std::move(OldCaloriesLossMultiplier);
+	Params::CrWeaponModDataAsset_GetAttributesModifiersWithValuesAndDescriptions Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -15496,506 +16024,11 @@ void UCrGemAttributeSet::OnRep_CaloriesLossMultiplier(const struct FGameplayAttr
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
 
+	if (OutAttributesDescription != nullptr)
+		*OutAttributesDescription = std::move(Parms.OutAttributesDescription);
 
-// Function Chimera.CrGemAttributeSet.OnRep_ConsumableStatsMultiplier
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldConsumableStatsMultiplier                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrGemAttributeSet::OnRep_ConsumableStatsMultiplier(const struct FGameplayAttributeData& OldConsumableStatsMultiplier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_ConsumableStatsMultiplier");
-
-	Params::CrGemAttributeSet_OnRep_ConsumableStatsMultiplier Parms{};
-
-	Parms.OldConsumableStatsMultiplier = std::move(OldConsumableStatsMultiplier);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGemAttributeSet.OnRep_ConsumableToxicityMultiplier
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldConsumableToxicityMultiplier                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrGemAttributeSet::OnRep_ConsumableToxicityMultiplier(const struct FGameplayAttributeData& OldConsumableToxicityMultiplier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_ConsumableToxicityMultiplier");
-
-	Params::CrGemAttributeSet_OnRep_ConsumableToxicityMultiplier Parms{};
-
-	Parms.OldConsumableToxicityMultiplier = std::move(OldConsumableToxicityMultiplier);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGemAttributeSet.OnRep_DodgeCostMultiplier
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldDodgeCostMultiplier                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrGemAttributeSet::OnRep_DodgeCostMultiplier(const struct FGameplayAttributeData& OldDodgeCostMultiplier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_DodgeCostMultiplier");
-
-	Params::CrGemAttributeSet_OnRep_DodgeCostMultiplier Parms{};
-
-	Parms.OldDodgeCostMultiplier = std::move(OldDodgeCostMultiplier);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGemAttributeSet.OnRep_DoubleJumpCostMultiplier
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldDoubleJumpCostMultiplier                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrGemAttributeSet::OnRep_DoubleJumpCostMultiplier(const struct FGameplayAttributeData& OldDoubleJumpCostMultiplier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_DoubleJumpCostMultiplier");
-
-	Params::CrGemAttributeSet_OnRep_DoubleJumpCostMultiplier Parms{};
-
-	Parms.OldDoubleJumpCostMultiplier = std::move(OldDoubleJumpCostMultiplier);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGemAttributeSet.OnRep_EnemyDropChanceMultiplier
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldEnemyDropChanceMultiplier                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrGemAttributeSet::OnRep_EnemyDropChanceMultiplier(const struct FGameplayAttributeData& OldEnemyDropChanceMultiplier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_EnemyDropChanceMultiplier");
-
-	Params::CrGemAttributeSet_OnRep_EnemyDropChanceMultiplier Parms{};
-
-	Parms.OldEnemyDropChanceMultiplier = std::move(OldEnemyDropChanceMultiplier);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGemAttributeSet.OnRep_FallDamageMultiplier
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldFallDamageMultiplier                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrGemAttributeSet::OnRep_FallDamageMultiplier(const struct FGameplayAttributeData& OldFallDamageMultiplier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_FallDamageMultiplier");
-
-	Params::CrGemAttributeSet_OnRep_FallDamageMultiplier Parms{};
-
-	Parms.OldFallDamageMultiplier = std::move(OldFallDamageMultiplier);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGemAttributeSet.OnRep_FogOfWarRadiusMultiplier
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldFogOfWarRadiusMultiplier                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrGemAttributeSet::OnRep_FogOfWarRadiusMultiplier(const struct FGameplayAttributeData& OldFogOfWarRadiusMultiplier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_FogOfWarRadiusMultiplier");
-
-	Params::CrGemAttributeSet_OnRep_FogOfWarRadiusMultiplier Parms{};
-
-	Parms.OldFogOfWarRadiusMultiplier = std::move(OldFogOfWarRadiusMultiplier);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGemAttributeSet.OnRep_FriendlyFireMultiplier
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldFriendlyFireMultiplier                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrGemAttributeSet::OnRep_FriendlyFireMultiplier(const struct FGameplayAttributeData& OldFriendlyFireMultiplier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_FriendlyFireMultiplier");
-
-	Params::CrGemAttributeSet_OnRep_FriendlyFireMultiplier Parms{};
-
-	Parms.OldFriendlyFireMultiplier = std::move(OldFriendlyFireMultiplier);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGemAttributeSet.OnRep_HarvesterMiningDamageMultiplier
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldHarvesterMiningDamageMultiplier                     (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrGemAttributeSet::OnRep_HarvesterMiningDamageMultiplier(const struct FGameplayAttributeData& OldHarvesterMiningDamageMultiplier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_HarvesterMiningDamageMultiplier");
-
-	Params::CrGemAttributeSet_OnRep_HarvesterMiningDamageMultiplier Parms{};
-
-	Parms.OldHarvesterMiningDamageMultiplier = std::move(OldHarvesterMiningDamageMultiplier);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGemAttributeSet.OnRep_HydrationLossMultiplier
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldHydrationLossMultiplier                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrGemAttributeSet::OnRep_HydrationLossMultiplier(const struct FGameplayAttributeData& OldHydrationLossMultiplier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_HydrationLossMultiplier");
-
-	Params::CrGemAttributeSet_OnRep_HydrationLossMultiplier Parms{};
-
-	Parms.OldHydrationLossMultiplier = std::move(OldHydrationLossMultiplier);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGemAttributeSet.OnRep_InfectionGainMultiplier
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldInfectionGainMultiplier                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrGemAttributeSet::OnRep_InfectionGainMultiplier(const struct FGameplayAttributeData& OldInfectionGainMultiplier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_InfectionGainMultiplier");
-
-	Params::CrGemAttributeSet_OnRep_InfectionGainMultiplier Parms{};
-
-	Parms.OldInfectionGainMultiplier = std::move(OldInfectionGainMultiplier);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGemAttributeSet.OnRep_NegativeStatsGainMultiplier
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldNegativeStatsGainMultiplier                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrGemAttributeSet::OnRep_NegativeStatsGainMultiplier(const struct FGameplayAttributeData& OldNegativeStatsGainMultiplier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_NegativeStatsGainMultiplier");
-
-	Params::CrGemAttributeSet_OnRep_NegativeStatsGainMultiplier Parms{};
-
-	Parms.OldNegativeStatsGainMultiplier = std::move(OldNegativeStatsGainMultiplier);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGemAttributeSet.OnRep_ReviveDurationMultiplier
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldReviveDurationMultiplier                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrGemAttributeSet::OnRep_ReviveDurationMultiplier(const struct FGameplayAttributeData& OldReviveDurationMultiplier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_ReviveDurationMultiplier");
-
-	Params::CrGemAttributeSet_OnRep_ReviveDurationMultiplier Parms{};
-
-	Parms.OldReviveDurationMultiplier = std::move(OldReviveDurationMultiplier);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGemAttributeSet.OnRep_ShieldRechargeCooldownMultiplier
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldShieldRechargeCooldownMultiplier                    (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrGemAttributeSet::OnRep_ShieldRechargeCooldownMultiplier(const struct FGameplayAttributeData& OldShieldRechargeCooldownMultiplier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_ShieldRechargeCooldownMultiplier");
-
-	Params::CrGemAttributeSet_OnRep_ShieldRechargeCooldownMultiplier Parms{};
-
-	Parms.OldShieldRechargeCooldownMultiplier = std::move(OldShieldRechargeCooldownMultiplier);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGemAttributeSet.OnRep_SlideStaminaRegenMultiplier
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldSlideStaminaRegenMultiplier                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrGemAttributeSet::OnRep_SlideStaminaRegenMultiplier(const struct FGameplayAttributeData& OldSlideStaminaRegenMultiplier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_SlideStaminaRegenMultiplier");
-
-	Params::CrGemAttributeSet_OnRep_SlideStaminaRegenMultiplier Parms{};
-
-	Parms.OldSlideStaminaRegenMultiplier = std::move(OldSlideStaminaRegenMultiplier);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGemAttributeSet.OnRep_StaminaRegenMultiplier
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldStaminaRegenMultiplier                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrGemAttributeSet::OnRep_StaminaRegenMultiplier(const struct FGameplayAttributeData& OldStaminaRegenMultiplier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_StaminaRegenMultiplier");
-
-	Params::CrGemAttributeSet_OnRep_StaminaRegenMultiplier Parms{};
-
-	Parms.OldStaminaRegenMultiplier = std::move(OldStaminaRegenMultiplier);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGemAttributeSet.OnRep_WeaponADSSpeedMultiplier
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldWeaponADSSpeedMultiplier                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrGemAttributeSet::OnRep_WeaponADSSpeedMultiplier(const struct FGameplayAttributeData& OldWeaponADSSpeedMultiplier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_WeaponADSSpeedMultiplier");
-
-	Params::CrGemAttributeSet_OnRep_WeaponADSSpeedMultiplier Parms{};
-
-	Parms.OldWeaponADSSpeedMultiplier = std::move(OldWeaponADSSpeedMultiplier);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGemAttributeSet.OnRep_WeaponReloadSpeedMultiplier
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldWeaponReloadSpeedMultiplier                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrGemAttributeSet::OnRep_WeaponReloadSpeedMultiplier(const struct FGameplayAttributeData& OldWeaponReloadSpeedMultiplier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_WeaponReloadSpeedMultiplier");
-
-	Params::CrGemAttributeSet_OnRep_WeaponReloadSpeedMultiplier Parms{};
-
-	Parms.OldWeaponReloadSpeedMultiplier = std::move(OldWeaponReloadSpeedMultiplier);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGemAttributeSet.OnRep_WeaponSwapSpeedMultiplier
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldWeaponSwapSpeedMultiplier                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrGemAttributeSet::OnRep_WeaponSwapSpeedMultiplier(const struct FGameplayAttributeData& OldWeaponSwapSpeedMultiplier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_WeaponSwapSpeedMultiplier");
-
-	Params::CrGemAttributeSet_OnRep_WeaponSwapSpeedMultiplier Parms{};
-
-	Parms.OldWeaponSwapSpeedMultiplier = std::move(OldWeaponSwapSpeedMultiplier);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGemAttributeSet.OnRep_ZiplineSpeedMultiplier
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldZiplineSpeedMultiplier                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrGemAttributeSet::OnRep_ZiplineSpeedMultiplier(const struct FGameplayAttributeData& OldZiplineSpeedMultiplier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGemAttributeSet", "OnRep_ZiplineSpeedMultiplier");
-
-	Params::CrGemAttributeSet_OnRep_ZiplineSpeedMultiplier Parms{};
-
-	Parms.OldZiplineSpeedMultiplier = std::move(OldZiplineSpeedMultiplier);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
+	return Parms.ReturnValue;
 }
 
 
@@ -16148,52 +16181,6 @@ struct FVector ACrDroneBase::GetItemScale() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSoundChannelPlayer.OnAudioPlaybackPercent
-// (Final, Native, Private)
-// Parameters:
-// const class USoundWave*                 PlayingSoundWave                                       (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const float                             PlaybackPercent                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSoundChannelPlayer::OnAudioPlaybackPercent(const class USoundWave* PlayingSoundWave, const float PlaybackPercent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSoundChannelPlayer", "OnAudioPlaybackPercent");
-
-	Params::CrSoundChannelPlayer_OnAudioPlaybackPercent Parms{};
-
-	Parms.PlayingSoundWave = PlayingSoundWave;
-	Parms.PlaybackPercent = PlaybackPercent;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSoundChannelPlayer.OnSoundFinished
-// (Final, Native, Private)
-
-void UCrSoundChannelPlayer::OnSoundFinished()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSoundChannelPlayer", "OnSoundFinished");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -16459,20 +16446,27 @@ bool ICrGatherableInterface::IsDepleted() const
 }
 
 
-// Function Chimera.CrWeaponModDataAsset.GetAttributesModifiersWithValuesAndDescriptions
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Function Chimera.CrHintsSubsystem.OnContextualEventExecuted
+// (Final, Native, Protected)
 // Parameters:
-// TArray<class FText>*                    OutAttributesDescription                               (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-// TMap<struct FGameplayAttribute, float>  ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+// class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             Context                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             ContextValue                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-TMap<struct FGameplayAttribute, float> UCrWeaponModDataAsset::GetAttributesModifiersWithValuesAndDescriptions(TArray<class FText>* OutAttributesDescription)
+void UCrHintsSubsystem::OnContextualEventExecuted(class AActor* Target, class FName Context, class FName ContextValue, class AActor* TargetActor)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrWeaponModDataAsset", "GetAttributesModifiersWithValuesAndDescriptions");
+		Func = Class->GetFunction("CrHintsSubsystem", "OnContextualEventExecuted");
 
-	Params::CrWeaponModDataAsset_GetAttributesModifiersWithValuesAndDescriptions Parms{};
+	Params::CrHintsSubsystem_OnContextualEventExecuted Parms{};
+
+	Parms.Target = Target;
+	Parms.Context = Context;
+	Parms.ContextValue = ContextValue;
+	Parms.TargetActor = TargetActor;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -16480,99 +16474,6 @@ TMap<struct FGameplayAttribute, float> UCrWeaponModDataAsset::GetAttributesModif
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	if (OutAttributesDescription != nullptr)
-		*OutAttributesDescription = std::move(Parms.OutAttributesDescription);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrInfectionActor.OnRep_WasDestroyed
-// (Final, Native, Public)
-
-void ACrInfectionActor::OnRep_WasDestroyed()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrInfectionActor", "OnRep_WasDestroyed");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrInfectionActor.ResetGuid
-// (Final, Native, Public, BlueprintCallable)
-
-void ACrInfectionActor::ResetGuid()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrInfectionActor", "ResetGuid");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrInfectionActor.UpdateDestroyedStateVisuals
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bWasLoaded                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrInfectionActor::UpdateDestroyedStateVisuals(bool bWasLoaded)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrInfectionActor", "UpdateDestroyedStateVisuals");
-
-	Params::CrInfectionActor_UpdateDestroyedStateVisuals Parms{};
-
-	Parms.bWasLoaded = bWasLoaded;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrInfectionActor.GetGuid
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FGuid                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FGuid ACrInfectionActor::GetGuid() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrInfectionActor", "GetGuid");
-
-	Params::CrInfectionActor_GetGuid Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -16761,60 +16662,21 @@ class UObject* UCrDroneSystemBPF::GetDefaultObject(TSubclassOf<class UObject> Ob
 }
 
 
-// Function Chimera.CrZiplineSubsystem.OnPreSaveStart
-// (Final, Native, Private)
-
-void UCrZiplineSubsystem::OnPreSaveStart()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplineSubsystem", "OnPreSaveStart");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrZiplineSubsystem.OnSaveLoaded
-// (Final, Native, Private)
-
-void UCrZiplineSubsystem::OnSaveLoaded()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplineSubsystem", "OnSaveLoaded");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrInputActionGroupMappingDataAsset.GetOtherActionMappingsFromGroup
-// (Final, Native, Public, HasOutParams, Const)
+// Function Chimera.CrInfectionAttributeSet.OnRep_CurrentInfection
+// (Native, Protected, HasOutParams)
 // Parameters:
-// const class FName&                      InActionMappingName                                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class FName>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAttributeData&    OldCurrentInfection                                    (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-TArray<class FName> UCrInputActionGroupMappingDataAsset::GetOtherActionMappingsFromGroup(const class FName& InActionMappingName) const
+void UCrInfectionAttributeSet::OnRep_CurrentInfection(const struct FGameplayAttributeData& OldCurrentInfection)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrInputActionGroupMappingDataAsset", "GetOtherActionMappingsFromGroup");
+		Func = Class->GetFunction("CrInfectionAttributeSet", "OnRep_CurrentInfection");
 
-	Params::CrInputActionGroupMappingDataAsset_GetOtherActionMappingsFromGroup Parms{};
+	Params::CrInfectionAttributeSet_OnRep_CurrentInfection Parms{};
 
-	Parms.InActionMappingName = InActionMappingName;
+	Parms.OldCurrentInfection = std::move(OldCurrentInfection);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -16822,31 +16684,112 @@ TArray<class FName> UCrInputActionGroupMappingDataAsset::GetOtherActionMappingsF
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function Chimera.CrPointOfInterestMarkerActor.SwitchPointOfInterestState
+// Function Chimera.CrInfectionAttributeSet.OnRep_MaxInfection
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldMaxInfection                                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrInfectionAttributeSet::OnRep_MaxInfection(const struct FGameplayAttributeData& OldMaxInfection)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrInfectionAttributeSet", "OnRep_MaxInfection");
+
+	Params::CrInfectionAttributeSet_OnRep_MaxInfection Parms{};
+
+	Parms.OldMaxInfection = std::move(OldMaxInfection);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrInfectionAttributeSet.OnRep_MinInfection
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldMinInfection                                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrInfectionAttributeSet::OnRep_MinInfection(const struct FGameplayAttributeData& OldMinInfection)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrInfectionAttributeSet", "OnRep_MinInfection");
+
+	Params::CrInfectionAttributeSet_OnRep_MinInfection Parms{};
+
+	Parms.OldMinInfection = std::move(OldMinInfection);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrZiplineReplicator.OnPreSaveStart
+// (Final, Native, Private)
+
+void ACrZiplineReplicator::OnPreSaveStart()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplineReplicator", "OnPreSaveStart");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrZiplineReplicator.OnSaveLoaded
+// (Final, Native, Private)
+
+void ACrZiplineReplicator::OnSaveLoaded()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplineReplicator", "OnSaveLoaded");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrPlayerSoundSubsystem.AddAdditionalTag
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// EPointOfInterestState                   NewState                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ForceDowngrade                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class ACrCharacterPlayerBase*           PlayerInteracted                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              Tag                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ACrPointOfInterestMarkerActor::SwitchPointOfInterestState(EPointOfInterestState NewState, bool ForceDowngrade, class ACrCharacterPlayerBase* PlayerInteracted)
+void UCrPlayerSoundSubsystem::AddAdditionalTag(const struct FGameplayTag& Tag)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrPointOfInterestMarkerActor", "SwitchPointOfInterestState");
+		Func = Class->GetFunction("CrPlayerSoundSubsystem", "AddAdditionalTag");
 
-	Params::CrPointOfInterestMarkerActor_SwitchPointOfInterestState Parms{};
+	Params::CrPlayerSoundSubsystem_AddAdditionalTag Parms{};
 
-	Parms.NewState = NewState;
-	Parms.ForceDowngrade = ForceDowngrade;
-	Parms.PlayerInteracted = PlayerInteracted;
+	Parms.Tag = std::move(Tag);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -16854,24 +16797,26 @@ bool ACrPointOfInterestMarkerActor::SwitchPointOfInterestState(EPointOfInterestS
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function Chimera.CrPointOfInterestMarkerActor.GetPointOfInterestState
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function Chimera.CrPlayerSoundSubsystem.OnPawnPossessedChanged
+// (Final, Native, Private)
 // Parameters:
-// EPointOfInterestState                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class APawn*                            OldPawn                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class APawn*                            NewPawn                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-EPointOfInterestState ACrPointOfInterestMarkerActor::GetPointOfInterestState() const
+void UCrPlayerSoundSubsystem::OnPawnPossessedChanged(class APawn* OldPawn, class APawn* NewPawn)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrPointOfInterestMarkerActor", "GetPointOfInterestState");
+		Func = Class->GetFunction("CrPlayerSoundSubsystem", "OnPawnPossessedChanged");
 
-	Params::CrPointOfInterestMarkerActor_GetPointOfInterestState Parms{};
+	Params::CrPlayerSoundSubsystem_OnPawnPossessedChanged Parms{};
+
+	Parms.OldPawn = OldPawn;
+	Parms.NewPawn = NewPawn;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -16879,24 +16824,43 @@ EPointOfInterestState ACrPointOfInterestMarkerActor::GetPointOfInterestState() c
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function Chimera.CrPointOfInterestMarkerActor.GetPointOfInterestType
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// ECrPointOfInterestType                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Chimera.CrPlayerSoundSubsystem.PauseAll
+// (Final, Native, Public, BlueprintCallable)
 
-ECrPointOfInterestType ACrPointOfInterestMarkerActor::GetPointOfInterestType() const
+void UCrPlayerSoundSubsystem::PauseAll()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrPointOfInterestMarkerActor", "GetPointOfInterestType");
+		Func = Class->GetFunction("CrPlayerSoundSubsystem", "PauseAll");
 
-	Params::CrPointOfInterestMarkerActor_GetPointOfInterestType Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrPlayerSoundSubsystem.RemoveAdditionalTag
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const struct FGameplayTag&              Tag                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrPlayerSoundSubsystem::RemoveAdditionalTag(const struct FGameplayTag& Tag)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrPlayerSoundSubsystem", "RemoveAdditionalTag");
+
+	Params::CrPlayerSoundSubsystem_RemoveAdditionalTag Parms{};
+
+	Parms.Tag = std::move(Tag);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -16904,37 +16868,23 @@ ECrPointOfInterestType ACrPointOfInterestMarkerActor::GetPointOfInterestType() c
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function Chimera.CrHintsSubsystem.OnContextualEventExecuted
-// (Final, Native, Protected)
-// Parameters:
-// class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             Context                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             ContextValue                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Chimera.CrPlayerSoundSubsystem.ResumeAll
+// (Final, Native, Public, BlueprintCallable)
 
-void UCrHintsSubsystem::OnContextualEventExecuted(class AActor* Target, class FName Context, class FName ContextValue, class AActor* TargetActor)
+void UCrPlayerSoundSubsystem::ResumeAll()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrHintsSubsystem", "OnContextualEventExecuted");
-
-	Params::CrHintsSubsystem_OnContextualEventExecuted Parms{};
-
-	Parms.Target = Target;
-	Parms.Context = Context;
-	Parms.ContextValue = ContextValue;
-	Parms.TargetActor = TargetActor;
+		Func = Class->GetFunction("CrPlayerSoundSubsystem", "ResumeAll");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -17027,6 +16977,120 @@ float UCrElectricityGraphSubsystem::GetElectricityInRadius(const struct FVector&
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.GasOverlapComponent.OnBeginOverlap
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UGasOverlapComponent::OnBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GasOverlapComponent", "OnBeginOverlap");
+
+	Params::GasOverlapComponent_OnBeginOverlap Parms{};
+
+	Parms.OverlappedComponent = OverlappedComponent;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.OtherBodyIndex = OtherBodyIndex;
+	Parms.bFromSweep = bFromSweep;
+	Parms.SweepResult = std::move(SweepResult);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.GasOverlapComponent.OnEndOverlap
+// (Final, Native, Public)
+// Parameters:
+// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGasOverlapComponent::OnEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GasOverlapComponent", "OnEndOverlap");
+
+	Params::GasOverlapComponent_OnEndOverlap Parms{};
+
+	Parms.OverlappedComponent = OverlappedComponent;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.OtherBodyIndex = OtherBodyIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrNativeInputBPHandler.BP_InputCompleted
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const struct FInputActionValue&         InputActionValue                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class APawn*                            InPawn                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              InputTag                                               (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrNativeInputBPHandler::BP_InputCompleted(const struct FInputActionValue& InputActionValue, class APawn* InPawn, const struct FGameplayTag& InputTag)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrNativeInputBPHandler", "BP_InputCompleted");
+
+	Params::CrNativeInputBPHandler_BP_InputCompleted Parms{};
+
+	Parms.InputActionValue = std::move(InputActionValue);
+	Parms.InPawn = InPawn;
+	Parms.InputTag = std::move(InputTag);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Chimera.CrNativeInputBPHandler.BP_InputPressed
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const struct FInputActionValue&         InputActionValue                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class APawn*                            InPawn                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              InputTag                                               (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrNativeInputBPHandler::BP_InputPressed(const struct FInputActionValue& InputActionValue, class APawn* InPawn, const struct FGameplayTag& InputTag)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrNativeInputBPHandler", "BP_InputPressed");
+
+	Params::CrNativeInputBPHandler_BP_InputPressed Parms{};
+
+	Parms.InputActionValue = std::move(InputActionValue);
+	Parms.InPawn = InPawn;
+	Parms.InputTag = std::move(InputTag);
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -17161,24 +17225,31 @@ void UCrEncyclopediaSubsystem::OnContextualEventExecuted(class AActor* Target, c
 }
 
 
-// Function Chimera.CrGlassDecalActorBase.GetGlassPlaneMutable
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Function Chimera.CrAiActionFloat.Create_CrAiActionFloat
+// (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class UStaticMeshComponent*             ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UCrAiActionFloat>     ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewInputVariable                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionFloat*                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UStaticMeshComponent* ACrGlassDecalActorBase::GetGlassPlaneMutable()
+class UCrAiActionFloat* UCrAiActionFloat::Create_CrAiActionFloat(TSubclassOf<class UCrAiActionFloat> ActionType, float NewMaxLifetimeS, float NewInputVariable)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrGlassDecalActorBase", "GetGlassPlaneMutable");
+		Func = StaticClass()->GetFunction("CrAiActionFloat", "Create_CrAiActionFloat");
 
-	Params::CrGlassDecalActorBase_GetGlassPlaneMutable Parms{};
+	Params::CrAiActionFloat_Create_CrAiActionFloat Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.NewInputVariable = NewInputVariable;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -17315,48 +17386,23 @@ float UCrEnergyLogicComponent::GetCurrentEnergy() const
 }
 
 
-// Function Chimera.CrPlayerSoundSubsystem.AddAdditionalTag
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const struct FGameplayTag&              Tag                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrPlayerSoundSubsystem::AddAdditionalTag(const struct FGameplayTag& Tag)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrPlayerSoundSubsystem", "AddAdditionalTag");
-
-	Params::CrPlayerSoundSubsystem_AddAdditionalTag Parms{};
-
-	Parms.Tag = std::move(Tag);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrPlayerSoundSubsystem.OnPawnPossessedChanged
+// Function Chimera.CrSoundChannelPlayer.OnAudioPlaybackPercent
 // (Final, Native, Private)
 // Parameters:
-// class APawn*                            OldPawn                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class APawn*                            NewPawn                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class USoundWave*                 PlayingSoundWave                                       (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             PlaybackPercent                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrPlayerSoundSubsystem::OnPawnPossessedChanged(class APawn* OldPawn, class APawn* NewPawn)
+void UCrSoundChannelPlayer::OnAudioPlaybackPercent(const class USoundWave* PlayingSoundWave, const float PlaybackPercent)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrPlayerSoundSubsystem", "OnPawnPossessedChanged");
+		Func = Class->GetFunction("CrSoundChannelPlayer", "OnAudioPlaybackPercent");
 
-	Params::CrPlayerSoundSubsystem_OnPawnPossessedChanged Parms{};
+	Params::CrSoundChannelPlayer_OnAudioPlaybackPercent Parms{};
 
-	Parms.OldPawn = OldPawn;
-	Parms.NewPawn = NewPawn;
+	Parms.PlayingSoundWave = PlayingSoundWave;
+	Parms.PlaybackPercent = PlaybackPercent;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -17367,139 +17413,20 @@ void UCrPlayerSoundSubsystem::OnPawnPossessedChanged(class APawn* OldPawn, class
 }
 
 
-// Function Chimera.CrPlayerSoundSubsystem.PauseAll
-// (Final, Native, Public, BlueprintCallable)
+// Function Chimera.CrSoundChannelPlayer.OnSoundFinished
+// (Final, Native, Private)
 
-void UCrPlayerSoundSubsystem::PauseAll()
+void UCrSoundChannelPlayer::OnSoundFinished()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrPlayerSoundSubsystem", "PauseAll");
+		Func = Class->GetFunction("CrSoundChannelPlayer", "OnSoundFinished");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrPlayerSoundSubsystem.RemoveAdditionalTag
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const struct FGameplayTag&              Tag                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrPlayerSoundSubsystem::RemoveAdditionalTag(const struct FGameplayTag& Tag)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrPlayerSoundSubsystem", "RemoveAdditionalTag");
-
-	Params::CrPlayerSoundSubsystem_RemoveAdditionalTag Parms{};
-
-	Parms.Tag = std::move(Tag);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrPlayerSoundSubsystem.ResumeAll
-// (Final, Native, Public, BlueprintCallable)
-
-void UCrPlayerSoundSubsystem::ResumeAll()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrPlayerSoundSubsystem", "ResumeAll");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrHeatAttributeSet.OnRep_CurrentHeat
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldCurrentHeat                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrHeatAttributeSet::OnRep_CurrentHeat(const struct FGameplayAttributeData& OldCurrentHeat)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrHeatAttributeSet", "OnRep_CurrentHeat");
-
-	Params::CrHeatAttributeSet_OnRep_CurrentHeat Parms{};
-
-	Parms.OldCurrentHeat = std::move(OldCurrentHeat);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrHeatAttributeSet.OnRep_MaxHeat
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldMaxHeat                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrHeatAttributeSet::OnRep_MaxHeat(const struct FGameplayAttributeData& OldMaxHeat)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrHeatAttributeSet", "OnRep_MaxHeat");
-
-	Params::CrHeatAttributeSet_OnRep_MaxHeat Parms{};
-
-	Parms.OldMaxHeat = std::move(OldMaxHeat);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrHeatAttributeSet.OnRep_MinHeat
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldMinHeat                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrHeatAttributeSet::OnRep_MinHeat(const struct FGameplayAttributeData& OldMinHeat)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrHeatAttributeSet", "OnRep_MinHeat");
-
-	Params::CrHeatAttributeSet_OnRep_MinHeat Parms{};
-
-	Parms.OldMinHeat = std::move(OldMinHeat);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -20072,6 +19999,56 @@ void ACrEnviroSkyboxActor::UpdateCosmoBreachPos()
 }
 
 
+// Function Chimera.CrPCGGatherableSpawnerVolume.OnCleanupFinished
+// (Final, Native, Private)
+// Parameters:
+// class UPCGComponent*                    InPCGComponent                                         (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrPCGGatherableSpawnerVolume::OnCleanupFinished(class UPCGComponent* InPCGComponent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrPCGGatherableSpawnerVolume", "OnCleanupFinished");
+
+	Params::CrPCGGatherableSpawnerVolume_OnCleanupFinished Parms{};
+
+	Parms.InPCGComponent = InPCGComponent;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrPCGVolume.OnCleanupFinished
+// (Final, Native, Private)
+// Parameters:
+// class UPCGComponent*                    InPCGComponent                                         (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrPCGVolume::OnCleanupFinished(class UPCGComponent* InPCGComponent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrPCGVolume", "OnCleanupFinished");
+
+	Params::CrPCGVolume_OnCleanupFinished Parms{};
+
+	Parms.InPCGComponent = InPCGComponent;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Chimera.CrEnviroWaveAmbientSoundSubsystem.OnEnviroWaveFinished
 // (Final, Native, Public)
 
@@ -20304,21 +20281,59 @@ struct FVector UCrEnviroWaveCurvesFunctionLibrary::EvaluateVectorCurve(const TMa
 }
 
 
-// Function Chimera.CrInfectionAttributeSet.OnRep_CurrentInfection
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldCurrentInfection                                    (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// Function Chimera.CrInfectionActor.OnRep_WasDestroyed
+// (Final, Native, Public)
 
-void UCrInfectionAttributeSet::OnRep_CurrentInfection(const struct FGameplayAttributeData& OldCurrentInfection)
+void ACrInfectionActor::OnRep_WasDestroyed()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrInfectionAttributeSet", "OnRep_CurrentInfection");
+		Func = Class->GetFunction("CrInfectionActor", "OnRep_WasDestroyed");
 
-	Params::CrInfectionAttributeSet_OnRep_CurrentInfection Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
-	Parms.OldCurrentInfection = std::move(OldCurrentInfection);
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrInfectionActor.ResetGuid
+// (Final, Native, Public, BlueprintCallable)
+
+void ACrInfectionActor::ResetGuid()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrInfectionActor", "ResetGuid");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrInfectionActor.UpdateDestroyedStateVisuals
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bWasLoaded                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrInfectionActor::UpdateDestroyedStateVisuals(bool bWasLoaded)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrInfectionActor", "UpdateDestroyedStateVisuals");
+
+	Params::CrInfectionActor_UpdateDestroyedStateVisuals Parms{};
+
+	Parms.bWasLoaded = bWasLoaded;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -20329,21 +20344,19 @@ void UCrInfectionAttributeSet::OnRep_CurrentInfection(const struct FGameplayAttr
 }
 
 
-// Function Chimera.CrInfectionAttributeSet.OnRep_MaxInfection
-// (Native, Protected, HasOutParams)
+// Function Chimera.CrInfectionActor.GetGuid
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// const struct FGameplayAttributeData&    OldMaxInfection                                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FGuid                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrInfectionAttributeSet::OnRep_MaxInfection(const struct FGameplayAttributeData& OldMaxInfection)
+struct FGuid ACrInfectionActor::GetGuid() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrInfectionAttributeSet", "OnRep_MaxInfection");
+		Func = Class->GetFunction("CrInfectionActor", "GetGuid");
 
-	Params::CrInfectionAttributeSet_OnRep_MaxInfection Parms{};
-
-	Parms.OldMaxInfection = std::move(OldMaxInfection);
+	Params::CrInfectionActor_GetGuid Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -20351,31 +20364,8 @@ void UCrInfectionAttributeSet::OnRep_MaxInfection(const struct FGameplayAttribut
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
 
-
-// Function Chimera.CrInfectionAttributeSet.OnRep_MinInfection
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldMinInfection                                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrInfectionAttributeSet::OnRep_MinInfection(const struct FGameplayAttributeData& OldMinInfection)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrInfectionAttributeSet", "OnRep_MinInfection");
-
-	Params::CrInfectionAttributeSet_OnRep_MinInfection Parms{};
-
-	Parms.OldMinInfection = std::move(OldMinInfection);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
+	return Parms.ReturnValue;
 }
 
 
@@ -20475,31 +20465,6 @@ void UCrEnviroWaveEffectsSubsystem::OnSaveLoaded()
 }
 
 
-// Function Chimera.CrPCGGatherableSpawnerVolume.OnCleanupFinished
-// (Final, Native, Private)
-// Parameters:
-// class UPCGComponent*                    InPCGComponent                                         (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrPCGGatherableSpawnerVolume::OnCleanupFinished(class UPCGComponent* InPCGComponent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrPCGGatherableSpawnerVolume", "OnCleanupFinished");
-
-	Params::CrPCGGatherableSpawnerVolume_OnCleanupFinished Parms{};
-
-	Parms.InPCGComponent = InPCGComponent;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function Chimera.CrEnviroWaveMaterialMapComponent.ChangeMaterialState
 // (Native, Public, BlueprintCallable)
 // Parameters:
@@ -20515,108 +20480,6 @@ void UCrEnviroWaveMaterialMapComponent::ChangeMaterialState(ECrEnviroWaveMateria
 	Params::CrEnviroWaveMaterialMapComponent_ChangeMaterialState Parms{};
 
 	Parms.WantedMaterialState = WantedMaterialState;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingValueDiscreteDynamic_AudioOutputDevice.DefaultDeviceChanged
-// (Final, Native, Public)
-// Parameters:
-// EAudioDeviceChangedRole                 InRole                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    DeviceID                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingValueDiscreteDynamic_AudioOutputDevice::DefaultDeviceChanged(EAudioDeviceChangedRole InRole, const class FString& DeviceID)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingValueDiscreteDynamic_AudioOutputDevice", "DefaultDeviceChanged");
-
-	Params::CrSettingValueDiscreteDynamic_AudioOutputDevice_DefaultDeviceChanged Parms{};
-
-	Parms.InRole = InRole;
-	Parms.DeviceID = std::move(DeviceID);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingValueDiscreteDynamic_AudioOutputDevice.DeviceAddedOrRemoved
-// (Final, Native, Public)
-// Parameters:
-// const class FString&                    DeviceID                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingValueDiscreteDynamic_AudioOutputDevice::DeviceAddedOrRemoved(const class FString& DeviceID)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingValueDiscreteDynamic_AudioOutputDevice", "DeviceAddedOrRemoved");
-
-	Params::CrSettingValueDiscreteDynamic_AudioOutputDevice_DeviceAddedOrRemoved Parms{};
-
-	Parms.DeviceID = std::move(DeviceID);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingValueDiscreteDynamic_AudioOutputDevice.OnAudioOutputDevicesObtained
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// const TArray<struct FAudioOutputDeviceInfo>&AvailableDevices                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrSettingValueDiscreteDynamic_AudioOutputDevice::OnAudioOutputDevicesObtained(const TArray<struct FAudioOutputDeviceInfo>& AvailableDevices)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingValueDiscreteDynamic_AudioOutputDevice", "OnAudioOutputDevicesObtained");
-
-	Params::CrSettingValueDiscreteDynamic_AudioOutputDevice_OnAudioOutputDevicesObtained Parms{};
-
-	Parms.AvailableDevices = std::move(AvailableDevices);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingValueDiscreteDynamic_AudioOutputDevice.OnCompletedDeviceSwap
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// const struct FSwapAudioOutputResult&    SwapResult                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrSettingValueDiscreteDynamic_AudioOutputDevice::OnCompletedDeviceSwap(const struct FSwapAudioOutputResult& SwapResult)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingValueDiscreteDynamic_AudioOutputDevice", "OnCompletedDeviceSwap");
-
-	Params::CrSettingValueDiscreteDynamic_AudioOutputDevice_OnCompletedDeviceSwap Parms{};
-
-	Parms.SwapResult = std::move(SwapResult);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -21080,510 +20943,6 @@ bool UCrEnviroWaveSubsystem::IsWavePaused() const
 		Func = Class->GetFunction("CrEnviroWaveSubsystem", "IsWavePaused");
 
 	Params::CrEnviroWaveSubsystem_IsWavePaused Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrEnviroWaveTimerSubsystem.OnPreSaveStart
-// (Final, Native, Private)
-
-void UCrEnviroWaveTimerSubsystem::OnPreSaveStart()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrEnviroWaveTimerSubsystem", "OnPreSaveStart");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrEnviroWaveTimerSubsystem.OnSaveLoaded
-// (Final, Native, Private)
-
-void UCrEnviroWaveTimerSubsystem::OnSaveLoaded()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrEnviroWaveTimerSubsystem", "OnSaveLoaded");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrEnviroWaveTimerSubsystem.WavesActive
-// (Final, Native, Public)
-// Parameters:
-// bool                                    bActive                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrEnviroWaveTimerSubsystem::WavesActive(bool bActive)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrEnviroWaveTimerSubsystem", "WavesActive");
-
-	Params::CrEnviroWaveTimerSubsystem_WavesActive Parms{};
-
-	Parms.bActive = bActive;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrEnviroWaveVisualsReplicationActor.HandleWaterEvaporatedChanged
-// (Final, Native, Private)
-// Parameters:
-// bool                                    bActive                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrEnviroWaveVisualsReplicationActor::HandleWaterEvaporatedChanged(bool bActive)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrEnviroWaveVisualsReplicationActor", "HandleWaterEvaporatedChanged");
-
-	Params::CrEnviroWaveVisualsReplicationActor_HandleWaterEvaporatedChanged Parms{};
-
-	Parms.bActive = bActive;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrEnviroWaveVisualsReplicationActor.MulticastEnviroWaveCanceled
-// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
-// Parameters:
-// EEnviroWave                             WaveType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EEnviroWaveStage                        WaveStage                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void ACrEnviroWaveVisualsReplicationActor::MulticastEnviroWaveCanceled(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrEnviroWaveVisualsReplicationActor", "MulticastEnviroWaveCanceled");
-
-	Params::CrEnviroWaveVisualsReplicationActor_MulticastEnviroWaveCanceled Parms{};
-
-	Parms.WaveType = WaveType;
-	Parms.WaveStage = WaveStage;
-	Parms.WaveSettings = std::move(WaveSettings);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrEnviroWaveVisualsReplicationActor.MulticastEnviroWaveFinished
-// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
-// Parameters:
-// EEnviroWave                             WaveType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void ACrEnviroWaveVisualsReplicationActor::MulticastEnviroWaveFinished(EEnviroWave WaveType, const struct FCrEnviroWaveSettings& WaveSettings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrEnviroWaveVisualsReplicationActor", "MulticastEnviroWaveFinished");
-
-	Params::CrEnviroWaveVisualsReplicationActor_MulticastEnviroWaveFinished Parms{};
-
-	Parms.WaveType = WaveType;
-	Parms.WaveSettings = std::move(WaveSettings);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrEnviroWaveVisualsReplicationActor.MulticastEnviroWaveForced
-// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
-// Parameters:
-// EEnviroWave                             WaveType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EEnviroWaveStage                        WaveStage                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// float                                   WaveProgress                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrEnviroWaveVisualsReplicationActor::MulticastEnviroWaveForced(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrEnviroWaveVisualsReplicationActor", "MulticastEnviroWaveForced");
-
-	Params::CrEnviroWaveVisualsReplicationActor_MulticastEnviroWaveForced Parms{};
-
-	Parms.WaveType = WaveType;
-	Parms.WaveStage = WaveStage;
-	Parms.WaveSettings = std::move(WaveSettings);
-	Parms.WaveProgress = WaveProgress;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrEnviroWaveVisualsReplicationActor.MulticastEnviroWavePaused
-// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
-// Parameters:
-// EEnviroWave                             WaveType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EEnviroWaveStage                        WaveStage                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// float                                   WaveProgress                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrEnviroWaveVisualsReplicationActor::MulticastEnviroWavePaused(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrEnviroWaveVisualsReplicationActor", "MulticastEnviroWavePaused");
-
-	Params::CrEnviroWaveVisualsReplicationActor_MulticastEnviroWavePaused Parms{};
-
-	Parms.WaveType = WaveType;
-	Parms.WaveStage = WaveStage;
-	Parms.WaveSettings = std::move(WaveSettings);
-	Parms.WaveProgress = WaveProgress;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrEnviroWaveVisualsReplicationActor.MulticastEnviroWaveStarted
-// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
-// Parameters:
-// EEnviroWave                             WaveType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EEnviroWaveStage                        WaveStage                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// float                                   WaveProgress                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrEnviroWaveVisualsReplicationActor::MulticastEnviroWaveStarted(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrEnviroWaveVisualsReplicationActor", "MulticastEnviroWaveStarted");
-
-	Params::CrEnviroWaveVisualsReplicationActor_MulticastEnviroWaveStarted Parms{};
-
-	Parms.WaveType = WaveType;
-	Parms.WaveStage = WaveStage;
-	Parms.WaveSettings = std::move(WaveSettings);
-	Parms.WaveProgress = WaveProgress;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrEnviroWaveVisualsReplicationActor.OnFadeoutSubstageChanged
-// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
-// Parameters:
-// const struct FCrEnviroWaveSettings&     Settings                                               (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// EEnviroWaveFadeoutSubstage              Substage                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Progress                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrEnviroWaveVisualsReplicationActor::OnFadeoutSubstageChanged(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveFadeoutSubstage Substage, float Progress)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrEnviroWaveVisualsReplicationActor", "OnFadeoutSubstageChanged");
-
-	Params::CrEnviroWaveVisualsReplicationActor_OnFadeoutSubstageChanged Parms{};
-
-	Parms.Settings = std::move(Settings);
-	Parms.Substage = Substage;
-	Parms.Progress = Progress;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrEnviroWaveVisualsReplicationActor.OnGrowbackSubstageChanged
-// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
-// Parameters:
-// const struct FCrEnviroWaveSettings&     Settings                                               (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// EEnviroWaveGrowbackSubstage             Substage                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Progress                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrEnviroWaveVisualsReplicationActor::OnGrowbackSubstageChanged(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveGrowbackSubstage Substage, float Progress)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrEnviroWaveVisualsReplicationActor", "OnGrowbackSubstageChanged");
-
-	Params::CrEnviroWaveVisualsReplicationActor_OnGrowbackSubstageChanged Parms{};
-
-	Parms.Settings = std::move(Settings);
-	Parms.Substage = Substage;
-	Parms.Progress = Progress;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrEnviroWaveVisualsReplicationActor.OnIsWaterEvaporatedReplicated
-// (Final, Native, Private)
-
-void ACrEnviroWaveVisualsReplicationActor::OnIsWaterEvaporatedReplicated()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrEnviroWaveVisualsReplicationActor", "OnIsWaterEvaporatedReplicated");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrEnviroWaveVisualsReplicationActor.OnWaterEvaporatedLastTimeChangedReplicated
-// (Final, Native, Private)
-
-void ACrEnviroWaveVisualsReplicationActor::OnWaterEvaporatedLastTimeChangedReplicated()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrEnviroWaveVisualsReplicationActor", "OnWaterEvaporatedLastTimeChangedReplicated");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrEnviroWaveVisualsWorldSubsystem.DisableAllFXes
-// (Final, Native, Public, BlueprintCallable)
-
-void UCrEnviroWaveVisualsWorldSubsystem::DisableAllFXes()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrEnviroWaveVisualsWorldSubsystem", "DisableAllFXes");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrEnviroWaveVisualsWorldSubsystem.EnableAllFXes
-// (Final, Native, Public, BlueprintCallable)
-
-void UCrEnviroWaveVisualsWorldSubsystem::EnableAllFXes()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrEnviroWaveVisualsWorldSubsystem", "EnableAllFXes");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrEnviroWaveVisualsWorldSubsystem.OnFadeoutSubstageChanged
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// const struct FCrEnviroWaveSettings&     InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// EEnviroWaveFadeoutSubstage              InSubstage                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   InProgress                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrEnviroWaveVisualsWorldSubsystem::OnFadeoutSubstageChanged(const struct FCrEnviroWaveSettings& InSettings, EEnviroWaveFadeoutSubstage InSubstage, float InProgress)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrEnviroWaveVisualsWorldSubsystem", "OnFadeoutSubstageChanged");
-
-	Params::CrEnviroWaveVisualsWorldSubsystem_OnFadeoutSubstageChanged Parms{};
-
-	Parms.InSettings = std::move(InSettings);
-	Parms.InSubstage = InSubstage;
-	Parms.InProgress = InProgress;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrEnviroWaveVisualsWorldSubsystem.OnGrowbackSubstageChanged
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// const struct FCrEnviroWaveSettings&     InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// EEnviroWaveGrowbackSubstage             InSubstage                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   InProgress                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrEnviroWaveVisualsWorldSubsystem::OnGrowbackSubstageChanged(const struct FCrEnviroWaveSettings& InSettings, EEnviroWaveGrowbackSubstage InSubstage, float InProgress)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrEnviroWaveVisualsWorldSubsystem", "OnGrowbackSubstageChanged");
-
-	Params::CrEnviroWaveVisualsWorldSubsystem_OnGrowbackSubstageChanged Parms{};
-
-	Parms.InSettings = std::move(InSettings);
-	Parms.InSubstage = InSubstage;
-	Parms.InProgress = InProgress;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrEnviroWaveVisualsWorldSubsystem.EvaporatedWaterLastTimeChange
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UCrEnviroWaveVisualsWorldSubsystem::EvaporatedWaterLastTimeChange() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrEnviroWaveVisualsWorldSubsystem", "EvaporatedWaterLastTimeChange");
-
-	Params::CrEnviroWaveVisualsWorldSubsystem_EvaporatedWaterLastTimeChange Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrEnviroWaveVisualsWorldSubsystem.GetCurrentStage
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// EEnviroWaveStage                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EEnviroWaveStage UCrEnviroWaveVisualsWorldSubsystem::GetCurrentStage() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrEnviroWaveVisualsWorldSubsystem", "GetCurrentStage");
-
-	Params::CrEnviroWaveVisualsWorldSubsystem_GetCurrentStage Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrEnviroWaveVisualsWorldSubsystem.IsWaterEvaporated
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UCrEnviroWaveVisualsWorldSubsystem::IsWaterEvaporated() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrEnviroWaveVisualsWorldSubsystem", "IsWaterEvaporated");
-
-	Params::CrEnviroWaveVisualsWorldSubsystem_IsWaterEvaporated Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -22271,6 +21630,535 @@ void ACrScalabialityQualityActor::OnViewQualityChanged(int32 Quality)
 }
 
 
+// Function Chimera.CrEnviroWaveTimerSubsystem.OnPreSaveStart
+// (Final, Native, Private)
+
+void UCrEnviroWaveTimerSubsystem::OnPreSaveStart()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrEnviroWaveTimerSubsystem", "OnPreSaveStart");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrEnviroWaveTimerSubsystem.OnSaveLoaded
+// (Final, Native, Private)
+
+void UCrEnviroWaveTimerSubsystem::OnSaveLoaded()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrEnviroWaveTimerSubsystem", "OnSaveLoaded");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrEnviroWaveTimerSubsystem.WavesActive
+// (Final, Native, Public)
+// Parameters:
+// bool                                    bActive                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrEnviroWaveTimerSubsystem::WavesActive(bool bActive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrEnviroWaveTimerSubsystem", "WavesActive");
+
+	Params::CrEnviroWaveTimerSubsystem_WavesActive Parms{};
+
+	Parms.bActive = bActive;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrEnviroWaveVisualsReplicationActor.HandleWaterEvaporatedChanged
+// (Final, Native, Private)
+// Parameters:
+// bool                                    bActive                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrEnviroWaveVisualsReplicationActor::HandleWaterEvaporatedChanged(bool bActive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrEnviroWaveVisualsReplicationActor", "HandleWaterEvaporatedChanged");
+
+	Params::CrEnviroWaveVisualsReplicationActor_HandleWaterEvaporatedChanged Parms{};
+
+	Parms.bActive = bActive;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrEnviroWaveVisualsReplicationActor.MulticastEnviroWaveCanceled
+// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
+// Parameters:
+// EEnviroWave                             WaveType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EEnviroWaveStage                        WaveStage                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void ACrEnviroWaveVisualsReplicationActor::MulticastEnviroWaveCanceled(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrEnviroWaveVisualsReplicationActor", "MulticastEnviroWaveCanceled");
+
+	Params::CrEnviroWaveVisualsReplicationActor_MulticastEnviroWaveCanceled Parms{};
+
+	Parms.WaveType = WaveType;
+	Parms.WaveStage = WaveStage;
+	Parms.WaveSettings = std::move(WaveSettings);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrEnviroWaveVisualsReplicationActor.MulticastEnviroWaveFinished
+// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
+// Parameters:
+// EEnviroWave                             WaveType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void ACrEnviroWaveVisualsReplicationActor::MulticastEnviroWaveFinished(EEnviroWave WaveType, const struct FCrEnviroWaveSettings& WaveSettings)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrEnviroWaveVisualsReplicationActor", "MulticastEnviroWaveFinished");
+
+	Params::CrEnviroWaveVisualsReplicationActor_MulticastEnviroWaveFinished Parms{};
+
+	Parms.WaveType = WaveType;
+	Parms.WaveSettings = std::move(WaveSettings);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrEnviroWaveVisualsReplicationActor.MulticastEnviroWaveForced
+// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
+// Parameters:
+// EEnviroWave                             WaveType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EEnviroWaveStage                        WaveStage                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// float                                   WaveProgress                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrEnviroWaveVisualsReplicationActor::MulticastEnviroWaveForced(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrEnviroWaveVisualsReplicationActor", "MulticastEnviroWaveForced");
+
+	Params::CrEnviroWaveVisualsReplicationActor_MulticastEnviroWaveForced Parms{};
+
+	Parms.WaveType = WaveType;
+	Parms.WaveStage = WaveStage;
+	Parms.WaveSettings = std::move(WaveSettings);
+	Parms.WaveProgress = WaveProgress;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrEnviroWaveVisualsReplicationActor.MulticastEnviroWavePaused
+// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
+// Parameters:
+// EEnviroWave                             WaveType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EEnviroWaveStage                        WaveStage                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// float                                   WaveProgress                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrEnviroWaveVisualsReplicationActor::MulticastEnviroWavePaused(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrEnviroWaveVisualsReplicationActor", "MulticastEnviroWavePaused");
+
+	Params::CrEnviroWaveVisualsReplicationActor_MulticastEnviroWavePaused Parms{};
+
+	Parms.WaveType = WaveType;
+	Parms.WaveStage = WaveStage;
+	Parms.WaveSettings = std::move(WaveSettings);
+	Parms.WaveProgress = WaveProgress;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrEnviroWaveVisualsReplicationActor.MulticastEnviroWaveStarted
+// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
+// Parameters:
+// EEnviroWave                             WaveType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EEnviroWaveStage                        WaveStage                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// float                                   WaveProgress                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrEnviroWaveVisualsReplicationActor::MulticastEnviroWaveStarted(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrEnviroWaveVisualsReplicationActor", "MulticastEnviroWaveStarted");
+
+	Params::CrEnviroWaveVisualsReplicationActor_MulticastEnviroWaveStarted Parms{};
+
+	Parms.WaveType = WaveType;
+	Parms.WaveStage = WaveStage;
+	Parms.WaveSettings = std::move(WaveSettings);
+	Parms.WaveProgress = WaveProgress;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrEnviroWaveVisualsReplicationActor.OnFadeoutSubstageChanged
+// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
+// Parameters:
+// const struct FCrEnviroWaveSettings&     Settings                                               (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// EEnviroWaveFadeoutSubstage              Substage                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Progress                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrEnviroWaveVisualsReplicationActor::OnFadeoutSubstageChanged(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveFadeoutSubstage Substage, float Progress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrEnviroWaveVisualsReplicationActor", "OnFadeoutSubstageChanged");
+
+	Params::CrEnviroWaveVisualsReplicationActor_OnFadeoutSubstageChanged Parms{};
+
+	Parms.Settings = std::move(Settings);
+	Parms.Substage = Substage;
+	Parms.Progress = Progress;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrEnviroWaveVisualsReplicationActor.OnGrowbackSubstageChanged
+// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
+// Parameters:
+// const struct FCrEnviroWaveSettings&     Settings                                               (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// EEnviroWaveGrowbackSubstage             Substage                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Progress                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrEnviroWaveVisualsReplicationActor::OnGrowbackSubstageChanged(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveGrowbackSubstage Substage, float Progress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrEnviroWaveVisualsReplicationActor", "OnGrowbackSubstageChanged");
+
+	Params::CrEnviroWaveVisualsReplicationActor_OnGrowbackSubstageChanged Parms{};
+
+	Parms.Settings = std::move(Settings);
+	Parms.Substage = Substage;
+	Parms.Progress = Progress;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrEnviroWaveVisualsReplicationActor.OnIsWaterEvaporatedReplicated
+// (Final, Native, Private)
+
+void ACrEnviroWaveVisualsReplicationActor::OnIsWaterEvaporatedReplicated()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrEnviroWaveVisualsReplicationActor", "OnIsWaterEvaporatedReplicated");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrEnviroWaveVisualsReplicationActor.OnWaterEvaporatedLastTimeChangedReplicated
+// (Final, Native, Private)
+
+void ACrEnviroWaveVisualsReplicationActor::OnWaterEvaporatedLastTimeChangedReplicated()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrEnviroWaveVisualsReplicationActor", "OnWaterEvaporatedLastTimeChangedReplicated");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrEnviroWaveVisualsWorldSubsystem.DisableAllFXes
+// (Final, Native, Public, BlueprintCallable)
+
+void UCrEnviroWaveVisualsWorldSubsystem::DisableAllFXes()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrEnviroWaveVisualsWorldSubsystem", "DisableAllFXes");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrEnviroWaveVisualsWorldSubsystem.EnableAllFXes
+// (Final, Native, Public, BlueprintCallable)
+
+void UCrEnviroWaveVisualsWorldSubsystem::EnableAllFXes()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrEnviroWaveVisualsWorldSubsystem", "EnableAllFXes");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrEnviroWaveVisualsWorldSubsystem.OnFadeoutSubstageChanged
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// const struct FCrEnviroWaveSettings&     InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// EEnviroWaveFadeoutSubstage              InSubstage                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InProgress                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrEnviroWaveVisualsWorldSubsystem::OnFadeoutSubstageChanged(const struct FCrEnviroWaveSettings& InSettings, EEnviroWaveFadeoutSubstage InSubstage, float InProgress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrEnviroWaveVisualsWorldSubsystem", "OnFadeoutSubstageChanged");
+
+	Params::CrEnviroWaveVisualsWorldSubsystem_OnFadeoutSubstageChanged Parms{};
+
+	Parms.InSettings = std::move(InSettings);
+	Parms.InSubstage = InSubstage;
+	Parms.InProgress = InProgress;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrEnviroWaveVisualsWorldSubsystem.OnGrowbackSubstageChanged
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// const struct FCrEnviroWaveSettings&     InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// EEnviroWaveGrowbackSubstage             InSubstage                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InProgress                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrEnviroWaveVisualsWorldSubsystem::OnGrowbackSubstageChanged(const struct FCrEnviroWaveSettings& InSettings, EEnviroWaveGrowbackSubstage InSubstage, float InProgress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrEnviroWaveVisualsWorldSubsystem", "OnGrowbackSubstageChanged");
+
+	Params::CrEnviroWaveVisualsWorldSubsystem_OnGrowbackSubstageChanged Parms{};
+
+	Parms.InSettings = std::move(InSettings);
+	Parms.InSubstage = InSubstage;
+	Parms.InProgress = InProgress;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrEnviroWaveVisualsWorldSubsystem.EvaporatedWaterLastTimeChange
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UCrEnviroWaveVisualsWorldSubsystem::EvaporatedWaterLastTimeChange() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrEnviroWaveVisualsWorldSubsystem", "EvaporatedWaterLastTimeChange");
+
+	Params::CrEnviroWaveVisualsWorldSubsystem_EvaporatedWaterLastTimeChange Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrEnviroWaveVisualsWorldSubsystem.GetCurrentStage
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EEnviroWaveStage                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EEnviroWaveStage UCrEnviroWaveVisualsWorldSubsystem::GetCurrentStage() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrEnviroWaveVisualsWorldSubsystem", "GetCurrentStage");
+
+	Params::CrEnviroWaveVisualsWorldSubsystem_GetCurrentStage Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrEnviroWaveVisualsWorldSubsystem.GetCurrentStageNormalizedProgress
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UCrEnviroWaveVisualsWorldSubsystem::GetCurrentStageNormalizedProgress() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrEnviroWaveVisualsWorldSubsystem", "GetCurrentStageNormalizedProgress");
+
+	Params::CrEnviroWaveVisualsWorldSubsystem_GetCurrentStageNormalizedProgress Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrEnviroWaveVisualsWorldSubsystem.IsWaterEvaporated
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCrEnviroWaveVisualsWorldSubsystem::IsWaterEvaporated() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrEnviroWaveVisualsWorldSubsystem", "IsWaterEvaporated");
+
+	Params::CrEnviroWaveVisualsWorldSubsystem_IsWaterEvaporated Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function Chimera.CrExperienceManagerComponent.OnRep_CurrentExperience
 // (Final, Native, Private)
 
@@ -22290,23 +22178,21 @@ void UCrExperienceManagerComponent::OnRep_CurrentExperience()
 }
 
 
-// Function Chimera.CrInventoryComponent.BP_DebugAddItem
-// (Final, Native, Public, BlueprintCallable)
+// Function Chimera.CrInteractiveDoor.MulticastInteract
+// (Net, Native, Event, NetMulticast, Protected)
 // Parameters:
-// TSubclassOf<class UAuItemDataBase>      InItem                                                 (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class APlayerController*                InPc                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrInventoryComponent::BP_DebugAddItem(TSubclassOf<class UAuItemDataBase> InItem, int32 Amount)
+void ACrInteractiveDoor::MulticastInteract(class APlayerController* InPc)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrInventoryComponent", "BP_DebugAddItem");
+		Func = Class->GetFunction("CrInteractiveDoor", "MulticastInteract");
 
-	Params::CrInventoryComponent_BP_DebugAddItem Parms{};
+	Params::CrInteractiveDoor_MulticastInteract Parms{};
 
-	Parms.InItem = InItem;
-	Parms.Amount = Amount;
+	Parms.InPc = InPc;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -22317,308 +22203,35 @@ void UCrInventoryComponent::BP_DebugAddItem(TSubclassOf<class UAuItemDataBase> I
 }
 
 
-// Function Chimera.CrInventoryComponent.BP_RemoveItem
-// (Final, Native, Public, BlueprintCallable)
+// Function Chimera.CrInteractiveDoor.OnInteract
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// const class UAuItemDataBase*            InItem                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class APlayerController*                InPc                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrInventoryComponent::BP_RemoveItem(const class UAuItemDataBase* InItem, int32 Amount)
+void ACrInteractiveDoor::OnInteract(class APlayerController* InPc)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrInventoryComponent", "BP_RemoveItem");
+		Func = Class->GetFunction("CrInteractiveDoor", "OnInteract");
 
-	Params::CrInventoryComponent_BP_RemoveItem Parms{};
+	Params::CrInteractiveDoor_OnInteract Parms{};
 
-	Parms.InItem = InItem;
-	Parms.Amount = Amount;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
+	Parms.InPc = InPc;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
-// Function Chimera.CrInventoryComponent.FindDroppedItemChestStorageInCloseProximity
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const class UAuItemDataBase*            WantedItemData                                         (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   DetectionRadius                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrBuildingItemStorageComponent** OutStorageComponent                                    (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Chimera.CrInteractiveDoor.OnRep_IsOpen
+// (Final, Native, Protected)
 
-bool UCrInventoryComponent::FindDroppedItemChestStorageInCloseProximity(const class UAuItemDataBase* WantedItemData, float DetectionRadius, class UCrBuildingItemStorageComponent** OutStorageComponent)
+void ACrInteractiveDoor::OnRep_IsOpen()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrInventoryComponent", "FindDroppedItemChestStorageInCloseProximity");
-
-	Params::CrInventoryComponent_FindDroppedItemChestStorageInCloseProximity Parms{};
-
-	Parms.WantedItemData = WantedItemData;
-	Parms.DetectionRadius = DetectionRadius;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutStorageComponent != nullptr)
-		*OutStorageComponent = Parms.OutStorageComponent;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrInventoryComponent.OnRep_Slots
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// const TArray<struct FCrInventorySlot>&  OldSlots                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrInventoryComponent::OnRep_Slots(const TArray<struct FCrInventorySlot>& OldSlots)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrInventoryComponent", "OnRep_Slots");
-
-	Params::CrInventoryComponent_OnRep_Slots Parms{};
-
-	Parms.OldSlots = std::move(OldSlots);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrInventoryComponent.ServerAddItemFromInventory
-// (Net, NetReliable, Native, Event, Public, NetServer)
-// Parameters:
-// const struct FCrSlotId&                 FromSlot                                               (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FCrSlotId&                 ToSlot                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrInventoryComponent*            FromComponent                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrInventoryComponent::ServerAddItemFromInventory(const struct FCrSlotId& FromSlot, const struct FCrSlotId& ToSlot, class UCrInventoryComponent* FromComponent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrInventoryComponent", "ServerAddItemFromInventory");
-
-	Params::CrInventoryComponent_ServerAddItemFromInventory Parms{};
-
-	Parms.FromSlot = std::move(FromSlot);
-	Parms.ToSlot = std::move(ToSlot);
-	Parms.FromComponent = FromComponent;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrInventoryComponent.ServerAddItemFromStorage
-// (Net, NetReliable, Native, Event, Public, NetServer)
-// Parameters:
-// const struct FCrSlotId&                 FromSlot                                               (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FCrSlotId&                 ToSlot                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FCrMassComponentReplicationHelper&InStorageComponent                                     (Parm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// bool                                    DropNotAdded                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrInventoryComponent::ServerAddItemFromStorage(const struct FCrSlotId& FromSlot, const struct FCrSlotId& ToSlot, const struct FCrMassComponentReplicationHelper& InStorageComponent, bool DropNotAdded)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrInventoryComponent", "ServerAddItemFromStorage");
-
-	Params::CrInventoryComponent_ServerAddItemFromStorage Parms{};
-
-	Parms.FromSlot = std::move(FromSlot);
-	Parms.ToSlot = std::move(ToSlot);
-	Parms.InStorageComponent = std::move(InStorageComponent);
-	Parms.DropNotAdded = DropNotAdded;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrInventoryComponent.ServerAddItemToStorage
-// (Net, NetReliable, Native, Event, Public, NetServer)
-// Parameters:
-// const struct FCrSlotId&                 FromSlot                                               (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FCrSlotId&                 ToSlot                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FCrMassComponentReplicationHelper&InStorageComponent                                     (Parm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void UCrInventoryComponent::ServerAddItemToStorage(const struct FCrSlotId& FromSlot, const struct FCrSlotId& ToSlot, const struct FCrMassComponentReplicationHelper& InStorageComponent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrInventoryComponent", "ServerAddItemToStorage");
-
-	Params::CrInventoryComponent_ServerAddItemToStorage Parms{};
-
-	Parms.FromSlot = std::move(FromSlot);
-	Parms.ToSlot = std::move(ToSlot);
-	Parms.InStorageComponent = std::move(InStorageComponent);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrInventoryComponent.ServerAddNewItemToInventorySlot
-// (Net, NetReliable, Native, Event, Public, NetServer)
-// Parameters:
-// const struct FCrSlotId&                 InSlot                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class UAuItemDataBase*            InItem                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrInventoryComponent::ServerAddNewItemToInventorySlot(const struct FCrSlotId& InSlot, const class UAuItemDataBase* InItem, int32 Amount)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrInventoryComponent", "ServerAddNewItemToInventorySlot");
-
-	Params::CrInventoryComponent_ServerAddNewItemToInventorySlot Parms{};
-
-	Parms.InSlot = std::move(InSlot);
-	Parms.InItem = InItem;
-	Parms.Amount = Amount;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrInventoryComponent.ServerDebugAddItem
-// (Net, Native, Event, Public, NetServer)
-// Parameters:
-// const class UAuItemDataBase*            InItem                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrInventoryComponent::ServerDebugAddItem(const class UAuItemDataBase* InItem, int32 Amount)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrInventoryComponent", "ServerDebugAddItem");
-
-	Params::CrInventoryComponent_ServerDebugAddItem Parms{};
-
-	Parms.InItem = InItem;
-	Parms.Amount = Amount;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrInventoryComponent.ServerDropItemAtLocation
-// (Net, NetReliable, Native, Event, Public, NetServer, HasDefaults)
-// Parameters:
-// const struct FAuItemId&                 InItemId                                               (ConstParm, Parm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   InLocation                                             (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bRemove                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrInventoryComponent::ServerDropItemAtLocation(const struct FAuItemId& InItemId, const struct FVector& InLocation, bool bRemove, int32 Count)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrInventoryComponent", "ServerDropItemAtLocation");
-
-	Params::CrInventoryComponent_ServerDropItemAtLocation Parms{};
-
-	Parms.InItemId = std::move(InItemId);
-	Parms.InLocation = std::move(InLocation);
-	Parms.bRemove = bRemove;
-	Parms.Count = Count;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrInventoryComponent.ServerDropItemToStorage
-// (Net, NetReliable, Native, Event, Public, NetServer)
-// Parameters:
-// const struct FAuItemId&                 InItemId                                               (ConstParm, Parm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FCrMassComponentReplicationHelper&Storage                                                (Parm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// bool                                    bRemove                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrInventoryComponent::ServerDropItemToStorage(const struct FAuItemId& InItemId, const struct FCrMassComponentReplicationHelper& Storage, bool bRemove, int32 Count)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrInventoryComponent", "ServerDropItemToStorage");
-
-	Params::CrInventoryComponent_ServerDropItemToStorage Parms{};
-
-	Parms.InItemId = std::move(InItemId);
-	Parms.Storage = std::move(Storage);
-	Parms.bRemove = bRemove;
-	Parms.Count = Count;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrInventoryComponent.ServerMergeItems
-// (Net, NetReliable, Native, Event, Public, NetServer)
-
-void UCrInventoryComponent::ServerMergeItems()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrInventoryComponent", "ServerMergeItems");
+		Func = Class->GetFunction("CrInteractiveDoor", "OnRep_IsOpen");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -22629,23 +22242,21 @@ void UCrInventoryComponent::ServerMergeItems()
 }
 
 
-// Function Chimera.CrInventoryComponent.ServerMoveItemBetweenSlots
-// (Net, NetReliable, Native, Event, Public, NetServer)
+// Function Chimera.CrTimelineSequenceDirector.SetSequenceOwner
+// (Final, Native, Private, BlueprintCallable)
 // Parameters:
-// const struct FCrSlotId&                 InFromSlot                                             (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FCrSlotId&                 InToSlot                                               (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ACrTimelineEvent*                 TimelineEvent                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrInventoryComponent::ServerMoveItemBetweenSlots(const struct FCrSlotId& InFromSlot, const struct FCrSlotId& InToSlot)
+void UCrTimelineSequenceDirector::SetSequenceOwner(class ACrTimelineEvent* TimelineEvent)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrInventoryComponent", "ServerMoveItemBetweenSlots");
+		Func = Class->GetFunction("CrTimelineSequenceDirector", "SetSequenceOwner");
 
-	Params::CrInventoryComponent_ServerMoveItemBetweenSlots Parms{};
+	Params::CrTimelineSequenceDirector_SetSequenceOwner Parms{};
 
-	Parms.InFromSlot = std::move(InFromSlot);
-	Parms.InToSlot = std::move(InToSlot);
+	Parms.TimelineEvent = TimelineEvent;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -22656,25 +22267,21 @@ void UCrInventoryComponent::ServerMoveItemBetweenSlots(const struct FCrSlotId& I
 }
 
 
-// Function Chimera.CrInventoryComponent.ServerMoveItemsBetweenSlotsInStorage
-// (Net, NetReliable, Native, Event, Public, NetServer)
+// Function Chimera.CrTimelineSequenceDirector.StartSpawning
+// (Final, Native, Private, BlueprintCallable)
 // Parameters:
-// const struct FCrSlotId&                 FromSlot                                               (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FCrSlotId&                 ToSlot                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FCrMassComponentReplicationHelper&InStorageComponent                                     (Parm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// class ACrAISpawner*                     Spawner                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrInventoryComponent::ServerMoveItemsBetweenSlotsInStorage(const struct FCrSlotId& FromSlot, const struct FCrSlotId& ToSlot, const struct FCrMassComponentReplicationHelper& InStorageComponent)
+void UCrTimelineSequenceDirector::StartSpawning(class ACrAISpawner* Spawner)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrInventoryComponent", "ServerMoveItemsBetweenSlotsInStorage");
+		Func = Class->GetFunction("CrTimelineSequenceDirector", "StartSpawning");
 
-	Params::CrInventoryComponent_ServerMoveItemsBetweenSlotsInStorage Parms{};
+	Params::CrTimelineSequenceDirector_StartSpawning Parms{};
 
-	Parms.FromSlot = std::move(FromSlot);
-	Parms.ToSlot = std::move(ToSlot);
-	Parms.InStorageComponent = std::move(InStorageComponent);
+	Parms.Spawner = Spawner;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -22682,216 +22289,6 @@ void UCrInventoryComponent::ServerMoveItemsBetweenSlotsInStorage(const struct FC
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrInventoryComponent.ServerMoveItemToInventory
-// (Net, NetReliable, Native, Event, Public, NetServer)
-// Parameters:
-// const struct FCrSlotId&                 InSlot                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class UAuItemDataBase*            ItemType                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FAuItemId&                 ItemId                                                 (ConstParm, Parm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrBuildingItemStorageComponent*  From                                                   (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrInventoryComponent::ServerMoveItemToInventory(const struct FCrSlotId& InSlot, const class UAuItemDataBase* ItemType, const struct FAuItemId& ItemId, int32 Amount, class UCrBuildingItemStorageComponent* From)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrInventoryComponent", "ServerMoveItemToInventory");
-
-	Params::CrInventoryComponent_ServerMoveItemToInventory Parms{};
-
-	Parms.InSlot = std::move(InSlot);
-	Parms.ItemType = ItemType;
-	Parms.ItemId = std::move(ItemId);
-	Parms.Amount = Amount;
-	Parms.From = From;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrInventoryComponent.ServerPickAllFrom
-// (Net, NetReliable, Native, Event, Public, NetServer)
-// Parameters:
-// const struct FCrMassComponentReplicationHelper&InStorageComponent                                     (Parm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void UCrInventoryComponent::ServerPickAllFrom(const struct FCrMassComponentReplicationHelper& InStorageComponent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrInventoryComponent", "ServerPickAllFrom");
-
-	Params::CrInventoryComponent_ServerPickAllFrom Parms{};
-
-	Parms.InStorageComponent = std::move(InStorageComponent);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrInventoryComponent.ServerResizeInventory
-// (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable)
-// Parameters:
-// int32                                   Columns                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Rows                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrInventoryComponent::ServerResizeInventory(int32 Columns, int32 Rows)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrInventoryComponent", "ServerResizeInventory");
-
-	Params::CrInventoryComponent_ServerResizeInventory Parms{};
-
-	Parms.Columns = Columns;
-	Parms.Rows = Rows;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrInventoryComponent.ServerSort
-// (Net, NetReliable, Native, Event, Public, NetServer)
-
-void UCrInventoryComponent::ServerSort()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrInventoryComponent", "ServerSort");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrInventoryComponent.ServerTransferAllTo
-// (Net, NetReliable, Native, Event, Public, NetServer)
-// Parameters:
-// const struct FCrMassComponentReplicationHelper&InStorageComponent                                     (Parm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void UCrInventoryComponent::ServerTransferAllTo(const struct FCrMassComponentReplicationHelper& InStorageComponent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrInventoryComponent", "ServerTransferAllTo");
-
-	Params::CrInventoryComponent_ServerTransferAllTo Parms{};
-
-	Parms.InStorageComponent = std::move(InStorageComponent);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrInventoryComponent.ServerTransferAllToInventory
-// (Net, NetReliable, Native, Event, Public, NetServer)
-// Parameters:
-// const struct FCrMassComponentReplicationHelper&InStorageComponent                                     (Parm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void UCrInventoryComponent::ServerTransferAllToInventory(const struct FCrMassComponentReplicationHelper& InStorageComponent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrInventoryComponent", "ServerTransferAllToInventory");
-
-	Params::CrInventoryComponent_ServerTransferAllToInventory Parms{};
-
-	Parms.InStorageComponent = std::move(InStorageComponent);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrInventoryComponent.BP_GetItemAmount
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const class UAuItemDataBase*            InItem                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UCrInventoryComponent::BP_GetItemAmount(const class UAuItemDataBase* InItem) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrInventoryComponent", "BP_GetItemAmount");
-
-	Params::CrInventoryComponent_BP_GetItemAmount Parms{};
-
-	Parms.InItem = InItem;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrInventoryComponent.BP_GetItemClassAmount
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UClass*                           InItemClass                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UCrInventoryComponent::BP_GetItemClassAmount(class UClass* InItemClass) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrInventoryComponent", "BP_GetItemClassAmount");
-
-	Params::CrInventoryComponent_BP_GetItemClassAmount Parms{};
-
-	Parms.InItemClass = InItemClass;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -22939,100 +22336,6 @@ void ACrExporter::OnRecipeChangedSignal(const struct FMassEntityHandle& EntityHa
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSimpleFoundableMassSpawner.GetCalculatedItemsToSpawn
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TArray<struct FCrItemsSpawnSettings>    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<struct FCrItemsSpawnSettings> ACrSimpleFoundableMassSpawner::GetCalculatedItemsToSpawn()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSimpleFoundableMassSpawner", "GetCalculatedItemsToSpawn");
-
-	Params::CrSimpleFoundableMassSpawner_GetCalculatedItemsToSpawn Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSimpleFoundableMassSpawner.GetItemsToSpawn
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// TArray<struct FCrItemsSpawnSettings>    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<struct FCrItemsSpawnSettings> ACrSimpleFoundableMassSpawner::GetItemsToSpawn()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSimpleFoundableMassSpawner", "GetItemsToSpawn");
-
-	Params::CrSimpleFoundableMassSpawner_GetItemsToSpawn Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSimpleFoundableMassSpawner.UpdateOwnedFoundableEntitiesLocation
-// (Final, Native, Public, BlueprintCallable)
-
-void ACrSimpleFoundableMassSpawner::UpdateOwnedFoundableEntitiesLocation()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSimpleFoundableMassSpawner", "UpdateOwnedFoundableEntitiesLocation");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSimpleFoundableMassSpawner.IsWorldEditorWorld
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ACrSimpleFoundableMassSpawner::IsWorldEditorWorld() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSimpleFoundableMassSpawner", "IsWorldEditorWorld");
-
-	Params::CrSimpleFoundableMassSpawner_IsWorldEditorWorld Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -23228,56 +22531,6 @@ void UCrFlashlightComponent::SwitchFlashlightMode()
 }
 
 
-// Function Chimera.CrTimelineSequenceDirector.SetSequenceOwner
-// (Final, Native, Private, BlueprintCallable)
-// Parameters:
-// class ACrTimelineEvent*                 TimelineEvent                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrTimelineSequenceDirector::SetSequenceOwner(class ACrTimelineEvent* TimelineEvent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrTimelineSequenceDirector", "SetSequenceOwner");
-
-	Params::CrTimelineSequenceDirector_SetSequenceOwner Parms{};
-
-	Parms.TimelineEvent = TimelineEvent;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrTimelineSequenceDirector.StartSpawning
-// (Final, Native, Private, BlueprintCallable)
-// Parameters:
-// class ACrAISpawner*                     Spawner                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrTimelineSequenceDirector::StartSpawning(class ACrAISpawner* Spawner)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrTimelineSequenceDirector", "StartSpawning");
-
-	Params::CrTimelineSequenceDirector_StartSpawning Parms{};
-
-	Parms.Spawner = Spawner;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function Chimera.CrFlowEventBase.Complete
 // (Native, Public)
 
@@ -23287,79 +22540,6 @@ void UCrFlowEventBase::Complete()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("CrFlowEventBase", "Complete");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrItemReceiverBuilding.OnItemsReceived
-// (Event, Public, BlueprintEvent)
-
-void ACrItemReceiverBuilding::OnItemsReceived()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrItemReceiverBuilding", "OnItemsReceived");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Chimera.CrUW_BuildingSelection.OnBuildingNameChanged
-// (Event, Protected, HasOutParams, BlueprintEvent)
-// Parameters:
-// const class FText&                      InName                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrUW_BuildingSelection::OnBuildingNameChanged(const class FText& InName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingSelection", "OnBuildingNameChanged");
-
-	Params::CrUW_BuildingSelection_OnBuildingNameChanged Parms{};
-
-	Parms.InName = std::move(InName);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Chimera.CrUW_BuildingSelection.OnTypeChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// ECrBuildingType                         InType                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_BuildingSelection::OnTypeChanged(ECrBuildingType InType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingSelection", "OnTypeChanged");
-
-	Params::CrUW_BuildingSelection_OnTypeChanged Parms{};
-
-	Parms.InType = InType;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Chimera.CrCutsceneFlowEvent.CutsceneCompleted
-// (Final, Native, Private)
-
-void UCrCutsceneFlowEvent::CutsceneCompleted()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrCutsceneFlowEvent", "CutsceneCompleted");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -23390,51 +22570,26 @@ void UCrUW_BuildingCostEntry::OnRequirementsMetChanged(bool bRequirementsMet)
 }
 
 
-// Function Chimera.CrRadiationBorderVisualSubsystem.OnRadiationLevelSet
-// (Final, Native, Public)
+// Function Chimera.CrPointOfInterestMarkerActor.SwitchPointOfInterestState
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   CurrentRadiationLevel                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   NewRadiationLevel                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    Immediately                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EPointOfInterestState                   NewState                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ForceDowngrade                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ACrCharacterPlayerBase*           PlayerInteracted                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrRadiationBorderVisualSubsystem::OnRadiationLevelSet(int32 CurrentRadiationLevel, int32 NewRadiationLevel, bool Immediately)
+bool ACrPointOfInterestMarkerActor::SwitchPointOfInterestState(EPointOfInterestState NewState, bool ForceDowngrade, class ACrCharacterPlayerBase* PlayerInteracted)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrRadiationBorderVisualSubsystem", "OnRadiationLevelSet");
+		Func = Class->GetFunction("CrPointOfInterestMarkerActor", "SwitchPointOfInterestState");
 
-	Params::CrRadiationBorderVisualSubsystem_OnRadiationLevelSet Parms{};
+	Params::CrPointOfInterestMarkerActor_SwitchPointOfInterestState Parms{};
 
-	Parms.CurrentRadiationLevel = CurrentRadiationLevel;
-	Parms.NewRadiationLevel = NewRadiationLevel;
-	Parms.Immediately = Immediately;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrRadiationBorderVisualSubsystem.GetDefaultRadiationBordersSettings
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UObject*                          Context                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class UCrRadiationBordersSystemSettings*ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-const class UCrRadiationBordersSystemSettings* UCrRadiationBorderVisualSubsystem::GetDefaultRadiationBordersSettings(class UObject* Context) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrRadiationBorderVisualSubsystem", "GetDefaultRadiationBordersSettings");
-
-	Params::CrRadiationBorderVisualSubsystem_GetDefaultRadiationBordersSettings Parms{};
-
-	Parms.Context = Context;
+	Parms.NewState = NewState;
+	Parms.ForceDowngrade = ForceDowngrade;
+	Parms.PlayerInteracted = PlayerInteracted;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -23447,27 +22602,19 @@ const class UCrRadiationBordersSystemSettings* UCrRadiationBorderVisualSubsystem
 }
 
 
-// Function Chimera.CrFlowSubsystem.OnContextualEventExecuted
-// (Final, Native, Protected)
+// Function Chimera.CrPointOfInterestMarkerActor.GetPointOfInterestState
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             Context                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             ContextValue                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EPointOfInterestState                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrFlowSubsystem::OnContextualEventExecuted(class AActor* Target, class FName Context, class FName ContextValue, class AActor* TargetActor)
+EPointOfInterestState ACrPointOfInterestMarkerActor::GetPointOfInterestState() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrFlowSubsystem", "OnContextualEventExecuted");
+		Func = Class->GetFunction("CrPointOfInterestMarkerActor", "GetPointOfInterestState");
 
-	Params::CrFlowSubsystem_OnContextualEventExecuted Parms{};
-
-	Parms.Target = Target;
-	Parms.Context = Context;
-	Parms.ContextValue = ContextValue;
-	Parms.TargetActor = TargetActor;
+	Params::CrPointOfInterestMarkerActor_GetPointOfInterestState Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -23475,18 +22622,45 @@ void UCrFlowSubsystem::OnContextualEventExecuted(class AActor* Target, class FNa
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function Chimera.CrFlowSubsystem.OnPreSaveStart
-// (Final, Native, Private)
+// Function Chimera.CrPointOfInterestMarkerActor.GetPointOfInterestType
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// ECrPointOfInterestType                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrFlowSubsystem::OnPreSaveStart()
+ECrPointOfInterestType ACrPointOfInterestMarkerActor::GetPointOfInterestType() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrFlowSubsystem", "OnPreSaveStart");
+		Func = Class->GetFunction("CrPointOfInterestMarkerActor", "GetPointOfInterestType");
+
+	Params::CrPointOfInterestMarkerActor_GetPointOfInterestType Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrCutsceneFlowEvent.CutsceneCompleted
+// (Final, Native, Private)
+
+void UCrCutsceneFlowEvent::CutsceneCompleted()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrCutsceneFlowEvent", "CutsceneCompleted");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -23497,15 +22671,65 @@ void UCrFlowSubsystem::OnPreSaveStart()
 }
 
 
-// Function Chimera.CrFlowSubsystem.OnSaveLoaded
-// (Final, Native, Private)
+// Function Chimera.CrSimpleFoundableMassSpawner.GetCalculatedItemsToSpawn
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TArray<struct FCrItemsSpawnSettings>    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-void UCrFlowSubsystem::OnSaveLoaded()
+TArray<struct FCrItemsSpawnSettings> ACrSimpleFoundableMassSpawner::GetCalculatedItemsToSpawn()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrFlowSubsystem", "OnSaveLoaded");
+		Func = Class->GetFunction("CrSimpleFoundableMassSpawner", "GetCalculatedItemsToSpawn");
+
+	Params::CrSimpleFoundableMassSpawner_GetCalculatedItemsToSpawn Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSimpleFoundableMassSpawner.GetItemsToSpawn
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// TArray<struct FCrItemsSpawnSettings>    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<struct FCrItemsSpawnSettings> ACrSimpleFoundableMassSpawner::GetItemsToSpawn()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSimpleFoundableMassSpawner", "GetItemsToSpawn");
+
+	Params::CrSimpleFoundableMassSpawner_GetItemsToSpawn Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSimpleFoundableMassSpawner.UpdateOwnedFoundableEntitiesLocation
+// (Final, Native, Public, BlueprintCallable)
+
+void ACrSimpleFoundableMassSpawner::UpdateOwnedFoundableEntitiesLocation()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSimpleFoundableMassSpawner", "UpdateOwnedFoundableEntitiesLocation");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -23513,6 +22737,56 @@ void UCrFlowSubsystem::OnSaveLoaded()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSimpleFoundableMassSpawner.IsWorldEditorWorld
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ACrSimpleFoundableMassSpawner::IsWorldEditorWorld() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSimpleFoundableMassSpawner", "IsWorldEditorWorld");
+
+	Params::CrSimpleFoundableMassSpawner_IsWorldEditorWorld Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrWatermarkSubsystem.GetWatermarkString
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UCrWatermarkSubsystem::GetWatermarkString() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWatermarkSubsystem", "GetWatermarkString");
+
+	Params::CrWatermarkSubsystem_GetWatermarkString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -23656,6 +22930,161 @@ const class UDataLayerInstance* UCrRadiationBordersSubsystem::GetDataLayer(class
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrFlowSubsystem.OnContextualEventExecuted
+// (Final, Native, Protected)
+// Parameters:
+// class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             Context                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             ContextValue                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrFlowSubsystem::OnContextualEventExecuted(class AActor* Target, class FName Context, class FName ContextValue, class AActor* TargetActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrFlowSubsystem", "OnContextualEventExecuted");
+
+	Params::CrFlowSubsystem_OnContextualEventExecuted Parms{};
+
+	Parms.Target = Target;
+	Parms.Context = Context;
+	Parms.ContextValue = ContextValue;
+	Parms.TargetActor = TargetActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrFlowSubsystem.OnPreSaveStart
+// (Final, Native, Private)
+
+void UCrFlowSubsystem::OnPreSaveStart()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrFlowSubsystem", "OnPreSaveStart");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrFlowSubsystem.OnSaveLoaded
+// (Final, Native, Private)
+
+void UCrFlowSubsystem::OnSaveLoaded()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrFlowSubsystem", "OnSaveLoaded");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrRadiationBillboard.ValidateForStaticSwitch
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UMaterialInstance*                Instance                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             ParameterName                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ACrRadiationBillboard::ValidateForStaticSwitch(class UMaterialInstance* Instance, class FName ParameterName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrRadiationBillboard", "ValidateForStaticSwitch");
+
+	Params::CrRadiationBillboard_ValidateForStaticSwitch Parms{};
+
+	Parms.Instance = Instance;
+	Parms.ParameterName = ParameterName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrRadiationBillboard.SetupPrimitiveData
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UMeshComponent*                   Mesh                                                   (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRadiationBillboardPrimitiveData&Data                                                   (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+
+void ACrRadiationBillboard::SetupPrimitiveData(class UMeshComponent* Mesh, const struct FRadiationBillboardPrimitiveData& Data)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrRadiationBillboard", "SetupPrimitiveData");
+
+	Params::CrRadiationBillboard_SetupPrimitiveData Parms{};
+
+	Parms.Mesh = Mesh;
+	Parms.Data = std::move(Data);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrRadiationBillboard.ValidateSetup
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UMaterialInterface*               ParentMaterial                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMaterialInstance*                Instance                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             StaticSwitchName                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrRadiationBillboard::ValidateSetup(class UMaterialInterface* ParentMaterial, class UMaterialInstance* Instance, class FName StaticSwitchName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrRadiationBillboard", "ValidateSetup");
+
+	Params::CrRadiationBillboard_ValidateSetup Parms{};
+
+	Parms.ParentMaterial = ParentMaterial;
+	Parms.Instance = Instance;
+	Parms.StaticSwitchName = StaticSwitchName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -24659,6 +24088,26 @@ void ACrGatherableBaseActor::BP_OnDepletedCosmetics(const struct FVector& InInte
 }
 
 
+// Function Chimera.CrGatherableBaseActor.BP_OnLightsVisualsTriggered
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bLightsOn                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrGatherableBaseActor::BP_OnLightsVisualsTriggered(bool bLightsOn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrGatherableBaseActor", "BP_OnLightsVisualsTriggered");
+
+	Params::CrGatherableBaseActor_BP_OnLightsVisualsTriggered Parms{};
+
+	Parms.bLightsOn = bLightsOn;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function Chimera.CrGatherableBaseActor.BP_OnRemoveInstancedVisualsRequested
 // (Event, Protected, BlueprintEvent)
 
@@ -25297,103 +24746,35 @@ void ACrGatherableSpawnersRepActor::OnRepGlobalGatherablePCGSeed()
 }
 
 
-// Function Chimera.CrGlobalAbilitiesSubsystem.ApplyAbilityToAll
-// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Function Chimera.CrAiActionBool.Create_CrAiActionBool
+// (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// TSubclassOf<class UGameplayAbility>     Ability                                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UCrAiActionBool>      ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    NewInputVariable                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionBool*                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrGlobalAbilitiesSubsystem::ApplyAbilityToAll(TSubclassOf<class UGameplayAbility> Ability)
+class UCrAiActionBool* UCrAiActionBool::Create_CrAiActionBool(TSubclassOf<class UCrAiActionBool> ActionType, float NewMaxLifetimeS, bool NewInputVariable)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrGlobalAbilitiesSubsystem", "ApplyAbilityToAll");
+		Func = StaticClass()->GetFunction("CrAiActionBool", "Create_CrAiActionBool");
 
-	Params::CrGlobalAbilitiesSubsystem_ApplyAbilityToAll Parms{};
+	Params::CrAiActionBool_Create_CrAiActionBool Parms{};
 
-	Parms.Ability = Ability;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGlobalAbilitiesSubsystem.ApplyEffectToAll
-// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UGameplayEffect>      Effect                                                 (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrGlobalAbilitiesSubsystem::ApplyEffectToAll(TSubclassOf<class UGameplayEffect> Effect)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGlobalAbilitiesSubsystem", "ApplyEffectToAll");
-
-	Params::CrGlobalAbilitiesSubsystem_ApplyEffectToAll Parms{};
-
-	Parms.Effect = Effect;
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.NewInputVariable = NewInputVariable;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
 
-
-// Function Chimera.CrGlobalAbilitiesSubsystem.RemoveAbilityFromAll
-// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UGameplayAbility>     Ability                                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrGlobalAbilitiesSubsystem::RemoveAbilityFromAll(TSubclassOf<class UGameplayAbility> Ability)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGlobalAbilitiesSubsystem", "RemoveAbilityFromAll");
-
-	Params::CrGlobalAbilitiesSubsystem_RemoveAbilityFromAll Parms{};
-
-	Parms.Ability = Ability;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrGlobalAbilitiesSubsystem.RemoveEffectFromAll
-// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UGameplayEffect>      Effect                                                 (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrGlobalAbilitiesSubsystem::RemoveEffectFromAll(TSubclassOf<class UGameplayEffect> Effect)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrGlobalAbilitiesSubsystem", "RemoveEffectFromAll");
-
-	Params::CrGlobalAbilitiesSubsystem_RemoveEffectFromAll Parms{};
-
-	Parms.Effect = Effect;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
+	return Parms.ReturnValue;
 }
 
 
@@ -25957,6 +25338,383 @@ struct FGuid ACrInfectionAreaVolume::GetGuid() const
 }
 
 
+// Function Chimera.CrZiplinePoint.NativeOnNeighbourRemoved
+// (Final, Native, Private)
+// Parameters:
+// const struct FCrMassEntityReplicationHelper&InZipline                                              (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrZiplinePoint::NativeOnNeighbourRemoved(const struct FCrMassEntityReplicationHelper& InZipline)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplinePoint", "NativeOnNeighbourRemoved");
+
+	Params::CrZiplinePoint_NativeOnNeighbourRemoved Parms{};
+
+	Parms.InZipline = std::move(InZipline);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrZiplinePoint.OnActivityModified
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bActive                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrZiplinePoint::OnActivityModified(bool bActive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplinePoint", "OnActivityModified");
+
+	Params::CrZiplinePoint_OnActivityModified Parms{};
+
+	Parms.bActive = bActive;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Chimera.CrZiplinePoint.OnConnectionsModified
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// const TArray<struct FVector_NetQuantize>&ActiveLocations                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FVector_NetQuantize>&InactiveLocations                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void ACrZiplinePoint::OnConnectionsModified(const TArray<struct FVector_NetQuantize>& ActiveLocations, const TArray<struct FVector_NetQuantize>& InactiveLocations)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplinePoint", "OnConnectionsModified");
+
+	Params::CrZiplinePoint_OnConnectionsModified Parms{};
+
+	Parms.ActiveLocations = std::move(ActiveLocations);
+	Parms.InactiveLocations = std::move(InactiveLocations);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Chimera.CrZiplinePoint.OnHideBlockingSphere
+// (Event, Public, BlueprintEvent)
+
+void ACrZiplinePoint::OnHideBlockingSphere()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplinePoint", "OnHideBlockingSphere");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Chimera.CrZiplinePoint.OnObstructionChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bObstructed                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrZiplinePoint::OnObstructionChanged(bool bObstructed)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplinePoint", "OnObstructionChanged");
+
+	Params::CrZiplinePoint_OnObstructionChanged Parms{};
+
+	Parms.bObstructed = bObstructed;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Chimera.CrZiplinePoint.OnOccupied
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class ACrCharacterPlayerBase*           InPlayer                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrZiplinePoint::OnOccupied(class ACrCharacterPlayerBase* InPlayer)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplinePoint", "OnOccupied");
+
+	Params::CrZiplinePoint_OnOccupied Parms{};
+
+	Parms.InPlayer = InPlayer;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Chimera.CrZiplinePoint.OnPlayerRotationChanged
+// (Event, Public, HasDefaults, BlueprintEvent)
+// Parameters:
+// const struct FRotator&                  PlayerRotation                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+void ACrZiplinePoint::OnPlayerRotationChanged(const struct FRotator& PlayerRotation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplinePoint", "OnPlayerRotationChanged");
+
+	Params::CrZiplinePoint_OnPlayerRotationChanged Parms{};
+
+	Parms.PlayerRotation = std::move(PlayerRotation);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Chimera.CrZiplinePoint.OnPlayerRotationFinished
+// (Event, Public, HasDefaults, BlueprintEvent)
+// Parameters:
+// const struct FVector_NetQuantize&       NewTargetLocation                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  NewRotation                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+void ACrZiplinePoint::OnPlayerRotationFinished(const struct FVector_NetQuantize& NewTargetLocation, const struct FRotator& NewRotation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplinePoint", "OnPlayerRotationFinished");
+
+	Params::CrZiplinePoint_OnPlayerRotationFinished Parms{};
+
+	Parms.NewTargetLocation = std::move(NewTargetLocation);
+	Parms.NewRotation = std::move(NewRotation);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Chimera.CrZiplinePoint.OnPlayerRotationStarted
+// (Event, Public, BlueprintEvent)
+
+void ACrZiplinePoint::OnPlayerRotationStarted()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplinePoint", "OnPlayerRotationStarted");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Chimera.CrZiplinePoint.OnShowBlockingSphere
+// (Event, Public, BlueprintEvent)
+
+void ACrZiplinePoint::OnShowBlockingSphere()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplinePoint", "OnShowBlockingSphere");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Chimera.CrZiplinePoint.OnStopTravellingTo
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class ACrCharacterPlayerBase*           InPlayer                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bCancelled                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrZiplinePoint::OnStopTravellingTo(class ACrCharacterPlayerBase* InPlayer, bool bCancelled)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplinePoint", "OnStopTravellingTo");
+
+	Params::CrZiplinePoint_OnStopTravellingTo Parms{};
+
+	Parms.InPlayer = InPlayer;
+	Parms.bCancelled = bCancelled;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Chimera.CrZiplinePoint.OnTargeted
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class ACrCharacterPlayerBase*           InPlayer                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrZiplinePoint::OnTargeted(class ACrCharacterPlayerBase* InPlayer)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplinePoint", "OnTargeted");
+
+	Params::CrZiplinePoint_OnTargeted Parms{};
+
+	Parms.InPlayer = InPlayer;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Chimera.CrZiplinePoint.OnTravelBlocked
+// (Event, Protected, BlueprintEvent)
+
+void ACrZiplinePoint::OnTravelBlocked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplinePoint", "OnTravelBlocked");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Chimera.CrZiplinePoint.OnTravelEnded
+// (Event, Protected, BlueprintEvent)
+
+void ACrZiplinePoint::OnTravelEnded()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplinePoint", "OnTravelEnded");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Chimera.CrZiplinePoint.OnTravellingTo
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class ACrCharacterPlayerBase*           InPlayer                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrZiplinePoint::OnTravellingTo(class ACrCharacterPlayerBase* InPlayer)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplinePoint", "OnTravellingTo");
+
+	Params::CrZiplinePoint_OnTravellingTo Parms{};
+
+	Parms.InPlayer = InPlayer;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Chimera.CrZiplinePoint.OnTravelStarted
+// (Event, Protected, BlueprintEvent)
+
+void ACrZiplinePoint::OnTravelStarted()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplinePoint", "OnTravelStarted");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Chimera.CrZiplinePoint.OnUnoccupied
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class ACrCharacterPlayerBase*           InPlayer                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrZiplinePoint::OnUnoccupied(class ACrCharacterPlayerBase* InPlayer)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplinePoint", "OnUnoccupied");
+
+	Params::CrZiplinePoint_OnUnoccupied Parms{};
+
+	Parms.InPlayer = InPlayer;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Chimera.CrZiplinePoint.OnUntargeted
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class ACrCharacterPlayerBase*           InPlayer                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrZiplinePoint::OnUntargeted(class ACrCharacterPlayerBase* InPlayer)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplinePoint", "OnUntargeted");
+
+	Params::CrZiplinePoint_OnUntargeted Parms{};
+
+	Parms.InPlayer = InPlayer;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Chimera.CrZiplinePoint.OnZiplineLocallyCancelled
+// (Event, Public, BlueprintEvent)
+
+void ACrZiplinePoint::OnZiplineLocallyCancelled()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplinePoint", "OnZiplineLocallyCancelled");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Chimera.CrZiplinePoint.OnZiplineModeLocallyStarted
+// (Event, Public, BlueprintEvent)
+
+void ACrZiplinePoint::OnZiplineModeLocallyStarted()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplinePoint", "OnZiplineModeLocallyStarted");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Chimera.CrZiplinePoint.OnZiplineTravelLocallyStarted
+// (Event, Public, BlueprintEvent)
+
+void ACrZiplinePoint::OnZiplineTravelLocallyStarted()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrZiplinePoint", "OnZiplineTravelLocallyStarted");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function Chimera.CrInputConfig.FindAbilityInputActionForTag
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -26095,234 +25853,19 @@ class FText UCrInteractionComponent::GetInteractionDisplayName()
 }
 
 
-// Function Chimera.CrInteractionInterface.K2_GetInteractionActionText
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-class FText ICrInteractionInterface::K2_GetInteractionActionText()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("CrInteractionInterface", "K2_GetInteractionActionText");
-
-	Params::CrInteractionInterface_K2_GetInteractionActionText Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrInteractionInterface.K2_GetInteractionProgress
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float ICrInteractionInterface::K2_GetInteractionProgress()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("CrInteractionInterface", "K2_GetInteractionProgress");
-
-	Params::CrInteractionInterface_K2_GetInteractionProgress Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrInteractionInterface.K2_GetInteractionText
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-class FText ICrInteractionInterface::K2_GetInteractionText()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("CrInteractionInterface", "K2_GetInteractionText");
-
-	Params::CrInteractionInterface_K2_GetInteractionText Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrInteractionInterface.K2_GetRequiredInteractionDuration
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class APlayerController*                InPc                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float ICrInteractionInterface::K2_GetRequiredInteractionDuration(class APlayerController* InPc)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("CrInteractionInterface", "K2_GetRequiredInteractionDuration");
-
-	Params::CrInteractionInterface_K2_GetRequiredInteractionDuration Parms{};
-
-	Parms.InPc = InPc;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrInteractionInterface.GetItemRequiredForInteraction
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// TSubclassOf<class UAuItemDataBase>*     OutRequiredItem                                        (Parm, OutParm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ICrInteractionInterface::GetItemRequiredForInteraction(TSubclassOf<class UAuItemDataBase>* OutRequiredItem) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("CrInteractionInterface", "GetItemRequiredForInteraction");
-
-	Params::CrInteractionInterface_GetItemRequiredForInteraction Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutRequiredItem != nullptr)
-		*OutRequiredItem = Parms.OutRequiredItem;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrInteractionInterface.GetItemsRequiredForInteraction
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// TArray<TSubclassOf<class UAuItemDataBase>>*OutRequiredItems                                       (Parm, OutParm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ICrInteractionInterface::GetItemsRequiredForInteraction(TArray<TSubclassOf<class UAuItemDataBase>>* OutRequiredItems) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("CrInteractionInterface", "GetItemsRequiredForInteraction");
-
-	Params::CrInteractionInterface_GetItemsRequiredForInteraction Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutRequiredItems != nullptr)
-		*OutRequiredItems = std::move(Parms.OutRequiredItems);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrInteractionInterface.HasCustomInteractionWidget
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// TSubclassOf<class UUserWidget>*         OutInteractionWidget                                   (Parm, OutParm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ICrInteractionInterface::HasCustomInteractionWidget(TSubclassOf<class UUserWidget>* OutInteractionWidget) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("CrInteractionInterface", "HasCustomInteractionWidget");
-
-	Params::CrInteractionInterface_HasCustomInteractionWidget Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutInteractionWidget != nullptr)
-		*OutInteractionWidget = Parms.OutInteractionWidget;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrInteractiveDoor.MulticastInteract
-// (Net, Native, Event, NetMulticast, Protected)
-// Parameters:
-// class APlayerController*                InPc                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrInteractiveDoor::MulticastInteract(class APlayerController* InPc)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrInteractiveDoor", "MulticastInteract");
-
-	Params::CrInteractiveDoor_MulticastInteract Parms{};
-
-	Parms.InPc = InPc;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrInteractiveDoor.OnInteract
+// Function Chimera.CrInteractiveFunBox.K2_OnInteract
 // (Event, Protected, BlueprintEvent)
 // Parameters:
 // class APlayerController*                InPc                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ACrInteractiveDoor::OnInteract(class APlayerController* InPc)
+void ACrInteractiveFunBox::K2_OnInteract(class APlayerController* InPc)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrInteractiveDoor", "OnInteract");
+		Func = Class->GetFunction("CrInteractiveFunBox", "K2_OnInteract");
 
-	Params::CrInteractiveDoor_OnInteract Parms{};
+	Params::CrInteractiveFunBox_K2_OnInteract Parms{};
 
 	Parms.InPc = InPc;
 
@@ -26330,15 +25873,40 @@ void ACrInteractiveDoor::OnInteract(class APlayerController* InPc)
 }
 
 
-// Function Chimera.CrInteractiveDoor.OnRep_IsOpen
-// (Final, Native, Protected)
+// Function Chimera.CrInteractiveFunBox.MulticastInteract
+// (Net, Native, Event, NetMulticast, Protected)
+// Parameters:
+// class APlayerController*                InPc                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ACrInteractiveDoor::OnRep_IsOpen()
+void ACrInteractiveFunBox::MulticastInteract(class APlayerController* InPc)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrInteractiveDoor", "OnRep_IsOpen");
+		Func = Class->GetFunction("CrInteractiveFunBox", "MulticastInteract");
+
+	Params::CrInteractiveFunBox_MulticastInteract Parms{};
+
+	Parms.InPc = InPc;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrInteractiveFunBox.OnRep_IsOpen
+// (Final, Native, Protected)
+
+void ACrInteractiveFunBox::OnRep_IsOpen()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrInteractiveFunBox", "OnRep_IsOpen");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -26349,22 +25917,571 @@ void ACrInteractiveDoor::OnRep_IsOpen()
 }
 
 
-// Function Chimera.CrItemRecipeCollection.GetRecipes
-// (Final, Native, Public, Const)
+// Function Chimera.CrInventoryComponent.BP_DebugAddItem
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class UCrItemRecipeData*>        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+// TSubclassOf<class UAuItemDataBase>      InItem                                                 (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-TArray<class UCrItemRecipeData*> UCrItemRecipeCollection::GetRecipes(const class UObject* WorldContextObject) const
+void UCrInventoryComponent::BP_DebugAddItem(TSubclassOf<class UAuItemDataBase> InItem, int32 Amount)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrItemRecipeCollection", "GetRecipes");
+		Func = Class->GetFunction("CrInventoryComponent", "BP_DebugAddItem");
 
-	Params::CrItemRecipeCollection_GetRecipes Parms{};
+	Params::CrInventoryComponent_BP_DebugAddItem Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
+	Parms.InItem = InItem;
+	Parms.Amount = Amount;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrInventoryComponent.BP_RemoveItem
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class UAuItemDataBase*            InItem                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrInventoryComponent::BP_RemoveItem(const class UAuItemDataBase* InItem, int32 Amount)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrInventoryComponent", "BP_RemoveItem");
+
+	Params::CrInventoryComponent_BP_RemoveItem Parms{};
+
+	Parms.InItem = InItem;
+	Parms.Amount = Amount;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrInventoryComponent.FindDroppedItemChestStorageInCloseProximity
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class UAuItemDataBase*            WantedItemData                                         (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   DetectionRadius                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrBuildingItemStorageComponent** OutStorageComponent                                    (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCrInventoryComponent::FindDroppedItemChestStorageInCloseProximity(const class UAuItemDataBase* WantedItemData, float DetectionRadius, class UCrBuildingItemStorageComponent** OutStorageComponent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrInventoryComponent", "FindDroppedItemChestStorageInCloseProximity");
+
+	Params::CrInventoryComponent_FindDroppedItemChestStorageInCloseProximity Parms{};
+
+	Parms.WantedItemData = WantedItemData;
+	Parms.DetectionRadius = DetectionRadius;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutStorageComponent != nullptr)
+		*OutStorageComponent = Parms.OutStorageComponent;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrInventoryComponent.OnRep_Slots
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// const TArray<struct FCrInventorySlot>&  OldSlots                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrInventoryComponent::OnRep_Slots(const TArray<struct FCrInventorySlot>& OldSlots)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrInventoryComponent", "OnRep_Slots");
+
+	Params::CrInventoryComponent_OnRep_Slots Parms{};
+
+	Parms.OldSlots = std::move(OldSlots);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrInventoryComponent.ServerAddItemFromInventory
+// (Net, NetReliable, Native, Event, Public, NetServer)
+// Parameters:
+// const struct FCrSlotId&                 FromSlot                                               (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrSlotId&                 ToSlot                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrInventoryComponent*            FromComponent                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrInventoryComponent::ServerAddItemFromInventory(const struct FCrSlotId& FromSlot, const struct FCrSlotId& ToSlot, class UCrInventoryComponent* FromComponent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrInventoryComponent", "ServerAddItemFromInventory");
+
+	Params::CrInventoryComponent_ServerAddItemFromInventory Parms{};
+
+	Parms.FromSlot = std::move(FromSlot);
+	Parms.ToSlot = std::move(ToSlot);
+	Parms.FromComponent = FromComponent;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrInventoryComponent.ServerAddItemFromStorage
+// (Net, NetReliable, Native, Event, Public, NetServer)
+// Parameters:
+// const struct FCrSlotId&                 FromSlot                                               (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrSlotId&                 ToSlot                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrMassComponentReplicationHelper&InStorageComponent                                     (Parm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// bool                                    DropNotAdded                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrInventoryComponent::ServerAddItemFromStorage(const struct FCrSlotId& FromSlot, const struct FCrSlotId& ToSlot, const struct FCrMassComponentReplicationHelper& InStorageComponent, bool DropNotAdded)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrInventoryComponent", "ServerAddItemFromStorage");
+
+	Params::CrInventoryComponent_ServerAddItemFromStorage Parms{};
+
+	Parms.FromSlot = std::move(FromSlot);
+	Parms.ToSlot = std::move(ToSlot);
+	Parms.InStorageComponent = std::move(InStorageComponent);
+	Parms.DropNotAdded = DropNotAdded;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrInventoryComponent.ServerAddItemToStorage
+// (Net, NetReliable, Native, Event, Public, NetServer)
+// Parameters:
+// const struct FCrSlotId&                 FromSlot                                               (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrSlotId&                 ToSlot                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrMassComponentReplicationHelper&InStorageComponent                                     (Parm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UCrInventoryComponent::ServerAddItemToStorage(const struct FCrSlotId& FromSlot, const struct FCrSlotId& ToSlot, const struct FCrMassComponentReplicationHelper& InStorageComponent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrInventoryComponent", "ServerAddItemToStorage");
+
+	Params::CrInventoryComponent_ServerAddItemToStorage Parms{};
+
+	Parms.FromSlot = std::move(FromSlot);
+	Parms.ToSlot = std::move(ToSlot);
+	Parms.InStorageComponent = std::move(InStorageComponent);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrInventoryComponent.ServerAddNewItemToInventorySlot
+// (Net, NetReliable, Native, Event, Public, NetServer)
+// Parameters:
+// const struct FCrSlotId&                 InSlot                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UAuItemDataBase*            InItem                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrInventoryComponent::ServerAddNewItemToInventorySlot(const struct FCrSlotId& InSlot, const class UAuItemDataBase* InItem, int32 Amount)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrInventoryComponent", "ServerAddNewItemToInventorySlot");
+
+	Params::CrInventoryComponent_ServerAddNewItemToInventorySlot Parms{};
+
+	Parms.InSlot = std::move(InSlot);
+	Parms.InItem = InItem;
+	Parms.Amount = Amount;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrInventoryComponent.ServerDebugAddItem
+// (Net, Native, Event, Public, NetServer)
+// Parameters:
+// const class UAuItemDataBase*            InItem                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrInventoryComponent::ServerDebugAddItem(const class UAuItemDataBase* InItem, int32 Amount)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrInventoryComponent", "ServerDebugAddItem");
+
+	Params::CrInventoryComponent_ServerDebugAddItem Parms{};
+
+	Parms.InItem = InItem;
+	Parms.Amount = Amount;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrInventoryComponent.ServerDropItemAtLocation
+// (Net, NetReliable, Native, Event, Public, NetServer, HasDefaults)
+// Parameters:
+// const struct FAuItemId&                 InItemId                                               (ConstParm, Parm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InLocation                                             (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bRemove                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrInventoryComponent::ServerDropItemAtLocation(const struct FAuItemId& InItemId, const struct FVector& InLocation, bool bRemove, int32 Count)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrInventoryComponent", "ServerDropItemAtLocation");
+
+	Params::CrInventoryComponent_ServerDropItemAtLocation Parms{};
+
+	Parms.InItemId = std::move(InItemId);
+	Parms.InLocation = std::move(InLocation);
+	Parms.bRemove = bRemove;
+	Parms.Count = Count;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrInventoryComponent.ServerDropItemToStorage
+// (Net, NetReliable, Native, Event, Public, NetServer)
+// Parameters:
+// const struct FAuItemId&                 InItemId                                               (ConstParm, Parm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrMassComponentReplicationHelper&Storage                                                (Parm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// bool                                    bRemove                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrInventoryComponent::ServerDropItemToStorage(const struct FAuItemId& InItemId, const struct FCrMassComponentReplicationHelper& Storage, bool bRemove, int32 Count)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrInventoryComponent", "ServerDropItemToStorage");
+
+	Params::CrInventoryComponent_ServerDropItemToStorage Parms{};
+
+	Parms.InItemId = std::move(InItemId);
+	Parms.Storage = std::move(Storage);
+	Parms.bRemove = bRemove;
+	Parms.Count = Count;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrInventoryComponent.ServerMergeItems
+// (Net, NetReliable, Native, Event, Public, NetServer)
+
+void UCrInventoryComponent::ServerMergeItems()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrInventoryComponent", "ServerMergeItems");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrInventoryComponent.ServerMoveItemBetweenSlots
+// (Net, NetReliable, Native, Event, Public, NetServer)
+// Parameters:
+// const struct FCrSlotId&                 InFromSlot                                             (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrSlotId&                 InToSlot                                               (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrInventoryComponent::ServerMoveItemBetweenSlots(const struct FCrSlotId& InFromSlot, const struct FCrSlotId& InToSlot)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrInventoryComponent", "ServerMoveItemBetweenSlots");
+
+	Params::CrInventoryComponent_ServerMoveItemBetweenSlots Parms{};
+
+	Parms.InFromSlot = std::move(InFromSlot);
+	Parms.InToSlot = std::move(InToSlot);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrInventoryComponent.ServerMoveItemsBetweenSlotsInStorage
+// (Net, NetReliable, Native, Event, Public, NetServer)
+// Parameters:
+// const struct FCrSlotId&                 FromSlot                                               (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrSlotId&                 ToSlot                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrMassComponentReplicationHelper&InStorageComponent                                     (Parm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UCrInventoryComponent::ServerMoveItemsBetweenSlotsInStorage(const struct FCrSlotId& FromSlot, const struct FCrSlotId& ToSlot, const struct FCrMassComponentReplicationHelper& InStorageComponent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrInventoryComponent", "ServerMoveItemsBetweenSlotsInStorage");
+
+	Params::CrInventoryComponent_ServerMoveItemsBetweenSlotsInStorage Parms{};
+
+	Parms.FromSlot = std::move(FromSlot);
+	Parms.ToSlot = std::move(ToSlot);
+	Parms.InStorageComponent = std::move(InStorageComponent);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrInventoryComponent.ServerMoveItemToInventory
+// (Net, NetReliable, Native, Event, Public, NetServer)
+// Parameters:
+// const struct FCrSlotId&                 InSlot                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UAuItemDataBase*            ItemType                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAuItemId&                 ItemId                                                 (ConstParm, Parm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrBuildingItemStorageComponent*  From                                                   (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrInventoryComponent::ServerMoveItemToInventory(const struct FCrSlotId& InSlot, const class UAuItemDataBase* ItemType, const struct FAuItemId& ItemId, int32 Amount, class UCrBuildingItemStorageComponent* From)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrInventoryComponent", "ServerMoveItemToInventory");
+
+	Params::CrInventoryComponent_ServerMoveItemToInventory Parms{};
+
+	Parms.InSlot = std::move(InSlot);
+	Parms.ItemType = ItemType;
+	Parms.ItemId = std::move(ItemId);
+	Parms.Amount = Amount;
+	Parms.From = From;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrInventoryComponent.ServerPickAllFrom
+// (Net, NetReliable, Native, Event, Public, NetServer)
+// Parameters:
+// const struct FCrMassComponentReplicationHelper&InStorageComponent                                     (Parm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UCrInventoryComponent::ServerPickAllFrom(const struct FCrMassComponentReplicationHelper& InStorageComponent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrInventoryComponent", "ServerPickAllFrom");
+
+	Params::CrInventoryComponent_ServerPickAllFrom Parms{};
+
+	Parms.InStorageComponent = std::move(InStorageComponent);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrInventoryComponent.ServerResizeInventory
+// (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable)
+// Parameters:
+// int32                                   Columns                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Rows                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrInventoryComponent::ServerResizeInventory(int32 Columns, int32 Rows)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrInventoryComponent", "ServerResizeInventory");
+
+	Params::CrInventoryComponent_ServerResizeInventory Parms{};
+
+	Parms.Columns = Columns;
+	Parms.Rows = Rows;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrInventoryComponent.ServerSort
+// (Net, NetReliable, Native, Event, Public, NetServer)
+
+void UCrInventoryComponent::ServerSort()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrInventoryComponent", "ServerSort");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrInventoryComponent.ServerTransferAllTo
+// (Net, NetReliable, Native, Event, Public, NetServer)
+// Parameters:
+// const struct FCrMassComponentReplicationHelper&InStorageComponent                                     (Parm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UCrInventoryComponent::ServerTransferAllTo(const struct FCrMassComponentReplicationHelper& InStorageComponent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrInventoryComponent", "ServerTransferAllTo");
+
+	Params::CrInventoryComponent_ServerTransferAllTo Parms{};
+
+	Parms.InStorageComponent = std::move(InStorageComponent);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrInventoryComponent.ServerTransferAllToInventory
+// (Net, NetReliable, Native, Event, Public, NetServer)
+// Parameters:
+// const struct FCrMassComponentReplicationHelper&InStorageComponent                                     (Parm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UCrInventoryComponent::ServerTransferAllToInventory(const struct FCrMassComponentReplicationHelper& InStorageComponent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrInventoryComponent", "ServerTransferAllToInventory");
+
+	Params::CrInventoryComponent_ServerTransferAllToInventory Parms{};
+
+	Parms.InStorageComponent = std::move(InStorageComponent);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrInventoryComponent.BP_GetItemAmount
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const class UAuItemDataBase*            InItem                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UCrInventoryComponent::BP_GetItemAmount(const class UAuItemDataBase* InItem) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrInventoryComponent", "BP_GetItemAmount");
+
+	Params::CrInventoryComponent_BP_GetItemAmount Parms{};
+
+	Parms.InItem = InItem;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -26377,29 +26494,22 @@ TArray<class UCrItemRecipeData*> UCrItemRecipeCollection::GetRecipes(const class
 }
 
 
-// Function Chimera.CrFrontendStateComponent.OnUserInitialized
-// (Final, Native, Private)
+// Function Chimera.CrInventoryComponent.BP_GetItemClassAmount
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// const class UCommonUserInfo*            UserInfo                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bSuccess                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FText&                      Error                                                  (Parm, NativeAccessSpecifierPublic)
-// ECommonUserPrivilege                    RequestedPrivilege                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECommonUserOnlineContext                OnlineContext                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UClass*                           InItemClass                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrFrontendStateComponent::OnUserInitialized(const class UCommonUserInfo* UserInfo, bool bSuccess, const class FText& Error, ECommonUserPrivilege RequestedPrivilege, ECommonUserOnlineContext OnlineContext)
+int32 UCrInventoryComponent::BP_GetItemClassAmount(class UClass* InItemClass) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrFrontendStateComponent", "OnUserInitialized");
+		Func = Class->GetFunction("CrInventoryComponent", "BP_GetItemClassAmount");
 
-	Params::CrFrontendStateComponent_OnUserInitialized Parms{};
+	Params::CrInventoryComponent_BP_GetItemClassAmount Parms{};
 
-	Parms.UserInfo = UserInfo;
-	Parms.bSuccess = bSuccess;
-	Parms.Error = std::move(Error);
-	Parms.RequestedPrivilege = RequestedPrivilege;
-	Parms.OnlineContext = OnlineContext;
+	Parms.InItemClass = InItemClass;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -26407,78 +26517,59 @@ void UCrFrontendStateComponent::OnUserInitialized(const class UCommonUserInfo* U
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function Chimera.CrIvy.CallIvyHide
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   InDuration                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Chimera.CrItemPickupGeneric.OnRep_ItemClass
+// (Final, Native, Private)
 
-void ACrIvy::CallIvyHide(float InDuration)
+void ACrItemPickupGeneric::OnRep_ItemClass()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrIvy", "CallIvyHide");
+		Func = Class->GetFunction("CrItemPickupGeneric", "OnRep_ItemClass");
 
-	Params::CrIvy_CallIvyHide Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
-	Parms.InDuration = InDuration;
+	UObject::ProcessEvent(Func, nullptr);
 
-	UObject::ProcessEvent(Func, &Parms);
+	Func->FunctionFlags = Flgs;
 }
 
 
-// Function Chimera.CrIvy.CallIvyHideInstant
+// Function Chimera.CrItemReceiverBuilding.OnItemsReceived
 // (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   InDuration                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ACrIvy::CallIvyHideInstant(float InDuration)
+void ACrItemReceiverBuilding::OnItemsReceived()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrIvy", "CallIvyHideInstant");
-
-	Params::CrIvy_CallIvyHideInstant Parms{};
-
-	Parms.InDuration = InDuration;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Chimera.CrIvy.CallIvyUnhide
-// (Event, Public, BlueprintEvent)
-
-void ACrIvy::CallIvyUnhide()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrIvy", "CallIvyUnhide");
+		Func = Class->GetFunction("CrItemReceiverBuilding", "OnItemsReceived");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function Chimera.CrIvy.SetIvyProgress
-// (Final, Native, Public, BlueprintCallable)
+// Function Chimera.CrSettingsShared.SetADSToggle
+// (Final, Native, Public)
 // Parameters:
-// float                                   InProgress                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ACrIvy::SetIvyProgress(float InProgress)
+void UCrSettingsShared::SetADSToggle(bool NewValue)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrIvy", "SetIvyProgress");
+		Func = Class->GetFunction("CrSettingsShared", "SetADSToggle");
 
-	Params::CrIvy_SetIvyProgress Parms{};
+	Params::CrSettingsShared_SetADSToggle Parms{};
 
-	Parms.InProgress = InProgress;
+	Parms.NewValue = NewValue;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -26489,21 +26580,21 @@ void ACrIvy::SetIvyProgress(float InProgress)
 }
 
 
-// Function Chimera.CrIvy.SetState
-// (Final, Native, Public, BlueprintCallable)
+// Function Chimera.CrSettingsShared.SetAimAssistStrength
+// (Final, Native, Public)
 // Parameters:
-// EIvyState                               InState                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ACrIvy::SetState(EIvyState InState)
+void UCrSettingsShared::SetAimAssistStrength(float NewValue)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrIvy", "SetState");
+		Func = Class->GetFunction("CrSettingsShared", "SetAimAssistStrength");
 
-	Params::CrIvy_SetState Parms{};
+	Params::CrSettingsShared_SetAimAssistStrength Parms{};
 
-	Parms.InState = InState;
+	Parms.NewValue = NewValue;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -26511,6 +26602,1670 @@ void ACrIvy::SetState(EIvyState InState)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetAimAssistType
+// (Final, Native, Public)
+// Parameters:
+// ECrAimAssistType                        NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetAimAssistType(ECrAimAssistType NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetAimAssistType");
+
+	Params::CrSettingsShared_SetAimAssistType Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetAllowAudioInBackgroundSetting
+// (Final, Native, Public)
+// Parameters:
+// ECrAllowBackgroundAudioSetting          NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetAllowAudioInBackgroundSetting(ECrAllowBackgroundAudioSetting NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetAllowAudioInBackgroundSetting");
+
+	Params::CrSettingsShared_SetAllowAudioInBackgroundSetting Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetAutosaveInterval
+// (Final, Native, Public)
+// Parameters:
+// EAutosaveInterval                       NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetAutosaveInterval(EAutosaveInterval NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetAutosaveInterval");
+
+	Params::CrSettingsShared_SetAutosaveInterval Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetBuildingDroneActivateMode
+// (Final, Native, Public)
+// Parameters:
+// EBuildingDroneActivateMode              NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetBuildingDroneActivateMode(EBuildingDroneActivateMode NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetBuildingDroneActivateMode");
+
+	Params::CrSettingsShared_SetBuildingDroneActivateMode Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetColorBlindMode
+// (Final, Native, Public)
+// Parameters:
+// EColorBlindMode                         InMode                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetColorBlindMode(EColorBlindMode InMode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetColorBlindMode");
+
+	Params::CrSettingsShared_SetColorBlindMode Parms{};
+
+	Parms.InMode = InMode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetColorBlindStrength
+// (Final, Native, Public)
+// Parameters:
+// int32                                   InColorBlindStrength                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetColorBlindStrength(int32 InColorBlindStrength)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetColorBlindStrength");
+
+	Params::CrSettingsShared_SetColorBlindStrength Parms{};
+
+	Parms.InColorBlindStrength = InColorBlindStrength;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetConsoleGraphicsMode
+// (Final, Native, Public)
+// Parameters:
+// EConsoleGraphicsMode                    InConsoleMode                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetConsoleGraphicsMode(EConsoleGraphicsMode InConsoleMode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetConsoleGraphicsMode");
+
+	Params::CrSettingsShared_SetConsoleGraphicsMode Parms{};
+
+	Parms.InConsoleMode = InConsoleMode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetCoopInfoCollision
+// (Final, Native, Public)
+// Parameters:
+// ECoopInfoCollision                      NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetCoopInfoCollision(ECoopInfoCollision NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetCoopInfoCollision");
+
+	Params::CrSettingsShared_SetCoopInfoCollision Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetCrouchToggle
+// (Final, Native, Public)
+// Parameters:
+// bool                                    NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetCrouchToggle(bool NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetCrouchToggle");
+
+	Params::CrSettingsShared_SetCrouchToggle Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetForceFeedbackEnabled
+// (Final, Native, Public)
+// Parameters:
+// const bool                              NewValue                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetForceFeedbackEnabled(const bool NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetForceFeedbackEnabled");
+
+	Params::CrSettingsShared_SetForceFeedbackEnabled Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetGamepadLookStickDeadZone
+// (Final, Native, Public)
+// Parameters:
+// const float                             NewValue                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetGamepadLookStickDeadZone(const float NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetGamepadLookStickDeadZone");
+
+	Params::CrSettingsShared_SetGamepadLookStickDeadZone Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetGamepadMoveStickDeadZone
+// (Final, Native, Public)
+// Parameters:
+// const float                             NewValue                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetGamepadMoveStickDeadZone(const float NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetGamepadMoveStickDeadZone");
+
+	Params::CrSettingsShared_SetGamepadMoveStickDeadZone Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetGamepadTargetingSensitivityPreset
+// (Final, Native, Public)
+// Parameters:
+// ECrGamepadSensitivity                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetGamepadTargetingSensitivityPreset(ECrGamepadSensitivity NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetGamepadTargetingSensitivityPreset");
+
+	Params::CrSettingsShared_SetGamepadTargetingSensitivityPreset Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetHasCompletedTutorial
+// (Final, Native, Public)
+// Parameters:
+// bool                                    NewHasCompletedTutorial                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetHasCompletedTutorial(bool NewHasCompletedTutorial)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetHasCompletedTutorial");
+
+	Params::CrSettingsShared_SetHasCompletedTutorial Parms{};
+
+	Parms.NewHasCompletedTutorial = NewHasCompletedTutorial;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetInvertHorizontalAxis
+// (Final, Native, Public)
+// Parameters:
+// bool                                    NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetInvertHorizontalAxis(bool NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetInvertHorizontalAxis");
+
+	Params::CrSettingsShared_SetInvertHorizontalAxis Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetInvertVerticalAxis
+// (Final, Native, Public)
+// Parameters:
+// bool                                    NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetInvertVerticalAxis(bool NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetInvertVerticalAxis");
+
+	Params::CrSettingsShared_SetInvertVerticalAxis Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetLookAcceleration
+// (Final, Native, Public)
+// Parameters:
+// bool                                    NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetLookAcceleration(bool NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetLookAcceleration");
+
+	Params::CrSettingsShared_SetLookAcceleration Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetLookSensitivityPreset
+// (Final, Native, Public)
+// Parameters:
+// ECrGamepadSensitivity                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetLookSensitivityPreset(ECrGamepadSensitivity NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetLookSensitivityPreset");
+
+	Params::CrSettingsShared_SetLookSensitivityPreset Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetMouseSensitivityX
+// (Final, Native, Public)
+// Parameters:
+// double                                  NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetMouseSensitivityX(double NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetMouseSensitivityX");
+
+	Params::CrSettingsShared_SetMouseSensitivityX Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetMouseSensitivityY
+// (Final, Native, Public)
+// Parameters:
+// double                                  NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetMouseSensitivityY(double NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetMouseSensitivityY");
+
+	Params::CrSettingsShared_SetMouseSensitivityY Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetSkipTutorialChecked
+// (Final, Native, Public)
+// Parameters:
+// bool                                    InSkipTutorialChecked                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetSkipTutorialChecked(bool InSkipTutorialChecked)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetSkipTutorialChecked");
+
+	Params::CrSettingsShared_SetSkipTutorialChecked Parms{};
+
+	Parms.InSkipTutorialChecked = InSkipTutorialChecked;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetSprintInputToggleMode
+// (Final, Native, Public)
+// Parameters:
+// ESprintInputToggleMode                  InMode                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetSprintInputToggleMode(ESprintInputToggleMode InMode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetSprintInputToggleMode");
+
+	Params::CrSettingsShared_SetSprintInputToggleMode Parms{};
+
+	Parms.InMode = InMode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetSubtitlesBackgroundOpacity
+// (Final, Native, Public)
+// Parameters:
+// ESubtitleDisplayBackgroundOpacity       Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetSubtitlesBackgroundOpacity(ESubtitleDisplayBackgroundOpacity Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetSubtitlesBackgroundOpacity");
+
+	Params::CrSettingsShared_SetSubtitlesBackgroundOpacity Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetSubtitlesEnabled
+// (Final, Native, Public)
+// Parameters:
+// bool                                    Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetSubtitlesEnabled(bool Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetSubtitlesEnabled");
+
+	Params::CrSettingsShared_SetSubtitlesEnabled Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetSubtitlesTextBorder
+// (Final, Native, Public)
+// Parameters:
+// ESubtitleDisplayTextBorder              Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetSubtitlesTextBorder(ESubtitleDisplayTextBorder Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetSubtitlesTextBorder");
+
+	Params::CrSettingsShared_SetSubtitlesTextBorder Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetSubtitlesTextColor
+// (Final, Native, Public)
+// Parameters:
+// ESubtitleDisplayTextColor               Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetSubtitlesTextColor(ESubtitleDisplayTextColor Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetSubtitlesTextColor");
+
+	Params::CrSettingsShared_SetSubtitlesTextColor Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetSubtitlesTextSize
+// (Final, Native, Public)
+// Parameters:
+// ESubtitleDisplayTextSize                Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetSubtitlesTextSize(ESubtitleDisplayTextSize Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetSubtitlesTextSize");
+
+	Params::CrSettingsShared_SetSubtitlesTextSize Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetTargetingMultiplier
+// (Final, Native, Public)
+// Parameters:
+// double                                  NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetTargetingMultiplier(double NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetTargetingMultiplier");
+
+	Params::CrSettingsShared_SetTargetingMultiplier Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetTriggerHapticsEnabled
+// (Final, Native, Public)
+// Parameters:
+// const bool                              NewValue                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetTriggerHapticsEnabled(const bool NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetTriggerHapticsEnabled");
+
+	Params::CrSettingsShared_SetTriggerHapticsEnabled Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetTriggerHapticStartPosition
+// (Final, Native, Public)
+// Parameters:
+// const uint8                             NewValue                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetTriggerHapticStartPosition(const uint8 NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetTriggerHapticStartPosition");
+
+	Params::CrSettingsShared_SetTriggerHapticStartPosition Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetTriggerHapticStrength
+// (Final, Native, Public)
+// Parameters:
+// const uint8                             NewValue                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetTriggerHapticStrength(const uint8 NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetTriggerHapticStrength");
+
+	Params::CrSettingsShared_SetTriggerHapticStrength Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.SetTriggerPullUsesHapticThreshold
+// (Final, Native, Public)
+// Parameters:
+// const bool                              NewValue                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSettingsShared::SetTriggerPullUsesHapticThreshold(const bool NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "SetTriggerPullUsesHapticThreshold");
+
+	Params::CrSettingsShared_SetTriggerPullUsesHapticThreshold Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSettingsShared.GetADSToggle
+// (Final, Native, Public, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCrSettingsShared::GetADSToggle() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetADSToggle");
+
+	Params::CrSettingsShared_GetADSToggle Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetAimAssistStrength
+// (Final, Native, Public, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UCrSettingsShared::GetAimAssistStrength() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetAimAssistStrength");
+
+	Params::CrSettingsShared_GetAimAssistStrength Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetAimAssistType
+// (Final, Native, Public, Const)
+// Parameters:
+// ECrAimAssistType                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+ECrAimAssistType UCrSettingsShared::GetAimAssistType() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetAimAssistType");
+
+	Params::CrSettingsShared_GetAimAssistType Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetAllowAudioInBackgroundSetting
+// (Final, Native, Public, Const)
+// Parameters:
+// ECrAllowBackgroundAudioSetting          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+ECrAllowBackgroundAudioSetting UCrSettingsShared::GetAllowAudioInBackgroundSetting() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetAllowAudioInBackgroundSetting");
+
+	Params::CrSettingsShared_GetAllowAudioInBackgroundSetting Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetAutosaveInterval
+// (Final, Native, Public, Const)
+// Parameters:
+// EAutosaveInterval                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EAutosaveInterval UCrSettingsShared::GetAutosaveInterval() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetAutosaveInterval");
+
+	Params::CrSettingsShared_GetAutosaveInterval Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetBuildingDroneActivateMode
+// (Final, Native, Public, Const)
+// Parameters:
+// EBuildingDroneActivateMode              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EBuildingDroneActivateMode UCrSettingsShared::GetBuildingDroneActivateMode() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetBuildingDroneActivateMode");
+
+	Params::CrSettingsShared_GetBuildingDroneActivateMode Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetColorBlindMode
+// (Final, Native, Public, Const)
+// Parameters:
+// EColorBlindMode                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EColorBlindMode UCrSettingsShared::GetColorBlindMode() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetColorBlindMode");
+
+	Params::CrSettingsShared_GetColorBlindMode Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetColorBlindStrength
+// (Final, Native, Public, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UCrSettingsShared::GetColorBlindStrength() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetColorBlindStrength");
+
+	Params::CrSettingsShared_GetColorBlindStrength Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetCoopInfoCollision
+// (Final, Native, Public, Const)
+// Parameters:
+// ECoopInfoCollision                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+ECoopInfoCollision UCrSettingsShared::GetCoopInfoCollision() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetCoopInfoCollision");
+
+	Params::CrSettingsShared_GetCoopInfoCollision Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetCrouchToggle
+// (Final, Native, Public, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCrSettingsShared::GetCrouchToggle() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetCrouchToggle");
+
+	Params::CrSettingsShared_GetCrouchToggle Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetCurrentConsoleGraphicsMode
+// (Final, Native, Public, Const)
+// Parameters:
+// EConsoleGraphicsMode                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EConsoleGraphicsMode UCrSettingsShared::GetCurrentConsoleGraphicsMode() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetCurrentConsoleGraphicsMode");
+
+	Params::CrSettingsShared_GetCurrentConsoleGraphicsMode Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetForceFeedbackEnabled
+// (Final, Native, Public, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCrSettingsShared::GetForceFeedbackEnabled() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetForceFeedbackEnabled");
+
+	Params::CrSettingsShared_GetForceFeedbackEnabled Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetGamepadLookSensitivityPreset
+// (Final, Native, Public, Const)
+// Parameters:
+// ECrGamepadSensitivity                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+ECrGamepadSensitivity UCrSettingsShared::GetGamepadLookSensitivityPreset() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetGamepadLookSensitivityPreset");
+
+	Params::CrSettingsShared_GetGamepadLookSensitivityPreset Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetGamepadLookStickDeadZone
+// (Final, Native, Public, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UCrSettingsShared::GetGamepadLookStickDeadZone() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetGamepadLookStickDeadZone");
+
+	Params::CrSettingsShared_GetGamepadLookStickDeadZone Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetGamepadMoveStickDeadZone
+// (Final, Native, Public, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UCrSettingsShared::GetGamepadMoveStickDeadZone() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetGamepadMoveStickDeadZone");
+
+	Params::CrSettingsShared_GetGamepadMoveStickDeadZone Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetGamepadTargetingSensitivityPreset
+// (Final, Native, Public, Const)
+// Parameters:
+// ECrGamepadSensitivity                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+ECrGamepadSensitivity UCrSettingsShared::GetGamepadTargetingSensitivityPreset() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetGamepadTargetingSensitivityPreset");
+
+	Params::CrSettingsShared_GetGamepadTargetingSensitivityPreset Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetHasCompletedTutorial
+// (Final, Native, Public, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCrSettingsShared::GetHasCompletedTutorial() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetHasCompletedTutorial");
+
+	Params::CrSettingsShared_GetHasCompletedTutorial Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetInvertHorizontalAxis
+// (Final, Native, Public, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCrSettingsShared::GetInvertHorizontalAxis() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetInvertHorizontalAxis");
+
+	Params::CrSettingsShared_GetInvertHorizontalAxis Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetInvertVerticalAxis
+// (Final, Native, Public, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCrSettingsShared::GetInvertVerticalAxis() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetInvertVerticalAxis");
+
+	Params::CrSettingsShared_GetInvertVerticalAxis Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetLookAcceleration
+// (Final, Native, Public, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCrSettingsShared::GetLookAcceleration() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetLookAcceleration");
+
+	Params::CrSettingsShared_GetLookAcceleration Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetMouseSensitivityX
+// (Final, Native, Public, Const)
+// Parameters:
+// double                                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+double UCrSettingsShared::GetMouseSensitivityX() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetMouseSensitivityX");
+
+	Params::CrSettingsShared_GetMouseSensitivityX Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetMouseSensitivityY
+// (Final, Native, Public, Const)
+// Parameters:
+// double                                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+double UCrSettingsShared::GetMouseSensitivityY() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetMouseSensitivityY");
+
+	Params::CrSettingsShared_GetMouseSensitivityY Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetSkipTutorialChecked
+// (Final, Native, Public, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCrSettingsShared::GetSkipTutorialChecked() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetSkipTutorialChecked");
+
+	Params::CrSettingsShared_GetSkipTutorialChecked Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetSprintInputToggleMode
+// (Final, Native, Public, Const)
+// Parameters:
+// ESprintInputToggleMode                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+ESprintInputToggleMode UCrSettingsShared::GetSprintInputToggleMode() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetSprintInputToggleMode");
+
+	Params::CrSettingsShared_GetSprintInputToggleMode Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetSubtitlesBackgroundOpacity
+// (Final, Native, Public, Const)
+// Parameters:
+// ESubtitleDisplayBackgroundOpacity       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+ESubtitleDisplayBackgroundOpacity UCrSettingsShared::GetSubtitlesBackgroundOpacity() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetSubtitlesBackgroundOpacity");
+
+	Params::CrSettingsShared_GetSubtitlesBackgroundOpacity Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetSubtitlesEnabled
+// (Final, Native, Public, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCrSettingsShared::GetSubtitlesEnabled() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetSubtitlesEnabled");
+
+	Params::CrSettingsShared_GetSubtitlesEnabled Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetSubtitlesTextBorder
+// (Final, Native, Public, Const)
+// Parameters:
+// ESubtitleDisplayTextBorder              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+ESubtitleDisplayTextBorder UCrSettingsShared::GetSubtitlesTextBorder() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetSubtitlesTextBorder");
+
+	Params::CrSettingsShared_GetSubtitlesTextBorder Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetSubtitlesTextColor
+// (Final, Native, Public, Const)
+// Parameters:
+// ESubtitleDisplayTextColor               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+ESubtitleDisplayTextColor UCrSettingsShared::GetSubtitlesTextColor() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetSubtitlesTextColor");
+
+	Params::CrSettingsShared_GetSubtitlesTextColor Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetSubtitlesTextSize
+// (Final, Native, Public, Const)
+// Parameters:
+// ESubtitleDisplayTextSize                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+ESubtitleDisplayTextSize UCrSettingsShared::GetSubtitlesTextSize() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetSubtitlesTextSize");
+
+	Params::CrSettingsShared_GetSubtitlesTextSize Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetTargetingMultiplier
+// (Final, Native, Public, Const)
+// Parameters:
+// double                                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+double UCrSettingsShared::GetTargetingMultiplier() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetTargetingMultiplier");
+
+	Params::CrSettingsShared_GetTargetingMultiplier Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetTriggerHapticsEnabled
+// (Final, Native, Public, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCrSettingsShared::GetTriggerHapticsEnabled() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetTriggerHapticsEnabled");
+
+	Params::CrSettingsShared_GetTriggerHapticsEnabled Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetTriggerHapticStartPosition
+// (Final, Native, Public, Const)
+// Parameters:
+// uint8                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+uint8 UCrSettingsShared::GetTriggerHapticStartPosition() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetTriggerHapticStartPosition");
+
+	Params::CrSettingsShared_GetTriggerHapticStartPosition Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetTriggerHapticStrength
+// (Final, Native, Public, Const)
+// Parameters:
+// uint8                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+uint8 UCrSettingsShared::GetTriggerHapticStrength() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetTriggerHapticStrength");
+
+	Params::CrSettingsShared_GetTriggerHapticStrength Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSettingsShared.GetTriggerPullUsesHapticThreshold
+// (Final, Native, Public, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCrSettingsShared::GetTriggerPullUsesHapticThreshold() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSettingsShared", "GetTriggerPullUsesHapticThreshold");
+
+	Params::CrSettingsShared_GetTriggerPullUsesHapticThreshold Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrItemSenderBuilding.OnItemsSent
+// (Event, Public, BlueprintEvent)
+
+void ACrItemSenderBuilding::OnItemsSent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrItemSenderBuilding", "OnItemsSent");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -26577,119 +28332,6 @@ void ACrLocalizedInteractiveActor::OnPostBecameSignificant()
 		Func = Class->GetFunction("CrLocalizedInteractiveActor", "OnPostBecameSignificant");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Chimera.CrLocalPlayer.OnCompletedAudioDeviceSwap
-// (Final, Native, Protected, HasOutParams)
-// Parameters:
-// const struct FSwapAudioOutputResult&    SwapResult                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrLocalPlayer::OnCompletedAudioDeviceSwap(const struct FSwapAudioOutputResult& SwapResult)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrLocalPlayer", "OnCompletedAudioDeviceSwap");
-
-	Params::CrLocalPlayer_OnCompletedAudioDeviceSwap Parms{};
-
-	Parms.SwapResult = std::move(SwapResult);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrLocalPlayer.GetLocalSettings
-// (Final, Native, Public, Const)
-// Parameters:
-// class UCrGameUserSettings*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrGameUserSettings* UCrLocalPlayer::GetLocalSettings() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrLocalPlayer", "GetLocalSettings");
-
-	Params::CrLocalPlayer_GetLocalSettings Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrLocalPlayer.GetSharedSettings
-// (Final, Native, Public, Const)
-// Parameters:
-// class UCrSettingsShared*                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrSettingsShared* UCrLocalPlayer::GetSharedSettings() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrLocalPlayer", "GetSharedSettings");
-
-	Params::CrLocalPlayer_GetSharedSettings Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrLogisticsRequestSubsystem.OnPreSaveStart
-// (Final, Native, Protected)
-
-void UCrLogisticsRequestSubsystem::OnPreSaveStart()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrLogisticsRequestSubsystem", "OnPreSaveStart");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrLogisticsRequestSubsystem.OnSaveLoaded
-// (Final, Native, Protected)
-
-void UCrLogisticsRequestSubsystem::OnSaveLoaded()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrLogisticsRequestSubsystem", "OnSaveLoaded");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -26766,40 +28408,15 @@ void ACrMapMenuDataReplicationHelper::SendMapWarningLocations(const TArray<struc
 }
 
 
-// Function Chimera.CrPlayerMapMenuDataComponent.OnMapMenuMarkerFiltersOnOffStatusLoaded
-// (Final, Net, NetReliable, Native, Event, Private, NetClient)
-// Parameters:
-// const TArray<bool>&                     FiltersOnOffStatus                                     (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrPlayerMapMenuDataComponent::OnMapMenuMarkerFiltersOnOffStatusLoaded(const TArray<bool>& FiltersOnOffStatus)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrPlayerMapMenuDataComponent", "OnMapMenuMarkerFiltersOnOffStatusLoaded");
-
-	Params::CrPlayerMapMenuDataComponent_OnMapMenuMarkerFiltersOnOffStatusLoaded Parms{};
-
-	Parms.FiltersOnOffStatus = std::move(FiltersOnOffStatus);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrPlayerMapMenuDataComponent.OnRep_EncodedFogOfWar
+// Function Chimera.CrJinglePlaybackContext.OnFinished
 // (Final, Native, Private)
 
-void UCrPlayerMapMenuDataComponent::OnRep_EncodedFogOfWar()
+void UCrJinglePlaybackContext::OnFinished()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrPlayerMapMenuDataComponent", "OnRep_EncodedFogOfWar");
+		Func = Class->GetFunction("CrJinglePlaybackContext", "OnFinished");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -26810,15 +28427,15 @@ void UCrPlayerMapMenuDataComponent::OnRep_EncodedFogOfWar()
 }
 
 
-// Function Chimera.CrPlayerMapMenuDataComponent.OnRep_PlayerFootstepPositionArray
-// (Final, Native, Private)
+// Function Chimera.CrMassBuildingInfectionAlarmSubsystem.Update
+// (Final, Native, Protected)
 
-void UCrPlayerMapMenuDataComponent::OnRep_PlayerFootstepPositionArray()
+void UCrMassBuildingInfectionAlarmSubsystem::Update()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrPlayerMapMenuDataComponent", "OnRep_PlayerFootstepPositionArray");
+		Func = Class->GetFunction("CrMassBuildingInfectionAlarmSubsystem", "Update");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -26826,825 +28443,6 @@ void UCrPlayerMapMenuDataComponent::OnRep_PlayerFootstepPositionArray()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrPlayerMapMenuDataComponent.SetMapMenuMarkerFiltersOnOffStatusServer
-// (Final, Net, NetReliable, Native, Event, Private, NetServer)
-// Parameters:
-// int32                                   FilterIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    Enable                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrPlayerMapMenuDataComponent::SetMapMenuMarkerFiltersOnOffStatusServer(int32 FilterIndex, bool Enable)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrPlayerMapMenuDataComponent", "SetMapMenuMarkerFiltersOnOffStatusServer");
-
-	Params::CrPlayerMapMenuDataComponent_SetMapMenuMarkerFiltersOnOffStatusServer Parms{};
-
-	Parms.FilterIndex = FilterIndex;
-	Parms.Enable = Enable;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrPlayerStateBase.ClientSendAndOverrideUniqueNetIdOnServerFromLocalValue
-// (Net, NetReliable, Native, Event, Public, NetClient)
-
-void ACrPlayerStateBase::ClientSendAndOverrideUniqueNetIdOnServerFromLocalValue()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrPlayerStateBase", "ClientSendAndOverrideUniqueNetIdOnServerFromLocalValue");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrPlayerStateBase.GetUniqueNetId
-// (Final, Native, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FUniqueNetIdRepl                 ReturnValue                                            (Parm, OutParm, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FUniqueNetIdRepl ACrPlayerStateBase::GetUniqueNetId()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrPlayerStateBase", "GetUniqueNetId");
-
-	Params::CrPlayerStateBase_GetUniqueNetId Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrPlayerStateBase.GetUniqueNetIdAsString
-// (Final, Native, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString ACrPlayerStateBase::GetUniqueNetIdAsString()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrPlayerStateBase", "GetUniqueNetIdAsString");
-
-	Params::CrPlayerStateBase_GetUniqueNetIdAsString Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrPlayerStateBase.ServerSendUniqueNetIdToOverrideOnServer
-// (Net, NetReliable, Native, Event, Public, NetServer)
-// Parameters:
-// const struct FUniqueNetIdRepl&          UniqueNetId                                            (ConstParm, Parm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FUniqueNetIdRepl&          OldUniqueNetId                                         (ConstParm, Parm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrPlayerStateBase::ServerSendUniqueNetIdToOverrideOnServer(const struct FUniqueNetIdRepl& UniqueNetId, const struct FUniqueNetIdRepl& OldUniqueNetId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrPlayerStateBase", "ServerSendUniqueNetIdToOverrideOnServer");
-
-	Params::CrPlayerStateBase_ServerSendUniqueNetIdToOverrideOnServer Parms{};
-
-	Parms.UniqueNetId = std::move(UniqueNetId);
-	Parms.OldUniqueNetId = std::move(OldUniqueNetId);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrWeaponActor.DebugShowCosmeticImpactHitResultTrace
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FHitResult&                InHitResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void ACrWeaponActor::DebugShowCosmeticImpactHitResultTrace(const struct FHitResult& InHitResult)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWeaponActor", "DebugShowCosmeticImpactHitResultTrace");
-
-	Params::CrWeaponActor_DebugShowCosmeticImpactHitResultTrace Parms{};
-
-	Parms.InHitResult = std::move(InHitResult);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrWeaponActor.GetAimSocketTransformForADS
-// (Native, Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FTransform ACrWeaponActor::GetAimSocketTransformForADS()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWeaponActor", "GetAimSocketTransformForADS");
-
-	Params::CrWeaponActor_GetAimSocketTransformForADS Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrWeaponActor.GetLeftHandIKSocketTransform
-// (Native, Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// class FName                             SocketName                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransform*                      OutTransform                                           (Parm, OutParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ACrWeaponActor::GetLeftHandIKSocketTransform(class FName SocketName, struct FTransform* OutTransform)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWeaponActor", "GetLeftHandIKSocketTransform");
-
-	Params::CrWeaponActor_GetLeftHandIKSocketTransform Parms{};
-
-	Parms.SocketName = SocketName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutTransform != nullptr)
-		*OutTransform = std::move(Parms.OutTransform);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrWeaponActor.GetModsData
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TArray<TSoftObjectPtr<class UCrWeaponModDataAsset>>*OutCurrentlyAppliedMods                                (Parm, OutParm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ACrWeaponActor::GetModsData(TArray<TSoftObjectPtr<class UCrWeaponModDataAsset>>* OutCurrentlyAppliedMods)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWeaponActor", "GetModsData");
-
-	Params::CrWeaponActor_GetModsData Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutCurrentlyAppliedMods != nullptr)
-		*OutCurrentlyAppliedMods = std::move(Parms.OutCurrentlyAppliedMods);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrWeaponActor.GetWeaponPartsByIdentifierTag
-// (Final, Native, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// const struct FGameplayTag&              IdentifierTag                                          (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class UPrimitiveComponent*>      ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-TArray<class UPrimitiveComponent*> ACrWeaponActor::GetWeaponPartsByIdentifierTag(const struct FGameplayTag& IdentifierTag)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWeaponActor", "GetWeaponPartsByIdentifierTag");
-
-	Params::CrWeaponActor_GetWeaponPartsByIdentifierTag Parms{};
-
-	Parms.IdentifierTag = std::move(IdentifierTag);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrWeaponActor.GetWeaponPartsBySlotTag
-// (Final, Native, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// const struct FGameplayTag&              SlotTag                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class UPrimitiveComponent*>      ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-TArray<class UPrimitiveComponent*> ACrWeaponActor::GetWeaponPartsBySlotTag(const struct FGameplayTag& SlotTag)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWeaponActor", "GetWeaponPartsBySlotTag");
-
-	Params::CrWeaponActor_GetWeaponPartsBySlotTag Parms{};
-
-	Parms.SlotTag = std::move(SlotTag);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrWeaponActor.GetWeaponSocketTransform
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class FName                             SocketName                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ERelativeTransformSpace                 TransformSpace                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FTransform ACrWeaponActor::GetWeaponSocketTransform(class FName SocketName, ERelativeTransformSpace TransformSpace)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWeaponActor", "GetWeaponSocketTransform");
-
-	Params::CrWeaponActor_GetWeaponSocketTransform Parms{};
-
-	Parms.SocketName = SocketName;
-	Parms.TransformSpace = TransformSpace;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrWeaponActor.LocalPiercingTraceForSimulatedProxies
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const TArray<struct FHitResult>&        OriginalHits                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// const struct FAuCustomTargetHandle&     InHandle                                               (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrWeaponActor::LocalPiercingTraceForSimulatedProxies(const TArray<struct FHitResult>& OriginalHits, const struct FAuCustomTargetHandle& InHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWeaponActor", "LocalPiercingTraceForSimulatedProxies");
-
-	Params::CrWeaponActor_LocalPiercingTraceForSimulatedProxies Parms{};
-
-	Parms.OriginalHits = std::move(OriginalHits);
-	Parms.InHandle = std::move(InHandle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrWeaponActor.OnBPCameraChanged
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bIsFirstPersonView                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrWeaponActor::OnBPCameraChanged(bool bIsFirstPersonView)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWeaponActor", "OnBPCameraChanged");
-
-	Params::CrWeaponActor_OnBPCameraChanged Parms{};
-
-	Parms.bIsFirstPersonView = bIsFirstPersonView;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Chimera.CrWeaponActor.OnBPPassiveAbilitiesLocallyGranted
-// (Event, Public, BlueprintEvent)
-
-void ACrWeaponActor::OnBPPassiveAbilitiesLocallyGranted()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWeaponActor", "OnBPPassiveAbilitiesLocallyGranted");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Chimera.CrWeaponActor.OnBPWeaponPostEquip
-// (Event, Public, BlueprintEvent)
-
-void ACrWeaponActor::OnBPWeaponPostEquip()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWeaponActor", "OnBPWeaponPostEquip");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Chimera.CrWeaponActor.OnBPWeaponPreUnequip
-// (Event, Public, BlueprintEvent)
-
-void ACrWeaponActor::OnBPWeaponPreUnequip()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWeaponActor", "OnBPWeaponPreUnequip");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Chimera.CrWeaponActor.OnBuildingToolApplyEffects
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    bIsDeconstructing                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrWeaponActor::OnBuildingToolApplyEffects(bool bIsDeconstructing)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWeaponActor", "OnBuildingToolApplyEffects");
-
-	Params::CrWeaponActor_OnBuildingToolApplyEffects Parms{};
-
-	Parms.bIsDeconstructing = bIsDeconstructing;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Chimera.CrWeaponActor.OnBuildingToolNiagaraStart
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    bStartDeconstructEffect                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrWeaponActor::OnBuildingToolNiagaraStart(bool bStartDeconstructEffect)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWeaponActor", "OnBuildingToolNiagaraStart");
-
-	Params::CrWeaponActor_OnBuildingToolNiagaraStart Parms{};
-
-	Parms.bStartDeconstructEffect = bStartDeconstructEffect;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Chimera.CrWeaponActor.OnBuildingToolNiagaraStop
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    bStopDeconstructEffect                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrWeaponActor::OnBuildingToolNiagaraStop(bool bStopDeconstructEffect)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWeaponActor", "OnBuildingToolNiagaraStop");
-
-	Params::CrWeaponActor_OnBuildingToolNiagaraStop Parms{};
-
-	Parms.bStopDeconstructEffect = bStopDeconstructEffect;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Chimera.CrWeaponActor.OnCameraChanged
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bIsFirstPersonView                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrWeaponActor::OnCameraChanged(bool bIsFirstPersonView)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWeaponActor", "OnCameraChanged");
-
-	Params::CrWeaponActor_OnCameraChanged Parms{};
-
-	Parms.bIsFirstPersonView = bIsFirstPersonView;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrWeaponActor.OnPiercingCommitedCosmeticEffects
-// (Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const TArray<struct FHitResult>&        Hits                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void ACrWeaponActor::OnPiercingCommitedCosmeticEffects(const TArray<struct FHitResult>& Hits)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWeaponActor", "OnPiercingCommitedCosmeticEffects");
-
-	Params::CrWeaponActor_OnPiercingCommitedCosmeticEffects Parms{};
-
-	Parms.Hits = std::move(Hits);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Chimera.CrWeaponActor.OnWeaponInstanceDataReplicated
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ACrWeaponActor::OnWeaponInstanceDataReplicated()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWeaponActor", "OnWeaponInstanceDataReplicated");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrWeaponActor.SetModsData
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const TArray<TSoftObjectPtr<class UCrWeaponModDataAsset>>&CurrentlyAppliedMods                                   (Parm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ACrWeaponActor::SetModsData(const TArray<TSoftObjectPtr<class UCrWeaponModDataAsset>>& CurrentlyAppliedMods)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWeaponActor", "SetModsData");
-
-	Params::CrWeaponActor_SetModsData Parms{};
-
-	Parms.CurrentlyAppliedMods = std::move(CurrentlyAppliedMods);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrWeaponActor.SpawnFireHitImpactCosmetics
-// (Final, Native, Protected, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FHitResult&                InHitResults                                           (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void ACrWeaponActor::SpawnFireHitImpactCosmetics(const struct FHitResult& InHitResults)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWeaponActor", "SpawnFireHitImpactCosmetics");
-
-	Params::CrWeaponActor_SpawnFireHitImpactCosmetics Parms{};
-
-	Parms.InHitResults = std::move(InHitResults);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrWeaponActor.UpdateShadowCastingOnMeshes
-// (Final, Native, Public, BlueprintCallable)
-
-void ACrWeaponActor::UpdateShadowCastingOnMeshes()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWeaponActor", "UpdateShadowCastingOnMeshes");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrWeaponActor.UpdateWeaponVisualsForMods
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ACrWeaponActor::UpdateWeaponVisualsForMods()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWeaponActor", "UpdateWeaponVisualsForMods");
-
-	Params::CrWeaponActor_UpdateWeaponVisualsForMods Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrWeaponActor.GetCurrentSignificance
-// (Final, Native, Protected, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float ACrWeaponActor::GetCurrentSignificance() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWeaponActor", "GetCurrentSignificance");
-
-	Params::CrWeaponActor_GetCurrentSignificance Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrWeaponActor.IsOverCosmeticsReplicationDistance
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ACrWeaponActor::IsOverCosmeticsReplicationDistance() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWeaponActor", "IsOverCosmeticsReplicationDistance");
-
-	Params::CrWeaponActor_IsOverCosmeticsReplicationDistance Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrWeaponActor.IsSingleFireTypeWeapon
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ACrWeaponActor::IsSingleFireTypeWeapon() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWeaponActor", "IsSingleFireTypeWeapon");
-
-	Params::CrWeaponActor_IsSingleFireTypeWeapon Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrWeaponModsFunctionLibrary.GetModMaterialsOverrideForTagWeaponPart
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// const struct FGameplayTag&              WeaponPartGameplayTag                                  (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TMap<class FName, class UMaterialInterface*>ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-TMap<class FName, class UMaterialInterface*> UCrWeaponModsFunctionLibrary::GetModMaterialsOverrideForTagWeaponPart(const struct FGameplayTag& WeaponPartGameplayTag)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrWeaponModsFunctionLibrary", "GetModMaterialsOverrideForTagWeaponPart");
-
-	Params::CrWeaponModsFunctionLibrary_GetModMaterialsOverrideForTagWeaponPart Parms{};
-
-	Parms.WeaponPartGameplayTag = std::move(WeaponPartGameplayTag);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrWeaponModsFunctionLibrary.GetWeaponModSceneComponentByName
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class ACrWeaponModVisualData>ModVisualDataActorClass                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class USceneComponent*                  ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class USceneComponent* UCrWeaponModsFunctionLibrary::GetWeaponModSceneComponentByName(TSubclassOf<class ACrWeaponModVisualData> ModVisualDataActorClass, class FName Name_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrWeaponModsFunctionLibrary", "GetWeaponModSceneComponentByName");
-
-	Params::CrWeaponModsFunctionLibrary_GetWeaponModSceneComponentByName Parms{};
-
-	Parms.ModVisualDataActorClass = ModVisualDataActorClass;
-	Parms.Name_0 = Name_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrWeaponModsFunctionLibrary.GetWeaponModSceneComponents
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class ACrWeaponModVisualData>ModVisualDataActorClass                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const TArray<class USceneComponent*>    ReturnValue                                            (ConstParm, ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-const TArray<class USceneComponent*> UCrWeaponModsFunctionLibrary::GetWeaponModSceneComponents(TSubclassOf<class ACrWeaponModVisualData> ModVisualDataActorClass)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrWeaponModsFunctionLibrary", "GetWeaponModSceneComponents");
-
-	Params::CrWeaponModsFunctionLibrary_GetWeaponModSceneComponents Parms{};
-
-	Parms.ModVisualDataActorClass = ModVisualDataActorClass;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrWeaponModsFunctionLibrary.GetWeaponModSkeletalSceneComponents
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class ACrWeaponModVisualData>ModVisualDataActorClass                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const TArray<class UCrWeaponSkeletalMeshComponent*>ReturnValue                                            (ConstParm, ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-const TArray<class UCrWeaponSkeletalMeshComponent*> UCrWeaponModsFunctionLibrary::GetWeaponModSkeletalSceneComponents(TSubclassOf<class ACrWeaponModVisualData> ModVisualDataActorClass)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrWeaponModsFunctionLibrary", "GetWeaponModSkeletalSceneComponents");
-
-	Params::CrWeaponModsFunctionLibrary_GetWeaponModSkeletalSceneComponents Parms{};
-
-	Parms.ModVisualDataActorClass = ModVisualDataActorClass;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -27673,42 +28471,210 @@ const TArray<class FName> UCrMassBuildingNiagaraSignalProcessor::GetAvailableSig
 }
 
 
-// Function Chimera.CrSpawnPointBuilding.OnBuildingOwnershipChanged
-// (Event, Public, BlueprintEvent)
+// Function Chimera.CrSplineBasedBuildingActorsVisualsSpawnerWorldSubsystem.RegisterSplineBasedBuildingActor
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// ECrBuildingOwnership                    NewOwnership                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ACrBuildingSplineActorBase*       BuildingSplineActorBase                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ACrSpawnPointBuilding::OnBuildingOwnershipChanged(ECrBuildingOwnership NewOwnership)
+void UCrSplineBasedBuildingActorsVisualsSpawnerWorldSubsystem::RegisterSplineBasedBuildingActor(class ACrBuildingSplineActorBase* BuildingSplineActorBase)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrSpawnPointBuilding", "OnBuildingOwnershipChanged");
+		Func = Class->GetFunction("CrSplineBasedBuildingActorsVisualsSpawnerWorldSubsystem", "RegisterSplineBasedBuildingActor");
 
-	Params::CrSpawnPointBuilding_OnBuildingOwnershipChanged Parms{};
+	Params::CrSplineBasedBuildingActorsVisualsSpawnerWorldSubsystem_RegisterSplineBasedBuildingActor Parms{};
 
-	Parms.NewOwnership = NewOwnership;
+	Parms.BuildingSplineActorBase = BuildingSplineActorBase;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSplineBasedBuildingActorsVisualsSpawnerWorldSubsystem.UnRegisterSplineBasedBuildingActor
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class ACrBuildingSplineActorBase*       BuildingSplineActorBase                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSplineBasedBuildingActorsVisualsSpawnerWorldSubsystem::UnRegisterSplineBasedBuildingActor(class ACrBuildingSplineActorBase* BuildingSplineActorBase)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSplineBasedBuildingActorsVisualsSpawnerWorldSubsystem", "UnRegisterSplineBasedBuildingActor");
+
+	Params::CrSplineBasedBuildingActorsVisualsSpawnerWorldSubsystem_UnRegisterSplineBasedBuildingActor Parms{};
+
+	Parms.BuildingSplineActorBase = BuildingSplineActorBase;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrTeleportReplicator.OnRep_Teleporters
+// (Final, Native, Private)
+
+void ACrTeleportReplicator::OnRep_Teleporters()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrTeleportReplicator", "OnRep_Teleporters");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrStandaloneInfectionActor.BP_OnDamageProtectionChanged
+// (Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    IsActive                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrStandaloneInfectionActor::BP_OnDamageProtectionChanged(bool IsActive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrStandaloneInfectionActor", "BP_OnDamageProtectionChanged");
+
+	Params::CrStandaloneInfectionActor_BP_OnDamageProtectionChanged Parms{};
+
+	Parms.IsActive = IsActive;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function Chimera.CrSpawnPointBuilding.GetInteractionAdditionalTextFromOwnership
-// (Native, Event, Public, BlueprintEvent, Const)
-// Parameters:
-// ECrBuildingOwnership                    InOwnership                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+// Function Chimera.CrStandaloneInfectionActor.BP_OnDestroyed
+// (Event, Public, BlueprintEvent)
 
-class FText ACrSpawnPointBuilding::GetInteractionAdditionalTextFromOwnership(ECrBuildingOwnership InOwnership) const
+void ACrStandaloneInfectionActor::BP_OnDestroyed()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrSpawnPointBuilding", "GetInteractionAdditionalTextFromOwnership");
+		Func = Class->GetFunction("CrStandaloneInfectionActor", "BP_OnDestroyed");
 
-	Params::CrSpawnPointBuilding_GetInteractionAdditionalTextFromOwnership Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.InOwnership = InOwnership;
+
+// Function Chimera.CrStandaloneInfectionActor.BP_OnInfectionJustSpawned
+// (Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void ACrStandaloneInfectionActor::BP_OnInfectionJustSpawned()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrStandaloneInfectionActor", "BP_OnInfectionJustSpawned");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Chimera.CrStandaloneInfectionActor.OnDamageProtectionChanged
+// (Final, Native, Public)
+// Parameters:
+// const struct FMassEntityHandle&         Entity                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             Signal                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrStandaloneInfectionActor::OnDamageProtectionChanged(const struct FMassEntityHandle& Entity, class FName Signal)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrStandaloneInfectionActor", "OnDamageProtectionChanged");
+
+	Params::CrStandaloneInfectionActor_OnDamageProtectionChanged Parms{};
+
+	Parms.Entity = std::move(Entity);
+	Parms.Signal = Signal;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrStandaloneInfectionActor.OnDestroyed
+// (Final, Native, Public)
+// Parameters:
+// const struct FMassEntityHandle&         Entity                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             Signal                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrStandaloneInfectionActor::OnDestroyed(const struct FMassEntityHandle& Entity, class FName Signal)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrStandaloneInfectionActor", "OnDestroyed");
+
+	Params::CrStandaloneInfectionActor_OnDestroyed Parms{};
+
+	Parms.Entity = std::move(Entity);
+	Parms.Signal = Signal;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrStandaloneInfectionActor.OnGrowthProgress
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// float                                   Progress                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrStandaloneInfectionActor::OnGrowthProgress(float Progress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrStandaloneInfectionActor", "OnGrowthProgress");
+
+	Params::CrStandaloneInfectionActor_OnGrowthProgress Parms{};
+
+	Parms.Progress = Progress;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Chimera.CrStandaloneInfectionActor.GetDamageProtectionActive
+// (Final, Native, Protected, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ACrStandaloneInfectionActor::GetDamageProtectionActive() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrStandaloneInfectionActor", "GetDamageProtectionActive");
+
+	Params::CrStandaloneInfectionActor_GetDamageProtectionActive Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -27721,44 +28687,137 @@ class FText ACrSpawnPointBuilding::GetInteractionAdditionalTextFromOwnership(ECr
 }
 
 
-// Function Chimera.CrMassCustomOnRepInterface.OnRep_CustomState
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function Chimera.CrStandaloneInfectionActor.GetWasDestroyed
+// (Final, Native, Protected, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// const struct FInstancedStruct&          CustomFragment                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ICrMassCustomOnRepInterface::OnRep_CustomState(const struct FInstancedStruct& CustomFragment)
+bool ACrStandaloneInfectionActor::GetWasDestroyed() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("CrMassCustomOnRepInterface", "OnRep_CustomState");
+		Func = Class->GetFunction("CrStandaloneInfectionActor", "GetWasDestroyed");
 
-	Params::CrMassCustomOnRepInterface_OnRep_CustomState Parms{};
-
-	Parms.CustomFragment = std::move(CustomFragment);
+	Params::CrStandaloneInfectionActor_GetWasDestroyed Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	AsUObject()->ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrStorageBox.OnRep_StoredItems
+// (Final, Native, Private)
+
+void ACrStorageBox::OnRep_StoredItems()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrStorageBox", "OnRep_StoredItems");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function Chimera.CrWatermarkSubsystem.GetWatermarkString
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function Chimera.CrStorageBox.ServerRemoveItem
+// (Final, Net, NetReliable, Native, Event, Private, NetServer)
 // Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAuItemId&                 InItemId                                               (ConstParm, Parm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString UCrWatermarkSubsystem::GetWatermarkString() const
+void ACrStorageBox::ServerRemoveItem(const struct FAuItemId& InItemId, int32 Count)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrWatermarkSubsystem", "GetWatermarkString");
+		Func = Class->GetFunction("CrStorageBox", "ServerRemoveItem");
 
-	Params::CrWatermarkSubsystem_GetWatermarkString Parms{};
+	Params::CrStorageBox_ServerRemoveItem Parms{};
+
+	Parms.InItemId = std::move(InItemId);
+	Parms.Count = Count;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrPawnExtensionComponent.FindPawnExtensionComponent
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const class AActor*                     Actor                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrPawnExtensionComponent*        ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrPawnExtensionComponent* UCrPawnExtensionComponent::FindPawnExtensionComponent(const class AActor* Actor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrPawnExtensionComponent", "FindPawnExtensionComponent");
+
+	Params::CrPawnExtensionComponent_FindPawnExtensionComponent Parms{};
+
+	Parms.Actor = Actor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrPawnExtensionComponent.OnRep_PawnData
+// (Final, Native, Protected)
+
+void UCrPawnExtensionComponent::OnRep_PawnData()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrPawnExtensionComponent", "OnRep_PawnData");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrPawnExtensionComponent.GetCrAbilitySystemComponent
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UCrAbilitySystemComponent*        ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAbilitySystemComponent* UCrPawnExtensionComponent::GetCrAbilitySystemComponent() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrPawnExtensionComponent", "GetCrAbilitySystemComponent");
+
+	Params::CrPawnExtensionComponent_GetCrAbilitySystemComponent Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -27972,44 +29031,6 @@ bool ACrMassGatherableCropActorBase::IsCropDepleted() const
 }
 
 
-// Function Chimera.CrStartScreenWidget.OnAnimationEnd
-// (Final, Native, Private)
-
-void UCrStartScreenWidget::OnAnimationEnd()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrStartScreenWidget", "OnAnimationEnd");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrStartScreenWidget.OnButtonClicked
-// (Final, Native, Private)
-
-void UCrStartScreenWidget::OnButtonClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrStartScreenWidget", "OnButtonClicked");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function Chimera.CrMassInfectionSubsystem.IsInfectionValid
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -28101,6 +29122,267 @@ struct FInfectionEntityHandle UCrMassInfectionSubsystem::SpawnInfectionAtLocatio
 }
 
 
+// Function Chimera.CrPlayerMapMenuDataComponent.OnMapMenuMarkerFiltersOnOffStatusLoaded
+// (Final, Net, NetReliable, Native, Event, Private, NetClient)
+// Parameters:
+// const TArray<bool>&                     FiltersOnOffStatus                                     (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrPlayerMapMenuDataComponent::OnMapMenuMarkerFiltersOnOffStatusLoaded(const TArray<bool>& FiltersOnOffStatus)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrPlayerMapMenuDataComponent", "OnMapMenuMarkerFiltersOnOffStatusLoaded");
+
+	Params::CrPlayerMapMenuDataComponent_OnMapMenuMarkerFiltersOnOffStatusLoaded Parms{};
+
+	Parms.FiltersOnOffStatus = std::move(FiltersOnOffStatus);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrPlayerMapMenuDataComponent.OnRep_EncodedFogOfWar
+// (Final, Native, Private)
+
+void UCrPlayerMapMenuDataComponent::OnRep_EncodedFogOfWar()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrPlayerMapMenuDataComponent", "OnRep_EncodedFogOfWar");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrPlayerMapMenuDataComponent.OnRep_PlayerFootstepPositionArray
+// (Final, Native, Private)
+
+void UCrPlayerMapMenuDataComponent::OnRep_PlayerFootstepPositionArray()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrPlayerMapMenuDataComponent", "OnRep_PlayerFootstepPositionArray");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrPlayerMapMenuDataComponent.SetMapMenuMarkerFiltersOnOffStatusServer
+// (Final, Net, NetReliable, Native, Event, Private, NetServer)
+// Parameters:
+// int32                                   FilterIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    Enable                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrPlayerMapMenuDataComponent::SetMapMenuMarkerFiltersOnOffStatusServer(int32 FilterIndex, bool Enable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrPlayerMapMenuDataComponent", "SetMapMenuMarkerFiltersOnOffStatusServer");
+
+	Params::CrPlayerMapMenuDataComponent_SetMapMenuMarkerFiltersOnOffStatusServer Parms{};
+
+	Parms.FilterIndex = FilterIndex;
+	Parms.Enable = Enable;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrPlayerStateBase.ClientSendAndOverrideUniqueNetIdOnServerFromLocalValue
+// (Net, NetReliable, Native, Event, Public, NetClient)
+
+void ACrPlayerStateBase::ClientSendAndOverrideUniqueNetIdOnServerFromLocalValue()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrPlayerStateBase", "ClientSendAndOverrideUniqueNetIdOnServerFromLocalValue");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrPlayerStateBase.GetUniqueNetId
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FUniqueNetIdRepl                 ReturnValue                                            (Parm, OutParm, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FUniqueNetIdRepl ACrPlayerStateBase::GetUniqueNetId()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrPlayerStateBase", "GetUniqueNetId");
+
+	Params::CrPlayerStateBase_GetUniqueNetId Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrPlayerStateBase.GetUniqueNetIdAsString
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString ACrPlayerStateBase::GetUniqueNetIdAsString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrPlayerStateBase", "GetUniqueNetIdAsString");
+
+	Params::CrPlayerStateBase_GetUniqueNetIdAsString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrPlayerStateBase.ServerSendUniqueNetIdToOverrideOnServer
+// (Net, NetReliable, Native, Event, Public, NetServer)
+// Parameters:
+// const struct FUniqueNetIdRepl&          UniqueNetId                                            (ConstParm, Parm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FUniqueNetIdRepl&          OldUniqueNetId                                         (ConstParm, Parm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrPlayerStateBase::ServerSendUniqueNetIdToOverrideOnServer(const struct FUniqueNetIdRepl& UniqueNetId, const struct FUniqueNetIdRepl& OldUniqueNetId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrPlayerStateBase", "ServerSendUniqueNetIdToOverrideOnServer");
+
+	Params::CrPlayerStateBase_ServerSendUniqueNetIdToOverrideOnServer Parms{};
+
+	Parms.UniqueNetId = std::move(UniqueNetId);
+	Parms.OldUniqueNetId = std::move(OldUniqueNetId);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrShieldAttributeSet.OnRep_CurrentShield
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldCurrentShield                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrShieldAttributeSet::OnRep_CurrentShield(const struct FGameplayAttributeData& OldCurrentShield)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrShieldAttributeSet", "OnRep_CurrentShield");
+
+	Params::CrShieldAttributeSet_OnRep_CurrentShield Parms{};
+
+	Parms.OldCurrentShield = std::move(OldCurrentShield);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrShieldAttributeSet.OnRep_MaxShield
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldMaxShield                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrShieldAttributeSet::OnRep_MaxShield(const struct FGameplayAttributeData& OldMaxShield)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrShieldAttributeSet", "OnRep_MaxShield");
+
+	Params::CrShieldAttributeSet_OnRep_MaxShield Parms{};
+
+	Parms.OldMaxShield = std::move(OldMaxShield);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrShieldAttributeSet.OnRep_MinShield
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldMinShield                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrShieldAttributeSet::OnRep_MinShield(const struct FGameplayAttributeData& OldMinShield)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrShieldAttributeSet", "OnRep_MinShield");
+
+	Params::CrShieldAttributeSet_OnRep_MinShield Parms{};
+
+	Parms.OldMinShield = std::move(OldMinShield);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Chimera.CrMassSaveSubsystem.OnPostSaveLoaded
 // (Final, Native, Private)
 
@@ -28158,15 +29440,43 @@ void UCrMassSaveSubsystem::OnSaveLoaded()
 }
 
 
-// Function Chimera.CrJinglePlaybackContext.OnFinished
-// (Final, Native, Private)
+// Function Chimera.CrPCGActorBase.BP_OnPostSeedChanged
+// (Event, Protected, BlueprintEvent)
 
-void UCrJinglePlaybackContext::OnFinished()
+void ACrPCGActorBase::BP_OnPostSeedChanged()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrJinglePlaybackContext", "OnFinished");
+		Func = Class->GetFunction("CrPCGActorBase", "BP_OnPostSeedChanged");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Chimera.CrPCGActorBase.BP_OnPreSeedChanged
+// (Event, Protected, BlueprintEvent)
+
+void ACrPCGActorBase::BP_OnPreSeedChanged()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrPCGActorBase", "BP_OnPreSeedChanged");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Chimera.CrPCGActorBase.DelayPostBecameSignificantGeneration
+// (Final, Native, Protected, BlueprintCallable)
+
+void ACrPCGActorBase::DelayPostBecameSignificantGeneration()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrPCGActorBase", "DelayPostBecameSignificantGeneration");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -28177,53 +29487,41 @@ void UCrJinglePlaybackContext::OnFinished()
 }
 
 
-// Function Chimera.CrPlayerCharacterAnimInstance.GetCharacterSpeed
-// (Native, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Chimera.CrPCGActorBase.OnCellSpawnedCheckTimerElapsed
+// (Final, Native, Private)
 
-float UCrPlayerCharacterAnimInstance::GetCharacterSpeed()
+void ACrPCGActorBase::OnCellSpawnedCheckTimerElapsed()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrPlayerCharacterAnimInstance", "GetCharacterSpeed");
-
-	Params::CrPlayerCharacterAnimInstance_GetCharacterSpeed Parms{};
+		Func = Class->GetFunction("CrPCGActorBase", "OnCellSpawnedCheckTimerElapsed");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function Chimera.CrPlayerCharacterAnimInstance.GetCharacterVelocity
-// (Native, Public, HasDefaults, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Chimera.CrPCGActorBase.TriggerGeneration
+// (Final, Native, Private)
 
-struct FVector UCrPlayerCharacterAnimInstance::GetCharacterVelocity()
+void ACrPCGActorBase::TriggerGeneration()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrPlayerCharacterAnimInstance", "GetCharacterVelocity");
-
-	Params::CrPlayerCharacterAnimInstance_GetCharacterVelocity Parms{};
+		Func = Class->GetFunction("CrPCGActorBase", "TriggerGeneration");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -30728,6 +32026,163 @@ void UCrMegamachinesSubsystem::SetMegamachineState(ECrMegamachineType InMegamach
 }
 
 
+// Function Chimera.CrRifleTurretBase.CosmeticDryFire
+// (Event, Public, BlueprintEvent)
+
+void ACrRifleTurretBase::CosmeticDryFire()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrRifleTurretBase", "CosmeticDryFire");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Chimera.CrRifleTurretBase.CosmeticHit
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const struct FHitResult&                InHit                                                  (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void ACrRifleTurretBase::CosmeticHit(const struct FHitResult& InHit)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrRifleTurretBase", "CosmeticHit");
+
+	Params::CrRifleTurretBase_CosmeticHit Parms{};
+
+	Parms.InHit = std::move(InHit);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Chimera.CrRifleTurretBase.CosmeticTurretMalfunctionEnded
+// (Event, Public, BlueprintEvent)
+
+void ACrRifleTurretBase::CosmeticTurretMalfunctionEnded()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrRifleTurretBase", "CosmeticTurretMalfunctionEnded");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Chimera.CrRifleTurretBase.CosmeticTurretMalfunctionStarted
+// (Event, Public, BlueprintEvent)
+
+void ACrRifleTurretBase::CosmeticTurretMalfunctionStarted()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrRifleTurretBase", "CosmeticTurretMalfunctionStarted");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Chimera.CrRifleTurretBase.UpdateCosmeticsBasedOnAttackDirection
+// (Event, Public, HasOutParams, HasDefaults, BlueprintEvent)
+// Parameters:
+// const struct FVector&                   OutCurrentAttackDirection                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrRifleTurretBase::UpdateCosmeticsBasedOnAttackDirection(const struct FVector& OutCurrentAttackDirection)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrRifleTurretBase", "UpdateCosmeticsBasedOnAttackDirection");
+
+	Params::CrRifleTurretBase_UpdateCosmeticsBasedOnAttackDirection Parms{};
+
+	Parms.OutCurrentAttackDirection = std::move(OutCurrentAttackDirection);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Chimera.CrRifleTurretBase.GetImpactHitNiagaraSystem
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UNiagaraSystem*                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UNiagaraSystem* ACrRifleTurretBase::GetImpactHitNiagaraSystem() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrRifleTurretBase", "GetImpactHitNiagaraSystem");
+
+	Params::CrRifleTurretBase_GetImpactHitNiagaraSystem Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrRifleTurretBase.GetShootSound
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class USoundBase*                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class USoundBase* ACrRifleTurretBase::GetShootSound() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrRifleTurretBase", "GetShootSound");
+
+	Params::CrRifleTurretBase_GetShootSound Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrRifleTurretBase.GetShootTracerNiagaraSystem
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UNiagaraSystem*                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UNiagaraSystem* ACrRifleTurretBase::GetShootTracerNiagaraSystem() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrRifleTurretBase", "GetShootTracerNiagaraSystem");
+
+	Params::CrRifleTurretBase_GetShootTracerNiagaraSystem Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function Chimera.CrMegamachineTeleporterDevice.ActivateTeleporter
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -31139,203 +32594,6 @@ bool ACrMeteOreActor::IsListenServer() const
 		Func = Class->GetFunction("CrMeteOreActor", "IsListenServer");
 
 	Params::CrMeteOreActor_IsListenServer Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSaveSubsystem.CloseSessionConfirmationWidget
-// (Final, Native, Public, BlueprintCallable)
-
-void UCrSaveSubsystem::CloseSessionConfirmationWidget()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSaveSubsystem", "CloseSessionConfirmationWidget");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSaveSubsystem.DoesAnySaveExist
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UCrSaveSubsystem::DoesAnySaveExist()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSaveSubsystem", "DoesAnySaveExist");
-
-	Params::CrSaveSubsystem_DoesAnySaveExist Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSaveSubsystem.ExecuteSave
-// (Final, Native, Public, BlueprintCallable)
-
-void UCrSaveSubsystem::ExecuteSave()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSaveSubsystem", "ExecuteSave");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSaveSubsystem.LoadGame
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bInCoopGame                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSaveSubsystem::LoadGame(const class FString& Name_0, bool bInCoopGame)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSaveSubsystem", "LoadGame");
-
-	Params::CrSaveSubsystem_LoadGame Parms{};
-
-	Parms.Name_0 = std::move(Name_0);
-	Parms.bInCoopGame = bInCoopGame;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSaveSubsystem.RequestSaveGameToServer
-// (Final, Native, Public, BlueprintCallable)
-
-void UCrSaveSubsystem::RequestSaveGameToServer()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSaveSubsystem", "RequestSaveGameToServer");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSaveSubsystem.SaveGame
-// (Final, Native, Public, BlueprintCallable)
-
-void UCrSaveSubsystem::SaveGame()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSaveSubsystem", "SaveGame");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSaveSubsystem.ShowSessionConfirmationWidget
-// (Final, Native, Public, BlueprintCallable)
-
-void UCrSaveSubsystem::ShowSessionConfirmationWidget()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSaveSubsystem", "ShowSessionConfirmationWidget");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSaveSubsystem.GetCurrentSessionCount
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UCrSaveSubsystem::GetCurrentSessionCount() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSaveSubsystem", "GetCurrentSessionCount");
-
-	Params::CrSaveSubsystem_GetCurrentSessionCount Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSaveSubsystem.GetMaxSessionCount
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UCrSaveSubsystem::GetMaxSessionCount() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSaveSubsystem", "GetMaxSessionCount");
-
-	Params::CrSaveSubsystem_GetMaxSessionCount Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -32806,6 +34064,288 @@ void UCrMiningComponent::ServerDebugDepleteResource(class AActor* MineableActor)
 }
 
 
+// Function Chimera.CrTemperatureAttributeSet.OnRep_CurrentTemperature
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldCurrentTemperature                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrTemperatureAttributeSet::OnRep_CurrentTemperature(const struct FGameplayAttributeData& OldCurrentTemperature)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrTemperatureAttributeSet", "OnRep_CurrentTemperature");
+
+	Params::CrTemperatureAttributeSet_OnRep_CurrentTemperature Parms{};
+
+	Parms.OldCurrentTemperature = std::move(OldCurrentTemperature);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrTemperatureAttributeSet.OnRep_MaxTemperature
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldMaxTemperature                                      (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrTemperatureAttributeSet::OnRep_MaxTemperature(const struct FGameplayAttributeData& OldMaxTemperature)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrTemperatureAttributeSet", "OnRep_MaxTemperature");
+
+	Params::CrTemperatureAttributeSet_OnRep_MaxTemperature Parms{};
+
+	Parms.OldMaxTemperature = std::move(OldMaxTemperature);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrTemperatureAttributeSet.OnRep_MinTemperature
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldMinTemperature                                      (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrTemperatureAttributeSet::OnRep_MinTemperature(const struct FGameplayAttributeData& OldMinTemperature)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrTemperatureAttributeSet", "OnRep_MinTemperature");
+
+	Params::CrTemperatureAttributeSet_OnRep_MinTemperature Parms{};
+
+	Parms.OldMinTemperature = std::move(OldMinTemperature);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrMiningLockingComponent.BP_RemoveLockOnAll
+// (Final, Native, Public, BlueprintCallable)
+
+void UCrMiningLockingComponent::BP_RemoveLockOnAll()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrMiningLockingComponent", "BP_RemoveLockOnAll");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrMiningLockingComponent.BP_RemoveLockOnAllLocalClientOnly
+// (Final, Native, Public, BlueprintCallable)
+
+void UCrMiningLockingComponent::BP_RemoveLockOnAllLocalClientOnly()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrMiningLockingComponent", "BP_RemoveLockOnAllLocalClientOnly");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrMiningLockingComponent.ServerRemoveLockOnAll
+// (Final, Net, NetReliable, Native, Event, Private, NetServer)
+
+void UCrMiningLockingComponent::ServerRemoveLockOnAll()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrMiningLockingComponent", "ServerRemoveLockOnAll");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrMiningLockingComponent.ServerTryLockingMineableTarget
+// (Final, Net, NetReliable, Native, Event, Private, NetServer)
+// Parameters:
+// const struct FCrMineableLockedTargetData&InMineableTargetData                                   (Parm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UCrMiningLockingComponent::ServerTryLockingMineableTarget(const struct FCrMineableLockedTargetData& InMineableTargetData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrMiningLockingComponent", "ServerTryLockingMineableTarget");
+
+	Params::CrMiningLockingComponent_ServerTryLockingMineableTarget Parms{};
+
+	Parms.InMineableTargetData = std::move(InMineableTargetData);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrMiningLockingComponent.TryLockingForLocallyControlledCharacter
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FHitResult&                InHtResults                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UCrMiningLockingComponent::TryLockingForLocallyControlledCharacter(const struct FHitResult& InHtResults)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrMiningLockingComponent", "TryLockingForLocallyControlledCharacter");
+
+	Params::CrMiningLockingComponent_TryLockingForLocallyControlledCharacter Parms{};
+
+	Parms.InHtResults = std::move(InHtResults);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrMiningLockingComponent.GetLockedOnActor
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AActor* UCrMiningLockingComponent::GetLockedOnActor() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrMiningLockingComponent", "GetLockedOnActor");
+
+	Params::CrMiningLockingComponent_GetLockedOnActor Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrMiningLockingComponent.GetLockedOnISMPhysicalMaterial
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const class UPhysicalMaterial*          ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+const class UPhysicalMaterial* UCrMiningLockingComponent::GetLockedOnISMPhysicalMaterial() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrMiningLockingComponent", "GetLockedOnISMPhysicalMaterial");
+
+	Params::CrMiningLockingComponent_GetLockedOnISMPhysicalMaterial Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrMiningLockingComponent.GetWeakSpotName
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FName UCrMiningLockingComponent::GetWeakSpotName() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrMiningLockingComponent", "GetWeakSpotName");
+
+	Params::CrMiningLockingComponent_GetWeakSpotName Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrMiningLockingComponent.IsWeakSpotLockedOn
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCrMiningLockingComponent::IsWeakSpotLockedOn() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrMiningLockingComponent", "IsWeakSpotLockedOn");
+
+	Params::CrMiningLockingComponent_IsWeakSpotLockedOn Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function Chimera.CrModularPlaceCustom.SpawnOnStart
 // (Final, Native, Public)
 // Parameters:
@@ -32831,90 +34371,15 @@ void UCrModularPlaceCustom::SpawnOnStart(const class UAuActorPlacementData* InPl
 }
 
 
-// Function Chimera.CrMovementSpeedMultiplierAttributeSet.OnRep_CurrentMovementSpeedMultiplier
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldCurrentMovementSpeedMultiplier                      (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrMovementSpeedMultiplierAttributeSet::OnRep_CurrentMovementSpeedMultiplier(const struct FGameplayAttributeData& OldCurrentMovementSpeedMultiplier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrMovementSpeedMultiplierAttributeSet", "OnRep_CurrentMovementSpeedMultiplier");
-
-	Params::CrMovementSpeedMultiplierAttributeSet_OnRep_CurrentMovementSpeedMultiplier Parms{};
-
-	Parms.OldCurrentMovementSpeedMultiplier = std::move(OldCurrentMovementSpeedMultiplier);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrMovementSpeedMultiplierAttributeSet.OnRep_MaxMovementSpeedMultiplier
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldMaxMovementSpeedMultiplier                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrMovementSpeedMultiplierAttributeSet::OnRep_MaxMovementSpeedMultiplier(const struct FGameplayAttributeData& OldMaxMovementSpeedMultiplier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrMovementSpeedMultiplierAttributeSet", "OnRep_MaxMovementSpeedMultiplier");
-
-	Params::CrMovementSpeedMultiplierAttributeSet_OnRep_MaxMovementSpeedMultiplier Parms{};
-
-	Parms.OldMaxMovementSpeedMultiplier = std::move(OldMaxMovementSpeedMultiplier);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrMovementSpeedMultiplierAttributeSet.OnRep_MinMovementSpeedMultiplier
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldMinMovementSpeedMultiplier                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrMovementSpeedMultiplierAttributeSet::OnRep_MinMovementSpeedMultiplier(const struct FGameplayAttributeData& OldMinMovementSpeedMultiplier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrMovementSpeedMultiplierAttributeSet", "OnRep_MinMovementSpeedMultiplier");
-
-	Params::CrMovementSpeedMultiplierAttributeSet_OnRep_MinMovementSpeedMultiplier Parms{};
-
-	Parms.OldMinMovementSpeedMultiplier = std::move(OldMinMovementSpeedMultiplier);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrMultisampleMultiSensor.DecreaseOverlapNum
+// Function Chimera.CrMultisample.DestroyWithFade
 // (Final, Native, Public, BlueprintCallable)
 
-void UCrMultisampleMultiSensor::DecreaseOverlapNum()
+void ACrMultisample::DestroyWithFade()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrMultisampleMultiSensor", "DecreaseOverlapNum");
+		Func = Class->GetFunction("CrMultisample", "DestroyWithFade");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -32925,15 +34390,15 @@ void UCrMultisampleMultiSensor::DecreaseOverlapNum()
 }
 
 
-// Function Chimera.CrMultisampleMultiSensor.IncreaseOverlapNum
+// Function Chimera.CrMultisample.PauseAll
 // (Final, Native, Public, BlueprintCallable)
 
-void UCrMultisampleMultiSensor::IncreaseOverlapNum()
+void ACrMultisample::PauseAll()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrMultisampleMultiSensor", "IncreaseOverlapNum");
+		Func = Class->GetFunction("CrMultisample", "PauseAll");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -32944,28 +34409,22 @@ void UCrMultisampleMultiSensor::IncreaseOverlapNum()
 }
 
 
-// Function Chimera.CrMultisampleMultiSensor.IsInAnySensor
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Chimera.CrMultisample.ResumeAll
+// (Final, Native, Public, BlueprintCallable)
 
-bool UCrMultisampleMultiSensor::IsInAnySensor() const
+void ACrMultisample::ResumeAll()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrMultisampleMultiSensor", "IsInAnySensor");
-
-	Params::CrMultisampleMultiSensor_IsInAnySensor Parms{};
+		Func = Class->GetFunction("CrMultisample", "ResumeAll");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -33321,6 +34780,25 @@ bool ACrOrePCGMarkerBase::IsGameWorld() const
 }
 
 
+// Function Chimera.CrSimpleSplineActor.UpdateSpline
+// (Final, Native, Protected, BlueprintCallable)
+
+void ACrSimpleSplineActor::UpdateSpline()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSimpleSplineActor", "UpdateSpline");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Chimera.CrOreMassSpawner.OreFinishedSpawning
 // (Final, Native, Private)
 
@@ -33416,6 +34894,81 @@ void UCrOreSubsystem::OnEnviroWaveStarted(EEnviroWave InWaveType, EEnviroWaveSta
 	Parms.InWaveStage = InWaveStage;
 	Parms.InWaveSettings = std::move(InWaveSettings);
 	Parms.InWaveProgress = InWaveProgress;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrRadiationAttributeSet.OnRep_CurrentRadiation
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldCurrentRadiation                                    (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrRadiationAttributeSet::OnRep_CurrentRadiation(const struct FGameplayAttributeData& OldCurrentRadiation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrRadiationAttributeSet", "OnRep_CurrentRadiation");
+
+	Params::CrRadiationAttributeSet_OnRep_CurrentRadiation Parms{};
+
+	Parms.OldCurrentRadiation = std::move(OldCurrentRadiation);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrRadiationAttributeSet.OnRep_MaxRadiation
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldMaxRadiation                                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrRadiationAttributeSet::OnRep_MaxRadiation(const struct FGameplayAttributeData& OldMaxRadiation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrRadiationAttributeSet", "OnRep_MaxRadiation");
+
+	Params::CrRadiationAttributeSet_OnRep_MaxRadiation Parms{};
+
+	Parms.OldMaxRadiation = std::move(OldMaxRadiation);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrRadiationAttributeSet.OnRep_MinRadiation
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FGameplayAttributeData&    OldMinRadiation                                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrRadiationAttributeSet::OnRep_MinRadiation(const struct FGameplayAttributeData& OldMinRadiation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrRadiationAttributeSet", "OnRep_MinRadiation");
+
+	Params::CrRadiationAttributeSet_OnRep_MinRadiation Parms{};
+
+	Parms.OldMinRadiation = std::move(OldMinRadiation);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -33557,143 +35110,6 @@ void UCrOxygenAttributeSet::OnRep_MinOxygen(const struct FGameplayAttributeData&
 	Params::CrOxygenAttributeSet_OnRep_MinOxygen Parms{};
 
 	Parms.OldMinOxygen = std::move(OldMinOxygen);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrRadiationBordersReplActor.MulticastRadiationLevelChanged
-// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
-// Parameters:
-// int32                                   CurrentRadiationLevel                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   NewRadiationLevel                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    Immediately                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrRadiationBordersReplActor::MulticastRadiationLevelChanged(int32 CurrentRadiationLevel, int32 NewRadiationLevel, bool Immediately)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrRadiationBordersReplActor", "MulticastRadiationLevelChanged");
-
-	Params::CrRadiationBordersReplActor_MulticastRadiationLevelChanged Parms{};
-
-	Parms.CurrentRadiationLevel = CurrentRadiationLevel;
-	Parms.NewRadiationLevel = NewRadiationLevel;
-	Parms.Immediately = Immediately;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrPC_MainMenu.ClientJoinSessionAutomatized
-// (Final, Exec, Native, Public)
-// Parameters:
-// const class FString&                    SessionId                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIsDedicated                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    RestURL                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrPC_MainMenu::ClientJoinSessionAutomatized(const class FString& SessionId, bool bIsDedicated, const class FString& RestURL)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrPC_MainMenu", "ClientJoinSessionAutomatized");
-
-	Params::CrPC_MainMenu_ClientJoinSessionAutomatized Parms{};
-
-	Parms.SessionId = std::move(SessionId);
-	Parms.bIsDedicated = bIsDedicated;
-	Parms.RestURL = std::move(RestURL);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrPC_MainMenu.ServerCreateSessionAutomatized
-// (Final, Exec, Native, Public)
-// Parameters:
-// const class FString&                    SessionId                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIsDedicated                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    RestURL                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrPC_MainMenu::ServerCreateSessionAutomatized(const class FString& SessionId, bool bIsDedicated, const class FString& RestURL)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrPC_MainMenu", "ServerCreateSessionAutomatized");
-
-	Params::CrPC_MainMenu_ServerCreateSessionAutomatized Parms{};
-
-	Parms.SessionId = std::move(SessionId);
-	Parms.bIsDedicated = bIsDedicated;
-	Parms.RestURL = std::move(RestURL);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrPC_MainMenu.SetHostAutomationServerURL
-// (Final, Exec, Native, Public)
-// Parameters:
-// const class FString&                    NewHostURL                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrPC_MainMenu::SetHostAutomationServerURL(const class FString& NewHostURL)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrPC_MainMenu", "SetHostAutomationServerURL");
-
-	Params::CrPC_MainMenu_SetHostAutomationServerURL Parms{};
-
-	Parms.NewHostURL = std::move(NewHostURL);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrPC_MainMenu.SetOwningAutomationServerURL
-// (Final, Exec, Native, Public)
-// Parameters:
-// const class FString&                    NewOwningURL                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrPC_MainMenu::SetOwningAutomationServerURL(const class FString& NewOwningURL)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrPC_MainMenu", "SetOwningAutomationServerURL");
-
-	Params::CrPC_MainMenu_SetOwningAutomationServerURL Parms{};
-
-	Parms.NewOwningURL = std::move(NewOwningURL);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -33875,106 +35291,25 @@ void UCrPackageTransportSubsystem::OnSenderStateChanged(const struct FMassEntity
 }
 
 
-// Function Chimera.CrPCGActorBase.BP_OnPostSeedChanged
-// (Event, Protected, BlueprintEvent)
-
-void ACrPCGActorBase::BP_OnPostSeedChanged()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrPCGActorBase", "BP_OnPostSeedChanged");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Chimera.CrPCGActorBase.BP_OnPreSeedChanged
-// (Event, Protected, BlueprintEvent)
-
-void ACrPCGActorBase::BP_OnPreSeedChanged()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrPCGActorBase", "BP_OnPreSeedChanged");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Chimera.CrPCGActorBase.DelayPostBecameSignificantGeneration
-// (Final, Native, Protected, BlueprintCallable)
-
-void ACrPCGActorBase::DelayPostBecameSignificantGeneration()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrPCGActorBase", "DelayPostBecameSignificantGeneration");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrPCGActorBase.OnCellSpawnedCheckTimerElapsed
-// (Final, Native, Private)
-
-void ACrPCGActorBase::OnCellSpawnedCheckTimerElapsed()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrPCGActorBase", "OnCellSpawnedCheckTimerElapsed");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrPCGActorBase.TriggerGeneration
-// (Final, Native, Private)
-
-void ACrPCGActorBase::TriggerGeneration()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrPCGActorBase", "TriggerGeneration");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrRadiationAttributeSet.OnRep_CurrentRadiation
-// (Native, Protected, HasOutParams)
+// Function Chimera.CrPC_MainMenu.ClientJoinSessionAutomatized
+// (Final, Exec, Native, Public)
 // Parameters:
-// const struct FGameplayAttributeData&    OldCurrentRadiation                                    (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FString&                    SessionId                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIsDedicated                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    RestURL                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrRadiationAttributeSet::OnRep_CurrentRadiation(const struct FGameplayAttributeData& OldCurrentRadiation)
+void ACrPC_MainMenu::ClientJoinSessionAutomatized(const class FString& SessionId, bool bIsDedicated, const class FString& RestURL)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrRadiationAttributeSet", "OnRep_CurrentRadiation");
+		Func = Class->GetFunction("CrPC_MainMenu", "ClientJoinSessionAutomatized");
 
-	Params::CrRadiationAttributeSet_OnRep_CurrentRadiation Parms{};
+	Params::CrPC_MainMenu_ClientJoinSessionAutomatized Parms{};
 
-	Parms.OldCurrentRadiation = std::move(OldCurrentRadiation);
+	Parms.SessionId = std::move(SessionId);
+	Parms.bIsDedicated = bIsDedicated;
+	Parms.RestURL = std::move(RestURL);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -33985,21 +35320,25 @@ void UCrRadiationAttributeSet::OnRep_CurrentRadiation(const struct FGameplayAttr
 }
 
 
-// Function Chimera.CrRadiationAttributeSet.OnRep_MaxRadiation
-// (Native, Protected, HasOutParams)
+// Function Chimera.CrPC_MainMenu.ServerCreateSessionAutomatized
+// (Final, Exec, Native, Public)
 // Parameters:
-// const struct FGameplayAttributeData&    OldMaxRadiation                                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FString&                    SessionId                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIsDedicated                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    RestURL                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrRadiationAttributeSet::OnRep_MaxRadiation(const struct FGameplayAttributeData& OldMaxRadiation)
+void ACrPC_MainMenu::ServerCreateSessionAutomatized(const class FString& SessionId, bool bIsDedicated, const class FString& RestURL)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrRadiationAttributeSet", "OnRep_MaxRadiation");
+		Func = Class->GetFunction("CrPC_MainMenu", "ServerCreateSessionAutomatized");
 
-	Params::CrRadiationAttributeSet_OnRep_MaxRadiation Parms{};
+	Params::CrPC_MainMenu_ServerCreateSessionAutomatized Parms{};
 
-	Parms.OldMaxRadiation = std::move(OldMaxRadiation);
+	Parms.SessionId = std::move(SessionId);
+	Parms.bIsDedicated = bIsDedicated;
+	Parms.RestURL = std::move(RestURL);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -34010,21 +35349,21 @@ void UCrRadiationAttributeSet::OnRep_MaxRadiation(const struct FGameplayAttribut
 }
 
 
-// Function Chimera.CrRadiationAttributeSet.OnRep_MinRadiation
-// (Native, Protected, HasOutParams)
+// Function Chimera.CrPC_MainMenu.SetHostAutomationServerURL
+// (Final, Exec, Native, Public)
 // Parameters:
-// const struct FGameplayAttributeData&    OldMinRadiation                                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FString&                    NewHostURL                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrRadiationAttributeSet::OnRep_MinRadiation(const struct FGameplayAttributeData& OldMinRadiation)
+void ACrPC_MainMenu::SetHostAutomationServerURL(const class FString& NewHostURL)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrRadiationAttributeSet", "OnRep_MinRadiation");
+		Func = Class->GetFunction("CrPC_MainMenu", "SetHostAutomationServerURL");
 
-	Params::CrRadiationAttributeSet_OnRep_MinRadiation Parms{};
+	Params::CrPC_MainMenu_SetHostAutomationServerURL Parms{};
 
-	Parms.OldMinRadiation = std::move(OldMinRadiation);
+	Parms.NewHostURL = std::move(NewHostURL);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -34035,29 +35374,49 @@ void UCrRadiationAttributeSet::OnRep_MinRadiation(const struct FGameplayAttribut
 }
 
 
-// Function Chimera.CrRadiationBillboard.ValidateForStaticSwitch
-// (Final, Native, Static, Public, BlueprintCallable)
+// Function Chimera.CrPC_MainMenu.SetOwningAutomationServerURL
+// (Final, Exec, Native, Public)
 // Parameters:
-// class UMaterialInstance*                Instance                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             ParameterName                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    NewOwningURL                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ACrRadiationBillboard::ValidateForStaticSwitch(class UMaterialInstance* Instance, class FName ParameterName)
+void ACrPC_MainMenu::SetOwningAutomationServerURL(const class FString& NewOwningURL)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrRadiationBillboard", "ValidateForStaticSwitch");
+		Func = Class->GetFunction("CrPC_MainMenu", "SetOwningAutomationServerURL");
 
-	Params::CrRadiationBillboard_ValidateForStaticSwitch Parms{};
+	Params::CrPC_MainMenu_SetOwningAutomationServerURL Parms{};
 
-	Parms.Instance = Instance;
-	Parms.ParameterName = ParameterName;
+	Parms.NewOwningURL = std::move(NewOwningURL);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrPlayerCharacterAnimInstance.GetCharacterSpeed
+// (Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UCrPlayerCharacterAnimInstance::GetCharacterSpeed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrPlayerCharacterAnimInstance", "GetCharacterSpeed");
+
+	Params::CrPlayerCharacterAnimInstance_GetCharacterSpeed Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -34065,23 +35424,50 @@ bool ACrRadiationBillboard::ValidateForStaticSwitch(class UMaterialInstance* Ins
 }
 
 
-// Function Chimera.CrRadiationBillboard.SetupPrimitiveData
-// (Final, Native, Public, BlueprintCallable)
+// Function Chimera.CrPlayerCharacterAnimInstance.GetCharacterVelocity
+// (Native, Public, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UMeshComponent*                   Mesh                                                   (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FRadiationBillboardPrimitiveData&Data                                                   (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ACrRadiationBillboard::SetupPrimitiveData(class UMeshComponent* Mesh, const struct FRadiationBillboardPrimitiveData& Data)
+struct FVector UCrPlayerCharacterAnimInstance::GetCharacterVelocity()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrRadiationBillboard", "SetupPrimitiveData");
+		Func = Class->GetFunction("CrPlayerCharacterAnimInstance", "GetCharacterVelocity");
 
-	Params::CrRadiationBillboard_SetupPrimitiveData Parms{};
+	Params::CrPlayerCharacterAnimInstance_GetCharacterVelocity Parms{};
 
-	Parms.Mesh = Mesh;
-	Parms.Data = std::move(Data);
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrRadiationBordersReplActor.MulticastRadiationLevelChanged
+// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
+// Parameters:
+// int32                                   CurrentRadiationLevel                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   NewRadiationLevel                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    Immediately                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrRadiationBordersReplActor::MulticastRadiationLevelChanged(int32 CurrentRadiationLevel, int32 NewRadiationLevel, bool Immediately)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrRadiationBordersReplActor", "MulticastRadiationLevelChanged");
+
+	Params::CrRadiationBordersReplActor_MulticastRadiationLevelChanged Parms{};
+
+	Parms.CurrentRadiationLevel = CurrentRadiationLevel;
+	Parms.NewRadiationLevel = NewRadiationLevel;
+	Parms.Immediately = Immediately;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -34092,25 +35478,25 @@ void ACrRadiationBillboard::SetupPrimitiveData(class UMeshComponent* Mesh, const
 }
 
 
-// Function Chimera.CrRadiationBillboard.ValidateSetup
-// (Final, Native, Public, BlueprintCallable)
+// Function Chimera.CrRadiationBorderVisualSubsystem.OnRadiationLevelSet
+// (Final, Native, Public)
 // Parameters:
-// class UMaterialInterface*               ParentMaterial                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UMaterialInstance*                Instance                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             StaticSwitchName                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   CurrentRadiationLevel                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   NewRadiationLevel                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    Immediately                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ACrRadiationBillboard::ValidateSetup(class UMaterialInterface* ParentMaterial, class UMaterialInstance* Instance, class FName StaticSwitchName)
+void UCrRadiationBorderVisualSubsystem::OnRadiationLevelSet(int32 CurrentRadiationLevel, int32 NewRadiationLevel, bool Immediately)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrRadiationBillboard", "ValidateSetup");
+		Func = Class->GetFunction("CrRadiationBorderVisualSubsystem", "OnRadiationLevelSet");
 
-	Params::CrRadiationBillboard_ValidateSetup Parms{};
+	Params::CrRadiationBorderVisualSubsystem_OnRadiationLevelSet Parms{};
 
-	Parms.ParentMaterial = ParentMaterial;
-	Parms.Instance = Instance;
-	Parms.StaticSwitchName = StaticSwitchName;
+	Parms.CurrentRadiationLevel = CurrentRadiationLevel;
+	Parms.NewRadiationLevel = NewRadiationLevel;
+	Parms.Immediately = Immediately;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -34118,6 +35504,34 @@ void ACrRadiationBillboard::ValidateSetup(class UMaterialInterface* ParentMateri
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrRadiationBorderVisualSubsystem.GetDefaultRadiationBordersSettings
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UObject*                          Context                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UCrRadiationBordersSystemSettings*ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+const class UCrRadiationBordersSystemSettings* UCrRadiationBorderVisualSubsystem::GetDefaultRadiationBordersSettings(class UObject* Context) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrRadiationBorderVisualSubsystem", "GetDefaultRadiationBordersSettings");
+
+	Params::CrRadiationBorderVisualSubsystem_GetDefaultRadiationBordersSettings Parms{};
+
+	Parms.Context = Context;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -34146,90 +35560,15 @@ float UCrRecoilComponent::BP_GetRealCurrentSpread() const
 }
 
 
-// Function Chimera.CrShieldAttributeSet.OnRep_CurrentShield
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldCurrentShield                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// Function Chimera.CrSaveSubsystem.CloseSessionConfirmationWidget
+// (Final, Native, Public, BlueprintCallable)
 
-void UCrShieldAttributeSet::OnRep_CurrentShield(const struct FGameplayAttributeData& OldCurrentShield)
+void UCrSaveSubsystem::CloseSessionConfirmationWidget()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrShieldAttributeSet", "OnRep_CurrentShield");
-
-	Params::CrShieldAttributeSet_OnRep_CurrentShield Parms{};
-
-	Parms.OldCurrentShield = std::move(OldCurrentShield);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrShieldAttributeSet.OnRep_MaxShield
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldMaxShield                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrShieldAttributeSet::OnRep_MaxShield(const struct FGameplayAttributeData& OldMaxShield)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrShieldAttributeSet", "OnRep_MaxShield");
-
-	Params::CrShieldAttributeSet_OnRep_MaxShield Parms{};
-
-	Parms.OldMaxShield = std::move(OldMaxShield);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrShieldAttributeSet.OnRep_MinShield
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldMinShield                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrShieldAttributeSet::OnRep_MinShield(const struct FGameplayAttributeData& OldMinShield)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrShieldAttributeSet", "OnRep_MinShield");
-
-	Params::CrShieldAttributeSet_OnRep_MinShield Parms{};
-
-	Parms.OldMinShield = std::move(OldMinShield);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSimpleSplineActor.UpdateSpline
-// (Final, Native, Protected, BlueprintCallable)
-
-void ACrSimpleSplineActor::UpdateSpline()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSimpleSplineActor", "UpdateSpline");
+		Func = Class->GetFunction("CrSaveSubsystem", "CloseSessionConfirmationWidget");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -34240,21 +35579,67 @@ void ACrSimpleSplineActor::UpdateSpline()
 }
 
 
-// Function Chimera.CrSplineBasedBuildingActorsVisualsSpawnerWorldSubsystem.RegisterSplineBasedBuildingActor
+// Function Chimera.CrSaveSubsystem.DoesAnySaveExist
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class ACrBuildingSplineActorBase*       BuildingSplineActorBase                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrSplineBasedBuildingActorsVisualsSpawnerWorldSubsystem::RegisterSplineBasedBuildingActor(class ACrBuildingSplineActorBase* BuildingSplineActorBase)
+bool UCrSaveSubsystem::DoesAnySaveExist()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrSplineBasedBuildingActorsVisualsSpawnerWorldSubsystem", "RegisterSplineBasedBuildingActor");
+		Func = Class->GetFunction("CrSaveSubsystem", "DoesAnySaveExist");
 
-	Params::CrSplineBasedBuildingActorsVisualsSpawnerWorldSubsystem_RegisterSplineBasedBuildingActor Parms{};
+	Params::CrSaveSubsystem_DoesAnySaveExist Parms{};
 
-	Parms.BuildingSplineActorBase = BuildingSplineActorBase;
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSaveSubsystem.ExecuteSave
+// (Final, Native, Public, BlueprintCallable)
+
+void UCrSaveSubsystem::ExecuteSave()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSaveSubsystem", "ExecuteSave");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSaveSubsystem.LoadGame
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInCoopGame                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSaveSubsystem::LoadGame(const class FString& Name_0, bool bInCoopGame)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSaveSubsystem", "LoadGame");
+
+	Params::CrSaveSubsystem_LoadGame Parms{};
+
+	Parms.Name_0 = std::move(Name_0);
+	Parms.bInCoopGame = bInCoopGame;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -34265,21 +35650,157 @@ void UCrSplineBasedBuildingActorsVisualsSpawnerWorldSubsystem::RegisterSplineBas
 }
 
 
-// Function Chimera.CrSplineBasedBuildingActorsVisualsSpawnerWorldSubsystem.UnRegisterSplineBasedBuildingActor
+// Function Chimera.CrSaveSubsystem.RequestSaveGameToServer
 // (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class ACrBuildingSplineActorBase*       BuildingSplineActorBase                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrSplineBasedBuildingActorsVisualsSpawnerWorldSubsystem::UnRegisterSplineBasedBuildingActor(class ACrBuildingSplineActorBase* BuildingSplineActorBase)
+void UCrSaveSubsystem::RequestSaveGameToServer()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrSplineBasedBuildingActorsVisualsSpawnerWorldSubsystem", "UnRegisterSplineBasedBuildingActor");
+		Func = Class->GetFunction("CrSaveSubsystem", "RequestSaveGameToServer");
 
-	Params::CrSplineBasedBuildingActorsVisualsSpawnerWorldSubsystem_UnRegisterSplineBasedBuildingActor Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
-	Parms.BuildingSplineActorBase = BuildingSplineActorBase;
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSaveSubsystem.SaveGame
+// (Final, Native, Public, BlueprintCallable)
+
+void UCrSaveSubsystem::SaveGame()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSaveSubsystem", "SaveGame");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSaveSubsystem.ShowSessionConfirmationWidget
+// (Final, Native, Public, BlueprintCallable)
+
+void UCrSaveSubsystem::ShowSessionConfirmationWidget()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSaveSubsystem", "ShowSessionConfirmationWidget");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSaveSubsystem.GetCurrentSessionCount
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UCrSaveSubsystem::GetCurrentSessionCount() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSaveSubsystem", "GetCurrentSessionCount");
+
+	Params::CrSaveSubsystem_GetCurrentSessionCount Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSaveSubsystem.GetMaxSessionCount
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UCrSaveSubsystem::GetMaxSessionCount() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSaveSubsystem", "GetMaxSessionCount");
+
+	Params::CrSaveSubsystem_GetMaxSessionCount Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSessionSubsystem.ClientCreateSearchRequest
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UCommonSession_SearchSessionRequest*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCommonSession_SearchSessionRequest* UCrSessionSubsystem::ClientCreateSearchRequest()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSessionSubsystem", "ClientCreateSearchRequest");
+
+	Params::CrSessionSubsystem_ClientCreateSearchRequest Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSessionSubsystem.ClientFindSessions
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UCommonSession_SearchSessionRequest*Request                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InIPAddress                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InPort                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSessionSubsystem::ClientFindSessions(class UCommonSession_SearchSessionRequest* Request, const class FString& InIPAddress, const class FString& InPort)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSessionSubsystem", "ClientFindSessions");
+
+	Params::CrSessionSubsystem_ClientFindSessions Parms{};
+
+	Parms.Request = Request;
+	Parms.InIPAddress = std::move(InIPAddress);
+	Parms.InPort = std::move(InPort);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -34290,141 +35811,392 @@ void UCrSplineBasedBuildingActorsVisualsSpawnerWorldSubsystem::UnRegisterSplineB
 }
 
 
-// Function Chimera.CrStandaloneInfectionActor.BP_OnDamageProtectionChanged
-// (Event, Protected, BlueprintCallable, BlueprintEvent)
+// Function Chimera.CrSessionSubsystem.ClientJoinSession
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    IsActive                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCommonSession_SearchResult*      SearchResult                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ACrStandaloneInfectionActor::BP_OnDamageProtectionChanged(bool IsActive)
+void UCrSessionSubsystem::ClientJoinSession(class UCommonSession_SearchResult* SearchResult)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrStandaloneInfectionActor", "BP_OnDamageProtectionChanged");
+		Func = Class->GetFunction("CrSessionSubsystem", "ClientJoinSession");
 
-	Params::CrStandaloneInfectionActor_BP_OnDamageProtectionChanged Parms{};
+	Params::CrSessionSubsystem_ClientJoinSession Parms{};
 
-	Parms.IsActive = IsActive;
+	Parms.SearchResult = SearchResult;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
-// Function Chimera.CrStandaloneInfectionActor.BP_OnDestroyed
+// Function Chimera.CrSessionSubsystem.ClientTryToLogin
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCrSessionSubsystem::ClientTryToLogin()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSessionSubsystem", "ClientTryToLogin");
+
+	Params::CrSessionSubsystem_ClientTryToLogin Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSessionSubsystem.HandleNetworkFailure
+// (Final, Native, Protected)
+// Parameters:
+// class UWorld*                           InWorld                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UNetDriver*                       NetDriver                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ENetworkFailure                         FailureType                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ErrorString                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSessionSubsystem::HandleNetworkFailure(class UWorld* InWorld, class UNetDriver* NetDriver, ENetworkFailure FailureType, const class FString& ErrorString)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSessionSubsystem", "HandleNetworkFailure");
+
+	Params::CrSessionSubsystem_HandleNetworkFailure Parms{};
+
+	Parms.InWorld = InWorld;
+	Parms.NetDriver = NetDriver;
+	Parms.FailureType = FailureType;
+	Parms.ErrorString = std::move(ErrorString);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSessionSubsystem.HandleTravelFailure
+// (Final, Native, Protected)
+// Parameters:
+// class UWorld*                           World                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ETravelFailure                          FailureType                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ErrorString                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSessionSubsystem::HandleTravelFailure(class UWorld* World, ETravelFailure FailureType, const class FString& ErrorString)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSessionSubsystem", "HandleTravelFailure");
+
+	Params::CrSessionSubsystem_HandleTravelFailure Parms{};
+
+	Parms.World = World;
+	Parms.FailureType = FailureType;
+	Parms.ErrorString = std::move(ErrorString);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSessionSubsystem.OnlineSetUsingDedicatedSessions
+// (Final, Exec, Native, Protected)
+
+void UCrSessionSubsystem::OnlineSetUsingDedicatedSessions()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSessionSubsystem", "OnlineSetUsingDedicatedSessions");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSessionSubsystem.OnlineSetUsingP2PLobbies
+// (Final, Exec, Native, Protected)
+
+void UCrSessionSubsystem::OnlineSetUsingP2PLobbies()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSessionSubsystem", "OnlineSetUsingP2PLobbies");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSessionSubsystem.OnUserInitialized
+// (Final, Native, Protected)
+// Parameters:
+// const class UCommonUserInfo*            UserInfo                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bSuccess                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FText&                      Error                                                  (Parm, NativeAccessSpecifierPublic)
+// ECommonUserPrivilege                    RequestedPrivilege                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECommonUserOnlineContext                OnlineContext                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSessionSubsystem::OnUserInitialized(const class UCommonUserInfo* UserInfo, bool bSuccess, const class FText& Error, ECommonUserPrivilege RequestedPrivilege, ECommonUserOnlineContext OnlineContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSessionSubsystem", "OnUserInitialized");
+
+	Params::CrSessionSubsystem_OnUserInitialized Parms{};
+
+	Parms.UserInfo = UserInfo;
+	Parms.bSuccess = bSuccess;
+	Parms.Error = std::move(Error);
+	Parms.RequestedPrivilege = RequestedPrivilege;
+	Parms.OnlineContext = OnlineContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSessionSubsystem.ServerCreateSession
+// (Final, Native, Public, BlueprintCallable)
+
+void UCrSessionSubsystem::ServerCreateSession()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSessionSubsystem", "ServerCreateSession");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSessionSubsystem.SetCommonSessionOnlineMode
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// ECommonSessionOnlineMode                Mode                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSessionSubsystem::SetCommonSessionOnlineMode(ECommonSessionOnlineMode Mode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSessionSubsystem", "SetCommonSessionOnlineMode");
+
+	Params::CrSessionSubsystem_SetCommonSessionOnlineMode Parms{};
+
+	Parms.Mode = Mode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSessionSubsystem.SetOnlineConnectionMode
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// ECrOnlineConnectionMode                 Mode                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSessionSubsystem::SetOnlineConnectionMode(ECrOnlineConnectionMode Mode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSessionSubsystem", "SetOnlineConnectionMode");
+
+	Params::CrSessionSubsystem_SetOnlineConnectionMode Parms{};
+
+	Parms.Mode = Mode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSessionSubsystem.SetOnlineMode
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// ECrOnlineSessionMode                    InMode                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrSessionSubsystem::SetOnlineMode(ECrOnlineSessionMode InMode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSessionSubsystem", "SetOnlineMode");
+
+	Params::CrSessionSubsystem_SetOnlineMode Parms{};
+
+	Parms.InMode = InMode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrSessionSubsystem.GetDefaultExperience
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const class UCrExperienceDefinition*    ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+const class UCrExperienceDefinition* UCrSessionSubsystem::GetDefaultExperience() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSessionSubsystem", "GetDefaultExperience");
+
+	Params::CrSessionSubsystem_GetDefaultExperience Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSessionSubsystem.GetDefaultMapPath
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UCrSessionSubsystem::GetDefaultMapPath() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSessionSubsystem", "GetDefaultMapPath");
+
+	Params::CrSessionSubsystem_GetDefaultMapPath Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSessionSubsystem.GetIsLoggedIn
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCrSessionSubsystem::GetIsLoggedIn() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrSessionSubsystem", "GetIsLoggedIn");
+
+	Params::CrSessionSubsystem_GetIsLoggedIn Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrSpawnPointBuilding.OnBuildingOwnershipChanged
 // (Event, Public, BlueprintEvent)
-
-void ACrStandaloneInfectionActor::BP_OnDestroyed()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrStandaloneInfectionActor", "BP_OnDestroyed");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Chimera.CrStandaloneInfectionActor.BP_OnInfectionJustSpawned
-// (Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void ACrStandaloneInfectionActor::BP_OnInfectionJustSpawned()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrStandaloneInfectionActor", "BP_OnInfectionJustSpawned");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Chimera.CrStandaloneInfectionActor.OnDamageProtectionChanged
-// (Final, Native, Public)
 // Parameters:
-// const struct FMassEntityHandle&         Entity                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             Signal                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrBuildingOwnership                    NewOwnership                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ACrStandaloneInfectionActor::OnDamageProtectionChanged(const struct FMassEntityHandle& Entity, class FName Signal)
+void ACrSpawnPointBuilding::OnBuildingOwnershipChanged(ECrBuildingOwnership NewOwnership)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrStandaloneInfectionActor", "OnDamageProtectionChanged");
+		Func = Class->GetFunction("CrSpawnPointBuilding", "OnBuildingOwnershipChanged");
 
-	Params::CrStandaloneInfectionActor_OnDamageProtectionChanged Parms{};
+	Params::CrSpawnPointBuilding_OnBuildingOwnershipChanged Parms{};
 
-	Parms.Entity = std::move(Entity);
-	Parms.Signal = Signal;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrStandaloneInfectionActor.OnDestroyed
-// (Final, Native, Public)
-// Parameters:
-// const struct FMassEntityHandle&         Entity                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             Signal                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrStandaloneInfectionActor::OnDestroyed(const struct FMassEntityHandle& Entity, class FName Signal)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrStandaloneInfectionActor", "OnDestroyed");
-
-	Params::CrStandaloneInfectionActor_OnDestroyed Parms{};
-
-	Parms.Entity = std::move(Entity);
-	Parms.Signal = Signal;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrStandaloneInfectionActor.OnGrowthProgress
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   Progress                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrStandaloneInfectionActor::OnGrowthProgress(float Progress)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrStandaloneInfectionActor", "OnGrowthProgress");
-
-	Params::CrStandaloneInfectionActor_OnGrowthProgress Parms{};
-
-	Parms.Progress = Progress;
+	Parms.NewOwnership = NewOwnership;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function Chimera.CrStandaloneInfectionActor.GetDamageProtectionActive
-// (Final, Native, Protected, BlueprintCallable, BlueprintPure, Const)
+// Function Chimera.CrSpawnPointBuilding.GetInteractionAdditionalTextFromOwnership
+// (Native, Event, Public, BlueprintEvent, Const)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrBuildingOwnership                    InOwnership                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-bool ACrStandaloneInfectionActor::GetDamageProtectionActive() const
+class FText ACrSpawnPointBuilding::GetInteractionAdditionalTextFromOwnership(ECrBuildingOwnership InOwnership) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrStandaloneInfectionActor", "GetDamageProtectionActive");
+		Func = Class->GetFunction("CrSpawnPointBuilding", "GetInteractionAdditionalTextFromOwnership");
 
-	Params::CrStandaloneInfectionActor_GetDamageProtectionActive Parms{};
+	Params::CrSpawnPointBuilding_GetInteractionAdditionalTextFromOwnership Parms{};
+
+	Parms.InOwnership = InOwnership;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -34437,40 +36209,15 @@ bool ACrStandaloneInfectionActor::GetDamageProtectionActive() const
 }
 
 
-// Function Chimera.CrStandaloneInfectionActor.GetWasDestroyed
-// (Final, Native, Protected, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ACrStandaloneInfectionActor::GetWasDestroyed() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrStandaloneInfectionActor", "GetWasDestroyed");
-
-	Params::CrStandaloneInfectionActor_GetWasDestroyed Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrStorageBox.OnRep_StoredItems
+// Function Chimera.CrStartScreenWidget.OnAnimationEnd
 // (Final, Native, Private)
 
-void ACrStorageBox::OnRep_StoredItems()
+void UCrStartScreenWidget::OnAnimationEnd()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrStorageBox", "OnRep_StoredItems");
+		Func = Class->GetFunction("CrStartScreenWidget", "OnAnimationEnd");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -34481,28 +36228,20 @@ void ACrStorageBox::OnRep_StoredItems()
 }
 
 
-// Function Chimera.CrStorageBox.ServerRemoveItem
-// (Final, Net, NetReliable, Native, Event, Private, NetServer)
-// Parameters:
-// const struct FAuItemId&                 InItemId                                               (ConstParm, Parm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Chimera.CrStartScreenWidget.OnButtonClicked
+// (Final, Native, Private)
 
-void ACrStorageBox::ServerRemoveItem(const struct FAuItemId& InItemId, int32 Count)
+void UCrStartScreenWidget::OnButtonClicked()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrStorageBox", "ServerRemoveItem");
-
-	Params::CrStorageBox_ServerRemoveItem Parms{};
-
-	Parms.InItemId = std::move(InItemId);
-	Parms.Count = Count;
+		Func = Class->GetFunction("CrStartScreenWidget", "OnButtonClicked");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -34720,15 +36459,171 @@ void ACrTeleporter::OnTeleporterUsed(bool bLocalPlayer)
 }
 
 
-// Function Chimera.CrTeleportReplicator.OnRep_Teleporters
+// Function Chimera.CrUW_BuildingSelection.OnBuildingNameChanged
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FText&                      InName                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrUW_BuildingSelection::OnBuildingNameChanged(const class FText& InName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_BuildingSelection", "OnBuildingNameChanged");
+
+	Params::CrUW_BuildingSelection_OnBuildingNameChanged Parms{};
+
+	Parms.InName = std::move(InName);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Chimera.CrUW_BuildingSelection.OnTypeChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// ECrBuildingType                         InType                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_BuildingSelection::OnTypeChanged(ECrBuildingType InType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_BuildingSelection", "OnTypeChanged");
+
+	Params::CrUW_BuildingSelection_OnTypeChanged Parms{};
+
+	Parms.InType = InType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Chimera.CrWaveTimerActor.MulticastOnEnviroWaveFinished
+// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
+// Parameters:
+// EEnviroWave                             WaveType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void ACrWaveTimerActor::MulticastOnEnviroWaveFinished(EEnviroWave WaveType, const struct FCrEnviroWaveSettings& WaveSettings)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWaveTimerActor", "MulticastOnEnviroWaveFinished");
+
+	Params::CrWaveTimerActor_MulticastOnEnviroWaveFinished Parms{};
+
+	Parms.WaveType = WaveType;
+	Parms.WaveSettings = std::move(WaveSettings);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrWaveTimerActor.MulticastOnEnviroWaveStarted
+// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
+// Parameters:
+// EEnviroWave                             InWaveType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EEnviroWaveStage                        InWaveStage                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrEnviroWaveSettings&     InWaveSettings                                         (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// float                                   InWaveProgress                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrWaveTimerActor::MulticastOnEnviroWaveStarted(EEnviroWave InWaveType, EEnviroWaveStage InWaveStage, const struct FCrEnviroWaveSettings& InWaveSettings, float InWaveProgress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWaveTimerActor", "MulticastOnEnviroWaveStarted");
+
+	Params::CrWaveTimerActor_MulticastOnEnviroWaveStarted Parms{};
+
+	Parms.InWaveType = InWaveType;
+	Parms.InWaveStage = InWaveStage;
+	Parms.InWaveSettings = std::move(InWaveSettings);
+	Parms.InWaveProgress = InWaveProgress;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrWaveTimerActor.OnEnviroWaveFinished
+// (Native, Protected, HasOutParams)
+// Parameters:
+// EEnviroWave                             WaveType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void ACrWaveTimerActor::OnEnviroWaveFinished(EEnviroWave WaveType, const struct FCrEnviroWaveSettings& WaveSettings)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWaveTimerActor", "OnEnviroWaveFinished");
+
+	Params::CrWaveTimerActor_OnEnviroWaveFinished Parms{};
+
+	Parms.WaveType = WaveType;
+	Parms.WaveSettings = std::move(WaveSettings);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrWaveTimerActor.OnEnviroWaveStarted
+// (Native, Protected, HasOutParams)
+// Parameters:
+// EEnviroWave                             InWaveType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EEnviroWaveStage                        InWaveStage                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrEnviroWaveSettings&     InWaveSettings                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// float                                   InWaveProgress                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrWaveTimerActor::OnEnviroWaveStarted(EEnviroWave InWaveType, EEnviroWaveStage InWaveStage, const struct FCrEnviroWaveSettings& InWaveSettings, float InWaveProgress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWaveTimerActor", "OnEnviroWaveStarted");
+
+	Params::CrWaveTimerActor_OnEnviroWaveStarted Parms{};
+
+	Parms.InWaveType = InWaveType;
+	Parms.InWaveStage = InWaveStage;
+	Parms.InWaveSettings = std::move(InWaveSettings);
+	Parms.InWaveProgress = InWaveProgress;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrWaveTimerActor.OnPreSaveStart
 // (Final, Native, Private)
 
-void ACrTeleportReplicator::OnRep_Teleporters()
+void ACrWaveTimerActor::OnPreSaveStart()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrTeleportReplicator", "OnRep_Teleporters");
+		Func = Class->GetFunction("CrWaveTimerActor", "OnPreSaveStart");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -34739,21 +36634,78 @@ void ACrTeleportReplicator::OnRep_Teleporters()
 }
 
 
-// Function Chimera.CrToxicityAttributeSet.OnRep_CurrentToxicity
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FGameplayAttributeData&    OldCurrentToxicity                                     (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// Function Chimera.CrWaveTimerActor.OnRep_Pause
+// (Final, Native, Private)
 
-void UCrToxicityAttributeSet::OnRep_CurrentToxicity(const struct FGameplayAttributeData& OldCurrentToxicity)
+void ACrWaveTimerActor::OnRep_Pause()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrToxicityAttributeSet", "OnRep_CurrentToxicity");
+		Func = Class->GetFunction("CrWaveTimerActor", "OnRep_Pause");
 
-	Params::CrToxicityAttributeSet_OnRep_CurrentToxicity Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
-	Parms.OldCurrentToxicity = std::move(OldCurrentToxicity);
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrWaveTimerActor.OnRep_Phase
+// (Final, Native, Private)
+
+void ACrWaveTimerActor::OnRep_Phase()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWaveTimerActor", "OnRep_Phase");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrWaveTimerActor.OnRep_Time
+// (Final, Native, Private)
+
+void ACrWaveTimerActor::OnRep_Time()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWaveTimerActor", "OnRep_Time");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrWeaponActor.DebugShowCosmeticImpactHitResultTrace
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FHitResult&                InHitResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void ACrWeaponActor::DebugShowCosmeticImpactHitResultTrace(const struct FHitResult& InHitResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWeaponActor", "DebugShowCosmeticImpactHitResultTrace");
+
+	Params::CrWeaponActor_DebugShowCosmeticImpactHitResultTrace Parms{};
+
+	Parms.InHitResult = std::move(InHitResult);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -34764,21 +36716,195 @@ void UCrToxicityAttributeSet::OnRep_CurrentToxicity(const struct FGameplayAttrib
 }
 
 
-// Function Chimera.CrToxicityAttributeSet.OnRep_MaxToxicity
-// (Native, Protected, HasOutParams)
+// Function Chimera.CrWeaponActor.GetAimSocketTransformForADS
+// (Native, Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// const struct FGameplayAttributeData&    OldMaxToxicity                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrToxicityAttributeSet::OnRep_MaxToxicity(const struct FGameplayAttributeData& OldMaxToxicity)
+struct FTransform ACrWeaponActor::GetAimSocketTransformForADS()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrToxicityAttributeSet", "OnRep_MaxToxicity");
+		Func = Class->GetFunction("CrWeaponActor", "GetAimSocketTransformForADS");
 
-	Params::CrToxicityAttributeSet_OnRep_MaxToxicity Parms{};
+	Params::CrWeaponActor_GetAimSocketTransformForADS Parms{};
 
-	Parms.OldMaxToxicity = std::move(OldMaxToxicity);
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrWeaponActor.GetLeftHandIKSocketTransform
+// (Native, Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class FName                             SocketName                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FTransform*                      OutTransform                                           (Parm, OutParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ACrWeaponActor::GetLeftHandIKSocketTransform(class FName SocketName, struct FTransform* OutTransform)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWeaponActor", "GetLeftHandIKSocketTransform");
+
+	Params::CrWeaponActor_GetLeftHandIKSocketTransform Parms{};
+
+	Parms.SocketName = SocketName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutTransform != nullptr)
+		*OutTransform = std::move(Parms.OutTransform);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrWeaponActor.GetModsData
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TArray<TSoftObjectPtr<class UCrWeaponModDataAsset>>*OutCurrentlyAppliedMods                                (Parm, OutParm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ACrWeaponActor::GetModsData(TArray<TSoftObjectPtr<class UCrWeaponModDataAsset>>* OutCurrentlyAppliedMods)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWeaponActor", "GetModsData");
+
+	Params::CrWeaponActor_GetModsData Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutCurrentlyAppliedMods != nullptr)
+		*OutCurrentlyAppliedMods = std::move(Parms.OutCurrentlyAppliedMods);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrWeaponActor.GetWeaponPartsByIdentifierTag
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FGameplayTag&              IdentifierTag                                          (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class UPrimitiveComponent*>      ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+TArray<class UPrimitiveComponent*> ACrWeaponActor::GetWeaponPartsByIdentifierTag(const struct FGameplayTag& IdentifierTag)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWeaponActor", "GetWeaponPartsByIdentifierTag");
+
+	Params::CrWeaponActor_GetWeaponPartsByIdentifierTag Parms{};
+
+	Parms.IdentifierTag = std::move(IdentifierTag);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrWeaponActor.GetWeaponPartsBySlotTag
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FGameplayTag&              SlotTag                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class UPrimitiveComponent*>      ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+TArray<class UPrimitiveComponent*> ACrWeaponActor::GetWeaponPartsBySlotTag(const struct FGameplayTag& SlotTag)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWeaponActor", "GetWeaponPartsBySlotTag");
+
+	Params::CrWeaponActor_GetWeaponPartsBySlotTag Parms{};
+
+	Parms.SlotTag = std::move(SlotTag);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrWeaponActor.GetWeaponSocketTransform
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FName                             SocketName                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ERelativeTransformSpace                 TransformSpace                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FTransform ACrWeaponActor::GetWeaponSocketTransform(class FName SocketName, ERelativeTransformSpace TransformSpace)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWeaponActor", "GetWeaponSocketTransform");
+
+	Params::CrWeaponActor_GetWeaponSocketTransform Parms{};
+
+	Parms.SocketName = SocketName;
+	Parms.TransformSpace = TransformSpace;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrWeaponActor.LocalPiercingTraceForSimulatedProxies
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const TArray<struct FHitResult>&        OriginalHits                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FAuCustomTargetHandle&     InHandle                                               (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrWeaponActor::LocalPiercingTraceForSimulatedProxies(const TArray<struct FHitResult>& OriginalHits, const struct FAuCustomTargetHandle& InHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWeaponActor", "LocalPiercingTraceForSimulatedProxies");
+
+	Params::CrWeaponActor_LocalPiercingTraceForSimulatedProxies Parms{};
+
+	Parms.OriginalHits = std::move(OriginalHits);
+	Parms.InHandle = std::move(InHandle);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -34789,80 +36915,208 @@ void UCrToxicityAttributeSet::OnRep_MaxToxicity(const struct FGameplayAttributeD
 }
 
 
-// Function Chimera.CrToxicityAttributeSet.OnRep_MinToxicity
-// (Native, Protected, HasOutParams)
+// Function Chimera.CrWeaponActor.OnBPCameraChanged
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// const struct FGameplayAttributeData&    OldMinToxicity                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    bIsFirstPersonView                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrToxicityAttributeSet::OnRep_MinToxicity(const struct FGameplayAttributeData& OldMinToxicity)
+void ACrWeaponActor::OnBPCameraChanged(bool bIsFirstPersonView)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrToxicityAttributeSet", "OnRep_MinToxicity");
+		Func = Class->GetFunction("CrWeaponActor", "OnBPCameraChanged");
 
-	Params::CrToxicityAttributeSet_OnRep_MinToxicity Parms{};
+	Params::CrWeaponActor_OnBPCameraChanged Parms{};
 
-	Parms.OldMinToxicity = std::move(OldMinToxicity);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
+	Parms.bIsFirstPersonView = bIsFirstPersonView;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
-// Function Chimera.CrUW_BuildingCost.DeleteAllEntries
+// Function Chimera.CrWeaponActor.OnBPPassiveAbilitiesLocallyGranted
 // (Event, Public, BlueprintEvent)
 
-void UCrUW_BuildingCost::DeleteAllEntries()
+void ACrWeaponActor::OnBPPassiveAbilitiesLocallyGranted()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingCost", "DeleteAllEntries");
+		Func = Class->GetFunction("CrWeaponActor", "OnBPPassiveAbilitiesLocallyGranted");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function Chimera.CrUW_BuildingCost.OnEntryCreated
+// Function Chimera.CrWeaponActor.OnBPWeaponPostEquip
 // (Event, Public, BlueprintEvent)
-// Parameters:
-// class UCrUW_BuildingCostEntry*          CreatedEntry                                           (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_BuildingCost::OnEntryCreated(class UCrUW_BuildingCostEntry* CreatedEntry)
+void ACrWeaponActor::OnBPWeaponPostEquip()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingCost", "OnEntryCreated");
+		Func = Class->GetFunction("CrWeaponActor", "OnBPWeaponPostEquip");
 
-	Params::CrUW_BuildingCost_OnEntryCreated Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.CreatedEntry = CreatedEntry;
+
+// Function Chimera.CrWeaponActor.OnBPWeaponPreUnequip
+// (Event, Public, BlueprintEvent)
+
+void ACrWeaponActor::OnBPWeaponPreUnequip()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWeaponActor", "OnBPWeaponPreUnequip");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Chimera.CrWeaponActor.OnBuildingToolApplyEffects
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bIsDeconstructing                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrWeaponActor::OnBuildingToolApplyEffects(bool bIsDeconstructing)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWeaponActor", "OnBuildingToolApplyEffects");
+
+	Params::CrWeaponActor_OnBuildingToolApplyEffects Parms{};
+
+	Parms.bIsDeconstructing = bIsDeconstructing;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function Chimera.CrUW_BuildingCost.SetupInfo
+// Function Chimera.CrWeaponActor.OnBuildingToolNiagaraStart
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bStartDeconstructEffect                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrWeaponActor::OnBuildingToolNiagaraStart(bool bStartDeconstructEffect)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWeaponActor", "OnBuildingToolNiagaraStart");
+
+	Params::CrWeaponActor_OnBuildingToolNiagaraStart Parms{};
+
+	Parms.bStartDeconstructEffect = bStartDeconstructEffect;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Chimera.CrWeaponActor.OnBuildingToolNiagaraStop
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bStopDeconstructEffect                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrWeaponActor::OnBuildingToolNiagaraStop(bool bStopDeconstructEffect)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWeaponActor", "OnBuildingToolNiagaraStop");
+
+	Params::CrWeaponActor_OnBuildingToolNiagaraStop Parms{};
+
+	Parms.bStopDeconstructEffect = bStopDeconstructEffect;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Chimera.CrWeaponActor.OnCameraChanged
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bIsFirstPersonView                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrWeaponActor::OnCameraChanged(bool bIsFirstPersonView)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWeaponActor", "OnCameraChanged");
+
+	Params::CrWeaponActor_OnCameraChanged Parms{};
+
+	Parms.bIsFirstPersonView = bIsFirstPersonView;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrWeaponActor.OnPiercingCommitedCosmeticEffects
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const TArray<struct FHitResult>&        Hits                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void ACrWeaponActor::OnPiercingCommitedCosmeticEffects(const TArray<struct FHitResult>& Hits)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWeaponActor", "OnPiercingCommitedCosmeticEffects");
+
+	Params::CrWeaponActor_OnPiercingCommitedCosmeticEffects Parms{};
+
+	Parms.Hits = std::move(Hits);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Chimera.CrWeaponActor.OnWeaponInstanceDataReplicated
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ACrWeaponActor::OnWeaponInstanceDataReplicated()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWeaponActor", "OnWeaponInstanceDataReplicated");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrWeaponActor.SetModsData
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class ACrBuildingActorBase*             InBuilding                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<TSoftObjectPtr<class UCrWeaponModDataAsset>>&CurrentlyAppliedMods                                   (Parm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_BuildingCost::SetupInfo(class ACrBuildingActorBase* InBuilding)
+bool ACrWeaponActor::SetModsData(const TArray<TSoftObjectPtr<class UCrWeaponModDataAsset>>& CurrentlyAppliedMods)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingCost", "SetupInfo");
+		Func = Class->GetFunction("CrWeaponActor", "SetModsData");
 
-	Params::CrUW_BuildingCost_SetupInfo Parms{};
+	Params::CrWeaponActor_SetModsData Parms{};
 
-	Parms.InBuilding = InBuilding;
+	Parms.CurrentlyAppliedMods = std::move(CurrentlyAppliedMods);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -34870,6 +37124,152 @@ void UCrUW_BuildingCost::SetupInfo(class ACrBuildingActorBase* InBuilding)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrWeaponActor.SpawnFireHitImpactCosmetics
+// (Final, Native, Protected, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FHitResult&                InHitResults                                           (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void ACrWeaponActor::SpawnFireHitImpactCosmetics(const struct FHitResult& InHitResults)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWeaponActor", "SpawnFireHitImpactCosmetics");
+
+	Params::CrWeaponActor_SpawnFireHitImpactCosmetics Parms{};
+
+	Parms.InHitResults = std::move(InHitResults);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrWeaponActor.UpdateShadowCastingOnMeshes
+// (Final, Native, Public, BlueprintCallable)
+
+void ACrWeaponActor::UpdateShadowCastingOnMeshes()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWeaponActor", "UpdateShadowCastingOnMeshes");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrWeaponActor.UpdateWeaponVisualsForMods
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ACrWeaponActor::UpdateWeaponVisualsForMods()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWeaponActor", "UpdateWeaponVisualsForMods");
+
+	Params::CrWeaponActor_UpdateWeaponVisualsForMods Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrWeaponActor.GetCurrentSignificance
+// (Final, Native, Protected, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float ACrWeaponActor::GetCurrentSignificance() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWeaponActor", "GetCurrentSignificance");
+
+	Params::CrWeaponActor_GetCurrentSignificance Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrWeaponActor.IsOverCosmeticsReplicationDistance
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ACrWeaponActor::IsOverCosmeticsReplicationDistance() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWeaponActor", "IsOverCosmeticsReplicationDistance");
+
+	Params::CrWeaponActor_IsOverCosmeticsReplicationDistance Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrWeaponActor.IsSingleFireTypeWeapon
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ACrWeaponActor::IsSingleFireTypeWeapon() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWeaponActor", "IsSingleFireTypeWeapon");
+
+	Params::CrWeaponActor_IsSingleFireTypeWeapon Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -36644,6 +39044,120 @@ TArray<struct FGameplayTag> UCrWeaponItemDataBase::GetWeaponType() const
 }
 
 
+// Function Chimera.CrWeaponModsFunctionLibrary.GetModMaterialsOverrideForTagWeaponPart
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const struct FGameplayTag&              WeaponPartGameplayTag                                  (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TMap<class FName, class UMaterialInterface*>ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+TMap<class FName, class UMaterialInterface*> UCrWeaponModsFunctionLibrary::GetModMaterialsOverrideForTagWeaponPart(const struct FGameplayTag& WeaponPartGameplayTag)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrWeaponModsFunctionLibrary", "GetModMaterialsOverrideForTagWeaponPart");
+
+	Params::CrWeaponModsFunctionLibrary_GetModMaterialsOverrideForTagWeaponPart Parms{};
+
+	Parms.WeaponPartGameplayTag = std::move(WeaponPartGameplayTag);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrWeaponModsFunctionLibrary.GetWeaponModSceneComponentByName
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class ACrWeaponModVisualData>ModVisualDataActorClass                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class USceneComponent*                  ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class USceneComponent* UCrWeaponModsFunctionLibrary::GetWeaponModSceneComponentByName(TSubclassOf<class ACrWeaponModVisualData> ModVisualDataActorClass, class FName Name_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrWeaponModsFunctionLibrary", "GetWeaponModSceneComponentByName");
+
+	Params::CrWeaponModsFunctionLibrary_GetWeaponModSceneComponentByName Parms{};
+
+	Parms.ModVisualDataActorClass = ModVisualDataActorClass;
+	Parms.Name_0 = Name_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrWeaponModsFunctionLibrary.GetWeaponModSceneComponents
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class ACrWeaponModVisualData>ModVisualDataActorClass                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class USceneComponent*>    ReturnValue                                            (ConstParm, ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+const TArray<class USceneComponent*> UCrWeaponModsFunctionLibrary::GetWeaponModSceneComponents(TSubclassOf<class ACrWeaponModVisualData> ModVisualDataActorClass)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrWeaponModsFunctionLibrary", "GetWeaponModSceneComponents");
+
+	Params::CrWeaponModsFunctionLibrary_GetWeaponModSceneComponents Parms{};
+
+	Parms.ModVisualDataActorClass = ModVisualDataActorClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrWeaponModsFunctionLibrary.GetWeaponModSkeletalSceneComponents
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class ACrWeaponModVisualData>ModVisualDataActorClass                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class UCrWeaponSkeletalMeshComponent*>ReturnValue                                            (ConstParm, ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+const TArray<class UCrWeaponSkeletalMeshComponent*> UCrWeaponModsFunctionLibrary::GetWeaponModSkeletalSceneComponents(TSubclassOf<class ACrWeaponModVisualData> ModVisualDataActorClass)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrWeaponModsFunctionLibrary", "GetWeaponModSkeletalSceneComponents");
+
+	Params::CrWeaponModsFunctionLibrary_GetWeaponModSkeletalSceneComponents Parms{};
+
+	Parms.ModVisualDataActorClass = ModVisualDataActorClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function Chimera.CrWeaponPrimitiveCompInterface.GetAttachParentSocketName
 // (Native, Public, BlueprintCallable)
 // Parameters:
@@ -36747,6 +39261,110 @@ float UCrWeatherSubsystem::BlendTemperature(const struct FVector& InLocation) co
 }
 
 
+// Function Chimera.CrWorldSpawnerRegionActor.Generate
+// (Final, Native, Public, BlueprintCallable)
+
+void ACrWorldSpawnerRegionActor::Generate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWorldSpawnerRegionActor", "Generate");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrWorldSpawnerRegionActor.OnBeginOverlap
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// class UPrimitiveComponent*              OverlappedComp                                         (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void ACrWorldSpawnerRegionActor::OnBeginOverlap(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWorldSpawnerRegionActor", "OnBeginOverlap");
+
+	Params::CrWorldSpawnerRegionActor_OnBeginOverlap Parms{};
+
+	Parms.OverlappedComp = OverlappedComp;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.OtherBodyIndex = OtherBodyIndex;
+	Parms.bFromSweep = bFromSweep;
+	Parms.SweepResult = std::move(SweepResult);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrWorldSpawnerRegionActor.OnEndOverlap
+// (Final, Native, Public)
+// Parameters:
+// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrWorldSpawnerRegionActor::OnEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWorldSpawnerRegionActor", "OnEndOverlap");
+
+	Params::CrWorldSpawnerRegionActor_OnEndOverlap Parms{};
+
+	Parms.OverlappedComponent = OverlappedComponent;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.OtherBodyIndex = OtherBodyIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrWorldSpawnerRegionActor.TriggerGeneration
+// (Final, Native, Private)
+
+void ACrWorldSpawnerRegionActor::TriggerGeneration()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrWorldSpawnerRegionActor", "TriggerGeneration");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Chimera.CrWorldSpawnerSubsystem.OnEnviroWaveActivateSpawnersChanged
 // (Final, Native, Public)
 // Parameters:
@@ -36791,607 +39409,41 @@ void UCrWorldSpawnerSubsystem::OnEnviroWaveSubsystemActivated()
 }
 
 
-// Function Chimera.CrZiplineActorsManagerWorldSubsystem.DestroyZiplineProxiesForOwner
-// (Final, Native, Public)
-// Parameters:
-// class AActor*                           Owner                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrZiplineActorsManagerWorldSubsystem::DestroyZiplineProxiesForOwner(class AActor* Owner)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplineActorsManagerWorldSubsystem", "DestroyZiplineProxiesForOwner");
-
-	Params::CrZiplineActorsManagerWorldSubsystem_DestroyZiplineProxiesForOwner Parms{};
-
-	Parms.Owner = Owner;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrZiplineActorsManagerWorldSubsystem.GetNextSplineComponent
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// class USplineComponent*                 InSplineComponent                                      (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   InDirection                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class USplineComponent**                OutSplineComponent                                     (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float*                                  OutDirection                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class USplineComponent*                 InIgnoreSplineComponent                                (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UCrZiplineActorsManagerWorldSubsystem::GetNextSplineComponent(class USplineComponent* InSplineComponent, float InDirection, class USplineComponent** OutSplineComponent, float* OutDirection, class USplineComponent* InIgnoreSplineComponent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplineActorsManagerWorldSubsystem", "GetNextSplineComponent");
-
-	Params::CrZiplineActorsManagerWorldSubsystem_GetNextSplineComponent Parms{};
-
-	Parms.InSplineComponent = InSplineComponent;
-	Parms.InDirection = InDirection;
-	Parms.InIgnoreSplineComponent = InIgnoreSplineComponent;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutSplineComponent != nullptr)
-		*OutSplineComponent = Parms.OutSplineComponent;
-
-	if (OutDirection != nullptr)
-		*OutDirection = Parms.OutDirection;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrZiplineActorsManagerWorldSubsystem.OnZiplineActorEndPlay
-// (Final, Native, Public)
-// Parameters:
-// class AActor*                           Actor                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EEndPlayReason                          Reason                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrZiplineActorsManagerWorldSubsystem::OnZiplineActorEndPlay(class AActor* Actor, EEndPlayReason Reason)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplineActorsManagerWorldSubsystem", "OnZiplineActorEndPlay");
-
-	Params::CrZiplineActorsManagerWorldSubsystem_OnZiplineActorEndPlay Parms{};
-
-	Parms.Actor = Actor;
-	Parms.Reason = Reason;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrZiplineActorsManagerWorldSubsystem.RebuildZiplineFullSplineProxy
-// (Final, Native, Public)
-// Parameters:
-// const struct FZiplineFullSplineProxy&   ProxyToRebuild                                         (Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void UCrZiplineActorsManagerWorldSubsystem::RebuildZiplineFullSplineProxy(const struct FZiplineFullSplineProxy& ProxyToRebuild)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplineActorsManagerWorldSubsystem", "RebuildZiplineFullSplineProxy");
-
-	Params::CrZiplineActorsManagerWorldSubsystem_RebuildZiplineFullSplineProxy Parms{};
-
-	Parms.ProxyToRebuild = std::move(ProxyToRebuild);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrZiplineActorsManagerWorldSubsystem.RebuildZiplineSplineProxy
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// class AActor*                           Owner                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class ACrBuildingSplineActorBase*       StartingZiplineActor                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   InDirection                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FZiplineFullSplineProxy*         OutNewProxyData                                        (Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// int32                                   MaxAmountOfZiplineActorsToMerge                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrZiplineActorsManagerWorldSubsystem::RebuildZiplineSplineProxy(class AActor* Owner, class ACrBuildingSplineActorBase* StartingZiplineActor, float InDirection, struct FZiplineFullSplineProxy* OutNewProxyData, int32 MaxAmountOfZiplineActorsToMerge)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplineActorsManagerWorldSubsystem", "RebuildZiplineSplineProxy");
-
-	Params::CrZiplineActorsManagerWorldSubsystem_RebuildZiplineSplineProxy Parms{};
-
-	Parms.Owner = Owner;
-	Parms.StartingZiplineActor = StartingZiplineActor;
-	Parms.InDirection = InDirection;
-	Parms.MaxAmountOfZiplineActorsToMerge = MaxAmountOfZiplineActorsToMerge;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutNewProxyData != nullptr)
-		*OutNewProxyData = std::move(Parms.OutNewProxyData);
-}
-
-
-// Function Chimera.CrZiplineActorsManagerWorldSubsystem.RegisterZiplineActor
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class ACrBuildingSplineActorBase*       InZiplineActor                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrZiplineActorsManagerWorldSubsystem::RegisterZiplineActor(class ACrBuildingSplineActorBase* InZiplineActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplineActorsManagerWorldSubsystem", "RegisterZiplineActor");
-
-	Params::CrZiplineActorsManagerWorldSubsystem_RegisterZiplineActor Parms{};
-
-	Parms.InZiplineActor = InZiplineActor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrZiplineActorsManagerWorldSubsystem.SpawnSpline
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class ACrSplineActor*                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class ACrSplineActor* UCrZiplineActorsManagerWorldSubsystem::SpawnSpline()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplineActorsManagerWorldSubsystem", "SpawnSpline");
-
-	Params::CrZiplineActorsManagerWorldSubsystem_SpawnSpline Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrZiplineActorsManagerWorldSubsystem.UnRegisterZiplineActor
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class ACrBuildingSplineActorBase*       InZiplineActor                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrZiplineActorsManagerWorldSubsystem::UnRegisterZiplineActor(class ACrBuildingSplineActorBase* InZiplineActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplineActorsManagerWorldSubsystem", "UnRegisterZiplineActor");
-
-	Params::CrZiplineActorsManagerWorldSubsystem_UnRegisterZiplineActor Parms{};
-
-	Parms.InZiplineActor = InZiplineActor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrZiplinePoint.NativeOnNeighbourRemoved
+// Function Chimera.CrZiplineSubsystem.OnPreSaveStart
 // (Final, Native, Private)
-// Parameters:
-// const struct FCrMassEntityReplicationHelper&InZipline                                              (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ACrZiplinePoint::NativeOnNeighbourRemoved(const struct FCrMassEntityReplicationHelper& InZipline)
+void UCrZiplineSubsystem::OnPreSaveStart()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplinePoint", "NativeOnNeighbourRemoved");
-
-	Params::CrZiplinePoint_NativeOnNeighbourRemoved Parms{};
-
-	Parms.InZipline = std::move(InZipline);
+		Func = Class->GetFunction("CrZiplineSubsystem", "OnPreSaveStart");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function Chimera.CrZiplinePoint.OnActivityModified
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bActive                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Chimera.CrZiplineSubsystem.OnSaveLoaded
+// (Final, Native, Private)
 
-void ACrZiplinePoint::OnActivityModified(bool bActive)
+void UCrZiplineSubsystem::OnSaveLoaded()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplinePoint", "OnActivityModified");
+		Func = Class->GetFunction("CrZiplineSubsystem", "OnSaveLoaded");
 
-	Params::CrZiplinePoint_OnActivityModified Parms{};
-
-	Parms.bActive = bActive;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Chimera.CrZiplinePoint.OnConnectionsModified
-// (Event, Protected, HasOutParams, BlueprintEvent)
-// Parameters:
-// const TArray<struct FVector_NetQuantize>&ActiveLocations                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// const TArray<struct FVector_NetQuantize>&InactiveLocations                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void ACrZiplinePoint::OnConnectionsModified(const TArray<struct FVector_NetQuantize>& ActiveLocations, const TArray<struct FVector_NetQuantize>& InactiveLocations)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplinePoint", "OnConnectionsModified");
-
-	Params::CrZiplinePoint_OnConnectionsModified Parms{};
-
-	Parms.ActiveLocations = std::move(ActiveLocations);
-	Parms.InactiveLocations = std::move(InactiveLocations);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Chimera.CrZiplinePoint.OnHideBlockingSphere
-// (Event, Public, BlueprintEvent)
-
-void ACrZiplinePoint::OnHideBlockingSphere()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplinePoint", "OnHideBlockingSphere");
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
-}
 
-
-// Function Chimera.CrZiplinePoint.OnObstructionChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bObstructed                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrZiplinePoint::OnObstructionChanged(bool bObstructed)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplinePoint", "OnObstructionChanged");
-
-	Params::CrZiplinePoint_OnObstructionChanged Parms{};
-
-	Parms.bObstructed = bObstructed;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Chimera.CrZiplinePoint.OnOccupied
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class ACrCharacterPlayerBase*           InPlayer                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrZiplinePoint::OnOccupied(class ACrCharacterPlayerBase* InPlayer)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplinePoint", "OnOccupied");
-
-	Params::CrZiplinePoint_OnOccupied Parms{};
-
-	Parms.InPlayer = InPlayer;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Chimera.CrZiplinePoint.OnPlayerRotationChanged
-// (Event, Public, HasDefaults, BlueprintEvent)
-// Parameters:
-// const struct FRotator&                  PlayerRotation                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-void ACrZiplinePoint::OnPlayerRotationChanged(const struct FRotator& PlayerRotation)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplinePoint", "OnPlayerRotationChanged");
-
-	Params::CrZiplinePoint_OnPlayerRotationChanged Parms{};
-
-	Parms.PlayerRotation = std::move(PlayerRotation);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Chimera.CrZiplinePoint.OnPlayerRotationFinished
-// (Event, Public, HasDefaults, BlueprintEvent)
-// Parameters:
-// const struct FVector_NetQuantize&       NewTargetLocation                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FRotator&                  NewRotation                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-void ACrZiplinePoint::OnPlayerRotationFinished(const struct FVector_NetQuantize& NewTargetLocation, const struct FRotator& NewRotation)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplinePoint", "OnPlayerRotationFinished");
-
-	Params::CrZiplinePoint_OnPlayerRotationFinished Parms{};
-
-	Parms.NewTargetLocation = std::move(NewTargetLocation);
-	Parms.NewRotation = std::move(NewRotation);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Chimera.CrZiplinePoint.OnPlayerRotationStarted
-// (Event, Public, BlueprintEvent)
-
-void ACrZiplinePoint::OnPlayerRotationStarted()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplinePoint", "OnPlayerRotationStarted");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Chimera.CrZiplinePoint.OnShowBlockingSphere
-// (Event, Public, BlueprintEvent)
-
-void ACrZiplinePoint::OnShowBlockingSphere()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplinePoint", "OnShowBlockingSphere");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Chimera.CrZiplinePoint.OnStopTravellingTo
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class ACrCharacterPlayerBase*           InPlayer                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bCancelled                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrZiplinePoint::OnStopTravellingTo(class ACrCharacterPlayerBase* InPlayer, bool bCancelled)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplinePoint", "OnStopTravellingTo");
-
-	Params::CrZiplinePoint_OnStopTravellingTo Parms{};
-
-	Parms.InPlayer = InPlayer;
-	Parms.bCancelled = bCancelled;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Chimera.CrZiplinePoint.OnTargeted
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class ACrCharacterPlayerBase*           InPlayer                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrZiplinePoint::OnTargeted(class ACrCharacterPlayerBase* InPlayer)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplinePoint", "OnTargeted");
-
-	Params::CrZiplinePoint_OnTargeted Parms{};
-
-	Parms.InPlayer = InPlayer;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Chimera.CrZiplinePoint.OnTravelBlocked
-// (Event, Protected, BlueprintEvent)
-
-void ACrZiplinePoint::OnTravelBlocked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplinePoint", "OnTravelBlocked");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Chimera.CrZiplinePoint.OnTravelEnded
-// (Event, Protected, BlueprintEvent)
-
-void ACrZiplinePoint::OnTravelEnded()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplinePoint", "OnTravelEnded");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Chimera.CrZiplinePoint.OnTravellingTo
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class ACrCharacterPlayerBase*           InPlayer                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrZiplinePoint::OnTravellingTo(class ACrCharacterPlayerBase* InPlayer)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplinePoint", "OnTravellingTo");
-
-	Params::CrZiplinePoint_OnTravellingTo Parms{};
-
-	Parms.InPlayer = InPlayer;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Chimera.CrZiplinePoint.OnTravelStarted
-// (Event, Protected, BlueprintEvent)
-
-void ACrZiplinePoint::OnTravelStarted()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplinePoint", "OnTravelStarted");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Chimera.CrZiplinePoint.OnUnoccupied
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class ACrCharacterPlayerBase*           InPlayer                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrZiplinePoint::OnUnoccupied(class ACrCharacterPlayerBase* InPlayer)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplinePoint", "OnUnoccupied");
-
-	Params::CrZiplinePoint_OnUnoccupied Parms{};
-
-	Parms.InPlayer = InPlayer;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Chimera.CrZiplinePoint.OnUntargeted
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class ACrCharacterPlayerBase*           InPlayer                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACrZiplinePoint::OnUntargeted(class ACrCharacterPlayerBase* InPlayer)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplinePoint", "OnUntargeted");
-
-	Params::CrZiplinePoint_OnUntargeted Parms{};
-
-	Parms.InPlayer = InPlayer;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Chimera.CrZiplinePoint.OnZiplineLocallyCancelled
-// (Event, Public, BlueprintEvent)
-
-void ACrZiplinePoint::OnZiplineLocallyCancelled()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplinePoint", "OnZiplineLocallyCancelled");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Chimera.CrZiplinePoint.OnZiplineModeLocallyStarted
-// (Event, Public, BlueprintEvent)
-
-void ACrZiplinePoint::OnZiplineModeLocallyStarted()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplinePoint", "OnZiplineModeLocallyStarted");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Chimera.CrZiplinePoint.OnZiplineTravelLocallyStarted
-// (Event, Public, BlueprintEvent)
-
-void ACrZiplinePoint::OnZiplineTravelLocallyStarted()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrZiplinePoint", "OnZiplineTravelLocallyStarted");
-
-	UObject::ProcessEvent(Func, nullptr);
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -37409,72 +39461,6 @@ void UGameFeatureAction_AddLevelInstances::OnLevelLoaded()
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.GasOverlapComponent.OnBeginOverlap
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void UGasOverlapComponent::OnBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GasOverlapComponent", "OnBeginOverlap");
-
-	Params::GasOverlapComponent_OnBeginOverlap Parms{};
-
-	Parms.OverlappedComponent = OverlappedComponent;
-	Parms.OtherActor = OtherActor;
-	Parms.OtherComp = OtherComp;
-	Parms.OtherBodyIndex = OtherBodyIndex;
-	Parms.bFromSweep = bFromSweep;
-	Parms.SweepResult = std::move(SweepResult);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.GasOverlapComponent.OnEndOverlap
-// (Final, Native, Public)
-// Parameters:
-// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGasOverlapComponent::OnEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GasOverlapComponent", "OnEndOverlap");
-
-	Params::GasOverlapComponent_OnEndOverlap Parms{};
-
-	Parms.OverlappedComponent = OverlappedComponent;
-	Parms.OtherActor = OtherActor;
-	Parms.OtherComp = OtherComp;
-	Parms.OtherBodyIndex = OtherBodyIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -37523,6 +39509,63 @@ bool UGEBoxComponent::GetTriggerEnabled() const
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.IdentificationLibrary.GetActorUniqueName
+// (Final, Native, Static, Private, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName*                            OutName                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UIdentificationLibrary::GetActorUniqueName(class AActor* TargetActor, class FName* OutName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("IdentificationLibrary", "GetActorUniqueName");
+
+	Params::IdentificationLibrary_GetActorUniqueName Parms{};
+
+	Parms.TargetActor = TargetActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutName != nullptr)
+		*OutName = Parms.OutName;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.IdentificationLibrary.GetAllCategoriesNames
+// (Final, Native, Static, Private, BlueprintCallable, BlueprintPure)
+// Parameters:
+// TArray<class FName>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class FName> UIdentificationLibrary::GetAllCategoriesNames()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("IdentificationLibrary", "GetAllCategoriesNames");
+
+	Params::IdentificationLibrary_GetAllCategoriesNames Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -49848,310 +51891,6 @@ void ACrPlayerControllerBase::ServerDebugSpawnDebugAiSpawner(const TSoftClassPtr
 }
 
 
-// Function Chimera.CrAbilityTask_PlayMontage.CreatePlayMontageAndWaitProxy
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             TaskInstanceName                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAnimMontage*                     TppMontageToPlay_0                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAnimMontage*                     FppMontageToPlay_0                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Rate_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bStopWhenAbilityEnds_0                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             StartSection_0                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAbilityTask_PlayMontage*       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAbilityTask_PlayMontage* UCrAbilityTask_PlayMontage::CreatePlayMontageAndWaitProxy(class UGameplayAbility* OwningAbility, class FName TaskInstanceName, class UAnimMontage* TppMontageToPlay_0, class UAnimMontage* FppMontageToPlay_0, float Rate_0, bool bStopWhenAbilityEnds_0, class FName StartSection_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAbilityTask_PlayMontage", "CreatePlayMontageAndWaitProxy");
-
-	Params::CrAbilityTask_PlayMontage_CreatePlayMontageAndWaitProxy Parms{};
-
-	Parms.OwningAbility = OwningAbility;
-	Parms.TaskInstanceName = TaskInstanceName;
-	Parms.TppMontageToPlay_0 = TppMontageToPlay_0;
-	Parms.FppMontageToPlay_0 = FppMontageToPlay_0;
-	Parms.Rate_0 = Rate_0;
-	Parms.bStopWhenAbilityEnds_0 = bStopWhenAbilityEnds_0;
-	Parms.StartSection_0 = StartSection_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrAbilityTask_PlayMontage.CreatePlayMontagePairAndWaitProxy
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             TaskInstanceName                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FCrMontagePair&            MontagePair                                            (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// float                                   Rate_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bStopWhenAbilityEnds_0                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             StartSection_0                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAbilityTask_PlayMontage*       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAbilityTask_PlayMontage* UCrAbilityTask_PlayMontage::CreatePlayMontagePairAndWaitProxy(class UGameplayAbility* OwningAbility, class FName TaskInstanceName, const struct FCrMontagePair& MontagePair, float Rate_0, bool bStopWhenAbilityEnds_0, class FName StartSection_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAbilityTask_PlayMontage", "CreatePlayMontagePairAndWaitProxy");
-
-	Params::CrAbilityTask_PlayMontage_CreatePlayMontagePairAndWaitProxy Parms{};
-
-	Parms.OwningAbility = OwningAbility;
-	Parms.TaskInstanceName = TaskInstanceName;
-	Parms.MontagePair = std::move(MontagePair);
-	Parms.Rate_0 = Rate_0;
-	Parms.bStopWhenAbilityEnds_0 = bStopWhenAbilityEnds_0;
-	Parms.StartSection_0 = StartSection_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrAbilityTask_PlayMontage.OnAbilityCancelled
-// (Final, Native, Public)
-
-void UCrAbilityTask_PlayMontage::OnAbilityCancelled()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAbilityTask_PlayMontage", "OnAbilityCancelled");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrAbilityTask_PlayMontage.OnFPPMontageBlendOut
-// (Final, Native, Public)
-// Parameters:
-// class UAnimMontage*                     Montage                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bInterrupted                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrAbilityTask_PlayMontage::OnFPPMontageBlendOut_0(class UAnimMontage* Montage, bool bInterrupted)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAbilityTask_PlayMontage", "OnFPPMontageBlendOut");
-
-	Params::CrAbilityTask_PlayMontage_OnFPPMontageBlendOut_0 Parms{};
-
-	Parms.Montage = Montage;
-	Parms.bInterrupted = bInterrupted;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrAbilityTask_PlayMontage.OnMontageEnded
-// (Final, Native, Public)
-// Parameters:
-// class UAnimMontage*                     Montage                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bInterrupted                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrAbilityTask_PlayMontage::OnMontageEnded(class UAnimMontage* Montage, bool bInterrupted)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAbilityTask_PlayMontage", "OnMontageEnded");
-
-	Params::CrAbilityTask_PlayMontage_OnMontageEnded Parms{};
-
-	Parms.Montage = Montage;
-	Parms.bInterrupted = bInterrupted;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrAbilityTask_PlayMontage.OnNotifyBeginReceived
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// class FName                             NotifyName                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FBranchingPointNotifyPayload&BranchingPointNotifyPayload                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UCrAbilityTask_PlayMontage::OnNotifyBeginReceived(class FName NotifyName, const struct FBranchingPointNotifyPayload& BranchingPointNotifyPayload)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAbilityTask_PlayMontage", "OnNotifyBeginReceived");
-
-	Params::CrAbilityTask_PlayMontage_OnNotifyBeginReceived Parms{};
-
-	Parms.NotifyName = NotifyName;
-	Parms.BranchingPointNotifyPayload = std::move(BranchingPointNotifyPayload);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrAbilityTask_PlayMontage.OnNotifyEndReceived
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// class FName                             NotifyName                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FBranchingPointNotifyPayload&BranchingPointNotifyPayload                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UCrAbilityTask_PlayMontage::OnNotifyEndReceived(class FName NotifyName, const struct FBranchingPointNotifyPayload& BranchingPointNotifyPayload)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAbilityTask_PlayMontage", "OnNotifyEndReceived");
-
-	Params::CrAbilityTask_PlayMontage_OnNotifyEndReceived Parms{};
-
-	Parms.NotifyName = NotifyName;
-	Parms.BranchingPointNotifyPayload = std::move(BranchingPointNotifyPayload);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrAbilityTask_PlayMontage.OnTPPMontageBlendOut
-// (Final, Native, Public)
-// Parameters:
-// class UAnimMontage*                     Montage                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bInterrupted                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrAbilityTask_PlayMontage::OnTPPMontageBlendOut(class UAnimMontage* Montage, bool bInterrupted)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAbilityTask_PlayMontage", "OnTPPMontageBlendOut");
-
-	Params::CrAbilityTask_PlayMontage_OnTPPMontageBlendOut Parms{};
-
-	Parms.Montage = Montage;
-	Parms.bInterrupted = bInterrupted;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrPawnExtensionComponent.FindPawnExtensionComponent
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// const class AActor*                     Actor                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrPawnExtensionComponent*        ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrPawnExtensionComponent* UCrPawnExtensionComponent::FindPawnExtensionComponent(const class AActor* Actor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrPawnExtensionComponent", "FindPawnExtensionComponent");
-
-	Params::CrPawnExtensionComponent_FindPawnExtensionComponent Parms{};
-
-	Parms.Actor = Actor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrPawnExtensionComponent.OnRep_PawnData
-// (Final, Native, Protected)
-
-void UCrPawnExtensionComponent::OnRep_PawnData()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrPawnExtensionComponent", "OnRep_PawnData");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrPawnExtensionComponent.GetCrAbilitySystemComponent
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UCrAbilitySystemComponent*        ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAbilitySystemComponent* UCrPawnExtensionComponent::GetCrAbilitySystemComponent() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrPawnExtensionComponent", "GetCrAbilitySystemComponent");
-
-	Params::CrPawnExtensionComponent_GetCrAbilitySystemComponent Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function Chimera.CrCheatManager.AddTagToSelf
 // (BlueprintAuthorityOnly, Exec, Native, Public)
 // Parameters:
@@ -52628,21 +54367,29 @@ void UCrHeroComponent::UnbindExclusiveMapping(const struct FGameplayTag& ConfigT
 }
 
 
-// Function Chimera.CrSettingsShared.SetADSToggle
-// (Final, Native, Public)
+// Function Chimera.CrFrontendStateComponent.OnUserInitialized
+// (Final, Native, Private)
 // Parameters:
-// bool                                    NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UCommonUserInfo*            UserInfo                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bSuccess                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FText&                      Error                                                  (Parm, NativeAccessSpecifierPublic)
+// ECommonUserPrivilege                    RequestedPrivilege                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECommonUserOnlineContext                OnlineContext                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrSettingsShared::SetADSToggle(bool NewValue)
+void UCrFrontendStateComponent::OnUserInitialized(const class UCommonUserInfo* UserInfo, bool bSuccess, const class FText& Error, ECommonUserPrivilege RequestedPrivilege, ECommonUserOnlineContext OnlineContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetADSToggle");
+		Func = Class->GetFunction("CrFrontendStateComponent", "OnUserInitialized");
 
-	Params::CrSettingsShared_SetADSToggle Parms{};
+	Params::CrFrontendStateComponent_OnUserInitialized Parms{};
 
-	Parms.NewValue = NewValue;
+	Parms.UserInfo = UserInfo;
+	Parms.bSuccess = bSuccess;
+	Parms.Error = std::move(Error);
+	Parms.RequestedPrivilege = RequestedPrivilege;
+	Parms.OnlineContext = OnlineContext;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -52650,1681 +54397,6 @@ void UCrSettingsShared::SetADSToggle(bool NewValue)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetAimAssistStrength
-// (Final, Native, Public)
-// Parameters:
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetAimAssistStrength(float NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetAimAssistStrength");
-
-	Params::CrSettingsShared_SetAimAssistStrength Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetAimAssistType
-// (Final, Native, Public)
-// Parameters:
-// ECrAimAssistType                        NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetAimAssistType(ECrAimAssistType NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetAimAssistType");
-
-	Params::CrSettingsShared_SetAimAssistType Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetAllowAudioInBackgroundSetting
-// (Final, Native, Public)
-// Parameters:
-// ECrAllowBackgroundAudioSetting          NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetAllowAudioInBackgroundSetting(ECrAllowBackgroundAudioSetting NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetAllowAudioInBackgroundSetting");
-
-	Params::CrSettingsShared_SetAllowAudioInBackgroundSetting Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetAutoSaveEnabled
-// (Final, Native, Public)
-// Parameters:
-// bool                                    Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetAutoSaveEnabled(bool Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetAutoSaveEnabled");
-
-	Params::CrSettingsShared_SetAutoSaveEnabled Parms{};
-
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetBuildingDroneActivateMode
-// (Final, Native, Public)
-// Parameters:
-// EBuildingDroneActivateMode              NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetBuildingDroneActivateMode(EBuildingDroneActivateMode NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetBuildingDroneActivateMode");
-
-	Params::CrSettingsShared_SetBuildingDroneActivateMode Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetColorBlindMode
-// (Final, Native, Public)
-// Parameters:
-// EColorBlindMode                         InMode                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetColorBlindMode(EColorBlindMode InMode)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetColorBlindMode");
-
-	Params::CrSettingsShared_SetColorBlindMode Parms{};
-
-	Parms.InMode = InMode;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetColorBlindStrength
-// (Final, Native, Public)
-// Parameters:
-// int32                                   InColorBlindStrength                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetColorBlindStrength(int32 InColorBlindStrength)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetColorBlindStrength");
-
-	Params::CrSettingsShared_SetColorBlindStrength Parms{};
-
-	Parms.InColorBlindStrength = InColorBlindStrength;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetConsoleGraphicsMode
-// (Final, Native, Public)
-// Parameters:
-// EConsoleGraphicsMode                    InConsoleMode                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetConsoleGraphicsMode(EConsoleGraphicsMode InConsoleMode)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetConsoleGraphicsMode");
-
-	Params::CrSettingsShared_SetConsoleGraphicsMode Parms{};
-
-	Parms.InConsoleMode = InConsoleMode;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetCoopInfoCollision
-// (Final, Native, Public)
-// Parameters:
-// ECoopInfoCollision                      NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetCoopInfoCollision(ECoopInfoCollision NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetCoopInfoCollision");
-
-	Params::CrSettingsShared_SetCoopInfoCollision Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetCrouchToggle
-// (Final, Native, Public)
-// Parameters:
-// bool                                    NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetCrouchToggle(bool NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetCrouchToggle");
-
-	Params::CrSettingsShared_SetCrouchToggle Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetForceFeedbackEnabled
-// (Final, Native, Public)
-// Parameters:
-// const bool                              NewValue                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetForceFeedbackEnabled(const bool NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetForceFeedbackEnabled");
-
-	Params::CrSettingsShared_SetForceFeedbackEnabled Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetGamepadLookStickDeadZone
-// (Final, Native, Public)
-// Parameters:
-// const float                             NewValue                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetGamepadLookStickDeadZone(const float NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetGamepadLookStickDeadZone");
-
-	Params::CrSettingsShared_SetGamepadLookStickDeadZone Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetGamepadMoveStickDeadZone
-// (Final, Native, Public)
-// Parameters:
-// const float                             NewValue                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetGamepadMoveStickDeadZone(const float NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetGamepadMoveStickDeadZone");
-
-	Params::CrSettingsShared_SetGamepadMoveStickDeadZone Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetGamepadTargetingSensitivityPreset
-// (Final, Native, Public)
-// Parameters:
-// ECrGamepadSensitivity                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetGamepadTargetingSensitivityPreset(ECrGamepadSensitivity NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetGamepadTargetingSensitivityPreset");
-
-	Params::CrSettingsShared_SetGamepadTargetingSensitivityPreset Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetHasCompletedTutorial
-// (Final, Native, Public)
-// Parameters:
-// bool                                    NewHasCompletedTutorial                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetHasCompletedTutorial(bool NewHasCompletedTutorial)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetHasCompletedTutorial");
-
-	Params::CrSettingsShared_SetHasCompletedTutorial Parms{};
-
-	Parms.NewHasCompletedTutorial = NewHasCompletedTutorial;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetInvertHorizontalAxis
-// (Final, Native, Public)
-// Parameters:
-// bool                                    NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetInvertHorizontalAxis(bool NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetInvertHorizontalAxis");
-
-	Params::CrSettingsShared_SetInvertHorizontalAxis Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetInvertVerticalAxis
-// (Final, Native, Public)
-// Parameters:
-// bool                                    NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetInvertVerticalAxis(bool NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetInvertVerticalAxis");
-
-	Params::CrSettingsShared_SetInvertVerticalAxis Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetLookAcceleration
-// (Final, Native, Public)
-// Parameters:
-// bool                                    NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetLookAcceleration(bool NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetLookAcceleration");
-
-	Params::CrSettingsShared_SetLookAcceleration Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetLookSensitivityPreset
-// (Final, Native, Public)
-// Parameters:
-// ECrGamepadSensitivity                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetLookSensitivityPreset(ECrGamepadSensitivity NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetLookSensitivityPreset");
-
-	Params::CrSettingsShared_SetLookSensitivityPreset Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetMouseSensitivityX
-// (Final, Native, Public)
-// Parameters:
-// double                                  NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetMouseSensitivityX(double NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetMouseSensitivityX");
-
-	Params::CrSettingsShared_SetMouseSensitivityX Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetMouseSensitivityY
-// (Final, Native, Public)
-// Parameters:
-// double                                  NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetMouseSensitivityY(double NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetMouseSensitivityY");
-
-	Params::CrSettingsShared_SetMouseSensitivityY Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetSkipTutorialChecked
-// (Final, Native, Public)
-// Parameters:
-// bool                                    InSkipTutorialChecked                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetSkipTutorialChecked(bool InSkipTutorialChecked)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetSkipTutorialChecked");
-
-	Params::CrSettingsShared_SetSkipTutorialChecked Parms{};
-
-	Parms.InSkipTutorialChecked = InSkipTutorialChecked;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetSprintInputToggleMode
-// (Final, Native, Public)
-// Parameters:
-// ESprintInputToggleMode                  InMode                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetSprintInputToggleMode(ESprintInputToggleMode InMode)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetSprintInputToggleMode");
-
-	Params::CrSettingsShared_SetSprintInputToggleMode Parms{};
-
-	Parms.InMode = InMode;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetSubtitlesBackgroundOpacity
-// (Final, Native, Public)
-// Parameters:
-// ESubtitleDisplayBackgroundOpacity       Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetSubtitlesBackgroundOpacity(ESubtitleDisplayBackgroundOpacity Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetSubtitlesBackgroundOpacity");
-
-	Params::CrSettingsShared_SetSubtitlesBackgroundOpacity Parms{};
-
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetSubtitlesEnabled
-// (Final, Native, Public)
-// Parameters:
-// bool                                    Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetSubtitlesEnabled(bool Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetSubtitlesEnabled");
-
-	Params::CrSettingsShared_SetSubtitlesEnabled Parms{};
-
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetSubtitlesTextBorder
-// (Final, Native, Public)
-// Parameters:
-// ESubtitleDisplayTextBorder              Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetSubtitlesTextBorder(ESubtitleDisplayTextBorder Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetSubtitlesTextBorder");
-
-	Params::CrSettingsShared_SetSubtitlesTextBorder Parms{};
-
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetSubtitlesTextColor
-// (Final, Native, Public)
-// Parameters:
-// ESubtitleDisplayTextColor               Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetSubtitlesTextColor(ESubtitleDisplayTextColor Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetSubtitlesTextColor");
-
-	Params::CrSettingsShared_SetSubtitlesTextColor Parms{};
-
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetSubtitlesTextSize
-// (Final, Native, Public)
-// Parameters:
-// ESubtitleDisplayTextSize                Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetSubtitlesTextSize(ESubtitleDisplayTextSize Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetSubtitlesTextSize");
-
-	Params::CrSettingsShared_SetSubtitlesTextSize Parms{};
-
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetTargetingMultiplier
-// (Final, Native, Public)
-// Parameters:
-// double                                  NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetTargetingMultiplier(double NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetTargetingMultiplier");
-
-	Params::CrSettingsShared_SetTargetingMultiplier Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetTriggerHapticsEnabled
-// (Final, Native, Public)
-// Parameters:
-// const bool                              NewValue                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetTriggerHapticsEnabled(const bool NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetTriggerHapticsEnabled");
-
-	Params::CrSettingsShared_SetTriggerHapticsEnabled Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetTriggerHapticStartPosition
-// (Final, Native, Public)
-// Parameters:
-// const uint8                             NewValue                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetTriggerHapticStartPosition(const uint8 NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetTriggerHapticStartPosition");
-
-	Params::CrSettingsShared_SetTriggerHapticStartPosition Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetTriggerHapticStrength
-// (Final, Native, Public)
-// Parameters:
-// const uint8                             NewValue                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetTriggerHapticStrength(const uint8 NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetTriggerHapticStrength");
-
-	Params::CrSettingsShared_SetTriggerHapticStrength Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.SetTriggerPullUsesHapticThreshold
-// (Final, Native, Public)
-// Parameters:
-// const bool                              NewValue                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrSettingsShared::SetTriggerPullUsesHapticThreshold(const bool NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "SetTriggerPullUsesHapticThreshold");
-
-	Params::CrSettingsShared_SetTriggerPullUsesHapticThreshold Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrSettingsShared.GetADSToggle
-// (Final, Native, Public, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UCrSettingsShared::GetADSToggle() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetADSToggle");
-
-	Params::CrSettingsShared_GetADSToggle Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetAimAssistStrength
-// (Final, Native, Public, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UCrSettingsShared::GetAimAssistStrength() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetAimAssistStrength");
-
-	Params::CrSettingsShared_GetAimAssistStrength Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetAimAssistType
-// (Final, Native, Public, Const)
-// Parameters:
-// ECrAimAssistType                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-ECrAimAssistType UCrSettingsShared::GetAimAssistType() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetAimAssistType");
-
-	Params::CrSettingsShared_GetAimAssistType Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetAllowAudioInBackgroundSetting
-// (Final, Native, Public, Const)
-// Parameters:
-// ECrAllowBackgroundAudioSetting          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-ECrAllowBackgroundAudioSetting UCrSettingsShared::GetAllowAudioInBackgroundSetting() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetAllowAudioInBackgroundSetting");
-
-	Params::CrSettingsShared_GetAllowAudioInBackgroundSetting Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetAutoSaveEnabled
-// (Final, Native, Public, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UCrSettingsShared::GetAutoSaveEnabled() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetAutoSaveEnabled");
-
-	Params::CrSettingsShared_GetAutoSaveEnabled Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetBuildingDroneActivateMode
-// (Final, Native, Public, Const)
-// Parameters:
-// EBuildingDroneActivateMode              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EBuildingDroneActivateMode UCrSettingsShared::GetBuildingDroneActivateMode() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetBuildingDroneActivateMode");
-
-	Params::CrSettingsShared_GetBuildingDroneActivateMode Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetColorBlindMode
-// (Final, Native, Public, Const)
-// Parameters:
-// EColorBlindMode                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EColorBlindMode UCrSettingsShared::GetColorBlindMode() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetColorBlindMode");
-
-	Params::CrSettingsShared_GetColorBlindMode Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetColorBlindStrength
-// (Final, Native, Public, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UCrSettingsShared::GetColorBlindStrength() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetColorBlindStrength");
-
-	Params::CrSettingsShared_GetColorBlindStrength Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetCoopInfoCollision
-// (Final, Native, Public, Const)
-// Parameters:
-// ECoopInfoCollision                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-ECoopInfoCollision UCrSettingsShared::GetCoopInfoCollision() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetCoopInfoCollision");
-
-	Params::CrSettingsShared_GetCoopInfoCollision Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetCrouchToggle
-// (Final, Native, Public, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UCrSettingsShared::GetCrouchToggle() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetCrouchToggle");
-
-	Params::CrSettingsShared_GetCrouchToggle Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetCurrentConsoleGraphicsMode
-// (Final, Native, Public, Const)
-// Parameters:
-// EConsoleGraphicsMode                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EConsoleGraphicsMode UCrSettingsShared::GetCurrentConsoleGraphicsMode() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetCurrentConsoleGraphicsMode");
-
-	Params::CrSettingsShared_GetCurrentConsoleGraphicsMode Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetForceFeedbackEnabled
-// (Final, Native, Public, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UCrSettingsShared::GetForceFeedbackEnabled() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetForceFeedbackEnabled");
-
-	Params::CrSettingsShared_GetForceFeedbackEnabled Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetGamepadLookSensitivityPreset
-// (Final, Native, Public, Const)
-// Parameters:
-// ECrGamepadSensitivity                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-ECrGamepadSensitivity UCrSettingsShared::GetGamepadLookSensitivityPreset() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetGamepadLookSensitivityPreset");
-
-	Params::CrSettingsShared_GetGamepadLookSensitivityPreset Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetGamepadLookStickDeadZone
-// (Final, Native, Public, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UCrSettingsShared::GetGamepadLookStickDeadZone() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetGamepadLookStickDeadZone");
-
-	Params::CrSettingsShared_GetGamepadLookStickDeadZone Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetGamepadMoveStickDeadZone
-// (Final, Native, Public, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UCrSettingsShared::GetGamepadMoveStickDeadZone() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetGamepadMoveStickDeadZone");
-
-	Params::CrSettingsShared_GetGamepadMoveStickDeadZone Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetGamepadTargetingSensitivityPreset
-// (Final, Native, Public, Const)
-// Parameters:
-// ECrGamepadSensitivity                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-ECrGamepadSensitivity UCrSettingsShared::GetGamepadTargetingSensitivityPreset() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetGamepadTargetingSensitivityPreset");
-
-	Params::CrSettingsShared_GetGamepadTargetingSensitivityPreset Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetHasCompletedTutorial
-// (Final, Native, Public, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UCrSettingsShared::GetHasCompletedTutorial() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetHasCompletedTutorial");
-
-	Params::CrSettingsShared_GetHasCompletedTutorial Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetInvertHorizontalAxis
-// (Final, Native, Public, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UCrSettingsShared::GetInvertHorizontalAxis() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetInvertHorizontalAxis");
-
-	Params::CrSettingsShared_GetInvertHorizontalAxis Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetInvertVerticalAxis
-// (Final, Native, Public, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UCrSettingsShared::GetInvertVerticalAxis() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetInvertVerticalAxis");
-
-	Params::CrSettingsShared_GetInvertVerticalAxis Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetLookAcceleration
-// (Final, Native, Public, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UCrSettingsShared::GetLookAcceleration() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetLookAcceleration");
-
-	Params::CrSettingsShared_GetLookAcceleration Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetMouseSensitivityX
-// (Final, Native, Public, Const)
-// Parameters:
-// double                                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-double UCrSettingsShared::GetMouseSensitivityX() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetMouseSensitivityX");
-
-	Params::CrSettingsShared_GetMouseSensitivityX Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetMouseSensitivityY
-// (Final, Native, Public, Const)
-// Parameters:
-// double                                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-double UCrSettingsShared::GetMouseSensitivityY() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetMouseSensitivityY");
-
-	Params::CrSettingsShared_GetMouseSensitivityY Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetSkipTutorialChecked
-// (Final, Native, Public, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UCrSettingsShared::GetSkipTutorialChecked() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetSkipTutorialChecked");
-
-	Params::CrSettingsShared_GetSkipTutorialChecked Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetSprintInputToggleMode
-// (Final, Native, Public, Const)
-// Parameters:
-// ESprintInputToggleMode                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-ESprintInputToggleMode UCrSettingsShared::GetSprintInputToggleMode() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetSprintInputToggleMode");
-
-	Params::CrSettingsShared_GetSprintInputToggleMode Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetSubtitlesBackgroundOpacity
-// (Final, Native, Public, Const)
-// Parameters:
-// ESubtitleDisplayBackgroundOpacity       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-ESubtitleDisplayBackgroundOpacity UCrSettingsShared::GetSubtitlesBackgroundOpacity() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetSubtitlesBackgroundOpacity");
-
-	Params::CrSettingsShared_GetSubtitlesBackgroundOpacity Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetSubtitlesEnabled
-// (Final, Native, Public, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UCrSettingsShared::GetSubtitlesEnabled() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetSubtitlesEnabled");
-
-	Params::CrSettingsShared_GetSubtitlesEnabled Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetSubtitlesTextBorder
-// (Final, Native, Public, Const)
-// Parameters:
-// ESubtitleDisplayTextBorder              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-ESubtitleDisplayTextBorder UCrSettingsShared::GetSubtitlesTextBorder() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetSubtitlesTextBorder");
-
-	Params::CrSettingsShared_GetSubtitlesTextBorder Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetSubtitlesTextColor
-// (Final, Native, Public, Const)
-// Parameters:
-// ESubtitleDisplayTextColor               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-ESubtitleDisplayTextColor UCrSettingsShared::GetSubtitlesTextColor() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetSubtitlesTextColor");
-
-	Params::CrSettingsShared_GetSubtitlesTextColor Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetSubtitlesTextSize
-// (Final, Native, Public, Const)
-// Parameters:
-// ESubtitleDisplayTextSize                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-ESubtitleDisplayTextSize UCrSettingsShared::GetSubtitlesTextSize() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetSubtitlesTextSize");
-
-	Params::CrSettingsShared_GetSubtitlesTextSize Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetTargetingMultiplier
-// (Final, Native, Public, Const)
-// Parameters:
-// double                                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-double UCrSettingsShared::GetTargetingMultiplier() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetTargetingMultiplier");
-
-	Params::CrSettingsShared_GetTargetingMultiplier Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetTriggerHapticsEnabled
-// (Final, Native, Public, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UCrSettingsShared::GetTriggerHapticsEnabled() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetTriggerHapticsEnabled");
-
-	Params::CrSettingsShared_GetTriggerHapticsEnabled Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetTriggerHapticStartPosition
-// (Final, Native, Public, Const)
-// Parameters:
-// uint8                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-uint8 UCrSettingsShared::GetTriggerHapticStartPosition() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetTriggerHapticStartPosition");
-
-	Params::CrSettingsShared_GetTriggerHapticStartPosition Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetTriggerHapticStrength
-// (Final, Native, Public, Const)
-// Parameters:
-// uint8                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-uint8 UCrSettingsShared::GetTriggerHapticStrength() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetTriggerHapticStrength");
-
-	Params::CrSettingsShared_GetTriggerHapticStrength Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Chimera.CrSettingsShared.GetTriggerPullUsesHapticThreshold
-// (Final, Native, Public, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UCrSettingsShared::GetTriggerPullUsesHapticThreshold() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrSettingsShared", "GetTriggerPullUsesHapticThreshold");
-
-	Params::CrSettingsShared_GetTriggerPullUsesHapticThreshold Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 

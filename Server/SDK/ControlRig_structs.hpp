@@ -13,8 +13,8 @@
 #include "Constraints_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "AnimationCore_structs.hpp"
-#include "Engine_structs.hpp"
 #include "RigVM_structs.hpp"
+#include "Engine_structs.hpp"
 #include "MovieSceneTracks_structs.hpp"
 #include "MovieScene_structs.hpp"
 
@@ -522,6 +522,16 @@ enum class ERigMetaDataNameSpace : uint8
 	ERigMetaDataNameSpace_MAX                = 5,
 };
 
+// ScriptStruct ControlRig.ControlRigIOSettings
+// 0x0002 (0x0002 - 0x0000)
+struct FControlRigIOSettings final
+{
+public:
+	bool                                          bUpdatePose;                                       // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUpdateCurves;                                     // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FControlRigIOSettings;
+
 // ScriptStruct ControlRig.RigElementKey
 // 0x000C (0x000C - 0x0000)
 struct FRigElementKey final
@@ -532,6 +542,103 @@ public:
 	class FName                                   Name;                                              // 0x0004(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRigElementKey;
+
+// ScriptStruct ControlRig.RigUnit
+// 0x0000 (0x0008 - 0x0008)
+struct FRigUnit : public FRigVMStruct
+{
+};
+DUMPER7_ASSERTS_FRigUnit;
+
+// ScriptStruct ControlRig.RigUnit_GetAnimationChannelFromItemBase
+// 0x0010 (0x0018 - 0x0008)
+struct FRigUnit_GetAnimationChannelFromItemBase : public FRigUnit
+{
+public:
+	struct FRigElementKey                         Item;                                              // 0x0008(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInitial;                                          // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigUnit_GetAnimationChannelFromItemBase;
+
+// ScriptStruct ControlRig.RigUnit_GetVector2DAnimationChannelFromItem
+// 0x0010 (0x0028 - 0x0018)
+struct FRigUnit_GetVector2DAnimationChannelFromItem final : public FRigUnit_GetAnimationChannelFromItemBase
+{
+public:
+	struct FVector2D                              Value;                                             // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_GetVector2DAnimationChannelFromItem;
+
+// ScriptStruct ControlRig.RigUnitMutable
+// 0x0008 (0x0010 - 0x0008)
+struct FRigUnitMutable : public FRigUnit
+{
+public:
+	struct FRigVMExecutePin                       ExecutePin;                                        // 0x0008(0x0008)(Edit, BlueprintVisible, Transient, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnitMutable;
+
+// ScriptStruct ControlRig.RigUnit_HighlevelBaseMutable
+// 0x0000 (0x0010 - 0x0010)
+struct FRigUnit_HighlevelBaseMutable : public FRigUnitMutable
+{
+};
+DUMPER7_ASSERTS_FRigUnit_HighlevelBaseMutable;
+
+// ScriptStruct ControlRig.RigUnit_Harmonics_TargetItem
+// 0x0010 (0x0010 - 0x0000)
+struct FRigUnit_Harmonics_TargetItem final
+{
+public:
+	struct FRigElementKey                         Item;                                              // 0x0000(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Ratio;                                             // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_Harmonics_TargetItem;
+
+// ScriptStruct ControlRig.CachedRigElement
+// 0x0020 (0x0020 - 0x0000)
+struct alignas(0x08) FCachedRigElement final
+{
+public:
+	struct FRigElementKey                         Key;                                               // 0x0000(0x000C)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint16                                        Index;                                             // 0x000C(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ContainerVersion;                                  // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_14[0xC];                                       // 0x0014(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCachedRigElement;
+
+// ScriptStruct ControlRig.RigUnit_BoneHarmonics_WorkData
+// 0x0028 (0x0028 - 0x0000)
+struct FRigUnit_BoneHarmonics_WorkData final
+{
+public:
+	TArray<struct FCachedRigElement>              CachedItems;                                       // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FVector                                WaveTime;                                          // 0x0010(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_BoneHarmonics_WorkData;
+
+// ScriptStruct ControlRig.RigUnit_ItemHarmonics
+// 0x00C0 (0x00D0 - 0x0010)
+struct FRigUnit_ItemHarmonics final : public FRigUnit_HighlevelBaseMutable
+{
+public:
+	TArray<struct FRigUnit_Harmonics_TargetItem>  Targets;                                           // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
+	struct FVector                                WaveSpeed;                                         // 0x0020(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                WaveFrequency;                                     // 0x0038(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                WaveAmplitude;                                     // 0x0050(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                WaveOffset;                                        // 0x0068(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                WaveNoise;                                         // 0x0080(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERigVMAnimEasingType                          WaveEase;                                          // 0x0098(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_99[0x3];                                       // 0x0099(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         WaveMinimum;                                       // 0x009C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WaveMaximum;                                       // 0x00A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EEulerRotationOrder                           RotationOrder;                                     // 0x00A4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A5[0x3];                                       // 0x00A5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRigUnit_BoneHarmonics_WorkData        WorkData;                                          // 0x00A8(0x0028)(Transient, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_ItemHarmonics;
 
 // ScriptStruct ControlRig.RigBaseElement
 // 0x0058 (0x0058 - 0x0000)
@@ -548,17 +655,248 @@ public:
 };
 DUMPER7_ASSERTS_FRigBaseElement;
 
-// ScriptStruct ControlRig.RigElement
-// 0x0018 (0x0018 - 0x0000)
-struct alignas(0x08) FRigElement
+// ScriptStruct ControlRig.ControlRigOverrideContainer
+// 0x0158 (0x0158 - 0x0000)
+struct alignas(0x08) FControlRigOverrideContainer final
+{
+public:
+	uint8                                         Pad_0[0x158];                                      // 0x0000(0x0158)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FControlRigOverrideContainer;
+
+// ScriptStruct ControlRig.RigModuleReference
+// 0x02D0 (0x02D0 - 0x0000)
+struct FRigModuleReference final
+{
+public:
+	class FName                                   Name;                                              // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ShortName;                                         // 0x0008(0x0010)(ZeroConstructor, Deprecated, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShortNameBasedOnPath;                             // 0x0018(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ParentPath;                                        // 0x0020(0x0010)(ZeroConstructor, Deprecated, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ParentModuleName;                                  // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftClassPtr<class UClass>                   Class;                                             // 0x0038(0x0028)(UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<struct FRigElementKey, struct FRigElementKey> Connections;                                  // 0x0060(0x0050)(Deprecated, NativeAccessSpecifierPublic)
+	TMap<class FName, class FString>              ConfigValues;                                      // 0x00B0(0x0050)(Deprecated, NativeAccessSpecifierPublic)
+	struct FControlRigOverrideContainer           ConfigOverrides;                                   // 0x0100(0x0158)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<class FName, class FString>              Bindings;                                          // 0x0258(0x0050)(NativeAccessSpecifierPublic)
+	class FName                                   PreviousName;                                      // 0x02A8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   PreviousParentName;                                // 0x02B0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2B8[0x18];                                     // 0x02B8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigModuleReference;
+
+// ScriptStruct ControlRig.RigUnit_SetMetadataTag
+// 0x0038 (0x0048 - 0x0010)
+struct FRigUnit_SetMetadataTag final : public FRigUnitMutable
+{
+public:
+	struct FRigElementKey                         Item;                                              // 0x0010(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Tag;                                               // 0x001C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERigMetaDataNameSpace                         Namespace;                                         // 0x0024(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCachedRigElement                      CachedIndex;                                       // 0x0028(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_SetMetadataTag;
+
+// ScriptStruct ControlRig.RigConnectionRuleStash
+// 0x0020 (0x0020 - 0x0000)
+struct FRigConnectionRuleStash final
+{
+public:
+	class FString                                 ScriptStructPath;                                  // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ExportedText;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigConnectionRuleStash;
+
+// ScriptStruct ControlRig.RigElementKeyCollection
+// 0x0010 (0x0010 - 0x0000)
+struct FRigElementKeyCollection final
+{
+public:
+	TArray<struct FRigElementKey>                 Keys;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigElementKeyCollection;
+
+// ScriptStruct ControlRig.RigUnit_CollectionBase
+// 0x0000 (0x0008 - 0x0008)
+struct FRigUnit_CollectionBase : public FRigUnit
+{
+};
+DUMPER7_ASSERTS_FRigUnit_CollectionBase;
+
+// ScriptStruct ControlRig.RigUnit_CollectionGetItems
+// 0x0020 (0x0028 - 0x0008)
+struct FRigUnit_CollectionGetItems final : public FRigUnit_CollectionBase
+{
+public:
+	struct FRigElementKeyCollection               Collection;                                        // 0x0008(0x0010)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FRigElementKey>                 Items;                                             // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_CollectionGetItems;
+
+// ScriptStruct ControlRig.RigBaseMetadata
+// 0x0020 (0x0020 - 0x0000)
+struct alignas(0x08) FRigBaseMetadata
 {
 public:
 	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   Name;                                              // 0x0008(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Index;                                             // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FName                                   Name;                                              // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	ERigMetadataType                              Type;                                              // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_11[0xF];                                       // 0x0011(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FRigElement;
+DUMPER7_ASSERTS_FRigBaseMetadata;
+
+// ScriptStruct ControlRig.RigVectorArrayMetadata
+// 0x0010 (0x0030 - 0x0020)
+struct FRigVectorArrayMetadata final : public FRigBaseMetadata
+{
+public:
+	TArray<struct FVector>                        Value;                                             // 0x0020(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+};
+DUMPER7_ASSERTS_FRigVectorArrayMetadata;
+
+// ScriptStruct ControlRig.RigTransformElement
+// 0x00C0 (0x0118 - 0x0058)
+struct FRigTransformElement : public FRigBaseElement
+{
+public:
+	uint8                                         Pad_58[0xC0];                                      // 0x0058(0x00C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigTransformElement;
+
+// ScriptStruct ControlRig.RigUnit_SetControlRotationOffset
+// 0x0060 (0x0070 - 0x0010)
+struct FRigUnit_SetControlRotationOffset final : public FRigUnitMutable
+{
+public:
+	class FName                                   Control;                                           // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FQuat                                  Offset;                                            // 0x0020(0x0020)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERigVMTransformSpace                          Space;                                             // 0x0040(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCachedRigElement                      CachedControlIndex;                                // 0x0048(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_68[0x8];                                       // 0x0068(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigUnit_SetControlRotationOffset;
+
+// ScriptStruct ControlRig.RigUnit_HighlevelBase
+// 0x0000 (0x0008 - 0x0008)
+struct FRigUnit_HighlevelBase : public FRigUnit
+{
+};
+DUMPER7_ASSERTS_FRigUnit_HighlevelBase;
+
+// ScriptStruct ControlRig.RigUnit_AimItem_Target
+// 0x0048 (0x0048 - 0x0000)
+struct FRigUnit_AimItem_Target final
+{
+public:
+	float                                         Weight;                                            // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                Axis;                                              // 0x0008(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Target;                                            // 0x0020(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EControlRigVectorKind                         Kind;                                              // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_39[0x3];                                       // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRigElementKey                         Space;                                             // 0x003C(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_AimItem_Target;
+
+// ScriptStruct ControlRig.RigUnit_AimBone_DebugSettings
+// 0x0070 (0x0070 - 0x0000)
+struct FRigUnit_AimBone_DebugSettings final
+{
+public:
+	bool                                          bEnabled;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Scale;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             WorldOffset;                                       // 0x0010(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_AimBone_DebugSettings;
+
+// ScriptStruct ControlRig.RigUnit_AimBoneMath
+// 0x0228 (0x0230 - 0x0008)
+struct FRigUnit_AimBoneMath final : public FRigUnit_HighlevelBase
+{
+public:
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             InputTransform;                                    // 0x0010(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRigUnit_AimItem_Target                Primary;                                           // 0x0070(0x0048)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRigUnit_AimItem_Target                Secondary;                                         // 0x00B8(0x0048)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         Weight;                                            // 0x0100(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_104[0xC];                                      // 0x0104(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Result;                                            // 0x0110(0x0060)(BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRigUnit_AimBone_DebugSettings         DebugSettings;                                     // 0x0170(0x0070)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FCachedRigElement                      PrimaryCachedSpace;                                // 0x01E0(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCachedRigElement                      SecondaryCachedSpace;                              // 0x0200(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsInitialized;                                    // 0x0220(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_221[0xF];                                      // 0x0221(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigUnit_AimBoneMath;
+
+// ScriptStruct ControlRig.RigMultiParentElement
+// 0x0118 (0x0230 - 0x0118)
+struct alignas(0x10) FRigMultiParentElement : public FRigTransformElement
+{
+public:
+	uint8                                         Pad_118[0x118];                                    // 0x0118(0x0118)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigMultiParentElement;
+
+// ScriptStruct ControlRig.RigUnit_GetAnimationChannelBase
+// 0x0028 (0x0030 - 0x0008)
+struct FRigUnit_GetAnimationChannelBase : public FRigUnit
+{
+public:
+	class FName                                   Control;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Channel;                                           // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInitial;                                          // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRigElementKey                         CachedChannelKey;                                  // 0x001C(0x000C)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CachedChannelHash;                                 // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigUnit_GetAnimationChannelBase;
+
+// ScriptStruct ControlRig.RigUnit_GetTransformAnimationChannel
+// 0x0060 (0x0090 - 0x0030)
+struct FRigUnit_GetTransformAnimationChannel final : public FRigUnit_GetAnimationChannelBase
+{
+public:
+	struct FTransform                             Value;                                             // 0x0030(0x0060)(BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_GetTransformAnimationChannel;
+
+// ScriptStruct ControlRig.RigElementKeyWithLabel
+// 0x0014 (0x0014 - 0x0000)
+struct FRigElementKeyWithLabel final
+{
+public:
+	struct FRigElementKey                         Key;                                               // 0x0000(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Label;                                             // 0x000C(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigElementKeyWithLabel;
+
+// ScriptStruct ControlRig.RigControlElementCustomization
+// 0x0020 (0x0020 - 0x0000)
+struct FRigControlElementCustomization final
+{
+public:
+	TArray<struct FRigElementKeyWithLabel>        AvailableSpaces;                                   // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FRigElementKey>                 RemovedSpaces;                                     // 0x0010(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigControlElementCustomization;
+
+// ScriptStruct ControlRig.RigControlLimitEnabled
+// 0x0002 (0x0002 - 0x0000)
+struct FRigControlLimitEnabled final
+{
+public:
+	bool                                          bMinimum;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bMaximum;                                          // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigControlLimitEnabled;
 
 // ScriptStruct ControlRig.RigControlValueStorage
 // 0x0084 (0x0084 - 0x0000)
@@ -610,345 +948,6 @@ public:
 	struct FRigControlValueStorage                FloatStorage;                                      // 0x0000(0x0084)(NoDestructor, NativeAccessSpecifierPrivate)
 };
 DUMPER7_ASSERTS_FRigControlValue;
-
-// ScriptStruct ControlRig.RigControl
-// 0x0348 (0x0360 - 0x0018)
-struct FRigControl final : public FRigElement
-{
-public:
-	ERigControlType                               ControlType;                                       // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   DisplayName;                                       // 0x001C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   ParentName;                                        // 0x0024(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ParentIndex;                                       // 0x002C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   SpaceName;                                         // 0x0030(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SpaceIndex;                                        // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             OffsetTransform;                                   // 0x0040(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRigControlValue                       InitialValue;                                      // 0x00A0(0x0084)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRigControlValue                       Value;                                             // 0x0124(0x0084)(Edit, BlueprintVisible, BlueprintReadOnly, Transient, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	ERigControlAxis                               PrimaryAxis;                                       // 0x01A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsCurve;                                          // 0x01A9(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAnimatable;                                       // 0x01AA(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bLimitTranslation;                                 // 0x01AB(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bLimitRotation;                                    // 0x01AC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bLimitScale;                                       // 0x01AD(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bDrawLimits;                                       // 0x01AE(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1AF[0x1];                                      // 0x01AF(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRigControlValue                       MinimumValue;                                      // 0x01B0(0x0084)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRigControlValue                       MaximumValue;                                      // 0x0234(0x0084)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bGizmoEnabled;                                     // 0x02B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bGizmoVisible;                                     // 0x02B9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2BA[0x2];                                      // 0x02BA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   GizmoName;                                         // 0x02BC(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C4[0xC];                                      // 0x02C4(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             GizmoTransform;                                    // 0x02D0(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           GizmoColor;                                        // 0x0330(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<int32>                                 Dependents;                                        // 0x0340(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
-	bool                                          bIsTransientControl;                               // 0x0350(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_351[0x7];                                      // 0x0351(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UEnum*                                  ControlEnum;                                       // 0x0358(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FRigControl;
-
-// ScriptStruct ControlRig.RigControlHierarchy
-// 0x0010 (0x0010 - 0x0000)
-struct FRigControlHierarchy final
-{
-public:
-	TArray<struct FRigControl>                    Controls;                                          // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
-};
-DUMPER7_ASSERTS_FRigControlHierarchy;
-
-// ScriptStruct ControlRig.CachedRigElement
-// 0x0020 (0x0020 - 0x0000)
-struct alignas(0x08) FCachedRigElement final
-{
-public:
-	struct FRigElementKey                         Key;                                               // 0x0000(0x000C)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint16                                        Index;                                             // 0x000C(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ContainerVersion;                                  // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_14[0xC];                                       // 0x0014(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCachedRigElement;
-
-// ScriptStruct ControlRig.RigUnit
-// 0x0000 (0x0008 - 0x0008)
-struct FRigUnit : public FRigVMStruct
-{
-};
-DUMPER7_ASSERTS_FRigUnit;
-
-// ScriptStruct ControlRig.RigUnitMutable
-// 0x0008 (0x0010 - 0x0008)
-struct FRigUnitMutable : public FRigUnit
-{
-public:
-	struct FRigVMExecutePin                       ExecutePin;                                        // 0x0008(0x0008)(Edit, BlueprintVisible, Transient, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnitMutable;
-
-// ScriptStruct ControlRig.RigUnit_SetTransformItemArray
-// 0x0040 (0x0050 - 0x0010)
-struct FRigUnit_SetTransformItemArray final : public FRigUnitMutable
-{
-public:
-	TArray<struct FRigElementKey>                 Items;                                             // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	ERigVMTransformSpace                          Space;                                             // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInitial;                                          // 0x0021(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_22[0x6];                                       // 0x0022(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FTransform>                     Transforms;                                        // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	float                                         Weight;                                            // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPropagateToChildren;                              // 0x003C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FCachedRigElement>              CachedIndex;                                       // 0x0040(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_SetTransformItemArray;
-
-// ScriptStruct ControlRig.CRSimLinearSpring
-// 0x0010 (0x0010 - 0x0000)
-struct FCRSimLinearSpring final
-{
-public:
-	int32                                         SubjectA;                                          // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SubjectB;                                          // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Coefficient;                                       // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Equilibrium;                                       // 0x000C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCRSimLinearSpring;
-
-// ScriptStruct ControlRig.RigUnit_FindClosestItem
-// 0x0048 (0x0058 - 0x0010)
-struct FRigUnit_FindClosestItem final : public FRigUnitMutable
-{
-public:
-	TArray<struct FRigElementKey>                 Items;                                             // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FVector                                Point;                                             // 0x0020(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRigElementKey                         Item;                                              // 0x0038(0x000C)(BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FCachedRigElement>              CachedItems;                                       // 0x0048(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_FindClosestItem;
-
-// ScriptStruct ControlRig.RigConnectionRuleStash
-// 0x0020 (0x0020 - 0x0000)
-struct FRigConnectionRuleStash final
-{
-public:
-	class FString                                 ScriptStructPath;                                  // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ExportedText;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigConnectionRuleStash;
-
-// ScriptStruct ControlRig.RigUnit_DebugBase
-// 0x0008 (0x0010 - 0x0008)
-struct FRigUnit_DebugBase : public FRigUnit
-{
-public:
-	struct FRigVMDebugDrawSettings                DebugDrawSettings;                                 // 0x0008(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_DebugBase;
-
-// ScriptStruct ControlRig.RigUnit_DebugTransform
-// 0x0100 (0x0110 - 0x0010)
-struct FRigUnit_DebugTransform final : public FRigUnit_DebugBase
-{
-public:
-	struct FTransform                             Transform;                                         // 0x0010(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERigUnitDebugTransformMode                    Mode;                                              // 0x0070(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_71[0x3];                                       // 0x0071(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLinearColor                           Color;                                             // 0x0074(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Thickness;                                         // 0x0084(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Scale;                                             // 0x0088(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Space;                                             // 0x008C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_94[0xC];                                       // 0x0094(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             WorldOffset;                                       // 0x00A0(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnabled;                                          // 0x0100(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_101[0xF];                                      // 0x0101(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigUnit_DebugTransform;
-
-// ScriptStruct ControlRig.RigPhysicsSolverID
-// 0x0010 (0x0010 - 0x0000)
-struct FRigPhysicsSolverID final
-{
-public:
-	struct FGuid                                  Guid;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigPhysicsSolverID;
-
-// ScriptStruct ControlRig.RigUnit_DynamicHierarchyBaseMutable
-// 0x0000 (0x0010 - 0x0010)
-struct FRigUnit_DynamicHierarchyBaseMutable : public FRigUnitMutable
-{
-};
-DUMPER7_ASSERTS_FRigUnit_DynamicHierarchyBaseMutable;
-
-// ScriptStruct ControlRig.RigUnit_HierarchyAddPhysicsSolver
-// 0x0018 (0x0028 - 0x0010)
-struct FRigUnit_HierarchyAddPhysicsSolver final : public FRigUnit_DynamicHierarchyBaseMutable
-{
-public:
-	class FName                                   Name;                                              // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRigPhysicsSolverID                    Solver;                                            // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_HierarchyAddPhysicsSolver;
-
-// ScriptStruct ControlRig.RigUnit_SetControlBool
-// 0x0030 (0x0040 - 0x0010)
-struct FRigUnit_SetControlBool final : public FRigUnitMutable
-{
-public:
-	class FName                                   Control;                                           // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          BoolValue;                                         // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCachedRigElement                      CachedControlIndex;                                // 0x0020(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_SetControlBool;
-
-// ScriptStruct ControlRig.RigElementKeyCollection
-// 0x0010 (0x0010 - 0x0000)
-struct FRigElementKeyCollection final
-{
-public:
-	TArray<struct FRigElementKey>                 Keys;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigElementKeyCollection;
-
-// ScriptStruct ControlRig.RigUnit_TwistBones_WorkData
-// 0x0030 (0x0030 - 0x0000)
-struct FRigUnit_TwistBones_WorkData final
-{
-public:
-	TArray<struct FCachedRigElement>              CachedItems;                                       // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<float>                                 ItemRatios;                                        // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FTransform>                     ItemTransforms;                                    // 0x0020(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_TwistBones_WorkData;
-
-// ScriptStruct ControlRig.RigUnit_HighlevelBaseMutable
-// 0x0000 (0x0010 - 0x0010)
-struct FRigUnit_HighlevelBaseMutable : public FRigUnitMutable
-{
-};
-DUMPER7_ASSERTS_FRigUnit_HighlevelBaseMutable;
-
-// ScriptStruct ControlRig.RigUnit_TwistBonesPerItem
-// 0x0080 (0x0090 - 0x0010)
-struct FRigUnit_TwistBonesPerItem final : public FRigUnit_HighlevelBaseMutable
-{
-public:
-	struct FRigElementKeyCollection               Items;                                             // 0x0010(0x0010)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                TwistAxis;                                         // 0x0020(0x0018)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                PoleAxis;                                          // 0x0038(0x0018)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERigVMAnimEasingType                          TwistEaseType;                                     // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_51[0x3];                                       // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Weight;                                            // 0x0054(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPropagateToChildren;                              // 0x0058(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRigUnit_TwistBones_WorkData           WorkData;                                          // 0x0060(0x0030)(Transient, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_TwistBonesPerItem;
-
-// ScriptStruct ControlRig.RigTransformElement
-// 0x00C0 (0x0118 - 0x0058)
-struct FRigTransformElement : public FRigBaseElement
-{
-public:
-	uint8                                         Pad_58[0xC0];                                      // 0x0058(0x00C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigTransformElement;
-
-// ScriptStruct ControlRig.RigMultiParentElement
-// 0x0118 (0x0230 - 0x0118)
-struct alignas(0x10) FRigMultiParentElement : public FRigTransformElement
-{
-public:
-	uint8                                         Pad_118[0x118];                                    // 0x0118(0x0118)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigMultiParentElement;
-
-// ScriptStruct ControlRig.RigUnit_HighlevelBase
-// 0x0000 (0x0008 - 0x0008)
-struct FRigUnit_HighlevelBase : public FRigUnit
-{
-};
-DUMPER7_ASSERTS_FRigUnit_HighlevelBase;
-
-// ScriptStruct ControlRig.RigUnit_GetAnimationChannelFromItemBase
-// 0x0010 (0x0018 - 0x0008)
-struct FRigUnit_GetAnimationChannelFromItemBase : public FRigUnit
-{
-public:
-	struct FRigElementKey                         Item;                                              // 0x0008(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInitial;                                          // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigUnit_GetAnimationChannelFromItemBase;
-
-// ScriptStruct ControlRig.RigUnit_SetAnimationChannelBaseFromItem
-// 0x0008 (0x0020 - 0x0018)
-struct FRigUnit_SetAnimationChannelBaseFromItem : public FRigUnit_GetAnimationChannelFromItemBase
-{
-public:
-	struct FRigVMExecutePin                       ExecutePin;                                        // 0x0018(0x0008)(Edit, BlueprintVisible, Transient, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_SetAnimationChannelBaseFromItem;
-
-// ScriptStruct ControlRig.RigUnit_SetVector2DAnimationChannelFromItem
-// 0x0010 (0x0030 - 0x0020)
-struct FRigUnit_SetVector2DAnimationChannelFromItem final : public FRigUnit_SetAnimationChannelBaseFromItem
-{
-public:
-	struct FVector2D                              Value;                                             // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_SetVector2DAnimationChannelFromItem;
-
-// ScriptStruct ControlRig.RigUnit_AimItem_Target
-// 0x0048 (0x0048 - 0x0000)
-struct FRigUnit_AimItem_Target final
-{
-public:
-	float                                         Weight;                                            // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                Axis;                                              // 0x0008(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Target;                                            // 0x0020(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EControlRigVectorKind                         Kind;                                              // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_39[0x3];                                       // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRigElementKey                         Space;                                             // 0x003C(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_AimItem_Target;
-
-// ScriptStruct ControlRig.RigElementKeyWithLabel
-// 0x0014 (0x0014 - 0x0000)
-struct FRigElementKeyWithLabel final
-{
-public:
-	struct FRigElementKey                         Key;                                               // 0x0000(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Label;                                             // 0x000C(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigElementKeyWithLabel;
-
-// ScriptStruct ControlRig.RigControlElementCustomization
-// 0x0020 (0x0020 - 0x0000)
-struct FRigControlElementCustomization final
-{
-public:
-	TArray<struct FRigElementKeyWithLabel>        AvailableSpaces;                                   // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FRigElementKey>                 RemovedSpaces;                                     // 0x0010(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigControlElementCustomization;
-
-// ScriptStruct ControlRig.RigControlLimitEnabled
-// 0x0002 (0x0002 - 0x0000)
-struct FRigControlLimitEnabled final
-{
-public:
-	bool                                          bMinimum;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bMaximum;                                          // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigControlLimitEnabled;
 
 // ScriptStruct ControlRig.RigControlSettings
 // 0x0220 (0x0220 - 0x0000)
@@ -1012,223 +1011,267 @@ public:
 };
 DUMPER7_ASSERTS_FRigControlElement;
 
-// ScriptStruct ControlRig.RigUnit_SetMultiControlFloat_Entry
-// 0x000C (0x000C - 0x0000)
-struct FRigUnit_SetMultiControlFloat_Entry final
+// ScriptStruct ControlRig.CRSimPointConstraint
+// 0x0040 (0x0040 - 0x0000)
+struct FCRSimPointConstraint final
 {
 public:
-	class FName                                   Control;                                           // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FloatValue;                                        // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECRSimConstraintType                          Type;                                              // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         SubjectA;                                          // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SubjectB;                                          // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                DataA;                                             // 0x0010(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                DataB;                                             // 0x0028(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigUnit_SetMultiControlFloat_Entry;
+DUMPER7_ASSERTS_FCRSimPointConstraint;
 
-// ScriptStruct ControlRig.RigUnit_CCDIK_RotationLimitPerItem
+// ScriptStruct ControlRig.RigInt32ArrayMetadata
+// 0x0010 (0x0030 - 0x0020)
+struct FRigInt32ArrayMetadata final : public FRigBaseMetadata
+{
+public:
+	TArray<int32>                                 Value;                                             // 0x0020(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+};
+DUMPER7_ASSERTS_FRigInt32ArrayMetadata;
+
+// ScriptStruct ControlRig.RigDispatchFactory
+// 0x0000 (0x0070 - 0x0070)
+struct FRigDispatchFactory : public FRigVMDispatchFactory
+{
+};
+DUMPER7_ASSERTS_FRigDispatchFactory;
+
+// ScriptStruct ControlRig.RigDispatch_ComponentBase
+// 0x0038 (0x00A8 - 0x0070)
+struct FRigDispatch_ComponentBase : public FRigDispatchFactory
+{
+public:
+	uint8                                         Pad_70[0x38];                                      // 0x0070(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigDispatch_ComponentBase;
+
+// ScriptStruct ControlRig.RigDispatch_SpawnTopLevelComponent
+// 0x0000 (0x00A8 - 0x00A8)
+struct FRigDispatch_SpawnTopLevelComponent final : public FRigDispatch_ComponentBase
+{
+};
+DUMPER7_ASSERTS_FRigDispatch_SpawnTopLevelComponent;
+
+// ScriptStruct ControlRig.ControlRigValidationContext
+// 0x0038 (0x0038 - 0x0000)
+struct alignas(0x08) FControlRigValidationContext final
+{
+public:
+	uint8                                         Pad_0[0x38];                                       // 0x0000(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FControlRigValidationContext;
+
+// ScriptStruct ControlRig.RigUnit_GetMetadataTags
+// 0x0040 (0x0048 - 0x0008)
+struct FRigUnit_GetMetadataTags final : public FRigUnit
+{
+public:
+	struct FRigElementKey                         Item;                                              // 0x0008(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FName>                           Tags;                                              // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FCachedRigElement                      CachedIndex;                                       // 0x0028(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_GetMetadataTags;
+
+// ScriptStruct ControlRig.RigFloatMetadata
+// 0x0008 (0x0028 - 0x0020)
+struct FRigFloatMetadata final : public FRigBaseMetadata
+{
+public:
+	float                                         Value;                                             // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigFloatMetadata;
+
+// ScriptStruct ControlRig.RigUnit_SetAnimationChannelBase
+// 0x0008 (0x0038 - 0x0030)
+struct FRigUnit_SetAnimationChannelBase : public FRigUnit_GetAnimationChannelBase
+{
+public:
+	struct FRigVMExecutePin                       ExecutePin;                                        // 0x0030(0x0008)(Edit, BlueprintVisible, Transient, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_SetAnimationChannelBase;
+
+// ScriptStruct ControlRig.RigUnit_SetVector2DAnimationChannel
+// 0x0010 (0x0048 - 0x0038)
+struct FRigUnit_SetVector2DAnimationChannel final : public FRigUnit_SetAnimationChannelBase
+{
+public:
+	struct FVector2D                              Value;                                             // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_SetVector2DAnimationChannel;
+
+// ScriptStruct ControlRig.RigUnit_ToWorldSpace_Location
+// 0x0030 (0x0038 - 0x0008)
+struct FRigUnit_ToWorldSpace_Location final : public FRigUnit
+{
+public:
+	struct FVector                                Value;                                             // 0x0008(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                World;                                             // 0x0020(0x0018)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_ToWorldSpace_Location;
+
+// ScriptStruct ControlRig.RigUnit_SetBoneTransform
+// 0x0100 (0x0110 - 0x0010)
+struct FRigUnit_SetBoneTransform final : public FRigUnitMutable
+{
+public:
+	class FName                                   bone;                                              // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Transform;                                         // 0x0020(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             Result;                                            // 0x0080(0x0060)(BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERigVMTransformSpace                          Space;                                             // 0x00E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E1[0x3];                                       // 0x00E1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Weight;                                            // 0x00E4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPropagateToChildren;                              // 0x00E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E9[0x7];                                       // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCachedRigElement                      CachedBone;                                        // 0x00F0(0x0020)(Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_SetBoneTransform;
+
+// ScriptStruct ControlRig.RigUnit_ParentConstraint_AdvancedSettings
+// 0x0002 (0x0002 - 0x0000)
+struct FRigUnit_ParentConstraint_AdvancedSettings final
+{
+public:
+	EConstraintInterpType                         InterpolationType;                                 // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EEulerRotationOrder                           RotationOrderForFilter;                            // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_ParentConstraint_AdvancedSettings;
+
+// ScriptStruct ControlRig.SampleTrackHost
 // 0x0010 (0x0010 - 0x0000)
-struct FRigUnit_CCDIK_RotationLimitPerItem final
+struct alignas(0x08) FSampleTrackHost
 {
 public:
-	struct FRigElementKey                         Item;                                              // 0x0000(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Limit;                                             // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FRigUnit_CCDIK_RotationLimitPerItem;
+DUMPER7_ASSERTS_FSampleTrackHost;
 
-// ScriptStruct ControlRig.RigBaseMetadata
+// ScriptStruct ControlRig.ControlRigReplayTracks
+// 0x0168 (0x0178 - 0x0010)
+struct FControlRigReplayTracks final : public FSampleTrackHost
+{
+public:
+	uint8                                         Pad_10[0x168];                                     // 0x0010(0x0168)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FControlRigReplayTracks;
+
+// ScriptStruct ControlRig.RigUnit_HierarchyAddControl_ShapeSettings
+// 0x0080 (0x0080 - 0x0000)
+struct FRigUnit_HierarchyAddControl_ShapeSettings final
+{
+public:
+	bool                                          bVisible;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   Name;                                              // 0x0004(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           Color;                                             // 0x000C(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Transform;                                         // 0x0020(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_HierarchyAddControl_ShapeSettings;
+
+// ScriptStruct ControlRig.RigUnit_HierarchyAddControlInteger_LimitSettings
+// 0x0010 (0x0010 - 0x0000)
+struct FRigUnit_HierarchyAddControlInteger_LimitSettings final
+{
+public:
+	struct FRigControlLimitEnabled                Limit;                                             // 0x0000(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         MinValue;                                          // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxValue;                                          // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDrawLimits;                                       // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigUnit_HierarchyAddControlInteger_LimitSettings;
+
+// ScriptStruct ControlRig.RigUnit_HierarchyAddControl_ProxySettings
 // 0x0020 (0x0020 - 0x0000)
-struct alignas(0x08) FRigBaseMetadata
+struct FRigUnit_HierarchyAddControl_ProxySettings final
+{
+public:
+	bool                                          bIsProxy;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FRigElementKey>                 DrivenControls;                                    // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	ERigControlVisibility                         ShapeVisibility;                                   // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigUnit_HierarchyAddControl_ProxySettings;
+
+// ScriptStruct ControlRig.RigUnit_HierarchyAddControl_Settings
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FRigUnit_HierarchyAddControl_Settings
 {
 public:
 	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   Name;                                              // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	ERigMetadataType                              Type;                                              // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_11[0xF];                                       // 0x0011(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FName                                   DisplayName;                                       // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigBaseMetadata;
+DUMPER7_ASSERTS_FRigUnit_HierarchyAddControl_Settings;
 
-// ScriptStruct ControlRig.RigQuatArrayMetadata
-// 0x0010 (0x0030 - 0x0020)
-struct FRigQuatArrayMetadata final : public FRigBaseMetadata
-{
-public:
-	TArray<struct FQuat>                          Value;                                             // 0x0020(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-};
-DUMPER7_ASSERTS_FRigQuatArrayMetadata;
-
-// ScriptStruct ControlRig.RigUnit_GetAnimationChannelBase
-// 0x0028 (0x0030 - 0x0008)
-struct FRigUnit_GetAnimationChannelBase : public FRigUnit
-{
-public:
-	class FName                                   Control;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Channel;                                           // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInitial;                                          // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRigElementKey                         CachedChannelKey;                                  // 0x001C(0x000C)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CachedChannelHash;                                 // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigUnit_GetAnimationChannelBase;
-
-// ScriptStruct ControlRig.RigUnit_GetIntAnimationChannel
-// 0x0008 (0x0038 - 0x0030)
-struct FRigUnit_GetIntAnimationChannel final : public FRigUnit_GetAnimationChannelBase
-{
-public:
-	int32                                         Value;                                             // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigUnit_GetIntAnimationChannel;
-
-// ScriptStruct ControlRig.ModularRigSingleConnection
-// 0x0028 (0x0028 - 0x0000)
-struct FModularRigSingleConnection final
-{
-public:
-	struct FRigElementKey                         Connector;                                         // 0x0000(0x000C)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRigElementKey                         Target;                                            // 0x000C(0x000C)(Deprecated, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FRigElementKey>                 Targets;                                           // 0x0018(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FModularRigSingleConnection;
-
-// ScriptStruct ControlRig.RigUnit_FilterItemsByMetadataTags
-// 0x0048 (0x0050 - 0x0008)
-struct FRigUnit_FilterItemsByMetadataTags final : public FRigUnit
-{
-public:
-	TArray<struct FRigElementKey>                 Items;                                             // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class FName>                           Tags;                                              // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	ERigMetaDataNameSpace                         Namespace;                                         // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Inclusive;                                         // 0x0029(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A[0x6];                                       // 0x002A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FRigElementKey>                 Result;                                            // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FCachedRigElement>              CachedIndices;                                     // 0x0040(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_FilterItemsByMetadataTags;
-
-// ScriptStruct ControlRig.RigRotatorMetadata
-// 0x0018 (0x0038 - 0x0020)
-struct FRigRotatorMetadata final : public FRigBaseMetadata
-{
-public:
-	struct FRotator                               Value;                                             // 0x0020(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
-};
-DUMPER7_ASSERTS_FRigRotatorMetadata;
-
-// ScriptStruct ControlRig.ControlRigIOSettings
-// 0x0002 (0x0002 - 0x0000)
-struct FControlRigIOSettings final
-{
-public:
-	bool                                          bUpdatePose;                                       // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUpdateCurves;                                     // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FControlRigIOSettings;
-
-// ScriptStruct ControlRig.RigUnit_GetVector2DAnimationChannelFromItem
-// 0x0010 (0x0028 - 0x0018)
-struct FRigUnit_GetVector2DAnimationChannelFromItem final : public FRigUnit_GetAnimationChannelFromItemBase
-{
-public:
-	struct FVector2D                              Value;                                             // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_GetVector2DAnimationChannelFromItem;
-
-// ScriptStruct ControlRig.RigUnit_Harmonics_TargetItem
-// 0x0010 (0x0010 - 0x0000)
-struct FRigUnit_Harmonics_TargetItem final
-{
-public:
-	struct FRigElementKey                         Item;                                              // 0x0000(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Ratio;                                             // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_Harmonics_TargetItem;
-
-// ScriptStruct ControlRig.RigUnit_BoneHarmonics_WorkData
-// 0x0028 (0x0028 - 0x0000)
-struct FRigUnit_BoneHarmonics_WorkData final
-{
-public:
-	TArray<struct FCachedRigElement>              CachedItems;                                       // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FVector                                WaveTime;                                          // 0x0010(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_BoneHarmonics_WorkData;
-
-// ScriptStruct ControlRig.RigUnit_ItemHarmonics
+// ScriptStruct ControlRig.RigUnit_HierarchyAddControlInteger_Settings
 // 0x00C0 (0x00D0 - 0x0010)
-struct FRigUnit_ItemHarmonics final : public FRigUnit_HighlevelBaseMutable
+struct FRigUnit_HierarchyAddControlInteger_Settings final : public FRigUnit_HierarchyAddControl_Settings
 {
 public:
-	TArray<struct FRigUnit_Harmonics_TargetItem>  Targets;                                           // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
-	struct FVector                                WaveSpeed;                                         // 0x0020(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                WaveFrequency;                                     // 0x0038(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                WaveAmplitude;                                     // 0x0050(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                WaveOffset;                                        // 0x0068(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                WaveNoise;                                         // 0x0080(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERigVMAnimEasingType                          WaveEase;                                          // 0x0098(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_99[0x3];                                       // 0x0099(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         WaveMinimum;                                       // 0x009C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WaveMaximum;                                       // 0x00A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EEulerRotationOrder                           RotationOrder;                                     // 0x00A4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A5[0x3];                                       // 0x00A5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRigUnit_BoneHarmonics_WorkData        WorkData;                                          // 0x00A8(0x0028)(Transient, NativeAccessSpecifierPublic)
+	ERigControlAxis                               PrimaryAxis;                                       // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UEnum*                                  ControlEnum;                                       // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FRigUnit_HierarchyAddControlInteger_LimitSettings Limits;                                 // 0x0020(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRigUnit_HierarchyAddControl_ShapeSettings Shape;                                         // 0x0030(0x0080)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRigUnit_HierarchyAddControl_ProxySettings Proxy;                                         // 0x00B0(0x0020)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigUnit_ItemHarmonics;
+DUMPER7_ASSERTS_FRigUnit_HierarchyAddControlInteger_Settings;
 
-// ScriptStruct ControlRig.RigConnectionRule
-// 0x0008 (0x0008 - 0x0000)
-struct alignas(0x08) FRigConnectionRule
+// ScriptStruct ControlRig.RigUnit_DebugBaseMutable
+// 0x0008 (0x0018 - 0x0010)
+struct FRigUnit_DebugBaseMutable : public FRigUnitMutable
 {
 public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FRigVMDebugDrawSettings                DebugDrawSettings;                                 // 0x0010(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigConnectionRule;
+DUMPER7_ASSERTS_FRigUnit_DebugBaseMutable;
 
-// ScriptStruct ControlRig.RigTypeConnectionRule
-// 0x0008 (0x0010 - 0x0008)
-struct FRigTypeConnectionRule final : public FRigConnectionRule
+// ScriptStruct ControlRig.RigUnit_DebugLineItemSpace
+// 0x00C8 (0x00E0 - 0x0018)
+struct FRigUnit_DebugLineItemSpace final : public FRigUnit_DebugBaseMutable
 {
 public:
-	ERigElementType                               ElementType;                                       // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FVector                                A;                                                 // 0x0018(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                B;                                                 // 0x0030(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           Color;                                             // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Thickness;                                         // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRigElementKey                         Space;                                             // 0x005C(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_68[0x8];                                       // 0x0068(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             WorldOffset;                                       // 0x0070(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnabled;                                          // 0x00D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D1[0xF];                                       // 0x00D1(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FRigTypeConnectionRule;
+DUMPER7_ASSERTS_FRigUnit_DebugLineItemSpace;
 
-// ScriptStruct ControlRig.RigUnit_SetTranslation
-// 0x0050 (0x0060 - 0x0010)
-struct FRigUnit_SetTranslation final : public FRigUnitMutable
+// ScriptStruct ControlRig.RigUnit_SetAnimationChannelBaseFromItem
+// 0x0008 (0x0020 - 0x0018)
+struct FRigUnit_SetAnimationChannelBaseFromItem : public FRigUnit_GetAnimationChannelFromItemBase
 {
 public:
-	struct FRigElementKey                         Item;                                              // 0x0010(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERigVMTransformSpace                          Space;                                             // 0x001C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInitial;                                          // 0x001D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E[0x2];                                       // 0x001E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                Value;                                             // 0x0020(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Weight;                                            // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPropagateToChildren;                              // 0x003C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCachedRigElement                      CachedIndex;                                       // 0x0040(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRigVMExecutePin                       ExecutePin;                                        // 0x0018(0x0008)(Edit, BlueprintVisible, Transient, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigUnit_SetTranslation;
+DUMPER7_ASSERTS_FRigUnit_SetAnimationChannelBaseFromItem;
 
-// ScriptStruct ControlRig.ModularRigModuleSettingsForClipboard
-// 0x0110 (0x0110 - 0x0000)
-struct FModularRigModuleSettingsForClipboard final
+// ScriptStruct ControlRig.RigUnit_SetBoolAnimationChannelFromItem
+// 0x0008 (0x0028 - 0x0020)
+struct FRigUnit_SetBoolAnimationChannelFromItem final : public FRigUnit_SetAnimationChannelBaseFromItem
 {
 public:
-	struct FSoftObjectPath                        ModuleClass;                                       // 0x0000(0x0020)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class FString, class FString>            Defaults;                                          // 0x0020(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TMap<class FString, class FString>            Overrides;                                         // 0x0070(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TMap<class FName, class FString>              Bindings;                                          // 0x00C0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	bool                                          Value;                                             // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FModularRigModuleSettingsForClipboard;
-
-// ScriptStruct ControlRig.ModularRigModuleSettingsSetForClipboard
-// 0x0050 (0x0050 - 0x0000)
-struct FModularRigModuleSettingsSetForClipboard final
-{
-public:
-	TMap<class FName, struct FModularRigModuleSettingsForClipboard> Settings;                        // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FModularRigModuleSettingsSetForClipboard;
+DUMPER7_ASSERTS_FRigUnit_SetBoolAnimationChannelFromItem;
 
 // ScriptStruct ControlRig.RigModuleIdentifier
 // 0x0020 (0x0020 - 0x0000)
@@ -1278,142 +1321,241 @@ public:
 };
 DUMPER7_ASSERTS_FRigModuleSettings;
 
-// ScriptStruct ControlRig.RigUnit_HasMetadataTag
-// 0x0038 (0x0040 - 0x0008)
-struct FRigUnit_HasMetadataTag final : public FRigUnit
+// ScriptStruct ControlRig.RigUnit_DebugLine
+// 0x00C8 (0x00E0 - 0x0018)
+struct FRigUnit_DebugLine final : public FRigUnit_DebugBaseMutable
 {
 public:
-	struct FRigElementKey                         Item;                                              // 0x0008(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Tag;                                               // 0x0014(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERigMetaDataNameSpace                         Namespace;                                         // 0x001C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Found;                                             // 0x001D(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E[0x2];                                       // 0x001E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCachedRigElement                      CachedIndex;                                       // 0x0020(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                A;                                                 // 0x0018(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                B;                                                 // 0x0030(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           Color;                                             // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Thickness;                                         // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Space;                                             // 0x005C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_64[0xC];                                       // 0x0064(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             WorldOffset;                                       // 0x0070(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnabled;                                          // 0x00D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D1[0xF];                                       // 0x00D1(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FRigUnit_HasMetadataTag;
+DUMPER7_ASSERTS_FRigUnit_DebugLine;
 
-// ScriptStruct ControlRig.RigAndConnectionRule
-// 0x0010 (0x0018 - 0x0008)
-struct FRigAndConnectionRule final : public FRigConnectionRule
+// ScriptStruct ControlRig.ControlRigReplayVariable
+// 0x0020 (0x0020 - 0x0000)
+struct FControlRigReplayVariable final
 {
 public:
-	TArray<struct FRigConnectionRuleStash>        ChildRules;                                        // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FName                                   Name;                                              // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   CPPType;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Value;                                             // 0x0010(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigAndConnectionRule;
+DUMPER7_ASSERTS_FControlRigReplayVariable;
 
-// ScriptStruct ControlRig.SampleTrackHost
+// ScriptStruct ControlRig.RigUnit_GetControlTransform
+// 0x0158 (0x0160 - 0x0008)
+struct FRigUnit_GetControlTransform final : public FRigUnit
+{
+public:
+	class FName                                   Control;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERigVMTransformSpace                          Space;                                             // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0xF];                                       // 0x0011(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Transform;                                         // 0x0020(0x0060)(BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             Minimum;                                           // 0x0080(0x0060)(BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             Maximum;                                           // 0x00E0(0x0060)(BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCachedRigElement                      CachedControlIndex;                                // 0x0140(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_GetControlTransform;
+
+// ScriptStruct ControlRig.ControlRigAnimInstanceProxy
+// 0x00E0 (0x0880 - 0x07A0)
+struct FControlRigAnimInstanceProxy final : public FAnimInstanceProxy
+{
+public:
+	uint8                                         Pad_798[0xE8];                                     // 0x0798(0x00E8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FControlRigAnimInstanceProxy;
+
+// ScriptStruct ControlRig.RigUnit_HierarchyAddControlTransform_LimitSettings
+// 0x00B0 (0x00B0 - 0x0000)
+struct FRigUnit_HierarchyAddControlTransform_LimitSettings final
+{
+public:
+	struct FRigControlLimitEnabled                LimitTranslationX;                                 // 0x0000(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRigControlLimitEnabled                LimitTranslationY;                                 // 0x0002(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRigControlLimitEnabled                LimitTranslationZ;                                 // 0x0004(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRigControlLimitEnabled                LimitPitch;                                        // 0x0006(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRigControlLimitEnabled                LimitYaw;                                          // 0x0008(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRigControlLimitEnabled                LimitRoll;                                         // 0x000A(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRigControlLimitEnabled                LimitScaleX;                                       // 0x000C(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRigControlLimitEnabled                LimitScaleY;                                       // 0x000E(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRigControlLimitEnabled                LimitScaleZ;                                       // 0x0010(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FEulerTransform                        MinValue;                                          // 0x0018(0x0048)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FEulerTransform                        MaxValue;                                          // 0x0060(0x0048)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bDrawLimits;                                       // 0x00A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A9[0x7];                                       // 0x00A9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigUnit_HierarchyAddControlTransform_LimitSettings;
+
+// ScriptStruct ControlRig.RigPoseElement
+// 0x0110 (0x0110 - 0x0000)
+struct FRigPoseElement final
+{
+public:
+	struct FCachedRigElement                      Index;                                             // 0x0000(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             GlobalTransform;                                   // 0x0020(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             LocalTransform;                                    // 0x0080(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                PreferredEulerAngle;                               // 0x00E0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRigElementKey                         ActiveParent;                                      // 0x00F8(0x000C)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CurveValue;                                        // 0x0104(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_108[0x8];                                      // 0x0108(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigPoseElement;
+
+// ScriptStruct ControlRig.RigPose
+// 0x0070 (0x0070 - 0x0000)
+struct FRigPose final
+{
+public:
+	TArray<struct FRigPoseElement>                Elements;                                          // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         HierarchyTopologyVersion;                          // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PoseHash;                                          // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18[0x58];                                      // 0x0018(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigPose;
+
+// ScriptStruct ControlRig.RigUnit_RemoveMetadataTag
+// 0x0038 (0x0048 - 0x0010)
+struct FRigUnit_RemoveMetadataTag final : public FRigUnitMutable
+{
+public:
+	struct FRigElementKey                         Item;                                              // 0x0010(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Tag;                                               // 0x001C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERigMetaDataNameSpace                         Namespace;                                         // 0x0024(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Removed;                                           // 0x0025(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_26[0x2];                                       // 0x0026(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCachedRigElement                      CachedIndex;                                       // 0x0028(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_RemoveMetadataTag;
+
+// ScriptStruct ControlRig.RigUnit_SlideChain_WorkData
+// 0x0048 (0x0048 - 0x0000)
+struct FRigUnit_SlideChain_WorkData final
+{
+public:
+	float                                         ChainLength;                                       // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<float>                                 ItemSegments;                                      // 0x0008(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FCachedRigElement>              CachedItems;                                       // 0x0018(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FTransform>                     Transforms;                                        // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FTransform>                     BlendedTransforms;                                 // 0x0038(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_SlideChain_WorkData;
+
+// ScriptStruct ControlRig.RigUnit_GetRelativeTransformForItem
+// 0x00C8 (0x00D0 - 0x0008)
+struct FRigUnit_GetRelativeTransformForItem final : public FRigUnit
+{
+public:
+	struct FRigElementKey                         Child;                                             // 0x0008(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bChildInitial;                                     // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRigElementKey                         Parent;                                            // 0x0018(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bParentInitial;                                    // 0x0024(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_25[0xB];                                       // 0x0025(0x000B)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             RelativeTransform;                                 // 0x0030(0x0060)(BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCachedRigElement                      CachedChild;                                       // 0x0090(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCachedRigElement                      CachedParent;                                      // 0x00B0(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_GetRelativeTransformForItem;
+
+// ScriptStruct ControlRig.CRSimLinearSpring
 // 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FSampleTrackHost
+struct FCRSimLinearSpring final
 {
 public:
-	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         SubjectA;                                          // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SubjectB;                                          // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Coefficient;                                       // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Equilibrium;                                       // 0x000C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FSampleTrackHost;
+DUMPER7_ASSERTS_FCRSimLinearSpring;
 
-// ScriptStruct ControlRig.ControlRigReplayTracks
-// 0x0168 (0x0178 - 0x0010)
-struct FControlRigReplayTracks final : public FSampleTrackHost
+// ScriptStruct ControlRig.CRSimPointForce
+// 0x0028 (0x0028 - 0x0000)
+struct FCRSimPointForce final
 {
 public:
-	uint8                                         Pad_10[0x168];                                     // 0x0010(0x0168)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	ECRSimPointForceType                          ForceType;                                         // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                Vector;                                            // 0x0008(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Coefficient;                                       // 0x0020(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNormalize;                                        // 0x0024(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FControlRigReplayTracks;
+DUMPER7_ASSERTS_FCRSimPointForce;
 
-// ScriptStruct ControlRig.RigUnit_GetTransformItemArray
-// 0x0038 (0x0040 - 0x0008)
-struct FRigUnit_GetTransformItemArray final : public FRigUnit
+// ScriptStruct ControlRig.CRSimSoftCollision
+// 0x0080 (0x0080 - 0x0000)
+struct FCRSimSoftCollision final
 {
 public:
-	TArray<struct FRigElementKey>                 Items;                                             // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	ERigVMTransformSpace                          Space;                                             // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInitial;                                          // 0x0019(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A[0x6];                                       // 0x001A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FTransform>                     Transforms;                                        // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FCachedRigElement>              CachedIndex;                                       // 0x0030(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FTransform                             Transform;                                         // 0x0000(0x0060)(Edit, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECRSimSoftCollisionType                       ShapeType;                                         // 0x0060(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_61[0x3];                                       // 0x0061(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         MinimumDistance;                                   // 0x0064(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaximumDistance;                                   // 0x0068(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERigVMAnimEasingType                          FalloffType;                                       // 0x006C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6D[0x3];                                       // 0x006D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Coefficient;                                       // 0x0070(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInverted;                                         // 0x0074(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_75[0xB];                                       // 0x0075(0x000B)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FRigUnit_GetTransformItemArray;
+DUMPER7_ASSERTS_FCRSimSoftCollision;
 
-// ScriptStruct ControlRig.ControlRigOverrideContainer
-// 0x0158 (0x0158 - 0x0000)
-struct alignas(0x08) FControlRigOverrideContainer final
+// ScriptStruct ControlRig.CRSimContainer
+// 0x0018 (0x0018 - 0x0000)
+struct alignas(0x08) FCRSimContainer
 {
 public:
-	uint8                                         Pad_0[0x158];                                      // 0x0000(0x0158)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         TimeStep;                                          // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AccumulatedTime;                                   // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TimeLeftForStep;                                   // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FControlRigOverrideContainer;
+DUMPER7_ASSERTS_FCRSimContainer;
 
-// ScriptStruct ControlRig.RigUnit_HierarchyAddAnimationChannelEmptyLimitSettings
-// 0x0000 (0x0000 - 0x0000)
-#pragma pack(push, 0x1)
-struct SDK_ALIGN(0x01) FRigUnit_HierarchyAddAnimationChannelEmptyLimitSettings
-{
-};
-#pragma pack(pop)
-DUMPER7_ASSERTS_FRigUnit_HierarchyAddAnimationChannelEmptyLimitSettings;
-
-// ScriptStruct ControlRig.RigUnit_HierarchyAddAnimationChannelSingleLimitSettings
-// 0x0002 (0x0002 - 0x0000)
-struct FRigUnit_HierarchyAddAnimationChannelSingleLimitSettings final : public FRigUnit_HierarchyAddAnimationChannelEmptyLimitSettings
+// ScriptStruct ControlRig.CRSimPointContainer
+// 0x0060 (0x0078 - 0x0018)
+struct FCRSimPointContainer final : public FCRSimContainer
 {
 public:
-	struct FRigControlLimitEnabled                Enabled;                                           // 0x0000(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	TArray<struct FRigVMSimPoint>                 Points;                                            // 0x0018(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FCRSimLinearSpring>             Springs;                                           // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FCRSimPointForce>               Forces;                                            // 0x0038(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FCRSimSoftCollision>            CollisionVolumes;                                  // 0x0048(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FCRSimPointConstraint>          Constraints;                                       // 0x0058(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FRigVMSimPoint>                 PreviousStep;                                      // 0x0068(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 };
-DUMPER7_ASSERTS_FRigUnit_HierarchyAddAnimationChannelSingleLimitSettings;
+DUMPER7_ASSERTS_FCRSimPointContainer;
 
-// ScriptStruct ControlRig.RigUnit_HierarchyAddElement
-// 0x0020 (0x0030 - 0x0010)
-struct FRigUnit_HierarchyAddElement : public FRigUnit_DynamicHierarchyBaseMutable
+// ScriptStruct ControlRig.RigUnit_SetRelativeTransformForItem
+// 0x00D0 (0x00E0 - 0x0010)
+struct FRigUnit_SetRelativeTransformForItem final : public FRigUnitMutable
 {
 public:
-	struct FRigElementKey                         Parent;                                            // 0x0010(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Name;                                              // 0x001C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRigElementKey                         Item;                                              // 0x0024(0x000C)(BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRigElementKey                         Child;                                             // 0x0010(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRigElementKey                         Parent;                                            // 0x001C(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bParentInitial;                                    // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Value;                                             // 0x0030(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Weight;                                            // 0x0090(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPropagateToChildren;                              // 0x0094(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_95[0x3];                                       // 0x0095(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCachedRigElement                      CachedChild;                                       // 0x0098(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCachedRigElement                      CachedParent;                                      // 0x00B8(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D8[0x8];                                       // 0x00D8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FRigUnit_HierarchyAddElement;
-
-// ScriptStruct ControlRig.RigUnit_HierarchyAddAnimationChannelInteger
-// 0x0018 (0x0048 - 0x0030)
-struct FRigUnit_HierarchyAddAnimationChannelInteger final : public FRigUnit_HierarchyAddElement
-{
-public:
-	int32                                         InitialValue;                                      // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MinimumValue;                                      // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaximumValue;                                      // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRigUnit_HierarchyAddAnimationChannelSingleLimitSettings LimitsEnabled;                   // 0x003C(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3E[0x2];                                       // 0x003E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	class UEnum*                                  ControlEnum;                                       // 0x0040(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FRigUnit_HierarchyAddAnimationChannelInteger;
-
-// ScriptStruct ControlRig.RigDispatchFactory
-// 0x0000 (0x0070 - 0x0070)
-struct FRigDispatchFactory : public FRigVMDispatchFactory
-{
-};
-DUMPER7_ASSERTS_FRigDispatchFactory;
-
-// ScriptStruct ControlRig.RigDispatch_MetadataBase
-// 0x0030 (0x00A0 - 0x0070)
-struct FRigDispatch_MetadataBase : public FRigDispatchFactory
-{
-public:
-	uint8                                         Pad_70[0x30];                                      // 0x0070(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigDispatch_MetadataBase;
-
-// ScriptStruct ControlRig.RigDispatch_GetMetadata
-// 0x0000 (0x00A0 - 0x00A0)
-struct FRigDispatch_GetMetadata : public FRigDispatch_MetadataBase
-{
-};
-DUMPER7_ASSERTS_FRigDispatch_GetMetadata;
-
-// ScriptStruct ControlRig.RigDispatch_GetModuleMetadata
-// 0x0000 (0x00A0 - 0x00A0)
-struct FRigDispatch_GetModuleMetadata final : public FRigDispatch_GetMetadata
-{
-};
-DUMPER7_ASSERTS_FRigDispatch_GetModuleMetadata;
+DUMPER7_ASSERTS_FRigUnit_SetRelativeTransformForItem;
 
 // ScriptStruct ControlRig.RigInfluenceEntry
 // 0x0020 (0x0020 - 0x0000)
@@ -1447,96 +1589,148 @@ public:
 };
 DUMPER7_ASSERTS_FRigInfluenceMapPerEvent;
 
-// ScriptStruct ControlRig.CRSimPointForce
-// 0x0028 (0x0028 - 0x0000)
-struct FCRSimPointForce final
+// ScriptStruct ControlRig.RigNameMetadata
+// 0x0008 (0x0028 - 0x0020)
+struct FRigNameMetadata final : public FRigBaseMetadata
 {
 public:
-	ECRSimPointForceType                          ForceType;                                         // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                Vector;                                            // 0x0008(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Coefficient;                                       // 0x0020(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bNormalize;                                        // 0x0024(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FName                                   Value;                                             // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
-DUMPER7_ASSERTS_FCRSimPointForce;
+DUMPER7_ASSERTS_FRigNameMetadata;
 
-// ScriptStruct ControlRig.RigUnit_GetControlBool
-// 0x0030 (0x0038 - 0x0008)
-struct FRigUnit_GetControlBool final : public FRigUnit
+// ScriptStruct ControlRig.ControlRigAnimNodeEventName
+// 0x0008 (0x0008 - 0x0000)
+struct FControlRigAnimNodeEventName final
 {
 public:
-	class FName                                   Control;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          BoolValue;                                         // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCachedRigElement                      CachedControlIndex;                                // 0x0018(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   EventName;                                         // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigUnit_GetControlBool;
+DUMPER7_ASSERTS_FControlRigAnimNodeEventName;
 
-// ScriptStruct ControlRig.CRSimSoftCollision
-// 0x0080 (0x0080 - 0x0000)
-struct FCRSimSoftCollision final
+// ScriptStruct ControlRig.AnimNode_ControlRigBase
+// 0x01D0 (0x0228 - 0x0058)
+struct FAnimNode_ControlRigBase : public FAnimNode_CustomProperty
 {
 public:
-	struct FTransform                             Transform;                                         // 0x0000(0x0060)(Edit, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECRSimSoftCollisionType                       ShapeType;                                         // 0x0060(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_61[0x3];                                       // 0x0061(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         MinimumDistance;                                   // 0x0064(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaximumDistance;                                   // 0x0068(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERigVMAnimEasingType                          FalloffType;                                       // 0x006C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_6D[0x3];                                       // 0x006D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Coefficient;                                       // 0x0070(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInverted;                                         // 0x0074(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_75[0xB];                                       // 0x0075(0x000B)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FPoseLink                              Source;                                            // 0x0058(0x0010)(Edit, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	bool                                          bResetInputPoseToInitial;                          // 0x0068(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bTransferInputPose;                                // 0x0069(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bTransferInputCurves;                              // 0x006A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bTransferPoseInGlobalSpace;                        // 0x006B(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FBoneReference>                 InputBonesToTransfer;                              // 0x0070(0x0010)(Edit, ZeroConstructor, AdvancedDisplay, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FBoneReference>                 OutputBonesToTransfer;                             // 0x0080(0x0010)(Edit, ZeroConstructor, AdvancedDisplay, Protected, NativeAccessSpecifierProtected)
+	TArray<class UAssetUserData*>                 AssetUserData;                                     // 0x0090(0x0010)(Edit, ExportObject, ZeroConstructor, ContainsInstancedReference, AdvancedDisplay, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	TWeakObjectPtr<class UNodeMappingContainer>   NodeMappingContainer;                              // 0x00A0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FControlRigIOSettings                  InputSettings;                                     // 0x00A8(0x0002)(Transient, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	struct FControlRigIOSettings                  OutputSettings;                                    // 0x00AA(0x0002)(Transient, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	bool                                          bExecute;                                          // 0x00AC(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_AD[0xB];                                       // 0x00AD(0x000B)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FControlRigAnimNodeEventName>   EventQueue;                                        // 0x00B8(0x0010)(Edit, ZeroConstructor, AdvancedDisplay, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_C8[0x160];                                     // 0x00C8(0x0160)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCRSimSoftCollision;
+DUMPER7_ASSERTS_FAnimNode_ControlRigBase;
 
-// ScriptStruct ControlRig.RigUnit_OffsetTransformForItem
-// 0x00A0 (0x00B0 - 0x0010)
-struct FRigUnit_OffsetTransformForItem final : public FRigUnitMutable
+// ScriptStruct ControlRig.RigDispatch_AnimAttributeBase
+// 0x0030 (0x00A0 - 0x0070)
+struct FRigDispatch_AnimAttributeBase : public FRigDispatchFactory
 {
 public:
-	struct FRigElementKey                         Item;                                              // 0x0010(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             OffsetTransform;                                   // 0x0020(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Weight;                                            // 0x0080(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPropagateToChildren;                              // 0x0084(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_85[0x3];                                       // 0x0085(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCachedRigElement                      CachedIndex;                                       // 0x0088(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A8[0x8];                                       // 0x00A8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_70[0x30];                                      // 0x0070(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FRigUnit_OffsetTransformForItem;
+DUMPER7_ASSERTS_FRigDispatch_AnimAttributeBase;
 
-// ScriptStruct ControlRig.RigUnit_SpringIK_DebugSettings
-// 0x0080 (0x0080 - 0x0000)
-struct FRigUnit_SpringIK_DebugSettings final
+// ScriptStruct ControlRig.RigDispatch_GetAnimAttribute
+// 0x0000 (0x00A0 - 0x00A0)
+struct FRigDispatch_GetAnimAttribute final : public FRigDispatch_AnimAttributeBase
 {
-public:
-	bool                                          bEnabled;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Scale;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           Color;                                             // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             WorldOffset;                                       // 0x0020(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigUnit_SpringIK_DebugSettings;
+DUMPER7_ASSERTS_FRigDispatch_GetAnimAttribute;
 
-// ScriptStruct ControlRig.RigUnit_SetScale
-// 0x0050 (0x0060 - 0x0010)
-struct FRigUnit_SetScale final : public FRigUnitMutable
+// ScriptStruct ControlRig.ControlRigComponentMappedComponent
+// 0x0018 (0x0018 - 0x0000)
+struct FControlRigComponentMappedComponent final
 {
 public:
-	struct FRigElementKey                         Item;                                              // 0x0010(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERigVMTransformSpace                          Space;                                             // 0x001C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInitial;                                          // 0x001D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E[0x2];                                       // 0x001E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                Scale;                                             // 0x0020(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Weight;                                            // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPropagateToChildren;                              // 0x003C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCachedRigElement                      CachedIndex;                                       // 0x0040(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USceneComponent*                        Component;                                         // 0x0000(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class FName                                   ElementName;                                       // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERigElementType                               ElementType;                                       // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EControlRigComponentMapDirection              Direction;                                         // 0x0011(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FRigUnit_SetScale;
+DUMPER7_ASSERTS_FControlRigComponentMappedComponent;
+
+// ScriptStruct ControlRig.RigUnit_HierarchyBase
+// 0x0000 (0x0008 - 0x0008)
+struct FRigUnit_HierarchyBase : public FRigUnit
+{
+};
+DUMPER7_ASSERTS_FRigUnit_HierarchyBase;
+
+// ScriptStruct ControlRig.RigUnit_PoseGetCurve
+// 0x0088 (0x0090 - 0x0008)
+struct FRigUnit_PoseGetCurve final : public FRigUnit_HierarchyBase
+{
+public:
+	struct FRigPose                               Pose;                                              // 0x0008(0x0070)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FName                                   Curve;                                             // 0x0078(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Valid;                                             // 0x0080(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_81[0x3];                                       // 0x0081(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CurveValue;                                        // 0x0084(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CachedPoseElementIndex;                            // 0x0088(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CachedPoseHash;                                    // 0x008C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_PoseGetCurve;
+
+// ScriptStruct ControlRig.ConstraintParent
+// 0x0010 (0x0010 - 0x0000)
+struct FConstraintParent final
+{
+public:
+	struct FRigElementKey                         Item;                                              // 0x0000(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Weight;                                            // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FConstraintParent;
+
+// ScriptStruct ControlRig.RigUnit_ScaleConstraintLocalSpaceOffset
+// 0x0058 (0x0068 - 0x0010)
+struct FRigUnit_ScaleConstraintLocalSpaceOffset final : public FRigUnit_HighlevelBaseMutable
+{
+public:
+	struct FRigElementKey                         Child;                                             // 0x0010(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bMaintainOffset;                                   // 0x001C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FFilterOptionPerAxis                   Filter;                                            // 0x001D(0x0003)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	TArray<struct FConstraintParent>              Parents;                                           // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         Weight;                                            // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCachedRigElement                      ChildCache;                                        // 0x0038(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FCachedRigElement>              ParentCaches;                                      // 0x0058(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_ScaleConstraintLocalSpaceOffset;
+
+// ScriptStruct ControlRig.ControlRigComponentMappedElement
+// 0x00F0 (0x00F0 - 0x0000)
+struct FControlRigComponentMappedElement final
+{
+public:
+	struct FSoftComponentReference                ComponentReference;                                // 0x0000(0x0048)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TransformIndex;                                    // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   TransformName;                                     // 0x004C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERigElementType                               ElementType;                                       // 0x0054(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_55[0x3];                                       // 0x0055(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   ElementName;                                       // 0x0058(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EControlRigComponentMapDirection              Direction;                                         // 0x0060(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_61[0xF];                                       // 0x0061(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Offset;                                            // 0x0070(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Weight;                                            // 0x00D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EControlRigComponentSpace                     Space;                                             // 0x00D4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D5[0x3];                                       // 0x00D5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class USceneComponent*                        SceneComponent;                                    // 0x00D8(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	int32                                         ElementIndex;                                      // 0x00E0(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SubIndex;                                          // 0x00E4(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E8[0x8];                                       // 0x00E8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FControlRigComponentMappedElement;
 
 // ScriptStruct ControlRig.RigHierarchySettings
 // 0x0008 (0x0008 - 0x0000)
@@ -1549,24 +1743,80 @@ public:
 };
 DUMPER7_ASSERTS_FRigHierarchySettings;
 
-// ScriptStruct ControlRig.RigTransformMetadata
-// 0x0060 (0x0080 - 0x0020)
-struct FRigTransformMetadata final : public FRigBaseMetadata
+// ScriptStruct ControlRig.RigUnit_Control
+// 0x0178 (0x0180 - 0x0008)
+struct FRigUnit_Control : public FRigUnit
 {
 public:
-	struct FTransform                             Value;                                             // 0x0020(0x0060)(IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FEulerTransform                        Transform;                                         // 0x0008(0x0048)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
+	struct FTransform                             base;                                              // 0x0050(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             InitTransform;                                     // 0x00B0(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             Result;                                            // 0x0110(0x0060)(BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransformFilter                       Filter;                                            // 0x0170(0x0009)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bIsInitialized;                                    // 0x0179(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_17A[0x6];                                      // 0x017A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FRigTransformMetadata;
+DUMPER7_ASSERTS_FRigUnit_Control;
 
-// ScriptStruct ControlRig.RigUnit_SetIntAnimationChannelFromItem
-// 0x0008 (0x0028 - 0x0020)
-struct FRigUnit_SetIntAnimationChannelFromItem final : public FRigUnit_SetAnimationChannelBaseFromItem
+// ScriptStruct ControlRig.RigUnit_HierarchyAddAnimationChannelEmptyLimitSettings
+// 0x0000 (0x0000 - 0x0000)
+#pragma pack(push, 0x1)
+struct SDK_ALIGN(0x01) FRigUnit_HierarchyAddAnimationChannelEmptyLimitSettings
+{
+};
+#pragma pack(pop)
+DUMPER7_ASSERTS_FRigUnit_HierarchyAddAnimationChannelEmptyLimitSettings;
+
+// ScriptStruct ControlRig.RigUnit_HierarchyAddAnimationChannelSingleLimitSettings
+// 0x0002 (0x0002 - 0x0000)
+struct FRigUnit_HierarchyAddAnimationChannelSingleLimitSettings final : public FRigUnit_HierarchyAddAnimationChannelEmptyLimitSettings
 {
 public:
-	int32                                         Value;                                             // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FRigControlLimitEnabled                Enabled;                                           // 0x0000(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigUnit_SetIntAnimationChannelFromItem;
+DUMPER7_ASSERTS_FRigUnit_HierarchyAddAnimationChannelSingleLimitSettings;
+
+// ScriptStruct ControlRig.RigUnit_DynamicHierarchyBaseMutable
+// 0x0000 (0x0010 - 0x0010)
+struct FRigUnit_DynamicHierarchyBaseMutable : public FRigUnitMutable
+{
+};
+DUMPER7_ASSERTS_FRigUnit_DynamicHierarchyBaseMutable;
+
+// ScriptStruct ControlRig.RigUnit_HierarchyAddElement
+// 0x0020 (0x0030 - 0x0010)
+struct FRigUnit_HierarchyAddElement : public FRigUnit_DynamicHierarchyBaseMutable
+{
+public:
+	struct FRigElementKey                         Parent;                                            // 0x0010(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name;                                              // 0x001C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRigElementKey                         Item;                                              // 0x0024(0x000C)(BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_HierarchyAddElement;
+
+// ScriptStruct ControlRig.RigUnit_HierarchyAddAnimationChannelScaleFloat
+// 0x0010 (0x0040 - 0x0030)
+struct FRigUnit_HierarchyAddAnimationChannelScaleFloat final : public FRigUnit_HierarchyAddElement
+{
+public:
+	float                                         InitialValue;                                      // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MinimumValue;                                      // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaximumValue;                                      // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRigUnit_HierarchyAddAnimationChannelSingleLimitSettings LimitsEnabled;                   // 0x003C(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3E[0x2];                                       // 0x003E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigUnit_HierarchyAddAnimationChannelScaleFloat;
+
+// ScriptStruct ControlRig.RigUnit_SetMultiControlBool_Entry
+// 0x000C (0x000C - 0x0000)
+struct FRigUnit_SetMultiControlBool_Entry final
+{
+public:
+	class FName                                   Control;                                           // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          BoolValue;                                         // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigUnit_SetMultiControlBool_Entry;
 
 // ScriptStruct ControlRig.RigModuleInstance
 // 0x00B0 (0x00B0 - 0x0000)
@@ -1620,15 +1870,6 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_GetBoolAnimationChannel;
 
-// ScriptStruct ControlRig.RigUnit_SetAnimationChannelBase
-// 0x0008 (0x0038 - 0x0030)
-struct FRigUnit_SetAnimationChannelBase : public FRigUnit_GetAnimationChannelBase
-{
-public:
-	struct FRigVMExecutePin                       ExecutePin;                                        // 0x0030(0x0008)(Edit, BlueprintVisible, Transient, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_SetAnimationChannelBase;
-
 // ScriptStruct ControlRig.RigUnit_SetTransformAnimationChannel
 // 0x0068 (0x00A0 - 0x0038)
 struct FRigUnit_SetTransformAnimationChannel final : public FRigUnit_SetAnimationChannelBase
@@ -1639,36 +1880,42 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_SetTransformAnimationChannel;
 
-// ScriptStruct ControlRig.RigUnit_DebugBaseMutable
-// 0x0008 (0x0018 - 0x0010)
-struct FRigUnit_DebugBaseMutable : public FRigUnitMutable
+// ScriptStruct ControlRig.RigUnit_DebugBase
+// 0x0008 (0x0010 - 0x0008)
+struct FRigUnit_DebugBase : public FRigUnit
 {
 public:
-	struct FRigVMDebugDrawSettings                DebugDrawSettings;                                 // 0x0010(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRigVMDebugDrawSettings                DebugDrawSettings;                                 // 0x0008(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigUnit_DebugBaseMutable;
+DUMPER7_ASSERTS_FRigUnit_DebugBase;
 
-// ScriptStruct ControlRig.RigUnit_GetVectorAnimationChannel
-// 0x0018 (0x0048 - 0x0030)
-struct FRigUnit_GetVectorAnimationChannel final : public FRigUnit_GetAnimationChannelBase
+// ScriptStruct ControlRig.RigUnit_HierarchyGetSiblingsItemArray
+// 0x0050 (0x0058 - 0x0008)
+struct FRigUnit_HierarchyGetSiblingsItemArray final : public FRigUnit_HierarchyBase
 {
 public:
-	struct FVector                                Value;                                             // 0x0030(0x0018)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRigElementKey                         Item;                                              // 0x0008(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIncludeItem;                                      // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDefaultSiblings;                                  // 0x0015(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_16[0x2];                                       // 0x0016(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FRigElementKey>                 Siblings;                                          // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FCachedRigElement                      CachedItem;                                        // 0x0028(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRigElementKeyCollection               CachedSiblings;                                    // 0x0048(0x0010)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigUnit_GetVectorAnimationChannel;
+DUMPER7_ASSERTS_FRigUnit_HierarchyGetSiblingsItemArray;
 
-// ScriptStruct ControlRig.RigUnit_SetControlVector2D
-// 0x0040 (0x0050 - 0x0010)
-struct FRigUnit_SetControlVector2D final : public FRigUnitMutable
+// ScriptStruct ControlRig.RigUnit_GetControlInitialTransform
+// 0x0098 (0x00A0 - 0x0008)
+struct FRigUnit_GetControlInitialTransform final : public FRigUnit
 {
 public:
-	class FName                                   Control;                                           // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Weight;                                            // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2D                              Vector;                                            // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCachedRigElement                      CachedControlIndex;                                // 0x0030(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Control;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERigVMTransformSpace                          Space;                                             // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0xF];                                       // 0x0011(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Transform;                                         // 0x0020(0x0060)(BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCachedRigElement                      CachedControlIndex;                                // 0x0080(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigUnit_SetControlVector2D;
+DUMPER7_ASSERTS_FRigUnit_GetControlInitialTransform;
 
 // ScriptStruct ControlRig.StructReference
 // 0x0008 (0x0008 - 0x0000)
@@ -1697,48 +1944,27 @@ public:
 };
 DUMPER7_ASSERTS_FRigTransformStackEntry;
 
-// ScriptStruct ControlRig.RigUnit_SetBoolAnimationChannel
-// 0x0008 (0x0040 - 0x0038)
-struct FRigUnit_SetBoolAnimationChannel final : public FRigUnit_SetAnimationChannelBase
+// ScriptStruct ControlRig.RigUnit_HierarchyBaseMutable
+// 0x0000 (0x0010 - 0x0010)
+struct FRigUnit_HierarchyBaseMutable : public FRigUnitMutable
 {
-public:
-	bool                                          Value;                                             // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FRigUnit_SetBoolAnimationChannel;
+DUMPER7_ASSERTS_FRigUnit_HierarchyBaseMutable;
 
-// ScriptStruct ControlRig.ControlRigAnimNodeEventName
-// 0x0008 (0x0008 - 0x0000)
-struct FControlRigAnimNodeEventName final
+// ScriptStruct ControlRig.RigUnit_HierarchySetPose
+// 0x0090 (0x00A0 - 0x0010)
+struct FRigUnit_HierarchySetPose final : public FRigUnit_HierarchyBaseMutable
 {
 public:
-	class FName                                   EventName;                                         // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRigPose                               Pose;                                              // 0x0010(0x0070)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	ERigElementType                               ElementType;                                       // 0x0080(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERigVMTransformSpace                          Space;                                             // 0x0081(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_82[0x6];                                       // 0x0082(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRigElementKeyCollection               ItemsToSet;                                        // 0x0088(0x0010)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Weight;                                            // 0x0098(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9C[0x4];                                       // 0x009C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FControlRigAnimNodeEventName;
-
-// ScriptStruct ControlRig.AnimNode_ControlRigBase
-// 0x01D0 (0x0228 - 0x0058)
-struct FAnimNode_ControlRigBase : public FAnimNode_CustomProperty
-{
-public:
-	struct FPoseLink                              Source;                                            // 0x0058(0x0010)(Edit, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	bool                                          bResetInputPoseToInitial;                          // 0x0068(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bTransferInputPose;                                // 0x0069(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bTransferInputCurves;                              // 0x006A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bTransferPoseInGlobalSpace;                        // 0x006B(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FBoneReference>                 InputBonesToTransfer;                              // 0x0070(0x0010)(Edit, ZeroConstructor, AdvancedDisplay, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FBoneReference>                 OutputBonesToTransfer;                             // 0x0080(0x0010)(Edit, ZeroConstructor, AdvancedDisplay, Protected, NativeAccessSpecifierProtected)
-	TArray<class UAssetUserData*>                 AssetUserData;                                     // 0x0090(0x0010)(Edit, ExportObject, ZeroConstructor, ContainsInstancedReference, AdvancedDisplay, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
-	TWeakObjectPtr<class UNodeMappingContainer>   NodeMappingContainer;                              // 0x00A0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FControlRigIOSettings                  InputSettings;                                     // 0x00A8(0x0002)(Transient, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	struct FControlRigIOSettings                  OutputSettings;                                    // 0x00AA(0x0002)(Transient, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	bool                                          bExecute;                                          // 0x00AC(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_AD[0xB];                                       // 0x00AD(0x000B)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FControlRigAnimNodeEventName>   EventQueue;                                        // 0x00B8(0x0010)(Edit, ZeroConstructor, AdvancedDisplay, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_C8[0x160];                                     // 0x00C8(0x0160)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAnimNode_ControlRigBase;
+DUMPER7_ASSERTS_FRigUnit_HierarchySetPose;
 
 // ScriptStruct ControlRig.RigUnit_GetTransformAnimationChannelFromItem
 // 0x0068 (0x0080 - 0x0018)
@@ -1784,40 +2010,6 @@ public:
 };
 DUMPER7_ASSERTS_FAnimNode_ControlRig_ExternalSource;
 
-// ScriptStruct ControlRig.RigUnit_HierarchyBase
-// 0x0000 (0x0008 - 0x0008)
-struct FRigUnit_HierarchyBase : public FRigUnit
-{
-};
-DUMPER7_ASSERTS_FRigUnit_HierarchyBase;
-
-// ScriptStruct ControlRig.RigPoseElement
-// 0x0110 (0x0110 - 0x0000)
-struct FRigPoseElement final
-{
-public:
-	struct FCachedRigElement                      Index;                                             // 0x0000(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             GlobalTransform;                                   // 0x0020(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             LocalTransform;                                    // 0x0080(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                PreferredEulerAngle;                               // 0x00E0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRigElementKey                         ActiveParent;                                      // 0x00F8(0x000C)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CurveValue;                                        // 0x0104(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_108[0x8];                                      // 0x0108(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigPoseElement;
-
-// ScriptStruct ControlRig.RigPose
-// 0x0070 (0x0070 - 0x0000)
-struct FRigPose final
-{
-public:
-	TArray<struct FRigPoseElement>                Elements;                                          // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         HierarchyTopologyVersion;                          // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         PoseHash;                                          // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18[0x58];                                      // 0x0018(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigPose;
-
 // ScriptStruct ControlRig.RigUnit_PoseGetItemsItemArray
 // 0x0088 (0x0090 - 0x0008)
 struct FRigUnit_PoseGetItemsItemArray final : public FRigUnit_HierarchyBase
@@ -1836,82 +2028,6 @@ struct FControlRigReference final : public FAnimNodeReference
 {
 };
 DUMPER7_ASSERTS_FControlRigReference;
-
-// ScriptStruct ControlRig.RigUnit_GetControlTransform
-// 0x0158 (0x0160 - 0x0008)
-struct FRigUnit_GetControlTransform final : public FRigUnit
-{
-public:
-	class FName                                   Control;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERigVMTransformSpace                          Space;                                             // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0xF];                                       // 0x0011(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             Transform;                                         // 0x0020(0x0060)(BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             Minimum;                                           // 0x0080(0x0060)(BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             Maximum;                                           // 0x00E0(0x0060)(BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCachedRigElement                      CachedControlIndex;                                // 0x0140(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_GetControlTransform;
-
-// ScriptStruct ControlRig.ControlRigAnimInstanceProxy
-// 0x00E0 (0x0880 - 0x07A0)
-struct FControlRigAnimInstanceProxy final : public FAnimInstanceProxy
-{
-public:
-	uint8                                         Pad_798[0xE8];                                     // 0x0798(0x00E8)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FControlRigAnimInstanceProxy;
-
-// ScriptStruct ControlRig.ControlRigComponentMappedElement
-// 0x00F0 (0x00F0 - 0x0000)
-struct FControlRigComponentMappedElement final
-{
-public:
-	struct FSoftComponentReference                ComponentReference;                                // 0x0000(0x0048)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TransformIndex;                                    // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   TransformName;                                     // 0x004C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERigElementType                               ElementType;                                       // 0x0054(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_55[0x3];                                       // 0x0055(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   ElementName;                                       // 0x0058(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EControlRigComponentMapDirection              Direction;                                         // 0x0060(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_61[0xF];                                       // 0x0061(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             Offset;                                            // 0x0070(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Weight;                                            // 0x00D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EControlRigComponentSpace                     Space;                                             // 0x00D4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D5[0x3];                                       // 0x00D5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class USceneComponent*                        SceneComponent;                                    // 0x00D8(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	int32                                         ElementIndex;                                      // 0x00E0(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SubIndex;                                          // 0x00E4(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_E8[0x8];                                       // 0x00E8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FControlRigComponentMappedElement;
-
-// ScriptStruct ControlRig.ControlRigComponentMappedComponent
-// 0x0018 (0x0018 - 0x0000)
-struct FControlRigComponentMappedComponent final
-{
-public:
-	class USceneComponent*                        Component;                                         // 0x0000(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class FName                                   ElementName;                                       // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERigElementType                               ElementType;                                       // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EControlRigComponentMapDirection              Direction;                                         // 0x0011(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FControlRigComponentMappedComponent;
-
-// ScriptStruct ControlRig.RigUnit_PoseGetCurve
-// 0x0088 (0x0090 - 0x0008)
-struct FRigUnit_PoseGetCurve final : public FRigUnit_HierarchyBase
-{
-public:
-	struct FRigPose                               Pose;                                              // 0x0008(0x0070)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FName                                   Curve;                                             // 0x0078(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Valid;                                             // 0x0080(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_81[0x3];                                       // 0x0081(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CurveValue;                                        // 0x0084(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CachedPoseElementIndex;                            // 0x0088(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CachedPoseHash;                                    // 0x008C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_PoseGetCurve;
 
 // ScriptStruct ControlRig.ControlRigComponentMappedBone
 // 0x0010 (0x0010 - 0x0000)
@@ -1963,14 +2079,14 @@ public:
 };
 DUMPER7_ASSERTS_FControlRigShapeDefinition;
 
-// ScriptStruct ControlRig.RigUnit_InteractionExecution
-// 0x0008 (0x0010 - 0x0008)
-struct FRigUnit_InteractionExecution final : public FRigUnit
+// ScriptStruct ControlRig.RigUnit_GetVectorAnimationChannelFromItem
+// 0x0018 (0x0030 - 0x0018)
+struct FRigUnit_GetVectorAnimationChannelFromItem final : public FRigUnit_GetAnimationChannelFromItemBase
 {
 public:
-	struct FRigVMExecutePin                       ExecutePin;                                        // 0x0008(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, Transient, NativeAccessSpecifierPublic)
+	struct FVector                                Value;                                             // 0x0018(0x0018)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigUnit_InteractionExecution;
+DUMPER7_ASSERTS_FRigUnit_GetVectorAnimationChannelFromItem;
 
 // ScriptStruct ControlRig.ControlRigOverrideValue
 // 0x0050 (0x0050 - 0x0000)
@@ -1981,23 +2097,19 @@ public:
 };
 DUMPER7_ASSERTS_FControlRigOverrideValue;
 
-// ScriptStruct ControlRig.ControlRigReplayVariable
-// 0x0020 (0x0020 - 0x0000)
-struct FControlRigReplayVariable final
+// ScriptStruct ControlRig.RigUnit_GetTransformItemArray
+// 0x0038 (0x0040 - 0x0008)
+struct FRigUnit_GetTransformItemArray final : public FRigUnit
 {
 public:
-	class FName                                   Name;                                              // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   CPPType;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Value;                                             // 0x0010(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FRigElementKey>                 Items;                                             // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	ERigVMTransformSpace                          Space;                                             // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInitial;                                          // 0x0019(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1A[0x6];                                       // 0x001A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FTransform>                     Transforms;                                        // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FCachedRigElement>              CachedIndex;                                       // 0x0030(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FControlRigReplayVariable;
-
-// ScriptStruct ControlRig.RigUnit_ItemBaseMutable
-// 0x0000 (0x0010 - 0x0010)
-struct FRigUnit_ItemBaseMutable final : public FRigUnitMutable
-{
-};
-DUMPER7_ASSERTS_FRigUnit_ItemBaseMutable;
+DUMPER7_ASSERTS_FRigUnit_GetTransformItemArray;
 
 // ScriptStruct ControlRig.RigUnit_GetControlInteger
 // 0x0038 (0x0040 - 0x0008)
@@ -2036,107 +2148,66 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_SetVectorAnimationChannelFromItem;
 
-// ScriptStruct ControlRig.RigUnit_GetMetadataTags
-// 0x0040 (0x0048 - 0x0008)
-struct FRigUnit_GetMetadataTags final : public FRigUnit
+// ScriptStruct ControlRig.RigUnit_FindClosestItem
+// 0x0048 (0x0058 - 0x0010)
+struct FRigUnit_FindClosestItem final : public FRigUnitMutable
 {
 public:
-	struct FRigElementKey                         Item;                                              // 0x0008(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FName>                           Tags;                                              // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FCachedRigElement                      CachedIndex;                                       // 0x0028(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FRigElementKey>                 Items;                                             // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FVector                                Point;                                             // 0x0020(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRigElementKey                         Item;                                              // 0x0038(0x000C)(BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FCachedRigElement>              CachedItems;                                       // 0x0048(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigUnit_GetMetadataTags;
+DUMPER7_ASSERTS_FRigUnit_FindClosestItem;
 
-// ScriptStruct ControlRig.ControlRigValidationContext
-// 0x0038 (0x0038 - 0x0000)
-struct alignas(0x08) FControlRigValidationContext final
-{
-public:
-	uint8                                         Pad_0[0x38];                                       // 0x0000(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FControlRigValidationContext;
-
-// ScriptStruct ControlRig.CRSimContainer
+// ScriptStruct ControlRig.RigUnit_SetMultiControlVector2D_Entry
 // 0x0018 (0x0018 - 0x0000)
-struct alignas(0x08) FCRSimContainer
+struct FRigUnit_SetMultiControlVector2D_Entry final
 {
 public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         TimeStep;                                          // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AccumulatedTime;                                   // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TimeLeftForStep;                                   // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FName                                   Control;                                           // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              Vector;                                            // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCRSimContainer;
+DUMPER7_ASSERTS_FRigUnit_SetMultiControlVector2D_Entry;
 
-// ScriptStruct ControlRig.CRSimPointConstraint
-// 0x0040 (0x0040 - 0x0000)
-struct FCRSimPointConstraint final
+// ScriptStruct ControlRig.RigUnit_SetMultiControlVector2D
+// 0x0028 (0x0038 - 0x0010)
+struct FRigUnit_SetMultiControlVector2D final : public FRigUnitMutable
 {
 public:
-	ECRSimConstraintType                          Type;                                              // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         SubjectA;                                          // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SubjectB;                                          // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                DataA;                                             // 0x0010(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                DataB;                                             // 0x0028(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FRigUnit_SetMultiControlVector2D_Entry> Entries;                                   // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         Weight;                                            // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FCachedRigElement>              CachedControlIndices;                              // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCRSimPointConstraint;
+DUMPER7_ASSERTS_FRigUnit_SetMultiControlVector2D;
 
-// ScriptStruct ControlRig.RigUnit_GetRelativeTransformForItem
-// 0x00C8 (0x00D0 - 0x0008)
-struct FRigUnit_GetRelativeTransformForItem final : public FRigUnit
+// ScriptStruct ControlRig.RigUnit_FilterItemsByMetadataTags
+// 0x0048 (0x0050 - 0x0008)
+struct FRigUnit_FilterItemsByMetadataTags final : public FRigUnit
 {
 public:
-	struct FRigElementKey                         Child;                                             // 0x0008(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bChildInitial;                                     // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRigElementKey                         Parent;                                            // 0x0018(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bParentInitial;                                    // 0x0024(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_25[0xB];                                       // 0x0025(0x000B)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             RelativeTransform;                                 // 0x0030(0x0060)(BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCachedRigElement                      CachedChild;                                       // 0x0090(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCachedRigElement                      CachedParent;                                      // 0x00B0(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FRigElementKey>                 Items;                                             // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class FName>                           Tags;                                              // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	ERigMetaDataNameSpace                         Namespace;                                         // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Inclusive;                                         // 0x0029(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2A[0x6];                                       // 0x002A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FRigElementKey>                 Result;                                            // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FCachedRigElement>              CachedIndices;                                     // 0x0040(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigUnit_GetRelativeTransformForItem;
+DUMPER7_ASSERTS_FRigUnit_FilterItemsByMetadataTags;
 
-// ScriptStruct ControlRig.CRSimPointContainer
-// 0x0060 (0x0078 - 0x0018)
-struct FCRSimPointContainer final : public FCRSimContainer
+// ScriptStruct ControlRig.ModularRigSingleConnection
+// 0x0028 (0x0028 - 0x0000)
+struct FModularRigSingleConnection final
 {
 public:
-	TArray<struct FRigVMSimPoint>                 Points;                                            // 0x0018(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FCRSimLinearSpring>             Springs;                                           // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FCRSimPointForce>               Forces;                                            // 0x0038(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FCRSimSoftCollision>            CollisionVolumes;                                  // 0x0048(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FCRSimPointConstraint>          Constraints;                                       // 0x0058(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FRigVMSimPoint>                 PreviousStep;                                      // 0x0068(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	struct FRigElementKey                         Connector;                                         // 0x0000(0x000C)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRigElementKey                         Target;                                            // 0x000C(0x000C)(Deprecated, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FRigElementKey>                 Targets;                                           // 0x0018(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCRSimPointContainer;
-
-// ScriptStruct ControlRig.RigModuleReference
-// 0x02D0 (0x02D0 - 0x0000)
-struct FRigModuleReference final
-{
-public:
-	class FName                                   Name;                                              // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ShortName;                                         // 0x0008(0x0010)(ZeroConstructor, Deprecated, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShortNameBasedOnPath;                             // 0x0018(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ParentPath;                                        // 0x0020(0x0010)(ZeroConstructor, Deprecated, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   ParentModuleName;                                  // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftClassPtr<class UClass>                   Class;                                             // 0x0038(0x0028)(UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<struct FRigElementKey, struct FRigElementKey> Connections;                                  // 0x0060(0x0050)(Deprecated, NativeAccessSpecifierPublic)
-	TMap<class FName, class FString>              ConfigValues;                                      // 0x00B0(0x0050)(Deprecated, NativeAccessSpecifierPublic)
-	struct FControlRigOverrideContainer           ConfigOverrides;                                   // 0x0100(0x0158)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class FName, class FString>              Bindings;                                          // 0x0258(0x0050)(NativeAccessSpecifierPublic)
-	class FName                                   PreviousName;                                      // 0x02A8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   PreviousParentName;                                // 0x02B0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2B8[0x18];                                     // 0x02B8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigModuleReference;
+DUMPER7_ASSERTS_FModularRigSingleConnection;
 
 // ScriptStruct ControlRig.ModularRigConnections
 // 0x0060 (0x0060 - 0x0000)
@@ -2172,20 +2243,29 @@ public:
 };
 DUMPER7_ASSERTS_FModularRigModel;
 
-// ScriptStruct ControlRig.RigUnit_GetControlVector
-// 0x0078 (0x0080 - 0x0008)
-struct FRigUnit_GetControlVector final : public FRigUnit
+// ScriptStruct ControlRig.RigUnit_SetMultiControlRotator_Entry
+// 0x0028 (0x0028 - 0x0000)
+struct FRigUnit_SetMultiControlRotator_Entry final
 {
 public:
-	class FName                                   Control;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERigVMTransformSpace                          Space;                                             // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                Vector;                                            // 0x0018(0x0018)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Minimum;                                           // 0x0030(0x0018)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Maximum;                                           // 0x0048(0x0018)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCachedRigElement                      CachedControlIndex;                                // 0x0060(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Control;                                           // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               Rotator;                                           // 0x0008(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	ERigVMTransformSpace                          Space;                                             // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FRigUnit_GetControlVector;
+DUMPER7_ASSERTS_FRigUnit_SetMultiControlRotator_Entry;
+
+// ScriptStruct ControlRig.RigUnit_SetMultiControlRotator
+// 0x0028 (0x0038 - 0x0010)
+struct FRigUnit_SetMultiControlRotator final : public FRigUnitMutable
+{
+public:
+	TArray<struct FRigUnit_SetMultiControlRotator_Entry> Entries;                                    // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         Weight;                                            // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FCachedRigElement>              CachedControlIndices;                              // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_SetMultiControlRotator;
 
 // ScriptStruct ControlRig.RigUnit_RemoveMetadata
 // 0x0038 (0x0048 - 0x0010)
@@ -2200,6 +2280,27 @@ public:
 	struct FCachedRigElement                      CachedIndex;                                       // 0x0028(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRigUnit_RemoveMetadata;
+
+// ScriptStruct ControlRig.ModularRigModuleSettingsForClipboard
+// 0x0110 (0x0110 - 0x0000)
+struct FModularRigModuleSettingsForClipboard final
+{
+public:
+	struct FSoftObjectPath                        ModuleClass;                                       // 0x0000(0x0020)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<class FString, class FString>            Defaults;                                          // 0x0020(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<class FString, class FString>            Overrides;                                         // 0x0070(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<class FName, class FString>              Bindings;                                          // 0x00C0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FModularRigModuleSettingsForClipboard;
+
+// ScriptStruct ControlRig.ModularRigModuleSettingsSetForClipboard
+// 0x0050 (0x0050 - 0x0000)
+struct FModularRigModuleSettingsSetForClipboard final
+{
+public:
+	TMap<class FName, struct FModularRigModuleSettingsForClipboard> Settings;                        // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FModularRigModuleSettingsSetForClipboard;
 
 // ScriptStruct ControlRig.ConstraintNodeData
 // 0x0140 (0x0140 - 0x0000)
@@ -2250,6 +2351,18 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_SendEvent;
 
+// ScriptStruct ControlRig.RigElement
+// 0x0018 (0x0018 - 0x0000)
+struct alignas(0x08) FRigElement
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   Name;                                              // 0x0008(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index;                                             // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigElement;
+
 // ScriptStruct ControlRig.RigBone
 // 0x0158 (0x0170 - 0x0018)
 struct FRigBone final : public FRigElement
@@ -2295,6 +2408,38 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_SetRelativeRotationForItem;
 
+// ScriptStruct ControlRig.RigConnectionRule
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x08) FRigConnectionRule
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigConnectionRule;
+
+// ScriptStruct ControlRig.RigUnit_HasMetadataTag
+// 0x0038 (0x0040 - 0x0008)
+struct FRigUnit_HasMetadataTag final : public FRigUnit
+{
+public:
+	struct FRigElementKey                         Item;                                              // 0x0008(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Tag;                                               // 0x0014(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERigMetaDataNameSpace                         Namespace;                                         // 0x001C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Found;                                             // 0x001D(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1E[0x2];                                       // 0x001E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCachedRigElement                      CachedIndex;                                       // 0x0020(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_HasMetadataTag;
+
+// ScriptStruct ControlRig.RigAndConnectionRule
+// 0x0010 (0x0018 - 0x0008)
+struct FRigAndConnectionRule final : public FRigConnectionRule
+{
+public:
+	TArray<struct FRigConnectionRuleStash>        ChildRules;                                        // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigAndConnectionRule;
+
 // ScriptStruct ControlRig.RigOrConnectionRule
 // 0x0010 (0x0018 - 0x0008)
 struct FRigOrConnectionRule final : public FRigConnectionRule
@@ -2303,6 +2448,43 @@ public:
 	TArray<struct FRigConnectionRuleStash>        ChildRules;                                        // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRigOrConnectionRule;
+
+// ScriptStruct ControlRig.RigUnit_HierarchyAddBone
+// 0x0070 (0x00A0 - 0x0030)
+struct FRigUnit_HierarchyAddBone final : public FRigUnit_HierarchyAddElement
+{
+public:
+	struct FTransform                             Transform;                                         // 0x0030(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERigVMTransformSpace                          Space;                                             // 0x0090(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_91[0xF];                                       // 0x0091(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigUnit_HierarchyAddBone;
+
+// ScriptStruct ControlRig.RigTypeConnectionRule
+// 0x0008 (0x0010 - 0x0008)
+struct FRigTypeConnectionRule final : public FRigConnectionRule
+{
+public:
+	ERigElementType                               ElementType;                                       // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigTypeConnectionRule;
+
+// ScriptStruct ControlRig.RigDispatch_MetadataBase
+// 0x0030 (0x00A0 - 0x0070)
+struct FRigDispatch_MetadataBase : public FRigDispatchFactory
+{
+public:
+	uint8                                         Pad_70[0x30];                                      // 0x0070(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigDispatch_MetadataBase;
+
+// ScriptStruct ControlRig.RigDispatch_GetMetadata
+// 0x0000 (0x00A0 - 0x00A0)
+struct FRigDispatch_GetMetadata : public FRigDispatch_MetadataBase
+{
+};
+DUMPER7_ASSERTS_FRigDispatch_GetMetadata;
 
 // ScriptStruct ControlRig.RigTagConnectionRule
 // 0x0008 (0x0010 - 0x0008)
@@ -2330,6 +2512,70 @@ struct FRigChildOfPrimaryConnectionRule final : public FRigConnectionRule
 {
 };
 DUMPER7_ASSERTS_FRigChildOfPrimaryConnectionRule;
+
+// ScriptStruct ControlRig.RigControl
+// 0x0348 (0x0360 - 0x0018)
+struct FRigControl final : public FRigElement
+{
+public:
+	ERigControlType                               ControlType;                                       // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   DisplayName;                                       // 0x001C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ParentName;                                        // 0x0024(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ParentIndex;                                       // 0x002C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   SpaceName;                                         // 0x0030(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SpaceIndex;                                        // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             OffsetTransform;                                   // 0x0040(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRigControlValue                       InitialValue;                                      // 0x00A0(0x0084)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRigControlValue                       Value;                                             // 0x0124(0x0084)(Edit, BlueprintVisible, BlueprintReadOnly, Transient, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	ERigControlAxis                               PrimaryAxis;                                       // 0x01A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsCurve;                                          // 0x01A9(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAnimatable;                                       // 0x01AA(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bLimitTranslation;                                 // 0x01AB(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bLimitRotation;                                    // 0x01AC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bLimitScale;                                       // 0x01AD(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDrawLimits;                                       // 0x01AE(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1AF[0x1];                                      // 0x01AF(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRigControlValue                       MinimumValue;                                      // 0x01B0(0x0084)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRigControlValue                       MaximumValue;                                      // 0x0234(0x0084)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bGizmoEnabled;                                     // 0x02B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bGizmoVisible;                                     // 0x02B9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2BA[0x2];                                      // 0x02BA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   GizmoName;                                         // 0x02BC(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C4[0xC];                                      // 0x02C4(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             GizmoTransform;                                    // 0x02D0(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           GizmoColor;                                        // 0x0330(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<int32>                                 Dependents;                                        // 0x0340(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+	bool                                          bIsTransientControl;                               // 0x0350(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_351[0x7];                                      // 0x0351(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UEnum*                                  ControlEnum;                                       // 0x0358(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FRigControl;
+
+// ScriptStruct ControlRig.RigControlHierarchy
+// 0x0010 (0x0010 - 0x0000)
+struct FRigControlHierarchy final
+{
+public:
+	TArray<struct FRigControl>                    Controls;                                          // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
+};
+DUMPER7_ASSERTS_FRigControlHierarchy;
+
+// ScriptStruct ControlRig.RigUnit_HasMetadata
+// 0x0038 (0x0040 - 0x0008)
+struct FRigUnit_HasMetadata final : public FRigUnit
+{
+public:
+	struct FRigElementKey                         Item;                                              // 0x0008(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name;                                              // 0x0014(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERigMetadataType                              Type;                                              // 0x001C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERigMetaDataNameSpace                         Namespace;                                         // 0x001D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Found;                                             // 0x001E(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1F[0x1];                                       // 0x001F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCachedRigElement                      CachedIndex;                                       // 0x0020(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_HasMetadata;
 
 // ScriptStruct ControlRig.RigCurve
 // 0x0008 (0x0020 - 0x0018)
@@ -2396,43 +2642,6 @@ public:
 	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FRigUnit_HierarchyAddControlFloat_LimitSettings;
-
-// ScriptStruct ControlRig.RigUnit_HierarchyAddControl_ShapeSettings
-// 0x0080 (0x0080 - 0x0000)
-struct FRigUnit_HierarchyAddControl_ShapeSettings final
-{
-public:
-	bool                                          bVisible;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   Name;                                              // 0x0004(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           Color;                                             // 0x000C(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             Transform;                                         // 0x0020(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_HierarchyAddControl_ShapeSettings;
-
-// ScriptStruct ControlRig.RigUnit_HierarchyAddControl_ProxySettings
-// 0x0020 (0x0020 - 0x0000)
-struct FRigUnit_HierarchyAddControl_ProxySettings final
-{
-public:
-	bool                                          bIsProxy;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FRigElementKey>                 DrivenControls;                                    // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	ERigControlVisibility                         ShapeVisibility;                                   // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigUnit_HierarchyAddControl_ProxySettings;
-
-// ScriptStruct ControlRig.RigUnit_HierarchyAddControl_Settings
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FRigUnit_HierarchyAddControl_Settings
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   DisplayName;                                       // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_HierarchyAddControl_Settings;
 
 // ScriptStruct ControlRig.RigUnit_HierarchyAddControlFloat_Settings
 // 0x00C0 (0x00D0 - 0x0010)
@@ -2532,17 +2741,6 @@ public:
 };
 DUMPER7_ASSERTS_FRigHierarchyContainer;
 
-// ScriptStruct ControlRig.RigUnit_SetMultiControlBool_Entry
-// 0x000C (0x000C - 0x0000)
-struct FRigUnit_SetMultiControlBool_Entry final
-{
-public:
-	class FName                                   Control;                                           // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          BoolValue;                                         // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigUnit_SetMultiControlBool_Entry;
-
 // ScriptStruct ControlRig.RigUnit_HierarchyAddControlVector2D_LimitSettings
 // 0x0030 (0x0030 - 0x0000)
 struct FRigUnit_HierarchyAddControlVector2D_LimitSettings final
@@ -2623,51 +2821,14 @@ public:
 };
 DUMPER7_ASSERTS_FRigHierarchyKey;
 
-// ScriptStruct ControlRig.RigUnit_HierarchyAddControlVector_LimitSettings
-// 0x0040 (0x0040 - 0x0000)
-struct FRigUnit_HierarchyAddControlVector_LimitSettings final
+// ScriptStruct ControlRig.RigUnit_GetVectorAnimationChannel
+// 0x0018 (0x0048 - 0x0030)
+struct FRigUnit_GetVectorAnimationChannel final : public FRigUnit_GetAnimationChannelBase
 {
 public:
-	struct FRigControlLimitEnabled                LimitX;                                            // 0x0000(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRigControlLimitEnabled                LimitY;                                            // 0x0002(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRigControlLimitEnabled                LimitZ;                                            // 0x0004(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                MinValue;                                          // 0x0008(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                MaxValue;                                          // 0x0020(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bDrawLimits;                                       // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FVector                                Value;                                             // 0x0030(0x0018)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigUnit_HierarchyAddControlVector_LimitSettings;
-
-// ScriptStruct ControlRig.RigUnit_HierarchyAddControlVector_Settings
-// 0x0100 (0x0110 - 0x0010)
-struct FRigUnit_HierarchyAddControlVector_Settings final : public FRigUnit_HierarchyAddControl_Settings
-{
-public:
-	ERigVMTransformSpace                          InitialSpace;                                      // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsPosition;                                       // 0x0011(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRigUnit_HierarchyAddControlVector_LimitSettings Limits;                                  // 0x0018(0x0040)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_58[0x8];                                       // 0x0058(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRigUnit_HierarchyAddControl_ShapeSettings Shape;                                         // 0x0060(0x0080)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRigUnit_HierarchyAddControl_ProxySettings Proxy;                                         // 0x00E0(0x0020)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TArray<ERigControlTransformChannel>           FilteredChannels;                                  // 0x0100(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_HierarchyAddControlVector_Settings;
-
-// ScriptStruct ControlRig.RigDispatch_SetMetadata
-// 0x0000 (0x00A0 - 0x00A0)
-struct FRigDispatch_SetMetadata : public FRigDispatch_MetadataBase
-{
-};
-DUMPER7_ASSERTS_FRigDispatch_SetMetadata;
-
-// ScriptStruct ControlRig.RigDispatch_SetModuleMetadata
-// 0x0000 (0x00A0 - 0x00A0)
-struct FRigDispatch_SetModuleMetadata final : public FRigDispatch_SetMetadata
-{
-};
-DUMPER7_ASSERTS_FRigDispatch_SetModuleMetadata;
+DUMPER7_ASSERTS_FRigUnit_GetVectorAnimationChannel;
 
 // ScriptStruct ControlRig.RigEventContext
 // 0x0028 (0x0028 - 0x0000)
@@ -2677,6 +2838,19 @@ public:
 	uint8                                         Pad_0[0x28];                                       // 0x0000(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FRigEventContext;
+
+// ScriptStruct ControlRig.RigUnit_SetControlVector2D
+// 0x0040 (0x0050 - 0x0010)
+struct FRigUnit_SetControlVector2D final : public FRigUnitMutable
+{
+public:
+	class FName                                   Control;                                           // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Weight;                                            // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              Vector;                                            // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCachedRigElement                      CachedControlIndex;                                // 0x0030(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_SetControlVector2D;
 
 // ScriptStruct ControlRig.RigElementResolveResult
 // 0x0020 (0x0020 - 0x0000)
@@ -2705,50 +2879,6 @@ public:
 };
 DUMPER7_ASSERTS_FModularRigResolveResult;
 
-// ScriptStruct ControlRig.RigUnit_HierarchyAddControlRotator_LimitSettings
-// 0x0040 (0x0040 - 0x0000)
-struct FRigUnit_HierarchyAddControlRotator_LimitSettings final
-{
-public:
-	struct FRigControlLimitEnabled                LimitPitch;                                        // 0x0000(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRigControlLimitEnabled                LimitYaw;                                          // 0x0002(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRigControlLimitEnabled                LimitRoll;                                         // 0x0004(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRotator                               MinValue;                                          // 0x0008(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRotator                               MaxValue;                                          // 0x0020(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bDrawLimits;                                       // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigUnit_HierarchyAddControlRotator_LimitSettings;
-
-// ScriptStruct ControlRig.RigUnit_HierarchyAddControlRotator_Settings
-// 0x0110 (0x0120 - 0x0010)
-struct FRigUnit_HierarchyAddControlRotator_Settings final : public FRigUnit_HierarchyAddControl_Settings
-{
-public:
-	ERigVMTransformSpace                          InitialSpace;                                      // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRigUnit_HierarchyAddControlRotator_LimitSettings Limits;                                 // 0x0018(0x0040)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_58[0x8];                                       // 0x0058(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRigUnit_HierarchyAddControl_ShapeSettings Shape;                                         // 0x0060(0x0080)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRigUnit_HierarchyAddControl_ProxySettings Proxy;                                         // 0x00E0(0x0020)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TArray<ERigControlTransformChannel>           FilteredChannels;                                  // 0x0100(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          bUsePreferredRotationOrder;                        // 0x0110(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EEulerRotationOrder                           PreferredRotationOrder;                            // 0x0111(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_112[0xE];                                      // 0x0112(0x000E)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigUnit_HierarchyAddControlRotator_Settings;
-
-// ScriptStruct ControlRig.RigUnit_HierarchyAddControlRotator
-// 0x0130 (0x01D0 - 0x00A0)
-struct FRigUnit_HierarchyAddControlRotator final : public FRigUnit_HierarchyAddControlElement
-{
-public:
-	struct FRotator                               InitialValue;                                      // 0x0098(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRigUnit_HierarchyAddControlRotator_Settings Settings;                                    // 0x00B0(0x0120)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_HierarchyAddControlRotator;
-
 // ScriptStruct ControlRig.RigTransformDirtyState
 // 0x0010 (0x0010 - 0x0000)
 struct alignas(0x08) FRigTransformDirtyState final
@@ -2758,26 +2888,15 @@ public:
 };
 DUMPER7_ASSERTS_FRigTransformDirtyState;
 
-// ScriptStruct ControlRig.RigUnit_ProjectTransformToNewParent
-// 0x00F8 (0x0100 - 0x0008)
-struct FRigUnit_ProjectTransformToNewParent final : public FRigUnit
+// ScriptStruct ControlRig.RigUnit_SetBoolAnimationChannel
+// 0x0008 (0x0040 - 0x0038)
+struct FRigUnit_SetBoolAnimationChannel final : public FRigUnit_SetAnimationChannelBase
 {
 public:
-	struct FRigElementKey                         Child;                                             // 0x0008(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bChildInitial;                                     // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRigElementKey                         OldParent;                                         // 0x0018(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bOldParentInitial;                                 // 0x0024(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRigElementKey                         NewParent;                                         // 0x0028(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bNewParentInitial;                                 // 0x0034(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_35[0xB];                                       // 0x0035(0x000B)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             Transform;                                         // 0x0040(0x0060)(BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCachedRigElement                      CachedChild;                                       // 0x00A0(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCachedRigElement                      CachedOldParent;                                   // 0x00C0(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCachedRigElement                      CachedNewParent;                                   // 0x00E0(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Value;                                             // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FRigUnit_ProjectTransformToNewParent;
+DUMPER7_ASSERTS_FRigUnit_SetBoolAnimationChannel;
 
 // ScriptStruct ControlRig.RigLocalAndGlobalDirtyState
 // 0x0020 (0x0020 - 0x0000)
@@ -2911,6 +3030,16 @@ public:
 };
 DUMPER7_ASSERTS_FRigBoneElement;
 
+// ScriptStruct ControlRig.RigUnit_SetMultiControlFloat_Entry
+// 0x000C (0x000C - 0x0000)
+struct FRigUnit_SetMultiControlFloat_Entry final
+{
+public:
+	class FName                                   Control;                                           // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FloatValue;                                        // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_SetMultiControlFloat_Entry;
+
 // ScriptStruct ControlRig.RigUnit_SetMultiControlFloat
 // 0x0028 (0x0038 - 0x0010)
 struct FRigUnit_SetMultiControlFloat final : public FRigUnitMutable
@@ -2948,14 +3077,18 @@ public:
 };
 DUMPER7_ASSERTS_FRigReferenceElement;
 
-// ScriptStruct ControlRig.RigUnit_GetVectorAnimationChannelFromItem
-// 0x0018 (0x0030 - 0x0018)
-struct FRigUnit_GetVectorAnimationChannelFromItem final : public FRigUnit_GetAnimationChannelFromItemBase
+// ScriptStruct ControlRig.RigUnit_SetControlTranslationOffset
+// 0x0048 (0x0058 - 0x0010)
+struct FRigUnit_SetControlTranslationOffset final : public FRigUnitMutable
 {
 public:
-	struct FVector                                Value;                                             // 0x0018(0x0018)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Control;                                           // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Offset;                                            // 0x0018(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERigVMTransformSpace                          Space;                                             // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCachedRigElement                      CachedControlIndex;                                // 0x0038(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigUnit_GetVectorAnimationChannelFromItem;
+DUMPER7_ASSERTS_FRigUnit_SetControlTranslationOffset;
 
 // ScriptStruct ControlRig.RigConnectorState
 // 0x0040 (0x0040 - 0x0000)
@@ -3015,15 +3148,17 @@ struct FRigSocketElement final : public FRigSingleParentElement
 };
 DUMPER7_ASSERTS_FRigSocketElement;
 
-// ScriptStruct ControlRig.RigUnit_SetBoolAnimationChannelFromItem
-// 0x0008 (0x0028 - 0x0020)
-struct FRigUnit_SetBoolAnimationChannelFromItem final : public FRigUnit_SetAnimationChannelBaseFromItem
+// ScriptStruct ControlRig.RigUnit_SetShapeTransform
+// 0x0090 (0x00A0 - 0x0010)
+struct FRigUnit_SetShapeTransform final : public FRigUnitMutable
 {
 public:
-	bool                                          Value;                                             // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FName                                   Control;                                           // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Transform;                                         // 0x0020(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCachedRigElement                      CachedControlIndex;                                // 0x0080(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigUnit_SetBoolAnimationChannelFromItem;
+DUMPER7_ASSERTS_FRigUnit_SetShapeTransform;
 
 // ScriptStruct ControlRig.RigHierarchyCopyPasteContentPerElement
 // 0x0060 (0x0060 - 0x0000)
@@ -3099,16 +3234,6 @@ public:
 };
 DUMPER7_ASSERTS_FRigBoolArrayMetadata;
 
-// ScriptStruct ControlRig.RigFloatMetadata
-// 0x0008 (0x0028 - 0x0020)
-struct FRigFloatMetadata final : public FRigBaseMetadata
-{
-public:
-	float                                         Value;                                             // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigFloatMetadata;
-
 // ScriptStruct ControlRig.RigFloatArrayMetadata
 // 0x0010 (0x0030 - 0x0020)
 struct FRigFloatArrayMetadata final : public FRigBaseMetadata
@@ -3138,43 +3263,6 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_SetMultiControlInteger_Entry;
 
-// ScriptStruct ControlRig.RigInt32ArrayMetadata
-// 0x0010 (0x0030 - 0x0020)
-struct FRigInt32ArrayMetadata final : public FRigBaseMetadata
-{
-public:
-	TArray<int32>                                 Value;                                             // 0x0020(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-};
-DUMPER7_ASSERTS_FRigInt32ArrayMetadata;
-
-// ScriptStruct ControlRig.RigUnit_SetRelativeTransformForItem
-// 0x00D0 (0x00E0 - 0x0010)
-struct FRigUnit_SetRelativeTransformForItem final : public FRigUnitMutable
-{
-public:
-	struct FRigElementKey                         Child;                                             // 0x0010(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRigElementKey                         Parent;                                            // 0x001C(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bParentInitial;                                    // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             Value;                                             // 0x0030(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Weight;                                            // 0x0090(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPropagateToChildren;                              // 0x0094(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_95[0x3];                                       // 0x0095(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCachedRigElement                      CachedChild;                                       // 0x0098(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCachedRigElement                      CachedParent;                                      // 0x00B8(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D8[0x8];                                       // 0x00D8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigUnit_SetRelativeTransformForItem;
-
-// ScriptStruct ControlRig.RigNameMetadata
-// 0x0008 (0x0028 - 0x0020)
-struct FRigNameMetadata final : public FRigBaseMetadata
-{
-public:
-	class FName                                   Value;                                             // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-};
-DUMPER7_ASSERTS_FRigNameMetadata;
-
 // ScriptStruct ControlRig.RigNameArrayMetadata
 // 0x0010 (0x0030 - 0x0020)
 struct FRigNameArrayMetadata final : public FRigBaseMetadata
@@ -3183,6 +3271,15 @@ public:
 	TArray<class FName>                           Value;                                             // 0x0020(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 };
 DUMPER7_ASSERTS_FRigNameArrayMetadata;
+
+// ScriptStruct ControlRig.ControlRigExecuteContext
+// 0x0110 (0x0220 - 0x0110)
+struct FControlRigExecuteContext final : public FRigVMExecuteContext
+{
+public:
+	uint8                                         Pad_110[0x110];                                    // 0x0110(0x0110)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FControlRigExecuteContext;
 
 // ScriptStruct ControlRig.RigVectorMetadata
 // 0x0018 (0x0038 - 0x0020)
@@ -3193,36 +3290,14 @@ public:
 };
 DUMPER7_ASSERTS_FRigVectorMetadata;
 
-// ScriptStruct ControlRig.RigUnit_SetMultiControlVector2D_Entry
-// 0x0018 (0x0018 - 0x0000)
-struct FRigUnit_SetMultiControlVector2D_Entry final
+// ScriptStruct ControlRig.RigRotatorMetadata
+// 0x0018 (0x0038 - 0x0020)
+struct FRigRotatorMetadata final : public FRigBaseMetadata
 {
 public:
-	class FName                                   Control;                                           // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              Vector;                                            // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               Value;                                             // 0x0020(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
 };
-DUMPER7_ASSERTS_FRigUnit_SetMultiControlVector2D_Entry;
-
-// ScriptStruct ControlRig.RigUnit_SetMultiControlVector2D
-// 0x0028 (0x0038 - 0x0010)
-struct FRigUnit_SetMultiControlVector2D final : public FRigUnitMutable
-{
-public:
-	TArray<struct FRigUnit_SetMultiControlVector2D_Entry> Entries;                                   // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	float                                         Weight;                                            // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FCachedRigElement>              CachedControlIndices;                              // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_SetMultiControlVector2D;
-
-// ScriptStruct ControlRig.RigVectorArrayMetadata
-// 0x0010 (0x0030 - 0x0020)
-struct FRigVectorArrayMetadata final : public FRigBaseMetadata
-{
-public:
-	TArray<struct FVector>                        Value;                                             // 0x0020(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-};
-DUMPER7_ASSERTS_FRigVectorArrayMetadata;
+DUMPER7_ASSERTS_FRigRotatorMetadata;
 
 // ScriptStruct ControlRig.RigRotatorArrayMetadata
 // 0x0010 (0x0030 - 0x0020)
@@ -3233,6 +3308,17 @@ public:
 };
 DUMPER7_ASSERTS_FRigRotatorArrayMetadata;
 
+// ScriptStruct ControlRig.RigUnit_AddParent
+// 0x0020 (0x0030 - 0x0010)
+struct FRigUnit_AddParent final : public FRigUnit_DynamicHierarchyBaseMutable
+{
+public:
+	struct FRigElementKey                         Child;                                             // 0x0010(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRigElementKey                         Parent;                                            // 0x001C(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   DisplayLabel;                                      // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_AddParent;
+
 // ScriptStruct ControlRig.RigQuatMetadata
 // 0x0020 (0x0040 - 0x0020)
 struct FRigQuatMetadata final : public FRigBaseMetadata
@@ -3242,29 +3328,23 @@ public:
 };
 DUMPER7_ASSERTS_FRigQuatMetadata;
 
-// ScriptStruct ControlRig.RigUnit_SetMultiControlRotator_Entry
-// 0x0028 (0x0028 - 0x0000)
-struct FRigUnit_SetMultiControlRotator_Entry final
+// ScriptStruct ControlRig.RigQuatArrayMetadata
+// 0x0010 (0x0030 - 0x0020)
+struct FRigQuatArrayMetadata final : public FRigBaseMetadata
 {
 public:
-	class FName                                   Control;                                           // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               Rotator;                                           // 0x0008(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	ERigVMTransformSpace                          Space;                                             // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<struct FQuat>                          Value;                                             // 0x0020(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 };
-DUMPER7_ASSERTS_FRigUnit_SetMultiControlRotator_Entry;
+DUMPER7_ASSERTS_FRigQuatArrayMetadata;
 
-// ScriptStruct ControlRig.RigUnit_SetMultiControlRotator
-// 0x0028 (0x0038 - 0x0010)
-struct FRigUnit_SetMultiControlRotator final : public FRigUnitMutable
+// ScriptStruct ControlRig.RigTransformMetadata
+// 0x0060 (0x0080 - 0x0020)
+struct FRigTransformMetadata final : public FRigBaseMetadata
 {
 public:
-	TArray<struct FRigUnit_SetMultiControlRotator_Entry> Entries;                                    // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	float                                         Weight;                                            // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FCachedRigElement>              CachedControlIndices;                              // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FTransform                             Value;                                             // 0x0020(0x0060)(IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
-DUMPER7_ASSERTS_FRigUnit_SetMultiControlRotator;
+DUMPER7_ASSERTS_FRigTransformMetadata;
 
 // ScriptStruct ControlRig.RigTransformArrayMetadata
 // 0x0010 (0x0030 - 0x0020)
@@ -3297,13 +3377,6 @@ public:
 	struct FLinearColor                           Value;                                             // 0x0020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
 DUMPER7_ASSERTS_FRigLinearColorMetadata;
-
-// ScriptStruct ControlRig.RigUnit_CollectionBase
-// 0x0000 (0x0008 - 0x0008)
-struct FRigUnit_CollectionBase : public FRigUnit
-{
-};
-DUMPER7_ASSERTS_FRigUnit_CollectionBase;
 
 // ScriptStruct ControlRig.RigUnit_CollectionItemAtIndex
 // 0x0020 (0x0028 - 0x0008)
@@ -3360,29 +3433,16 @@ public:
 };
 DUMPER7_ASSERTS_FRigInfluenceEntryModifier;
 
-// ScriptStruct ControlRig.RigUnit_HierarchyAddAnimationChannelVectorLimitSettings
-// 0x0006 (0x0006 - 0x0000)
-struct FRigUnit_HierarchyAddAnimationChannelVectorLimitSettings final : public FRigUnit_HierarchyAddAnimationChannelEmptyLimitSettings
+// ScriptStruct ControlRig.RigUnit_CollectionGetAll
+// 0x0018 (0x0020 - 0x0008)
+struct FRigUnit_CollectionGetAll final : public FRigUnit_CollectionBase
 {
 public:
-	struct FRigControlLimitEnabled                X;                                                 // 0x0000(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRigControlLimitEnabled                Y;                                                 // 0x0002(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRigControlLimitEnabled                Z;                                                 // 0x0004(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	ERigElementType                               TypeToSearch;                                      // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FRigElementKey>                 Items;                                             // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigUnit_HierarchyAddAnimationChannelVectorLimitSettings;
-
-// ScriptStruct ControlRig.RigUnit_HierarchyAddAnimationChannelScaleVector
-// 0x0050 (0x0080 - 0x0030)
-struct FRigUnit_HierarchyAddAnimationChannelScaleVector final : public FRigUnit_HierarchyAddElement
-{
-public:
-	struct FVector                                InitialValue;                                      // 0x0030(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                MinimumValue;                                      // 0x0048(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                MaximumValue;                                      // 0x0060(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRigUnit_HierarchyAddAnimationChannelVectorLimitSettings LimitsEnabled;                   // 0x0078(0x0006)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_7E[0x2];                                       // 0x007E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigUnit_HierarchyAddAnimationChannelScaleVector;
+DUMPER7_ASSERTS_FRigUnit_CollectionGetAll;
 
 // ScriptStruct ControlRig.ModularRigSettings
 // 0x0001 (0x0001 - 0x0000)
@@ -3412,16 +3472,23 @@ public:
 };
 DUMPER7_ASSERTS_FRigPhysicsSimulationBase;
 
-// ScriptStruct ControlRig.RigUnit_HierarchyAddBone
-// 0x0070 (0x00A0 - 0x0030)
-struct FRigUnit_HierarchyAddBone final : public FRigUnit_HierarchyAddElement
+// ScriptStruct ControlRig.RigUnit_InverseExecution
+// 0x0008 (0x0010 - 0x0008)
+struct FRigUnit_InverseExecution final : public FRigUnit
 {
 public:
-	struct FTransform                             Transform;                                         // 0x0030(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERigVMTransformSpace                          Space;                                             // 0x0090(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_91[0xF];                                       // 0x0091(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FRigVMExecutePin                       ExecutePin;                                        // 0x0008(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, Transient, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigUnit_HierarchyAddBone;
+DUMPER7_ASSERTS_FRigUnit_InverseExecution;
+
+// ScriptStruct ControlRig.RigPhysicsSolverID
+// 0x0010 (0x0010 - 0x0000)
+struct FRigPhysicsSolverID final
+{
+public:
+	struct FGuid                                  Guid;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigPhysicsSolverID;
 
 // ScriptStruct ControlRig.RigUnit_AddAvailableSpaces
 // 0x0020 (0x0030 - 0x0010)
@@ -3462,6 +3529,25 @@ public:
 	uint8                                         Pad_798[0xA8];                                     // 0x0798(0x00A8)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FControlRigLayerInstanceProxy;
+
+// ScriptStruct ControlRig.RigUnit_ItemBase
+// 0x0000 (0x0008 - 0x0008)
+struct FRigUnit_ItemBase : public FRigUnit
+{
+};
+DUMPER7_ASSERTS_FRigUnit_ItemBase;
+
+// ScriptStruct ControlRig.RigUnit_ItemExists
+// 0x0030 (0x0038 - 0x0008)
+struct FRigUnit_ItemExists final : public FRigUnit_ItemBase
+{
+public:
+	struct FRigElementKey                         Item;                                              // 0x0008(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Exists;                                            // 0x0014(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCachedRigElement                      CachedIndex;                                       // 0x0018(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_ItemExists;
 
 // ScriptStruct ControlRig.ControlRigSequenceObjectReference
 // 0x0008 (0x0008 - 0x0000)
@@ -3510,13 +3596,6 @@ public:
 	struct FMovieSceneByteChannel                 ParameterCurve;                                    // 0x0008(0x0128)(NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FEnumParameterNameAndCurve;
-
-// ScriptStruct ControlRig.RigUnit_ItemBase
-// 0x0000 (0x0008 - 0x0008)
-struct FRigUnit_ItemBase : public FRigUnit
-{
-};
-DUMPER7_ASSERTS_FRigUnit_ItemBase;
 
 // ScriptStruct ControlRig.RigUnit_ItemTypeEquals
 // 0x0020 (0x0028 - 0x0008)
@@ -3651,12 +3730,37 @@ public:
 };
 DUMPER7_ASSERTS_FControlRigSettingsPerPinBool;
 
-// ScriptStruct ControlRig.RigUnit_RigModulesBaseMutable
-// 0x0000 (0x0010 - 0x0010)
-struct FRigUnit_RigModulesBaseMutable final : public FRigUnitMutable
+// ScriptStruct ControlRig.RigUnit_HierarchyAddControlVector_LimitSettings
+// 0x0040 (0x0040 - 0x0000)
+struct FRigUnit_HierarchyAddControlVector_LimitSettings final
 {
+public:
+	struct FRigControlLimitEnabled                LimitX;                                            // 0x0000(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRigControlLimitEnabled                LimitY;                                            // 0x0002(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRigControlLimitEnabled                LimitZ;                                            // 0x0004(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                MinValue;                                          // 0x0008(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                MaxValue;                                          // 0x0020(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDrawLimits;                                       // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FRigUnit_RigModulesBaseMutable;
+DUMPER7_ASSERTS_FRigUnit_HierarchyAddControlVector_LimitSettings;
+
+// ScriptStruct ControlRig.RigUnit_HierarchyAddControlVector_Settings
+// 0x0100 (0x0110 - 0x0010)
+struct FRigUnit_HierarchyAddControlVector_Settings final : public FRigUnit_HierarchyAddControl_Settings
+{
+public:
+	ERigVMTransformSpace                          InitialSpace;                                      // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsPosition;                                       // 0x0011(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRigUnit_HierarchyAddControlVector_LimitSettings Limits;                                  // 0x0018(0x0040)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_58[0x8];                                       // 0x0058(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRigUnit_HierarchyAddControl_ShapeSettings Shape;                                         // 0x0060(0x0080)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRigUnit_HierarchyAddControl_ProxySettings Proxy;                                         // 0x00E0(0x0020)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<ERigControlTransformChannel>           FilteredChannels;                                  // 0x0100(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_HierarchyAddControlVector_Settings;
 
 // ScriptStruct ControlRig.RigControlCopy
 // 0x0220 (0x0220 - 0x0000)
@@ -3675,6 +3779,20 @@ public:
 	struct FTransform                             GlobalTransform;                                   // 0x01C0(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRigControlCopy;
+
+// ScriptStruct ControlRig.RigDispatch_SetMetadata
+// 0x0000 (0x00A0 - 0x00A0)
+struct FRigDispatch_SetMetadata : public FRigDispatch_MetadataBase
+{
+};
+DUMPER7_ASSERTS_FRigDispatch_SetMetadata;
+
+// ScriptStruct ControlRig.RigDispatch_SetModuleMetadata
+// 0x0000 (0x00A0 - 0x00A0)
+struct FRigDispatch_SetModuleMetadata final : public FRigDispatch_SetMetadata
+{
+};
+DUMPER7_ASSERTS_FRigDispatch_SetModuleMetadata;
 
 // ScriptStruct ControlRig.ControlRigControlPose
 // 0x0060 (0x0060 - 0x0000)
@@ -3697,51 +3815,70 @@ public:
 };
 DUMPER7_ASSERTS_FSampleTrackMemoryData;
 
-// ScriptStruct ControlRig.RigUnit_RigModulesBase
-// 0x0000 (0x0008 - 0x0008)
-struct FRigUnit_RigModulesBase : public FRigUnit
-{
-};
-DUMPER7_ASSERTS_FRigUnit_RigModulesBase;
-
-// ScriptStruct ControlRig.RigUnit_GetItemShortName
-// 0x0018 (0x0020 - 0x0008)
-struct FRigUnit_GetItemShortName final : public FRigUnit_RigModulesBase
+// ScriptStruct ControlRig.RigUnit_HierarchyAddControlRotator_LimitSettings
+// 0x0040 (0x0040 - 0x0000)
+struct FRigUnit_HierarchyAddControlRotator_LimitSettings final
 {
 public:
-	struct FRigElementKey                         Item;                                              // 0x0008(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   ShortName;                                         // 0x0014(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FRigControlLimitEnabled                LimitPitch;                                        // 0x0000(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRigControlLimitEnabled                LimitYaw;                                          // 0x0002(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRigControlLimitEnabled                LimitRoll;                                         // 0x0004(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRotator                               MinValue;                                          // 0x0008(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRotator                               MaxValue;                                          // 0x0020(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bDrawLimits;                                       // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FRigUnit_GetItemShortName;
+DUMPER7_ASSERTS_FRigUnit_HierarchyAddControlRotator_LimitSettings;
 
-// ScriptStruct ControlRig.RigDispatch_AnimAttributeBase
-// 0x0030 (0x00A0 - 0x0070)
-struct FRigDispatch_AnimAttributeBase : public FRigDispatchFactory
+// ScriptStruct ControlRig.RigUnit_HierarchyAddControlRotator_Settings
+// 0x0110 (0x0120 - 0x0010)
+struct FRigUnit_HierarchyAddControlRotator_Settings final : public FRigUnit_HierarchyAddControl_Settings
 {
 public:
-	uint8                                         Pad_70[0x30];                                      // 0x0070(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	ERigVMTransformSpace                          InitialSpace;                                      // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRigUnit_HierarchyAddControlRotator_LimitSettings Limits;                                 // 0x0018(0x0040)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_58[0x8];                                       // 0x0058(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRigUnit_HierarchyAddControl_ShapeSettings Shape;                                         // 0x0060(0x0080)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRigUnit_HierarchyAddControl_ProxySettings Proxy;                                         // 0x00E0(0x0020)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<ERigControlTransformChannel>           FilteredChannels;                                  // 0x0100(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          bUsePreferredRotationOrder;                        // 0x0110(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EEulerRotationOrder                           PreferredRotationOrder;                            // 0x0111(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_112[0xE];                                      // 0x0112(0x000E)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FRigDispatch_AnimAttributeBase;
+DUMPER7_ASSERTS_FRigUnit_HierarchyAddControlRotator_Settings;
 
-// ScriptStruct ControlRig.RigUnit_HierarchyGetParentWeightsArray
-// 0x0030 (0x0038 - 0x0008)
-struct FRigUnit_HierarchyGetParentWeightsArray final : public FRigUnit_DynamicHierarchyBase
+// ScriptStruct ControlRig.RigUnit_HierarchyAddControlRotator
+// 0x0130 (0x01D0 - 0x00A0)
+struct FRigUnit_HierarchyAddControlRotator final : public FRigUnit_HierarchyAddControlElement
+{
+public:
+	struct FRotator                               InitialValue;                                      // 0x0098(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRigUnit_HierarchyAddControlRotator_Settings Settings;                                    // 0x00B0(0x0120)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_HierarchyAddControlRotator;
+
+// ScriptStruct ControlRig.RigUnit_ProjectTransformToNewParent
+// 0x00F8 (0x0100 - 0x0008)
+struct FRigUnit_ProjectTransformToNewParent final : public FRigUnit
 {
 public:
 	struct FRigElementKey                         Child;                                             // 0x0008(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FRigElementWeight>              Weights;                                           // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FRigElementKey>                 Parents;                                           // 0x0028(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          bChildInitial;                                     // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRigElementKey                         OldParent;                                         // 0x0018(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOldParentInitial;                                 // 0x0024(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRigElementKey                         NewParent;                                         // 0x0028(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNewParentInitial;                                 // 0x0034(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_35[0xB];                                       // 0x0035(0x000B)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Transform;                                         // 0x0040(0x0060)(BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCachedRigElement                      CachedChild;                                       // 0x00A0(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCachedRigElement                      CachedOldParent;                                   // 0x00C0(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCachedRigElement                      CachedNewParent;                                   // 0x00E0(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigUnit_HierarchyGetParentWeightsArray;
-
-// ScriptStruct ControlRig.RigDispatch_GetAnimAttribute
-// 0x0000 (0x00A0 - 0x00A0)
-struct FRigDispatch_GetAnimAttribute final : public FRigDispatch_AnimAttributeBase
-{
-};
-DUMPER7_ASSERTS_FRigDispatch_GetAnimAttribute;
+DUMPER7_ASSERTS_FRigUnit_ProjectTransformToNewParent;
 
 // ScriptStruct ControlRig.RigDispatch_SetAnimAttribute
 // 0x0000 (0x00A0 - 0x00A0)
@@ -3859,34 +3996,6 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_SphereTraceByObjectTypes;
 
-// ScriptStruct ControlRig.RigUnit_Control
-// 0x0178 (0x0180 - 0x0008)
-struct FRigUnit_Control : public FRigUnit
-{
-public:
-	struct FEulerTransform                        Transform;                                         // 0x0008(0x0048)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
-	struct FTransform                             base;                                              // 0x0050(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             InitTransform;                                     // 0x00B0(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             Result;                                            // 0x0110(0x0060)(BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransformFilter                       Filter;                                            // 0x0170(0x0009)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bIsInitialized;                                    // 0x0179(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17A[0x6];                                      // 0x017A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigUnit_Control;
-
-// ScriptStruct ControlRig.RigUnit_HierarchyAddAnimationChannelScaleFloat
-// 0x0010 (0x0040 - 0x0030)
-struct FRigUnit_HierarchyAddAnimationChannelScaleFloat final : public FRigUnit_HierarchyAddElement
-{
-public:
-	float                                         InitialValue;                                      // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MinimumValue;                                      // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaximumValue;                                      // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRigUnit_HierarchyAddAnimationChannelSingleLimitSettings LimitsEnabled;                   // 0x003C(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3E[0x2];                                       // 0x003E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigUnit_HierarchyAddAnimationChannelScaleFloat;
-
 // ScriptStruct ControlRig.RigUnit_Control_StaticMesh
 // 0x0060 (0x01E0 - 0x0180)
 struct FRigUnit_Control_StaticMesh final : public FRigUnit_Control
@@ -3938,6 +4047,20 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_ShapeExists;
 
+// ScriptStruct ControlRig.RigUnit_CollectionChildren
+// 0x0020 (0x0028 - 0x0008)
+struct FRigUnit_CollectionChildren final : public FRigUnit_CollectionBase
+{
+public:
+	struct FRigElementKey                         Parent;                                            // 0x0008(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIncludeParent;                                    // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRecursive;                                        // 0x0015(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERigElementType                               TypeToSearch;                                      // 0x0016(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_17[0x1];                                       // 0x0017(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRigElementKeyCollection               Collection;                                        // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_CollectionChildren;
+
 // ScriptStruct ControlRig.RigUnit_DebugBezier
 // 0x00F8 (0x0110 - 0x0018)
 struct FRigUnit_DebugBezier final : public FRigVMFunction_DebugBaseMutable
@@ -3955,41 +4078,6 @@ public:
 	uint8                                         Pad_101[0xF];                                      // 0x0101(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FRigUnit_DebugBezier;
-
-// ScriptStruct ControlRig.RigUnit_SetControlTranslationOffset
-// 0x0048 (0x0058 - 0x0010)
-struct FRigUnit_SetControlTranslationOffset final : public FRigUnitMutable
-{
-public:
-	class FName                                   Control;                                           // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Offset;                                            // 0x0018(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERigVMTransformSpace                          Space;                                             // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCachedRigElement                      CachedControlIndex;                                // 0x0038(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_SetControlTranslationOffset;
-
-// ScriptStruct ControlRig.RigUnit_HierarchyAddControlTransform_LimitSettings
-// 0x00B0 (0x00B0 - 0x0000)
-struct FRigUnit_HierarchyAddControlTransform_LimitSettings final
-{
-public:
-	struct FRigControlLimitEnabled                LimitTranslationX;                                 // 0x0000(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRigControlLimitEnabled                LimitTranslationY;                                 // 0x0002(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRigControlLimitEnabled                LimitTranslationZ;                                 // 0x0004(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRigControlLimitEnabled                LimitPitch;                                        // 0x0006(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRigControlLimitEnabled                LimitYaw;                                          // 0x0008(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRigControlLimitEnabled                LimitRoll;                                         // 0x000A(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRigControlLimitEnabled                LimitScaleX;                                       // 0x000C(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRigControlLimitEnabled                LimitScaleY;                                       // 0x000E(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRigControlLimitEnabled                LimitScaleZ;                                       // 0x0010(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FEulerTransform                        MinValue;                                          // 0x0018(0x0048)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FEulerTransform                        MaxValue;                                          // 0x0060(0x0048)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bDrawLimits;                                       // 0x00A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A9[0x7];                                       // 0x00A9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigUnit_HierarchyAddControlTransform_LimitSettings;
 
 // ScriptStruct ControlRig.RigUnit_HierarchyAddControlTransform_Settings
 // 0x0170 (0x0180 - 0x0010)
@@ -4060,103 +4148,20 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_DebugPose;
 
-// ScriptStruct ControlRig.RigUnit_HierarchyAddAnimationChannelRotatorLimitSettings
-// 0x0006 (0x0006 - 0x0000)
-struct FRigUnit_HierarchyAddAnimationChannelRotatorLimitSettings final : public FRigUnit_HierarchyAddAnimationChannelEmptyLimitSettings
+// ScriptStruct ControlRig.RigUnit_CollectionReplaceItemsArray
+// 0x0038 (0x0040 - 0x0008)
+struct FRigUnit_CollectionReplaceItemsArray final : public FRigUnit_CollectionBase
 {
 public:
-	struct FRigControlLimitEnabled                Pitch;                                             // 0x0000(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRigControlLimitEnabled                Yaw;                                               // 0x0002(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRigControlLimitEnabled                Roll;                                              // 0x0004(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	TArray<struct FRigElementKey>                 Items;                                             // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FName                                   Old;                                               // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   New;                                               // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          RemoveInvalidItems;                                // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAllowDuplicates;                                  // 0x0029(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2A[0x6];                                       // 0x002A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FRigElementKey>                 Result;                                            // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigUnit_HierarchyAddAnimationChannelRotatorLimitSettings;
-
-// ScriptStruct ControlRig.RigUnit_HierarchyAddAnimationChannelRotator
-// 0x0050 (0x0080 - 0x0030)
-struct FRigUnit_HierarchyAddAnimationChannelRotator final : public FRigUnit_HierarchyAddElement
-{
-public:
-	struct FRotator                               InitialValue;                                      // 0x0030(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRotator                               MinimumValue;                                      // 0x0048(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRotator                               MaximumValue;                                      // 0x0060(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRigUnit_HierarchyAddAnimationChannelRotatorLimitSettings LimitsEnabled;                  // 0x0078(0x0006)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_7E[0x2];                                       // 0x007E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigUnit_HierarchyAddAnimationChannelRotator;
-
-// ScriptStruct ControlRig.RigUnit_DebugLine
-// 0x00C8 (0x00E0 - 0x0018)
-struct FRigUnit_DebugLine final : public FRigUnit_DebugBaseMutable
-{
-public:
-	struct FVector                                A;                                                 // 0x0018(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                B;                                                 // 0x0030(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           Color;                                             // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Thickness;                                         // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Space;                                             // 0x005C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_64[0xC];                                       // 0x0064(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             WorldOffset;                                       // 0x0070(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnabled;                                          // 0x00D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D1[0xF];                                       // 0x00D1(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigUnit_DebugLine;
-
-// ScriptStruct ControlRig.RigUnit_SetShapeTransform
-// 0x0090 (0x00A0 - 0x0010)
-struct FRigUnit_SetShapeTransform final : public FRigUnitMutable
-{
-public:
-	class FName                                   Control;                                           // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             Transform;                                         // 0x0020(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCachedRigElement                      CachedControlIndex;                                // 0x0080(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_SetShapeTransform;
-
-// ScriptStruct ControlRig.RigUnit_HierarchyAddControlInteger_LimitSettings
-// 0x0010 (0x0010 - 0x0000)
-struct FRigUnit_HierarchyAddControlInteger_LimitSettings final
-{
-public:
-	struct FRigControlLimitEnabled                Limit;                                             // 0x0000(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         MinValue;                                          // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxValue;                                          // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bDrawLimits;                                       // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigUnit_HierarchyAddControlInteger_LimitSettings;
-
-// ScriptStruct ControlRig.RigUnit_HierarchyAddControlInteger_Settings
-// 0x00C0 (0x00D0 - 0x0010)
-struct FRigUnit_HierarchyAddControlInteger_Settings final : public FRigUnit_HierarchyAddControl_Settings
-{
-public:
-	ERigControlAxis                               PrimaryAxis;                                       // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UEnum*                                  ControlEnum;                                       // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	struct FRigUnit_HierarchyAddControlInteger_LimitSettings Limits;                                 // 0x0020(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRigUnit_HierarchyAddControl_ShapeSettings Shape;                                         // 0x0030(0x0080)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRigUnit_HierarchyAddControl_ProxySettings Proxy;                                         // 0x00B0(0x0020)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_HierarchyAddControlInteger_Settings;
-
-// ScriptStruct ControlRig.RigUnit_DebugLineItemSpace
-// 0x00C8 (0x00E0 - 0x0018)
-struct FRigUnit_DebugLineItemSpace final : public FRigUnit_DebugBaseMutable
-{
-public:
-	struct FVector                                A;                                                 // 0x0018(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                B;                                                 // 0x0030(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           Color;                                             // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Thickness;                                         // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRigElementKey                         Space;                                             // 0x005C(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_68[0x8];                                       // 0x0068(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             WorldOffset;                                       // 0x0070(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnabled;                                          // 0x00D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D1[0xF];                                       // 0x00D1(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigUnit_DebugLineItemSpace;
+DUMPER7_ASSERTS_FRigUnit_CollectionReplaceItemsArray;
 
 // ScriptStruct ControlRig.RigUnit_DebugLineStrip
 // 0x00A8 (0x00C0 - 0x0018)
@@ -4296,6 +4301,25 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_CollectionReverse;
 
+// ScriptStruct ControlRig.RigUnit_DebugTransform
+// 0x0100 (0x0110 - 0x0010)
+struct FRigUnit_DebugTransform final : public FRigUnit_DebugBase
+{
+public:
+	struct FTransform                             Transform;                                         // 0x0010(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERigUnitDebugTransformMode                    Mode;                                              // 0x0070(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_71[0x3];                                       // 0x0071(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           Color;                                             // 0x0074(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Thickness;                                         // 0x0084(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Scale;                                             // 0x0088(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Space;                                             // 0x008C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_94[0xC];                                       // 0x0094(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             WorldOffset;                                       // 0x00A0(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnabled;                                          // 0x0100(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_101[0xF];                                      // 0x0101(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigUnit_DebugTransform;
+
 // ScriptStruct ControlRig.RigUnit_DebugTransformMutable
 // 0x0108 (0x0120 - 0x0018)
 struct FRigUnit_DebugTransformMutable final : public FRigUnit_DebugBaseMutable
@@ -4345,14 +4369,23 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_DebugTransformArrayMutable_WorkData;
 
-// ScriptStruct ControlRig.ControlRigExecuteContext
-// 0x0110 (0x0220 - 0x0110)
-struct FControlRigExecuteContext final : public FRigVMExecuteContext
+// ScriptStruct ControlRig.RigUnit_HierarchyGetChainItemArray
+// 0x0080 (0x0088 - 0x0008)
+struct FRigUnit_HierarchyGetChainItemArray final : public FRigUnit_HierarchyBase
 {
 public:
-	uint8                                         Pad_110[0x110];                                    // 0x0110(0x0110)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FRigElementKey                         Start;                                             // 0x0008(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRigElementKey                         End;                                               // 0x0014(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIncludeStart;                                     // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIncludeEnd;                                       // 0x0021(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bReverse;                                          // 0x0022(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_23[0x5];                                       // 0x0023(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FRigElementKey>                 Chain;                                             // 0x0028(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FCachedRigElement                      CachedStart;                                       // 0x0038(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCachedRigElement                      CachedEnd;                                         // 0x0058(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRigElementKeyCollection               CachedChain;                                       // 0x0078(0x0010)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FControlRigExecuteContext;
+DUMPER7_ASSERTS_FRigUnit_HierarchyGetChainItemArray;
 
 // ScriptStruct ControlRig.RigUnit_DebugTransformArrayMutable
 // 0x00B8 (0x00D0 - 0x0018)
@@ -4427,16 +4460,20 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_EndProfilingTimer;
 
-// ScriptStruct ControlRig.RigUnit_AddParent
-// 0x0020 (0x0030 - 0x0010)
-struct FRigUnit_AddParent final : public FRigUnit_DynamicHierarchyBaseMutable
+// ScriptStruct ControlRig.RigUnit_HierarchySetPoseItemArray
+// 0x0090 (0x00A0 - 0x0010)
+struct FRigUnit_HierarchySetPoseItemArray final : public FRigUnit_HierarchyBaseMutable
 {
 public:
-	struct FRigElementKey                         Child;                                             // 0x0010(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRigElementKey                         Parent;                                            // 0x001C(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   DisplayLabel;                                      // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRigPose                               Pose;                                              // 0x0010(0x0070)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	ERigElementType                               ElementType;                                       // 0x0080(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERigVMTransformSpace                          Space;                                             // 0x0081(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_82[0x6];                                       // 0x0082(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FRigElementKey>                 ItemsToSet;                                        // 0x0088(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         Weight;                                            // 0x0098(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9C[0x4];                                       // 0x009C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FRigUnit_AddParent;
+DUMPER7_ASSERTS_FRigUnit_HierarchySetPoseItemArray;
 
 // ScriptStruct ControlRig.RigUnit_VisualDebugVector
 // 0x0040 (0x0050 - 0x0010)
@@ -4454,6 +4491,24 @@ public:
 	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FRigUnit_VisualDebugVector;
+
+// ScriptStruct ControlRig.RigUnit_RigModulesBase
+// 0x0000 (0x0008 - 0x0008)
+struct FRigUnit_RigModulesBase : public FRigUnit
+{
+};
+DUMPER7_ASSERTS_FRigUnit_RigModulesBase;
+
+// ScriptStruct ControlRig.RigUnit_IsItemInCurrentModule
+// 0x0010 (0x0018 - 0x0008)
+struct FRigUnit_IsItemInCurrentModule final : public FRigUnit_RigModulesBase
+{
+public:
+	struct FRigElementKey                         Item;                                              // 0x0008(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Result;                                            // 0x0014(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigUnit_IsItemInCurrentModule;
 
 // ScriptStruct ControlRig.RigUnit_VisualDebugVectorItemSpace
 // 0x0040 (0x0050 - 0x0010)
@@ -4588,13 +4643,6 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_ConvertEulerTransform;
 
-// ScriptStruct ControlRig.RigUnit_HierarchyBaseMutable
-// 0x0000 (0x0010 - 0x0010)
-struct FRigUnit_HierarchyBaseMutable : public FRigUnitMutable
-{
-};
-DUMPER7_ASSERTS_FRigUnit_HierarchyBaseMutable;
-
 // ScriptStruct ControlRig.RigUnit_PoseLoop
 // 0x0380 (0x0390 - 0x0010)
 struct FRigUnit_PoseLoop final : public FRigUnit_HierarchyBaseMutable
@@ -4624,14 +4672,29 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_ConvertRotation;
 
-// ScriptStruct ControlRig.RigUnit_ControlName
-// 0x0008 (0x0010 - 0x0008)
-struct FRigUnit_ControlName final : public FRigUnit
+// ScriptStruct ControlRig.RigUnit_HierarchyAddAnimationChannelVectorLimitSettings
+// 0x0006 (0x0006 - 0x0000)
+struct FRigUnit_HierarchyAddAnimationChannelVectorLimitSettings final : public FRigUnit_HierarchyAddAnimationChannelEmptyLimitSettings
 {
 public:
-	class FName                                   Control;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRigControlLimitEnabled                X;                                                 // 0x0000(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRigControlLimitEnabled                Y;                                                 // 0x0002(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRigControlLimitEnabled                Z;                                                 // 0x0004(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigUnit_ControlName;
+DUMPER7_ASSERTS_FRigUnit_HierarchyAddAnimationChannelVectorLimitSettings;
+
+// ScriptStruct ControlRig.RigUnit_HierarchyAddAnimationChannelScaleVector
+// 0x0050 (0x0080 - 0x0030)
+struct FRigUnit_HierarchyAddAnimationChannelScaleVector final : public FRigUnit_HierarchyAddElement
+{
+public:
+	struct FVector                                InitialValue;                                      // 0x0030(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                MinimumValue;                                      // 0x0048(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                MaximumValue;                                      // 0x0060(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRigUnit_HierarchyAddAnimationChannelVectorLimitSettings LimitsEnabled;                   // 0x0078(0x0006)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_7E[0x2];                                       // 0x007E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigUnit_HierarchyAddAnimationChannelScaleVector;
 
 // ScriptStruct ControlRig.RigUnit_ConvertVectorRotation
 // 0x0000 (0x0040 - 0x0040)
@@ -4662,14 +4725,14 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_ConvertVectorToRotation;
 
-// ScriptStruct ControlRig.RigUnit_InverseExecution
-// 0x0008 (0x0010 - 0x0008)
-struct FRigUnit_InverseExecution final : public FRigUnit
+// ScriptStruct ControlRig.RigUnit_GetRotatorAnimationChannelFromItem
+// 0x0018 (0x0030 - 0x0018)
+struct FRigUnit_GetRotatorAnimationChannelFromItem final : public FRigUnit_GetAnimationChannelFromItemBase
 {
 public:
-	struct FRigVMExecutePin                       ExecutePin;                                        // 0x0008(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, Transient, NativeAccessSpecifierPublic)
+	struct FRotator                               Value;                                             // 0x0018(0x0018)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigUnit_InverseExecution;
+DUMPER7_ASSERTS_FRigUnit_GetRotatorAnimationChannelFromItem;
 
 // ScriptStruct ControlRig.RigUnit_ConvertVectorToQuaternion
 // 0x0038 (0x0040 - 0x0008)
@@ -4729,17 +4792,15 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_ToSwingAndTwist;
 
-// ScriptStruct ControlRig.RigUnit_ItemExists
-// 0x0030 (0x0038 - 0x0008)
-struct FRigUnit_ItemExists final : public FRigUnit_ItemBase
+// ScriptStruct ControlRig.RigUnit_SetFloatAnimationChannelFromItem
+// 0x0008 (0x0028 - 0x0020)
+struct FRigUnit_SetFloatAnimationChannelFromItem final : public FRigUnit_SetAnimationChannelBaseFromItem
 {
 public:
-	struct FRigElementKey                         Item;                                              // 0x0008(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Exists;                                            // 0x0014(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCachedRigElement                      CachedIndex;                                       // 0x0018(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Value;                                             // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FRigUnit_ItemExists;
+DUMPER7_ASSERTS_FRigUnit_SetFloatAnimationChannelFromItem;
 
 // ScriptStruct ControlRig.RigUnit_BinaryFloatOp
 // 0x0010 (0x0018 - 0x0008)
@@ -4936,19 +4997,12 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_QuaternionToAxisAndAngle;
 
-// ScriptStruct ControlRig.RigUnit_GetControlFloat
-// 0x0038 (0x0040 - 0x0008)
-struct FRigUnit_GetControlFloat final : public FRigUnit
+// ScriptStruct ControlRig.RigUnit_RigModulesBaseMutable
+// 0x0000 (0x0010 - 0x0010)
+struct FRigUnit_RigModulesBaseMutable final : public FRigUnitMutable
 {
-public:
-	class FName                                   Control;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FloatValue;                                        // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Minimum;                                           // 0x0014(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Maximum;                                           // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCachedRigElement                      CachedControlIndex;                                // 0x0020(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigUnit_GetControlFloat;
+DUMPER7_ASSERTS_FRigUnit_RigModulesBaseMutable;
 
 // ScriptStruct ControlRig.RigUnit_QuaternionFromAxisAndAngle
 // 0x0048 (0x0050 - 0x0008)
@@ -5005,20 +5059,16 @@ struct FRigUnit_MultiplyTransform final : public FRigUnit_BinaryTransformOp
 };
 DUMPER7_ASSERTS_FRigUnit_MultiplyTransform;
 
-// ScriptStruct ControlRig.RigUnit_GetControlRotator
-// 0x0078 (0x0080 - 0x0008)
-struct FRigUnit_GetControlRotator final : public FRigUnit
+// ScriptStruct ControlRig.RigUnit_GetItemShortName
+// 0x0018 (0x0020 - 0x0008)
+struct FRigUnit_GetItemShortName final : public FRigUnit_RigModulesBase
 {
 public:
-	class FName                                   Control;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERigVMTransformSpace                          Space;                                             // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRotator                               Rotator;                                           // 0x0018(0x0018)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRotator                               Minimum;                                           // 0x0030(0x0018)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRotator                               Maximum;                                           // 0x0048(0x0018)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FCachedRigElement                      CachedControlIndex;                                // 0x0060(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRigElementKey                         Item;                                              // 0x0008(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ShortName;                                         // 0x0014(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FRigUnit_GetControlRotator;
+DUMPER7_ASSERTS_FRigUnit_GetItemShortName;
 
 // ScriptStruct ControlRig.RigUnit_GetRelativeTransform
 // 0x0000 (0x0130 - 0x0130)
@@ -5027,18 +5077,17 @@ struct FRigUnit_GetRelativeTransform final : public FRigUnit_BinaryTransformOp
 };
 DUMPER7_ASSERTS_FRigUnit_GetRelativeTransform;
 
-// ScriptStruct ControlRig.RigUnit_PoseGetTransformArray
-// 0x0088 (0x0090 - 0x0008)
-struct FRigUnit_PoseGetTransformArray final : public FRigUnit_HierarchyBase
+// ScriptStruct ControlRig.RigUnit_HierarchyGetParentWeightsArray
+// 0x0030 (0x0038 - 0x0008)
+struct FRigUnit_HierarchyGetParentWeightsArray final : public FRigUnit_DynamicHierarchyBase
 {
 public:
-	struct FRigPose                               Pose;                                              // 0x0008(0x0070)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	ERigVMTransformSpace                          Space;                                             // 0x0078(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Valid;                                             // 0x0079(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_7A[0x6];                                       // 0x007A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FTransform>                     Transforms;                                        // 0x0080(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FRigElementKey                         Child;                                             // 0x0008(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FRigElementWeight>              Weights;                                           // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FRigElementKey>                 Parents;                                           // 0x0028(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigUnit_PoseGetTransformArray;
+DUMPER7_ASSERTS_FRigUnit_HierarchyGetParentWeightsArray;
 
 // ScriptStruct ControlRig.RigUnit_BinaryVectorOp
 // 0x0048 (0x0050 - 0x0008)
@@ -5191,15 +5240,6 @@ public:
 };
 DUMPER7_ASSERTS_FBlendTarget;
 
-// ScriptStruct ControlRig.RigUnit_BoneName
-// 0x0008 (0x0010 - 0x0008)
-struct FRigUnit_BoneName final : public FRigUnit
-{
-public:
-	class FName                                   bone;                                              // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_BoneName;
-
 // ScriptStruct ControlRig.RigUnit_BlendTransform
 // 0x00D8 (0x00E0 - 0x0008)
 struct FRigUnit_BlendTransform final : public FRigUnit
@@ -5281,21 +5321,29 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_DrawContainerGetInstruction;
 
-// ScriptStruct ControlRig.RigDispatch_ComponentBase
-// 0x0038 (0x00A8 - 0x0070)
-struct FRigDispatch_ComponentBase : public FRigDispatchFactory
+// ScriptStruct ControlRig.RigUnit_HierarchyAddAnimationChannelRotatorLimitSettings
+// 0x0006 (0x0006 - 0x0000)
+struct FRigUnit_HierarchyAddAnimationChannelRotatorLimitSettings final : public FRigUnit_HierarchyAddAnimationChannelEmptyLimitSettings
 {
 public:
-	uint8                                         Pad_70[0x38];                                      // 0x0070(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FRigControlLimitEnabled                Pitch;                                             // 0x0000(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRigControlLimitEnabled                Yaw;                                               // 0x0002(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRigControlLimitEnabled                Roll;                                              // 0x0004(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigDispatch_ComponentBase;
+DUMPER7_ASSERTS_FRigUnit_HierarchyAddAnimationChannelRotatorLimitSettings;
 
-// ScriptStruct ControlRig.RigDispatch_SpawnComponent
-// 0x0000 (0x00A8 - 0x00A8)
-struct FRigDispatch_SpawnComponent final : public FRigDispatch_ComponentBase
+// ScriptStruct ControlRig.RigUnit_HierarchyAddAnimationChannelRotator
+// 0x0050 (0x0080 - 0x0030)
+struct FRigUnit_HierarchyAddAnimationChannelRotator final : public FRigUnit_HierarchyAddElement
 {
+public:
+	struct FRotator                               InitialValue;                                      // 0x0030(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRotator                               MinimumValue;                                      // 0x0048(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRotator                               MaximumValue;                                      // 0x0060(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRigUnit_HierarchyAddAnimationChannelRotatorLimitSettings LimitsEnabled;                  // 0x0078(0x0006)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_7E[0x2];                                       // 0x007E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FRigDispatch_SpawnComponent;
+DUMPER7_ASSERTS_FRigUnit_HierarchyAddAnimationChannelRotator;
 
 // ScriptStruct ControlRig.RigUnit_DrawContainerSetColor
 // 0x0018 (0x0028 - 0x0010)
@@ -5464,45 +5512,6 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_CollectionNameSearchArray;
 
-// ScriptStruct ControlRig.RigUnit_HierarchyGetChainItemArray
-// 0x0080 (0x0088 - 0x0008)
-struct FRigUnit_HierarchyGetChainItemArray final : public FRigUnit_HierarchyBase
-{
-public:
-	struct FRigElementKey                         Start;                                             // 0x0008(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRigElementKey                         End;                                               // 0x0014(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIncludeStart;                                     // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIncludeEnd;                                       // 0x0021(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bReverse;                                          // 0x0022(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_23[0x5];                                       // 0x0023(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FRigElementKey>                 Chain;                                             // 0x0028(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FCachedRigElement                      CachedStart;                                       // 0x0038(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCachedRigElement                      CachedEnd;                                         // 0x0058(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRigElementKeyCollection               CachedChain;                                       // 0x0078(0x0010)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_HierarchyGetChainItemArray;
-
-// ScriptStruct ControlRig.RigUnit_CollectionChildren
-// 0x0020 (0x0028 - 0x0008)
-struct FRigUnit_CollectionChildren final : public FRigUnit_CollectionBase
-{
-public:
-	struct FRigElementKey                         Parent;                                            // 0x0008(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIncludeParent;                                    // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRecursive;                                        // 0x0015(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERigElementType                               TypeToSearch;                                      // 0x0016(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17[0x1];                                       // 0x0017(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRigElementKeyCollection               Collection;                                        // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_CollectionChildren;
-
-// ScriptStruct ControlRig.RigDispatch_GetComponentContent
-// 0x0000 (0x00A8 - 0x00A8)
-struct FRigDispatch_GetComponentContent final : public FRigDispatch_ComponentBase
-{
-};
-DUMPER7_ASSERTS_FRigDispatch_GetComponentContent;
-
 // ScriptStruct ControlRig.RigUnit_CollectionChildrenArray
 // 0x0020 (0x0028 - 0x0008)
 struct FRigUnit_CollectionChildrenArray final : public FRigUnit_CollectionBase
@@ -5516,17 +5525,6 @@ public:
 	TArray<struct FRigElementKey>                 Items;                                             // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRigUnit_CollectionChildrenArray;
-
-// ScriptStruct ControlRig.RigUnit_CollectionGetAll
-// 0x0018 (0x0020 - 0x0008)
-struct FRigUnit_CollectionGetAll final : public FRigUnit_CollectionBase
-{
-public:
-	ERigElementType                               TypeToSearch;                                      // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FRigElementKey>                 Items;                                             // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_CollectionGetAll;
 
 // ScriptStruct ControlRig.RigUnit_CollectionReplaceItems
 // 0x0038 (0x0040 - 0x0008)
@@ -5543,47 +5541,6 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_CollectionReplaceItems;
 
-// ScriptStruct ControlRig.RigUnit_HierarchySetPoseItemArray
-// 0x0090 (0x00A0 - 0x0010)
-struct FRigUnit_HierarchySetPoseItemArray final : public FRigUnit_HierarchyBaseMutable
-{
-public:
-	struct FRigPose                               Pose;                                              // 0x0010(0x0070)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	ERigElementType                               ElementType;                                       // 0x0080(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERigVMTransformSpace                          Space;                                             // 0x0081(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_82[0x6];                                       // 0x0082(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FRigElementKey>                 ItemsToSet;                                        // 0x0088(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	float                                         Weight;                                            // 0x0098(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9C[0x4];                                       // 0x009C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigUnit_HierarchySetPoseItemArray;
-
-// ScriptStruct ControlRig.RigUnit_CollectionReplaceItemsArray
-// 0x0038 (0x0040 - 0x0008)
-struct FRigUnit_CollectionReplaceItemsArray final : public FRigUnit_CollectionBase
-{
-public:
-	TArray<struct FRigElementKey>                 Items;                                             // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	class FName                                   Old;                                               // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   New;                                               // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          RemoveInvalidItems;                                // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAllowDuplicates;                                  // 0x0029(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A[0x6];                                       // 0x002A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FRigElementKey>                 Result;                                            // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_CollectionReplaceItemsArray;
-
-// ScriptStruct ControlRig.RigUnit_IsItemInCurrentModule
-// 0x0010 (0x0018 - 0x0008)
-struct FRigUnit_IsItemInCurrentModule final : public FRigUnit_RigModulesBase
-{
-public:
-	struct FRigElementKey                         Item;                                              // 0x0008(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Result;                                            // 0x0014(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigUnit_IsItemInCurrentModule;
-
 // ScriptStruct ControlRig.RigUnit_CollectionItems
 // 0x0028 (0x0030 - 0x0008)
 struct FRigUnit_CollectionItems final : public FRigUnit_CollectionBase
@@ -5595,16 +5552,6 @@ public:
 	struct FRigElementKeyCollection               Collection;                                        // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRigUnit_CollectionItems;
-
-// ScriptStruct ControlRig.RigUnit_CollectionGetItems
-// 0x0020 (0x0028 - 0x0008)
-struct FRigUnit_CollectionGetItems final : public FRigUnit_CollectionBase
-{
-public:
-	struct FRigElementKeyCollection               Collection;                                        // 0x0008(0x0010)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FRigElementKey>                 Items;                                             // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_CollectionGetItems;
 
 // ScriptStruct ControlRig.RigUnit_CollectionGetParentIndices
 // 0x0020 (0x0028 - 0x0008)
@@ -5805,6 +5752,20 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_HierarchyAddAnimationChannelFloat;
 
+// ScriptStruct ControlRig.RigUnit_HierarchyAddAnimationChannelInteger
+// 0x0018 (0x0048 - 0x0030)
+struct FRigUnit_HierarchyAddAnimationChannelInteger final : public FRigUnit_HierarchyAddElement
+{
+public:
+	int32                                         InitialValue;                                      // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MinimumValue;                                      // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaximumValue;                                      // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRigUnit_HierarchyAddAnimationChannelSingleLimitSettings LimitsEnabled;                   // 0x003C(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3E[0x2];                                       // 0x003E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class UEnum*                                  ControlEnum;                                       // 0x0040(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FRigUnit_HierarchyAddAnimationChannelInteger;
+
 // ScriptStruct ControlRig.RigUnit_HierarchyAddAnimationChannelVector2D
 // 0x0038 (0x0068 - 0x0030)
 struct FRigUnit_HierarchyAddAnimationChannelVector2D final : public FRigUnit_HierarchyAddElement
@@ -5887,21 +5848,6 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_HierarchyGetChildren;
 
-// ScriptStruct ControlRig.RigUnit_HierarchyGetSiblingsItemArray
-// 0x0050 (0x0058 - 0x0008)
-struct FRigUnit_HierarchyGetSiblingsItemArray final : public FRigUnit_HierarchyBase
-{
-public:
-	struct FRigElementKey                         Item;                                              // 0x0008(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIncludeItem;                                      // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bDefaultSiblings;                                  // 0x0015(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16[0x2];                                       // 0x0016(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FRigElementKey>                 Siblings;                                          // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FCachedRigElement                      CachedItem;                                        // 0x0028(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRigElementKeyCollection               CachedSiblings;                                    // 0x0048(0x0010)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_HierarchyGetSiblingsItemArray;
-
 // ScriptStruct ControlRig.RigUnit_HierarchyGetPose
 // 0x0088 (0x0090 - 0x0008)
 struct FRigUnit_HierarchyGetPose final : public FRigUnit_HierarchyBase
@@ -5914,21 +5860,6 @@ public:
 	struct FRigPose                               Pose;                                              // 0x0020(0x0070)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRigUnit_HierarchyGetPose;
-
-// ScriptStruct ControlRig.RigUnit_HierarchySetPose
-// 0x0090 (0x00A0 - 0x0010)
-struct FRigUnit_HierarchySetPose final : public FRigUnit_HierarchyBaseMutable
-{
-public:
-	struct FRigPose                               Pose;                                              // 0x0010(0x0070)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	ERigElementType                               ElementType;                                       // 0x0080(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERigVMTransformSpace                          Space;                                             // 0x0081(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_82[0x6];                                       // 0x0082(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRigElementKeyCollection               ItemsToSet;                                        // 0x0088(0x0010)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Weight;                                            // 0x0098(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9C[0x4];                                       // 0x009C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigUnit_HierarchySetPose;
 
 // ScriptStruct ControlRig.RigUnit_PoseIsEmpty
 // 0x0078 (0x0080 - 0x0008)
@@ -5959,6 +5890,28 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_PoseGetTransform;
 
+// ScriptStruct ControlRig.RigUnit_PoseGetTransformArray
+// 0x0088 (0x0090 - 0x0008)
+struct FRigUnit_PoseGetTransformArray final : public FRigUnit_HierarchyBase
+{
+public:
+	struct FRigPose                               Pose;                                              // 0x0008(0x0070)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	ERigVMTransformSpace                          Space;                                             // 0x0078(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Valid;                                             // 0x0079(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_7A[0x6];                                       // 0x007A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FTransform>                     Transforms;                                        // 0x0080(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_PoseGetTransformArray;
+
+// ScriptStruct ControlRig.RigUnit_InteractionExecution
+// 0x0008 (0x0010 - 0x0008)
+struct FRigUnit_InteractionExecution final : public FRigUnit
+{
+public:
+	struct FRigVMExecutePin                       ExecutePin;                                        // 0x0008(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, Transient, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_InteractionExecution;
+
 // ScriptStruct ControlRig.RigUnit_IsInteracting
 // 0x0018 (0x0020 - 0x0008)
 struct FRigUnit_IsInteracting final : public FRigUnit
@@ -5972,6 +5925,13 @@ public:
 	TArray<struct FRigElementKey>                 Items;                                             // 0x0010(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRigUnit_IsInteracting;
+
+// ScriptStruct ControlRig.RigUnit_ItemBaseMutable
+// 0x0000 (0x0010 - 0x0010)
+struct FRigUnit_ItemBaseMutable final : public FRigUnitMutable
+{
+};
+DUMPER7_ASSERTS_FRigUnit_ItemBaseMutable;
 
 // ScriptStruct ControlRig.RigUnit_ItemReplace
 // 0x0028 (0x0030 - 0x0008)
@@ -6008,6 +5968,16 @@ public:
 	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FRigUnit_ItemTypeNotEquals;
+
+// ScriptStruct ControlRig.RigUnit_HierarchyAddPhysicsSolver
+// 0x0018 (0x0028 - 0x0010)
+struct FRigUnit_HierarchyAddPhysicsSolver final : public FRigUnit_DynamicHierarchyBaseMutable
+{
+public:
+	class FName                                   Name;                                              // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRigPhysicsSolverID                    Solver;                                            // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_HierarchyAddPhysicsSolver;
 
 // ScriptStruct ControlRig.RigUnit_PrepareForExecution
 // 0x0008 (0x0010 - 0x0008)
@@ -6113,6 +6083,15 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_ItemArray;
 
+// ScriptStruct ControlRig.RigUnit_BoneName
+// 0x0008 (0x0010 - 0x0008)
+struct FRigUnit_BoneName final : public FRigUnit
+{
+public:
+	class FName                                   bone;                                              // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_BoneName;
+
 // ScriptStruct ControlRig.RigUnit_SpaceName
 // 0x0008 (0x0010 - 0x0008)
 struct FRigUnit_SpaceName final : public FRigUnit
@@ -6122,12 +6101,45 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_SpaceName;
 
-// ScriptStruct ControlRig.RigDispatch_SpawnTopLevelComponent
+// ScriptStruct ControlRig.RigUnit_SetTransformItemArray
+// 0x0040 (0x0050 - 0x0010)
+struct FRigUnit_SetTransformItemArray final : public FRigUnitMutable
+{
+public:
+	TArray<struct FRigElementKey>                 Items;                                             // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	ERigVMTransformSpace                          Space;                                             // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInitial;                                          // 0x0021(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_22[0x6];                                       // 0x0022(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FTransform>                     Transforms;                                        // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         Weight;                                            // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPropagateToChildren;                              // 0x003C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FCachedRigElement>              CachedIndex;                                       // 0x0040(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_SetTransformItemArray;
+
+// ScriptStruct ControlRig.RigUnit_ControlName
+// 0x0008 (0x0010 - 0x0008)
+struct FRigUnit_ControlName final : public FRigUnit
+{
+public:
+	class FName                                   Control;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_ControlName;
+
+// ScriptStruct ControlRig.RigDispatch_SpawnComponent
 // 0x0000 (0x00A8 - 0x00A8)
-struct FRigDispatch_SpawnTopLevelComponent final : public FRigDispatch_ComponentBase
+struct FRigDispatch_SpawnComponent final : public FRigDispatch_ComponentBase
 {
 };
-DUMPER7_ASSERTS_FRigDispatch_SpawnTopLevelComponent;
+DUMPER7_ASSERTS_FRigDispatch_SpawnComponent;
+
+// ScriptStruct ControlRig.RigDispatch_GetComponentContent
+// 0x0000 (0x00A8 - 0x00A8)
+struct FRigDispatch_GetComponentContent final : public FRigDispatch_ComponentBase
+{
+};
+DUMPER7_ASSERTS_FRigDispatch_GetComponentContent;
 
 // ScriptStruct ControlRig.RigDispatch_SetComponentContent
 // 0x0000 (0x00A8 - 0x00A8)
@@ -6135,6 +6147,23 @@ struct FRigDispatch_SetComponentContent final : public FRigDispatch_ComponentBas
 {
 };
 DUMPER7_ASSERTS_FRigDispatch_SetComponentContent;
+
+// ScriptStruct ControlRig.RigUnit_SetScale
+// 0x0050 (0x0060 - 0x0010)
+struct FRigUnit_SetScale final : public FRigUnitMutable
+{
+public:
+	struct FRigElementKey                         Item;                                              // 0x0010(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERigVMTransformSpace                          Space;                                             // 0x001C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInitial;                                          // 0x001D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1E[0x2];                                       // 0x001E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                Scale;                                             // 0x0020(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Weight;                                            // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPropagateToChildren;                              // 0x003C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCachedRigElement                      CachedIndex;                                       // 0x0040(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_SetScale;
 
 // ScriptStruct ControlRig.RigDispatch_GetTopLevelComponentContent
 // 0x0000 (0x00A8 - 0x00A8)
@@ -6160,6 +6189,33 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_GetFloatAnimationChannel;
 
+// ScriptStruct ControlRig.RigUnit_GetIntAnimationChannel
+// 0x0008 (0x0038 - 0x0030)
+struct FRigUnit_GetIntAnimationChannel final : public FRigUnit_GetAnimationChannelBase
+{
+public:
+	int32                                         Value;                                             // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigUnit_GetIntAnimationChannel;
+
+// ScriptStruct ControlRig.RigUnit_SetTranslation
+// 0x0050 (0x0060 - 0x0010)
+struct FRigUnit_SetTranslation final : public FRigUnitMutable
+{
+public:
+	struct FRigElementKey                         Item;                                              // 0x0010(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERigVMTransformSpace                          Space;                                             // 0x001C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInitial;                                          // 0x001D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1E[0x2];                                       // 0x001E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                Value;                                             // 0x0020(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Weight;                                            // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPropagateToChildren;                              // 0x003C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCachedRigElement                      CachedIndex;                                       // 0x0040(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_SetTranslation;
+
 // ScriptStruct ControlRig.RigUnit_GetVector2DAnimationChannel
 // 0x0010 (0x0040 - 0x0030)
 struct FRigUnit_GetVector2DAnimationChannel final : public FRigUnit_GetAnimationChannelBase
@@ -6177,15 +6233,6 @@ public:
 	struct FRotator                               Value;                                             // 0x0030(0x0018)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRigUnit_GetRotatorAnimationChannel;
-
-// ScriptStruct ControlRig.RigUnit_GetTransformAnimationChannel
-// 0x0060 (0x0090 - 0x0030)
-struct FRigUnit_GetTransformAnimationChannel final : public FRigUnit_GetAnimationChannelBase
-{
-public:
-	struct FTransform                             Value;                                             // 0x0030(0x0060)(BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_GetTransformAnimationChannel;
 
 // ScriptStruct ControlRig.RigUnit_SetFloatAnimationChannel
 // 0x0008 (0x0040 - 0x0038)
@@ -6206,15 +6253,6 @@ public:
 	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FRigUnit_SetIntAnimationChannel;
-
-// ScriptStruct ControlRig.RigUnit_SetVector2DAnimationChannel
-// 0x0010 (0x0048 - 0x0038)
-struct FRigUnit_SetVector2DAnimationChannel final : public FRigUnit_SetAnimationChannelBase
-{
-public:
-	struct FVector2D                              Value;                                             // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_SetVector2DAnimationChannel;
 
 // ScriptStruct ControlRig.RigUnit_SetRotatorAnimationChannel
 // 0x0018 (0x0050 - 0x0038)
@@ -6245,24 +6283,24 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_GetIntAnimationChannelFromItem;
 
-// ScriptStruct ControlRig.RigUnit_GetRotatorAnimationChannelFromItem
-// 0x0018 (0x0030 - 0x0018)
-struct FRigUnit_GetRotatorAnimationChannelFromItem final : public FRigUnit_GetAnimationChannelFromItemBase
-{
-public:
-	struct FRotator                               Value;                                             // 0x0018(0x0018)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_GetRotatorAnimationChannelFromItem;
-
-// ScriptStruct ControlRig.RigUnit_SetFloatAnimationChannelFromItem
+// ScriptStruct ControlRig.RigUnit_SetIntAnimationChannelFromItem
 // 0x0008 (0x0028 - 0x0020)
-struct FRigUnit_SetFloatAnimationChannelFromItem final : public FRigUnit_SetAnimationChannelBaseFromItem
+struct FRigUnit_SetIntAnimationChannelFromItem final : public FRigUnit_SetAnimationChannelBaseFromItem
 {
 public:
-	float                                         Value;                                             // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Value;                                             // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FRigUnit_SetFloatAnimationChannelFromItem;
+DUMPER7_ASSERTS_FRigUnit_SetIntAnimationChannelFromItem;
+
+// ScriptStruct ControlRig.RigUnit_SetVector2DAnimationChannelFromItem
+// 0x0010 (0x0030 - 0x0020)
+struct FRigUnit_SetVector2DAnimationChannelFromItem final : public FRigUnit_SetAnimationChannelBaseFromItem
+{
+public:
+	struct FVector2D                              Value;                                             // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_SetVector2DAnimationChannelFromItem;
 
 // ScriptStruct ControlRig.RigUnit_CurveExists
 // 0x0030 (0x0038 - 0x0008)
@@ -6275,19 +6313,6 @@ public:
 	struct FCachedRigElement                      CachedCurveIndex;                                  // 0x0018(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
 DUMPER7_ASSERTS_FRigUnit_CurveExists;
-
-// ScriptStruct ControlRig.RigUnit_GetControlInitialTransform
-// 0x0098 (0x00A0 - 0x0008)
-struct FRigUnit_GetControlInitialTransform final : public FRigUnit
-{
-public:
-	class FName                                   Control;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERigVMTransformSpace                          Space;                                             // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0xF];                                       // 0x0011(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             Transform;                                         // 0x0020(0x0060)(BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCachedRigElement                      CachedControlIndex;                                // 0x0080(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_GetControlInitialTransform;
 
 // ScriptStruct ControlRig.RigUnit_GetControlOffset
 // 0x0098 (0x00A0 - 0x0008)
@@ -6302,6 +6327,32 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_GetControlOffset;
 
+// ScriptStruct ControlRig.RigUnit_GetControlBool
+// 0x0030 (0x0038 - 0x0008)
+struct FRigUnit_GetControlBool final : public FRigUnit
+{
+public:
+	class FName                                   Control;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          BoolValue;                                         // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCachedRigElement                      CachedControlIndex;                                // 0x0018(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_GetControlBool;
+
+// ScriptStruct ControlRig.RigUnit_GetControlFloat
+// 0x0038 (0x0040 - 0x0008)
+struct FRigUnit_GetControlFloat final : public FRigUnit
+{
+public:
+	class FName                                   Control;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FloatValue;                                        // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Minimum;                                           // 0x0014(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Maximum;                                           // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCachedRigElement                      CachedControlIndex;                                // 0x0020(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_GetControlFloat;
+
 // ScriptStruct ControlRig.RigUnit_GetControlVector2D
 // 0x0058 (0x0060 - 0x0008)
 struct FRigUnit_GetControlVector2D final : public FRigUnit
@@ -6314,6 +6365,36 @@ public:
 	struct FCachedRigElement                      CachedControlIndex;                                // 0x0040(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRigUnit_GetControlVector2D;
+
+// ScriptStruct ControlRig.RigUnit_GetControlVector
+// 0x0078 (0x0080 - 0x0008)
+struct FRigUnit_GetControlVector final : public FRigUnit
+{
+public:
+	class FName                                   Control;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERigVMTransformSpace                          Space;                                             // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                Vector;                                            // 0x0018(0x0018)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Minimum;                                           // 0x0030(0x0018)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Maximum;                                           // 0x0048(0x0018)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCachedRigElement                      CachedControlIndex;                                // 0x0060(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_GetControlVector;
+
+// ScriptStruct ControlRig.RigUnit_GetControlRotator
+// 0x0078 (0x0080 - 0x0008)
+struct FRigUnit_GetControlRotator final : public FRigUnit
+{
+public:
+	class FName                                   Control;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERigVMTransformSpace                          Space;                                             // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRotator                               Rotator;                                           // 0x0018(0x0018)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRotator                               Minimum;                                           // 0x0030(0x0018)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRotator                               Maximum;                                           // 0x0048(0x0018)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FCachedRigElement                      CachedControlIndex;                                // 0x0060(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_GetControlRotator;
 
 // ScriptStruct ControlRig.RigUnit_GetCurveValue
 // 0x0030 (0x0038 - 0x0008)
@@ -6409,21 +6490,6 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_RemoveAllMetadata;
 
-// ScriptStruct ControlRig.RigUnit_HasMetadata
-// 0x0038 (0x0040 - 0x0008)
-struct FRigUnit_HasMetadata final : public FRigUnit
-{
-public:
-	struct FRigElementKey                         Item;                                              // 0x0008(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Name;                                              // 0x0014(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERigMetadataType                              Type;                                              // 0x001C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERigMetaDataNameSpace                         Namespace;                                         // 0x001D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Found;                                             // 0x001E(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1F[0x1];                                       // 0x001F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCachedRigElement                      CachedIndex;                                       // 0x0020(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_HasMetadata;
-
 // ScriptStruct ControlRig.RigUnit_FindItemsWithMetadata
 // 0x0020 (0x0028 - 0x0008)
 struct FRigUnit_FindItemsWithMetadata final : public FRigUnit
@@ -6436,33 +6502,6 @@ public:
 	TArray<struct FRigElementKey>                 Items;                                             // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRigUnit_FindItemsWithMetadata;
-
-// ScriptStruct ControlRig.RigUnit_SetMetadataTag
-// 0x0038 (0x0048 - 0x0010)
-struct FRigUnit_SetMetadataTag final : public FRigUnitMutable
-{
-public:
-	struct FRigElementKey                         Item;                                              // 0x0010(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Tag;                                               // 0x001C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERigMetaDataNameSpace                         Namespace;                                         // 0x0024(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCachedRigElement                      CachedIndex;                                       // 0x0028(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_SetMetadataTag;
-
-// ScriptStruct ControlRig.RigUnit_RemoveMetadataTag
-// 0x0038 (0x0048 - 0x0010)
-struct FRigUnit_RemoveMetadataTag final : public FRigUnitMutable
-{
-public:
-	struct FRigElementKey                         Item;                                              // 0x0010(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Tag;                                               // 0x001C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERigMetaDataNameSpace                         Namespace;                                         // 0x0024(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Removed;                                           // 0x0025(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_26[0x2];                                       // 0x0026(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCachedRigElement                      CachedIndex;                                       // 0x0028(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_RemoveMetadataTag;
 
 // ScriptStruct ControlRig.RigUnit_HasMetadataTagArray
 // 0x0048 (0x0050 - 0x0008)
@@ -6490,6 +6529,29 @@ public:
 	TArray<struct FRigElementKey>                 Items;                                             // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRigUnit_FindItemsWithMetadataTagArray;
+
+// ScriptStruct ControlRig.RigDispatch_GetModuleMetadata
+// 0x0000 (0x00A0 - 0x00A0)
+struct FRigDispatch_GetModuleMetadata final : public FRigDispatch_GetMetadata
+{
+};
+DUMPER7_ASSERTS_FRigDispatch_GetModuleMetadata;
+
+// ScriptStruct ControlRig.RigUnit_OffsetTransformForItem
+// 0x00A0 (0x00B0 - 0x0010)
+struct FRigUnit_OffsetTransformForItem final : public FRigUnitMutable
+{
+public:
+	struct FRigElementKey                         Item;                                              // 0x0010(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             OffsetTransform;                                   // 0x0020(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Weight;                                            // 0x0080(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPropagateToChildren;                              // 0x0084(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_85[0x3];                                       // 0x0085(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCachedRigElement                      CachedIndex;                                       // 0x0088(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A8[0x8];                                       // 0x00A8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRigUnit_OffsetTransformForItem;
 
 // ScriptStruct ControlRig.RigUnit_ParentSwitchConstraintArray
 // 0x01A0 (0x01B0 - 0x0010)
@@ -6543,24 +6605,6 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_SetBoneInitialTransform;
 
-// ScriptStruct ControlRig.RigUnit_SetBoneTransform
-// 0x0100 (0x0110 - 0x0010)
-struct FRigUnit_SetBoneTransform final : public FRigUnitMutable
-{
-public:
-	class FName                                   bone;                                              // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             Transform;                                         // 0x0020(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             Result;                                            // 0x0080(0x0060)(BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERigVMTransformSpace                          Space;                                             // 0x00E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_E1[0x3];                                       // 0x00E1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Weight;                                            // 0x00E4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPropagateToChildren;                              // 0x00E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_E9[0x7];                                       // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCachedRigElement                      CachedBone;                                        // 0x00F0(0x0020)(Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_SetBoneTransform;
-
 // ScriptStruct ControlRig.RigUnit_GetControlColor
 // 0x0038 (0x0040 - 0x0008)
 struct FRigUnit_GetControlColor final : public FRigUnit
@@ -6598,21 +6642,6 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_SetControlOffset;
 
-// ScriptStruct ControlRig.RigUnit_SetControlRotationOffset
-// 0x0060 (0x0070 - 0x0010)
-struct FRigUnit_SetControlRotationOffset final : public FRigUnitMutable
-{
-public:
-	class FName                                   Control;                                           // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FQuat                                  Offset;                                            // 0x0020(0x0020)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERigVMTransformSpace                          Space;                                             // 0x0040(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCachedRigElement                      CachedControlIndex;                                // 0x0048(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_68[0x8];                                       // 0x0068(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigUnit_SetControlRotationOffset;
-
 // ScriptStruct ControlRig.RigUnit_GetShapeTransform
 // 0x0088 (0x0090 - 0x0008)
 struct FRigUnit_GetShapeTransform final : public FRigUnit
@@ -6623,6 +6652,18 @@ public:
 	struct FCachedRigElement                      CachedControlIndex;                                // 0x0070(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRigUnit_GetShapeTransform;
+
+// ScriptStruct ControlRig.RigUnit_SetControlBool
+// 0x0030 (0x0040 - 0x0010)
+struct FRigUnit_SetControlBool final : public FRigUnitMutable
+{
+public:
+	class FName                                   Control;                                           // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          BoolValue;                                         // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCachedRigElement                      CachedControlIndex;                                // 0x0020(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_SetControlBool;
 
 // ScriptStruct ControlRig.RigUnit_SetMultiControlBool
 // 0x0020 (0x0030 - 0x0010)
@@ -6839,16 +6880,6 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_ToRigSpace_Transform;
 
-// ScriptStruct ControlRig.RigUnit_ToWorldSpace_Location
-// 0x0030 (0x0038 - 0x0008)
-struct FRigUnit_ToWorldSpace_Location final : public FRigUnit
-{
-public:
-	struct FVector                                Value;                                             // 0x0008(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                World;                                             // 0x0020(0x0018)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_ToWorldSpace_Location;
-
 // ScriptStruct ControlRig.RigUnit_ToRigSpace_Location
 // 0x0030 (0x0038 - 0x0008)
 struct FRigUnit_ToRigSpace_Location final : public FRigUnit
@@ -7040,39 +7071,6 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_AimBone_Target;
 
-// ScriptStruct ControlRig.RigUnit_AimBone_DebugSettings
-// 0x0070 (0x0070 - 0x0000)
-struct FRigUnit_AimBone_DebugSettings final
-{
-public:
-	bool                                          bEnabled;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Scale;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             WorldOffset;                                       // 0x0010(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_AimBone_DebugSettings;
-
-// ScriptStruct ControlRig.RigUnit_AimBoneMath
-// 0x0228 (0x0230 - 0x0008)
-struct FRigUnit_AimBoneMath final : public FRigUnit_HighlevelBase
-{
-public:
-	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             InputTransform;                                    // 0x0010(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRigUnit_AimItem_Target                Primary;                                           // 0x0070(0x0048)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRigUnit_AimItem_Target                Secondary;                                         // 0x00B8(0x0048)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         Weight;                                            // 0x0100(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_104[0xC];                                      // 0x0104(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             Result;                                            // 0x0110(0x0060)(BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRigUnit_AimBone_DebugSettings         DebugSettings;                                     // 0x0170(0x0070)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FCachedRigElement                      PrimaryCachedSpace;                                // 0x01E0(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCachedRigElement                      SecondaryCachedSpace;                              // 0x0200(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsInitialized;                                    // 0x0220(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_221[0xF];                                      // 0x0221(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRigUnit_AimBoneMath;
-
 // ScriptStruct ControlRig.RigUnit_AimBone
 // 0x0180 (0x0190 - 0x0010)
 struct FRigUnit_AimBone final : public FRigUnit_HighlevelBaseMutable
@@ -7136,16 +7134,6 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_AimConstraint_AdvancedSettings;
 
-// ScriptStruct ControlRig.ConstraintParent
-// 0x0010 (0x0010 - 0x0000)
-struct FConstraintParent final
-{
-public:
-	struct FRigElementKey                         Item;                                              // 0x0000(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Weight;                                            // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FConstraintParent;
-
 // ScriptStruct ControlRig.RigUnit_AimConstraintLocalSpaceOffset
 // 0x0160 (0x0170 - 0x0010)
 struct FRigUnit_AimConstraintLocalSpaceOffset final : public FRigUnit_HighlevelBaseMutable
@@ -7179,6 +7167,16 @@ public:
 	float                                         Limit;                                             // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRigUnit_CCDIK_RotationLimit;
+
+// ScriptStruct ControlRig.RigUnit_CCDIK_RotationLimitPerItem
+// 0x0010 (0x0010 - 0x0000)
+struct FRigUnit_CCDIK_RotationLimitPerItem final
+{
+public:
+	struct FRigElementKey                         Item;                                              // 0x0000(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Limit;                                             // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_CCDIK_RotationLimitPerItem;
 
 // ScriptStruct ControlRig.RigUnit_CCDIK_WorkData
 // 0x0060 (0x0060 - 0x0000)
@@ -7681,20 +7679,6 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_MultiFABRIK;
 
-// ScriptStruct ControlRig.RigUnit_SlideChain_WorkData
-// 0x0048 (0x0048 - 0x0000)
-struct FRigUnit_SlideChain_WorkData final
-{
-public:
-	float                                         ChainLength;                                       // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<float>                                 ItemSegments;                                      // 0x0008(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FCachedRigElement>              CachedItems;                                       // 0x0018(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FTransform>                     Transforms;                                        // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FTransform>                     BlendedTransforms;                                 // 0x0038(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_SlideChain_WorkData;
-
 // ScriptStruct ControlRig.RigUnit_SlideChain
 // 0x0060 (0x0070 - 0x0010)
 struct FRigUnit_SlideChain final : public FRigUnit_HighlevelBaseMutable
@@ -7802,6 +7786,20 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_SphericalPoseReader;
 
+// ScriptStruct ControlRig.RigUnit_SpringIK_DebugSettings
+// 0x0080 (0x0080 - 0x0000)
+struct FRigUnit_SpringIK_DebugSettings final
+{
+public:
+	bool                                          bEnabled;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Scale;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           Color;                                             // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             WorldOffset;                                       // 0x0020(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_SpringIK_DebugSettings;
+
 // ScriptStruct ControlRig.RigUnit_SpringIK_WorkData
 // 0x00B8 (0x00B8 - 0x0000)
 struct FRigUnit_SpringIK_WorkData final
@@ -7905,16 +7903,6 @@ public:
 	uint8                                         Pad_108[0x8];                                      // 0x0108(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FRigUnit_TransformConstraintPerItem;
-
-// ScriptStruct ControlRig.RigUnit_ParentConstraint_AdvancedSettings
-// 0x0002 (0x0002 - 0x0000)
-struct FRigUnit_ParentConstraint_AdvancedSettings final
-{
-public:
-	EConstraintInterpType                         InterpolationType;                                 // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EEulerRotationOrder                           RotationOrderForFilter;                            // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRigUnit_ParentConstraint_AdvancedSettings;
 
 // ScriptStruct ControlRig.RigUnit_ParentConstraint
 // 0x0060 (0x0070 - 0x0010)
@@ -8044,21 +8032,16 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_ScaleConstraint;
 
-// ScriptStruct ControlRig.RigUnit_ScaleConstraintLocalSpaceOffset
-// 0x0058 (0x0068 - 0x0010)
-struct FRigUnit_ScaleConstraintLocalSpaceOffset final : public FRigUnit_HighlevelBaseMutable
+// ScriptStruct ControlRig.RigUnit_TwistBones_WorkData
+// 0x0030 (0x0030 - 0x0000)
+struct FRigUnit_TwistBones_WorkData final
 {
 public:
-	struct FRigElementKey                         Child;                                             // 0x0010(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bMaintainOffset;                                   // 0x001C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FFilterOptionPerAxis                   Filter;                                            // 0x001D(0x0003)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	TArray<struct FConstraintParent>              Parents;                                           // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	float                                         Weight;                                            // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCachedRigElement                      ChildCache;                                        // 0x0038(0x0020)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FCachedRigElement>              ParentCaches;                                      // 0x0058(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FCachedRigElement>              CachedItems;                                       // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<float>                                 ItemRatios;                                        // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FTransform>                     ItemTransforms;                                    // 0x0020(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRigUnit_ScaleConstraintLocalSpaceOffset;
+DUMPER7_ASSERTS_FRigUnit_TwistBones_WorkData;
 
 // ScriptStruct ControlRig.RigUnit_TwistBones
 // 0x0080 (0x0090 - 0x0010)
@@ -8077,6 +8060,23 @@ public:
 	struct FRigUnit_TwistBones_WorkData           WorkData;                                          // 0x0060(0x0030)(Transient, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRigUnit_TwistBones;
+
+// ScriptStruct ControlRig.RigUnit_TwistBonesPerItem
+// 0x0080 (0x0090 - 0x0010)
+struct FRigUnit_TwistBonesPerItem final : public FRigUnit_HighlevelBaseMutable
+{
+public:
+	struct FRigElementKeyCollection               Items;                                             // 0x0010(0x0010)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                TwistAxis;                                         // 0x0020(0x0018)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                PoleAxis;                                          // 0x0038(0x0018)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERigVMAnimEasingType                          TwistEaseType;                                     // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_51[0x3];                                       // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Weight;                                            // 0x0054(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPropagateToChildren;                              // 0x0058(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRigUnit_TwistBones_WorkData           WorkData;                                          // 0x0060(0x0030)(Transient, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRigUnit_TwistBonesPerItem;
 
 // ScriptStruct ControlRig.RigUnit_TwoBoneIKSimple_DebugSettings
 // 0x0070 (0x0070 - 0x0000)

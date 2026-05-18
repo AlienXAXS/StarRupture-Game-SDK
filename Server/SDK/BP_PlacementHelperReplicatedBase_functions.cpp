@@ -16,21 +16,35 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_PlacementHelperReplicatedBase.BP_PlacementHelperReplicatedBase_C.ExecuteUbergraph_BP_PlacementHelperReplicatedBase
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_PlacementHelperReplicatedBase.BP_PlacementHelperReplicatedBase_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_PlacementHelperReplicatedBase_C::ExecuteUbergraph_BP_PlacementHelperReplicatedBase(int32 EntryPoint)
+void ABP_PlacementHelperReplicatedBase_C::UserConstructionScript()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperReplicatedBase_C", "ExecuteUbergraph_BP_PlacementHelperReplicatedBase");
+		Func = Class->GetFunction("BP_PlacementHelperReplicatedBase_C", "UserConstructionScript");
 
-	Params::BP_PlacementHelperReplicatedBase_C_ExecuteUbergraph_BP_PlacementHelperReplicatedBase Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
+
+// Function BP_PlacementHelperReplicatedBase.BP_PlacementHelperReplicatedBase_C.SetMeshColor
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_PlacementHelperReplicatedBase_C::SetMeshColor(const struct FLinearColor& Color)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PlacementHelperReplicatedBase_C", "SetMeshColor");
+
+	Params::BP_PlacementHelperReplicatedBase_C_SetMeshColor Parms{};
+
+	Parms.Color = std::move(Color);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -56,37 +70,23 @@ void ABP_PlacementHelperReplicatedBase_C::OnFoundationSetUp(const TArray<struct 
 }
 
 
-// Function BP_PlacementHelperReplicatedBase.BP_PlacementHelperReplicatedBase_C.SetMeshColor
-// (Event, Public, BlueprintEvent)
+// Function BP_PlacementHelperReplicatedBase.BP_PlacementHelperReplicatedBase_C.ExecuteUbergraph_BP_PlacementHelperReplicatedBase
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PlacementHelperReplicatedBase_C::SetMeshColor(const struct FLinearColor& Color)
+void ABP_PlacementHelperReplicatedBase_C::ExecuteUbergraph_BP_PlacementHelperReplicatedBase(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperReplicatedBase_C", "SetMeshColor");
+		Func = Class->GetFunction("BP_PlacementHelperReplicatedBase_C", "ExecuteUbergraph_BP_PlacementHelperReplicatedBase");
 
-	Params::BP_PlacementHelperReplicatedBase_C_SetMeshColor Parms{};
+	Params::BP_PlacementHelperReplicatedBase_C_ExecuteUbergraph_BP_PlacementHelperReplicatedBase Parms{};
 
-	Parms.Color = std::move(Color);
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_PlacementHelperReplicatedBase.BP_PlacementHelperReplicatedBase_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_PlacementHelperReplicatedBase_C::UserConstructionScript()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperReplicatedBase_C", "UserConstructionScript");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 

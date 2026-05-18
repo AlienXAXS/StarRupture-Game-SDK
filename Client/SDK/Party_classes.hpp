@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Party_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "Party_structs.hpp"
 #include "Engine_structs.hpp"
 
 

@@ -117,19 +117,30 @@ public:
 };
 DUMPER7_ASSERTS_FUIActionBindingHandle;
 
-// ScriptStruct CommonUI.UITag
-// 0x0000 (0x0008 - 0x0008)
-struct FUITag : public FGameplayTag
+// ScriptStruct CommonUI.CommonInputActionHandlerData
+// 0x0020 (0x0020 - 0x0000)
+struct FCommonInputActionHandlerData final
 {
+public:
+	struct FDataTableRowHandle                    InputActionRow;                                    // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
+	EInputActionState                             State;                                             // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_11[0xF];                                       // 0x0011(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FUITag;
+DUMPER7_ASSERTS_FCommonInputActionHandlerData;
 
-// ScriptStruct CommonUI.UIActionTag
-// 0x0000 (0x0008 - 0x0008)
-struct FUIActionTag final : public FUITag
+// ScriptStruct CommonUI.UIInputConfig
+// 0x0006 (0x0006 - 0x0000)
+struct FUIInputConfig final
 {
+public:
+	bool                                          bIgnoreMoveInput;                                  // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIgnoreLookInput;                                  // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECommonInputMode                              InputMode;                                         // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EMouseCaptureMode                             MouseCaptureMode;                                  // 0x0003(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EMouseLockMode                                MouseLockMode;                                     // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bHideCursorDuringViewportCapture;                  // 0x0005(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
-DUMPER7_ASSERTS_FUIActionTag;
+DUMPER7_ASSERTS_FUIInputConfig;
 
 // ScriptStruct CommonUI.CommonNumberFormattingOptions
 // 0x0014 (0x0014 - 0x0000)
@@ -147,21 +158,12 @@ public:
 };
 DUMPER7_ASSERTS_FCommonNumberFormattingOptions;
 
-// ScriptStruct CommonUI.CommonInputTypeInfo
-// 0x00E0 (0x00E0 - 0x0000)
-struct FCommonInputTypeInfo final
+// ScriptStruct CommonUI.UITag
+// 0x0000 (0x0008 - 0x0008)
+struct FUITag : public FGameplayTag
 {
-public:
-	struct FKey                                   Key;                                               // 0x0000(0x0018)(Edit, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	EInputActionState                             OverrrideState;                                    // 0x0018(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bActionRequiresHold;                               // 0x0019(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A[0x2];                                       // 0x001A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         HoldTime;                                          // 0x001C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         HoldRollbackTime;                                  // 0x0020(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0xC];                                       // 0x0024(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            OverrideBrush;                                     // 0x0030(0x00B0)(Edit, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCommonInputTypeInfo;
+DUMPER7_ASSERTS_FUITag;
 
 // ScriptStruct CommonUI.CommonRegisteredTabInfo
 // 0x0020 (0x0020 - 0x0000)
@@ -176,30 +178,12 @@ public:
 };
 DUMPER7_ASSERTS_FCommonRegisteredTabInfo;
 
-// ScriptStruct CommonUI.UIInputConfig
-// 0x0006 (0x0006 - 0x0000)
-struct FUIInputConfig final
+// ScriptStruct CommonUI.UIActionTag
+// 0x0000 (0x0008 - 0x0008)
+struct FUIActionTag final : public FUITag
 {
-public:
-	bool                                          bIgnoreMoveInput;                                  // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIgnoreLookInput;                                  // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECommonInputMode                              InputMode;                                         // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EMouseCaptureMode                             MouseCaptureMode;                                  // 0x0003(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EMouseLockMode                                MouseLockMode;                                     // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bHideCursorDuringViewportCapture;                  // 0x0005(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
-DUMPER7_ASSERTS_FUIInputConfig;
-
-// ScriptStruct CommonUI.CommonInputActionHandlerData
-// 0x0020 (0x0020 - 0x0000)
-struct FCommonInputActionHandlerData final
-{
-public:
-	struct FDataTableRowHandle                    InputActionRow;                                    // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
-	EInputActionState                             State;                                             // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_11[0xF];                                       // 0x0011(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCommonInputActionHandlerData;
+DUMPER7_ASSERTS_FUIActionTag;
 
 // ScriptStruct CommonUI.CommonButtonStyleOptionalSlateSound
 // 0x0020 (0x0020 - 0x0000)
@@ -222,6 +206,22 @@ public:
 	struct FVector2D                              ImageSize;                                         // 0x0040(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRichTextIconData;
+
+// ScriptStruct CommonUI.CommonInputTypeInfo
+// 0x00E0 (0x00E0 - 0x0000)
+struct FCommonInputTypeInfo final
+{
+public:
+	struct FKey                                   Key;                                               // 0x0000(0x0018)(Edit, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	EInputActionState                             OverrrideState;                                    // 0x0018(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bActionRequiresHold;                               // 0x0019(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1A[0x2];                                       // 0x001A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         HoldTime;                                          // 0x001C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HoldRollbackTime;                                  // 0x0020(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0xC];                                       // 0x0024(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            OverrideBrush;                                     // 0x0030(0x00B0)(Edit, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCommonInputTypeInfo;
 
 // ScriptStruct CommonUI.CommonInputActionDataBase
 // 0x0318 (0x0320 - 0x0008)

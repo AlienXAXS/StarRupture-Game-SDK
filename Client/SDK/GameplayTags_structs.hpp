@@ -82,21 +82,12 @@ public:
 };
 DUMPER7_ASSERTS_FGameplayTagContainer;
 
-// ScriptStruct GameplayTags.GameplayTagContainerNetSerializerSerializationHelper
-// 0x0010 (0x0010 - 0x0000)
-struct FGameplayTagContainerNetSerializerSerializationHelper final
-{
-public:
-	TArray<struct FGameplayTag>                   GameplayTags;                                      // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGameplayTagContainerNetSerializerSerializationHelper;
-
-// ScriptStruct GameplayTags.GameplayTagNetSerializerConfig
+// ScriptStruct GameplayTags.GameplayTagContainerNetSerializerConfig
 // 0x0000 (0x0010 - 0x0010)
-struct FGameplayTagNetSerializerConfig final : public FNetSerializerConfig
+struct FGameplayTagContainerNetSerializerConfig final : public FNetSerializerConfig
 {
 };
-DUMPER7_ASSERTS_FGameplayTagNetSerializerConfig;
+DUMPER7_ASSERTS_FGameplayTagContainerNetSerializerConfig;
 
 // ScriptStruct GameplayTags.GameplayTagQuery
 // 0x0048 (0x0048 - 0x0000)
@@ -112,6 +103,15 @@ public:
 };
 DUMPER7_ASSERTS_FGameplayTagQuery;
 
+// ScriptStruct GameplayTags.GameplayTagContainerNetSerializerSerializationHelper
+// 0x0010 (0x0010 - 0x0000)
+struct FGameplayTagContainerNetSerializerSerializationHelper final
+{
+public:
+	TArray<struct FGameplayTag>                   GameplayTags;                                      // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGameplayTagContainerNetSerializerSerializationHelper;
+
 // ScriptStruct GameplayTags.GameplayTagCreationWidgetHelper
 // 0x0001 (0x0001 - 0x0000)
 struct FGameplayTagCreationWidgetHelper final
@@ -121,12 +121,12 @@ public:
 };
 DUMPER7_ASSERTS_FGameplayTagCreationWidgetHelper;
 
-// ScriptStruct GameplayTags.GameplayTagContainerNetSerializerConfig
+// ScriptStruct GameplayTags.GameplayTagNetSerializerConfig
 // 0x0000 (0x0010 - 0x0010)
-struct FGameplayTagContainerNetSerializerConfig final : public FNetSerializerConfig
+struct FGameplayTagNetSerializerConfig final : public FNetSerializerConfig
 {
 };
-DUMPER7_ASSERTS_FGameplayTagContainerNetSerializerConfig;
+DUMPER7_ASSERTS_FGameplayTagNetSerializerConfig;
 
 // ScriptStruct GameplayTags.GameplayTagRedirect
 // 0x0010 (0x0010 - 0x0000)

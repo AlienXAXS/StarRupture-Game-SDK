@@ -39,15 +39,15 @@ public:
 	class USoundBase*                             ResourceDepletedSound;                             // 0x0530(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void BP_OnSpawnedWithResourceDepleted();
-	void ExecuteUbergraph_BP_StandaloneMeteOreChunkBase(int32 EntryPoint);
-	void GetCurrentEnvironmentalWaveStage(EEnviroWaveStage* CurrentEnviroWaveStage);
-	void GetCurrentFadeoutSubstage(EEnviroWaveFadeoutSubstage* GrowbackSubstage);
-	void GetCurrentGrowbackSubstage(EEnviroWaveGrowbackSubstage* GrowbackSubstage);
-	void OnResourceDepletedCosmeticsStart();
-	void ReceiveBeginPlay();
-	void Timeline__FinishedFunc();
 	void Timeline__UpdateFunc();
+	void Timeline__FinishedFunc();
+	void ReceiveBeginPlay();
+	void OnResourceDepletedCosmeticsStart();
+	void GetCurrentGrowbackSubstage(EEnviroWaveGrowbackSubstage* GrowbackSubstage);
+	void GetCurrentFadeoutSubstage(EEnviroWaveFadeoutSubstage* GrowbackSubstage);
+	void GetCurrentEnvironmentalWaveStage(EEnviroWaveStage* CurrentEnviroWaveStage);
+	void ExecuteUbergraph_BP_StandaloneMeteOreChunkBase(int32 EntryPoint);
+	void BP_OnSpawnedWithResourceDepleted();
 
 public:
 	static class UClass* StaticClass()

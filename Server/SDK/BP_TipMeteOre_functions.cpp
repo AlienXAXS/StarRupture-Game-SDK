@@ -16,77 +16,15 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_TipMeteOre.BP_TipMeteOre_C.ExecuteUbergraph_BP_TipMeteOre
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_TipMeteOre.BP_TipMeteOre_C.TurnOffWalkableCollision
+// (BlueprintCallable, BlueprintEvent)
 
-void ABP_TipMeteOre_C::ExecuteUbergraph_BP_TipMeteOre(int32 EntryPoint)
+void ABP_TipMeteOre_C::TurnOffWalkableCollision()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TipMeteOre_C", "ExecuteUbergraph_BP_TipMeteOre");
-
-	Params::BP_TipMeteOre_C_ExecuteUbergraph_BP_TipMeteOre Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_TipMeteOre.BP_TipMeteOre_C.OnBeginPlayDepletedStateStarted
-// (Event, Public, BlueprintEvent)
-
-void ABP_TipMeteOre_C::OnBeginPlayDepletedStateStarted()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TipMeteOre_C", "OnBeginPlayDepletedStateStarted");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_TipMeteOre.BP_TipMeteOre_C.OnResourceDepletedCosmeticsStart
-// (Event, Public, BlueprintEvent)
-
-void ABP_TipMeteOre_C::OnResourceDepletedCosmeticsStart()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TipMeteOre_C", "OnResourceDepletedCosmeticsStart");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_TipMeteOre.BP_TipMeteOre_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_TipMeteOre_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TipMeteOre_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_TipMeteOre.BP_TipMeteOre_C.Timeline__FinishedFunc
-// (BlueprintEvent)
-
-void ABP_TipMeteOre_C::Timeline__FinishedFunc()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TipMeteOre_C", "Timeline__FinishedFunc");
+		Func = Class->GetFunction("BP_TipMeteOre_C", "TurnOffWalkableCollision");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -106,17 +44,79 @@ void ABP_TipMeteOre_C::Timeline__UpdateFunc()
 }
 
 
-// Function BP_TipMeteOre.BP_TipMeteOre_C.TurnOffWalkableCollision
-// (BlueprintCallable, BlueprintEvent)
+// Function BP_TipMeteOre.BP_TipMeteOre_C.Timeline__FinishedFunc
+// (BlueprintEvent)
 
-void ABP_TipMeteOre_C::TurnOffWalkableCollision()
+void ABP_TipMeteOre_C::Timeline__FinishedFunc()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TipMeteOre_C", "TurnOffWalkableCollision");
+		Func = Class->GetFunction("BP_TipMeteOre_C", "Timeline__FinishedFunc");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_TipMeteOre.BP_TipMeteOre_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_TipMeteOre_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TipMeteOre_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_TipMeteOre.BP_TipMeteOre_C.OnResourceDepletedCosmeticsStart
+// (Event, Public, BlueprintEvent)
+
+void ABP_TipMeteOre_C::OnResourceDepletedCosmeticsStart()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TipMeteOre_C", "OnResourceDepletedCosmeticsStart");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_TipMeteOre.BP_TipMeteOre_C.OnBeginPlayDepletedStateStarted
+// (Event, Public, BlueprintEvent)
+
+void ABP_TipMeteOre_C::OnBeginPlayDepletedStateStarted()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TipMeteOre_C", "OnBeginPlayDepletedStateStarted");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_TipMeteOre.BP_TipMeteOre_C.ExecuteUbergraph_BP_TipMeteOre
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_TipMeteOre_C::ExecuteUbergraph_BP_TipMeteOre(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TipMeteOre_C", "ExecuteUbergraph_BP_TipMeteOre");
+
+	Params::BP_TipMeteOre_C_ExecuteUbergraph_BP_TipMeteOre Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

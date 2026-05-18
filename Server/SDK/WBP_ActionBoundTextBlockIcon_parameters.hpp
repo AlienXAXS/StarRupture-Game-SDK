@@ -17,6 +17,51 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function WBP_ActionBoundTextBlockIcon.WBP_ActionBoundTextBlockIcon_C.SetTemporaryIconVisibility
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_ActionBoundTextBlockIcon_C_SetTemporaryIconVisibility final
+{
+public:
+	bool                                          bVisible;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_ActionBoundTextBlockIcon_C_SetTemporaryIconVisibility;
+
+// Function WBP_ActionBoundTextBlockIcon.WBP_ActionBoundTextBlockIcon_C.SetTemporaryIconKey
+// 0x0010 (0x0010 - 0x0000)
+struct WBP_ActionBoundTextBlockIcon_C_SetTemporaryIconKey final
+{
+public:
+	class FText                                   InText;                                            // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
+DUMPER7_ASSERTS_WBP_ActionBoundTextBlockIcon_C_SetTemporaryIconKey;
+
+// Function WBP_ActionBoundTextBlockIcon.WBP_ActionBoundTextBlockIcon_C.SetLongIconText
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_ActionBoundTextBlockIcon_C_SetLongIconText final
+{
+public:
+	bool                                          bLong;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_ActionBoundTextBlockIcon_C_SetLongIconText;
+
+// Function WBP_ActionBoundTextBlockIcon.WBP_ActionBoundTextBlockIcon_C.SetButtonImageVisibility
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_ActionBoundTextBlockIcon_C_SetButtonImageVisibility final
+{
+public:
+	ESlateVisibility                              InVisibility;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_ActionBoundTextBlockIcon_C_SetButtonImageVisibility;
+
+// Function WBP_ActionBoundTextBlockIcon.WBP_ActionBoundTextBlockIcon_C.GetHeightSize
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_ActionBoundTextBlockIcon_C_GetHeightSize final
+{
+public:
+	double                                        Height;                                            // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_ActionBoundTextBlockIcon_C_GetHeightSize;
+
 // Function WBP_ActionBoundTextBlockIcon.WBP_ActionBoundTextBlockIcon_C.ExecuteUbergraph_WBP_ActionBoundTextBlockIcon
 // 0x01C0 (0x01C0 - 0x0000)
 struct WBP_ActionBoundTextBlockIcon_C_ExecuteUbergraph_WBP_ActionBoundTextBlockIcon final
@@ -37,51 +82,6 @@ public:
 	class FText                                   K2Node_Event_InText;                               // 0x01A8(0x0010)(ConstParm)
 };
 DUMPER7_ASSERTS_WBP_ActionBoundTextBlockIcon_C_ExecuteUbergraph_WBP_ActionBoundTextBlockIcon;
-
-// Function WBP_ActionBoundTextBlockIcon.WBP_ActionBoundTextBlockIcon_C.GetHeightSize
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_ActionBoundTextBlockIcon_C_GetHeightSize final
-{
-public:
-	double                                        Height;                                            // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_ActionBoundTextBlockIcon_C_GetHeightSize;
-
-// Function WBP_ActionBoundTextBlockIcon.WBP_ActionBoundTextBlockIcon_C.SetButtonImageVisibility
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_ActionBoundTextBlockIcon_C_SetButtonImageVisibility final
-{
-public:
-	ESlateVisibility                              InVisibility;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_ActionBoundTextBlockIcon_C_SetButtonImageVisibility;
-
-// Function WBP_ActionBoundTextBlockIcon.WBP_ActionBoundTextBlockIcon_C.SetLongIconText
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_ActionBoundTextBlockIcon_C_SetLongIconText final
-{
-public:
-	bool                                          bLong;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_ActionBoundTextBlockIcon_C_SetLongIconText;
-
-// Function WBP_ActionBoundTextBlockIcon.WBP_ActionBoundTextBlockIcon_C.SetTemporaryIconKey
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_ActionBoundTextBlockIcon_C_SetTemporaryIconKey final
-{
-public:
-	class FText                                   InText;                                            // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-};
-DUMPER7_ASSERTS_WBP_ActionBoundTextBlockIcon_C_SetTemporaryIconKey;
-
-// Function WBP_ActionBoundTextBlockIcon.WBP_ActionBoundTextBlockIcon_C.SetTemporaryIconVisibility
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_ActionBoundTextBlockIcon_C_SetTemporaryIconVisibility final
-{
-public:
-	bool                                          bVisible;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_ActionBoundTextBlockIcon_C_SetTemporaryIconVisibility;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

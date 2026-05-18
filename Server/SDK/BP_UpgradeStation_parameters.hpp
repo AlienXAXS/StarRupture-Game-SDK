@@ -14,6 +14,15 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function BP_UpgradeStation.BP_UpgradeStation_C.OnUIOpened
+// 0x0001 (0x0001 - 0x0000)
+struct BP_UpgradeStation_C_OnUIOpened final
+{
+public:
+	bool                                          bOpened;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_UpgradeStation_C_OnUIOpened;
+
 // Function BP_UpgradeStation.BP_UpgradeStation_C.ExecuteUbergraph_BP_UpgradeStation
 // 0x0030 (0x0030 - 0x0000)
 struct BP_UpgradeStation_C_ExecuteUbergraph_BP_UpgradeStation final
@@ -30,15 +39,6 @@ public:
 	class UAudioComponent*                        CallFunc_SpawnSound2D_ReturnValue_2;               // 0x0028(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_UpgradeStation_C_ExecuteUbergraph_BP_UpgradeStation;
-
-// Function BP_UpgradeStation.BP_UpgradeStation_C.OnUIOpened
-// 0x0001 (0x0001 - 0x0000)
-struct BP_UpgradeStation_C_OnUIOpened final
-{
-public:
-	bool                                          bOpened;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_UpgradeStation_C_OnUIOpened;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

@@ -29,11 +29,11 @@ public:
 	class USkeletalMeshComponent*                 SK_PersonalStorage;                                // 0x0868(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_BP_PersonalStorageBig(int32 EntryPoint);
-	void OnNameChanged(const class FString& NewName);
-	void OnUIOpened(bool bOpened);
-	void ReceiveBeginPlay();
 	void UpdateDisplayedPersonalStorageName();
+	void ReceiveBeginPlay();
+	void OnUIOpened(bool bOpened);
+	void OnNameChanged(const class FString& NewName);
+	void ExecuteUbergraph_BP_PersonalStorageBig(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

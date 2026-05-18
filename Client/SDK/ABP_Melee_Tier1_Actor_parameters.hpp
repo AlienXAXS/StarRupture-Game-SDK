@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
+#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 #include "GameplayTags_structs.hpp"
-#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 
 
 SDK_NAMESPACE_START

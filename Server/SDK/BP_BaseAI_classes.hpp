@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "MassAIPrototypeEnemyRuntime_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "MassAIPrototypeEnemyRuntime_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -27,22 +27,22 @@ public:
 	bool                                          ApplySlowdownAfterDamage;                          // 0x0CF8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void CanChangeEyeColor(bool* Result);
-	void ExecuteUbergraph_BP_BaseAI(int32 EntryPoint);
-	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
-	void NotifyAggroTargetChanged(bool bHasAggroTarget);
-	bool NotifyNearbyPlayerCharactersAboutSpawn();
-	void OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag);
-	void OnDamage(class AActor* Actor, const struct FHitResult& HitResult, float InDamage);
-	void OnEnterActorPool();
-	void OnExitActorPool();
-	void OnPrepareForGame();
-	void OnPrepareForPooling();
-	void PostSetupPooledActorData(bool bNewIsInPool);
-	void ReceiveBeginPlay();
-	void SetIsAggroEyeColor(bool NewIsAggro);
-	void SetIsBoostedEyeColor(bool NewIsBoosted);
 	void SetIsJumpEyeBehaviour(bool NewIsJumpEyeBehaviour);
+	void SetIsBoostedEyeColor(bool NewIsBoosted);
+	void SetIsAggroEyeColor(bool NewIsAggro);
+	void ReceiveBeginPlay();
+	void PostSetupPooledActorData(bool bNewIsInPool);
+	void OnPrepareForPooling();
+	void OnPrepareForGame();
+	void OnExitActorPool();
+	void OnEnterActorPool();
+	void OnDamage(class AActor* Actor, const struct FHitResult& HitResult, float InDamage);
+	void OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag);
+	bool NotifyNearbyPlayerCharactersAboutSpawn();
+	void NotifyAggroTargetChanged(bool bHasAggroTarget);
+	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
+	void ExecuteUbergraph_BP_BaseAI(int32 EntryPoint);
+	void CanChangeEyeColor(bool* Result);
 
 	struct FColor GetIdleEyeColor() const;
 

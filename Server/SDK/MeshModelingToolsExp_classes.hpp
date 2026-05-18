@@ -11,10 +11,10 @@
 #include "Basic.hpp"
 
 #include "MeshModelingToolsExp_structs.hpp"
+#include "ModelingOperators_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "InteractiveToolsFramework_classes.hpp"
-#include "ModelingOperators_structs.hpp"
 #include "ModelingComponents_structs.hpp"
 #include "ModelingComponents_classes.hpp"
 #include "MeshModelingTools_structs.hpp"
@@ -70,33 +70,6 @@ public:
 };
 DUMPER7_ASSERTS_UBakeInputMeshProperties;
 
-// Class MeshModelingToolsExp.TransformMeshesTool
-// 0x00E8 (0x01B0 - 0x00C8)
-class alignas(0x10) UTransformMeshesTool final : public UMultiSelectionMeshEditingTool
-{
-public:
-	uint8                                         Pad_C8[0x10];                                      // 0x00C8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTransformMeshesToolProperties*         TransformProps;                                    // 0x00D8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TArray<struct FTransformMeshesTarget>         ActiveGizmos;                                      // 0x00E0(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	class UDragAlignmentMechanic*                 DragAlignmentMechanic;                             // 0x00F0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_F8[0xB8];                                      // 0x00F8(0x00B8)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("TransformMeshesTool")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"TransformMeshesTool")
-	}
-	static class UTransformMeshesTool* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UTransformMeshesTool>();
-	}
-};
-DUMPER7_ASSERTS_UTransformMeshesTool;
-
 // Class MeshModelingToolsExp.BakeNormalMapToolProperties
 // 0x0000 (0x00B0 - 0x00B0)
 class UBakeNormalMapToolProperties final : public UInteractiveToolPropertySet
@@ -144,6 +117,38 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UBakeOcclusionMapToolProperties;
+
+// Class MeshModelingToolsExp.MirrorTool
+// 0x00C0 (0x0188 - 0x00C8)
+class UMirrorTool final : public UMultiSelectionMeshEditingTool
+{
+public:
+	uint8                                         Pad_C8[0x8];                                       // 0x00C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMirrorToolProperties*                  Settings;                                          // 0x00D0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCreateMeshObjectTypeProperties*        OutputTypeProperties;                              // 0x00D8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UOnAcceptHandleSourcesProperties*       HandleSourcesProperties;                           // 0x00E0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UMirrorToolActionPropertySet*           ToolActions;                                       // 0x00E8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TArray<class UDynamicMeshReplacementChangeTarget*> MeshesToMirror;                               // 0x00F0(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	TArray<class UMeshOpPreviewWithBackgroundCompute*> Previews;                                     // 0x0100(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_110[0x30];                                     // 0x0110(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
+	class UConstructionPlaneMechanic*             PlaneMechanic;                                     // 0x0140(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_148[0x40];                                     // 0x0148(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MirrorTool")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MirrorTool")
+	}
+	static class UMirrorTool* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMirrorTool>();
+	}
+};
+DUMPER7_ASSERTS_UMirrorTool;
 
 // Class MeshModelingToolsExp.BakeCurvatureMapToolProperties
 // 0x0018 (0x00C8 - 0x00B0)
@@ -199,42 +204,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UBakeUVShellMapToolProperties;
-
-// Class MeshModelingToolsExp.CollisionGeometryVisualizationProperties
-// 0x0030 (0x00E0 - 0x00B0)
-class UCollisionGeometryVisualizationProperties final : public UInteractiveToolPropertySet
-{
-public:
-	bool                                          bShowCollision;                                    // 0x00B0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShowSolid;                                        // 0x00B1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B2[0x2];                                       // 0x00B2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         LineThickness;                                     // 0x00B4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShowHidden;                                       // 0x00B8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRandomColors;                                     // 0x00B9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_BA[0x2];                                       // 0x00BA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FColor                                 Color;                                             // 0x00BC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMaterialInterface*                     LineMaterial;                                      // 0x00C0(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UMaterialInterface*                     LineMaterialShowingHidden;                         // 0x00C8(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UMaterialInterface*                     TriangleMaterial;                                  // 0x00D0(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	bool                                          bEnableShowCollision;                              // 0x00D8(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnableShowSolid;                                  // 0x00D9(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_DA[0x6];                                       // 0x00DA(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CollisionGeometryVisualizationProperties")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CollisionGeometryVisualizationProperties")
-	}
-	static class UCollisionGeometryVisualizationProperties* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCollisionGeometryVisualizationProperties>();
-	}
-};
-DUMPER7_ASSERTS_UCollisionGeometryVisualizationProperties;
 
 // Class MeshModelingToolsExp.BakeHeightMapToolProperties
 // 0x0018 (0x00C8 - 0x00B0)
@@ -410,6 +379,61 @@ public:
 };
 DUMPER7_ASSERTS_UExtrudeMeshSelectionToolProperties;
 
+// Class MeshModelingToolsExp.MeshSelectionToolActionPropertySet
+// 0x0008 (0x00B8 - 0x00B0)
+class UMeshSelectionToolActionPropertySet : public UInteractiveToolPropertySet
+{
+public:
+	uint8                                         Pad_B0[0x8];                                       // 0x00B0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MeshSelectionToolActionPropertySet")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MeshSelectionToolActionPropertySet")
+	}
+	static class UMeshSelectionToolActionPropertySet* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMeshSelectionToolActionPropertySet>();
+	}
+};
+DUMPER7_ASSERTS_UMeshSelectionToolActionPropertySet;
+
+// Class MeshModelingToolsExp.MeshSelectionEditActions
+// 0x0000 (0x00B8 - 0x00B8)
+class UMeshSelectionEditActions final : public UMeshSelectionToolActionPropertySet
+{
+public:
+	void Clear();
+	void ExpandToMaterials();
+	void FloodFill();
+	void Grow();
+	void Invert();
+	void LargestAreaPart();
+	void LargestTriCountPart();
+	void OptimizeBorder();
+	void SelectAll();
+	void Shrink();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MeshSelectionEditActions")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MeshSelectionEditActions")
+	}
+	static class UMeshSelectionEditActions* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMeshSelectionEditActions>();
+	}
+};
+DUMPER7_ASSERTS_UMeshSelectionEditActions;
+
 // Class MeshModelingToolsExp.ExtrudeMeshSelectionTool
 // 0x0748 (0x0878 - 0x0130)
 class UExtrudeMeshSelectionTool final : public USingleTargetWithSelectionTool
@@ -457,34 +481,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UOffsetMeshSelectionToolBuilder;
-
-// Class MeshModelingToolsExp.MeshSelectionToolProperties
-// 0x0010 (0x00C0 - 0x00B0)
-class UMeshSelectionToolProperties final : public UInteractiveToolPropertySet
-{
-public:
-	EMeshSelectionToolPrimaryMode                 SelectionMode;                                     // 0x00B0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AngleTolerance;                                    // 0x00B4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHitBackFaces;                                     // 0x00B8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShowPoints;                                       // 0x00B9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_BA[0x2];                                       // 0x00BA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	EMeshFacesColorMode                           FaceColorMode;                                     // 0x00BC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MeshSelectionToolProperties")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MeshSelectionToolProperties")
-	}
-	static class UMeshSelectionToolProperties* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMeshSelectionToolProperties>();
-	}
-};
-DUMPER7_ASSERTS_UMeshSelectionToolProperties;
 
 // Class MeshModelingToolsExp.OffsetMeshSelectionToolProperties
 // 0x0038 (0x00E8 - 0x00B0)
@@ -550,6 +546,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UOffsetMeshSelectionTool;
+
+// Class MeshModelingToolsExp.VoxelSolidifyMeshesTool
+// 0x0008 (0x0138 - 0x0130)
+class UVoxelSolidifyMeshesTool final : public UBaseVoxelTool
+{
+public:
+	class UVoxelSolidifyMeshesToolProperties*     SolidifyProperties;                                // 0x0130(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("VoxelSolidifyMeshesTool")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"VoxelSolidifyMeshesTool")
+	}
+	static class UVoxelSolidifyMeshesTool* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UVoxelSolidifyMeshesTool>();
+	}
+};
+DUMPER7_ASSERTS_UVoxelSolidifyMeshesTool;
 
 // Class MeshModelingToolsExp.PatternToolBuilder
 // 0x0008 (0x0030 - 0x0028)
@@ -730,6 +749,26 @@ public:
 };
 DUMPER7_ASSERTS_UPatternTool_RadialSettings;
 
+// Class MeshModelingToolsExp.MeshSelectionToolBuilder
+// 0x0000 (0x0030 - 0x0030)
+class UMeshSelectionToolBuilder final : public UMeshSurfacePointMeshEditingToolBuilder
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MeshSelectionToolBuilder")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MeshSelectionToolBuilder")
+	}
+	static class UMeshSelectionToolBuilder* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMeshSelectionToolBuilder>();
+	}
+};
+DUMPER7_ASSERTS_UMeshSelectionToolBuilder;
+
 // Class MeshModelingToolsExp.PatternTool_RotationSettings
 // 0x0050 (0x0100 - 0x00B0)
 class UPatternTool_RotationSettings final : public UInteractiveToolPropertySet
@@ -785,61 +824,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UPatternTool_TranslationSettings;
-
-// Class MeshModelingToolsExp.MeshSelectionToolActionPropertySet
-// 0x0008 (0x00B8 - 0x00B0)
-class UMeshSelectionToolActionPropertySet : public UInteractiveToolPropertySet
-{
-public:
-	uint8                                         Pad_B0[0x8];                                       // 0x00B0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MeshSelectionToolActionPropertySet")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MeshSelectionToolActionPropertySet")
-	}
-	static class UMeshSelectionToolActionPropertySet* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMeshSelectionToolActionPropertySet>();
-	}
-};
-DUMPER7_ASSERTS_UMeshSelectionToolActionPropertySet;
-
-// Class MeshModelingToolsExp.MeshSelectionEditActions
-// 0x0000 (0x00B8 - 0x00B8)
-class UMeshSelectionEditActions final : public UMeshSelectionToolActionPropertySet
-{
-public:
-	void Clear();
-	void ExpandToMaterials();
-	void FloodFill();
-	void Grow();
-	void Invert();
-	void LargestAreaPart();
-	void LargestTriCountPart();
-	void OptimizeBorder();
-	void SelectAll();
-	void Shrink();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MeshSelectionEditActions")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MeshSelectionEditActions")
-	}
-	static class UMeshSelectionEditActions* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMeshSelectionEditActions>();
-	}
-};
-DUMPER7_ASSERTS_UMeshSelectionEditActions;
 
 // Class MeshModelingToolsExp.PatternTool_ScaleSettings
 // 0x0050 (0x0100 - 0x00B0)
@@ -1222,6 +1206,26 @@ public:
 };
 DUMPER7_ASSERTS_UAddPatchToolProperties;
 
+// Class MeshModelingToolsExp.PhysicsInspectorToolBuilder
+// 0x0000 (0x0028 - 0x0028)
+class UPhysicsInspectorToolBuilder final : public UMultiSelectionMeshEditingToolBuilder
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PhysicsInspectorToolBuilder")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PhysicsInspectorToolBuilder")
+	}
+	static class UPhysicsInspectorToolBuilder* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPhysicsInspectorToolBuilder>();
+	}
+};
+DUMPER7_ASSERTS_UPhysicsInspectorToolBuilder;
+
 // Class MeshModelingToolsExp.AddPatchTool
 // 0x0088 (0x0138 - 0x00B0)
 class UAddPatchTool final : public USingleClickTool
@@ -1268,34 +1272,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAlignObjectsToolBuilder;
-
-// Class MeshModelingToolsExp.PhysicsInspectorTool
-// 0x0048 (0x0110 - 0x00C8)
-class UPhysicsInspectorTool final : public UMultiSelectionMeshEditingTool
-{
-public:
-	uint8                                         Pad_C8[0x8];                                       // 0x00C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCollisionGeometryVisualizationProperties* VizSettings;                                    // 0x00D0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UPhysicsInspectorToolProperties*        Settings;                                          // 0x00D8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TArray<class UPhysicsObjectToolPropertySet*>  ObjectData;                                        // 0x00E0(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
-	TArray<class UPreviewGeometry*>               PreviewElements;                                   // 0x00F0(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_100[0x10];                                     // 0x0100(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("PhysicsInspectorTool")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"PhysicsInspectorTool")
-	}
-	static class UPhysicsInspectorTool* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPhysicsInspectorTool>();
-	}
-};
-DUMPER7_ASSERTS_UPhysicsInspectorTool;
 
 // Class MeshModelingToolsExp.AlignObjectsToolProperties
 // 0x0010 (0x00C0 - 0x00B0)
@@ -1350,6 +1326,26 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAlignObjectsTool;
+
+// Class MeshModelingToolsExp.MeshInspectorToolBuilder
+// 0x0000 (0x0028 - 0x0028)
+class UMeshInspectorToolBuilder final : public USingleSelectionMeshEditingToolBuilder
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MeshInspectorToolBuilder")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MeshInspectorToolBuilder")
+	}
+	static class UMeshInspectorToolBuilder* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMeshInspectorToolBuilder>();
+	}
+};
+DUMPER7_ASSERTS_UMeshInspectorToolBuilder;
 
 // Class MeshModelingToolsExp.BakeMeshAttributeMapsToolBuilder
 // 0x0000 (0x0028 - 0x0028)
@@ -1406,46 +1402,25 @@ public:
 };
 DUMPER7_ASSERTS_UBakeMeshAttributeMapsToolProperties;
 
-// Class MeshModelingToolsExp.MeshInspectorMaterialProperties
-// 0x0078 (0x0128 - 0x00B0)
-class UMeshInspectorMaterialProperties final : public UInteractiveToolPropertySet
+// Class MeshModelingToolsExp.SeamSculptToolBuilder
+// 0x0000 (0x0030 - 0x0030)
+class USeamSculptToolBuilder final : public UMeshSurfacePointMeshEditingToolBuilder
 {
-public:
-	EMeshInspectorMaterialMode                    MaterialMode;                                      // 0x00B0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B1[0x3];                                       // 0x00B1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CheckerDensity;                                    // 0x00B4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMaterialInterface*                     OverrideMaterial;                                  // 0x00B8(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class FString                                 UVChannel;                                         // 0x00C0(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class FString>                         UVChannelNamesList;                                // 0x00D0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          bFlatShading;                                      // 0x00E0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_E1[0x3];                                       // 0x00E1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLinearColor                           Color;                                             // 0x00E4(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_F4[0x4];                                       // 0x00F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        Opacity;                                           // 0x00F8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           TransparentMaterialColor;                          // 0x0100(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bTwoSided;                                         // 0x0110(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_111[0x7];                                      // 0x0111(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInstanceDynamic*               CheckerMaterial;                                   // 0x0118(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UMaterialInstanceDynamic*               ActiveCustomMaterial;                              // 0x0120(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-
-public:
-	const TArray<class FString> GetUVChannelNamesFunc() const;
-
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MeshInspectorMaterialProperties")
+		STATIC_CLASS_IMPL("SeamSculptToolBuilder")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MeshInspectorMaterialProperties")
+		STATIC_NAME_IMPL(L"SeamSculptToolBuilder")
 	}
-	static class UMeshInspectorMaterialProperties* GetDefaultObj()
+	static class USeamSculptToolBuilder* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMeshInspectorMaterialProperties>();
+		return GetDefaultObjImpl<USeamSculptToolBuilder>();
 	}
 };
-DUMPER7_ASSERTS_UMeshInspectorMaterialProperties;
+DUMPER7_ASSERTS_USeamSculptToolBuilder;
 
 // Class MeshModelingToolsExp.BakeMeshAttributeTool
 // 0x0118 (0x01E0 - 0x00C8)
@@ -1510,32 +1485,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UBakeMeshAttributeMapsToolBase;
-
-// Class MeshModelingToolsExp.SeamSculptTool
-// 0x0110 (0x0410 - 0x0300)
-class alignas(0x10) USeamSculptTool final : public UDynamicMeshBrushTool
-{
-public:
-	uint8                                         Pad_300[0x8];                                      // 0x0300(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class USeamSculptToolProperties*              Settings;                                          // 0x0308(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UPreviewGeometry*                       PreviewGeom;                                       // 0x0310(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_318[0xF8];                                     // 0x0318(0x00F8)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SeamSculptTool")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SeamSculptTool")
-	}
-	static class USeamSculptTool* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USeamSculptTool>();
-	}
-};
-DUMPER7_ASSERTS_USeamSculptTool;
 
 // Class MeshModelingToolsExp.BakeMeshAttributeMapsTool
 // 0x00B8 (0x0410 - 0x0358)
@@ -1689,6 +1638,35 @@ public:
 };
 DUMPER7_ASSERTS_UBakeMultiMeshAttributeMapsToolBuilder;
 
+// Class MeshModelingToolsExp.VoxelMorphologyMeshesToolProperties
+// 0x0020 (0x00D0 - 0x00B0)
+class UVoxelMorphologyMeshesToolProperties final : public UInteractiveToolPropertySet
+{
+public:
+	EMorphologyOperation                          Operation;                                         // 0x00B0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B1[0x7];                                       // 0x00B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        Distance;                                          // 0x00B8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bVoxWrap;                                          // 0x00C0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRemoveInternalsAfterVoxWrap;                      // 0x00C1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C2[0x6];                                       // 0x00C2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        ThickenShells;                                     // 0x00C8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("VoxelMorphologyMeshesToolProperties")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"VoxelMorphologyMeshesToolProperties")
+	}
+	static class UVoxelMorphologyMeshesToolProperties* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UVoxelMorphologyMeshesToolProperties>();
+	}
+};
+DUMPER7_ASSERTS_UVoxelMorphologyMeshesToolProperties;
+
 // Class MeshModelingToolsExp.BakeMultiMeshAttributeMapsToolProperties
 // 0x0090 (0x0140 - 0x00B0)
 class UBakeMultiMeshAttributeMapsToolProperties final : public UInteractiveToolPropertySet
@@ -1757,25 +1735,32 @@ public:
 };
 DUMPER7_ASSERTS_UBakeMultiMeshInputToolProperties;
 
-// Class MeshModelingToolsExp.VoxelMorphologyMeshesToolBuilder
-// 0x0000 (0x0028 - 0x0028)
-class UVoxelMorphologyMeshesToolBuilder final : public UBaseCreateFromSelectedToolBuilder
+// Class MeshModelingToolsExp.RevolveBoundaryToolProperties
+// 0x0030 (0x0150 - 0x0120)
+class URevolveBoundaryToolProperties final : public URevolveProperties
 {
+public:
+	ERevolvePropertiesCapFillMode                 CapFillMode;                                       // 0x0120(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDisplayInputMesh;                                 // 0x0121(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_122[0x6];                                      // 0x0122(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                AxisOrigin;                                        // 0x0128(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              AxisOrientation;                                   // 0x0140(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("VoxelMorphologyMeshesToolBuilder")
+		STATIC_CLASS_IMPL("RevolveBoundaryToolProperties")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"VoxelMorphologyMeshesToolBuilder")
+		STATIC_NAME_IMPL(L"RevolveBoundaryToolProperties")
 	}
-	static class UVoxelMorphologyMeshesToolBuilder* GetDefaultObj()
+	static class URevolveBoundaryToolProperties* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UVoxelMorphologyMeshesToolBuilder>();
+		return GetDefaultObjImpl<URevolveBoundaryToolProperties>();
 	}
 };
-DUMPER7_ASSERTS_UVoxelMorphologyMeshesToolBuilder;
+DUMPER7_ASSERTS_URevolveBoundaryToolProperties;
 
 // Class MeshModelingToolsExp.BakeMultiMeshAttributeMapsTool
 // 0x00A8 (0x0400 - 0x0358)
@@ -1822,26 +1807,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UBakeTransformToolBuilder;
-
-// Class MeshModelingToolsExp.SeamSculptToolBuilder
-// 0x0000 (0x0030 - 0x0030)
-class USeamSculptToolBuilder final : public UMeshSurfacePointMeshEditingToolBuilder
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SeamSculptToolBuilder")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SeamSculptToolBuilder")
-	}
-	static class USeamSculptToolBuilder* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USeamSculptToolBuilder>();
-	}
-};
-DUMPER7_ASSERTS_USeamSculptToolBuilder;
 
 // Class MeshModelingToolsExp.BakeTransformToolProperties
 // 0x0008 (0x00B8 - 0x00B0)
@@ -1896,6 +1861,42 @@ public:
 };
 DUMPER7_ASSERTS_UBakeTransformTool;
 
+// Class MeshModelingToolsExp.CollisionGeometryVisualizationProperties
+// 0x0030 (0x00E0 - 0x00B0)
+class UCollisionGeometryVisualizationProperties final : public UInteractiveToolPropertySet
+{
+public:
+	bool                                          bShowCollision;                                    // 0x00B0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowSolid;                                        // 0x00B1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B2[0x2];                                       // 0x00B2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         LineThickness;                                     // 0x00B4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowHidden;                                       // 0x00B8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRandomColors;                                     // 0x00B9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_BA[0x2];                                       // 0x00BA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FColor                                 Color;                                             // 0x00BC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMaterialInterface*                     LineMaterial;                                      // 0x00C0(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UMaterialInterface*                     LineMaterialShowingHidden;                         // 0x00C8(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UMaterialInterface*                     TriangleMaterial;                                  // 0x00D0(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	bool                                          bEnableShowCollision;                              // 0x00D8(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableShowSolid;                                  // 0x00D9(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_DA[0x6];                                       // 0x00DA(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CollisionGeometryVisualizationProperties")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CollisionGeometryVisualizationProperties")
+	}
+	static class UCollisionGeometryVisualizationProperties* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCollisionGeometryVisualizationProperties>();
+	}
+};
+DUMPER7_ASSERTS_UCollisionGeometryVisualizationProperties;
+
 // Class MeshModelingToolsExp.ConvertMeshesToolBuilder
 // 0x0000 (0x0028 - 0x0028)
 class UConvertMeshesToolBuilder final : public UInteractiveToolBuilder
@@ -1942,33 +1943,25 @@ public:
 };
 DUMPER7_ASSERTS_UConvertMeshesToolProperties;
 
-// Class MeshModelingToolsExp.ExtractCollisionToolProperties
-// 0x0008 (0x00B8 - 0x00B0)
-class UExtractCollisionToolProperties final : public UInteractiveToolPropertySet
+// Class MeshModelingToolsExp.EditPivotToolBuilder
+// 0x0000 (0x0028 - 0x0028)
+class UEditPivotToolBuilder final : public UMultiSelectionMeshEditingToolBuilder
 {
-public:
-	EExtractCollisionOutputType                   CollisionType;                                     // 0x00B0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bOutputSeparateMeshes;                             // 0x00B1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShowPreview;                                      // 0x00B2(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShowInputMesh;                                    // 0x00B3(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bWeldEdges;                                        // 0x00B4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B5[0x3];                                       // 0x00B5(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("ExtractCollisionToolProperties")
+		STATIC_CLASS_IMPL("EditPivotToolBuilder")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"ExtractCollisionToolProperties")
+		STATIC_NAME_IMPL(L"EditPivotToolBuilder")
 	}
-	static class UExtractCollisionToolProperties* GetDefaultObj()
+	static class UEditPivotToolBuilder* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UExtractCollisionToolProperties>();
+		return GetDefaultObjImpl<UEditPivotToolBuilder>();
 	}
 };
-DUMPER7_ASSERTS_UExtractCollisionToolProperties;
+DUMPER7_ASSERTS_UEditPivotToolBuilder;
 
 // Class MeshModelingToolsExp.ConvertMeshesTool
 // 0x0030 (0x00D8 - 0x00A8)
@@ -2020,40 +2013,28 @@ public:
 };
 DUMPER7_ASSERTS_UCubeGridToolBuilder;
 
-// Class MeshModelingToolsExp.EditPivotToolActionPropertySet
-// 0x0010 (0x00C0 - 0x00B0)
-class UEditPivotToolActionPropertySet final : public UInteractiveToolPropertySet
+// Class MeshModelingToolsExp.VoxelBlendMeshesTool
+// 0x0008 (0x0138 - 0x0130)
+class UVoxelBlendMeshesTool final : public UBaseVoxelTool
 {
 public:
-	uint8                                         Pad_B0[0x8];                                       // 0x00B0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bUseWorldBox;                                      // 0x00B8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B9[0x7];                                       // 0x00B9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void Back();
-	void Bottom();
-	void Center();
-	void Front();
-	void Left();
-	void Right();
-	void Top();
-	void WorldOrigin();
+	class UVoxelBlendMeshesToolProperties*        BlendProperties;                                   // 0x0130(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("EditPivotToolActionPropertySet")
+		STATIC_CLASS_IMPL("VoxelBlendMeshesTool")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"EditPivotToolActionPropertySet")
+		STATIC_NAME_IMPL(L"VoxelBlendMeshesTool")
 	}
-	static class UEditPivotToolActionPropertySet* GetDefaultObj()
+	static class UVoxelBlendMeshesTool* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UEditPivotToolActionPropertySet>();
+		return GetDefaultObjImpl<UVoxelBlendMeshesTool>();
 	}
 };
-DUMPER7_ASSERTS_UEditPivotToolActionPropertySet;
+DUMPER7_ASSERTS_UVoxelBlendMeshesTool;
 
 // Class MeshModelingToolsExp.CubeGridToolProperties
 // 0x0100 (0x01B0 - 0x00B0)
@@ -2142,35 +2123,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCubeGridToolActions;
-
-// Class MeshModelingToolsExp.VoxelMorphologyMeshesToolProperties
-// 0x0020 (0x00D0 - 0x00B0)
-class UVoxelMorphologyMeshesToolProperties final : public UInteractiveToolPropertySet
-{
-public:
-	EMorphologyOperation                          Operation;                                         // 0x00B0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B1[0x7];                                       // 0x00B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        Distance;                                          // 0x00B8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bVoxWrap;                                          // 0x00C0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRemoveInternalsAfterVoxWrap;                      // 0x00C1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C2[0x6];                                       // 0x00C2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        ThickenShells;                                     // 0x00C8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("VoxelMorphologyMeshesToolProperties")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"VoxelMorphologyMeshesToolProperties")
-	}
-	static class UVoxelMorphologyMeshesToolProperties* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UVoxelMorphologyMeshesToolProperties>();
-	}
-};
-DUMPER7_ASSERTS_UVoxelMorphologyMeshesToolProperties;
 
 // Class MeshModelingToolsExp.CubeGridTool
 // 0x0598 (0x0640 - 0x00A8)
@@ -2344,6 +2296,33 @@ public:
 };
 DUMPER7_ASSERTS_UEditNormalsToolBuilder;
 
+// Class MeshModelingToolsExp.TransformMeshesTool
+// 0x00E8 (0x01B0 - 0x00C8)
+class alignas(0x10) UTransformMeshesTool final : public UMultiSelectionMeshEditingTool
+{
+public:
+	uint8                                         Pad_C8[0x10];                                      // 0x00C8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTransformMeshesToolProperties*         TransformProps;                                    // 0x00D8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TArray<struct FTransformMeshesTarget>         ActiveGizmos;                                      // 0x00E0(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	class UDragAlignmentMechanic*                 DragAlignmentMechanic;                             // 0x00F0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_F8[0xB8];                                      // 0x00F8(0x00B8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("TransformMeshesTool")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"TransformMeshesTool")
+	}
+	static class UTransformMeshesTool* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UTransformMeshesTool>();
+	}
+};
+DUMPER7_ASSERTS_UTransformMeshesTool;
+
 // Class MeshModelingToolsExp.EditNormalsToolProperties
 // 0x0010 (0x00C0 - 0x00B0)
 class UEditNormalsToolProperties final : public UInteractiveToolPropertySet
@@ -2401,30 +2380,6 @@ public:
 };
 DUMPER7_ASSERTS_UEditNormalsOperatorFactory;
 
-// Class MeshModelingToolsExp.TriangulateSplinesTool
-// 0x0018 (0x0128 - 0x0110)
-class UTriangulateSplinesTool final : public UBaseMeshFromSplinesTool
-{
-public:
-	class UTriangulateSplinesToolProperties*      TriangulateProperties;                             // 0x0110(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_118[0x10];                                     // 0x0118(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("TriangulateSplinesTool")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"TriangulateSplinesTool")
-	}
-	static class UTriangulateSplinesTool* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UTriangulateSplinesTool>();
-	}
-};
-DUMPER7_ASSERTS_UTriangulateSplinesTool;
-
 // Class MeshModelingToolsExp.EditNormalsTool
 // 0x0208 (0x02D0 - 0x00C8)
 class alignas(0x10) UEditNormalsTool final : public UMultiSelectionMeshEditingTool
@@ -2455,26 +2410,6 @@ public:
 };
 DUMPER7_ASSERTS_UEditNormalsTool;
 
-// Class MeshModelingToolsExp.EditPivotToolBuilder
-// 0x0000 (0x0028 - 0x0028)
-class UEditPivotToolBuilder final : public UMultiSelectionMeshEditingToolBuilder
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("EditPivotToolBuilder")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"EditPivotToolBuilder")
-	}
-	static class UEditPivotToolBuilder* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UEditPivotToolBuilder>();
-	}
-};
-DUMPER7_ASSERTS_UEditPivotToolBuilder;
-
 // Class MeshModelingToolsExp.EditPivotToolProperties
 // 0x0008 (0x00B8 - 0x00B0)
 class UEditPivotToolProperties final : public UInteractiveToolPropertySet
@@ -2501,6 +2436,41 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UEditPivotToolProperties;
+
+// Class MeshModelingToolsExp.EditPivotToolActionPropertySet
+// 0x0010 (0x00C0 - 0x00B0)
+class UEditPivotToolActionPropertySet final : public UInteractiveToolPropertySet
+{
+public:
+	uint8                                         Pad_B0[0x8];                                       // 0x00B0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bUseWorldBox;                                      // 0x00B8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B9[0x7];                                       // 0x00B9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void Back();
+	void Bottom();
+	void Center();
+	void Front();
+	void Left();
+	void Right();
+	void Top();
+	void WorldOrigin();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("EditPivotToolActionPropertySet")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"EditPivotToolActionPropertySet")
+	}
+	static class UEditPivotToolActionPropertySet* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UEditPivotToolActionPropertySet>();
+	}
+};
+DUMPER7_ASSERTS_UEditPivotToolActionPropertySet;
 
 // Class MeshModelingToolsExp.EditPivotTool
 // 0x01F8 (0x02C0 - 0x00C8)
@@ -2684,26 +2654,6 @@ public:
 };
 DUMPER7_ASSERTS_UMeshBoundaryToolBase;
 
-// Class MeshModelingToolsExp.MeshInspectorToolBuilder
-// 0x0000 (0x0028 - 0x0028)
-class UMeshInspectorToolBuilder final : public USingleSelectionMeshEditingToolBuilder
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MeshInspectorToolBuilder")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MeshInspectorToolBuilder")
-	}
-	static class UMeshInspectorToolBuilder* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMeshInspectorToolBuilder>();
-	}
-};
-DUMPER7_ASSERTS_UMeshInspectorToolBuilder;
-
 // Class MeshModelingToolsExp.MeshInspectorProperties
 // 0x0018 (0x00C8 - 0x00B0)
 class UMeshInspectorProperties final : public UInteractiveToolPropertySet
@@ -2742,6 +2692,47 @@ public:
 };
 DUMPER7_ASSERTS_UMeshInspectorProperties;
 
+// Class MeshModelingToolsExp.MeshInspectorMaterialProperties
+// 0x0078 (0x0128 - 0x00B0)
+class UMeshInspectorMaterialProperties final : public UInteractiveToolPropertySet
+{
+public:
+	EMeshInspectorMaterialMode                    MaterialMode;                                      // 0x00B0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B1[0x3];                                       // 0x00B1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CheckerDensity;                                    // 0x00B4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMaterialInterface*                     OverrideMaterial;                                  // 0x00B8(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class FString                                 UVChannel;                                         // 0x00C0(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         UVChannelNamesList;                                // 0x00D0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          bFlatShading;                                      // 0x00E0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E1[0x3];                                       // 0x00E1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           Color;                                             // 0x00E4(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_F4[0x4];                                       // 0x00F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        Opacity;                                           // 0x00F8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           TransparentMaterialColor;                          // 0x0100(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bTwoSided;                                         // 0x0110(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_111[0x7];                                      // 0x0111(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInstanceDynamic*               CheckerMaterial;                                   // 0x0118(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UMaterialInstanceDynamic*               ActiveCustomMaterial;                              // 0x0120(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+
+public:
+	const TArray<class FString> GetUVChannelNamesFunc() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MeshInspectorMaterialProperties")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MeshInspectorMaterialProperties")
+	}
+	static class UMeshInspectorMaterialProperties* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMeshInspectorMaterialProperties>();
+	}
+};
+DUMPER7_ASSERTS_UMeshInspectorMaterialProperties;
+
 // Class MeshModelingToolsExp.MeshInspectorTool
 // 0x01A0 (0x0260 - 0x00C0)
 class alignas(0x10) UMeshInspectorTool final : public USingleSelectionMeshEditingTool
@@ -2773,26 +2764,6 @@ public:
 };
 DUMPER7_ASSERTS_UMeshInspectorTool;
 
-// Class MeshModelingToolsExp.MeshSelectionToolBuilder
-// 0x0000 (0x0030 - 0x0030)
-class UMeshSelectionToolBuilder final : public UMeshSurfacePointMeshEditingToolBuilder
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MeshSelectionToolBuilder")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MeshSelectionToolBuilder")
-	}
-	static class UMeshSelectionToolBuilder* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMeshSelectionToolBuilder>();
-	}
-};
-DUMPER7_ASSERTS_UMeshSelectionToolBuilder;
-
 // Class MeshModelingToolsExp.MeshSelectionMeshEditActions
 // 0x0000 (0x00B8 - 0x00B8)
 class UMeshSelectionMeshEditActions final : public UMeshSelectionToolActionPropertySet
@@ -2821,6 +2792,34 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMeshSelectionMeshEditActions;
+
+// Class MeshModelingToolsExp.MeshSelectionToolProperties
+// 0x0010 (0x00C0 - 0x00B0)
+class UMeshSelectionToolProperties final : public UInteractiveToolPropertySet
+{
+public:
+	EMeshSelectionToolPrimaryMode                 SelectionMode;                                     // 0x00B0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AngleTolerance;                                    // 0x00B4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHitBackFaces;                                     // 0x00B8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowPoints;                                       // 0x00B9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_BA[0x2];                                       // 0x00BA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	EMeshFacesColorMode                           FaceColorMode;                                     // 0x00BC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MeshSelectionToolProperties")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MeshSelectionToolProperties")
+	}
+	static class UMeshSelectionToolProperties* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMeshSelectionToolProperties>();
+	}
+};
+DUMPER7_ASSERTS_UMeshSelectionToolProperties;
 
 // Class MeshModelingToolsExp.MeshSelectionTool
 // 0x0458 (0x0758 - 0x0300)
@@ -2967,38 +2966,6 @@ public:
 };
 DUMPER7_ASSERTS_UMirrorToolActionPropertySet;
 
-// Class MeshModelingToolsExp.MirrorTool
-// 0x00C0 (0x0188 - 0x00C8)
-class UMirrorTool final : public UMultiSelectionMeshEditingTool
-{
-public:
-	uint8                                         Pad_C8[0x8];                                       // 0x00C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMirrorToolProperties*                  Settings;                                          // 0x00D0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCreateMeshObjectTypeProperties*        OutputTypeProperties;                              // 0x00D8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UOnAcceptHandleSourcesProperties*       HandleSourcesProperties;                           // 0x00E0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UMirrorToolActionPropertySet*           ToolActions;                                       // 0x00E8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TArray<class UDynamicMeshReplacementChangeTarget*> MeshesToMirror;                               // 0x00F0(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
-	TArray<class UMeshOpPreviewWithBackgroundCompute*> Previews;                                     // 0x0100(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_110[0x30];                                     // 0x0110(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
-	class UConstructionPlaneMechanic*             PlaneMechanic;                                     // 0x0140(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_148[0x40];                                     // 0x0148(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MirrorTool")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MirrorTool")
-	}
-	static class UMirrorTool* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMirrorTool>();
-	}
-};
-DUMPER7_ASSERTS_UMirrorTool;
-
 // Class MeshModelingToolsExp.PhysicsObjectToolPropertySet
 // 0x0068 (0x0118 - 0x00B0)
 class UPhysicsObjectToolPropertySet final : public UInteractiveToolPropertySet
@@ -3049,6 +3016,34 @@ public:
 };
 DUMPER7_ASSERTS_UExtractCollisionGeometryToolBuilder;
 
+// Class MeshModelingToolsExp.ExtractCollisionToolProperties
+// 0x0008 (0x00B8 - 0x00B0)
+class UExtractCollisionToolProperties final : public UInteractiveToolPropertySet
+{
+public:
+	EExtractCollisionOutputType                   CollisionType;                                     // 0x00B0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOutputSeparateMeshes;                             // 0x00B1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowPreview;                                      // 0x00B2(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowInputMesh;                                    // 0x00B3(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bWeldEdges;                                        // 0x00B4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B5[0x3];                                       // 0x00B5(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ExtractCollisionToolProperties")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ExtractCollisionToolProperties")
+	}
+	static class UExtractCollisionToolProperties* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UExtractCollisionToolProperties>();
+	}
+};
+DUMPER7_ASSERTS_UExtractCollisionToolProperties;
+
 // Class MeshModelingToolsExp.ExtractCollisionGeometryTool
 // 0x0278 (0x0338 - 0x00C0)
 class UExtractCollisionGeometryTool final : public USingleSelectionMeshEditingTool
@@ -3078,26 +3073,6 @@ public:
 };
 DUMPER7_ASSERTS_UExtractCollisionGeometryTool;
 
-// Class MeshModelingToolsExp.PhysicsInspectorToolBuilder
-// 0x0000 (0x0028 - 0x0028)
-class UPhysicsInspectorToolBuilder final : public UMultiSelectionMeshEditingToolBuilder
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("PhysicsInspectorToolBuilder")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"PhysicsInspectorToolBuilder")
-	}
-	static class UPhysicsInspectorToolBuilder* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPhysicsInspectorToolBuilder>();
-	}
-};
-DUMPER7_ASSERTS_UPhysicsInspectorToolBuilder;
-
 // Class MeshModelingToolsExp.PhysicsInspectorToolProperties
 // 0x0008 (0x00B8 - 0x00B0)
 class UPhysicsInspectorToolProperties final : public UInteractiveToolPropertySet
@@ -3121,6 +3096,34 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UPhysicsInspectorToolProperties;
+
+// Class MeshModelingToolsExp.PhysicsInspectorTool
+// 0x0048 (0x0110 - 0x00C8)
+class UPhysicsInspectorTool final : public UMultiSelectionMeshEditingTool
+{
+public:
+	uint8                                         Pad_C8[0x8];                                       // 0x00C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCollisionGeometryVisualizationProperties* VizSettings;                                    // 0x00D0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UPhysicsInspectorToolProperties*        Settings;                                          // 0x00D8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TArray<class UPhysicsObjectToolPropertySet*>  ObjectData;                                        // 0x00E0(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	TArray<class UPreviewGeometry*>               PreviewElements;                                   // 0x00F0(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_100[0x10];                                     // 0x0100(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PhysicsInspectorTool")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PhysicsInspectorTool")
+	}
+	static class UPhysicsInspectorTool* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPhysicsInspectorTool>();
+	}
+};
+DUMPER7_ASSERTS_UPhysicsInspectorTool;
 
 // Class MeshModelingToolsExp.SetCollisionGeometryToolBuilder
 // 0x0000 (0x0028 - 0x0028)
@@ -3487,33 +3490,6 @@ public:
 };
 DUMPER7_ASSERTS_URevolveBoundaryOperatorFactory;
 
-// Class MeshModelingToolsExp.RevolveBoundaryToolProperties
-// 0x0030 (0x0150 - 0x0120)
-class URevolveBoundaryToolProperties final : public URevolveProperties
-{
-public:
-	ERevolvePropertiesCapFillMode                 CapFillMode;                                       // 0x0120(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bDisplayInputMesh;                                 // 0x0121(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_122[0x6];                                      // 0x0122(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                AxisOrigin;                                        // 0x0128(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              AxisOrientation;                                   // 0x0140(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("RevolveBoundaryToolProperties")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"RevolveBoundaryToolProperties")
-	}
-	static class URevolveBoundaryToolProperties* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<URevolveBoundaryToolProperties>();
-	}
-};
-DUMPER7_ASSERTS_URevolveBoundaryToolProperties;
-
 // Class MeshModelingToolsExp.RevolveBoundaryTool
 // 0x0070 (0x0210 - 0x01A0)
 class URevolveBoundaryTool final : public UMeshBoundaryToolBase
@@ -3568,6 +3544,32 @@ public:
 	}
 };
 DUMPER7_ASSERTS_USeamSculptToolProperties;
+
+// Class MeshModelingToolsExp.SeamSculptTool
+// 0x0110 (0x0410 - 0x0300)
+class alignas(0x10) USeamSculptTool final : public UDynamicMeshBrushTool
+{
+public:
+	uint8                                         Pad_300[0x8];                                      // 0x0300(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class USeamSculptToolProperties*              Settings;                                          // 0x0308(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UPreviewGeometry*                       PreviewGeom;                                       // 0x0310(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_318[0xF8];                                     // 0x0318(0x00F8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SeamSculptTool")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SeamSculptTool")
+	}
+	static class USeamSculptTool* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USeamSculptTool>();
+	}
+};
+DUMPER7_ASSERTS_USeamSculptTool;
 
 // Class MeshModelingToolsExp.SelfUnionMeshesToolProperties
 // 0x0010 (0x00C0 - 0x00B0)
@@ -3889,6 +3891,30 @@ public:
 };
 DUMPER7_ASSERTS_UTriangulateSplinesToolProperties;
 
+// Class MeshModelingToolsExp.TriangulateSplinesTool
+// 0x0018 (0x0128 - 0x0110)
+class UTriangulateSplinesTool final : public UBaseMeshFromSplinesTool
+{
+public:
+	class UTriangulateSplinesToolProperties*      TriangulateProperties;                             // 0x0110(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_118[0x10];                                     // 0x0118(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("TriangulateSplinesTool")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"TriangulateSplinesTool")
+	}
+	static class UTriangulateSplinesTool* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UTriangulateSplinesTool>();
+	}
+};
+DUMPER7_ASSERTS_UTriangulateSplinesTool;
+
 // Class MeshModelingToolsExp.TriangulateSplinesToolBuilder
 // 0x0000 (0x0028 - 0x0028)
 class UTriangulateSplinesToolBuilder final : public UBaseMeshFromSplinesToolBuilder
@@ -4013,29 +4039,6 @@ public:
 };
 DUMPER7_ASSERTS_UVoxelBlendMeshesToolProperties;
 
-// Class MeshModelingToolsExp.VoxelBlendMeshesTool
-// 0x0008 (0x0138 - 0x0130)
-class UVoxelBlendMeshesTool final : public UBaseVoxelTool
-{
-public:
-	class UVoxelBlendMeshesToolProperties*        BlendProperties;                                   // 0x0130(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("VoxelBlendMeshesTool")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"VoxelBlendMeshesTool")
-	}
-	static class UVoxelBlendMeshesTool* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UVoxelBlendMeshesTool>();
-	}
-};
-DUMPER7_ASSERTS_UVoxelBlendMeshesTool;
-
 // Class MeshModelingToolsExp.VoxelBlendMeshesToolBuilder
 // 0x0000 (0x0028 - 0x0028)
 class UVoxelBlendMeshesToolBuilder final : public UBaseCreateFromSelectedToolBuilder
@@ -4079,6 +4082,26 @@ public:
 };
 DUMPER7_ASSERTS_UVoxelMorphologyMeshesTool;
 
+// Class MeshModelingToolsExp.VoxelMorphologyMeshesToolBuilder
+// 0x0000 (0x0028 - 0x0028)
+class UVoxelMorphologyMeshesToolBuilder final : public UBaseCreateFromSelectedToolBuilder
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("VoxelMorphologyMeshesToolBuilder")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"VoxelMorphologyMeshesToolBuilder")
+	}
+	static class UVoxelMorphologyMeshesToolBuilder* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UVoxelMorphologyMeshesToolBuilder>();
+	}
+};
+DUMPER7_ASSERTS_UVoxelMorphologyMeshesToolBuilder;
+
 // Class MeshModelingToolsExp.VoxelSolidifyMeshesToolProperties
 // 0x0020 (0x00D0 - 0x00B0)
 class UVoxelSolidifyMeshesToolProperties final : public UInteractiveToolPropertySet
@@ -4107,29 +4130,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UVoxelSolidifyMeshesToolProperties;
-
-// Class MeshModelingToolsExp.VoxelSolidifyMeshesTool
-// 0x0008 (0x0138 - 0x0130)
-class UVoxelSolidifyMeshesTool final : public UBaseVoxelTool
-{
-public:
-	class UVoxelSolidifyMeshesToolProperties*     SolidifyProperties;                                // 0x0130(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("VoxelSolidifyMeshesTool")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"VoxelSolidifyMeshesTool")
-	}
-	static class UVoxelSolidifyMeshesTool* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UVoxelSolidifyMeshesTool>();
-	}
-};
-DUMPER7_ASSERTS_UVoxelSolidifyMeshesTool;
 
 // Class MeshModelingToolsExp.VoxelSolidifyMeshesToolBuilder
 // 0x0000 (0x0028 - 0x0028)

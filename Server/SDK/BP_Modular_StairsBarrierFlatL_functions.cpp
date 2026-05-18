@@ -16,31 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Modular_StairsBarrierFlatL.BP_Modular_StairsBarrierFlatL_C.GetBuildingMeshes
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// class UMeshComponent**                  MainBody                                               (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-// TArray<class UMeshComponent*>*          AdditionalMeshes                                       (Parm, OutParm, ContainsInstancedReference)
-
-void ABP_Modular_StairsBarrierFlatL_C::GetBuildingMeshes(class UMeshComponent** MainBody, TArray<class UMeshComponent*>* AdditionalMeshes) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Modular_StairsBarrierFlatL_C", "GetBuildingMeshes");
-
-	Params::BP_Modular_StairsBarrierFlatL_C_GetBuildingMeshes Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (MainBody != nullptr)
-		*MainBody = Parms.MainBody;
-
-	if (AdditionalMeshes != nullptr)
-		*AdditionalMeshes = std::move(Parms.AdditionalMeshes);
-}
-
-
 // Function BP_Modular_StairsBarrierFlatL.BP_Modular_StairsBarrierFlatL_C.GetBuildingProgressMeshes
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
@@ -66,6 +41,31 @@ void ABP_Modular_StairsBarrierFlatL_C::GetBuildingProgressMeshes(float BuildingP
 
 	if (OutMeshesToShow != nullptr)
 		*OutMeshesToShow = std::move(Parms.OutMeshesToShow);
+}
+
+
+// Function BP_Modular_StairsBarrierFlatL.BP_Modular_StairsBarrierFlatL_C.GetBuildingMeshes
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// class UMeshComponent**                  MainBody                                               (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// TArray<class UMeshComponent*>*          AdditionalMeshes                                       (Parm, OutParm, ContainsInstancedReference)
+
+void ABP_Modular_StairsBarrierFlatL_C::GetBuildingMeshes(class UMeshComponent** MainBody, TArray<class UMeshComponent*>* AdditionalMeshes) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Modular_StairsBarrierFlatL_C", "GetBuildingMeshes");
+
+	Params::BP_Modular_StairsBarrierFlatL_C_GetBuildingMeshes Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (MainBody != nullptr)
+		*MainBody = Parms.MainBody;
+
+	if (AdditionalMeshes != nullptr)
+		*AdditionalMeshes = std::move(Parms.AdditionalMeshes);
 }
 
 

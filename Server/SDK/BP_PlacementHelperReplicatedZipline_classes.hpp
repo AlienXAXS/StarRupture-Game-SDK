@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 #include "Chimera_classes.hpp"
 
 
@@ -39,13 +39,13 @@ public:
 	int32                                         BeamOffsetNumber;                                  // 0x0A70(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_BP_PlacementHelperReplicatedZipline(int32 EntryPoint);
-	void OnConnectionsModified(const TArray<struct FVector>& NewAcceptedLocations, const TArray<struct FVector>& NewObstructedLocations, const TArray<struct FVector>& NewBlockedLocations);
-	void TurnOffBeams();
-	void TurnOnBeams();
-	void UpdateAcceptedBeamLocations();
-	void UpdateBeamsLocations();
 	void UpdateBlockedBeamLocations();
+	void UpdateBeamsLocations();
+	void UpdateAcceptedBeamLocations();
+	void TurnOnBeams();
+	void TurnOffBeams();
+	void OnConnectionsModified(const TArray<struct FVector>& NewAcceptedLocations, const TArray<struct FVector>& NewObstructedLocations, const TArray<struct FVector>& NewBlockedLocations);
+	void ExecuteUbergraph_BP_PlacementHelperReplicatedZipline(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

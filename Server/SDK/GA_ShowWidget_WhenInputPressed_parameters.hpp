@@ -14,23 +14,14 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function GA_ShowWidget_WhenInputPressed.GA_ShowWidget_WhenInputPressed_C.AfterPush_07A5E8B54EF4795F874768B89DFB5B45
-// 0x0008 (0x0008 - 0x0000)
-struct GA_ShowWidget_WhenInputPressed_C_AfterPush_07A5E8B54EF4795F874768B89DFB5B45 final
+// Function GA_ShowWidget_WhenInputPressed.GA_ShowWidget_WhenInputPressed_C.K2_OnEndAbility
+// 0x0001 (0x0001 - 0x0000)
+struct GA_ShowWidget_WhenInputPressed_C_K2_OnEndAbility final
 {
 public:
-	class UCommonActivatableWidget*               UserWidget;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_GA_ShowWidget_WhenInputPressed_C_AfterPush_07A5E8B54EF4795F874768B89DFB5B45;
-
-// Function GA_ShowWidget_WhenInputPressed.GA_ShowWidget_WhenInputPressed_C.BeforePush_07A5E8B54EF4795F874768B89DFB5B45
-// 0x0008 (0x0008 - 0x0000)
-struct GA_ShowWidget_WhenInputPressed_C_BeforePush_07A5E8B54EF4795F874768B89DFB5B45 final
-{
-public:
-	class UCommonActivatableWidget*               UserWidget;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_GA_ShowWidget_WhenInputPressed_C_BeforePush_07A5E8B54EF4795F874768B89DFB5B45;
+DUMPER7_ASSERTS_GA_ShowWidget_WhenInputPressed_C_K2_OnEndAbility;
 
 // Function GA_ShowWidget_WhenInputPressed.GA_ShowWidget_WhenInputPressed_C.ExecuteUbergraph_GA_ShowWidget_WhenInputPressed
 // 0x00A0 (0x00A0 - 0x0000)
@@ -62,14 +53,23 @@ public:
 };
 DUMPER7_ASSERTS_GA_ShowWidget_WhenInputPressed_C_ExecuteUbergraph_GA_ShowWidget_WhenInputPressed;
 
-// Function GA_ShowWidget_WhenInputPressed.GA_ShowWidget_WhenInputPressed_C.K2_OnEndAbility
-// 0x0001 (0x0001 - 0x0000)
-struct GA_ShowWidget_WhenInputPressed_C_K2_OnEndAbility final
+// Function GA_ShowWidget_WhenInputPressed.GA_ShowWidget_WhenInputPressed_C.BeforePush_07A5E8B54EF4795F874768B89DFB5B45
+// 0x0008 (0x0008 - 0x0000)
+struct GA_ShowWidget_WhenInputPressed_C_BeforePush_07A5E8B54EF4795F874768B89DFB5B45 final
 {
 public:
-	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UCommonActivatableWidget*               UserWidget;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_GA_ShowWidget_WhenInputPressed_C_K2_OnEndAbility;
+DUMPER7_ASSERTS_GA_ShowWidget_WhenInputPressed_C_BeforePush_07A5E8B54EF4795F874768B89DFB5B45;
+
+// Function GA_ShowWidget_WhenInputPressed.GA_ShowWidget_WhenInputPressed_C.AfterPush_07A5E8B54EF4795F874768B89DFB5B45
+// 0x0008 (0x0008 - 0x0000)
+struct GA_ShowWidget_WhenInputPressed_C_AfterPush_07A5E8B54EF4795F874768B89DFB5B45 final
+{
+public:
+	class UCommonActivatableWidget*               UserWidget;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_GA_ShowWidget_WhenInputPressed_C_AfterPush_07A5E8B54EF4795F874768B89DFB5B45;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

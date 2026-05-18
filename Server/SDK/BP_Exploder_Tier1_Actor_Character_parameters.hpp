@@ -19,6 +19,102 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.UserConstructionScript
+// 0x0003 (0x0003 - 0x0000)
+struct BP_Exploder_Tier1_Actor_Character_C_UserConstructionScript final
+{
+public:
+	bool                                          CallFunc_K2_AttachToComponent_ReturnValue;         // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_K2_AttachToComponent_ReturnValue_1;       // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_K2_AttachToComponent_ReturnValue_2;       // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_UserConstructionScript;
+
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_Exploder_Tier1_Actor_Character_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_ReceiveTick;
+
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnExitActorPool
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Exploder_Tier1_Actor_Character_C_OnExitActorPool final
+{
+public:
+	bool                                          CallFunc_IsActive_ReturnValue;                     // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_OnExitActorPool;
+
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnEnableExplosionTimer
+// 0x0040 (0x0040 - 0x0000)
+struct BP_Exploder_Tier1_Actor_Character_C_OnEnableExplosionTimer final
+{
+public:
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0000(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAudioComponent*                        CallFunc_SpawnSoundAtLocation_ReturnValue;         // 0x0018(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_22[0x6];                                       // 0x0022(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_GetTimeSeconds_ReturnValue;               // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_HasAuthority_ReturnValue;                 // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_LessEqual_DoubleDouble_ReturnValue;       // 0x0031(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_32[0x2];                                       // 0x0032(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         K2Node_VariableSet_ExplosionStartTimestamp_ImplicitCast; // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_LessEqual_DoubleDouble_A_ImplicitCast;    // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_OnEnableExplosionTimer;
+
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnEnableActivationTimer
+// 0x0030 (0x0030 - 0x0000)
+struct BP_Exploder_Tier1_Actor_Character_C_OnEnableActivationTimer final
+{
+public:
+	bool                                          CallFunc_HasAuthority_ReturnValue;                 // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAudioComponent*                        CallFunc_SpawnSoundAttached_ReturnValue;           // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_GetTimeSeconds_ReturnValue;               // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_LessEqual_DoubleDouble_ReturnValue;       // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_LessEqual_DoubleDouble_ReturnValue_1;     // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x001A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1B[0x1];                                       // 0x001B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         K2Node_VariableSet_ActivationStartTimestamp_ImplicitCast; // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_LessEqual_DoubleDouble_A_ImplicitCast;    // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_LessEqual_DoubleDouble_A_ImplicitCast_1;  // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_OnEnableActivationTimer;
+
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnDiedFromGas
+// 0x0108 (0x0108 - 0x0000)
+struct BP_Exploder_Tier1_Actor_Character_C_OnDiedFromGas final
+{
+public:
+	struct FHitResult                             LastHit;                                           // 0x0000(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	struct FGameplayTag                           KillingDamageTag;                                  // 0x0100(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_OnDiedFromGas;
+
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnAiDied
+// 0x0108 (0x0108 - 0x0000)
+struct BP_Exploder_Tier1_Actor_Character_C_OnAiDied final
+{
+public:
+	struct FHitResult                             HitResult;                                         // 0x0000(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	struct FGameplayTag                           KillingDamageTag;                                  // 0x0100(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_OnAiDied;
+
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.GetNiagaraEyeSystem
+// 0x0008 (0x0008 - 0x0000)
+struct BP_Exploder_Tier1_Actor_Character_C_GetNiagaraEyeSystem final
+{
+public:
+	class UNiagaraComponent*                      NewParam;                                          // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_GetNiagaraEyeSystem;
+
 // Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.ExecuteUbergraph_BP_Exploder_Tier1_Actor_Character
 // 0x0280 (0x0280 - 0x0000)
 struct BP_Exploder_Tier1_Actor_Character_C_ExecuteUbergraph_BP_Exploder_Tier1_Actor_Character final
@@ -53,101 +149,23 @@ public:
 };
 DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_ExecuteUbergraph_BP_Exploder_Tier1_Actor_Character;
 
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.GetNiagaraEyeSystem
-// 0x0008 (0x0008 - 0x0000)
-struct BP_Exploder_Tier1_Actor_Character_C_GetNiagaraEyeSystem final
-{
-public:
-	class UNiagaraComponent*                      NewParam;                                          // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_GetNiagaraEyeSystem;
-
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnAiDied
-// 0x0108 (0x0108 - 0x0000)
-struct BP_Exploder_Tier1_Actor_Character_C_OnAiDied final
-{
-public:
-	struct FHitResult                             HitResult;                                         // 0x0000(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	struct FGameplayTag                           KillingDamageTag;                                  // 0x0100(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_OnAiDied;
-
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnDiedFromGas
-// 0x0108 (0x0108 - 0x0000)
-struct BP_Exploder_Tier1_Actor_Character_C_OnDiedFromGas final
-{
-public:
-	struct FHitResult                             LastHit;                                           // 0x0000(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	struct FGameplayTag                           KillingDamageTag;                                  // 0x0100(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_OnDiedFromGas;
-
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnEnableActivationTimer
-// 0x0030 (0x0030 - 0x0000)
-struct BP_Exploder_Tier1_Actor_Character_C_OnEnableActivationTimer final
-{
-public:
-	bool                                          CallFunc_HasAuthority_ReturnValue;                 // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAudioComponent*                        CallFunc_SpawnSoundAttached_ReturnValue;           // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_GetTimeSeconds_ReturnValue;               // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_LessEqual_DoubleDouble_ReturnValue;       // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_LessEqual_DoubleDouble_ReturnValue_1;     // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x001A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1B[0x1];                                       // 0x001B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         K2Node_VariableSet_ActivationStartTimestamp_ImplicitCast; // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_LessEqual_DoubleDouble_A_ImplicitCast;    // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_LessEqual_DoubleDouble_A_ImplicitCast_1;  // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_OnEnableActivationTimer;
-
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnEnableExplosionTimer
-// 0x0040 (0x0040 - 0x0000)
-struct BP_Exploder_Tier1_Actor_Character_C_OnEnableExplosionTimer final
-{
-public:
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0000(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UAudioComponent*                        CallFunc_SpawnSoundAtLocation_ReturnValue;         // 0x0018(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_22[0x6];                                       // 0x0022(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        CallFunc_GetTimeSeconds_ReturnValue;               // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_HasAuthority_ReturnValue;                 // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_LessEqual_DoubleDouble_ReturnValue;       // 0x0031(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32[0x2];                                       // 0x0032(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         K2Node_VariableSet_ExplosionStartTimestamp_ImplicitCast; // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_LessEqual_DoubleDouble_A_ImplicitCast;    // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_OnEnableExplosionTimer;
-
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnExitActorPool
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.ShouldSpawnHugeCollision
 // 0x0001 (0x0001 - 0x0000)
-struct BP_Exploder_Tier1_Actor_Character_C_OnExitActorPool final
+struct BP_Exploder_Tier1_Actor_Character_C_ShouldSpawnHugeCollision final
 {
 public:
-	bool                                          CallFunc_IsActive_ReturnValue;                     // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_OnExitActorPool;
+DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_ShouldSpawnHugeCollision;
 
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct BP_Exploder_Tier1_Actor_Character_C_ReceiveTick final
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnMeshVisibilityUpdated
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Exploder_Tier1_Actor_Character_C_OnMeshVisibilityUpdated final
 {
 public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bIsMeshHidden;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_ReceiveTick;
-
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.UserConstructionScript
-// 0x0003 (0x0003 - 0x0000)
-struct BP_Exploder_Tier1_Actor_Character_C_UserConstructionScript final
-{
-public:
-	bool                                          CallFunc_K2_AttachToComponent_ReturnValue;         // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_K2_AttachToComponent_ReturnValue_1;       // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_K2_AttachToComponent_ReturnValue_2;       // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_UserConstructionScript;
+DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_OnMeshVisibilityUpdated;
 
 // Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.IsExploderDead
 // 0x0018 (0x0018 - 0x0000)
@@ -166,24 +184,6 @@ public:
 	double                                        CallFunc_Greater_DoubleDouble_A_ImplicitCast_1;    // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_IsExploderDead;
-
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnMeshVisibilityUpdated
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Exploder_Tier1_Actor_Character_C_OnMeshVisibilityUpdated final
-{
-public:
-	bool                                          bIsMeshHidden;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_OnMeshVisibilityUpdated;
-
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.ShouldSpawnHugeCollision
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Exploder_Tier1_Actor_Character_C_ShouldSpawnHugeCollision final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_ShouldSpawnHugeCollision;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

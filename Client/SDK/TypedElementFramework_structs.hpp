@@ -27,6 +27,15 @@ enum class ESCCModification : uint32
 	ESCCModification_MAX                     = 4,
 };
 
+// ScriptStruct TypedElementFramework.EditorDataStorageColumn
+// 0x0000 (0x0000 - 0x0000)
+#pragma pack(push, 0x1)
+struct SDK_ALIGN(0x01) FEditorDataStorageColumn
+{
+};
+#pragma pack(pop)
+DUMPER7_ASSERTS_FEditorDataStorageColumn;
+
 // ScriptStruct TypedElementFramework.EditorDataStorageTag
 // 0x0001 (0x0001 - 0x0000)
 struct FEditorDataStorageTag
@@ -36,12 +45,12 @@ public:
 };
 DUMPER7_ASSERTS_FEditorDataStorageTag;
 
-// ScriptStruct TypedElementFramework.TypedElementLoosePropertyTag
+// ScriptStruct TypedElementFramework.TypedElementSyncBackToWorldTag
 // 0x0000 (0x0001 - 0x0001)
-struct FTypedElementLoosePropertyTag final : public FEditorDataStorageTag
+struct FTypedElementSyncBackToWorldTag final : public FEditorDataStorageTag
 {
 };
-DUMPER7_ASSERTS_FTypedElementLoosePropertyTag;
+DUMPER7_ASSERTS_FTypedElementSyncBackToWorldTag;
 
 // ScriptStruct TypedElementFramework.ScriptTypedElementHandle
 // 0x0008 (0x0008 - 0x0000)
@@ -51,15 +60,6 @@ public:
 	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FScriptTypedElementHandle;
-
-// ScriptStruct TypedElementFramework.EditorDataStorageColumn
-// 0x0000 (0x0000 - 0x0000)
-#pragma pack(push, 0x1)
-struct SDK_ALIGN(0x01) FEditorDataStorageColumn
-{
-};
-#pragma pack(pop)
-DUMPER7_ASSERTS_FEditorDataStorageColumn;
 
 // ScriptStruct TypedElementFramework.TypedElementUObjectColumn
 // 0x0008 (0x0008 - 0x0000)
@@ -118,6 +118,13 @@ struct FTypedElementPropertyBagPlaceholderTag final : public FEditorDataStorageT
 {
 };
 DUMPER7_ASSERTS_FTypedElementPropertyBagPlaceholderTag;
+
+// ScriptStruct TypedElementFramework.TypedElementLoosePropertyTag
+// 0x0000 (0x0001 - 0x0001)
+struct FTypedElementLoosePropertyTag final : public FEditorDataStorageTag
+{
+};
+DUMPER7_ASSERTS_FTypedElementLoosePropertyTag;
 
 // ScriptStruct TypedElementFramework.TypedElementPropertyBagPlaceholderTypeInfoColumn
 // 0x0008 (0x0008 - 0x0000)
@@ -240,13 +247,6 @@ public:
 	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FScriptTypedElementListProxy;
-
-// ScriptStruct TypedElementFramework.TypedElementSyncBackToWorldTag
-// 0x0000 (0x0001 - 0x0001)
-struct FTypedElementSyncBackToWorldTag final : public FEditorDataStorageTag
-{
-};
-DUMPER7_ASSERTS_FTypedElementSyncBackToWorldTag;
 
 // ScriptStruct TypedElementFramework.TypedElementSyncFromWorldTag
 // 0x0000 (0x0001 - 0x0001)

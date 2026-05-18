@@ -18,40 +18,56 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.BP_OnCollisionHitsChanged
-// 0x01D0 (0x01D0 - 0x0000)
-struct BP_DroneRailHelperT1_C_BP_OnCollisionHitsChanged final
+// Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.SetSplineSegment
+// 0x0070 (0x0070 - 0x0000)
+struct BP_DroneRailHelperT1_C_SetSplineSegment final
 {
 public:
-	int32                                         Temp_int_Variable;                                 // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable;                     // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_14[0xC];                                       // 0x0014(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             Temp_struct_Variable;                              // 0x0020(0x0060)(ConstParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0080(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UBillboardComponent*                    CallFunc_AddComponent_ReturnValue;                 // 0x0088(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Subtract_IntInt_ReturnValue;              // 0x0090(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Variable_1;                               // 0x0094(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0098(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_9C[0x4];                                       // 0x009C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UBillboardComponent*                    CallFunc_Array_Get_Item;                           // 0x00A0(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_LessEqual_IntInt_ReturnValue;             // 0x00A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_A9[0x3];                                       // 0x00A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue_2;                 // 0x00AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x00B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Subtract_IntInt_ReturnValue_1;            // 0x00B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Subtract_IntInt_ReturnValue_2;            // 0x00B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_LessEqual_IntInt_ReturnValue_1;           // 0x00BC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_BD[0x3];                                       // 0x00BD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UBillboardComponent*                    CallFunc_Array_Get_Item_1;                         // 0x00C0(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	struct FHitResult                             CallFunc_K2_SetWorldLocation_SweepHitResult;       // 0x00C8(0x0100)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x01C8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x01CC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class USplineMeshComponent*                   SplineMeshComponent;                               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	int32                                         FirstPointIndex;                                   // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         SecondPointIndex;                                  // 0x000C(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_GetLocationAndTangentAtSplinePoint_Location; // 0x0010(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_GetLocationAndTangentAtSplinePoint_Tangent; // 0x0028(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_GetLocationAndTangentAtSplinePoint_Location_1; // 0x0040(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_GetLocationAndTangentAtSplinePoint_Tangent_1; // 0x0058(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_DroneRailHelperT1_C_BP_OnCollisionHitsChanged;
+DUMPER7_ASSERTS_BP_DroneRailHelperT1_C_SetSplineSegment;
+
+// Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.SetMeshColor
+// 0x0010 (0x0010 - 0x0000)
+struct BP_DroneRailHelperT1_C_SetMeshColor final
+{
+public:
+	struct FLinearColor                           Color;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_DroneRailHelperT1_C_SetMeshColor;
+
+// Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_DroneRailHelperT1_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_DroneRailHelperT1_C_ReceiveTick;
+
+// Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.OnSetReplacingExistingActor
+// 0x0001 (0x0001 - 0x0000)
+struct BP_DroneRailHelperT1_C_OnSetReplacingExistingActor final
+{
+public:
+	bool                                          bSet;                                              // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_DroneRailHelperT1_C_OnSetReplacingExistingActor;
+
+// Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.OnConfirmedPoint
+// 0x0148 (0x0148 - 0x0000)
+struct BP_DroneRailHelperT1_C_OnConfirmedPoint final
+{
+public:
+	struct FAuAPConfirmPointData                  NewPoint;                                          // 0x0000(0x0148)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, ContainsInstancedReference)
+};
+DUMPER7_ASSERTS_BP_DroneRailHelperT1_C_OnConfirmedPoint;
 
 // Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.ExecuteUbergraph_BP_DroneRailHelperT1
 // 0x0328 (0x0328 - 0x0000)
@@ -134,56 +150,40 @@ public:
 };
 DUMPER7_ASSERTS_BP_DroneRailHelperT1_C_ExecuteUbergraph_BP_DroneRailHelperT1;
 
-// Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.OnConfirmedPoint
-// 0x0148 (0x0148 - 0x0000)
-struct BP_DroneRailHelperT1_C_OnConfirmedPoint final
+// Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.BP_OnCollisionHitsChanged
+// 0x01D0 (0x01D0 - 0x0000)
+struct BP_DroneRailHelperT1_C_BP_OnCollisionHitsChanged final
 {
 public:
-	struct FAuAPConfirmPointData                  NewPoint;                                          // 0x0000(0x0148)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, ContainsInstancedReference)
+	int32                                         Temp_int_Variable;                                 // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_14[0xC];                                       // 0x0014(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Temp_struct_Variable;                              // 0x0020(0x0060)(ConstParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0080(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBillboardComponent*                    CallFunc_AddComponent_ReturnValue;                 // 0x0088(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Subtract_IntInt_ReturnValue;              // 0x0090(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Variable_1;                               // 0x0094(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0098(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_9C[0x4];                                       // 0x009C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBillboardComponent*                    CallFunc_Array_Get_Item;                           // 0x00A0(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_LessEqual_IntInt_ReturnValue;             // 0x00A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_A9[0x3];                                       // 0x00A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue_2;                 // 0x00AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x00B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Subtract_IntInt_ReturnValue_1;            // 0x00B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Subtract_IntInt_ReturnValue_2;            // 0x00B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_LessEqual_IntInt_ReturnValue_1;           // 0x00BC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_BD[0x3];                                       // 0x00BD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBillboardComponent*                    CallFunc_Array_Get_Item_1;                         // 0x00C0(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             CallFunc_K2_SetWorldLocation_SweepHitResult;       // 0x00C8(0x0100)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x01C8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x01CC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_DroneRailHelperT1_C_OnConfirmedPoint;
-
-// Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.OnSetReplacingExistingActor
-// 0x0001 (0x0001 - 0x0000)
-struct BP_DroneRailHelperT1_C_OnSetReplacingExistingActor final
-{
-public:
-	bool                                          bSet;                                              // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_DroneRailHelperT1_C_OnSetReplacingExistingActor;
-
-// Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct BP_DroneRailHelperT1_C_ReceiveTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_DroneRailHelperT1_C_ReceiveTick;
-
-// Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.SetMeshColor
-// 0x0010 (0x0010 - 0x0000)
-struct BP_DroneRailHelperT1_C_SetMeshColor final
-{
-public:
-	struct FLinearColor                           Color;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_DroneRailHelperT1_C_SetMeshColor;
-
-// Function BP_DroneRailHelperT1.BP_DroneRailHelperT1_C.SetSplineSegment
-// 0x0070 (0x0070 - 0x0000)
-struct BP_DroneRailHelperT1_C_SetSplineSegment final
-{
-public:
-	class USplineMeshComponent*                   SplineMeshComponent;                               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	int32                                         FirstPointIndex;                                   // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         SecondPointIndex;                                  // 0x000C(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_GetLocationAndTangentAtSplinePoint_Location; // 0x0010(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_GetLocationAndTangentAtSplinePoint_Tangent; // 0x0028(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_GetLocationAndTangentAtSplinePoint_Location_1; // 0x0040(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_GetLocationAndTangentAtSplinePoint_Tangent_1; // 0x0058(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_DroneRailHelperT1_C_SetSplineSegment;
+DUMPER7_ASSERTS_BP_DroneRailHelperT1_C_BP_OnCollisionHitsChanged;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

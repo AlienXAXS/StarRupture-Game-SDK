@@ -13,8 +13,8 @@
 #include "MassCommon_structs.hpp"
 #include "ZoneGraph_structs.hpp"
 #include "MassEntity_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "MassNavigation_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 SDK_NAMESPACE_START

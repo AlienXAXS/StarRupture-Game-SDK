@@ -18,18 +18,54 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_MeteOreBase.BP_MeteOreBase_C.BP_OnEnviroWaveStarted
-// 0x0034 (0x0034 - 0x0000)
-struct BP_MeteOreBase_C_BP_OnEnviroWaveStarted final
+// Function BP_MeteOreBase.BP_MeteOreBase_C.ShouldSpawnForListenServer
+// 0x0078 (0x0078 - 0x0000)
+struct BP_MeteOreBase_C_ShouldSpawnForListenServer final
 {
 public:
-	EEnviroWave                                   InWaveType;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EEnviroWaveStage                              InWaveStage;                                       // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrEnviroWaveSettings                  InWaveSettings;                                    // 0x0004(0x002C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-	float                                         InWaveProgress;                                    // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bShouldSpawnForLS;                                 // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0008(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Multiply_DoubleDouble_ReturnValue;        // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Square_ReturnValue;                       // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0030(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class APawn*                                  CallFunc_K2_GetPawn_ReturnValue;                   // 0x0040(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_1;        // 0x0050(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Vector_Distance2DSquared_ReturnValue;     // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_LessEqual_DoubleDouble_ReturnValue;       // 0x0070(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_MeteOreBase_C_BP_OnEnviroWaveStarted;
+DUMPER7_ASSERTS_BP_MeteOreBase_C_ShouldSpawnForListenServer;
+
+// Function BP_MeteOreBase.BP_MeteOreBase_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_MeteOreBase_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_MeteOreBase_C_ReceiveTick;
+
+// Function BP_MeteOreBase.BP_MeteOreBase_C.ReceiveEndPlay
+// 0x0001 (0x0001 - 0x0000)
+struct BP_MeteOreBase_C_ReceiveEndPlay final
+{
+public:
+	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_MeteOreBase_C_ReceiveEndPlay;
+
+// Function BP_MeteOreBase.BP_MeteOreBase_C.OnMiningWeakSpotDepletedCosmeticsStart
+// 0x0060 (0x0060 - 0x0000)
+struct BP_MeteOreBase_C_OnMiningWeakSpotDepletedCosmeticsStart final
+{
+public:
+	struct FTransform                             CosmeticTransform;                                 // 0x0000(0x0060)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_MeteOreBase_C_OnMiningWeakSpotDepletedCosmeticsStart;
 
 // Function BP_MeteOreBase.BP_MeteOreBase_C.ExecuteUbergraph_BP_MeteOreBase
 // 0x02B0 (0x02B0 - 0x0000)
@@ -87,54 +123,18 @@ public:
 };
 DUMPER7_ASSERTS_BP_MeteOreBase_C_ExecuteUbergraph_BP_MeteOreBase;
 
-// Function BP_MeteOreBase.BP_MeteOreBase_C.OnMiningWeakSpotDepletedCosmeticsStart
-// 0x0060 (0x0060 - 0x0000)
-struct BP_MeteOreBase_C_OnMiningWeakSpotDepletedCosmeticsStart final
+// Function BP_MeteOreBase.BP_MeteOreBase_C.BP_OnEnviroWaveStarted
+// 0x0034 (0x0034 - 0x0000)
+struct BP_MeteOreBase_C_BP_OnEnviroWaveStarted final
 {
 public:
-	struct FTransform                             CosmeticTransform;                                 // 0x0000(0x0060)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEnviroWave                                   InWaveType;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEnviroWaveStage                              InWaveStage;                                       // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCrEnviroWaveSettings                  InWaveSettings;                                    // 0x0004(0x002C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+	float                                         InWaveProgress;                                    // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_MeteOreBase_C_OnMiningWeakSpotDepletedCosmeticsStart;
-
-// Function BP_MeteOreBase.BP_MeteOreBase_C.ReceiveEndPlay
-// 0x0001 (0x0001 - 0x0000)
-struct BP_MeteOreBase_C_ReceiveEndPlay final
-{
-public:
-	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_MeteOreBase_C_ReceiveEndPlay;
-
-// Function BP_MeteOreBase.BP_MeteOreBase_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct BP_MeteOreBase_C_ReceiveTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_MeteOreBase_C_ReceiveTick;
-
-// Function BP_MeteOreBase.BP_MeteOreBase_C.ShouldSpawnForListenServer
-// 0x0078 (0x0078 - 0x0000)
-struct BP_MeteOreBase_C_ShouldSpawnForListenServer final
-{
-public:
-	bool                                          bShouldSpawnForLS;                                 // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0008(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Multiply_DoubleDouble_ReturnValue;        // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Square_ReturnValue;                       // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0030(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class APawn*                                  CallFunc_K2_GetPawn_ReturnValue;                   // 0x0040(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_1;        // 0x0050(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Vector_Distance2DSquared_ReturnValue;     // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_LessEqual_DoubleDouble_ReturnValue;       // 0x0070(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_MeteOreBase_C_ShouldSpawnForListenServer;
+DUMPER7_ASSERTS_BP_MeteOreBase_C_BP_OnEnviroWaveStarted;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

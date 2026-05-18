@@ -16,19 +16,127 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_ZipRail.BP_ZipRail_C.CanBePooled
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function BP_ZipRail.BP_ZipRail_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-bool ABP_ZipRail_C::CanBePooled()
+void ABP_ZipRail_C::ReceiveTick(float DeltaSeconds)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipRail_C", "CanBePooled");
+		Func = Class->GetFunction("BP_ZipRail_C", "ReceiveTick");
 
-	Params::BP_ZipRail_C_CanBePooled Parms{};
+	Params::BP_ZipRail_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_ZipRail.BP_ZipRail_C.ReceiveEndPlay
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_ZipRail_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ZipRail_C", "ReceiveEndPlay");
+
+	Params::BP_ZipRail_C_ReceiveEndPlay Parms{};
+
+	Parms.EndPlayReason = EndPlayReason;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_ZipRail.BP_ZipRail_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_ZipRail_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ZipRail_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_ZipRail.BP_ZipRail_C.PrepareForGame
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_ZipRail_C::PrepareForGame()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ZipRail_C", "PrepareForGame");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_ZipRail.BP_ZipRail_C.OnSplineReady
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class USplineComponent*                 InSpline                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void ABP_ZipRail_C::OnSplineReady(class USplineComponent* InSpline)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ZipRail_C", "OnSplineReady");
+
+	Params::BP_ZipRail_C_OnSplineReady Parms{};
+
+	Parms.InSpline = InSpline;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_ZipRail.BP_ZipRail_C.OnInteract
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class APlayerController*                InPc                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void ABP_ZipRail_C::OnInteract(class APlayerController* InPc)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ZipRail_C", "OnInteract");
+
+	Params::BP_ZipRail_C_OnInteract Parms{};
+
+	Parms.InPc = InPc;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_ZipRail.BP_ZipRail_C.IsRamp
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool ABP_ZipRail_C::IsRamp()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ZipRail_C", "IsRamp");
+
+	Params::BP_ZipRail_C_IsRamp Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -36,59 +144,19 @@ bool ABP_ZipRail_C::CanBePooled()
 }
 
 
-// Function BP_ZipRail.BP_ZipRail_C.EndZiprail
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    Jump_Off                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_ZipRail_C::EndZiprail(bool Jump_Off)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipRail_C", "EndZiprail");
-
-	Params::BP_ZipRail_C_EndZiprail Parms{};
-
-	Parms.Jump_Off = Jump_Off;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_ZipRail.BP_ZipRail_C.ExecuteUbergraph_BP_ZipRail
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_ZipRail_C::ExecuteUbergraph_BP_ZipRail(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipRail_C", "ExecuteUbergraph_BP_ZipRail");
-
-	Params::BP_ZipRail_C_ExecuteUbergraph_BP_ZipRail Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_ZipRail.BP_ZipRail_C.GetRampAngle
+// Function BP_ZipRail.BP_ZipRail_C.IsLadder
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// double                                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-double ABP_ZipRail_C::GetRampAngle()
+bool ABP_ZipRail_C::IsLadder()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipRail_C", "GetRampAngle");
+		Func = Class->GetFunction("BP_ZipRail_C", "IsLadder");
 
-	Params::BP_ZipRail_C_GetRampAngle Parms{};
+	Params::BP_ZipRail_C_IsLadder Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -122,19 +190,19 @@ void ABP_ZipRail_C::InpActEvt_Jump_K2Node_EnhancedInputActionEvent_0(const struc
 }
 
 
-// Function BP_ZipRail.BP_ZipRail_C.IsLadder
+// Function BP_ZipRail.BP_ZipRail_C.GetRampAngle
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double                                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-bool ABP_ZipRail_C::IsLadder()
+double ABP_ZipRail_C::GetRampAngle()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipRail_C", "IsLadder");
+		Func = Class->GetFunction("BP_ZipRail_C", "GetRampAngle");
 
-	Params::BP_ZipRail_C_IsLadder Parms{};
+	Params::BP_ZipRail_C_GetRampAngle Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -142,131 +210,63 @@ bool ABP_ZipRail_C::IsLadder()
 }
 
 
-// Function BP_ZipRail.BP_ZipRail_C.IsRamp
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Function BP_ZipRail.BP_ZipRail_C.ExecuteUbergraph_BP_ZipRail
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-bool ABP_ZipRail_C::IsRamp()
+void ABP_ZipRail_C::ExecuteUbergraph_BP_ZipRail(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipRail_C", "IsRamp");
+		Func = Class->GetFunction("BP_ZipRail_C", "ExecuteUbergraph_BP_ZipRail");
 
-	Params::BP_ZipRail_C_IsRamp Parms{};
+	Params::BP_ZipRail_C_ExecuteUbergraph_BP_ZipRail Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_ZipRail.BP_ZipRail_C.EndZiprail
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Jump_Off                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_ZipRail_C::EndZiprail(bool Jump_Off)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ZipRail_C", "EndZiprail");
+
+	Params::BP_ZipRail_C_EndZiprail Parms{};
+
+	Parms.Jump_Off = Jump_Off;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_ZipRail.BP_ZipRail_C.CanBePooled
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool ABP_ZipRail_C::CanBePooled()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ZipRail_C", "CanBePooled");
+
+	Params::BP_ZipRail_C_CanBePooled Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
-}
-
-
-// Function BP_ZipRail.BP_ZipRail_C.OnInteract
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class APlayerController*                InPc                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void ABP_ZipRail_C::OnInteract(class APlayerController* InPc)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipRail_C", "OnInteract");
-
-	Params::BP_ZipRail_C_OnInteract Parms{};
-
-	Parms.InPc = InPc;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_ZipRail.BP_ZipRail_C.OnSplineReady
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class USplineComponent*                 InSpline                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-
-void ABP_ZipRail_C::OnSplineReady(class USplineComponent* InSpline)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipRail_C", "OnSplineReady");
-
-	Params::BP_ZipRail_C_OnSplineReady Parms{};
-
-	Parms.InSpline = InSpline;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_ZipRail.BP_ZipRail_C.PrepareForGame
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_ZipRail_C::PrepareForGame()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipRail_C", "PrepareForGame");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_ZipRail.BP_ZipRail_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_ZipRail_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipRail_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_ZipRail.BP_ZipRail_C.ReceiveEndPlay
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_ZipRail_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipRail_C", "ReceiveEndPlay");
-
-	Params::BP_ZipRail_C_ReceiveEndPlay Parms{};
-
-	Parms.EndPlayReason = EndPlayReason;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_ZipRail.BP_ZipRail_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_ZipRail_C::ReceiveTick(float DeltaSeconds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipRail_C", "ReceiveTick");
-
-	Params::BP_ZipRail_C_ReceiveTick Parms{};
-
-	Parms.DeltaSeconds = DeltaSeconds;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 

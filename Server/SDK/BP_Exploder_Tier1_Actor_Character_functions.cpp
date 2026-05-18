@@ -16,21 +16,219 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.ExecuteUbergraph_BP_Exploder_Tier1_Actor_Character
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_Exploder_Tier1_Actor_Character_C::ExecuteUbergraph_BP_Exploder_Tier1_Actor_Character(int32 EntryPoint)
+void ABP_Exploder_Tier1_Actor_Character_C::UserConstructionScript()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "ExecuteUbergraph_BP_Exploder_Tier1_Actor_Character");
+		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "UserConstructionScript");
 
-	Params::BP_Exploder_Tier1_Actor_Character_C_ExecuteUbergraph_BP_Exploder_Tier1_Actor_Character Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
+
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.TryApplySpeedupRemoveActivator
+// (BlueprintEvent)
+
+void ABP_Exploder_Tier1_Actor_Character_C::TryApplySpeedupRemoveActivator()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "TryApplySpeedupRemoveActivator");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.TryApplySpeedup
+// (BlueprintEvent)
+
+void ABP_Exploder_Tier1_Actor_Character_C::TryApplySpeedup()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "TryApplySpeedup");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.StartExplosionTimer
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier1_Actor_Character_C::StartExplosionTimer()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "StartExplosionTimer");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.StartActivationTimer
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier1_Actor_Character_C::StartActivationTimer()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "StartActivationTimer");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Exploder_Tier1_Actor_Character_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "ReceiveTick");
+
+	Params::BP_Exploder_Tier1_Actor_Character_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnPrepareForPooling
+// (Event, Public, BlueprintEvent)
+
+void ABP_Exploder_Tier1_Actor_Character_C::OnPrepareForPooling()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "OnPrepareForPooling");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnPrepareForGame
+// (Event, Public, BlueprintEvent)
+
+void ABP_Exploder_Tier1_Actor_Character_C::OnPrepareForGame()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "OnPrepareForGame");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnExitActorPool
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier1_Actor_Character_C::OnExitActorPool()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "OnExitActorPool");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnEnterActorPool
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier1_Actor_Character_C::OnEnterActorPool()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "OnEnterActorPool");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnEnableExplosionTimer
+// (Private, BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier1_Actor_Character_C::OnEnableExplosionTimer()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "OnEnableExplosionTimer");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnEnableActivationTimer
+// (Private, BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier1_Actor_Character_C::OnEnableActivationTimer()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "OnEnableActivationTimer");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnDiedFromGas
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// const struct FHitResult&                LastHit                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+// const struct FGameplayTag&              KillingDamageTag                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Exploder_Tier1_Actor_Character_C::OnDiedFromGas(const struct FHitResult& LastHit, const struct FGameplayTag& KillingDamageTag)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "OnDiedFromGas");
+
+	Params::BP_Exploder_Tier1_Actor_Character_C_OnDiedFromGas Parms{};
+
+	Parms.LastHit = std::move(LastHit);
+	Parms.KillingDamageTag = std::move(KillingDamageTag);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnAiDied
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const struct FHitResult&                HitResult                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+// const struct FGameplayTag&              KillingDamageTag                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Exploder_Tier1_Actor_Character_C::OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "OnAiDied");
+
+	Params::BP_Exploder_Tier1_Actor_Character_C_OnAiDied Parms{};
+
+	Parms.HitResult = std::move(HitResult);
+	Parms.KillingDamageTag = std::move(KillingDamageTag);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -57,237 +255,39 @@ void ABP_Exploder_Tier1_Actor_Character_C::GetNiagaraEyeSystem(class UNiagaraCom
 }
 
 
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnAiDied
-// (Event, Public, HasOutParams, BlueprintEvent)
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.ExecuteUbergraph_BP_Exploder_Tier1_Actor_Character
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// const struct FHitResult&                HitResult                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-// const struct FGameplayTag&              KillingDamageTag                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Exploder_Tier1_Actor_Character_C::OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag)
+void ABP_Exploder_Tier1_Actor_Character_C::ExecuteUbergraph_BP_Exploder_Tier1_Actor_Character(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "OnAiDied");
+		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "ExecuteUbergraph_BP_Exploder_Tier1_Actor_Character");
 
-	Params::BP_Exploder_Tier1_Actor_Character_C_OnAiDied Parms{};
+	Params::BP_Exploder_Tier1_Actor_Character_C_ExecuteUbergraph_BP_Exploder_Tier1_Actor_Character Parms{};
 
-	Parms.HitResult = std::move(HitResult);
-	Parms.KillingDamageTag = std::move(KillingDamageTag);
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnDiedFromGas
-// (Event, Protected, HasOutParams, BlueprintEvent)
-// Parameters:
-// const struct FHitResult&                LastHit                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-// const struct FGameplayTag&              KillingDamageTag                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Exploder_Tier1_Actor_Character_C::OnDiedFromGas(const struct FHitResult& LastHit, const struct FGameplayTag& KillingDamageTag)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "OnDiedFromGas");
-
-	Params::BP_Exploder_Tier1_Actor_Character_C_OnDiedFromGas Parms{};
-
-	Parms.LastHit = std::move(LastHit);
-	Parms.KillingDamageTag = std::move(KillingDamageTag);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnEnableActivationTimer
-// (Private, BlueprintCallable, BlueprintEvent)
-
-void ABP_Exploder_Tier1_Actor_Character_C::OnEnableActivationTimer()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "OnEnableActivationTimer");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnEnableExplosionTimer
-// (Private, BlueprintCallable, BlueprintEvent)
-
-void ABP_Exploder_Tier1_Actor_Character_C::OnEnableExplosionTimer()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "OnEnableExplosionTimer");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnEnterActorPool
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Exploder_Tier1_Actor_Character_C::OnEnterActorPool()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "OnEnterActorPool");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnExitActorPool
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Exploder_Tier1_Actor_Character_C::OnExitActorPool()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "OnExitActorPool");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnPrepareForGame
-// (Event, Public, BlueprintEvent)
-
-void ABP_Exploder_Tier1_Actor_Character_C::OnPrepareForGame()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "OnPrepareForGame");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnPrepareForPooling
-// (Event, Public, BlueprintEvent)
-
-void ABP_Exploder_Tier1_Actor_Character_C::OnPrepareForPooling()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "OnPrepareForPooling");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Exploder_Tier1_Actor_Character_C::ReceiveTick(float DeltaSeconds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "ReceiveTick");
-
-	Params::BP_Exploder_Tier1_Actor_Character_C_ReceiveTick Parms{};
-
-	Parms.DeltaSeconds = DeltaSeconds;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.StartActivationTimer
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Exploder_Tier1_Actor_Character_C::StartActivationTimer()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "StartActivationTimer");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.StartExplosionTimer
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Exploder_Tier1_Actor_Character_C::StartExplosionTimer()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "StartExplosionTimer");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.TryApplySpeedup
-// (BlueprintEvent)
-
-void ABP_Exploder_Tier1_Actor_Character_C::TryApplySpeedup()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "TryApplySpeedup");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.TryApplySpeedupRemoveActivator
-// (BlueprintEvent)
-
-void ABP_Exploder_Tier1_Actor_Character_C::TryApplySpeedupRemoveActivator()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "TryApplySpeedupRemoveActivator");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Exploder_Tier1_Actor_Character_C::UserConstructionScript()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "UserConstructionScript");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.IsExploderDead
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.ShouldSpawnHugeCollision
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-bool ABP_Exploder_Tier1_Actor_Character_C::IsExploderDead() const
+bool ABP_Exploder_Tier1_Actor_Character_C::ShouldSpawnHugeCollision() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "IsExploderDead");
+		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "ShouldSpawnHugeCollision");
 
-	Params::BP_Exploder_Tier1_Actor_Character_C_IsExploderDead Parms{};
+	Params::BP_Exploder_Tier1_Actor_Character_C_ShouldSpawnHugeCollision Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -315,19 +315,19 @@ void ABP_Exploder_Tier1_Actor_Character_C::OnMeshVisibilityUpdated(bool bIsMeshH
 }
 
 
-// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.ShouldSpawnHugeCollision
+// Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.IsExploderDead
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-bool ABP_Exploder_Tier1_Actor_Character_C::ShouldSpawnHugeCollision() const
+bool ABP_Exploder_Tier1_Actor_Character_C::IsExploderDead() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "ShouldSpawnHugeCollision");
+		Func = Class->GetFunction("BP_Exploder_Tier1_Actor_Character_C", "IsExploderDead");
 
-	Params::BP_Exploder_Tier1_Actor_Character_C_ShouldSpawnHugeCollision Parms{};
+	Params::BP_Exploder_Tier1_Actor_Character_C_IsExploderDead Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 

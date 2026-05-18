@@ -14,6 +14,16 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function BTTask_Animal_Crab_RegisterFXEvent.BTTask_Animal_Crab_RegisterFXEvent_C.ReceiveExecuteAI
+// 0x0010 (0x0010 - 0x0000)
+struct BTTask_Animal_Crab_RegisterFXEvent_C_ReceiveExecuteAI final
+{
+public:
+	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BTTask_Animal_Crab_RegisterFXEvent_C_ReceiveExecuteAI;
+
 // Function BTTask_Animal_Crab_RegisterFXEvent.BTTask_Animal_Crab_RegisterFXEvent_C.ExecuteUbergraph_BTTask_Animal_Crab_RegisterFXEvent
 // 0x0028 (0x0028 - 0x0000)
 struct BTTask_Animal_Crab_RegisterFXEvent_C_ExecuteUbergraph_BTTask_Animal_Crab_RegisterFXEvent final
@@ -27,16 +37,6 @@ public:
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BTTask_Animal_Crab_RegisterFXEvent_C_ExecuteUbergraph_BTTask_Animal_Crab_RegisterFXEvent;
-
-// Function BTTask_Animal_Crab_RegisterFXEvent.BTTask_Animal_Crab_RegisterFXEvent_C.ReceiveExecuteAI
-// 0x0010 (0x0010 - 0x0000)
-struct BTTask_Animal_Crab_RegisterFXEvent_C_ReceiveExecuteAI final
-{
-public:
-	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BTTask_Animal_Crab_RegisterFXEvent_C_ReceiveExecuteAI;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

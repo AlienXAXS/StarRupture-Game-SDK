@@ -17,6 +17,33 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function BP_Airlock.BP_Airlock_C.PostPlayBuildingEffect
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Airlock_C_PostPlayBuildingEffect final
+{
+public:
+	bool                                          bWasBuildingEffectPlayed;                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Airlock_C_PostPlayBuildingEffect;
+
+// Function BP_Airlock.BP_Airlock_C.PlayInteractionUnSuccessfulSound
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Airlock_C_PlayInteractionUnSuccessfulSound final
+{
+public:
+	EDoorState                                    DoorState;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Airlock_C_PlayInteractionUnSuccessfulSound;
+
+// Function BP_Airlock.BP_Airlock_C.OnOpenStateChanged
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Airlock_C_OnOpenStateChanged final
+{
+public:
+	bool                                          bInOpen;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Airlock_C_OnOpenStateChanged;
+
 // Function BP_Airlock.BP_Airlock_C.ExecuteUbergraph_BP_Airlock
 // 0x0290 (0x0290 - 0x0000)
 struct BP_Airlock_C_ExecuteUbergraph_BP_Airlock final
@@ -126,32 +153,14 @@ public:
 };
 DUMPER7_ASSERTS_BP_Airlock_C_ExecuteUbergraph_BP_Airlock;
 
-// Function BP_Airlock.BP_Airlock_C.OnOpenStateChanged
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Airlock_C_OnOpenStateChanged final
+// Function BP_Airlock.BP_Airlock_C.GetAirlockInteriorComponent
+// 0x0008 (0x0008 - 0x0000)
+struct BP_Airlock_C_GetAirlockInteriorComponent final
 {
 public:
-	bool                                          bInOpen;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	const class UShapeComponent*                  ReturnValue;                                       // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_Airlock_C_OnOpenStateChanged;
-
-// Function BP_Airlock.BP_Airlock_C.PlayInteractionUnSuccessfulSound
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Airlock_C_PlayInteractionUnSuccessfulSound final
-{
-public:
-	EDoorState                                    DoorState;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Airlock_C_PlayInteractionUnSuccessfulSound;
-
-// Function BP_Airlock.BP_Airlock_C.PostPlayBuildingEffect
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Airlock_C_PostPlayBuildingEffect final
-{
-public:
-	bool                                          bWasBuildingEffectPlayed;                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Airlock_C_PostPlayBuildingEffect;
+DUMPER7_ASSERTS_BP_Airlock_C_GetAirlockInteriorComponent;
 
 // Function BP_Airlock.BP_Airlock_C.GetAirlockHabitatExteriorComponent
 // 0x0008 (0x0008 - 0x0000)
@@ -161,15 +170,6 @@ public:
 	const class UShapeComponent*                  ReturnValue;                                       // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Airlock_C_GetAirlockHabitatExteriorComponent;
-
-// Function BP_Airlock.BP_Airlock_C.GetAirlockInteriorComponent
-// 0x0008 (0x0008 - 0x0000)
-struct BP_Airlock_C_GetAirlockInteriorComponent final
-{
-public:
-	const class UShapeComponent*                  ReturnValue;                                       // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Airlock_C_GetAirlockInteriorComponent;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

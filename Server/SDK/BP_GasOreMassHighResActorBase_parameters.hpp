@@ -16,23 +16,32 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_GasOreMassHighResActorBase.BP_GasOreMassHighResActorBase_C.BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature
-// 0x0008 (0x0008 - 0x0000)
-struct BP_GasOreMassHighResActorBase_C_BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature final
+// Function BP_GasOreMassHighResActorBase.BP_GasOreMassHighResActorBase_C.OnMiningWeakSpotDepletedCosmeticsStart
+// 0x0060 (0x0060 - 0x0000)
+struct BP_GasOreMassHighResActorBase_C_OnMiningWeakSpotDepletedCosmeticsStart final
 {
 public:
-	class UNiagaraComponent*                      PSystem;                                           // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	struct FTransform                             CosmeticTransform;                                 // 0x0000(0x0060)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_GasOreMassHighResActorBase_C_BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature;
+DUMPER7_ASSERTS_BP_GasOreMassHighResActorBase_C_OnMiningWeakSpotDepletedCosmeticsStart;
 
-// Function BP_GasOreMassHighResActorBase.BP_GasOreMassHighResActorBase_C.BndEvt__BP_OreMassHighResActorBase_DepletedWeakSpotSystem_K2Node_ComponentBoundEvent_0_OnNiagaraSystemFinished__DelegateSignature
+// Function BP_GasOreMassHighResActorBase.BP_GasOreMassHighResActorBase_C.OnLoaded_F2A55B714CA31962EC2B1182DF4424C3
 // 0x0008 (0x0008 - 0x0000)
-struct BP_GasOreMassHighResActorBase_C_BndEvt__BP_OreMassHighResActorBase_DepletedWeakSpotSystem_K2Node_ComponentBoundEvent_0_OnNiagaraSystemFinished__DelegateSignature final
+struct BP_GasOreMassHighResActorBase_C_OnLoaded_F2A55B714CA31962EC2B1182DF4424C3 final
 {
 public:
-	class UNiagaraComponent*                      PSystem;                                           // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                Loaded;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_GasOreMassHighResActorBase_C_BndEvt__BP_OreMassHighResActorBase_DepletedWeakSpotSystem_K2Node_ComponentBoundEvent_0_OnNiagaraSystemFinished__DelegateSignature;
+DUMPER7_ASSERTS_BP_GasOreMassHighResActorBase_C_OnLoaded_F2A55B714CA31962EC2B1182DF4424C3;
+
+// Function BP_GasOreMassHighResActorBase.BP_GasOreMassHighResActorBase_C.OnLoaded_24996BB14058AF5058B4EB86D574B71F
+// 0x0008 (0x0008 - 0x0000)
+struct BP_GasOreMassHighResActorBase_C_OnLoaded_24996BB14058AF5058B4EB86D574B71F final
+{
+public:
+	class UObject*                                Loaded;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_GasOreMassHighResActorBase_C_OnLoaded_24996BB14058AF5058B4EB86D574B71F;
 
 // Function BP_GasOreMassHighResActorBase.BP_GasOreMassHighResActorBase_C.ExecuteUbergraph_BP_GasOreMassHighResActorBase
 // 0x01F0 (0x01F0 - 0x0000)
@@ -69,32 +78,23 @@ public:
 };
 DUMPER7_ASSERTS_BP_GasOreMassHighResActorBase_C_ExecuteUbergraph_BP_GasOreMassHighResActorBase;
 
-// Function BP_GasOreMassHighResActorBase.BP_GasOreMassHighResActorBase_C.OnLoaded_24996BB14058AF5058B4EB86D574B71F
+// Function BP_GasOreMassHighResActorBase.BP_GasOreMassHighResActorBase_C.BndEvt__BP_OreMassHighResActorBase_DepletedWeakSpotSystem_K2Node_ComponentBoundEvent_0_OnNiagaraSystemFinished__DelegateSignature
 // 0x0008 (0x0008 - 0x0000)
-struct BP_GasOreMassHighResActorBase_C_OnLoaded_24996BB14058AF5058B4EB86D574B71F final
+struct BP_GasOreMassHighResActorBase_C_BndEvt__BP_OreMassHighResActorBase_DepletedWeakSpotSystem_K2Node_ComponentBoundEvent_0_OnNiagaraSystemFinished__DelegateSignature final
 {
 public:
-	class UObject*                                Loaded;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      PSystem;                                           // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_GasOreMassHighResActorBase_C_OnLoaded_24996BB14058AF5058B4EB86D574B71F;
+DUMPER7_ASSERTS_BP_GasOreMassHighResActorBase_C_BndEvt__BP_OreMassHighResActorBase_DepletedWeakSpotSystem_K2Node_ComponentBoundEvent_0_OnNiagaraSystemFinished__DelegateSignature;
 
-// Function BP_GasOreMassHighResActorBase.BP_GasOreMassHighResActorBase_C.OnLoaded_F2A55B714CA31962EC2B1182DF4424C3
+// Function BP_GasOreMassHighResActorBase.BP_GasOreMassHighResActorBase_C.BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature
 // 0x0008 (0x0008 - 0x0000)
-struct BP_GasOreMassHighResActorBase_C_OnLoaded_F2A55B714CA31962EC2B1182DF4424C3 final
+struct BP_GasOreMassHighResActorBase_C_BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature final
 {
 public:
-	class UObject*                                Loaded;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      PSystem;                                           // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_GasOreMassHighResActorBase_C_OnLoaded_F2A55B714CA31962EC2B1182DF4424C3;
-
-// Function BP_GasOreMassHighResActorBase.BP_GasOreMassHighResActorBase_C.OnMiningWeakSpotDepletedCosmeticsStart
-// 0x0060 (0x0060 - 0x0000)
-struct BP_GasOreMassHighResActorBase_C_OnMiningWeakSpotDepletedCosmeticsStart final
-{
-public:
-	struct FTransform                             CosmeticTransform;                                 // 0x0000(0x0060)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_GasOreMassHighResActorBase_C_OnMiningWeakSpotDepletedCosmeticsStart;
+DUMPER7_ASSERTS_BP_GasOreMassHighResActorBase_C_BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

@@ -25,13 +25,13 @@ public:
 	double                                        MinPitch;                                          // 0x1150(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	bool CanInputKeyBePassedFromUIOnlyMode(const struct FKey& Key);
-	void cheat_Teleport2player(int32 PlayerId);
-	void ExecuteUbergraph_PC_PlayerControllerBase(int32 EntryPoint);
-	void InpActEvt_K_K2Node_InputDebugKeyEvent_0(const struct FKey& Key, const struct FInputActionValue& ActionValue);
-	void K2_ShowProfessionMenu();
-	void OnServerExecuteConsoleCommand();
 	void ReceiveBeginPlay();
+	void OnServerExecuteConsoleCommand();
+	void K2_ShowProfessionMenu();
+	void InpActEvt_K_K2Node_InputDebugKeyEvent_0(const struct FKey& Key, const struct FInputActionValue& ActionValue);
+	void ExecuteUbergraph_PC_PlayerControllerBase(int32 EntryPoint);
+	void cheat_Teleport2player(int32 PlayerId);
+	bool CanInputKeyBePassedFromUIOnlyMode(const struct FKey& Key);
 
 public:
 	static class UClass* StaticClass()

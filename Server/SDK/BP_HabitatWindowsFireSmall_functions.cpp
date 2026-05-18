@@ -16,73 +16,21 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_HabitatWindowsFireSmall.BP_HabitatWindowsFireSmall_C.ExecuteUbergraph_BP_HabitatWindowsFireSmall
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_HabitatWindowsFireSmall.BP_HabitatWindowsFireSmall_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ABP_HabitatWindowsFireSmall_C::ExecuteUbergraph_BP_HabitatWindowsFireSmall(int32 EntryPoint)
+void ABP_HabitatWindowsFireSmall_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HabitatWindowsFireSmall_C", "ExecuteUbergraph_BP_HabitatWindowsFireSmall");
+		Func = Class->GetFunction("BP_HabitatWindowsFireSmall_C", "ReceiveBeginPlay");
 
-	Params::BP_HabitatWindowsFireSmall_C_ExecuteUbergraph_BP_HabitatWindowsFireSmall Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_HabitatWindowsFireSmall.BP_HabitatWindowsFireSmall_C.OnEnviroWaveCanceled
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EEnviroWave                             WaveType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EEnviroWaveStage                        WaveStage                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-
-void ABP_HabitatWindowsFireSmall_C::OnEnviroWaveCanceled(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HabitatWindowsFireSmall_C", "OnEnviroWaveCanceled");
-
-	Params::BP_HabitatWindowsFireSmall_C_OnEnviroWaveCanceled Parms{};
-
-	Parms.WaveType = WaveType;
-	Parms.WaveStage = WaveStage;
-	Parms.WaveSettings = std::move(WaveSettings);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_HabitatWindowsFireSmall.BP_HabitatWindowsFireSmall_C.OnEnviroWaveFinished
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EEnviroWave                             WaveType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-
-void ABP_HabitatWindowsFireSmall_C::OnEnviroWaveFinished(EEnviroWave WaveType, const struct FCrEnviroWaveSettings& WaveSettings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HabitatWindowsFireSmall_C", "OnEnviroWaveFinished");
-
-	Params::BP_HabitatWindowsFireSmall_C_OnEnviroWaveFinished Parms{};
-
-	Parms.WaveType = WaveType;
-	Parms.WaveSettings = std::move(WaveSettings);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_HabitatWindowsFireSmall.BP_HabitatWindowsFireSmall_C.OnEnviroWaveForced
+// Function BP_HabitatWindowsFireSmall.BP_HabitatWindowsFireSmall_C.OnEnviroWaveTick
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // EEnviroWave                             WaveType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -90,14 +38,14 @@ void ABP_HabitatWindowsFireSmall_C::OnEnviroWaveFinished(EEnviroWave WaveType, c
 // const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
 // float                                   WaveProgress                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_HabitatWindowsFireSmall_C::OnEnviroWaveForced(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress)
+void ABP_HabitatWindowsFireSmall_C::OnEnviroWaveTick(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HabitatWindowsFireSmall_C", "OnEnviroWaveForced");
+		Func = Class->GetFunction("BP_HabitatWindowsFireSmall_C", "OnEnviroWaveTick");
 
-	Params::BP_HabitatWindowsFireSmall_C_OnEnviroWaveForced Parms{};
+	Params::BP_HabitatWindowsFireSmall_C_OnEnviroWaveTick Parms{};
 
 	Parms.WaveType = WaveType;
 	Parms.WaveStage = WaveStage;
@@ -134,7 +82,7 @@ void ABP_HabitatWindowsFireSmall_C::OnEnviroWaveStarted(EEnviroWave WaveType, EE
 }
 
 
-// Function BP_HabitatWindowsFireSmall.BP_HabitatWindowsFireSmall_C.OnEnviroWaveTick
+// Function BP_HabitatWindowsFireSmall.BP_HabitatWindowsFireSmall_C.OnEnviroWaveForced
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // EEnviroWave                             WaveType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -142,14 +90,14 @@ void ABP_HabitatWindowsFireSmall_C::OnEnviroWaveStarted(EEnviroWave WaveType, EE
 // const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
 // float                                   WaveProgress                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_HabitatWindowsFireSmall_C::OnEnviroWaveTick(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress)
+void ABP_HabitatWindowsFireSmall_C::OnEnviroWaveForced(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HabitatWindowsFireSmall_C", "OnEnviroWaveTick");
+		Func = Class->GetFunction("BP_HabitatWindowsFireSmall_C", "OnEnviroWaveForced");
 
-	Params::BP_HabitatWindowsFireSmall_C_OnEnviroWaveTick Parms{};
+	Params::BP_HabitatWindowsFireSmall_C_OnEnviroWaveForced Parms{};
 
 	Parms.WaveType = WaveType;
 	Parms.WaveStage = WaveStage;
@@ -160,17 +108,69 @@ void ABP_HabitatWindowsFireSmall_C::OnEnviroWaveTick(EEnviroWave WaveType, EEnvi
 }
 
 
-// Function BP_HabitatWindowsFireSmall.BP_HabitatWindowsFireSmall_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_HabitatWindowsFireSmall.BP_HabitatWindowsFireSmall_C.OnEnviroWaveFinished
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EEnviroWave                             WaveType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
 
-void ABP_HabitatWindowsFireSmall_C::ReceiveBeginPlay()
+void ABP_HabitatWindowsFireSmall_C::OnEnviroWaveFinished(EEnviroWave WaveType, const struct FCrEnviroWaveSettings& WaveSettings)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HabitatWindowsFireSmall_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_HabitatWindowsFireSmall_C", "OnEnviroWaveFinished");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_HabitatWindowsFireSmall_C_OnEnviroWaveFinished Parms{};
+
+	Parms.WaveType = WaveType;
+	Parms.WaveSettings = std::move(WaveSettings);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_HabitatWindowsFireSmall.BP_HabitatWindowsFireSmall_C.OnEnviroWaveCanceled
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EEnviroWave                             WaveType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEnviroWaveStage                        WaveStage                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+
+void ABP_HabitatWindowsFireSmall_C::OnEnviroWaveCanceled(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_HabitatWindowsFireSmall_C", "OnEnviroWaveCanceled");
+
+	Params::BP_HabitatWindowsFireSmall_C_OnEnviroWaveCanceled Parms{};
+
+	Parms.WaveType = WaveType;
+	Parms.WaveStage = WaveStage;
+	Parms.WaveSettings = std::move(WaveSettings);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_HabitatWindowsFireSmall.BP_HabitatWindowsFireSmall_C.ExecuteUbergraph_BP_HabitatWindowsFireSmall
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_HabitatWindowsFireSmall_C::ExecuteUbergraph_BP_HabitatWindowsFireSmall(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_HabitatWindowsFireSmall_C", "ExecuteUbergraph_BP_HabitatWindowsFireSmall");
+
+	Params::BP_HabitatWindowsFireSmall_C_ExecuteUbergraph_BP_HabitatWindowsFireSmall Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

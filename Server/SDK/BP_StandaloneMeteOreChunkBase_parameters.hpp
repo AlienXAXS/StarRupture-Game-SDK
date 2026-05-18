@@ -17,6 +17,56 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.GetCurrentGrowbackSubstage
+// 0x0028 (0x0028 - 0x0000)
+struct BP_StandaloneMeteOreChunkBase_C_GetCurrentGrowbackSubstage final
+{
+public:
+	EEnviroWaveGrowbackSubstage                   GrowbackSubstage;                                  // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCrEnviroWaveVisualsWorldSubsystem*     CallFunc_GetWorldSubsystem_ReturnValue;            // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsServer_ReturnValue;                     // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCrEnviroWaveSubsystem*                 CallFunc_GetWorldSubsystem_ReturnValue_1;          // 0x0018(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_StandaloneMeteOreChunkBase_C_GetCurrentGrowbackSubstage;
+
+// Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.GetCurrentFadeoutSubstage
+// 0x0028 (0x0028 - 0x0000)
+struct BP_StandaloneMeteOreChunkBase_C_GetCurrentFadeoutSubstage final
+{
+public:
+	EEnviroWaveFadeoutSubstage                    GrowbackSubstage;                                  // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCrEnviroWaveVisualsWorldSubsystem*     CallFunc_GetWorldSubsystem_ReturnValue;            // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsServer_ReturnValue;                     // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCrEnviroWaveSubsystem*                 CallFunc_GetWorldSubsystem_ReturnValue_1;          // 0x0018(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_StandaloneMeteOreChunkBase_C_GetCurrentFadeoutSubstage;
+
+// Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.GetCurrentEnvironmentalWaveStage
+// 0x0028 (0x0028 - 0x0000)
+struct BP_StandaloneMeteOreChunkBase_C_GetCurrentEnvironmentalWaveStage final
+{
+public:
+	EEnviroWaveStage                              CurrentEnviroWaveStage;                            // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCrEnviroWaveVisualsWorldSubsystem*     CallFunc_GetWorldSubsystem_ReturnValue;            // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsServer_ReturnValue;                     // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEnviroWaveStage                              CallFunc_GetCurrentStage_ReturnValue;              // 0x0012(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_13[0x5];                                       // 0x0013(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCrEnviroWaveSubsystem*                 CallFunc_GetWorldSubsystem_ReturnValue_1;          // 0x0018(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEnviroWaveStage                              CallFunc_GetCurrentStage_ReturnValue_1;            // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_StandaloneMeteOreChunkBase_C_GetCurrentEnvironmentalWaveStage;
+
 // Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.ExecuteUbergraph_BP_StandaloneMeteOreChunkBase
 // 0x0070 (0x0070 - 0x0000)
 struct BP_StandaloneMeteOreChunkBase_C_ExecuteUbergraph_BP_StandaloneMeteOreChunkBase final
@@ -46,56 +96,6 @@ public:
 	float                                         CallFunc_Delay_Duration_ImplicitCast;              // 0x006C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_StandaloneMeteOreChunkBase_C_ExecuteUbergraph_BP_StandaloneMeteOreChunkBase;
-
-// Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.GetCurrentEnvironmentalWaveStage
-// 0x0028 (0x0028 - 0x0000)
-struct BP_StandaloneMeteOreChunkBase_C_GetCurrentEnvironmentalWaveStage final
-{
-public:
-	EEnviroWaveStage                              CurrentEnviroWaveStage;                            // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCrEnviroWaveVisualsWorldSubsystem*     CallFunc_GetWorldSubsystem_ReturnValue;            // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsServer_ReturnValue;                     // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EEnviroWaveStage                              CallFunc_GetCurrentStage_ReturnValue;              // 0x0012(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_13[0x5];                                       // 0x0013(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCrEnviroWaveSubsystem*                 CallFunc_GetWorldSubsystem_ReturnValue_1;          // 0x0018(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EEnviroWaveStage                              CallFunc_GetCurrentStage_ReturnValue_1;            // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_StandaloneMeteOreChunkBase_C_GetCurrentEnvironmentalWaveStage;
-
-// Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.GetCurrentFadeoutSubstage
-// 0x0028 (0x0028 - 0x0000)
-struct BP_StandaloneMeteOreChunkBase_C_GetCurrentFadeoutSubstage final
-{
-public:
-	EEnviroWaveFadeoutSubstage                    GrowbackSubstage;                                  // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCrEnviroWaveVisualsWorldSubsystem*     CallFunc_GetWorldSubsystem_ReturnValue;            // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsServer_ReturnValue;                     // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCrEnviroWaveSubsystem*                 CallFunc_GetWorldSubsystem_ReturnValue_1;          // 0x0018(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_StandaloneMeteOreChunkBase_C_GetCurrentFadeoutSubstage;
-
-// Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.GetCurrentGrowbackSubstage
-// 0x0028 (0x0028 - 0x0000)
-struct BP_StandaloneMeteOreChunkBase_C_GetCurrentGrowbackSubstage final
-{
-public:
-	EEnviroWaveGrowbackSubstage                   GrowbackSubstage;                                  // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCrEnviroWaveVisualsWorldSubsystem*     CallFunc_GetWorldSubsystem_ReturnValue;            // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsServer_ReturnValue;                     // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCrEnviroWaveSubsystem*                 CallFunc_GetWorldSubsystem_ReturnValue_1;          // 0x0018(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_StandaloneMeteOreChunkBase_C_GetCurrentGrowbackSubstage;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

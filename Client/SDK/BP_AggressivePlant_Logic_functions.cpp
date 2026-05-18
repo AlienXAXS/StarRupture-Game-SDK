@@ -112,6 +112,48 @@ void ABP_AggressivePlant_Logic_C::ExecuteUbergraph_BP_AggressivePlant_Logic(int3
 }
 
 
+// Function BP_AggressivePlant_Logic.BP_AggressivePlant_Logic_C.GetCurrentWaveNormalizedProgress
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// double*                                 NormalizedCurrentStageProgress                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_AggressivePlant_Logic_C::GetCurrentWaveNormalizedProgress(double* NormalizedCurrentStageProgress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_AggressivePlant_Logic_C", "GetCurrentWaveNormalizedProgress");
+
+	Params::BP_AggressivePlant_Logic_C_GetCurrentWaveNormalizedProgress Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (NormalizedCurrentStageProgress != nullptr)
+		*NormalizedCurrentStageProgress = Parms.NormalizedCurrentStageProgress;
+}
+
+
+// Function BP_AggressivePlant_Logic.BP_AggressivePlant_Logic_C.GetCurrentWaveStage
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// EEnviroWaveStage*                       CurrentWaveStage                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_AggressivePlant_Logic_C::GetCurrentWaveStage(EEnviroWaveStage* CurrentWaveStage)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_AggressivePlant_Logic_C", "GetCurrentWaveStage");
+
+	Params::BP_AggressivePlant_Logic_C_GetCurrentWaveStage Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (CurrentWaveStage != nullptr)
+		*CurrentWaveStage = Parms.CurrentWaveStage;
+}
+
+
 // Function BP_AggressivePlant_Logic.BP_AggressivePlant_Logic_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
 

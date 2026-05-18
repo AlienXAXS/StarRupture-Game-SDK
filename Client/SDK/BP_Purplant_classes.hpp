@@ -10,23 +10,22 @@
 
 #include "Basic.hpp"
 
-#include "Chimera_structs.hpp"
-#include "BP_GatherableBaseActor_classes.hpp"
 #include "Engine_structs.hpp"
+#include "BP_GatherableBaseActor_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Purplant.BP_Purplant_C
-// 0x0010 (0x03B0 - 0x03A0)
+// 0x0010 (0x03B8 - 0x03A8)
 class ABP_Purplant_C final : public ABP_GatherableBaseActor_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Purplant_C;                      // 0x03A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UPointLightComponent*                   PointLight;                                        // 0x03A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Purplant_C;                      // 0x03A8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UPointLightComponent*                   PointLight;                                        // 0x03B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void BP_OnWaveChangedUpdate(EEnviroWave WaveType, EEnviroWaveStage WaveStage, EEnviroWaveFadeoutSubstage FadeoutSubstage, EEnviroWaveGrowbackSubstage GrowbackSubstage);
+	void BP_OnLightsVisualsTriggered(bool bLightsOn);
 	void ExecuteUbergraph_BP_Purplant(int32 EntryPoint);
 
 public:

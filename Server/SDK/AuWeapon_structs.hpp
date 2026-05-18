@@ -74,6 +74,18 @@ public:
 };
 DUMPER7_ASSERTS_FAuWeaponAttachmentSpawned;
 
+// ScriptStruct AuWeapon.AuWeaponItemInstance
+// 0x0028 (0x0050 - 0x0028)
+struct FAuWeaponItemInstance : public FAuItemInstance
+{
+public:
+	struct FGameplayAttributeData                 CurrentAmmo;                                       // 0x0028(0x0010)(SaveGame, NativeAccessSpecifierPublic)
+	TArray<struct FAuWeaponAttachmentSpawned>     WeaponActors;                                      // 0x0038(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          bFirstShotExecuted;                                // 0x0048(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAuWeaponItemInstance;
+
 // ScriptStruct AuWeapon.AuEquippedWeapon
 // 0x0100 (0x0100 - 0x0000)
 struct FAuEquippedWeapon final
@@ -126,18 +138,6 @@ public:
 	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FAuWeaponInstanceSaveData;
-
-// ScriptStruct AuWeapon.AuWeaponItemInstance
-// 0x0028 (0x0050 - 0x0028)
-struct FAuWeaponItemInstance : public FAuItemInstance
-{
-public:
-	struct FGameplayAttributeData                 CurrentAmmo;                                       // 0x0028(0x0010)(SaveGame, NativeAccessSpecifierPublic)
-	TArray<struct FAuWeaponAttachmentSpawned>     WeaponActors;                                      // 0x0038(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          bFirstShotExecuted;                                // 0x0048(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAuWeaponItemInstance;
 
 // ScriptStruct AuWeapon.AuWeaponAttachment
 // 0x0040 (0x0040 - 0x0000)

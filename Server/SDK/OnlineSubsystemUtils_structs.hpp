@@ -126,26 +126,6 @@ enum class ESpectatorReservationResult : uint8
 	ESpectatorReservationResult_MAX          = 16,
 };
 
-// ScriptStruct OnlineSubsystemUtils.BlueprintSessionResult
-// 0x0130 (0x0130 - 0x0000)
-struct alignas(0x08) FBlueprintSessionResult final
-{
-public:
-	uint8                                         Pad_0[0x130];                                      // 0x0000(0x0130)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FBlueprintSessionResult;
-
-// ScriptStruct OnlineSubsystemUtils.InAppPurchaseProductRequest2
-// 0x0018 (0x0018 - 0x0000)
-struct FInAppPurchaseProductRequest2 final
-{
-public:
-	class FString                                 ProductIdentifier;                                 // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsConsumable;                                     // 0x0010(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FInAppPurchaseProductRequest2;
-
 // ScriptStruct OnlineSubsystemUtils.InAppPurchaseReceiptInfo2
 // 0x0040 (0x0040 - 0x0000)
 struct FInAppPurchaseReceiptInfo2 final
@@ -157,6 +137,27 @@ public:
 	class FString                                 TransactionIdentifier;                             // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FInAppPurchaseReceiptInfo2;
+
+// ScriptStruct OnlineSubsystemUtils.BlueprintSessionResult
+// 0x0130 (0x0130 - 0x0000)
+struct alignas(0x08) FBlueprintSessionResult final
+{
+public:
+	uint8                                         Pad_0[0x130];                                      // 0x0000(0x0130)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FBlueprintSessionResult;
+
+// ScriptStruct OnlineSubsystemUtils.OnlineAccountStoredCredentials
+// 0x0040 (0x0040 - 0x0000)
+struct FOnlineAccountStoredCredentials final
+{
+public:
+	class FString                                 ID;                                                // 0x0000(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Token;                                             // 0x0010(0x0010)(Edit, ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Type;                                              // 0x0020(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<uint8>                                 TokenBytes;                                        // 0x0030(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FOnlineAccountStoredCredentials;
 
 // ScriptStruct OnlineSubsystemUtils.OnlineProxyStoreOffer
 // 0x00E8 (0x00E8 - 0x0000)
@@ -182,6 +183,28 @@ public:
 };
 DUMPER7_ASSERTS_FOnlineProxyStoreOffer;
 
+// ScriptStruct OnlineSubsystemUtils.InAppPurchaseRestoreInfo2
+// 0x0030 (0x0030 - 0x0000)
+struct FInAppPurchaseRestoreInfo2 final
+{
+public:
+	class FString                                 ItemName;                                          // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ItemId;                                            // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ValidationInfo;                                    // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FInAppPurchaseRestoreInfo2;
+
+// ScriptStruct OnlineSubsystemUtils.InAppPurchaseProductRequest2
+// 0x0018 (0x0018 - 0x0000)
+struct FInAppPurchaseProductRequest2 final
+{
+public:
+	class FString                                 ProductIdentifier;                                 // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsConsumable;                                     // 0x0010(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FInAppPurchaseProductRequest2;
+
 // ScriptStruct OnlineSubsystemUtils.PlayerReservation
 // 0x0058 (0x0058 - 0x0000)
 struct FPlayerReservation final
@@ -195,29 +218,6 @@ public:
 	float                                         ElapsedTime;                                       // 0x0054(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FPlayerReservation;
-
-// ScriptStruct OnlineSubsystemUtils.InAppPurchaseRestoreInfo2
-// 0x0030 (0x0030 - 0x0000)
-struct FInAppPurchaseRestoreInfo2 final
-{
-public:
-	class FString                                 ItemName;                                          // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ItemId;                                            // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ValidationInfo;                                    // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FInAppPurchaseRestoreInfo2;
-
-// ScriptStruct OnlineSubsystemUtils.OnlineAccountStoredCredentials
-// 0x0040 (0x0040 - 0x0000)
-struct FOnlineAccountStoredCredentials final
-{
-public:
-	class FString                                 ID;                                                // 0x0000(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Token;                                             // 0x0010(0x0010)(Edit, ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Type;                                              // 0x0020(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<uint8>                                 TokenBytes;                                        // 0x0030(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FOnlineAccountStoredCredentials;
 
 // ScriptStruct OnlineSubsystemUtils.InAppPurchaseProductInfo2
 // 0x00F8 (0x00F8 - 0x0000)

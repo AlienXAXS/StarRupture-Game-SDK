@@ -22,9 +22,9 @@ class UApplyScaleToBounds_C final : public UPCGBlueprintElement
 public:
 	void ExecuteWithContext(struct FPCGContext& InContext, const struct FPCGDataCollection& Input, struct FPCGDataCollection* Output);
 
-	struct FLinearColor NodeColorOverride() const;
-	class FName NodeTitleOverride() const;
 	bool PointLoopBody(const struct FPCGContext& InContext, const class UPCGPointData* InData, const struct FPCGPoint& InPoint, struct FPCGPoint* OutPoint, class UPCGMetadata* OutMetadata, int64 Iteration) const;
+	class FName NodeTitleOverride() const;
+	struct FLinearColor NodeColorOverride() const;
 
 public:
 	static class UClass* StaticClass()

@@ -16,20 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_BrushBase_DecalOnly.BP_BrushBase_DecalOnly_C.AlignToGround
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void ABP_BrushBase_DecalOnly_C::AlignToGround()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BrushBase_DecalOnly_C", "AlignToGround");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_BrushBase_DecalOnly.BP_BrushBase_DecalOnly_C.SetTranslucency
 // (Public, BlueprintCallable, BlueprintEvent)
 
@@ -39,6 +25,20 @@ void ABP_BrushBase_DecalOnly_C::SetTranslucency()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_BrushBase_DecalOnly_C", "SetTranslucency");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_BrushBase_DecalOnly.BP_BrushBase_DecalOnly_C.AlignToGround
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_BrushBase_DecalOnly_C::AlignToGround()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BrushBase_DecalOnly_C", "AlignToGround");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

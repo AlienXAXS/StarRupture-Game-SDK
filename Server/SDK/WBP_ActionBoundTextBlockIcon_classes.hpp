@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "UMG_structs.hpp"
 #include "ChimeraUI_classes.hpp"
+#include "UMG_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -30,12 +30,12 @@ public:
 	class UClass*                                 LongStyle;                                         // 0x16C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_WBP_ActionBoundTextBlockIcon(int32 EntryPoint);
-	void GetHeightSize(double* Height);
-	void SetButtonImageVisibility(ESlateVisibility InVisibility);
-	void SetLongIconText(bool bLong);
-	void SetTemporaryIconKey(const class FText& InText);
 	void SetTemporaryIconVisibility(bool bVisible);
+	void SetTemporaryIconKey(const class FText& InText);
+	void SetLongIconText(bool bLong);
+	void SetButtonImageVisibility(ESlateVisibility InVisibility);
+	void GetHeightSize(double* Height);
+	void ExecuteUbergraph_WBP_ActionBoundTextBlockIcon(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

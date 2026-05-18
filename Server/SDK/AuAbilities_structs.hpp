@@ -85,15 +85,16 @@ public:
 };
 DUMPER7_ASSERTS_FAuCustomTargetHandle;
 
-// ScriptStruct AuAbilities.AuTargetingCameraNetUpdate
-// 0x0030 (0x0030 - 0x0000)
-struct FAuTargetingCameraNetUpdate final
+// ScriptStruct AuAbilities.AuGameplayTargetDataFilter
+// 0x0020 (0x0020 - 0x0000)
+struct FAuGameplayTargetDataFilter
 {
 public:
-	struct FVector                                Location;                                          // 0x0000(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               Rotation;                                          // 0x0018(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class AActor>                     RequiredActorClass;                                // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<TSubclassOf<class AActor>>             IgnoreActorClasses;                                // 0x0010(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FAuTargetingCameraNetUpdate;
+DUMPER7_ASSERTS_FAuGameplayTargetDataFilter;
 
 // ScriptStruct AuAbilities.AuTargetDataHandle
 // 0x0002 (0x0002 - 0x0000)
@@ -129,65 +130,14 @@ public:
 };
 DUMPER7_ASSERTS_FAuTargetData;
 
-// ScriptStruct AuAbilities.AuCustomTraceRequest
-// 0x0038 (0x0038 - 0x0000)
-struct FAuCustomTraceRequest final
+// ScriptStruct AuAbilities.AuGameplayEffectContext
+// 0x0018 (0x00D8 - 0x00C0)
+struct FAuGameplayEffectContext : public FAuItemGameplayEffectContext
 {
 public:
-	class UAuCustomTrace*                         CustomTrace;                                       // 0x0000(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_8[0x10];                                       // 0x0008(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	ENxTraceType                                  TraceType;                                         // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ETraceTypeQuery                               TraceChannel;                                      // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A[0x6];                                       // 0x001A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<EObjectTypeQuery>                      ObjectTypes;                                       // 0x0020(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	ECollisionResponse                            CollisionResponse;                                 // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bTraceComplex : 1;                                 // 0x0031(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bReturnPhysicalMaterial : 1;                       // 0x0031(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bIgnoreSelf : 1;                                   // 0x0031(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_32[0x6];                                       // 0x0032(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C0[0x18];                                      // 0x00C0(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FAuCustomTraceRequest;
-
-// ScriptStruct AuAbilities.AuCustomTraceRequestConfig
-// 0x0038 (0x0038 - 0x0000)
-struct FAuCustomTraceRequestConfig final
-{
-public:
-	class FName                                   Name;                                              // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UScriptStruct*                          CustomStartLocation;                               // 0x0008(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	TSubclassOf<class UAuCustomTrace>             CustomTrace;                                       // 0x0010(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ENxTraceType                                  TraceType;                                         // 0x0018(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ETraceTypeQuery                               TraceChannel;                                      // 0x0019(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A[0x6];                                       // 0x001A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<EObjectTypeQuery>                      ObjectTypes;                                       // 0x0020(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	ECollisionResponse                            CollisionResponse;                                 // 0x0030(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bTraceComplex : 1;                                 // 0x0031(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bReturnPhysicalMaterial : 1;                       // 0x0031(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bIgnoreSelf : 1;                                   // 0x0031(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_32[0x6];                                       // 0x0032(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAuCustomTraceRequestConfig;
-
-// ScriptStruct AuAbilities.AuCountedGameplayTagItem
-// 0x000C (0x0018 - 0x000C)
-struct FAuCountedGameplayTagItem final : public FFastArraySerializerItem
-{
-public:
-	struct FGameplayTag                           Tag;                                               // 0x000C(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Count;                                             // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAuCountedGameplayTagItem;
-
-// ScriptStruct AuAbilities.AuTraceDebugParams
-// 0x0008 (0x0008 - 0x0000)
-struct FAuTraceDebugParams final
-{
-public:
-	float                                         Lifetime;                                          // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPersistent;                                       // 0x0004(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAuTraceDebugParams;
+DUMPER7_ASSERTS_FAuGameplayEffectContext;
 
 // ScriptStruct AuAbilities.AuCustomTraceDataHandle
 // 0x0018 (0x0018 - 0x0000)
@@ -208,14 +158,15 @@ public:
 };
 DUMPER7_ASSERTS_FAuGameplayAbilityActorInfo;
 
-// ScriptStruct AuAbilities.AuGameplayEffectContext
-// 0x0018 (0x00D8 - 0x00C0)
-struct FAuGameplayEffectContext : public FAuItemGameplayEffectContext
+// ScriptStruct AuAbilities.AuCountedGameplayTagItem
+// 0x000C (0x0018 - 0x000C)
+struct FAuCountedGameplayTagItem final : public FFastArraySerializerItem
 {
 public:
-	uint8                                         Pad_C0[0x18];                                      // 0x00C0(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FGameplayTag                           Tag;                                               // 0x000C(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FAuGameplayEffectContext;
+DUMPER7_ASSERTS_FAuCountedGameplayTagItem;
 
 // ScriptStruct AuAbilities.AuCountedGameplayTagReplication
 // 0x0140 (0x0248 - 0x0108)
@@ -339,6 +290,16 @@ public:
 };
 DUMPER7_ASSERTS_FAttributeEffectHandle;
 
+// ScriptStruct AuAbilities.AuTargetingCameraNetUpdate
+// 0x0030 (0x0030 - 0x0000)
+struct FAuTargetingCameraNetUpdate final
+{
+public:
+	struct FVector                                Location;                                          // 0x0000(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               Rotation;                                          // 0x0018(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAuTargetingCameraNetUpdate;
+
 // ScriptStruct AuAbilities.AuTargetRequest
 // 0x0014 (0x0014 - 0x0000)
 struct FAuTargetRequest final
@@ -425,17 +386,6 @@ public:
 };
 DUMPER7_ASSERTS_FAuTickTargetingHandle;
 
-// ScriptStruct AuAbilities.AuGameplayTargetDataFilter
-// 0x0020 (0x0020 - 0x0000)
-struct FAuGameplayTargetDataFilter
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class AActor>                     RequiredActorClass;                                // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<TSubclassOf<class AActor>>             IgnoreActorClasses;                                // 0x0010(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAuGameplayTargetDataFilter;
-
 // ScriptStruct AuAbilities.AuFilterClosestToCrosshair
 // 0x0000 (0x0020 - 0x0020)
 struct FAuFilterClosestToCrosshair final : public FAuGameplayTargetDataFilter
@@ -451,6 +401,26 @@ public:
 	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FAuGameplayTargetDataFilterHandle;
+
+// ScriptStruct AuAbilities.AuCustomTraceRequestConfig
+// 0x0038 (0x0038 - 0x0000)
+struct FAuCustomTraceRequestConfig final
+{
+public:
+	class FName                                   Name;                                              // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UScriptStruct*                          CustomStartLocation;                               // 0x0008(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	TSubclassOf<class UAuCustomTrace>             CustomTrace;                                       // 0x0010(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ENxTraceType                                  TraceType;                                         // 0x0018(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ETraceTypeQuery                               TraceChannel;                                      // 0x0019(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1A[0x6];                                       // 0x001A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<EObjectTypeQuery>                      ObjectTypes;                                       // 0x0020(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	ECollisionResponse                            CollisionResponse;                                 // 0x0030(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bTraceComplex : 1;                                 // 0x0031(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bReturnPhysicalMaterial : 1;                       // 0x0031(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bIgnoreSelf : 1;                                   // 0x0031(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_32[0x6];                                       // 0x0032(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAuCustomTraceRequestConfig;
 
 // ScriptStruct AuAbilities.AuCustomTraceData
 // 0x0008 (0x0008 - 0x0000)
@@ -473,6 +443,17 @@ public:
 };
 DUMPER7_ASSERTS_FAuRangeTraceData;
 
+// ScriptStruct AuAbilities.AuTraceDebugParams
+// 0x0008 (0x0008 - 0x0000)
+struct FAuTraceDebugParams final
+{
+public:
+	float                                         Lifetime;                                          // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPersistent;                                       // 0x0004(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAuTraceDebugParams;
+
 // ScriptStruct AuAbilities.AuCustomTraceStartLocation
 // 0x0008 (0x0008 - 0x0000)
 struct alignas(0x08) FAuCustomTraceStartLocation final
@@ -481,6 +462,25 @@ public:
 	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FAuCustomTraceStartLocation;
+
+// ScriptStruct AuAbilities.AuCustomTraceRequest
+// 0x0038 (0x0038 - 0x0000)
+struct FAuCustomTraceRequest final
+{
+public:
+	class UAuCustomTrace*                         CustomTrace;                                       // 0x0000(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_8[0x10];                                       // 0x0008(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	ENxTraceType                                  TraceType;                                         // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ETraceTypeQuery                               TraceChannel;                                      // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1A[0x6];                                       // 0x001A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<EObjectTypeQuery>                      ObjectTypes;                                       // 0x0020(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	ECollisionResponse                            CollisionResponse;                                 // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bTraceComplex : 1;                                 // 0x0031(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bReturnPhysicalMaterial : 1;                       // 0x0031(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bIgnoreSelf : 1;                                   // 0x0031(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_32[0x6];                                       // 0x0032(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAuCustomTraceRequest;
 
 // ScriptStruct AuAbilities.AuGATD_HitResultArray
 // 0x00C8 (0x00D0 - 0x0008)

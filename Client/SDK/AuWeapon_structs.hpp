@@ -11,10 +11,10 @@
 #include "Basic.hpp"
 
 #include "GameplayTags_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "AuAbilities_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
 #include "AuItems_structs.hpp"
-#include "CoreUObject_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -63,28 +63,16 @@ enum class ENxEquipWeapon : uint8
 	ENxEquipWeapon_MAX                       = 3,
 };
 
-// ScriptStruct AuWeapon.AuWeaponAttachmentSpawned
-// 0x0020 (0x0020 - 0x0000)
-struct FAuWeaponAttachmentSpawned final
+// ScriptStruct AuWeapon.AuWeaponInstanceSaveData
+// 0x0008 (0x0008 - 0x0000)
+struct FAuWeaponInstanceSaveData final
 {
 public:
-	class AAuWeaponActor*                         WeaponActor;                                       // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class FName                                   UnholsterSocket;                                   // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class FName>                           HolsterSockets;                                    // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         CurrentAmmo;                                       // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFirstShotExecuted;                                // 0x0004(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FAuWeaponAttachmentSpawned;
-
-// ScriptStruct AuWeapon.AuWeaponItemInstance
-// 0x0028 (0x0050 - 0x0028)
-struct FAuWeaponItemInstance : public FAuItemInstance
-{
-public:
-	struct FGameplayAttributeData                 CurrentAmmo;                                       // 0x0028(0x0010)(SaveGame, NativeAccessSpecifierPublic)
-	TArray<struct FAuWeaponAttachmentSpawned>     WeaponActors;                                      // 0x0038(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          bFirstShotExecuted;                                // 0x0048(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAuWeaponItemInstance;
+DUMPER7_ASSERTS_FAuWeaponInstanceSaveData;
 
 // ScriptStruct AuWeapon.AuEquippedWeapon
 // 0x0100 (0x0100 - 0x0000)
@@ -128,16 +116,28 @@ public:
 };
 DUMPER7_ASSERTS_FAuReloadStateRep;
 
-// ScriptStruct AuWeapon.AuWeaponInstanceSaveData
-// 0x0008 (0x0008 - 0x0000)
-struct FAuWeaponInstanceSaveData final
+// ScriptStruct AuWeapon.AuWeaponAttachmentSpawned
+// 0x0020 (0x0020 - 0x0000)
+struct FAuWeaponAttachmentSpawned final
 {
 public:
-	int32                                         CurrentAmmo;                                       // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bFirstShotExecuted;                                // 0x0004(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class AAuWeaponActor*                         WeaponActor;                                       // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class FName                                   UnholsterSocket;                                   // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FName>                           HolsterSockets;                                    // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FAuWeaponInstanceSaveData;
+DUMPER7_ASSERTS_FAuWeaponAttachmentSpawned;
+
+// ScriptStruct AuWeapon.AuWeaponItemInstance
+// 0x0028 (0x0050 - 0x0028)
+struct FAuWeaponItemInstance : public FAuItemInstance
+{
+public:
+	struct FGameplayAttributeData                 CurrentAmmo;                                       // 0x0028(0x0010)(SaveGame, NativeAccessSpecifierPublic)
+	TArray<struct FAuWeaponAttachmentSpawned>     WeaponActors;                                      // 0x0038(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          bFirstShotExecuted;                                // 0x0048(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAuWeaponItemInstance;
 
 // ScriptStruct AuWeapon.AuWeaponAttachment
 // 0x0040 (0x0040 - 0x0000)

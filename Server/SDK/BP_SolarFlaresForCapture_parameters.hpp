@@ -17,6 +17,15 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function BP_SolarFlaresForCapture.BP_SolarFlaresForCapture_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_SolarFlaresForCapture_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_SolarFlaresForCapture_C_ReceiveTick;
+
 // Function BP_SolarFlaresForCapture.BP_SolarFlaresForCapture_C.ExecuteUbergraph_BP_SolarFlaresForCapture
 // 0x0140 (0x0140 - 0x0000)
 struct BP_SolarFlaresForCapture_C_ExecuteUbergraph_BP_SolarFlaresForCapture final
@@ -32,15 +41,6 @@ public:
 	float                                         CallFunc_MakeRotator_Yaw_ImplicitCast;             // 0x0138(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_SolarFlaresForCapture_C_ExecuteUbergraph_BP_SolarFlaresForCapture;
-
-// Function BP_SolarFlaresForCapture.BP_SolarFlaresForCapture_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct BP_SolarFlaresForCapture_C_ReceiveTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_SolarFlaresForCapture_C_ReceiveTick;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

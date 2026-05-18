@@ -16,23 +16,17 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Pressurizer.BP_Pressurizer_C.ExecuteUbergraph_BP_Pressurizer
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_Pressurizer.BP_Pressurizer_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ABP_Pressurizer_C::ExecuteUbergraph_BP_Pressurizer(int32 EntryPoint)
+void ABP_Pressurizer_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Pressurizer_C", "ExecuteUbergraph_BP_Pressurizer");
+		Func = Class->GetFunction("BP_Pressurizer_C", "ReceiveBeginPlay");
 
-	Params::BP_Pressurizer_C_ExecuteUbergraph_BP_Pressurizer Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -56,17 +50,23 @@ void ABP_Pressurizer_C::OnBuildingStateChanged(ECrBuildingState InState)
 }
 
 
-// Function BP_Pressurizer.BP_Pressurizer_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_Pressurizer.BP_Pressurizer_C.ExecuteUbergraph_BP_Pressurizer
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Pressurizer_C::ReceiveBeginPlay()
+void ABP_Pressurizer_C::ExecuteUbergraph_BP_Pressurizer(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Pressurizer_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_Pressurizer_C", "ExecuteUbergraph_BP_Pressurizer");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_Pressurizer_C_ExecuteUbergraph_BP_Pressurizer Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

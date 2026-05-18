@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "NiagaraSimCaching_structs.hpp"
 #include "MovieScene_classes.hpp"
 #include "MovieSceneTracks_classes.hpp"
-#include "NiagaraSimCaching_structs.hpp"
 
 
 SDK_NAMESPACE_START

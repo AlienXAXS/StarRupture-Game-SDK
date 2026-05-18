@@ -16,23 +16,17 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Modular_BasePlatform.BP_Modular_BasePlatform_C.ExecuteUbergraph_BP_Modular_BasePlatform
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_Modular_BasePlatform.BP_Modular_BasePlatform_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_Modular_BasePlatform_C::ExecuteUbergraph_BP_Modular_BasePlatform(int32 EntryPoint)
+void ABP_Modular_BasePlatform_C::UserConstructionScript()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Modular_BasePlatform_C", "ExecuteUbergraph_BP_Modular_BasePlatform");
+		Func = Class->GetFunction("BP_Modular_BasePlatform_C", "UserConstructionScript");
 
-	Params::BP_Modular_BasePlatform_C_ExecuteUbergraph_BP_Modular_BasePlatform Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -50,17 +44,23 @@ void ABP_Modular_BasePlatform_C::ReceiveBeginPlay()
 }
 
 
-// Function BP_Modular_BasePlatform.BP_Modular_BasePlatform_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Function BP_Modular_BasePlatform.BP_Modular_BasePlatform_C.ExecuteUbergraph_BP_Modular_BasePlatform
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Modular_BasePlatform_C::UserConstructionScript()
+void ABP_Modular_BasePlatform_C::ExecuteUbergraph_BP_Modular_BasePlatform(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Modular_BasePlatform_C", "UserConstructionScript");
+		Func = Class->GetFunction("BP_Modular_BasePlatform_C", "ExecuteUbergraph_BP_Modular_BasePlatform");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_Modular_BasePlatform_C_ExecuteUbergraph_BP_Modular_BasePlatform Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

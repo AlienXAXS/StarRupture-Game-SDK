@@ -29,11 +29,11 @@ public:
 	class UMaterialInstanceDynamic*               MaterialInstance;                                  // 0x0388(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void Emissive__FinishedFunc();
-	void Emissive__UpdateFunc();
-	void ExecuteUbergraph_BP_Animal_GoldenBalloon(int32 EntryPoint);
-	void OnRunAwayStartedVisuals();
 	void ReceiveBeginPlay();
+	void OnRunAwayStartedVisuals();
+	void ExecuteUbergraph_BP_Animal_GoldenBalloon(int32 EntryPoint);
+	void Emissive__UpdateFunc();
+	void Emissive__FinishedFunc();
 
 public:
 	static class UClass* StaticClass()

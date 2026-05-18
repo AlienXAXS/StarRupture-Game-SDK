@@ -289,275 +289,6 @@ public:
 };
 DUMPER7_ASSERTS_URetargetRootSettings;
 
-// Class IKRig.IKRetargetGlobalSettings
-// 0x0038 (0x0060 - 0x0028)
-class UIKRetargetGlobalSettings final : public UObject
-{
-public:
-	struct FRetargetGlobalSettings                Settings;                                          // 0x0028(0x0034)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("IKRetargetGlobalSettings")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"IKRetargetGlobalSettings")
-	}
-	static class UIKRetargetGlobalSettings* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UIKRetargetGlobalSettings>();
-	}
-};
-DUMPER7_ASSERTS_UIKRetargetGlobalSettings;
-
-// Class IKRig.RetargetOpStack
-// 0x0010 (0x0038 - 0x0028)
-class URetargetOpStack final : public UObject
-{
-public:
-	TArray<class URetargetOpBase*>                RetargetOps;                                       // 0x0028(0x0010)(ZeroConstructor, Deprecated, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("RetargetOpStack")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"RetargetOpStack")
-	}
-	static class URetargetOpStack* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<URetargetOpStack>();
-	}
-};
-DUMPER7_ASSERTS_URetargetOpStack;
-
-// Class IKRig.IKRigEffectorGoal
-// 0x00D8 (0x0100 - 0x0028)
-class UIKRigEffectorGoal final : public UObject
-{
-public:
-	class FName                                   GoalName;                                          // 0x0028(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   BoneName;                                          // 0x0030(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PositionAlpha;                                     // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RotationAlpha;                                     // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             CurrentTransform;                                  // 0x0040(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             InitialTransform;                                  // 0x00A0(0x0060)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("IKRigEffectorGoal")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"IKRigEffectorGoal")
-	}
-	static class UIKRigEffectorGoal* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UIKRigEffectorGoal>();
-	}
-};
-DUMPER7_ASSERTS_UIKRigEffectorGoal;
-
-// Class IKRig.RetargetProfileLibrary
-// 0x0000 (0x0028 - 0x0028)
-class URetargetProfileLibrary final : public UBlueprintFunctionLibrary
-{
-public:
-	static struct FRetargetProfile CopyRetargetProfileFromRetargetAsset(const class UIKRetargeter* InRetargetAsset);
-	static class UIKRetargetOpControllerBase* GetOpControllerFromRetargetProfile(struct FRetargetProfile& InRetargetProfile, const class FName InRetargetOpName);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("RetargetProfileLibrary")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"RetargetProfileLibrary")
-	}
-	static class URetargetProfileLibrary* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<URetargetProfileLibrary>();
-	}
-};
-DUMPER7_ASSERTS_URetargetProfileLibrary;
-
-// Class IKRig.IKGoalCreatorInterface
-// 0x0000 (0x0000 - 0x0000)
-class IIKGoalCreatorInterface final
-{
-public:
-	void AddIKGoals(TMap<class FName, struct FIKRigGoal>* OutGoals);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("IKGoalCreatorInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"IKGoalCreatorInterface")
-	}
-	static class IIKGoalCreatorInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IIKGoalCreatorInterface>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IIKGoalCreatorInterface;
-
-// Class IKRig.IKRetargetScaleSourceController
-// 0x0000 (0x0030 - 0x0030)
-class UIKRetargetScaleSourceController final : public UIKRetargetOpControllerBase
-{
-public:
-	struct FIKRetargetScaleSourceOpSettings GetSettings();
-	void SetSettings(const struct FIKRetargetScaleSourceOpSettings& InSettings);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("IKRetargetScaleSourceController")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"IKRetargetScaleSourceController")
-	}
-	static class UIKRetargetScaleSourceController* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UIKRetargetScaleSourceController>();
-	}
-};
-DUMPER7_ASSERTS_UIKRetargetScaleSourceController;
-
-// Class IKRig.IKRetargetPelvisMotionController
-// 0x0000 (0x0030 - 0x0030)
-class UIKRetargetPelvisMotionController final : public UIKRetargetOpControllerBase
-{
-public:
-	struct FIKRetargetPelvisMotionOpSettings GetSettings();
-	class FName GetSourcePelvisBone();
-	class FName GetTargetPelvisBone();
-	void SetSettings(const struct FIKRetargetPelvisMotionOpSettings& InSettings);
-	void SetSourcePelvisBone(const class FName InSourcePelvisBone);
-	void SetTargetPelvisBone(const class FName InTargetPelvisBone);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("IKRetargetPelvisMotionController")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"IKRetargetPelvisMotionController")
-	}
-	static class UIKRetargetPelvisMotionController* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UIKRetargetPelvisMotionController>();
-	}
-};
-DUMPER7_ASSERTS_UIKRetargetPelvisMotionController;
-
-// Class IKRig.IKRetargetPinBoneController
-// 0x0000 (0x0030 - 0x0030)
-class UIKRetargetPinBoneController final : public UIKRetargetOpControllerBase
-{
-public:
-	void ClearAllBonePairs();
-	TMap<class FName, class FName> GetAllBonePairs();
-	struct FIKRetargetPinBoneOpSettings GetSettings();
-	void SetBonePair(const class FName InBoneToCopyFrom, const class FName InBoneToCopyTo);
-	void SetSettings(const struct FIKRetargetPinBoneOpSettings& InSettings);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("IKRetargetPinBoneController")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"IKRetargetPinBoneController")
-	}
-	static class UIKRetargetPinBoneController* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UIKRetargetPinBoneController>();
-	}
-};
-DUMPER7_ASSERTS_UIKRetargetPinBoneController;
-
-// Class IKRig.PinBoneOp
-// 0x00F0 (0x0120 - 0x0030)
-class UPinBoneOp final : public URetargetOpBase
-{
-public:
-	TArray<struct FPinBoneData>                   BonesToPin;                                        // 0x0030(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	ERetargetSourceOrTarget                       PinTo;                                             // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCopyTranslation;                                  // 0x0041(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCopyRotation;                                     // 0x0042(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCopyScale;                                        // 0x0043(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EPinBoneTranslationMode                       TranslationMode;                                   // 0x0044(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EPinBoneRotationMode                          RotationMode;                                      // 0x0045(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_46[0xA];                                       // 0x0046(0x000A)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             GlobalOffset;                                      // 0x0050(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             LocalOffset;                                       // 0x00B0(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bMaintainOffset;                                   // 0x0110(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	EPinBoneType                                  PinType;                                           // 0x0111(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_112[0xE];                                      // 0x0112(0x000E)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("PinBoneOp")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"PinBoneOp")
-	}
-	static class UPinBoneOp* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPinBoneOp>();
-	}
-};
-DUMPER7_ASSERTS_UPinBoneOp;
-
-// Class IKRig.IKRetargetAdditivePoseController
-// 0x0000 (0x0030 - 0x0030)
-class UIKRetargetAdditivePoseController final : public UIKRetargetOpControllerBase
-{
-public:
-	struct FIKRetargetAdditivePoseOpSettings GetSettings();
-	void SetSettings(const struct FIKRetargetAdditivePoseOpSettings& InSettings);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("IKRetargetAdditivePoseController")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"IKRetargetAdditivePoseController")
-	}
-	static class UIKRetargetAdditivePoseController* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UIKRetargetAdditivePoseController>();
-	}
-};
-DUMPER7_ASSERTS_UIKRetargetAdditivePoseController;
-
 // Class IKRig.IKRetargeter
 // 0x01E0 (0x0208 - 0x0028)
 class UIKRetargeter final : public UObject
@@ -623,35 +354,52 @@ public:
 };
 DUMPER7_ASSERTS_UIKRetargeter;
 
-// Class IKRig.IKRetargetRootMotionController
-// 0x0000 (0x0030 - 0x0030)
-class UIKRetargetRootMotionController final : public UIKRetargetOpControllerBase
+// Class IKRig.IKRetargetGlobalSettings
+// 0x0038 (0x0060 - 0x0028)
+class UIKRetargetGlobalSettings final : public UObject
 {
 public:
-	struct FIKRetargetRootMotionOpSettings GetSettings();
-	class FName GetSourceRootBone();
-	class FName GetTargetPelvisBone();
-	class FName GetTargetRootBone();
-	void SetSettings(const struct FIKRetargetRootMotionOpSettings& InSettings);
-	void SetSourceRootBone(const class FName InSourceRootBone);
-	void SetTargetPelvisBone(const class FName InTargetPelvisBone);
-	void SetTargetRootBone(const class FName InTargetRootBone);
+	struct FRetargetGlobalSettings                Settings;                                          // 0x0028(0x0034)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("IKRetargetRootMotionController")
+		STATIC_CLASS_IMPL("IKRetargetGlobalSettings")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"IKRetargetRootMotionController")
+		STATIC_NAME_IMPL(L"IKRetargetGlobalSettings")
 	}
-	static class UIKRetargetRootMotionController* GetDefaultObj()
+	static class UIKRetargetGlobalSettings* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UIKRetargetRootMotionController>();
+		return GetDefaultObjImpl<UIKRetargetGlobalSettings>();
 	}
 };
-DUMPER7_ASSERTS_UIKRetargetRootMotionController;
+DUMPER7_ASSERTS_UIKRetargetGlobalSettings;
+
+// Class IKRig.RetargetOpStack
+// 0x0010 (0x0038 - 0x0028)
+class URetargetOpStack final : public UObject
+{
+public:
+	TArray<class URetargetOpBase*>                RetargetOps;                                       // 0x0028(0x0010)(ZeroConstructor, Deprecated, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("RetargetOpStack")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"RetargetOpStack")
+	}
+	static class URetargetOpStack* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<URetargetOpStack>();
+	}
+};
+DUMPER7_ASSERTS_URetargetOpStack;
 
 // Class IKRig.RootMotionGeneratorOp
 // 0x0080 (0x00B0 - 0x0030)
@@ -685,53 +433,116 @@ public:
 };
 DUMPER7_ASSERTS_URootMotionGeneratorOp;
 
-// Class IKRig.IKRetargetRunIKRigController
-// 0x0000 (0x0030 - 0x0030)
-class UIKRetargetRunIKRigController final : public UIKRetargetOpControllerBase
+// Class IKRig.RetargetProfileLibrary
+// 0x0000 (0x0028 - 0x0028)
+class URetargetProfileLibrary final : public UBlueprintFunctionLibrary
 {
 public:
-	struct FIKRetargetRunIKRigOpSettings GetSettings();
-	void SetSettings(const struct FIKRetargetRunIKRigOpSettings& InSettings);
+	static struct FRetargetProfile CopyRetargetProfileFromRetargetAsset(const class UIKRetargeter* InRetargetAsset);
+	static class UIKRetargetOpControllerBase* GetOpControllerFromRetargetProfile(struct FRetargetProfile& InRetargetProfile, const class FName InRetargetOpName);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("IKRetargetRunIKRigController")
+		STATIC_CLASS_IMPL("RetargetProfileLibrary")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"IKRetargetRunIKRigController")
+		STATIC_NAME_IMPL(L"RetargetProfileLibrary")
 	}
-	static class UIKRetargetRunIKRigController* GetDefaultObj()
+	static class URetargetProfileLibrary* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UIKRetargetRunIKRigController>();
+		return GetDefaultObjImpl<URetargetProfileLibrary>();
 	}
 };
-DUMPER7_ASSERTS_UIKRetargetRunIKRigController;
+DUMPER7_ASSERTS_URetargetProfileLibrary;
 
-// Class IKRig.IKRetargetSpeedPlantingController
-// 0x0000 (0x0030 - 0x0030)
-class UIKRetargetSpeedPlantingController final : public UIKRetargetOpControllerBase
+// Class IKRig.IKGoalCreatorInterface
+// 0x0000 (0x0000 - 0x0000)
+class IIKGoalCreatorInterface final
 {
 public:
-	struct FIKRetargetSpeedPlantingOpSettings GetSettings();
-	void SetSettings(const struct FIKRetargetSpeedPlantingOpSettings& InSettings);
+	void AddIKGoals(TMap<class FName, struct FIKRigGoal>* OutGoals);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("IKRetargetSpeedPlantingController")
+		STATIC_CLASS_IMPL("IKGoalCreatorInterface")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"IKRetargetSpeedPlantingController")
+		STATIC_NAME_IMPL(L"IKGoalCreatorInterface")
 	}
-	static class UIKRetargetSpeedPlantingController* GetDefaultObj()
+	static class IIKGoalCreatorInterface* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UIKRetargetSpeedPlantingController>();
+		return GetDefaultObjImpl<IIKGoalCreatorInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
-DUMPER7_ASSERTS_UIKRetargetSpeedPlantingController;
+DUMPER7_ASSERTS_IIKGoalCreatorInterface;
+
+// Class IKRig.IKRetargetPelvisMotionController
+// 0x0000 (0x0030 - 0x0030)
+class UIKRetargetPelvisMotionController final : public UIKRetargetOpControllerBase
+{
+public:
+	struct FIKRetargetPelvisMotionOpSettings GetSettings();
+	class FName GetSourcePelvisBone();
+	class FName GetTargetPelvisBone();
+	void SetSettings(const struct FIKRetargetPelvisMotionOpSettings& InSettings);
+	void SetSourcePelvisBone(const class FName InSourcePelvisBone);
+	void SetTargetPelvisBone(const class FName InTargetPelvisBone);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("IKRetargetPelvisMotionController")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"IKRetargetPelvisMotionController")
+	}
+	static class UIKRetargetPelvisMotionController* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UIKRetargetPelvisMotionController>();
+	}
+};
+DUMPER7_ASSERTS_UIKRetargetPelvisMotionController;
+
+// Class IKRig.IKRetargetPinBoneController
+// 0x0000 (0x0030 - 0x0030)
+class UIKRetargetPinBoneController final : public UIKRetargetOpControllerBase
+{
+public:
+	void ClearAllBonePairs();
+	TMap<class FName, class FName> GetAllBonePairs();
+	struct FIKRetargetPinBoneOpSettings GetSettings();
+	void SetBonePair(const class FName InBoneToCopyFrom, const class FName InBoneToCopyTo);
+	void SetSettings(const struct FIKRetargetPinBoneOpSettings& InSettings);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("IKRetargetPinBoneController")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"IKRetargetPinBoneController")
+	}
+	static class UIKRetargetPinBoneController* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UIKRetargetPinBoneController>();
+	}
+};
+DUMPER7_ASSERTS_UIKRetargetPinBoneController;
 
 // Class IKRig.IKRetargetStrideWarpingController
 // 0x0000 (0x0030 - 0x0030)
@@ -756,6 +567,167 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UIKRetargetStrideWarpingController;
+
+// Class IKRig.PinBoneOp
+// 0x00F0 (0x0120 - 0x0030)
+class UPinBoneOp final : public URetargetOpBase
+{
+public:
+	TArray<struct FPinBoneData>                   BonesToPin;                                        // 0x0030(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	ERetargetSourceOrTarget                       PinTo;                                             // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCopyTranslation;                                  // 0x0041(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCopyRotation;                                     // 0x0042(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCopyScale;                                        // 0x0043(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EPinBoneTranslationMode                       TranslationMode;                                   // 0x0044(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EPinBoneRotationMode                          RotationMode;                                      // 0x0045(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_46[0xA];                                       // 0x0046(0x000A)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             GlobalOffset;                                      // 0x0050(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             LocalOffset;                                       // 0x00B0(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bMaintainOffset;                                   // 0x0110(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	EPinBoneType                                  PinType;                                           // 0x0111(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_112[0xE];                                      // 0x0112(0x000E)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PinBoneOp")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PinBoneOp")
+	}
+	static class UPinBoneOp* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPinBoneOp>();
+	}
+};
+DUMPER7_ASSERTS_UPinBoneOp;
+
+// Class IKRig.IKRetargetAdditivePoseController
+// 0x0000 (0x0030 - 0x0030)
+class UIKRetargetAdditivePoseController final : public UIKRetargetOpControllerBase
+{
+public:
+	struct FIKRetargetAdditivePoseOpSettings GetSettings();
+	void SetSettings(const struct FIKRetargetAdditivePoseOpSettings& InSettings);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("IKRetargetAdditivePoseController")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"IKRetargetAdditivePoseController")
+	}
+	static class UIKRetargetAdditivePoseController* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UIKRetargetAdditivePoseController>();
+	}
+};
+DUMPER7_ASSERTS_UIKRetargetAdditivePoseController;
+
+// Class IKRig.IKRetargetRootMotionController
+// 0x0000 (0x0030 - 0x0030)
+class UIKRetargetRootMotionController final : public UIKRetargetOpControllerBase
+{
+public:
+	struct FIKRetargetRootMotionOpSettings GetSettings();
+	class FName GetSourceRootBone();
+	class FName GetTargetPelvisBone();
+	class FName GetTargetRootBone();
+	void SetSettings(const struct FIKRetargetRootMotionOpSettings& InSettings);
+	void SetSourceRootBone(const class FName InSourceRootBone);
+	void SetTargetPelvisBone(const class FName InTargetPelvisBone);
+	void SetTargetRootBone(const class FName InTargetRootBone);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("IKRetargetRootMotionController")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"IKRetargetRootMotionController")
+	}
+	static class UIKRetargetRootMotionController* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UIKRetargetRootMotionController>();
+	}
+};
+DUMPER7_ASSERTS_UIKRetargetRootMotionController;
+
+// Class IKRig.IKRetargetRunIKRigController
+// 0x0000 (0x0030 - 0x0030)
+class UIKRetargetRunIKRigController final : public UIKRetargetOpControllerBase
+{
+public:
+	struct FIKRetargetRunIKRigOpSettings GetSettings();
+	void SetSettings(const struct FIKRetargetRunIKRigOpSettings& InSettings);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("IKRetargetRunIKRigController")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"IKRetargetRunIKRigController")
+	}
+	static class UIKRetargetRunIKRigController* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UIKRetargetRunIKRigController>();
+	}
+};
+DUMPER7_ASSERTS_UIKRetargetRunIKRigController;
+
+// Class IKRig.IKRetargetScaleSourceController
+// 0x0000 (0x0030 - 0x0030)
+class UIKRetargetScaleSourceController final : public UIKRetargetOpControllerBase
+{
+public:
+	struct FIKRetargetScaleSourceOpSettings GetSettings();
+	void SetSettings(const struct FIKRetargetScaleSourceOpSettings& InSettings);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("IKRetargetScaleSourceController")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"IKRetargetScaleSourceController")
+	}
+	static class UIKRetargetScaleSourceController* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UIKRetargetScaleSourceController>();
+	}
+};
+DUMPER7_ASSERTS_UIKRetargetScaleSourceController;
+
+// Class IKRig.IKRetargetSpeedPlantingController
+// 0x0000 (0x0030 - 0x0030)
+class UIKRetargetSpeedPlantingController final : public UIKRetargetOpControllerBase
+{
+public:
+	struct FIKRetargetSpeedPlantingOpSettings GetSettings();
+	void SetSettings(const struct FIKRetargetSpeedPlantingOpSettings& InSettings);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("IKRetargetSpeedPlantingController")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"IKRetargetSpeedPlantingController")
+	}
+	static class UIKRetargetSpeedPlantingController* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UIKRetargetSpeedPlantingController>();
+	}
+};
+DUMPER7_ASSERTS_UIKRetargetSpeedPlantingController;
 
 // Class IKRig.IKRigComponent
 // 0x0020 (0x00D8 - 0x00B8)
@@ -808,6 +780,34 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UIKRetargetProcessor;
+
+// Class IKRig.IKRigEffectorGoal
+// 0x00D8 (0x0100 - 0x0028)
+class UIKRigEffectorGoal final : public UObject
+{
+public:
+	class FName                                   GoalName;                                          // 0x0028(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   BoneName;                                          // 0x0030(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PositionAlpha;                                     // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RotationAlpha;                                     // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             CurrentTransform;                                  // 0x0040(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             InitialTransform;                                  // 0x00A0(0x0060)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("IKRigEffectorGoal")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"IKRigEffectorGoal")
+	}
+	static class UIKRigEffectorGoal* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UIKRigEffectorGoal>();
+	}
+};
+DUMPER7_ASSERTS_UIKRigEffectorGoal;
 
 // Class IKRig.IKRigDefinition
 // 0x00E8 (0x0110 - 0x0028)

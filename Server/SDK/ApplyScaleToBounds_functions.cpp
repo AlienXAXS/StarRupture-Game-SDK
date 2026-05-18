@@ -44,46 +44,6 @@ void UApplyScaleToBounds_C::ExecuteWithContext(struct FPCGContext& InContext, co
 }
 
 
-// Function ApplyScaleToBounds.ApplyScaleToBounds_C.NodeColorOverride
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// struct FLinearColor                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-struct FLinearColor UApplyScaleToBounds_C::NodeColorOverride() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ApplyScaleToBounds_C", "NodeColorOverride");
-
-	Params::ApplyScaleToBounds_C_NodeColorOverride Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ApplyScaleToBounds.ApplyScaleToBounds_C.NodeTitleOverride
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-class FName UApplyScaleToBounds_C::NodeTitleOverride() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ApplyScaleToBounds_C", "NodeTitleOverride");
-
-	Params::ApplyScaleToBounds_C_NodeTitleOverride Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
 // Function ApplyScaleToBounds.ApplyScaleToBounds_C.PointLoopBody
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
@@ -114,6 +74,46 @@ bool UApplyScaleToBounds_C::PointLoopBody(const struct FPCGContext& InContext, c
 
 	if (OutPoint != nullptr)
 		*OutPoint = std::move(Parms.OutPoint);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ApplyScaleToBounds.ApplyScaleToBounds_C.NodeTitleOverride
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+class FName UApplyScaleToBounds_C::NodeTitleOverride() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ApplyScaleToBounds_C", "NodeTitleOverride");
+
+	Params::ApplyScaleToBounds_C_NodeTitleOverride Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ApplyScaleToBounds.ApplyScaleToBounds_C.NodeColorOverride
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// struct FLinearColor                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+struct FLinearColor UApplyScaleToBounds_C::NodeColorOverride() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ApplyScaleToBounds_C", "NodeColorOverride");
+
+	Params::ApplyScaleToBounds_C_NodeColorOverride Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
 }

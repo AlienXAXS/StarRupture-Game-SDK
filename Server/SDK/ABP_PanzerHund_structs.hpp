@@ -16,6 +16,21 @@
 
 SDK_NAMESPACE_START
 
+// ScriptStruct ABP_PanzerHund.ABP_PanzerHund_C.AnimBlueprintGeneratedMutableData
+// 0x0017 (0x0018 - 0x0001)
+struct ABP_PanzerHund::FAnimBlueprintGeneratedMutableData final : public FAnimBlueprintMutableData
+{
+public:
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         __FloatProperty;                                   // 0x0004(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          __BoolProperty_0;                                  // 0x0008(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         __FloatProperty_1;                                 // 0x000C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         __FloatProperty_2;                                 // 0x0010(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         __ByteProperty_3;                                  // 0x0014(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_ABP_PanzerHund__FAnimBlueprintGeneratedMutableData;
+
 // ScriptStruct ABP_PanzerHund.ABP_PanzerHund_C.AnimBlueprintGeneratedConstantData
 // 0x0AC7 (0x0AC8 - 0x0001)
 struct ABP_PanzerHund::FAnimBlueprintGeneratedConstantData final : public FAnimBlueprintConstantData
@@ -116,20 +131,5 @@ public:
 	struct FAnimNodeExposedValueHandler_PropertyAccess AnimGraphNode_ControlRig;                     // 0x0A98(0x0030)()
 };
 DUMPER7_ASSERTS_ABP_PanzerHund__FAnimBlueprintGeneratedConstantData;
-
-// ScriptStruct ABP_PanzerHund.ABP_PanzerHund_C.AnimBlueprintGeneratedMutableData
-// 0x0017 (0x0018 - 0x0001)
-struct ABP_PanzerHund::FAnimBlueprintGeneratedMutableData final : public FAnimBlueprintMutableData
-{
-public:
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         __FloatProperty;                                   // 0x0004(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          __BoolProperty_0;                                  // 0x0008(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         __FloatProperty_1;                                 // 0x000C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         __FloatProperty_2;                                 // 0x0010(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         __ByteProperty_3;                                  // 0x0014(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_ABP_PanzerHund__FAnimBlueprintGeneratedMutableData;
 
 SDK_NAMESPACE_END

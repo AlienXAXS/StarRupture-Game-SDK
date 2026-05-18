@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Gatherable_Thornfruit_Fruit.BP_Gatherable_Thornfruit_Fruit_C
-// 0x0000 (0x03A0 - 0x03A0)
+// 0x0000 (0x03A8 - 0x03A8)
 class ABP_Gatherable_Thornfruit_Fruit_C final : public ABP_GatherableBaseActor_C
 {
 public:

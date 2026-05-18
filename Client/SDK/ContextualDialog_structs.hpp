@@ -62,18 +62,6 @@ enum class EContextualResponsePolicy : uint8
 	EContextualResponsePolicy_MAX            = 5,
 };
 
-// ScriptStruct ContextualDialog.PropertyDefinition
-// 0x0038 (0x0040 - 0x0008)
-struct FPropertyDefinition final : public FTableRowBase
-{
-public:
-	class FString                                 PropertyName;                                      // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   ValueType;                                         // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Description;                                       // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class FString>                         Values;                                            // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FPropertyDefinition;
-
 // ScriptStruct ContextualDialog.ContextualResponseVoiceResponse
 // 0x0078 (0x0080 - 0x0008)
 struct FContextualResponseVoiceResponse final : public FTableRowBase
@@ -137,6 +125,72 @@ public:
 };
 DUMPER7_ASSERTS_FPropertiesSet;
 
+// ScriptStruct ContextualDialog.Criterion
+// 0x0028 (0x0030 - 0x0008)
+struct FCriterion final : public FTableRowBase
+{
+public:
+	class FString                                 KeyName;                                           // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        AValueAsNumber;                                    // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        BValueAsNumber;                                    // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ValueAsName;                                       // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCriterion;
+
+// ScriptStruct ContextualDialog.PropertyDefinition
+// 0x0038 (0x0040 - 0x0008)
+struct FPropertyDefinition final : public FTableRowBase
+{
+public:
+	class FString                                 PropertyName;                                      // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ValueType;                                         // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Description;                                       // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         Values;                                            // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FPropertyDefinition;
+
+// ScriptStruct ContextualDialog.ContextualRuleSaveData
+// 0x0018 (0x0018 - 0x0000)
+struct FContextualRuleSaveData final
+{
+public:
+	TArray<class FName>                           ExecutedResponsesNames;                            // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	int32                                         CurrentResponseIndex;                              // 0x0010(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FContextualRuleSaveData;
+
+// ScriptStruct ContextualDialog.LocalDynamicPropertiesMap
+// 0x0050 (0x0058 - 0x0008)
+struct FLocalDynamicPropertiesMap final : public FTableRowBase
+{
+public:
+	TMap<class FName, float>                      LocalDynamicPropertiesMap;                         // 0x0008(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLocalDynamicPropertiesMap;
+
+// ScriptStruct ContextualDialog.ContextualDialogSubsystemSaveData
+// 0x0190 (0x0190 - 0x0000)
+struct FContextualDialogSubsystemSaveData final
+{
+public:
+	TSet<class FName>                             UsedRules;                                         // 0x0000(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+	TMap<class FName, float>                      GlobalCooldownsTimeLeftForResponsesMap;            // 0x0050(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+	TMap<class FName, float>                      GlobalDynamicPropertiesMap;                        // 0x00A0(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FContextualRuleSaveData> RulesSaveData;                                 // 0x00F0(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+	TMap<class FString, struct FLocalDynamicPropertiesMap> LocalDynamicPropertiesMapForNetId;        // 0x0140(0x0050)(SaveGame, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FContextualDialogSubsystemSaveData;
+
+// ScriptStruct ContextualDialog.RuleResponseLocalCooldownData
+// 0x0050 (0x0058 - 0x0008)
+struct FRuleResponseLocalCooldownData final : public FTableRowBase
+{
+public:
+	TMap<class FName, float>                      ResponseCooldownTimeLeft;                          // 0x0008(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRuleResponseLocalCooldownData;
+
 // ScriptStruct ContextualDialog.Condition
 // 0x0030 (0x0038 - 0x0008)
 struct FCondition final : public FTableRowBase
@@ -150,36 +204,6 @@ public:
 	class FString                                 ValueWantedString;                                 // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCondition;
-
-// ScriptStruct ContextualDialog.RuleResponseLocalCooldownData
-// 0x0050 (0x0058 - 0x0008)
-struct FRuleResponseLocalCooldownData final : public FTableRowBase
-{
-public:
-	TMap<class FName, float>                      ResponseCooldownTimeLeft;                          // 0x0008(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRuleResponseLocalCooldownData;
-
-// ScriptStruct ContextualDialog.Criterion
-// 0x0028 (0x0030 - 0x0008)
-struct FCriterion final : public FTableRowBase
-{
-public:
-	class FString                                 KeyName;                                           // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        AValueAsNumber;                                    // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        BValueAsNumber;                                    // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   ValueAsName;                                       // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCriterion;
-
-// ScriptStruct ContextualDialog.LocalDynamicPropertiesMap
-// 0x0050 (0x0058 - 0x0008)
-struct FLocalDynamicPropertiesMap final : public FTableRowBase
-{
-public:
-	TMap<class FName, float>                      LocalDynamicPropertiesMap;                         // 0x0008(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLocalDynamicPropertiesMap;
 
 // ScriptStruct ContextualDialog.ContextNameAndValues
 // 0x0020 (0x0028 - 0x0008)
@@ -233,30 +257,6 @@ public:
 	struct FContextualResponseForRule             RuleResponse;                                      // 0x0028(0x0020)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRuleData;
-
-// ScriptStruct ContextualDialog.ContextualRuleSaveData
-// 0x0018 (0x0018 - 0x0000)
-struct FContextualRuleSaveData final
-{
-public:
-	TArray<class FName>                           ExecutedResponsesNames;                            // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-	int32                                         CurrentResponseIndex;                              // 0x0010(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FContextualRuleSaveData;
-
-// ScriptStruct ContextualDialog.ContextualDialogSubsystemSaveData
-// 0x0190 (0x0190 - 0x0000)
-struct FContextualDialogSubsystemSaveData final
-{
-public:
-	TSet<class FName>                             UsedRules;                                         // 0x0000(0x0050)(SaveGame, NativeAccessSpecifierPublic)
-	TMap<class FName, float>                      GlobalCooldownsTimeLeftForResponsesMap;            // 0x0050(0x0050)(SaveGame, NativeAccessSpecifierPublic)
-	TMap<class FName, float>                      GlobalDynamicPropertiesMap;                        // 0x00A0(0x0050)(SaveGame, NativeAccessSpecifierPublic)
-	TMap<class FName, struct FContextualRuleSaveData> RulesSaveData;                                 // 0x00F0(0x0050)(SaveGame, NativeAccessSpecifierPublic)
-	TMap<class FString, struct FLocalDynamicPropertiesMap> LocalDynamicPropertiesMapForNetId;        // 0x0140(0x0050)(SaveGame, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FContextualDialogSubsystemSaveData;
 
 // ScriptStruct ContextualDialog.GoogleSheetAPIData
 // 0x0030 (0x0038 - 0x0008)

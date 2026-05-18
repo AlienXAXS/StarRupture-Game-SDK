@@ -16,6 +16,26 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function BP_AnimNotifyState_SetAnimDebugData.BP_AnimNotifyState_SetAnimDebugData_C.Received_NotifyEnd
+// 0x0078 (0x0078 - 0x0000)
+struct BP_AnimNotifyState_SetAnimDebugData_C_Received_NotifyEnd final
+{
+public:
+	class USkeletalMeshComponent*                 MeshComp;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UAnimSequenceBase*                      Animation;                                         // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FAnimNotifyEventReference              EventReference;                                    // 0x0010(0x0030)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	bool                                          ReturnValue;                                       // 0x0040(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 CallFunc_GetOwner_ReturnValue;                     // 0x0048(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AMassEnemyCharacterBase*                K2Node_DynamicCast_AsMass_Enemy_Character_Base;    // 0x0050(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAnimInstance*                          CallFunc_GetAnimInstance_ReturnValue;              // 0x0060(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UMassEnemyAnimationInstance*            K2Node_DynamicCast_AsMass_Enemy_Animation_Instance; // 0x0068(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0070(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_AnimNotifyState_SetAnimDebugData_C_Received_NotifyEnd;
+
 // Function BP_AnimNotifyState_SetAnimDebugData.BP_AnimNotifyState_SetAnimDebugData_C.Received_NotifyBegin
 // 0x0098 (0x0098 - 0x0000)
 struct BP_AnimNotifyState_SetAnimDebugData_C_Received_NotifyBegin final
@@ -41,26 +61,6 @@ public:
 	float                                         CallFunc_AddAnimDebugData_Lifetime_ImplicitCast;   // 0x0090(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_AnimNotifyState_SetAnimDebugData_C_Received_NotifyBegin;
-
-// Function BP_AnimNotifyState_SetAnimDebugData.BP_AnimNotifyState_SetAnimDebugData_C.Received_NotifyEnd
-// 0x0078 (0x0078 - 0x0000)
-struct BP_AnimNotifyState_SetAnimDebugData_C_Received_NotifyEnd final
-{
-public:
-	class USkeletalMeshComponent*                 MeshComp;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UAnimSequenceBase*                      Animation;                                         // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FAnimNotifyEventReference              EventReference;                                    // 0x0010(0x0030)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	bool                                          ReturnValue;                                       // 0x0040(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 CallFunc_GetOwner_ReturnValue;                     // 0x0048(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class AMassEnemyCharacterBase*                K2Node_DynamicCast_AsMass_Enemy_Character_Base;    // 0x0050(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAnimInstance*                          CallFunc_GetAnimInstance_ReturnValue;              // 0x0060(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UMassEnemyAnimationInstance*            K2Node_DynamicCast_AsMass_Enemy_Animation_Instance; // 0x0068(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0070(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_AnimNotifyState_SetAnimDebugData_C_Received_NotifyEnd;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

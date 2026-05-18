@@ -16,21 +16,35 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_PlacementHelperReplicatedCustomRoom.BP_PlacementHelperReplicatedCustomRoom_C.ExecuteUbergraph_BP_PlacementHelperReplicatedCustomRoom
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_PlacementHelperReplicatedCustomRoom.BP_PlacementHelperReplicatedCustomRoom_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_PlacementHelperReplicatedCustomRoom_C::ExecuteUbergraph_BP_PlacementHelperReplicatedCustomRoom(int32 EntryPoint)
+void ABP_PlacementHelperReplicatedCustomRoom_C::UserConstructionScript()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperReplicatedCustomRoom_C", "ExecuteUbergraph_BP_PlacementHelperReplicatedCustomRoom");
+		Func = Class->GetFunction("BP_PlacementHelperReplicatedCustomRoom_C", "UserConstructionScript");
 
-	Params::BP_PlacementHelperReplicatedCustomRoom_C_ExecuteUbergraph_BP_PlacementHelperReplicatedCustomRoom Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
+
+// Function BP_PlacementHelperReplicatedCustomRoom.BP_PlacementHelperReplicatedCustomRoom_C.SetMeshColor
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_PlacementHelperReplicatedCustomRoom_C::SetMeshColor(const struct FLinearColor& Color)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PlacementHelperReplicatedCustomRoom_C", "SetMeshColor");
+
+	Params::BP_PlacementHelperReplicatedCustomRoom_C_SetMeshColor Parms{};
+
+	Parms.Color = std::move(Color);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -56,37 +70,23 @@ void ABP_PlacementHelperReplicatedCustomRoom_C::OnFoundationSetUp(const TArray<s
 }
 
 
-// Function BP_PlacementHelperReplicatedCustomRoom.BP_PlacementHelperReplicatedCustomRoom_C.SetMeshColor
-// (Event, Public, BlueprintEvent)
+// Function BP_PlacementHelperReplicatedCustomRoom.BP_PlacementHelperReplicatedCustomRoom_C.ExecuteUbergraph_BP_PlacementHelperReplicatedCustomRoom
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PlacementHelperReplicatedCustomRoom_C::SetMeshColor(const struct FLinearColor& Color)
+void ABP_PlacementHelperReplicatedCustomRoom_C::ExecuteUbergraph_BP_PlacementHelperReplicatedCustomRoom(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperReplicatedCustomRoom_C", "SetMeshColor");
+		Func = Class->GetFunction("BP_PlacementHelperReplicatedCustomRoom_C", "ExecuteUbergraph_BP_PlacementHelperReplicatedCustomRoom");
 
-	Params::BP_PlacementHelperReplicatedCustomRoom_C_SetMeshColor Parms{};
+	Params::BP_PlacementHelperReplicatedCustomRoom_C_ExecuteUbergraph_BP_PlacementHelperReplicatedCustomRoom Parms{};
 
-	Parms.Color = std::move(Color);
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_PlacementHelperReplicatedCustomRoom.BP_PlacementHelperReplicatedCustomRoom_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_PlacementHelperReplicatedCustomRoom_C::UserConstructionScript()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperReplicatedCustomRoom_C", "UserConstructionScript");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 

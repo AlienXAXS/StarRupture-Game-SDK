@@ -16,6 +16,34 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function BP_ChimeraPlacementHelperReplicatedStarPowered.BP_ChimeraPlacementHelperReplicatedStarPowered_C.UserConstructionScript
+// 0x0010 (0x0010 - 0x0000)
+struct BP_ChimeraPlacementHelperReplicatedStarPowered_C_UserConstructionScript final
+{
+public:
+	class UMaterialInterface*                     CallFunc_GetMaterial_ReturnValue;                  // 0x0000(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_ChimeraPlacementHelperReplicatedStarPowered_C_UserConstructionScript;
+
+// Function BP_ChimeraPlacementHelperReplicatedStarPowered.BP_ChimeraPlacementHelperReplicatedStarPowered_C.SetMeshColor
+// 0x0010 (0x0010 - 0x0000)
+struct BP_ChimeraPlacementHelperReplicatedStarPowered_C_SetMeshColor final
+{
+public:
+	struct FLinearColor                           Color;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_ChimeraPlacementHelperReplicatedStarPowered_C_SetMeshColor;
+
+// Function BP_ChimeraPlacementHelperReplicatedStarPowered.BP_ChimeraPlacementHelperReplicatedStarPowered_C.OnFoundationSetUp
+// 0x0010 (0x0010 - 0x0000)
+struct BP_ChimeraPlacementHelperReplicatedStarPowered_C_OnFoundationSetUp final
+{
+public:
+	TArray<struct FTransform>                     FoundationTransforms;                              // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
+DUMPER7_ASSERTS_BP_ChimeraPlacementHelperReplicatedStarPowered_C_OnFoundationSetUp;
+
 // Function BP_ChimeraPlacementHelperReplicatedStarPowered.BP_ChimeraPlacementHelperReplicatedStarPowered_C.ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedStarPowered
 // 0x0028 (0x0028 - 0x0000)
 struct BP_ChimeraPlacementHelperReplicatedStarPowered_C_ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedStarPowered final
@@ -27,34 +55,6 @@ public:
 	TArray<struct FTransform>                     K2Node_Event_FoundationTransforms;                 // 0x0018(0x0010)(ConstParm, ReferenceParm)
 };
 DUMPER7_ASSERTS_BP_ChimeraPlacementHelperReplicatedStarPowered_C_ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedStarPowered;
-
-// Function BP_ChimeraPlacementHelperReplicatedStarPowered.BP_ChimeraPlacementHelperReplicatedStarPowered_C.OnFoundationSetUp
-// 0x0010 (0x0010 - 0x0000)
-struct BP_ChimeraPlacementHelperReplicatedStarPowered_C_OnFoundationSetUp final
-{
-public:
-	TArray<struct FTransform>                     FoundationTransforms;                              // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-};
-DUMPER7_ASSERTS_BP_ChimeraPlacementHelperReplicatedStarPowered_C_OnFoundationSetUp;
-
-// Function BP_ChimeraPlacementHelperReplicatedStarPowered.BP_ChimeraPlacementHelperReplicatedStarPowered_C.SetMeshColor
-// 0x0010 (0x0010 - 0x0000)
-struct BP_ChimeraPlacementHelperReplicatedStarPowered_C_SetMeshColor final
-{
-public:
-	struct FLinearColor                           Color;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_ChimeraPlacementHelperReplicatedStarPowered_C_SetMeshColor;
-
-// Function BP_ChimeraPlacementHelperReplicatedStarPowered.BP_ChimeraPlacementHelperReplicatedStarPowered_C.UserConstructionScript
-// 0x0010 (0x0010 - 0x0000)
-struct BP_ChimeraPlacementHelperReplicatedStarPowered_C_UserConstructionScript final
-{
-public:
-	class UMaterialInterface*                     CallFunc_GetMaterial_ReturnValue;                  // 0x0000(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_ChimeraPlacementHelperReplicatedStarPowered_C_UserConstructionScript;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

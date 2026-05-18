@@ -16,63 +16,15 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_SmallMeteOre.BP_SmallMeteOre_C.ExecuteUbergraph_BP_SmallMeteOre
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_SmallMeteOre.BP_SmallMeteOre_C.Timeline__UpdateFunc
+// (BlueprintEvent)
 
-void ABP_SmallMeteOre_C::ExecuteUbergraph_BP_SmallMeteOre(int32 EntryPoint)
+void ABP_SmallMeteOre_C::Timeline__UpdateFunc()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SmallMeteOre_C", "ExecuteUbergraph_BP_SmallMeteOre");
-
-	Params::BP_SmallMeteOre_C_ExecuteUbergraph_BP_SmallMeteOre Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_SmallMeteOre.BP_SmallMeteOre_C.OnBeginPlayDepletedStateStarted
-// (Event, Public, BlueprintEvent)
-
-void ABP_SmallMeteOre_C::OnBeginPlayDepletedStateStarted()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SmallMeteOre_C", "OnBeginPlayDepletedStateStarted");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_SmallMeteOre.BP_SmallMeteOre_C.OnResourceDepletedCosmeticsStart
-// (Event, Public, BlueprintEvent)
-
-void ABP_SmallMeteOre_C::OnResourceDepletedCosmeticsStart()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SmallMeteOre_C", "OnResourceDepletedCosmeticsStart");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_SmallMeteOre.BP_SmallMeteOre_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_SmallMeteOre_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SmallMeteOre_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_SmallMeteOre_C", "Timeline__UpdateFunc");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -92,17 +44,65 @@ void ABP_SmallMeteOre_C::Timeline__FinishedFunc()
 }
 
 
-// Function BP_SmallMeteOre.BP_SmallMeteOre_C.Timeline__UpdateFunc
-// (BlueprintEvent)
+// Function BP_SmallMeteOre.BP_SmallMeteOre_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ABP_SmallMeteOre_C::Timeline__UpdateFunc()
+void ABP_SmallMeteOre_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SmallMeteOre_C", "Timeline__UpdateFunc");
+		Func = Class->GetFunction("BP_SmallMeteOre_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_SmallMeteOre.BP_SmallMeteOre_C.OnResourceDepletedCosmeticsStart
+// (Event, Public, BlueprintEvent)
+
+void ABP_SmallMeteOre_C::OnResourceDepletedCosmeticsStart()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SmallMeteOre_C", "OnResourceDepletedCosmeticsStart");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_SmallMeteOre.BP_SmallMeteOre_C.OnBeginPlayDepletedStateStarted
+// (Event, Public, BlueprintEvent)
+
+void ABP_SmallMeteOre_C::OnBeginPlayDepletedStateStarted()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SmallMeteOre_C", "OnBeginPlayDepletedStateStarted");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_SmallMeteOre.BP_SmallMeteOre_C.ExecuteUbergraph_BP_SmallMeteOre
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_SmallMeteOre_C::ExecuteUbergraph_BP_SmallMeteOre(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SmallMeteOre_C", "ExecuteUbergraph_BP_SmallMeteOre");
+
+	Params::BP_SmallMeteOre_C_ExecuteUbergraph_BP_SmallMeteOre Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

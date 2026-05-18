@@ -11,15 +11,15 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
+#include "UniversalObjectLocator_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "FieldNotification_structs.hpp"
 #include "ImageCore_structs.hpp"
 #include "InputCore_structs.hpp"
 #include "PhysicsCore_structs.hpp"
-#include "RenderCore_structs.hpp"
 #include "AudioExtensions_structs.hpp"
 #include "Chaos_structs.hpp"
-#include "UniversalObjectLocator_structs.hpp"
+#include "RenderCore_structs.hpp"
 #include "TypedElementFramework_structs.hpp"
 #include "NetCore_structs.hpp"
 #include "SlateCore_structs.hpp"
@@ -37590,16 +37590,16 @@ public:
 };
 DUMPER7_ASSERTS_KismetMathLibrary_ProjectPointOnToPlane;
 
-// Function Engine.KismetMathLibrary.ProjectVectorOntoPlane
+// Function Engine.KismetMathLibrary.ProjectVectorOnToPlane
 // 0x0048 (0x0048 - 0x0000)
-struct KismetMathLibrary_ProjectVectorOntoPlane final
+struct KismetMathLibrary_ProjectVectorOnToPlane final
 {
 public:
 	struct FVector                                V;                                                 // 0x0000(0x0018)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                PlaneNormal;                                       // 0x0018(0x0018)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                ReturnValue;                                       // 0x0030(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_KismetMathLibrary_ProjectVectorOntoPlane;
+DUMPER7_ASSERTS_KismetMathLibrary_ProjectVectorOnToPlane;
 
 // Function Engine.KismetMathLibrary.ProjectVectorOnToVector
 // 0x0048 (0x0048 - 0x0000)

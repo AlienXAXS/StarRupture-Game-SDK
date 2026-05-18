@@ -16,6 +16,17 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function BP_PlacementHelperReplicatedZipline.BP_PlacementHelperReplicatedZipline_C.OnConnectionsModified
+// 0x0030 (0x0030 - 0x0000)
+struct BP_PlacementHelperReplicatedZipline_C_OnConnectionsModified final
+{
+public:
+	TArray<struct FVector>                        NewAcceptedLocations;                              // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	TArray<struct FVector>                        NewObstructedLocations;                            // 0x0010(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	TArray<struct FVector>                        NewBlockedLocations;                               // 0x0020(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
+DUMPER7_ASSERTS_BP_PlacementHelperReplicatedZipline_C_OnConnectionsModified;
+
 // Function BP_PlacementHelperReplicatedZipline.BP_PlacementHelperReplicatedZipline_C.ExecuteUbergraph_BP_PlacementHelperReplicatedZipline
 // 0x0260 (0x0260 - 0x0000)
 struct BP_PlacementHelperReplicatedZipline_C_ExecuteUbergraph_BP_PlacementHelperReplicatedZipline final
@@ -92,17 +103,6 @@ public:
 	class FName                                   CallFunc_Conv_StringToName_ReturnValue_5;          // 0x0258(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_PlacementHelperReplicatedZipline_C_ExecuteUbergraph_BP_PlacementHelperReplicatedZipline;
-
-// Function BP_PlacementHelperReplicatedZipline.BP_PlacementHelperReplicatedZipline_C.OnConnectionsModified
-// 0x0030 (0x0030 - 0x0000)
-struct BP_PlacementHelperReplicatedZipline_C_OnConnectionsModified final
-{
-public:
-	TArray<struct FVector>                        NewAcceptedLocations;                              // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	TArray<struct FVector>                        NewObstructedLocations;                            // 0x0010(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	TArray<struct FVector>                        NewBlockedLocations;                               // 0x0020(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-};
-DUMPER7_ASSERTS_BP_PlacementHelperReplicatedZipline_C_OnConnectionsModified;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

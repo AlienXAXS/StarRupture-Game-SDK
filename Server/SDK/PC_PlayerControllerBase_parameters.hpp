@@ -18,16 +18,39 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function PC_PlayerControllerBase.PC_PlayerControllerBase_C.CanInputKeyBePassedFromUIOnlyMode
-// 0x0020 (0x0020 - 0x0000)
-struct PC_PlayerControllerBase_C_CanInputKeyBePassedFromUIOnlyMode final
+// Function PC_PlayerControllerBase.PC_PlayerControllerBase_C.InpActEvt_K_K2Node_InputDebugKeyEvent_0
+// 0x0038 (0x0038 - 0x0000)
+struct PC_PlayerControllerBase_C_InpActEvt_K_K2Node_InputDebugKeyEvent_0 final
 {
 public:
 	struct FKey                                   Key;                                               // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
-	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_KeyKey_ReturnValue;            // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FInputActionValue                      ActionValue;                                       // 0x0018(0x0020)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
 };
-DUMPER7_ASSERTS_PC_PlayerControllerBase_C_CanInputKeyBePassedFromUIOnlyMode;
+DUMPER7_ASSERTS_PC_PlayerControllerBase_C_InpActEvt_K_K2Node_InputDebugKeyEvent_0;
+
+// Function PC_PlayerControllerBase.PC_PlayerControllerBase_C.ExecuteUbergraph_PC_PlayerControllerBase
+// 0x0078 (0x0078 - 0x0000)
+struct PC_PlayerControllerBase_C_ExecuteUbergraph_PC_PlayerControllerBase final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class APawn*                                  CallFunc_K2_GetPawn_ReturnValue;                   // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAbilitySystemComponent*                CallFunc_GetAbilitySystemComponent_ReturnValue;    // 0x0018(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_TryActivateAbilityByClass_ReturnValue;    // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_22[0x6];                                       // 0x0022(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class APlayerCameraManager*                   CallFunc_GetPlayerCameraManager_ReturnValue;       // 0x0028(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Variable;                                // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0031(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_32[0x6];                                       // 0x0032(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKey                                   K2Node_InputDebugKeyEvent_Key;                     // 0x0038(0x0018)(HasGetValueTypeHash)
+	struct FInputActionValue                      K2Node_InputDebugKeyEvent_ActionValue;             // 0x0050(0x0020)(NoDestructor)
+	float                                         K2Node_VariableSet_ViewPitchMin_ImplicitCast;      // 0x0070(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_PC_PlayerControllerBase_C_ExecuteUbergraph_PC_PlayerControllerBase;
 
 // Function PC_PlayerControllerBase.PC_PlayerControllerBase_C.cheat_Teleport2player
 // 0x01A8 (0x01A8 - 0x0000)
@@ -71,39 +94,16 @@ public:
 };
 DUMPER7_ASSERTS_PC_PlayerControllerBase_C_cheat_Teleport2player;
 
-// Function PC_PlayerControllerBase.PC_PlayerControllerBase_C.ExecuteUbergraph_PC_PlayerControllerBase
-// 0x0078 (0x0078 - 0x0000)
-struct PC_PlayerControllerBase_C_ExecuteUbergraph_PC_PlayerControllerBase final
-{
-public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class APawn*                                  CallFunc_K2_GetPawn_ReturnValue;                   // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAbilitySystemComponent*                CallFunc_GetAbilitySystemComponent_ReturnValue;    // 0x0018(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_TryActivateAbilityByClass_ReturnValue;    // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_22[0x6];                                       // 0x0022(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class APlayerCameraManager*                   CallFunc_GetPlayerCameraManager_ReturnValue;       // 0x0028(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Variable;                                // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0031(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32[0x6];                                       // 0x0032(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKey                                   K2Node_InputDebugKeyEvent_Key;                     // 0x0038(0x0018)(HasGetValueTypeHash)
-	struct FInputActionValue                      K2Node_InputDebugKeyEvent_ActionValue;             // 0x0050(0x0020)(NoDestructor)
-	float                                         K2Node_VariableSet_ViewPitchMin_ImplicitCast;      // 0x0070(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_PC_PlayerControllerBase_C_ExecuteUbergraph_PC_PlayerControllerBase;
-
-// Function PC_PlayerControllerBase.PC_PlayerControllerBase_C.InpActEvt_K_K2Node_InputDebugKeyEvent_0
-// 0x0038 (0x0038 - 0x0000)
-struct PC_PlayerControllerBase_C_InpActEvt_K_K2Node_InputDebugKeyEvent_0 final
+// Function PC_PlayerControllerBase.PC_PlayerControllerBase_C.CanInputKeyBePassedFromUIOnlyMode
+// 0x0020 (0x0020 - 0x0000)
+struct PC_PlayerControllerBase_C_CanInputKeyBePassedFromUIOnlyMode final
 {
 public:
 	struct FKey                                   Key;                                               // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
-	struct FInputActionValue                      ActionValue;                                       // 0x0018(0x0020)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_KeyKey_ReturnValue;            // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_PC_PlayerControllerBase_C_InpActEvt_K_K2Node_InputDebugKeyEvent_0;
+DUMPER7_ASSERTS_PC_PlayerControllerBase_C_CanInputKeyBePassedFromUIOnlyMode;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

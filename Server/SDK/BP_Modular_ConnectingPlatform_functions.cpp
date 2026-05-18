@@ -16,23 +16,17 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Modular_ConnectingPlatform.BP_Modular_ConnectingPlatform_C.ExecuteUbergraph_BP_Modular_ConnectingPlatform
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_Modular_ConnectingPlatform.BP_Modular_ConnectingPlatform_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_Modular_ConnectingPlatform_C::ExecuteUbergraph_BP_Modular_ConnectingPlatform(int32 EntryPoint)
+void ABP_Modular_ConnectingPlatform_C::UserConstructionScript()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Modular_ConnectingPlatform_C", "ExecuteUbergraph_BP_Modular_ConnectingPlatform");
+		Func = Class->GetFunction("BP_Modular_ConnectingPlatform_C", "UserConstructionScript");
 
-	Params::BP_Modular_ConnectingPlatform_C_ExecuteUbergraph_BP_Modular_ConnectingPlatform Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -50,17 +44,23 @@ void ABP_Modular_ConnectingPlatform_C::ReceiveBeginPlay()
 }
 
 
-// Function BP_Modular_ConnectingPlatform.BP_Modular_ConnectingPlatform_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Function BP_Modular_ConnectingPlatform.BP_Modular_ConnectingPlatform_C.ExecuteUbergraph_BP_Modular_ConnectingPlatform
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Modular_ConnectingPlatform_C::UserConstructionScript()
+void ABP_Modular_ConnectingPlatform_C::ExecuteUbergraph_BP_Modular_ConnectingPlatform(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Modular_ConnectingPlatform_C", "UserConstructionScript");
+		Func = Class->GetFunction("BP_Modular_ConnectingPlatform_C", "ExecuteUbergraph_BP_Modular_ConnectingPlatform");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_Modular_ConnectingPlatform_C_ExecuteUbergraph_BP_Modular_ConnectingPlatform Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

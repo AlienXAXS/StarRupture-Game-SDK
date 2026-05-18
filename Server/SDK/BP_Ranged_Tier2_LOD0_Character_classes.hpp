@@ -27,16 +27,16 @@ public:
 	double                                        InjuryPoseAlpha;                                   // 0x0D18(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_BP_Ranged_Tier2_LOD0_Character(int32 EntryPoint);
-	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
-	void OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag);
-	void OnDamage(class AActor* Actor, const struct FHitResult& HitResult, float InDamage);
-	void OnEnterActorPool();
-	void OnExitActorPool();
-	void OnPrepareForGame();
-	void OnRep_InjuryPoseAlpha();
-	void SetIsAggroEyeColor(bool NewIsAggro);
 	void UserConstructionScript();
+	void SetIsAggroEyeColor(bool NewIsAggro);
+	void OnRep_InjuryPoseAlpha();
+	void OnPrepareForGame();
+	void OnExitActorPool();
+	void OnEnterActorPool();
+	void OnDamage(class AActor* Actor, const struct FHitResult& HitResult, float InDamage);
+	void OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag);
+	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
+	void ExecuteUbergraph_BP_Ranged_Tier2_LOD0_Character(int32 EntryPoint);
 
 	void OnMeshVisibilityUpdated(bool bIsMeshHidden) const;
 

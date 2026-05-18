@@ -19,19 +19,93 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_BaseAI.BP_BaseAI_C.CanChangeEyeColor
-// 0x0020 (0x0020 - 0x0000)
-struct BP_BaseAI_C_CanChangeEyeColor final
+// Function BP_BaseAI.BP_BaseAI_C.SetIsJumpEyeBehaviour
+// 0x0001 (0x0001 - 0x0000)
+struct BP_BaseAI_C_SetIsJumpEyeBehaviour final
 {
 public:
-	bool                                          Result;                                            // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAnimInstance*                          CallFunc_GetAnimInstance_ReturnValue;              // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UMassEnemyAnimationInstance*            K2Node_DynamicCast_AsMass_Enemy_Animation_Instance; // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_NotEqual_ByteByte_ReturnValue;            // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          NewIsJumpEyeBehaviour;                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_BaseAI_C_CanChangeEyeColor;
+DUMPER7_ASSERTS_BP_BaseAI_C_SetIsJumpEyeBehaviour;
+
+// Function BP_BaseAI.BP_BaseAI_C.SetIsBoostedEyeColor
+// 0x0001 (0x0001 - 0x0000)
+struct BP_BaseAI_C_SetIsBoostedEyeColor final
+{
+public:
+	bool                                          NewIsBoosted;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_BaseAI_C_SetIsBoostedEyeColor;
+
+// Function BP_BaseAI.BP_BaseAI_C.SetIsAggroEyeColor
+// 0x0001 (0x0001 - 0x0000)
+struct BP_BaseAI_C_SetIsAggroEyeColor final
+{
+public:
+	bool                                          NewIsAggro;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_BaseAI_C_SetIsAggroEyeColor;
+
+// Function BP_BaseAI.BP_BaseAI_C.PostSetupPooledActorData
+// 0x0001 (0x0001 - 0x0000)
+struct BP_BaseAI_C_PostSetupPooledActorData final
+{
+public:
+	bool                                          bNewIsInPool;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_BaseAI_C_PostSetupPooledActorData;
+
+// Function BP_BaseAI.BP_BaseAI_C.OnDamage
+// 0x0110 (0x0110 - 0x0000)
+struct BP_BaseAI_C_OnDamage final
+{
+public:
+	class AActor*                                 Actor;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             HitResult;                                         // 0x0008(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	float                                         InDamage;                                          // 0x0108(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_BaseAI_C_OnDamage;
+
+// Function BP_BaseAI.BP_BaseAI_C.OnAiDied
+// 0x0108 (0x0108 - 0x0000)
+struct BP_BaseAI_C_OnAiDied final
+{
+public:
+	struct FHitResult                             HitResult;                                         // 0x0000(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	struct FGameplayTag                           KillingDamageTag;                                  // 0x0100(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_BaseAI_C_OnAiDied;
+
+// Function BP_BaseAI.BP_BaseAI_C.NotifyNearbyPlayerCharactersAboutSpawn
+// 0x0018 (0x0018 - 0x0000)
+struct BP_BaseAI_C_NotifyNearbyPlayerCharactersAboutSpawn final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMassEnemyEventQueueSubsystem*          CallFunc_GetWorldSubsystem_ReturnValue;            // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_HasAuthority_ReturnValue;                 // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_BaseAI_C_NotifyNearbyPlayerCharactersAboutSpawn;
+
+// Function BP_BaseAI.BP_BaseAI_C.NotifyAggroTargetChanged
+// 0x0001 (0x0001 - 0x0000)
+struct BP_BaseAI_C_NotifyAggroTargetChanged final
+{
+public:
+	bool                                          bHasAggroTarget;                                   // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_BaseAI_C_NotifyAggroTargetChanged;
+
+// Function BP_BaseAI.BP_BaseAI_C.GetNiagaraEyeSystem
+// 0x0008 (0x0008 - 0x0000)
+struct BP_BaseAI_C_GetNiagaraEyeSystem final
+{
+public:
+	class UNiagaraComponent*                      NewParam;                                          // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_BaseAI_C_GetNiagaraEyeSystem;
 
 // Function BP_BaseAI.BP_BaseAI_C.ExecuteUbergraph_BP_BaseAI
 // 0x0288 (0x0288 - 0x0000)
@@ -74,93 +148,19 @@ public:
 };
 DUMPER7_ASSERTS_BP_BaseAI_C_ExecuteUbergraph_BP_BaseAI;
 
-// Function BP_BaseAI.BP_BaseAI_C.GetNiagaraEyeSystem
-// 0x0008 (0x0008 - 0x0000)
-struct BP_BaseAI_C_GetNiagaraEyeSystem final
+// Function BP_BaseAI.BP_BaseAI_C.CanChangeEyeColor
+// 0x0020 (0x0020 - 0x0000)
+struct BP_BaseAI_C_CanChangeEyeColor final
 {
 public:
-	class UNiagaraComponent*                      NewParam;                                          // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_BaseAI_C_GetNiagaraEyeSystem;
-
-// Function BP_BaseAI.BP_BaseAI_C.NotifyAggroTargetChanged
-// 0x0001 (0x0001 - 0x0000)
-struct BP_BaseAI_C_NotifyAggroTargetChanged final
-{
-public:
-	bool                                          bHasAggroTarget;                                   // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_BaseAI_C_NotifyAggroTargetChanged;
-
-// Function BP_BaseAI.BP_BaseAI_C.NotifyNearbyPlayerCharactersAboutSpawn
-// 0x0018 (0x0018 - 0x0000)
-struct BP_BaseAI_C_NotifyNearbyPlayerCharactersAboutSpawn final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Result;                                            // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMassEnemyEventQueueSubsystem*          CallFunc_GetWorldSubsystem_ReturnValue;            // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_HasAuthority_ReturnValue;                 // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAnimInstance*                          CallFunc_GetAnimInstance_ReturnValue;              // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UMassEnemyAnimationInstance*            K2Node_DynamicCast_AsMass_Enemy_Animation_Instance; // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_NotEqual_ByteByte_ReturnValue;            // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_BaseAI_C_NotifyNearbyPlayerCharactersAboutSpawn;
-
-// Function BP_BaseAI.BP_BaseAI_C.OnAiDied
-// 0x0108 (0x0108 - 0x0000)
-struct BP_BaseAI_C_OnAiDied final
-{
-public:
-	struct FHitResult                             HitResult;                                         // 0x0000(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	struct FGameplayTag                           KillingDamageTag;                                  // 0x0100(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_BaseAI_C_OnAiDied;
-
-// Function BP_BaseAI.BP_BaseAI_C.OnDamage
-// 0x0110 (0x0110 - 0x0000)
-struct BP_BaseAI_C_OnDamage final
-{
-public:
-	class AActor*                                 Actor;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FHitResult                             HitResult;                                         // 0x0008(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	float                                         InDamage;                                          // 0x0108(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_BaseAI_C_OnDamage;
-
-// Function BP_BaseAI.BP_BaseAI_C.PostSetupPooledActorData
-// 0x0001 (0x0001 - 0x0000)
-struct BP_BaseAI_C_PostSetupPooledActorData final
-{
-public:
-	bool                                          bNewIsInPool;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_BaseAI_C_PostSetupPooledActorData;
-
-// Function BP_BaseAI.BP_BaseAI_C.SetIsAggroEyeColor
-// 0x0001 (0x0001 - 0x0000)
-struct BP_BaseAI_C_SetIsAggroEyeColor final
-{
-public:
-	bool                                          NewIsAggro;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_BaseAI_C_SetIsAggroEyeColor;
-
-// Function BP_BaseAI.BP_BaseAI_C.SetIsBoostedEyeColor
-// 0x0001 (0x0001 - 0x0000)
-struct BP_BaseAI_C_SetIsBoostedEyeColor final
-{
-public:
-	bool                                          NewIsBoosted;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_BaseAI_C_SetIsBoostedEyeColor;
-
-// Function BP_BaseAI.BP_BaseAI_C.SetIsJumpEyeBehaviour
-// 0x0001 (0x0001 - 0x0000)
-struct BP_BaseAI_C_SetIsJumpEyeBehaviour final
-{
-public:
-	bool                                          NewIsJumpEyeBehaviour;                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_BaseAI_C_SetIsJumpEyeBehaviour;
+DUMPER7_ASSERTS_BP_BaseAI_C_CanChangeEyeColor;
 
 // Function BP_BaseAI.BP_BaseAI_C.GetIdleEyeColor
 // 0x0008 (0x0008 - 0x0000)

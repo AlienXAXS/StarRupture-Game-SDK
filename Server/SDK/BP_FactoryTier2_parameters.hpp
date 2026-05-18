@@ -16,6 +16,15 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function BP_FactoryTier2.BP_FactoryTier2_C.OnBuildingStateChanged
+// 0x0001 (0x0001 - 0x0000)
+struct BP_FactoryTier2_C_OnBuildingStateChanged final
+{
+public:
+	ECrBuildingState                              InState;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_FactoryTier2_C_OnBuildingStateChanged;
+
 // Function BP_FactoryTier2.BP_FactoryTier2_C.ExecuteUbergraph_BP_FactoryTier2
 // 0x0070 (0x0070 - 0x0000)
 struct BP_FactoryTier2_C_ExecuteUbergraph_BP_FactoryTier2 final
@@ -49,15 +58,6 @@ public:
 	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0068(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_FactoryTier2_C_ExecuteUbergraph_BP_FactoryTier2;
-
-// Function BP_FactoryTier2.BP_FactoryTier2_C.OnBuildingStateChanged
-// 0x0001 (0x0001 - 0x0000)
-struct BP_FactoryTier2_C_OnBuildingStateChanged final
-{
-public:
-	ECrBuildingState                              InState;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_FactoryTier2_C_OnBuildingStateChanged;
 
 // Function BP_FactoryTier2.BP_FactoryTier2_C.Get Meshes
 // 0x00B0 (0x00B0 - 0x0000)

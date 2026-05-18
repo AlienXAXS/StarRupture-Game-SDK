@@ -16,81 +16,35 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_GasOreMassHighResActorBase.BP_GasOreMassHighResActorBase_C.BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UNiagaraComponent*                PSystem                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// Function BP_GasOreMassHighResActorBase.BP_GasOreMassHighResActorBase_C.OnResourceDepletedCosmeticsStart
+// (Event, Public, BlueprintEvent)
 
-void ABP_GasOreMassHighResActorBase_C::BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature(class UNiagaraComponent* PSystem)
+void ABP_GasOreMassHighResActorBase_C::OnResourceDepletedCosmeticsStart()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GasOreMassHighResActorBase_C", "BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature");
+		Func = Class->GetFunction("BP_GasOreMassHighResActorBase_C", "OnResourceDepletedCosmeticsStart");
 
-	Params::BP_GasOreMassHighResActorBase_C_BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature Parms{};
-
-	Parms.PSystem = PSystem;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_GasOreMassHighResActorBase.BP_GasOreMassHighResActorBase_C.BndEvt__BP_OreMassHighResActorBase_DepletedWeakSpotSystem_K2Node_ComponentBoundEvent_0_OnNiagaraSystemFinished__DelegateSignature
-// (BlueprintEvent)
+// Function BP_GasOreMassHighResActorBase.BP_GasOreMassHighResActorBase_C.OnMiningWeakSpotDepletedCosmeticsStart
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// class UNiagaraComponent*                PSystem                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// const struct FTransform&                CosmeticTransform                                      (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_GasOreMassHighResActorBase_C::BndEvt__BP_OreMassHighResActorBase_DepletedWeakSpotSystem_K2Node_ComponentBoundEvent_0_OnNiagaraSystemFinished__DelegateSignature(class UNiagaraComponent* PSystem)
+void ABP_GasOreMassHighResActorBase_C::OnMiningWeakSpotDepletedCosmeticsStart(const struct FTransform& CosmeticTransform)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GasOreMassHighResActorBase_C", "BndEvt__BP_OreMassHighResActorBase_DepletedWeakSpotSystem_K2Node_ComponentBoundEvent_0_OnNiagaraSystemFinished__DelegateSignature");
+		Func = Class->GetFunction("BP_GasOreMassHighResActorBase_C", "OnMiningWeakSpotDepletedCosmeticsStart");
 
-	Params::BP_GasOreMassHighResActorBase_C_BndEvt__BP_OreMassHighResActorBase_DepletedWeakSpotSystem_K2Node_ComponentBoundEvent_0_OnNiagaraSystemFinished__DelegateSignature Parms{};
+	Params::BP_GasOreMassHighResActorBase_C_OnMiningWeakSpotDepletedCosmeticsStart Parms{};
 
-	Parms.PSystem = PSystem;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_GasOreMassHighResActorBase.BP_GasOreMassHighResActorBase_C.ExecuteUbergraph_BP_GasOreMassHighResActorBase
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_GasOreMassHighResActorBase_C::ExecuteUbergraph_BP_GasOreMassHighResActorBase(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GasOreMassHighResActorBase_C", "ExecuteUbergraph_BP_GasOreMassHighResActorBase");
-
-	Params::BP_GasOreMassHighResActorBase_C_ExecuteUbergraph_BP_GasOreMassHighResActorBase Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_GasOreMassHighResActorBase.BP_GasOreMassHighResActorBase_C.OnLoaded_24996BB14058AF5058B4EB86D574B71F
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UObject*                          Loaded                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void ABP_GasOreMassHighResActorBase_C::OnLoaded_24996BB14058AF5058B4EB86D574B71F(class UObject* Loaded)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GasOreMassHighResActorBase_C", "OnLoaded_24996BB14058AF5058B4EB86D574B71F");
-
-	Params::BP_GasOreMassHighResActorBase_C_OnLoaded_24996BB14058AF5058B4EB86D574B71F Parms{};
-
-	Parms.Loaded = Loaded;
+	Parms.CosmeticTransform = std::move(CosmeticTransform);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -116,37 +70,83 @@ void ABP_GasOreMassHighResActorBase_C::OnLoaded_F2A55B714CA31962EC2B1182DF4424C3
 }
 
 
-// Function BP_GasOreMassHighResActorBase.BP_GasOreMassHighResActorBase_C.OnMiningWeakSpotDepletedCosmeticsStart
-// (Event, Public, BlueprintEvent)
+// Function BP_GasOreMassHighResActorBase.BP_GasOreMassHighResActorBase_C.OnLoaded_24996BB14058AF5058B4EB86D574B71F
+// (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// const struct FTransform&                CosmeticTransform                                      (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          Loaded                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_GasOreMassHighResActorBase_C::OnMiningWeakSpotDepletedCosmeticsStart(const struct FTransform& CosmeticTransform)
+void ABP_GasOreMassHighResActorBase_C::OnLoaded_24996BB14058AF5058B4EB86D574B71F(class UObject* Loaded)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GasOreMassHighResActorBase_C", "OnMiningWeakSpotDepletedCosmeticsStart");
+		Func = Class->GetFunction("BP_GasOreMassHighResActorBase_C", "OnLoaded_24996BB14058AF5058B4EB86D574B71F");
 
-	Params::BP_GasOreMassHighResActorBase_C_OnMiningWeakSpotDepletedCosmeticsStart Parms{};
+	Params::BP_GasOreMassHighResActorBase_C_OnLoaded_24996BB14058AF5058B4EB86D574B71F Parms{};
 
-	Parms.CosmeticTransform = std::move(CosmeticTransform);
+	Parms.Loaded = Loaded;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_GasOreMassHighResActorBase.BP_GasOreMassHighResActorBase_C.OnResourceDepletedCosmeticsStart
-// (Event, Public, BlueprintEvent)
+// Function BP_GasOreMassHighResActorBase.BP_GasOreMassHighResActorBase_C.ExecuteUbergraph_BP_GasOreMassHighResActorBase
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_GasOreMassHighResActorBase_C::OnResourceDepletedCosmeticsStart()
+void ABP_GasOreMassHighResActorBase_C::ExecuteUbergraph_BP_GasOreMassHighResActorBase(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GasOreMassHighResActorBase_C", "OnResourceDepletedCosmeticsStart");
+		Func = Class->GetFunction("BP_GasOreMassHighResActorBase_C", "ExecuteUbergraph_BP_GasOreMassHighResActorBase");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_GasOreMassHighResActorBase_C_ExecuteUbergraph_BP_GasOreMassHighResActorBase Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_GasOreMassHighResActorBase.BP_GasOreMassHighResActorBase_C.BndEvt__BP_OreMassHighResActorBase_DepletedWeakSpotSystem_K2Node_ComponentBoundEvent_0_OnNiagaraSystemFinished__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UNiagaraComponent*                PSystem                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void ABP_GasOreMassHighResActorBase_C::BndEvt__BP_OreMassHighResActorBase_DepletedWeakSpotSystem_K2Node_ComponentBoundEvent_0_OnNiagaraSystemFinished__DelegateSignature(class UNiagaraComponent* PSystem)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GasOreMassHighResActorBase_C", "BndEvt__BP_OreMassHighResActorBase_DepletedWeakSpotSystem_K2Node_ComponentBoundEvent_0_OnNiagaraSystemFinished__DelegateSignature");
+
+	Params::BP_GasOreMassHighResActorBase_C_BndEvt__BP_OreMassHighResActorBase_DepletedWeakSpotSystem_K2Node_ComponentBoundEvent_0_OnNiagaraSystemFinished__DelegateSignature Parms{};
+
+	Parms.PSystem = PSystem;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_GasOreMassHighResActorBase.BP_GasOreMassHighResActorBase_C.BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UNiagaraComponent*                PSystem                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void ABP_GasOreMassHighResActorBase_C::BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature(class UNiagaraComponent* PSystem)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GasOreMassHighResActorBase_C", "BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature");
+
+	Params::BP_GasOreMassHighResActorBase_C_BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature Parms{};
+
+	Parms.PSystem = PSystem;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

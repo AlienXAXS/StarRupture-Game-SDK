@@ -14,6 +14,15 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function BP_Sulphur_Logic_Large_AbandonedBase.BP_Sulphur_Logic_Large_AbandonedBase_C.OnSulphurActivityChanged
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Sulphur_Logic_Large_AbandonedBase_C_OnSulphurActivityChanged final
+{
+public:
+	bool                                          bActive;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Sulphur_Logic_Large_AbandonedBase_C_OnSulphurActivityChanged;
+
 // Function BP_Sulphur_Logic_Large_AbandonedBase.BP_Sulphur_Logic_Large_AbandonedBase_C.ExecuteUbergraph_BP_Sulphur_Logic_Large_AbandonedBase
 // 0x0008 (0x0008 - 0x0000)
 struct BP_Sulphur_Logic_Large_AbandonedBase_C_ExecuteUbergraph_BP_Sulphur_Logic_Large_AbandonedBase final
@@ -23,15 +32,6 @@ public:
 	bool                                          K2Node_Event_bActive;                              // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Sulphur_Logic_Large_AbandonedBase_C_ExecuteUbergraph_BP_Sulphur_Logic_Large_AbandonedBase;
-
-// Function BP_Sulphur_Logic_Large_AbandonedBase.BP_Sulphur_Logic_Large_AbandonedBase_C.OnSulphurActivityChanged
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Sulphur_Logic_Large_AbandonedBase_C_OnSulphurActivityChanged final
-{
-public:
-	bool                                          bActive;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Sulphur_Logic_Large_AbandonedBase_C_OnSulphurActivityChanged;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

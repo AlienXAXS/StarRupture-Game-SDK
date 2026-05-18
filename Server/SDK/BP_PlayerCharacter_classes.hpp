@@ -10,15 +10,15 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "AuActorPlacement_structs.hpp"
 #include "GameplayTags_structs.hpp"
-#include "BS_WeaponFOV_structs.hpp"
-#include "GameplayAbilities_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "Chimera_structs.hpp"
 #include "Chimera_classes.hpp"
+#include "GameplayAbilities_structs.hpp"
+#include "Engine_structs.hpp"
 #include "AuCamera_structs.hpp"
+#include "BS_WeaponFOV_structs.hpp"
 #include "EPlayerState_structs.hpp"
 #include "CommonInput_structs.hpp"
 
@@ -26,7 +26,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_PlayerCharacter.BP_PlayerCharacter_C
-// 0x03C0 (0x1910 - 0x1550)
+// 0x03E0 (0x1930 - 0x1550)
 class ABP_PlayerCharacter_C final : public ACrCharacterPlayerBase
 {
 public:
@@ -111,6 +111,8 @@ public:
 	class UAudioComponent*                        ZiplineSound;                                      // 0x18F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	class UAudioComponent*                        ZiplineEndSound;                                   // 0x18F8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	bool                                          CurrentDialogueIsLocal;                            // 0x1900(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1901[0x7];                                     // 0x1901(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftObjectPtr<class UDialogueWave>           CurrentDialogueWaveLoadingInProgress;              // 0x1908(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
 	bool BlockEnergyLoweringDuringSprint();
@@ -150,15 +152,14 @@ public:
 	void InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEvent_6(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
 	void InpActEvt_Interact_K2Node_EnhancedInputActionEvent_13(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
 	void InpActEvt_Jump_K2Node_EnhancedInputActionEvent_12(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
-	void InpActEvt_L_K2Node_InputDebugKeyEvent_2(const struct FKey& Key, const struct FInputActionValue& ActionValue);
+	void InpActEvt_L_K2Node_InputDebugKeyEvent_1(const struct FKey& Key, const struct FInputActionValue& ActionValue);
 	void InpActEvt_OpenEOSOverlay_K2Node_EnhancedInputActionEvent_7(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
 	void InpActEvt_Reload_K2Node_EnhancedInputActionEvent_2(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
 	void InpActEvt_Reload_K2Node_EnhancedInputActionEvent_3(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
 	void InpActEvt_Reload_K2Node_EnhancedInputActionEvent_4(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
 	void InpActEvt_X_K2Node_InputDebugKeyEvent_0(const struct FKey& Key, const struct FInputActionValue& ActionValue);
-	void InpActEvt_X_K2Node_InputDebugKeyEvent_1(const struct FKey& Key, const struct FInputActionValue& ActionValue);
-	void InpActEvt_X_K2Node_InputDebugKeyEvent_4(const struct FKey& Key, const struct FInputActionValue& ActionValue);
-	void InpActEvt_Z_K2Node_InputDebugKeyEvent_3(const struct FKey& Key, const struct FInputActionValue& ActionValue);
+	void InpActEvt_X_K2Node_InputDebugKeyEvent_3(const struct FKey& Key, const struct FInputActionValue& ActionValue);
+	void InpActEvt_Z_K2Node_InputDebugKeyEvent_2(const struct FKey& Key, const struct FInputActionValue& ActionValue);
 	void InpActEvt_ZiplineCancel_K2Node_EnhancedInputActionEvent_1(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
 	void IsAnyKillTypeHitmarkDisplayed(bool* Return);
 	void K2_ClientOnInteractionEnded(class AActor* TargetActor);

@@ -33,11 +33,11 @@ public:
 	bool                                          IsLargeNS;                                         // 0x02E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void BndEvt__BP_Ore_Sulphur_A_SulphurGasCollision_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult);
-	void BndEvt__BP_Ore_Sulphur_A_SulphurGasCollision_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
-	void ExecuteUbergraph_BP_Sulphur_Logic(int32 EntryPoint);
-	void OnSulphurActivityChanged(bool bActive);
 	void UserConstructionScript();
+	void OnSulphurActivityChanged(bool bActive);
+	void ExecuteUbergraph_BP_Sulphur_Logic(int32 EntryPoint);
+	void BndEvt__BP_Ore_Sulphur_A_SulphurGasCollision_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+	void BndEvt__BP_Ore_Sulphur_A_SulphurGasCollision_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult);
 
 public:
 	static class UClass* StaticClass()

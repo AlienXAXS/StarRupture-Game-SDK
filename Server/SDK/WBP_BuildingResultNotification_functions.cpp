@@ -16,26 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function WBP_BuildingResultNotification.WBP_BuildingResultNotification_C.ExecuteUbergraph_WBP_BuildingResultNotification
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UWBP_BuildingResultNotification_C::ExecuteUbergraph_WBP_BuildingResultNotification(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BuildingResultNotification_C", "ExecuteUbergraph_WBP_BuildingResultNotification");
-
-	Params::WBP_BuildingResultNotification_C_ExecuteUbergraph_WBP_BuildingResultNotification Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function WBP_BuildingResultNotification.WBP_BuildingResultNotification_C.OnPlacementResultNotif
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -51,6 +31,26 @@ void UWBP_BuildingResultNotification_C::OnPlacementResultNotif(EAuAPPlacementRes
 	Params::WBP_BuildingResultNotification_C_OnPlacementResultNotif Parms{};
 
 	Parms.PlacementResult = PlacementResult;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_BuildingResultNotification.WBP_BuildingResultNotification_C.ExecuteUbergraph_WBP_BuildingResultNotification
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_BuildingResultNotification_C::ExecuteUbergraph_WBP_BuildingResultNotification(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_BuildingResultNotification_C", "ExecuteUbergraph_WBP_BuildingResultNotification");
+
+	Params::WBP_BuildingResultNotification_C_ExecuteUbergraph_WBP_BuildingResultNotification Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

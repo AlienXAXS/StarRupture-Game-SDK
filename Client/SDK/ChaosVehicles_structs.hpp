@@ -109,19 +109,6 @@ enum class ESteeringType : uint8
 	ESteeringType_MAX                        = 3,
 };
 
-// ScriptStruct ChaosVehicles.VehicleSteeringConfig
-// 0x00D8 (0x00D8 - 0x0000)
-struct FVehicleSteeringConfig final
-{
-public:
-	ESteeringType                                 SteeringType;                                      // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         AngleRatio;                                        // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRuntimeFloatCurve                     SteeringCurve;                                     // 0x0008(0x0088)(Edit, NativeAccessSpecifierPublic)
-	uint8                                         Pad_90[0x48];                                      // 0x0090(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FVehicleSteeringConfig;
-
 // ScriptStruct ChaosVehicles.AnimNode_StageCoachWheelController
 // 0x0028 (0x00F0 - 0x00C8)
 struct FAnimNode_StageCoachWheelController final : public FAnimNode_SkeletalControlBase
@@ -134,25 +121,6 @@ public:
 	uint8                                         Pad_D8[0x18];                                      // 0x00D8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FAnimNode_StageCoachWheelController;
-
-// ScriptStruct ChaosVehicles.VehicleTransmissionConfig
-// 0x0070 (0x0070 - 0x0000)
-struct FVehicleTransmissionConfig final
-{
-public:
-	bool                                          bUseAutomaticGears;                                // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseAutoReverse;                                   // 0x0001(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         FinalRatio;                                        // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<float>                                 ForwardGearRatios;                                 // 0x0008(0x0010)(Edit, ZeroConstructor, AdvancedDisplay, NativeAccessSpecifierPublic)
-	TArray<float>                                 ReverseGearRatios;                                 // 0x0018(0x0010)(Edit, ZeroConstructor, AdvancedDisplay, NativeAccessSpecifierPublic)
-	float                                         ChangeUpRPM;                                       // 0x0028(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ChangeDownRPM;                                     // 0x002C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         GearChangeTime;                                    // 0x0030(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TransmissionEfficiency;                            // 0x0034(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_38[0x38];                                      // 0x0038(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FVehicleTransmissionConfig;
 
 // ScriptStruct ChaosVehicles.AnimNode_WheelController
 // 0x0018 (0x00E0 - 0x00C8)
@@ -391,6 +359,38 @@ public:
 	uint8                                         Pad_A0[0x28];                                      // 0x00A0(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FVehicleEngineConfig;
+
+// ScriptStruct ChaosVehicles.VehicleTransmissionConfig
+// 0x0070 (0x0070 - 0x0000)
+struct FVehicleTransmissionConfig final
+{
+public:
+	bool                                          bUseAutomaticGears;                                // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseAutoReverse;                                   // 0x0001(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         FinalRatio;                                        // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<float>                                 ForwardGearRatios;                                 // 0x0008(0x0010)(Edit, ZeroConstructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+	TArray<float>                                 ReverseGearRatios;                                 // 0x0018(0x0010)(Edit, ZeroConstructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+	float                                         ChangeUpRPM;                                       // 0x0028(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ChangeDownRPM;                                     // 0x002C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GearChangeTime;                                    // 0x0030(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TransmissionEfficiency;                            // 0x0034(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_38[0x38];                                      // 0x0038(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FVehicleTransmissionConfig;
+
+// ScriptStruct ChaosVehicles.VehicleSteeringConfig
+// 0x00D8 (0x00D8 - 0x0000)
+struct FVehicleSteeringConfig final
+{
+public:
+	ESteeringType                                 SteeringType;                                      // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         AngleRatio;                                        // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRuntimeFloatCurve                     SteeringCurve;                                     // 0x0008(0x0088)(Edit, NativeAccessSpecifierPublic)
+	uint8                                         Pad_90[0x48];                                      // 0x0090(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FVehicleSteeringConfig;
 
 // ScriptStruct ChaosVehicles.ChaosWheelSetup
 // 0x0028 (0x0028 - 0x0000)

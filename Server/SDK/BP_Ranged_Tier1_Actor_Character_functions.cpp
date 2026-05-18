@@ -16,21 +16,65 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Ranged_Tier1_Actor_Character.BP_Ranged_Tier1_Actor_Character_C.ExecuteUbergraph_BP_Ranged_Tier1_Actor_Character
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_Ranged_Tier1_Actor_Character.BP_Ranged_Tier1_Actor_Character_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_Ranged_Tier1_Actor_Character_C::ExecuteUbergraph_BP_Ranged_Tier1_Actor_Character(int32 EntryPoint)
+void ABP_Ranged_Tier1_Actor_Character_C::UserConstructionScript()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier1_Actor_Character_C", "ExecuteUbergraph_BP_Ranged_Tier1_Actor_Character");
+		Func = Class->GetFunction("BP_Ranged_Tier1_Actor_Character_C", "UserConstructionScript");
 
-	Params::BP_Ranged_Tier1_Actor_Character_C_ExecuteUbergraph_BP_Ranged_Tier1_Actor_Character Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
+
+// Function BP_Ranged_Tier1_Actor_Character.BP_Ranged_Tier1_Actor_Character_C.OnExitActorPool
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Ranged_Tier1_Actor_Character_C::OnExitActorPool()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Ranged_Tier1_Actor_Character_C", "OnExitActorPool");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Ranged_Tier1_Actor_Character.BP_Ranged_Tier1_Actor_Character_C.OnEnterActorPool
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Ranged_Tier1_Actor_Character_C::OnEnterActorPool()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Ranged_Tier1_Actor_Character_C", "OnEnterActorPool");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Ranged_Tier1_Actor_Character.BP_Ranged_Tier1_Actor_Character_C.OnAiDied
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const struct FHitResult&                HitResult                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+// const struct FGameplayTag&              KillingDamageTag                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Ranged_Tier1_Actor_Character_C::OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Ranged_Tier1_Actor_Character_C", "OnAiDied");
+
+	Params::BP_Ranged_Tier1_Actor_Character_C_OnAiDied Parms{};
+
+	Parms.HitResult = std::move(HitResult);
+	Parms.KillingDamageTag = std::move(KillingDamageTag);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -57,67 +101,23 @@ void ABP_Ranged_Tier1_Actor_Character_C::GetNiagaraEyeSystem(class UNiagaraCompo
 }
 
 
-// Function BP_Ranged_Tier1_Actor_Character.BP_Ranged_Tier1_Actor_Character_C.OnAiDied
-// (Event, Public, HasOutParams, BlueprintEvent)
+// Function BP_Ranged_Tier1_Actor_Character.BP_Ranged_Tier1_Actor_Character_C.ExecuteUbergraph_BP_Ranged_Tier1_Actor_Character
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// const struct FHitResult&                HitResult                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-// const struct FGameplayTag&              KillingDamageTag                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Ranged_Tier1_Actor_Character_C::OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag)
+void ABP_Ranged_Tier1_Actor_Character_C::ExecuteUbergraph_BP_Ranged_Tier1_Actor_Character(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier1_Actor_Character_C", "OnAiDied");
+		Func = Class->GetFunction("BP_Ranged_Tier1_Actor_Character_C", "ExecuteUbergraph_BP_Ranged_Tier1_Actor_Character");
 
-	Params::BP_Ranged_Tier1_Actor_Character_C_OnAiDied Parms{};
+	Params::BP_Ranged_Tier1_Actor_Character_C_ExecuteUbergraph_BP_Ranged_Tier1_Actor_Character Parms{};
 
-	Parms.HitResult = std::move(HitResult);
-	Parms.KillingDamageTag = std::move(KillingDamageTag);
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Ranged_Tier1_Actor_Character.BP_Ranged_Tier1_Actor_Character_C.OnEnterActorPool
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Ranged_Tier1_Actor_Character_C::OnEnterActorPool()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier1_Actor_Character_C", "OnEnterActorPool");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Ranged_Tier1_Actor_Character.BP_Ranged_Tier1_Actor_Character_C.OnExitActorPool
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Ranged_Tier1_Actor_Character_C::OnExitActorPool()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier1_Actor_Character_C", "OnExitActorPool");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Ranged_Tier1_Actor_Character.BP_Ranged_Tier1_Actor_Character_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Ranged_Tier1_Actor_Character_C::UserConstructionScript()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier1_Actor_Character_C", "UserConstructionScript");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 

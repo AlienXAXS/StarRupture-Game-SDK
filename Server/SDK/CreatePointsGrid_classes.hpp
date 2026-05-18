@@ -39,10 +39,10 @@ public:
 public:
 	void ExecuteWithContext(struct FPCGContext& InContext, const struct FPCGDataCollection& Input, struct FPCGDataCollection* Output);
 
-	bool IsCacheableOverride() const;
-	bool IterationLoopBody(const struct FPCGContext& InContext, int64 Iteration, const class UPCGSpatialData* InA, const class UPCGSpatialData* InB, struct FPCGPoint* OutPoint, class UPCGMetadata* OutMetadata) const;
-	struct FLinearColor NodeColorOverride() const;
 	class FName NodeTitleOverride() const;
+	struct FLinearColor NodeColorOverride() const;
+	bool IterationLoopBody(const struct FPCGContext& InContext, int64 Iteration, const class UPCGSpatialData* InA, const class UPCGSpatialData* InB, struct FPCGPoint* OutPoint, class UPCGMetadata* OutMetadata) const;
+	bool IsCacheableOverride() const;
 
 public:
 	static class UClass* StaticClass()

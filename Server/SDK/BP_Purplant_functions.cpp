@@ -16,32 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Purplant.BP_Purplant_C.BP_OnWaveChangedUpdate
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// EEnviroWave                             WaveType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EEnviroWaveStage                        WaveStage                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EEnviroWaveFadeoutSubstage              FadeoutSubstage                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EEnviroWaveGrowbackSubstage             GrowbackSubstage                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Purplant_C::BP_OnWaveChangedUpdate(EEnviroWave WaveType, EEnviroWaveStage WaveStage, EEnviroWaveFadeoutSubstage FadeoutSubstage, EEnviroWaveGrowbackSubstage GrowbackSubstage)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Purplant_C", "BP_OnWaveChangedUpdate");
-
-	Params::BP_Purplant_C_BP_OnWaveChangedUpdate Parms{};
-
-	Parms.WaveType = WaveType;
-	Parms.WaveStage = WaveStage;
-	Parms.FadeoutSubstage = FadeoutSubstage;
-	Parms.GrowbackSubstage = GrowbackSubstage;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_Purplant.BP_Purplant_C.ExecuteUbergraph_BP_Purplant
 // (Final, UbergraphFunction)
 // Parameters:
@@ -57,6 +31,26 @@ void ABP_Purplant_C::ExecuteUbergraph_BP_Purplant(int32 EntryPoint)
 	Params::BP_Purplant_C_ExecuteUbergraph_BP_Purplant Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Purplant.BP_Purplant_C.BP_OnLightsVisualsTriggered
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bLightsOn                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Purplant_C::BP_OnLightsVisualsTriggered(bool bLightsOn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Purplant_C", "BP_OnLightsVisualsTriggered");
+
+	Params::BP_Purplant_C_BP_OnLightsVisualsTriggered Parms{};
+
+	Parms.bLightsOn = bLightsOn;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -51,6 +51,17 @@ enum class EClusterConnectionTypeEnum : uint8
 	Chaos_MAX                                = 7,
 };
 
+// ScriptStruct ChaosSolverEngine.ChaosVDStartRecordingCommandMessage
+// 0x0018 (0x0018 - 0x0000)
+struct FChaosVDStartRecordingCommandMessage final
+{
+public:
+	EChaosVDRecordingMode                         RecordingMode;                                     // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Target;                                            // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FChaosVDStartRecordingCommandMessage;
+
 // ScriptStruct ChaosSolverEngine.ChaosPhysicsCollisionInfo
 // 0x00C0 (0x00C0 - 0x0000)
 struct FChaosPhysicsCollisionInfo final
@@ -69,15 +80,6 @@ public:
 	float                                         OtherMass;                                         // 0x00BC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FChaosPhysicsCollisionInfo;
-
-// ScriptStruct ChaosSolverEngine.ChaosVDStopRecordingCommandMessage
-// 0x0001 (0x0001 - 0x0000)
-struct FChaosVDStopRecordingCommandMessage final
-{
-public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FChaosVDStopRecordingCommandMessage;
 
 // ScriptStruct ChaosSolverEngine.ChaosVDSessionPing
 // 0x0010 (0x0010 - 0x0000)
@@ -101,16 +103,14 @@ public:
 };
 DUMPER7_ASSERTS_FChaosVDSessionPong;
 
-// ScriptStruct ChaosSolverEngine.ChaosVDStartRecordingCommandMessage
-// 0x0018 (0x0018 - 0x0000)
-struct FChaosVDStartRecordingCommandMessage final
+// ScriptStruct ChaosSolverEngine.ChaosVDStopRecordingCommandMessage
+// 0x0001 (0x0001 - 0x0000)
+struct FChaosVDStopRecordingCommandMessage final
 {
 public:
-	EChaosVDRecordingMode                         RecordingMode;                                     // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Target;                                            // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FChaosVDStartRecordingCommandMessage;
+DUMPER7_ASSERTS_FChaosVDStopRecordingCommandMessage;
 
 // ScriptStruct ChaosSolverEngine.ChaosVDRecordingStatusMessage
 // 0x0050 (0x0050 - 0x0000)

@@ -56,24 +56,24 @@ public:
 	double                                        LastTimeInfectionTaken;                            // 0x0808(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void Activation_progress__FinishedFunc();
-	void Activation_progress__UpdateFunc();
-	void Attach_objects();
-	void ExecuteUbergraph_BP_Antena(int32 EntryPoint);
-	void Finalization_progress__FinishedFunc();
-	void Finalization_progress__UpdateFunc();
-	void OnActivated();
-	void OnActivatedFromLoad();
-	void OnChargingProgressUpdate(float Progress);
-	void OnInfectionTaken();
-	void OnStateChanged(ECrAntennaState NewState);
-	bool PlayInteractionSuccessfulSound();
-	bool PlayInteractionUnSuccessfulSound();
-	void ReceiveBeginPlay();
-	void ReceiveTick(float DeltaSeconds);
-	void Set_Display_State(ECrAntennaState AntennaState, const struct FLinearColor& Color);
-	void SetUI(ECrAntennaState InState, const struct FLinearColor& InColor);
 	void StopLoopSound();
+	void SetUI(ECrAntennaState InState, const struct FLinearColor& InColor);
+	void Set_Display_State(ECrAntennaState AntennaState, const struct FLinearColor& Color);
+	void ReceiveTick(float DeltaSeconds);
+	void ReceiveBeginPlay();
+	bool PlayInteractionUnSuccessfulSound();
+	bool PlayInteractionSuccessfulSound();
+	void OnStateChanged(ECrAntennaState NewState);
+	void OnInfectionTaken();
+	void OnChargingProgressUpdate(float Progress);
+	void OnActivatedFromLoad();
+	void OnActivated();
+	void Finalization_progress__UpdateFunc();
+	void Finalization_progress__FinishedFunc();
+	void ExecuteUbergraph_BP_Antena(int32 EntryPoint);
+	void Attach_objects();
+	void Activation_progress__UpdateFunc();
+	void Activation_progress__FinishedFunc();
 
 public:
 	static class UClass* StaticClass()

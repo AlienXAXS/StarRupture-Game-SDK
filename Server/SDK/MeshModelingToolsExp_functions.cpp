@@ -350,31 +350,6 @@ const TArray<class FString> UBakeMeshAttributeMapsToolProperties::GetMapPreviewN
 }
 
 
-// Function MeshModelingToolsExp.MeshInspectorMaterialProperties.GetUVChannelNamesFunc
-// (Final, RequiredAPI, Native, Public, Const)
-// Parameters:
-// const TArray<class FString>             ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-const TArray<class FString> UMeshInspectorMaterialProperties::GetUVChannelNamesFunc() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MeshInspectorMaterialProperties", "GetUVChannelNamesFunc");
-
-	Params::MeshInspectorMaterialProperties_GetUVChannelNamesFunc Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function MeshModelingToolsExp.BakeMultiMeshAttributeMapsToolProperties.GetMapPreviewNamesFunc
 // (Final, Native, Public)
 // Parameters:
@@ -422,6 +397,158 @@ const TArray<class FString> UBakeMultiMeshInputToolProperties::GetTargetUVLayerN
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function MeshModelingToolsExp.CubeGridToolActions.AcceptAndStartNew
+// (Final, Native, Public)
+
+void UCubeGridToolActions::AcceptAndStartNew()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CubeGridToolActions", "AcceptAndStartNew");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.CubeGridToolActions.CornerMode
+// (Final, Native, Public)
+
+void UCubeGridToolActions::CornerMode()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CubeGridToolActions", "CornerMode");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.CubeGridToolActions.Flip
+// (Final, Native, Public)
+
+void UCubeGridToolActions::Flip()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CubeGridToolActions", "Flip");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.CubeGridToolActions.Pull
+// (Final, Native, Public)
+
+void UCubeGridToolActions::Pull()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CubeGridToolActions", "Pull");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.CubeGridToolActions.Push
+// (Final, Native, Public)
+
+void UCubeGridToolActions::Push()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CubeGridToolActions", "Push");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.CubeGridToolActions.ResetGridFromActor
+// (Final, Native, Public)
+
+void UCubeGridToolActions::ResetGridFromActor()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CubeGridToolActions", "ResetGridFromActor");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.CubeGridToolActions.SlideBack
+// (Final, Native, Public)
+
+void UCubeGridToolActions::SlideBack()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CubeGridToolActions", "SlideBack");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.CubeGridToolActions.SlideForward
+// (Final, Native, Public)
+
+void UCubeGridToolActions::SlideForward()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CubeGridToolActions", "SlideForward");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -577,155 +704,28 @@ void UEditPivotToolActionPropertySet::WorldOrigin()
 }
 
 
-// Function MeshModelingToolsExp.CubeGridToolActions.AcceptAndStartNew
-// (Final, Native, Public)
+// Function MeshModelingToolsExp.MeshInspectorMaterialProperties.GetUVChannelNamesFunc
+// (Final, RequiredAPI, Native, Public, Const)
+// Parameters:
+// const TArray<class FString>             ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UCubeGridToolActions::AcceptAndStartNew()
+const TArray<class FString> UMeshInspectorMaterialProperties::GetUVChannelNamesFunc() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CubeGridToolActions", "AcceptAndStartNew");
+		Func = Class->GetFunction("MeshInspectorMaterialProperties", "GetUVChannelNamesFunc");
+
+	Params::MeshInspectorMaterialProperties_GetUVChannelNamesFunc Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
 
-
-// Function MeshModelingToolsExp.CubeGridToolActions.CornerMode
-// (Final, Native, Public)
-
-void UCubeGridToolActions::CornerMode()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CubeGridToolActions", "CornerMode");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.CubeGridToolActions.Flip
-// (Final, Native, Public)
-
-void UCubeGridToolActions::Flip()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CubeGridToolActions", "Flip");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.CubeGridToolActions.Pull
-// (Final, Native, Public)
-
-void UCubeGridToolActions::Pull()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CubeGridToolActions", "Pull");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.CubeGridToolActions.Push
-// (Final, Native, Public)
-
-void UCubeGridToolActions::Push()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CubeGridToolActions", "Push");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.CubeGridToolActions.ResetGridFromActor
-// (Final, Native, Public)
-
-void UCubeGridToolActions::ResetGridFromActor()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CubeGridToolActions", "ResetGridFromActor");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.CubeGridToolActions.SlideBack
-// (Final, Native, Public)
-
-void UCubeGridToolActions::SlideBack()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CubeGridToolActions", "SlideBack");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.CubeGridToolActions.SlideForward
-// (Final, Native, Public)
-
-void UCubeGridToolActions::SlideForward()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CubeGridToolActions", "SlideForward");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
+	return Parms.ReturnValue;
 }
 
 

@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "Chimera_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "GameplayTags_structs.hpp"
@@ -18,7 +19,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_AggressivePlant_Logic.BP_AggressivePlant_Logic_C
-// 0x0048 (0x02F0 - 0x02A8)
+// 0x0050 (0x02F8 - 0x02A8)
 class ABP_AggressivePlant_Logic_C final : public AActor
 {
 public:
@@ -29,12 +30,15 @@ public:
 	uint8                                         Pad_2C1[0x7];                                      // 0x02C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGameplayTagContainer                  DrainBackgroundGameplayTags;                       // 0x02C8(0x0020)(Edit, BlueprintVisible, DisableEditOnInstance)
 	double                                        RegrowthDelay;                                     // 0x02E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        GrowbackNormalizedProgressInteractivityThreshold;  // 0x02F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void BndEvt__BP_AggressivePlant_CapsuleCollision_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult);
 	void BndEvt__BP_AggressivePlant_CapsuleCollision_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 	void ChangedDelegate(bool NewValue);
 	void ExecuteUbergraph_BP_AggressivePlant_Logic(int32 EntryPoint);
+	void GetCurrentWaveNormalizedProgress(double* NormalizedCurrentStageProgress);
+	void GetCurrentWaveStage(EEnviroWaveStage* CurrentWaveStage);
 	void ReceiveBeginPlay();
 	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 	void SetHidden(bool IsHidden);

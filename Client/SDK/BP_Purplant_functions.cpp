@@ -16,27 +16,21 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Purplant.BP_Purplant_C.BP_OnWaveChangedUpdate
-// (Event, Protected, BlueprintEvent)
+// Function BP_Purplant.BP_Purplant_C.BP_OnLightsVisualsTriggered
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// EEnviroWave                             WaveType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EEnviroWaveStage                        WaveStage                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EEnviroWaveFadeoutSubstage              FadeoutSubstage                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EEnviroWaveGrowbackSubstage             GrowbackSubstage                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bLightsOn                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Purplant_C::BP_OnWaveChangedUpdate(EEnviroWave WaveType, EEnviroWaveStage WaveStage, EEnviroWaveFadeoutSubstage FadeoutSubstage, EEnviroWaveGrowbackSubstage GrowbackSubstage)
+void ABP_Purplant_C::BP_OnLightsVisualsTriggered(bool bLightsOn)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Purplant_C", "BP_OnWaveChangedUpdate");
+		Func = Class->GetFunction("BP_Purplant_C", "BP_OnLightsVisualsTriggered");
 
-	Params::BP_Purplant_C_BP_OnWaveChangedUpdate Parms{};
+	Params::BP_Purplant_C_BP_OnLightsVisualsTriggered Parms{};
 
-	Parms.WaveType = WaveType;
-	Parms.WaveStage = WaveStage;
-	Parms.FadeoutSubstage = FadeoutSubstage;
-	Parms.GrowbackSubstage = GrowbackSubstage;
+	Parms.bLightsOn = bLightsOn;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

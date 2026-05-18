@@ -52,10 +52,10 @@ public:
 	double                                        Item_Craft_Duration;                               // 0x07B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_BP_Factory(int32 EntryPoint);
-	void OnBuildingStateChanged(ECrBuildingState InState);
-	void OnItemCraftingComplete();
 	void SetupSkeletalMesh();
+	void OnItemCraftingComplete();
+	void OnBuildingStateChanged(ECrBuildingState InState);
+	void ExecuteUbergraph_BP_Factory(int32 EntryPoint);
 
 	void Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Animated_0, TArray<class UMeshComponent*>* NewParam) const;
 

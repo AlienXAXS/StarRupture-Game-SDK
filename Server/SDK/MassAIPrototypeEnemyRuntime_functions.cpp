@@ -2138,33 +2138,6 @@ void ADonutVisualizationActor::UpdateFloatingTrails()
 }
 
 
-// Function MassAIPrototypeEnemyRuntime.MassEnemyFXEventSubsystem.RegisterEvent
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const class AMassEnemyCharacterBase*    Character                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FGameplayTag&              EventTag                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMassEnemyFXEventSubsystem::RegisterEvent(const class AMassEnemyCharacterBase* Character, const struct FGameplayTag& EventTag)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyFXEventSubsystem", "RegisterEvent");
-
-	Params::MassEnemyFXEventSubsystem_RegisterEvent Parms{};
-
-	Parms.Character = Character;
-	Parms.EventTag = std::move(EventTag);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function MassAIPrototypeEnemyRuntime.MovingTowardsBaseActor.OnDespawnScheduled
 // (Event, Protected, BlueprintEvent)
 
@@ -2417,56 +2390,6 @@ void UBaseSiteAttackSubsystem::OnWaveStarted(EEnviroWave Wave, EEnviroWaveStage 
 }
 
 
-// Function MassAIPrototypeEnemyRuntime.CrAiActionAttack.Create_CrAiActionAttack
-// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCrAiActionAttack>    ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrEnemyAttackType                      NewAttackType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bNewWaitForAnimFinishEvent                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UGameplayEffect>      NewDamageGameplayEffect                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewBuildingInfectionDamage                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewAllowedAttackDistance                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewAllowedBuildingAttackDistance                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewAllowedAttackConeHalfAngle                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bKeepRotatedToMovement_0                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   TargetPosition_0                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bNewAttackWithTurnInPlace                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAiActionAttack*                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAiActionAttack* UCrAiActionAttack::Create_CrAiActionAttack(TSubclassOf<class UCrAiActionAttack> ActionType, float NewMaxLifetimeS, ECrEnemyAttackType NewAttackType, bool bNewWaitForAnimFinishEvent, TSubclassOf<class UGameplayEffect> NewDamageGameplayEffect, float NewBuildingInfectionDamage, float NewAllowedAttackDistance, float NewAllowedBuildingAttackDistance, float NewAllowedAttackConeHalfAngle, bool bKeepRotatedToMovement_0, const struct FVector& TargetPosition_0, bool bNewAttackWithTurnInPlace)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionAttack", "Create_CrAiActionAttack");
-
-	Params::CrAiActionAttack_Create_CrAiActionAttack Parms{};
-
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-	Parms.NewAttackType = NewAttackType;
-	Parms.bNewWaitForAnimFinishEvent = bNewWaitForAnimFinishEvent;
-	Parms.NewDamageGameplayEffect = NewDamageGameplayEffect;
-	Parms.NewBuildingInfectionDamage = NewBuildingInfectionDamage;
-	Parms.NewAllowedAttackDistance = NewAllowedAttackDistance;
-	Parms.NewAllowedBuildingAttackDistance = NewAllowedBuildingAttackDistance;
-	Parms.NewAllowedAttackConeHalfAngle = NewAllowedAttackConeHalfAngle;
-	Parms.bKeepRotatedToMovement_0 = bKeepRotatedToMovement_0;
-	Parms.TargetPosition_0 = std::move(TargetPosition_0);
-	Parms.bNewAttackWithTurnInPlace = bNewAttackWithTurnInPlace;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function MassAIPrototypeEnemyRuntime.NavLinkGeneratorBox.QueuePcgGeneration
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -2529,6 +2452,56 @@ bool ANavLinkGeneratorBox::IsGenerating() const
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionAttack.Create_CrAiActionAttack
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCrAiActionAttack>    ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyAttackType                      NewAttackType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewWaitForAnimFinishEvent                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UGameplayEffect>      NewDamageGameplayEffect                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewBuildingInfectionDamage                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewAllowedAttackDistance                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewAllowedBuildingAttackDistance                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewAllowedAttackConeHalfAngle                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bKeepRotatedToMovement_0                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   TargetPosition_0                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewAttackWithTurnInPlace                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionAttack*                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionAttack* UCrAiActionAttack::Create_CrAiActionAttack(TSubclassOf<class UCrAiActionAttack> ActionType, float NewMaxLifetimeS, ECrEnemyAttackType NewAttackType, bool bNewWaitForAnimFinishEvent, TSubclassOf<class UGameplayEffect> NewDamageGameplayEffect, float NewBuildingInfectionDamage, float NewAllowedAttackDistance, float NewAllowedBuildingAttackDistance, float NewAllowedAttackConeHalfAngle, bool bKeepRotatedToMovement_0, const struct FVector& TargetPosition_0, bool bNewAttackWithTurnInPlace)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionAttack", "Create_CrAiActionAttack");
+
+	Params::CrAiActionAttack_Create_CrAiActionAttack Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.NewAttackType = NewAttackType;
+	Parms.bNewWaitForAnimFinishEvent = bNewWaitForAnimFinishEvent;
+	Parms.NewDamageGameplayEffect = NewDamageGameplayEffect;
+	Parms.NewBuildingInfectionDamage = NewBuildingInfectionDamage;
+	Parms.NewAllowedAttackDistance = NewAllowedAttackDistance;
+	Parms.NewAllowedBuildingAttackDistance = NewAllowedBuildingAttackDistance;
+	Parms.NewAllowedAttackConeHalfAngle = NewAllowedAttackConeHalfAngle;
+	Parms.bKeepRotatedToMovement_0 = bKeepRotatedToMovement_0;
+	Parms.TargetPosition_0 = std::move(TargetPosition_0);
+	Parms.bNewAttackWithTurnInPlace = bNewAttackWithTurnInPlace;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -6817,6 +6790,33 @@ void UMassEnemyEventQueueSubsystem::NotifyAiSpawn(class ACrAIBase* SpawnedAiActo
 	Params::MassEnemyEventQueueSubsystem_NotifyAiSpawn Parms{};
 
 	Parms.SpawnedAiActor = SpawnedAiActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyFXEventSubsystem.RegisterEvent
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class AMassEnemyCharacterBase*    Character                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              EventTag                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMassEnemyFXEventSubsystem::RegisterEvent(const class AMassEnemyCharacterBase* Character, const struct FGameplayTag& EventTag)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyFXEventSubsystem", "RegisterEvent");
+
+	Params::MassEnemyFXEventSubsystem_RegisterEvent Parms{};
+
+	Parms.Character = Character;
+	Parms.EventTag = std::move(EventTag);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

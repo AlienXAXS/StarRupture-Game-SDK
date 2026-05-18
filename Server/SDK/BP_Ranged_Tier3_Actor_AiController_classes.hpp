@@ -24,8 +24,8 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03F8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ExecuteUbergraph_BP_Ranged_Tier3_Actor_AiController(int32 EntryPoint);
 	void ReceiveBeginPlay();
+	void ExecuteUbergraph_BP_Ranged_Tier3_Actor_AiController(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

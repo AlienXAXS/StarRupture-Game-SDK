@@ -16,39 +16,143 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_PlacementHelperConnector.BP_PlacementHelperConnector_C.ExecuteUbergraph_BP_PlacementHelperConnector
-// (Final, UbergraphFunction, HasDefaults)
+// Function BP_PlacementHelperConnector.BP_PlacementHelperConnector_C.SetSplineSegment
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class USplineMeshComponent*             SplineMeshComponent                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// int32                                   FirstPointIndex                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   SecondPointIndex                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PlacementHelperConnector_C::ExecuteUbergraph_BP_PlacementHelperConnector(int32 EntryPoint)
+void ABP_PlacementHelperConnector_C::SetSplineSegment(class USplineMeshComponent* SplineMeshComponent, int32 FirstPointIndex, int32 SecondPointIndex)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperConnector_C", "ExecuteUbergraph_BP_PlacementHelperConnector");
+		Func = Class->GetFunction("BP_PlacementHelperConnector_C", "SetSplineSegment");
 
-	Params::BP_PlacementHelperConnector_C_ExecuteUbergraph_BP_PlacementHelperConnector Parms{};
+	Params::BP_PlacementHelperConnector_C_SetSplineSegment Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.SplineMeshComponent = SplineMeshComponent;
+	Parms.FirstPointIndex = FirstPointIndex;
+	Parms.SecondPointIndex = SecondPointIndex;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_PlacementHelperConnector.BP_PlacementHelperConnector_C.GetRampAngle
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Function BP_PlacementHelperConnector.BP_PlacementHelperConnector_C.SetMeshColor
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// double                                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-double ABP_PlacementHelperConnector_C::GetRampAngle()
+void ABP_PlacementHelperConnector_C::SetMeshColor(const struct FLinearColor& Color)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperConnector_C", "GetRampAngle");
+		Func = Class->GetFunction("BP_PlacementHelperConnector_C", "SetMeshColor");
 
-	Params::BP_PlacementHelperConnector_C_GetRampAngle Parms{};
+	Params::BP_PlacementHelperConnector_C_SetMeshColor Parms{};
+
+	Parms.Color = std::move(Color);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_PlacementHelperConnector.BP_PlacementHelperConnector_C.RemoveSteps
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   Amount                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_PlacementHelperConnector_C::RemoveSteps(int32 Amount)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PlacementHelperConnector_C", "RemoveSteps");
+
+	Params::BP_PlacementHelperConnector_C_RemoveSteps Parms{};
+
+	Parms.Amount = Amount;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_PlacementHelperConnector.BP_PlacementHelperConnector_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_PlacementHelperConnector_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PlacementHelperConnector_C", "ReceiveTick");
+
+	Params::BP_PlacementHelperConnector_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_PlacementHelperConnector.BP_PlacementHelperConnector_C.OnSplinePointRemoved
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   PointIndex                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_PlacementHelperConnector_C::OnSplinePointRemoved(int32 PointIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PlacementHelperConnector_C", "OnSplinePointRemoved");
+
+	Params::BP_PlacementHelperConnector_C_OnSplinePointRemoved Parms{};
+
+	Parms.PointIndex = PointIndex;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_PlacementHelperConnector.BP_PlacementHelperConnector_C.OnSplinePointAdded
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   PointIndex                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_PlacementHelperConnector_C::OnSplinePointAdded(int32 PointIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PlacementHelperConnector_C", "OnSplinePointAdded");
+
+	Params::BP_PlacementHelperConnector_C_OnSplinePointAdded Parms{};
+
+	Parms.PointIndex = PointIndex;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_PlacementHelperConnector.BP_PlacementHelperConnector_C.IsRamp
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool ABP_PlacementHelperConnector_C::IsRamp()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PlacementHelperConnector_C", "IsRamp");
+
+	Params::BP_PlacementHelperConnector_C_IsRamp Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -76,19 +180,19 @@ bool ABP_PlacementHelperConnector_C::IsLadder()
 }
 
 
-// Function BP_PlacementHelperConnector.BP_PlacementHelperConnector_C.IsRamp
+// Function BP_PlacementHelperConnector.BP_PlacementHelperConnector_C.GetRampAngle
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double                                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-bool ABP_PlacementHelperConnector_C::IsRamp()
+double ABP_PlacementHelperConnector_C::GetRampAngle()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperConnector_C", "IsRamp");
+		Func = Class->GetFunction("BP_PlacementHelperConnector_C", "GetRampAngle");
 
-	Params::BP_PlacementHelperConnector_C_IsRamp Parms{};
+	Params::BP_PlacementHelperConnector_C_GetRampAngle Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -96,125 +200,21 @@ bool ABP_PlacementHelperConnector_C::IsRamp()
 }
 
 
-// Function BP_PlacementHelperConnector.BP_PlacementHelperConnector_C.OnSplinePointAdded
-// (Event, Protected, BlueprintEvent)
+// Function BP_PlacementHelperConnector.BP_PlacementHelperConnector_C.ExecuteUbergraph_BP_PlacementHelperConnector
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// int32                                   PointIndex                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PlacementHelperConnector_C::OnSplinePointAdded(int32 PointIndex)
+void ABP_PlacementHelperConnector_C::ExecuteUbergraph_BP_PlacementHelperConnector(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperConnector_C", "OnSplinePointAdded");
+		Func = Class->GetFunction("BP_PlacementHelperConnector_C", "ExecuteUbergraph_BP_PlacementHelperConnector");
 
-	Params::BP_PlacementHelperConnector_C_OnSplinePointAdded Parms{};
+	Params::BP_PlacementHelperConnector_C_ExecuteUbergraph_BP_PlacementHelperConnector Parms{};
 
-	Parms.PointIndex = PointIndex;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_PlacementHelperConnector.BP_PlacementHelperConnector_C.OnSplinePointRemoved
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// int32                                   PointIndex                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_PlacementHelperConnector_C::OnSplinePointRemoved(int32 PointIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperConnector_C", "OnSplinePointRemoved");
-
-	Params::BP_PlacementHelperConnector_C_OnSplinePointRemoved Parms{};
-
-	Parms.PointIndex = PointIndex;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_PlacementHelperConnector.BP_PlacementHelperConnector_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_PlacementHelperConnector_C::ReceiveTick(float DeltaSeconds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperConnector_C", "ReceiveTick");
-
-	Params::BP_PlacementHelperConnector_C_ReceiveTick Parms{};
-
-	Parms.DeltaSeconds = DeltaSeconds;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_PlacementHelperConnector.BP_PlacementHelperConnector_C.RemoveSteps
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   Amount                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_PlacementHelperConnector_C::RemoveSteps(int32 Amount)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperConnector_C", "RemoveSteps");
-
-	Params::BP_PlacementHelperConnector_C_RemoveSteps Parms{};
-
-	Parms.Amount = Amount;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_PlacementHelperConnector.BP_PlacementHelperConnector_C.SetMeshColor
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_PlacementHelperConnector_C::SetMeshColor(const struct FLinearColor& Color)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperConnector_C", "SetMeshColor");
-
-	Params::BP_PlacementHelperConnector_C_SetMeshColor Parms{};
-
-	Parms.Color = std::move(Color);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_PlacementHelperConnector.BP_PlacementHelperConnector_C.SetSplineSegment
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class USplineMeshComponent*             SplineMeshComponent                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// int32                                   FirstPointIndex                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   SecondPointIndex                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_PlacementHelperConnector_C::SetSplineSegment(class USplineMeshComponent* SplineMeshComponent, int32 FirstPointIndex, int32 SecondPointIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperConnector_C", "SetSplineSegment");
-
-	Params::BP_PlacementHelperConnector_C_SetSplineSegment Parms{};
-
-	Parms.SplineMeshComponent = SplineMeshComponent;
-	Parms.FirstPointIndex = FirstPointIndex;
-	Parms.SecondPointIndex = SecondPointIndex;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

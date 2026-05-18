@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "ChimeraUI_classes.hpp"
+#include "CoreUObject_structs.hpp"
 #include "Chimera_structs.hpp"
 
 
@@ -35,12 +35,12 @@ public:
 	struct FLinearColor                           MessageColor;                                      // 0x03F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void Init(double Percent_0);
-	void SetBackgroundColor(const struct FLinearColor& Color);
-	void SetPercent(double Percent_0);
-	void SetPercentageIcon(const struct FLinearColor& Color, class UTexture2D* IconTexture, bool ShowPercentage, const class FText& InText, class UWidgetAnimation* Animation);
-	void SetProgressColor(const struct FLinearColor& Color);
 	void SetState(ECrAntennaState State, const struct FLinearColor& StateColor);
+	void SetProgressColor(const struct FLinearColor& Color);
+	void SetPercentageIcon(const struct FLinearColor& Color, class UTexture2D* IconTexture, bool ShowPercentage, const class FText& InText, class UWidgetAnimation* Animation);
+	void SetPercent(double Percent_0);
+	void SetBackgroundColor(const struct FLinearColor& Color);
+	void Init(double Percent_0);
 
 public:
 	static class UClass* StaticClass()

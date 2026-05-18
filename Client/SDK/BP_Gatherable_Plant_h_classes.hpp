@@ -11,18 +11,18 @@
 #include "Basic.hpp"
 
 #include "Chimera_structs.hpp"
-#include "BP_GatherableBaseActor_classes.hpp"
 #include "Engine_structs.hpp"
+#include "BP_GatherableBaseActor_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Gatherable_Plant_h.BP_Gatherable_Plant_h_C
-// 0x0008 (0x03A8 - 0x03A0)
+// 0x0008 (0x03B0 - 0x03A8)
 class ABP_Gatherable_Plant_h_C final : public ABP_GatherableBaseActor_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Gatherable_Plant_h_C;            // 0x03A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Gatherable_Plant_h_C;            // 0x03A8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void BP_OnWaveChangedUpdate(EEnviroWave WaveType, EEnviroWaveStage WaveStage, EEnviroWaveFadeoutSubstage FadeoutSubstage, EEnviroWaveGrowbackSubstage GrowbackSubstage);

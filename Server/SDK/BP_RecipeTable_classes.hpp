@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 #include "Chimera_classes.hpp"
 
 
@@ -33,9 +33,9 @@ public:
 	class UWBP_ResearchTerminalWidget_C*          ResearchTerminalWidget;                            // 0x0680(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_BP_RecipeTable(int32 EntryPoint);
-	void OnUIOpened(bool bOpened);
 	void ReceiveBeginPlay();
+	void OnUIOpened(bool bOpened);
+	void ExecuteUbergraph_BP_RecipeTable(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

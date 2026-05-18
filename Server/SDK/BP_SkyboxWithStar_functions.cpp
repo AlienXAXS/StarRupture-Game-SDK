@@ -16,97 +16,59 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_SkyboxWithStar.BP_SkyboxWithStar_C.EveryFrameEvent
-// (Event, Public, BlueprintEvent)
+// Function BP_SkyboxWithStar.BP_SkyboxWithStar_C.UserConstructionScript
+// (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void ABP_SkyboxWithStar_C::EveryFrameEvent()
+void ABP_SkyboxWithStar_C::UserConstructionScript()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SkyboxWithStar_C", "EveryFrameEvent");
+		Func = Class->GetFunction("BP_SkyboxWithStar_C", "UserConstructionScript");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_SkyboxWithStar.BP_SkyboxWithStar_C.ExecuteUbergraph_BP_SkyboxWithStar
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_SkyboxWithStar.BP_SkyboxWithStar_C.UpdateStarMaterial
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void ABP_SkyboxWithStar_C::ExecuteUbergraph_BP_SkyboxWithStar(int32 EntryPoint)
+void ABP_SkyboxWithStar_C::UpdateStarMaterial()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SkyboxWithStar_C", "ExecuteUbergraph_BP_SkyboxWithStar");
+		Func = Class->GetFunction("BP_SkyboxWithStar_C", "UpdateStarMaterial");
 
-	Params::BP_SkyboxWithStar_C_ExecuteUbergraph_BP_SkyboxWithStar Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_SkyboxWithStar.BP_SkyboxWithStar_C.InitializeRTMaterials
+// Function BP_SkyboxWithStar.BP_SkyboxWithStar_C.UpdateRTMaterials
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_SkyboxWithStar_C::InitializeRTMaterials()
+void ABP_SkyboxWithStar_C::UpdateRTMaterials()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SkyboxWithStar_C", "InitializeRTMaterials");
+		Func = Class->GetFunction("BP_SkyboxWithStar_C", "UpdateRTMaterials");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_SkyboxWithStar.BP_SkyboxWithStar_C.OnEnviroWaveCanceled
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EEnviroWave                             WaveType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EEnviroWaveStage                        WaveStage                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+// Function BP_SkyboxWithStar.BP_SkyboxWithStar_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ABP_SkyboxWithStar_C::OnEnviroWaveCanceled(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings)
+void ABP_SkyboxWithStar_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SkyboxWithStar_C", "OnEnviroWaveCanceled");
+		Func = Class->GetFunction("BP_SkyboxWithStar_C", "ReceiveBeginPlay");
 
-	Params::BP_SkyboxWithStar_C_OnEnviroWaveCanceled Parms{};
-
-	Parms.WaveType = WaveType;
-	Parms.WaveStage = WaveStage;
-	Parms.WaveSettings = std::move(WaveSettings);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_SkyboxWithStar.BP_SkyboxWithStar_C.OnEnviroWaveFinished
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EEnviroWave                             WaveType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-
-void ABP_SkyboxWithStar_C::OnEnviroWaveFinished(EEnviroWave WaveType, const struct FCrEnviroWaveSettings& WaveSettings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SkyboxWithStar_C", "OnEnviroWaveFinished");
-
-	Params::BP_SkyboxWithStar_C_OnEnviroWaveFinished Parms{};
-
-	Parms.WaveType = WaveType;
-	Parms.WaveSettings = std::move(WaveSettings);
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -136,57 +98,95 @@ void ABP_SkyboxWithStar_C::OnEnviroWaveTick(EEnviroWave WaveType, EEnviroWaveSta
 }
 
 
-// Function BP_SkyboxWithStar.BP_SkyboxWithStar_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_SkyboxWithStar.BP_SkyboxWithStar_C.OnEnviroWaveFinished
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EEnviroWave                             WaveType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
 
-void ABP_SkyboxWithStar_C::ReceiveBeginPlay()
+void ABP_SkyboxWithStar_C::OnEnviroWaveFinished(EEnviroWave WaveType, const struct FCrEnviroWaveSettings& WaveSettings)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SkyboxWithStar_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_SkyboxWithStar_C", "OnEnviroWaveFinished");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_SkyboxWithStar_C_OnEnviroWaveFinished Parms{};
+
+	Parms.WaveType = WaveType;
+	Parms.WaveSettings = std::move(WaveSettings);
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_SkyboxWithStar.BP_SkyboxWithStar_C.UpdateRTMaterials
+// Function BP_SkyboxWithStar.BP_SkyboxWithStar_C.OnEnviroWaveCanceled
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EEnviroWave                             WaveType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEnviroWaveStage                        WaveStage                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+
+void ABP_SkyboxWithStar_C::OnEnviroWaveCanceled(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SkyboxWithStar_C", "OnEnviroWaveCanceled");
+
+	Params::BP_SkyboxWithStar_C_OnEnviroWaveCanceled Parms{};
+
+	Parms.WaveType = WaveType;
+	Parms.WaveStage = WaveStage;
+	Parms.WaveSettings = std::move(WaveSettings);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_SkyboxWithStar.BP_SkyboxWithStar_C.InitializeRTMaterials
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_SkyboxWithStar_C::UpdateRTMaterials()
+void ABP_SkyboxWithStar_C::InitializeRTMaterials()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SkyboxWithStar_C", "UpdateRTMaterials");
+		Func = Class->GetFunction("BP_SkyboxWithStar_C", "InitializeRTMaterials");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_SkyboxWithStar.BP_SkyboxWithStar_C.UpdateStarMaterial
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function BP_SkyboxWithStar.BP_SkyboxWithStar_C.ExecuteUbergraph_BP_SkyboxWithStar
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_SkyboxWithStar_C::UpdateStarMaterial()
+void ABP_SkyboxWithStar_C::ExecuteUbergraph_BP_SkyboxWithStar(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SkyboxWithStar_C", "UpdateStarMaterial");
+		Func = Class->GetFunction("BP_SkyboxWithStar_C", "ExecuteUbergraph_BP_SkyboxWithStar");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_SkyboxWithStar_C_ExecuteUbergraph_BP_SkyboxWithStar Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_SkyboxWithStar.BP_SkyboxWithStar_C.UserConstructionScript
-// (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function BP_SkyboxWithStar.BP_SkyboxWithStar_C.EveryFrameEvent
+// (Event, Public, BlueprintEvent)
 
-void ABP_SkyboxWithStar_C::UserConstructionScript()
+void ABP_SkyboxWithStar_C::EveryFrameEvent()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SkyboxWithStar_C", "UserConstructionScript");
+		Func = Class->GetFunction("BP_SkyboxWithStar_C", "EveryFrameEvent");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

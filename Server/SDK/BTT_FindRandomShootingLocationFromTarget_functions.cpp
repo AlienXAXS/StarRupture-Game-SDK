@@ -16,26 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BTT_FindRandomShootingLocationFromTarget.BTT_FindRandomShootingLocationFromTarget_C.ExecuteUbergraph_BTT_FindRandomShootingLocationFromTarget
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UBTT_FindRandomShootingLocationFromTarget_C::ExecuteUbergraph_BTT_FindRandomShootingLocationFromTarget(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTT_FindRandomShootingLocationFromTarget_C", "ExecuteUbergraph_BTT_FindRandomShootingLocationFromTarget");
-
-	Params::BTT_FindRandomShootingLocationFromTarget_C_ExecuteUbergraph_BTT_FindRandomShootingLocationFromTarget Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BTT_FindRandomShootingLocationFromTarget.BTT_FindRandomShootingLocationFromTarget_C.ReceiveExecuteAI
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -53,6 +33,26 @@ void UBTT_FindRandomShootingLocationFromTarget_C::ReceiveExecuteAI(class AAICont
 
 	Parms.OwnerController = OwnerController;
 	Parms.ControlledPawn = ControlledPawn;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BTT_FindRandomShootingLocationFromTarget.BTT_FindRandomShootingLocationFromTarget_C.ExecuteUbergraph_BTT_FindRandomShootingLocationFromTarget
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBTT_FindRandomShootingLocationFromTarget_C::ExecuteUbergraph_BTT_FindRandomShootingLocationFromTarget(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BTT_FindRandomShootingLocationFromTarget_C", "ExecuteUbergraph_BTT_FindRandomShootingLocationFromTarget");
+
+	Params::BTT_FindRandomShootingLocationFromTarget_C_ExecuteUbergraph_BTT_FindRandomShootingLocationFromTarget Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

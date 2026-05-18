@@ -16,19 +16,67 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.BlockAllBeams
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.UpdateDetailedBeamActivity
 // (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UNiagaraComponent*                NiagaraSystem                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ZipLine_OLD_C::BlockAllBeams(class UNiagaraComponent* NiagaraSystem)
+void ABP_ZipLine_OLD_C::UpdateDetailedBeamActivity()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "BlockAllBeams");
+		Func = Class->GetFunction("BP_ZipLine_OLD_C", "UpdateDetailedBeamActivity");
 
-	Params::BP_ZipLine_OLD_C_BlockAllBeams Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.UpdateAllBeamLocationsByActivity
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bActiveConnections                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_ZipLine_OLD_C::UpdateAllBeamLocationsByActivity(bool bActiveConnections)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ZipLine_OLD_C", "UpdateAllBeamLocationsByActivity");
+
+	Params::BP_ZipLine_OLD_C_UpdateAllBeamLocationsByActivity Parms{};
+
+	Parms.bActiveConnections = bActiveConnections;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.UpdateAllBeamLocations
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_ZipLine_OLD_C::UpdateAllBeamLocations()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ZipLine_OLD_C", "UpdateAllBeamLocations");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.TurnOnBeams
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UNiagaraComponent*                NiagaraSystem                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void ABP_ZipLine_OLD_C::TurnOnBeams(class UNiagaraComponent* NiagaraSystem)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ZipLine_OLD_C", "TurnOnBeams");
+
+	Params::BP_ZipLine_OLD_C_TurnOnBeams Parms{};
 
 	Parms.NiagaraSystem = NiagaraSystem;
 
@@ -36,207 +84,129 @@ void ABP_ZipLine_OLD_C::BlockAllBeams(class UNiagaraComponent* NiagaraSystem)
 }
 
 
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.ExecuteUbergraph_BP_ZipLine_OLD
-// (Final, UbergraphFunction, HasDefaults)
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.TurnOffBeams
+// (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UNiagaraComponent*                Niagara_System                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ZipLine_OLD_C::ExecuteUbergraph_BP_ZipLine_OLD(int32 EntryPoint)
+void ABP_ZipLine_OLD_C::TurnOffBeams(class UNiagaraComponent* Niagara_System)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "ExecuteUbergraph_BP_ZipLine_OLD");
+		Func = Class->GetFunction("BP_ZipLine_OLD_C", "TurnOffBeams");
 
-	Params::BP_ZipLine_OLD_C_ExecuteUbergraph_BP_ZipLine_OLD Parms{};
+	Params::BP_ZipLine_OLD_C_TurnOffBeams Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.Niagara_System = Niagara_System;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnActivityModified
-// (Event, Protected, BlueprintEvent)
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.SetDetailedBeamLocation
+// (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    bActive                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   Target_Location                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ZipLine_OLD_C::OnActivityModified(bool bActive)
+void ABP_ZipLine_OLD_C::SetDetailedBeamLocation(const struct FVector& Target_Location)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnActivityModified");
+		Func = Class->GetFunction("BP_ZipLine_OLD_C", "SetDetailedBeamLocation");
 
-	Params::BP_ZipLine_OLD_C_OnActivityModified Parms{};
+	Params::BP_ZipLine_OLD_C_SetDetailedBeamLocation Parms{};
 
-	Parms.bActive = bActive;
+	Parms.Target_Location = std::move(Target_Location);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnBuildingStateChanged
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.Open__UpdateFunc
+// (BlueprintEvent)
 
-void ABP_ZipLine_OLD_C::OnBuildingStateChanged(ECrBuildingState InState)
+void ABP_ZipLine_OLD_C::Open__UpdateFunc()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnBuildingStateChanged");
-
-	Params::BP_ZipLine_OLD_C_OnBuildingStateChanged Parms{};
-
-	Parms.InState = InState;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnConnectionsModified
-// (Event, Protected, HasOutParams, BlueprintEvent)
-// Parameters:
-// const TArray<struct FVector_NetQuantize>&ActiveLocations                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// const TArray<struct FVector_NetQuantize>&InactiveLocations                                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-
-void ABP_ZipLine_OLD_C::OnConnectionsModified(const TArray<struct FVector_NetQuantize>& ActiveLocations, const TArray<struct FVector_NetQuantize>& InactiveLocations)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnConnectionsModified");
-
-	Params::BP_ZipLine_OLD_C_OnConnectionsModified Parms{};
-
-	Parms.ActiveLocations = std::move(ActiveLocations);
-	Parms.InactiveLocations = std::move(InactiveLocations);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnHideBlockingSphere
-// (Event, Public, BlueprintEvent)
-
-void ABP_ZipLine_OLD_C::OnHideBlockingSphere()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnHideBlockingSphere");
+		Func = Class->GetFunction("BP_ZipLine_OLD_C", "Open__UpdateFunc");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnPlayerRotationFinished
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// const struct FVector_NetQuantize&       NewTargetLocation                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FRotator&                  NewRotation                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.Open__FinishedFunc
+// (BlueprintEvent)
 
-void ABP_ZipLine_OLD_C::OnPlayerRotationFinished(const struct FVector_NetQuantize& NewTargetLocation, const struct FRotator& NewRotation)
+void ABP_ZipLine_OLD_C::Open__FinishedFunc()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnPlayerRotationFinished");
-
-	Params::BP_ZipLine_OLD_C_OnPlayerRotationFinished Parms{};
-
-	Parms.NewTargetLocation = std::move(NewTargetLocation);
-	Parms.NewRotation = std::move(NewRotation);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnPlayerRotationStarted
-// (Event, Public, BlueprintEvent)
-
-void ABP_ZipLine_OLD_C::OnPlayerRotationStarted()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnPlayerRotationStarted");
+		Func = Class->GetFunction("BP_ZipLine_OLD_C", "Open__FinishedFunc");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnShowBlockingSphere
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnZiplineTravelLocallyStarted
 // (Event, Public, BlueprintEvent)
 
-void ABP_ZipLine_OLD_C::OnShowBlockingSphere()
+void ABP_ZipLine_OLD_C::OnZiplineTravelLocallyStarted()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnShowBlockingSphere");
+		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnZiplineTravelLocallyStarted");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnStopTravellingTo
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class ACrCharacterPlayerBase*           InPlayer                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// bool                                    bCancelled                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnZiplineModeLocallyStarted
+// (Event, Public, BlueprintEvent)
 
-void ABP_ZipLine_OLD_C::OnStopTravellingTo(class ACrCharacterPlayerBase* InPlayer, bool bCancelled)
+void ABP_ZipLine_OLD_C::OnZiplineModeLocallyStarted()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnStopTravellingTo");
+		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnZiplineModeLocallyStarted");
 
-	Params::BP_ZipLine_OLD_C_OnStopTravellingTo Parms{};
-
-	Parms.InPlayer = InPlayer;
-	Parms.bCancelled = bCancelled;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnTargeted
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class ACrCharacterPlayerBase*           InPlayer                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnZiplineLocallyCancelled
+// (Event, Public, BlueprintEvent)
 
-void ABP_ZipLine_OLD_C::OnTargeted(class ACrCharacterPlayerBase* InPlayer)
+void ABP_ZipLine_OLD_C::OnZiplineLocallyCancelled()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnTargeted");
+		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnZiplineLocallyCancelled");
 
-	Params::BP_ZipLine_OLD_C_OnTargeted Parms{};
-
-	Parms.InPlayer = InPlayer;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnTravellingTo
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnUntargeted
 // (Event, Protected, BlueprintEvent)
 // Parameters:
 // class ACrCharacterPlayerBase*           InPlayer                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ZipLine_OLD_C::OnTravellingTo(class ACrCharacterPlayerBase* InPlayer)
+void ABP_ZipLine_OLD_C::OnUntargeted(class ACrCharacterPlayerBase* InPlayer)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnTravellingTo");
+		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnUntargeted");
 
-	Params::BP_ZipLine_OLD_C_OnTravellingTo Parms{};
+	Params::BP_ZipLine_OLD_C_OnUntargeted Parms{};
 
 	Parms.InPlayer = InPlayer;
 
@@ -264,19 +234,19 @@ void ABP_ZipLine_OLD_C::OnUnoccupied(class ACrCharacterPlayerBase* InPlayer)
 }
 
 
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnUntargeted
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnTravellingTo
 // (Event, Protected, BlueprintEvent)
 // Parameters:
 // class ACrCharacterPlayerBase*           InPlayer                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ZipLine_OLD_C::OnUntargeted(class ACrCharacterPlayerBase* InPlayer)
+void ABP_ZipLine_OLD_C::OnTravellingTo(class ACrCharacterPlayerBase* InPlayer)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnUntargeted");
+		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnTravellingTo");
 
-	Params::BP_ZipLine_OLD_C_OnUntargeted Parms{};
+	Params::BP_ZipLine_OLD_C_OnTravellingTo Parms{};
 
 	Parms.InPlayer = InPlayer;
 
@@ -284,181 +254,211 @@ void ABP_ZipLine_OLD_C::OnUntargeted(class ACrCharacterPlayerBase* InPlayer)
 }
 
 
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnZiplineLocallyCancelled
-// (Event, Public, BlueprintEvent)
-
-void ABP_ZipLine_OLD_C::OnZiplineLocallyCancelled()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnZiplineLocallyCancelled");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnZiplineModeLocallyStarted
-// (Event, Public, BlueprintEvent)
-
-void ABP_ZipLine_OLD_C::OnZiplineModeLocallyStarted()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnZiplineModeLocallyStarted");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnZiplineTravelLocallyStarted
-// (Event, Public, BlueprintEvent)
-
-void ABP_ZipLine_OLD_C::OnZiplineTravelLocallyStarted()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnZiplineTravelLocallyStarted");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.Open__FinishedFunc
-// (BlueprintEvent)
-
-void ABP_ZipLine_OLD_C::Open__FinishedFunc()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "Open__FinishedFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.Open__UpdateFunc
-// (BlueprintEvent)
-
-void ABP_ZipLine_OLD_C::Open__UpdateFunc()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "Open__UpdateFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.SetDetailedBeamLocation
-// (BlueprintCallable, BlueprintEvent)
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnTargeted
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// const struct FVector&                   Target_Location                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ACrCharacterPlayerBase*           InPlayer                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ZipLine_OLD_C::SetDetailedBeamLocation(const struct FVector& Target_Location)
+void ABP_ZipLine_OLD_C::OnTargeted(class ACrCharacterPlayerBase* InPlayer)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "SetDetailedBeamLocation");
+		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnTargeted");
 
-	Params::BP_ZipLine_OLD_C_SetDetailedBeamLocation Parms{};
+	Params::BP_ZipLine_OLD_C_OnTargeted Parms{};
 
-	Parms.Target_Location = std::move(Target_Location);
+	Parms.InPlayer = InPlayer;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.TurnOffBeams
-// (BlueprintCallable, BlueprintEvent)
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnStopTravellingTo
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UNiagaraComponent*                Niagara_System                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class ACrCharacterPlayerBase*           InPlayer                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                                    bCancelled                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ZipLine_OLD_C::TurnOffBeams(class UNiagaraComponent* Niagara_System)
+void ABP_ZipLine_OLD_C::OnStopTravellingTo(class ACrCharacterPlayerBase* InPlayer, bool bCancelled)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "TurnOffBeams");
+		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnStopTravellingTo");
 
-	Params::BP_ZipLine_OLD_C_TurnOffBeams Parms{};
+	Params::BP_ZipLine_OLD_C_OnStopTravellingTo Parms{};
 
-	Parms.Niagara_System = Niagara_System;
+	Parms.InPlayer = InPlayer;
+	Parms.bCancelled = bCancelled;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.TurnOnBeams
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnShowBlockingSphere
+// (Event, Public, BlueprintEvent)
+
+void ABP_ZipLine_OLD_C::OnShowBlockingSphere()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnShowBlockingSphere");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnPlayerRotationStarted
+// (Event, Public, BlueprintEvent)
+
+void ABP_ZipLine_OLD_C::OnPlayerRotationStarted()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnPlayerRotationStarted");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnPlayerRotationFinished
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// const struct FVector_NetQuantize&       NewTargetLocation                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FRotator&                  NewRotation                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ABP_ZipLine_OLD_C::OnPlayerRotationFinished(const struct FVector_NetQuantize& NewTargetLocation, const struct FRotator& NewRotation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnPlayerRotationFinished");
+
+	Params::BP_ZipLine_OLD_C_OnPlayerRotationFinished Parms{};
+
+	Parms.NewTargetLocation = std::move(NewTargetLocation);
+	Parms.NewRotation = std::move(NewRotation);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnHideBlockingSphere
+// (Event, Public, BlueprintEvent)
+
+void ABP_ZipLine_OLD_C::OnHideBlockingSphere()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnHideBlockingSphere");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnConnectionsModified
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// const TArray<struct FVector_NetQuantize>&ActiveLocations                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const TArray<struct FVector_NetQuantize>&InactiveLocations                                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void ABP_ZipLine_OLD_C::OnConnectionsModified(const TArray<struct FVector_NetQuantize>& ActiveLocations, const TArray<struct FVector_NetQuantize>& InactiveLocations)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnConnectionsModified");
+
+	Params::BP_ZipLine_OLD_C_OnConnectionsModified Parms{};
+
+	Parms.ActiveLocations = std::move(ActiveLocations);
+	Parms.InactiveLocations = std::move(InactiveLocations);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnBuildingStateChanged
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_ZipLine_OLD_C::OnBuildingStateChanged(ECrBuildingState InState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnBuildingStateChanged");
+
+	Params::BP_ZipLine_OLD_C_OnBuildingStateChanged Parms{};
+
+	Parms.InState = InState;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnActivityModified
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bActive                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_ZipLine_OLD_C::OnActivityModified(bool bActive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnActivityModified");
+
+	Params::BP_ZipLine_OLD_C_OnActivityModified Parms{};
+
+	Parms.bActive = bActive;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.ExecuteUbergraph_BP_ZipLine_OLD
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_ZipLine_OLD_C::ExecuteUbergraph_BP_ZipLine_OLD(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ZipLine_OLD_C", "ExecuteUbergraph_BP_ZipLine_OLD");
+
+	Params::BP_ZipLine_OLD_C_ExecuteUbergraph_BP_ZipLine_OLD Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.BlockAllBeams
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UNiagaraComponent*                NiagaraSystem                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ZipLine_OLD_C::TurnOnBeams(class UNiagaraComponent* NiagaraSystem)
+void ABP_ZipLine_OLD_C::BlockAllBeams(class UNiagaraComponent* NiagaraSystem)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "TurnOnBeams");
+		Func = Class->GetFunction("BP_ZipLine_OLD_C", "BlockAllBeams");
 
-	Params::BP_ZipLine_OLD_C_TurnOnBeams Parms{};
+	Params::BP_ZipLine_OLD_C_BlockAllBeams Parms{};
 
 	Parms.NiagaraSystem = NiagaraSystem;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.UpdateAllBeamLocations
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_ZipLine_OLD_C::UpdateAllBeamLocations()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "UpdateAllBeamLocations");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.UpdateAllBeamLocationsByActivity
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    bActiveConnections                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_ZipLine_OLD_C::UpdateAllBeamLocationsByActivity(bool bActiveConnections)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "UpdateAllBeamLocationsByActivity");
-
-	Params::BP_ZipLine_OLD_C_UpdateAllBeamLocationsByActivity Parms{};
-
-	Parms.bActiveConnections = bActiveConnections;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.UpdateDetailedBeamActivity
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_ZipLine_OLD_C::UpdateDetailedBeamActivity()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "UpdateDetailedBeamActivity");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 

@@ -38,8 +38,8 @@ public:
 	class UStaticMeshComponent*                   Cube5;                                             // 0x0390(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	bool OnStorageEmptied();
 	void UpdateFoundableVisibilityForStorageState(bool BeginPlay);
+	bool OnStorageEmptied();
 
 public:
 	static class UClass* StaticClass()

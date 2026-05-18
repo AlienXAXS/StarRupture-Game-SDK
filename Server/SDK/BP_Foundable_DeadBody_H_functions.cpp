@@ -16,26 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Foundable_DeadBody_H.BP_Foundable_DeadBody_H_C.OnStorageEmptied
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-bool ABP_Foundable_DeadBody_H_C::OnStorageEmptied()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Foundable_DeadBody_H_C", "OnStorageEmptied");
-
-	Params::BP_Foundable_DeadBody_H_C_OnStorageEmptied Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
 // Function BP_Foundable_DeadBody_H.BP_Foundable_DeadBody_H_C.UpdateFoundableVisibilityForStorageState
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -53,6 +33,26 @@ void ABP_Foundable_DeadBody_H_C::UpdateFoundableVisibilityForStorageState(bool B
 	Parms.BeginPlay = BeginPlay;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Foundable_DeadBody_H.BP_Foundable_DeadBody_H_C.OnStorageEmptied
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool ABP_Foundable_DeadBody_H_C::OnStorageEmptied()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Foundable_DeadBody_H_C", "OnStorageEmptied");
+
+	Params::BP_Foundable_DeadBody_H_C_OnStorageEmptied Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
 }
 
 

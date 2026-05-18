@@ -14,14 +14,23 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function MeshModelingTools.ConvertToPolygonsToolProperties.GetGroupOptionsList
+// Function MeshModelingTools.MeshVertexPaintToolUtilityActions.GetWeightMapsFunc
 // 0x0010 (0x0010 - 0x0000)
-struct ConvertToPolygonsToolProperties_GetGroupOptionsList final
+struct MeshVertexPaintToolUtilityActions_GetWeightMapsFunc final
 {
 public:
 	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_ConvertToPolygonsToolProperties_GetGroupOptionsList;
+DUMPER7_ASSERTS_MeshVertexPaintToolUtilityActions_GetWeightMapsFunc;
+
+// Function MeshModelingTools.MeshVertexPaintToolUtilityActions.GetLODNamesFunc
+// 0x0010 (0x0010 - 0x0000)
+struct MeshVertexPaintToolUtilityActions_GetLODNamesFunc final
+{
+public:
+	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MeshVertexPaintToolUtilityActions_GetLODNamesFunc;
 
 // Function MeshModelingTools.MeshConstraintProperties.IsPreventNormalFlipsEnabled
 // 0x0001 (0x0001 - 0x0000)
@@ -41,23 +50,14 @@ public:
 };
 DUMPER7_ASSERTS_MeshConstraintProperties_IsPreventTinyTrianglesEnabled;
 
-// Function MeshModelingTools.MeshVertexPaintToolUtilityActions.GetWeightMapsFunc
+// Function MeshModelingTools.ConvertToPolygonsToolProperties.GetGroupOptionsList
 // 0x0010 (0x0010 - 0x0000)
-struct MeshVertexPaintToolUtilityActions_GetWeightMapsFunc final
+struct ConvertToPolygonsToolProperties_GetGroupOptionsList final
 {
 public:
 	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_MeshVertexPaintToolUtilityActions_GetWeightMapsFunc;
-
-// Function MeshModelingTools.MeshVertexPaintToolUtilityActions.GetLODNamesFunc
-// 0x0010 (0x0010 - 0x0000)
-struct MeshVertexPaintToolUtilityActions_GetLODNamesFunc final
-{
-public:
-	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MeshVertexPaintToolUtilityActions_GetLODNamesFunc;
+DUMPER7_ASSERTS_ConvertToPolygonsToolProperties_GetGroupOptionsList;
 
 // Function MeshModelingTools.DisplaceMeshCommonProperties.GetWeightMapsFunc
 // 0x0010 (0x0010 - 0x0000)

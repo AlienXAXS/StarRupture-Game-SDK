@@ -28,10 +28,10 @@ public:
 	class UMaterialInstanceDynamic*               RangeVisMaterial;                                  // 0x08C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedBaseCore(int32 EntryPoint);
-	void ReceiveBeginPlay();
-	void SetMeshColor(const struct FLinearColor& Color);
 	void UserConstructionScript();
+	void SetMeshColor(const struct FLinearColor& Color);
+	void ReceiveBeginPlay();
+	void ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedBaseCore(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

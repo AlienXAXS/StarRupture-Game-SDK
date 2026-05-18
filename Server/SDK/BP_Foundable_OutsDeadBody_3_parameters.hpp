@@ -14,16 +14,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_Foundable_OutsDeadBody_3.BP_Foundable_OutsDeadBody_3_C.OnStorageEmptied
-// 0x0002 (0x0002 - 0x0000)
-struct BP_Foundable_OutsDeadBody_3_C_OnStorageEmptied final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_OnStorageEmptied_ReturnValue;             // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Foundable_OutsDeadBody_3_C_OnStorageEmptied;
-
 // Function BP_Foundable_OutsDeadBody_3.BP_Foundable_OutsDeadBody_3_C.UpdateFoundableVisibilityForStorageState
 // 0x0002 (0x0002 - 0x0000)
 struct BP_Foundable_OutsDeadBody_3_C_UpdateFoundableVisibilityForStorageState final
@@ -33,6 +23,16 @@ public:
 	bool                                          CallFunc_IsStorageEmpty_ReturnValue;               // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Foundable_OutsDeadBody_3_C_UpdateFoundableVisibilityForStorageState;
+
+// Function BP_Foundable_OutsDeadBody_3.BP_Foundable_OutsDeadBody_3_C.OnStorageEmptied
+// 0x0002 (0x0002 - 0x0000)
+struct BP_Foundable_OutsDeadBody_3_C_OnStorageEmptied final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_OnStorageEmptied_ReturnValue;             // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Foundable_OutsDeadBody_3_C_OnStorageEmptied;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

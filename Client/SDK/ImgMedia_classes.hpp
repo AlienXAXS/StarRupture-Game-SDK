@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "ImgMedia_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "MediaAssets_classes.hpp"
-#include "ImgMedia_structs.hpp"
 
 
 SDK_NAMESPACE_START

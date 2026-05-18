@@ -56,15 +56,23 @@ public:
 };
 DUMPER7_ASSERTS_CreatePointsGrid_C_ExecuteWithContext;
 
-// Function CreatePointsGrid.CreatePointsGrid_C.IsCacheableOverride
-// 0x0002 (0x0002 - 0x0000)
-struct CreatePointsGrid_C_IsCacheableOverride final
+// Function CreatePointsGrid.CreatePointsGrid_C.NodeTitleOverride
+// 0x0008 (0x0008 - 0x0000)
+struct CreatePointsGrid_C_NodeTitleOverride final
 {
 public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_CreatePointsGrid_C_IsCacheableOverride;
+DUMPER7_ASSERTS_CreatePointsGrid_C_NodeTitleOverride;
+
+// Function CreatePointsGrid.CreatePointsGrid_C.NodeColorOverride
+// 0x0010 (0x0010 - 0x0000)
+struct CreatePointsGrid_C_NodeColorOverride final
+{
+public:
+	struct FLinearColor                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_CreatePointsGrid_C_NodeColorOverride;
 
 // Function CreatePointsGrid.CreatePointsGrid_C.IterationLoopBody
 // 0x0C30 (0x0C30 - 0x0000)
@@ -181,23 +189,15 @@ public:
 };
 DUMPER7_ASSERTS_CreatePointsGrid_C_IterationLoopBody;
 
-// Function CreatePointsGrid.CreatePointsGrid_C.NodeColorOverride
-// 0x0010 (0x0010 - 0x0000)
-struct CreatePointsGrid_C_NodeColorOverride final
+// Function CreatePointsGrid.CreatePointsGrid_C.IsCacheableOverride
+// 0x0002 (0x0002 - 0x0000)
+struct CreatePointsGrid_C_IsCacheableOverride final
 {
 public:
-	struct FLinearColor                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_CreatePointsGrid_C_NodeColorOverride;
-
-// Function CreatePointsGrid.CreatePointsGrid_C.NodeTitleOverride
-// 0x0008 (0x0008 - 0x0000)
-struct CreatePointsGrid_C_NodeTitleOverride final
-{
-public:
-	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_CreatePointsGrid_C_NodeTitleOverride;
+DUMPER7_ASSERTS_CreatePointsGrid_C_IsCacheableOverride;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

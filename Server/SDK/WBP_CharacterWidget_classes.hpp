@@ -36,15 +36,15 @@ public:
 	bool                                          IsBioVisible;                                      // 0x04B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void BndEvt__WBP_CharacterWidget_ShowBioButton_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature();
-	void Construct();
-	void ExecuteUbergraph_WBP_CharacterWidget(int32 EntryPoint);
-	void OnShowBioButtonPressed();
-	void SetColorsInternal();
-	void SetHighlightStyles(bool bHighlight);
-	void SetSelectedRemote(bool bSelected, const class FText& Name_0);
-	void SetSelectedStyles(bool bSelected);
 	void SetupProfession();
+	void SetSelectedStyles(bool bSelected);
+	void SetSelectedRemote(bool bSelected, const class FText& Name_0);
+	void SetHighlightStyles(bool bHighlight);
+	void SetColorsInternal();
+	void OnShowBioButtonPressed();
+	void ExecuteUbergraph_WBP_CharacterWidget(int32 EntryPoint);
+	void Construct();
+	void BndEvt__WBP_CharacterWidget_ShowBioButton_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature();
 
 public:
 	static class UClass* StaticClass()

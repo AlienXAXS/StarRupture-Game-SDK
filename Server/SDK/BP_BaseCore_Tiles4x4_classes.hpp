@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "BP_Modular_Tiles_Base_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -24,10 +24,10 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_BP_BaseCore_Tiles4x4_C;             // 0x0880(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ExecuteUbergraph_BP_BaseCore_Tiles4x4(int32 EntryPoint);
-	void ReceiveActorBeginOverlap(class AActor* OtherActor);
-	void ReceiveBeginPlay();
 	void ReceiveTick(float DeltaSeconds);
+	void ReceiveBeginPlay();
+	void ReceiveActorBeginOverlap(class AActor* OtherActor);
+	void ExecuteUbergraph_BP_BaseCore_Tiles4x4(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

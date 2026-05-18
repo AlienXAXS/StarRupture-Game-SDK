@@ -31,18 +31,18 @@ public:
 	double                                        Ladder_Angle;                                      // 0x09A0(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_BP_PlacementHelperWalkway(int32 EntryPoint);
-	double GetRampAngle();
-	bool IsLadder();
-	bool IsRamp();
-	void OnConfirmedPoint(const struct FAuAPConfirmPointData& NewPoint);
-	void OnSplinePointAdded(int32 PointIndex);
-	void OnSplinePointRemoved(int32 PointIndex);
-	void ReceiveTick(float DeltaSeconds);
-	void RemoveSteps(int32 Amount);
-	void SetMeshColor(const struct FLinearColor& Color);
-	void SetSplineSegment(class USplineMeshComponent* SplineMeshComponent, int32 FirstPointIndex, int32 SecondPointIndex);
 	void UserConstructionScript();
+	void SetSplineSegment(class USplineMeshComponent* SplineMeshComponent, int32 FirstPointIndex, int32 SecondPointIndex);
+	void SetMeshColor(const struct FLinearColor& Color);
+	void RemoveSteps(int32 Amount);
+	void ReceiveTick(float DeltaSeconds);
+	void OnSplinePointRemoved(int32 PointIndex);
+	void OnSplinePointAdded(int32 PointIndex);
+	void OnConfirmedPoint(const struct FAuAPConfirmPointData& NewPoint);
+	bool IsRamp();
+	bool IsLadder();
+	double GetRampAngle();
+	void ExecuteUbergraph_BP_PlacementHelperWalkway(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

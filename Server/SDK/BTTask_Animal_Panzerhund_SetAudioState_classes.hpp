@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "Engine_structs.hpp"
 #include "AIModule_classes.hpp"
 
 
@@ -26,8 +26,8 @@ public:
 	struct FGameplayTag                           StartStateEventTag;                                // 0x00B0(0x0008)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 	void ExecuteUbergraph_BTTask_Animal_Panzerhund_SetAudioState(int32 EntryPoint);
+	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 
 public:
 	static class UClass* StaticClass()

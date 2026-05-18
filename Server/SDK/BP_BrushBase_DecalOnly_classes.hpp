@@ -26,8 +26,8 @@ public:
 	int32                                         Translucent_Sort_Priority;                         // 0x02C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void AlignToGround();
 	void SetTranslucency();
+	void AlignToGround();
 
 public:
 	static class UClass* StaticClass()

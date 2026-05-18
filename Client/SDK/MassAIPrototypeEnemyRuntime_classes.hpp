@@ -10,9 +10,6 @@
 
 #include "Basic.hpp"
 
-#include "MassSpawner_classes.hpp"
-#include "GameplayTags_structs.hpp"
-#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "MassEntity_structs.hpp"
@@ -20,11 +17,14 @@
 #include "MassLOD_classes.hpp"
 #include "Chimera_structs.hpp"
 #include "Chimera_classes.hpp"
+#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "AIModule_structs.hpp"
 #include "AIModule_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "AuActorPlacement_structs.hpp"
+#include "MassSpawner_classes.hpp"
+#include "GameplayTags_structs.hpp"
 #include "MassCommon_structs.hpp"
 #include "MassSignals_classes.hpp"
 #include "MassRepresentation_structs.hpp"
@@ -111,25 +111,28 @@ public:
 };
 DUMPER7_ASSERTS_AAbstractMassEnemySpawner;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemyFlockElementTrait
-// 0x0000 (0x0028 - 0x0028)
-class UMassEnemyFlockElementTrait final : public UMassEntityTraitBase
+// Class MassAIPrototypeEnemyRuntime.MassEnemyGroundFollowProcessor
+// 0x0620 (0x06E0 - 0x00C0)
+class UMassEnemyGroundFollowProcessor final : public UMassProcessor
 {
+public:
+	uint8                                         Pad_C0[0x620];                                     // 0x00C0(0x0620)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MassEnemyFlockElementTrait")
+		STATIC_CLASS_IMPL("MassEnemyGroundFollowProcessor")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MassEnemyFlockElementTrait")
+		STATIC_NAME_IMPL(L"MassEnemyGroundFollowProcessor")
 	}
-	static class UMassEnemyFlockElementTrait* GetDefaultObj()
+	static class UMassEnemyGroundFollowProcessor* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMassEnemyFlockElementTrait>();
+		return GetDefaultObjImpl<UMassEnemyGroundFollowProcessor>();
 	}
 };
-DUMPER7_ASSERTS_UMassEnemyFlockElementTrait;
+DUMPER7_ASSERTS_UMassEnemyGroundFollowProcessor;
 
 // Class MassAIPrototypeEnemyRuntime.AiFunctionLibrary
 // 0x0000 (0x0028 - 0x0028)
@@ -242,28 +245,30 @@ public:
 };
 DUMPER7_ASSERTS_ABaseAttackSpawnIndicator;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemyDamageWithoutTargetProcessor
-// 0x0350 (0x0410 - 0x00C0)
-class UMassEnemyDamageWithoutTargetProcessor final : public UMassProcessor
+// Class MassAIPrototypeEnemyRuntime.MassEnemyEventConfigAsset
+// 0x0060 (0x0090 - 0x0030)
+class UMassEnemyEventConfigAsset final : public UDataAsset
 {
 public:
-	uint8                                         Pad_C0[0x350];                                     // 0x00C0(0x0350)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TMap<struct FGameplayTag, struct FMassEnemyEventData> Events;                                    // 0x0030(0x0050)(Edit, NativeAccessSpecifierPublic)
+	class UMassEnemyAudioStateConfigAsset*        AudioStatesConfigAsset;                            // 0x0080(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UCrSurfaceFootstepData*                 FootstepsConfigAsset;                              // 0x0088(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MassEnemyDamageWithoutTargetProcessor")
+		STATIC_CLASS_IMPL("MassEnemyEventConfigAsset")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MassEnemyDamageWithoutTargetProcessor")
+		STATIC_NAME_IMPL(L"MassEnemyEventConfigAsset")
 	}
-	static class UMassEnemyDamageWithoutTargetProcessor* GetDefaultObj()
+	static class UMassEnemyEventConfigAsset* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMassEnemyDamageWithoutTargetProcessor>();
+		return GetDefaultObjImpl<UMassEnemyEventConfigAsset>();
 	}
 };
-DUMPER7_ASSERTS_UMassEnemyDamageWithoutTargetProcessor;
+DUMPER7_ASSERTS_UMassEnemyEventConfigAsset;
 
 // Class MassAIPrototypeEnemyRuntime.CrMassBaseAttackStateProcessor
 // 0x0350 (0x0410 - 0x00C0)
@@ -323,29 +328,34 @@ public:
 };
 DUMPER7_ASSERTS_IBaseAttackVisualizationInterface;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemyAudioStatesPlayersManager
-// 0x0070 (0x0318 - 0x02A8)
-class AMassEnemyAudioStatesPlayersManager final : public AActor
+// Class MassAIPrototypeEnemyRuntime.MassEnemyEventQueueSubsystem
+// 0x0020 (0x0060 - 0x0040)
+class UMassEnemyEventQueueSubsystem final : public UTickableWorldSubsystem
 {
 public:
-	TArray<class UAudioComponent*>                AudioStatesPlayers;                                // 0x02A8(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_2B8[0x60];                                     // 0x02B8(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<struct FMassEnemyDealDamageQueuedEvent> DamageEventQueue;                                 // 0x0040(0x0010)(ZeroConstructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FMassEnemyNotifyNearbyPlayerQueuedEvent> NotifySpawnEventQueue;                    // 0x0050(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+
+public:
+	void DealDamageToAiActor(TSubclassOf<class UGameplayEffect> AiDamageEffect, class AActor* AttackerActor, class AActor* TargetActor);
+	void DealDamageToAiASC(const struct FGameplayEffectSpecHandle& SpecHandle, class UAbilitySystemComponent* InstigatorASC, class UAbilitySystemComponent* TargetASC);
+	void NotifyAiSpawn(class ACrAIBase* SpawnedAiActor);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MassEnemyAudioStatesPlayersManager")
+		STATIC_CLASS_IMPL("MassEnemyEventQueueSubsystem")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MassEnemyAudioStatesPlayersManager")
+		STATIC_NAME_IMPL(L"MassEnemyEventQueueSubsystem")
 	}
-	static class AMassEnemyAudioStatesPlayersManager* GetDefaultObj()
+	static class UMassEnemyEventQueueSubsystem* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<AMassEnemyAudioStatesPlayersManager>();
+		return GetDefaultObjImpl<UMassEnemyEventQueueSubsystem>();
 	}
 };
-DUMPER7_ASSERTS_AMassEnemyAudioStatesPlayersManager;
+DUMPER7_ASSERTS_UMassEnemyEventQueueSubsystem;
 
 // Class MassAIPrototypeEnemyRuntime.DonutVisualizationActor
 // 0x0098 (0x0340 - 0x02A8)
@@ -416,28 +426,28 @@ public:
 };
 DUMPER7_ASSERTS_AMovingTowardsBaseNavmeshInvokerActor;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemyFlockProcessorBase
-// 0x1350 (0x1410 - 0x00C0)
-class UMassEnemyFlockProcessorBase : public UMassProcessor
+// Class MassAIPrototypeEnemyRuntime.MassNiagaraVisualizationSubsystem
+// 0x0050 (0x0090 - 0x0040)
+class UMassNiagaraVisualizationSubsystem final : public UTickableWorldSubsystem
 {
 public:
-	uint8                                         Pad_C0[0x1350];                                    // 0x00C0(0x1350)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TMap<uint32, struct FSharedNiagaraSystemFragment> NiagaraFragmentCache;                          // 0x0040(0x0050)(Protected, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MassEnemyFlockProcessorBase")
+		STATIC_CLASS_IMPL("MassNiagaraVisualizationSubsystem")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MassEnemyFlockProcessorBase")
+		STATIC_NAME_IMPL(L"MassNiagaraVisualizationSubsystem")
 	}
-	static class UMassEnemyFlockProcessorBase* GetDefaultObj()
+	static class UMassNiagaraVisualizationSubsystem* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMassEnemyFlockProcessorBase>();
+		return GetDefaultObjImpl<UMassNiagaraVisualizationSubsystem>();
 	}
 };
-DUMPER7_ASSERTS_UMassEnemyFlockProcessorBase;
+DUMPER7_ASSERTS_UMassNiagaraVisualizationSubsystem;
 
 // Class MassAIPrototypeEnemyRuntime.MovingTowardsBaseActor
 // 0x0020 (0x02C8 - 0x02A8)
@@ -491,29 +501,28 @@ public:
 };
 DUMPER7_ASSERTS_UCrBaseSiteAttackSpawnHandler;
 
-// Class MassAIPrototypeEnemyRuntime.NiagaraVisualizationTrait
-// 0x0048 (0x0070 - 0x0028)
-class UNiagaraVisualizationTrait final : public UMassEntityTraitBase
+// Class MassAIPrototypeEnemyRuntime.MassEnemyInitializeProcessor
+// 0x0350 (0x0410 - 0x00C0)
+class UMassEnemyInitializeProcessor final : public UMassProcessor
 {
 public:
-	class UNiagaraSystem*                         NiagaraSystem;                                     // 0x0028(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	struct FNiagaraDataProviderConfiguration      DataProviderConfiguration;                         // 0x0030(0x0040)(Edit, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C0[0x350];                                     // 0x00C0(0x0350)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("NiagaraVisualizationTrait")
+		STATIC_CLASS_IMPL("MassEnemyInitializeProcessor")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"NiagaraVisualizationTrait")
+		STATIC_NAME_IMPL(L"MassEnemyInitializeProcessor")
 	}
-	static class UNiagaraVisualizationTrait* GetDefaultObj()
+	static class UMassEnemyInitializeProcessor* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UNiagaraVisualizationTrait>();
+		return GetDefaultObjImpl<UMassEnemyInitializeProcessor>();
 	}
 };
-DUMPER7_ASSERTS_UNiagaraVisualizationTrait;
+DUMPER7_ASSERTS_UMassEnemyInitializeProcessor;
 
 // Class MassAIPrototypeEnemyRuntime.BaseSiteAttackSubsystem
 // 0x0268 (0x0298 - 0x0030)
@@ -595,25 +604,56 @@ public:
 };
 DUMPER7_ASSERTS_UBTService_CrCalculateCurrentAiStateData;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemyInstancedStaticMeshComponent
-// 0x0000 (0x09C0 - 0x09C0)
-class UMassEnemyInstancedStaticMeshComponent final : public UInstancedStaticMeshComponent
+// Class MassAIPrototypeEnemyRuntime.MassEnemyAiSpawner
+// 0x0040 (0x0518 - 0x04D8)
+class AMassEnemyAiSpawner : public AAbstractMassEnemySpawner
+{
+public:
+	uint8                                         Pad_4D8[0x8];                                      // 0x04D8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBox                                   SpawnPositionBox;                                  // 0x04E0(0x0038)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void DespawnAll();
+	void DisableActivationTrigger();
+	void DisableSpawning(bool bPermanently);
+	void EnableActivationTrigger();
+	void EnableSpawning();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MassEnemyAiSpawner")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MassEnemyAiSpawner")
+	}
+	static class AMassEnemyAiSpawner* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AMassEnemyAiSpawner>();
+	}
+};
+DUMPER7_ASSERTS_AMassEnemyAiSpawner;
+
+// Class MassAIPrototypeEnemyRuntime.MegaMachineMassEnemySpawner
+// 0x0000 (0x0518 - 0x0518)
+class AMegaMachineMassEnemySpawner final : public AMassEnemyAiSpawner
 {
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MassEnemyInstancedStaticMeshComponent")
+		STATIC_CLASS_IMPL("MegaMachineMassEnemySpawner")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MassEnemyInstancedStaticMeshComponent")
+		STATIC_NAME_IMPL(L"MegaMachineMassEnemySpawner")
 	}
-	static class UMassEnemyInstancedStaticMeshComponent* GetDefaultObj()
+	static class AMegaMachineMassEnemySpawner* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMassEnemyInstancedStaticMeshComponent>();
+		return GetDefaultObjImpl<AMegaMachineMassEnemySpawner>();
 	}
 };
-DUMPER7_ASSERTS_UMassEnemyInstancedStaticMeshComponent;
+DUMPER7_ASSERTS_AMegaMachineMassEnemySpawner;
 
 // Class MassAIPrototypeEnemyRuntime.BTService_UpdateAggroTarget
 // 0x0350 (0x03C0 - 0x0070)
@@ -698,31 +738,28 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionAttack;
 
-// Class MassAIPrototypeEnemyRuntime.NavLinkOwnerBox
-// 0x0038 (0x02E0 - 0x02A8)
-class ANavLinkOwnerBox final : public AActor
+// Class MassAIPrototypeEnemyRuntime.MassEnemyWaveAffectedProcessor
+// 0x0350 (0x0410 - 0x00C0)
+class UMassEnemyWaveAffectedProcessor final : public UMassProcessor
 {
 public:
-	uint8                                         Pad_2A8[0x10];                                     // 0x02A8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FNavigationLink>                PointLinks;                                        // 0x02B8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C8[0x10];                                     // 0x02C8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	class UBoxComponent*                          BoxComponent;                                      // 0x02D8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_C0[0x350];                                     // 0x00C0(0x0350)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("NavLinkOwnerBox")
+		STATIC_CLASS_IMPL("MassEnemyWaveAffectedProcessor")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"NavLinkOwnerBox")
+		STATIC_NAME_IMPL(L"MassEnemyWaveAffectedProcessor")
 	}
-	static class ANavLinkOwnerBox* GetDefaultObj()
+	static class UMassEnemyWaveAffectedProcessor* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<ANavLinkOwnerBox>();
+		return GetDefaultObjImpl<UMassEnemyWaveAffectedProcessor>();
 	}
 };
-DUMPER7_ASSERTS_ANavLinkOwnerBox;
+DUMPER7_ASSERTS_UMassEnemyWaveAffectedProcessor;
 
 // Class MassAIPrototypeEnemyRuntime.CrAiActionBtTaskMoveTo
 // 0x0058 (0x0128 - 0x00D0)
@@ -790,28 +827,28 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionBtTaskSetFocus;
 
-// Class MassAIPrototypeEnemyRuntime.MassNiagaraVisualizationSubsystem
-// 0x0050 (0x0090 - 0x0040)
-class UMassNiagaraVisualizationSubsystem final : public UTickableWorldSubsystem
+// Class MassAIPrototypeEnemyRuntime.MassEnemyEyeStateProcessor
+// 0x0350 (0x0410 - 0x00C0)
+class UMassEnemyEyeStateProcessor final : public UMassProcessor
 {
 public:
-	TMap<uint32, struct FSharedNiagaraSystemFragment> NiagaraFragmentCache;                          // 0x0040(0x0050)(Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_C0[0x350];                                     // 0x00C0(0x0350)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MassNiagaraVisualizationSubsystem")
+		STATIC_CLASS_IMPL("MassEnemyEyeStateProcessor")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MassNiagaraVisualizationSubsystem")
+		STATIC_NAME_IMPL(L"MassEnemyEyeStateProcessor")
 	}
-	static class UMassNiagaraVisualizationSubsystem* GetDefaultObj()
+	static class UMassEnemyEyeStateProcessor* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMassNiagaraVisualizationSubsystem>();
+		return GetDefaultObjImpl<UMassEnemyEyeStateProcessor>();
 	}
 };
-DUMPER7_ASSERTS_UMassNiagaraVisualizationSubsystem;
+DUMPER7_ASSERTS_UMassEnemyEyeStateProcessor;
 
 // Class MassAIPrototypeEnemyRuntime.CrAiActionBtTaskSetHasAggroTarget
 // 0x0008 (0x00D8 - 0x00D0)
@@ -861,28 +898,28 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionBtTaskRotateToFocus;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemyInitializeProcessor
-// 0x0350 (0x0410 - 0x00C0)
-class UMassEnemyInitializeProcessor final : public UMassProcessor
+// Class MassAIPrototypeEnemyRuntime.CrMassEnemyAiClientDestructorObserver
+// 0x0358 (0x0430 - 0x00D8)
+class UCrMassEnemyAiClientDestructorObserver final : public UMassObserverProcessor
 {
 public:
-	uint8                                         Pad_C0[0x350];                                     // 0x00C0(0x0350)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D8[0x358];                                     // 0x00D8(0x0358)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MassEnemyInitializeProcessor")
+		STATIC_CLASS_IMPL("CrMassEnemyAiClientDestructorObserver")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MassEnemyInitializeProcessor")
+		STATIC_NAME_IMPL(L"CrMassEnemyAiClientDestructorObserver")
 	}
-	static class UMassEnemyInitializeProcessor* GetDefaultObj()
+	static class UCrMassEnemyAiClientDestructorObserver* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMassEnemyInitializeProcessor>();
+		return GetDefaultObjImpl<UCrMassEnemyAiClientDestructorObserver>();
 	}
 };
-DUMPER7_ASSERTS_UMassEnemyInitializeProcessor;
+DUMPER7_ASSERTS_UCrMassEnemyAiClientDestructorObserver;
 
 // Class MassAIPrototypeEnemyRuntime.CrAiActionBtTaskAttack
 // 0x0108 (0x01D8 - 0x00D0)
@@ -957,28 +994,25 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionBtTaskMovementAttack;
 
-// Class MassAIPrototypeEnemyRuntime.CrMassEnemyStartRagdollObserver
-// 0x0358 (0x0430 - 0x00D8)
-class UCrMassEnemyStartRagdollObserver final : public UMassObserverProcessor
+// Class MassAIPrototypeEnemyRuntime.MassEnemyInstancedStaticMeshComponent
+// 0x0000 (0x09C0 - 0x09C0)
+class UMassEnemyInstancedStaticMeshComponent final : public UInstancedStaticMeshComponent
 {
-public:
-	uint8                                         Pad_D8[0x358];                                     // 0x00D8(0x0358)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrMassEnemyStartRagdollObserver")
+		STATIC_CLASS_IMPL("MassEnemyInstancedStaticMeshComponent")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrMassEnemyStartRagdollObserver")
+		STATIC_NAME_IMPL(L"MassEnemyInstancedStaticMeshComponent")
 	}
-	static class UCrMassEnemyStartRagdollObserver* GetDefaultObj()
+	static class UMassEnemyInstancedStaticMeshComponent* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrMassEnemyStartRagdollObserver>();
+		return GetDefaultObjImpl<UMassEnemyInstancedStaticMeshComponent>();
 	}
 };
-DUMPER7_ASSERTS_UCrMassEnemyStartRagdollObserver;
+DUMPER7_ASSERTS_UMassEnemyInstancedStaticMeshComponent;
 
 // Class MassAIPrototypeEnemyRuntime.CrAiActionBtTaskJumpAttack
 // 0x0020 (0x01F8 - 0x01D8)
@@ -1037,28 +1071,28 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionBtTaskPlayAnimation;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemyMoveToTaskDataProcessor
-// 0x0360 (0x0420 - 0x00C0)
-class UMassEnemyMoveToTaskDataProcessor final : public UMassProcessor
+// Class MassAIPrototypeEnemyRuntime.MassEnemyGuarantedAggroProcessor
+// 0x0350 (0x0410 - 0x00C0)
+class UMassEnemyGuarantedAggroProcessor final : public UMassProcessor
 {
 public:
-	uint8                                         Pad_C0[0x360];                                     // 0x00C0(0x0360)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C0[0x350];                                     // 0x00C0(0x0350)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MassEnemyMoveToTaskDataProcessor")
+		STATIC_CLASS_IMPL("MassEnemyGuarantedAggroProcessor")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MassEnemyMoveToTaskDataProcessor")
+		STATIC_NAME_IMPL(L"MassEnemyGuarantedAggroProcessor")
 	}
-	static class UMassEnemyMoveToTaskDataProcessor* GetDefaultObj()
+	static class UMassEnemyGuarantedAggroProcessor* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMassEnemyMoveToTaskDataProcessor>();
+		return GetDefaultObjImpl<UMassEnemyGuarantedAggroProcessor>();
 	}
 };
-DUMPER7_ASSERTS_UMassEnemyMoveToTaskDataProcessor;
+DUMPER7_ASSERTS_UMassEnemyGuarantedAggroProcessor;
 
 // Class MassAIPrototypeEnemyRuntime.CrAiActionBtTaskTaunt
 // 0x0018 (0x00E8 - 0x00D0)
@@ -1115,28 +1149,28 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionBtTaskDealDamage;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemyEyeStateProcessor
-// 0x0350 (0x0410 - 0x00C0)
-class UMassEnemyEyeStateProcessor final : public UMassProcessor
+// Class MassAIPrototypeEnemyRuntime.CrMassEnemyReplicatedAiDestructorObserver
+// 0x0358 (0x0430 - 0x00D8)
+class UCrMassEnemyReplicatedAiDestructorObserver final : public UMassObserverProcessor
 {
 public:
-	uint8                                         Pad_C0[0x350];                                     // 0x00C0(0x0350)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D8[0x358];                                     // 0x00D8(0x0358)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MassEnemyEyeStateProcessor")
+		STATIC_CLASS_IMPL("CrMassEnemyReplicatedAiDestructorObserver")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MassEnemyEyeStateProcessor")
+		STATIC_NAME_IMPL(L"CrMassEnemyReplicatedAiDestructorObserver")
 	}
-	static class UMassEnemyEyeStateProcessor* GetDefaultObj()
+	static class UCrMassEnemyReplicatedAiDestructorObserver* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMassEnemyEyeStateProcessor>();
+		return GetDefaultObjImpl<UCrMassEnemyReplicatedAiDestructorObserver>();
 	}
 };
-DUMPER7_ASSERTS_UMassEnemyEyeStateProcessor;
+DUMPER7_ASSERTS_UCrMassEnemyReplicatedAiDestructorObserver;
 
 // Class MassAIPrototypeEnemyRuntime.CrAiActionBtTaskSpawnEntity
 // 0x0080 (0x0150 - 0x00D0)
@@ -1185,28 +1219,25 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionBtTaskJumpBackToNavmesh;
 
-// Class MassAIPrototypeEnemyRuntime.CrMassEnemyAiClientDestructorObserver
-// 0x0358 (0x0430 - 0x00D8)
-class UCrMassEnemyAiClientDestructorObserver final : public UMassObserverProcessor
+// Class MassAIPrototypeEnemyRuntime.AbstractMassEnemySpawnerLogicHandler
+// 0x0000 (0x0028 - 0x0028)
+class UAbstractMassEnemySpawnerLogicHandler : public UObject
 {
-public:
-	uint8                                         Pad_D8[0x358];                                     // 0x00D8(0x0358)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrMassEnemyAiClientDestructorObserver")
+		STATIC_CLASS_IMPL("AbstractMassEnemySpawnerLogicHandler")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrMassEnemyAiClientDestructorObserver")
+		STATIC_NAME_IMPL(L"AbstractMassEnemySpawnerLogicHandler")
 	}
-	static class UCrMassEnemyAiClientDestructorObserver* GetDefaultObj()
+	static class UAbstractMassEnemySpawnerLogicHandler* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrMassEnemyAiClientDestructorObserver>();
+		return GetDefaultObjImpl<UAbstractMassEnemySpawnerLogicHandler>();
 	}
 };
-DUMPER7_ASSERTS_UCrMassEnemyAiClientDestructorObserver;
+DUMPER7_ASSERTS_UAbstractMassEnemySpawnerLogicHandler;
 
 // Class MassAIPrototypeEnemyRuntime.CrAiActionBtTaskSpawnAnimation
 // 0x0000 (0x00D8 - 0x00D8)
@@ -1251,65 +1282,28 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionBtTaskJumpBack;
 
-// Class MassAIPrototypeEnemyRuntime.AbstractMassEnemySpawnerLogicHandler
-// 0x0000 (0x0028 - 0x0028)
-class UAbstractMassEnemySpawnerLogicHandler : public UObject
+// Class MassAIPrototypeEnemyRuntime.CrMassEnemyStartRagdollObserver
+// 0x0358 (0x0430 - 0x00D8)
+class UCrMassEnemyStartRagdollObserver final : public UMassObserverProcessor
 {
 public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AbstractMassEnemySpawnerLogicHandler")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AbstractMassEnemySpawnerLogicHandler")
-	}
-	static class UAbstractMassEnemySpawnerLogicHandler* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAbstractMassEnemySpawnerLogicHandler>();
-	}
-};
-DUMPER7_ASSERTS_UAbstractMassEnemySpawnerLogicHandler;
+	uint8                                         Pad_D8[0x358];                                     // 0x00D8(0x0358)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemySpawnerLogicHandlerDefault
-// 0x0000 (0x0028 - 0x0028)
-class UMassEnemySpawnerLogicHandlerDefault : public UAbstractMassEnemySpawnerLogicHandler
-{
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MassEnemySpawnerLogicHandlerDefault")
+		STATIC_CLASS_IMPL("CrMassEnemyStartRagdollObserver")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MassEnemySpawnerLogicHandlerDefault")
+		STATIC_NAME_IMPL(L"CrMassEnemyStartRagdollObserver")
 	}
-	static class UMassEnemySpawnerLogicHandlerDefault* GetDefaultObj()
+	static class UCrMassEnemyStartRagdollObserver* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMassEnemySpawnerLogicHandlerDefault>();
+		return GetDefaultObjImpl<UCrMassEnemyStartRagdollObserver>();
 	}
 };
-DUMPER7_ASSERTS_UMassEnemySpawnerLogicHandlerDefault;
-
-// Class MassAIPrototypeEnemyRuntime.MassEnemySpawnerLogicHandlerDebugSpawn
-// 0x0000 (0x0028 - 0x0028)
-class UMassEnemySpawnerLogicHandlerDebugSpawn final : public UMassEnemySpawnerLogicHandlerDefault
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MassEnemySpawnerLogicHandlerDebugSpawn")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MassEnemySpawnerLogicHandlerDebugSpawn")
-	}
-	static class UMassEnemySpawnerLogicHandlerDebugSpawn* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMassEnemySpawnerLogicHandlerDebugSpawn>();
-	}
-};
-DUMPER7_ASSERTS_UMassEnemySpawnerLogicHandlerDebugSpawn;
+DUMPER7_ASSERTS_UCrMassEnemyStartRagdollObserver;
 
 // Class MassAIPrototypeEnemyRuntime.CrAiActionBtTaskShootAtLocation
 // 0x0048 (0x0220 - 0x01D8)
@@ -1363,37 +1357,28 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionBtTaskShoot;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemyPooledActorComponentInterface
-// 0x0000 (0x0000 - 0x0000)
-class IMassEnemyPooledActorComponentInterface final
+// Class MassAIPrototypeEnemyRuntime.MassEnemyMoveToTaskDataProcessor
+// 0x0360 (0x0420 - 0x00C0)
+class UMassEnemyMoveToTaskDataProcessor final : public UMassProcessor
 {
 public:
-	void OnPooledOwnerActivityChanged(bool bNewEnabled);
+	uint8                                         Pad_C0[0x360];                                     // 0x00C0(0x0360)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MassEnemyPooledActorComponentInterface")
+		STATIC_CLASS_IMPL("MassEnemyMoveToTaskDataProcessor")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MassEnemyPooledActorComponentInterface")
+		STATIC_NAME_IMPL(L"MassEnemyMoveToTaskDataProcessor")
 	}
-	static class IMassEnemyPooledActorComponentInterface* GetDefaultObj()
+	static class UMassEnemyMoveToTaskDataProcessor* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<IMassEnemyPooledActorComponentInterface>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
+		return GetDefaultObjImpl<UMassEnemyMoveToTaskDataProcessor>();
 	}
 };
-DUMPER7_ASSERTS_IMassEnemyPooledActorComponentInterface;
+DUMPER7_ASSERTS_UMassEnemyMoveToTaskDataProcessor;
 
 // Class MassAIPrototypeEnemyRuntime.CrAiActionDealAoeDamage
 // 0x0048 (0x00D0 - 0x0088)
@@ -1462,28 +1447,28 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionDealDamage;
 
-// Class MassAIPrototypeEnemyRuntime.CrMassEnemyReplicatedAiDestructorObserver
-// 0x0358 (0x0430 - 0x00D8)
-class UCrMassEnemyReplicatedAiDestructorObserver final : public UMassObserverProcessor
+// Class MassAIPrototypeEnemyRuntime.MassEnemySmoothRotationProcessor
+// 0x0350 (0x0410 - 0x00C0)
+class UMassEnemySmoothRotationProcessor final : public UMassProcessor
 {
 public:
-	uint8                                         Pad_D8[0x358];                                     // 0x00D8(0x0358)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C0[0x350];                                     // 0x00C0(0x0350)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrMassEnemyReplicatedAiDestructorObserver")
+		STATIC_CLASS_IMPL("MassEnemySmoothRotationProcessor")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrMassEnemyReplicatedAiDestructorObserver")
+		STATIC_NAME_IMPL(L"MassEnemySmoothRotationProcessor")
 	}
-	static class UCrMassEnemyReplicatedAiDestructorObserver* GetDefaultObj()
+	static class UMassEnemySmoothRotationProcessor* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrMassEnemyReplicatedAiDestructorObserver>();
+		return GetDefaultObjImpl<UMassEnemySmoothRotationProcessor>();
 	}
 };
-DUMPER7_ASSERTS_UCrMassEnemyReplicatedAiDestructorObserver;
+DUMPER7_ASSERTS_UMassEnemySmoothRotationProcessor;
 
 // Class MassAIPrototypeEnemyRuntime.CrAiActionDealLongAoeDamage
 // 0x0040 (0x00C8 - 0x0088)
@@ -1543,6 +1528,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCrAiActionDissolve;
+
+// Class MassAIPrototypeEnemyRuntime.MassEnemySpawnerNavmeshRadius
+// 0x0000 (0x0560 - 0x0560)
+class UMassEnemySpawnerNavmeshRadius final : public USphereComponent
+{
+public:
+	class AAbstractMassEnemySpawner*              CachedOwner;                                       // 0x0558(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MassEnemySpawnerNavmeshRadius")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MassEnemySpawnerNavmeshRadius")
+	}
+	static class UMassEnemySpawnerNavmeshRadius* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMassEnemySpawnerNavmeshRadius>();
+	}
+};
+DUMPER7_ASSERTS_UMassEnemySpawnerNavmeshRadius;
 
 // Class MassAIPrototypeEnemyRuntime.CrAiActionFinishMassAnim
 // 0x0018 (0x00A0 - 0x0088)
@@ -1604,28 +1612,45 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionBtTaskFinishMassAnim;
 
-// Class MassAIPrototypeEnemyRuntime.CrMassEnemySpawnerDestructorObserver
-// 0x0358 (0x0430 - 0x00D8)
-class UCrMassEnemySpawnerDestructorObserver final : public UMassObserverProcessor
+// Class MassAIPrototypeEnemyRuntime.MassEnemySpawnerLogicHandlerDefault
+// 0x0000 (0x0028 - 0x0028)
+class UMassEnemySpawnerLogicHandlerDefault : public UAbstractMassEnemySpawnerLogicHandler
 {
-public:
-	uint8                                         Pad_D8[0x358];                                     // 0x00D8(0x0358)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrMassEnemySpawnerDestructorObserver")
+		STATIC_CLASS_IMPL("MassEnemySpawnerLogicHandlerDefault")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrMassEnemySpawnerDestructorObserver")
+		STATIC_NAME_IMPL(L"MassEnemySpawnerLogicHandlerDefault")
 	}
-	static class UCrMassEnemySpawnerDestructorObserver* GetDefaultObj()
+	static class UMassEnemySpawnerLogicHandlerDefault* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrMassEnemySpawnerDestructorObserver>();
+		return GetDefaultObjImpl<UMassEnemySpawnerLogicHandlerDefault>();
 	}
 };
-DUMPER7_ASSERTS_UCrMassEnemySpawnerDestructorObserver;
+DUMPER7_ASSERTS_UMassEnemySpawnerLogicHandlerDefault;
+
+// Class MassAIPrototypeEnemyRuntime.MassEnemySpawnerLogicHandlerDebugSpawn
+// 0x0000 (0x0028 - 0x0028)
+class UMassEnemySpawnerLogicHandlerDebugSpawn final : public UMassEnemySpawnerLogicHandlerDefault
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MassEnemySpawnerLogicHandlerDebugSpawn")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MassEnemySpawnerLogicHandlerDebugSpawn")
+	}
+	static class UMassEnemySpawnerLogicHandlerDebugSpawn* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMassEnemySpawnerLogicHandlerDebugSpawn>();
+	}
+};
+DUMPER7_ASSERTS_UMassEnemySpawnerLogicHandlerDebugSpawn;
 
 // Class MassAIPrototypeEnemyRuntime.CrAiActionHitReaction
 // 0x0038 (0x00C0 - 0x0088)
@@ -1696,25 +1721,37 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionJumpAttack;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemySpawnerLogicHandlerSpreadInTime
-// 0x0000 (0x0028 - 0x0028)
-class UMassEnemySpawnerLogicHandlerSpreadInTime final : public UMassEnemySpawnerLogicHandlerDefault
+// Class MassAIPrototypeEnemyRuntime.MassEnemyPooledActorComponentInterface
+// 0x0000 (0x0000 - 0x0000)
+class IMassEnemyPooledActorComponentInterface final
 {
+public:
+	void OnPooledOwnerActivityChanged(bool bNewEnabled);
+
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MassEnemySpawnerLogicHandlerSpreadInTime")
+		STATIC_CLASS_IMPL("MassEnemyPooledActorComponentInterface")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MassEnemySpawnerLogicHandlerSpreadInTime")
+		STATIC_NAME_IMPL(L"MassEnemyPooledActorComponentInterface")
 	}
-	static class UMassEnemySpawnerLogicHandlerSpreadInTime* GetDefaultObj()
+	static class IMassEnemyPooledActorComponentInterface* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMassEnemySpawnerLogicHandlerSpreadInTime>();
+		return GetDefaultObjImpl<IMassEnemyPooledActorComponentInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
-DUMPER7_ASSERTS_UMassEnemySpawnerLogicHandlerSpreadInTime;
+DUMPER7_ASSERTS_IMassEnemyPooledActorComponentInterface;
 
 // Class MassAIPrototypeEnemyRuntime.CrAiMovementAttackInstigator
 // 0x0000 (0x0000 - 0x0000)
@@ -1781,28 +1818,32 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionMovementAttack;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemySmoothRotationProcessor
-// 0x0350 (0x0410 - 0x00C0)
-class UMassEnemySmoothRotationProcessor final : public UMassProcessor
+// Class MassAIPrototypeEnemyRuntime.BTTask_MoveBackToNavmesh
+// 0x0050 (0x00C0 - 0x0070)
+class UBTTask_MoveBackToNavmesh final : public UBTTaskNode
 {
 public:
-	uint8                                         Pad_C0[0x350];                                     // 0x00C0(0x0350)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FBlackboardKeySelector                 DesiredDestination;                                // 0x0070(0x0028)(Edit, NativeAccessSpecifierPublic)
+	struct FVector                                Extents;                                           // 0x0098(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ArriveRadius;                                      // 0x00B0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LerpSpeed;                                         // 0x00B4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   NavAgentName;                                      // 0x00B8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MassEnemySmoothRotationProcessor")
+		STATIC_CLASS_IMPL("BTTask_MoveBackToNavmesh")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MassEnemySmoothRotationProcessor")
+		STATIC_NAME_IMPL(L"BTTask_MoveBackToNavmesh")
 	}
-	static class UMassEnemySmoothRotationProcessor* GetDefaultObj()
+	static class UBTTask_MoveBackToNavmesh* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMassEnemySmoothRotationProcessor>();
+		return GetDefaultObjImpl<UBTTask_MoveBackToNavmesh>();
 	}
 };
-DUMPER7_ASSERTS_UMassEnemySmoothRotationProcessor;
+DUMPER7_ASSERTS_UBTTask_MoveBackToNavmesh;
 
 // Class MassAIPrototypeEnemyRuntime.CrAiActionMoveTo
 // 0x0070 (0x0110 - 0x00A0)
@@ -1868,33 +1909,28 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionPlayAnimation;
 
-// Class MassAIPrototypeEnemyRuntime.BTTask_SetDamageGameEffect
-// 0x0088 (0x00F8 - 0x0070)
-class UBTTask_SetDamageGameEffect final : public UBTTaskNode
+// Class MassAIPrototypeEnemyRuntime.MassEnemySteeringProcessor
+// 0x0350 (0x0410 - 0x00C0)
+class UMassEnemySteeringProcessor final : public UMassProcessor
 {
 public:
-	struct FBlackboardKeySelector                 SelfActorKey;                                      // 0x0070(0x0028)(Edit, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                 AllowedAttackDistanceKey;                          // 0x0098(0x0028)(Edit, NativeAccessSpecifierPublic)
-	TSubclassOf<class UGameplayEffect>            DamageGameplayEffect;                              // 0x00C0(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                 BuildingInfectionDamageKey;                        // 0x00C8(0x0028)(Edit, NativeAccessSpecifierPublic)
-	float                                         AllowedAttackConeHalfAngle;                        // 0x00F0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_F4[0x4];                                       // 0x00F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C0[0x350];                                     // 0x00C0(0x0350)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("BTTask_SetDamageGameEffect")
+		STATIC_CLASS_IMPL("MassEnemySteeringProcessor")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"BTTask_SetDamageGameEffect")
+		STATIC_NAME_IMPL(L"MassEnemySteeringProcessor")
 	}
-	static class UBTTask_SetDamageGameEffect* GetDefaultObj()
+	static class UMassEnemySteeringProcessor* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UBTTask_SetDamageGameEffect>();
+		return GetDefaultObjImpl<UMassEnemySteeringProcessor>();
 	}
 };
-DUMPER7_ASSERTS_UBTTask_SetDamageGameEffect;
+DUMPER7_ASSERTS_UMassEnemySteeringProcessor;
 
 // Class MassAIPrototypeEnemyRuntime.CrAiActionRotateToFocus
 // 0x0008 (0x0090 - 0x0088)
@@ -1955,29 +1991,32 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionSetEyeState;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemyTemperatureModificatorTrait
-// 0x0008 (0x0030 - 0x0028)
-class UMassEnemyTemperatureModificatorTrait final : public UMassEntityTraitBase
+// Class MassAIPrototypeEnemyRuntime.BTTask_SpawnEntity
+// 0x0090 (0x0100 - 0x0070)
+class UBTTask_SpawnEntity final : public UBTTaskNode
 {
 public:
-	float                                         TemperatureToSet;                                  // 0x0028(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FBlackboardKeySelector                 SpawnLocationKey;                                  // 0x0070(0x0028)(Edit, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                 SelfActorKey;                                      // 0x0098(0x0028)(Edit, NativeAccessSpecifierPublic)
+	bool                                          bSpawnAtSelfActorLocation;                         // 0x00C0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C1[0x7];                                       // 0x00C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FAuAPMassSpawnedEntityType             EntityType;                                        // 0x00C8(0x0038)(Edit, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MassEnemyTemperatureModificatorTrait")
+		STATIC_CLASS_IMPL("BTTask_SpawnEntity")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MassEnemyTemperatureModificatorTrait")
+		STATIC_NAME_IMPL(L"BTTask_SpawnEntity")
 	}
-	static class UMassEnemyTemperatureModificatorTrait* GetDefaultObj()
+	static class UBTTask_SpawnEntity* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMassEnemyTemperatureModificatorTrait>();
+		return GetDefaultObjImpl<UBTTask_SpawnEntity>();
 	}
 };
-DUMPER7_ASSERTS_UMassEnemyTemperatureModificatorTrait;
+DUMPER7_ASSERTS_UBTTask_SpawnEntity;
 
 // Class MassAIPrototypeEnemyRuntime.CrAiActionSetFocus
 // 0x0030 (0x00B8 - 0x0088)
@@ -2037,35 +2076,36 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionSetHasAggroTarget;
 
-// Class MassAIPrototypeEnemyRuntime.BTTask_FindRandomPositionOnNavmesh
-// 0x0090 (0x0100 - 0x0070)
-class UBTTask_FindRandomPositionOnNavmesh final : public UBTTaskNode
+// Class MassAIPrototypeEnemyRuntime.BTTask_SetAnimationStateBlocking
+// 0x0060 (0x00D0 - 0x0070)
+class UBTTask_SetAnimationStateBlocking final : public UBTTaskNode
 {
 public:
-	struct FBlackboardKeySelector                 SelfActorKey;                                      // 0x0070(0x0028)(Edit, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                 SearchCenter;                                      // 0x0098(0x0028)(Edit, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                 OutMoveLocationKey;                                // 0x00C0(0x0028)(Edit, NativeAccessSpecifierPublic)
-	float                                         SearchRadius;                                      // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnsureReachable;                                  // 0x00EC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_ED[0x3];                                       // 0x00ED(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UNavigationQueryFilter>     NavFilterClass;                                    // 0x00F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   NavAgentName;                                      // 0x00F8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                 ObservedBooleanIsAnimationFinished;                // 0x0070(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
+	ECrEnemyAttackType                            AttackType;                                        // 0x0098(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bBlockBTForAnimDuration;                           // 0x0099(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bUseFallbackTimeBBKey;                             // 0x009A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_9B[0x5];                                       // 0x009B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBlackboardKeySelector                 FallbackTimeBBKey;                                 // 0x00A0(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
+	float                                         FallbackTimeS;                                     // 0x00C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bClearAttackTypeOnAbort;                           // 0x00CC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_CD[0x3];                                       // 0x00CD(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("BTTask_FindRandomPositionOnNavmesh")
+		STATIC_CLASS_IMPL("BTTask_SetAnimationStateBlocking")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"BTTask_FindRandomPositionOnNavmesh")
+		STATIC_NAME_IMPL(L"BTTask_SetAnimationStateBlocking")
 	}
-	static class UBTTask_FindRandomPositionOnNavmesh* GetDefaultObj()
+	static class UBTTask_SetAnimationStateBlocking* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UBTTask_FindRandomPositionOnNavmesh>();
+		return GetDefaultObjImpl<UBTTask_SetAnimationStateBlocking>();
 	}
 };
-DUMPER7_ASSERTS_UBTTask_FindRandomPositionOnNavmesh;
+DUMPER7_ASSERTS_UBTTask_SetAnimationStateBlocking;
 
 // Class MassAIPrototypeEnemyRuntime.CrAiActionShoot
 // 0x0058 (0x0130 - 0x00D8)
@@ -2126,32 +2166,34 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionShowMesh;
 
-// Class MassAIPrototypeEnemyRuntime.BTTask_MoveBackToNavmesh
-// 0x0050 (0x00C0 - 0x0070)
-class UBTTask_MoveBackToNavmesh final : public UBTTaskNode
+// Class MassAIPrototypeEnemyRuntime.MassEnemySpawnSubsystem
+// 0x0168 (0x0198 - 0x0030)
+class UMassEnemySpawnSubsystem final : public UWorldSubsystem
 {
 public:
-	struct FBlackboardKeySelector                 DesiredDestination;                                // 0x0070(0x0028)(Edit, NativeAccessSpecifierPublic)
-	struct FVector                                Extents;                                           // 0x0098(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ArriveRadius;                                      // 0x00B0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LerpSpeed;                                         // 0x00B4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   NavAgentName;                                      // 0x00B8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class UMassEnemyAiTypeDefinitionAsset*> AiTypes;                                          // 0x0030(0x0010)(Edit, ZeroConstructor, EditConst, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrAISpawnRequestSubsystem*             RequestSubsystem;                                  // 0x0040(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_48[0x150];                                     // 0x0048(0x0150)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void ClearDebugSpawnPreset();
+	void OnPreSaveStart();
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("BTTask_MoveBackToNavmesh")
+		STATIC_CLASS_IMPL("MassEnemySpawnSubsystem")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"BTTask_MoveBackToNavmesh")
+		STATIC_NAME_IMPL(L"MassEnemySpawnSubsystem")
 	}
-	static class UBTTask_MoveBackToNavmesh* GetDefaultObj()
+	static class UMassEnemySpawnSubsystem* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UBTTask_MoveBackToNavmesh>();
+		return GetDefaultObjImpl<UMassEnemySpawnSubsystem>();
 	}
 };
-DUMPER7_ASSERTS_UBTTask_MoveBackToNavmesh;
+DUMPER7_ASSERTS_UMassEnemySpawnSubsystem;
 
 // Class MassAIPrototypeEnemyRuntime.CrAiActionSpawnAnimation
 // 0x0008 (0x00A0 - 0x0098)
@@ -2209,28 +2251,25 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionSpawnEntity;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemySteeringProcessor
-// 0x0350 (0x0410 - 0x00C0)
-class UMassEnemySteeringProcessor final : public UMassProcessor
+// Class MassAIPrototypeEnemyRuntime.MassEnemyEntityTypeTriat
+// 0x0000 (0x0028 - 0x0028)
+class UMassEnemyEntityTypeTriat final : public UMassEntityTraitBase
 {
-public:
-	uint8                                         Pad_C0[0x350];                                     // 0x00C0(0x0350)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MassEnemySteeringProcessor")
+		STATIC_CLASS_IMPL("MassEnemyEntityTypeTriat")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MassEnemySteeringProcessor")
+		STATIC_NAME_IMPL(L"MassEnemyEntityTypeTriat")
 	}
-	static class UMassEnemySteeringProcessor* GetDefaultObj()
+	static class UMassEnemyEntityTypeTriat* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMassEnemySteeringProcessor>();
+		return GetDefaultObjImpl<UMassEnemyEntityTypeTriat>();
 	}
 };
-DUMPER7_ASSERTS_UMassEnemySteeringProcessor;
+DUMPER7_ASSERTS_UMassEnemyEntityTypeTriat;
 
 // Class MassAIPrototypeEnemyRuntime.CrAiActionTaunt
 // 0x0018 (0x00B0 - 0x0098)
@@ -2307,28 +2346,29 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionUseNavlink;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemySpawnLocationTrait
+// Class MassAIPrototypeEnemyRuntime.MassEnemyTemperatureModificatorTrait
 // 0x0008 (0x0030 - 0x0028)
-class UMassEnemySpawnLocationTrait final : public UMassEntityTraitBase
+class UMassEnemyTemperatureModificatorTrait final : public UMassEntityTraitBase
 {
 public:
-	struct FMassEnemySpawnLocationConfigurationSharedFragment SpawnLocationConfiguration;            // 0x0028(0x0008)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         TemperatureToSet;                                  // 0x0028(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MassEnemySpawnLocationTrait")
+		STATIC_CLASS_IMPL("MassEnemyTemperatureModificatorTrait")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MassEnemySpawnLocationTrait")
+		STATIC_NAME_IMPL(L"MassEnemyTemperatureModificatorTrait")
 	}
-	static class UMassEnemySpawnLocationTrait* GetDefaultObj()
+	static class UMassEnemyTemperatureModificatorTrait* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMassEnemySpawnLocationTrait>();
+		return GetDefaultObjImpl<UMassEnemyTemperatureModificatorTrait>();
 	}
 };
-DUMPER7_ASSERTS_UMassEnemySpawnLocationTrait;
+DUMPER7_ASSERTS_UMassEnemyTemperatureModificatorTrait;
 
 // Class MassAIPrototypeEnemyRuntime.CrEQSTestingPawn
 // 0x0000 (0x0710 - 0x0710)
@@ -2373,33 +2413,39 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiEQSTargetContext;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemyPrototypeTrait
-// 0x0340 (0x0368 - 0x0028)
-class UMassEnemyPrototypeTrait final : public UMassEntityTraitBase
+// Class MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerBox
+// 0x0040 (0x05B0 - 0x0570)
+class UMassEnemySpawnerTriggerBox final : public UBoxComponent
 {
 public:
-	struct FCrMassEnemyConfigurationFragment      Params_0;                                          // 0x0028(0x02F0)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FMassMovementParameters                Movement;                                          // 0x0318(0x0030)(Edit, EditConst, Protected, NativeAccessSpecifierProtected)
-	class UMassEnemyDataAsset*                    ConfigurationAsset;                                // 0x0348(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	struct FMassMovingSteeringParameters          MovingSteering;                                    // 0x0350(0x000C)(Edit, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_35C[0x4];                                      // 0x035C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UNavigationQueryFilter>     NavmeshFilterClass;                                // 0x0360(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_568[0x10];                                     // 0x0568(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bActivateAiAggroOnEnter;                           // 0x0578(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_579[0x3];                                      // 0x0579(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	EMassEnemySpawnerTriggerType                  TriggerType;                                       // 0x057C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<int32>                                 PlayerIdsInside;                                   // 0x0580(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FMassEnemySpawnerTriggerLogic          TriggerLogic;                                      // 0x0590(0x0010)(NoDestructor, Protected, NativeAccessSpecifierProtected)
+	struct FTimerHandle                           UpdateInitialOverlapsTimerHandle;                  // 0x05A0(0x0008)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_5A8[0x8];                                      // 0x05A8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnBoxBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult);
+	void OnBoxEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MassEnemyPrototypeTrait")
+		STATIC_CLASS_IMPL("MassEnemySpawnerTriggerBox")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MassEnemyPrototypeTrait")
+		STATIC_NAME_IMPL(L"MassEnemySpawnerTriggerBox")
 	}
-	static class UMassEnemyPrototypeTrait* GetDefaultObj()
+	static class UMassEnemySpawnerTriggerBox* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMassEnemyPrototypeTrait>();
+		return GetDefaultObjImpl<UMassEnemySpawnerTriggerBox>();
 	}
 };
-DUMPER7_ASSERTS_UMassEnemyPrototypeTrait;
+DUMPER7_ASSERTS_UMassEnemySpawnerTriggerBox;
 
 // Class MassAIPrototypeEnemyRuntime.CrAiBallisticTrajectoryTest
 // 0x0048 (0x0240 - 0x01F8)
@@ -2452,34 +2498,34 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiDotTest;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemySpawnSubsystem
-// 0x0168 (0x0198 - 0x0030)
-class UMassEnemySpawnSubsystem final : public UWorldSubsystem
+// Class MassAIPrototypeEnemyRuntime.MassEnemyLodTrait
+// 0x0428 (0x0450 - 0x0028)
+class UMassEnemyLodTrait final : public UMassEntityTraitBase
 {
 public:
-	TArray<class UMassEnemyAiTypeDefinitionAsset*> AiTypes;                                          // 0x0030(0x0010)(Edit, ZeroConstructor, EditConst, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrAISpawnRequestSubsystem*             RequestSubsystem;                                  // 0x0040(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_48[0x150];                                     // 0x0048(0x0150)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void ClearDebugSpawnPreset();
-	void OnPreSaveStart();
+	struct FMassEnemyNetModeLODConfiguration      Standalone;                                        // 0x0028(0x00D0)(Edit, Protected, NativeAccessSpecifierProtected)
+	bool                                          bShouldReplicate;                                  // 0x00F8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_F9[0x7];                                       // 0x00F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMassEnemyNetModeLODServerConfiguration Server;                                           // 0x0100(0x00F0)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FMassEnemyNetModeLODServerConfiguration ListenServer;                                     // 0x01F0(0x00F0)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FMassEnemyNetModeLODConfiguration      Client;                                            // 0x02E0(0x00D0)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FStaticMeshInstanceVisualizationDesc   StaticMeshInstanceDesc;                            // 0x03B0(0x00A0)(Edit, Protected, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MassEnemySpawnSubsystem")
+		STATIC_CLASS_IMPL("MassEnemyLodTrait")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MassEnemySpawnSubsystem")
+		STATIC_NAME_IMPL(L"MassEnemyLodTrait")
 	}
-	static class UMassEnemySpawnSubsystem* GetDefaultObj()
+	static class UMassEnemyLodTrait* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMassEnemySpawnSubsystem>();
+		return GetDefaultObjImpl<UMassEnemyLodTrait>();
 	}
 };
-DUMPER7_ASSERTS_UMassEnemySpawnSubsystem;
+DUMPER7_ASSERTS_UMassEnemyLodTrait;
 
 // Class MassAIPrototypeEnemyRuntime.CrAiEQSPlayerCharactersContext
 // 0x0000 (0x0028 - 0x0028)
@@ -2521,25 +2567,25 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiEQSSpawnLocationContext;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemyEntityTypeTriat
-// 0x0000 (0x0028 - 0x0028)
-class UMassEnemyEntityTypeTriat final : public UMassEntityTraitBase
+// Class MassAIPrototypeEnemyRuntime.MassEnemyVisualizationProcessor
+// 0x0000 (0x0420 - 0x0420)
+class UMassEnemyVisualizationProcessor final : public UMassVisualizationProcessor
 {
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MassEnemyEntityTypeTriat")
+		STATIC_CLASS_IMPL("MassEnemyVisualizationProcessor")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MassEnemyEntityTypeTriat")
+		STATIC_NAME_IMPL(L"MassEnemyVisualizationProcessor")
 	}
-	static class UMassEnemyEntityTypeTriat* GetDefaultObj()
+	static class UMassEnemyVisualizationProcessor* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMassEnemyEntityTypeTriat>();
+		return GetDefaultObjImpl<UMassEnemyVisualizationProcessor>();
 	}
 };
-DUMPER7_ASSERTS_UMassEnemyEntityTypeTriat;
+DUMPER7_ASSERTS_UMassEnemyVisualizationProcessor;
 
 // Class MassAIPrototypeEnemyRuntime.CrAiNavmeshBreadcrumbsSubsystem
 // 0x00A8 (0x00D8 - 0x0030)
@@ -2601,25 +2647,28 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiPcgNavlinkSubsystem;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemyLODCollectorProcessor
-// 0x0000 (0x0E20 - 0x0E20)
-class UMassEnemyLODCollectorProcessor final : public UMassLODCollectorProcessor
+// Class MassAIPrototypeEnemyRuntime.MassEnemySpawnLocationTrait
+// 0x0008 (0x0030 - 0x0028)
+class UMassEnemySpawnLocationTrait final : public UMassEntityTraitBase
 {
+public:
+	struct FMassEnemySpawnLocationConfigurationSharedFragment SpawnLocationConfiguration;            // 0x0028(0x0008)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MassEnemyLODCollectorProcessor")
+		STATIC_CLASS_IMPL("MassEnemySpawnLocationTrait")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MassEnemyLODCollectorProcessor")
+		STATIC_NAME_IMPL(L"MassEnemySpawnLocationTrait")
 	}
-	static class UMassEnemyLODCollectorProcessor* GetDefaultObj()
+	static class UMassEnemySpawnLocationTrait* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMassEnemyLODCollectorProcessor>();
+		return GetDefaultObjImpl<UMassEnemySpawnLocationTrait>();
 	}
 };
-DUMPER7_ASSERTS_UMassEnemyLODCollectorProcessor;
+DUMPER7_ASSERTS_UMassEnemySpawnLocationTrait;
 
 // Class MassAIPrototypeEnemyRuntime.CrAnimNotify_RunAiAction
 // 0x0000 (0x0038 - 0x0038)
@@ -2667,28 +2716,33 @@ public:
 };
 DUMPER7_ASSERTS_UCrAvoidanceManager;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemyUpdateCastShadowsProcessor
-// 0x0350 (0x0410 - 0x00C0)
-class UMassEnemyUpdateCastShadowsProcessor final : public UMassProcessor
+// Class MassAIPrototypeEnemyRuntime.MassEnemyPrototypeTrait
+// 0x0340 (0x0368 - 0x0028)
+class UMassEnemyPrototypeTrait final : public UMassEntityTraitBase
 {
 public:
-	uint8                                         Pad_C0[0x350];                                     // 0x00C0(0x0350)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FCrMassEnemyConfigurationFragment      Params_0;                                          // 0x0028(0x02F0)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FMassMovementParameters                Movement;                                          // 0x0318(0x0030)(Edit, EditConst, Protected, NativeAccessSpecifierProtected)
+	class UMassEnemyDataAsset*                    ConfigurationAsset;                                // 0x0348(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	struct FMassMovingSteeringParameters          MovingSteering;                                    // 0x0350(0x000C)(Edit, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_35C[0x4];                                      // 0x035C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UNavigationQueryFilter>     NavmeshFilterClass;                                // 0x0360(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MassEnemyUpdateCastShadowsProcessor")
+		STATIC_CLASS_IMPL("MassEnemyPrototypeTrait")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MassEnemyUpdateCastShadowsProcessor")
+		STATIC_NAME_IMPL(L"MassEnemyPrototypeTrait")
 	}
-	static class UMassEnemyUpdateCastShadowsProcessor* GetDefaultObj()
+	static class UMassEnemyPrototypeTrait* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMassEnemyUpdateCastShadowsProcessor>();
+		return GetDefaultObjImpl<UMassEnemyPrototypeTrait>();
 	}
 };
-DUMPER7_ASSERTS_UMassEnemyUpdateCastShadowsProcessor;
+DUMPER7_ASSERTS_UMassEnemyPrototypeTrait;
 
 // Class MassAIPrototypeEnemyRuntime.CrAvoidanceSubsystem
 // 0x0018 (0x0048 - 0x0030)
@@ -2736,34 +2790,25 @@ public:
 };
 DUMPER7_ASSERTS_UCrBaseAttackSpawnIndicatorWaveObserver;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemyLodTrait
-// 0x0428 (0x0450 - 0x0028)
-class UMassEnemyLodTrait final : public UMassEntityTraitBase
+// Class MassAIPrototypeEnemyRuntime.MassEnemyUpdateISMProcessor
+// 0x0000 (0x0410 - 0x0410)
+class UMassEnemyUpdateISMProcessor final : public UMassUpdateISMProcessor
 {
-public:
-	struct FMassEnemyNetModeLODConfiguration      Standalone;                                        // 0x0028(0x00D0)(Edit, Protected, NativeAccessSpecifierProtected)
-	bool                                          bShouldReplicate;                                  // 0x00F8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_F9[0x7];                                       // 0x00F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMassEnemyNetModeLODServerConfiguration Server;                                           // 0x0100(0x00F0)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FMassEnemyNetModeLODServerConfiguration ListenServer;                                     // 0x01F0(0x00F0)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FMassEnemyNetModeLODConfiguration      Client;                                            // 0x02E0(0x00D0)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FStaticMeshInstanceVisualizationDesc   StaticMeshInstanceDesc;                            // 0x03B0(0x00A0)(Edit, Protected, NativeAccessSpecifierProtected)
-
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MassEnemyLodTrait")
+		STATIC_CLASS_IMPL("MassEnemyUpdateISMProcessor")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MassEnemyLodTrait")
+		STATIC_NAME_IMPL(L"MassEnemyUpdateISMProcessor")
 	}
-	static class UMassEnemyLodTrait* GetDefaultObj()
+	static class UMassEnemyUpdateISMProcessor* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMassEnemyLodTrait>();
+		return GetDefaultObjImpl<UMassEnemyUpdateISMProcessor>();
 	}
 };
-DUMPER7_ASSERTS_UMassEnemyLodTrait;
+DUMPER7_ASSERTS_UMassEnemyUpdateISMProcessor;
 
 // Class MassAIPrototypeEnemyRuntime.CrMassApplyMovementProcessor
 // 0x0350 (0x0410 - 0x00C0)
@@ -2811,25 +2856,29 @@ public:
 };
 DUMPER7_ASSERTS_UCrMassCrowdAvoidanceProcessor;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemyVisualizationProcessor
-// 0x0000 (0x0420 - 0x0420)
-class UMassEnemyVisualizationProcessor final : public UMassVisualizationProcessor
+// Class MassAIPrototypeEnemyRuntime.NiagaraVisualizationTrait
+// 0x0048 (0x0070 - 0x0028)
+class UNiagaraVisualizationTrait final : public UMassEntityTraitBase
 {
+public:
+	class UNiagaraSystem*                         NiagaraSystem;                                     // 0x0028(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FNiagaraDataProviderConfiguration      DataProviderConfiguration;                         // 0x0030(0x0040)(Edit, NativeAccessSpecifierPublic)
+
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MassEnemyVisualizationProcessor")
+		STATIC_CLASS_IMPL("NiagaraVisualizationTrait")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MassEnemyVisualizationProcessor")
+		STATIC_NAME_IMPL(L"NiagaraVisualizationTrait")
 	}
-	static class UMassEnemyVisualizationProcessor* GetDefaultObj()
+	static class UNiagaraVisualizationTrait* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMassEnemyVisualizationProcessor>();
+		return GetDefaultObjImpl<UNiagaraVisualizationTrait>();
 	}
 };
-DUMPER7_ASSERTS_UMassEnemyVisualizationProcessor;
+DUMPER7_ASSERTS_UNiagaraVisualizationTrait;
 
 // Class MassAIPrototypeEnemyRuntime.CrMassEnemyBubbleReplicatedSerializerHolder
 // 0x0330 (0x05E8 - 0x02B8)
@@ -2874,56 +2923,25 @@ public:
 };
 DUMPER7_ASSERTS_ACrMassEnemyClientBubbleInfo;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemyAiSpawner
-// 0x0040 (0x0518 - 0x04D8)
-class AMassEnemyAiSpawner : public AAbstractMassEnemySpawner
-{
-public:
-	uint8                                         Pad_4D8[0x8];                                      // 0x04D8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBox                                   SpawnPositionBox;                                  // 0x04E0(0x0038)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	void DespawnAll();
-	void DisableActivationTrigger();
-	void DisableSpawning(bool bPermanently);
-	void EnableActivationTrigger();
-	void EnableSpawning();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MassEnemyAiSpawner")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MassEnemyAiSpawner")
-	}
-	static class AMassEnemyAiSpawner* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<AMassEnemyAiSpawner>();
-	}
-};
-DUMPER7_ASSERTS_AMassEnemyAiSpawner;
-
-// Class MassAIPrototypeEnemyRuntime.MegaMachineMassEnemySpawner
-// 0x0000 (0x0518 - 0x0518)
-class AMegaMachineMassEnemySpawner final : public AMassEnemyAiSpawner
+// Class MassAIPrototypeEnemyRuntime.MassEnemyLODCollectorProcessor
+// 0x0000 (0x0E20 - 0x0E20)
+class UMassEnemyLODCollectorProcessor final : public UMassLODCollectorProcessor
 {
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MegaMachineMassEnemySpawner")
+		STATIC_CLASS_IMPL("MassEnemyLODCollectorProcessor")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MegaMachineMassEnemySpawner")
+		STATIC_NAME_IMPL(L"MassEnemyLODCollectorProcessor")
 	}
-	static class AMegaMachineMassEnemySpawner* GetDefaultObj()
+	static class UMassEnemyLODCollectorProcessor* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<AMegaMachineMassEnemySpawner>();
+		return GetDefaultObjImpl<UMassEnemyLODCollectorProcessor>();
 	}
 };
-DUMPER7_ASSERTS_AMegaMachineMassEnemySpawner;
+DUMPER7_ASSERTS_UMassEnemyLODCollectorProcessor;
 
 // Class MassAIPrototypeEnemyRuntime.CrMassEnemyReplicationTransformSyncProcessor
 // 0x0350 (0x0410 - 0x00C0)
@@ -2971,9 +2989,9 @@ public:
 };
 DUMPER7_ASSERTS_UMassEnemyAsyncPathSubsystem;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemyWaveAffectedProcessor
+// Class MassAIPrototypeEnemyRuntime.MassEnemyUpdateCastShadowsProcessor
 // 0x0350 (0x0410 - 0x00C0)
-class UMassEnemyWaveAffectedProcessor final : public UMassProcessor
+class UMassEnemyUpdateCastShadowsProcessor final : public UMassProcessor
 {
 public:
 	uint8                                         Pad_C0[0x350];                                     // 0x00C0(0x0350)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -2981,18 +2999,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MassEnemyWaveAffectedProcessor")
+		STATIC_CLASS_IMPL("MassEnemyUpdateCastShadowsProcessor")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MassEnemyWaveAffectedProcessor")
+		STATIC_NAME_IMPL(L"MassEnemyUpdateCastShadowsProcessor")
 	}
-	static class UMassEnemyWaveAffectedProcessor* GetDefaultObj()
+	static class UMassEnemyUpdateCastShadowsProcessor* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMassEnemyWaveAffectedProcessor>();
+		return GetDefaultObjImpl<UMassEnemyUpdateCastShadowsProcessor>();
 	}
 };
-DUMPER7_ASSERTS_UMassEnemyWaveAffectedProcessor;
+DUMPER7_ASSERTS_UMassEnemyUpdateCastShadowsProcessor;
 
 // Class MassAIPrototypeEnemyRuntime.GameFeatureAction_AddAiType
 // 0x0038 (0x00B8 - 0x0080)
@@ -3041,26 +3059,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UGameFeatureAction_AddDeathSequenceActor;
-
-// Class MassAIPrototypeEnemyRuntime.MassEnemyUpdateISMProcessor
-// 0x0000 (0x0410 - 0x0410)
-class UMassEnemyUpdateISMProcessor final : public UMassUpdateISMProcessor
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MassEnemyUpdateISMProcessor")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MassEnemyUpdateISMProcessor")
-	}
-	static class UMassEnemyUpdateISMProcessor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMassEnemyUpdateISMProcessor>();
-	}
-};
-DUMPER7_ASSERTS_UMassEnemyUpdateISMProcessor;
 
 // Class MassAIPrototypeEnemyRuntime.GameFeatureAction_AddProjectileActor
 // 0x0028 (0x00A8 - 0x0080)
@@ -3808,37 +3806,6 @@ public:
 };
 DUMPER7_ASSERTS_UBTService_UpdateMoveAwayFromActorLocation;
 
-// Class MassAIPrototypeEnemyRuntime.BTTask_SetAnimationStateBlocking
-// 0x0060 (0x00D0 - 0x0070)
-class UBTTask_SetAnimationStateBlocking final : public UBTTaskNode
-{
-public:
-	struct FBlackboardKeySelector                 ObservedBooleanIsAnimationFinished;                // 0x0070(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
-	ECrEnemyAttackType                            AttackType;                                        // 0x0098(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bBlockBTForAnimDuration;                           // 0x0099(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bUseFallbackTimeBBKey;                             // 0x009A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_9B[0x5];                                       // 0x009B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBlackboardKeySelector                 FallbackTimeBBKey;                                 // 0x00A0(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
-	float                                         FallbackTimeS;                                     // 0x00C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bClearAttackTypeOnAbort;                           // 0x00CC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_CD[0x3];                                       // 0x00CD(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("BTTask_SetAnimationStateBlocking")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"BTTask_SetAnimationStateBlocking")
-	}
-	static class UBTTask_SetAnimationStateBlocking* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTTask_SetAnimationStateBlocking>();
-	}
-};
-DUMPER7_ASSERTS_UBTTask_SetAnimationStateBlocking;
-
 // Class MassAIPrototypeEnemyRuntime.BTTask_MoveToWithTracking
 // 0x0000 (0x0160 - 0x0160)
 class UBTTask_MoveToWithTracking final : public UBTTask_MoveTo
@@ -3882,6 +3849,34 @@ public:
 };
 DUMPER7_ASSERTS_UBTTask_SetTagCooldownBB;
 
+// Class MassAIPrototypeEnemyRuntime.BTTask_SetDamageGameEffect
+// 0x0088 (0x00F8 - 0x0070)
+class UBTTask_SetDamageGameEffect final : public UBTTaskNode
+{
+public:
+	struct FBlackboardKeySelector                 SelfActorKey;                                      // 0x0070(0x0028)(Edit, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                 AllowedAttackDistanceKey;                          // 0x0098(0x0028)(Edit, NativeAccessSpecifierPublic)
+	TSubclassOf<class UGameplayEffect>            DamageGameplayEffect;                              // 0x00C0(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                 BuildingInfectionDamageKey;                        // 0x00C8(0x0028)(Edit, NativeAccessSpecifierPublic)
+	float                                         AllowedAttackConeHalfAngle;                        // 0x00F0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_F4[0x4];                                       // 0x00F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BTTask_SetDamageGameEffect")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BTTask_SetDamageGameEffect")
+	}
+	static class UBTTask_SetDamageGameEffect* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTTask_SetDamageGameEffect>();
+	}
+};
+DUMPER7_ASSERTS_UBTTask_SetDamageGameEffect;
+
 // Class MassAIPrototypeEnemyRuntime.BTTask_SetArcParamOverride
 // 0x0030 (0x00A0 - 0x0070)
 class UBTTask_SetArcParamOverride final : public UBTTaskNode
@@ -3906,33 +3901,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UBTTask_SetArcParamOverride;
-
-// Class MassAIPrototypeEnemyRuntime.BTTask_SpawnEntity
-// 0x0090 (0x0100 - 0x0070)
-class UBTTask_SpawnEntity final : public UBTTaskNode
-{
-public:
-	struct FBlackboardKeySelector                 SpawnLocationKey;                                  // 0x0070(0x0028)(Edit, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                 SelfActorKey;                                      // 0x0098(0x0028)(Edit, NativeAccessSpecifierPublic)
-	bool                                          bSpawnAtSelfActorLocation;                         // 0x00C0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C1[0x7];                                       // 0x00C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAuAPMassSpawnedEntityType             EntityType;                                        // 0x00C8(0x0038)(Edit, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("BTTask_SpawnEntity")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"BTTask_SpawnEntity")
-	}
-	static class UBTTask_SpawnEntity* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTTask_SpawnEntity>();
-	}
-};
-DUMPER7_ASSERTS_UBTTask_SpawnEntity;
 
 // Class MassAIPrototypeEnemyRuntime.BTTask_WaitForAnimFinish
 // 0x0060 (0x00D0 - 0x0070)
@@ -3961,6 +3929,36 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UBTTask_WaitForAnimFinish;
+
+// Class MassAIPrototypeEnemyRuntime.BTTask_FindRandomPositionOnNavmesh
+// 0x0090 (0x0100 - 0x0070)
+class UBTTask_FindRandomPositionOnNavmesh final : public UBTTaskNode
+{
+public:
+	struct FBlackboardKeySelector                 SelfActorKey;                                      // 0x0070(0x0028)(Edit, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                 SearchCenter;                                      // 0x0098(0x0028)(Edit, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                 OutMoveLocationKey;                                // 0x00C0(0x0028)(Edit, NativeAccessSpecifierPublic)
+	float                                         SearchRadius;                                      // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnsureReachable;                                  // 0x00EC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_ED[0x3];                                       // 0x00ED(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UNavigationQueryFilter>     NavFilterClass;                                    // 0x00F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   NavAgentName;                                      // 0x00F8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BTTask_FindRandomPositionOnNavmesh")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BTTask_FindRandomPositionOnNavmesh")
+	}
+	static class UBTTask_FindRandomPositionOnNavmesh* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTTask_FindRandomPositionOnNavmesh>();
+	}
+};
+DUMPER7_ASSERTS_UBTTask_FindRandomPositionOnNavmesh;
 
 // Class MassAIPrototypeEnemyRuntime.BTTask_FindRandomLocationInFence
 // 0x0028 (0x0098 - 0x0070)
@@ -4582,35 +4580,6 @@ public:
 };
 DUMPER7_ASSERTS_UMassEnemyEntityCollisionIsmWrapperComponent;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemyEventQueueSubsystem
-// 0x0020 (0x0060 - 0x0040)
-class UMassEnemyEventQueueSubsystem final : public UTickableWorldSubsystem
-{
-public:
-	TArray<struct FMassEnemyDealDamageQueuedEvent> DamageEventQueue;                                 // 0x0040(0x0010)(ZeroConstructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FMassEnemyNotifyNearbyPlayerQueuedEvent> NotifySpawnEventQueue;                    // 0x0050(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-
-public:
-	void DealDamageToAiActor(TSubclassOf<class UGameplayEffect> AiDamageEffect, class AActor* AttackerActor, class AActor* TargetActor);
-	void DealDamageToAiASC(const struct FGameplayEffectSpecHandle& SpecHandle, class UAbilitySystemComponent* InstigatorASC, class UAbilitySystemComponent* TargetASC);
-	void NotifyAiSpawn(class ACrAIBase* SpawnedAiActor);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MassEnemyEventQueueSubsystem")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MassEnemyEventQueueSubsystem")
-	}
-	static class UMassEnemyEventQueueSubsystem* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMassEnemyEventQueueSubsystem>();
-	}
-};
-DUMPER7_ASSERTS_UMassEnemyEventQueueSubsystem;
-
 // Class MassAIPrototypeEnemyRuntime.MassEnemyExplosionSphereRepresentationActorManagement
 // 0x0000 (0x0028 - 0x0028)
 class UMassEnemyExplosionSphereRepresentationActorManagement final : public UMassRepresentationActorManagement
@@ -4630,6 +4599,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMassEnemyExplosionSphereRepresentationActorManagement;
+
+// Class MassAIPrototypeEnemyRuntime.MassEnemyFlockProcessorBase
+// 0x1350 (0x1410 - 0x00C0)
+class UMassEnemyFlockProcessorBase : public UMassProcessor
+{
+public:
+	uint8                                         Pad_C0[0x1350];                                    // 0x00C0(0x1350)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MassEnemyFlockProcessorBase")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MassEnemyFlockProcessorBase")
+	}
+	static class UMassEnemyFlockProcessorBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMassEnemyFlockProcessorBase>();
+	}
+};
+DUMPER7_ASSERTS_UMassEnemyFlockProcessorBase;
 
 // Class MassAIPrototypeEnemyRuntime.MassEnemyFlockProcessor
 // 0x0080 (0x1490 - 0x1410)
@@ -4654,6 +4646,26 @@ public:
 };
 DUMPER7_ASSERTS_UMassEnemyFlockProcessor;
 
+// Class MassAIPrototypeEnemyRuntime.MassEnemyFlockElementTrait
+// 0x0000 (0x0028 - 0x0028)
+class UMassEnemyFlockElementTrait final : public UMassEntityTraitBase
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MassEnemyFlockElementTrait")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MassEnemyFlockElementTrait")
+	}
+	static class UMassEnemyFlockElementTrait* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMassEnemyFlockElementTrait>();
+	}
+};
+DUMPER7_ASSERTS_UMassEnemyFlockElementTrait;
+
 // Class MassAIPrototypeEnemyRuntime.MassEnemyAudioStateConfigAsset
 // 0x0050 (0x0080 - 0x0030)
 class UMassEnemyAudioStateConfigAsset final : public UDataAsset
@@ -4677,31 +4689,6 @@ public:
 };
 DUMPER7_ASSERTS_UMassEnemyAudioStateConfigAsset;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemyEventConfigAsset
-// 0x0060 (0x0090 - 0x0030)
-class UMassEnemyEventConfigAsset final : public UDataAsset
-{
-public:
-	TMap<struct FGameplayTag, struct FMassEnemyEventData> Events;                                    // 0x0030(0x0050)(Edit, NativeAccessSpecifierPublic)
-	class UMassEnemyAudioStateConfigAsset*        AudioStatesConfigAsset;                            // 0x0080(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UCrSurfaceFootstepData*                 FootstepsConfigAsset;                              // 0x0088(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MassEnemyEventConfigAsset")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MassEnemyEventConfigAsset")
-	}
-	static class UMassEnemyEventConfigAsset* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMassEnemyEventConfigAsset>();
-	}
-};
-DUMPER7_ASSERTS_UMassEnemyEventConfigAsset;
-
 // Class MassAIPrototypeEnemyRuntime.MassEnemyFXEventTrait
 // 0x0008 (0x0030 - 0x0028)
 class UMassEnemyFXEventTrait final : public UMassEntityTraitBase
@@ -4724,6 +4711,30 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMassEnemyFXEventTrait;
+
+// Class MassAIPrototypeEnemyRuntime.MassEnemyAudioStatesPlayersManager
+// 0x0070 (0x0318 - 0x02A8)
+class AMassEnemyAudioStatesPlayersManager final : public AActor
+{
+public:
+	TArray<class UAudioComponent*>                AudioStatesPlayers;                                // 0x02A8(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_2B8[0x60];                                     // 0x02B8(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MassEnemyAudioStatesPlayersManager")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MassEnemyAudioStatesPlayersManager")
+	}
+	static class AMassEnemyAudioStatesPlayersManager* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AMassEnemyAudioStatesPlayersManager>();
+	}
+};
+DUMPER7_ASSERTS_AMassEnemyAudioStatesPlayersManager;
 
 // Class MassAIPrototypeEnemyRuntime.MassEnemyFXEventSubsystem
 // 0x0018 (0x0048 - 0x0030)
@@ -4798,29 +4809,6 @@ public:
 };
 DUMPER7_ASSERTS_UMassEnemyFXEventsDetectorProcessor;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemyGroundFollowProcessor
-// 0x0620 (0x06E0 - 0x00C0)
-class UMassEnemyGroundFollowProcessor final : public UMassProcessor
-{
-public:
-	uint8                                         Pad_C0[0x620];                                     // 0x00C0(0x0620)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MassEnemyGroundFollowProcessor")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MassEnemyGroundFollowProcessor")
-	}
-	static class UMassEnemyGroundFollowProcessor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMassEnemyGroundFollowProcessor>();
-	}
-};
-DUMPER7_ASSERTS_UMassEnemyGroundFollowProcessor;
-
 // Class MassAIPrototypeEnemyRuntime.MassEnemyHealthUpdateProcessor
 // 0x0350 (0x0410 - 0x00C0)
 class UMassEnemyHealthUpdateProcessor final : public UMassProcessor
@@ -4844,6 +4832,29 @@ public:
 };
 DUMPER7_ASSERTS_UMassEnemyHealthUpdateProcessor;
 
+// Class MassAIPrototypeEnemyRuntime.MassEnemyDamageWithoutTargetProcessor
+// 0x0350 (0x0410 - 0x00C0)
+class UMassEnemyDamageWithoutTargetProcessor final : public UMassProcessor
+{
+public:
+	uint8                                         Pad_C0[0x350];                                     // 0x00C0(0x0350)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MassEnemyDamageWithoutTargetProcessor")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MassEnemyDamageWithoutTargetProcessor")
+	}
+	static class UMassEnemyDamageWithoutTargetProcessor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMassEnemyDamageWithoutTargetProcessor>();
+	}
+};
+DUMPER7_ASSERTS_UMassEnemyDamageWithoutTargetProcessor;
+
 // Class MassAIPrototypeEnemyRuntime.MassEnemyTemperatureModifierProcessor
 // 0x0370 (0x0430 - 0x00C0)
 class UMassEnemyTemperatureModifierProcessor final : public UMassProcessor
@@ -4866,29 +4877,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMassEnemyTemperatureModifierProcessor;
-
-// Class MassAIPrototypeEnemyRuntime.MassEnemyGuarantedAggroProcessor
-// 0x0350 (0x0410 - 0x00C0)
-class UMassEnemyGuarantedAggroProcessor final : public UMassProcessor
-{
-public:
-	uint8                                         Pad_C0[0x350];                                     // 0x00C0(0x0350)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MassEnemyGuarantedAggroProcessor")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MassEnemyGuarantedAggroProcessor")
-	}
-	static class UMassEnemyGuarantedAggroProcessor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMassEnemyGuarantedAggroProcessor>();
-	}
-};
-DUMPER7_ASSERTS_UMassEnemyGuarantedAggroProcessor;
 
 // Class MassAIPrototypeEnemyRuntime.MassEnemyInfectionBoostProcessor
 // 0x0350 (0x0410 - 0x00C0)
@@ -5149,6 +5137,26 @@ public:
 };
 DUMPER7_ASSERTS_UMassEnemySpawnerLogicHandlerWorldSpawner;
 
+// Class MassAIPrototypeEnemyRuntime.MassEnemySpawnerLogicHandlerSpreadInTime
+// 0x0000 (0x0028 - 0x0028)
+class UMassEnemySpawnerLogicHandlerSpreadInTime final : public UMassEnemySpawnerLogicHandlerDefault
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MassEnemySpawnerLogicHandlerSpreadInTime")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MassEnemySpawnerLogicHandlerSpreadInTime")
+	}
+	static class UMassEnemySpawnerLogicHandlerSpreadInTime* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMassEnemySpawnerLogicHandlerSpreadInTime>();
+	}
+};
+DUMPER7_ASSERTS_UMassEnemySpawnerLogicHandlerSpreadInTime;
+
 // Class MassAIPrototypeEnemyRuntime.MassEnemySpawnerLogicHandlerBurst
 // 0x0000 (0x0028 - 0x0028)
 class UMassEnemySpawnerLogicHandlerBurst : public UMassEnemySpawnerLogicHandlerDefault
@@ -5209,29 +5217,6 @@ public:
 };
 DUMPER7_ASSERTS_UMassEnemySpawnerLogicHandlerBaseAttack;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemySpawnerNavmeshRadius
-// 0x0000 (0x0560 - 0x0560)
-class UMassEnemySpawnerNavmeshRadius final : public USphereComponent
-{
-public:
-	class AAbstractMassEnemySpawner*              CachedOwner;                                       // 0x0558(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MassEnemySpawnerNavmeshRadius")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MassEnemySpawnerNavmeshRadius")
-	}
-	static class UMassEnemySpawnerNavmeshRadius* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMassEnemySpawnerNavmeshRadius>();
-	}
-};
-DUMPER7_ASSERTS_UMassEnemySpawnerNavmeshRadius;
-
 // Class MassAIPrototypeEnemyRuntime.MassEnemySpawnerUpdateStateProcessor
 // 0x0360 (0x0420 - 0x00C0)
 class UMassEnemySpawnerUpdateStateProcessor final : public UMassProcessor
@@ -5254,6 +5239,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMassEnemySpawnerUpdateStateProcessor;
+
+// Class MassAIPrototypeEnemyRuntime.CrMassEnemySpawnerDestructorObserver
+// 0x0358 (0x0430 - 0x00D8)
+class UCrMassEnemySpawnerDestructorObserver final : public UMassObserverProcessor
+{
+public:
+	uint8                                         Pad_D8[0x358];                                     // 0x00D8(0x0358)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrMassEnemySpawnerDestructorObserver")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrMassEnemySpawnerDestructorObserver")
+	}
+	static class UCrMassEnemySpawnerDestructorObserver* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrMassEnemySpawnerDestructorObserver>();
+	}
+};
+DUMPER7_ASSERTS_UCrMassEnemySpawnerDestructorObserver;
 
 // Class MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerSphere
 // 0x0040 (0x05A0 - 0x0560)
@@ -5288,40 +5296,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMassEnemySpawnerTriggerSphere;
-
-// Class MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerBox
-// 0x0040 (0x05B0 - 0x0570)
-class UMassEnemySpawnerTriggerBox final : public UBoxComponent
-{
-public:
-	uint8                                         Pad_568[0x10];                                     // 0x0568(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bActivateAiAggroOnEnter;                           // 0x0578(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_579[0x3];                                      // 0x0579(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	EMassEnemySpawnerTriggerType                  TriggerType;                                       // 0x057C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<int32>                                 PlayerIdsInside;                                   // 0x0580(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FMassEnemySpawnerTriggerLogic          TriggerLogic;                                      // 0x0590(0x0010)(NoDestructor, Protected, NativeAccessSpecifierProtected)
-	struct FTimerHandle                           UpdateInitialOverlapsTimerHandle;                  // 0x05A0(0x0008)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_5A8[0x8];                                      // 0x05A8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void OnBoxBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult);
-	void OnBoxEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MassEnemySpawnerTriggerBox")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MassEnemySpawnerTriggerBox")
-	}
-	static class UMassEnemySpawnerTriggerBox* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMassEnemySpawnerTriggerBox>();
-	}
-};
-DUMPER7_ASSERTS_UMassEnemySpawnerTriggerBox;
 
 // Class MassAIPrototypeEnemyRuntime.MassEnemySpawnPositionComponent
 // 0x0010 (0x0580 - 0x0570)
@@ -5687,6 +5661,32 @@ public:
 	}
 };
 DUMPER7_ASSERTS_ANavLinkGeneratorBox;
+
+// Class MassAIPrototypeEnemyRuntime.NavLinkOwnerBox
+// 0x0038 (0x02E0 - 0x02A8)
+class ANavLinkOwnerBox final : public AActor
+{
+public:
+	uint8                                         Pad_2A8[0x10];                                     // 0x02A8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FNavigationLink>                PointLinks;                                        // 0x02B8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C8[0x10];                                     // 0x02C8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBoxComponent*                          BoxComponent;                                      // 0x02D8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NavLinkOwnerBox")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NavLinkOwnerBox")
+	}
+	static class ANavLinkOwnerBox* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ANavLinkOwnerBox>();
+	}
+};
+DUMPER7_ASSERTS_ANavLinkOwnerBox;
 
 // Class MassAIPrototypeEnemyRuntime.PCGNavmeshSamplerSettings
 // 0x0048 (0x0108 - 0x00C0)

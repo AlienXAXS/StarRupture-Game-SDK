@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
 #include "Slate_structs.hpp"
 #include "GameplayTags_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "InputCore_structs.hpp"
 #include "Engine_structs.hpp"
 
@@ -227,22 +227,6 @@ public:
 };
 DUMPER7_ASSERTS_FInputActionValue;
 
-// ScriptStruct EnhancedInput.PlayerMappableKeyQueryOptions
-// 0x0028 (0x0028 - 0x0000)
-struct FPlayerMappableKeyQueryOptions final
-{
-public:
-	class FName                                   MappingName;                                       // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FKey                                   KeyToMatch;                                        // 0x0008(0x0018)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EPlayerMappableKeySlot                        SlotToMatch;                                       // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bMatchBasicKeyTypes : 1;                           // 0x0021(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bMatchKeyAxisType : 1;                             // 0x0021(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	EHardwareDevicePrimaryType                    RequiredDeviceType;                                // 0x0022(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_23[0x1];                                       // 0x0023(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         RequiredDeviceFlags;                               // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FPlayerMappableKeyQueryOptions;
-
 // ScriptStruct EnhancedInput.PlayerKeyMapping
 // 0x00A8 (0x00A8 - 0x0000)
 struct FPlayerKeyMapping final
@@ -261,6 +245,15 @@ public:
 	TSoftObjectPtr<class UInputAction>            AssociatedInputActionSoft;                         // 0x0080(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Transient, EditConst, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
 DUMPER7_ASSERTS_FPlayerKeyMapping;
+
+// ScriptStruct EnhancedInput.KeyMappingRow
+// 0x0050 (0x0050 - 0x0000)
+struct FKeyMappingRow final
+{
+public:
+	TSet<struct FPlayerKeyMapping>                Mappings;                                          // 0x0000(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FKeyMappingRow;
 
 // ScriptStruct EnhancedInput.InjectedInput
 // 0x0040 (0x0040 - 0x0000)
@@ -289,6 +282,18 @@ public:
 };
 DUMPER7_ASSERTS_FPlayerMappableKeyProfileCreationArgs;
 
+// ScriptStruct EnhancedInput.MappingQueryIssue
+// 0x0018 (0x0018 - 0x0000)
+struct FMappingQueryIssue final
+{
+public:
+	EMappingQueryIssue                            Issue;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UInputMappingContext*                   BlockingContext;                                   // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UInputAction*                           BlockingAction;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FMappingQueryIssue;
+
 // ScriptStruct EnhancedInput.MapPlayerKeyArgs
 // 0x0050 (0x0050 - 0x0000)
 struct FMapPlayerKeyArgs final
@@ -307,26 +312,21 @@ public:
 };
 DUMPER7_ASSERTS_FMapPlayerKeyArgs;
 
-// ScriptStruct EnhancedInput.KeyMappingRow
-// 0x0050 (0x0050 - 0x0000)
-struct FKeyMappingRow final
+// ScriptStruct EnhancedInput.PlayerMappableKeyQueryOptions
+// 0x0028 (0x0028 - 0x0000)
+struct FPlayerMappableKeyQueryOptions final
 {
 public:
-	TSet<struct FPlayerKeyMapping>                Mappings;                                          // 0x0000(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
+	class FName                                   MappingName;                                       // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKey                                   KeyToMatch;                                        // 0x0008(0x0018)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EPlayerMappableKeySlot                        SlotToMatch;                                       // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bMatchBasicKeyTypes : 1;                           // 0x0021(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bMatchKeyAxisType : 1;                             // 0x0021(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	EHardwareDevicePrimaryType                    RequiredDeviceType;                                // 0x0022(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_23[0x1];                                       // 0x0023(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         RequiredDeviceFlags;                               // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FKeyMappingRow;
-
-// ScriptStruct EnhancedInput.MappingQueryIssue
-// 0x0018 (0x0018 - 0x0000)
-struct FMappingQueryIssue final
-{
-public:
-	EMappingQueryIssue                            Issue;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UInputMappingContext*                   BlockingContext;                                   // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UInputAction*                           BlockingAction;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FMappingQueryIssue;
+DUMPER7_ASSERTS_FPlayerMappableKeyQueryOptions;
 
 // ScriptStruct EnhancedInput.EnhancedActionKeyMapping
 // 0x0050 (0x0050 - 0x0000)

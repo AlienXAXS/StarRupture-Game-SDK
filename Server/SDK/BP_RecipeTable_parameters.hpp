@@ -14,6 +14,15 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function BP_RecipeTable.BP_RecipeTable_C.OnUIOpened
+// 0x0001 (0x0001 - 0x0000)
+struct BP_RecipeTable_C_OnUIOpened final
+{
+public:
+	bool                                          bOpened;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_RecipeTable_C_OnUIOpened;
+
 // Function BP_RecipeTable.BP_RecipeTable_C.ExecuteUbergraph_BP_RecipeTable
 // 0x0008 (0x0008 - 0x0000)
 struct BP_RecipeTable_C_ExecuteUbergraph_BP_RecipeTable final
@@ -23,15 +32,6 @@ public:
 	bool                                          K2Node_Event_bOpened;                              // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_RecipeTable_C_ExecuteUbergraph_BP_RecipeTable;
-
-// Function BP_RecipeTable.BP_RecipeTable_C.OnUIOpened
-// 0x0001 (0x0001 - 0x0000)
-struct BP_RecipeTable_C_OnUIOpened final
-{
-public:
-	bool                                          bOpened;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_RecipeTable_C_OnUIOpened;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

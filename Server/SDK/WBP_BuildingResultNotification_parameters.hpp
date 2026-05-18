@@ -17,6 +17,15 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function WBP_BuildingResultNotification.WBP_BuildingResultNotification_C.OnPlacementResultNotif
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_BuildingResultNotification_C_OnPlacementResultNotif final
+{
+public:
+	EAuAPPlacementResult                          PlacementResult;                                   // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_BuildingResultNotification_C_OnPlacementResultNotif;
+
 // Function WBP_BuildingResultNotification.WBP_BuildingResultNotification_C.ExecuteUbergraph_WBP_BuildingResultNotification
 // 0x0050 (0x0050 - 0x0000)
 struct WBP_BuildingResultNotification_C_ExecuteUbergraph_WBP_BuildingResultNotification final
@@ -33,15 +42,6 @@ public:
 	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x0040(0x0010)()
 };
 DUMPER7_ASSERTS_WBP_BuildingResultNotification_C_ExecuteUbergraph_WBP_BuildingResultNotification;
-
-// Function WBP_BuildingResultNotification.WBP_BuildingResultNotification_C.OnPlacementResultNotif
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_BuildingResultNotification_C_OnPlacementResultNotif final
-{
-public:
-	EAuAPPlacementResult                          PlacementResult;                                   // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_BuildingResultNotification_C_OnPlacementResultNotif;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

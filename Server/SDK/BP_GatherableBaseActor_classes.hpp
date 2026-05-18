@@ -11,46 +11,46 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "ST_GatherablePlantIstnacedData_structs.hpp"
 #include "Chimera_classes.hpp"
+#include "ST_GatherablePlantIstnacedData_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_GatherableBaseActor.BP_GatherableBaseActor_C
-// 0x0060 (0x03A0 - 0x0340)
+// 0x0060 (0x03A8 - 0x0348)
 class ABP_GatherableBaseActor_C : public ACrGatherableBaseActor
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0340(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UStaticMeshComponent*                   StaticMainMesh;                                    // 0x0348(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UAudioComponent*                        DepletedSound;                                     // 0x0350(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0358(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	double                                        Impulse_Time;                                      // 0x0360(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        Impulse_Amplitude;                                 // 0x0368(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        Impulse_Cycles;                                    // 0x0370(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bInitCalled;                                       // 0x0378(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_379[0x7];                                      // 0x0379(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UInstancedStaticMeshComponent*          LocalVisualizationISMRef;                          // 0x0380(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	int32                                         LocalVisualizationInstanceIdx;                     // 0x0388(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_38C[0x4];                                      // 0x038C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FST_GatherablePlantIstnacedData> LocalVisualizationRefs;                           // 0x0390(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0348(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UStaticMeshComponent*                   StaticMainMesh;                                    // 0x0350(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UAudioComponent*                        DepletedSound;                                     // 0x0358(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0360(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	double                                        Impulse_Time;                                      // 0x0368(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        Impulse_Amplitude;                                 // 0x0370(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        Impulse_Cycles;                                    // 0x0378(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bInitCalled;                                       // 0x0380(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_381[0x7];                                      // 0x0381(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UInstancedStaticMeshComponent*          LocalVisualizationISMRef;                          // 0x0388(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	int32                                         LocalVisualizationInstanceIdx;                     // 0x0390(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_394[0x4];                                      // 0x0394(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FST_GatherablePlantIstnacedData> LocalVisualizationRefs;                           // 0x0398(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 
 public:
-	void BP_DebugToggleRegularVisualization();
-	void BP_OnDepletedCosmetics(const struct FVector& InInteractingActorLocation, const class ACrCharacterPlayerBase* InInteractingPlayer);
-	void BP_OnRemoveInstancedVisualsRequested();
-	void BP_OnVisualInstanceAdded(const struct FCrGatherableInstancedVisualsData& InVisualData);
-	void BP_ShowDepletedVisuals(const struct FVector& InInteractingActorLocation);
-	void BP_ShowInitVisuals();
-	void DebugProcessRegularVisualization();
-	void ExecuteUbergraph_BP_GatherableBaseActor(int32 EntryPoint);
-	void InitializeInstance();
-	void PostPCGSpawnInstanceInitialize();
-	void ProcessDataFloatsAfterDepletion(const struct FVector& InInteractingActorLocation);
-	void ProcessMeshInstanceRemoval();
-	void ProcessMeshInstancing();
 	void ProcessOnInstaceAdded(class UInstancedStaticMeshComponent* InVisualInstancedVisualsComponent, int32 InVisualDataInstanceIdx);
+	void ProcessMeshInstancing();
+	void ProcessMeshInstanceRemoval();
+	void ProcessDataFloatsAfterDepletion(const struct FVector& InInteractingActorLocation);
+	void PostPCGSpawnInstanceInitialize();
+	void InitializeInstance();
+	void ExecuteUbergraph_BP_GatherableBaseActor(int32 EntryPoint);
+	void DebugProcessRegularVisualization();
+	void BP_ShowInitVisuals();
+	void BP_ShowDepletedVisuals(const struct FVector& InInteractingActorLocation);
+	void BP_OnVisualInstanceAdded(const struct FCrGatherableInstancedVisualsData& InVisualData);
+	void BP_OnRemoveInstancedVisualsRequested();
+	void BP_OnDepletedCosmetics(const struct FVector& InInteractingActorLocation, const class ACrCharacterPlayerBase* InInteractingPlayer);
+	void BP_DebugToggleRegularVisualization();
 
 public:
 	static class UClass* StaticClass()

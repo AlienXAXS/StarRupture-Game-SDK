@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_SikkimRhubarb_Fruit.BP_SikkimRhubarb_Fruit_C
-// 0x0000 (0x03A0 - 0x03A0)
+// 0x0000 (0x03A8 - 0x03A8)
 class ABP_SikkimRhubarb_Fruit_C final : public ABP_GatherableBaseActor_C
 {
 public:

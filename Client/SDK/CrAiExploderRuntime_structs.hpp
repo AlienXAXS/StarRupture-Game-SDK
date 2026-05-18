@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
+#include "MassAIBehavior_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "AuActorPlacement_structs.hpp"
 #include "MassReplication_structs.hpp"
 #include "MassEntity_structs.hpp"
 #include "Chimera_structs.hpp"
-#include "MassAIBehavior_structs.hpp"
 
 
 SDK_NAMESPACE_START

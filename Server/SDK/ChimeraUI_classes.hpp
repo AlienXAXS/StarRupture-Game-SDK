@@ -10,20 +10,20 @@
 
 #include "Basic.hpp"
 
-#include "DeveloperSettings_classes.hpp"
-#include "UMG_structs.hpp"
-#include "UMG_classes.hpp"
-#include "ChimeraUI_structs.hpp"
-#include "ChimeraRichText_classes.hpp"
-#include "Engine_structs.hpp"
-#include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "ChimeraUI_structs.hpp"
+#include "Engine_structs.hpp"
+#include "Engine_classes.hpp"
 #include "AuActorWidgets_classes.hpp"
 #include "CommonUI_structs.hpp"
 #include "CommonUI_classes.hpp"
 #include "MassEntity_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "DeveloperSettings_classes.hpp"
+#include "UMG_structs.hpp"
+#include "UMG_classes.hpp"
+#include "ChimeraRichText_classes.hpp"
 #include "GameplayTags_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
 #include "Chimera_structs.hpp"
@@ -119,6 +119,39 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCrUW_ManageServerChildTemplate;
+
+// Class ChimeraUI.CrUW_SafeZoneEditor
+// 0x0058 (0x0590 - 0x0538)
+class UCrUW_SafeZoneEditor final : public UCommonActivatableWidget
+{
+public:
+	uint8                                         Pad_538[0x28];                                     // 0x0538(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bCanCancel;                                        // 0x0560(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_561[0xF];                                      // 0x0561(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
+	class UWidgetSwitcher*                        Switcher_SafeZoneMessage;                          // 0x0570(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCommonRichTextBlock*                   RichText_Default;                                  // 0x0578(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCommonButtonBase*                      Button_Back;                                       // 0x0580(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCommonButtonBase*                      Button_Done;                                       // 0x0588(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+
+public:
+	void HandleBackClicked();
+	void HandleDoneClicked();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrUW_SafeZoneEditor")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrUW_SafeZoneEditor")
+	}
+	static class UCrUW_SafeZoneEditor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrUW_SafeZoneEditor>();
+	}
+};
+DUMPER7_ASSERTS_UCrUW_SafeZoneEditor;
 
 // Class ChimeraUI.CrActionBoundRichTextBlockDecorator
 // 0x0020 (0x0048 - 0x0028)
@@ -334,6 +367,40 @@ public:
 };
 DUMPER7_ASSERTS_UCrCorporationDataForUI;
 
+// Class ChimeraUI.CrUW_InputTextPopup
+// 0x0050 (0x03F0 - 0x03A0)
+class UCrUW_InputTextPopup : public UUserWidget
+{
+public:
+	class UCrUW_ActionButton*                     ConfirmButton;                                     // 0x03A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrUW_ActionButton*                     CancelButton;                                      // 0x03A8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UEditableText*                          InputTextField;                                    // 0x03B0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrCommonUIColorsDevSettings*           ColorsSettings;                                    // 0x03B8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_3C0[0x30];                                     // 0x03C0(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	class FString GetClipBoardText();
+	void InputTextChanged(const class FText& InText);
+	void OnCancelButtonClicked();
+	void OnConfirmButtonClicked();
+	void SetColors();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrUW_InputTextPopup")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrUW_InputTextPopup")
+	}
+	static class UCrUW_InputTextPopup* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrUW_InputTextPopup>();
+	}
+};
+DUMPER7_ASSERTS_UCrUW_InputTextPopup;
+
 // Class ChimeraUI.CrHUD
 // 0x00B8 (0x0450 - 0x0398)
 class ACrHUD : public AHUD
@@ -373,6 +440,38 @@ public:
 };
 DUMPER7_ASSERTS_ACrHUD;
 
+// Class ChimeraUI.CrUW_SettingsListEntrySetting_KeyboardInput
+// 0x0048 (0x0458 - 0x0410)
+class UCrUW_SettingsListEntrySetting_KeyboardInput final : public UGameSettingListEntry_Setting
+{
+public:
+	struct FKey                                   OriginalKeyToBind;                                 // 0x0410(0x0018)(Transient, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UCrUW_ButtonBase*                       Button_PrimaryKey;                                 // 0x0428(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrUW_ButtonBase*                       Button_SecondaryKey;                               // 0x0430(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UButton*                                Button_Clear;                                      // 0x0438(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrSettingKeyboardInput*                KeyboardInputSetting;                              // 0x0440(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TSubclassOf<class UGameSettingPressAnyKey>    PressAnyKeyPanelClass;                             // 0x0448(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TSubclassOf<class UKeyAlreadyBoundWarning>    KeyAlreadyBoundWarningPanelClass;                  // 0x0450(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	void HandleClearClicked();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrUW_SettingsListEntrySetting_KeyboardInput")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrUW_SettingsListEntrySetting_KeyboardInput")
+	}
+	static class UCrUW_SettingsListEntrySetting_KeyboardInput* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrUW_SettingsListEntrySetting_KeyboardInput>();
+	}
+};
+DUMPER7_ASSERTS_UCrUW_SettingsListEntrySetting_KeyboardInput;
+
 // Class ChimeraUI.CrHUDSettings
 // 0x0070 (0x00A8 - 0x0038)
 class UCrHUDSettings final : public UDeveloperSettings
@@ -405,32 +504,6 @@ public:
 };
 DUMPER7_ASSERTS_UCrHUDSettings;
 
-// Class ChimeraUI.CrUW_InputMappingInfoEntry
-// 0x0018 (0x03B8 - 0x03A0)
-class UCrUW_InputMappingInfoEntry final : public UUserWidget
-{
-public:
-	class UTextBlock*                             InputMappingName;                                  // 0x03A0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class URichTextBlock*                         KeyName;                                           // 0x03A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	ECrControllerType                             ControllerType;                                    // 0x03B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_3B1[0x7];                                      // 0x03B1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrUW_InputMappingInfoEntry")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrUW_InputMappingInfoEntry")
-	}
-	static class UCrUW_InputMappingInfoEntry* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrUW_InputMappingInfoEntry>();
-	}
-};
-DUMPER7_ASSERTS_UCrUW_InputMappingInfoEntry;
-
 // Class ChimeraUI.CrItemListWidgetOwnerInterface
 // 0x0000 (0x0000 - 0x0000)
 class ICrItemListWidgetOwnerInterface final
@@ -460,39 +533,6 @@ public:
 };
 DUMPER7_ASSERTS_ICrItemListWidgetOwnerInterface;
 
-// Class ChimeraUI.CrUW_SafeZoneEditor
-// 0x0058 (0x0590 - 0x0538)
-class UCrUW_SafeZoneEditor final : public UCommonActivatableWidget
-{
-public:
-	uint8                                         Pad_538[0x28];                                     // 0x0538(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bCanCancel;                                        // 0x0560(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_561[0xF];                                      // 0x0561(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
-	class UWidgetSwitcher*                        Switcher_SafeZoneMessage;                          // 0x0570(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCommonRichTextBlock*                   RichText_Default;                                  // 0x0578(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCommonButtonBase*                      Button_Back;                                       // 0x0580(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCommonButtonBase*                      Button_Done;                                       // 0x0588(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-
-public:
-	void HandleBackClicked();
-	void HandleDoneClicked();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrUW_SafeZoneEditor")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrUW_SafeZoneEditor")
-	}
-	static class UCrUW_SafeZoneEditor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrUW_SafeZoneEditor>();
-	}
-};
-DUMPER7_ASSERTS_UCrUW_SafeZoneEditor;
-
 // Class ChimeraUI.CrMainMenuRichTextBlockHyperlinkDecorator
 // 0x0000 (0x06D0 - 0x06D0)
 class UCrMainMenuRichTextBlockHyperlinkDecorator final : public UCrRichTextBlockHyperlinkDecorator
@@ -512,6 +552,32 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCrMainMenuRichTextBlockHyperlinkDecorator;
+
+// Class ChimeraUI.CrUW_InputMappingInfoPanel
+// 0x0088 (0x0428 - 0x03A0)
+class UCrUW_InputMappingInfoPanel final : public UUserWidget
+{
+public:
+	TSubclassOf<class UCrUW_InputMappingInfoGroup> InfoGroupClass;                                   // 0x03A0(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TArray<class UInputMappingContext*>           CustomContexts;                                    // 0x03A8(0x0010)(Edit, ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	class UVerticalBox*                           MainBox;                                           // 0x03B8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_3C0[0x68];                                     // 0x03C0(0x0068)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrUW_InputMappingInfoPanel")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrUW_InputMappingInfoPanel")
+	}
+	static class UCrUW_InputMappingInfoPanel* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrUW_InputMappingInfoPanel>();
+	}
+};
+DUMPER7_ASSERTS_UCrUW_InputMappingInfoPanel;
 
 // Class ChimeraUI.CrMainMenuScalabilityOverrides
 // 0x0000 (0x0028 - 0x0028)
@@ -569,34 +635,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCrMapManuSubsystem;
-
-// Class ChimeraUI.CrUW_InteractionInfo
-// 0x0010 (0x03B0 - 0x03A0)
-class UCrUW_InteractionInfo final : public UUserWidget
-{
-public:
-	uint8                                         Pad_3A0[0x10];                                     // 0x03A0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	class FText GetInteractionAdditionalText();
-	class FText GetInteractionDisplayName();
-	void OnSetupInfo(class AActor* InteractionActor);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrUW_InteractionInfo")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrUW_InteractionInfo")
-	}
-	static class UCrUW_InteractionInfo* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrUW_InteractionInfo>();
-	}
-};
-DUMPER7_ASSERTS_UCrUW_InteractionInfo;
 
 // Class ChimeraUI.CrMapMenuCategoryData
 // 0x00E0 (0x0110 - 0x0030)
@@ -691,6 +729,47 @@ public:
 };
 DUMPER7_ASSERTS_UCrMapMenuDevSettings;
 
+// Class ChimeraUI.CrUW_InventoryContainer
+// 0x00E0 (0x04A8 - 0x03C8)
+class UCrUW_InventoryContainer final : public UCommonUserWidget
+{
+public:
+	TMap<struct FCrSlotId, class UCrUW_InventorySlot*> InventorySlots;                               // 0x03C8(0x0050)(ExportObject, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_418[0x18];                                     // 0x0418(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UCrUW_InventorySlot>        InventorySlotClass;                                // 0x0430(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TSubclassOf<class UCrUW_BuildingSlot>         BuildingSlotClass;                                 // 0x0438(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UGridPanel*                             ItemGridPanel;                                     // 0x0440(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_448[0x30];                                     // 0x0448(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UAuItemDataBase*>                CurrentFilterItems;                                // 0x0478(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_488[0x20];                                     // 0x0488(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void ExecuteOnDropForSlot(int32 SlotIdx, const struct FGeometry& InGeometry, const struct FPointerEvent& InDragDropEvent, class UDragDropOperation* InOperation);
+	void HandleClearFilterSelectionClicked();
+	void HandleFilterSelectedClicked(class UCrItemDataBase* Filter);
+	void HandleOnInventorySizeChanged();
+	void HandlePickAllClicked();
+	void OnFilterTextChanged(const class FText& FilterText);
+	void OnSortButtonClick();
+	void SetRecipeOutSlot(const struct FSlateBrush& InBrush, EUIItemType InUIType);
+	void SetSlotOffset(class UGridSlot* InSlot);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrUW_InventoryContainer")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrUW_InventoryContainer")
+	}
+	static class UCrUW_InventoryContainer* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrUW_InventoryContainer>();
+	}
+};
+DUMPER7_ASSERTS_UCrUW_InventoryContainer;
+
 // Class ChimeraUI.CrMapMenuFiltersData
 // 0x0010 (0x0040 - 0x0030)
 class UCrMapMenuFiltersData final : public UDataAsset
@@ -748,101 +827,6 @@ public:
 };
 DUMPER7_ASSERTS_UCrMapMenuFootstepsData;
 
-// Class ChimeraUI.CrUW_InventorySlot
-// 0x0150 (0x0518 - 0x03C8)
-class UCrUW_InventorySlot : public UCommonUserWidget
-{
-public:
-	class UGridSlot*                              GridSlot;                                          // 0x03C8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UMenuAnchor*                            ContextMenu;                                       // 0x03D0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UMenuAnchor*                            SplitWindowAnchor;                                 // 0x03D8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UMenuAnchor*                            QuickActionsContextMenu;                           // 0x03E0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UMenuAnchor*                            TooltipActionsContextMenu;                         // 0x03E8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UTexture2D*                             HightlightTexure;                                  // 0x03F0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UImage*                                 ItemIcon;                                          // 0x03F8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UImage*                                 HighlightIcon;                                     // 0x0400(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UImage*                                 FullStackIcon;                                     // 0x0408(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UBorder*                                IconBackground;                                    // 0x0410(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UTextBlock*                             ItemQuantityText;                                  // 0x0418(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UBorder*                                GrayedOut;                                         // 0x0420(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_428[0x60];                                     // 0x0428(0x0060)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UCrUW_InventorySplitWindow> SplitWindowClass;                                  // 0x0488(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TSubclassOf<class UCr_UW_InventoryToolTip>    ToolTipClass;                                      // 0x0490(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TSubclassOf<class UMyVisualDragDropWidget>    VisualDragDropWidget;                              // 0x0498(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TSubclassOf<class UCrUW_QuickActionsMenu>     QuickActionsWidget;                                // 0x04A0(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TSubclassOf<class UCrUW_TooltipPrompt>        TooltipActionsWidget;                              // 0x04A8(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         TooltipDelayTime;                                  // 0x04B0(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_4B4[0x4];                                      // 0x04B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UUIItemTypesColors*                     DA_IconColors;                                     // 0x04B8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UUIItemTypesColors*                     DA_IconColorsFullStack;                            // 0x04C0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrUIAudioData*                         DA_SoundsTable;                                    // 0x04C8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	bool                                          bCanSplitStack;                                    // 0x04D0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bSetEmptyIcon;                                     // 0x04D1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bDropEnabled;                                      // 0x04D2(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_4D3[0x5];                                      // 0x04D3(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCommonInputSubsystem*                  CommonInputSubsystem;                              // 0x04D8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_4E0[0x38];                                     // 0x04E0(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	class UUserWidget* ActivateQuickActionsMenu();
-	class UUserWidget* ActivateSplitWindow();
-	class UUserWidget* ActivateTooltipActionsMenu();
-	void CloseQuickMenu(ECrUIWindowMode Mode);
-	void CloseSplitWindow(ECrUIWindowMode Mode);
-	struct FLinearColor ConvertToGrayScale(const struct FColor& InColor);
-	int32 GetAmount();
-	struct FColor GetIconTypeColor(EUIItemType InType);
-	struct FLinearColor GetWarningColor();
-	class UUserWidget* NativeGetTooltipWidget();
-	void OpenSplitWindow(ECrUIWindowMode Mode);
-	void SetBackgroundColor(const struct FColor& InColor);
-	void SetDefaultBrush();
-	void SetFullStackColor(const struct FColor& InColor);
-	void SetFullStackHighlight();
-	void SetGrayedNames(bool bGray);
-	void SetGrayedOut(bool bVisible);
-	void SetGrayScaleTex(const struct FSlateBrush& InBrush);
-	void SetHighlightColor(const struct FLinearColor& InColor);
-	void SetNewHighlight(bool bIsHighlighted);
-	void SetSlotIcon(const struct FSlateBrush& InBrush, EUIItemType InUIType);
-	void ShowItemNameInIcon(const class FText& InText, bool Show);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrUW_InventorySlot")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrUW_InventorySlot")
-	}
-	static class UCrUW_InventorySlot* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrUW_InventorySlot>();
-	}
-};
-DUMPER7_ASSERTS_UCrUW_InventorySlot;
-
-// Class ChimeraUI.CrUW_InventoryOutSlot
-// 0x0000 (0x0518 - 0x0518)
-class UCrUW_InventoryOutSlot final : public UCrUW_InventorySlot
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrUW_InventoryOutSlot")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrUW_InventoryOutSlot")
-	}
-	static class UCrUW_InventoryOutSlot* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrUW_InventoryOutSlot>();
-	}
-};
-DUMPER7_ASSERTS_UCrUW_InventoryOutSlot;
-
 // Class ChimeraUI.CrMapMenuMarkerDefaultColorData
 // 0x0080 (0x00B0 - 0x0030)
 class UCrMapMenuMarkerDefaultColorData final : public UDataAsset
@@ -895,6 +879,31 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCrMapMenuPOIData;
+
+// Class ChimeraUI.CrUW_InventorySlotFilterListViewElement
+// 0x0018 (0x03B8 - 0x03A0)
+class UCrUW_InventorySlotFilterListViewElement final : public UUserWidget
+{
+public:
+	uint8                                         Pad_3A0[0x8];                                      // 0x03A0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UImage*                                 ItemIcon;                                          // 0x03A8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UTextBlock*                             ItemText;                                          // 0x03B0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrUW_InventorySlotFilterListViewElement")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrUW_InventorySlotFilterListViewElement")
+	}
+	static class UCrUW_InventorySlotFilterListViewElement* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrUW_InventorySlotFilterListViewElement>();
+	}
+};
+DUMPER7_ASSERTS_UCrUW_InventorySlotFilterListViewElement;
 
 // Class ChimeraUI.CrMapMenuTerrainData
 // 0x0080 (0x00B0 - 0x0030)
@@ -954,29 +963,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCrPlayerStatusIconsPriorityData;
-
-// Class ChimeraUI.CrUW_ItemNotification
-// 0x0008 (0x03B0 - 0x03A8)
-class UCrUW_ItemNotification final : public UAuUW_NotificationBase
-{
-public:
-	class UTextBlock*                             ItemNameText;                                      // 0x03A8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrUW_ItemNotification")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrUW_ItemNotification")
-	}
-	static class UCrUW_ItemNotification* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrUW_ItemNotification>();
-	}
-};
-DUMPER7_ASSERTS_UCrUW_ItemNotification;
 
 // Class ChimeraUI.CrUIAudioData
 // 0x0050 (0x0080 - 0x0030)
@@ -1087,29 +1073,6 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_ActionButton;
 
-// Class ChimeraUI.CrUW_ActionWidget
-// 0x0000 (0x0460 - 0x0460)
-class UCrUW_ActionWidget final : public UCommonActionWidget
-{
-public:
-	class UInputAction*                           AssociatedInputAction;                             // 0x0458(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrUW_ActionWidget")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrUW_ActionWidget")
-	}
-	static class UCrUW_ActionWidget* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrUW_ActionWidget>();
-	}
-};
-DUMPER7_ASSERTS_UCrUW_ActionWidget;
-
 // Class ChimeraUI.CrUW_ActivatableWidget
 // 0x0098 (0x05D0 - 0x0538)
 class UCrUW_ActivatableWidget : public UCommonActivatableWidget
@@ -1156,37 +1119,57 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_ActivatableWidget;
 
-// Class ChimeraUI.CrUW_StorageSizeAdjustment
-// 0x0018 (0x03B8 - 0x03A0)
-class UCrUW_StorageSizeAdjustment final : public UUserWidget
+// Class ChimeraUI.CrUW_StorageBoxContextMenu
+// 0x0018 (0x05E8 - 0x05D0)
+class UCrUW_StorageBoxContextMenu final : public UCrUW_ActivatableWidget
 {
 public:
-	class UCrUIAudioData*                         DA_SoundsTable;                                    // 0x03A0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_3A8[0x10];                                     // 0x03A8(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5D0[0x8];                                      // 0x05D0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UButton*                                OpenButton;                                        // 0x05D8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UButton*                                PickAllButton;                                     // 0x05E0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 
 public:
-	void OnDecreaseSizePressed();
-	void OnIncreaseSizePressed();
-	void PlayClickSound();
-	void PlayHoverSound();
-	void SetColors();
-	void UpdateElectricityValues(int32 Plus, int32 Minus);
+	void HandleOpenClicked();
+	void HandlePickAllClicked();
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_StorageSizeAdjustment")
+		STATIC_CLASS_IMPL("CrUW_StorageBoxContextMenu")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_StorageSizeAdjustment")
+		STATIC_NAME_IMPL(L"CrUW_StorageBoxContextMenu")
 	}
-	static class UCrUW_StorageSizeAdjustment* GetDefaultObj()
+	static class UCrUW_StorageBoxContextMenu* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_StorageSizeAdjustment>();
+		return GetDefaultObjImpl<UCrUW_StorageBoxContextMenu>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_StorageSizeAdjustment;
+DUMPER7_ASSERTS_UCrUW_StorageBoxContextMenu;
+
+// Class ChimeraUI.CrUW_ActionWidget
+// 0x0000 (0x0460 - 0x0460)
+class UCrUW_ActionWidget final : public UCommonActionWidget
+{
+public:
+	class UInputAction*                           AssociatedInputAction;                             // 0x0458(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrUW_ActionWidget")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrUW_ActionWidget")
+	}
+	static class UCrUW_ActionWidget* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrUW_ActionWidget>();
+	}
+};
+DUMPER7_ASSERTS_UCrUW_ActionWidget;
 
 // Class ChimeraUI.CrUW_AdvanceInputActionWidget
 // 0x01E8 (0x05B0 - 0x03C8)
@@ -1262,6 +1245,37 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_AlienObeliskWarning;
 
+// Class ChimeraUI.CrUW_StoryTab
+// 0x0028 (0x05F8 - 0x05D0)
+class UCrUW_StoryTab final : public UCrUW_ActivatableWidget
+{
+public:
+	class UCrUW_InventoryContainer*               ItemsContainer;                                    // 0x05D0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TSubclassOf<class UObject>                    ItemSlotClass;                                     // 0x05D8(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UUIItemTypesColors*                     DA_IconColors;                                     // 0x05E0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	int32                                         MaxColumnCount;                                    // 0x05E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         MaxRowCount;                                       // 0x05EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_5F0[0x8];                                      // 0x05F0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void FillGrid();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrUW_StoryTab")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrUW_StoryTab")
+	}
+	static class UCrUW_StoryTab* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrUW_StoryTab>();
+	}
+};
+DUMPER7_ASSERTS_UCrUW_StoryTab;
+
 // Class ChimeraUI.CrUW_Analyzer
 // 0x0140 (0x0710 - 0x05D0)
 class UCrUW_Analyzer final : public UCrUW_ActivatableWidget
@@ -1327,36 +1341,6 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_AnalyzerInventory;
 
-// Class ChimeraUI.CrUW_SurvivalAttributesHud
-// 0x0040 (0x03E0 - 0x03A0)
-class UCrUW_SurvivalAttributesHud final : public UUserWidget
-{
-public:
-	class UCrUW_AttributeProgressText*            HealthText;                                        // 0x03A0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrUW_AttributeProgressText*            ShieldText;                                        // 0x03A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrUW_AttributeProgressText*            CaloriesText;                                      // 0x03B0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrUW_AttributeProgressText*            OxygenText;                                        // 0x03B8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrUW_AttributeProgressText*            ToxicityText;                                      // 0x03C0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrUW_AttributeProgressText*            RadiationText;                                     // 0x03C8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrUW_AttributeProgressText*            HydrationText;                                     // 0x03D0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UTextBlock*                             TemperatureText;                                   // 0x03D8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrUW_SurvivalAttributesHud")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrUW_SurvivalAttributesHud")
-	}
-	static class UCrUW_SurvivalAttributesHud* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrUW_SurvivalAttributesHud>();
-	}
-};
-DUMPER7_ASSERTS_UCrUW_SurvivalAttributesHud;
-
 // Class ChimeraUI.CrUW_AntennaActivated
 // 0x0048 (0x03E8 - 0x03A0)
 class UCrUW_AntennaActivated final : public UUserWidget
@@ -1407,6 +1391,26 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCrUW_AntennaDisplay;
+
+// Class ChimeraUI.CrUW_Teleporter
+// 0x0000 (0x03C8 - 0x03C8)
+class UCrUW_Teleporter final : public UCommonUserWidget
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrUW_Teleporter")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrUW_Teleporter")
+	}
+	static class UCrUW_Teleporter* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrUW_Teleporter>();
+	}
+};
+DUMPER7_ASSERTS_UCrUW_Teleporter;
 
 // Class ChimeraUI.CrUW_Armory
 // 0x0168 (0x0738 - 0x05D0)
@@ -1484,39 +1488,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCrUW_ArmoryPanel;
-
-// Class ChimeraUI.CrUW_TeleporterMenu
-// 0x0090 (0x0618 - 0x0588)
-class UCrUW_TeleporterMenu final : public UAuActorWidgetBase
-{
-public:
-	TSubclassOf<class UCrUW_TeleporterButton>     TeleporterButtonClass;                             // 0x0588(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UTextBlock*                             TeleporterName;                                    // 0x0590(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_598[0x18];                                     // 0x0598(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<struct FCrMassEntityReplicationHelper, class UCrUW_TeleporterButton*> Buttons;              // 0x05B0(0x0050)(ExportObject, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_600[0x18];                                     // 0x0600(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void NativeOnTeleporterAdded(const struct FCrMassEntityReplicationHelper& InEntity);
-	void NativeOnTeleporterChanged(const struct FCrMassEntityReplicationHelper& InEntity);
-	void NativeOnTeleporterRemoved(const struct FCrMassEntityReplicationHelper& InEntity);
-	void OnButtonInitialised(class UCrUW_TeleporterButton* InButton);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrUW_TeleporterMenu")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrUW_TeleporterMenu")
-	}
-	static class UCrUW_TeleporterMenu* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrUW_TeleporterMenu>();
-	}
-};
-DUMPER7_ASSERTS_UCrUW_TeleporterMenu;
 
 // Class ChimeraUI.CrUW_GenericArmorySlot
 // 0x0058 (0x03F8 - 0x03A0)
@@ -1601,6 +1572,38 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_ArmorySlot;
 
+// Class ChimeraUI.CrUW_TeleportersList
+// 0x0038 (0x0608 - 0x05D0)
+class UCrUW_TeleportersList final : public UCrUW_ActivatableWidget
+{
+public:
+	class UScrollBox*                             TeleportersBox;                                    // 0x05D0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TSubclassOf<class UCrUW_SenderReceiver>       TeleporterClass;                                   // 0x05D8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TSubclassOf<class UCrUW_TeleporterMapArea>    TeleporterMapClass;                                // 0x05E0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UCrUW_TeleporterMapArea*                TeleporterMapAreaWidget;                           // 0x05E8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_5F0[0x18];                                     // 0x05F0(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void HandleOnTeleportClicked(const struct FCrMassEntityReplicationHelper& InEntity, int32 InIndex);
+	void HandleOnTeleporterAdded(const struct FCrMassEntityReplicationHelper& InEntity);
+	void HandleOnTeleporterRemoved(const struct FCrMassEntityReplicationHelper& InEntity);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrUW_TeleportersList")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrUW_TeleportersList")
+	}
+	static class UCrUW_TeleportersList* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrUW_TeleportersList>();
+	}
+};
+DUMPER7_ASSERTS_UCrUW_TeleportersList;
+
 // Class ChimeraUI.CrUW_ArmoryWeaponDetails
 // 0x00B0 (0x0680 - 0x05D0)
 class UCrUW_ArmoryWeaponDetails final : public UCrUW_ActivatableWidget
@@ -1673,83 +1676,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCrUW_ArmoryWeaponSlot;
-
-// Class ChimeraUI.CrUW_ToolPanelHud
-// 0x01A0 (0x0540 - 0x03A0)
-class UCrUW_ToolPanelHud final : public UUserWidget
-{
-public:
-	class UOverlay*                               Frame;                                             // 0x03A0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UOverlay*                               ToolsSlider;                                       // 0x03A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UImage*                                 ToolImage1;                                        // 0x03B0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UImage*                                 ToolImage2;                                        // 0x03B8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UProgressBar*                           MedToolCooldownProgressBar;                        // 0x03C0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UTextBlock*                             MedToolCooldownText;                               // 0x03C8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UOverlay*                               MedToolButton;                                     // 0x03D0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UOverlay*                               WeaponPanel;                                       // 0x03D8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UHorizontalBox*                         BuildingToolPanel;                                 // 0x03E0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UVerticalBox*                           ConstructionButtons;                               // 0x03E8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UHorizontalBox*                         DeconstructionButtons;                             // 0x03F0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UVerticalBox*                           HealingButtons;                                    // 0x03F8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UVerticalBox*                           GrenadeButtons;                                    // 0x0400(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UVerticalBox*                           HarvesterButtons;                                  // 0x0408(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UVerticalBox*                           WeaponButtons;                                     // 0x0410(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UVerticalBox*                           ZiplineButtons;                                    // 0x0418(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UTextBlock*                             BasicAmount;                                       // 0x0420(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UTextBlock*                             StandardAmount;                                    // 0x0428(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UTextBlock*                             MeteorcoreAmount;                                  // 0x0430(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UWidget*                                SwapButton;                                        // 0x0438(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UTextBlock*                             SwapButtonText;                                    // 0x0440(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UWidget*                                HeightButton;                                      // 0x0448(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UWidget*                                HeightButtonSpacer;                                // 0x0450(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UWidget*                                RotateButton;                                      // 0x0458(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UWidget*                                RotateButtonSpacer;                                // 0x0460(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UWidget*                                MultipleButton;                                    // 0x0468(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UWidget*                                MultipleButtonSpacer;                              // 0x0470(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UProgressBar*                           GrenadeCooldownProgressBar;                        // 0x0478(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UTextBlock*                             GrenadeCooldownText;                               // 0x0480(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UOverlay*                               GrenadeButton;                                     // 0x0488(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UHorizontalBox*                         HorizontalBoxHolster;                              // 0x0490(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UTextBlock*                             CurrentAmmoText;                                   // 0x0498(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UTextBlock*                             MaxAmmoText;                                       // 0x04A0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UHorizontalBox*                         AmmoCountContainer;                                // 0x04A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UImage*                                 InfinityAmmoIcon;                                  // 0x04B0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	struct FSlateColor                            AmmoTextColor;                                     // 0x04B8(0x0014)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FSlateColor                            NoAmmoTextColor;                                   // 0x04CC(0x0014)(Edit, Protected, NativeAccessSpecifierProtected)
-	class FText                                   SwapFoundationText;                                // 0x04E0(0x0010)(Edit, Protected, NativeAccessSpecifierProtected)
-	class FText                                   ChangeDirectionText;                               // 0x04F0(0x0010)(Edit, Protected, NativeAccessSpecifierProtected)
-	float                                         FrameMoveSpeed;                                    // 0x0500(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_504[0x4];                                      // 0x0504(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class ACrPlayerControllerBase*                CrPC;                                              // 0x0508(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrInventoryComponent*                  Inventory;                                         // 0x0510(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrWeaponItemDataBase*                  CurrentToolData;                                   // 0x0518(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrWeaponItemDataBase*                  WantedToolData;                                    // 0x0520(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_528[0x18];                                     // 0x0528(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void Init();
-	void OnItemPostEquip();
-	void OnPossess(class APawn* InPawn);
-	void RefreshLines();
-	void SetLeftLineSize(ECrToolPanelState State);
-	void ShiftAnimationFnished();
-	void TriggerShiftWeaponAnimation();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrUW_ToolPanelHud")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrUW_ToolPanelHud")
-	}
-	static class UCrUW_ToolPanelHud* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrUW_ToolPanelHud>();
-	}
-};
-DUMPER7_ASSERTS_UCrUW_ToolPanelHud;
 
 // Class ChimeraUI.CrUW_AttributeBar
 // 0x00E8 (0x04B0 - 0x03C8)
@@ -2293,6 +2219,43 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_BaseCoreDeconstructionProgress;
 
+// Class ChimeraUI.CrUW_GenericAmmoCounter
+// 0x0058 (0x0420 - 0x03C8)
+class UCrUW_GenericAmmoCounter : public UCommonUserWidget
+{
+public:
+	float                                         CurrentMaxMag;                                     // 0x03C8(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bMaxMagChanged;                                    // 0x03CC(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_3CD[0x3];                                      // 0x03CD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCrCommonUIColorsDevSettings*           ColorSettings;                                     // 0x03D0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_3D8[0x48];                                     // 0x03D8(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnTimerEnded();
+	void SetColors();
+	void UpdateAmmo();
+
+	float GetCurrentAmmoCount() const;
+	float GetCurrentInventoryMaxAmmoCount() const;
+	float GetCurrentWeaponMaxMagAmmo() const;
+	const struct FSlateBrush GetEquippedWeaponAmmoItemType() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrUW_GenericAmmoCounter")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrUW_GenericAmmoCounter")
+	}
+	static class UCrUW_GenericAmmoCounter* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrUW_GenericAmmoCounter>();
+	}
+};
+DUMPER7_ASSERTS_UCrUW_GenericAmmoCounter;
+
 // Class ChimeraUI.CrUW_BaseCoreLevelWidget
 // 0x0068 (0x0430 - 0x03C8)
 class UCrUW_BaseCoreLevelWidget final : public UCommonUserWidget
@@ -2385,52 +2348,30 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_BaseCoreUpgrade;
 
-// Class ChimeraUI.CrUW_HealingHud
-// 0x00A0 (0x0440 - 0x03A0)
-class UCrUW_HealingHud final : public UUserWidget
+// Class ChimeraUI.CrUW_Extractor
+// 0x0020 (0x05F0 - 0x05D0)
+class UCrUW_Extractor final : public UCrUW_ActivatableWidget
 {
 public:
-	class UTextBlock*                             HealingTargetName;                                 // 0x03A0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UVerticalBox*                           ProgressGroup;                                     // 0x03A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UVerticalBox*                           CrosshairGroup;                                    // 0x03B0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UVerticalBox*                           BeingHealedProgressGroup;                          // 0x03B8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UVerticalBox*                           GettingUpProgressGroup;                            // 0x03C0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UTextBlock*                             BeingRevivedText;                                  // 0x03C8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UImage*                                 CrosshairIcon;                                     // 0x03D0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UHorizontalBox*                         HealCoopButton;                                    // 0x03D8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	TSubclassOf<class ACrWeaponActor>             MedToolClass;                                      // 0x03E0(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	float                                         MinCrosshairScale;                                 // 0x03E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	float                                         MaxCrosshairScale;                                 // 0x03EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class FText                                   SelfHealingText;                                   // 0x03F0(0x0010)(Edit, NativeAccessSpecifierPrivate)
-	class FText                                   CoopHealingText;                                   // 0x0400(0x0010)(Edit, NativeAccessSpecifierPrivate)
-	class ACrPlayerControllerBase*                PlayerController;                                  // 0x0410(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class ACrCharacterPlayerBase*                 CharacterPlayer;                                   // 0x0418(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_420[0x20];                                     // 0x0420(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void InitDelegates();
-	void OnBeingHealedChange();
-	void OnItemPostEquip();
-	void OnPossess(class APawn* InPawn);
-	void SetGettingUpProgress(float Progress);
-	void SetHealedProgress(float Progress);
-	void SetProgress(float Progress);
+	class UCrUW_CraftingBottomPanel*              CraftingBottomPanel;                               // 0x05D0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UImage*                                 ResourceIcon;                                      // 0x05D8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_5E0[0x10];                                     // 0x05E0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_HealingHud")
+		STATIC_CLASS_IMPL("CrUW_Extractor")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_HealingHud")
+		STATIC_NAME_IMPL(L"CrUW_Extractor")
 	}
-	static class UCrUW_HealingHud* GetDefaultObj()
+	static class UCrUW_Extractor* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_HealingHud>();
+		return GetDefaultObjImpl<UCrUW_Extractor>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_HealingHud;
+DUMPER7_ASSERTS_UCrUW_Extractor;
 
 // Class ChimeraUI.CrUW_BaseCoreUpgradeLevels
 // 0x0018 (0x05E8 - 0x05D0)
@@ -2522,35 +2463,36 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_BTConstrucionHud;
 
-// Class ChimeraUI.CrUW_FEDisplay
-// 0x0020 (0x03C0 - 0x03A0)
-class UCrUW_FEDisplay final : public UUserWidget
+// Class ChimeraUI.CrUW_HeaterCoolerInfo
+// 0x0010 (0x03B0 - 0x03A0)
+class UCrUW_HeaterCoolerInfo final : public UUserWidget
 {
 public:
-	class UVerticalBox*                           VerticalBox;                                       // 0x03A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrCommonUIColorsDevSettings*           ColorsSettings;                                    // 0x03A8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TSubclassOf<class UCrUW_CodeText>             CodeWidgetClass;                                   // 0x03B0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_3B8[0x8];                                      // 0x03B8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3A0[0x10];                                     // 0x03A0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	int32 GetWidgetHeight();
-	void SetColors();
+	void UpdateState(ECrMassHeaterCoolerState State);
+
+	int32 GetConnectedSocketNum() const;
+	class UCrItemDataBase* GetFuelItemType() const;
+	float GetPowerPerSocket() const;
+	int32 GetTotalSocketNum() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_FEDisplay")
+		STATIC_CLASS_IMPL("CrUW_HeaterCoolerInfo")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_FEDisplay")
+		STATIC_NAME_IMPL(L"CrUW_HeaterCoolerInfo")
 	}
-	static class UCrUW_FEDisplay* GetDefaultObj()
+	static class UCrUW_HeaterCoolerInfo* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_FEDisplay>();
+		return GetDefaultObjImpl<UCrUW_HeaterCoolerInfo>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_FEDisplay;
+DUMPER7_ASSERTS_UCrUW_HeaterCoolerInfo;
 
 // Class ChimeraUI.CrUW_BTDeconstrucionHud
 // 0x00B8 (0x0458 - 0x03A0)
@@ -2620,61 +2562,38 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_BTDeconstructionCrosshair;
 
-// Class ChimeraUI.CrUW_ParamBarHud
-// 0x0050 (0x03F0 - 0x03A0)
-class UCrUW_ParamBarHud : public UUserWidget
+// Class ChimeraUI.CrUW_MainMenuWidget
+// 0x00D0 (0x06A0 - 0x05D0)
+class UCrUW_MainMenuWidget final : public UCrUW_ActivatableWidget
 {
 public:
-	class UProgressBar*                           ProgressBar;                                       // 0x03A0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UImage*                                 BarBG;                                             // 0x03A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UImage*                                 Icon;                                              // 0x03B0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class USizeBox*                               SizeBox;                                           // 0x03B8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	float                                         PercentToBlink;                                    // 0x03C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         BlinkSpeed;                                        // 0x03C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UCrUW_BarsHUD*                          Parent;                                            // 0x03C8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_3D0[0x20];                                     // 0x03D0(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UVerticalBox*                           ButtonsBox;                                        // 0x05D0(0x0008)(Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UTabButton*                             ExitButton;                                        // 0x05D8(0x0008)(Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TArray<ECrMenuType>                           LeftButtons;                                       // 0x05E0(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	TSubclassOf<class UTabButton>                 LeftButtonClass;                                   // 0x05F0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TMap<ECrMenuType, class FText>                ButtonsTexts;                                      // 0x05F8(0x0050)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	TMap<int32, ECrMenuType>                      ButtonsIndexes;                                    // 0x0648(0x0050)(NativeAccessSpecifierPrivate)
+	uint8                                         Pad_698[0x8];                                      // 0x0698(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void Init();
-	void OnPossess(class APawn* InPawn);
-	void OnProgressBarChanged(bool bIsRed);
-	void OnProgressBarHidden();
+	void ButtonClicked(int32 Index_0);
+	void SetColors(const struct FLinearColor& OrangeColor);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_ParamBarHud")
+		STATIC_CLASS_IMPL("CrUW_MainMenuWidget")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_ParamBarHud")
+		STATIC_NAME_IMPL(L"CrUW_MainMenuWidget")
 	}
-	static class UCrUW_ParamBarHud* GetDefaultObj()
+	static class UCrUW_MainMenuWidget* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_ParamBarHud>();
+		return GetDefaultObjImpl<UCrUW_MainMenuWidget>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_ParamBarHud;
-
-// Class ChimeraUI.CrUW_HeatHud
-// 0x0000 (0x03F0 - 0x03F0)
-class UCrUW_HeatHud final : public UCrUW_ParamBarHud
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrUW_HeatHud")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrUW_HeatHud")
-	}
-	static class UCrUW_HeatHud* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrUW_HeatHud>();
-	}
-};
-DUMPER7_ASSERTS_UCrUW_HeatHud;
+DUMPER7_ASSERTS_UCrUW_MainMenuWidget;
 
 // Class ChimeraUI.CrUW_BuildingDeconstructionInfoElement
 // 0x0040 (0x03E0 - 0x03A0)
@@ -2733,64 +2652,37 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_BuildingRefundEntry;
 
-// Class ChimeraUI.CrUW_MapMenu
-// 0x0190 (0x0760 - 0x05D0)
-class UCrUW_MapMenu final : public UCrUW_ActivatableWidget
+// Class ChimeraUI.CrUW_HitIndicator
+// 0x0130 (0x04D0 - 0x03A0)
+class UCrUW_HitIndicator final : public UUserWidget
 {
 public:
-	uint8                                         Pad_5D0[0x28];                                     // 0x05D0(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCrUIAudioData*                         DA_SoundsTable;                                    // 0x05F8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_600[0x10];                                     // 0x0600(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCrUW_MapMenuMapArea*                   MapMenuMapArea;                                    // 0x0610(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrUW_MapMenuLegend*                    MapMenuLegend;                                     // 0x0618(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrUW_MapMenuZoomSlider*                MapMenuZoomSlider;                                 // 0x0620(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UButton*                                CloseButton;                                       // 0x0628(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UButton*                                ResetFiltersButton;                                // 0x0630(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UButton*                                CenterOnPlayerButton;                              // 0x0638(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_640[0x18];                                     // 0x0640(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FDataTableRowHandle                    ScrollWheelUpInputActionData;                      // 0x0658(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FDataTableRowHandle                    ScrollWheelDownInputActionData;                    // 0x0668(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FDataTableRowHandle                    CenterOnPlayerMenuInputActionData;                 // 0x0678(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FDataTableRowHandle                    HoldLMBInputActionData;                            // 0x0688(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FDataTableRowHandle                    HoldRMBInputActionData;                            // 0x0698(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FDataTableRowHandle                    NextMarkerBasicInputActionData;                    // 0x06A8(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FDataTableRowHandle                    PrevMarkerBasicInputActionData;                    // 0x06B8(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FDataTableRowHandle                    ShifedPressedInputActionData;                      // 0x06C8(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FDataTableRowHandle                    CtrlPressedInputActionData;                        // 0x06D8(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FDataTableRowHandle                    FocusMarkerInputActionData;                        // 0x06E8(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FDataTableRowHandle                    PersonalMarkerInputActionData;                     // 0x06F8(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FDataTableRowHandle                    SharedMarkerInputActionData;                       // 0x0708(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FDataTableRowHandle                    ToggleAllFiltersInputActionData;                   // 0x0718(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
-	class UButton*                                MoveButton;                                        // 0x0728(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UButton*                                ZoomInButton;                                      // 0x0730(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UButton*                                ZoomOutButton;                                     // 0x0738(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UButton*                                PlaceMarkerButton;                                 // 0x0740(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UButton*                                NavigateFiltersButton;                             // 0x0748(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UButton*                                ChangeFilterButton;                                // 0x0750(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_758[0x8];                                      // 0x0758(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TSoftObjectPtr<class UMaterialParameterCollection> HitIndicator_MPC;                             // 0x03A0(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<ECrHitReactionType, struct FCrHitReactionData> HitReactionDataBase;                         // 0x03C8(0x0050)(Edit, NativeAccessSpecifierPublic)
+	class UCanvasPanel*                           RootCanvas;                                        // 0x0418(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	float                                         PostProcessMaskAnimationTimeMultiplyer;            // 0x0420(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_424[0x4];                                      // 0x0424(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRuntimeFloatCurve                     PostProcessMaskAnimationCurve;                     // 0x0428(0x0088)(Edit, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_4B0[0x20];                                     // 0x04B0(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void HandleCenterOnPlayerInput();
-	void HandleOnExitClicked();
-	void HandlePersonalMarkerInput();
-	void HandleToggleAllFiltersInput();
-	void ZoomValueFromSlider(float ZoomValue);
+	void CreateHitIndicator(const struct FVector& InDirection, ECrHitReactionType InHitReactionType);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_MapMenu")
+		STATIC_CLASS_IMPL("CrUW_HitIndicator")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_MapMenu")
+		STATIC_NAME_IMPL(L"CrUW_HitIndicator")
 	}
-	static class UCrUW_MapMenu* GetDefaultObj()
+	static class UCrUW_HitIndicator* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_MapMenu>();
+		return GetDefaultObjImpl<UCrUW_HitIndicator>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_MapMenu;
+DUMPER7_ASSERTS_UCrUW_HitIndicator;
 
 // Class ChimeraUI.CrUW_BuildingRefund
 // 0x0028 (0x03C8 - 0x03A0)
@@ -2854,32 +2746,108 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_BuildingDeconstructionInfo;
 
-// Class ChimeraUI.CrUW_HudRoundTimer
-// 0x0008 (0x03A8 - 0x03A0)
-class UCrUW_HudRoundTimer : public UUserWidget
+// Class ChimeraUI.CrUW_InventorySlot
+// 0x0150 (0x0518 - 0x03C8)
+class UCrUW_InventorySlot : public UCommonUserWidget
 {
 public:
-	float                                         Progress;                                          // 0x03A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3A4[0x4];                                      // 0x03A4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UGridSlot*                              GridSlot;                                          // 0x03C8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UMenuAnchor*                            ContextMenu;                                       // 0x03D0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UMenuAnchor*                            SplitWindowAnchor;                                 // 0x03D8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UMenuAnchor*                            QuickActionsContextMenu;                           // 0x03E0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UMenuAnchor*                            TooltipActionsContextMenu;                         // 0x03E8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UTexture2D*                             HightlightTexure;                                  // 0x03F0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UImage*                                 ItemIcon;                                          // 0x03F8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UImage*                                 HighlightIcon;                                     // 0x0400(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UImage*                                 FullStackIcon;                                     // 0x0408(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UBorder*                                IconBackground;                                    // 0x0410(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UTextBlock*                             ItemQuantityText;                                  // 0x0418(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UBorder*                                GrayedOut;                                         // 0x0420(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_428[0x60];                                     // 0x0428(0x0060)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UCrUW_InventorySplitWindow> SplitWindowClass;                                  // 0x0488(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TSubclassOf<class UCr_UW_InventoryToolTip>    ToolTipClass;                                      // 0x0490(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TSubclassOf<class UMyVisualDragDropWidget>    VisualDragDropWidget;                              // 0x0498(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TSubclassOf<class UCrUW_QuickActionsMenu>     QuickActionsWidget;                                // 0x04A0(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TSubclassOf<class UCrUW_TooltipPrompt>        TooltipActionsWidget;                              // 0x04A8(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         TooltipDelayTime;                                  // 0x04B0(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_4B4[0x4];                                      // 0x04B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UUIItemTypesColors*                     DA_IconColors;                                     // 0x04B8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UUIItemTypesColors*                     DA_IconColorsFullStack;                            // 0x04C0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrUIAudioData*                         DA_SoundsTable;                                    // 0x04C8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	bool                                          bCanSplitStack;                                    // 0x04D0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bSetEmptyIcon;                                     // 0x04D1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bDropEnabled;                                      // 0x04D2(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_4D3[0x5];                                      // 0x04D3(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCommonInputSubsystem*                  CommonInputSubsystem;                              // 0x04D8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_4E0[0x38];                                     // 0x04E0(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void SetProgress(float Value);
+	class UUserWidget* ActivateQuickActionsMenu();
+	class UUserWidget* ActivateSplitWindow();
+	class UUserWidget* ActivateTooltipActionsMenu();
+	void CloseQuickMenu(ECrUIWindowMode Mode);
+	void CloseSplitWindow(ECrUIWindowMode Mode);
+	struct FLinearColor ConvertToGrayScale(const struct FColor& InColor);
+	int32 GetAmount();
+	struct FColor GetIconTypeColor(EUIItemType InType);
+	struct FLinearColor GetWarningColor();
+	class UUserWidget* NativeGetTooltipWidget();
+	void OpenSplitWindow(ECrUIWindowMode Mode);
+	void SetBackgroundColor(const struct FColor& InColor);
+	void SetDefaultBrush();
+	void SetFullStackColor(const struct FColor& InColor);
+	void SetFullStackHighlight();
+	void SetGrayedNames(bool bGray);
+	void SetGrayedOut(bool bVisible);
+	void SetGrayScaleTex(const struct FSlateBrush& InBrush);
+	void SetHighlightColor(const struct FLinearColor& InColor);
+	void SetNewHighlight(bool bIsHighlighted);
+	void SetSlotIcon(const struct FSlateBrush& InBrush, EUIItemType InUIType);
+	void ShowItemNameInIcon(const class FText& InText, bool Show);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_HudRoundTimer")
+		STATIC_CLASS_IMPL("CrUW_InventorySlot")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_HudRoundTimer")
+		STATIC_NAME_IMPL(L"CrUW_InventorySlot")
 	}
-	static class UCrUW_HudRoundTimer* GetDefaultObj()
+	static class UCrUW_InventorySlot* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_HudRoundTimer>();
+		return GetDefaultObjImpl<UCrUW_InventorySlot>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_HudRoundTimer;
+DUMPER7_ASSERTS_UCrUW_InventorySlot;
+
+// Class ChimeraUI.CrUW_GemInventorySlot
+// 0x0018 (0x0530 - 0x0518)
+class UCrUW_GemInventorySlot final : public UCrUW_InventorySlot
+{
+public:
+	bool                                          bLocked;                                           // 0x0518(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_519[0x17];                                     // 0x0519(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void HandleSkillLevelChanged(ECrPlayerProgressionSkill InSkill, int32 InLevel);
+	void UpdateVisuals(bool bInLocked, int32 Level);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrUW_GemInventorySlot")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrUW_GemInventorySlot")
+	}
+	static class UCrUW_GemInventorySlot* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrUW_GemInventorySlot>();
+	}
+};
+DUMPER7_ASSERTS_UCrUW_GemInventorySlot;
 
 // Class ChimeraUI.CrUW_BuildingDroneHud
 // 0x00D0 (0x0470 - 0x03A0)
@@ -2964,42 +2932,61 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_BuildingHud;
 
-// Class ChimeraUI.CrUW_GenericAmmoCounter
-// 0x0058 (0x0420 - 0x03C8)
-class UCrUW_GenericAmmoCounter : public UCommonUserWidget
+// Class ChimeraUI.CrUW_ParamBarHud
+// 0x0050 (0x03F0 - 0x03A0)
+class UCrUW_ParamBarHud : public UUserWidget
 {
 public:
-	float                                         CurrentMaxMag;                                     // 0x03C8(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bMaxMagChanged;                                    // 0x03CC(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_3CD[0x3];                                      // 0x03CD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCrCommonUIColorsDevSettings*           ColorSettings;                                     // 0x03D0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_3D8[0x48];                                     // 0x03D8(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UProgressBar*                           ProgressBar;                                       // 0x03A0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UImage*                                 BarBG;                                             // 0x03A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UImage*                                 Icon;                                              // 0x03B0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class USizeBox*                               SizeBox;                                           // 0x03B8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	float                                         PercentToBlink;                                    // 0x03C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         BlinkSpeed;                                        // 0x03C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UCrUW_BarsHUD*                          Parent;                                            // 0x03C8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_3D0[0x20];                                     // 0x03D0(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void OnTimerEnded();
-	void SetColors();
-	void UpdateAmmo();
-
-	float GetCurrentAmmoCount() const;
-	float GetCurrentInventoryMaxAmmoCount() const;
-	float GetCurrentWeaponMaxMagAmmo() const;
-	const struct FSlateBrush GetEquippedWeaponAmmoItemType() const;
+	void Init();
+	void OnPossess(class APawn* InPawn);
+	void OnProgressBarChanged(bool bIsRed);
+	void OnProgressBarHidden();
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_GenericAmmoCounter")
+		STATIC_CLASS_IMPL("CrUW_ParamBarHud")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_GenericAmmoCounter")
+		STATIC_NAME_IMPL(L"CrUW_ParamBarHud")
 	}
-	static class UCrUW_GenericAmmoCounter* GetDefaultObj()
+	static class UCrUW_ParamBarHud* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_GenericAmmoCounter>();
+		return GetDefaultObjImpl<UCrUW_ParamBarHud>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_GenericAmmoCounter;
+DUMPER7_ASSERTS_UCrUW_ParamBarHud;
+
+// Class ChimeraUI.CrUW_InfectionHud
+// 0x0000 (0x03F0 - 0x03F0)
+class UCrUW_InfectionHud final : public UCrUW_ParamBarHud
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrUW_InfectionHud")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrUW_InfectionHud")
+	}
+	static class UCrUW_InfectionHud* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrUW_InfectionHud>();
+	}
+};
+DUMPER7_ASSERTS_UCrUW_InfectionHud;
 
 // Class ChimeraUI.CrUW_BuildingInfo
 // 0x00A8 (0x0678 - 0x05D0)
@@ -3089,34 +3076,40 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_BuildingInfoBuildingMenu;
 
-// Class ChimeraUI.CrUW_InGameMenu
-// 0x0018 (0x05E8 - 0x05D0)
-class UCrUW_InGameMenu final : public UCrUW_ActivatableWidget
+// Class ChimeraUI.CrUW_EnergyHud
+// 0x0030 (0x03D0 - 0x03A0)
+class UCrUW_EnergyHud final : public UUserWidget
 {
 public:
-	class UCrRichTextBlock*                       NetMode;                                           // 0x05D0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrRichTextBlock*                       NetModeLabel;                                      // 0x05D8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_5E0[0x8];                                      // 0x05E0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UCrEnergyAttributeSet*                  EnergyAttributeSet;                                // 0x03A0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UProgressBar*                           EnergyBar;                                         // 0x03A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UImage*                                 Icon;                                              // 0x03B0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class USizeBox*                               SizeBox;                                           // 0x03B8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	float                                         HudHidingDelay;                                    // 0x03C0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         Steps;                                             // 0x03C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_3C8[0x8];                                      // 0x03C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void GoOnline();
-	void SetTargetSessionOnlineMode(ECrOnlineSessionMode InTargetMode);
+	void InitEnergyChangeDelegate(class ACrCharacterPlayerBase* InCharacter);
+	void OnPlayerSetProfession();
+	void OnPossesed(class APawn* InPawn);
+	void OnUnPossesed(class APawn* InPawn);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_InGameMenu")
+		STATIC_CLASS_IMPL("CrUW_EnergyHud")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_InGameMenu")
+		STATIC_NAME_IMPL(L"CrUW_EnergyHud")
 	}
-	static class UCrUW_InGameMenu* GetDefaultObj()
+	static class UCrUW_EnergyHud* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_InGameMenu>();
+		return GetDefaultObjImpl<UCrUW_EnergyHud>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_InGameMenu;
+DUMPER7_ASSERTS_UCrUW_EnergyHud;
 
 // Class ChimeraUI.CrUW_BuildingInfoRow
 // 0x0028 (0x03F0 - 0x03C8)
@@ -3192,42 +3185,54 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_BuildingInfoStatus;
 
-// Class ChimeraUI.CrUW_ExportingSelectionWidget
-// 0x0080 (0x0650 - 0x05D0)
-class UCrUW_ExportingSelectionWidget final : public UCrUW_ActivatableWidget
+// Class ChimeraUI.CrUW_PauseMenuMainScreen
+// 0x0420 (0x09F0 - 0x05D0)
+class UCrUW_PauseMenuMainScreen final : public UCrUW_ActivatableWidget
 {
 public:
-	class UScrollBox*                             LevelsBox;                                         // 0x05D0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UImage*                                 CorpoImage;                                        // 0x05D8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCommonTextBlock*                       CorpoName;                                         // 0x05E0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TSubclassOf<class UObject>                    CorporationRecipesClass;                           // 0x05E8(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class FString                                 CorporationName;                                   // 0x05F0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_600[0x30];                                     // 0x0600(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 BuildingActor;                                     // 0x0630(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrCraftingRecipeDataForUI*             CurrentRecipe;                                     // 0x0638(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrUW_CorporationsList*                 OwningWidget;                                      // 0x0640(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_648[0x8];                                      // 0x0648(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UCrUW_ButtonsTab*                       TabWidget;                                         // 0x05D0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrUW_BoundActionButton*                BackButton;                                        // 0x05D8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrUW_ButtonBase*                       ApplyButton;                                       // 0x05E0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UWidgetSwitcher*                        ContentSwitch;                                     // 0x05E8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UOverlay*                               ContentOverlay;                                    // 0x05F0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrMenuWidgetsData*                     WidgetsData;                                       // 0x05F8(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrUIAudioData*                         DA_SoundsTable;                                    // 0x0600(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TSubclassOf<class UCrUW_ActivatableWidget>    PlaytestEndVideoWidgetClass;                       // 0x0608(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TArray<ECrMenuType>                           TabsTypes;                                         // 0x0610(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	struct FButtonStyle                           Style;                                             // 0x0620(0x0390)(Edit, Protected, NativeAccessSpecifierProtected)
+	bool                                          bHideBackground;                                   // 0x09B0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_9B1[0x7];                                      // 0x09B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   CancelText;                                        // 0x09B8(0x0010)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	class FText                                   QuitText;                                          // 0x09C8(0x0010)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	struct FDataTableRowHandle                    RestoreDefaultsActionData;                         // 0x09D8(0x0010)(Edit, DisableEditOnInstance, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	struct FUIActionBindingHandle                 RestoreDefaultsActionHandle;                       // 0x09E8(0x0004)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_9EC[0x4];                                      // 0x09EC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void SetCorpoColor(const struct FColor& InColor);
-	void SetDisabledOpacity(bool bInDisabled);
-	void SetNoCorpoSelectedState(bool bInNoCorpo);
+	void ApplyClicked();
+	void BackButtonClicked();
+	void EnableBlur(bool bEnable);
+	void EnableUpAndDownFrame(bool bEnable);
+	struct FCrMenuConfig GetWidgetsData(const ECrMenuType Type);
+	void OnActionTriggered(ECrMenuType MenuType);
+	void RestoreToDefaulsActionTriggered();
+	void TabChanged(int32 Old, int32 Active);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_ExportingSelectionWidget")
+		STATIC_CLASS_IMPL("CrUW_PauseMenuMainScreen")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_ExportingSelectionWidget")
+		STATIC_NAME_IMPL(L"CrUW_PauseMenuMainScreen")
 	}
-	static class UCrUW_ExportingSelectionWidget* GetDefaultObj()
+	static class UCrUW_PauseMenuMainScreen* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_ExportingSelectionWidget>();
+		return GetDefaultObjImpl<UCrUW_PauseMenuMainScreen>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_ExportingSelectionWidget;
+DUMPER7_ASSERTS_UCrUW_PauseMenuMainScreen;
 
 // Class ChimeraUI.CrUW_BuildingInGameInfo
 // 0x0020 (0x03E8 - 0x03C8)
@@ -3299,42 +3304,25 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_BuildingInventory;
 
-// Class ChimeraUI.CrUW_PlayerParamsHud
-// 0x01C0 (0x0560 - 0x03A0)
-class UCrUW_PlayerParamsHud final : public UUserWidget
+// Class ChimeraUI.CrUW_HeatHud
+// 0x0000 (0x03F0 - 0x03F0)
+class UCrUW_HeatHud final : public UCrUW_ParamBarHud
 {
-public:
-	uint8                                         Pad_3A0[0x18];                                     // 0x03A0(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	class UImage*                                 ToxicityIcon;                                      // 0x03B8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UImage*                                 HydrationIcon;                                     // 0x03C0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UImage*                                 CaloriesIcon;                                      // 0x03C8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	float                                         CriticalBlinkValue;                                // 0x03D0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_3D4[0x4];                                      // 0x03D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCrPlayerParamHudData*                  ToxicityMessageData;                               // 0x03D8(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrPlayerParamHudData*                  CaloriesMessageData;                               // 0x03E0(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrPlayerParamHudData*                  HydrationMessageData;                              // 0x03E8(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	struct FLinearColor                           NormalColor;                                       // 0x03F0(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_400[0x160];                                    // 0x0400(0x0160)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void InitDelegates();
-	void OnPossess(class APawn* InPawn);
-
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_PlayerParamsHud")
+		STATIC_CLASS_IMPL("CrUW_HeatHud")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_PlayerParamsHud")
+		STATIC_NAME_IMPL(L"CrUW_HeatHud")
 	}
-	static class UCrUW_PlayerParamsHud* GetDefaultObj()
+	static class UCrUW_HeatHud* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_PlayerParamsHud>();
+		return GetDefaultObjImpl<UCrUW_HeatHud>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_PlayerParamsHud;
+DUMPER7_ASSERTS_UCrUW_HeatHud;
 
 // Class ChimeraUI.CrUW_BuildingLogisticsInfo
 // 0x0020 (0x03C0 - 0x03A0)
@@ -3424,37 +3412,35 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_BuildingMenu;
 
-// Class ChimeraUI.CrUW_HitIndicator
-// 0x0130 (0x04D0 - 0x03A0)
-class UCrUW_HitIndicator final : public UUserWidget
+// Class ChimeraUI.CrUW_PlayerPingHud
+// 0x0030 (0x03D0 - 0x03A0)
+class UCrUW_PlayerPingHud final : public UUserWidget
 {
 public:
-	TSoftObjectPtr<class UMaterialParameterCollection> HitIndicator_MPC;                             // 0x03A0(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<ECrHitReactionType, struct FCrHitReactionData> HitReactionDataBase;                         // 0x03C8(0x0050)(Edit, NativeAccessSpecifierPublic)
-	class UCanvasPanel*                           RootCanvas;                                        // 0x0418(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	float                                         PostProcessMaskAnimationTimeMultiplyer;            // 0x0420(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_424[0x4];                                      // 0x0424(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRuntimeFloatCurve                     PostProcessMaskAnimationCurve;                     // 0x0428(0x0088)(Edit, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_4B0[0x20];                                     // 0x04B0(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<class UCrUW_PlayerPingItem*>           PingItems;                                         // 0x03A0(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	TSubclassOf<class UCrUW_PlayerPingItem>       ItemClass;                                         // 0x03B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UCanvasPanel*                           ItemCanvas;                                        // 0x03B8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class USoundBase*                             AppearSound;                                       // 0x03C0(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_3C8[0x8];                                      // 0x03C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void CreateHitIndicator(const struct FVector& InDirection, ECrHitReactionType InHitReactionType);
+	void OnPlayerPingChanged(const TArray<struct FCrPlayerPingData>& PlayerPingData);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_HitIndicator")
+		STATIC_CLASS_IMPL("CrUW_PlayerPingHud")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_HitIndicator")
+		STATIC_NAME_IMPL(L"CrUW_PlayerPingHud")
 	}
-	static class UCrUW_HitIndicator* GetDefaultObj()
+	static class UCrUW_PlayerPingHud* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_HitIndicator>();
+		return GetDefaultObjImpl<UCrUW_PlayerPingHud>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_HitIndicator;
+DUMPER7_ASSERTS_UCrUW_PlayerPingHud;
 
 // Class ChimeraUI.CrUW_BuildingMenuButton
 // 0x00B8 (0x0458 - 0x03A0)
@@ -3529,46 +3515,38 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_BuildingMenuCategoryButton;
 
-// Class ChimeraUI.CrUW_PlayerProgressionSkill
-// 0x00B8 (0x0458 - 0x03A0)
-class UCrUW_PlayerProgressionSkill final : public UUserWidget
+// Class ChimeraUI.CrUW_FoodEffectHud
+// 0x0130 (0x04D0 - 0x03A0)
+class UCrUW_FoodEffectHud final : public UUserWidget
 {
 public:
-	class UTextBlock*                             SkillName;                                         // 0x03A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UTextBlock*                             Level;                                             // 0x03A8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UProgressBar*                           SkillProgress;                                     // 0x03B0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UImage*                                 Background;                                        // 0x03B8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UTextBlock*                             CurrentPoints;                                     // 0x03C0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UTextBlock*                             MaxPoints;                                         // 0x03C8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrUW_InventoryContainer*               SkillSlots;                                        // 0x03D0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrCommonUIColorsDevSettings*           ColorsSettings;                                    // 0x03D8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TMap<ECrPlayerProgressionSkill, struct FLinearColor> SkillToColor;                               // 0x03E0(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	ECrPlayerProgressionSkill                     OwningSkill;                                       // 0x0430(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_431[0x1F];                                     // 0x0431(0x001F)(Fixing Size After Last Property [ Dumper-7 ])
-	class ACrPlayerControllerBase*                CrPC;                                              // 0x0450(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UImage*                                 Icon;                                              // 0x03A0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UTextBlock*                             Counter;                                           // 0x03A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrUW_HudRoundTimer*                    RoundProgress;                                     // 0x03B0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UMenuAnchor*                            TooltipAnchor;                                     // 0x03B8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TSubclassOf<class UCr_UW_InventoryToolTip>    ToolTipClass;                                      // 0x03C0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_3C8[0x8];                                      // 0x03C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FFoodEffectData                        EffectData;                                        // 0x03D0(0x00E0)(NativeAccessSpecifierPrivate)
+	uint8                                         Pad_4B0[0x20];                                     // 0x04B0(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void SetColors();
-	void SetMaxLevel();
-	void SetSkillIcon(ECrPlayerProgressionSkill InSkill);
-	void UpdateExperience(ECrPlayerProgressionSkill InSkill, float InExperience);
-	void UpdateLevel(ECrPlayerProgressionSkill InSkill, int32 InLevel);
+	class UUserWidget* NativeGetTooltipWidget();
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_PlayerProgressionSkill")
+		STATIC_CLASS_IMPL("CrUW_FoodEffectHud")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_PlayerProgressionSkill")
+		STATIC_NAME_IMPL(L"CrUW_FoodEffectHud")
 	}
-	static class UCrUW_PlayerProgressionSkill* GetDefaultObj()
+	static class UCrUW_FoodEffectHud* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_PlayerProgressionSkill>();
+		return GetDefaultObjImpl<UCrUW_FoodEffectHud>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_PlayerProgressionSkill;
+DUMPER7_ASSERTS_UCrUW_FoodEffectHud;
 
 // Class ChimeraUI.CrUW_BuildingMenuInfoOutputElem
 // 0x0010 (0x03B0 - 0x03A0)
@@ -3623,31 +3601,35 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_BuildingOptionButton;
 
-// Class ChimeraUI.CrUW_FoodEffectsHud
-// 0x0028 (0x03C8 - 0x03A0)
-class UCrUW_FoodEffectsHud final : public UUserWidget
+// Class ChimeraUI.CrUW_PowerGenerator
+// 0x0030 (0x0600 - 0x05D0)
+class UCrUW_PowerGenerator final : public UCrUW_ActivatableWidget
 {
 public:
-	class UGridPanel*                             Container;                                         // 0x03A0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UFoodEffectsTable*                      EffectDatasTable;                                  // 0x03A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TArray<struct FFoodActiveEffect>              ActiveEffects;                                     // 0x03B0(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	class UAbilitySystemComponent*                AbilitySystemComponent;                            // 0x03C0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCommonTextBlock*                       GeneratingPower;                                   // 0x05D0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrCommonUIColorsDevSettings*           ColorSettings;                                     // 0x05D8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_5E0[0x20];                                     // 0x05E0(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetStateColor(bool bWorking);
+	void SetupVisuals();
+	void UpdateGridPower(float PowerUsedInGrid, float PowerGeneratedByGrid);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_FoodEffectsHud")
+		STATIC_CLASS_IMPL("CrUW_PowerGenerator")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_FoodEffectsHud")
+		STATIC_NAME_IMPL(L"CrUW_PowerGenerator")
 	}
-	static class UCrUW_FoodEffectsHud* GetDefaultObj()
+	static class UCrUW_PowerGenerator* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_FoodEffectsHud>();
+		return GetDefaultObjImpl<UCrUW_PowerGenerator>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_FoodEffectsHud;
+DUMPER7_ASSERTS_UCrUW_PowerGenerator;
 
 // Class ChimeraUI.CrUW_BuildingOptionButtons
 // 0x0660 (0x0A00 - 0x03A0)
@@ -3748,34 +3730,34 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_BuildingPlacementIndicator;
 
-// Class ChimeraUI.CrUW_QuickUseEntry
-// 0x0020 (0x03C0 - 0x03A0)
-class UCrUW_QuickUseEntry : public UUserWidget
+// Class ChimeraUI.CrUW_InGameMenu
+// 0x0018 (0x05E8 - 0x05D0)
+class UCrUW_InGameMenu final : public UCrUW_ActivatableWidget
 {
 public:
-	class UImage*                                 Icon;                                              // 0x03A0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	float                                         ActiveOpacity;                                     // 0x03A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         InactiveOpacity;                                   // 0x03AC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_3B0[0x10];                                     // 0x03B0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UCrRichTextBlock*                       NetMode;                                           // 0x05D0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrRichTextBlock*                       NetModeLabel;                                      // 0x05D8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_5E0[0x8];                                      // 0x05E0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void OnDataRefresh(int32 Index_0);
+	void GoOnline();
+	void SetTargetSessionOnlineMode(ECrOnlineSessionMode InTargetMode);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_QuickUseEntry")
+		STATIC_CLASS_IMPL("CrUW_InGameMenu")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_QuickUseEntry")
+		STATIC_NAME_IMPL(L"CrUW_InGameMenu")
 	}
-	static class UCrUW_QuickUseEntry* GetDefaultObj()
+	static class UCrUW_InGameMenu* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_QuickUseEntry>();
+		return GetDefaultObjImpl<UCrUW_InGameMenu>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_QuickUseEntry;
+DUMPER7_ASSERTS_UCrUW_InGameMenu;
 
 // Class ChimeraUI.CrUW_ButtonBase
 // 0x0050 (0x16A0 - 0x1650)
@@ -3853,39 +3835,25 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_BuildingPriorityButton;
 
-// Class ChimeraUI.CrUW_InputTextPopup
-// 0x0050 (0x03F0 - 0x03A0)
-class UCrUW_InputTextPopup : public UUserWidget
+// Class ChimeraUI.CrUW_RadiationHud
+// 0x0000 (0x03F0 - 0x03F0)
+class UCrUW_RadiationHud final : public UCrUW_ParamBarHud
 {
-public:
-	class UCrUW_ActionButton*                     ConfirmButton;                                     // 0x03A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrUW_ActionButton*                     CancelButton;                                      // 0x03A8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UEditableText*                          InputTextField;                                    // 0x03B0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrCommonUIColorsDevSettings*           ColorsSettings;                                    // 0x03B8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_3C0[0x30];                                     // 0x03C0(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	class FString GetClipBoardText();
-	void InputTextChanged(const class FText& InText);
-	void OnCancelButtonClicked();
-	void OnConfirmButtonClicked();
-	void SetColors();
-
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_InputTextPopup")
+		STATIC_CLASS_IMPL("CrUW_RadiationHud")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_InputTextPopup")
+		STATIC_NAME_IMPL(L"CrUW_RadiationHud")
 	}
-	static class UCrUW_InputTextPopup* GetDefaultObj()
+	static class UCrUW_RadiationHud* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_InputTextPopup>();
+		return GetDefaultObjImpl<UCrUW_RadiationHud>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_InputTextPopup;
+DUMPER7_ASSERTS_UCrUW_RadiationHud;
 
 // Class ChimeraUI.CrUW_BuildingSlot
 // 0x0488 (0x09A0 - 0x0518)
@@ -3915,39 +3883,52 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_BuildingSlot;
 
-// Class ChimeraUI.CrUW_RecipeImage
-// 0x0048 (0x03E8 - 0x03A0)
-class UCrUW_RecipeImage final : public UUserWidget
+// Class ChimeraUI.CrUW_HealingHud
+// 0x00A0 (0x0440 - 0x03A0)
+class UCrUW_HealingHud final : public UUserWidget
 {
 public:
-	class UImage*                                 RecipeImage;                                       // 0x03A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UMenuAnchor*                            TooltipAnchor;                                     // 0x03A8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TSubclassOf<class UCr_UW_InventoryToolTip>    ToolTipClass;                                      // 0x03B0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UUIItemTypesColors*                     DA_IconColors;                                     // 0x03B8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrCommonUIColorsDevSettings*           ColorsSettings;                                    // 0x03C0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrItemRecipeData*                      Recipe;                                            // 0x03C8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_3D0[0x18];                                     // 0x03D0(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UTextBlock*                             HealingTargetName;                                 // 0x03A0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UVerticalBox*                           ProgressGroup;                                     // 0x03A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UVerticalBox*                           CrosshairGroup;                                    // 0x03B0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UVerticalBox*                           BeingHealedProgressGroup;                          // 0x03B8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UVerticalBox*                           GettingUpProgressGroup;                            // 0x03C0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UTextBlock*                             BeingRevivedText;                                  // 0x03C8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UImage*                                 CrosshairIcon;                                     // 0x03D0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UHorizontalBox*                         HealCoopButton;                                    // 0x03D8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	TSubclassOf<class ACrWeaponActor>             MedToolClass;                                      // 0x03E0(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         MinCrosshairScale;                                 // 0x03E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         MaxCrosshairScale;                                 // 0x03EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class FText                                   SelfHealingText;                                   // 0x03F0(0x0010)(Edit, NativeAccessSpecifierPrivate)
+	class FText                                   CoopHealingText;                                   // 0x0400(0x0010)(Edit, NativeAccessSpecifierPrivate)
+	class ACrPlayerControllerBase*                PlayerController;                                  // 0x0410(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class ACrCharacterPlayerBase*                 CharacterPlayer;                                   // 0x0418(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_420[0x20];                                     // 0x0420(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	class UUserWidget* GetTooltipWidget();
-	void SetColors();
-	void SetRecipeClaimed();
+	void InitDelegates();
+	void OnBeingHealedChange();
+	void OnItemPostEquip();
+	void OnPossess(class APawn* InPawn);
+	void SetGettingUpProgress(float Progress);
+	void SetHealedProgress(float Progress);
+	void SetProgress(float Progress);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_RecipeImage")
+		STATIC_CLASS_IMPL("CrUW_HealingHud")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_RecipeImage")
+		STATIC_NAME_IMPL(L"CrUW_HealingHud")
 	}
-	static class UCrUW_RecipeImage* GetDefaultObj()
+	static class UCrUW_HealingHud* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_RecipeImage>();
+		return GetDefaultObjImpl<UCrUW_HealingHud>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_RecipeImage;
+DUMPER7_ASSERTS_UCrUW_HealingHud;
 
 // Class ChimeraUI.CrUW_BuildingTooltips
 // 0x0010 (0x03B0 - 0x03A0)
@@ -4003,36 +3984,38 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_BuildingTooltipsDeconstruct;
 
-// Class ChimeraUI.CrUW_HeaterCoolerInfo
-// 0x0010 (0x03B0 - 0x03A0)
-class UCrUW_HeaterCoolerInfo final : public UUserWidget
+// Class ChimeraUI.CrUW_ItemSelectionGroup
+// 0x0040 (0x0610 - 0x05D0)
+class UCrUW_ItemSelectionGroup final : public UCrUW_ActivatableWidget
 {
 public:
-	uint8                                         Pad_3A0[0x10];                                     // 0x03A0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UCrUW_ItemSelectionGridPanel*           ItemGridPanel;                                     // 0x05D0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TSubclassOf<class UObject>                    ItemSlotClass;                                     // 0x05D8(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	int32                                         ColumnCount;                                       // 0x05E0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsExpanded;                                       // 0x05E4(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_5E5[0x2B];                                     // 0x05E5(0x002B)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void UpdateState(ECrMassHeaterCoolerState State);
-
-	int32 GetConnectedSocketNum() const;
-	class UCrItemDataBase* GetFuelItemType() const;
-	float GetPowerPerSocket() const;
-	int32 GetTotalSocketNum() const;
+	void EnableLine(bool bEnabled);
+	void SetColors(const class UCrCommonUIColorsDevSettings* Settings);
+	void SetExpanded(bool bExpand);
+	void SetTitle(const class FText& Title);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_HeaterCoolerInfo")
+		STATIC_CLASS_IMPL("CrUW_ItemSelectionGroup")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_HeaterCoolerInfo")
+		STATIC_NAME_IMPL(L"CrUW_ItemSelectionGroup")
 	}
-	static class UCrUW_HeaterCoolerInfo* GetDefaultObj()
+	static class UCrUW_ItemSelectionGroup* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_HeaterCoolerInfo>();
+		return GetDefaultObjImpl<UCrUW_ItemSelectionGroup>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_HeaterCoolerInfo;
+DUMPER7_ASSERTS_UCrUW_ItemSelectionGroup;
 
 // Class ChimeraUI.CrUW_BuildingUIWithTabs
 // 0x0040 (0x0610 - 0x05D0)
@@ -4092,58 +4075,33 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_BuildingUnlocked;
 
-// Class ChimeraUI.CrUW_ItemSelectionList
-// 0x0030 (0x0600 - 0x05D0)
-class UCrUW_ItemSelectionList : public UCrUW_ActivatableWidget
+// Class ChimeraUI.CrUW_InteractionInfo
+// 0x0010 (0x03B0 - 0x03A0)
+class UCrUW_InteractionInfo final : public UUserWidget
 {
 public:
-	class UScrollBox*                             ItemGroupBox;                                      // 0x05D0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TSubclassOf<class UObject>                    ItemGroupWidgetClass;                              // 0x05D8(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	struct FCrItemDataForUI                       CurrentItem;                                       // 0x05E0(0x0008)(NoDestructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_5E8[0x18];                                     // 0x05E8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3A0[0x10];                                     // 0x03A0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void SetTitle(bool bVisible, const class FText& InTitle);
+	class FText GetInteractionAdditionalText();
+	class FText GetInteractionDisplayName();
+	void OnSetupInfo(class AActor* InteractionActor);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_ItemSelectionList")
+		STATIC_CLASS_IMPL("CrUW_InteractionInfo")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_ItemSelectionList")
+		STATIC_NAME_IMPL(L"CrUW_InteractionInfo")
 	}
-	static class UCrUW_ItemSelectionList* GetDefaultObj()
+	static class UCrUW_InteractionInfo* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_ItemSelectionList>();
+		return GetDefaultObjImpl<UCrUW_InteractionInfo>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_ItemSelectionList;
-
-// Class ChimeraUI.CrUW_ItemSelectionListWithViewModel
-// 0x0038 (0x0638 - 0x0600)
-class UCrUW_ItemSelectionListWithViewModel : public UCrUW_ItemSelectionList
-{
-public:
-	EUIWidgetType                                 TabToShowOnConfirm;                                // 0x0600(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_601[0x37];                                     // 0x0601(0x0037)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrUW_ItemSelectionListWithViewModel")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrUW_ItemSelectionListWithViewModel")
-	}
-	static class UCrUW_ItemSelectionListWithViewModel* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrUW_ItemSelectionListWithViewModel>();
-	}
-};
-DUMPER7_ASSERTS_UCrUW_ItemSelectionListWithViewModel;
+DUMPER7_ASSERTS_UCrUW_InteractionInfo;
 
 // Class ChimeraUI.CrUW_BuildingCollectionUnlocked
 // 0x0010 (0x03B8 - 0x03A8)
@@ -4202,46 +4160,30 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_BuildingWidget;
 
-// Class ChimeraUI.CrUW_InventoryContainer
-// 0x00E0 (0x04A8 - 0x03C8)
-class UCrUW_InventoryContainer final : public UCommonUserWidget
+// Class ChimeraUI.CrUW_ItemTooltipBase
+// 0x0018 (0x03B8 - 0x03A0)
+class UCrUW_ItemTooltipBase final : public UAuUW_ItemTooltipBase
 {
 public:
-	TMap<struct FCrSlotId, class UCrUW_InventorySlot*> InventorySlots;                               // 0x03C8(0x0050)(ExportObject, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_418[0x18];                                     // 0x0418(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UCrUW_InventorySlot>        InventorySlotClass;                                // 0x0430(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TSubclassOf<class UCrUW_BuildingSlot>         BuildingSlotClass;                                 // 0x0438(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UGridPanel*                             ItemGridPanel;                                     // 0x0440(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_448[0x30];                                     // 0x0448(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UAuItemDataBase*>                CurrentFilterItems;                                // 0x0478(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_488[0x20];                                     // 0x0488(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void ExecuteOnDropForSlot(int32 SlotIdx, const struct FGeometry& InGeometry, const struct FPointerEvent& InDragDropEvent, class UDragDropOperation* InOperation);
-	void HandleClearFilterSelectionClicked();
-	void HandleFilterSelectedClicked(class UCrItemDataBase* Filter);
-	void HandleOnInventorySizeChanged();
-	void HandlePickAllClicked();
-	void OnFilterTextChanged(const class FText& FilterText);
-	void OnSortButtonClick();
-	void SetRecipeOutSlot(const struct FSlateBrush& InBrush, EUIItemType InUIType);
-	void SetSlotOffset(class UGridSlot* InSlot);
+	class UTextBlock*                             ItemName;                                          // 0x03A0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UTextBlock*                             ItemDescription;                                   // 0x03A8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UTextBlock*                             ItemCount;                                         // 0x03B0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_InventoryContainer")
+		STATIC_CLASS_IMPL("CrUW_ItemTooltipBase")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_InventoryContainer")
+		STATIC_NAME_IMPL(L"CrUW_ItemTooltipBase")
 	}
-	static class UCrUW_InventoryContainer* GetDefaultObj()
+	static class UCrUW_ItemTooltipBase* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_InventoryContainer>();
+		return GetDefaultObjImpl<UCrUW_ItemTooltipBase>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_InventoryContainer;
+DUMPER7_ASSERTS_UCrUW_ItemTooltipBase;
 
 // Class ChimeraUI.CrUW_ButtonsTab
 // 0x0090 (0x0660 - 0x05D0)
@@ -4308,70 +4250,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCrUW_CategoryGrid;
-
-// Class ChimeraUI.CrUW_LoadSessionMenu
-// 0x0268 (0x0838 - 0x05D0)
-class UCrUW_LoadSessionMenu final : public UCrUW_ActivatableWidget
-{
-public:
-	class UCrUW_ActionButton*                     LoadSessionSaveButton;                             // 0x05D0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrUW_ActionButton*                     DeleteSessionButton;                               // 0x05D8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrUW_ActionButton*                     DeleteSessionSaveButton;                           // 0x05E0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UScrollBox*                             SessionsBox;                                       // 0x05E8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UGameSettingRotator*                    SessionTypeRotator;                                // 0x05F0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UButton*                                OptionDecrease;                                    // 0x05F8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UButton*                                OptionIncrease;                                    // 0x0600(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCommonTextBlock*                       TempSessionName;                                   // 0x0608(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TSubclassOf<class UCrUW_SessionBox>           SessionBoxClass;                                   // 0x0610(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FKey                                   KeyOptIncrease;                                    // 0x0618(0x0018)(Edit, DisableEditOnInstance, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FKey                                   KeyOptDecrease;                                    // 0x0630(0x0018)(Edit, DisableEditOnInstance, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FKey                                   KeyDeleteSession;                                  // 0x0648(0x0018)(Edit, DisableEditOnInstance, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FKey                                   KeyDeleteSessionSave;                              // 0x0660(0x0018)(Edit, DisableEditOnInstance, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FKey                                   KeyLoad;                                           // 0x0678(0x0018)(Edit, DisableEditOnInstance, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FText                                   SessionSingleText;                                 // 0x0690(0x0010)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	class FText                                   SessionInviteText;                                 // 0x06A0(0x0010)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	class FText                                   SessionFriendsText;                                // 0x06B0(0x0010)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	class FText                                   CancelText;                                        // 0x06C0(0x0010)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	TArray<class FString>                         LongTextLanguages;                                 // 0x06D0(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	class UUserWidget*                            BPW_DeleteSavesButton;                             // 0x06E0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCheckBox*                              PTRSavesCheckbox;                                  // 0x06E8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCommonTextBlock*                       MainBranchSavesLabel;                              // 0x06F0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_6F8[0x8];                                      // 0x06F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 SelectedSave;                                      // 0x0700(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class FString                                 SelectedSession;                                   // 0x0710(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	int32                                         SelectedSessionIndex;                              // 0x0720(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_724[0x114];                                    // 0x0724(0x0114)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void DebugDeleteAllSaveGames();
-	void DeleteSessionClicked();
-	void DeleteSessionSaveClicked();
-	void ExpandedSessionChanged(int32 ExpandedIndex);
-	void GrayoutSessionTypeText();
-	void HandleRotatorChangedValue(int32 Value, bool bUserInitiated);
-	void LoadButtonClicked();
-	void OptionDecreaseClicked();
-	void OptionIncreaseClicked();
-	void PTRSavesCheckboxChanged(bool bin);
-	void SelectedSaveChanged(const class FString& InSelectedItem, const class FString& ItemSession, ECrSlotType InSlotType, int32 InItemIndex);
-	void SetSessionOnlineMode(ECrOnlineSessionMode InMode);
-	void SetupButtons(bool bLowerFont);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrUW_LoadSessionMenu")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrUW_LoadSessionMenu")
-	}
-	static class UCrUW_LoadSessionMenu* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrUW_LoadSessionMenu>();
-	}
-};
-DUMPER7_ASSERTS_UCrUW_LoadSessionMenu;
 
 // Class ChimeraUI.CrUW_CharacterHud
 // 0x0098 (0x0438 - 0x03A0)
@@ -4444,6 +4322,32 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CharacterPortrait;
 
+// Class ChimeraUI.CrUW_LootboxMenu
+// 0x0008 (0x05D8 - 0x05D0)
+class UCrUW_LootboxMenu final : public UCrUW_ActivatableWidget
+{
+public:
+	class UCrUW_Storage*                          StorageWidget;                                     // 0x05D0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+
+public:
+	void SetTitleText(const class FText& InText);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrUW_LootboxMenu")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrUW_LootboxMenu")
+	}
+	static class UCrUW_LootboxMenu* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrUW_LootboxMenu>();
+	}
+};
+DUMPER7_ASSERTS_UCrUW_LootboxMenu;
+
 // Class ChimeraUI.CrUW_CharacterSelectionMenu
 // 0x0008 (0x05D8 - 0x05D0)
 class UCrUW_CharacterSelectionMenu : public UCrUW_ActivatableWidget
@@ -4507,38 +4411,28 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CloningBedPlayer;
 
-// Class ChimeraUI.CrUW_MainMenuWidget
-// 0x00D0 (0x06A0 - 0x05D0)
-class UCrUW_MainMenuWidget final : public UCrUW_ActivatableWidget
+// Class ChimeraUI.CrUW_ItemNotification
+// 0x0008 (0x03B0 - 0x03A8)
+class UCrUW_ItemNotification final : public UAuUW_NotificationBase
 {
 public:
-	class UVerticalBox*                           ButtonsBox;                                        // 0x05D0(0x0008)(Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UTabButton*                             ExitButton;                                        // 0x05D8(0x0008)(Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TArray<ECrMenuType>                           LeftButtons;                                       // 0x05E0(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	TSubclassOf<class UTabButton>                 LeftButtonClass;                                   // 0x05F0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TMap<ECrMenuType, class FText>                ButtonsTexts;                                      // 0x05F8(0x0050)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	TMap<int32, ECrMenuType>                      ButtonsIndexes;                                    // 0x0648(0x0050)(NativeAccessSpecifierPrivate)
-	uint8                                         Pad_698[0x8];                                      // 0x0698(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void ButtonClicked(int32 Index_0);
-	void SetColors(const struct FLinearColor& OrangeColor);
+	class UTextBlock*                             ItemNameText;                                      // 0x03A8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_MainMenuWidget")
+		STATIC_CLASS_IMPL("CrUW_ItemNotification")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_MainMenuWidget")
+		STATIC_NAME_IMPL(L"CrUW_ItemNotification")
 	}
-	static class UCrUW_MainMenuWidget* GetDefaultObj()
+	static class UCrUW_ItemNotification* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_MainMenuWidget>();
+		return GetDefaultObjImpl<UCrUW_ItemNotification>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_MainMenuWidget;
+DUMPER7_ASSERTS_UCrUW_ItemNotification;
 
 // Class ChimeraUI.CrUW_CharacterWidget
 // 0x0018 (0x0448 - 0x0430)
@@ -4613,38 +4507,64 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_ChatHud;
 
-// Class ChimeraUI.CrUW_ItemSelectionGroup
-// 0x0040 (0x0610 - 0x05D0)
-class UCrUW_ItemSelectionGroup final : public UCrUW_ActivatableWidget
+// Class ChimeraUI.CrUW_MapMenu
+// 0x0190 (0x0760 - 0x05D0)
+class UCrUW_MapMenu final : public UCrUW_ActivatableWidget
 {
 public:
-	class UCrUW_ItemSelectionGridPanel*           ItemGridPanel;                                     // 0x05D0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TSubclassOf<class UObject>                    ItemSlotClass;                                     // 0x05D8(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	int32                                         ColumnCount;                                       // 0x05E0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsExpanded;                                       // 0x05E4(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_5E5[0x2B];                                     // 0x05E5(0x002B)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5D0[0x28];                                     // 0x05D0(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCrUIAudioData*                         DA_SoundsTable;                                    // 0x05F8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_600[0x10];                                     // 0x0600(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCrUW_MapMenuMapArea*                   MapMenuMapArea;                                    // 0x0610(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrUW_MapMenuLegend*                    MapMenuLegend;                                     // 0x0618(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrUW_MapMenuZoomSlider*                MapMenuZoomSlider;                                 // 0x0620(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UButton*                                CloseButton;                                       // 0x0628(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UButton*                                ResetFiltersButton;                                // 0x0630(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UButton*                                CenterOnPlayerButton;                              // 0x0638(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_640[0x18];                                     // 0x0640(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FDataTableRowHandle                    ScrollWheelUpInputActionData;                      // 0x0658(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FDataTableRowHandle                    ScrollWheelDownInputActionData;                    // 0x0668(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FDataTableRowHandle                    CenterOnPlayerMenuInputActionData;                 // 0x0678(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FDataTableRowHandle                    HoldLMBInputActionData;                            // 0x0688(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FDataTableRowHandle                    HoldRMBInputActionData;                            // 0x0698(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FDataTableRowHandle                    NextMarkerBasicInputActionData;                    // 0x06A8(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FDataTableRowHandle                    PrevMarkerBasicInputActionData;                    // 0x06B8(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FDataTableRowHandle                    ShifedPressedInputActionData;                      // 0x06C8(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FDataTableRowHandle                    CtrlPressedInputActionData;                        // 0x06D8(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FDataTableRowHandle                    FocusMarkerInputActionData;                        // 0x06E8(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FDataTableRowHandle                    PersonalMarkerInputActionData;                     // 0x06F8(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FDataTableRowHandle                    SharedMarkerInputActionData;                       // 0x0708(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FDataTableRowHandle                    ToggleAllFiltersInputActionData;                   // 0x0718(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
+	class UButton*                                MoveButton;                                        // 0x0728(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UButton*                                ZoomInButton;                                      // 0x0730(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UButton*                                ZoomOutButton;                                     // 0x0738(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UButton*                                PlaceMarkerButton;                                 // 0x0740(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UButton*                                NavigateFiltersButton;                             // 0x0748(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UButton*                                ChangeFilterButton;                                // 0x0750(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_758[0x8];                                      // 0x0758(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void EnableLine(bool bEnabled);
-	void SetColors(const class UCrCommonUIColorsDevSettings* Settings);
-	void SetExpanded(bool bExpand);
-	void SetTitle(const class FText& Title);
+	void HandleCenterOnPlayerInput();
+	void HandleOnExitClicked();
+	void HandlePersonalMarkerInput();
+	void HandleToggleAllFiltersInput();
+	void ZoomValueFromSlider(float ZoomValue);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_ItemSelectionGroup")
+		STATIC_CLASS_IMPL("CrUW_MapMenu")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_ItemSelectionGroup")
+		STATIC_NAME_IMPL(L"CrUW_MapMenu")
 	}
-	static class UCrUW_ItemSelectionGroup* GetDefaultObj()
+	static class UCrUW_MapMenu* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_ItemSelectionGroup>();
+		return GetDefaultObjImpl<UCrUW_MapMenu>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_ItemSelectionGroup;
+DUMPER7_ASSERTS_UCrUW_MapMenu;
 
 // Class ChimeraUI.CrUW_CheatAIListViewElement
 // 0x0010 (0x03B0 - 0x03A0)
@@ -4694,31 +4614,31 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CheatCategoryTab;
 
-// Class ChimeraUI.CrUW_MapMenuLegend
-// 0x0048 (0x0410 - 0x03C8)
-class UCrUW_MapMenuLegend final : public UCommonUserWidget
+// Class ChimeraUI.CrUW_InputMappingInfoEntry
+// 0x0018 (0x03B8 - 0x03A0)
+class UCrUW_InputMappingInfoEntry final : public UUserWidget
 {
 public:
-	TSubclassOf<class UCrUW_MapMenuLegendButton>  LegendButtonFilterClass;                           // 0x03C8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FDataTableRowHandle                    ToggleAllFiltersInputActionData;                   // 0x03D0(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	class UVerticalBox*                           VerticalBoxFilterButtons;                          // 0x03E0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_3E8[0x28];                                     // 0x03E8(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UTextBlock*                             InputMappingName;                                  // 0x03A0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class URichTextBlock*                         KeyName;                                           // 0x03A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	ECrControllerType                             ControllerType;                                    // 0x03B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_3B1[0x7];                                      // 0x03B1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_MapMenuLegend")
+		STATIC_CLASS_IMPL("CrUW_InputMappingInfoEntry")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_MapMenuLegend")
+		STATIC_NAME_IMPL(L"CrUW_InputMappingInfoEntry")
 	}
-	static class UCrUW_MapMenuLegend* GetDefaultObj()
+	static class UCrUW_InputMappingInfoEntry* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_MapMenuLegend>();
+		return GetDefaultObjImpl<UCrUW_InputMappingInfoEntry>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_MapMenuLegend;
+DUMPER7_ASSERTS_UCrUW_InputMappingInfoEntry;
 
 // Class ChimeraUI.CrUW_CheatAITab
 // 0x0020 (0x03F0 - 0x03D0)
@@ -4781,31 +4701,56 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CheatBuildingInfo;
 
-// Class ChimeraUI.CrUW_InputMappingInfoPanel
-// 0x0088 (0x0428 - 0x03A0)
-class UCrUW_InputMappingInfoPanel final : public UUserWidget
+// Class ChimeraUI.CrUW_EncyclopediaMenu
+// 0x00D8 (0x06A8 - 0x05D0)
+class UCrUW_EncyclopediaMenu final : public UCrUW_ActivatableWidget
 {
 public:
-	TSubclassOf<class UCrUW_InputMappingInfoGroup> InfoGroupClass;                                   // 0x03A0(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TArray<class UInputMappingContext*>           CustomContexts;                                    // 0x03A8(0x0010)(Edit, ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
-	class UVerticalBox*                           MainBox;                                           // 0x03B8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_3C0[0x68];                                     // 0x03C0(0x0068)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<class UCrUW_EncyclopediaCategoryButton*> CategoryButtons;                                 // 0x05D0(0x0010)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	class UButton*                                DebugButton;                                       // 0x05E0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrUW_EncyclopediaInfoMenu*             EncyclopediaInfoMenu;                              // 0x05E8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrUW_EncyclopediaAudiologInfoMenu*     EncyclopediaAudiologInfoMenu;                      // 0x05F0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrUW_EncyclopediaDatapadInfoMenu*      EncyclopediaDatapadInfoMenu;                       // 0x05F8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UHorizontalBox*                         LegendKeys;                                        // 0x0600(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrUW_EncyclopediaCategoryButton*       CategoryButtonPlanet;                              // 0x0608(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrUW_EncyclopediaCategoryButton*       CategoryButtonTech;                                // 0x0610(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrUW_EncyclopediaCategoryButton*       CategoryButtonStory;                               // 0x0618(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrUW_EncyclopediaCategoryButton*       CategoryButtonJournal;                             // 0x0620(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UVerticalBox*                           EncyclopediaCategoryBox;                           // 0x0628(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UScrollBox*                             ScrollBoxSubcategories;                            // 0x0630(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UImage*                                 ScrollIconCategories;                              // 0x0638(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	TSubclassOf<class UCrUW_EncyclopediaSubcategoryGrid> SubcategoryGridClass;                       // 0x0640(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TSubclassOf<class UCrUW_EncyclopediaEntryButton> EntryButtonClass;                               // 0x0648(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_650[0x40];                                     // 0x0650(0x0040)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FDataTableRowHandle                    CloseEncyclopediaInputActionData;                  // 0x0690(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_6A0[0x8];                                      // 0x06A0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void HandleOnDeactivate();
+	void HandleOnDebugButtonClicked();
+	void OnCategoryButtonPressed(class FName Category);
+	void OnCategorySelected(class FName Category);
+	void OnEncyclopediaEntryChanged(const struct FCrEncyclopediaEntryStatus& EntryData);
+	void OnEntryButtonHovered(class UCrUW_EncyclopediaEntryButton* Button);
+	void OnEntryButtonPressed(class UCrUW_EncyclopediaEntryButton* Button);
+	void OnEntrySelected(class FName EntryID);
+	void OnHyperlinkPressed(const class FString& HyperlinkID);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_InputMappingInfoPanel")
+		STATIC_CLASS_IMPL("CrUW_EncyclopediaMenu")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_InputMappingInfoPanel")
+		STATIC_NAME_IMPL(L"CrUW_EncyclopediaMenu")
 	}
-	static class UCrUW_InputMappingInfoPanel* GetDefaultObj()
+	static class UCrUW_EncyclopediaMenu* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_InputMappingInfoPanel>();
+		return GetDefaultObjImpl<UCrUW_EncyclopediaMenu>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_InputMappingInfoPanel;
+DUMPER7_ASSERTS_UCrUW_EncyclopediaMenu;
 
 // Class ChimeraUI.CrUW_CheatBuildingResource
 // 0x0010 (0x03B0 - 0x03A0)
@@ -4861,40 +4806,69 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CheatBuildingResourceGrid;
 
-// Class ChimeraUI.CrUW_EnergyHud
-// 0x0030 (0x03D0 - 0x03A0)
-class UCrUW_EnergyHud final : public UUserWidget
+// Class ChimeraUI.CrUW_LoadSessionMenu
+// 0x0268 (0x0838 - 0x05D0)
+class UCrUW_LoadSessionMenu final : public UCrUW_ActivatableWidget
 {
 public:
-	class UCrEnergyAttributeSet*                  EnergyAttributeSet;                                // 0x03A0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UProgressBar*                           EnergyBar;                                         // 0x03A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UImage*                                 Icon;                                              // 0x03B0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class USizeBox*                               SizeBox;                                           // 0x03B8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	float                                         HudHidingDelay;                                    // 0x03C0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         Steps;                                             // 0x03C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_3C8[0x8];                                      // 0x03C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UCrUW_ActionButton*                     LoadSessionSaveButton;                             // 0x05D0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrUW_ActionButton*                     DeleteSessionButton;                               // 0x05D8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrUW_ActionButton*                     DeleteSessionSaveButton;                           // 0x05E0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UScrollBox*                             SessionsBox;                                       // 0x05E8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UGameSettingRotator*                    SessionTypeRotator;                                // 0x05F0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UButton*                                OptionDecrease;                                    // 0x05F8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UButton*                                OptionIncrease;                                    // 0x0600(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCommonTextBlock*                       TempSessionName;                                   // 0x0608(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TSubclassOf<class UCrUW_SessionBox>           SessionBoxClass;                                   // 0x0610(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FKey                                   KeyOptIncrease;                                    // 0x0618(0x0018)(Edit, DisableEditOnInstance, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FKey                                   KeyOptDecrease;                                    // 0x0630(0x0018)(Edit, DisableEditOnInstance, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FKey                                   KeyDeleteSession;                                  // 0x0648(0x0018)(Edit, DisableEditOnInstance, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FKey                                   KeyDeleteSessionSave;                              // 0x0660(0x0018)(Edit, DisableEditOnInstance, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FKey                                   KeyLoad;                                           // 0x0678(0x0018)(Edit, DisableEditOnInstance, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FText                                   SessionSingleText;                                 // 0x0690(0x0010)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	class FText                                   SessionInviteText;                                 // 0x06A0(0x0010)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	class FText                                   SessionFriendsText;                                // 0x06B0(0x0010)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	class FText                                   CancelText;                                        // 0x06C0(0x0010)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	TArray<class FString>                         LongTextLanguages;                                 // 0x06D0(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	class UUserWidget*                            BPW_DeleteSavesButton;                             // 0x06E0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCheckBox*                              PTRSavesCheckbox;                                  // 0x06E8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCommonTextBlock*                       MainBranchSavesLabel;                              // 0x06F0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_6F8[0x8];                                      // 0x06F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 SelectedSave;                                      // 0x0700(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class FString                                 SelectedSession;                                   // 0x0710(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	int32                                         SelectedSessionIndex;                              // 0x0720(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_724[0x114];                                    // 0x0724(0x0114)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void InitEnergyChangeDelegate(class ACrCharacterPlayerBase* InCharacter);
-	void OnPlayerSetProfession();
-	void OnPossesed(class APawn* InPawn);
-	void OnUnPossesed(class APawn* InPawn);
+	void DebugDeleteAllSaveGames();
+	void DeleteSessionClicked();
+	void DeleteSessionSaveClicked();
+	void ExpandedSessionChanged(int32 ExpandedIndex);
+	void GrayoutSessionTypeText();
+	void HandleRotatorChangedValue(int32 Value, bool bUserInitiated);
+	void LoadButtonClicked();
+	void OptionDecreaseClicked();
+	void OptionIncreaseClicked();
+	void PTRSavesCheckboxChanged(bool bin);
+	void SelectedSaveChanged(const class FString& InSelectedItem, const class FString& ItemSession, ECrSlotType InSlotType, int32 InItemIndex);
+	void SetSessionOnlineMode(ECrOnlineSessionMode InMode);
+	void SetupButtons(bool bLowerFont);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_EnergyHud")
+		STATIC_CLASS_IMPL("CrUW_LoadSessionMenu")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_EnergyHud")
+		STATIC_NAME_IMPL(L"CrUW_LoadSessionMenu")
 	}
-	static class UCrUW_EnergyHud* GetDefaultObj()
+	static class UCrUW_LoadSessionMenu* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_EnergyHud>();
+		return GetDefaultObjImpl<UCrUW_LoadSessionMenu>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_EnergyHud;
+DUMPER7_ASSERTS_UCrUW_LoadSessionMenu;
 
 // Class ChimeraUI.CrUW_CheatBuildindingButton
 // 0x0050 (0x03F0 - 0x03A0)
@@ -4958,31 +4932,42 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CheatBuildindingCategoryButton;
 
-// Class ChimeraUI.CrUW_LootboxMenu
-// 0x0008 (0x05D8 - 0x05D0)
-class UCrUW_LootboxMenu final : public UCrUW_ActivatableWidget
+// Class ChimeraUI.CrUW_ExportingSelectionWidget
+// 0x0080 (0x0650 - 0x05D0)
+class UCrUW_ExportingSelectionWidget final : public UCrUW_ActivatableWidget
 {
 public:
-	class UCrUW_Storage*                          StorageWidget;                                     // 0x05D0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UScrollBox*                             LevelsBox;                                         // 0x05D0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UImage*                                 CorpoImage;                                        // 0x05D8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCommonTextBlock*                       CorpoName;                                         // 0x05E0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TSubclassOf<class UObject>                    CorporationRecipesClass;                           // 0x05E8(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class FString                                 CorporationName;                                   // 0x05F0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_600[0x30];                                     // 0x0600(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 BuildingActor;                                     // 0x0630(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrCraftingRecipeDataForUI*             CurrentRecipe;                                     // 0x0638(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrUW_CorporationsList*                 OwningWidget;                                      // 0x0640(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_648[0x8];                                      // 0x0648(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void SetTitleText(const class FText& InText);
+	void SetCorpoColor(const struct FColor& InColor);
+	void SetDisabledOpacity(bool bInDisabled);
+	void SetNoCorpoSelectedState(bool bInNoCorpo);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_LootboxMenu")
+		STATIC_CLASS_IMPL("CrUW_ExportingSelectionWidget")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_LootboxMenu")
+		STATIC_NAME_IMPL(L"CrUW_ExportingSelectionWidget")
 	}
-	static class UCrUW_LootboxMenu* GetDefaultObj()
+	static class UCrUW_ExportingSelectionWidget* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_LootboxMenu>();
+		return GetDefaultObjImpl<UCrUW_ExportingSelectionWidget>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_LootboxMenu;
+DUMPER7_ASSERTS_UCrUW_ExportingSelectionWidget;
 
 // Class ChimeraUI.CrUW_CheatBuildTab
 // 0x0050 (0x0420 - 0x03D0)
@@ -5051,30 +5036,25 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CheatCorporationsRow;
 
-// Class ChimeraUI.CrUW_Extractor
-// 0x0020 (0x05F0 - 0x05D0)
-class UCrUW_Extractor final : public UCrUW_ActivatableWidget
+// Class ChimeraUI.CrUW_InventoryOutSlot
+// 0x0000 (0x0518 - 0x0518)
+class UCrUW_InventoryOutSlot final : public UCrUW_InventorySlot
 {
-public:
-	class UCrUW_CraftingBottomPanel*              CraftingBottomPanel;                               // 0x05D0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UImage*                                 ResourceIcon;                                      // 0x05D8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_5E0[0x10];                                     // 0x05E0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_Extractor")
+		STATIC_CLASS_IMPL("CrUW_InventoryOutSlot")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_Extractor")
+		STATIC_NAME_IMPL(L"CrUW_InventoryOutSlot")
 	}
-	static class UCrUW_Extractor* GetDefaultObj()
+	static class UCrUW_InventoryOutSlot* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_Extractor>();
+		return GetDefaultObjImpl<UCrUW_InventoryOutSlot>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_Extractor;
+DUMPER7_ASSERTS_UCrUW_InventoryOutSlot;
 
 // Class ChimeraUI.CrUW_CheatCorporationsTab
 // 0x0010 (0x03E0 - 0x03D0)
@@ -5132,30 +5112,35 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CheatAttributeValueSlider;
 
-// Class ChimeraUI.CrUW_InventorySlotFilterListViewElement
-// 0x0018 (0x03B8 - 0x03A0)
-class UCrUW_InventorySlotFilterListViewElement final : public UUserWidget
+// Class ChimeraUI.CrUW_FEDisplay
+// 0x0020 (0x03C0 - 0x03A0)
+class UCrUW_FEDisplay final : public UUserWidget
 {
 public:
-	uint8                                         Pad_3A0[0x8];                                      // 0x03A0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UImage*                                 ItemIcon;                                          // 0x03A8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UTextBlock*                             ItemText;                                          // 0x03B0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UVerticalBox*                           VerticalBox;                                       // 0x03A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrCommonUIColorsDevSettings*           ColorsSettings;                                    // 0x03A8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TSubclassOf<class UCrUW_CodeText>             CodeWidgetClass;                                   // 0x03B0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_3B8[0x8];                                      // 0x03B8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	int32 GetWidgetHeight();
+	void SetColors();
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_InventorySlotFilterListViewElement")
+		STATIC_CLASS_IMPL("CrUW_FEDisplay")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_InventorySlotFilterListViewElement")
+		STATIC_NAME_IMPL(L"CrUW_FEDisplay")
 	}
-	static class UCrUW_InventorySlotFilterListViewElement* GetDefaultObj()
+	static class UCrUW_FEDisplay* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_InventorySlotFilterListViewElement>();
+		return GetDefaultObjImpl<UCrUW_FEDisplay>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_InventorySlotFilterListViewElement;
+DUMPER7_ASSERTS_UCrUW_FEDisplay;
 
 // Class ChimeraUI.CrUW_CheatAttributeEffectButton
 // 0x0038 (0x03D8 - 0x03A0)
@@ -5217,38 +5202,31 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CheatAttributeImmunityCheckBox;
 
-// Class ChimeraUI.CrUW_FoodEffectHud
-// 0x0130 (0x04D0 - 0x03A0)
-class UCrUW_FoodEffectHud final : public UUserWidget
+// Class ChimeraUI.CrUW_MapMenuLegend
+// 0x0048 (0x0410 - 0x03C8)
+class UCrUW_MapMenuLegend final : public UCommonUserWidget
 {
 public:
-	class UImage*                                 Icon;                                              // 0x03A0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UTextBlock*                             Counter;                                           // 0x03A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrUW_HudRoundTimer*                    RoundProgress;                                     // 0x03B0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UMenuAnchor*                            TooltipAnchor;                                     // 0x03B8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TSubclassOf<class UCr_UW_InventoryToolTip>    ToolTipClass;                                      // 0x03C0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_3C8[0x8];                                      // 0x03C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FFoodEffectData                        EffectData;                                        // 0x03D0(0x00E0)(NativeAccessSpecifierPrivate)
-	uint8                                         Pad_4B0[0x20];                                     // 0x04B0(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	class UUserWidget* NativeGetTooltipWidget();
+	TSubclassOf<class UCrUW_MapMenuLegendButton>  LegendButtonFilterClass;                           // 0x03C8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FDataTableRowHandle                    ToggleAllFiltersInputActionData;                   // 0x03D0(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	class UVerticalBox*                           VerticalBoxFilterButtons;                          // 0x03E0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_3E8[0x28];                                     // 0x03E8(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_FoodEffectHud")
+		STATIC_CLASS_IMPL("CrUW_MapMenuLegend")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_FoodEffectHud")
+		STATIC_NAME_IMPL(L"CrUW_MapMenuLegend")
 	}
-	static class UCrUW_FoodEffectHud* GetDefaultObj()
+	static class UCrUW_MapMenuLegend* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_FoodEffectHud>();
+		return GetDefaultObjImpl<UCrUW_MapMenuLegend>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_FoodEffectHud;
+DUMPER7_ASSERTS_UCrUW_MapMenuLegend;
 
 // Class ChimeraUI.CrUW_CheatAttributeHorizontalBox
 // 0x0028 (0x03C8 - 0x03A0)
@@ -5303,60 +5281,31 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CheatAttributeVerticalBox;
 
-// Class ChimeraUI.CrUW_MapMenuMapArea
-// 0x0210 (0x05B0 - 0x03A0)
-class alignas(0x10) UCrUW_MapMenuMapArea final : public UUserWidget
+// Class ChimeraUI.CrUW_FoodEffectsHud
+// 0x0028 (0x03C8 - 0x03A0)
+class UCrUW_FoodEffectsHud final : public UUserWidget
 {
 public:
-	TSubclassOf<class UCrUW_MapMenuMarker>        MapMenuMarkerClass;                                // 0x03A0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3A8[0x18];                                     // 0x03A8(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCanvasPanel*                           CanvasPanelMapArea;                                // 0x03C0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrUW_MapMenuTerrain*                   MapMenuTerrain;                                    // 0x03C8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrUW_MapMenuCrosshair*                 MapMenuCrosshair;                                  // 0x03D0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrUW_MapMenuMarkersList*               MapMenuMarkersList;                                // 0x03D8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	TMap<EPlayerMarkerFlags, class FText>         PlayerMarkerFlagsText;                             // 0x03E0(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPrivate)
-	TArray<struct FInfectionMarkerUIRepresentation> MapMenuInfectionNotificationMarkers;             // 0x0430(0x0010)(ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	TArray<struct FPersonalMarkerUIRepresentation> MapMenuPlayerPersonalMarkers;                     // 0x0440(0x0010)(ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	TArray<struct FCoopMarkerUIRepresentation>    MapMenuCoopMarkers;                                // 0x0450(0x0010)(ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	TArray<struct FPOIMarkerUIRepresentation>     MapMenuPOIMarkers;                                 // 0x0460(0x0010)(ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_470[0x8];                                      // 0x0470(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<struct FMassEntityHandle, struct FEntityMarkerUIRepresentation> MapMenuMassMarkers;         // 0x0478(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	TArray<struct FAttackWaveMarkerUIRepresentation> MapMenuAttackWaveMarkers;                       // 0x04C8(0x0010)(ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_4D8[0xD8];                                     // 0x04D8(0x00D8)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void OnBaseAttackMarkerAdded(const struct FBaseAttackMarkerDataFastArrayItem& Data);
-	void OnBaseAttackMarkerChanged(const struct FBaseAttackMarkerDataFastArrayItem& Data);
-	void OnBaseAttackMarkerRemoved(const struct FBaseAttackMarkerDataFastArrayItem& Data);
-	void OnBuildingMarkerAdded(const struct FBuildingMarkerDataFastArrayItem& Data);
-	void OnBuildingMarkerChanged(const struct FBuildingMarkerDataFastArrayItem& Data);
-	void OnBuildingMarkerRemoved(const struct FBuildingMarkerDataFastArrayItem& Data);
-	void OnCoopPlayerMarkerAdded(const struct FPlayerMarkerDataFastArrayItem& Data);
-	void OnCoopPlayerMarkerChanged(const struct FPlayerMarkerDataFastArrayItem& Data);
-	void OnCoopPlayerMarkerRemoved(const struct FPlayerMarkerDataFastArrayItem& Data);
-	void OnFilterButtonChanged(ECrMapMenuMarkerFilter Filter, bool Status);
-	void OnFoundableMarkerAdded(const struct FFoundableMarkerDataFastArrayItem& Data);
-	void OnFoundableMarkerRemoved(const struct FFoundableMarkerDataFastArrayItem& Data);
-	void OnMarkerHovered(class UCrUW_MapMenuMarker* MarkerHovered);
-	void OnMarkerUnovered(class UCrUW_MapMenuMarker* MarkerUnhovered);
-	void OnPOIMarkerChanged(const struct FGuid& POIMarkerID);
-	void OnWarningLocation(const TArray<struct FVector3f>& Locations);
+	class UGridPanel*                             Container;                                         // 0x03A0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UFoodEffectsTable*                      EffectDatasTable;                                  // 0x03A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TArray<struct FFoodActiveEffect>              ActiveEffects;                                     // 0x03B0(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	class UAbilitySystemComponent*                AbilitySystemComponent;                            // 0x03C0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_MapMenuMapArea")
+		STATIC_CLASS_IMPL("CrUW_FoodEffectsHud")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_MapMenuMapArea")
+		STATIC_NAME_IMPL(L"CrUW_FoodEffectsHud")
 	}
-	static class UCrUW_MapMenuMapArea* GetDefaultObj()
+	static class UCrUW_FoodEffectsHud* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_MapMenuMapArea>();
+		return GetDefaultObjImpl<UCrUW_FoodEffectsHud>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_MapMenuMapArea;
+DUMPER7_ASSERTS_UCrUW_FoodEffectsHud;
 
 // Class ChimeraUI.CrUW_WeaponsCheatVerticalBox
 // 0x0010 (0x03B0 - 0x03A0)
@@ -5411,33 +5360,58 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CheatGameplayModifiersTab;
 
-// Class ChimeraUI.CrUW_GemInventorySlot
-// 0x0018 (0x0530 - 0x0518)
-class UCrUW_GemInventorySlot final : public UCrUW_InventorySlot
+// Class ChimeraUI.CrUW_ItemSelectionList
+// 0x0030 (0x0600 - 0x05D0)
+class UCrUW_ItemSelectionList : public UCrUW_ActivatableWidget
 {
 public:
-	bool                                          bLocked;                                           // 0x0518(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_519[0x17];                                     // 0x0519(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UScrollBox*                             ItemGroupBox;                                      // 0x05D0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TSubclassOf<class UObject>                    ItemGroupWidgetClass;                              // 0x05D8(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	struct FCrItemDataForUI                       CurrentItem;                                       // 0x05E0(0x0008)(NoDestructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_5E8[0x18];                                     // 0x05E8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void HandleSkillLevelChanged(ECrPlayerProgressionSkill InSkill, int32 InLevel);
-	void UpdateVisuals(bool bInLocked, int32 Level);
+	void SetTitle(bool bVisible, const class FText& InTitle);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_GemInventorySlot")
+		STATIC_CLASS_IMPL("CrUW_ItemSelectionList")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_GemInventorySlot")
+		STATIC_NAME_IMPL(L"CrUW_ItemSelectionList")
 	}
-	static class UCrUW_GemInventorySlot* GetDefaultObj()
+	static class UCrUW_ItemSelectionList* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_GemInventorySlot>();
+		return GetDefaultObjImpl<UCrUW_ItemSelectionList>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_GemInventorySlot;
+DUMPER7_ASSERTS_UCrUW_ItemSelectionList;
+
+// Class ChimeraUI.CrUW_ItemSelectionListWithViewModel
+// 0x0038 (0x0638 - 0x0600)
+class UCrUW_ItemSelectionListWithViewModel : public UCrUW_ItemSelectionList
+{
+public:
+	EUIWidgetType                                 TabToShowOnConfirm;                                // 0x0600(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_601[0x37];                                     // 0x0601(0x0037)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrUW_ItemSelectionListWithViewModel")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrUW_ItemSelectionListWithViewModel")
+	}
+	static class UCrUW_ItemSelectionListWithViewModel* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrUW_ItemSelectionListWithViewModel>();
+	}
+};
+DUMPER7_ASSERTS_UCrUW_ItemSelectionListWithViewModel;
 
 // Class ChimeraUI.CrUW_CheatGem
 // 0x0038 (0x03D8 - 0x03A0)
@@ -5496,30 +5470,30 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CheatGemsTab;
 
-// Class ChimeraUI.CrUW_ItemTooltipBase
+// Class ChimeraUI.CrUW_MiningProgressBar
 // 0x0018 (0x03B8 - 0x03A0)
-class UCrUW_ItemTooltipBase final : public UAuUW_ItemTooltipBase
+class UCrUW_MiningProgressBar final : public UUserWidget
 {
 public:
-	class UTextBlock*                             ItemName;                                          // 0x03A0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UTextBlock*                             ItemDescription;                                   // 0x03A8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UTextBlock*                             ItemCount;                                         // 0x03B0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UTextBlock*                             CurrentMiningProgressValue;                        // 0x03A0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UTextBlock*                             MaxMiningProgressValue;                            // 0x03A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UProgressBar*                           ProgressBar;                                       // 0x03B0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_ItemTooltipBase")
+		STATIC_CLASS_IMPL("CrUW_MiningProgressBar")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_ItemTooltipBase")
+		STATIC_NAME_IMPL(L"CrUW_MiningProgressBar")
 	}
-	static class UCrUW_ItemTooltipBase* GetDefaultObj()
+	static class UCrUW_MiningProgressBar* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_ItemTooltipBase>();
+		return GetDefaultObjImpl<UCrUW_MiningProgressBar>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_ItemTooltipBase;
+DUMPER7_ASSERTS_UCrUW_MiningProgressBar;
 
 // Class ChimeraUI.CrUW_CheatItemsListViewElement
 // 0x0018 (0x03B8 - 0x03A0)
@@ -5571,28 +5545,35 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CheatItemsQuickAdd;
 
-// Class ChimeraUI.CrUW_MiningProgressHud
-// 0x0008 (0x03B0 - 0x03A8)
-class UCrUW_MiningProgressHud final : public UCrUW_HudRoundTimer
+// Class ChimeraUI.CrUW_MapMenuTerrain
+// 0x0100 (0x04A0 - 0x03A0)
+class UCrUW_MapMenuTerrain final : public UUserWidget
 {
 public:
-	class URadialSlider*                          Slider;                                            // 0x03A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	TSubclassOf<class UCrUW_MapMenuTerrainSegment> TerrainSegmentClass;                              // 0x03A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              DebugBorderTexturePosition;                        // 0x03A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              DebugBorderTextureSize;                            // 0x03B8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C8[0x8];                                      // 0x03C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            DebugBorderTexture;                                // 0x03D0(0x00B0)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	class UCanvasPanel*                           CanvasPanelTerrain;                                // 0x0480(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	TArray<class UCrUW_MapMenuTerrainSegment*>    TerrainSegments;                                   // 0x0488(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_498[0x8];                                      // 0x0498(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_MiningProgressHud")
+		STATIC_CLASS_IMPL("CrUW_MapMenuTerrain")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_MiningProgressHud")
+		STATIC_NAME_IMPL(L"CrUW_MapMenuTerrain")
 	}
-	static class UCrUW_MiningProgressHud* GetDefaultObj()
+	static class UCrUW_MapMenuTerrain* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_MiningProgressHud>();
+		return GetDefaultObjImpl<UCrUW_MapMenuTerrain>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_MiningProgressHud;
+DUMPER7_ASSERTS_UCrUW_MapMenuTerrain;
 
 // Class ChimeraUI.CrUW_CheatItemsTab
 // 0x0030 (0x0400 - 0x03D0)
@@ -5666,34 +5647,51 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CheatMenu;
 
-// Class ChimeraUI.CrUW_MapMenuZoomSlider
-// 0x0038 (0x0400 - 0x03C8)
-class UCrUW_MapMenuZoomSlider final : public UCommonUserWidget
+// Class ChimeraUI.CrUW_MultiplayerWidget
+// 0x0090 (0x0458 - 0x03C8)
+class UCrUW_MultiplayerWidget final : public UCommonUserWidget
 {
 public:
-	uint8                                         Pad_3C8[0x28];                                     // 0x03C8(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
-	class USlider*                                Slider;                                            // 0x03F0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UImage*                                 ImageScrollInput;                                  // 0x03F8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrUW_ActionButton*                     ButtonGoOnline;                                    // 0x03C8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrUW_ActionButton*                     ButtonGoOffline;                                   // 0x03D0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCommonTextBlock*                       OnlineTutorialMessage;                             // 0x03D8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UVerticalBox*                           FriendsBox;                                        // 0x03E0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UGameSettingRotator*                    SessionTypeRotator;                                // 0x03E8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UButton*                                OptionDecrease;                                    // 0x03F0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UButton*                                OptionIncrease;                                    // 0x03F8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class FText                                   SessionSingleText;                                 // 0x0400(0x0010)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	class FText                                   SessionInviteText;                                 // 0x0410(0x0010)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	class FText                                   SessionFriendsText;                                // 0x0420(0x0010)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	ECrOnlineSessionMode                          OnlineSessionMode;                                 // 0x0430(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_431[0x27];                                     // 0x0431(0x0027)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void OnMapMenuZoomValueChangedExternal(float ZoomValue);
-	void OnSliderValueChange(float Value);
+	void GoOfflineClicked();
+	void GoOnlineClicked();
+	void HandleRotatorChangedValue(int32 Value, bool bUserInitiated);
+	void OnCreateSessionComplete(const struct FOnlineResultInformation& Result);
+	void OptionDecreaseClicked();
+	void OptionIncreaseClicked();
+	void ProfessionStateChanged(EProfessionType Profession);
+	void SessionStateChanged();
+	void SetCurrentOnlineMode();
+	void SetOnlineModeVisibility(bool bVisible);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_MapMenuZoomSlider")
+		STATIC_CLASS_IMPL("CrUW_MultiplayerWidget")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_MapMenuZoomSlider")
+		STATIC_NAME_IMPL(L"CrUW_MultiplayerWidget")
 	}
-	static class UCrUW_MapMenuZoomSlider* GetDefaultObj()
+	static class UCrUW_MultiplayerWidget* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_MapMenuZoomSlider>();
+		return GetDefaultObjImpl<UCrUW_MultiplayerWidget>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_MapMenuZoomSlider;
+DUMPER7_ASSERTS_UCrUW_MultiplayerWidget;
 
 // Class ChimeraUI.CrUW_CheatMenuCategoryButton
 // 0x0080 (0x0420 - 0x03A0)
@@ -5756,25 +5754,35 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CloningBed;
 
-// Class ChimeraUI.CrUW_NotificationContainer
-// 0x0000 (0x0438 - 0x0438)
-class UCrUW_NotificationContainer final : public UAuUW_NotificationContainer
+// Class ChimeraUI.CrUW_ResearchTerminalScreen
+// 0x0048 (0x03E8 - 0x03A0)
+class UCrUW_ResearchTerminalScreen : public UUserWidget
 {
+public:
+	class UGridPanel*                             CorporationBox;                                    // 0x03A0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UWidgetSwitcher*                        TutorialStatusSwitcher;                            // 0x03A8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrUW_CorporationScreenWidget*          StartingCorporationScreenWidget;                   // 0x03B0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class ACrCorporationsOwner*                   CorpoOwner;                                        // 0x03B8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_3C0[0x28];                                     // 0x03C0(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetupBindings();
+
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_NotificationContainer")
+		STATIC_CLASS_IMPL("CrUW_ResearchTerminalScreen")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_NotificationContainer")
+		STATIC_NAME_IMPL(L"CrUW_ResearchTerminalScreen")
 	}
-	static class UCrUW_NotificationContainer* GetDefaultObj()
+	static class UCrUW_ResearchTerminalScreen* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_NotificationContainer>();
+		return GetDefaultObjImpl<UCrUW_ResearchTerminalScreen>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_NotificationContainer;
+DUMPER7_ASSERTS_UCrUW_ResearchTerminalScreen;
 
 // Class ChimeraUI.CrUW_CloningBedPanel
 // 0x00B0 (0x0680 - 0x05D0)
@@ -5831,65 +5839,61 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CloningBedPlayerInfo;
 
-// Class ChimeraUI.CrUW_Storage
-// 0x0030 (0x0600 - 0x05D0)
-class UCrUW_Storage : public UCrUW_ActivatableWidget
+// Class ChimeraUI.CrUW_NotificationsHud
+// 0x06B0 (0x0A50 - 0x03A0)
+class UCrUW_NotificationsHud final : public UUserWidget
 {
 public:
-	class UCrUW_InventoryContainer*               ItemContainer;                                     // 0x05D0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UButton*                                TakeAllButton;                                     // 0x05D8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	bool                                          bBlockChangeThreshold;                             // 0x05E0(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_5E1[0x1F];                                     // 0x05E1(0x001F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UCrUW_NotificationHud>      NotificationClass;                                 // 0x03A0(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UCanvasPanel*                           Container;                                         // 0x03A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	int32                                         MaxNotificationsCount;                             // 0x03B0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         NotificationLifeTime;                              // 0x03B4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         FadeOutDuration;                                   // 0x03B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_3BC[0x4];                                      // 0x03BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<EFAuNotificationType, class FText>       Texts;                                             // 0x03C0(0x0050)(Edit, NativeAccessSpecifierPrivate)
+	struct FSlateBrush                            BaseUnderAttackIcon;                               // 0x0410(0x00B0)(Edit, NativeAccessSpecifierPrivate)
+	struct FSlateBrush                            EncyclopediaEntryUnlockedIcon;                     // 0x04C0(0x00B0)(Edit, NativeAccessSpecifierPrivate)
+	struct FSlateBrush                            GemSlotUnlockedIcon;                               // 0x0570(0x00B0)(Edit, NativeAccessSpecifierPrivate)
+	struct FSlateBrush                            MovementSkillLevelUpIcon;                          // 0x0620(0x00B0)(Edit, NativeAccessSpecifierPrivate)
+	struct FSlateBrush                            SurvivalSkillLevelUpIcon;                          // 0x06D0(0x00B0)(Edit, NativeAccessSpecifierPrivate)
+	struct FSlateBrush                            CombatSkillLevelUpIcon;                            // 0x0780(0x00B0)(Edit, NativeAccessSpecifierPrivate)
+	struct FSlateBrush                            InventoryFullIcon;                                 // 0x0830(0x00B0)(Edit, NativeAccessSpecifierPrivate)
+	struct FVector2D                              NotificationSize;                                  // 0x08E0(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TArray<float>                                 NotificationScale;                                 // 0x08F0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
+	TArray<float>                                 NotificationOpacity;                               // 0x0900(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
+	struct FSlateColor                            NormalColor;                                       // 0x0910(0x0014)(Edit, NativeAccessSpecifierPrivate)
+	struct FSlateColor                            HighlightColor;                                    // 0x0924(0x0014)(Edit, NativeAccessSpecifierPrivate)
+	TMap<EUIItemType, struct FLinearColor>        ItemBGColors;                                      // 0x0938(0x0050)(Edit, NativeAccessSpecifierPrivate)
+	struct FLinearColor                           LevelColor;                                        // 0x0988(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FLinearColor                           EncyclopediaColor;                                 // 0x0998(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         MoveSpeed;                                         // 0x09A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_9AC[0x4];                                      // 0x09AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<EFAuNotificationType, class USoundBase*> Sounds;                                            // 0x09B0(0x0050)(Edit, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_A00[0x8];                                      // 0x0A00(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   TaskCompletedText;                                 // 0x0A08(0x0010)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_A18[0x38];                                     // 0x0A18(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void HandleTakeAllClicked();
-	bool IsUniversalStorage();
-	void SetColors(const class UCrCommonUIColorsDevSettings* Settings);
+	void OnCheatHUDShowNotification(EFAuNotificationType NotificationType, bool Show);
+	void OnCorporationQuestItemAdded(const class UCrItemDataBase* Data);
+	void OnPossesed(class APawn* InPawn);
+	void OnUnlockedFeaturesChanged(const TArray<ECrCorporationUnlockedFeatures>& UnlockedFeatures);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_Storage")
+		STATIC_CLASS_IMPL("CrUW_NotificationsHud")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_Storage")
+		STATIC_NAME_IMPL(L"CrUW_NotificationsHud")
 	}
-	static class UCrUW_Storage* GetDefaultObj()
+	static class UCrUW_NotificationsHud* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_Storage>();
+		return GetDefaultObjImpl<UCrUW_NotificationsHud>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_Storage;
-
-// Class ChimeraUI.CrUW_ResourceRedistributor
-// 0x0018 (0x0618 - 0x0600)
-class UCrUW_ResourceRedistributor final : public UCrUW_Storage
-{
-public:
-	uint8                                         Pad_600[0x8];                                      // 0x0600(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCrUW_BuildingLogisticsInfo*            LogisticsInfo;                                     // 0x0608(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrUW_StorageSizeAdjustment*            SizeAdjustment;                                    // 0x0610(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-
-public:
-	void OnInventoryChanged();
-	void UpdateStoragLevelVisuals(ECrStorageLevel StorageLevel);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrUW_ResourceRedistributor")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrUW_ResourceRedistributor")
-	}
-	static class UCrUW_ResourceRedistributor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrUW_ResourceRedistributor>();
-	}
-};
-DUMPER7_ASSERTS_UCrUW_ResourceRedistributor;
+DUMPER7_ASSERTS_UCrUW_NotificationsHud;
 
 // Class ChimeraUI.CrUW_CodeText
 // 0x0010 (0x03B0 - 0x03A0)
@@ -5940,28 +5944,29 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_ConeSpreadPatternCheckbox;
 
-// Class ChimeraUI.CrUW_ObjectiveTipEntry
-// 0x0008 (0x03A8 - 0x03A0)
-class UCrUW_ObjectiveTipEntry final : public UUserWidget
+// Class ChimeraUI.CrPlayerParamHudData
+// 0x00C0 (0x00F0 - 0x0030)
+class UCrPlayerParamHudData final : public UDataAsset
 {
 public:
-	class URichTextBlock*                         EntryText;                                         // 0x03A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FSlateBrush                            MessageIcon;                                       // 0x0030(0x00B0)(Edit, NativeAccessSpecifierPublic)
+	TArray<struct FCrMessageHUDImportance>        AttributeThresholds;                               // 0x00E0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_ObjectiveTipEntry")
+		STATIC_CLASS_IMPL("CrPlayerParamHudData")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_ObjectiveTipEntry")
+		STATIC_NAME_IMPL(L"CrPlayerParamHudData")
 	}
-	static class UCrUW_ObjectiveTipEntry* GetDefaultObj()
+	static class UCrPlayerParamHudData* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_ObjectiveTipEntry>();
+		return GetDefaultObjImpl<UCrPlayerParamHudData>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_ObjectiveTipEntry;
+DUMPER7_ASSERTS_UCrPlayerParamHudData;
 
 // Class ChimeraUI.CrUW_ConeSpreadPatternCheckboxRow
 // 0x0028 (0x03C8 - 0x03A0)
@@ -6019,30 +6024,51 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_ConeSpreadPatternEditor;
 
-// Class ChimeraUI.CrUW_MiningProgressBar
-// 0x0018 (0x03B8 - 0x03A0)
-class UCrUW_MiningProgressBar final : public UUserWidget
+// Class ChimeraUI.CrUW_OnScreenNotification
+// 0x0000 (0x03A0 - 0x03A0)
+class UCrUW_OnScreenNotification : public UUserWidget
 {
 public:
-	class UTextBlock*                             CurrentMiningProgressValue;                        // 0x03A0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UTextBlock*                             MaxMiningProgressValue;                            // 0x03A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UProgressBar*                           ProgressBar;                                       // 0x03B0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrUW_OnScreenNotification")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrUW_OnScreenNotification")
+	}
+	static class UCrUW_OnScreenNotification* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrUW_OnScreenNotification>();
+	}
+};
+DUMPER7_ASSERTS_UCrUW_OnScreenNotification;
+
+// Class ChimeraUI.CrUW_OnScreenBuildingResultNotification
+// 0x0010 (0x03B0 - 0x03A0)
+class UCrUW_OnScreenBuildingResultNotification : public UCrUW_OnScreenNotification
+{
+public:
+	uint8                                         Pad_3A0[0x10];                                     // 0x03A0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnPlacementResultNotif(EAuAPPlacementResult PlacementResult);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_MiningProgressBar")
+		STATIC_CLASS_IMPL("CrUW_OnScreenBuildingResultNotification")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_MiningProgressBar")
+		STATIC_NAME_IMPL(L"CrUW_OnScreenBuildingResultNotification")
 	}
-	static class UCrUW_MiningProgressBar* GetDefaultObj()
+	static class UCrUW_OnScreenBuildingResultNotification* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_MiningProgressBar>();
+		return GetDefaultObjImpl<UCrUW_OnScreenBuildingResultNotification>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_MiningProgressBar;
+DUMPER7_ASSERTS_UCrUW_OnScreenBuildingResultNotification;
 
 // Class ChimeraUI.CrUW_ConnectToServer
 // 0x0018 (0x0418 - 0x0400)
@@ -6140,44 +6166,33 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_ControllerLayout;
 
-// Class ChimeraUI.CrUW_PackageSender
-// 0x0060 (0x0630 - 0x05D0)
-class UCrUW_PackageSender final : public UCrUW_ActivatableWidget
+// Class ChimeraUI.CrUW_MapMenuMarker
+// 0x0120 (0x04C0 - 0x03A0)
+class UCrUW_MapMenuMarker final : public UUserWidget
 {
 public:
-	class UCrUW_InventoryContainer*               InputItemContainer;                                // 0x05D0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCommonTextBlock*                       ReceiverName;                                      // 0x05D8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCommonTextBlock*                       Distance;                                          // 0x05E0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrUW_BuildingLogisticsInfo*            LogisticsInfo;                                     // 0x05E8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrCommonUIColorsDevSettings*           ColorsSettings;                                    // 0x05F0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_5F8[0x38];                                     // 0x05F8(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void HandleConnectionChanged(const struct FCrMassEntityReplicationHelper& InConnection);
-	void HandleReceiverStateChanged(const struct FCrMassEntityReplicationHelper& InReceiver);
-	void OnConnectionChanged(const class UAuItemDataBase* InItem, bool bReceiverValid);
-	void SelectItem();
-	void SelectReceiver();
-	void SetBuildingStatus(bool bPowerOk, bool bTemperatureOk, bool bInventoryOk);
-	void SetColors();
-	void SetProgress(float Progress);
-	void SetReceiverData(bool bInReceiverValid, const class FString& InName, int32 InDistance);
+	uint8                                         Pad_3A0[0x40];                                     // 0x03A0(0x0040)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTextBlock*                             MergedNumber;                                      // 0x03E0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UImage*                                 ImageIcon;                                         // 0x03E8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UImage*                                 ImageStatusIcon;                                   // 0x03F0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UTextBlock*                             TextAboveIcon;                                     // 0x03F8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_400[0xC0];                                     // 0x0400(0x00C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_PackageSender")
+		STATIC_CLASS_IMPL("CrUW_MapMenuMarker")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_PackageSender")
+		STATIC_NAME_IMPL(L"CrUW_MapMenuMarker")
 	}
-	static class UCrUW_PackageSender* GetDefaultObj()
+	static class UCrUW_MapMenuMarker* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_PackageSender>();
+		return GetDefaultObjImpl<UCrUW_MapMenuMarker>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_PackageSender;
+DUMPER7_ASSERTS_UCrUW_MapMenuMarker;
 
 // Class ChimeraUI.CrUW_Controls
 // 0x0048 (0x03E8 - 0x03A0)
@@ -6234,40 +6249,29 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_Cooler;
 
-// Class ChimeraUI.CrUW_MapMenuMarkersList
-// 0x0050 (0x03F0 - 0x03A0)
-class UCrUW_MapMenuMarkersList final : public UUserWidget
+// Class ChimeraUI.CrTriggerHudData
+// 0x00A0 (0x00D0 - 0x0030)
+class UCrTriggerHudData final : public UDataAsset
 {
 public:
-	TSubclassOf<class UCrUW_MapMenuMarkersListRow> MarkersListRowClass;                              // 0x03A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3A8[0x10];                                     // 0x03A8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCrUIAudioData*                         DA_SoundsTableSfx;                                 // 0x03B8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_3C0[0x8];                                      // 0x03C0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UScrollBox*                             ScrollBoxListOfMarkers;                            // 0x03C8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrUW_MapMenuMarkerDetails*             MapMenuMarkerDetails;                              // 0x03D0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UOverlay*                               ListOfMarkersOverlay;                              // 0x03D8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UOverlay*                               DetailsOverlay;                                    // 0x03E0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_3E8[0x8];                                      // 0x03E8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void OnMarkerDetachFromParent(class UCrUW_MapMenuMarker* Marker);
-	void OnMarkerPriorityChange(class UCrUW_MapMenuMarker* Marker);
+	TMap<ECrInteractionType, class FText>         InteractionTypeTextMap;                            // 0x0030(0x0050)(Edit, NativeAccessSpecifierPrivate)
+	TMap<ECrInteractionIconType, struct FSlateBrush> InteractionIconMap;                             // 0x0080(0x0050)(Edit, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_MapMenuMarkersList")
+		STATIC_CLASS_IMPL("CrTriggerHudData")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_MapMenuMarkersList")
+		STATIC_NAME_IMPL(L"CrTriggerHudData")
 	}
-	static class UCrUW_MapMenuMarkersList* GetDefaultObj()
+	static class UCrTriggerHudData* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_MapMenuMarkersList>();
+		return GetDefaultObjImpl<UCrTriggerHudData>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_MapMenuMarkersList;
+DUMPER7_ASSERTS_UCrTriggerHudData;
 
 // Class ChimeraUI.CrUW_CoopHud
 // 0x00E0 (0x0480 - 0x03A0)
@@ -6331,50 +6335,25 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CoopHudItem;
 
-// Class ChimeraUI.CrUW_UpgradeBuildingWidget
-// 0x00F8 (0x04C0 - 0x03C8)
-class UCrUW_UpgradeBuildingWidget final : public UCommonUserWidget
+// Class ChimeraUI.CrUW_NotificationContainer
+// 0x0000 (0x0438 - 0x0438)
+class UCrUW_NotificationContainer final : public UAuUW_NotificationContainer
 {
-public:
-	class UHorizontalBox*                         RewardsBox;                                        // 0x03C8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrUW_ActionButton*                     ResearchButton;                                    // 0x03D0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UImage*                                 BuildingIcon;                                      // 0x03D8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCommonTextBlock*                       BuildingName;                                      // 0x03E0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCommonTextBlock*                       ReachLevelText;                                    // 0x03E8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UImage*                                 CorpoImage;                                        // 0x03F0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UImage*                                 UnclaimedIcon;                                     // 0x03F8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TSubclassOf<class UCrUW_UpgradeStationRecipe> RecipeClass;                                       // 0x0400(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UCrUIAudioData*                         DA_SoundsTable;                                    // 0x0408(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrCorporationData*                     CorpoData;                                         // 0x0410(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrBuildingUpgradeRecipeData*           UpgradeData;                                       // 0x0418(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_420[0xA0];                                     // 0x0420(0x00A0)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void ClaimButtonClicked();
-	void ClaimButtonHovered();
-	void HandleOnTaskUpgradeTaskCompleted(const struct FCrBuildingUpgradeTask& InTask);
-	void PlayClickSound();
-	void RequiredLevelReached(bool bReached);
-	void SetColors(const class UCrCommonUIColorsDevSettings* Settings);
-	void SetLevel(int32 InLevel);
-	void SetLevelButtonFocus(bool bFocused);
-	void SetRewardClaimed();
-
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_UpgradeBuildingWidget")
+		STATIC_CLASS_IMPL("CrUW_NotificationContainer")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_UpgradeBuildingWidget")
+		STATIC_NAME_IMPL(L"CrUW_NotificationContainer")
 	}
-	static class UCrUW_UpgradeBuildingWidget* GetDefaultObj()
+	static class UCrUW_NotificationContainer* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_UpgradeBuildingWidget>();
+		return GetDefaultObjImpl<UCrUW_NotificationContainer>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_UpgradeBuildingWidget;
+DUMPER7_ASSERTS_UCrUW_NotificationContainer;
 
 // Class ChimeraUI.CrUW_CorpLevelUpHud
 // 0x0040 (0x03E0 - 0x03A0)
@@ -6448,61 +6427,31 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CorporationRecipes;
 
-// Class ChimeraUI.CrUW_NotificationsHud
-// 0x06B0 (0x0A50 - 0x03A0)
-class UCrUW_NotificationsHud final : public UUserWidget
+// Class ChimeraUI.CrUW_UpgradeStationPanel
+// 0x0020 (0x05F0 - 0x05D0)
+class UCrUW_UpgradeStationPanel final : public UCrUW_ActivatableWidget
 {
 public:
-	TSubclassOf<class UCrUW_NotificationHud>      NotificationClass;                                 // 0x03A0(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UCanvasPanel*                           Container;                                         // 0x03A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	int32                                         MaxNotificationsCount;                             // 0x03B0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	float                                         NotificationLifeTime;                              // 0x03B4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	float                                         FadeOutDuration;                                   // 0x03B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_3BC[0x4];                                      // 0x03BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<EFAuNotificationType, class FText>       Texts;                                             // 0x03C0(0x0050)(Edit, NativeAccessSpecifierPrivate)
-	struct FSlateBrush                            BaseUnderAttackIcon;                               // 0x0410(0x00B0)(Edit, NativeAccessSpecifierPrivate)
-	struct FSlateBrush                            EncyclopediaEntryUnlockedIcon;                     // 0x04C0(0x00B0)(Edit, NativeAccessSpecifierPrivate)
-	struct FSlateBrush                            GemSlotUnlockedIcon;                               // 0x0570(0x00B0)(Edit, NativeAccessSpecifierPrivate)
-	struct FSlateBrush                            MovementSkillLevelUpIcon;                          // 0x0620(0x00B0)(Edit, NativeAccessSpecifierPrivate)
-	struct FSlateBrush                            SurvivalSkillLevelUpIcon;                          // 0x06D0(0x00B0)(Edit, NativeAccessSpecifierPrivate)
-	struct FSlateBrush                            CombatSkillLevelUpIcon;                            // 0x0780(0x00B0)(Edit, NativeAccessSpecifierPrivate)
-	struct FSlateBrush                            InventoryFullIcon;                                 // 0x0830(0x00B0)(Edit, NativeAccessSpecifierPrivate)
-	struct FVector2D                              NotificationSize;                                  // 0x08E0(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	TArray<float>                                 NotificationScale;                                 // 0x08F0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
-	TArray<float>                                 NotificationOpacity;                               // 0x0900(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
-	struct FSlateColor                            NormalColor;                                       // 0x0910(0x0014)(Edit, NativeAccessSpecifierPrivate)
-	struct FSlateColor                            HighlightColor;                                    // 0x0924(0x0014)(Edit, NativeAccessSpecifierPrivate)
-	TMap<EUIItemType, struct FLinearColor>        ItemBGColors;                                      // 0x0938(0x0050)(Edit, NativeAccessSpecifierPrivate)
-	struct FLinearColor                           LevelColor;                                        // 0x0988(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	struct FLinearColor                           EncyclopediaColor;                                 // 0x0998(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	float                                         MoveSpeed;                                         // 0x09A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_9AC[0x4];                                      // 0x09AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<EFAuNotificationType, class USoundBase*> Sounds;                                            // 0x09B0(0x0050)(Edit, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_A00[0x8];                                      // 0x0A00(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   TaskCompletedText;                                 // 0x0A08(0x0010)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_A18[0x38];                                     // 0x0A18(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void OnCheatHUDShowNotification(EFAuNotificationType NotificationType, bool Show);
-	void OnCorporationQuestItemAdded(const class UCrItemDataBase* Data);
-	void OnPossesed(class APawn* InPawn);
-	void OnUnlockedFeaturesChanged(const TArray<ECrCorporationUnlockedFeatures>& UnlockedFeatures);
+	class UCrUW_UpgradeStation*                   UpgradeStation;                                    // 0x05D0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrUW_ResearchTerminalInfo*             UpgradeStationInfo;                                // 0x05D8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrUIAudioData*                         DA_SoundsTable;                                    // 0x05E0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class AActor*                                 InteractedBuilding;                                // 0x05E8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_NotificationsHud")
+		STATIC_CLASS_IMPL("CrUW_UpgradeStationPanel")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_NotificationsHud")
+		STATIC_NAME_IMPL(L"CrUW_UpgradeStationPanel")
 	}
-	static class UCrUW_NotificationsHud* GetDefaultObj()
+	static class UCrUW_UpgradeStationPanel* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_NotificationsHud>();
+		return GetDefaultObjImpl<UCrUW_UpgradeStationPanel>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_NotificationsHud;
+DUMPER7_ASSERTS_UCrUW_UpgradeStationPanel;
 
 // Class ChimeraUI.CrUW_CorporationScreenWidget
 // 0x0008 (0x03A8 - 0x03A0)
@@ -6569,35 +6518,29 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CorporationsList;
 
-// Class ChimeraUI.CrUW_UpgradeStationTask
-// 0x0018 (0x03B8 - 0x03A0)
-class UCrUW_UpgradeStationTask final : public UUserWidget
+// Class ChimeraUI.CrUW_MarketingElement
+// 0x0010 (0x03D8 - 0x03C8)
+class UCrUW_MarketingElement final : public UCommonUserWidget
 {
 public:
-	class URichTextBlock*                         EntryText;                                         // 0x03A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_3A8[0x10];                                     // 0x03A8(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void OnCompleted();
-	void OnTaskCompleted(const struct FCrBuildingUpgradeTask& InTask);
-	void OnTaskUpdated(const struct FCrBuildingUpgradeTask& InTask);
-	void OnUpdated();
+	class UImage*                                 Image;                                             // 0x03C8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class URichTextBlock*                         TextBlock;                                         // 0x03D0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_UpgradeStationTask")
+		STATIC_CLASS_IMPL("CrUW_MarketingElement")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_UpgradeStationTask")
+		STATIC_NAME_IMPL(L"CrUW_MarketingElement")
 	}
-	static class UCrUW_UpgradeStationTask* GetDefaultObj()
+	static class UCrUW_MarketingElement* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_UpgradeStationTask>();
+		return GetDefaultObjImpl<UCrUW_MarketingElement>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_UpgradeStationTask;
+DUMPER7_ASSERTS_UCrUW_MarketingElement;
 
 // Class ChimeraUI.CrUW_CorporationSlot
 // 0x0098 (0x0460 - 0x03C8)
@@ -6644,36 +6587,42 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CorporationSlot;
 
-// Class ChimeraUI.CrUW_Message
-// 0x0080 (0x0420 - 0x03A0)
-class UCrUW_Message final : public UUserWidget
+// Class ChimeraUI.CrUW_WeaponSlot
+// 0x0238 (0x0600 - 0x03C8)
+class UCrUW_WeaponSlot final : public UCommonUserWidget
 {
 public:
-	class UTextBlock*                             MessageTitle;                                      // 0x03A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrUIAudioData*                         DA_SoundsTable;                                    // 0x03A8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	struct FDatapadData                           MessageData;                                       // 0x03B0(0x0050)(NativeAccessSpecifierPrivate)
-	uint8                                         Pad_400[0x20];                                     // 0x0400(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FGameplayTag                           DataTag;                                           // 0x03C8(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMenuAnchor*                            TooltipAnchor;                                     // 0x03D0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	struct FAuItemEntry                           ItemEntry;                                         // 0x03D8(0x01D8)(BlueprintVisible, BlueprintReadOnly, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	TSubclassOf<class UObject>                    ToolTipClass;                                      // 0x05B0(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	float                                         TooltipDelayTime;                                  // 0x05B8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_5BC[0x4];                                      // 0x05BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   LockedTitle;                                       // 0x05C0(0x0010)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	class FText                                   LockedDescription;                                 // 0x05D0(0x0010)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_5E0[0x20];                                     // 0x05E0(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void SetColors(const struct FLinearColor& Highlight, const struct FLinearColor& New, const struct FLinearColor& Default, const struct FLinearColor& Read);
-	void SetStateColor(EMessageState State);
-	void SetStateIcon(EMessageState State);
+	class UUserWidget* GetTooltip();
+	void SetEmptySlot();
+	void SetIcon(const struct FSlateBrush& InBrush);
+	void SetLockedView();
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_Message")
+		STATIC_CLASS_IMPL("CrUW_WeaponSlot")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_Message")
+		STATIC_NAME_IMPL(L"CrUW_WeaponSlot")
 	}
-	static class UCrUW_Message* GetDefaultObj()
+	static class UCrUW_WeaponSlot* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_Message>();
+		return GetDefaultObjImpl<UCrUW_WeaponSlot>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_Message;
+DUMPER7_ASSERTS_UCrUW_WeaponSlot;
 
 // Class ChimeraUI.CrUW_CorrosionHud
 // 0x0000 (0x03F0 - 0x03F0)
@@ -6740,32 +6689,44 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CrafterInterior;
 
-// Class ChimeraUI.CrUW_WeaponTooltip
-// 0x0008 (0x03A8 - 0x03A0)
-class UCrUW_WeaponTooltip final : public UUserWidget
+// Class ChimeraUI.CrUW_PackageSender
+// 0x0060 (0x0630 - 0x05D0)
+class UCrUW_PackageSender final : public UCrUW_ActivatableWidget
 {
 public:
-	class URichTextBlock*                         ItemDescription;                                   // 0x03A0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrUW_InventoryContainer*               InputItemContainer;                                // 0x05D0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCommonTextBlock*                       ReceiverName;                                      // 0x05D8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCommonTextBlock*                       Distance;                                          // 0x05E0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrUW_BuildingLogisticsInfo*            LogisticsInfo;                                     // 0x05E8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrCommonUIColorsDevSettings*           ColorsSettings;                                    // 0x05F0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_5F8[0x38];                                     // 0x05F8(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void SetItemInfo(const class FText& InName, const class FText& InDescription);
-	void SetItemName(const class FText& InText);
+	void HandleConnectionChanged(const struct FCrMassEntityReplicationHelper& InConnection);
+	void HandleReceiverStateChanged(const struct FCrMassEntityReplicationHelper& InReceiver);
+	void OnConnectionChanged(const class UAuItemDataBase* InItem, bool bReceiverValid);
+	void SelectItem();
+	void SelectReceiver();
+	void SetBuildingStatus(bool bPowerOk, bool bTemperatureOk, bool bInventoryOk);
+	void SetColors();
+	void SetProgress(float Progress);
+	void SetReceiverData(bool bInReceiverValid, const class FString& InName, int32 InDistance);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_WeaponTooltip")
+		STATIC_CLASS_IMPL("CrUW_PackageSender")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_WeaponTooltip")
+		STATIC_NAME_IMPL(L"CrUW_PackageSender")
 	}
-	static class UCrUW_WeaponTooltip* GetDefaultObj()
+	static class UCrUW_PackageSender* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_WeaponTooltip>();
+		return GetDefaultObjImpl<UCrUW_PackageSender>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_WeaponTooltip;
+DUMPER7_ASSERTS_UCrUW_PackageSender;
 
 // Class ChimeraUI.CrUW_CraftingBottomPanel
 // 0x0030 (0x0600 - 0x05D0)
@@ -6833,54 +6794,45 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CraftingProgress;
 
-// Class ChimeraUI.CrUW_PauseMenuMainScreen
-// 0x0420 (0x09F0 - 0x05D0)
-class UCrUW_PauseMenuMainScreen final : public UCrUW_ActivatableWidget
+// Class ChimeraUI.CrWeaponWheelSlot
+// 0x03E0 (0x0780 - 0x03A0)
+class UCrWeaponWheelSlot final : public UUserWidget
 {
 public:
-	class UCrUW_ButtonsTab*                       TabWidget;                                         // 0x05D0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrUW_BoundActionButton*                BackButton;                                        // 0x05D8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrUW_ButtonBase*                       ApplyButton;                                       // 0x05E0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UWidgetSwitcher*                        ContentSwitch;                                     // 0x05E8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UOverlay*                               ContentOverlay;                                    // 0x05F0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrMenuWidgetsData*                     WidgetsData;                                       // 0x05F8(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrUIAudioData*                         DA_SoundsTable;                                    // 0x0600(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TSubclassOf<class UCrUW_ActivatableWidget>    PlaytestEndVideoWidgetClass;                       // 0x0608(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TArray<ECrMenuType>                           TabsTypes;                                         // 0x0610(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	struct FButtonStyle                           Style;                                             // 0x0620(0x0390)(Edit, Protected, NativeAccessSpecifierProtected)
-	bool                                          bHideBackground;                                   // 0x09B0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_9B1[0x7];                                      // 0x09B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   CancelText;                                        // 0x09B8(0x0010)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	class FText                                   QuitText;                                          // 0x09C8(0x0010)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	struct FDataTableRowHandle                    RestoreDefaultsActionData;                         // 0x09D8(0x0010)(Edit, DisableEditOnInstance, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	struct FUIActionBindingHandle                 RestoreDefaultsActionHandle;                       // 0x09E8(0x0004)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_9EC[0x4];                                      // 0x09EC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void ApplyClicked();
-	void BackButtonClicked();
-	void EnableBlur(bool bEnable);
-	void EnableUpAndDownFrame(bool bEnable);
-	struct FCrMenuConfig GetWidgetsData(const ECrMenuType Type);
-	void OnActionTriggered(ECrMenuType MenuType);
-	void RestoreToDefaulsActionTriggered();
-	void TabChanged(int32 Old, int32 Active);
+	bool                                          bIsLocked;                                         // 0x03A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bOverrideBrush;                                    // 0x03A1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_3A2[0xE];                                      // 0x03A2(0x000E)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            SlotImageBrush;                                    // 0x03B0(0x00B0)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FSlateBrush                            SlotLockedImageBrush;                              // 0x0460(0x00B0)(Edit, Protected, NativeAccessSpecifierProtected)
+	EWeaponWheelSlotInfoType                      SlotInfoType;                                      // 0x0510(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_511[0x3];                                      // 0x0511(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTag                           DataTag;                                           // 0x0514(0x0008)(Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FSlateColor                            AmmoTxtColor;                                      // 0x051C(0x0014)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FSlateColor                            NoAmmoTxtColor;                                    // 0x0530(0x0014)(Edit, Protected, NativeAccessSpecifierProtected)
+	float                                         IconYSize;                                         // 0x0544(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UImage*                                 SlotImage;                                         // 0x0548(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UWidgetSwitcher*                        SlotIcon;                                          // 0x0550(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UWidgetSwitcher*                        AmmoInfo;                                          // 0x0558(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UTextBlock*                             TxtAmmo;                                           // 0x0560(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class ACrPlayerControllerBase*                PlayerContoller;                                   // 0x0568(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrWeaponComponent*                     WeaponComponent;                                   // 0x0570(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_578[0x208];                                    // 0x0578(0x0208)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_PauseMenuMainScreen")
+		STATIC_CLASS_IMPL("CrWeaponWheelSlot")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_PauseMenuMainScreen")
+		STATIC_NAME_IMPL(L"CrWeaponWheelSlot")
 	}
-	static class UCrUW_PauseMenuMainScreen* GetDefaultObj()
+	static class UCrWeaponWheelSlot* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_PauseMenuMainScreen>();
+		return GetDefaultObjImpl<UCrWeaponWheelSlot>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_PauseMenuMainScreen;
+DUMPER7_ASSERTS_UCrWeaponWheelSlot;
 
 // Class ChimeraUI.CrUW_CraftingProgressInterior
 // 0x0030 (0x0600 - 0x05D0)
@@ -6954,28 +6906,55 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CraftingQueueListViewElement;
 
-// Class ChimeraUI.RecipeGridPanel
-// 0x0038 (0x0210 - 0x01D8)
-class URecipeGridPanel final : public UGridPanel
+// Class ChimeraUI.CrUW_HudRoundTimer
+// 0x0008 (0x03A8 - 0x03A0)
+class UCrUW_HudRoundTimer : public UUserWidget
 {
 public:
-	uint8                                         Pad_1D8[0x38];                                     // 0x01D8(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         Progress;                                          // 0x03A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3A4[0x4];                                      // 0x03A4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetProgress(float Value);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("RecipeGridPanel")
+		STATIC_CLASS_IMPL("CrUW_HudRoundTimer")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"RecipeGridPanel")
+		STATIC_NAME_IMPL(L"CrUW_HudRoundTimer")
 	}
-	static class URecipeGridPanel* GetDefaultObj()
+	static class UCrUW_HudRoundTimer* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<URecipeGridPanel>();
+		return GetDefaultObjImpl<UCrUW_HudRoundTimer>();
 	}
 };
-DUMPER7_ASSERTS_URecipeGridPanel;
+DUMPER7_ASSERTS_UCrUW_HudRoundTimer;
+
+// Class ChimeraUI.CrUW_MiningProgressHud
+// 0x0008 (0x03B0 - 0x03A8)
+class UCrUW_MiningProgressHud final : public UCrUW_HudRoundTimer
+{
+public:
+	class URadialSlider*                          Slider;                                            // 0x03A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrUW_MiningProgressHud")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrUW_MiningProgressHud")
+	}
+	static class UCrUW_MiningProgressHud* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrUW_MiningProgressHud>();
+	}
+};
+DUMPER7_ASSERTS_UCrUW_MiningProgressHud;
 
 // Class ChimeraUI.CrUW_CraftingQueue
 // 0x0030 (0x03D0 - 0x03A0)
@@ -7030,51 +7009,53 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CraftingRecipe;
 
-// Class ChimeraUI.CrUW_MultiplayerWidget
-// 0x0090 (0x0458 - 0x03C8)
-class UCrUW_MultiplayerWidget final : public UCommonUserWidget
+// Class ChimeraUI.CrUW_RecipeTableCrafter
+// 0x00F0 (0x04B8 - 0x03C8)
+class UCrUW_RecipeTableCrafter final : public UCommonUserWidget
 {
 public:
-	class UCrUW_ActionButton*                     ButtonGoOnline;                                    // 0x03C8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrUW_ActionButton*                     ButtonGoOffline;                                   // 0x03D0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCommonTextBlock*                       OnlineTutorialMessage;                             // 0x03D8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UVerticalBox*                           FriendsBox;                                        // 0x03E0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UGameSettingRotator*                    SessionTypeRotator;                                // 0x03E8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UButton*                                OptionDecrease;                                    // 0x03F0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UButton*                                OptionIncrease;                                    // 0x03F8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class FText                                   SessionSingleText;                                 // 0x0400(0x0010)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	class FText                                   SessionInviteText;                                 // 0x0410(0x0010)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	class FText                                   SessionFriendsText;                                // 0x0420(0x0010)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	ECrOnlineSessionMode                          OnlineSessionMode;                                 // 0x0430(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_431[0x27];                                     // 0x0431(0x0027)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UImage*                                 BuildingIcon;                                      // 0x03C8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCommonTextBlock*                       BuildingName;                                      // 0x03D0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UTextBlock*                             PercentText;                                       // 0x03D8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UProgressBar*                           UnlockProgress;                                    // 0x03E0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UVerticalBox*                           RecipesBox;                                        // 0x03E8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UButton*                                DropDownButton;                                    // 0x03F0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UButton*                                DropDownOverlayButton;                             // 0x03F8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TSubclassOf<class UCrUW_RecipeTableRecipe>    RecipeClass;                                       // 0x0400(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UCrItemRecipeCollection*                RecipeCollection;                                  // 0x0408(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrBuildingData*                        CrafterData;                                       // 0x0410(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrFoodProcessorRecipeCategories*       FoodProcessorRecipeCategories;                     // 0x0418(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TSubclassOf<class UCrItemDataBase>            MainItemClass;                                     // 0x0420(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UCrCommonUIColorsDevSettings*           ColorsSettings;                                    // 0x0428(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrUIAudioData*                         DA_SoundsTable;                                    // 0x0430(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	bool                                          bIsExpanded;                                       // 0x0438(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_439[0x7F];                                     // 0x0439(0x007F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void GoOfflineClicked();
-	void GoOnlineClicked();
-	void HandleRotatorChangedValue(int32 Value, bool bUserInitiated);
-	void OnCreateSessionComplete(const struct FOnlineResultInformation& Result);
-	void OptionDecreaseClicked();
-	void OptionIncreaseClicked();
-	void ProfessionStateChanged(EProfessionType Profession);
-	void SessionStateChanged();
-	void SetCurrentOnlineMode();
-	void SetOnlineModeVisibility(bool bVisible);
+	void CheckPossibleActions();
+	void Expand();
+	void OnDropDownClicked();
+	void SetColors();
+	void SetDropDownFocus(bool bHasFocus);
+	void SetHovered(bool bHovered);
+	void SetResourceAvailable(bool bAvailable);
+	void ShowActionPossibleIcon(bool bShow);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_MultiplayerWidget")
+		STATIC_CLASS_IMPL("CrUW_RecipeTableCrafter")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_MultiplayerWidget")
+		STATIC_NAME_IMPL(L"CrUW_RecipeTableCrafter")
 	}
-	static class UCrUW_MultiplayerWidget* GetDefaultObj()
+	static class UCrUW_RecipeTableCrafter* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_MultiplayerWidget>();
+		return GetDefaultObjImpl<UCrUW_RecipeTableCrafter>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_MultiplayerWidget;
+DUMPER7_ASSERTS_UCrUW_RecipeTableCrafter;
 
 // Class ChimeraUI.CrUW_CraftingRecipeItem
 // 0x0020 (0x03C0 - 0x03A0)
@@ -7127,29 +7108,46 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CraftingRecipeName;
 
-// Class ChimeraUI.CrUW_RecipeUnlocked
-// 0x0010 (0x03B8 - 0x03A8)
-class UCrUW_RecipeUnlocked final : public UAuUW_NotificationBase
+// Class ChimeraUI.CrUW_PlayerProgressionSkill
+// 0x00B8 (0x0458 - 0x03A0)
+class UCrUW_PlayerProgressionSkill final : public UUserWidget
 {
 public:
-	class UTextBlock*                             RecipeName;                                        // 0x03A8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UImage*                                 RecipeIcon;                                        // 0x03B0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UTextBlock*                             SkillName;                                         // 0x03A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UTextBlock*                             Level;                                             // 0x03A8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UProgressBar*                           SkillProgress;                                     // 0x03B0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UImage*                                 Background;                                        // 0x03B8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UTextBlock*                             CurrentPoints;                                     // 0x03C0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UTextBlock*                             MaxPoints;                                         // 0x03C8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrUW_InventoryContainer*               SkillSlots;                                        // 0x03D0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrCommonUIColorsDevSettings*           ColorsSettings;                                    // 0x03D8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TMap<ECrPlayerProgressionSkill, struct FLinearColor> SkillToColor;                               // 0x03E0(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	ECrPlayerProgressionSkill                     OwningSkill;                                       // 0x0430(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_431[0x1F];                                     // 0x0431(0x001F)(Fixing Size After Last Property [ Dumper-7 ])
+	class ACrPlayerControllerBase*                CrPC;                                              // 0x0450(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+
+public:
+	void SetColors();
+	void SetMaxLevel();
+	void SetSkillIcon(ECrPlayerProgressionSkill InSkill);
+	void UpdateExperience(ECrPlayerProgressionSkill InSkill, float InExperience);
+	void UpdateLevel(ECrPlayerProgressionSkill InSkill, int32 InLevel);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_RecipeUnlocked")
+		STATIC_CLASS_IMPL("CrUW_PlayerProgressionSkill")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_RecipeUnlocked")
+		STATIC_NAME_IMPL(L"CrUW_PlayerProgressionSkill")
 	}
-	static class UCrUW_RecipeUnlocked* GetDefaultObj()
+	static class UCrUW_PlayerProgressionSkill* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_RecipeUnlocked>();
+		return GetDefaultObjImpl<UCrUW_PlayerProgressionSkill>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_RecipeUnlocked;
+DUMPER7_ASSERTS_UCrUW_PlayerProgressionSkill;
 
 // Class ChimeraUI.CrUW_CraftingRecipeSelectionListViewElement
 // 0x0050 (0x0418 - 0x03C8)
@@ -7214,35 +7212,78 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CraftingRecipeSelection;
 
-// Class ChimeraUI.CrUW_PowerGenerator
-// 0x0030 (0x0600 - 0x05D0)
-class UCrUW_PowerGenerator final : public UCrUW_ActivatableWidget
+// Class ChimeraUI.CrUW_CraftingStatus
+// 0x0060 (0x0630 - 0x05D0)
+class UCrUW_CraftingStatus : public UCrUW_ActivatableWidget
 {
 public:
-	class UCommonTextBlock*                       GeneratingPower;                                   // 0x05D0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrCommonUIColorsDevSettings*           ColorSettings;                                     // 0x05D8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_5E0[0x20];                                     // 0x05E0(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class AActor*                                 InteractingActor;                                  // 0x05D0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UImage*                                 RecipeIcon;                                        // 0x05D8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UTextBlock*                             RecipeText;                                        // 0x05E0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UTextBlock*                             ProgressText;                                      // 0x05E8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UButton*                                RecipeButton;                                      // 0x05F0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UButton*                                TransferRequiredItems;                             // 0x05F8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UButton*                                TransferRequiredItemsx100;                         // 0x0600(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	int32                                         IconSize;                                          // 0x0608(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_60C[0x4];                                      // 0x060C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UProgressBar*                           CraftingProgressBar;                               // 0x0610(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	TSubclassOf<class UObject>                    RecipeSelectionClass;                              // 0x0618(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_620[0x10];                                     // 0x0620(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void SetStateColor(bool bWorking);
-	void SetupVisuals();
-	void UpdateGridPower(float PowerUsedInGrid, float PowerGeneratedByGrid);
+	void GetCraftingType(TSubclassOf<class ACrCrafter> CraftingClass);
+	void HandleRecipeSelectionButtonClicked();
+	void HandleTransferRequiredItemsClicked();
+	void HandleTransferRequiredItemsx100Clicked();
+	void OnRecipeChanged();
+	void OnRecipeCleared();
+
+	const class UCrItemRecipeData* GetSelectedRecipe() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_PowerGenerator")
+		STATIC_CLASS_IMPL("CrUW_CraftingStatus")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_PowerGenerator")
+		STATIC_NAME_IMPL(L"CrUW_CraftingStatus")
 	}
-	static class UCrUW_PowerGenerator* GetDefaultObj()
+	static class UCrUW_CraftingStatus* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_PowerGenerator>();
+		return GetDefaultObjImpl<UCrUW_CraftingStatus>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_PowerGenerator;
+DUMPER7_ASSERTS_UCrUW_CraftingStatus;
+
+// Class ChimeraUI.CrUW_RecyclingStatus
+// 0x0018 (0x0648 - 0x0630)
+class UCrUW_RecyclingStatus final : public UCrUW_CraftingStatus
+{
+public:
+	class UButton*                                RecycleButton;                                     // 0x0630(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrItemRecyclerRecipeData*              RecycleRecipe;                                     // 0x0638(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class ACrPlayerControllerBase*                PC;                                                // 0x0640(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+
+public:
+	void HandleOnFullRecycleButtonClicked();
+	void HandleOnRecycleButtonClicked();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrUW_RecyclingStatus")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrUW_RecyclingStatus")
+	}
+	static class UCrUW_RecyclingStatus* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrUW_RecyclingStatus>();
+	}
+};
+DUMPER7_ASSERTS_UCrUW_RecyclingStatus;
 
 // Class ChimeraUI.CrUW_CraftingRecipeSlot
 // 0x04F8 (0x08C0 - 0x03C8)
@@ -7324,48 +7365,6 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CraftingRecipeTime;
 
-// Class ChimeraUI.CrUW_ResearchLevelWidget
-// 0x0078 (0x0440 - 0x03C8)
-class UCrUW_ResearchLevelWidget final : public UCommonUserWidget
-{
-public:
-	class UHorizontalBox*                         RewardsBox;                                        // 0x03C8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UButton*                                ClaimButton;                                       // 0x03D0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	bool                                          bIsExpanded;                                       // 0x03D8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_3D9[0x7];                                      // 0x03D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UObject>                    RewardItemClass;                                   // 0x03E0(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrUIAudioData*                         DA_SoundsTable;                                    // 0x03E8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrCorporationData*                     CorpoData;                                         // 0x03F0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_3F8[0x48];                                     // 0x03F8(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void ClaimButtonClicked();
-	void ClaimButtonHovered();
-	void PlayClickSound();
-	void RewardCanBeClaimed();
-	void SetButttonClaimed();
-	void SetColors(const class UCrCommonUIColorsDevSettings* Settings);
-	void SetExpanded(bool bExpand);
-	void SetLevel(int32 InLevel);
-	void SetLevelButtonFocus(bool bFocused);
-	void SetLinesEnabled(bool InEnable);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrUW_ResearchLevelWidget")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrUW_ResearchLevelWidget")
-	}
-	static class UCrUW_ResearchLevelWidget* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrUW_ResearchLevelWidget>();
-	}
-};
-DUMPER7_ASSERTS_UCrUW_ResearchLevelWidget;
-
 // Class ChimeraUI.CrUW_CraftingSelectionWidget
 // 0x0070 (0x0640 - 0x05D0)
 class UCrUW_CraftingSelectionWidget final : public UCrUW_ActivatableWidget
@@ -7399,69 +7398,42 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CraftingSelectionWidget;
 
-// Class ChimeraUI.CrUW_CraftingStatus
-// 0x0060 (0x0630 - 0x05D0)
-class UCrUW_CraftingStatus : public UCrUW_ActivatableWidget
+// Class ChimeraUI.CrUW_ResearchTerminalInfo
+// 0x0030 (0x04B0 - 0x0480)
+class UCrUW_ResearchTerminalInfo final : public UCrUW_BuildingInfoBuildingMenu
 {
 public:
-	class AActor*                                 InteractingActor;                                  // 0x05D0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UImage*                                 RecipeIcon;                                        // 0x05D8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UTextBlock*                             RecipeText;                                        // 0x05E0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UTextBlock*                             ProgressText;                                      // 0x05E8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UButton*                                RecipeButton;                                      // 0x05F0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UButton*                                TransferRequiredItems;                             // 0x05F8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UButton*                                TransferRequiredItemsx100;                         // 0x0600(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	int32                                         IconSize;                                          // 0x0608(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_60C[0x4];                                      // 0x060C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UProgressBar*                           CraftingProgressBar;                               // 0x0610(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	TSubclassOf<class UObject>                    RecipeSelectionClass;                              // 0x0618(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_620[0x10];                                     // 0x0620(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UWidgetSwitcher*                        ContentSwitcher;                                   // 0x0480(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UImage*                                 ItemIcon;                                          // 0x0488(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UImage*                                 ItemFrame;                                         // 0x0490(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCommonTextBlock*                       ItemDescription;                                   // 0x0498(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UTextBlock*                             HeaderRecipes;                                     // 0x04A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	int32                                         Columns;                                           // 0x04A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_4AC[0x4];                                      // 0x04AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void GetCraftingType(TSubclassOf<class ACrCrafter> CraftingClass);
-	void HandleRecipeSelectionButtonClicked();
-	void HandleTransferRequiredItemsClicked();
-	void HandleTransferRequiredItemsx100Clicked();
-	void OnRecipeChanged();
-	void OnRecipeCleared();
-
-	const class UCrItemRecipeData* GetSelectedRecipe() const;
+	void HideNameWidget();
+	void HideOutputWidget();
+	void SetCorpoColor(const struct FColor& InColor);
+	void SetItemName(const class FText& InText);
+	class UCrUW_RewardCollectionRow* SetupBuildingInCollection(const struct FSlateBrush& Icon, const class FText& BuildingName);
+	void ShowOutputWidget();
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_CraftingStatus")
+		STATIC_CLASS_IMPL("CrUW_ResearchTerminalInfo")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_CraftingStatus")
+		STATIC_NAME_IMPL(L"CrUW_ResearchTerminalInfo")
 	}
-	static class UCrUW_CraftingStatus* GetDefaultObj()
+	static class UCrUW_ResearchTerminalInfo* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_CraftingStatus>();
+		return GetDefaultObjImpl<UCrUW_ResearchTerminalInfo>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_CraftingStatus;
-
-// Class ChimeraUI.CrUW_InfectionHud
-// 0x0000 (0x03F0 - 0x03F0)
-class UCrUW_InfectionHud final : public UCrUW_ParamBarHud
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrUW_InfectionHud")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrUW_InfectionHud")
-	}
-	static class UCrUW_InfectionHud* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrUW_InfectionHud>();
-	}
-};
-DUMPER7_ASSERTS_UCrUW_InfectionHud;
+DUMPER7_ASSERTS_UCrUW_ResearchTerminalInfo;
 
 // Class ChimeraUI.CrUW_Crosshair
 // 0x0008 (0x03A8 - 0x03A0)
@@ -7516,35 +7488,39 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CrosshairBase;
 
-// Class ChimeraUI.CrUW_ResearchTerminalScreen
+// Class ChimeraUI.CrUW_RecipeImage
 // 0x0048 (0x03E8 - 0x03A0)
-class UCrUW_ResearchTerminalScreen : public UUserWidget
+class UCrUW_RecipeImage final : public UUserWidget
 {
 public:
-	class UGridPanel*                             CorporationBox;                                    // 0x03A0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UWidgetSwitcher*                        TutorialStatusSwitcher;                            // 0x03A8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrUW_CorporationScreenWidget*          StartingCorporationScreenWidget;                   // 0x03B0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class ACrCorporationsOwner*                   CorpoOwner;                                        // 0x03B8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_3C0[0x28];                                     // 0x03C0(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UImage*                                 RecipeImage;                                       // 0x03A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UMenuAnchor*                            TooltipAnchor;                                     // 0x03A8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TSubclassOf<class UCr_UW_InventoryToolTip>    ToolTipClass;                                      // 0x03B0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UUIItemTypesColors*                     DA_IconColors;                                     // 0x03B8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrCommonUIColorsDevSettings*           ColorsSettings;                                    // 0x03C0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrItemRecipeData*                      Recipe;                                            // 0x03C8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_3D0[0x18];                                     // 0x03D0(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void SetupBindings();
+	class UUserWidget* GetTooltipWidget();
+	void SetColors();
+	void SetRecipeClaimed();
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_ResearchTerminalScreen")
+		STATIC_CLASS_IMPL("CrUW_RecipeImage")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_ResearchTerminalScreen")
+		STATIC_NAME_IMPL(L"CrUW_RecipeImage")
 	}
-	static class UCrUW_ResearchTerminalScreen* GetDefaultObj()
+	static class UCrUW_RecipeImage* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_ResearchTerminalScreen>();
+		return GetDefaultObjImpl<UCrUW_RecipeImage>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_ResearchTerminalScreen;
+DUMPER7_ASSERTS_UCrUW_RecipeImage;
 
 // Class ChimeraUI.CrUW_CrosshairDot
 // 0x0018 (0x03F8 - 0x03E0)
@@ -7612,53 +7588,65 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_CrosshairDynamic;
 
-// Class ChimeraUI.CrUW_RecipeTableCrafter
-// 0x00F0 (0x04B8 - 0x03C8)
-class UCrUW_RecipeTableCrafter final : public UCommonUserWidget
+// Class ChimeraUI.CrUW_Storage
+// 0x0030 (0x0600 - 0x05D0)
+class UCrUW_Storage : public UCrUW_ActivatableWidget
 {
 public:
-	class UImage*                                 BuildingIcon;                                      // 0x03C8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCommonTextBlock*                       BuildingName;                                      // 0x03D0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UTextBlock*                             PercentText;                                       // 0x03D8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UProgressBar*                           UnlockProgress;                                    // 0x03E0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UVerticalBox*                           RecipesBox;                                        // 0x03E8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UButton*                                DropDownButton;                                    // 0x03F0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UButton*                                DropDownOverlayButton;                             // 0x03F8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TSubclassOf<class UCrUW_RecipeTableRecipe>    RecipeClass;                                       // 0x0400(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UCrItemRecipeCollection*                RecipeCollection;                                  // 0x0408(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrBuildingData*                        CrafterData;                                       // 0x0410(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrFoodProcessorRecipeCategories*       FoodProcessorRecipeCategories;                     // 0x0418(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TSubclassOf<class UCrItemDataBase>            MainItemClass;                                     // 0x0420(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UCrCommonUIColorsDevSettings*           ColorsSettings;                                    // 0x0428(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrUIAudioData*                         DA_SoundsTable;                                    // 0x0430(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	bool                                          bIsExpanded;                                       // 0x0438(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_439[0x7F];                                     // 0x0439(0x007F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UCrUW_InventoryContainer*               ItemContainer;                                     // 0x05D0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UButton*                                TakeAllButton;                                     // 0x05D8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	bool                                          bBlockChangeThreshold;                             // 0x05E0(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_5E1[0x1F];                                     // 0x05E1(0x001F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void CheckPossibleActions();
-	void Expand();
-	void OnDropDownClicked();
-	void SetColors();
-	void SetDropDownFocus(bool bHasFocus);
-	void SetHovered(bool bHovered);
-	void SetResourceAvailable(bool bAvailable);
-	void ShowActionPossibleIcon(bool bShow);
+	void HandleTakeAllClicked();
+	bool IsUniversalStorage();
+	void SetColors(const class UCrCommonUIColorsDevSettings* Settings);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_RecipeTableCrafter")
+		STATIC_CLASS_IMPL("CrUW_Storage")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_RecipeTableCrafter")
+		STATIC_NAME_IMPL(L"CrUW_Storage")
 	}
-	static class UCrUW_RecipeTableCrafter* GetDefaultObj()
+	static class UCrUW_Storage* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_RecipeTableCrafter>();
+		return GetDefaultObjImpl<UCrUW_Storage>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_RecipeTableCrafter;
+DUMPER7_ASSERTS_UCrUW_Storage;
+
+// Class ChimeraUI.CrUW_ResourceRedistributor
+// 0x0018 (0x0618 - 0x0600)
+class UCrUW_ResourceRedistributor final : public UCrUW_Storage
+{
+public:
+	uint8                                         Pad_600[0x8];                                      // 0x0600(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCrUW_BuildingLogisticsInfo*            LogisticsInfo;                                     // 0x0608(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrUW_StorageSizeAdjustment*            SizeAdjustment;                                    // 0x0610(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+
+public:
+	void OnInventoryChanged();
+	void UpdateStoragLevelVisuals(ECrStorageLevel StorageLevel);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrUW_ResourceRedistributor")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrUW_ResourceRedistributor")
+	}
+	static class UCrUW_ResourceRedistributor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrUW_ResourceRedistributor>();
+	}
+};
+DUMPER7_ASSERTS_UCrUW_ResourceRedistributor;
 
 // Class ChimeraUI.CrUW_CutsceneLetterBox
 // 0x0010 (0x03B0 - 0x03A0)
@@ -7718,44 +7706,42 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_DatapadBaseWidget;
 
-// Class ChimeraUI.CrUW_RewardItem
-// 0x00C0 (0x0488 - 0x03C8)
-class UCrUW_RewardItem final : public UCommonUserWidget
+// Class ChimeraUI.CrUW_PlayerParamsHud
+// 0x01C0 (0x0560 - 0x03A0)
+class UCrUW_PlayerParamsHud final : public UUserWidget
 {
 public:
-	class UBorder*                                Background;                                        // 0x03C8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UImage*                                 ItemIcon;                                          // 0x03D0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCommonTextBlock*                       ItemName;                                          // 0x03D8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCommonTextBlock*                       ItemCount;                                         // 0x03E0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UUIItemTypesColors*                     DA_IconColors;                                     // 0x03E8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrUIAudioData*                         DA_SoundsTable;                                    // 0x03F0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	struct FCrCorporationItemReward               RewardItem;                                        // 0x03F8(0x0010)(NoDestructor, NativeAccessSpecifierPrivate)
-	class UCrBuildingData*                        BuildingItem;                                      // 0x0408(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrCorporationData*                     OwningCorpo;                                       // 0x0410(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrBuildingCollectionData*              CollectionItem;                                    // 0x0418(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_420[0x68];                                     // 0x0420(0x0068)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3A0[0x18];                                     // 0x03A0(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	class UImage*                                 ToxicityIcon;                                      // 0x03B8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UImage*                                 HydrationIcon;                                     // 0x03C0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UImage*                                 CaloriesIcon;                                      // 0x03C8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	float                                         CriticalBlinkValue;                                // 0x03D0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_3D4[0x4];                                      // 0x03D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCrPlayerParamHudData*                  ToxicityMessageData;                               // 0x03D8(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrPlayerParamHudData*                  CaloriesMessageData;                               // 0x03E0(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrPlayerParamHudData*                  HydrationMessageData;                              // 0x03E8(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	struct FLinearColor                           NormalColor;                                       // 0x03F0(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_400[0x160];                                    // 0x0400(0x0160)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void HighlightSlot(bool bHighlight);
-	void SetClaimed();
-	void SetColors(const struct FLinearColor& Blue);
-	void SetLocked(bool InLocked);
+	void InitDelegates();
+	void OnPossess(class APawn* InPawn);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_RewardItem")
+		STATIC_CLASS_IMPL("CrUW_PlayerParamsHud")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_RewardItem")
+		STATIC_NAME_IMPL(L"CrUW_PlayerParamsHud")
 	}
-	static class UCrUW_RewardItem* GetDefaultObj()
+	static class UCrUW_PlayerParamsHud* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_RewardItem>();
+		return GetDefaultObjImpl<UCrUW_PlayerParamsHud>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_RewardItem;
+DUMPER7_ASSERTS_UCrUW_PlayerParamsHud;
 
 // Class ChimeraUI.CrUW_DatapadComputer
 // 0x0048 (0x0640 - 0x05F8)
@@ -7818,35 +7804,60 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_DatapadMessage;
 
-// Class ChimeraUI.CrUW_PlayerPingHud
-// 0x0030 (0x03D0 - 0x03A0)
-class UCrUW_PlayerPingHud final : public UUserWidget
+// Class ChimeraUI.CrUW_MapMenuMapArea
+// 0x0210 (0x05B0 - 0x03A0)
+class alignas(0x10) UCrUW_MapMenuMapArea final : public UUserWidget
 {
 public:
-	TArray<class UCrUW_PlayerPingItem*>           PingItems;                                         // 0x03A0(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
-	TSubclassOf<class UCrUW_PlayerPingItem>       ItemClass;                                         // 0x03B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UCanvasPanel*                           ItemCanvas;                                        // 0x03B8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class USoundBase*                             AppearSound;                                       // 0x03C0(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_3C8[0x8];                                      // 0x03C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UCrUW_MapMenuMarker>        MapMenuMarkerClass;                                // 0x03A0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3A8[0x18];                                     // 0x03A8(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCanvasPanel*                           CanvasPanelMapArea;                                // 0x03C0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrUW_MapMenuTerrain*                   MapMenuTerrain;                                    // 0x03C8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrUW_MapMenuCrosshair*                 MapMenuCrosshair;                                  // 0x03D0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrUW_MapMenuMarkersList*               MapMenuMarkersList;                                // 0x03D8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	TMap<EPlayerMarkerFlags, class FText>         PlayerMarkerFlagsText;                             // 0x03E0(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPrivate)
+	TArray<struct FInfectionMarkerUIRepresentation> MapMenuInfectionNotificationMarkers;             // 0x0430(0x0010)(ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	TArray<struct FPersonalMarkerUIRepresentation> MapMenuPlayerPersonalMarkers;                     // 0x0440(0x0010)(ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	TArray<struct FCoopMarkerUIRepresentation>    MapMenuCoopMarkers;                                // 0x0450(0x0010)(ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	TArray<struct FPOIMarkerUIRepresentation>     MapMenuPOIMarkers;                                 // 0x0460(0x0010)(ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_470[0x8];                                      // 0x0470(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<struct FMassEntityHandle, struct FEntityMarkerUIRepresentation> MapMenuMassMarkers;         // 0x0478(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	TArray<struct FAttackWaveMarkerUIRepresentation> MapMenuAttackWaveMarkers;                       // 0x04C8(0x0010)(ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_4D8[0xD8];                                     // 0x04D8(0x00D8)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void OnPlayerPingChanged(const TArray<struct FCrPlayerPingData>& PlayerPingData);
+	void OnBaseAttackMarkerAdded(const struct FBaseAttackMarkerDataFastArrayItem& Data);
+	void OnBaseAttackMarkerChanged(const struct FBaseAttackMarkerDataFastArrayItem& Data);
+	void OnBaseAttackMarkerRemoved(const struct FBaseAttackMarkerDataFastArrayItem& Data);
+	void OnBuildingMarkerAdded(const struct FBuildingMarkerDataFastArrayItem& Data);
+	void OnBuildingMarkerChanged(const struct FBuildingMarkerDataFastArrayItem& Data);
+	void OnBuildingMarkerRemoved(const struct FBuildingMarkerDataFastArrayItem& Data);
+	void OnCoopPlayerMarkerAdded(const struct FPlayerMarkerDataFastArrayItem& Data);
+	void OnCoopPlayerMarkerChanged(const struct FPlayerMarkerDataFastArrayItem& Data);
+	void OnCoopPlayerMarkerRemoved(const struct FPlayerMarkerDataFastArrayItem& Data);
+	void OnFilterButtonChanged(ECrMapMenuMarkerFilter Filter, bool Status);
+	void OnFoundableMarkerAdded(const struct FFoundableMarkerDataFastArrayItem& Data);
+	void OnFoundableMarkerRemoved(const struct FFoundableMarkerDataFastArrayItem& Data);
+	void OnMarkerHovered(class UCrUW_MapMenuMarker* MarkerHovered);
+	void OnMarkerUnovered(class UCrUW_MapMenuMarker* MarkerUnhovered);
+	void OnPOIMarkerChanged(const struct FGuid& POIMarkerID);
+	void OnWarningLocation(const TArray<struct FVector3f>& Locations);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_PlayerPingHud")
+		STATIC_CLASS_IMPL("CrUW_MapMenuMapArea")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_PlayerPingHud")
+		STATIC_NAME_IMPL(L"CrUW_MapMenuMapArea")
 	}
-	static class UCrUW_PlayerPingHud* GetDefaultObj()
+	static class UCrUW_MapMenuMapArea* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_PlayerPingHud>();
+		return GetDefaultObjImpl<UCrUW_MapMenuMapArea>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_PlayerPingHud;
+DUMPER7_ASSERTS_UCrUW_MapMenuMapArea;
 
 // Class ChimeraUI.CrUW_DeathScreen
 // 0x0030 (0x0600 - 0x05D0)
@@ -7906,33 +7917,47 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_DrainHud;
 
-// Class ChimeraUI.CrUW_MapMenuMarker
-// 0x0120 (0x04C0 - 0x03A0)
-class UCrUW_MapMenuMarker final : public UUserWidget
+// Class ChimeraUI.CrUW_ResearchLevelWidget
+// 0x0078 (0x0440 - 0x03C8)
+class UCrUW_ResearchLevelWidget final : public UCommonUserWidget
 {
 public:
-	uint8                                         Pad_3A0[0x40];                                     // 0x03A0(0x0040)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTextBlock*                             MergedNumber;                                      // 0x03E0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UImage*                                 ImageIcon;                                         // 0x03E8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UImage*                                 ImageStatusIcon;                                   // 0x03F0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UTextBlock*                             TextAboveIcon;                                     // 0x03F8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_400[0xC0];                                     // 0x0400(0x00C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UHorizontalBox*                         RewardsBox;                                        // 0x03C8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UButton*                                ClaimButton;                                       // 0x03D0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	bool                                          bIsExpanded;                                       // 0x03D8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_3D9[0x7];                                      // 0x03D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UObject>                    RewardItemClass;                                   // 0x03E0(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrUIAudioData*                         DA_SoundsTable;                                    // 0x03E8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrCorporationData*                     CorpoData;                                         // 0x03F0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_3F8[0x48];                                     // 0x03F8(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void ClaimButtonClicked();
+	void ClaimButtonHovered();
+	void PlayClickSound();
+	void RewardCanBeClaimed();
+	void SetButttonClaimed();
+	void SetColors(const class UCrCommonUIColorsDevSettings* Settings);
+	void SetExpanded(bool bExpand);
+	void SetLevel(int32 InLevel);
+	void SetLevelButtonFocus(bool bFocused);
+	void SetLinesEnabled(bool InEnable);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_MapMenuMarker")
+		STATIC_CLASS_IMPL("CrUW_ResearchLevelWidget")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_MapMenuMarker")
+		STATIC_NAME_IMPL(L"CrUW_ResearchLevelWidget")
 	}
-	static class UCrUW_MapMenuMarker* GetDefaultObj()
+	static class UCrUW_ResearchLevelWidget* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_MapMenuMarker>();
+		return GetDefaultObjImpl<UCrUW_ResearchLevelWidget>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_MapMenuMarker;
+DUMPER7_ASSERTS_UCrUW_ResearchLevelWidget;
 
 // Class ChimeraUI.CrUW_DroneJunctionFilterSelection
 // 0x0048 (0x0618 - 0x05D0)
@@ -7999,42 +8024,40 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_DroneJunctionInfo;
 
-// Class ChimeraUI.CrUW_ResearchTerminalInfo
-// 0x0030 (0x04B0 - 0x0480)
-class UCrUW_ResearchTerminalInfo final : public UCrUW_BuildingInfoBuildingMenu
+// Class ChimeraUI.CrUW_MapMenuMarkersList
+// 0x0050 (0x03F0 - 0x03A0)
+class UCrUW_MapMenuMarkersList final : public UUserWidget
 {
 public:
-	class UWidgetSwitcher*                        ContentSwitcher;                                   // 0x0480(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UImage*                                 ItemIcon;                                          // 0x0488(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UImage*                                 ItemFrame;                                         // 0x0490(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCommonTextBlock*                       ItemDescription;                                   // 0x0498(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UTextBlock*                             HeaderRecipes;                                     // 0x04A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	int32                                         Columns;                                           // 0x04A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_4AC[0x4];                                      // 0x04AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UCrUW_MapMenuMarkersListRow> MarkersListRowClass;                              // 0x03A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3A8[0x10];                                     // 0x03A8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCrUIAudioData*                         DA_SoundsTableSfx;                                 // 0x03B8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_3C0[0x8];                                      // 0x03C0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UScrollBox*                             ScrollBoxListOfMarkers;                            // 0x03C8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrUW_MapMenuMarkerDetails*             MapMenuMarkerDetails;                              // 0x03D0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UOverlay*                               ListOfMarkersOverlay;                              // 0x03D8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UOverlay*                               DetailsOverlay;                                    // 0x03E0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_3E8[0x8];                                      // 0x03E8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void HideNameWidget();
-	void HideOutputWidget();
-	void SetCorpoColor(const struct FColor& InColor);
-	void SetItemName(const class FText& InText);
-	class UCrUW_RewardCollectionRow* SetupBuildingInCollection(const struct FSlateBrush& Icon, const class FText& BuildingName);
-	void ShowOutputWidget();
+	void OnMarkerDetachFromParent(class UCrUW_MapMenuMarker* Marker);
+	void OnMarkerPriorityChange(class UCrUW_MapMenuMarker* Marker);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_ResearchTerminalInfo")
+		STATIC_CLASS_IMPL("CrUW_MapMenuMarkersList")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_ResearchTerminalInfo")
+		STATIC_NAME_IMPL(L"CrUW_MapMenuMarkersList")
 	}
-	static class UCrUW_ResearchTerminalInfo* GetDefaultObj()
+	static class UCrUW_MapMenuMarkersList* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_ResearchTerminalInfo>();
+		return GetDefaultObjImpl<UCrUW_MapMenuMarkersList>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_ResearchTerminalInfo;
+DUMPER7_ASSERTS_UCrUW_MapMenuMarkersList;
 
 // Class ChimeraUI.CrUW_DroneRailFilterSelection
 // 0x0020 (0x05F0 - 0x05D0)
@@ -8091,35 +8114,34 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_DroneRailInfo;
 
-// Class ChimeraUI.CrUW_MapMenuTerrain
-// 0x0100 (0x04A0 - 0x03A0)
-class UCrUW_MapMenuTerrain final : public UUserWidget
+// Class ChimeraUI.CrUW_QuickUseEntry
+// 0x0020 (0x03C0 - 0x03A0)
+class UCrUW_QuickUseEntry : public UUserWidget
 {
 public:
-	TSubclassOf<class UCrUW_MapMenuTerrainSegment> TerrainSegmentClass;                              // 0x03A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              DebugBorderTexturePosition;                        // 0x03A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              DebugBorderTextureSize;                            // 0x03B8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3C8[0x8];                                      // 0x03C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            DebugBorderTexture;                                // 0x03D0(0x00B0)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	class UCanvasPanel*                           CanvasPanelTerrain;                                // 0x0480(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	TArray<class UCrUW_MapMenuTerrainSegment*>    TerrainSegments;                                   // 0x0488(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_498[0x8];                                      // 0x0498(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UImage*                                 Icon;                                              // 0x03A0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	float                                         ActiveOpacity;                                     // 0x03A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         InactiveOpacity;                                   // 0x03AC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_3B0[0x10];                                     // 0x03B0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnDataRefresh(int32 Index_0);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_MapMenuTerrain")
+		STATIC_CLASS_IMPL("CrUW_QuickUseEntry")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_MapMenuTerrain")
+		STATIC_NAME_IMPL(L"CrUW_QuickUseEntry")
 	}
-	static class UCrUW_MapMenuTerrain* GetDefaultObj()
+	static class UCrUW_QuickUseEntry* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_MapMenuTerrain>();
+		return GetDefaultObjImpl<UCrUW_QuickUseEntry>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_MapMenuTerrain;
+DUMPER7_ASSERTS_UCrUW_QuickUseEntry;
 
 // Class ChimeraUI.CrUW_DynamicCoopHud
 // 0x00C8 (0x0468 - 0x03A0)
@@ -8184,25 +8206,34 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_DynamicCoopWidget;
 
-// Class ChimeraUI.CrUW_RadiationHud
-// 0x0000 (0x03F0 - 0x03F0)
-class UCrUW_RadiationHud final : public UCrUW_ParamBarHud
+// Class ChimeraUI.CrUW_MapMenuZoomSlider
+// 0x0038 (0x0400 - 0x03C8)
+class UCrUW_MapMenuZoomSlider final : public UCommonUserWidget
 {
+public:
+	uint8                                         Pad_3C8[0x28];                                     // 0x03C8(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
+	class USlider*                                Slider;                                            // 0x03F0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UImage*                                 ImageScrollInput;                                  // 0x03F8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+
+public:
+	void OnMapMenuZoomValueChangedExternal(float ZoomValue);
+	void OnSliderValueChange(float Value);
+
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_RadiationHud")
+		STATIC_CLASS_IMPL("CrUW_MapMenuZoomSlider")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_RadiationHud")
+		STATIC_NAME_IMPL(L"CrUW_MapMenuZoomSlider")
 	}
-	static class UCrUW_RadiationHud* GetDefaultObj()
+	static class UCrUW_MapMenuZoomSlider* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_RadiationHud>();
+		return GetDefaultObjImpl<UCrUW_MapMenuZoomSlider>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_RadiationHud;
+DUMPER7_ASSERTS_UCrUW_MapMenuZoomSlider;
 
 // Class ChimeraUI.CrUW_DynamicFallenCoop
 // 0x0020 (0x03C0 - 0x03A0)
@@ -8258,29 +8289,44 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_EffectIcon;
 
-// Class ChimeraUI.CrUW_MarketingElement
-// 0x0010 (0x03D8 - 0x03C8)
-class UCrUW_MarketingElement final : public UCommonUserWidget
+// Class ChimeraUI.CrUW_RewardItem
+// 0x00C0 (0x0488 - 0x03C8)
+class UCrUW_RewardItem final : public UCommonUserWidget
 {
 public:
-	class UImage*                                 Image;                                             // 0x03C8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class URichTextBlock*                         TextBlock;                                         // 0x03D0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UBorder*                                Background;                                        // 0x03C8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UImage*                                 ItemIcon;                                          // 0x03D0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCommonTextBlock*                       ItemName;                                          // 0x03D8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCommonTextBlock*                       ItemCount;                                         // 0x03E0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UUIItemTypesColors*                     DA_IconColors;                                     // 0x03E8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrUIAudioData*                         DA_SoundsTable;                                    // 0x03F0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	struct FCrCorporationItemReward               RewardItem;                                        // 0x03F8(0x0010)(NoDestructor, NativeAccessSpecifierPrivate)
+	class UCrBuildingData*                        BuildingItem;                                      // 0x0408(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrCorporationData*                     OwningCorpo;                                       // 0x0410(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrBuildingCollectionData*              CollectionItem;                                    // 0x0418(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_420[0x68];                                     // 0x0420(0x0068)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void HighlightSlot(bool bHighlight);
+	void SetClaimed();
+	void SetColors(const struct FLinearColor& Blue);
+	void SetLocked(bool InLocked);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_MarketingElement")
+		STATIC_CLASS_IMPL("CrUW_RewardItem")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_MarketingElement")
+		STATIC_NAME_IMPL(L"CrUW_RewardItem")
 	}
-	static class UCrUW_MarketingElement* GetDefaultObj()
+	static class UCrUW_RewardItem* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_MarketingElement>();
+		return GetDefaultObjImpl<UCrUW_RewardItem>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_MarketingElement;
+DUMPER7_ASSERTS_UCrUW_RewardItem;
 
 // Class ChimeraUI.CrUW_EffectsHud
 // 0x04B0 (0x0850 - 0x03A0)
@@ -8358,28 +8404,36 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_EncyclopediaAudiologInfoMenu;
 
-// Class ChimeraUI.CrUW_SaveSelectionGridPanel
-// 0x0020 (0x01F8 - 0x01D8)
-class UCrUW_SaveSelectionGridPanel final : public UGridPanel
+// Class ChimeraUI.CrUW_Message
+// 0x0080 (0x0420 - 0x03A0)
+class UCrUW_Message final : public UUserWidget
 {
 public:
-	uint8                                         Pad_1D8[0x20];                                     // 0x01D8(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UTextBlock*                             MessageTitle;                                      // 0x03A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrUIAudioData*                         DA_SoundsTable;                                    // 0x03A8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	struct FDatapadData                           MessageData;                                       // 0x03B0(0x0050)(NativeAccessSpecifierPrivate)
+	uint8                                         Pad_400[0x20];                                     // 0x0400(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetColors(const struct FLinearColor& Highlight, const struct FLinearColor& New, const struct FLinearColor& Default, const struct FLinearColor& Read);
+	void SetStateColor(EMessageState State);
+	void SetStateIcon(EMessageState State);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_SaveSelectionGridPanel")
+		STATIC_CLASS_IMPL("CrUW_Message")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_SaveSelectionGridPanel")
+		STATIC_NAME_IMPL(L"CrUW_Message")
 	}
-	static class UCrUW_SaveSelectionGridPanel* GetDefaultObj()
+	static class UCrUW_Message* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_SaveSelectionGridPanel>();
+		return GetDefaultObjImpl<UCrUW_Message>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_SaveSelectionGridPanel;
+DUMPER7_ASSERTS_UCrUW_Message;
 
 // Class ChimeraUI.CrUW_EncyclopediaCategoryButton
 // 0x0250 (0x05F0 - 0x03A0)
@@ -8445,29 +8499,29 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_EncyclopediaDatapadInfoMenu;
 
-// Class ChimeraUI.CrPlayerParamHudData
-// 0x00C0 (0x00F0 - 0x0030)
-class UCrPlayerParamHudData final : public UDataAsset
+// Class ChimeraUI.CrUW_RecipeUnlocked
+// 0x0010 (0x03B8 - 0x03A8)
+class UCrUW_RecipeUnlocked final : public UAuUW_NotificationBase
 {
 public:
-	struct FSlateBrush                            MessageIcon;                                       // 0x0030(0x00B0)(Edit, NativeAccessSpecifierPublic)
-	TArray<struct FCrMessageHUDImportance>        AttributeThresholds;                               // 0x00E0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	class UTextBlock*                             RecipeName;                                        // 0x03A8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UImage*                                 RecipeIcon;                                        // 0x03B0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrPlayerParamHudData")
+		STATIC_CLASS_IMPL("CrUW_RecipeUnlocked")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrPlayerParamHudData")
+		STATIC_NAME_IMPL(L"CrUW_RecipeUnlocked")
 	}
-	static class UCrPlayerParamHudData* GetDefaultObj()
+	static class UCrUW_RecipeUnlocked* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrPlayerParamHudData>();
+		return GetDefaultObjImpl<UCrUW_RecipeUnlocked>();
 	}
 };
-DUMPER7_ASSERTS_UCrPlayerParamHudData;
+DUMPER7_ASSERTS_UCrUW_RecipeUnlocked;
 
 // Class ChimeraUI.CrUW_EncyclopediaEntryButton
 // 0x00A8 (0x0448 - 0x03A0)
@@ -8530,35 +8584,6 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_EncyclopediaEntryChapter;
 
-// Class ChimeraUI.CrUW_RecyclingStatus
-// 0x0018 (0x0648 - 0x0630)
-class UCrUW_RecyclingStatus final : public UCrUW_CraftingStatus
-{
-public:
-	class UButton*                                RecycleButton;                                     // 0x0630(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrItemRecyclerRecipeData*              RecycleRecipe;                                     // 0x0638(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class ACrPlayerControllerBase*                PC;                                                // 0x0640(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-
-public:
-	void HandleOnFullRecycleButtonClicked();
-	void HandleOnRecycleButtonClicked();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrUW_RecyclingStatus")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrUW_RecyclingStatus")
-	}
-	static class UCrUW_RecyclingStatus* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrUW_RecyclingStatus>();
-	}
-};
-DUMPER7_ASSERTS_UCrUW_RecyclingStatus;
-
 // Class ChimeraUI.CrUW_EncyclopediaInfoMenu
 // 0x0048 (0x03E8 - 0x03A0)
 class UCrUW_EncyclopediaInfoMenu final : public UUserWidget
@@ -8593,57 +8618,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCrUW_EncyclopediaInfoMenu;
-
-// Class ChimeraUI.CrUW_EncyclopediaMenu
-// 0x00D8 (0x06A8 - 0x05D0)
-class UCrUW_EncyclopediaMenu final : public UCrUW_ActivatableWidget
-{
-public:
-	TArray<class UCrUW_EncyclopediaCategoryButton*> CategoryButtons;                                 // 0x05D0(0x0010)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
-	class UButton*                                DebugButton;                                       // 0x05E0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrUW_EncyclopediaInfoMenu*             EncyclopediaInfoMenu;                              // 0x05E8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrUW_EncyclopediaAudiologInfoMenu*     EncyclopediaAudiologInfoMenu;                      // 0x05F0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrUW_EncyclopediaDatapadInfoMenu*      EncyclopediaDatapadInfoMenu;                       // 0x05F8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UHorizontalBox*                         LegendKeys;                                        // 0x0600(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrUW_EncyclopediaCategoryButton*       CategoryButtonPlanet;                              // 0x0608(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrUW_EncyclopediaCategoryButton*       CategoryButtonTech;                                // 0x0610(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrUW_EncyclopediaCategoryButton*       CategoryButtonStory;                               // 0x0618(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrUW_EncyclopediaCategoryButton*       CategoryButtonJournal;                             // 0x0620(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UVerticalBox*                           EncyclopediaCategoryBox;                           // 0x0628(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UScrollBox*                             ScrollBoxSubcategories;                            // 0x0630(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UImage*                                 ScrollIconCategories;                              // 0x0638(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	TSubclassOf<class UCrUW_EncyclopediaSubcategoryGrid> SubcategoryGridClass;                       // 0x0640(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	TSubclassOf<class UCrUW_EncyclopediaEntryButton> EntryButtonClass;                               // 0x0648(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_650[0x40];                                     // 0x0650(0x0040)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FDataTableRowHandle                    CloseEncyclopediaInputActionData;                  // 0x0690(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_6A0[0x8];                                      // 0x06A0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void HandleOnDeactivate();
-	void HandleOnDebugButtonClicked();
-	void OnCategoryButtonPressed(class FName Category);
-	void OnCategorySelected(class FName Category);
-	void OnEncyclopediaEntryChanged(const struct FCrEncyclopediaEntryStatus& EntryData);
-	void OnEntryButtonHovered(class UCrUW_EncyclopediaEntryButton* Button);
-	void OnEntryButtonPressed(class UCrUW_EncyclopediaEntryButton* Button);
-	void OnEntrySelected(class FName EntryID);
-	void OnHyperlinkPressed(const class FString& HyperlinkID);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrUW_EncyclopediaMenu")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrUW_EncyclopediaMenu")
-	}
-	static class UCrUW_EncyclopediaMenu* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrUW_EncyclopediaMenu>();
-	}
-};
-DUMPER7_ASSERTS_UCrUW_EncyclopediaMenu;
 
 // Class ChimeraUI.CrUW_EncyclopediaSubcategoryGrid
 // 0x0040 (0x03E0 - 0x03A0)
@@ -10129,51 +10103,28 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_ObjectivesHUD;
 
-// Class ChimeraUI.CrUW_OnScreenNotification
-// 0x0000 (0x03A0 - 0x03A0)
-class UCrUW_OnScreenNotification : public UUserWidget
+// Class ChimeraUI.CrUW_ObjectiveTipEntry
+// 0x0008 (0x03A8 - 0x03A0)
+class UCrUW_ObjectiveTipEntry final : public UUserWidget
 {
 public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrUW_OnScreenNotification")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrUW_OnScreenNotification")
-	}
-	static class UCrUW_OnScreenNotification* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrUW_OnScreenNotification>();
-	}
-};
-DUMPER7_ASSERTS_UCrUW_OnScreenNotification;
-
-// Class ChimeraUI.CrUW_OnScreenBuildingResultNotification
-// 0x0010 (0x03B0 - 0x03A0)
-class UCrUW_OnScreenBuildingResultNotification : public UCrUW_OnScreenNotification
-{
-public:
-	uint8                                         Pad_3A0[0x10];                                     // 0x03A0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void OnPlacementResultNotif(EAuAPPlacementResult PlacementResult);
+	class URichTextBlock*                         EntryText;                                         // 0x03A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrUW_OnScreenBuildingResultNotification")
+		STATIC_CLASS_IMPL("CrUW_ObjectiveTipEntry")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrUW_OnScreenBuildingResultNotification")
+		STATIC_NAME_IMPL(L"CrUW_ObjectiveTipEntry")
 	}
-	static class UCrUW_OnScreenBuildingResultNotification* GetDefaultObj()
+	static class UCrUW_ObjectiveTipEntry* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrUW_OnScreenBuildingResultNotification>();
+		return GetDefaultObjImpl<UCrUW_ObjectiveTipEntry>();
 	}
 };
-DUMPER7_ASSERTS_UCrUW_OnScreenBuildingResultNotification;
+DUMPER7_ASSERTS_UCrUW_ObjectiveTipEntry;
 
 // Class ChimeraUI.CrUW_PackageReceiver
 // 0x0048 (0x0618 - 0x05D0)
@@ -10746,6 +10697,29 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_SaveElement;
 
+// Class ChimeraUI.CrUW_SaveSelectionGridPanel
+// 0x0020 (0x01F8 - 0x01D8)
+class UCrUW_SaveSelectionGridPanel final : public UGridPanel
+{
+public:
+	uint8                                         Pad_1D8[0x20];                                     // 0x01D8(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrUW_SaveSelectionGridPanel")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrUW_SaveSelectionGridPanel")
+	}
+	static class UCrUW_SaveSelectionGridPanel* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrUW_SaveSelectionGridPanel>();
+	}
+};
+DUMPER7_ASSERTS_UCrUW_SaveSelectionGridPanel;
+
 // Class ChimeraUI.CrUW_SaveSessionMenu
 // 0x0228 (0x07F8 - 0x05D0)
 class UCrUW_SaveSessionMenu final : public UCrUW_ActivatableWidget
@@ -11229,35 +11203,6 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_PickAll;
 
-// Class ChimeraUI.CrUW_StorageBoxContextMenu
-// 0x0018 (0x05E8 - 0x05D0)
-class UCrUW_StorageBoxContextMenu final : public UCrUW_ActivatableWidget
-{
-public:
-	uint8                                         Pad_5D0[0x8];                                      // 0x05D0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UButton*                                OpenButton;                                        // 0x05D8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UButton*                                PickAllButton;                                     // 0x05E0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-
-public:
-	void HandleOpenClicked();
-	void HandlePickAllClicked();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrUW_StorageBoxContextMenu")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrUW_StorageBoxContextMenu")
-	}
-	static class UCrUW_StorageBoxContextMenu* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrUW_StorageBoxContextMenu>();
-	}
-};
-DUMPER7_ASSERTS_UCrUW_StorageBoxContextMenu;
-
 // Class ChimeraUI.CrUW_StorageInventory
 // 0x00C8 (0x0698 - 0x05D0)
 class UCrUW_StorageInventory final : public UCrUW_ActivatableWidget
@@ -11302,6 +11247,38 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_StorageInventory;
 
+// Class ChimeraUI.CrUW_StorageSizeAdjustment
+// 0x0018 (0x03B8 - 0x03A0)
+class UCrUW_StorageSizeAdjustment final : public UUserWidget
+{
+public:
+	class UCrUIAudioData*                         DA_SoundsTable;                                    // 0x03A0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_3A8[0x10];                                     // 0x03A8(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnDecreaseSizePressed();
+	void OnIncreaseSizePressed();
+	void PlayClickSound();
+	void PlayHoverSound();
+	void SetColors();
+	void UpdateElectricityValues(int32 Plus, int32 Minus);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrUW_StorageSizeAdjustment")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrUW_StorageSizeAdjustment")
+	}
+	static class UCrUW_StorageSizeAdjustment* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrUW_StorageSizeAdjustment>();
+	}
+};
+DUMPER7_ASSERTS_UCrUW_StorageSizeAdjustment;
+
 // Class ChimeraUI.CrUW_StoryItemSlot
 // 0x0060 (0x0428 - 0x03C8)
 class UCrUW_StoryItemSlot final : public UCommonUserWidget
@@ -11338,37 +11315,6 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_StoryItemSlot;
 
-// Class ChimeraUI.CrUW_StoryTab
-// 0x0028 (0x05F8 - 0x05D0)
-class UCrUW_StoryTab final : public UCrUW_ActivatableWidget
-{
-public:
-	class UCrUW_InventoryContainer*               ItemsContainer;                                    // 0x05D0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TSubclassOf<class UObject>                    ItemSlotClass;                                     // 0x05D8(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UUIItemTypesColors*                     DA_IconColors;                                     // 0x05E0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	int32                                         MaxColumnCount;                                    // 0x05E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         MaxRowCount;                                       // 0x05EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_5F0[0x8];                                      // 0x05F0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void FillGrid();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrUW_StoryTab")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrUW_StoryTab")
-	}
-	static class UCrUW_StoryTab* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrUW_StoryTab>();
-	}
-};
-DUMPER7_ASSERTS_UCrUW_StoryTab;
-
 // Class ChimeraUI.CrUW_SubObjectiveEntry
 // 0x0008 (0x03A8 - 0x03A0)
 class UCrUW_SubObjectiveEntry final : public UUserWidget
@@ -11398,6 +11344,36 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCrUW_SubObjectiveEntry;
+
+// Class ChimeraUI.CrUW_SurvivalAttributesHud
+// 0x0040 (0x03E0 - 0x03A0)
+class UCrUW_SurvivalAttributesHud final : public UUserWidget
+{
+public:
+	class UCrUW_AttributeProgressText*            HealthText;                                        // 0x03A0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrUW_AttributeProgressText*            ShieldText;                                        // 0x03A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrUW_AttributeProgressText*            CaloriesText;                                      // 0x03B0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrUW_AttributeProgressText*            OxygenText;                                        // 0x03B8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrUW_AttributeProgressText*            ToxicityText;                                      // 0x03C0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrUW_AttributeProgressText*            RadiationText;                                     // 0x03C8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrUW_AttributeProgressText*            HydrationText;                                     // 0x03D0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UTextBlock*                             TemperatureText;                                   // 0x03D8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrUW_SurvivalAttributesHud")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrUW_SurvivalAttributesHud")
+	}
+	static class UCrUW_SurvivalAttributesHud* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrUW_SurvivalAttributesHud>();
+	}
+};
+DUMPER7_ASSERTS_UCrUW_SurvivalAttributesHud;
 
 // Class ChimeraUI.CrUW_TakeRemainingItems
 // 0x0040 (0x03E0 - 0x03A0)
@@ -11433,26 +11409,6 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_TakeRemainingItems;
 
-// Class ChimeraUI.CrUW_Teleporter
-// 0x0000 (0x03C8 - 0x03C8)
-class UCrUW_Teleporter final : public UCommonUserWidget
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrUW_Teleporter")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrUW_Teleporter")
-	}
-	static class UCrUW_Teleporter* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrUW_Teleporter>();
-	}
-};
-DUMPER7_ASSERTS_UCrUW_Teleporter;
-
 // Class ChimeraUI.CrUW_TeleporterMapArea
 // 0x0000 (0x05D0 - 0x05D0)
 class UCrUW_TeleporterMapArea final : public UCrUW_ActivatableWidget
@@ -11472,6 +11428,39 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCrUW_TeleporterMapArea;
+
+// Class ChimeraUI.CrUW_TeleporterMenu
+// 0x0090 (0x0618 - 0x0588)
+class UCrUW_TeleporterMenu final : public UAuActorWidgetBase
+{
+public:
+	TSubclassOf<class UCrUW_TeleporterButton>     TeleporterButtonClass;                             // 0x0588(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UTextBlock*                             TeleporterName;                                    // 0x0590(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_598[0x18];                                     // 0x0598(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<struct FCrMassEntityReplicationHelper, class UCrUW_TeleporterButton*> Buttons;              // 0x05B0(0x0050)(ExportObject, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_600[0x18];                                     // 0x0600(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void NativeOnTeleporterAdded(const struct FCrMassEntityReplicationHelper& InEntity);
+	void NativeOnTeleporterChanged(const struct FCrMassEntityReplicationHelper& InEntity);
+	void NativeOnTeleporterRemoved(const struct FCrMassEntityReplicationHelper& InEntity);
+	void OnButtonInitialised(class UCrUW_TeleporterButton* InButton);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrUW_TeleporterMenu")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrUW_TeleporterMenu")
+	}
+	static class UCrUW_TeleporterMenu* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrUW_TeleporterMenu>();
+	}
+};
+DUMPER7_ASSERTS_UCrUW_TeleporterMenu;
 
 // Class ChimeraUI.CrUW_TeleporterButton
 // 0x0038 (0x03D8 - 0x03A0)
@@ -11503,38 +11492,6 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_TeleporterButton;
 
-// Class ChimeraUI.CrUW_TeleportersList
-// 0x0038 (0x0608 - 0x05D0)
-class UCrUW_TeleportersList final : public UCrUW_ActivatableWidget
-{
-public:
-	class UScrollBox*                             TeleportersBox;                                    // 0x05D0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TSubclassOf<class UCrUW_SenderReceiver>       TeleporterClass;                                   // 0x05D8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TSubclassOf<class UCrUW_TeleporterMapArea>    TeleporterMapClass;                                // 0x05E0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UCrUW_TeleporterMapArea*                TeleporterMapAreaWidget;                           // 0x05E8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_5F0[0x18];                                     // 0x05F0(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void HandleOnTeleportClicked(const struct FCrMassEntityReplicationHelper& InEntity, int32 InIndex);
-	void HandleOnTeleporterAdded(const struct FCrMassEntityReplicationHelper& InEntity);
-	void HandleOnTeleporterRemoved(const struct FCrMassEntityReplicationHelper& InEntity);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrUW_TeleportersList")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrUW_TeleportersList")
-	}
-	static class UCrUW_TeleportersList* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrUW_TeleportersList>();
-	}
-};
-DUMPER7_ASSERTS_UCrUW_TeleportersList;
-
 // Class ChimeraUI.CrUW_TemperatureHud
 // 0x0000 (0x03F0 - 0x03F0)
 class UCrUW_TemperatureHud final : public UCrUW_ParamBarHud
@@ -11554,6 +11511,83 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCrUW_TemperatureHud;
+
+// Class ChimeraUI.CrUW_ToolPanelHud
+// 0x01A0 (0x0540 - 0x03A0)
+class UCrUW_ToolPanelHud final : public UUserWidget
+{
+public:
+	class UOverlay*                               Frame;                                             // 0x03A0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UOverlay*                               ToolsSlider;                                       // 0x03A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UImage*                                 ToolImage1;                                        // 0x03B0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UImage*                                 ToolImage2;                                        // 0x03B8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UProgressBar*                           MedToolCooldownProgressBar;                        // 0x03C0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UTextBlock*                             MedToolCooldownText;                               // 0x03C8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UOverlay*                               MedToolButton;                                     // 0x03D0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UOverlay*                               WeaponPanel;                                       // 0x03D8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UHorizontalBox*                         BuildingToolPanel;                                 // 0x03E0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UVerticalBox*                           ConstructionButtons;                               // 0x03E8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UHorizontalBox*                         DeconstructionButtons;                             // 0x03F0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UVerticalBox*                           HealingButtons;                                    // 0x03F8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UVerticalBox*                           GrenadeButtons;                                    // 0x0400(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UVerticalBox*                           HarvesterButtons;                                  // 0x0408(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UVerticalBox*                           WeaponButtons;                                     // 0x0410(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UVerticalBox*                           ZiplineButtons;                                    // 0x0418(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UTextBlock*                             BasicAmount;                                       // 0x0420(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UTextBlock*                             StandardAmount;                                    // 0x0428(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UTextBlock*                             MeteorcoreAmount;                                  // 0x0430(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UWidget*                                SwapButton;                                        // 0x0438(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UTextBlock*                             SwapButtonText;                                    // 0x0440(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UWidget*                                HeightButton;                                      // 0x0448(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UWidget*                                HeightButtonSpacer;                                // 0x0450(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UWidget*                                RotateButton;                                      // 0x0458(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UWidget*                                RotateButtonSpacer;                                // 0x0460(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UWidget*                                MultipleButton;                                    // 0x0468(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UWidget*                                MultipleButtonSpacer;                              // 0x0470(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UProgressBar*                           GrenadeCooldownProgressBar;                        // 0x0478(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UTextBlock*                             GrenadeCooldownText;                               // 0x0480(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UOverlay*                               GrenadeButton;                                     // 0x0488(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UHorizontalBox*                         HorizontalBoxHolster;                              // 0x0490(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UTextBlock*                             CurrentAmmoText;                                   // 0x0498(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UTextBlock*                             MaxAmmoText;                                       // 0x04A0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UHorizontalBox*                         AmmoCountContainer;                                // 0x04A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UImage*                                 InfinityAmmoIcon;                                  // 0x04B0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	struct FSlateColor                            AmmoTextColor;                                     // 0x04B8(0x0014)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FSlateColor                            NoAmmoTextColor;                                   // 0x04CC(0x0014)(Edit, Protected, NativeAccessSpecifierProtected)
+	class FText                                   SwapFoundationText;                                // 0x04E0(0x0010)(Edit, Protected, NativeAccessSpecifierProtected)
+	class FText                                   ChangeDirectionText;                               // 0x04F0(0x0010)(Edit, Protected, NativeAccessSpecifierProtected)
+	float                                         FrameMoveSpeed;                                    // 0x0500(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_504[0x4];                                      // 0x0504(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class ACrPlayerControllerBase*                CrPC;                                              // 0x0508(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrInventoryComponent*                  Inventory;                                         // 0x0510(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrWeaponItemDataBase*                  CurrentToolData;                                   // 0x0518(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrWeaponItemDataBase*                  WantedToolData;                                    // 0x0520(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_528[0x18];                                     // 0x0528(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void Init();
+	void OnItemPostEquip();
+	void OnPossess(class APawn* InPawn);
+	void RefreshLines();
+	void SetLeftLineSize(ECrToolPanelState State);
+	void ShiftAnimationFnished();
+	void TriggerShiftWeaponAnimation();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrUW_ToolPanelHud")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrUW_ToolPanelHud")
+	}
+	static class UCrUW_ToolPanelHud* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrUW_ToolPanelHud>();
+	}
+};
+DUMPER7_ASSERTS_UCrUW_ToolPanelHud;
 
 // Class ChimeraUI.CrUW_TooltipPrompt
 // 0x0000 (0x03A0 - 0x03A0)
@@ -11600,30 +11634,6 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_ToxicityHud;
 
-// Class ChimeraUI.CrTriggerHudData
-// 0x00A0 (0x00D0 - 0x0030)
-class UCrTriggerHudData final : public UDataAsset
-{
-public:
-	TMap<ECrInteractionType, class FText>         InteractionTypeTextMap;                            // 0x0030(0x0050)(Edit, NativeAccessSpecifierPrivate)
-	TMap<ECrInteractionIconType, struct FSlateBrush> InteractionIconMap;                             // 0x0080(0x0050)(Edit, NativeAccessSpecifierPrivate)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrTriggerHudData")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrTriggerHudData")
-	}
-	static class UCrTriggerHudData* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrTriggerHudData>();
-	}
-};
-DUMPER7_ASSERTS_UCrTriggerHudData;
-
 // Class ChimeraUI.CrUW_TriggerHud
 // 0x01B0 (0x0550 - 0x03A0)
 class UCrUW_TriggerHud final : public UUserWidget
@@ -11664,6 +11674,51 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCrUW_TriggerHud;
+
+// Class ChimeraUI.CrUW_UpgradeBuildingWidget
+// 0x00F8 (0x04C0 - 0x03C8)
+class UCrUW_UpgradeBuildingWidget final : public UCommonUserWidget
+{
+public:
+	class UHorizontalBox*                         RewardsBox;                                        // 0x03C8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrUW_ActionButton*                     ResearchButton;                                    // 0x03D0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UImage*                                 BuildingIcon;                                      // 0x03D8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCommonTextBlock*                       BuildingName;                                      // 0x03E0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCommonTextBlock*                       ReachLevelText;                                    // 0x03E8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UImage*                                 CorpoImage;                                        // 0x03F0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UImage*                                 UnclaimedIcon;                                     // 0x03F8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TSubclassOf<class UCrUW_UpgradeStationRecipe> RecipeClass;                                       // 0x0400(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UCrUIAudioData*                         DA_SoundsTable;                                    // 0x0408(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrCorporationData*                     CorpoData;                                         // 0x0410(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrBuildingUpgradeRecipeData*           UpgradeData;                                       // 0x0418(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_420[0xA0];                                     // 0x0420(0x00A0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void ClaimButtonClicked();
+	void ClaimButtonHovered();
+	void HandleOnTaskUpgradeTaskCompleted(const struct FCrBuildingUpgradeTask& InTask);
+	void PlayClickSound();
+	void RequiredLevelReached(bool bReached);
+	void SetColors(const class UCrCommonUIColorsDevSettings* Settings);
+	void SetLevel(int32 InLevel);
+	void SetLevelButtonFocus(bool bFocused);
+	void SetRewardClaimed();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrUW_UpgradeBuildingWidget")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrUW_UpgradeBuildingWidget")
+	}
+	static class UCrUW_UpgradeBuildingWidget* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrUW_UpgradeBuildingWidget>();
+	}
+};
+DUMPER7_ASSERTS_UCrUW_UpgradeBuildingWidget;
 
 // Class ChimeraUI.CrUW_UpgradeStation
 // 0x00E0 (0x06B0 - 0x05D0)
@@ -11712,32 +11767,6 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_UpgradeStation;
 
-// Class ChimeraUI.CrUW_UpgradeStationPanel
-// 0x0020 (0x05F0 - 0x05D0)
-class UCrUW_UpgradeStationPanel final : public UCrUW_ActivatableWidget
-{
-public:
-	class UCrUW_UpgradeStation*                   UpgradeStation;                                    // 0x05D0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrUW_ResearchTerminalInfo*             UpgradeStationInfo;                                // 0x05D8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrUIAudioData*                         DA_SoundsTable;                                    // 0x05E0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class AActor*                                 InteractedBuilding;                                // 0x05E8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrUW_UpgradeStationPanel")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrUW_UpgradeStationPanel")
-	}
-	static class UCrUW_UpgradeStationPanel* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrUW_UpgradeStationPanel>();
-	}
-};
-DUMPER7_ASSERTS_UCrUW_UpgradeStationPanel;
-
 // Class ChimeraUI.CrUW_UpgradeStationRecipe
 // 0x0080 (0x0448 - 0x03C8)
 class UCrUW_UpgradeStationRecipe final : public UCommonUserWidget
@@ -11777,6 +11806,36 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_UpgradeStationRecipe;
 
+// Class ChimeraUI.CrUW_UpgradeStationTask
+// 0x0018 (0x03B8 - 0x03A0)
+class UCrUW_UpgradeStationTask final : public UUserWidget
+{
+public:
+	class URichTextBlock*                         EntryText;                                         // 0x03A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_3A8[0x10];                                     // 0x03A8(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnCompleted();
+	void OnTaskCompleted(const struct FCrBuildingUpgradeTask& InTask);
+	void OnTaskUpdated(const struct FCrBuildingUpgradeTask& InTask);
+	void OnUpdated();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrUW_UpgradeStationTask")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrUW_UpgradeStationTask")
+	}
+	static class UCrUW_UpgradeStationTask* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrUW_UpgradeStationTask>();
+	}
+};
+DUMPER7_ASSERTS_UCrUW_UpgradeStationTask;
+
 // Class ChimeraUI.CrUW_WaveTimeCounter
 // 0x0038 (0x03D8 - 0x03A0)
 class UCrUW_WaveTimeCounter final : public UUserWidget
@@ -11811,43 +11870,6 @@ public:
 };
 DUMPER7_ASSERTS_UCrUW_WaveTimeCounter;
 
-// Class ChimeraUI.CrUW_WeaponSlot
-// 0x0238 (0x0600 - 0x03C8)
-class UCrUW_WeaponSlot final : public UCommonUserWidget
-{
-public:
-	struct FGameplayTag                           DataTag;                                           // 0x03C8(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMenuAnchor*                            TooltipAnchor;                                     // 0x03D0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	struct FAuItemEntry                           ItemEntry;                                         // 0x03D8(0x01D8)(BlueprintVisible, BlueprintReadOnly, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	TSubclassOf<class UObject>                    ToolTipClass;                                      // 0x05B0(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	float                                         TooltipDelayTime;                                  // 0x05B8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_5BC[0x4];                                      // 0x05BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   LockedTitle;                                       // 0x05C0(0x0010)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	class FText                                   LockedDescription;                                 // 0x05D0(0x0010)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_5E0[0x20];                                     // 0x05E0(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	class UUserWidget* GetTooltip();
-	void SetEmptySlot();
-	void SetIcon(const struct FSlateBrush& InBrush);
-	void SetLockedView();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrUW_WeaponSlot")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrUW_WeaponSlot")
-	}
-	static class UCrUW_WeaponSlot* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrUW_WeaponSlot>();
-	}
-};
-DUMPER7_ASSERTS_UCrUW_WeaponSlot;
-
 // Class ChimeraUI.CrUW_WeaponsToolsTab
 // 0x0028 (0x05F8 - 0x05D0)
 class UCrUW_WeaponsToolsTab final : public UCrUW_ActivatableWidget
@@ -11877,6 +11899,33 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCrUW_WeaponsToolsTab;
+
+// Class ChimeraUI.CrUW_WeaponTooltip
+// 0x0008 (0x03A8 - 0x03A0)
+class UCrUW_WeaponTooltip final : public UUserWidget
+{
+public:
+	class URichTextBlock*                         ItemDescription;                                   // 0x03A0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+
+public:
+	void SetItemInfo(const class FText& InName, const class FText& InDescription);
+	void SetItemName(const class FText& InText);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrUW_WeaponTooltip")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrUW_WeaponTooltip")
+	}
+	static class UCrUW_WeaponTooltip* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrUW_WeaponTooltip>();
+	}
+};
+DUMPER7_ASSERTS_UCrUW_WeaponTooltip;
 
 // Class ChimeraUI.CrWeaponWheel
 // 0x00E0 (0x0618 - 0x0538)
@@ -11922,46 +11971,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCrWeaponWheel;
-
-// Class ChimeraUI.CrWeaponWheelSlot
-// 0x03E0 (0x0780 - 0x03A0)
-class UCrWeaponWheelSlot final : public UUserWidget
-{
-public:
-	bool                                          bIsLocked;                                         // 0x03A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bOverrideBrush;                                    // 0x03A1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_3A2[0xE];                                      // 0x03A2(0x000E)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            SlotImageBrush;                                    // 0x03B0(0x00B0)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FSlateBrush                            SlotLockedImageBrush;                              // 0x0460(0x00B0)(Edit, Protected, NativeAccessSpecifierProtected)
-	EWeaponWheelSlotInfoType                      SlotInfoType;                                      // 0x0510(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_511[0x3];                                      // 0x0511(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTag                           DataTag;                                           // 0x0514(0x0008)(Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FSlateColor                            AmmoTxtColor;                                      // 0x051C(0x0014)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FSlateColor                            NoAmmoTxtColor;                                    // 0x0530(0x0014)(Edit, Protected, NativeAccessSpecifierProtected)
-	float                                         IconYSize;                                         // 0x0544(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UImage*                                 SlotImage;                                         // 0x0548(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UWidgetSwitcher*                        SlotIcon;                                          // 0x0550(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UWidgetSwitcher*                        AmmoInfo;                                          // 0x0558(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UTextBlock*                             TxtAmmo;                                           // 0x0560(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class ACrPlayerControllerBase*                PlayerContoller;                                   // 0x0568(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrWeaponComponent*                     WeaponComponent;                                   // 0x0570(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_578[0x208];                                    // 0x0578(0x0208)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrWeaponWheelSlot")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrWeaponWheelSlot")
-	}
-	static class UCrWeaponWheelSlot* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrWeaponWheelSlot>();
-	}
-};
-DUMPER7_ASSERTS_UCrWeaponWheelSlot;
 
 // Class ChimeraUI.Cr_UW_InventoryToolTip
 // 0x0108 (0x04A8 - 0x03A0)
@@ -12017,6 +12026,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCr_UW_InventoryToolTip;
+
+// Class ChimeraUI.RecipeGridPanel
+// 0x0038 (0x0210 - 0x01D8)
+class URecipeGridPanel final : public UGridPanel
+{
+public:
+	uint8                                         Pad_1D8[0x38];                                     // 0x01D8(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("RecipeGridPanel")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"RecipeGridPanel")
+	}
+	static class URecipeGridPanel* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<URecipeGridPanel>();
+	}
+};
+DUMPER7_ASSERTS_URecipeGridPanel;
 
 // Class ChimeraUI.SurvivalStatsData
 // 0x0010 (0x0040 - 0x0030)
@@ -12469,38 +12501,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCrUW_SettingScreen;
-
-// Class ChimeraUI.CrUW_SettingsListEntrySetting_KeyboardInput
-// 0x0048 (0x0458 - 0x0410)
-class UCrUW_SettingsListEntrySetting_KeyboardInput final : public UGameSettingListEntry_Setting
-{
-public:
-	struct FKey                                   OriginalKeyToBind;                                 // 0x0410(0x0018)(Transient, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UCrUW_ButtonBase*                       Button_PrimaryKey;                                 // 0x0428(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrUW_ButtonBase*                       Button_SecondaryKey;                               // 0x0430(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UButton*                                Button_Clear;                                      // 0x0438(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrSettingKeyboardInput*                KeyboardInputSetting;                              // 0x0440(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TSubclassOf<class UGameSettingPressAnyKey>    PressAnyKeyPanelClass;                             // 0x0448(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TSubclassOf<class UKeyAlreadyBoundWarning>    KeyAlreadyBoundWarningPanelClass;                  // 0x0450(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-
-public:
-	void HandleClearClicked();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrUW_SettingsListEntrySetting_KeyboardInput")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrUW_SettingsListEntrySetting_KeyboardInput")
-	}
-	static class UCrUW_SettingsListEntrySetting_KeyboardInput* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrUW_SettingsListEntrySetting_KeyboardInput>();
-	}
-};
-DUMPER7_ASSERTS_UCrUW_SettingsListEntrySetting_KeyboardInput;
 
 // Class ChimeraUI.CrUW_BrightnessEditor
 // 0x0058 (0x0590 - 0x0538)

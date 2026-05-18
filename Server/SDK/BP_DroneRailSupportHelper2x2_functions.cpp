@@ -16,21 +16,35 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_DroneRailSupportHelper2x2.BP_DroneRailSupportHelper2x2_C.ExecuteUbergraph_BP_DroneRailSupportHelper2x2
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_DroneRailSupportHelper2x2.BP_DroneRailSupportHelper2x2_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_DroneRailSupportHelper2x2_C::ExecuteUbergraph_BP_DroneRailSupportHelper2x2(int32 EntryPoint)
+void ABP_DroneRailSupportHelper2x2_C::UserConstructionScript()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneRailSupportHelper2x2_C", "ExecuteUbergraph_BP_DroneRailSupportHelper2x2");
+		Func = Class->GetFunction("BP_DroneRailSupportHelper2x2_C", "UserConstructionScript");
 
-	Params::BP_DroneRailSupportHelper2x2_C_ExecuteUbergraph_BP_DroneRailSupportHelper2x2 Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
+
+// Function BP_DroneRailSupportHelper2x2.BP_DroneRailSupportHelper2x2_C.SetMeshColor
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_DroneRailSupportHelper2x2_C::SetMeshColor(const struct FLinearColor& Color)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_DroneRailSupportHelper2x2_C", "SetMeshColor");
+
+	Params::BP_DroneRailSupportHelper2x2_C_SetMeshColor Parms{};
+
+	Parms.Color = std::move(Color);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -56,37 +70,23 @@ void ABP_DroneRailSupportHelper2x2_C::OnFoundationSetUp(const TArray<struct FTra
 }
 
 
-// Function BP_DroneRailSupportHelper2x2.BP_DroneRailSupportHelper2x2_C.SetMeshColor
-// (Event, Public, BlueprintEvent)
+// Function BP_DroneRailSupportHelper2x2.BP_DroneRailSupportHelper2x2_C.ExecuteUbergraph_BP_DroneRailSupportHelper2x2
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_DroneRailSupportHelper2x2_C::SetMeshColor(const struct FLinearColor& Color)
+void ABP_DroneRailSupportHelper2x2_C::ExecuteUbergraph_BP_DroneRailSupportHelper2x2(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneRailSupportHelper2x2_C", "SetMeshColor");
+		Func = Class->GetFunction("BP_DroneRailSupportHelper2x2_C", "ExecuteUbergraph_BP_DroneRailSupportHelper2x2");
 
-	Params::BP_DroneRailSupportHelper2x2_C_SetMeshColor Parms{};
+	Params::BP_DroneRailSupportHelper2x2_C_ExecuteUbergraph_BP_DroneRailSupportHelper2x2 Parms{};
 
-	Parms.Color = std::move(Color);
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_DroneRailSupportHelper2x2.BP_DroneRailSupportHelper2x2_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_DroneRailSupportHelper2x2_C::UserConstructionScript()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneRailSupportHelper2x2_C", "UserConstructionScript");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 

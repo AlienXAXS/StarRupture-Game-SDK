@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Chimera_classes.hpp"
-#include "ABP_Item_MiningTool_structs.hpp"
 #include "Engine_structs.hpp"
+#include "ABP_Item_MiningTool_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 #include "CoreUObject_structs.hpp"
 

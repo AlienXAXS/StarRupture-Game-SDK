@@ -35,13 +35,13 @@ public:
 	class AFS_Explosion_C*                        FSExplosion;                                       // 0x0940(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_BP_MediumMeteOre(int32 EntryPoint);
-	void OnBeginPlayDepletedStateStarted();
-	void OnResourceDepletedCosmeticsStart();
-	void ReceiveBeginPlay();
-	void Timeline__FinishedFunc();
-	void Timeline__UpdateFunc();
 	void TurnOffWalkableCollision();
+	void Timeline__UpdateFunc();
+	void Timeline__FinishedFunc();
+	void ReceiveBeginPlay();
+	void OnResourceDepletedCosmeticsStart();
+	void OnBeginPlayDepletedStateStarted();
+	void ExecuteUbergraph_BP_MediumMeteOre(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

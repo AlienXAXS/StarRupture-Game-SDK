@@ -49,6 +49,13 @@ enum class EMetaSoundBuilderResult : uint8
 	EMetaSoundBuilderResult_MAX              = 2,
 };
 
+// ScriptStruct MetasoundEngine.MetaSoundBuilderNodeOutputHandle
+// 0x0000 (0x0020 - 0x0020)
+struct FMetaSoundBuilderNodeOutputHandle final : public FMetasoundFrontendVertexHandle
+{
+};
+DUMPER7_ASSERTS_FMetaSoundBuilderNodeOutputHandle;
+
 // ScriptStruct MetasoundEngine.MetaSoundOutput
 // 0x0008 (0x0010 - 0x0008)
 struct alignas(0x08) FMetaSoundOutput final : public FSoundGeneratorOutput
@@ -115,13 +122,6 @@ struct FMetaSoundBuilderNodeInputHandle final : public FMetasoundFrontendVertexH
 {
 };
 DUMPER7_ASSERTS_FMetaSoundBuilderNodeInputHandle;
-
-// ScriptStruct MetasoundEngine.MetaSoundBuilderNodeOutputHandle
-// 0x0000 (0x0020 - 0x0020)
-struct FMetaSoundBuilderNodeOutputHandle final : public FMetasoundFrontendVertexHandle
-{
-};
-DUMPER7_ASSERTS_FMetaSoundBuilderNodeOutputHandle;
 
 // ScriptStruct MetasoundEngine.MetaSoundNodeHandle
 // 0x0010 (0x0010 - 0x0000)

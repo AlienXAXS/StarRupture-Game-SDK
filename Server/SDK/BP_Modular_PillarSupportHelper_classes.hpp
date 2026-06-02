@@ -16,11 +16,11 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Modular_PillarSupportHelper.BP_Modular_PillarSupportHelper_C
-// 0x0010 (0x09B0 - 0x09A0)
+// 0x0010 (0x09C0 - 0x09B0)
 class ABP_Modular_PillarSupportHelper_C final : public ABP_PlacementHelperReplicatedCustom_C
 {
 public:
-	class UStaticMeshComponent*                   PillarConnector;                                   // 0x09A0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   PillarConnector;                                   // 0x09B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

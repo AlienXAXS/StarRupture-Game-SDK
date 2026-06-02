@@ -523,18 +523,22 @@ public:
 };
 DUMPER7_ASSERTS_FCrTabDescriptor;
 
-// ScriptStruct ChimeraUI.CrCorporationContentForUI
-// 0x00D0 (0x00D0 - 0x0000)
-struct FCrCorporationContentForUI final
+// ScriptStruct ChimeraUI.CrMarkerFilterApperance
+// 0x0120 (0x0120 - 0x0000)
+struct FCrMarkerFilterApperance final
 {
 public:
-	struct FSlateBrush                            CorporationIcon;                                   // 0x0000(0x00B0)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	class FText                                   CorporationName;                                   // 0x00B0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	int32                                         NextLevel;                                         // 0x00C0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LevelProgress;                                     // 0x00C4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C8[0x8];                                       // 0x00C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	ECrMapMenuMarkerFilter                        Filter;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TSet<ECrMapMenuMarkerFilter>                  SubFilters;                                        // 0x0008(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	bool                                          PlayerAvailable;                                   // 0x0058(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          RightShift;                                        // 0x0059(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          TopSpace;                                          // 0x005A(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5B[0x5];                                       // 0x005B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   FilterName;                                        // 0x0060(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            FilterIcon;                                        // 0x0070(0x00B0)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrCorporationContentForUI;
+DUMPER7_ASSERTS_FCrMarkerFilterApperance;
 
 // ScriptStruct ChimeraUI.CrWidgetData
 // 0x0058 (0x0058 - 0x0000)
@@ -559,22 +563,18 @@ public:
 };
 DUMPER7_ASSERTS_FCrCraftingRecipeContentForUI;
 
-// ScriptStruct ChimeraUI.CrMarkerFilterApperance
-// 0x0120 (0x0120 - 0x0000)
-struct FCrMarkerFilterApperance final
+// ScriptStruct ChimeraUI.CrCorporationContentForUI
+// 0x00D0 (0x00D0 - 0x0000)
+struct FCrCorporationContentForUI final
 {
 public:
-	ECrMapMenuMarkerFilter                        Filter;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TSet<ECrMapMenuMarkerFilter>                  SubFilters;                                        // 0x0008(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	bool                                          PlayerAvailable;                                   // 0x0058(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          RightShift;                                        // 0x0059(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          TopSpace;                                          // 0x005A(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5B[0x5];                                       // 0x005B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   FilterName;                                        // 0x0060(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            FilterIcon;                                        // 0x0070(0x00B0)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            CorporationIcon;                                   // 0x0000(0x00B0)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	class FText                                   CorporationName;                                   // 0x00B0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	int32                                         NextLevel;                                         // 0x00C0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LevelProgress;                                     // 0x00C4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C8[0x8];                                       // 0x00C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrMarkerFilterApperance;
+DUMPER7_ASSERTS_FCrCorporationContentForUI;
 
 // ScriptStruct ChimeraUI.CrTerrainSegmentData
 // 0x0170 (0x0170 - 0x0000)

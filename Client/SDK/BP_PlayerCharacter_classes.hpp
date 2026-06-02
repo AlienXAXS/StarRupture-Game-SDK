@@ -10,15 +10,15 @@
 
 #include "Basic.hpp"
 
-#include "CommonInput_structs.hpp"
-#include "AuCamera_structs.hpp"
-#include "GameplayAbilities_structs.hpp"
-#include "BS_WeaponFOV_structs.hpp"
 #include "Chimera_structs.hpp"
 #include "Chimera_classes.hpp"
 #include "Engine_structs.hpp"
-#include "GameplayTags_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "BS_WeaponFOV_structs.hpp"
+#include "GameplayTags_structs.hpp"
+#include "CommonInput_structs.hpp"
+#include "AuCamera_structs.hpp"
+#include "GameplayAbilities_structs.hpp"
 #include "AuActorPlacement_structs.hpp"
 #include "EPlayerState_structs.hpp"
 
@@ -26,7 +26,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_PlayerCharacter.BP_PlayerCharacter_C
-// 0x03E0 (0x1930 - 0x1550)
+// 0x03F0 (0x1940 - 0x1550)
 class ABP_PlayerCharacter_C final : public ACrCharacterPlayerBase
 {
 public:
@@ -113,6 +113,7 @@ public:
 	bool                                          CurrentDialogueIsLocal;                            // 0x1900(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_1901[0x7];                                     // 0x1901(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftObjectPtr<class UDialogueWave>           CurrentDialogueWaveLoadingInProgress;              // 0x1908(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	bool                                          CurrentDialogueIsSilent;                           // 0x1930(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	bool BlockEnergyLoweringDuringSprint();

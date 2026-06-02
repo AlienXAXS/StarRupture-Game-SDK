@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "MassEntity_structs.hpp"
@@ -17,7 +18,6 @@
 #include "MassLOD_classes.hpp"
 #include "Chimera_structs.hpp"
 #include "Chimera_classes.hpp"
-#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "AIModule_structs.hpp"
 #include "AIModule_classes.hpp"
 #include "CoreUObject_structs.hpp"

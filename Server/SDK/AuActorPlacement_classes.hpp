@@ -473,8 +473,7 @@ DUMPER7_ASSERTS_UAuActorPlacingConditionsData;
 
 // Class AuActorPlacement.AuAPHelperActor
 // 0x05E8 (0x0890 - 0x02A8)
-#pragma pack(push, 0x1)
-class SDK_ALIGN(0x10) AAuAPHelperActor : public AActor
+class AAuAPHelperActor : public AActor
 {
 public:
 	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -554,9 +553,9 @@ public:
 	class UAuActorPlacementData*                  WaitingForBuildingData;                            // 0x07A8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	uint8                                         Pad_7B0[0x30];                                     // 0x07B0(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         StabilityStrength;                                 // 0x07E0(0x0004)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_7E4[0x44];                                     // 0x07E4(0x0044)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FString, class UActorComponent*>   AllComponentsByName;                               // 0x0828(0x0050)(ExportObject, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
-	TArray<class UStaticMeshComponent*>           EnabledStaticMeshComponent;                        // 0x0878(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_7E4[0x4C];                                     // 0x07E4(0x004C)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FString, class UActorComponent*>   AllComponentsByName;                               // 0x0830(0x0050)(ExportObject, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	TArray<class UStaticMeshComponent*>           EnabledStaticMeshComponent;                        // 0x0880(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
 
 public:
 	struct FVector GetMouseLocation();
@@ -603,18 +602,18 @@ public:
 		return GetDefaultObjImpl<AAuAPHelperActor>();
 	}
 };
-#pragma pack(pop)
 DUMPER7_ASSERTS_AAuAPHelperActor;
 
 // Class AuActorPlacement.AuAPHelperActorMultiConfirm
-// 0x0060 (0x08F0 - 0x0890)
-class AAuAPHelperActorMultiConfirm : public AAuAPHelperActor
+// 0x0070 (0x0900 - 0x0890)
+#pragma pack(push, 0x1)
+class SDK_ALIGN(0x10) AAuAPHelperActorMultiConfirm : public AAuAPHelperActor
 {
 public:
-	TArray<struct FAuAPConfirmPointData>          ConfirmedPoints;                                   // 0x0888(0x0010)(Net, ZeroConstructor, RepNotify, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	struct FVector                                RelativeMouseLocation;                             // 0x0898(0x0018)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FActorInstanceHandle                   StartActor;                                        // 0x08B0(0x0020)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FActorInstanceHandle                   EndActor;                                          // 0x08D0(0x0020)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TArray<struct FAuAPConfirmPointData>          ConfirmedPoints;                                   // 0x0890(0x0010)(Net, ZeroConstructor, RepNotify, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	struct FVector                                RelativeMouseLocation;                             // 0x08A0(0x0018)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FActorInstanceHandle                   StartActor;                                        // 0x08B8(0x0020)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FActorInstanceHandle                   EndActor;                                          // 0x08D8(0x0020)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	void OnCancelPoint(int32 PointIndex);
@@ -638,19 +637,19 @@ public:
 		return GetDefaultObjImpl<AAuAPHelperActorMultiConfirm>();
 	}
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_AAuAPHelperActorMultiConfirm;
 
 // Class AuActorPlacement.AuAPHelperActorSpline
-// 0x0070 (0x0960 - 0x08F0)
-#pragma pack(push, 0x1)
-class SDK_ALIGN(0x10) AAuAPHelperActorSpline : public AAuAPHelperActorMultiConfirm
+// 0x0060 (0x0960 - 0x0900)
+class AAuAPHelperActorSpline : public AAuAPHelperActorMultiConfirm
 {
 public:
-	class USplineComponent*                       Spline;                                            // 0x08F0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	struct FVector                                EndPointLocation;                                  // 0x08F8(0x0018)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector                                StartPointTangent;                                 // 0x0910(0x0018)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector                                EndPointTangent;                                   // 0x0928(0x0018)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_940[0x18];                                     // 0x0940(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class USplineComponent*                       Spline;                                            // 0x08F8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	struct FVector                                EndPointLocation;                                  // 0x0900(0x0018)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector                                StartPointTangent;                                 // 0x0918(0x0018)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector                                EndPointTangent;                                   // 0x0930(0x0018)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_948[0x18];                                     // 0x0948(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void OnRep_EndPointAndTangentsLocation();
@@ -672,7 +671,6 @@ public:
 		return GetDefaultObjImpl<AAuAPHelperActorSpline>();
 	}
 };
-#pragma pack(pop)
 DUMPER7_ASSERTS_AAuAPHelperActorSpline;
 
 // Class AuActorPlacement.AuAPMassRepresentationActorManagement

@@ -192,14 +192,16 @@ enum class EPhysicalMaterialSoftCollisionMode : uint8
 	EPhysicalMaterialSoftCollisionMode_MAX   = 3,
 };
 
-// ScriptStruct PhysicsCore.PhysicalMaterialDamageModifier
-// 0x0004 (0x0004 - 0x0000)
-struct FPhysicalMaterialDamageModifier final
+// ScriptStruct PhysicsCore.PhysicalMaterialStrength
+// 0x000C (0x000C - 0x0000)
+struct FPhysicalMaterialStrength final
 {
 public:
-	float                                         DamageThresholdMultiplier;                         // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TensileStrength;                                   // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CompressionStrength;                               // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ShearStrength;                                     // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FPhysicalMaterialDamageModifier;
+DUMPER7_ASSERTS_FPhysicalMaterialStrength;
 
 // ScriptStruct PhysicsCore.BodyInstanceCore
 // 0x000C (0x000C - 0x0000)
@@ -220,15 +222,13 @@ public:
 };
 DUMPER7_ASSERTS_FBodyInstanceCore;
 
-// ScriptStruct PhysicsCore.PhysicalMaterialStrength
-// 0x000C (0x000C - 0x0000)
-struct FPhysicalMaterialStrength final
+// ScriptStruct PhysicsCore.PhysicalMaterialDamageModifier
+// 0x0004 (0x0004 - 0x0000)
+struct FPhysicalMaterialDamageModifier final
 {
 public:
-	float                                         TensileStrength;                                   // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CompressionStrength;                               // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ShearStrength;                                     // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DamageThresholdMultiplier;                         // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FPhysicalMaterialStrength;
+DUMPER7_ASSERTS_FPhysicalMaterialDamageModifier;
 
 SDK_NAMESPACE_END

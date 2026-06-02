@@ -502,25 +502,23 @@ enum class EAITaskPriority : uint8
 	EAITaskPriority_MAX                      = 255,
 };
 
-// ScriptStruct AIModule.AIMoveRequest
-// 0x0050 (0x0050 - 0x0000)
-struct alignas(0x08) FAIMoveRequest final
+// ScriptStruct AIModule.CrowdAvoidanceConfig
+// 0x001C (0x001C - 0x0000)
+struct FCrowdAvoidanceConfig final
 {
 public:
-	TWeakObjectPtr<class AActor>                  GoalActor;                                         // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_8[0x48];                                       // 0x0008(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         VelocityBias;                                      // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DesiredVelocityWeight;                             // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CurrentVelocityWeight;                             // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SideBiasWeight;                                    // 0x000C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ImpactTimeWeight;                                  // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ImpactTimeRange;                                   // 0x0014(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         CustomPatternIdx;                                  // 0x0018(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         AdaptiveDivisions;                                 // 0x0019(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         AdaptiveRings;                                     // 0x001A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         AdaptiveDepth;                                     // 0x001B(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FAIMoveRequest;
-
-// ScriptStruct AIModule.CrowdAvoidanceSamplingPattern
-// 0x0020 (0x0020 - 0x0000)
-struct FCrowdAvoidanceSamplingPattern final
-{
-public:
-	TArray<float>                                 Angles;                                            // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<float>                                 Radii;                                             // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrowdAvoidanceSamplingPattern;
+DUMPER7_ASSERTS_FCrowdAvoidanceConfig;
 
 // ScriptStruct AIModule.AIStimulus
 // 0x0058 (0x0058 - 0x0000)
@@ -553,27 +551,32 @@ public:
 };
 DUMPER7_ASSERTS_FActorPerceptionUpdateInfo;
 
-// ScriptStruct AIModule.IntervalCountdown
-// 0x0008 (0x0008 - 0x0000)
-struct FIntervalCountdown final
+// ScriptStruct AIModule.AIMoveRequest
+// 0x0050 (0x0050 - 0x0000)
+struct alignas(0x08) FAIMoveRequest final
 {
 public:
-	float                                         Interval;                                          // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TWeakObjectPtr<class AActor>                  GoalActor;                                         // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_8[0x48];                                       // 0x0008(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FIntervalCountdown;
+DUMPER7_ASSERTS_FAIMoveRequest;
 
-// ScriptStruct AIModule.EnvQueryRequest
-// 0x0068 (0x0068 - 0x0000)
-struct FEnvQueryRequest final
+// ScriptStruct AIModule.EnvQueryManagerConfig
+// 0x0030 (0x0030 - 0x0000)
+struct FEnvQueryManagerConfig final
 {
 public:
-	class UEnvQuery*                              QueryTemplate;                                     // 0x0000(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UObject*                                Owner;                                             // 0x0008(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UWorld*                                 World;                                             // 0x0010(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_18[0x50];                                      // 0x0018(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         MaxAllowedTestingTime;                             // 0x0000(0x0004)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bTestQueriesUsingBreadth;                          // 0x0004(0x0001)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         QueryCountWarningThreshold;                        // 0x0008(0x0004)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        QueryCountWarningInterval;                         // 0x0010(0x0008)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        ExecutionTimeWarningSeconds;                       // 0x0018(0x0008)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        HandlingResultTimeWarningSeconds;                  // 0x0020(0x0008)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        GenerationTimeWarningSeconds;                      // 0x0028(0x0008)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FEnvQueryRequest;
+DUMPER7_ASSERTS_FEnvQueryManagerConfig;
 
 // ScriptStruct AIModule.SequentialIDBase
 // 0x0004 (0x0004 - 0x0000)
@@ -592,6 +595,16 @@ public:
 	uint32                                        RequestID;                                         // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
 DUMPER7_ASSERTS_FAIRequestID;
+
+// ScriptStruct AIModule.IntervalCountdown
+// 0x0008 (0x0008 - 0x0000)
+struct FIntervalCountdown final
+{
+public:
+	float                                         Interval;                                          // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FIntervalCountdown;
 
 // ScriptStruct AIModule.EnvNamedValue
 // 0x0010 (0x0010 - 0x0000)
@@ -989,22 +1002,17 @@ public:
 };
 DUMPER7_ASSERTS_FAIDataProviderBoolValue;
 
-// ScriptStruct AIModule.EnvQueryManagerConfig
-// 0x0030 (0x0030 - 0x0000)
-struct FEnvQueryManagerConfig final
+// ScriptStruct AIModule.EnvQueryRequest
+// 0x0068 (0x0068 - 0x0000)
+struct FEnvQueryRequest final
 {
 public:
-	float                                         MaxAllowedTestingTime;                             // 0x0000(0x0004)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bTestQueriesUsingBreadth;                          // 0x0004(0x0001)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         QueryCountWarningThreshold;                        // 0x0008(0x0004)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        QueryCountWarningInterval;                         // 0x0010(0x0008)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        ExecutionTimeWarningSeconds;                       // 0x0018(0x0008)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        HandlingResultTimeWarningSeconds;                  // 0x0020(0x0008)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        GenerationTimeWarningSeconds;                      // 0x0028(0x0008)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UEnvQuery*                              QueryTemplate;                                     // 0x0000(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UObject*                                Owner;                                             // 0x0008(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UWorld*                                 World;                                             // 0x0010(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_18[0x50];                                      // 0x0018(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FEnvQueryManagerConfig;
+DUMPER7_ASSERTS_FEnvQueryRequest;
 
 // ScriptStruct AIModule.EnvQueryInstanceCache
 // 0x0188 (0x0188 - 0x0000)
@@ -1016,23 +1024,15 @@ public:
 };
 DUMPER7_ASSERTS_FEnvQueryInstanceCache;
 
-// ScriptStruct AIModule.CrowdAvoidanceConfig
-// 0x001C (0x001C - 0x0000)
-struct FCrowdAvoidanceConfig final
+// ScriptStruct AIModule.CrowdAvoidanceSamplingPattern
+// 0x0020 (0x0020 - 0x0000)
+struct FCrowdAvoidanceSamplingPattern final
 {
 public:
-	float                                         VelocityBias;                                      // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DesiredVelocityWeight;                             // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CurrentVelocityWeight;                             // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SideBiasWeight;                                    // 0x000C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ImpactTimeWeight;                                  // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ImpactTimeRange;                                   // 0x0014(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         CustomPatternIdx;                                  // 0x0018(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         AdaptiveDivisions;                                 // 0x0019(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         AdaptiveRings;                                     // 0x001A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         AdaptiveDepth;                                     // 0x001B(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<float>                                 Angles;                                            // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<float>                                 Radii;                                             // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrowdAvoidanceConfig;
+DUMPER7_ASSERTS_FCrowdAvoidanceSamplingPattern;
 
 // ScriptStruct AIModule.RecastGraphWrapper
 // 0x00B8 (0x00B8 - 0x0000)

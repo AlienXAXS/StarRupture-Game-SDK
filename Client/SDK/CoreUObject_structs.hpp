@@ -2405,14 +2405,14 @@ public:
 };
 DUMPER7_ASSERTS_FTestUndeclaredScriptStructObjectReferencesTest;
 
-// ScriptStruct CoreUObject.FieldCookedMetaDataKey
-// 0x0010 (0x0010 - 0x0000)
-struct FFieldCookedMetaDataKey final
+// ScriptStruct CoreUObject.ObjectCookedMetaDataStore
+// 0x0050 (0x0050 - 0x0000)
+struct FObjectCookedMetaDataStore final
 {
 public:
-	TArray<class FName>                           FieldPath;                                         // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TMap<class FName, class FString>              ObjectMetaData;                                    // 0x0000(0x0050)(NativeAccessSpecifierPrivate)
 };
-DUMPER7_ASSERTS_FFieldCookedMetaDataKey;
+DUMPER7_ASSERTS_FObjectCookedMetaDataStore;
 
 // ScriptStruct CoreUObject.Timecode
 // 0x0018 (0x0018 - 0x0000)
@@ -2549,27 +2549,6 @@ public:
 };
 DUMPER7_ASSERTS_FVector4;
 
-// ScriptStruct CoreUObject.PropertyTextFName
-// 0x0018 (0x0018 - 0x0000)
-struct alignas(0x08) FPropertyTextFName final
-{
-public:
-	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FPropertyTextFName;
-
-// ScriptStruct CoreUObject.Vector4f
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x10) FVector4f final
-{
-public:
-	float                                         X;                                                 // 0x0000(0x0004)(Edit, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Y;                                                 // 0x0004(0x0004)(Edit, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Z;                                                 // 0x0008(0x0004)(Edit, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         W;                                                 // 0x000C(0x0004)(Edit, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FVector4f;
-
 // ScriptStruct CoreUObject.OverriddenPropertyNodeID
 // 0x0010 (0x0010 - 0x0000)
 struct FOverriddenPropertyNodeID final
@@ -2604,6 +2583,27 @@ public:
 	uint8                                         Pad_60[0x8];                                       // 0x0060(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FOverriddenPropertySet;
+
+// ScriptStruct CoreUObject.Vector4f
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x10) FVector4f final
+{
+public:
+	float                                         X;                                                 // 0x0000(0x0004)(Edit, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Y;                                                 // 0x0004(0x0004)(Edit, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Z;                                                 // 0x0008(0x0004)(Edit, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         W;                                                 // 0x000C(0x0004)(Edit, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FVector4f;
+
+// ScriptStruct CoreUObject.PropertyTextFName
+// 0x0018 (0x0018 - 0x0000)
+struct alignas(0x08) FPropertyTextFName final
+{
+public:
+	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FPropertyTextFName;
 
 // ScriptStruct CoreUObject.PropertyTextString
 // 0x0020 (0x0020 - 0x0000)
@@ -2721,14 +2721,14 @@ public:
 };
 DUMPER7_ASSERTS_FConstSharedStruct;
 
-// ScriptStruct CoreUObject.ObjectCookedMetaDataStore
-// 0x0050 (0x0050 - 0x0000)
-struct FObjectCookedMetaDataStore final
+// ScriptStruct CoreUObject.FieldCookedMetaDataKey
+// 0x0010 (0x0010 - 0x0000)
+struct FFieldCookedMetaDataKey final
 {
 public:
-	TMap<class FName, class FString>              ObjectMetaData;                                    // 0x0000(0x0050)(NativeAccessSpecifierPrivate)
+	TArray<class FName>                           FieldPath;                                         // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FObjectCookedMetaDataStore;
+DUMPER7_ASSERTS_FFieldCookedMetaDataKey;
 
 // ScriptStruct CoreUObject.FieldCookedMetaDataValue
 // 0x0050 (0x0050 - 0x0000)

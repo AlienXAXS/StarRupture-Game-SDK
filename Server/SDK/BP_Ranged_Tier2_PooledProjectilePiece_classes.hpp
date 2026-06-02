@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "AuCore_structs.hpp"
 #include "Engine_structs.hpp"
+#include "AuCore_structs.hpp"
 #include "Chimera_classes.hpp"
 
 

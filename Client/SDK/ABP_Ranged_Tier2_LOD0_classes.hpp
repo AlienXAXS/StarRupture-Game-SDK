@@ -11,10 +11,10 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
+#include "ABP_Ranged_Tier2_LOD0_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
 #include "AnimGraphRuntime_structs.hpp"
-#include "ABP_Ranged_Tier2_LOD0_structs.hpp"
 
 
 SDK_NAMESPACE_START

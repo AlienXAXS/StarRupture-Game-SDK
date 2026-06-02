@@ -576,6 +576,18 @@ public:
 };
 DUMPER7_ASSERTS_FGetArrayElementDataflowNode;
 
+// ScriptStruct GeometryCollectionNodes.CollectionToMeshDataflowNode
+// 0x00C0 (0x0348 - 0x0288)
+struct FCollectionToMeshDataflowNode final : public FDataflowNode
+{
+public:
+	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
+	bool                                          bCenterPivot;                                      // 0x0338(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_339[0x7];                                      // 0x0339(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UDynamicMesh*                           Mesh;                                              // 0x0340(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCollectionToMeshDataflowNode;
+
 // ScriptStruct GeometryCollectionNodes.GetNumArrayElementsDataflowNode
 // 0x0048 (0x02D0 - 0x0288)
 struct FGetNumArrayElementsDataflowNode final : public FDataflowNode
@@ -599,17 +611,6 @@ public:
 	struct FDataflowFaceSelection                 FaceSelection;                                     // 0x0298(0x0028)(NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FBoolArrayToFaceSelectionDataflowNode;
-
-// ScriptStruct GeometryCollectionNodes.MeshAppendDataflowNode
-// 0x0018 (0x02A0 - 0x0288)
-struct FMeshAppendDataflowNode final : public FDataflowNode
-{
-public:
-	class UDynamicMesh*                           Mesh1;                                             // 0x0288(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UDynamicMesh*                           Mesh2;                                             // 0x0290(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UDynamicMesh*                           Mesh;                                              // 0x0298(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FMeshAppendDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.FloatArrayToVertexSelectionDataflowNode
 // 0x0040 (0x02C8 - 0x0288)
@@ -637,6 +638,17 @@ public:
 };
 DUMPER7_ASSERTS_FFloatArrayNormalizeDataflowNode;
 
+// ScriptStruct GeometryCollectionNodes.MakeDataflowMeshDataflowNode
+// 0x0020 (0x02A8 - 0x0288)
+struct FMakeDataflowMeshDataflowNode final : public FDataflowNode
+{
+public:
+	class UDynamicMesh*                           InMesh;                                            // 0x0288(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	TArray<class UMaterialInterface*>             InMaterials;                                       // 0x0290(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UDataflowMesh*                          Mesh;                                              // 0x02A0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+};
+DUMPER7_ASSERTS_FMakeDataflowMeshDataflowNode;
+
 // ScriptStruct GeometryCollectionNodes.VectorArrayNormalizeDataflowNode
 // 0x0050 (0x02D8 - 0x0288)
 struct FVectorArrayNormalizeDataflowNode final : public FDataflowNode
@@ -660,19 +672,6 @@ public:
 	TArray<int32>                                 OutArray;                                          // 0x02A8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FUnionIntArraysDataflowNode;
-
-// ScriptStruct GeometryCollectionNodes.SplitMeshIslandsDataflowNode
-// 0x0020 (0x02A8 - 0x0288)
-struct FSplitMeshIslandsDataflowNode final : public FDataflowNode
-{
-public:
-	class UDynamicMesh*                           Mesh;                                              // 0x0288(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	TArray<class UDynamicMesh*>                   Meshes;                                            // 0x0290(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
-	EDataflowMeshSplitIslandsMethod               SplitMethod;                                       // 0x02A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_2A1[0x3];                                      // 0x02A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ConnectVerticesThreshold;                          // 0x02A4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-};
-DUMPER7_ASSERTS_FSplitMeshIslandsDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.RemoveFloatArrayElementDataflowNode
 // 0x0018 (0x02A0 - 0x0288)
@@ -700,6 +699,20 @@ public:
 };
 DUMPER7_ASSERTS_FFloatArrayComputeStatisticsDataflowNode;
 
+// ScriptStruct GeometryCollectionNodes.MeshCopyToPointsDataflowNode
+// 0x0038 (0x02C0 - 0x0288)
+struct FMeshCopyToPointsDataflowNode final : public FDataflowNode
+{
+public:
+	TArray<struct FVector>                        Points;                                            // 0x0288(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	class UDynamicMesh*                           MeshToCopy;                                        // 0x0298(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	float                                         Scale;                                             // 0x02A0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2A4[0x4];                                      // 0x02A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UDynamicMesh*                           Mesh;                                              // 0x02A8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	TArray<class UDynamicMesh*>                   Meshes;                                            // 0x02B0(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FMeshCopyToPointsDataflowNode;
+
 // ScriptStruct GeometryCollectionNodes.RandomizeFloatArrayDataflowNode
 // 0x0020 (0x02A8 - 0x0288)
 struct FRandomizeFloatArrayDataflowNode final : public FDataflowNode
@@ -724,16 +737,6 @@ public:
 };
 DUMPER7_ASSERTS_FDataflowGetArraySizeNode;
 
-// ScriptStruct GeometryCollectionNodes.GetCollectionFromAssetDataflowNode
-// 0x00B8 (0x0340 - 0x0288)
-struct FGetCollectionFromAssetDataflowNode final : public FDataflowNode
-{
-public:
-	class UGeometryCollection*                    CollectionAsset;                                   // 0x0288(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	struct FManagedArrayCollection                Collection;                                        // 0x0290(0x00B0)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGetCollectionFromAssetDataflowNode;
-
 // ScriptStruct GeometryCollectionNodes.DataflowGetArrayElementNode
 // 0x0010 (0x0298 - 0x0288)
 struct FDataflowGetArrayElementNode final : public FDataflowNode
@@ -757,6 +760,21 @@ public:
 };
 DUMPER7_ASSERTS_FDataflowMakeManagedArrayCollectionArrayNode;
 
+// ScriptStruct GeometryCollectionNodes.PrintStringDataflowNode
+// 0x0020 (0x02A8 - 0x0288)
+struct FPrintStringDataflowNode final : public FDataflowNode
+{
+public:
+	bool                                          bPrintToScreen;                                    // 0x0288(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPrintToLog;                                       // 0x0289(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_28A[0x2];                                      // 0x028A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FColor                                 Color;                                             // 0x028C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Duration;                                          // 0x0290(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_294[0x4];                                      // 0x0294(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 String;                                            // 0x0298(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FPrintStringDataflowNode;
+
 // ScriptStruct GeometryCollectionNodes.DataflowRootProxyMesh
 // 0x0070 (0x0070 - 0x0000)
 struct FDataflowRootProxyMesh final
@@ -778,16 +796,6 @@ public:
 	struct FDataflowRootProxyMesh                 RootProxyMesh;                                     // 0x02F0(0x0070)(NoDestructor, NativeAccessSpecifierPrivate)
 };
 DUMPER7_ASSERTS_FMakeRootProxyMeshDataflowNode;
-
-// ScriptStruct GeometryCollectionNodes.BoundingBoxDataflowNode
-// 0x00E8 (0x0370 - 0x0288)
-struct FBoundingBoxDataflowNode final : public FDataflowNode
-{
-public:
-	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
-	struct FBox                                   BoundingBox;                                       // 0x0338(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FBoundingBoxDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.MakeRootProxyMeshArrayDataflowNode
 // 0x0010 (0x0298 - 0x0288)
@@ -821,6 +829,50 @@ public:
 };
 DUMPER7_ASSERTS_FGeometryCollectionTerminalDataflowNode_v2;
 
+// ScriptStruct GeometryCollectionNodes.DataflowSphereCovering
+// 0x0020 (0x0020 - 0x0000)
+struct alignas(0x08) FDataflowSphereCovering final
+{
+public:
+	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FDataflowSphereCovering;
+
+// ScriptStruct GeometryCollectionNodes.GenerateClusterConvexHullsFromChildrenHullsDataflowNode
+// 0x01A0 (0x0428 - 0x0288)
+struct FGenerateClusterConvexHullsFromChildrenHullsDataflowNode final : public FDataflowNode
+{
+public:
+	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPrivate)
+	struct FDataflowSphereCovering                SphereCovering;                                    // 0x0338(0x0020)(NativeAccessSpecifierPrivate)
+	int32                                         ConvexCount;                                       // 0x0358(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_35C[0x4];                                      // 0x035C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        ErrorTolerance;                                    // 0x0360(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bPreferExternalCollisionShapes;                    // 0x0368(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_369[0x7];                                      // 0x0369(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FDataflowTransformSelection            OptionalSelectionFilter;                           // 0x0370(0x0028)(NativeAccessSpecifierPrivate)
+	EConvexHullProximityFilter                    MergeProximityFilter;                              // 0x0398(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_399[0x3];                                      // 0x0399(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         MergeProximityDistanceThreshold;                   // 0x039C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bAllowMergingLeafHulls;                            // 0x03A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bProtectNegativeSpace;                             // 0x03A1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	ENegativeSpaceSampleMethodDataflowEnum        SampleMethod;                                      // 0x03A2(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bRequireSearchSampleCoverage;                      // 0x03A3(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bOnlyConnectedToHull;                              // 0x03A4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_3A5[0x3];                                      // 0x03A5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         TargetNumSamples;                                  // 0x03A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_3AC[0x4];                                      // 0x03AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        MinSampleSpacing;                                  // 0x03B0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	double                                        NegativeSpaceTolerance;                            // 0x03B8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	double                                        MinRadius;                                         // 0x03C0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FDataflowNodeDebugDrawSettings         DebugDrawRenderSettings;                           // 0x03C8(0x0018)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
+	bool                                          bRandomizeColor;                                   // 0x03E0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_3E1[0x3];                                      // 0x03E1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ColorRandomSeed;                                   // 0x03E4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FDataflowNodeSphereCoveringDebugDrawSettings SphereCoveringDebugDrawRenderSettings;       // 0x03E8(0x0040)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
+};
+DUMPER7_ASSERTS_FGenerateClusterConvexHullsFromChildrenHullsDataflowNode;
+
 // ScriptStruct GeometryCollectionNodes.GeometryCollectionTerminalDataflowNode
 // 0x00E0 (0x0368 - 0x0288)
 struct FGeometryCollectionTerminalDataflowNode final : public FDataflowTerminalNode
@@ -841,23 +893,6 @@ public:
 	class UGeometryCollection*                    Asset;                                             // 0x0288(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 };
 DUMPER7_ASSERTS_FGetGeometryCollectionAssetDataflowNode;
-
-// ScriptStruct GeometryCollectionNodes.CopyConvexHullsFromRootDataflowNode
-// 0x0188 (0x0410 - 0x0288)
-struct FCopyConvexHullsFromRootDataflowNode final : public FDataflowNode
-{
-public:
-	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPrivate)
-	struct FManagedArrayCollection                FromCollection;                                    // 0x0338(0x00B0)(NativeAccessSpecifierPrivate)
-	bool                                          bSkipIfEmpty;                                      // 0x03E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_3E9[0x3];                                      // 0x03E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FDataflowNodeDebugDrawSettings         DebugDrawRenderSettings;                           // 0x03EC(0x0018)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
-	bool                                          bRandomizeColor;                                   // 0x0404(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_405[0x3];                                      // 0x0405(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ColorRandomSeed;                                   // 0x0408(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_40C[0x4];                                      // 0x040C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCopyConvexHullsFromRootDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.GetGeometryCollectionSourcesDataflowNode
 // 0x0018 (0x02A0 - 0x0288)
@@ -881,6 +916,15 @@ public:
 	TArray<struct FGeometryCollectionAutoInstanceMesh> InstancedMeshes;                              // 0x0368(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCreateGeometryCollectionFromSourcesDataflowNode;
+
+// ScriptStruct GeometryCollectionNodes.UpdateVolumeAttributesDataflowNode
+// 0x00B0 (0x0338 - 0x0288)
+struct FUpdateVolumeAttributesDataflowNode final : public FDataflowNode
+{
+public:
+	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUpdateVolumeAttributesDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.CreateGeometryCollectionFromSourcesDataflowNode_v2
 // 0x00F0 (0x0378 - 0x0288)
@@ -907,33 +951,6 @@ public:
 	TArray<struct FGeometryCollectionAutoInstanceMesh> InstancedMeshes;                              // 0x0360(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FGeometryCollectionToCollectionDataflowNode;
-
-// ScriptStruct GeometryCollectionNodes.FixTinyGeoDataflowNode
-// 0x00F8 (0x0380 - 0x0288)
-struct FFixTinyGeoDataflowNode final : public FDataflowNode
-{
-public:
-	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x0338(0x0028)(NativeAccessSpecifierPublic)
-	EFixTinyGeoMergeType                          MergeType;                                         // 0x0360(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bOnFractureLevel;                                  // 0x0361(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bOnlyClusters;                                     // 0x0362(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bOnlySameParent;                                   // 0x0363(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bFractureLevelIsAll;                               // 0x0364(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EFixTinyGeoNeighborSelectionMethod            NeighborSelection;                                 // 0x0365(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bOnlyToConnected;                                  // 0x0366(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseCollectionProximityForConnections;             // 0x0367(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EFixTinyGeoUseBoneSelection                   UseBoneSelection;                                  // 0x0368(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EFixTinyGeoGeometrySelectionMethod            SelectionMethod;                                   // 0x0369(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_36A[0x2];                                      // 0x036A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         MinVolumeCubeRoot;                                 // 0x036C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RelativeVolume;                                    // 0x0370(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          AddSamplesForCollision;                            // 0x0374(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_375[0x3];                                      // 0x0375(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CollisionSampleSpacing;                            // 0x0378(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_37C[0x4];                                      // 0x037C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FFixTinyGeoDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.GeometryCollectionToCollectionDataflowNode_v2
 // 0x00E8 (0x0370 - 0x0288)
@@ -962,6 +979,19 @@ public:
 	TArray<struct FGeometryCollectionAutoInstanceMesh> InstancedMeshes;                              // 0x0368(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FBlueprintToCollectionDataflowNode;
+
+// ScriptStruct GeometryCollectionNodes.ResampleGeometryCollectionDataflowNode
+// 0x00E0 (0x0368 - 0x0288)
+struct FResampleGeometryCollectionDataflowNode final : public FDataflowNode
+{
+public:
+	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x0338(0x0028)(NativeAccessSpecifierPublic)
+	bool                                          AddSamplesForCollision;                            // 0x0360(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_361[0x3];                                      // 0x0361(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CollisionSampleSpacing;                            // 0x0364(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FResampleGeometryCollectionDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.BlueprintToCollectionDataflowNode_v2
 // 0x00F0 (0x0378 - 0x0288)
@@ -1000,19 +1030,6 @@ public:
 	uint8                                         Pad_35C[0x4];                                      // 0x035C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FRadialFalloffFieldDataflowNode;
-
-// ScriptStruct GeometryCollectionNodes.GeometryCollectionVertexScalarToVertexIndicesNode
-// 0x00E8 (0x0370 - 0x0288)
-struct FGeometryCollectionVertexScalarToVertexIndicesNode final : public FDataflowNode
-{
-public:
-	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
-	struct FCollectionAttributeKey                AttributeKey;                                      // 0x0338(0x0020)(Edit, NativeAccessSpecifierPublic)
-	float                                         SelectionThreshold;                                // 0x0358(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_35C[0x4];                                      // 0x035C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 VertexIndices;                                     // 0x0360(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGeometryCollectionVertexScalarToVertexIndicesNode;
 
 // ScriptStruct GeometryCollectionNodes.BoxFalloffFieldDataflowNode
 // 0x0148 (0x03D0 - 0x0288)
@@ -1064,6 +1081,20 @@ public:
 };
 DUMPER7_ASSERTS_FPlaneFalloffFieldDataflowNode;
 
+// ScriptStruct GeometryCollectionNodes.SetVertexColorFromFloatArrayDataflowNode
+// 0x00D8 (0x0360 - 0x0288)
+struct FSetVertexColorFromFloatArrayDataflowNode final : public FDataflowNode
+{
+public:
+	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
+	TArray<float>                                 FloatArray;                                        // 0x0338(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          bNormalizeInput;                                   // 0x0348(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_349[0x3];                                      // 0x0349(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           Color;                                             // 0x034C(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_35C[0x4];                                      // 0x035C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSetVertexColorFromFloatArrayDataflowNode;
+
 // ScriptStruct GeometryCollectionNodes.RadialIntMaskFieldDataflowNode
 // 0x00A8 (0x0330 - 0x0288)
 struct FRadialIntMaskFieldDataflowNode final : public FDataflowNode
@@ -1099,17 +1130,6 @@ public:
 	uint8                                         Pad_2EC[0x4];                                      // 0x02EC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FUniformScalarFieldDataflowNode;
-
-// ScriptStruct GeometryCollectionNodes.SetVertexColorFromVertexSelectionDataflowNode
-// 0x00E8 (0x0370 - 0x0288)
-struct FSetVertexColorFromVertexSelectionDataflowNode final : public FDataflowNode
-{
-public:
-	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
-	struct FDataflowVertexSelection               VertexSelection;                                   // 0x0338(0x0028)(NativeAccessSpecifierPublic)
-	struct FLinearColor                           SelectedColor;                                     // 0x0360(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSetVertexColorFromVertexSelectionDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.UniformVectorFieldDataflowNode
 // 0x0080 (0x0308 - 0x0288)
@@ -1358,6 +1378,21 @@ public:
 };
 DUMPER7_ASSERTS_FMaterialInterfaceTextureOverrideDataflowNode;
 
+// ScriptStruct GeometryCollectionNodes.RandomUnitVectorInConeDataflowNode
+// 0x0040 (0x02C8 - 0x0288)
+struct FRandomUnitVectorInConeDataflowNode final : public FDataflowNode
+{
+public:
+	bool                                          bDeterministic;                                    // 0x0288(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_289[0x3];                                      // 0x0289(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         RandomSeed;                                        // 0x028C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ConeDirection;                                     // 0x0290(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ConeHalfAngle;                                     // 0x02A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2AC[0x4];                                      // 0x02AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                ReturnValue;                                       // 0x02B0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRandomUnitVectorInConeDataflowNode;
+
 // ScriptStruct GeometryCollectionNodes.AddMaterialToCollectionDataflowNode
 // 0x0100 (0x0388 - 0x0288)
 struct FAddMaterialToCollectionDataflowNode final : public FDataflowNode
@@ -1390,15 +1425,17 @@ public:
 };
 DUMPER7_ASSERTS_FReAssignMaterialInCollectionDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.DegreesToRadiansDataflowNode
-// 0x0008 (0x0290 - 0x0288)
-struct FDegreesToRadiansDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.ScaleVectorDataflowNode
+// 0x0038 (0x02C0 - 0x0288)
+struct FScaleVectorDataflowNode final : public FDataflowNode
 {
 public:
-	float                                         Degrees;                                           // 0x0288(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Radians;                                           // 0x028C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Vector;                                            // 0x0288(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Scale;                                             // 0x02A0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2A4[0x4];                                      // 0x02A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                ScaledVector;                                      // 0x02A8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FDegreesToRadiansDataflowNode;
+DUMPER7_ASSERTS_FScaleVectorDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.MaterialsInfoDataflowNode
 // 0x0020 (0x02A8 - 0x0288)
@@ -1422,16 +1459,15 @@ public:
 };
 DUMPER7_ASSERTS_FGetMaterialFromMaterialsArrayDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.CrossProductDataflowNode
-// 0x0048 (0x02D0 - 0x0288)
-struct FCrossProductDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.OneMinusDataflowNode
+// 0x0008 (0x0290 - 0x0288)
+struct FOneMinusDataflowNode final : public FDataflowNode
 {
 public:
-	struct FVector                                VectorA;                                           // 0x0288(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                VectorB;                                           // 0x02A0(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ReturnValue;                                       // 0x02B8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         A;                                                 // 0x0288(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x028C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrossProductDataflowNode;
+DUMPER7_ASSERTS_FOneMinusDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.SetMaterialInMaterialsArrayDataflowNode
 // 0x0020 (0x02A8 - 0x0288)
@@ -1456,19 +1492,16 @@ public:
 };
 DUMPER7_ASSERTS_FMakeMaterialDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.MathExpressionDataflowNode
-// 0x0038 (0x02C0 - 0x0288)
-struct FMathExpressionDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.GetCentroidsFromCollectionDataflowNode
+// 0x00E8 (0x0370 - 0x0288)
+struct FGetCentroidsFromCollectionDataflowNode final : public FDataflowNode
 {
 public:
-	struct FDataflowNumericTypes                  A;                                                 // 0x0288(0x0008)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FDataflowNumericTypes                  B;                                                 // 0x0290(0x0008)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FDataflowNumericTypes                  C;                                                 // 0x0298(0x0008)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FDataflowNumericTypes                  D;                                                 // 0x02A0(0x0008)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	class FString                                 Expression;                                        // 0x02A8(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FDataflowNumericTypes                  ReturnValue;                                       // 0x02B8(0x0008)(NoDestructor, NativeAccessSpecifierPublic)
+	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x0338(0x0028)(NativeAccessSpecifierPublic)
+	TArray<struct FVector>                        Centroids;                                         // 0x0360(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FMathExpressionDataflowNode;
+DUMPER7_ASSERTS_FGetCentroidsFromCollectionDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.MakeMaterialsArrayDataflowNode
 // 0x0010 (0x0298 - 0x0288)
@@ -1488,14 +1521,17 @@ public:
 };
 DUMPER7_ASSERTS_FCloseGeometryOnCollectionDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.BakeTransformsInCollectionDataflowNode
-// 0x00B0 (0x0338 - 0x0288)
-struct FBakeTransformsInCollectionDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.MeshProcessorDataflowNodeBase
+// 0x0020 (0x02A8 - 0x0288)
+struct FMeshProcessorDataflowNodeBase : public FDataflowNode
 {
 public:
-	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
+	TSubclassOf<class UDynamicMeshProcessorBlueprint> MeshProcessor;                                 // 0x0288(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UDynamicMeshProcessorBlueprint*         MeshProcessorInstance;                             // 0x0290(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoClear, NoDestructor, Protected, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_298[0x8];                                      // 0x0298(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                OwningObject;                                      // 0x02A0(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 };
-DUMPER7_ASSERTS_FBakeTransformsInCollectionDataflowNode;
+DUMPER7_ASSERTS_FMeshProcessorDataflowNodeBase;
 
 // ScriptStruct GeometryCollectionNodes.SkeletalMeshToCollectionDataflowNode
 // 0x00C0 (0x0348 - 0x0288)
@@ -1519,30 +1555,20 @@ public:
 };
 DUMPER7_ASSERTS_FSkeletonToCollectionDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.MeshProcessorDataflowNodeBase
-// 0x0020 (0x02A8 - 0x0288)
-struct FMeshProcessorDataflowNodeBase : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.RandomFloatInRangeDataflowNode
+// 0x0018 (0x02A0 - 0x0288)
+struct FRandomFloatInRangeDataflowNode final : public FDataflowNode
 {
 public:
-	TSubclassOf<class UDynamicMeshProcessorBlueprint> MeshProcessor;                                 // 0x0288(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UDynamicMeshProcessorBlueprint*         MeshProcessorInstance;                             // 0x0290(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoClear, NoDestructor, Protected, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_298[0x8];                                      // 0x0298(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                OwningObject;                                      // 0x02A0(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	bool                                          bDeterministic;                                    // 0x0288(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_289[0x3];                                      // 0x0289(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         RandomSeed;                                        // 0x028C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Min;                                               // 0x0290(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Max;                                               // 0x0294(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0298(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29C[0x4];                                      // 0x029C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FMeshProcessorDataflowNodeBase;
-
-// ScriptStruct GeometryCollectionNodes.ApplyMeshProcessorToGeometryCollectionDataflowNode
-// 0x00E0 (0x0388 - 0x02A8)
-struct FApplyMeshProcessorToGeometryCollectionDataflowNode final : public FMeshProcessorDataflowNodeBase
-{
-public:
-	struct FManagedArrayCollection                Collection;                                        // 0x02A8(0x00B0)(NativeAccessSpecifierPublic)
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x0358(0x0028)(NativeAccessSpecifierPublic)
-	bool                                          bWeldVertices;                                     // 0x0380(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPreserveIsolatedVertices;                         // 0x0381(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_382[0x6];                                      // 0x0382(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FApplyMeshProcessorToGeometryCollectionDataflowNode;
+DUMPER7_ASSERTS_FRandomFloatInRangeDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.StaticMeshToCollectionDataflowNode_v2
 // 0x0158 (0x03E0 - 0x0288)
@@ -1579,20 +1605,18 @@ public:
 };
 DUMPER7_ASSERTS_FStaticMeshToCollectionDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.RandomUnitVectorInConeDataflowNode
-// 0x0040 (0x02C8 - 0x0288)
-struct FRandomUnitVectorInConeDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.AppendMeshesToCollectionDataflowNode
+// 0x00F0 (0x0378 - 0x0288)
+struct FAppendMeshesToCollectionDataflowNode final : public FDataflowNode
 {
 public:
-	bool                                          bDeterministic;                                    // 0x0288(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_289[0x3];                                      // 0x0289(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         RandomSeed;                                        // 0x028C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ConeDirection;                                     // 0x0290(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ConeHalfAngle;                                     // 0x02A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AC[0x4];                                      // 0x02AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                ReturnValue;                                       // 0x02B0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
+	struct FDataflowTransformSelection            AddedSelection;                                    // 0x0338(0x0028)(NativeAccessSpecifierPublic)
+	TArray<class UDynamicMesh*>                   Meshes;                                            // 0x0360(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	int32                                         ParentIndex;                                       // 0x0370(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_374[0x4];                                      // 0x0374(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FRandomUnitVectorInConeDataflowNode;
+DUMPER7_ASSERTS_FAppendMeshesToCollectionDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.BakeTextureFromCollectionDataflowNode
 // 0x0140 (0x03C8 - 0x0288)
@@ -1633,15 +1657,15 @@ public:
 };
 DUMPER7_ASSERTS_FAddUVChannelDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.MeshInfoDataflowNode
-// 0x0018 (0x02A0 - 0x0288)
-struct FMeshInfoDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.TanDataflowNode
+// 0x0008 (0x0290 - 0x0288)
+struct FTanDataflowNode final : public FDataflowNode
 {
 public:
-	class UDynamicMesh*                           Mesh;                                              // 0x0288(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class FString                                 InfoString;                                        // 0x0290(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         float_0;                                           // 0x0288(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x028C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FMeshInfoDataflowNode;
+DUMPER7_ASSERTS_FTanDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.AutoUnwrapUVDataflowNode
 // 0x00E0 (0x0368 - 0x0288)
@@ -1672,17 +1696,18 @@ public:
 };
 DUMPER7_ASSERTS_FMergeUVIslandsDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.ArcTan2DataflowNode
-// 0x0010 (0x0298 - 0x0288)
-struct FArcTan2DataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionSetOperationDataflowNode
+// 0x0080 (0x0308 - 0x0288)
+struct FCollectionTransformSelectionSetOperationDataflowNode final : public FDataflowNode
 {
 public:
-	float                                         Y;                                                 // 0x0288(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         X;                                                 // 0x028C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x0290(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_294[0x4];                                      // 0x0294(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	ESetOperationEnum                             Operation;                                         // 0x0288(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_289[0x7];                                      // 0x0289(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FDataflowTransformSelection            TransformSelectionA;                               // 0x0290(0x0028)(NativeAccessSpecifierPublic)
+	struct FDataflowTransformSelection            TransformSelectionB;                               // 0x02B8(0x0028)(NativeAccessSpecifierPublic)
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x02E0(0x0028)(NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FArcTan2DataflowNode;
+DUMPER7_ASSERTS_FCollectionTransformSelectionSetOperationDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.BoxProjectUVDataflowNode
 // 0x00E0 (0x0368 - 0x0288)
@@ -1715,15 +1740,19 @@ public:
 };
 DUMPER7_ASSERTS_FCreateColorArrayFromFloatArrayDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionNoneDataflowNode
-// 0x00D8 (0x0360 - 0x0288)
-struct FCollectionTransformSelectionNoneDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.MathExpressionDataflowNode
+// 0x0038 (0x02C0 - 0x0288)
+struct FMathExpressionDataflowNode final : public FDataflowNode
 {
 public:
-	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x0338(0x0028)(NativeAccessSpecifierPublic)
+	struct FDataflowNumericTypes                  A;                                                 // 0x0288(0x0008)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FDataflowNumericTypes                  B;                                                 // 0x0290(0x0008)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FDataflowNumericTypes                  C;                                                 // 0x0298(0x0008)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FDataflowNumericTypes                  D;                                                 // 0x02A0(0x0008)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 Expression;                                        // 0x02A8(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FDataflowNumericTypes                  ReturnValue;                                       // 0x02B8(0x0008)(NoDestructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCollectionTransformSelectionNoneDataflowNode;
+DUMPER7_ASSERTS_FMathExpressionDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.AutoClusterDataflowNode
 // 0x0138 (0x03C0 - 0x0288)
@@ -1769,6 +1798,21 @@ public:
 };
 DUMPER7_ASSERTS_FClusterFlattenDataflowNode;
 
+// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionRandomDataflowNode
+// 0x00E8 (0x0370 - 0x0288)
+struct FCollectionTransformSelectionRandomDataflowNode final : public FDataflowNode
+{
+public:
+	bool                                          bDeterministic;                                    // 0x0288(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_289[0x3];                                      // 0x0289(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         RandomSeed;                                        // 0x028C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RandomThreshold;                                   // 0x0290(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_294[0x4];                                      // 0x0294(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FManagedArrayCollection                Collection;                                        // 0x0298(0x00B0)(NativeAccessSpecifierPublic)
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x0348(0x0028)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCollectionTransformSelectionRandomDataflowNode;
+
 // ScriptStruct GeometryCollectionNodes.ClusterUnclusterDataflowNode
 // 0x00D8 (0x0360 - 0x0288)
 struct FClusterUnclusterDataflowNode final : public FDataflowNode
@@ -1789,16 +1833,16 @@ public:
 };
 DUMPER7_ASSERTS_FClusterDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionCustomDataflowNode
-// 0x00E8 (0x0370 - 0x0288)
-struct FCollectionTransformSelectionCustomDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.LengthDataflowNode
+// 0x0020 (0x02A8 - 0x0288)
+struct FLengthDataflowNode final : public FDataflowNode
 {
 public:
-	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
-	class FString                                 BoneIndicies;                                      // 0x0338(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x0348(0x0028)(NativeAccessSpecifierPublic)
+	struct FVector                                Vector;                                            // 0x0288(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x02A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2A4[0x4];                                      // 0x02A4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCollectionTransformSelectionCustomDataflowNode;
+DUMPER7_ASSERTS_FLengthDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.ClusterMergeToNeighborsDataflowNode
 // 0x00E8 (0x0370 - 0x0288)
@@ -1826,16 +1870,16 @@ public:
 };
 DUMPER7_ASSERTS_FClusterMergeDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.IsNearlyZeroDataflowNode
-// 0x0008 (0x0290 - 0x0288)
-struct FIsNearlyZeroDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionFromIndexArrayDataflowNode
+// 0x00E8 (0x0370 - 0x0288)
+struct FCollectionTransformSelectionFromIndexArrayDataflowNode final : public FDataflowNode
 {
 public:
-	float                                         float_0;                                           // 0x0288(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x028C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_28D[0x3];                                      // 0x028D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
+	TArray<int32>                                 BoneIndices;                                       // 0x0338(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x0348(0x0028)(NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FIsNearlyZeroDataflowNode;
+DUMPER7_ASSERTS_FCollectionTransformSelectionFromIndexArrayDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.ClusterIsolatedRootsDataflowNode
 // 0x00B0 (0x0338 - 0x0288)
@@ -1858,19 +1902,15 @@ public:
 };
 DUMPER7_ASSERTS_FClusterMagnetDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionByPercentageDataflowNode
-// 0x0038 (0x02C0 - 0x0288)
-struct FCollectionTransformSelectionByPercentageDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.MeshInfoDataflowNode
+// 0x0018 (0x02A0 - 0x0288)
+struct FMeshInfoDataflowNode final : public FDataflowNode
 {
 public:
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x0288(0x0028)(NativeAccessSpecifierPublic)
-	int32                                         Percentage;                                        // 0x02B0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bDeterministic;                                    // 0x02B4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2B5[0x3];                                      // 0x02B5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         RandomSeed;                                        // 0x02B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2BC[0x4];                                      // 0x02BC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UDynamicMesh*                           Mesh;                                              // 0x0288(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class FString                                 InfoString;                                        // 0x0290(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCollectionTransformSelectionByPercentageDataflowNode;
+DUMPER7_ASSERTS_FMeshInfoDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.VectorToStringDataflowNode
 // 0x0028 (0x02B0 - 0x0288)
@@ -1893,17 +1933,15 @@ public:
 };
 DUMPER7_ASSERTS_FFloatToStringDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.CollectionToMeshDataflowNode
-// 0x00C0 (0x0348 - 0x0288)
-struct FCollectionToMeshDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionSiblingsDataflowNode
+// 0x00D8 (0x0360 - 0x0288)
+struct FCollectionTransformSelectionSiblingsDataflowNode final : public FDataflowNode
 {
 public:
-	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
-	bool                                          bCenterPivot;                                      // 0x0338(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_339[0x7];                                      // 0x0339(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UDynamicMesh*                           Mesh;                                              // 0x0340(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x0288(0x0028)(NativeAccessSpecifierPublic)
+	struct FManagedArrayCollection                Collection;                                        // 0x02B0(0x00B0)(NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCollectionToMeshDataflowNode;
+DUMPER7_ASSERTS_FCollectionTransformSelectionSiblingsDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.IntToStringDataflowNode
 // 0x0018 (0x02A0 - 0x0288)
@@ -1927,18 +1965,15 @@ public:
 };
 DUMPER7_ASSERTS_FBoolToStringDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionTargetLevelDataflowNode
-// 0x00E0 (0x0368 - 0x0288)
-struct FCollectionTransformSelectionTargetLevelDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.DegreesToRadiansDataflowNode
+// 0x0008 (0x0290 - 0x0288)
+struct FDegreesToRadiansDataflowNode final : public FDataflowNode
 {
 public:
-	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
-	int32                                         TargetLevel;                                       // 0x0338(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSkipEmbedded;                                     // 0x033C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_33D[0x3];                                      // 0x033D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x0340(0x0028)(NativeAccessSpecifierPublic)
+	float                                         Degrees;                                           // 0x0288(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Radians;                                           // 0x028C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCollectionTransformSelectionTargetLevelDataflowNode;
+DUMPER7_ASSERTS_FDegreesToRadiansDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.IntToFloatDataflowNode
 // 0x0008 (0x0290 - 0x0288)
@@ -1961,15 +1996,17 @@ public:
 };
 DUMPER7_ASSERTS_FIntToDoubleDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.OneMinusDataflowNode
-// 0x0008 (0x0290 - 0x0288)
-struct FOneMinusDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.GetBoxLengthsDataflowNode
+// 0x0028 (0x02B0 - 0x0288)
+struct FGetBoxLengthsDataflowNode final : public FDataflowNode
 {
 public:
-	float                                         A;                                                 // 0x0288(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x028C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FBox>                           Boxes;                                             // 0x0288(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<float>                                 Lengths;                                           // 0x0298(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	EBoxLengthMeasurementMethod                   MeasurementMethod;                                 // 0x02A8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2A9[0x7];                                      // 0x02A9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FOneMinusDataflowNode;
+DUMPER7_ASSERTS_FGetBoxLengthsDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.FloatToDoubleDataflowNode
 // 0x0010 (0x0298 - 0x0288)
@@ -1995,17 +2032,18 @@ public:
 };
 DUMPER7_ASSERTS_FFloatToIntDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.ExpandBoundingSphereDataflowNode
-// 0x0040 (0x02C8 - 0x0288)
-struct FExpandBoundingSphereDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.SplitMeshIslandsDataflowNode
+// 0x0020 (0x02A8 - 0x0288)
+struct FSplitMeshIslandsDataflowNode final : public FDataflowNode
 {
 public:
-	struct FSphere                                BoundingSphere;                                    // 0x0288(0x0020)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                Center;                                            // 0x02A8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Radius;                                            // 0x02C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Volume;                                            // 0x02C4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UDynamicMesh*                           Mesh;                                              // 0x0288(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	TArray<class UDynamicMesh*>                   Meshes;                                            // 0x0290(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
+	EDataflowMeshSplitIslandsMethod               SplitMethod;                                       // 0x02A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_2A1[0x3];                                      // 0x02A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ConnectVerticesThreshold;                          // 0x02A4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
-DUMPER7_ASSERTS_FExpandBoundingSphereDataflowNode;
+DUMPER7_ASSERTS_FSplitMeshIslandsDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.IntToBoolDataflowNode
 // 0x0008 (0x0290 - 0x0288)
@@ -2029,19 +2067,16 @@ public:
 };
 DUMPER7_ASSERTS_FBoolToIntDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.MeshCopyToPointsDataflowNode
-// 0x0038 (0x02C0 - 0x0288)
-struct FMeshCopyToPointsDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.StringAppendDataflowNode
+// 0x0030 (0x02B8 - 0x0288)
+struct FStringAppendDataflowNode final : public FDataflowNode
 {
 public:
-	TArray<struct FVector>                        Points;                                            // 0x0288(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	class UDynamicMesh*                           MeshToCopy;                                        // 0x0298(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	float                                         Scale;                                             // 0x02A0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A4[0x4];                                      // 0x02A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UDynamicMesh*                           Mesh;                                              // 0x02A8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	TArray<class UDynamicMesh*>                   Meshes;                                            // 0x02B0(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	class FString                                 String1;                                           // 0x0288(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 String2;                                           // 0x0298(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 String;                                            // 0x02A8(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FMeshCopyToPointsDataflowNode;
+DUMPER7_ASSERTS_FStringAppendDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.ConvexHullToMeshDataflowNode
 // 0x00F8 (0x0380 - 0x0288)
@@ -2057,15 +2092,6 @@ public:
 };
 DUMPER7_ASSERTS_FConvexHullToMeshDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.DataflowSphereCovering
-// 0x0020 (0x0020 - 0x0000)
-struct alignas(0x08) FDataflowSphereCovering final
-{
-public:
-	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FDataflowSphereCovering;
-
 // ScriptStruct GeometryCollectionNodes.SphereCoveringToMeshDataflowNode
 // 0x0030 (0x02B8 - 0x0288)
 struct FSphereCoveringToMeshDataflowNode final : public FDataflowNode
@@ -2078,17 +2104,6 @@ public:
 };
 DUMPER7_ASSERTS_FSphereCoveringToMeshDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.HashStringDataflowNode
-// 0x0018 (0x02A0 - 0x0288)
-struct FHashStringDataflowNode final : public FDataflowNode
-{
-public:
-	class FString                                 String;                                            // 0x0288(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Hash;                                              // 0x0298(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29C[0x4];                                      // 0x029C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FHashStringDataflowNode;
-
 // ScriptStruct GeometryCollectionNodes.SphereCoveringCountSpheresNode
 // 0x0028 (0x02B0 - 0x0288)
 struct FSphereCoveringCountSpheresNode final : public FDataflowNode
@@ -2099,6 +2114,17 @@ public:
 	uint8                                         Pad_2AC[0x4];                                      // 0x02AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FSphereCoveringCountSpheresNode;
+
+// ScriptStruct GeometryCollectionNodes.GetBoundingBoxesFromCollectionDataflowNode
+// 0x00E8 (0x0370 - 0x0288)
+struct FGetBoundingBoxesFromCollectionDataflowNode final : public FDataflowNode
+{
+public:
+	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x0338(0x0028)(NativeAccessSpecifierPublic)
+	TArray<struct FBox>                           BoundingBoxes;                                     // 0x0360(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGetBoundingBoxesFromCollectionDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.MeshToOBJStringDebugDataflowNode
 // 0x0020 (0x02A8 - 0x0288)
@@ -2122,16 +2148,15 @@ public:
 };
 DUMPER7_ASSERTS_FWriteStringToFile;
 
-// ScriptStruct GeometryCollectionNodes.GetCentroidsFromCollectionDataflowNode
+// ScriptStruct GeometryCollectionNodes.BoundingBoxDataflowNode
 // 0x00E8 (0x0370 - 0x0288)
-struct FGetCentroidsFromCollectionDataflowNode final : public FDataflowNode
+struct FBoundingBoxDataflowNode final : public FDataflowNode
 {
 public:
 	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x0338(0x0028)(NativeAccessSpecifierPublic)
-	TArray<struct FVector>                        Centroids;                                         // 0x0360(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FBox                                   BoundingBox;                                       // 0x0338(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FGetCentroidsFromCollectionDataflowNode;
+DUMPER7_ASSERTS_FBoundingBoxDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.PruneInCollectionDataflowNode
 // 0x00D8 (0x0360 - 0x0288)
@@ -2156,17 +2181,14 @@ public:
 };
 DUMPER7_ASSERTS_FSetVisibilityInCollectionDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.GetBoxLengthsDataflowNode
-// 0x0028 (0x02B0 - 0x0288)
-struct FGetBoxLengthsDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.BakeTransformsInCollectionDataflowNode
+// 0x00B0 (0x0338 - 0x0288)
+struct FBakeTransformsInCollectionDataflowNode final : public FDataflowNode
 {
 public:
-	TArray<struct FBox>                           Boxes;                                             // 0x0288(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<float>                                 Lengths;                                           // 0x0298(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	EBoxLengthMeasurementMethod                   MeasurementMethod;                                 // 0x02A8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A9[0x7];                                      // 0x02A9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FGetBoxLengthsDataflowNode;
+DUMPER7_ASSERTS_FBakeTransformsInCollectionDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.MergeInCollectionDataflowNode
 // 0x00D8 (0x0360 - 0x0288)
@@ -2192,19 +2214,16 @@ public:
 };
 DUMPER7_ASSERTS_FUniformScatterPointsDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.CompareIntDataflowNode
-// 0x0010 (0x0298 - 0x0288)
-struct FCompareIntDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.MeshAppendDataflowNode
+// 0x0018 (0x02A0 - 0x0288)
+struct FMeshAppendDataflowNode final : public FDataflowNode
 {
 public:
-	ECompareOperationEnum                         Operation;                                         // 0x0288(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_289[0x3];                                      // 0x0289(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         IntA;                                              // 0x028C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         IntB;                                              // 0x0290(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Result;                                            // 0x0294(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_295[0x3];                                      // 0x0295(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UDynamicMesh*                           Mesh1;                                             // 0x0288(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UDynamicMesh*                           Mesh2;                                             // 0x0290(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UDynamicMesh*                           Mesh;                                              // 0x0298(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 };
-DUMPER7_ASSERTS_FCompareIntDataflowNode;
+DUMPER7_ASSERTS_FMeshAppendDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.UniformScatterPointsDataflowNode_v2
 // 0x0058 (0x02E0 - 0x0288)
@@ -2238,16 +2257,15 @@ public:
 };
 DUMPER7_ASSERTS_FClusterScatterPointsDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.MakeDataflowMeshDataflowNode
-// 0x0020 (0x02A8 - 0x0288)
-struct FMakeDataflowMeshDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CosDataflowNode
+// 0x0008 (0x0290 - 0x0288)
+struct FCosDataflowNode final : public FDataflowNode
 {
 public:
-	class UDynamicMesh*                           InMesh;                                            // 0x0288(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	TArray<class UMaterialInterface*>             InMaterials;                                       // 0x0290(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UDataflowMesh*                          Mesh;                                              // 0x02A0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	float                                         float_0;                                           // 0x0288(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x028C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FMakeDataflowMeshDataflowNode;
+DUMPER7_ASSERTS_FCosDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.RadialScatterPointsDataflowNode
 // 0x0058 (0x02E0 - 0x0288)
@@ -2290,15 +2308,16 @@ public:
 };
 DUMPER7_ASSERTS_FRadialScatterPointsDataflowNode_v2;
 
-// ScriptStruct GeometryCollectionNodes.TanDataflowNode
-// 0x0008 (0x0290 - 0x0288)
-struct FTanDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.HashStringDataflowNode
+// 0x0018 (0x02A0 - 0x0288)
+struct FHashStringDataflowNode final : public FDataflowNode
 {
 public:
-	float                                         float_0;                                           // 0x0288(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x028C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 String;                                            // 0x0288(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Hash;                                              // 0x0298(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29C[0x4];                                      // 0x029C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FTanDataflowNode;
+DUMPER7_ASSERTS_FHashStringDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.GridScatterPointsDataflowNode
 // 0x0068 (0x02F0 - 0x0288)
@@ -2329,16 +2348,17 @@ public:
 };
 DUMPER7_ASSERTS_FTransformPointsDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.GetBoundingBoxesFromCollectionDataflowNode
-// 0x00E8 (0x0370 - 0x0288)
-struct FGetBoundingBoxesFromCollectionDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.ArcTan2DataflowNode
+// 0x0010 (0x0298 - 0x0288)
+struct FArcTan2DataflowNode final : public FDataflowNode
 {
 public:
-	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x0338(0x0028)(NativeAccessSpecifierPublic)
-	TArray<struct FBox>                           BoundingBoxes;                                     // 0x0360(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         Y;                                                 // 0x0288(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         X;                                                 // 0x028C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0290(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_294[0x4];                                      // 0x0294(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FGetBoundingBoxesFromCollectionDataflowNode;
+DUMPER7_ASSERTS_FArcTan2DataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.AppendPointsDataflowNode
 // 0x0030 (0x02B8 - 0x0288)
@@ -2376,17 +2396,15 @@ public:
 };
 DUMPER7_ASSERTS_FVoronoiFractureDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.ScaleVectorDataflowNode
-// 0x0038 (0x02C0 - 0x0288)
-struct FScaleVectorDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.GetCollectionFromAssetDataflowNode
+// 0x00B8 (0x0340 - 0x0288)
+struct FGetCollectionFromAssetDataflowNode final : public FDataflowNode
 {
 public:
-	struct FVector                                Vector;                                            // 0x0288(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Scale;                                             // 0x02A0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A4[0x4];                                      // 0x02A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                ScaledVector;                                      // 0x02A8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UGeometryCollection*                    CollectionAsset;                                   // 0x0288(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FManagedArrayCollection                Collection;                                        // 0x0290(0x00B0)(NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FScaleVectorDataflowNode;
+DUMPER7_ASSERTS_FGetCollectionFromAssetDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.VoronoiFractureDataflowNode_v2
 // 0x01A8 (0x0430 - 0x0288)
@@ -2440,20 +2458,16 @@ public:
 };
 DUMPER7_ASSERTS_FPlaneCutterDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.PrintStringDataflowNode
-// 0x0020 (0x02A8 - 0x0288)
-struct FPrintStringDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CrossProductDataflowNode
+// 0x0048 (0x02D0 - 0x0288)
+struct FCrossProductDataflowNode final : public FDataflowNode
 {
 public:
-	bool                                          bPrintToScreen;                                    // 0x0288(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPrintToLog;                                       // 0x0289(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_28A[0x2];                                      // 0x028A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FColor                                 Color;                                             // 0x028C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Duration;                                          // 0x0290(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_294[0x4];                                      // 0x0294(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 String;                                            // 0x0298(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                VectorA;                                           // 0x0288(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                VectorB;                                           // 0x02A0(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ReturnValue;                                       // 0x02B8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FPrintStringDataflowNode;
+DUMPER7_ASSERTS_FCrossProductDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.PlaneCutterDataflowNode_v2
 // 0x01E8 (0x0470 - 0x0288)
@@ -2505,16 +2519,19 @@ public:
 };
 DUMPER7_ASSERTS_FExplodedViewDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.LengthDataflowNode
-// 0x0020 (0x02A8 - 0x0288)
-struct FLengthDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CompareIntDataflowNode
+// 0x0010 (0x0298 - 0x0288)
+struct FCompareIntDataflowNode final : public FDataflowNode
 {
 public:
-	struct FVector                                Vector;                                            // 0x0288(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x02A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A4[0x4];                                      // 0x02A4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	ECompareOperationEnum                         Operation;                                         // 0x0288(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_289[0x3];                                      // 0x0289(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         IntA;                                              // 0x028C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         IntB;                                              // 0x0290(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Result;                                            // 0x0294(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_295[0x3];                                      // 0x0295(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FLengthDataflowNode;
+DUMPER7_ASSERTS_FCompareIntDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.SliceCutterDataflowNode
 // 0x0180 (0x0408 - 0x0288)
@@ -2582,18 +2599,16 @@ public:
 };
 DUMPER7_ASSERTS_FBrickCutterDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.BooleanOperationDataflowNode
+// ScriptStruct GeometryCollectionNodes.IsNearlyZeroDataflowNode
 // 0x0008 (0x0290 - 0x0288)
-struct FBooleanOperationDataflowNode final : public FDataflowNode
+struct FIsNearlyZeroDataflowNode final : public FDataflowNode
 {
 public:
-	EBooleanOperationEnum                         Operation;                                         // 0x0288(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bBoolA;                                            // 0x0289(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bBoolB;                                            // 0x028A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bResult;                                           // 0x028B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_28C[0x4];                                      // 0x028C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         float_0;                                           // 0x0288(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x028C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_28D[0x3];                                      // 0x028D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FBooleanOperationDataflowNode;
+DUMPER7_ASSERTS_FIsNearlyZeroDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.MeshCutterDataflowNode
 // 0x0208 (0x0490 - 0x0288)
@@ -2668,20 +2683,17 @@ public:
 };
 DUMPER7_ASSERTS_FUniformFractureDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.RandomFloatInRangeDataflowNode
-// 0x0018 (0x02A0 - 0x0288)
-struct FRandomFloatInRangeDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.ExpandBoundingSphereDataflowNode
+// 0x0040 (0x02C8 - 0x0288)
+struct FExpandBoundingSphereDataflowNode final : public FDataflowNode
 {
 public:
-	bool                                          bDeterministic;                                    // 0x0288(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_289[0x3];                                      // 0x0289(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         RandomSeed;                                        // 0x028C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Min;                                               // 0x0290(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Max;                                               // 0x0294(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x0298(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29C[0x4];                                      // 0x029C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FSphere                                BoundingSphere;                                    // 0x0288(0x0020)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                Center;                                            // 0x02A8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Radius;                                            // 0x02C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Volume;                                            // 0x02C4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRandomFloatInRangeDataflowNode;
+DUMPER7_ASSERTS_FExpandBoundingSphereDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.MinSettings
 // 0x0014 (0x0014 - 0x0000)
@@ -2703,16 +2715,16 @@ public:
 };
 DUMPER7_ASSERTS_FMaxSettings;
 
-// ScriptStruct GeometryCollectionNodes.StringAppendDataflowNode
-// 0x0030 (0x02B8 - 0x0288)
-struct FStringAppendDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.InvertTransformDataflowNode
+// 0x00C8 (0x0350 - 0x0288)
+struct FInvertTransformDataflowNode final : public FDataflowNode
 {
 public:
-	class FString                                 String1;                                           // 0x0288(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 String2;                                           // 0x0298(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 String;                                            // 0x02A8(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_288[0x8];                                      // 0x0288(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             InTransform;                                       // 0x0290(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             OutTransform;                                      // 0x02F0(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FStringAppendDataflowNode;
+DUMPER7_ASSERTS_FInvertTransformDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.VisualizeFractureDataflowNode
 // 0x0138 (0x03C0 - 0x0288)
@@ -2755,18 +2767,17 @@ public:
 };
 DUMPER7_ASSERTS_FSetFloatAttributeDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.BranchIntDataflowNode
-// 0x0010 (0x0298 - 0x0288)
-struct FBranchIntDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.SetDynamicStateDataflowNode
+// 0x00E0 (0x0368 - 0x0288)
+struct FSetDynamicStateDataflowNode final : public FDataflowNode
 {
 public:
-	int32                                         A;                                                 // 0x0288(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         B;                                                 // 0x028C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCondition;                                        // 0x0290(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_291[0x3];                                      // 0x0291(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ReturnValue;                                       // 0x0294(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EDataflowGeometryCollectionDynamicState       DynamicState;                                      // 0x0288(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_289[0x7];                                      // 0x0289(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FManagedArrayCollection                Collection;                                        // 0x0290(0x00B0)(NativeAccessSpecifierPrivate)
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x0340(0x0028)(NativeAccessSpecifierPrivate)
 };
-DUMPER7_ASSERTS_FBranchIntDataflowNode;
+DUMPER7_ASSERTS_FSetDynamicStateDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.MakeLiteralStringDataflowNode
 // 0x0020 (0x02A8 - 0x0288)
@@ -2787,16 +2798,15 @@ public:
 };
 DUMPER7_ASSERTS_FMakeLiteralStringDataflowNode_v2;
 
-// ScriptStruct GeometryCollectionNodes.CollectionSetPivotDataflowNode
-// 0x0118 (0x03A0 - 0x0288)
-struct FCollectionSetPivotDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.PointsToCollectionDataflowNode
+// 0x00C0 (0x0348 - 0x0288)
+struct FPointsToCollectionDataflowNode final : public FDataflowNode
 {
 public:
-	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
-	uint8                                         Pad_338[0x8];                                      // 0x0338(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             Transform;                                         // 0x0340(0x0060)(Edit, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPrivate)
+	TArray<struct FVector>                        Points;                                            // 0x0338(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
 };
-DUMPER7_ASSERTS_FCollectionSetPivotDataflowNode;
+DUMPER7_ASSERTS_FPointsToCollectionDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.MakePointsDataflowNode
 // 0x0020 (0x02A8 - 0x0288)
@@ -2823,16 +2833,16 @@ public:
 };
 DUMPER7_ASSERTS_FMakeBoxDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.SpheresToPointsDataflowNode
-// 0x0030 (0x02B8 - 0x0288)
-struct FSpheresToPointsDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CollectionVertexSelectionCustomDataflowNode
+// 0x00E8 (0x0370 - 0x0288)
+struct FCollectionVertexSelectionCustomDataflowNode final : public FDataflowNode
 {
 public:
-	TArray<struct FSphere>                        Spheres;                                           // 0x0288(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	TArray<struct FVector>                        Points;                                            // 0x0298(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	TArray<float>                                 Radii;                                             // 0x02A8(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
+	class FString                                 VertexIndicies;                                    // 0x0338(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FDataflowVertexSelection               VertexSelection;                                   // 0x0348(0x0028)(NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FSpheresToPointsDataflowNode;
+DUMPER7_ASSERTS_FCollectionVertexSelectionCustomDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.MakeSphereDataflowNode
 // 0x0040 (0x02C8 - 0x0288)
@@ -2856,19 +2866,15 @@ public:
 };
 DUMPER7_ASSERTS_FMakeLiteralFloatDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.CollectionSelectionConvertDataflowNode
-// 0x0130 (0x03B8 - 0x0288)
-struct FCollectionSelectionConvertDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.GetIntOverrideFromAssetDataflowNode
+// 0x0008 (0x02B0 - 0x02A8)
+struct FGetIntOverrideFromAssetDataflowNode final : public FDataflowOverrideNode
 {
 public:
-	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x0338(0x0028)(NativeAccessSpecifierPublic)
-	struct FDataflowFaceSelection                 FaceSelection;                                     // 0x0360(0x0028)(NativeAccessSpecifierPublic)
-	struct FDataflowVertexSelection               VertexSelection;                                   // 0x0388(0x0028)(NativeAccessSpecifierPublic)
-	bool                                          bAllElementsMustBeSelected;                        // 0x03B0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3B1[0x7];                                      // 0x03B1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         Int;                                               // 0x02A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         IntDefault;                                        // 0x02AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCollectionSelectionConvertDataflowNode;
+DUMPER7_ASSERTS_FGetIntOverrideFromAssetDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.MakeLiteralFloatDataflowNode_v2
 // 0x0008 (0x0290 - 0x0288)
@@ -2889,15 +2895,15 @@ public:
 };
 DUMPER7_ASSERTS_FMakeLiteralDoubleDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.GetStringOverrideFromAssetDataflowNode
-// 0x0020 (0x02C8 - 0x02A8)
-struct FGetStringOverrideFromAssetDataflowNode final : public FDataflowOverrideNode
+// ScriptStruct GeometryCollectionNodes.SelectionToVertexListDataflowNode
+// 0x0038 (0x02C0 - 0x0288)
+struct FSelectionToVertexListDataflowNode final : public FDataflowNode
 {
 public:
-	class FString                                 String;                                            // 0x02A8(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 StringDefault;                                     // 0x02B8(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FDataflowVertexSelection               VertexSelection;                                   // 0x0288(0x0028)(NativeAccessSpecifierPublic)
+	TArray<int32>                                 VertexList;                                        // 0x02B0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FGetStringOverrideFromAssetDataflowNode;
+DUMPER7_ASSERTS_FSelectionToVertexListDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.MakeLiteralIntDataflowNode
 // 0x0008 (0x0290 - 0x0288)
@@ -2919,16 +2925,23 @@ public:
 };
 DUMPER7_ASSERTS_FMakeLiteralIntDataflowNode_v2;
 
-// ScriptStruct GeometryCollectionNodes.InvertTransformDataflowNode
-// 0x00C8 (0x0350 - 0x0288)
-struct FInvertTransformDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.UniformPointSamplingDataflowNode
+// 0x0050 (0x02D8 - 0x0288)
+struct FUniformPointSamplingDataflowNode final : public FDataflowNode
 {
 public:
-	uint8                                         Pad_288[0x8];                                      // 0x0288(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             InTransform;                                       // 0x0290(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             OutTransform;                                      // 0x02F0(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UDynamicMesh*                           TargetMesh;                                        // 0x0288(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	float                                         SamplingRadius;                                    // 0x0290(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxNumSamples;                                     // 0x0294(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SubSampleDensity;                                  // 0x0298(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         RandomSeed;                                        // 0x029C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FVector>                        SamplePoints;                                      // 0x02A0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 SampleTriangleIDs;                                 // 0x02B0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FVector>                        SampleBarycentricCoords;                           // 0x02C0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         NumSamplePoints;                                   // 0x02D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D4[0x4];                                      // 0x02D4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FInvertTransformDataflowNode;
+DUMPER7_ASSERTS_FUniformPointSamplingDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.MakeLiteralBoolDataflowNode
 // 0x0008 (0x0290 - 0x0288)
@@ -2951,32 +2964,18 @@ public:
 };
 DUMPER7_ASSERTS_FMakeLiteralBoolDataflowNode_v2;
 
-// ScriptStruct GeometryCollectionNodes.VertexWeightedPointSamplingDataflowNode
-// 0x0080 (0x0308 - 0x0288)
-struct FVertexWeightedPointSamplingDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.BranchCollectionDataflowNode
+// 0x0218 (0x04A0 - 0x0288)
+struct FBranchCollectionDataflowNode final : public FDataflowNode
 {
 public:
-	class UDynamicMesh*                           TargetMesh;                                        // 0x0288(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	TArray<float>                                 VertexWeights;                                     // 0x0290(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	float                                         SamplingRadius;                                    // 0x02A0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxNumSamples;                                     // 0x02A4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SubSampleDensity;                                  // 0x02A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         RandomSeed;                                        // 0x02AC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxSamplingRadius;                                 // 0x02B0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ENonUniformSamplingDistributionMode           SizeDistribution;                                  // 0x02B4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2B5[0x3];                                      // 0x02B5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         SizeDistributionPower;                             // 0x02B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ENonUniformSamplingWeightMode                 WeightMode;                                        // 0x02BC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInvertWeights;                                    // 0x02BD(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2BE[0x2];                                      // 0x02BE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FVector>                        SamplePoints;                                      // 0x02C0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<float>                                 SampleRadii;                                       // 0x02D0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 SampleTriangleIDs;                                 // 0x02E0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FVector>                        SampleBarycentricCoords;                           // 0x02F0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         NumSamplePoints;                                   // 0x0300(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_304[0x4];                                      // 0x0304(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FManagedArrayCollection                TrueCollection;                                    // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
+	struct FManagedArrayCollection                FalseCollection;                                   // 0x0338(0x00B0)(NativeAccessSpecifierPublic)
+	bool                                          bCondition;                                        // 0x03E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3E9[0x7];                                      // 0x03E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FManagedArrayCollection                ChosenCollection;                                  // 0x03F0(0x00B0)(NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FVertexWeightedPointSamplingDataflowNode;
+DUMPER7_ASSERTS_FBranchCollectionDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.MakeLiteralVectorDataflowNode
 // 0x0028 (0x02B0 - 0x0288)
@@ -3002,22 +3001,6 @@ public:
 	struct FTransform                             OutTransform;                                      // 0x02D0(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
 DUMPER7_ASSERTS_FMakeTransformDataflowNode;
-
-// ScriptStruct GeometryCollectionNodes.RemoveOnBreakDataflowNode
-// 0x00F0 (0x0378 - 0x0288)
-struct FRemoveOnBreakDataflowNode final : public FDataflowNode
-{
-public:
-	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x0338(0x0028)(NativeAccessSpecifierPublic)
-	bool                                          bEnabledRemoval;                                   // 0x0360(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_361[0x3];                                      // 0x0361(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2f                              PostBreakTimer;                                    // 0x0364(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2f                              RemovalTimer;                                      // 0x036C(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bClusterCrumbling;                                 // 0x0374(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_375[0x3];                                      // 0x0375(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRemoveOnBreakDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.MakeTransformDataflowNode_v2
 // 0x00E8 (0x0370 - 0x0288)
@@ -3048,6 +3031,17 @@ public:
 };
 DUMPER7_ASSERTS_FMakeQuaternionDataflowNode;
 
+// ScriptStruct GeometryCollectionNodes.SpheresToPointsDataflowNode
+// 0x0030 (0x02B8 - 0x0288)
+struct FSpheresToPointsDataflowNode final : public FDataflowNode
+{
+public:
+	TArray<struct FSphere>                        Spheres;                                           // 0x0288(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	TArray<struct FVector>                        Points;                                            // 0x0298(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	TArray<float>                                 Radii;                                             // 0x02A8(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+};
+DUMPER7_ASSERTS_FSpheresToPointsDataflowNode;
+
 // ScriptStruct GeometryCollectionNodes.MakeFloatArrayDataflowNode
 // 0x0018 (0x02A0 - 0x0288)
 struct FMakeFloatArrayDataflowNode final : public FDataflowNode
@@ -3067,16 +3061,6 @@ public:
 	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPrivate)
 };
 DUMPER7_ASSERTS_FMakeCollectionDataflowNode;
-
-// ScriptStruct GeometryCollectionNodes.GetIntOverrideFromAssetDataflowNode
-// 0x0008 (0x02B0 - 0x02A8)
-struct FGetIntOverrideFromAssetDataflowNode final : public FDataflowOverrideNode
-{
-public:
-	int32                                         Int;                                               // 0x02A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         IntDefault;                                        // 0x02AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGetIntOverrideFromAssetDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.MakeRotatorDataflowNode
 // 0x0028 (0x02B0 - 0x0288)
@@ -3106,6 +3090,20 @@ public:
 };
 DUMPER7_ASSERTS_FBreakTransformDataflowNode;
 
+// ScriptStruct GeometryCollectionNodes.GetNumElementsInCollectionGroupDataflowNode
+// 0x00D0 (0x0358 - 0x0288)
+struct FGetNumElementsInCollectionGroupDataflowNode final : public FDataflowNode
+{
+public:
+	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
+	EStandardGroupNameEnum                        GroupName;                                         // 0x0338(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_339[0x7];                                      // 0x0339(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CustomGroupName;                                   // 0x0340(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NumElements;                                       // 0x0350(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_354[0x4];                                      // 0x0354(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FGetNumElementsInCollectionGroupDataflowNode;
+
 // ScriptStruct GeometryCollectionNodes.MakeSphereMeshDataflowNode
 // 0x0018 (0x02A0 - 0x0288)
 struct FMakeSphereMeshDataflowNode final : public FDataflowNode
@@ -3133,24 +3131,6 @@ public:
 	class UDynamicMesh*                           Mesh;                                              // 0x02A0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 };
 DUMPER7_ASSERTS_FMakeCapsuleMeshDataflowNode;
-
-// ScriptStruct GeometryCollectionNodes.GetCollectionAttributeDataTypedDataflowNode_v2
-// 0x0138 (0x03C0 - 0x0288)
-struct FGetCollectionAttributeDataTypedDataflowNode_v2 final : public FDataflowNode
-{
-public:
-	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPrivate)
-	struct FCollectionAttributeKey                AttributeKey;                                      // 0x0338(0x0020)(NativeAccessSpecifierPrivate)
-	EStandardGroupNameEnum                        GroupName;                                         // 0x0358(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_359[0x7];                                      // 0x0359(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CustomGroupName;                                   // 0x0360(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class FString                                 AttrName;                                          // 0x0370(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	TArray<bool>                                  BoolAttributeData;                                 // 0x0380(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	struct FDataflowNumericArrayTypes             NumericArray;                                      // 0x0390(0x0010)(NativeAccessSpecifierPrivate)
-	struct FDataflowVectorArrayTypes              VectorArray;                                       // 0x03A0(0x0010)(NativeAccessSpecifierPrivate)
-	struct FDataflowStringArrayTypes              StringArray;                                       // 0x03B0(0x0010)(NativeAccessSpecifierPrivate)
-};
-DUMPER7_ASSERTS_FGetCollectionAttributeDataTypedDataflowNode_v2;
 
 // ScriptStruct GeometryCollectionNodes.MakeCylinderMeshDataflowNode
 // 0x0020 (0x02A8 - 0x0288)
@@ -3182,6 +3162,33 @@ public:
 };
 DUMPER7_ASSERTS_FMakeBoxMeshDataflowNode;
 
+// ScriptStruct GeometryCollectionNodes.VertexWeightedPointSamplingDataflowNode
+// 0x0080 (0x0308 - 0x0288)
+struct FVertexWeightedPointSamplingDataflowNode final : public FDataflowNode
+{
+public:
+	class UDynamicMesh*                           TargetMesh;                                        // 0x0288(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	TArray<float>                                 VertexWeights;                                     // 0x0290(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         SamplingRadius;                                    // 0x02A0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxNumSamples;                                     // 0x02A4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SubSampleDensity;                                  // 0x02A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         RandomSeed;                                        // 0x02AC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxSamplingRadius;                                 // 0x02B0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ENonUniformSamplingDistributionMode           SizeDistribution;                                  // 0x02B4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2B5[0x3];                                      // 0x02B5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         SizeDistributionPower;                             // 0x02B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ENonUniformSamplingWeightMode                 WeightMode;                                        // 0x02BC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInvertWeights;                                    // 0x02BD(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2BE[0x2];                                      // 0x02BE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FVector>                        SamplePoints;                                      // 0x02C0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<float>                                 SampleRadii;                                       // 0x02D0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 SampleTriangleIDs;                                 // 0x02E0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FVector>                        SampleBarycentricCoords;                           // 0x02F0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         NumSamplePoints;                                   // 0x0300(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_304[0x4];                                      // 0x0304(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FVertexWeightedPointSamplingDataflowNode;
+
 // ScriptStruct GeometryCollectionNodes.MakePlaneDataflowNode
 // 0x0078 (0x0300 - 0x0288)
 struct FMakePlaneDataflowNode final : public FDataflowNode
@@ -3211,19 +3218,6 @@ public:
 	class UDynamicMesh*                           Mesh;                                              // 0x02B8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 };
 DUMPER7_ASSERTS_FMakeDiscMeshDataflowNode;
-
-// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionSetOperationDataflowNode
-// 0x0080 (0x0308 - 0x0288)
-struct FCollectionTransformSelectionSetOperationDataflowNode final : public FDataflowNode
-{
-public:
-	ESetOperationEnum                             Operation;                                         // 0x0288(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_289[0x7];                                      // 0x0289(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FDataflowTransformSelection            TransformSelectionA;                               // 0x0290(0x0028)(NativeAccessSpecifierPublic)
-	struct FDataflowTransformSelection            TransformSelectionB;                               // 0x02B8(0x0028)(NativeAccessSpecifierPublic)
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x02E0(0x0028)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCollectionTransformSelectionSetOperationDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.MakeStairMeshDataflowNode
 // 0x0028 (0x02B0 - 0x0288)
@@ -3258,6 +3252,19 @@ public:
 };
 DUMPER7_ASSERTS_FMakeRectangleMeshDataflowNode;
 
+// ScriptStruct GeometryCollectionNodes.BranchIntDataflowNode
+// 0x0010 (0x0298 - 0x0288)
+struct FBranchIntDataflowNode final : public FDataflowNode
+{
+public:
+	int32                                         A;                                                 // 0x0288(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         B;                                                 // 0x028C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCondition;                                        // 0x0290(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_291[0x3];                                      // 0x0291(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x0294(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FBranchIntDataflowNode;
+
 // ScriptStruct GeometryCollectionNodes.MakeTorusMeshDataflowNode
 // 0x0030 (0x02B8 - 0x0288)
 struct FMakeTorusMeshDataflowNode final : public FDataflowNode
@@ -3284,15 +3291,15 @@ public:
 };
 DUMPER7_ASSERTS_FAddDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.PointsToCollectionDataflowNode
-// 0x00C0 (0x0348 - 0x0288)
-struct FPointsToCollectionDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionLeafDataflowNode
+// 0x00D8 (0x0360 - 0x0288)
+struct FCollectionTransformSelectionLeafDataflowNode final : public FDataflowNode
 {
 public:
-	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPrivate)
-	TArray<struct FVector>                        Points;                                            // 0x0338(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
+	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x0338(0x0028)(NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FPointsToCollectionDataflowNode;
+DUMPER7_ASSERTS_FCollectionTransformSelectionLeafDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.SubtractDataflowNode
 // 0x0010 (0x0298 - 0x0288)
@@ -3318,15 +3325,16 @@ public:
 };
 DUMPER7_ASSERTS_FMultiplyDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionClusterDataflowNode_v2
-// 0x00D8 (0x0360 - 0x0288)
-struct FCollectionTransformSelectionClusterDataflowNode_v2 final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionCustomDataflowNode
+// 0x00E8 (0x0370 - 0x0288)
+struct FCollectionTransformSelectionCustomDataflowNode final : public FDataflowNode
 {
 public:
 	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x0338(0x0028)(NativeAccessSpecifierPublic)
+	class FString                                 BoneIndicies;                                      // 0x0338(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x0348(0x0028)(NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCollectionTransformSelectionClusterDataflowNode_v2;
+DUMPER7_ASSERTS_FCollectionTransformSelectionCustomDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.SafeDivideDataflowNode
 // 0x0010 (0x0298 - 0x0288)
@@ -3347,16 +3355,21 @@ struct FDivideDataflowNode final : public FSafeDivideDataflowNode
 };
 DUMPER7_ASSERTS_FDivideDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionFromIndexArrayDataflowNode
+// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionBySizeDataflowNode
 // 0x00E8 (0x0370 - 0x0288)
-struct FCollectionTransformSelectionFromIndexArrayDataflowNode final : public FDataflowNode
+struct FCollectionTransformSelectionBySizeDataflowNode final : public FDataflowNode
 {
 public:
 	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
-	TArray<int32>                                 BoneIndices;                                       // 0x0338(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         SizeMin;                                           // 0x0338(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SizeMax;                                           // 0x033C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERangeSettingEnum                             RangeSetting;                                      // 0x0340(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInclusive;                                        // 0x0341(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseRelativeSize;                                  // 0x0342(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_343[0x5];                                      // 0x0343(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FDataflowTransformSelection            TransformSelection;                                // 0x0348(0x0028)(NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCollectionTransformSelectionFromIndexArrayDataflowNode;
+DUMPER7_ASSERTS_FCollectionTransformSelectionBySizeDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.DivisionDataflowNode
 // 0x0010 (0x0298 - 0x0288)
@@ -3380,20 +3393,18 @@ public:
 };
 DUMPER7_ASSERTS_FSafeReciprocalDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionInBoxDataflowNode
-// 0x0178 (0x0400 - 0x0288)
-struct FCollectionTransformSelectionInBoxDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.ApplyMeshProcessorToGeometryCollectionDataflowNode
+// 0x00E0 (0x0388 - 0x02A8)
+struct FApplyMeshProcessorToGeometryCollectionDataflowNode final : public FMeshProcessorDataflowNodeBase
 {
 public:
-	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
-	struct FBox                                   Box;                                               // 0x0338(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             Transform;                                         // 0x0370(0x0060)(Edit, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESelectSubjectTypeEnum                        Type;                                              // 0x03D0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAllVerticesMustContainedInBox;                    // 0x03D1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3D2[0x6];                                      // 0x03D2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x03D8(0x0028)(NativeAccessSpecifierPublic)
+	struct FManagedArrayCollection                Collection;                                        // 0x02A8(0x00B0)(NativeAccessSpecifierPublic)
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x0358(0x0028)(NativeAccessSpecifierPublic)
+	bool                                          bWeldVertices;                                     // 0x0380(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPreserveIsolatedVertices;                         // 0x0381(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_382[0x6];                                      // 0x0382(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCollectionTransformSelectionInBoxDataflowNode;
+DUMPER7_ASSERTS_FApplyMeshProcessorToGeometryCollectionDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.SquareDataflowNode
 // 0x0008 (0x0290 - 0x0288)
@@ -3415,18 +3426,22 @@ public:
 };
 DUMPER7_ASSERTS_FSquareRootDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.AppendMeshesToCollectionDataflowNode
-// 0x00F0 (0x0378 - 0x0288)
-struct FAppendMeshesToCollectionDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionByFloatAttrDataflowNode
+// 0x0108 (0x0390 - 0x0288)
+struct FCollectionTransformSelectionByFloatAttrDataflowNode final : public FDataflowNode
 {
 public:
 	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
-	struct FDataflowTransformSelection            AddedSelection;                                    // 0x0338(0x0028)(NativeAccessSpecifierPublic)
-	TArray<class UDynamicMesh*>                   Meshes;                                            // 0x0360(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-	int32                                         ParentIndex;                                       // 0x0370(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_374[0x4];                                      // 0x0374(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 GroupName;                                         // 0x0338(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 AttrName;                                          // 0x0348(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Min;                                               // 0x0358(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Max;                                               // 0x035C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERangeSettingEnum                             RangeSetting;                                      // 0x0360(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInclusive;                                        // 0x0361(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_362[0x6];                                      // 0x0362(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x0368(0x0028)(NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FAppendMeshesToCollectionDataflowNode;
+DUMPER7_ASSERTS_FCollectionTransformSelectionByFloatAttrDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.InverseSqrtDataflowNode
 // 0x0008 (0x0290 - 0x0288)
@@ -3448,16 +3463,18 @@ public:
 };
 DUMPER7_ASSERTS_FCubeDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.CollectionVertexSelectionCustomDataflowNode
-// 0x00E8 (0x0370 - 0x0288)
-struct FCollectionVertexSelectionCustomDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionTargetLevelDataflowNode
+// 0x00E0 (0x0368 - 0x0288)
+struct FCollectionTransformSelectionTargetLevelDataflowNode final : public FDataflowNode
 {
 public:
 	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
-	class FString                                 VertexIndicies;                                    // 0x0338(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FDataflowVertexSelection               VertexSelection;                                   // 0x0348(0x0028)(NativeAccessSpecifierPublic)
+	int32                                         TargetLevel;                                       // 0x0338(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSkipEmbedded;                                     // 0x033C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_33D[0x3];                                      // 0x033D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x0340(0x0028)(NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCollectionVertexSelectionCustomDataflowNode;
+DUMPER7_ASSERTS_FCollectionTransformSelectionTargetLevelDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.NegateDataflowNode
 // 0x0008 (0x0290 - 0x0288)
@@ -3479,15 +3496,19 @@ public:
 };
 DUMPER7_ASSERTS_FAbsDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionLeafDataflowNode
-// 0x00D8 (0x0360 - 0x0288)
-struct FCollectionTransformSelectionLeafDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CollectionSelectionConvertDataflowNode
+// 0x0130 (0x03B8 - 0x0288)
+struct FCollectionSelectionConvertDataflowNode final : public FDataflowNode
 {
 public:
 	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
 	struct FDataflowTransformSelection            TransformSelection;                                // 0x0338(0x0028)(NativeAccessSpecifierPublic)
+	struct FDataflowFaceSelection                 FaceSelection;                                     // 0x0360(0x0028)(NativeAccessSpecifierPublic)
+	struct FDataflowVertexSelection               VertexSelection;                                   // 0x0388(0x0028)(NativeAccessSpecifierPublic)
+	bool                                          bAllElementsMustBeSelected;                        // 0x03B0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3B1[0x7];                                      // 0x03B1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCollectionTransformSelectionLeafDataflowNode;
+DUMPER7_ASSERTS_FCollectionSelectionConvertDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.FloorDataflowNode
 // 0x0008 (0x0290 - 0x0288)
@@ -3509,19 +3530,15 @@ public:
 };
 DUMPER7_ASSERTS_FCeilDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.CollectionVertexSelectionByPercentageDataflowNode
-// 0x0038 (0x02C0 - 0x0288)
-struct FCollectionVertexSelectionByPercentageDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionNoneDataflowNode
+// 0x00D8 (0x0360 - 0x0288)
+struct FCollectionTransformSelectionNoneDataflowNode final : public FDataflowNode
 {
 public:
-	struct FDataflowVertexSelection               VertexSelection;                                   // 0x0288(0x0028)(NativeAccessSpecifierPublic)
-	int32                                         Percentage;                                        // 0x02B0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bDeterministic;                                    // 0x02B4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2B5[0x3];                                      // 0x02B5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         RandomSeed;                                        // 0x02B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2BC[0x4];                                      // 0x02BC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x0338(0x0028)(NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCollectionVertexSelectionByPercentageDataflowNode;
+DUMPER7_ASSERTS_FCollectionTransformSelectionNoneDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.RoundDataflowNode
 // 0x0008 (0x0290 - 0x0288)
@@ -3543,20 +3560,18 @@ public:
 };
 DUMPER7_ASSERTS_FTruncDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionRandomDataflowNode
-// 0x00E8 (0x0370 - 0x0288)
-struct FCollectionTransformSelectionRandomDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.BooleanOperationDataflowNode
+// 0x0008 (0x0290 - 0x0288)
+struct FBooleanOperationDataflowNode final : public FDataflowNode
 {
 public:
-	bool                                          bDeterministic;                                    // 0x0288(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_289[0x3];                                      // 0x0289(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         RandomSeed;                                        // 0x028C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RandomThreshold;                                   // 0x0290(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_294[0x4];                                      // 0x0294(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FManagedArrayCollection                Collection;                                        // 0x0298(0x00B0)(NativeAccessSpecifierPublic)
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x0348(0x0028)(NativeAccessSpecifierPublic)
+	EBooleanOperationEnum                         Operation;                                         // 0x0288(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bBoolA;                                            // 0x0289(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bBoolB;                                            // 0x028A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bResult;                                           // 0x028B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_28C[0x4];                                      // 0x028C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCollectionTransformSelectionRandomDataflowNode;
+DUMPER7_ASSERTS_FBooleanOperationDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.FracDataflowNode
 // 0x0008 (0x0290 - 0x0288)
@@ -3580,18 +3595,20 @@ public:
 };
 DUMPER7_ASSERTS_FMinDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.BranchCollectionDataflowNode
-// 0x0218 (0x04A0 - 0x0288)
-struct FBranchCollectionDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionInBoxDataflowNode
+// 0x0178 (0x0400 - 0x0288)
+struct FCollectionTransformSelectionInBoxDataflowNode final : public FDataflowNode
 {
 public:
-	struct FManagedArrayCollection                TrueCollection;                                    // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
-	struct FManagedArrayCollection                FalseCollection;                                   // 0x0338(0x00B0)(NativeAccessSpecifierPublic)
-	bool                                          bCondition;                                        // 0x03E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3E9[0x7];                                      // 0x03E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FManagedArrayCollection                ChosenCollection;                                  // 0x03F0(0x00B0)(NativeAccessSpecifierPublic)
+	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
+	struct FBox                                   Box;                                               // 0x0338(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             Transform;                                         // 0x0370(0x0060)(Edit, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESelectSubjectTypeEnum                        Type;                                              // 0x03D0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAllVerticesMustContainedInBox;                    // 0x03D1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3D2[0x6];                                      // 0x03D2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x03D8(0x0028)(NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FBranchCollectionDataflowNode;
+DUMPER7_ASSERTS_FCollectionTransformSelectionInBoxDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.MaxDataflowNode
 // 0x0010 (0x0298 - 0x0288)
@@ -3617,22 +3634,21 @@ public:
 };
 DUMPER7_ASSERTS_FMin3DataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionByFloatAttrDataflowNode
-// 0x0108 (0x0390 - 0x0288)
-struct FCollectionTransformSelectionByFloatAttrDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.RemoveOnBreakDataflowNode
+// 0x00F0 (0x0378 - 0x0288)
+struct FRemoveOnBreakDataflowNode final : public FDataflowNode
 {
 public:
 	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
-	class FString                                 GroupName;                                         // 0x0338(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 AttrName;                                          // 0x0348(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Min;                                               // 0x0358(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Max;                                               // 0x035C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERangeSettingEnum                             RangeSetting;                                      // 0x0360(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInclusive;                                        // 0x0361(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_362[0x6];                                      // 0x0362(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x0368(0x0028)(NativeAccessSpecifierPublic)
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x0338(0x0028)(NativeAccessSpecifierPublic)
+	bool                                          bEnabledRemoval;                                   // 0x0360(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_361[0x3];                                      // 0x0361(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2f                              PostBreakTimer;                                    // 0x0364(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2f                              RemovalTimer;                                      // 0x036C(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bClusterCrumbling;                                 // 0x0374(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_375[0x3];                                      // 0x0375(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCollectionTransformSelectionByFloatAttrDataflowNode;
+DUMPER7_ASSERTS_FRemoveOnBreakDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.Max3DataflowNode
 // 0x0010 (0x0298 - 0x0288)
@@ -3656,17 +3672,19 @@ public:
 };
 DUMPER7_ASSERTS_FSignDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.SetDynamicStateDataflowNode
-// 0x00E0 (0x0368 - 0x0288)
-struct FSetDynamicStateDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionByPercentageDataflowNode
+// 0x0038 (0x02C0 - 0x0288)
+struct FCollectionTransformSelectionByPercentageDataflowNode final : public FDataflowNode
 {
 public:
-	EDataflowGeometryCollectionDynamicState       DynamicState;                                      // 0x0288(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_289[0x7];                                      // 0x0289(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FManagedArrayCollection                Collection;                                        // 0x0290(0x00B0)(NativeAccessSpecifierPrivate)
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x0340(0x0028)(NativeAccessSpecifierPrivate)
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x0288(0x0028)(NativeAccessSpecifierPublic)
+	int32                                         Percentage;                                        // 0x02B0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDeterministic;                                    // 0x02B4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2B5[0x3];                                      // 0x02B5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         RandomSeed;                                        // 0x02B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2BC[0x4];                                      // 0x02BC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FSetDynamicStateDataflowNode;
+DUMPER7_ASSERTS_FCollectionTransformSelectionByPercentageDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.ClampDataflowNode
 // 0x0010 (0x0298 - 0x0288)
@@ -3694,15 +3712,16 @@ public:
 };
 DUMPER7_ASSERTS_FFitDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionSiblingsDataflowNode
-// 0x00D8 (0x0360 - 0x0288)
-struct FCollectionTransformSelectionSiblingsDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CollectionSetPivotDataflowNode
+// 0x0118 (0x03A0 - 0x0288)
+struct FCollectionSetPivotDataflowNode final : public FDataflowNode
 {
 public:
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x0288(0x0028)(NativeAccessSpecifierPublic)
-	struct FManagedArrayCollection                Collection;                                        // 0x02B0(0x00B0)(NativeAccessSpecifierPublic)
+	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
+	uint8                                         Pad_338[0x8];                                      // 0x0338(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Transform;                                         // 0x0340(0x0060)(Edit, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCollectionTransformSelectionSiblingsDataflowNode;
+DUMPER7_ASSERTS_FCollectionSetPivotDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.EFitDataflowNode
 // 0x0018 (0x02A0 - 0x0288)
@@ -3730,19 +3749,19 @@ public:
 };
 DUMPER7_ASSERTS_FPowDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.GetNumElementsInCollectionGroupDataflowNode
-// 0x00D0 (0x0358 - 0x0288)
-struct FGetNumElementsInCollectionGroupDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CollectionVertexSelectionByPercentageDataflowNode
+// 0x0038 (0x02C0 - 0x0288)
+struct FCollectionVertexSelectionByPercentageDataflowNode final : public FDataflowNode
 {
 public:
-	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
-	EStandardGroupNameEnum                        GroupName;                                         // 0x0338(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_339[0x7];                                      // 0x0339(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CustomGroupName;                                   // 0x0340(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         NumElements;                                       // 0x0350(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_354[0x4];                                      // 0x0354(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FDataflowVertexSelection               VertexSelection;                                   // 0x0288(0x0028)(NativeAccessSpecifierPublic)
+	int32                                         Percentage;                                        // 0x02B0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDeterministic;                                    // 0x02B4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2B5[0x3];                                      // 0x02B5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         RandomSeed;                                        // 0x02B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2BC[0x4];                                      // 0x02BC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FGetNumElementsInCollectionGroupDataflowNode;
+DUMPER7_ASSERTS_FCollectionVertexSelectionByPercentageDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.LogDataflowNode
 // 0x0010 (0x0298 - 0x0288)
@@ -3766,26 +3785,23 @@ public:
 };
 DUMPER7_ASSERTS_FLogeDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.CollectionSelectionByAttrDataflowNode
-// 0x01C8 (0x0450 - 0x0288)
-struct FCollectionSelectionByAttrDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.GetCollectionAttributeDataTypedDataflowNode_v2
+// 0x0138 (0x03C0 - 0x0288)
+struct FGetCollectionAttributeDataTypedDataflowNode_v2 final : public FDataflowNode
 {
 public:
-	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
-	struct FCollectionAttributeKey                AttributeKey;                                      // 0x0338(0x0020)(NativeAccessSpecifierPublic)
-	ESelectionByAttrGroup                         Group;                                             // 0x0358(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPrivate)
+	struct FCollectionAttributeKey                AttributeKey;                                      // 0x0338(0x0020)(NativeAccessSpecifierPrivate)
+	EStandardGroupNameEnum                        GroupName;                                         // 0x0358(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_359[0x7];                                      // 0x0359(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Attribute;                                         // 0x0360(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESelectionByAttrOperation                     Operation;                                         // 0x0370(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_371[0x7];                                      // 0x0371(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Value;                                             // 0x0378(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FDataflowVertexSelection               VertexSelection;                                   // 0x0388(0x0028)(NativeAccessSpecifierPublic)
-	struct FDataflowFaceSelection                 FaceSelection;                                     // 0x03B0(0x0028)(NativeAccessSpecifierPublic)
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x03D8(0x0028)(NativeAccessSpecifierPublic)
-	struct FDataflowGeometrySelection             GeometrySelection;                                 // 0x0400(0x0028)(NativeAccessSpecifierPublic)
-	struct FDataflowMaterialSelection             MaterialSelection;                                 // 0x0428(0x0028)(NativeAccessSpecifierPublic)
+	class FString                                 CustomGroupName;                                   // 0x0360(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class FString                                 AttrName;                                          // 0x0370(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TArray<bool>                                  BoolAttributeData;                                 // 0x0380(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	struct FDataflowNumericArrayTypes             NumericArray;                                      // 0x0390(0x0010)(NativeAccessSpecifierPrivate)
+	struct FDataflowVectorArrayTypes              VectorArray;                                       // 0x03A0(0x0010)(NativeAccessSpecifierPrivate)
+	struct FDataflowStringArrayTypes              StringArray;                                       // 0x03B0(0x0010)(NativeAccessSpecifierPrivate)
 };
-DUMPER7_ASSERTS_FCollectionSelectionByAttrDataflowNode;
+DUMPER7_ASSERTS_FGetCollectionAttributeDataTypedDataflowNode_v2;
 
 // ScriptStruct GeometryCollectionNodes.LerpDataflowNode
 // 0x0010 (0x0298 - 0x0288)
@@ -3811,15 +3827,15 @@ public:
 };
 DUMPER7_ASSERTS_FWrapDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.SelectionToVertexListDataflowNode
-// 0x0038 (0x02C0 - 0x0288)
-struct FSelectionToVertexListDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionClusterDataflowNode_v2
+// 0x00D8 (0x0360 - 0x0288)
+struct FCollectionTransformSelectionClusterDataflowNode_v2 final : public FDataflowNode
 {
 public:
-	struct FDataflowVertexSelection               VertexSelection;                                   // 0x0288(0x0028)(NativeAccessSpecifierPublic)
-	TArray<int32>                                 VertexList;                                        // 0x02B0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x0338(0x0028)(NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FSelectionToVertexListDataflowNode;
+DUMPER7_ASSERTS_FCollectionTransformSelectionClusterDataflowNode_v2;
 
 // ScriptStruct GeometryCollectionNodes.ExpDataflowNode
 // 0x0008 (0x0290 - 0x0288)
@@ -3841,22 +3857,6 @@ public:
 };
 DUMPER7_ASSERTS_FSinDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionBySizeDataflowNode
-// 0x00E8 (0x0370 - 0x0288)
-struct FCollectionTransformSelectionBySizeDataflowNode final : public FDataflowNode
-{
-public:
-	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
-	float                                         SizeMin;                                           // 0x0338(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SizeMax;                                           // 0x033C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERangeSettingEnum                             RangeSetting;                                      // 0x0340(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInclusive;                                        // 0x0341(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseRelativeSize;                                  // 0x0342(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_343[0x5];                                      // 0x0343(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x0348(0x0028)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCollectionTransformSelectionBySizeDataflowNode;
-
 // ScriptStruct GeometryCollectionNodes.ArcSinDataflowNode
 // 0x0008 (0x0290 - 0x0288)
 struct FArcSinDataflowNode final : public FDataflowNode
@@ -3866,16 +3866,6 @@ public:
 	float                                         ReturnValue;                                       // 0x028C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FArcSinDataflowNode;
-
-// ScriptStruct GeometryCollectionNodes.CosDataflowNode
-// 0x0008 (0x0290 - 0x0288)
-struct FCosDataflowNode final : public FDataflowNode
-{
-public:
-	float                                         float_0;                                           // 0x0288(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x028C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCosDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.ArcCosDataflowNode
 // 0x0008 (0x0290 - 0x0288)
@@ -4463,6 +4453,16 @@ public:
 };
 DUMPER7_ASSERTS_FGetBoolOverrideFromAssetDataflowNode;
 
+// ScriptStruct GeometryCollectionNodes.GetStringOverrideFromAssetDataflowNode
+// 0x0020 (0x02C8 - 0x02A8)
+struct FGetStringOverrideFromAssetDataflowNode final : public FDataflowOverrideNode
+{
+public:
+	class FString                                 String;                                            // 0x02A8(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 StringDefault;                                     // 0x02B8(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGetStringOverrideFromAssetDataflowNode;
+
 // ScriptStruct GeometryCollectionNodes.FilterPointSetWithMeshDataflowNode
 // 0x0020 (0x02A8 - 0x0288)
 struct FFilterPointSetWithMeshDataflowNode final : public FDataflowNode
@@ -4475,24 +4475,6 @@ public:
 	TArray<struct FVector>                        SamplePoints;                                      // 0x0298(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
 };
 DUMPER7_ASSERTS_FFilterPointSetWithMeshDataflowNode;
-
-// ScriptStruct GeometryCollectionNodes.UniformPointSamplingDataflowNode
-// 0x0050 (0x02D8 - 0x0288)
-struct FUniformPointSamplingDataflowNode final : public FDataflowNode
-{
-public:
-	class UDynamicMesh*                           TargetMesh;                                        // 0x0288(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	float                                         SamplingRadius;                                    // 0x0290(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxNumSamples;                                     // 0x0294(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SubSampleDensity;                                  // 0x0298(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         RandomSeed;                                        // 0x029C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FVector>                        SamplePoints;                                      // 0x02A0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 SampleTriangleIDs;                                 // 0x02B0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FVector>                        SampleBarycentricCoords;                           // 0x02C0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         NumSamplePoints;                                   // 0x02D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D4[0x4];                                      // 0x02D4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FUniformPointSamplingDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.NonUniformPointSamplingDataflowNode
 // 0x0070 (0x02F8 - 0x0288)
@@ -4716,6 +4698,27 @@ public:
 	struct FDataflowVertexSelection               VertexSelection;                                   // 0x02E0(0x0028)(NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCollectionVertexSelectionSetOperationDataflowNode;
+
+// ScriptStruct GeometryCollectionNodes.CollectionSelectionByAttrDataflowNode
+// 0x01C8 (0x0450 - 0x0288)
+struct FCollectionSelectionByAttrDataflowNode final : public FDataflowNode
+{
+public:
+	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
+	struct FCollectionAttributeKey                AttributeKey;                                      // 0x0338(0x0020)(NativeAccessSpecifierPublic)
+	ESelectionByAttrGroup                         Group;                                             // 0x0358(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_359[0x7];                                      // 0x0359(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Attribute;                                         // 0x0360(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESelectionByAttrOperation                     Operation;                                         // 0x0370(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_371[0x7];                                      // 0x0371(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Value;                                             // 0x0378(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FDataflowVertexSelection               VertexSelection;                                   // 0x0388(0x0028)(NativeAccessSpecifierPublic)
+	struct FDataflowFaceSelection                 FaceSelection;                                     // 0x03B0(0x0028)(NativeAccessSpecifierPublic)
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x03D8(0x0028)(NativeAccessSpecifierPublic)
+	struct FDataflowGeometrySelection             GeometrySelection;                                 // 0x0400(0x0028)(NativeAccessSpecifierPublic)
+	struct FDataflowMaterialSelection             MaterialSelection;                                 // 0x0428(0x0028)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCollectionSelectionByAttrDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.GeometrySelectionToVertexSelectionDataflowNode
 // 0x0110 (0x0398 - 0x0288)
@@ -4960,41 +4963,6 @@ public:
 };
 DUMPER7_ASSERTS_FGenerateClusterConvexHullsFromLeafHullsDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.GenerateClusterConvexHullsFromChildrenHullsDataflowNode
-// 0x01A0 (0x0428 - 0x0288)
-struct FGenerateClusterConvexHullsFromChildrenHullsDataflowNode final : public FDataflowNode
-{
-public:
-	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPrivate)
-	struct FDataflowSphereCovering                SphereCovering;                                    // 0x0338(0x0020)(NativeAccessSpecifierPrivate)
-	int32                                         ConvexCount;                                       // 0x0358(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_35C[0x4];                                      // 0x035C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        ErrorTolerance;                                    // 0x0360(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          bPreferExternalCollisionShapes;                    // 0x0368(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_369[0x7];                                      // 0x0369(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FDataflowTransformSelection            OptionalSelectionFilter;                           // 0x0370(0x0028)(NativeAccessSpecifierPrivate)
-	EConvexHullProximityFilter                    MergeProximityFilter;                              // 0x0398(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_399[0x3];                                      // 0x0399(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         MergeProximityDistanceThreshold;                   // 0x039C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          bAllowMergingLeafHulls;                            // 0x03A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          bProtectNegativeSpace;                             // 0x03A1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	ENegativeSpaceSampleMethodDataflowEnum        SampleMethod;                                      // 0x03A2(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          bRequireSearchSampleCoverage;                      // 0x03A3(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          bOnlyConnectedToHull;                              // 0x03A4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_3A5[0x3];                                      // 0x03A5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         TargetNumSamples;                                  // 0x03A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_3AC[0x4];                                      // 0x03AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        MinSampleSpacing;                                  // 0x03B0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	double                                        NegativeSpaceTolerance;                            // 0x03B8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	double                                        MinRadius;                                         // 0x03C0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	struct FDataflowNodeDebugDrawSettings         DebugDrawRenderSettings;                           // 0x03C8(0x0018)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
-	bool                                          bRandomizeColor;                                   // 0x03E0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_3E1[0x3];                                      // 0x03E1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ColorRandomSeed;                                   // 0x03E4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	struct FDataflowNodeSphereCoveringDebugDrawSettings SphereCoveringDebugDrawRenderSettings;       // 0x03E8(0x0040)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
-};
-DUMPER7_ASSERTS_FGenerateClusterConvexHullsFromChildrenHullsDataflowNode;
-
 // ScriptStruct GeometryCollectionNodes.ClearConvexHullsDataflowNode
 // 0x00D8 (0x0360 - 0x0288)
 struct FClearConvexHullsDataflowNode final : public FDataflowNode
@@ -5004,6 +4972,23 @@ public:
 	struct FDataflowTransformSelection            TransformSelection;                                // 0x0338(0x0028)(NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FClearConvexHullsDataflowNode;
+
+// ScriptStruct GeometryCollectionNodes.CopyConvexHullsFromRootDataflowNode
+// 0x0188 (0x0410 - 0x0288)
+struct FCopyConvexHullsFromRootDataflowNode final : public FDataflowNode
+{
+public:
+	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPrivate)
+	struct FManagedArrayCollection                FromCollection;                                    // 0x0338(0x00B0)(NativeAccessSpecifierPrivate)
+	bool                                          bSkipIfEmpty;                                      // 0x03E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_3E9[0x3];                                      // 0x03E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FDataflowNodeDebugDrawSettings         DebugDrawRenderSettings;                           // 0x03EC(0x0018)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
+	bool                                          bRandomizeColor;                                   // 0x0404(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_405[0x3];                                      // 0x0405(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ColorRandomSeed;                                   // 0x0408(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_40C[0x4];                                      // 0x040C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCopyConvexHullsFromRootDataflowNode;
 
 // ScriptStruct GeometryCollectionNodes.MergeConvexHullsDataflowNode
 // 0x0198 (0x0420 - 0x0288)
@@ -5038,15 +5023,6 @@ public:
 };
 DUMPER7_ASSERTS_FMergeConvexHullsDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.UpdateVolumeAttributesDataflowNode
-// 0x00B0 (0x0338 - 0x0288)
-struct FUpdateVolumeAttributesDataflowNode final : public FDataflowNode
-{
-public:
-	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUpdateVolumeAttributesDataflowNode;
-
 // ScriptStruct GeometryCollectionNodes.GetConvexHullVolumeDataflowNode
 // 0x0100 (0x0388 - 0x0288)
 struct FGetConvexHullVolumeDataflowNode final : public FDataflowNode
@@ -5065,6 +5041,33 @@ public:
 };
 DUMPER7_ASSERTS_FGetConvexHullVolumeDataflowNode;
 
+// ScriptStruct GeometryCollectionNodes.FixTinyGeoDataflowNode
+// 0x00F8 (0x0380 - 0x0288)
+struct FFixTinyGeoDataflowNode final : public FDataflowNode
+{
+public:
+	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x0338(0x0028)(NativeAccessSpecifierPublic)
+	EFixTinyGeoMergeType                          MergeType;                                         // 0x0360(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOnFractureLevel;                                  // 0x0361(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOnlyClusters;                                     // 0x0362(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOnlySameParent;                                   // 0x0363(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFractureLevelIsAll;                               // 0x0364(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EFixTinyGeoNeighborSelectionMethod            NeighborSelection;                                 // 0x0365(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOnlyToConnected;                                  // 0x0366(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseCollectionProximityForConnections;             // 0x0367(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EFixTinyGeoUseBoneSelection                   UseBoneSelection;                                  // 0x0368(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EFixTinyGeoGeometrySelectionMethod            SelectionMethod;                                   // 0x0369(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_36A[0x2];                                      // 0x036A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         MinVolumeCubeRoot;                                 // 0x036C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RelativeVolume;                                    // 0x0370(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          AddSamplesForCollision;                            // 0x0374(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_375[0x3];                                      // 0x0375(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CollisionSampleSpacing;                            // 0x0378(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_37C[0x4];                                      // 0x037C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FFixTinyGeoDataflowNode;
+
 // ScriptStruct GeometryCollectionNodes.RecomputeNormalsInGeometryCollectionDataflowNode
 // 0x00E8 (0x0370 - 0x0288)
 struct FRecomputeNormalsInGeometryCollectionDataflowNode final : public FDataflowNode
@@ -5081,19 +5084,6 @@ public:
 };
 DUMPER7_ASSERTS_FRecomputeNormalsInGeometryCollectionDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.ResampleGeometryCollectionDataflowNode
-// 0x00E0 (0x0368 - 0x0288)
-struct FResampleGeometryCollectionDataflowNode final : public FDataflowNode
-{
-public:
-	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x0338(0x0028)(NativeAccessSpecifierPublic)
-	bool                                          AddSamplesForCollision;                            // 0x0360(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_361[0x3];                                      // 0x0361(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CollisionSampleSpacing;                            // 0x0364(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FResampleGeometryCollectionDataflowNode;
-
 // ScriptStruct GeometryCollectionNodes.ValidateGeometryCollectionDataflowNode
 // 0x00B8 (0x0340 - 0x0288)
 struct FValidateGeometryCollectionDataflowNode final : public FDataflowNode
@@ -5106,6 +5096,19 @@ public:
 	uint8                                         Pad_33B[0x5];                                      // 0x033B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FValidateGeometryCollectionDataflowNode;
+
+// ScriptStruct GeometryCollectionNodes.GeometryCollectionVertexScalarToVertexIndicesNode
+// 0x00E8 (0x0370 - 0x0288)
+struct FGeometryCollectionVertexScalarToVertexIndicesNode final : public FDataflowNode
+{
+public:
+	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
+	struct FCollectionAttributeKey                AttributeKey;                                      // 0x0338(0x0020)(Edit, NativeAccessSpecifierPublic)
+	float                                         SelectionThreshold;                                // 0x0358(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_35C[0x4];                                      // 0x035C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 VertexIndices;                                     // 0x0360(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGeometryCollectionVertexScalarToVertexIndicesNode;
 
 // ScriptStruct GeometryCollectionNodes.TransformCollectionAttributeDataflowNode
 // 0x0198 (0x0420 - 0x0288)
@@ -5121,20 +5124,6 @@ public:
 };
 DUMPER7_ASSERTS_FTransformCollectionAttributeDataflowNode;
 
-// ScriptStruct GeometryCollectionNodes.SetVertexColorFromFloatArrayDataflowNode
-// 0x00D8 (0x0360 - 0x0288)
-struct FSetVertexColorFromFloatArrayDataflowNode final : public FDataflowNode
-{
-public:
-	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
-	TArray<float>                                 FloatArray;                                        // 0x0338(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          bNormalizeInput;                                   // 0x0348(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_349[0x3];                                      // 0x0349(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLinearColor                           Color;                                             // 0x034C(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_35C[0x4];                                      // 0x035C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSetVertexColorFromFloatArrayDataflowNode;
-
 // ScriptStruct GeometryCollectionNodes.SetVertexColorFromVertexIndicesDataflowNode
 // 0x00D0 (0x0358 - 0x0288)
 struct FSetVertexColorFromVertexIndicesDataflowNode final : public FDataflowNode
@@ -5145,5 +5134,16 @@ public:
 	struct FLinearColor                           SelectedColor;                                     // 0x0348(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FSetVertexColorFromVertexIndicesDataflowNode;
+
+// ScriptStruct GeometryCollectionNodes.SetVertexColorFromVertexSelectionDataflowNode
+// 0x00E8 (0x0370 - 0x0288)
+struct FSetVertexColorFromVertexSelectionDataflowNode final : public FDataflowNode
+{
+public:
+	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
+	struct FDataflowVertexSelection               VertexSelection;                                   // 0x0338(0x0028)(NativeAccessSpecifierPublic)
+	struct FLinearColor                           SelectedColor;                                     // 0x0360(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSetVertexColorFromVertexSelectionDataflowNode;
 
 SDK_NAMESPACE_END

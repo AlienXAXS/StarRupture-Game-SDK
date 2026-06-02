@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "Engine_classes.hpp"
-#include "AuCamera_structs.hpp"
 #include "AuAbilities_structs.hpp"
 #include "AuAbilities_classes.hpp"
+#include "AuCamera_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
 #include "GameplayAbilities_classes.hpp"
 #include "AuItems_structs.hpp"
@@ -21,8 +21,8 @@
 #include "AuWeapon_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "AuCueTranslator_structs.hpp"
 #include "AuEquipment_classes.hpp"
+#include "AuCueTranslator_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "AuCore_structs.hpp"
 

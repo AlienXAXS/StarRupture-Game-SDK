@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "AIModule_structs.hpp"
 #include "AIModule_classes.hpp"
 #include "GameplayAbilities_classes.hpp"
 #include "Chimera_structs.hpp"
 #include "Chimera_classes.hpp"
+#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassSpawner_classes.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
@@ -30,8 +30,8 @@
 #include "MassRepresentation_structs.hpp"
 #include "MassRepresentation_classes.hpp"
 #include "DeveloperSettings_classes.hpp"
-#include "MassNavigation_structs.hpp"
 #include "MassMovement_structs.hpp"
+#include "MassNavigation_structs.hpp"
 #include "MassLOD_classes.hpp"
 #include "PCG_classes.hpp"
 

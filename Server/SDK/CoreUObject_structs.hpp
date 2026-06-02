@@ -2452,14 +2452,14 @@ public:
 };
 DUMPER7_ASSERTS_FTransform3d;
 
-// ScriptStruct CoreUObject.PerPlatformFloat
+// ScriptStruct CoreUObject.FreezablePerPlatformInt
 // 0x0004 (0x0004 - 0x0000)
-struct FPerPlatformFloat final
+struct alignas(0x04) FFreezablePerPlatformInt final
 {
 public:
-	float                                         Default;                                           // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x4];                                        // 0x0000(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FPerPlatformFloat;
+DUMPER7_ASSERTS_FFreezablePerPlatformInt;
 
 // ScriptStruct CoreUObject.Uint32Vector
 // 0x000C (0x000C - 0x0000)
@@ -2535,18 +2535,6 @@ public:
 };
 DUMPER7_ASSERTS_FOverriddenPropertyNodeID;
 
-// ScriptStruct CoreUObject.OverriddenPropertyNode
-// 0x0068 (0x0068 - 0x0000)
-struct FOverriddenPropertyNode final
-{
-public:
-	struct FOverriddenPropertyNodeID              NodeID;                                            // 0x0000(0x0010)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EOverriddenPropertyOperation                  Operation;                                         // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<struct FOverriddenPropertyNodeID, struct FOverriddenPropertyNodeID> SubPropertyNodeKeys;    // 0x0018(0x0050)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FOverriddenPropertyNode;
-
 // ScriptStruct CoreUObject.UintVector4
 // 0x0010 (0x0010 - 0x0000)
 struct FUintVector4 final
@@ -2582,6 +2570,18 @@ public:
 	float                                         W;                                                 // 0x000C(0x0004)(Edit, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FVector4f;
+
+// ScriptStruct CoreUObject.OverriddenPropertyNode
+// 0x0068 (0x0068 - 0x0000)
+struct FOverriddenPropertyNode final
+{
+public:
+	struct FOverriddenPropertyNodeID              NodeID;                                            // 0x0000(0x0010)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EOverriddenPropertyOperation                  Operation;                                         // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<struct FOverriddenPropertyNodeID, struct FOverriddenPropertyNodeID> SubPropertyNodeKeys;    // 0x0018(0x0050)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FOverriddenPropertyNode;
 
 // ScriptStruct CoreUObject.OverriddenPropertySet
 // 0x0068 (0x0068 - 0x0000)
@@ -2777,14 +2777,14 @@ public:
 };
 DUMPER7_ASSERTS_FPerPlatformInt;
 
-// ScriptStruct CoreUObject.FreezablePerPlatformInt
+// ScriptStruct CoreUObject.PerPlatformFloat
 // 0x0004 (0x0004 - 0x0000)
-struct alignas(0x04) FFreezablePerPlatformInt final
+struct FPerPlatformFloat final
 {
 public:
-	uint8                                         Pad_0[0x4];                                        // 0x0000(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         Default;                                           // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FFreezablePerPlatformInt;
+DUMPER7_ASSERTS_FPerPlatformFloat;
 
 // ScriptStruct CoreUObject.PerPlatformBool
 // 0x0001 (0x0001 - 0x0000)

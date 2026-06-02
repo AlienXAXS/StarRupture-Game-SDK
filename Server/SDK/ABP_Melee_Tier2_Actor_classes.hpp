@@ -12,8 +12,8 @@
 
 #include "AnimGraphRuntime_structs.hpp"
 #include "Engine_structs.hpp"
-#include "MassAIPrototypeEnemyRuntime_classes.hpp"
 #include "ABP_Melee_Tier2_Actor_structs.hpp"
+#include "MassAIPrototypeEnemyRuntime_classes.hpp"
 
 
 SDK_NAMESPACE_START

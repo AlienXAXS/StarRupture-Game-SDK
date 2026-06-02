@@ -221,14 +221,15 @@ public:
 };
 DUMPER7_ASSERTS_FEventReply;
 
-// ScriptStruct UMG.WidgetEventField
-// 0x0001 (0x0001 - 0x0000)
-struct FWidgetEventField final
+// ScriptStruct UMG.UIComponentTarget
+// 0x0010 (0x0010 - 0x0000)
+struct FUIComponentTarget final
 {
 public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FName                                   TargetName;                                        // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UUIComponent*                           Component;                                         // 0x0008(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 };
-DUMPER7_ASSERTS_FWidgetEventField;
+DUMPER7_ASSERTS_FUIComponentTarget;
 
 // ScriptStruct UMG.AnimationEventBinding
 // 0x0030 (0x0030 - 0x0000)
@@ -256,15 +257,6 @@ public:
 	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FWidgetTransform;
-
-// ScriptStruct UMG.WidgetComponentInstanceData
-// 0x0010 (0x00C8 - 0x00B8)
-struct FWidgetComponentInstanceData final : public FSceneComponentInstanceData
-{
-public:
-	uint8                                         Pad_B8[0x10];                                      // 0x00B8(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FWidgetComponentInstanceData;
 
 // ScriptStruct UMG.ShapedTextOptions
 // 0x0003 (0x0003 - 0x0000)
@@ -308,12 +300,18 @@ public:
 };
 DUMPER7_ASSERTS_FWidgetChild;
 
-// ScriptStruct UMG.DynamicPropertyPath
-// 0x0000 (0x0038 - 0x0038)
-struct FDynamicPropertyPath final : public FCachedPropertyPath
+// ScriptStruct UMG.BlueprintWidgetAnimationDelegateBinding
+// 0x001C (0x001C - 0x0000)
+struct FBlueprintWidgetAnimationDelegateBinding final
 {
+public:
+	EWidgetAnimationEvent                         Action;                                            // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   AnimationToBind;                                   // 0x0004(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   FunctionNameToBind;                                // 0x000C(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   UserTag;                                           // 0x0014(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FDynamicPropertyPath;
+DUMPER7_ASSERTS_FBlueprintWidgetAnimationDelegateBinding;
 
 // ScriptStruct UMG.NamedSlotBinding
 // 0x0010 (0x0010 - 0x0000)
@@ -370,15 +368,14 @@ public:
 };
 DUMPER7_ASSERTS_FSlateChildSize;
 
-// ScriptStruct UMG.UIComponentTarget
-// 0x0010 (0x0010 - 0x0000)
-struct FUIComponentTarget final
+// ScriptStruct UMG.WidgetEventField
+// 0x0001 (0x0001 - 0x0000)
+struct FWidgetEventField final
 {
 public:
-	class FName                                   TargetName;                                        // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UUIComponent*                           Component;                                         // 0x0008(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FUIComponentTarget;
+DUMPER7_ASSERTS_FWidgetEventField;
 
 // ScriptStruct UMG.WidgetNavigationData
 // 0x0030 (0x0030 - 0x0000)
@@ -426,18 +423,12 @@ public:
 };
 DUMPER7_ASSERTS_FWidgetAnimationBinding;
 
-// ScriptStruct UMG.BlueprintWidgetAnimationDelegateBinding
-// 0x001C (0x001C - 0x0000)
-struct FBlueprintWidgetAnimationDelegateBinding final
+// ScriptStruct UMG.DynamicPropertyPath
+// 0x0000 (0x0038 - 0x0038)
+struct FDynamicPropertyPath final : public FCachedPropertyPath
 {
-public:
-	EWidgetAnimationEvent                         Action;                                            // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   AnimationToBind;                                   // 0x0004(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   FunctionNameToBind;                                // 0x000C(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   UserTag;                                           // 0x0014(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FBlueprintWidgetAnimationDelegateBinding;
+DUMPER7_ASSERTS_FDynamicPropertyPath;
 
 // ScriptStruct UMG.WidgetStateBitfield
 // 0x0008 (0x0008 - 0x0000)
@@ -503,6 +494,15 @@ public:
 	struct FSlateBrush                            Brush;                                             // 0x0010(0x00B0)(Edit, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRichImageRow;
+
+// ScriptStruct UMG.WidgetComponentInstanceData
+// 0x0010 (0x00C8 - 0x00B8)
+struct FWidgetComponentInstanceData final : public FSceneComponentInstanceData
+{
+public:
+	uint8                                         Pad_B8[0x10];                                      // 0x00B8(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FWidgetComponentInstanceData;
 
 // ScriptStruct UMG.SlateMeshVertex
 // 0x003C (0x003C - 0x0000)

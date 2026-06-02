@@ -50,14 +50,23 @@ public:
 };
 DUMPER7_ASSERTS_FCrMassActorReplicationHelper;
 
-// ScriptStruct ChimeraMassCommon.CrMassPersistentEntityIDArray
-// 0x0010 (0x0010 - 0x0000)
-struct FCrMassPersistentEntityIDArray final
+// ScriptStruct ChimeraMassCommon.CrReplicatedSoftObjectPtr
+// 0x0030 (0x0030 - 0x0000)
+struct FCrReplicatedSoftObjectPtr final
 {
 public:
-	TArray<struct FCrMassPersistentEntityID>      Values;                                            // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	uint16                                        UId;                                               // 0x0000(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftObjectPtr<class UDataAsset>              SoftObjectPtr;                                     // 0x0008(0x0028)(RepSkip, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
-DUMPER7_ASSERTS_FCrMassPersistentEntityIDArray;
+DUMPER7_ASSERTS_FCrReplicatedSoftObjectPtr;
+
+// ScriptStruct ChimeraMassCommon.CrMassGenericVisualizationTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassGenericVisualizationTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrMassGenericVisualizationTag;
 
 // ScriptStruct ChimeraMassCommon.CrMassComponentReplicationHelper
 // 0x0018 (0x0018 - 0x0000)
@@ -87,22 +96,13 @@ struct FCrMassSavableTag : public FMassTag
 };
 DUMPER7_ASSERTS_FCrMassSavableTag;
 
-// ScriptStruct ChimeraMassCommon.CrMassGenericVisualizationTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassGenericVisualizationTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrMassGenericVisualizationTag;
-
-// ScriptStruct ChimeraMassCommon.CrReplicatedSoftObjectPtr
-// 0x0030 (0x0030 - 0x0000)
-struct FCrReplicatedSoftObjectPtr final
+// ScriptStruct ChimeraMassCommon.CrMassPersistentEntityIDArray
+// 0x0010 (0x0010 - 0x0000)
+struct FCrMassPersistentEntityIDArray final
 {
 public:
-	uint16                                        UId;                                               // 0x0000(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TSoftObjectPtr<class UDataAsset>              SoftObjectPtr;                                     // 0x0008(0x0028)(RepSkip, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TArray<struct FCrMassPersistentEntityID>      Values;                                            // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrReplicatedSoftObjectPtr;
+DUMPER7_ASSERTS_FCrMassPersistentEntityIDArray;
 
 SDK_NAMESPACE_END

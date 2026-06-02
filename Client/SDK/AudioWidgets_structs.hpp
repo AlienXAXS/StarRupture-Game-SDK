@@ -12,8 +12,8 @@
 
 #include "CoreUObject_structs.hpp"
 #include "SlateCore_structs.hpp"
-#include "AudioSynesthesia_structs.hpp"
 #include "Engine_structs.hpp"
+#include "AudioSynesthesia_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -161,6 +161,24 @@ enum class EAudioSpectrumPlotFrequencyAxisPixelBucketMode : uint8
 	EAudioSpectrumPlotFrequencyAxisPixelBucketMode_MAX = 3,
 };
 
+// ScriptStruct AudioWidgets.AudioMaterialEnvelopeSettings
+// 0x0024 (0x0024 - 0x0000)
+struct FAudioMaterialEnvelopeSettings final
+{
+public:
+	EAudioMaterialEnvelopeType                    EnvelopeType;                                      // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         AttackCurve;                                       // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AttackValue;                                       // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AttackTime;                                        // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DecayCurve;                                        // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DecayTime;                                         // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SustainValue;                                      // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReleaseCurve;                                      // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReleaseTime;                                       // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAudioMaterialEnvelopeSettings;
+
 // ScriptStruct AudioWidgets.FixedSampleSequenceRulerStyle
 // 0x0228 (0x0230 - 0x0008)
 struct FFixedSampleSequenceRulerStyle final : public FSlateWidgetStyle
@@ -261,6 +279,18 @@ public:
 };
 DUMPER7_ASSERTS_FAudioMaterialWidgetStyle;
 
+// ScriptStruct AudioWidgets.PlayheadOverlayStyle
+// 0x0020 (0x0028 - 0x0008)
+struct FPlayheadOverlayStyle final : public FSlateWidgetStyle
+{
+public:
+	struct FSlateColor                            PlayheadColor;                                     // 0x0008(0x0014)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	float                                         PlayheadWidth;                                     // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DesiredWidth;                                      // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DesiredHeight;                                     // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FPlayheadOverlayStyle;
+
 // ScriptStruct AudioWidgets.AudioMaterialMeterStyle
 // 0x00D8 (0x00F0 - 0x0018)
 struct FAudioMaterialMeterStyle final : public FAudioMaterialWidgetStyle
@@ -283,20 +313,6 @@ public:
 	struct FSlateFontInfo                         Font;                                              // 0x0090(0x0060)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FAudioMaterialMeterStyle;
-
-// ScriptStruct AudioWidgets.AudioMeterDefaultColorStyle
-// 0x0060 (0x0068 - 0x0008)
-struct FAudioMeterDefaultColorStyle final : public FSlateWidgetStyle
-{
-public:
-	struct FLinearColor                           MeterBackgroundColor;                              // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           MeterValueColor;                                   // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           MeterPeakColor;                                    // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           MeterClippingColor;                                // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           MeterScaleColor;                                   // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           MeterScaleLabelColor;                              // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAudioMeterDefaultColorStyle;
 
 // ScriptStruct AudioWidgets.AudioMeterStyle
 // 0x0428 (0x0430 - 0x0008)
@@ -326,6 +342,46 @@ public:
 };
 DUMPER7_ASSERTS_FAudioMeterStyle;
 
+// ScriptStruct AudioWidgets.SampledSequenceVectorViewerStyle
+// 0x00E8 (0x00F0 - 0x0008)
+struct FSampledSequenceVectorViewerStyle final : public FSlateWidgetStyle
+{
+public:
+	struct FSlateColor                            BackgroundColor;                                   // 0x0008(0x0014)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            BackgroundBrush;                                   // 0x0020(0x00B0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLinearColor                           LineColor;                                         // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LineThickness;                                     // 0x00E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E4[0xC];                                       // 0x00E4(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSampledSequenceVectorViewerStyle;
+
+// ScriptStruct AudioWidgets.AudioVectorscopePanelStyle
+// 0x0198 (0x01A0 - 0x0008)
+struct FAudioVectorscopePanelStyle final : public FSlateWidgetStyle
+{
+public:
+	struct FSampledSequenceValueGridOverlayStyle  ValueGridStyle;                                    // 0x0008(0x00A0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A8[0x8];                                       // 0x00A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSampledSequenceVectorViewerStyle      VectorViewerStyle;                                 // 0x00B0(0x00F0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAudioVectorscopePanelStyle;
+
+// ScriptStruct AudioWidgets.AudioMaterialButtonStyle
+// 0x0070 (0x0088 - 0x0018)
+struct FAudioMaterialButtonStyle final : public FAudioMaterialWidgetStyle
+{
+public:
+	struct FLinearColor                           ButtonMainColor;                                   // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           ButtonMainColorTint_1;                             // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           ButtonMainColorTint_2;                             // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           ButtonAccentColor;                                 // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           ButtonShadowColor;                                 // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           ButtonUnpressedOutlineColor;                       // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           ButtonPressedOutlineColor;                         // 0x0078(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAudioMaterialButtonStyle;
+
 // ScriptStruct AudioWidgets.AudioTextBoxStyle
 // 0x00D8 (0x00E0 - 0x0008)
 struct FAudioTextBoxStyle final : public FSlateWidgetStyle
@@ -352,64 +408,6 @@ public:
 	struct FAudioTextBoxStyle                     TextBoxStyle;                                      // 0x0070(0x00E0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FAudioMaterialSliderStyle;
-
-// ScriptStruct AudioWidgets.SampledSequenceVectorViewerStyle
-// 0x00E8 (0x00F0 - 0x0008)
-struct FSampledSequenceVectorViewerStyle final : public FSlateWidgetStyle
-{
-public:
-	struct FSlateColor                            BackgroundColor;                                   // 0x0008(0x0014)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            BackgroundBrush;                                   // 0x0020(0x00B0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FLinearColor                           LineColor;                                         // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LineThickness;                                     // 0x00E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_E4[0xC];                                       // 0x00E4(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSampledSequenceVectorViewerStyle;
-
-// ScriptStruct AudioWidgets.AudioVectorscopePanelStyle
-// 0x0198 (0x01A0 - 0x0008)
-struct FAudioVectorscopePanelStyle final : public FSlateWidgetStyle
-{
-public:
-	struct FSampledSequenceValueGridOverlayStyle  ValueGridStyle;                                    // 0x0008(0x00A0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A8[0x8];                                       // 0x00A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSampledSequenceVectorViewerStyle      VectorViewerStyle;                                 // 0x00B0(0x00F0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAudioVectorscopePanelStyle;
-
-// ScriptStruct AudioWidgets.AudioMaterialEnvelopeSettings
-// 0x0024 (0x0024 - 0x0000)
-struct FAudioMaterialEnvelopeSettings final
-{
-public:
-	EAudioMaterialEnvelopeType                    EnvelopeType;                                      // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         AttackCurve;                                       // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AttackValue;                                       // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AttackTime;                                        // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DecayCurve;                                        // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DecayTime;                                         // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SustainValue;                                      // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReleaseCurve;                                      // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReleaseTime;                                       // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAudioMaterialEnvelopeSettings;
-
-// ScriptStruct AudioWidgets.AudioMaterialButtonStyle
-// 0x0070 (0x0088 - 0x0018)
-struct FAudioMaterialButtonStyle final : public FAudioMaterialWidgetStyle
-{
-public:
-	struct FLinearColor                           ButtonMainColor;                                   // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           ButtonMainColorTint_1;                             // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           ButtonMainColorTint_2;                             // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           ButtonAccentColor;                                 // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           ButtonShadowColor;                                 // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           ButtonUnpressedOutlineColor;                       // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           ButtonPressedOutlineColor;                         // 0x0078(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAudioMaterialButtonStyle;
 
 // ScriptStruct AudioWidgets.AudioMaterialKnobStyle
 // 0x01A8 (0x01C0 - 0x0018)
@@ -476,6 +474,20 @@ public:
 };
 DUMPER7_ASSERTS_FSpectrumAnalyzerRackUnitSettings;
 
+// ScriptStruct AudioWidgets.AudioMeterDefaultColorStyle
+// 0x0060 (0x0068 - 0x0008)
+struct FAudioMeterDefaultColorStyle final : public FSlateWidgetStyle
+{
+public:
+	struct FLinearColor                           MeterBackgroundColor;                              // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           MeterValueColor;                                   // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           MeterPeakColor;                                    // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           MeterClippingColor;                                // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           MeterScaleColor;                                   // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           MeterScaleLabelColor;                              // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAudioMeterDefaultColorStyle;
+
 // ScriptStruct AudioWidgets.AudioSpectrumPlotStyle
 // 0x0128 (0x0130 - 0x0008)
 struct FAudioSpectrumPlotStyle final : public FSlateWidgetStyle
@@ -527,17 +539,5 @@ public:
 	uint8                                         Pad_134[0xC];                                      // 0x0134(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FAudioRadialSliderStyle;
-
-// ScriptStruct AudioWidgets.PlayheadOverlayStyle
-// 0x0020 (0x0028 - 0x0008)
-struct FPlayheadOverlayStyle final : public FSlateWidgetStyle
-{
-public:
-	struct FSlateColor                            PlayheadColor;                                     // 0x0008(0x0014)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	float                                         PlayheadWidth;                                     // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DesiredWidth;                                      // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DesiredHeight;                                     // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FPlayheadOverlayStyle;
 
 SDK_NAMESPACE_END

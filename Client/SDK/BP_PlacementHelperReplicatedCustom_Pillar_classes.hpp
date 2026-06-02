@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_PlacementHelperReplicatedCustom_Pillar.BP_PlacementHelperReplicatedCustom_Pillar_C
-// 0x0000 (0x09A0 - 0x09A0)
+// 0x0000 (0x09B0 - 0x09B0)
 class ABP_PlacementHelperReplicatedCustom_Pillar_C final : public ABP_PlacementHelperReplicatedCustom_C
 {
 public:

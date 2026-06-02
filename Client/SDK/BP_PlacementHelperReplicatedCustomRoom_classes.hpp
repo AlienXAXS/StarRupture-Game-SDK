@@ -17,13 +17,13 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_PlacementHelperReplicatedCustomRoom.BP_PlacementHelperReplicatedCustomRoom_C
-// 0x0020 (0x09C0 - 0x09A0)
+// 0x0020 (0x09D0 - 0x09B0)
 class ABP_PlacementHelperReplicatedCustomRoom_C final : public ACrAPHelperActorCustom
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x09A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UInstancedStaticMeshComponent*          TileIndicatorsISM;                                 // 0x09A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               TileIndicatorISMDynamicMaterial;                   // 0x09B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x09B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UInstancedStaticMeshComponent*          TileIndicatorsISM;                                 // 0x09B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               TileIndicatorISMDynamicMaterial;                   // 0x09C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_PlacementHelperReplicatedCustomRoom(int32 EntryPoint);

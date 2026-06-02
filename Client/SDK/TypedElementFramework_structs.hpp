@@ -27,6 +27,24 @@ enum class ESCCModification : uint32
 	ESCCModification_MAX                     = 4,
 };
 
+// ScriptStruct TypedElementFramework.ScriptTypedElementListProxy
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FScriptTypedElementListProxy final
+{
+public:
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FScriptTypedElementListProxy;
+
+// ScriptStruct TypedElementFramework.ScriptTypedElementHandle
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x08) FScriptTypedElementHandle final
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FScriptTypedElementHandle;
+
 // ScriptStruct TypedElementFramework.EditorDataStorageColumn
 // 0x0000 (0x0000 - 0x0000)
 #pragma pack(push, 0x1)
@@ -44,22 +62,6 @@ public:
 	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FEditorDataStorageTag;
-
-// ScriptStruct TypedElementFramework.TypedElementSyncBackToWorldTag
-// 0x0000 (0x0001 - 0x0001)
-struct FTypedElementSyncBackToWorldTag final : public FEditorDataStorageTag
-{
-};
-DUMPER7_ASSERTS_FTypedElementSyncBackToWorldTag;
-
-// ScriptStruct TypedElementFramework.ScriptTypedElementHandle
-// 0x0008 (0x0008 - 0x0000)
-struct alignas(0x08) FScriptTypedElementHandle final
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FScriptTypedElementHandle;
 
 // ScriptStruct TypedElementFramework.TypedElementUObjectColumn
 // 0x0008 (0x0008 - 0x0000)
@@ -239,14 +241,12 @@ public:
 };
 DUMPER7_ASSERTS_FTypedElementLabelHashColumn;
 
-// ScriptStruct TypedElementFramework.ScriptTypedElementListProxy
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FScriptTypedElementListProxy final
+// ScriptStruct TypedElementFramework.TypedElementSyncBackToWorldTag
+// 0x0000 (0x0001 - 0x0001)
+struct FTypedElementSyncBackToWorldTag final : public FEditorDataStorageTag
 {
-public:
-	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FScriptTypedElementListProxy;
+DUMPER7_ASSERTS_FTypedElementSyncBackToWorldTag;
 
 // ScriptStruct TypedElementFramework.TypedElementSyncFromWorldTag
 // 0x0000 (0x0001 - 0x0001)

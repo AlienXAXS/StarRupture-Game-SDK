@@ -236,6 +236,24 @@ public:
 };
 DUMPER7_ASSERTS_FRCEntityWrapper;
 
+// ScriptStruct RemoteControl.RCFieldMetadata
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x08) FRCFieldMetadata
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRCFieldMetadata;
+
+// ScriptStruct RemoteControl.RCMetadata_FString
+// 0x0010 (0x0018 - 0x0008)
+struct FRCMetadata_FString final : public FRCFieldMetadata
+{
+public:
+	class FString                                 DefaultValue;                                      // 0x0008(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRCMetadata_FString;
+
 // ScriptStruct RemoteControl.RemoteControlProtocolBinding
 // 0x0040 (0x0040 - 0x0000)
 struct alignas(0x08) FRemoteControlProtocolBinding final
@@ -268,23 +286,17 @@ public:
 };
 DUMPER7_ASSERTS_FRemoteControlField;
 
-// ScriptStruct RemoteControl.RCFieldMetadata
-// 0x0008 (0x0008 - 0x0000)
-struct alignas(0x08) FRCFieldMetadata
+// ScriptStruct RemoteControl.RCMetadata_int8
+// 0x0008 (0x0010 - 0x0008)
+struct FRCMetadata_int8 final : public FRCFieldMetadata
 {
 public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int8                                          Min;                                               // 0x0008(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int8                                          Max;                                               // 0x0009(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int8                                          DefaultValue;                                      // 0x000A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B[0x5];                                        // 0x000B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FRCFieldMetadata;
-
-// ScriptStruct RemoteControl.RCMetadata_UObject
-// 0x0028 (0x0030 - 0x0008)
-struct FRCMetadata_UObject final : public FRCFieldMetadata
-{
-public:
-	TSoftObjectPtr<class UObject>                 DefaultValue;                                      // 0x0008(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRCMetadata_UObject;
+DUMPER7_ASSERTS_FRCMetadata_int8;
 
 // ScriptStruct RemoteControl.RemoteControlProperty
 // 0x0008 (0x0150 - 0x0148)
@@ -309,18 +321,6 @@ public:
 };
 DUMPER7_ASSERTS_FRemoteControlFunction;
 
-// ScriptStruct RemoteControl.RCMetadata_int32
-// 0x0010 (0x0018 - 0x0008)
-struct FRCMetadata_int32 final : public FRCFieldMetadata
-{
-public:
-	int32                                         Min;                                               // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Max;                                               // 0x000C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         DefaultValue;                                      // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRCMetadata_int32;
-
 // ScriptStruct RemoteControl.RCMetadata_byte
 // 0x0008 (0x0010 - 0x0008)
 struct FRCMetadata_byte final : public FRCFieldMetadata
@@ -332,6 +332,18 @@ public:
 	uint8                                         Pad_B[0x5];                                        // 0x000B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FRCMetadata_byte;
+
+// ScriptStruct RemoteControl.RCMetadata_float
+// 0x0010 (0x0018 - 0x0008)
+struct FRCMetadata_float final : public FRCFieldMetadata
+{
+public:
+	float                                         Min;                                               // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Max;                                               // 0x000C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DefaultValue;                                      // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRCMetadata_float;
 
 // ScriptStruct RemoteControl.RCMetadata_uint16
 // 0x0008 (0x0010 - 0x0008)
@@ -357,15 +369,6 @@ public:
 };
 DUMPER7_ASSERTS_FRCMetadata_uint32;
 
-// ScriptStruct RemoteControl.RCMetadata_FString
-// 0x0010 (0x0018 - 0x0008)
-struct FRCMetadata_FString final : public FRCFieldMetadata
-{
-public:
-	class FString                                 DefaultValue;                                      // 0x0008(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRCMetadata_FString;
-
 // ScriptStruct RemoteControl.RCMetadata_uint64
 // 0x0018 (0x0020 - 0x0008)
 struct FRCMetadata_uint64 final : public FRCFieldMetadata
@@ -376,18 +379,6 @@ public:
 	uint64                                        DefaultValue;                                      // 0x0018(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRCMetadata_uint64;
-
-// ScriptStruct RemoteControl.RCMetadata_int8
-// 0x0008 (0x0010 - 0x0008)
-struct FRCMetadata_int8 final : public FRCFieldMetadata
-{
-public:
-	int8                                          Min;                                               // 0x0008(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int8                                          Max;                                               // 0x0009(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int8                                          DefaultValue;                                      // 0x000A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B[0x5];                                        // 0x000B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRCMetadata_int8;
 
 // ScriptStruct RemoteControl.RCMetadata_int16
 // 0x0008 (0x0010 - 0x0008)
@@ -401,6 +392,18 @@ public:
 };
 DUMPER7_ASSERTS_FRCMetadata_int16;
 
+// ScriptStruct RemoteControl.RCMetadata_int32
+// 0x0010 (0x0018 - 0x0008)
+struct FRCMetadata_int32 final : public FRCFieldMetadata
+{
+public:
+	int32                                         Min;                                               // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Max;                                               // 0x000C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         DefaultValue;                                      // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRCMetadata_int32;
+
 // ScriptStruct RemoteControl.RCMetadata_int64
 // 0x0018 (0x0020 - 0x0008)
 struct FRCMetadata_int64 final : public FRCFieldMetadata
@@ -411,18 +414,6 @@ public:
 	int64                                         DefaultValue;                                      // 0x0018(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRCMetadata_int64;
-
-// ScriptStruct RemoteControl.RCMetadata_float
-// 0x0010 (0x0018 - 0x0008)
-struct FRCMetadata_float final : public FRCFieldMetadata
-{
-public:
-	float                                         Min;                                               // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Max;                                               // 0x000C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DefaultValue;                                      // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRCMetadata_float;
 
 // ScriptStruct RemoteControl.RCMetadata_double
 // 0x0018 (0x0020 - 0x0008)
@@ -443,6 +434,15 @@ public:
 	class FName                                   DefaultValue;                                      // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRCMetadata_FName;
+
+// ScriptStruct RemoteControl.RCMetadata_UObject
+// 0x0028 (0x0030 - 0x0008)
+struct FRCMetadata_UObject final : public FRCFieldMetadata
+{
+public:
+	TSoftObjectPtr<class UObject>                 DefaultValue;                                      // 0x0008(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRCMetadata_UObject;
 
 // ScriptStruct RemoteControl.RCMetadata_UClass
 // 0x0028 (0x0030 - 0x0008)

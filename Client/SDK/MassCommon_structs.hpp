@@ -17,14 +17,14 @@
 
 SDK_NAMESPACE_START
 
-// ScriptStruct MassCommon.MassInt16Real
-// 0x0002 (0x0002 - 0x0000)
-struct FMassInt16Real final
+// ScriptStruct MassCommon.ObjectWrapperFragment
+// 0x0000 (0x0000 - 0x0000)
+#pragma pack(push, 0x1)
+struct SDK_ALIGN(0x01) FObjectWrapperFragment : public FMassFragment
 {
-public:
-	int16                                         Value;                                             // 0x0000(0x0002)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
-DUMPER7_ASSERTS_FMassInt16Real;
+#pragma pack(pop)
+DUMPER7_ASSERTS_FObjectWrapperFragment;
 
 // ScriptStruct MassCommon.MassNetworkID
 // 0x0000 (0x0004 - 0x0004)
@@ -51,16 +51,14 @@ public:
 };
 DUMPER7_ASSERTS_FAgentRadiusFragment;
 
-// ScriptStruct MassCommon.ObjectWrapperFragment
-// 0x0001 (0x0001 - 0x0000)
-#pragma pack(push, 0x1)
-struct SDK_ALIGN(0x01) FObjectWrapperFragment : public FMassFragment
+// ScriptStruct MassCommon.MassInt16Real
+// 0x0002 (0x0002 - 0x0000)
+struct FMassInt16Real final
 {
 public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int16                                         Value;                                             // 0x0000(0x0002)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
-#pragma pack(pop)
-DUMPER7_ASSERTS_FObjectWrapperFragment;
+DUMPER7_ASSERTS_FMassInt16Real;
 
 // ScriptStruct MassCommon.MassInt16Real10
 // 0x0002 (0x0002 - 0x0000)

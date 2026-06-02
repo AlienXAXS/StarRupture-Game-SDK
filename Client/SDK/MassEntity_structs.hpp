@@ -117,15 +117,6 @@ struct SDK_ALIGN(0x01) FMassFragment
 #pragma pack(pop)
 DUMPER7_ASSERTS_FMassFragment;
 
-// ScriptStruct MassEntity.MassDebugLogFragment
-// 0x0008 (0x0008 - 0x0000)
-struct FMassDebugLogFragment final : public FMassFragment
-{
-public:
-	TWeakObjectPtr<class UObject>                 LogOwner;                                          // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMassDebugLogFragment;
-
 // ScriptStruct MassEntity.MassEntityHandle
 // 0x0008 (0x0008 - 0x0000)
 struct alignas(0x08) FMassEntityHandle final
@@ -144,6 +135,15 @@ public:
 	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FMassGenericDebugEvent;
+
+// ScriptStruct MassEntity.MassDebugLogFragment
+// 0x0008 (0x0008 - 0x0000)
+struct FMassDebugLogFragment final : public FMassFragment
+{
+public:
+	TWeakObjectPtr<class UObject>                 LogOwner;                                          // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMassDebugLogFragment;
 
 // ScriptStruct MassEntity.MassTag
 // 0x0001 (0x0001 - 0x0000)

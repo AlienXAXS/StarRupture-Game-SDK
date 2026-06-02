@@ -9834,8 +9834,9 @@ bool ICrInteractionInterface::HasCustomInteractionWidget(TSubclassOf<class UUser
 // (Net, NetReliable, Native, Event, Protected, NetServer)
 // Parameters:
 // const struct FMassNetworkID&            InActor                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrMassActorReplicationHelper&ReplicationHelper                                      (Parm, NativeAccessSpecifierPublic)
 
-void UCrBuildingComponent::ServerDestructBuildingActorInternal(const struct FMassNetworkID& InActor)
+void UCrBuildingComponent::ServerDestructBuildingActorInternal(const struct FMassNetworkID& InActor, const struct FCrMassActorReplicationHelper& ReplicationHelper)
 {
 	static class UFunction* Func = nullptr;
 
@@ -9845,6 +9846,7 @@ void UCrBuildingComponent::ServerDestructBuildingActorInternal(const struct FMas
 	Params::CrBuildingComponent_ServerDestructBuildingActorInternal Parms{};
 
 	Parms.InActor = std::move(InActor);
+	Parms.ReplicationHelper = std::move(ReplicationHelper);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -21867,10 +21869,54 @@ void ACrEnviroWaveVisualsReplicationActor::MulticastEnviroWaveStarted(EEnviroWav
 }
 
 
-// Function Chimera.CrEnviroWaveVisualsReplicationActor.OnFadeoutSubstageChanged
-// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
+// Function Chimera.CrEnviroWaveVisualsReplicationActor.OnColdRegionLocationReplicated
+// (Final, Native, Private)
+
+void ACrEnviroWaveVisualsReplicationActor::OnColdRegionLocationReplicated()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrEnviroWaveVisualsReplicationActor", "OnColdRegionLocationReplicated");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrEnviroWaveVisualsReplicationActor.OnColdRegionTransformChanged
+// (Final, Native, Private, HasOutParams, HasDefaults)
 // Parameters:
-// const struct FCrEnviroWaveSettings&     Settings                                               (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FTransform&                InNewColdRegionTransform                               (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrEnviroWaveVisualsReplicationActor::OnColdRegionTransformChanged(const struct FTransform& InNewColdRegionTransform)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrEnviroWaveVisualsReplicationActor", "OnColdRegionTransformChanged");
+
+	Params::CrEnviroWaveVisualsReplicationActor_OnColdRegionTransformChanged Parms{};
+
+	Parms.InNewColdRegionTransform = std::move(InNewColdRegionTransform);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrEnviroWaveVisualsReplicationActor.OnFadeoutSubstageChanged
+// (Final, Native, Private, HasOutParams)
+// Parameters:
+// const struct FCrEnviroWaveSettings&     Settings                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // EEnviroWaveFadeoutSubstage              Substage                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Progress                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -21896,10 +21942,29 @@ void ACrEnviroWaveVisualsReplicationActor::OnFadeoutSubstageChanged(const struct
 }
 
 
+// Function Chimera.CrEnviroWaveVisualsReplicationActor.OnFadeoutSubstageReplicated
+// (Final, Native, Private)
+
+void ACrEnviroWaveVisualsReplicationActor::OnFadeoutSubstageReplicated()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrEnviroWaveVisualsReplicationActor", "OnFadeoutSubstageReplicated");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Chimera.CrEnviroWaveVisualsReplicationActor.OnGrowbackSubstageChanged
-// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
+// (Final, Native, Private, HasOutParams)
 // Parameters:
-// const struct FCrEnviroWaveSettings&     Settings                                               (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FCrEnviroWaveSettings&     Settings                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // EEnviroWaveGrowbackSubstage             Substage                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Progress                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -21915,6 +21980,69 @@ void ACrEnviroWaveVisualsReplicationActor::OnGrowbackSubstageChanged(const struc
 	Parms.Settings = std::move(Settings);
 	Parms.Substage = Substage;
 	Parms.Progress = Progress;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrEnviroWaveVisualsReplicationActor.OnGrowbackSubstageReplicated
+// (Final, Native, Private)
+
+void ACrEnviroWaveVisualsReplicationActor::OnGrowbackSubstageReplicated()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrEnviroWaveVisualsReplicationActor", "OnGrowbackSubstageReplicated");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrEnviroWaveVisualsReplicationActor.OnHeatRegionLocationReplicated
+// (Final, Native, Private)
+
+void ACrEnviroWaveVisualsReplicationActor::OnHeatRegionLocationReplicated()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrEnviroWaveVisualsReplicationActor", "OnHeatRegionLocationReplicated");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrEnviroWaveVisualsReplicationActor.OnHeatRegionTransformChanged
+// (Final, Native, Private, HasOutParams, HasDefaults)
+// Parameters:
+// const struct FTransform&                InNewHeatRegionTransform                               (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACrEnviroWaveVisualsReplicationActor::OnHeatRegionTransformChanged(const struct FTransform& InNewHeatRegionTransform)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrEnviroWaveVisualsReplicationActor", "OnHeatRegionTransformChanged");
+
+	Params::CrEnviroWaveVisualsReplicationActor_OnHeatRegionTransformChanged Parms{};
+
+	Parms.InNewHeatRegionTransform = std::move(InNewHeatRegionTransform);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -22576,9 +22704,10 @@ void UCrUW_BuildingCostEntry::OnRequirementsMetChanged(bool bRequirementsMet)
 // EPointOfInterestState                   NewState                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ForceDowngrade                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class ACrCharacterPlayerBase*           PlayerInteracted                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    HandleSkillExperience                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ACrPointOfInterestMarkerActor::SwitchPointOfInterestState(EPointOfInterestState NewState, bool ForceDowngrade, class ACrCharacterPlayerBase* PlayerInteracted)
+bool ACrPointOfInterestMarkerActor::SwitchPointOfInterestState(EPointOfInterestState NewState, bool ForceDowngrade, class ACrCharacterPlayerBase* PlayerInteracted, bool HandleSkillExperience)
 {
 	static class UFunction* Func = nullptr;
 
@@ -22590,6 +22719,7 @@ bool ACrPointOfInterestMarkerActor::SwitchPointOfInterestState(EPointOfInterestS
 	Parms.NewState = NewState;
 	Parms.ForceDowngrade = ForceDowngrade;
 	Parms.PlayerInteracted = PlayerInteracted;
+	Parms.HandleSkillExperience = HandleSkillExperience;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -46019,6 +46149,31 @@ bool ACrCharacterPlayerBase::IsInInterior() const
 		Func = Class->GetFunction("CrCharacterPlayerBase", "IsInInterior");
 
 	Params::CrCharacterPlayerBase_IsInInterior Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrCharacterPlayerBase.IsInSafeInterior
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ACrCharacterPlayerBase::IsInSafeInterior() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrCharacterPlayerBase", "IsInSafeInterior");
+
+	Params::CrCharacterPlayerBase_IsInSafeInterior Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

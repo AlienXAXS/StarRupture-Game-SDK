@@ -12,9 +12,9 @@
 
 #include "AuAbilities_structs.hpp"
 #include "Engine_structs.hpp"
-#include "GameplayTags_structs.hpp"
 #include "Chimera_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
+#include "GameplayTags_structs.hpp"
 
 
 SDK_NAMESPACE_START

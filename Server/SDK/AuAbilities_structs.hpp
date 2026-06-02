@@ -85,16 +85,14 @@ public:
 };
 DUMPER7_ASSERTS_FAuCustomTargetHandle;
 
-// ScriptStruct AuAbilities.AuGameplayTargetDataFilter
-// 0x0020 (0x0020 - 0x0000)
-struct FAuGameplayTargetDataFilter
+// ScriptStruct AuAbilities.AuTickTargetingHandle
+// 0x0004 (0x0004 - 0x0000)
+struct FAuTickTargetingHandle final
 {
 public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class AActor>                     RequiredActorClass;                                // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<TSubclassOf<class AActor>>             IgnoreActorClasses;                                // 0x0010(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	int32                                         Handle;                                            // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FAuGameplayTargetDataFilter;
+DUMPER7_ASSERTS_FAuTickTargetingHandle;
 
 // ScriptStruct AuAbilities.AuTargetDataHandle
 // 0x0002 (0x0002 - 0x0000)
@@ -130,14 +128,24 @@ public:
 };
 DUMPER7_ASSERTS_FAuTargetData;
 
-// ScriptStruct AuAbilities.AuGameplayEffectContext
-// 0x0018 (0x00D8 - 0x00C0)
-struct FAuGameplayEffectContext : public FAuItemGameplayEffectContext
+// ScriptStruct AuAbilities.AuCountedGameplayTagItem
+// 0x000C (0x0018 - 0x000C)
+struct FAuCountedGameplayTagItem final : public FFastArraySerializerItem
 {
 public:
-	uint8                                         Pad_C0[0x18];                                      // 0x00C0(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FGameplayTag                           Tag;                                               // 0x000C(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FAuGameplayEffectContext;
+DUMPER7_ASSERTS_FAuCountedGameplayTagItem;
+
+// ScriptStruct AuAbilities.AuGameplayAbilityActorInfo
+// 0x0010 (0x0058 - 0x0048)
+struct FAuGameplayAbilityActorInfo : public FGameplayAbilityActorInfo
+{
+public:
+	TScriptInterface<class IAuTargetingInterface> TargetingInterface;                                // 0x0048(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAuGameplayAbilityActorInfo;
 
 // ScriptStruct AuAbilities.AuCustomTraceDataHandle
 // 0x0018 (0x0018 - 0x0000)
@@ -149,24 +157,14 @@ public:
 };
 DUMPER7_ASSERTS_FAuCustomTraceDataHandle;
 
-// ScriptStruct AuAbilities.AuGameplayAbilityActorInfo
-// 0x0010 (0x0058 - 0x0048)
-struct FAuGameplayAbilityActorInfo : public FGameplayAbilityActorInfo
+// ScriptStruct AuAbilities.AuGameplayEffectContext
+// 0x0018 (0x00D8 - 0x00C0)
+struct FAuGameplayEffectContext : public FAuItemGameplayEffectContext
 {
 public:
-	TScriptInterface<class IAuTargetingInterface> TargetingInterface;                                // 0x0048(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C0[0x18];                                      // 0x00C0(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FAuGameplayAbilityActorInfo;
-
-// ScriptStruct AuAbilities.AuCountedGameplayTagItem
-// 0x000C (0x0018 - 0x000C)
-struct FAuCountedGameplayTagItem final : public FFastArraySerializerItem
-{
-public:
-	struct FGameplayTag                           Tag;                                               // 0x000C(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Count;                                             // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAuCountedGameplayTagItem;
+DUMPER7_ASSERTS_FAuGameplayEffectContext;
 
 // ScriptStruct AuAbilities.AuCountedGameplayTagReplication
 // 0x0140 (0x0248 - 0x0108)
@@ -377,14 +375,16 @@ public:
 };
 DUMPER7_ASSERTS_FAuTargeting;
 
-// ScriptStruct AuAbilities.AuTickTargetingHandle
-// 0x0004 (0x0004 - 0x0000)
-struct FAuTickTargetingHandle final
+// ScriptStruct AuAbilities.AuGameplayTargetDataFilter
+// 0x0020 (0x0020 - 0x0000)
+struct FAuGameplayTargetDataFilter
 {
 public:
-	int32                                         Handle;                                            // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class AActor>                     RequiredActorClass;                                // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<TSubclassOf<class AActor>>             IgnoreActorClasses;                                // 0x0010(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FAuTickTargetingHandle;
+DUMPER7_ASSERTS_FAuGameplayTargetDataFilter;
 
 // ScriptStruct AuAbilities.AuFilterClosestToCrosshair
 // 0x0000 (0x0020 - 0x0020)

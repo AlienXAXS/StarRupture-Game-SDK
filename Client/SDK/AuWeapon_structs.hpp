@@ -63,16 +63,26 @@ enum class ENxEquipWeapon : uint8
 	ENxEquipWeapon_MAX                       = 3,
 };
 
-// ScriptStruct AuWeapon.AuWeaponInstanceSaveData
-// 0x0008 (0x0008 - 0x0000)
-struct FAuWeaponInstanceSaveData final
+// ScriptStruct AuWeapon.AuReloadStateRep
+// 0x0002 (0x0002 - 0x0000)
+struct FAuReloadStateRep final
 {
 public:
-	int32                                         CurrentAmmo;                                       // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bFirstShotExecuted;                                // 0x0004(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	EAuReloadState                                State;                                             // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Rep;                                               // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FAuWeaponInstanceSaveData;
+DUMPER7_ASSERTS_FAuReloadStateRep;
+
+// ScriptStruct AuWeapon.AuHolsterSocket
+// 0x000C (0x000C - 0x0000)
+struct FAuHolsterSocket final
+{
+public:
+	class FName                                   SocketName;                                        // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAvailable;                                        // 0x0008(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAuHolsterSocket;
 
 // ScriptStruct AuWeapon.AuEquippedWeapon
 // 0x0100 (0x0100 - 0x0000)
@@ -106,15 +116,16 @@ public:
 };
 DUMPER7_ASSERTS_FAuShootData;
 
-// ScriptStruct AuWeapon.AuReloadStateRep
-// 0x0002 (0x0002 - 0x0000)
-struct FAuReloadStateRep final
+// ScriptStruct AuWeapon.AuWeaponInstanceSaveData
+// 0x0008 (0x0008 - 0x0000)
+struct FAuWeaponInstanceSaveData final
 {
 public:
-	EAuReloadState                                State;                                             // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Rep;                                               // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CurrentAmmo;                                       // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFirstShotExecuted;                                // 0x0004(0x0001)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FAuReloadStateRep;
+DUMPER7_ASSERTS_FAuWeaponInstanceSaveData;
 
 // ScriptStruct AuWeapon.AuWeaponAttachmentSpawned
 // 0x0020 (0x0020 - 0x0000)
@@ -188,16 +199,5 @@ public:
 	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FAuRecoilCurve;
-
-// ScriptStruct AuWeapon.AuHolsterSocket
-// 0x000C (0x000C - 0x0000)
-struct FAuHolsterSocket final
-{
-public:
-	class FName                                   SocketName;                                        // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAvailable;                                        // 0x0008(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAuHolsterSocket;
 
 SDK_NAMESPACE_END

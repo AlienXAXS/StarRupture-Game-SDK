@@ -17,13 +17,13 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ChimeraPlacementHelperReplicatedStarPowered.BP_ChimeraPlacementHelperReplicatedStarPowered_C
-// 0x0020 (0x08C0 - 0x08A0)
+// 0x0020 (0x08D0 - 0x08B0)
 class ABP_ChimeraPlacementHelperReplicatedStarPowered_C final : public ACrAPStarPoweredHelperBase
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x08A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UInstancedStaticMeshComponent*          TileIndicatorsISM;                                 // 0x08A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               TileIndicatorISMDynamicMaterial;                   // 0x08B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x08B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UInstancedStaticMeshComponent*          TileIndicatorsISM;                                 // 0x08B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               TileIndicatorISMDynamicMaterial;                   // 0x08C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void UserConstructionScript();

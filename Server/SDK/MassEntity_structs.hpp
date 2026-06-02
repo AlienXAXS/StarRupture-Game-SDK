@@ -108,14 +108,23 @@ enum class EMassFragmentPresence : uint8
 	MAX                                      = 4,
 };
 
-// ScriptStruct MassEntity.MassChunkFragment
-// 0x0000 (0x0000 - 0x0000)
-#pragma pack(push, 0x1)
-struct SDK_ALIGN(0x01) FMassChunkFragment
+// ScriptStruct MassEntity.MassTag
+// 0x0001 (0x0001 - 0x0000)
+struct FMassTag
 {
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-#pragma pack(pop)
-DUMPER7_ASSERTS_FMassChunkFragment;
+DUMPER7_ASSERTS_FMassTag;
+
+// ScriptStruct MassEntity.MassSubsystemRequirements
+// 0x0048 (0x0048 - 0x0000)
+struct alignas(0x08) FMassSubsystemRequirements final
+{
+public:
+	uint8                                         Pad_0[0x48];                                       // 0x0000(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassSubsystemRequirements;
 
 // ScriptStruct MassEntity.MassEntityHandle
 // 0x0008 (0x0008 - 0x0000)
@@ -154,14 +163,14 @@ public:
 };
 DUMPER7_ASSERTS_FMassDebugLogFragment;
 
-// ScriptStruct MassEntity.MassTag
-// 0x0001 (0x0001 - 0x0000)
-struct FMassTag
+// ScriptStruct MassEntity.MassChunkFragment
+// 0x0000 (0x0000 - 0x0000)
+#pragma pack(push, 0x1)
+struct SDK_ALIGN(0x01) FMassChunkFragment
 {
-public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FMassTag;
+#pragma pack(pop)
+DUMPER7_ASSERTS_FMassChunkFragment;
 
 // ScriptStruct MassEntity.MassSharedFragment
 // 0x0000 (0x0000 - 0x0000)
@@ -300,14 +309,5 @@ public:
 	TArray<class FName>                           ExecuteAfter;                                      // 0x0018(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FMassProcessorExecutionOrder;
-
-// ScriptStruct MassEntity.MassSubsystemRequirements
-// 0x0048 (0x0048 - 0x0000)
-struct alignas(0x08) FMassSubsystemRequirements final
-{
-public:
-	uint8                                         Pad_0[0x48];                                       // 0x0000(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassSubsystemRequirements;
 
 SDK_NAMESPACE_END

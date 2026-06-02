@@ -250,17 +250,6 @@ public:
 };
 DUMPER7_ASSERTS_FPartyMemberPlatformData;
 
-// ScriptStruct Party.PartyPrivacySettings
-// 0x0003 (0x0003 - 0x0000)
-struct FPartyPrivacySettings final
-{
-public:
-	EPartyType                                    PartyType;                                         // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EPartyInviteRestriction                       PartyInviteRestriction;                            // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bOnlyLeaderFriendsCanJoin;                         // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FPartyPrivacySettings;
-
 // ScriptStruct Party.PartyPlatformSessionInfo
 // 0x0050 (0x0050 - 0x0000)
 struct FPartyPlatformSessionInfo final
@@ -271,28 +260,6 @@ public:
 	struct FUniqueNetIdRepl                       OwnerPrimaryId;                                    // 0x0020(0x0030)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FPartyPlatformSessionInfo;
-
-// ScriptStruct Party.OnlinePartyRepDataBase
-// 0x0020 (0x0020 - 0x0000)
-struct alignas(0x08) FOnlinePartyRepDataBase
-{
-public:
-	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FOnlinePartyRepDataBase;
-
-// ScriptStruct Party.PartyRepData
-// 0x0080 (0x00A0 - 0x0020)
-struct FPartyRepData final : public FOnlinePartyRepDataBase
-{
-public:
-	uint8                                         Pad_20[0x9];                                       // 0x0020(0x0009)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPartyPrivacySettings                  PrivacySettings;                                   // 0x0029(0x0003)(NoDestructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_2C[0x44];                                      // 0x002C(0x0044)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FPartyPlatformSessionInfo>      PlatformSessions;                                  // 0x0070(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_80[0x20];                                      // 0x0080(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FPartyRepData;
 
 // ScriptStruct Party.PartyMemberJoinInProgressRequest
 // 0x0038 (0x0038 - 0x0000)
@@ -327,6 +294,15 @@ public:
 };
 DUMPER7_ASSERTS_FPartyMemberJoinInProgressData;
 
+// ScriptStruct Party.OnlinePartyRepDataBase
+// 0x0020 (0x0020 - 0x0000)
+struct alignas(0x08) FOnlinePartyRepDataBase
+{
+public:
+	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FOnlinePartyRepDataBase;
+
 // ScriptStruct Party.PartyMemberRepData
 // 0x02C8 (0x02E8 - 0x0020)
 struct FPartyMemberRepData final : public FOnlinePartyRepDataBase
@@ -343,6 +319,30 @@ public:
 	uint8                                         Pad_268[0x80];                                     // 0x0268(0x0080)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FPartyMemberRepData;
+
+// ScriptStruct Party.PartyPrivacySettings
+// 0x0003 (0x0003 - 0x0000)
+struct FPartyPrivacySettings final
+{
+public:
+	EPartyType                                    PartyType;                                         // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EPartyInviteRestriction                       PartyInviteRestriction;                            // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOnlyLeaderFriendsCanJoin;                         // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FPartyPrivacySettings;
+
+// ScriptStruct Party.PartyRepData
+// 0x0080 (0x00A0 - 0x0020)
+struct FPartyRepData final : public FOnlinePartyRepDataBase
+{
+public:
+	uint8                                         Pad_20[0x9];                                       // 0x0020(0x0009)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPartyPrivacySettings                  PrivacySettings;                                   // 0x0029(0x0003)(NoDestructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_2C[0x44];                                      // 0x002C(0x0044)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FPartyPlatformSessionInfo>      PlatformSessions;                                  // 0x0070(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_80[0x20];                                      // 0x0080(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FPartyRepData;
 
 // ScriptStruct Party.SocialChatChannelConfig
 // 0x0038 (0x0038 - 0x0000)

@@ -27,6 +27,22 @@ enum class ESCCModification : uint32
 	ESCCModification_MAX                     = 4,
 };
 
+// ScriptStruct TypedElementFramework.EditorDataStorageTag
+// 0x0001 (0x0001 - 0x0000)
+struct FEditorDataStorageTag
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FEditorDataStorageTag;
+
+// ScriptStruct TypedElementFramework.TypedElementActorTag
+// 0x0000 (0x0001 - 0x0001)
+struct FTypedElementActorTag final : public FEditorDataStorageTag
+{
+};
+DUMPER7_ASSERTS_FTypedElementActorTag;
+
 // ScriptStruct TypedElementFramework.ScriptTypedElementHandle
 // 0x0008 (0x0008 - 0x0000)
 struct alignas(0x08) FScriptTypedElementHandle final
@@ -35,15 +51,6 @@ public:
 	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FScriptTypedElementHandle;
-
-// ScriptStruct TypedElementFramework.ScriptTypedElementListProxy
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FScriptTypedElementListProxy final
-{
-public:
-	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FScriptTypedElementListProxy;
 
 // ScriptStruct TypedElementFramework.EditorDataStorageColumn
 // 0x0000 (0x0000 - 0x0000)
@@ -54,14 +61,14 @@ struct SDK_ALIGN(0x01) FEditorDataStorageColumn
 #pragma pack(pop)
 DUMPER7_ASSERTS_FEditorDataStorageColumn;
 
-// ScriptStruct TypedElementFramework.EditorDataStorageTag
-// 0x0001 (0x0001 - 0x0000)
-struct FEditorDataStorageTag
+// ScriptStruct TypedElementFramework.TypedElementLabelHashColumn
+// 0x0008 (0x0008 - 0x0000)
+struct FTypedElementLabelHashColumn final : public FEditorDataStorageColumn
 {
 public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint64                                        LabelHash;                                         // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FEditorDataStorageTag;
+DUMPER7_ASSERTS_FTypedElementLabelHashColumn;
 
 // ScriptStruct TypedElementFramework.TypedElementUObjectColumn
 // 0x0008 (0x0008 - 0x0000)
@@ -97,13 +104,6 @@ struct FTypedElementClassDefaultObjectTag final : public FEditorDataStorageTag
 {
 };
 DUMPER7_ASSERTS_FTypedElementClassDefaultObjectTag;
-
-// ScriptStruct TypedElementFramework.TypedElementActorTag
-// 0x0000 (0x0001 - 0x0001)
-struct FTypedElementActorTag final : public FEditorDataStorageTag
-{
-};
-DUMPER7_ASSERTS_FTypedElementActorTag;
 
 // ScriptStruct TypedElementFramework.TypedElementWorldColumn
 // 0x0008 (0x0008 - 0x0000)
@@ -232,14 +232,14 @@ public:
 };
 DUMPER7_ASSERTS_FTypedElementLabelColumn;
 
-// ScriptStruct TypedElementFramework.TypedElementLabelHashColumn
-// 0x0008 (0x0008 - 0x0000)
-struct FTypedElementLabelHashColumn final : public FEditorDataStorageColumn
+// ScriptStruct TypedElementFramework.ScriptTypedElementListProxy
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FScriptTypedElementListProxy final
 {
 public:
-	uint64                                        LabelHash;                                         // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FTypedElementLabelHashColumn;
+DUMPER7_ASSERTS_FScriptTypedElementListProxy;
 
 // ScriptStruct TypedElementFramework.TypedElementSyncBackToWorldTag
 // 0x0000 (0x0001 - 0x0001)

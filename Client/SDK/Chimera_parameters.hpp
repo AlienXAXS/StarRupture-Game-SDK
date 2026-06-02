@@ -3074,11 +3074,13 @@ public:
 DUMPER7_ASSERTS_CrStandaloneInfectionActor_GetWasDestroyed;
 
 // Function Chimera.CrBuildingComponent.ServerDestructBuildingActorInternal
-// 0x0004 (0x0004 - 0x0000)
+// 0x0020 (0x0020 - 0x0000)
 struct CrBuildingComponent_ServerDestructBuildingActorInternal final
 {
 public:
 	struct FMassNetworkID                         InActor;                                           // 0x0000(0x0004)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCrMassActorReplicationHelper          ReplicationHelper;                                 // 0x0008(0x0018)(Parm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrBuildingComponent_ServerDestructBuildingActorInternal;
 
@@ -6504,12 +6506,21 @@ public:
 };
 DUMPER7_ASSERTS_CrEnviroWaveVisualsReplicationActor_MulticastEnviroWaveStarted;
 
+// Function Chimera.CrEnviroWaveVisualsReplicationActor.OnColdRegionTransformChanged
+// 0x0060 (0x0060 - 0x0000)
+struct CrEnviroWaveVisualsReplicationActor_OnColdRegionTransformChanged final
+{
+public:
+	struct FTransform                             InNewColdRegionTransform;                          // 0x0000(0x0060)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrEnviroWaveVisualsReplicationActor_OnColdRegionTransformChanged;
+
 // Function Chimera.CrEnviroWaveVisualsReplicationActor.OnFadeoutSubstageChanged
 // 0x0034 (0x0034 - 0x0000)
 struct CrEnviroWaveVisualsReplicationActor_OnFadeoutSubstageChanged final
 {
 public:
-	struct FCrEnviroWaveSettings                  Settings;                                          // 0x0000(0x002C)(ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FCrEnviroWaveSettings                  Settings;                                          // 0x0000(0x002C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	EEnviroWaveFadeoutSubstage                    Substage;                                          // 0x002C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Progress;                                          // 0x0030(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -6521,12 +6532,21 @@ DUMPER7_ASSERTS_CrEnviroWaveVisualsReplicationActor_OnFadeoutSubstageChanged;
 struct CrEnviroWaveVisualsReplicationActor_OnGrowbackSubstageChanged final
 {
 public:
-	struct FCrEnviroWaveSettings                  Settings;                                          // 0x0000(0x002C)(ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FCrEnviroWaveSettings                  Settings;                                          // 0x0000(0x002C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	EEnviroWaveGrowbackSubstage                   Substage;                                          // 0x002C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Progress;                                          // 0x0030(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrEnviroWaveVisualsReplicationActor_OnGrowbackSubstageChanged;
+
+// Function Chimera.CrEnviroWaveVisualsReplicationActor.OnHeatRegionTransformChanged
+// 0x0060 (0x0060 - 0x0000)
+struct CrEnviroWaveVisualsReplicationActor_OnHeatRegionTransformChanged final
+{
+public:
+	struct FTransform                             InNewHeatRegionTransform;                          // 0x0000(0x0060)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrEnviroWaveVisualsReplicationActor_OnHeatRegionTransformChanged;
 
 // Function Chimera.CrEnviroWaveVisualsWorldSubsystem.OnFadeoutSubstageChanged
 // 0x0034 (0x0034 - 0x0000)
@@ -10076,6 +10096,15 @@ public:
 };
 DUMPER7_ASSERTS_CrCharacterPlayerBase_IsInInterior;
 
+// Function Chimera.CrCharacterPlayerBase.IsInSafeInterior
+// 0x0001 (0x0001 - 0x0000)
+struct CrCharacterPlayerBase_IsInSafeInterior final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrCharacterPlayerBase_IsInSafeInterior;
+
 // Function Chimera.CrCharacterPlayerBase.IsOnTopOfCustomBuildingWithEnergy
 // 0x0001 (0x0001 - 0x0000)
 struct CrCharacterPlayerBase_IsOnTopOfCustomBuildingWithEnergy final
@@ -12129,8 +12158,9 @@ public:
 	bool                                          ForceDowngrade;                                    // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class ACrCharacterPlayerBase*                 PlayerInteracted;                                  // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          HandleSkillExperience;                             // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0011(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_CrPointOfInterestMarkerActor_SwitchPointOfInterestState;
 

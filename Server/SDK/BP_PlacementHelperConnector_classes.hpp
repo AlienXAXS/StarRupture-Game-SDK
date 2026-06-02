@@ -17,19 +17,19 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_PlacementHelperConnector.BP_PlacementHelperConnector_C
-// 0x0050 (0x09B0 - 0x0960)
+// 0x0050 (0x09C0 - 0x0970)
 class ABP_PlacementHelperConnector_C final : public ACrAPHelperActorCustomSpline
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0960(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UStaticMeshComponent*                   Sphere;                                            // 0x0968(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UArrowComponent*                        Arrow;                                             // 0x0970(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	TArray<class USplineMeshComponent*>           SplineMeshes;                                      // 0x0978(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
-	TArray<class UStaticMeshComponent*>           Steps;                                             // 0x0988(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
-	bool                                          IsNarrow;                                          // 0x0998(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_999[0x7];                                      // 0x0999(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        Stairs_Angle;                                      // 0x09A0(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        Ladder_Angle;                                      // 0x09A8(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0970(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UStaticMeshComponent*                   Sphere;                                            // 0x0978(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UArrowComponent*                        Arrow;                                             // 0x0980(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	TArray<class USplineMeshComponent*>           SplineMeshes;                                      // 0x0988(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	TArray<class UStaticMeshComponent*>           Steps;                                             // 0x0998(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	bool                                          IsNarrow;                                          // 0x09A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_9A9[0x7];                                      // 0x09A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        Stairs_Angle;                                      // 0x09B0(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        Ladder_Angle;                                      // 0x09B8(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void SetSplineSegment(class USplineMeshComponent* SplineMeshComponent, int32 FirstPointIndex, int32 SecondPointIndex);

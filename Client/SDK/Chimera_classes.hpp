@@ -6182,8 +6182,7 @@ DUMPER7_ASSERTS_ACrItemReceiverBuilding;
 
 // Class Chimera.CrAPHelperActor
 // 0x0000 (0x0890 - 0x0890)
-#pragma pack(push, 0x1)
-class SDK_ALIGN(0x10) ACrAPHelperActor : public AAuAPHelperActor
+class ACrAPHelperActor : public AAuAPHelperActor
 {
 public:
 	static class UClass* StaticClass()
@@ -6199,7 +6198,6 @@ public:
 		return GetDefaultObjImpl<ACrAPHelperActor>();
 	}
 };
-#pragma pack(pop)
 DUMPER7_ASSERTS_ACrAPHelperActor;
 
 // Class Chimera.CrNativeInputHandler
@@ -6244,8 +6242,7 @@ DUMPER7_ASSERTS_UCrInputNativeBuildingMenu;
 
 // Class Chimera.CrAPHelperActorBase
 // 0x0000 (0x0890 - 0x0890)
-#pragma pack(push, 0x1)
-class SDK_ALIGN(0x10) ACrAPHelperActorBase : public ACrAPHelperActor
+class ACrAPHelperActorBase : public ACrAPHelperActor
 {
 public:
 	static class UClass* StaticClass()
@@ -6261,7 +6258,6 @@ public:
 		return GetDefaultObjImpl<ACrAPHelperActorBase>();
 	}
 };
-#pragma pack(pop)
 DUMPER7_ASSERTS_ACrAPHelperActorBase;
 
 // Class Chimera.CrWaveData
@@ -6300,16 +6296,17 @@ public:
 DUMPER7_ASSERTS_UCrWaveData;
 
 // Class Chimera.CrAPHelperActorCustom
-// 0x00B0 (0x09A0 - 0x08F0)
+// 0x00B0 (0x09B0 - 0x0900)
 class ACrAPHelperActorCustom : public AAuAPHelperActorMultiConfirm
 {
 public:
-	class UInstancedStaticMeshComponent*          AcceptedISM;                                       // 0x08F0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_8F8[0x8];                                      // 0x08F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrDynamicHelperData                   DynamicData;                                       // 0x0900(0x0038)(Net, RepNotify, NoDestructor, NativeAccessSpecifierPrivate)
-	EAuAPlacementConditionResult                  DynamicResult;                                     // 0x0938(0x0001)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_939[0x57];                                     // 0x0939(0x0057)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FVector>                        AllLocations;                                      // 0x0990(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	class UInstancedStaticMeshComponent*          AcceptedISM;                                       // 0x08F8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_900[0x8];                                      // 0x0900(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCrDynamicHelperData                   DynamicData;                                       // 0x0908(0x0038)(Net, RepNotify, NoDestructor, NativeAccessSpecifierPrivate)
+	EAuAPlacementConditionResult                  DynamicResult;                                     // 0x0940(0x0001)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_941[0x57];                                     // 0x0941(0x0057)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FVector>                        AllLocations;                                      // 0x0998(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_9A8[0x8];                                      // 0x09A8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void OnRep_DynamicData();
@@ -6445,11 +6442,12 @@ public:
 DUMPER7_ASSERTS_UCrInputNativeDroneMoveRight;
 
 // Class Chimera.CrAPHelperActorCustomSpline
-// 0x0000 (0x0960 - 0x0960)
+// 0x0010 (0x0970 - 0x0960)
 class ACrAPHelperActorCustomSpline : public AAuAPHelperActorSpline
 {
 public:
-	class UStaticMeshComponent*                   WalkwayConnectorMesh;                              // 0x0958(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UStaticMeshComponent*                   WalkwayConnectorMesh;                              // 0x0960(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_968[0x8];                                      // 0x0968(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetWalkwayConnectorMesh(class UStaticMeshComponent* Mesh);
@@ -6537,15 +6535,15 @@ public:
 DUMPER7_ASSERTS_UCrItemsMemoryLoaderDevSettings;
 
 // Class Chimera.CrAPHelperActorZipline
-// 0x0140 (0x09D0 - 0x0890)
+// 0x0150 (0x09E0 - 0x0890)
 class ACrAPHelperActorZipline : public ACrAPHelperActorBase
 {
 public:
-	class USceneComponent*                        PlayerPoint;                                       // 0x0888(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_890[0x100];                                    // 0x0890(0x0100)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMassActorSubsystem*                    MassActorSubsystem;                                // 0x0990(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UMassEntitySubsystem*                   EntitySubsystem;                                   // 0x0998(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_9A0[0x30];                                     // 0x09A0(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class USceneComponent*                        PlayerPoint;                                       // 0x0890(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_898[0x100];                                    // 0x0898(0x0100)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMassActorSubsystem*                    MassActorSubsystem;                                // 0x0998(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UMassEntitySubsystem*                   EntitySubsystem;                                   // 0x09A0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_9A8[0x38];                                     // 0x09A8(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void OnConnectionsModified(const TArray<struct FVector>& NewAcceptedLocations, const TArray<struct FVector>& NewObstructedLocations, const TArray<struct FVector>& NewBlockedLocations);
@@ -6651,10 +6649,9 @@ DUMPER7_ASSERTS_UCrWeaponModGameplayEffect;
 class ACrAPHelperActorLiquidPump final : public ACrAPHelperActor
 {
 public:
-	ECollisionChannel                             SweepChannelForPipes;                              // 0x0888(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_889[0x7];                                      // 0x0889(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPhysicalMaterial*                      WaterPhysMaterial;                                 // 0x0890(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_898[0x8];                                      // 0x0898(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	ECollisionChannel                             SweepChannelForPipes;                              // 0x0890(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_891[0x7];                                      // 0x0891(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPhysicalMaterial*                      WaterPhysMaterial;                                 // 0x0898(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 
 public:
 	static class UClass* StaticClass()
@@ -6800,12 +6797,12 @@ public:
 DUMPER7_ASSERTS_ACrWeaponActor;
 
 // Class Chimera.CrAPStarPoweredHelperBase
-// 0x0010 (0x08A0 - 0x0890)
+// 0x0020 (0x08B0 - 0x0890)
 class ACrAPStarPoweredHelperBase : public ACrAPHelperActorBase
 {
 public:
-	TArray<TSubclassOf<class AActor>>             StarIgnoreActors;                                  // 0x0888(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
-	uint8                                         Pad_898[0x8];                                      // 0x0898(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<TSubclassOf<class AActor>>             StarIgnoreActors;                                  // 0x0890(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
+	uint8                                         Pad_8A0[0x10];                                     // 0x08A0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -7971,7 +7968,7 @@ public:
 	uint8                                         Pad_7FC[0x54];                                     // 0x07FC(0x0054)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void ServerDestructBuildingActorInternal(const struct FMassNetworkID& InActor);
+	void ServerDestructBuildingActorInternal(const struct FMassNetworkID& InActor, const struct FCrMassActorReplicationHelper& ReplicationHelper);
 	void ServerElectricityConnectEntities(const struct FCrMassEntityReplicationHelper& Entity0, const struct FCrMassEntityReplicationHelper& Entity1);
 	void ServerSpawnActorFromSubsystem(const struct FAuAPPayloadDataHandle& InPayloadHandle, const struct FTransform& InSpawnTransform, const TArray<struct FVector>& TilesLocations, bool bCurrentFoundation, bool bCurrentTiles, const TArray<struct FCrMassEntityReplicationHelper>& InBuildingsToReplace);
 
@@ -13405,13 +13402,14 @@ public:
 DUMPER7_ASSERTS_ACrEnviroSkyboxActor;
 
 // Class Chimera.CrHelperDroneRailSpline
-// 0x0020 (0x0980 - 0x0960)
+// 0x0030 (0x0990 - 0x0960)
 class ACrHelperDroneRailSpline : public AAuAPHelperActorSpline
 {
 public:
-	TArray<struct FCrHelperDroneRailCollisionHit> HitLocations;                                      // 0x0958(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TArray<int32>                                 MaterialIdxToIgnore;                               // 0x0968(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	class UStaticMeshComponent*                   RailConnectorMesh;                                 // 0x0978(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TArray<struct FCrHelperDroneRailCollisionHit> HitLocations;                                      // 0x0960(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<int32>                                 MaterialIdxToIgnore;                               // 0x0970(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	class UStaticMeshComponent*                   RailConnectorMesh;                                 // 0x0980(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_988[0x8];                                      // 0x0988(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	bool BP_CanBePlaced();
@@ -14474,13 +14472,18 @@ public:
 DUMPER7_ASSERTS_UCrTeleportingSubsystem;
 
 // Class Chimera.CrEnviroWaveVisualsReplicationActor
-// 0x0008 (0x02B0 - 0x02A8)
+// 0x00D8 (0x0380 - 0x02A8)
 class ACrEnviroWaveVisualsReplicationActor final : public AInfo
 {
 public:
 	bool                                          bIsWaterEvaporated;                                // 0x02A8(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_2A9[0x3];                                      // 0x02A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         WaterEvaporatedLastTimeChange;                     // 0x02AC(0x0004)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         WaterEvaporatedLastServerTimeChange;               // 0x02AC(0x0004)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	EEnviroWaveFadeoutSubstage                    RepFadeoutSubstage;                                // 0x02B0(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	EEnviroWaveGrowbackSubstage                   RepGrowbackSubstage;                               // 0x02B1(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_2B2[0xE];                                      // 0x02B2(0x000E)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             RepHeatRegionTransform;                            // 0x02C0(0x0060)(Net, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FTransform                             RepColdRegionTransform;                            // 0x0320(0x0060)(Net, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	void HandleWaterEvaporatedChanged(bool bActive);
@@ -14489,8 +14492,14 @@ public:
 	void MulticastEnviroWaveForced(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress);
 	void MulticastEnviroWavePaused(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress);
 	void MulticastEnviroWaveStarted(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress);
+	void OnColdRegionLocationReplicated();
+	void OnColdRegionTransformChanged(const struct FTransform& InNewColdRegionTransform);
 	void OnFadeoutSubstageChanged(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveFadeoutSubstage Substage, float Progress);
+	void OnFadeoutSubstageReplicated();
 	void OnGrowbackSubstageChanged(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveGrowbackSubstage Substage, float Progress);
+	void OnGrowbackSubstageReplicated();
+	void OnHeatRegionLocationReplicated();
+	void OnHeatRegionTransformChanged(const struct FTransform& InNewHeatRegionTransform);
 	void OnIsWaterEvaporatedReplicated();
 	void OnWaterEvaporatedLastTimeChangedReplicated();
 
@@ -14531,25 +14540,27 @@ public:
 DUMPER7_ASSERTS_UCrInputBuildToggleRotationSnapping;
 
 // Class Chimera.CrEnviroWaveVisualsWorldSubsystem
-// 0x0128 (0x0158 - 0x0030)
+// 0x0158 (0x0188 - 0x0030)
 class UCrEnviroWaveVisualsWorldSubsystem final : public UWorldSubsystem
 {
 public:
 	uint8                                         Pad_30[0x40];                                      // 0x0030(0x0040)(Fixing Size After Last Property [ Dumper-7 ])
 	TMulticastInlineDelegate<void(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveFadeoutSubstage Substage, float Progress)> OnWaveFadeoutSubstageChanged; // 0x0070(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveGrowbackSubstage Substage, float Progress)> OnWaveGrowbackSubstageChanged; // 0x0088(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	class ACrEnviroWaveRegion*                    HeatWaveRegion;                                    // 0x00A0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class ACrEnviroWaveRegion*                    ColdWaveRegion;                                    // 0x00A8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UCrEnviroWaveSystemSettings*            Settings;                                          // 0x00B0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	TArray<class ACrEnviroWavePlayerFXActor*>     FXActors;                                          // 0x00B8(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
-	struct FCrEnviroWaveVisualsWorldSubsystemTickFunction TickFunction;                              // 0x00C8(0x0030)(NativeAccessSpecifierPrivate)
-	struct FCrEnviroWaveVisualsWorldSubsystemDebugTickFunction DebugTickFunction;                    // 0x00F8(0x0030)(NativeAccessSpecifierPrivate)
-	TArray<TScriptInterface<class ICrEnviroWaveMaterialMapComponentInterface>> MaterialMapComponents; // 0x0128(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate)
-	TArray<class ACrEnviroWaveVisualsActor*>      EnviroWaveVisualsActors;                           // 0x0138(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_148[0x8];                                      // 0x0148(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	EEnviroWaveFadeoutSubstage                    CurrentFadeoutSubstage;                            // 0x0150(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	EEnviroWaveGrowbackSubstage                   CurrentGrowbackSubstage;                           // 0x0151(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_152[0x6];                                      // 0x0152(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(const struct FTransform& NewTransform)> OnHeatRegionLocationChanged; // 0x00A0(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FTransform& NewTransform)> OnColdRegionLocationChanged; // 0x00B8(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	class ACrEnviroWaveRegion*                    HeatWaveRegion;                                    // 0x00D0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class ACrEnviroWaveRegion*                    ColdWaveRegion;                                    // 0x00D8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UCrEnviroWaveSystemSettings*            Settings;                                          // 0x00E0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	TArray<class ACrEnviroWavePlayerFXActor*>     FXActors;                                          // 0x00E8(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
+	struct FCrEnviroWaveVisualsWorldSubsystemTickFunction TickFunction;                              // 0x00F8(0x0030)(NativeAccessSpecifierPrivate)
+	struct FCrEnviroWaveVisualsWorldSubsystemDebugTickFunction DebugTickFunction;                    // 0x0128(0x0030)(NativeAccessSpecifierPrivate)
+	TArray<TScriptInterface<class ICrEnviroWaveMaterialMapComponentInterface>> MaterialMapComponents; // 0x0158(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate)
+	TArray<class ACrEnviroWaveVisualsActor*>      EnviroWaveVisualsActors;                           // 0x0168(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_178[0x8];                                      // 0x0178(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	EEnviroWaveFadeoutSubstage                    CurrentFadeoutSubstage;                            // 0x0180(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	EEnviroWaveGrowbackSubstage                   CurrentGrowbackSubstage;                           // 0x0181(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_182[0x6];                                      // 0x0182(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void DisableAllFXes();
@@ -22775,6 +22786,7 @@ public:
 	bool IsAFK() const;
 	bool IsIncapacitated() const;
 	bool IsInInterior() const;
+	bool IsInSafeInterior() const;
 	bool IsOnTopOfCustomBuildingWithEnergy() const;
 	bool IsPlayingDialogue() const;
 	bool IsSprinting() const;
@@ -26849,12 +26861,11 @@ public:
 DUMPER7_ASSERTS_UCrMiningLockingComponent;
 
 // Class Chimera.CrAPHelperMultiObject
-// 0x0010 (0x0900 - 0x08F0)
+// 0x0000 (0x0900 - 0x0900)
 class ACrAPHelperMultiObject : public AAuAPHelperActorMultiConfirm
 {
 public:
-	class UInstancedStaticMeshComponent*          ISM;                                               // 0x08F0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_8F8[0x8];                                      // 0x08F8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UInstancedStaticMeshComponent*          ISM;                                               // 0x08F8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 
 public:
 	static class UClass* StaticClass()
@@ -28373,7 +28384,7 @@ public:
 	struct FGuid                                  Guid;                                              // 0x02F0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
-	bool SwitchPointOfInterestState(EPointOfInterestState NewState, bool ForceDowngrade, class ACrCharacterPlayerBase* PlayerInteracted);
+	bool SwitchPointOfInterestState(EPointOfInterestState NewState, bool ForceDowngrade, class ACrCharacterPlayerBase* PlayerInteracted, bool HandleSkillExperience);
 
 	EPointOfInterestState GetPointOfInterestState() const;
 	ECrPointOfInterestType GetPointOfInterestType() const;

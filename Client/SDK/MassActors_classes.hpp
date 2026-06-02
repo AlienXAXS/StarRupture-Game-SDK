@@ -14,9 +14,9 @@
 #include "CoreUObject_classes.hpp"
 #include "Engine_classes.hpp"
 #include "MassEntity_classes.hpp"
-#include "MassCommon_structs.hpp"
 #include "MassSpawner_structs.hpp"
 #include "MassSpawner_classes.hpp"
+#include "MassCommon_structs.hpp"
 #include "MassActors_structs.hpp"
 
 

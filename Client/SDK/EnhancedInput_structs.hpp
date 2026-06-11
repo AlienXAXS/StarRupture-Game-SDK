@@ -12,8 +12,8 @@
 
 #include "GameplayTags_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "InputCore_structs.hpp"
 #include "Engine_structs.hpp"
+#include "InputCore_structs.hpp"
 #include "Slate_structs.hpp"
 
 
@@ -243,6 +243,24 @@ public:
 };
 DUMPER7_ASSERTS_FInputActionValue;
 
+// ScriptStruct EnhancedInput.MapPlayerKeyArgs
+// 0x0050 (0x0050 - 0x0000)
+struct FMapPlayerKeyArgs final
+{
+public:
+	class FName                                   MappingName;                                       // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EPlayerMappableKeySlot                        Slot;                                              // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKey                                   NewKey;                                            // 0x0010(0x0018)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   HardwareDeviceId;                                  // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           ProfileId;                                         // 0x0030(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ProfileIdString;                                   // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bCreateMatchingSlotIfNeeded : 1;                   // 0x0048(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bDeferOnSettingsChangedBroadcast : 1;              // 0x0048(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMapPlayerKeyArgs;
+
 // ScriptStruct EnhancedInput.PlayerKeyMapping
 // 0x00A8 (0x00A8 - 0x0000)
 struct FPlayerKeyMapping final
@@ -300,24 +318,6 @@ public:
 	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FPlayerMappableKeyProfileCreationArgs;
-
-// ScriptStruct EnhancedInput.MapPlayerKeyArgs
-// 0x0050 (0x0050 - 0x0000)
-struct FMapPlayerKeyArgs final
-{
-public:
-	class FName                                   MappingName;                                       // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EPlayerMappableKeySlot                        Slot;                                              // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKey                                   NewKey;                                            // 0x0010(0x0018)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   HardwareDeviceId;                                  // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           ProfileId;                                         // 0x0030(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ProfileIdString;                                   // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bCreateMatchingSlotIfNeeded : 1;                   // 0x0048(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bDeferOnSettingsChangedBroadcast : 1;              // 0x0048(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMapPlayerKeyArgs;
 
 // ScriptStruct EnhancedInput.KeyMappingRow
 // 0x0050 (0x0050 - 0x0000)

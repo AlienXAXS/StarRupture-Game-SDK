@@ -250,16 +250,14 @@ public:
 };
 DUMPER7_ASSERTS_FPartyMemberPlatformData;
 
-// ScriptStruct Party.PartyPlatformSessionInfo
-// 0x0050 (0x0050 - 0x0000)
-struct FPartyPlatformSessionInfo final
+// ScriptStruct Party.OnlinePartyRepDataBase
+// 0x0020 (0x0020 - 0x0000)
+struct alignas(0x08) FOnlinePartyRepDataBase
 {
 public:
-	class FString                                 SessionType;                                       // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 SessionId;                                         // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FUniqueNetIdRepl                       OwnerPrimaryId;                                    // 0x0020(0x0030)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FPartyPlatformSessionInfo;
+DUMPER7_ASSERTS_FOnlinePartyRepDataBase;
 
 // ScriptStruct Party.PartyMemberJoinInProgressRequest
 // 0x0038 (0x0038 - 0x0000)
@@ -294,15 +292,6 @@ public:
 };
 DUMPER7_ASSERTS_FPartyMemberJoinInProgressData;
 
-// ScriptStruct Party.OnlinePartyRepDataBase
-// 0x0020 (0x0020 - 0x0000)
-struct alignas(0x08) FOnlinePartyRepDataBase
-{
-public:
-	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FOnlinePartyRepDataBase;
-
 // ScriptStruct Party.PartyMemberRepData
 // 0x02C8 (0x02E8 - 0x0020)
 struct FPartyMemberRepData final : public FOnlinePartyRepDataBase
@@ -319,6 +308,29 @@ public:
 	uint8                                         Pad_268[0x80];                                     // 0x0268(0x0080)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FPartyMemberRepData;
+
+// ScriptStruct Party.SocialChatChannelConfig
+// 0x0038 (0x0038 - 0x0000)
+struct FSocialChatChannelConfig final
+{
+public:
+	class USocialUser*                            SocialUser;                                        // 0x0000(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_8[0x10];                                       // 0x0008(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class USocialChatChannel*>             ListenChannels;                                    // 0x0018(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_28[0x10];                                      // 0x0028(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSocialChatChannelConfig;
+
+// ScriptStruct Party.PartyPlatformSessionInfo
+// 0x0050 (0x0050 - 0x0000)
+struct FPartyPlatformSessionInfo final
+{
+public:
+	class FString                                 SessionType;                                       // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 SessionId;                                         // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FUniqueNetIdRepl                       OwnerPrimaryId;                                    // 0x0020(0x0030)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FPartyPlatformSessionInfo;
 
 // ScriptStruct Party.PartyPrivacySettings
 // 0x0003 (0x0003 - 0x0000)
@@ -343,17 +355,5 @@ public:
 	uint8                                         Pad_80[0x20];                                      // 0x0080(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FPartyRepData;
-
-// ScriptStruct Party.SocialChatChannelConfig
-// 0x0038 (0x0038 - 0x0000)
-struct FSocialChatChannelConfig final
-{
-public:
-	class USocialUser*                            SocialUser;                                        // 0x0000(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_8[0x10];                                       // 0x0008(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class USocialChatChannel*>             ListenChannels;                                    // 0x0018(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_28[0x10];                                      // 0x0028(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSocialChatChannelConfig;
 
 SDK_NAMESPACE_END

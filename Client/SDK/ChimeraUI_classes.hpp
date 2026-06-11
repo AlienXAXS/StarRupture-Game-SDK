@@ -535,7 +535,7 @@ DUMPER7_ASSERTS_ICrItemListWidgetOwnerInterface;
 
 // Class ChimeraUI.CrMainMenuRichTextBlockHyperlinkDecorator
 // 0x0000 (0x06D0 - 0x06D0)
-class UCrMainMenuRichTextBlockHyperlinkDecorator : public UCrRichTextBlockHyperlinkDecorator
+class UCrMainMenuRichTextBlockHyperlinkDecorator final : public UCrRichTextBlockHyperlinkDecorator
 {
 public:
 	static class UClass* StaticClass()
@@ -2564,7 +2564,7 @@ DUMPER7_ASSERTS_UCrUW_BTDeconstructionCrosshair;
 
 // Class ChimeraUI.CrUW_MainMenuWidget
 // 0x00D0 (0x06A0 - 0x05D0)
-class UCrUW_MainMenuWidget : public UCrUW_ActivatableWidget
+class UCrUW_MainMenuWidget final : public UCrUW_ActivatableWidget
 {
 public:
 	class UVerticalBox*                           ButtonsBox;                                        // 0x05D0(0x0008)(Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
@@ -3187,7 +3187,7 @@ DUMPER7_ASSERTS_UCrUW_BuildingInfoStatus;
 
 // Class ChimeraUI.CrUW_PauseMenuMainScreen
 // 0x0420 (0x09F0 - 0x05D0)
-class UCrUW_PauseMenuMainScreen : public UCrUW_ActivatableWidget
+class UCrUW_PauseMenuMainScreen final : public UCrUW_ActivatableWidget
 {
 public:
 	class UCrUW_ButtonsTab*                       TabWidget;                                         // 0x05D0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
@@ -6520,7 +6520,7 @@ DUMPER7_ASSERTS_UCrUW_CorporationsList;
 
 // Class ChimeraUI.CrUW_MarketingElement
 // 0x0010 (0x03D8 - 0x03C8)
-class UCrUW_MarketingElement : public UCommonUserWidget
+class UCrUW_MarketingElement final : public UCommonUserWidget
 {
 public:
 	class UImage*                                 Image;                                             // 0x03C8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
@@ -9787,7 +9787,7 @@ DUMPER7_ASSERTS_UCrUW_MapsList;
 
 // Class ChimeraUI.CrUW_MarketingWidget
 // 0x0080 (0x0448 - 0x03C8)
-class UCrUW_MarketingWidget : public UCommonUserWidget
+class UCrUW_MarketingWidget final : public UCommonUserWidget
 {
 public:
 	class UCommonAnimatedSwitcher*                ContentSwitcher;                                   // 0x03C8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)

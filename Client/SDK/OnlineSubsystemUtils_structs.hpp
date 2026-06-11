@@ -126,6 +126,16 @@ enum class ESpectatorReservationResult : uint8
 	ESpectatorReservationResult_MAX          = 16,
 };
 
+// ScriptStruct OnlineSubsystemUtils.PartyBeaconCrossplayPlatformMapping
+// 0x0020 (0x0020 - 0x0000)
+struct FPartyBeaconCrossplayPlatformMapping final
+{
+public:
+	class FString                                 PlatformName;                                      // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PlatformType;                                      // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FPartyBeaconCrossplayPlatformMapping;
+
 // ScriptStruct OnlineSubsystemUtils.InAppPurchaseReceiptInfo2
 // 0x0040 (0x0040 - 0x0000)
 struct FInAppPurchaseReceiptInfo2 final
@@ -252,16 +262,6 @@ public:
 	TArray<struct FPlayerReservation>             RemovedPartyMembers;                               // 0x0048(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FPartyReservation;
-
-// ScriptStruct OnlineSubsystemUtils.PartyBeaconCrossplayPlatformMapping
-// 0x0020 (0x0020 - 0x0000)
-struct FPartyBeaconCrossplayPlatformMapping final
-{
-public:
-	class FString                                 PlatformName;                                      // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 PlatformType;                                      // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FPartyBeaconCrossplayPlatformMapping;
 
 // ScriptStruct OnlineSubsystemUtils.SpectatorReservation
 // 0x0088 (0x0088 - 0x0000)

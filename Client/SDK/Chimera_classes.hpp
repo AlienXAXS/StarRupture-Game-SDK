@@ -22688,6 +22688,7 @@ public:
 	void ServerAddItems(const TArray<struct FCrCountItem>& InItemsToAdd, bool bSpawnChestIfNoSpace);
 	void ServerAddModToEquippedWeapon(const class UCrWeaponModDataAsset* InModData);
 	void ServerCheckGemEffects(const struct FCrSlotId& RemovedSlot);
+	void ServerClearCurrentResponseName();
 	void ServerDebugSetGemStacks(TSubclassOf<class UCrGemItemData> GemItem, int32 Stacks);
 	void ServerDisablePawn(bool bDisable);
 	void ServerEquipLastWeapon();

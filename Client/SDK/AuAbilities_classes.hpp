@@ -18,8 +18,8 @@
 #include "DeveloperSettings_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "AuItems_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "AuItems_structs.hpp"
 
 
 SDK_NAMESPACE_START

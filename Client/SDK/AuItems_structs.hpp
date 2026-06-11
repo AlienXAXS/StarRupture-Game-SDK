@@ -140,23 +140,26 @@ public:
 };
 DUMPER7_ASSERTS_FAuAbilitiesBarContainer;
 
-// ScriptStruct AuItems.AuEffectItem
-// 0x0008 (0x0008 - 0x0000)
-struct FAuEffectItem final
+// ScriptStruct AuItems.AuEquipmentSlotConfig
+// 0x0030 (0x0030 - 0x0000)
+struct FAuEquipmentSlotConfig final
 {
 public:
-	TSubclassOf<class UGameplayEffect>            Effect;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FPrimaryAssetType                      Type;                                              // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SlotNumber;                                        // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTagContainer                  SlotTags;                                          // 0x0010(0x0020)(Edit, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FAuEffectItem;
+DUMPER7_ASSERTS_FAuEquipmentSlotConfig;
 
-// ScriptStruct AuItems.AuItemId
+// ScriptStruct AuItems.AuEquipmentSlotConfigContainer
 // 0x0010 (0x0010 - 0x0000)
-struct FAuItemId final
+struct FAuEquipmentSlotConfigContainer final
 {
 public:
-	struct FGuid                                  Handle;                                            // 0x0000(0x0010)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TArray<struct FAuEquipmentSlotConfig>         Slots;                                             // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FAuItemId;
+DUMPER7_ASSERTS_FAuEquipmentSlotConfigContainer;
 
 // ScriptStruct AuItems.AuItemInstance
 // 0x0028 (0x0028 - 0x0000)
@@ -167,23 +170,35 @@ public:
 };
 DUMPER7_ASSERTS_FAuItemInstance;
 
-// ScriptStruct AuItems.AuItemSlotEntry
-// 0x00C4 (0x00D0 - 0x000C)
-struct FAuItemSlotEntry final : public FFastArraySerializerItem
+// ScriptStruct AuItems.AuItemId
+// 0x0010 (0x0010 - 0x0000)
+struct FAuItemId final
 {
 public:
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAuItemsComponent*                      OwnerComponent;                                    // 0x0010(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class APlayerController*                      OwnerPC;                                           // 0x0018(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	struct FGuid                                  ItemsComponentId;                                  // 0x0020(0x0010)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	struct FAuItemSlot                            Slot;                                              // 0x0030(0x0030)(SaveGame, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	struct FAuItemId                              Handle;                                            // 0x0060(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	struct FGameplayEffectSpecHandle              StatsToGiveSpecHandle;                             // 0x0070(0x0010)(RepSkip, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_80[0x8];                                       // 0x0080(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayEffectSpecHandle              RandomAttributesSpecHandle;                        // 0x0088(0x0010)(RepSkip, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_98[0x38];                                      // 0x0098(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FGuid                                  Handle;                                            // 0x0000(0x0010)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
-DUMPER7_ASSERTS_FAuItemSlotEntry;
+DUMPER7_ASSERTS_FAuItemId;
+
+// ScriptStruct AuItems.AuItemEntryInternal
+// 0x001C (0x0028 - 0x000C)
+struct FAuItemEntryInternal final : public FFastArraySerializerItem
+{
+public:
+	uint8                                         Pad_C[0x14];                                       // 0x000C(0x0014)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAuItemDataBase*                        ItemTypeGCHolder;                                  // 0x0020(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+};
+DUMPER7_ASSERTS_FAuItemEntryInternal;
+
+// ScriptStruct AuItems.AuItemsArray
+// 0x0068 (0x0170 - 0x0108)
+struct FAuItemsArray final : public FFastArraySerializer
+{
+public:
+	TArray<struct FAuItemEntryInternal>           Items;                                             // 0x0108(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	class UAuItemsStoreComponent*                 Owner;                                             // 0x0118(0x0008)(ExportObject, ZeroConstructor, InstancedReference, RepSkip, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_120[0x50];                                     // 0x0120(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAuItemsArray;
 
 // ScriptStruct AuItems.AuSimpleItem
 // 0x0024 (0x0030 - 0x000C)
@@ -198,16 +213,14 @@ public:
 };
 DUMPER7_ASSERTS_FAuSimpleItem;
 
-// ScriptStruct AuItems.AuAddItemBatch
-// 0x0010 (0x0010 - 0x0000)
-struct FAuAddItemBatch final
+// ScriptStruct AuItems.AuItemIdItem
+// 0x0010 (0x001C - 0x000C)
+struct FAuItemIdItem final : public FFastArraySerializerItem
 {
 public:
-	TSubclassOf<class UAuItemDataBase>            ItemDataBase;                                      // 0x0000(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Amount;                                            // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FAuItemId                              ItemId;                                            // 0x000C(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FAuAddItemBatch;
+DUMPER7_ASSERTS_FAuItemIdItem;
 
 // ScriptStruct AuItems.AuBarItem
 // 0x0008 (0x0008 - 0x0000)
@@ -229,6 +242,15 @@ public:
 };
 DUMPER7_ASSERTS_FAuGameplayAttributeComboPool;
 
+// ScriptStruct AuItems.AuItemStatCustom
+// 0x0008 (0x0008 - 0x0000)
+struct FAuItemStatCustom final
+{
+public:
+	TSubclassOf<class UAuCustomItemStat>          Custom;                                            // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAuItemStatCustom;
+
 // ScriptStruct AuItems.AuItemStatFloat
 // 0x0004 (0x0004 - 0x0000)
 struct FAuItemStatFloat final
@@ -247,15 +269,6 @@ public:
 	float                                         Max;                                               // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FAuItemStatRandomRange;
-
-// ScriptStruct AuItems.AuItemStatCustom
-// 0x0008 (0x0008 - 0x0000)
-struct FAuItemStatCustom final
-{
-public:
-	TSubclassOf<class UAuCustomItemStat>          Custom;                                            // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAuItemStatCustom;
 
 // ScriptStruct AuItems.AuItemAttribute
 // 0x0048 (0x0048 - 0x0000)
@@ -534,27 +547,6 @@ public:
 };
 DUMPER7_ASSERTS_FAuItemEntry;
 
-// ScriptStruct AuItems.AuItemEntryInternal
-// 0x001C (0x0028 - 0x000C)
-struct FAuItemEntryInternal final : public FFastArraySerializerItem
-{
-public:
-	uint8                                         Pad_C[0x14];                                       // 0x000C(0x0014)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAuItemDataBase*                        ItemTypeGCHolder;                                  // 0x0020(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-};
-DUMPER7_ASSERTS_FAuItemEntryInternal;
-
-// ScriptStruct AuItems.AuItemsArray
-// 0x0068 (0x0170 - 0x0108)
-struct FAuItemsArray final : public FFastArraySerializer
-{
-public:
-	TArray<struct FAuItemEntryInternal>           Items;                                             // 0x0108(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	class UAuItemsStoreComponent*                 Owner;                                             // 0x0118(0x0008)(ExportObject, ZeroConstructor, InstancedReference, RepSkip, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_120[0x50];                                     // 0x0120(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAuItemsArray;
-
 // ScriptStruct AuItems.AuItemEntryData
 // 0x00B4 (0x00C0 - 0x000C)
 struct FAuItemEntryData final : public FFastArraySerializerItem
@@ -638,27 +630,6 @@ public:
 };
 DUMPER7_ASSERTS_FAuItemPickupClass;
 
-// ScriptStruct AuItems.AuEquipmentSlotConfig
-// 0x0030 (0x0030 - 0x0000)
-struct FAuEquipmentSlotConfig final
-{
-public:
-	struct FPrimaryAssetType                      Type;                                              // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SlotNumber;                                        // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTagContainer                  SlotTags;                                          // 0x0010(0x0020)(Edit, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAuEquipmentSlotConfig;
-
-// ScriptStruct AuItems.AuEquipmentSlotConfigContainer
-// 0x0010 (0x0010 - 0x0000)
-struct FAuEquipmentSlotConfigContainer final
-{
-public:
-	TArray<struct FAuEquipmentSlotConfig>         Slots;                                             // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAuEquipmentSlotConfigContainer;
-
 // ScriptStruct AuItems.AuEquipmentItemContainer
 // 0x0068 (0x0068 - 0x0000)
 struct FAuEquipmentItemContainer final
@@ -671,15 +642,6 @@ public:
 };
 DUMPER7_ASSERTS_FAuEquipmentItemContainer;
 
-// ScriptStruct AuItems.AuItemIdItem
-// 0x0010 (0x001C - 0x000C)
-struct FAuItemIdItem final : public FFastArraySerializerItem
-{
-public:
-	struct FAuItemId                              ItemId;                                            // 0x000C(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAuItemIdItem;
-
 // ScriptStruct AuItems.AuItemsIdContainer
 // 0x0018 (0x0120 - 0x0108)
 struct FAuItemsIdContainer final : public FFastArraySerializer
@@ -689,6 +651,35 @@ public:
 	class UAuItemsComponent*                      Owner;                                             // 0x0118(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 };
 DUMPER7_ASSERTS_FAuItemsIdContainer;
+
+// ScriptStruct AuItems.AuAddItemBatch
+// 0x0010 (0x0010 - 0x0000)
+struct FAuAddItemBatch final
+{
+public:
+	TSubclassOf<class UAuItemDataBase>            ItemDataBase;                                      // 0x0000(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Amount;                                            // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAuAddItemBatch;
+
+// ScriptStruct AuItems.AuItemSlotEntry
+// 0x00C4 (0x00D0 - 0x000C)
+struct FAuItemSlotEntry final : public FFastArraySerializerItem
+{
+public:
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAuItemsComponent*                      OwnerComponent;                                    // 0x0010(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class APlayerController*                      OwnerPC;                                           // 0x0018(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	struct FGuid                                  ItemsComponentId;                                  // 0x0020(0x0010)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FAuItemSlot                            Slot;                                              // 0x0030(0x0030)(SaveGame, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FAuItemId                              Handle;                                            // 0x0060(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FGameplayEffectSpecHandle              StatsToGiveSpecHandle;                             // 0x0070(0x0010)(RepSkip, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_80[0x8];                                       // 0x0080(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayEffectSpecHandle              RandomAttributesSpecHandle;                        // 0x0088(0x0010)(RepSkip, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_98[0x38];                                      // 0x0098(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAuItemSlotEntry;
 
 // ScriptStruct AuItems.AuItemsComponentState
 // 0x0020 (0x0020 - 0x0000)
@@ -790,6 +781,15 @@ public:
 	TArray<struct FAuItemAttributeStat>           ItemStats;                                         // 0x0020(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FAuRandomAttriuteResult;
+
+// ScriptStruct AuItems.AuEffectItem
+// 0x0008 (0x0008 - 0x0000)
+struct FAuEffectItem final
+{
+public:
+	TSubclassOf<class UGameplayEffect>            Effect;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAuEffectItem;
 
 // ScriptStruct AuItems.AuArrayEffectItem
 // 0x0030 (0x0030 - 0x0000)

@@ -12,8 +12,8 @@
 
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "Chimera_structs.hpp"
 #include "BP_BaseAI_classes.hpp"
+#include "Chimera_structs.hpp"
 
 
 SDK_NAMESPACE_START

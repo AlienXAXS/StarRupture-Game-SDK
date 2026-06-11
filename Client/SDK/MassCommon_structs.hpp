@@ -17,22 +17,6 @@
 
 SDK_NAMESPACE_START
 
-// ScriptStruct MassCommon.ObjectWrapperFragment
-// 0x0000 (0x0000 - 0x0000)
-#pragma pack(push, 0x1)
-struct SDK_ALIGN(0x01) FObjectWrapperFragment : public FMassFragment
-{
-};
-#pragma pack(pop)
-DUMPER7_ASSERTS_FObjectWrapperFragment;
-
-// ScriptStruct MassCommon.MassNetworkID
-// 0x0000 (0x0004 - 0x0004)
-struct FMassNetworkID final : public FSequentialIDBase
-{
-};
-DUMPER7_ASSERTS_FMassNetworkID;
-
 // ScriptStruct MassCommon.TransformFragment
 // 0x0060 (0x0060 - 0x0000)
 struct FTransformFragment final : public FMassFragment
@@ -42,6 +26,13 @@ public:
 };
 DUMPER7_ASSERTS_FTransformFragment;
 
+// ScriptStruct MassCommon.MassNetworkID
+// 0x0000 (0x0004 - 0x0004)
+struct FMassNetworkID final : public FSequentialIDBase
+{
+};
+DUMPER7_ASSERTS_FMassNetworkID;
+
 // ScriptStruct MassCommon.AgentRadiusFragment
 // 0x0004 (0x0004 - 0x0000)
 struct FAgentRadiusFragment final : public FMassFragment
@@ -50,6 +41,15 @@ public:
 	float                                         Radius;                                            // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FAgentRadiusFragment;
+
+// ScriptStruct MassCommon.ObjectWrapperFragment
+// 0x0000 (0x0000 - 0x0000)
+#pragma pack(push, 0x1)
+struct SDK_ALIGN(0x01) FObjectWrapperFragment : public FMassFragment
+{
+};
+#pragma pack(pop)
+DUMPER7_ASSERTS_FObjectWrapperFragment;
 
 // ScriptStruct MassCommon.MassInt16Real
 // 0x0002 (0x0002 - 0x0000)

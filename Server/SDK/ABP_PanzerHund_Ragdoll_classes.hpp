@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
-#include "AnimGraphRuntime_structs.hpp"
-#include "Chimera_classes.hpp"
 #include "ABP_PanzerHund_Ragdoll_structs.hpp"
+#include "AnimGraphRuntime_structs.hpp"
+#include "Engine_structs.hpp"
+#include "Chimera_classes.hpp"
 
 
 SDK_NAMESPACE_START

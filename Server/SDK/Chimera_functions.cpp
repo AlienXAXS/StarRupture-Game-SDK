@@ -43830,6 +43830,25 @@ void ACrCharacterPlayerBase::ServerCheckGemEffects(const struct FCrSlotId& Remov
 }
 
 
+// Function Chimera.CrCharacterPlayerBase.ServerClearCurrentResponseName
+// (Net, NetReliable, Native, Event, Public, NetServer)
+
+void ACrCharacterPlayerBase::ServerClearCurrentResponseName()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrCharacterPlayerBase", "ServerClearCurrentResponseName");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Chimera.CrCharacterPlayerBase.ServerDebugSetGemStacks
 // (Net, Native, Event, Public, NetServer)
 // Parameters:

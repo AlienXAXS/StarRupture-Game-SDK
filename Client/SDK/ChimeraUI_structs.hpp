@@ -506,6 +506,30 @@ enum class ESoundToPlay : uint8
 	SoundToPlay_MAX                          = 5,
 };
 
+// ScriptStruct ChimeraUI.CrCraftingRecipeContentForUI
+// 0x00D0 (0x00D0 - 0x0000)
+struct FCrCraftingRecipeContentForUI final
+{
+public:
+	struct FSlateBrush                            ItemIcon;                                          // 0x0000(0x00B0)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	class FText                                   ItemName;                                          // 0x00B0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	int32                                         ItemAmount;                                        // 0x00C0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C4[0xC];                                       // 0x00C4(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrCraftingRecipeContentForUI;
+
+// ScriptStruct ChimeraUI.CrHitIndicatorObject
+// 0x0058 (0x0058 - 0x0000)
+struct FCrHitIndicatorObject final
+{
+public:
+	class UUserWidget*                            HitObject;                                         // 0x0000(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FVector2D                              Direction;                                         // 0x0008(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18[0x38];                                      // 0x0018(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCanvasPanelSlot*                       HitCanvasSlot;                                     // 0x0050(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrHitIndicatorObject;
+
 // ScriptStruct ChimeraUI.CrTabDescriptor
 // 0x00F0 (0x00F0 - 0x0000)
 struct FCrTabDescriptor final
@@ -523,6 +547,30 @@ public:
 };
 DUMPER7_ASSERTS_FCrTabDescriptor;
 
+// ScriptStruct ChimeraUI.CrWidgetData
+// 0x0058 (0x0058 - 0x0000)
+struct FCrWidgetData final
+{
+public:
+	EUIWidgetType                                 WidgetType;                                        // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<ECrBuildingState, class FText>           BuildingStatus;                                    // 0x0008(0x0050)(Edit, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrWidgetData;
+
+// ScriptStruct ChimeraUI.CrCorporationContentForUI
+// 0x00D0 (0x00D0 - 0x0000)
+struct FCrCorporationContentForUI final
+{
+public:
+	struct FSlateBrush                            CorporationIcon;                                   // 0x0000(0x00B0)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	class FText                                   CorporationName;                                   // 0x00B0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	int32                                         NextLevel;                                         // 0x00C0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LevelProgress;                                     // 0x00C4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C8[0x8];                                       // 0x00C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrCorporationContentForUI;
+
 // ScriptStruct ChimeraUI.CrMarkerFilterApperance
 // 0x0120 (0x0120 - 0x0000)
 struct FCrMarkerFilterApperance final
@@ -539,42 +587,6 @@ public:
 	struct FSlateBrush                            FilterIcon;                                        // 0x0070(0x00B0)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCrMarkerFilterApperance;
-
-// ScriptStruct ChimeraUI.CrWidgetData
-// 0x0058 (0x0058 - 0x0000)
-struct FCrWidgetData final
-{
-public:
-	EUIWidgetType                                 WidgetType;                                        // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<ECrBuildingState, class FText>           BuildingStatus;                                    // 0x0008(0x0050)(Edit, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrWidgetData;
-
-// ScriptStruct ChimeraUI.CrCraftingRecipeContentForUI
-// 0x00D0 (0x00D0 - 0x0000)
-struct FCrCraftingRecipeContentForUI final
-{
-public:
-	struct FSlateBrush                            ItemIcon;                                          // 0x0000(0x00B0)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	class FText                                   ItemName;                                          // 0x00B0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	int32                                         ItemAmount;                                        // 0x00C0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C4[0xC];                                       // 0x00C4(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrCraftingRecipeContentForUI;
-
-// ScriptStruct ChimeraUI.CrCorporationContentForUI
-// 0x00D0 (0x00D0 - 0x0000)
-struct FCrCorporationContentForUI final
-{
-public:
-	struct FSlateBrush                            CorporationIcon;                                   // 0x0000(0x00B0)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	class FText                                   CorporationName;                                   // 0x00B0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	int32                                         NextLevel;                                         // 0x00C0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LevelProgress;                                     // 0x00C4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C8[0x8];                                       // 0x00C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrCorporationContentForUI;
 
 // ScriptStruct ChimeraUI.CrTerrainSegmentData
 // 0x0170 (0x0170 - 0x0000)
@@ -715,18 +727,6 @@ public:
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCrHitReactionData;
-
-// ScriptStruct ChimeraUI.CrHitIndicatorObject
-// 0x0058 (0x0058 - 0x0000)
-struct FCrHitIndicatorObject final
-{
-public:
-	class UUserWidget*                            HitObject;                                         // 0x0000(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	struct FVector2D                              Direction;                                         // 0x0008(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18[0x38];                                      // 0x0018(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCanvasPanelSlot*                       HitCanvasSlot;                                     // 0x0050(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrHitIndicatorObject;
 
 // ScriptStruct ChimeraUI.InfectionMarkerUIRepresentation
 // 0x0018 (0x0018 - 0x0000)

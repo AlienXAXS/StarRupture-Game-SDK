@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
 #include "Chimera_structs.hpp"
 #include "Chimera_classes.hpp"
 #include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "BS_WeaponFOV_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "CommonInput_structs.hpp"
@@ -114,6 +114,8 @@ public:
 	uint8                                         Pad_1901[0x7];                                     // 0x1901(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftObjectPtr<class UDialogueWave>           CurrentDialogueWaveLoadingInProgress;              // 0x1908(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 	bool                                          CurrentDialogueIsSilent;                           // 0x1930(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1931[0x7];                                     // 0x1931(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        DialogueTimeoutDuration;                           // 0x1938(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	bool BlockEnergyLoweringDuringSprint();

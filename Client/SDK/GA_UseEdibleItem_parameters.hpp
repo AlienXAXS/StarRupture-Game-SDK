@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "GameplayAbilities_structs.hpp"
+#include "Chimera_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "AuItems_structs.hpp"
-#include "Chimera_structs.hpp"
 
 
 SDK_NAMESPACE_START

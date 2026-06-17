@@ -19,7 +19,7 @@ SDK_PARAM_NAMESPACE_START
 struct WBP_PopupInfoWindow_C_PreConstruct final
 {
 public:
-	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsDesignTime_PreConstruct;                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_PopupInfoWindow_C_PreConstruct;
 
@@ -40,7 +40,7 @@ DUMPER7_ASSERTS_WBP_PopupInfoWindow_C_ExecuteUbergraph_WBP_PopupInfoWindow;
 struct WBP_PopupInfoWindow_C_BP_GetDesiredFocusTarget final
 {
 public:
-	class UWidget*                                ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UWidget*                                ReturnValue_BP_GetDesiredFocusTarget;              // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_PopupInfoWindow_C_BP_GetDesiredFocusTarget;
 

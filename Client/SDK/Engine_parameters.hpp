@@ -25326,16 +25326,16 @@ public:
 };
 DUMPER7_ASSERTS_KismetMathLibrary_ProjectPointOnToPlane;
 
-// Function Engine.KismetMathLibrary.ProjectVectorOnToPlane
+// Function Engine.KismetMathLibrary.ProjectVectorOntoPlane
 // 0x0048 (0x0048 - 0x0000)
-struct KismetMathLibrary_ProjectVectorOnToPlane final
+struct KismetMathLibrary_ProjectVectorOntoPlane final
 {
 public:
 	struct FVector                                V;                                                 // 0x0000(0x0018)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                PlaneNormal;                                       // 0x0018(0x0018)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                ReturnValue;                                       // 0x0030(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_KismetMathLibrary_ProjectVectorOnToPlane;
+DUMPER7_ASSERTS_KismetMathLibrary_ProjectVectorOntoPlane;
 
 // Function Engine.KismetMathLibrary.ProjectVectorOnToVector
 // 0x0048 (0x0048 - 0x0000)
@@ -32201,7 +32201,7 @@ public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UQuartzClockHandle*                     InClockHandle;                                     // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FQuartzQuantizationBoundary            InQuantizationBoundary;                            // 0x0010(0x0020)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name)> InDelegate;           // 0x0030(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name_0)> InDelegate;         // 0x0030(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         InStartTime;                                       // 0x0048(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         InFadeInDuration;                                  // 0x004C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         InFadeVolumeLevel;                                 // 0x0050(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)

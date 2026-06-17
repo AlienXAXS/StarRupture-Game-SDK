@@ -27,7 +27,7 @@ public:
 
 public:
 	void ExecuteUbergraph_BTTask_Animal_Panzerhund_SetAudioState(int32 EntryPoint);
-	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+	void ReceiveExecuteAI(class AAIController* OwnerController_ReceiveExecuteAI, class APawn* ControlledPawn_ReceiveExecuteAI);
 
 public:
 	static class UClass* StaticClass()

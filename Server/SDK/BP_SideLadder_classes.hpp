@@ -34,7 +34,7 @@ public:
 	void UpdateCharactersHights();
 	void TryTriggerFootstep(class ACrCharacterPlayerBase* Character);
 	void RemoveCharacterFromLadder(const class ACrCharacterPlayerBase*& Character);
-	void ReceiveTick(float DeltaSeconds);
+	void ReceiveTick(float DeltaSeconds_ReceiveTick);
 	void ReceiveBeginPlay();
 	void ExecuteUbergraph_BP_SideLadder(int32 EntryPoint);
 	void BndEvt__BP_Ladder_LadderTrigger_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);

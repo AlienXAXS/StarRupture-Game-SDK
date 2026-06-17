@@ -53,10 +53,10 @@ void UWBP_Rifle_Magnifier_ScopeOverlay_C::UpdateCrosshairSpread(double Delta_Sec
 // Function WBP_Rifle_Magnifier_ScopeOverlay.WBP_Rifle_Magnifier_ScopeOverlay_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-// float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FGeometry&                 MyGeometry_Tick                                        (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// float                                   InDeltaTime_Tick                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_Rifle_Magnifier_ScopeOverlay_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)
+void UWBP_Rifle_Magnifier_ScopeOverlay_C::Tick(const struct FGeometry& MyGeometry_Tick, float InDeltaTime_Tick)
 {
 	static class UFunction* Func = nullptr;
 
@@ -65,8 +65,8 @@ void UWBP_Rifle_Magnifier_ScopeOverlay_C::Tick(const struct FGeometry& MyGeometr
 
 	Params::WBP_Rifle_Magnifier_ScopeOverlay_C_Tick Parms{};
 
-	Parms.MyGeometry = std::move(MyGeometry);
-	Parms.InDeltaTime = InDeltaTime;
+	Parms.MyGeometry_Tick = std::move(MyGeometry_Tick);
+	Parms.InDeltaTime_Tick = InDeltaTime_Tick;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

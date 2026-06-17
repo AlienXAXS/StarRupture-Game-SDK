@@ -509,9 +509,9 @@ void UABP_Melee_Tier2_Actor_C::AnimNotify_AnimationFinishedEvent()
 // Function ABP_Melee_Tier2_Actor.ABP_Melee_Tier2_Actor_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink*                       AnimGraph_0                                            (Parm, OutParm, NoDestructor)
+// struct FPoseLink*                       AnimGraph                                              (Parm, OutParm, NoDestructor)
 
-void UABP_Melee_Tier2_Actor_C::AnimGraph(struct FPoseLink* AnimGraph_0)
+void UABP_Melee_Tier2_Actor_C::AnimGraph(struct FPoseLink* AnimGraph)
 {
 	static class UFunction* Func = nullptr;
 
@@ -522,8 +522,8 @@ void UABP_Melee_Tier2_Actor_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (AnimGraph_0 != nullptr)
-		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
+	if (AnimGraph != nullptr)
+		*AnimGraph = std::move(Parms.AnimGraph);
 }
 
 

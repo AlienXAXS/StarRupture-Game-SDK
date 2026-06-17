@@ -14,8 +14,8 @@
 #include "CoreUObject_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
 #include "Chimera_structs.hpp"
-#include "Engine_structs.hpp"
 #include "EPlayerState_structs.hpp"
+#include "Engine_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "ModularGameplay_structs.hpp"
 #include "AuActorPlacement_structs.hpp"
@@ -226,7 +226,7 @@ public:
 	float                                         K2Node_EnhancedInputActionEvent_ElapsedTime_8;     // 0x0120(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         K2Node_EnhancedInputActionEvent_TriggeredTime_8;   // 0x0124(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	const class UInputAction*                     K2Node_EnhancedInputActionEvent_SourceAction_8;    // 0x0128(0x0008)(ConstParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(const struct FActorInitStateChangedParams& Params)> K2Node_CreateDelegate_OutputDelegate_2; // 0x0130(0x0018)(ZeroConstructor, HasGetValueTypeHash)
+	TDelegate<void(const struct FActorInitStateChangedParams& Params_0)> K2Node_CreateDelegate_OutputDelegate_2; // 0x0130(0x0018)(ZeroConstructor, HasGetValueTypeHash)
 	double                                        CallFunc_Conv_InputActionValueToAxis1D_ReturnValue_1; // 0x0148(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UInputAction*                           Temp_object_Variable_1;                            // 0x0150(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	double                                        Temp_real_Variable_3;                              // 0x0158(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

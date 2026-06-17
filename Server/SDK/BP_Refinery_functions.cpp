@@ -61,9 +61,9 @@ void ABP_Refinery_C::OnItemCraftingComplete()
 // Function BP_Refinery.BP_Refinery_C.OnBuildingStateChanged
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrBuildingState                        InState_OnBuildingStateChanged                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Refinery_C::OnBuildingStateChanged(ECrBuildingState InState)
+void ABP_Refinery_C::OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -72,7 +72,7 @@ void ABP_Refinery_C::OnBuildingStateChanged(ECrBuildingState InState)
 
 	Params::BP_Refinery_C_OnBuildingStateChanged Parms{};
 
-	Parms.InState = InState;
+	Parms.InState_OnBuildingStateChanged = InState_OnBuildingStateChanged;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -101,11 +101,11 @@ void ABP_Refinery_C::ExecuteUbergraph_BP_Refinery(int32 EntryPoint)
 // Function BP_Refinery.BP_Refinery_C.Get Meshes
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// class USceneComponent*                  Static_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-// class USceneComponent*                  Animated_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class USceneComponent*                  Static                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class USceneComponent*                  Animated                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // TArray<class UMeshComponent*>*          NewParam                                               (Parm, OutParm, ContainsInstancedReference)
 
-void ABP_Refinery_C::Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Animated_0, TArray<class UMeshComponent*>* NewParam) const
+void ABP_Refinery_C::Get_Meshes(class USceneComponent* Static, class USceneComponent* Animated, TArray<class UMeshComponent*>* NewParam) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -114,8 +114,8 @@ void ABP_Refinery_C::Get_Meshes(class USceneComponent* Static_0, class USceneCom
 
 	Params::BP_Refinery_C_Get_Meshes Parms{};
 
-	Parms.Static_0 = Static_0;
-	Parms.Animated_0 = Animated_0;
+	Parms.Static = Static;
+	Parms.Animated = Animated;
 
 	UObject::ProcessEvent(Func, &Parms);
 

@@ -23,7 +23,7 @@ SDK_PARAM_NAMESPACE_START
 struct BP_FE_entrance_door_C_OnUnlocked final
 {
 public:
-	class AActor*                                 ActorActivating;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 ActorActivating_OnUnlocked;                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_FE_entrance_door_C_OnUnlocked;
 

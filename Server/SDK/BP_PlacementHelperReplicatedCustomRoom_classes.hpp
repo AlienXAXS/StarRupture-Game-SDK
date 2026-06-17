@@ -27,8 +27,8 @@ public:
 
 public:
 	void UserConstructionScript();
-	void SetMeshColor(const struct FLinearColor& Color);
-	void OnFoundationSetUp(const TArray<struct FTransform>& FoundationTransforms);
+	void SetMeshColor(const struct FLinearColor& Color_SetMeshColor);
+	void OnFoundationSetUp(const TArray<struct FTransform>& FoundationTransforms_OnFoundationSetUp);
 	void ExecuteUbergraph_BP_PlacementHelperReplicatedCustomRoom(int32 EntryPoint);
 
 public:

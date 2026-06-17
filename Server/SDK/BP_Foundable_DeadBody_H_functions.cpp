@@ -19,9 +19,9 @@ SDK_NAMESPACE_START
 // Function BP_Foundable_DeadBody_H.BP_Foundable_DeadBody_H_C.UpdateFoundableVisibilityForStorageState
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    BeginPlay                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    BeginPlay_UpdateFoundableVisibilityForStorageState     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Foundable_DeadBody_H_C::UpdateFoundableVisibilityForStorageState(bool BeginPlay)
+void ABP_Foundable_DeadBody_H_C::UpdateFoundableVisibilityForStorageState(bool BeginPlay_UpdateFoundableVisibilityForStorageState)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,7 +30,7 @@ void ABP_Foundable_DeadBody_H_C::UpdateFoundableVisibilityForStorageState(bool B
 
 	Params::BP_Foundable_DeadBody_H_C_UpdateFoundableVisibilityForStorageState Parms{};
 
-	Parms.BeginPlay = BeginPlay;
+	Parms.BeginPlay_UpdateFoundableVisibilityForStorageState = BeginPlay_UpdateFoundableVisibilityForStorageState;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -39,7 +39,7 @@ void ABP_Foundable_DeadBody_H_C::UpdateFoundableVisibilityForStorageState(bool B
 // Function BP_Foundable_DeadBody_H.BP_Foundable_DeadBody_H_C.OnStorageEmptied
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue_OnStorageEmptied                           (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool ABP_Foundable_DeadBody_H_C::OnStorageEmptied()
 {

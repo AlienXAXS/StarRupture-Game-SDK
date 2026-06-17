@@ -51,8 +51,8 @@ public:
 
 public:
 	void ReceiveBeginPlay();
-	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed);
-	void OnOpenStateChanged(bool bInOpen);
+	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed_PostPlayBuildingEffect);
+	void OnOpenStateChanged(bool bInOpen_OnOpenStateChanged);
 	void ExecuteUbergraph_BP_Airlock_StartingHUB(int32 EntryPoint);
 
 public:

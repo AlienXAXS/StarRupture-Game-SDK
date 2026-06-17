@@ -19,9 +19,9 @@ SDK_NAMESPACE_START
 // Function BP_InventoryDropItem.BP_InventoryDropItem_C.ReceiveEndPlay
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEndPlayReason                          EndPlayReason_ReceiveEndPlay                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_InventoryDropItem_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
+void ABP_InventoryDropItem_C::ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,7 +30,7 @@ void ABP_InventoryDropItem_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 
 	Params::BP_InventoryDropItem_C_ReceiveEndPlay Parms{};
 
-	Parms.EndPlayReason = EndPlayReason;
+	Parms.EndPlayReason_ReceiveEndPlay = EndPlayReason_ReceiveEndPlay;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -53,7 +53,7 @@ void ABP_InventoryDropItem_C::ReceiveBeginPlay()
 // Function BP_InventoryDropItem.BP_InventoryDropItem_C.OnStorageEmptied
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue_OnStorageEmptied                           (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool ABP_InventoryDropItem_C::OnStorageEmptied()
 {

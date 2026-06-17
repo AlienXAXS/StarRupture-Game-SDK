@@ -47,8 +47,8 @@ public:
 public:
 	void OnSocketDisconnected(class FName SocketName);
 	void OnSocketConnected(class FName SocketName);
-	void OnHeaterCoolerStateChanged(ECrMassHeaterCoolerState State);
-	void OnHeaterCoolerConnectionsChanged(const TArray<class FName>& ConnectedSockets);
+	void OnHeaterCoolerStateChanged(ECrMassHeaterCoolerState State_OnHeaterCoolerStateChanged);
+	void OnHeaterCoolerConnectionsChanged(const TArray<class FName>& ConnectedSockets_OnHeaterCoolerConnectionsChanged);
 	void ExecuteUbergraph_BP_CoolerPassive(int32 EntryPoint);
 
 public:

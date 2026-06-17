@@ -85,7 +85,7 @@ public:
 	double                                        Pan_Speed;                                         // 0x0490(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveTick(float DeltaSeconds);
+	void ReceiveTick(float DeltaSeconds_ReceiveTick);
 	void ReceiveBeginPlay();
 	void ExecuteUbergraph_BP_SolarFlaresForCapture(int32 EntryPoint);
 

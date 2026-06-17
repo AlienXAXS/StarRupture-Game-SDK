@@ -21,7 +21,7 @@ SDK_PARAM_NAMESPACE_START
 struct BP_SynthetizerTier2_C_OnBuildingStateChanged final
 {
 public:
-	ECrBuildingState                              InState;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECrBuildingState                              InState_OnBuildingStateChanged;                    // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_SynthetizerTier2_C_OnBuildingStateChanged;
 

@@ -19,8 +19,8 @@ SDK_PARAM_NAMESPACE_START
 struct BP_AnimNotify_RunCrAiAction_Dissolve_C_CreateAiAction final
 {
 public:
-	class AActor*                                 Actor;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UCrAiAction*                            ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 Actor_CreateAiAction;                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UCrAiAction*                            ReturnValue_CreateAiAction;                        // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
 	class UCrAiActionDissolve*                    CallFunc_Create_CrAiActionDissolve_ReturnValue;    // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_AnimNotify_RunCrAiAction_Dissolve_C_CreateAiAction;

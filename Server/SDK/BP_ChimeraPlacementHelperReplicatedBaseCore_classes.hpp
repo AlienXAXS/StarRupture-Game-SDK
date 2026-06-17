@@ -29,7 +29,7 @@ public:
 
 public:
 	void UserConstructionScript();
-	void SetMeshColor(const struct FLinearColor& Color);
+	void SetMeshColor(const struct FLinearColor& Color_SetMeshColor);
 	void ReceiveBeginPlay();
 	void ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedBaseCore(int32 EntryPoint);
 

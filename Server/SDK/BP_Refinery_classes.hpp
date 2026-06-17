@@ -59,10 +59,10 @@ public:
 	void SetupSkeletalMesh();
 	void ReceiveBeginPlay();
 	void OnItemCraftingComplete();
-	void OnBuildingStateChanged(ECrBuildingState InState);
+	void OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged);
 	void ExecuteUbergraph_BP_Refinery(int32 EntryPoint);
 
-	void Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Animated_0, TArray<class UMeshComponent*>* NewParam) const;
+	void Get_Meshes(class USceneComponent* Static, class USceneComponent* Animated, TArray<class UMeshComponent*>* NewParam) const;
 
 public:
 	static class UClass* StaticClass()

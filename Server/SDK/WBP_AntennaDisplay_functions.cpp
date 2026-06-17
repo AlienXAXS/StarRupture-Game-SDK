@@ -89,9 +89,9 @@ void UWBP_AntennaDisplay_C::SetPercentageIcon(const struct FLinearColor& Color, 
 // Function WBP_AntennaDisplay.WBP_AntennaDisplay_C.SetPercent
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// double                                  Percent_0                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double                                  Percent                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_AntennaDisplay_C::SetPercent(double Percent_0)
+void UWBP_AntennaDisplay_C::SetPercent(double Percent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -100,7 +100,7 @@ void UWBP_AntennaDisplay_C::SetPercent(double Percent_0)
 
 	Params::WBP_AntennaDisplay_C_SetPercent Parms{};
 
-	Parms.Percent_0 = Percent_0;
+	Parms.Percent = Percent;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -129,9 +129,9 @@ void UWBP_AntennaDisplay_C::SetBackgroundColor(const struct FLinearColor& Color)
 // Function WBP_AntennaDisplay.WBP_AntennaDisplay_C.Init
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// double                                  Percent_0                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double                                  Percent                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_AntennaDisplay_C::Init(double Percent_0)
+void UWBP_AntennaDisplay_C::Init(double Percent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -140,7 +140,7 @@ void UWBP_AntennaDisplay_C::Init(double Percent_0)
 
 	Params::WBP_AntennaDisplay_C_Init Parms{};
 
-	Parms.Percent_0 = Percent_0;
+	Parms.Percent = Percent;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

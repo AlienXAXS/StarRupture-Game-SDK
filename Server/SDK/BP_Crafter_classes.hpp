@@ -46,8 +46,8 @@ public:
 public:
 	void SetupSkeletalMesh();
 	void OnItemCraftingComplete();
-	void OnBuildingStateChanged(ECrBuildingState InState);
-	void Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Animated_0, TArray<class UMeshComponent*>* NewParam);
+	void OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged);
+	void Get_Meshes(class USceneComponent* Static, class USceneComponent* Animated, TArray<class UMeshComponent*>* NewParam);
 	void ExecuteUbergraph_BP_Crafter(int32 EntryPoint);
 
 public:

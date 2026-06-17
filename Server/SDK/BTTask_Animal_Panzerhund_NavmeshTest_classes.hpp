@@ -26,7 +26,7 @@ public:
 	double                                        RadiusMultiplayer;                                 // 0x00B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+	void ReceiveExecuteAI(class AAIController* OwnerController_ReceiveExecuteAI, class APawn* ControlledPawn_ReceiveExecuteAI);
 	void ExecuteUbergraph_BTTask_Animal_Panzerhund_NavmeshTest(int32 EntryPoint);
 
 public:

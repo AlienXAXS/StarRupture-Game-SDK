@@ -61,9 +61,9 @@ void ABP_MaterializedItemCrate_C::PlaySound()
 // Function BP_MaterializedItemCrate.BP_MaterializedItemCrate_C.MaterializePackageOnce
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// double                                  Duration_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double                                  Duration                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_MaterializedItemCrate_C::MaterializePackageOnce(double Duration_0)
+void ABP_MaterializedItemCrate_C::MaterializePackageOnce(double Duration)
 {
 	static class UFunction* Func = nullptr;
 
@@ -72,7 +72,7 @@ void ABP_MaterializedItemCrate_C::MaterializePackageOnce(double Duration_0)
 
 	Params::BP_MaterializedItemCrate_C_MaterializePackageOnce Parms{};
 
-	Parms.Duration_0 = Duration_0;
+	Parms.Duration = Duration;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -81,9 +81,9 @@ void ABP_MaterializedItemCrate_C::MaterializePackageOnce(double Duration_0)
 // Function BP_MaterializedItemCrate.BP_MaterializedItemCrate_C.Materialize Package In Loop
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// double                                  Duration_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double                                  Duration                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_MaterializedItemCrate_C::Materialize_Package_In_Loop(double Duration_0)
+void ABP_MaterializedItemCrate_C::Materialize_Package_In_Loop(double Duration)
 {
 	static class UFunction* Func = nullptr;
 
@@ -92,7 +92,7 @@ void ABP_MaterializedItemCrate_C::Materialize_Package_In_Loop(double Duration_0)
 
 	Params::BP_MaterializedItemCrate_C_Materialize_Package_In_Loop Parms{};
 
-	Parms.Duration_0 = Duration_0;
+	Parms.Duration = Duration;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

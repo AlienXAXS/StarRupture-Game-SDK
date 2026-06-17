@@ -19,9 +19,9 @@ SDK_NAMESPACE_START
 // Function WBP_ActionBoundTextBlockIcon.WBP_ActionBoundTextBlockIcon_C.SetTemporaryIconVisibility
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool                                    bVisible                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bVisible_SetTemporaryIconVisibility                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_ActionBoundTextBlockIcon_C::SetTemporaryIconVisibility(bool bVisible)
+void UWBP_ActionBoundTextBlockIcon_C::SetTemporaryIconVisibility(bool bVisible_SetTemporaryIconVisibility)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,7 +30,7 @@ void UWBP_ActionBoundTextBlockIcon_C::SetTemporaryIconVisibility(bool bVisible)
 
 	Params::WBP_ActionBoundTextBlockIcon_C_SetTemporaryIconVisibility Parms{};
 
-	Parms.bVisible = bVisible;
+	Parms.bVisible_SetTemporaryIconVisibility = bVisible_SetTemporaryIconVisibility;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -39,9 +39,9 @@ void UWBP_ActionBoundTextBlockIcon_C::SetTemporaryIconVisibility(bool bVisible)
 // Function WBP_ActionBoundTextBlockIcon.WBP_ActionBoundTextBlockIcon_C.SetTemporaryIconKey
 // (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
-// const class FText&                      InText                                                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const class FText&                      InText_SetTemporaryIconKey                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
-void UWBP_ActionBoundTextBlockIcon_C::SetTemporaryIconKey(const class FText& InText)
+void UWBP_ActionBoundTextBlockIcon_C::SetTemporaryIconKey(const class FText& InText_SetTemporaryIconKey)
 {
 	static class UFunction* Func = nullptr;
 
@@ -50,7 +50,7 @@ void UWBP_ActionBoundTextBlockIcon_C::SetTemporaryIconKey(const class FText& InT
 
 	Params::WBP_ActionBoundTextBlockIcon_C_SetTemporaryIconKey Parms{};
 
-	Parms.InText = std::move(InText);
+	Parms.InText_SetTemporaryIconKey = std::move(InText_SetTemporaryIconKey);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -59,9 +59,9 @@ void UWBP_ActionBoundTextBlockIcon_C::SetTemporaryIconKey(const class FText& InT
 // Function WBP_ActionBoundTextBlockIcon.WBP_ActionBoundTextBlockIcon_C.SetLongIconText
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool                                    bLong                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bLong_SetLongIconText                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_ActionBoundTextBlockIcon_C::SetLongIconText(bool bLong)
+void UWBP_ActionBoundTextBlockIcon_C::SetLongIconText(bool bLong_SetLongIconText)
 {
 	static class UFunction* Func = nullptr;
 
@@ -70,7 +70,7 @@ void UWBP_ActionBoundTextBlockIcon_C::SetLongIconText(bool bLong)
 
 	Params::WBP_ActionBoundTextBlockIcon_C_SetLongIconText Parms{};
 
-	Parms.bLong = bLong;
+	Parms.bLong_SetLongIconText = bLong_SetLongIconText;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -79,9 +79,9 @@ void UWBP_ActionBoundTextBlockIcon_C::SetLongIconText(bool bLong)
 // Function WBP_ActionBoundTextBlockIcon.WBP_ActionBoundTextBlockIcon_C.SetButtonImageVisibility
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// ESlateVisibility                        InVisibility                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ESlateVisibility                        InVisibility_SetButtonImageVisibility                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_ActionBoundTextBlockIcon_C::SetButtonImageVisibility(ESlateVisibility InVisibility)
+void UWBP_ActionBoundTextBlockIcon_C::SetButtonImageVisibility(ESlateVisibility InVisibility_SetButtonImageVisibility)
 {
 	static class UFunction* Func = nullptr;
 
@@ -90,7 +90,7 @@ void UWBP_ActionBoundTextBlockIcon_C::SetButtonImageVisibility(ESlateVisibility 
 
 	Params::WBP_ActionBoundTextBlockIcon_C_SetButtonImageVisibility Parms{};
 
-	Parms.InVisibility = InVisibility;
+	Parms.InVisibility_SetButtonImageVisibility = InVisibility_SetButtonImageVisibility;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

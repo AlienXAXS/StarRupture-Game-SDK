@@ -33,12 +33,12 @@ void ABP_HabitatPostProcess_C::UserConstructionScript()
 // Function BP_HabitatPostProcess.BP_HabitatPostProcess_C.OnEnviroWaveTick
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EEnviroWave                             WaveType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EEnviroWaveStage                        WaveStage                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-// float                                   WaveProgress                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEnviroWave                             WaveType_OnEnviroWaveTick                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEnviroWaveStage                        WaveStage_OnEnviroWaveTick                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FCrEnviroWaveSettings&     WaveSettings_OnEnviroWaveTick                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+// float                                   WaveProgress_OnEnviroWaveTick                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_HabitatPostProcess_C::OnEnviroWaveTick(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress)
+void ABP_HabitatPostProcess_C::OnEnviroWaveTick(EEnviroWave WaveType_OnEnviroWaveTick, EEnviroWaveStage WaveStage_OnEnviroWaveTick, const struct FCrEnviroWaveSettings& WaveSettings_OnEnviroWaveTick, float WaveProgress_OnEnviroWaveTick)
 {
 	static class UFunction* Func = nullptr;
 
@@ -47,10 +47,10 @@ void ABP_HabitatPostProcess_C::OnEnviroWaveTick(EEnviroWave WaveType, EEnviroWav
 
 	Params::BP_HabitatPostProcess_C_OnEnviroWaveTick Parms{};
 
-	Parms.WaveType = WaveType;
-	Parms.WaveStage = WaveStage;
-	Parms.WaveSettings = std::move(WaveSettings);
-	Parms.WaveProgress = WaveProgress;
+	Parms.WaveType_OnEnviroWaveTick = WaveType_OnEnviroWaveTick;
+	Parms.WaveStage_OnEnviroWaveTick = WaveStage_OnEnviroWaveTick;
+	Parms.WaveSettings_OnEnviroWaveTick = std::move(WaveSettings_OnEnviroWaveTick);
+	Parms.WaveProgress_OnEnviroWaveTick = WaveProgress_OnEnviroWaveTick;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -31,11 +31,11 @@ DUMPER7_ASSERTS_BP_HabitatPostProcess_C_UserConstructionScript;
 struct BP_HabitatPostProcess_C_OnEnviroWaveTick final
 {
 public:
-	EEnviroWave                                   WaveType;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EEnviroWaveStage                              WaveStage;                                         // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEnviroWave                                   WaveType_OnEnviroWaveTick;                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEnviroWaveStage                              WaveStage_OnEnviroWaveTick;                        // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrEnviroWaveSettings                  WaveSettings;                                      // 0x0004(0x002C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-	float                                         WaveProgress;                                      // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FCrEnviroWaveSettings                  WaveSettings_OnEnviroWaveTick;                     // 0x0004(0x002C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+	float                                         WaveProgress_OnEnviroWaveTick;                     // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_HabitatPostProcess_C_OnEnviroWaveTick;
 

@@ -59,7 +59,7 @@ DUMPER7_ASSERTS_BP_Exploder_Tier2_Actor_Character_C_SetExplosionAttackTimer;
 struct BP_Exploder_Tier2_Actor_Character_C_ReceiveTick final
 {
 public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         DeltaSeconds_ReceiveTick;                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Exploder_Tier2_Actor_Character_C_ReceiveTick;
 

@@ -123,10 +123,10 @@ void APC_PlayerControllerBase_C::cheat_Teleport2player(int32 PlayerId)
 // Function PC_PlayerControllerBase.PC_PlayerControllerBase_C.CanInputKeyBePassedFromUIOnlyMode
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FKey&                      Key_CanInputKeyBePassedFromUIOnlyMode                  (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// bool                                    ReturnValue_CanInputKeyBePassedFromUIOnlyMode          (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-bool APC_PlayerControllerBase_C::CanInputKeyBePassedFromUIOnlyMode(const struct FKey& Key)
+bool APC_PlayerControllerBase_C::CanInputKeyBePassedFromUIOnlyMode(const struct FKey& Key_CanInputKeyBePassedFromUIOnlyMode)
 {
 	static class UFunction* Func = nullptr;
 
@@ -135,7 +135,7 @@ bool APC_PlayerControllerBase_C::CanInputKeyBePassedFromUIOnlyMode(const struct 
 
 	Params::PC_PlayerControllerBase_C_CanInputKeyBePassedFromUIOnlyMode Parms{};
 
-	Parms.Key = std::move(Key);
+	Parms.Key_CanInputKeyBePassedFromUIOnlyMode = std::move(Key_CanInputKeyBePassedFromUIOnlyMode);
 
 	UObject::ProcessEvent(Func, &Parms);
 

@@ -57,9 +57,9 @@ void ABP_PlacementHelperZipRail_C::SetSplineSegment(class USplineMeshComponent* 
 // Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.SetMeshColor
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              Color_SetMeshColor                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PlacementHelperZipRail_C::SetMeshColor(const struct FLinearColor& Color)
+void ABP_PlacementHelperZipRail_C::SetMeshColor(const struct FLinearColor& Color_SetMeshColor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -68,7 +68,7 @@ void ABP_PlacementHelperZipRail_C::SetMeshColor(const struct FLinearColor& Color
 
 	Params::BP_PlacementHelperZipRail_C_SetMeshColor Parms{};
 
-	Parms.Color = std::move(Color);
+	Parms.Color_SetMeshColor = std::move(Color_SetMeshColor);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -97,9 +97,9 @@ void ABP_PlacementHelperZipRail_C::RemoveSteps(int32 Amount)
 // Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaSeconds_ReceiveTick                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PlacementHelperZipRail_C::ReceiveTick(float DeltaSeconds)
+void ABP_PlacementHelperZipRail_C::ReceiveTick(float DeltaSeconds_ReceiveTick)
 {
 	static class UFunction* Func = nullptr;
 
@@ -108,7 +108,7 @@ void ABP_PlacementHelperZipRail_C::ReceiveTick(float DeltaSeconds)
 
 	Params::BP_PlacementHelperZipRail_C_ReceiveTick Parms{};
 
-	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.DeltaSeconds_ReceiveTick = DeltaSeconds_ReceiveTick;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -117,9 +117,9 @@ void ABP_PlacementHelperZipRail_C::ReceiveTick(float DeltaSeconds)
 // Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.OnSplinePointRemoved
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   PointIndex                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PointIndex_OnSplinePointRemoved                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PlacementHelperZipRail_C::OnSplinePointRemoved(int32 PointIndex)
+void ABP_PlacementHelperZipRail_C::OnSplinePointRemoved(int32 PointIndex_OnSplinePointRemoved)
 {
 	static class UFunction* Func = nullptr;
 
@@ -128,7 +128,7 @@ void ABP_PlacementHelperZipRail_C::OnSplinePointRemoved(int32 PointIndex)
 
 	Params::BP_PlacementHelperZipRail_C_OnSplinePointRemoved Parms{};
 
-	Parms.PointIndex = PointIndex;
+	Parms.PointIndex_OnSplinePointRemoved = PointIndex_OnSplinePointRemoved;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -137,9 +137,9 @@ void ABP_PlacementHelperZipRail_C::OnSplinePointRemoved(int32 PointIndex)
 // Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.OnSplinePointAdded
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   PointIndex                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PointIndex_OnSplinePointAdded                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PlacementHelperZipRail_C::OnSplinePointAdded(int32 PointIndex)
+void ABP_PlacementHelperZipRail_C::OnSplinePointAdded(int32 PointIndex_OnSplinePointAdded)
 {
 	static class UFunction* Func = nullptr;
 
@@ -148,7 +148,7 @@ void ABP_PlacementHelperZipRail_C::OnSplinePointAdded(int32 PointIndex)
 
 	Params::BP_PlacementHelperZipRail_C_OnSplinePointAdded Parms{};
 
-	Parms.PointIndex = PointIndex;
+	Parms.PointIndex_OnSplinePointAdded = PointIndex_OnSplinePointAdded;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -157,9 +157,9 @@ void ABP_PlacementHelperZipRail_C::OnSplinePointAdded(int32 PointIndex)
 // Function BP_PlacementHelperZipRail.BP_PlacementHelperZipRail_C.OnConfirmedPoint
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// const struct FAuAPConfirmPointData&     NewPoint                                               (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, ContainsInstancedReference)
+// const struct FAuAPConfirmPointData&     NewPoint_OnConfirmedPoint                              (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, ContainsInstancedReference)
 
-void ABP_PlacementHelperZipRail_C::OnConfirmedPoint(const struct FAuAPConfirmPointData& NewPoint)
+void ABP_PlacementHelperZipRail_C::OnConfirmedPoint(const struct FAuAPConfirmPointData& NewPoint_OnConfirmedPoint)
 {
 	static class UFunction* Func = nullptr;
 
@@ -168,7 +168,7 @@ void ABP_PlacementHelperZipRail_C::OnConfirmedPoint(const struct FAuAPConfirmPoi
 
 	Params::BP_PlacementHelperZipRail_C_OnConfirmedPoint Parms{};
 
-	Parms.NewPoint = std::move(NewPoint);
+	Parms.NewPoint_OnConfirmedPoint = std::move(NewPoint_OnConfirmedPoint);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

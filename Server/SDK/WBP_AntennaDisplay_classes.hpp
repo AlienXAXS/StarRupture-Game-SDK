@@ -38,9 +38,9 @@ public:
 	void SetState(ECrAntennaState State, const struct FLinearColor& StateColor);
 	void SetProgressColor(const struct FLinearColor& Color);
 	void SetPercentageIcon(const struct FLinearColor& Color, class UTexture2D* IconTexture, bool ShowPercentage, const class FText& InText, class UWidgetAnimation* Animation);
-	void SetPercent(double Percent_0);
+	void SetPercent(double Percent);
 	void SetBackgroundColor(const struct FLinearColor& Color);
-	void Init(double Percent_0);
+	void Init(double Percent);
 
 public:
 	static class UClass* StaticClass()

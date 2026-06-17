@@ -59,7 +59,7 @@ DUMPER7_ASSERTS_BP_ZipLine_OLD_C_SetDetailedBeamLocation;
 struct BP_ZipLine_OLD_C_OnUntargeted final
 {
 public:
-	class ACrCharacterPlayerBase*                 InPlayer;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class ACrCharacterPlayerBase*                 InPlayer_OnUntargeted;                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnUntargeted;
 
@@ -68,7 +68,7 @@ DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnUntargeted;
 struct BP_ZipLine_OLD_C_OnUnoccupied final
 {
 public:
-	class ACrCharacterPlayerBase*                 InPlayer;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class ACrCharacterPlayerBase*                 InPlayer_OnUnoccupied;                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnUnoccupied;
 
@@ -77,7 +77,7 @@ DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnUnoccupied;
 struct BP_ZipLine_OLD_C_OnTravellingTo final
 {
 public:
-	class ACrCharacterPlayerBase*                 InPlayer;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class ACrCharacterPlayerBase*                 InPlayer_OnTravellingTo;                           // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnTravellingTo;
 
@@ -86,7 +86,7 @@ DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnTravellingTo;
 struct BP_ZipLine_OLD_C_OnTargeted final
 {
 public:
-	class ACrCharacterPlayerBase*                 InPlayer;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class ACrCharacterPlayerBase*                 InPlayer_OnTargeted;                               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnTargeted;
 
@@ -95,8 +95,8 @@ DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnTargeted;
 struct BP_ZipLine_OLD_C_OnStopTravellingTo final
 {
 public:
-	class ACrCharacterPlayerBase*                 InPlayer;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          bCancelled;                                        // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ACrCharacterPlayerBase*                 InPlayer_OnStopTravellingTo;                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          bCancelled_OnStopTravellingTo;                     // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnStopTravellingTo;
 
@@ -105,8 +105,8 @@ DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnStopTravellingTo;
 struct BP_ZipLine_OLD_C_OnPlayerRotationFinished final
 {
 public:
-	struct FVector_NetQuantize                    NewTargetLocation;                                 // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               NewRotation;                                       // 0x0018(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FVector_NetQuantize                    NewTargetLocation_OnPlayerRotationFinished;        // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               NewRotation_OnPlayerRotationFinished;              // 0x0018(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnPlayerRotationFinished;
 
@@ -115,8 +115,8 @@ DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnPlayerRotationFinished;
 struct BP_ZipLine_OLD_C_OnConnectionsModified final
 {
 public:
-	TArray<struct FVector_NetQuantize>            ActiveLocations;                                   // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	TArray<struct FVector_NetQuantize>            InactiveLocations;                                 // 0x0010(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	TArray<struct FVector_NetQuantize>            ActiveLocations_OnConnectionsModified;             // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	TArray<struct FVector_NetQuantize>            InactiveLocations_OnConnectionsModified;           // 0x0010(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 };
 DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnConnectionsModified;
 
@@ -125,7 +125,7 @@ DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnConnectionsModified;
 struct BP_ZipLine_OLD_C_OnBuildingStateChanged final
 {
 public:
-	ECrBuildingState                              InState;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECrBuildingState                              InState_OnBuildingStateChanged;                    // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnBuildingStateChanged;
 
@@ -134,7 +134,7 @@ DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnBuildingStateChanged;
 struct BP_ZipLine_OLD_C_OnActivityModified final
 {
 public:
-	bool                                          bActive;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bActive_OnActivityModified;                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_ZipLine_OLD_C_OnActivityModified;
 

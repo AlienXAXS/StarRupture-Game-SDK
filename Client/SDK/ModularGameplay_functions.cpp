@@ -49,11 +49,11 @@ void UGameFrameworkComponentManager::AddReceiver(class AActor* Receiver, bool bA
 // class AActor*                           Actor                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             FeatureName                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FGameplayTag&              RequiredState                                          (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(const struct FActorInitStateChangedParams& Params)>Delegate                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TDelegate<void(const struct FActorInitStateChangedParams& Params_0)>Delegate                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bCallImmediately                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UGameFrameworkComponentManager::RegisterAndCallForActorInitState(class AActor* Actor, class FName FeatureName, const struct FGameplayTag& RequiredState, TDelegate<void(const struct FActorInitStateChangedParams& Params)> Delegate, bool bCallImmediately)
+bool UGameFrameworkComponentManager::RegisterAndCallForActorInitState(class AActor* Actor, class FName FeatureName, const struct FGameplayTag& RequiredState, TDelegate<void(const struct FActorInitStateChangedParams& Params_0)> Delegate, bool bCallImmediately)
 {
 	static class UFunction* Func = nullptr;
 
@@ -85,11 +85,11 @@ bool UGameFrameworkComponentManager::RegisterAndCallForActorInitState(class AAct
 // TSoftClassPtr<class UClass>             ActorClass                                             (Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             FeatureName                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FGameplayTag&              RequiredState                                          (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(const struct FActorInitStateChangedParams& Params)>Delegate                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TDelegate<void(const struct FActorInitStateChangedParams& Params_0)>Delegate                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bCallImmediately                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UGameFrameworkComponentManager::RegisterAndCallForClassInitState(TSoftClassPtr<class UClass> ActorClass, class FName FeatureName, const struct FGameplayTag& RequiredState, TDelegate<void(const struct FActorInitStateChangedParams& Params)> Delegate, bool bCallImmediately)
+bool UGameFrameworkComponentManager::RegisterAndCallForClassInitState(TSoftClassPtr<class UClass> ActorClass, class FName FeatureName, const struct FGameplayTag& RequiredState, TDelegate<void(const struct FActorInitStateChangedParams& Params_0)> Delegate, bool bCallImmediately)
 {
 	static class UFunction* Func = nullptr;
 
@@ -173,10 +173,10 @@ void UGameFrameworkComponentManager::SendExtensionEvent(class AActor* Receiver, 
 // (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                           Actor                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(const struct FActorInitStateChangedParams& Params)>DelegateToRemove                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TDelegate<void(const struct FActorInitStateChangedParams& Params_0)>DelegateToRemove                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UGameFrameworkComponentManager::UnregisterActorInitStateDelegate(class AActor* Actor, TDelegate<void(const struct FActorInitStateChangedParams& Params)> DelegateToRemove)
+bool UGameFrameworkComponentManager::UnregisterActorInitStateDelegate(class AActor* Actor, TDelegate<void(const struct FActorInitStateChangedParams& Params_0)> DelegateToRemove)
 {
 	static class UFunction* Func = nullptr;
 
@@ -203,10 +203,10 @@ bool UGameFrameworkComponentManager::UnregisterActorInitStateDelegate(class AAct
 // (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // TSoftClassPtr<class UClass>             ActorClass                                             (Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(const struct FActorInitStateChangedParams& Params)>DelegateToRemove                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TDelegate<void(const struct FActorInitStateChangedParams& Params_0)>DelegateToRemove                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UGameFrameworkComponentManager::UnregisterClassInitStateDelegate(TSoftClassPtr<class UClass> ActorClass, TDelegate<void(const struct FActorInitStateChangedParams& Params)> DelegateToRemove)
+bool UGameFrameworkComponentManager::UnregisterClassInitStateDelegate(TSoftClassPtr<class UClass> ActorClass, TDelegate<void(const struct FActorInitStateChangedParams& Params_0)> DelegateToRemove)
 {
 	static class UFunction* Func = nullptr;
 
@@ -233,11 +233,11 @@ bool UGameFrameworkComponentManager::UnregisterClassInitStateDelegate(TSoftClass
 // (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // const struct FGameplayTag&              RequiredState                                          (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(const struct FActorInitStateChangedParams& Params)>Delegate                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TDelegate<void(const struct FActorInitStateChangedParams& Params_0)>Delegate                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bCallImmediately                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool IGameFrameworkInitStateInterface::RegisterAndCallForInitStateChange(const struct FGameplayTag& RequiredState, TDelegate<void(const struct FActorInitStateChangedParams& Params)> Delegate, bool bCallImmediately)
+bool IGameFrameworkInitStateInterface::RegisterAndCallForInitStateChange(const struct FGameplayTag& RequiredState, TDelegate<void(const struct FActorInitStateChangedParams& Params_0)> Delegate, bool bCallImmediately)
 {
 	static class UFunction* Func = nullptr;
 
@@ -264,10 +264,10 @@ bool IGameFrameworkInitStateInterface::RegisterAndCallForInitStateChange(const s
 // Function ModularGameplay.GameFrameworkInitStateInterface.UnregisterInitStateDelegate
 // (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
-// TDelegate<void(const struct FActorInitStateChangedParams& Params)>Delegate                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TDelegate<void(const struct FActorInitStateChangedParams& Params_0)>Delegate                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool IGameFrameworkInitStateInterface::UnregisterInitStateDelegate(TDelegate<void(const struct FActorInitStateChangedParams& Params)> Delegate)
+bool IGameFrameworkInitStateInterface::UnregisterInitStateDelegate(TDelegate<void(const struct FActorInitStateChangedParams& Params_0)> Delegate)
 {
 	static class UFunction* Func = nullptr;
 

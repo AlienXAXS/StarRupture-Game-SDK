@@ -51,7 +51,7 @@ public:
 public:
 	void SetupSkeletalMesh();
 	void OnItemCraftingComplete();
-	void OnBuildingStateChanged(ECrBuildingState InState);
+	void OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged);
 	void ExecuteUbergraph_BP_Forge(int32 EntryPoint);
 
 public:

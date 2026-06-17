@@ -42,7 +42,7 @@ public:
 	ECrBuildingState                              In_State;                                          // 0x0760(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnBuildingStateChanged(ECrBuildingState InState);
+	void OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged);
 	void ExecuteUbergraph_BP_Synthetizer(int32 EntryPoint);
 
 public:

@@ -19,9 +19,9 @@ SDK_NAMESPACE_START
 // Function BP_Analyzer.BP_Analyzer_C.OnUIOpened
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    bOpened                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bOpened_OnUIOpened                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Analyzer_C::OnUIOpened(bool bOpened)
+void ABP_Analyzer_C::OnUIOpened(bool bOpened_OnUIOpened)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,7 +30,7 @@ void ABP_Analyzer_C::OnUIOpened(bool bOpened)
 
 	Params::BP_Analyzer_C_OnUIOpened Parms{};
 
-	Parms.bOpened = bOpened;
+	Parms.bOpened_OnUIOpened = bOpened_OnUIOpened;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

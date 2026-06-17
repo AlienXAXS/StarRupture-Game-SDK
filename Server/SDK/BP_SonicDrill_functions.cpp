@@ -19,9 +19,9 @@ SDK_NAMESPACE_START
 // Function BP_SonicDrill.BP_SonicDrill_C.ReceiveEndPlay
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEndPlayReason                          EndPlayReason_ReceiveEndPlay                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_SonicDrill_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
+void ABP_SonicDrill_C::ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,7 +30,7 @@ void ABP_SonicDrill_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 
 	Params::BP_SonicDrill_C_ReceiveEndPlay Parms{};
 
-	Parms.EndPlayReason = EndPlayReason;
+	Parms.EndPlayReason_ReceiveEndPlay = EndPlayReason_ReceiveEndPlay;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -53,9 +53,9 @@ void ABP_SonicDrill_C::OnConstructionFinished()
 // Function BP_SonicDrill.BP_SonicDrill_C.OnBuildingStateChanged
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrBuildingState                        InState_OnBuildingStateChanged                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_SonicDrill_C::OnBuildingStateChanged(ECrBuildingState InState)
+void ABP_SonicDrill_C::OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -64,7 +64,7 @@ void ABP_SonicDrill_C::OnBuildingStateChanged(ECrBuildingState InState)
 
 	Params::BP_SonicDrill_C_OnBuildingStateChanged Parms{};
 
-	Parms.InState = InState;
+	Parms.InState_OnBuildingStateChanged = InState_OnBuildingStateChanged;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

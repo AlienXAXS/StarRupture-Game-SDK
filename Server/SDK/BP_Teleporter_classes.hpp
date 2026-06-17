@@ -58,10 +58,10 @@ public:
 
 public:
 	void UserConstructionScript();
-	void OnTeleporterUsed(bool bLocalPlayer);
-	void OnPlayerArrived(bool bLocalPlayer);
-	void OnBuildingStateChanged(ECrBuildingState InState);
-	void Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Dynamic, TArray<class USceneComponent*>* NewParam);
+	void OnTeleporterUsed(bool bLocalPlayer_OnTeleporterUsed);
+	void OnPlayerArrived(bool bLocalPlayer_OnPlayerArrived);
+	void OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged);
+	void Get_Meshes(class USceneComponent* Static, class USceneComponent* Dynamic, TArray<class USceneComponent*>* NewParam);
 	void ExecuteUbergraph_BP_Teleporter(int32 EntryPoint);
 	void CylindersUpdate();
 	void BndEvt__BP_Teleporter_OpenBoxCollision_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);

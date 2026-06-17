@@ -64,9 +64,9 @@ public:
 public:
 	void OnSocketDisconnected(class FName SocketName);
 	void OnSocketConnected(class FName SocketName);
-	void OnHeaterCoolerStateChanged(ECrMassHeaterCoolerState State);
-	void OnHeaterCoolerInventoryChanged(float UsedSpaceNormalized);
-	void OnHeaterCoolerConnectionsChanged(const TArray<class FName>& ConnectedSockets);
+	void OnHeaterCoolerStateChanged(ECrMassHeaterCoolerState State_OnHeaterCoolerStateChanged);
+	void OnHeaterCoolerInventoryChanged(float UsedSpaceNormalized_OnHeaterCoolerInventoryChanged);
+	void OnHeaterCoolerConnectionsChanged(const TArray<class FName>& ConnectedSockets_OnHeaterCoolerConnectionsChanged);
 	void ExecuteUbergraph_BP_CoolerActive(int32 EntryPoint);
 
 public:

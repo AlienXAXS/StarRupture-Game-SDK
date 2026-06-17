@@ -53,9 +53,9 @@ void ABP_FE_Armory_C::ReceiveBeginPlay()
 // Function BP_FE_Armory.BP_FE_Armory_C.OnUIOpened
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    bOpened                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bOpened_OnUIOpened                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_FE_Armory_C::OnUIOpened(bool bOpened)
+void ABP_FE_Armory_C::OnUIOpened(bool bOpened_OnUIOpened)
 {
 	static class UFunction* Func = nullptr;
 
@@ -64,7 +64,7 @@ void ABP_FE_Armory_C::OnUIOpened(bool bOpened)
 
 	Params::BP_FE_Armory_C_OnUIOpened Parms{};
 
-	Parms.bOpened = bOpened;
+	Parms.bOpened_OnUIOpened = bOpened_OnUIOpened;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -73,9 +73,9 @@ void ABP_FE_Armory_C::OnUIOpened(bool bOpened)
 // Function BP_FE_Armory.BP_FE_Armory_C.OnBuildingStateChanged
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrBuildingState                        InState_OnBuildingStateChanged                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_FE_Armory_C::OnBuildingStateChanged(ECrBuildingState InState)
+void ABP_FE_Armory_C::OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -84,7 +84,7 @@ void ABP_FE_Armory_C::OnBuildingStateChanged(ECrBuildingState InState)
 
 	Params::BP_FE_Armory_C_OnBuildingStateChanged Parms{};
 
-	Parms.InState = InState;
+	Parms.InState_OnBuildingStateChanged = InState_OnBuildingStateChanged;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -79,7 +79,7 @@ DUMPER7_ASSERTS_ABP_Exploder_Tier2_Actor_C_AttackConduitOnUpdate;
 struct ABP_Exploder_Tier2_Actor_C_AnimGraph final
 {
 public:
-	struct FPoseLink                              AnimGraph_0;                                       // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
+	struct FPoseLink                              AnimGraph;                                         // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
 };
 DUMPER7_ASSERTS_ABP_Exploder_Tier2_Actor_C_AnimGraph;
 

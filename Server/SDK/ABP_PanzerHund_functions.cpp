@@ -19,10 +19,10 @@ SDK_NAMESPACE_START
 // Function ABP_PanzerHund.ABP_PanzerHund_C.UpdateYawRotationRateForLocomotionState
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// ECrEnemyLocomotionType                  OldLocomotionType                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// ECrEnemyLocomotionType                  NewLocomotionType                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrEnemyLocomotionType                  OldLocomotionType_UpdateYawRotationRateForLocomotionState(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrEnemyLocomotionType                  NewLocomotionType_UpdateYawRotationRateForLocomotionState(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UABP_PanzerHund_C::UpdateYawRotationRateForLocomotionState(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType)
+void UABP_PanzerHund_C::UpdateYawRotationRateForLocomotionState(ECrEnemyLocomotionType OldLocomotionType_UpdateYawRotationRateForLocomotionState, ECrEnemyLocomotionType NewLocomotionType_UpdateYawRotationRateForLocomotionState)
 {
 	static class UFunction* Func = nullptr;
 
@@ -31,8 +31,8 @@ void UABP_PanzerHund_C::UpdateYawRotationRateForLocomotionState(ECrEnemyLocomoti
 
 	Params::ABP_PanzerHund_C_UpdateYawRotationRateForLocomotionState Parms{};
 
-	Parms.OldLocomotionType = OldLocomotionType;
-	Parms.NewLocomotionType = NewLocomotionType;
+	Parms.OldLocomotionType_UpdateYawRotationRateForLocomotionState = OldLocomotionType_UpdateYawRotationRateForLocomotionState;
+	Parms.NewLocomotionType_UpdateYawRotationRateForLocomotionState = NewLocomotionType_UpdateYawRotationRateForLocomotionState;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -271,10 +271,10 @@ void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHu
 // Function ABP_PanzerHund.ABP_PanzerHund_C.BPOnLocomotionTypeChanged
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// ECrEnemyLocomotionType                  OldLocomotionType                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// ECrEnemyLocomotionType                  NewLocomotionType                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrEnemyLocomotionType                  OldLocomotionType_BPOnLocomotionTypeChanged            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrEnemyLocomotionType                  NewLocomotionType_BPOnLocomotionTypeChanged            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UABP_PanzerHund_C::BPOnLocomotionTypeChanged(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType)
+void UABP_PanzerHund_C::BPOnLocomotionTypeChanged(ECrEnemyLocomotionType OldLocomotionType_BPOnLocomotionTypeChanged, ECrEnemyLocomotionType NewLocomotionType_BPOnLocomotionTypeChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -283,8 +283,8 @@ void UABP_PanzerHund_C::BPOnLocomotionTypeChanged(ECrEnemyLocomotionType OldLoco
 
 	Params::ABP_PanzerHund_C_BPOnLocomotionTypeChanged Parms{};
 
-	Parms.OldLocomotionType = OldLocomotionType;
-	Parms.NewLocomotionType = NewLocomotionType;
+	Parms.OldLocomotionType_BPOnLocomotionTypeChanged = OldLocomotionType_BPOnLocomotionTypeChanged;
+	Parms.NewLocomotionType_BPOnLocomotionTypeChanged = NewLocomotionType_BPOnLocomotionTypeChanged;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -293,9 +293,9 @@ void UABP_PanzerHund_C::BPOnLocomotionTypeChanged(ECrEnemyLocomotionType OldLoco
 // Function ABP_PanzerHund.ABP_PanzerHund_C.BlueprintThreadSafeUpdateAnimation
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaTime_BlueprintThreadSafeUpdateAnimation           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UABP_PanzerHund_C::BlueprintThreadSafeUpdateAnimation(float DeltaTime)
+void UABP_PanzerHund_C::BlueprintThreadSafeUpdateAnimation(float DeltaTime_BlueprintThreadSafeUpdateAnimation)
 {
 	static class UFunction* Func = nullptr;
 
@@ -304,7 +304,7 @@ void UABP_PanzerHund_C::BlueprintThreadSafeUpdateAnimation(float DeltaTime)
 
 	Params::ABP_PanzerHund_C_BlueprintThreadSafeUpdateAnimation Parms{};
 
-	Parms.DeltaTime = DeltaTime;
+	Parms.DeltaTime_BlueprintThreadSafeUpdateAnimation = DeltaTime_BlueprintThreadSafeUpdateAnimation;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -341,9 +341,9 @@ void UABP_PanzerHund_C::AnimNotify_EndAnim()
 // Function ABP_PanzerHund.ABP_PanzerHund_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink*                       AnimGraph_0                                            (Parm, OutParm, NoDestructor)
+// struct FPoseLink*                       AnimGraph                                              (Parm, OutParm, NoDestructor)
 
-void UABP_PanzerHund_C::AnimGraph(struct FPoseLink* AnimGraph_0)
+void UABP_PanzerHund_C::AnimGraph(struct FPoseLink* AnimGraph)
 {
 	static class UFunction* Func = nullptr;
 
@@ -354,8 +354,8 @@ void UABP_PanzerHund_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (AnimGraph_0 != nullptr)
-		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
+	if (AnimGraph != nullptr)
+		*AnimGraph = std::move(Parms.AnimGraph);
 }
 
 

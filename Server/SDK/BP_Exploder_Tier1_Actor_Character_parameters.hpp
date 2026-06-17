@@ -35,7 +35,7 @@ DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_UserConstructionScript;
 struct BP_Exploder_Tier1_Actor_Character_C_ReceiveTick final
 {
 public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         DeltaSeconds_ReceiveTick;                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_ReceiveTick;
 
@@ -91,8 +91,8 @@ DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_OnEnableActivationTimer;
 struct BP_Exploder_Tier1_Actor_Character_C_OnDiedFromGas final
 {
 public:
-	struct FHitResult                             LastHit;                                           // 0x0000(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	struct FGameplayTag                           KillingDamageTag;                                  // 0x0100(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             LastHit_OnDiedFromGas;                             // 0x0000(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	struct FGameplayTag                           KillingDamageTag_OnDiedFromGas;                    // 0x0100(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_OnDiedFromGas;
 
@@ -101,8 +101,8 @@ DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_OnDiedFromGas;
 struct BP_Exploder_Tier1_Actor_Character_C_OnAiDied final
 {
 public:
-	struct FHitResult                             HitResult;                                         // 0x0000(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	struct FGameplayTag                           KillingDamageTag;                                  // 0x0100(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             HitResult_OnAiDied;                                // 0x0000(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	struct FGameplayTag                           KillingDamageTag_OnAiDied;                         // 0x0100(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_OnAiDied;
 
@@ -111,7 +111,7 @@ DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_OnAiDied;
 struct BP_Exploder_Tier1_Actor_Character_C_GetNiagaraEyeSystem final
 {
 public:
-	class UNiagaraComponent*                      NewParam;                                          // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      NewParam_GetNiagaraEyeSystem;                      // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_GetNiagaraEyeSystem;
 
@@ -163,7 +163,7 @@ DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_ShouldSpawnHugeCollision;
 struct BP_Exploder_Tier1_Actor_Character_C_OnMeshVisibilityUpdated final
 {
 public:
-	bool                                          bIsMeshHidden;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bIsMeshHidden_OnMeshVisibilityUpdated;             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Exploder_Tier1_Actor_Character_C_OnMeshVisibilityUpdated;
 

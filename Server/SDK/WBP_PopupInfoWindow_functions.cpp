@@ -19,9 +19,9 @@ SDK_NAMESPACE_START
 // Function WBP_PopupInfoWindow.WBP_PopupInfoWindow_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsDesignTime_PreConstruct                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_PopupInfoWindow_C::PreConstruct(bool IsDesignTime)
+void UWBP_PopupInfoWindow_C::PreConstruct(bool IsDesignTime_PreConstruct)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,7 +30,7 @@ void UWBP_PopupInfoWindow_C::PreConstruct(bool IsDesignTime)
 
 	Params::WBP_PopupInfoWindow_C_PreConstruct Parms{};
 
-	Parms.IsDesignTime = IsDesignTime;
+	Parms.IsDesignTime_PreConstruct = IsDesignTime_PreConstruct;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -73,7 +73,7 @@ void UWBP_PopupInfoWindow_C::ExecuteUbergraph_WBP_PopupInfoWindow(int32 EntryPoi
 // Function WBP_PopupInfoWindow.WBP_PopupInfoWindow_C.BP_GetDesiredFocusTarget
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// class UWidget*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UWidget*                          ReturnValue_BP_GetDesiredFocusTarget                   (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 class UWidget* UWBP_PopupInfoWindow_C::BP_GetDesiredFocusTarget() const
 {

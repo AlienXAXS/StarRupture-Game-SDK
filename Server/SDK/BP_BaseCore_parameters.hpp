@@ -22,7 +22,7 @@ SDK_PARAM_NAMESPACE_START
 struct BP_BaseCore_C_SetBaseCoreAreaVisibility final
 {
 public:
-	bool                                          Visible;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Visible_SetBaseCoreAreaVisibility;                 // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_BaseCore_C_SetBaseCoreAreaVisibility;
 
@@ -31,7 +31,7 @@ DUMPER7_ASSERTS_BP_BaseCore_C_SetBaseCoreAreaVisibility;
 struct BP_BaseCore_C_ReceiveEndPlay final
 {
 public:
-	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEndPlayReason                                EndPlayReason_ReceiveEndPlay;                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_BaseCore_C_ReceiveEndPlay;
 
@@ -119,8 +119,8 @@ DUMPER7_ASSERTS_BP_BaseCore_C_ExecuteUbergraph_BP_BaseCore;
 struct BP_BaseCore_C_BP_OnUpgreadLevelChanged final
 {
 public:
-	uint8                                         NewUpgreadLevel;                                   // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Immediately;                                       // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         NewUpgreadLevel_BP_OnUpgreadLevelChanged;          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Immediately_BP_OnUpgreadLevelChanged;              // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_BaseCore_C_BP_OnUpgreadLevelChanged;
 
@@ -129,8 +129,8 @@ DUMPER7_ASSERTS_BP_BaseCore_C_BP_OnUpgreadLevelChanged;
 struct BP_BaseCore_C_BP_OnInfectionChanged final
 {
 public:
-	float                                         Infection;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          InfectionActive;                                   // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         Infection_BP_OnInfectionChanged;                   // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          InfectionActive_BP_OnInfectionChanged;             // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_BaseCore_C_BP_OnInfectionChanged;
 
@@ -139,7 +139,7 @@ DUMPER7_ASSERTS_BP_BaseCore_C_BP_OnInfectionChanged;
 struct BP_BaseCore_C_BP_OnBeingAttackedStateChanged final
 {
 public:
-	bool                                          bUnderAttack;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bUnderAttack_BP_OnBeingAttackedStateChanged;       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_BaseCore_C_BP_OnBeingAttackedStateChanged;
 
@@ -148,9 +148,9 @@ DUMPER7_ASSERTS_BP_BaseCore_C_BP_OnBeingAttackedStateChanged;
 struct BP_BaseCore_C_BP_OnBaseCoreInfectionActorDestroyed final
 {
 public:
-	bool                                          LastActor;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          LastActor_BP_OnBaseCoreInfectionActorDestroyed;    // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                ActorLocation;                                     // 0x0008(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                ActorLocation_BP_OnBaseCoreInfectionActorDestroyed; // 0x0008(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_BaseCore_C_BP_OnBaseCoreInfectionActorDestroyed;
 
@@ -159,7 +159,7 @@ DUMPER7_ASSERTS_BP_BaseCore_C_BP_OnBaseCoreInfectionActorDestroyed;
 struct BP_BaseCore_C_BP_OnActiveCoolingChanged final
 {
 public:
-	bool                                          ActiveCooling;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ActiveCooling_BP_OnActiveCoolingChanged;           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_BaseCore_C_BP_OnActiveCoolingChanged;
 

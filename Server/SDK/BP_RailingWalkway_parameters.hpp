@@ -21,7 +21,7 @@ SDK_PARAM_NAMESPACE_START
 struct BP_RailingWalkway_C_OnSplineReady final
 {
 public:
-	class USplineComponent*                       InSpline;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class USplineComponent*                       InSpline_OnSplineReady;                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_RailingWalkway_C_OnSplineReady;
 

@@ -29,11 +29,11 @@ public:
 	void UserConstructionScript();
 	void OnExitActorPool();
 	void OnEnterActorPool();
-	void OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag);
-	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
+	void OnAiDied(const struct FHitResult& HitResult_OnAiDied, const struct FGameplayTag& KillingDamageTag_OnAiDied);
+	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam_GetNiagaraEyeSystem);
 	void ExecuteUbergraph_BP_Ranged_Tier1_Actor_Character(int32 EntryPoint);
 
-	void OnMeshVisibilityUpdated(bool bIsMeshHidden) const;
+	void OnMeshVisibilityUpdated(bool bIsMeshHidden_OnMeshVisibilityUpdated) const;
 
 public:
 	static class UClass* StaticClass()

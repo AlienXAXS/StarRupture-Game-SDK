@@ -22,7 +22,7 @@ SDK_PARAM_NAMESPACE_START
 struct BP_StandaloneInfectionCyst_C_ReceiveEndPlay final
 {
 public:
-	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEndPlayReason                                EndPlayReason_ReceiveEndPlay;                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_StandaloneInfectionCyst_C_ReceiveEndPlay;
 
@@ -31,7 +31,7 @@ DUMPER7_ASSERTS_BP_StandaloneInfectionCyst_C_ReceiveEndPlay;
 struct BP_StandaloneInfectionCyst_C_OnGrowthProgress final
 {
 public:
-	float                                         Progress;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         Progress_OnGrowthProgress;                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_StandaloneInfectionCyst_C_OnGrowthProgress;
 
@@ -128,7 +128,7 @@ DUMPER7_ASSERTS_BP_StandaloneInfectionCyst_C_ExecuteUbergraph_BP_StandaloneInfec
 struct BP_StandaloneInfectionCyst_C_BP_OnDamageProtectionChanged final
 {
 public:
-	bool                                          IsActive;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsActive_BP_OnDamageProtectionChanged;             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_StandaloneInfectionCyst_C_BP_OnDamageProtectionChanged;
 

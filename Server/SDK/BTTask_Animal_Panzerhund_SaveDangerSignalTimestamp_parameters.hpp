@@ -19,8 +19,8 @@ SDK_PARAM_NAMESPACE_START
 struct BTTask_Animal_Panzerhund_SaveDangerSignalTimestamp_C_ReceiveExecuteAI final
 {
 public:
-	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AAIController*                          OwnerController_ReceiveExecuteAI;                  // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  ControlledPawn_ReceiveExecuteAI;                   // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BTTask_Animal_Panzerhund_SaveDangerSignalTimestamp_C_ReceiveExecuteAI;
 

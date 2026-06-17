@@ -47,9 +47,9 @@ void ABP_PersonalStorageBig_C::ReceiveBeginPlay()
 // Function BP_PersonalStorageBig.BP_PersonalStorageBig_C.OnUIOpened
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    bOpened                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bOpened_OnUIOpened                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PersonalStorageBig_C::OnUIOpened(bool bOpened)
+void ABP_PersonalStorageBig_C::OnUIOpened(bool bOpened_OnUIOpened)
 {
 	static class UFunction* Func = nullptr;
 
@@ -58,7 +58,7 @@ void ABP_PersonalStorageBig_C::OnUIOpened(bool bOpened)
 
 	Params::BP_PersonalStorageBig_C_OnUIOpened Parms{};
 
-	Parms.bOpened = bOpened;
+	Parms.bOpened_OnUIOpened = bOpened_OnUIOpened;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

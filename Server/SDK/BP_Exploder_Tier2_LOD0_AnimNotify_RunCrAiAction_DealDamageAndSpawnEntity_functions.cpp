@@ -19,10 +19,10 @@ SDK_NAMESPACE_START
 // Function BP_Exploder_Tier2_LOD0_AnimNotify_RunCrAiAction_DealDamageAndSpawnEntity.BP_Exploder_Tier2_LOD0_AnimNotify_RunCrAiAction_DealDamageAndSpawnEntity_C.CreateAiAction
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// class AActor*                           Actor                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class UCrAiAction*                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           Actor_CreateAiAction                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class UCrAiAction*                      ReturnValue_CreateAiAction                             (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
 
-class UCrAiAction* UBP_Exploder_Tier2_LOD0_AnimNotify_RunCrAiAction_DealDamageAndSpawnEntity_C::CreateAiAction(class AActor* Actor) const
+class UCrAiAction* UBP_Exploder_Tier2_LOD0_AnimNotify_RunCrAiAction_DealDamageAndSpawnEntity_C::CreateAiAction(class AActor* Actor_CreateAiAction) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -31,7 +31,7 @@ class UCrAiAction* UBP_Exploder_Tier2_LOD0_AnimNotify_RunCrAiAction_DealDamageAn
 
 	Params::BP_Exploder_Tier2_LOD0_AnimNotify_RunCrAiAction_DealDamageAndSpawnEntity_C_CreateAiAction Parms{};
 
-	Parms.Actor = Actor;
+	Parms.Actor_CreateAiAction = Actor_CreateAiAction;
 
 	UObject::ProcessEvent(Func, &Parms);
 

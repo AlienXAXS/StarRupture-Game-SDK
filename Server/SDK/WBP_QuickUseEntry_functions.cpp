@@ -19,9 +19,9 @@ SDK_NAMESPACE_START
 // Function WBP_QuickUseEntry.WBP_QuickUseEntry_C.OnDataRefresh
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   Param_Index_0                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Index_OnDataRefresh                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_QuickUseEntry_C::OnDataRefresh(int32 Param_Index_0)
+void UWBP_QuickUseEntry_C::OnDataRefresh(int32 Index_OnDataRefresh)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,7 +30,7 @@ void UWBP_QuickUseEntry_C::OnDataRefresh(int32 Param_Index_0)
 
 	Params::WBP_QuickUseEntry_C_OnDataRefresh Parms{};
 
-	Parms.Param_Index_0 = Param_Index_0;
+	Parms.Index_OnDataRefresh = Index_OnDataRefresh;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

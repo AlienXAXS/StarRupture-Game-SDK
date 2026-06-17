@@ -31,7 +31,7 @@ DUMPER7_ASSERTS_BP_Exporter_C_UserConstructionScript;
 struct BP_Exporter_C_OnCorporationChanged final
 {
 public:
-	class FName                                   NewCorporation;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   NewCorporation_OnCorporationChanged;               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Exporter_C_OnCorporationChanged;
 
@@ -40,7 +40,7 @@ DUMPER7_ASSERTS_BP_Exporter_C_OnCorporationChanged;
 struct BP_Exporter_C_OnBuildingStateChanged final
 {
 public:
-	ECrBuildingState                              InState;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECrBuildingState                              InState_OnBuildingStateChanged;                    // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Exporter_C_OnBuildingStateChanged;
 

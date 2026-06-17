@@ -30,10 +30,10 @@ public:
 	class UClass*                                 LongStyle;                                         // 0x16C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void SetTemporaryIconVisibility(bool bVisible);
-	void SetTemporaryIconKey(const class FText& InText);
-	void SetLongIconText(bool bLong);
-	void SetButtonImageVisibility(ESlateVisibility InVisibility);
+	void SetTemporaryIconVisibility(bool bVisible_SetTemporaryIconVisibility);
+	void SetTemporaryIconKey(const class FText& InText_SetTemporaryIconKey);
+	void SetLongIconText(bool bLong_SetLongIconText);
+	void SetButtonImageVisibility(ESlateVisibility InVisibility_SetButtonImageVisibility);
 	void GetHeightSize(double* Height);
 	void ExecuteUbergraph_WBP_ActionBoundTextBlockIcon(int32 EntryPoint);
 

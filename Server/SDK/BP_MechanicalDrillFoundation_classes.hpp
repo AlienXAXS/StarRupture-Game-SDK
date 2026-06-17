@@ -26,9 +26,9 @@ public:
 	class UBoxComponent*                          SnapCollider2;                                     // 0x0888(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveTick(float DeltaSeconds);
+	void ReceiveTick(float DeltaSeconds_ReceiveTick);
 	void ReceiveBeginPlay();
-	void ReceiveActorBeginOverlap(class AActor* OtherActor);
+	void ReceiveActorBeginOverlap(class AActor* OtherActor_ReceiveActorBeginOverlap);
 	void ExecuteUbergraph_BP_MechanicalDrillFoundation(int32 EntryPoint);
 
 public:

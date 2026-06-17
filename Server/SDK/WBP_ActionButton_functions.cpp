@@ -149,9 +149,9 @@ void UWBP_ActionButton_C::SetDefault(bool bInDefault)
 // Function WBP_ActionButton.WBP_ActionButton_C.SetColors
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// const class UCrCommonUIColorsDevSettings*Settings                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UCrCommonUIColorsDevSettings*Settings_SetColors                                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_ActionButton_C::SetColors(const class UCrCommonUIColorsDevSettings* Settings)
+void UWBP_ActionButton_C::SetColors(const class UCrCommonUIColorsDevSettings* Settings_SetColors)
 {
 	static class UFunction* Func = nullptr;
 
@@ -160,7 +160,7 @@ void UWBP_ActionButton_C::SetColors(const class UCrCommonUIColorsDevSettings* Se
 
 	Params::WBP_ActionButton_C_SetColors Parms{};
 
-	Parms.Settings = Settings;
+	Parms.Settings_SetColors = Settings_SetColors;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -169,9 +169,9 @@ void UWBP_ActionButton_C::SetColors(const class UCrCommonUIColorsDevSettings* Se
 // Function WBP_ActionButton.WBP_ActionButton_C.SetButtonEnabled
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    bEnabled                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bEnabled_SetButtonEnabled                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_ActionButton_C::SetButtonEnabled(bool bEnabled)
+void UWBP_ActionButton_C::SetButtonEnabled(bool bEnabled_SetButtonEnabled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -180,7 +180,7 @@ void UWBP_ActionButton_C::SetButtonEnabled(bool bEnabled)
 
 	Params::WBP_ActionButton_C_SetButtonEnabled Parms{};
 
-	Parms.bEnabled = bEnabled;
+	Parms.bEnabled_SetButtonEnabled = bEnabled_SetButtonEnabled;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -209,9 +209,9 @@ void UWBP_ActionButton_C::SetAlignment(EHorizontalAlignment Alignment)
 // Function WBP_ActionButton.WBP_ActionButton_C.SetActionNamePadding
 // (Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    bSet                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bSet_SetActionNamePadding                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_ActionButton_C::SetActionNamePadding(bool bSet)
+void UWBP_ActionButton_C::SetActionNamePadding(bool bSet_SetActionNamePadding)
 {
 	static class UFunction* Func = nullptr;
 
@@ -220,7 +220,7 @@ void UWBP_ActionButton_C::SetActionNamePadding(bool bSet)
 
 	Params::WBP_ActionButton_C_SetActionNamePadding Parms{};
 
-	Parms.bSet = bSet;
+	Parms.bSet_SetActionNamePadding = bSet_SetActionNamePadding;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -229,9 +229,9 @@ void UWBP_ActionButton_C::SetActionNamePadding(bool bSet)
 // Function WBP_ActionButton.WBP_ActionButton_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsDesignTime_PreConstruct                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_ActionButton_C::PreConstruct(bool IsDesignTime)
+void UWBP_ActionButton_C::PreConstruct(bool IsDesignTime_PreConstruct)
 {
 	static class UFunction* Func = nullptr;
 
@@ -240,7 +240,7 @@ void UWBP_ActionButton_C::PreConstruct(bool IsDesignTime)
 
 	Params::WBP_ActionButton_C_PreConstruct Parms{};
 
-	Parms.IsDesignTime = IsDesignTime;
+	Parms.IsDesignTime_PreConstruct = IsDesignTime_PreConstruct;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

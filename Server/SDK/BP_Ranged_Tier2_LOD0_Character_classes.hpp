@@ -28,17 +28,17 @@ public:
 
 public:
 	void UserConstructionScript();
-	void SetIsAggroEyeColor(bool NewIsAggro);
+	void SetIsAggroEyeColor(bool NewIsAggro_SetIsAggroEyeColor);
 	void OnRep_InjuryPoseAlpha();
 	void OnPrepareForGame();
 	void OnExitActorPool();
 	void OnEnterActorPool();
-	void OnDamage(class AActor* Actor, const struct FHitResult& HitResult, float InDamage);
-	void OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag);
-	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
+	void OnDamage(class AActor* Actor_OnDamage, const struct FHitResult& HitResult_OnDamage, float InDamage_OnDamage);
+	void OnAiDied(const struct FHitResult& HitResult_OnAiDied, const struct FGameplayTag& KillingDamageTag_OnAiDied);
+	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam_GetNiagaraEyeSystem);
 	void ExecuteUbergraph_BP_Ranged_Tier2_LOD0_Character(int32 EntryPoint);
 
-	void OnMeshVisibilityUpdated(bool bIsMeshHidden) const;
+	void OnMeshVisibilityUpdated(bool bIsMeshHidden_OnMeshVisibilityUpdated) const;
 
 public:
 	static class UClass* StaticClass()

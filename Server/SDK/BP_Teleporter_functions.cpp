@@ -33,9 +33,9 @@ void ABP_Teleporter_C::UserConstructionScript()
 // Function BP_Teleporter.BP_Teleporter_C.OnTeleporterUsed
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    bLocalPlayer                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bLocalPlayer_OnTeleporterUsed                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Teleporter_C::OnTeleporterUsed(bool bLocalPlayer)
+void ABP_Teleporter_C::OnTeleporterUsed(bool bLocalPlayer_OnTeleporterUsed)
 {
 	static class UFunction* Func = nullptr;
 
@@ -44,7 +44,7 @@ void ABP_Teleporter_C::OnTeleporterUsed(bool bLocalPlayer)
 
 	Params::BP_Teleporter_C_OnTeleporterUsed Parms{};
 
-	Parms.bLocalPlayer = bLocalPlayer;
+	Parms.bLocalPlayer_OnTeleporterUsed = bLocalPlayer_OnTeleporterUsed;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -53,9 +53,9 @@ void ABP_Teleporter_C::OnTeleporterUsed(bool bLocalPlayer)
 // Function BP_Teleporter.BP_Teleporter_C.OnPlayerArrived
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    bLocalPlayer                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bLocalPlayer_OnPlayerArrived                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Teleporter_C::OnPlayerArrived(bool bLocalPlayer)
+void ABP_Teleporter_C::OnPlayerArrived(bool bLocalPlayer_OnPlayerArrived)
 {
 	static class UFunction* Func = nullptr;
 
@@ -64,7 +64,7 @@ void ABP_Teleporter_C::OnPlayerArrived(bool bLocalPlayer)
 
 	Params::BP_Teleporter_C_OnPlayerArrived Parms{};
 
-	Parms.bLocalPlayer = bLocalPlayer;
+	Parms.bLocalPlayer_OnPlayerArrived = bLocalPlayer_OnPlayerArrived;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -73,9 +73,9 @@ void ABP_Teleporter_C::OnPlayerArrived(bool bLocalPlayer)
 // Function BP_Teleporter.BP_Teleporter_C.OnBuildingStateChanged
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrBuildingState                        InState_OnBuildingStateChanged                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Teleporter_C::OnBuildingStateChanged(ECrBuildingState InState)
+void ABP_Teleporter_C::OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -84,7 +84,7 @@ void ABP_Teleporter_C::OnBuildingStateChanged(ECrBuildingState InState)
 
 	Params::BP_Teleporter_C_OnBuildingStateChanged Parms{};
 
-	Parms.InState = InState;
+	Parms.InState_OnBuildingStateChanged = InState_OnBuildingStateChanged;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -93,11 +93,11 @@ void ABP_Teleporter_C::OnBuildingStateChanged(ECrBuildingState InState)
 // Function BP_Teleporter.BP_Teleporter_C.Get Meshes
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class USceneComponent*                  Static_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class USceneComponent*                  Static                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // class USceneComponent*                  Dynamic                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // TArray<class USceneComponent*>*         NewParam                                               (Parm, OutParm, ContainsInstancedReference)
 
-void ABP_Teleporter_C::Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Dynamic, TArray<class USceneComponent*>* NewParam)
+void ABP_Teleporter_C::Get_Meshes(class USceneComponent* Static, class USceneComponent* Dynamic, TArray<class USceneComponent*>* NewParam)
 {
 	static class UFunction* Func = nullptr;
 
@@ -106,7 +106,7 @@ void ABP_Teleporter_C::Get_Meshes(class USceneComponent* Static_0, class USceneC
 
 	Params::BP_Teleporter_C_Get_Meshes Parms{};
 
-	Parms.Static_0 = Static_0;
+	Parms.Static = Static;
 	Parms.Dynamic = Dynamic;
 
 	UObject::ProcessEvent(Func, &Parms);

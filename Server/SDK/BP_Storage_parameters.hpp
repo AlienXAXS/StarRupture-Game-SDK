@@ -22,8 +22,8 @@ SDK_PARAM_NAMESPACE_START
 struct BP_Storage_C_UpdateItemCount final
 {
 public:
-	int32                                         Count;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         MaxCount;                                          // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Count_UpdateItemCount;                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         MaxCount_UpdateItemCount;                          // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Storage_C_UpdateItemCount;
 
@@ -32,7 +32,7 @@ DUMPER7_ASSERTS_BP_Storage_C_UpdateItemCount;
 struct BP_Storage_C_UpdateFilter final
 {
 public:
-	const class UAuItemDataBase*                  ItemFilter;                                        // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	const class UAuItemDataBase*                  ItemFilter_UpdateFilter;                           // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Storage_C_UpdateFilter;
 
@@ -41,7 +41,7 @@ DUMPER7_ASSERTS_BP_Storage_C_UpdateFilter;
 struct BP_Storage_C_PostPlayBuildingEffect final
 {
 public:
-	bool                                          bWasBuildingEffectPlayed;                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bWasBuildingEffectPlayed_PostPlayBuildingEffect;   // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Storage_C_PostPlayBuildingEffect;
 

@@ -47,7 +47,7 @@ DUMPER7_ASSERTS_BP_Melee_Tier3_Actor_Character_C_SetRangedAttackTimer;
 struct BP_Melee_Tier3_Actor_Character_C_SetMovementAttackStage final
 {
 public:
-	EMovementAttackStage                          MovementAttackStage_0;                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EMovementAttackStage                          MovementAttackStage;                               // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Melee_Tier3_Actor_Character_C_SetMovementAttackStage;
 
@@ -83,7 +83,7 @@ DUMPER7_ASSERTS_BP_Melee_Tier3_Actor_Character_C_SetIsCoverActive;
 struct BP_Melee_Tier3_Actor_Character_C_SetHasAggroTarget final
 {
 public:
-	bool                                          bNewHasAggroTarget;                                // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bNewHasAggroTarget_SetHasAggroTarget;              // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Melee_Tier3_Actor_Character_C_SetHasAggroTarget;
 
@@ -92,7 +92,7 @@ DUMPER7_ASSERTS_BP_Melee_Tier3_Actor_Character_C_SetHasAggroTarget;
 struct BP_Melee_Tier3_Actor_Character_C_ReceiveTick final
 {
 public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         DeltaSeconds_ReceiveTick;                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Melee_Tier3_Actor_Character_C_ReceiveTick;
 
@@ -101,7 +101,7 @@ DUMPER7_ASSERTS_BP_Melee_Tier3_Actor_Character_C_ReceiveTick;
 struct BP_Melee_Tier3_Actor_Character_C_ReceiveEndPlay final
 {
 public:
-	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEndPlayReason                                EndPlayReason_ReceiveEndPlay;                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Melee_Tier3_Actor_Character_C_ReceiveEndPlay;
 
@@ -131,7 +131,7 @@ DUMPER7_ASSERTS_BP_Melee_Tier3_Actor_Character_C_OnExitActorPool;
 struct BP_Melee_Tier3_Actor_Character_C_OnBlackboardConfigured final
 {
 public:
-	class UMassEnemyDataAsset*                    Config;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UMassEnemyDataAsset*                    Config_OnBlackboardConfigured;                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Melee_Tier3_Actor_Character_C_OnBlackboardConfigured;
 
@@ -140,8 +140,8 @@ DUMPER7_ASSERTS_BP_Melee_Tier3_Actor_Character_C_OnBlackboardConfigured;
 struct BP_Melee_Tier3_Actor_Character_C_OnAiDied final
 {
 public:
-	struct FHitResult                             HitResult;                                         // 0x0000(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	struct FGameplayTag                           KillingDamageTag;                                  // 0x0100(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             HitResult_OnAiDied;                                // 0x0000(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	struct FGameplayTag                           KillingDamageTag_OnAiDied;                         // 0x0100(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Melee_Tier3_Actor_Character_C_OnAiDied;
 
@@ -150,7 +150,7 @@ DUMPER7_ASSERTS_BP_Melee_Tier3_Actor_Character_C_OnAiDied;
 struct BP_Melee_Tier3_Actor_Character_C_GetNiagaraEyeSystem final
 {
 public:
-	class UNiagaraComponent*                      NewParam;                                          // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      NewParam_GetNiagaraEyeSystem;                      // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Melee_Tier3_Actor_Character_C_GetNiagaraEyeSystem;
 
@@ -290,7 +290,7 @@ DUMPER7_ASSERTS_BP_Melee_Tier3_Actor_Character_C_CacheLongAoePoints;
 struct BP_Melee_Tier3_Actor_Character_C_OnMeshVisibilityUpdated final
 {
 public:
-	bool                                          bIsMeshHidden;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bIsMeshHidden_OnMeshVisibilityUpdated;             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Melee_Tier3_Actor_Character_C_OnMeshVisibilityUpdated;
 

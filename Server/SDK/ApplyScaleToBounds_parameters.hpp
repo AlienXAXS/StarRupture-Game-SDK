@@ -22,9 +22,9 @@ SDK_PARAM_NAMESPACE_START
 struct ApplyScaleToBounds_C_ExecuteWithContext final
 {
 public:
-	struct FPCGContext                            InContext;                                         // 0x0000(0x0258)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	struct FPCGDataCollection                     Input;                                             // 0x0258(0x0030)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	struct FPCGDataCollection                     Output;                                            // 0x0288(0x0030)(Parm, OutParm)
+	struct FPCGContext                            InContext_ExecuteWithContext;                      // 0x0000(0x0258)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FPCGDataCollection                     Input_ExecuteWithContext;                          // 0x0258(0x0030)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FPCGDataCollection                     Output_ExecuteWithContext;                         // 0x0288(0x0030)(Parm, OutParm)
 	TArray<struct FPCGTaggedData>                 OutTaggedDatas;                                    // 0x02B8(0x0010)(Edit, BlueprintVisible)
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x02C8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x02CC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -60,13 +60,13 @@ DUMPER7_ASSERTS_ApplyScaleToBounds_C_ExecuteWithContext;
 struct ApplyScaleToBounds_C_PointLoopBody final
 {
 public:
-	struct FPCGContext                            InContext;                                         // 0x0000(0x0258)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	const class UPCGPointData*                    InData;                                            // 0x0258(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FPCGPoint                              InPoint;                                           // 0x0260(0x00D0)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-	struct FPCGPoint                              OutPoint;                                          // 0x0330(0x00D0)(Parm, OutParm, NoDestructor)
-	class UPCGMetadata*                           OutMetadata;                                       // 0x0400(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	int64                                         Iteration;                                         // 0x0408(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ReturnValue;                                       // 0x0410(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPCGContext                            InContext_PointLoopBody;                           // 0x0000(0x0258)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	const class UPCGPointData*                    InData_PointLoopBody;                              // 0x0258(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FPCGPoint                              InPoint_PointLoopBody;                             // 0x0260(0x00D0)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+	struct FPCGPoint                              OutPoint_PointLoopBody;                            // 0x0330(0x00D0)(Parm, OutParm, NoDestructor)
+	class UPCGMetadata*                           OutMetadata_PointLoopBody;                         // 0x0400(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	int64                                         Iteration_PointLoopBody;                           // 0x0408(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue_PointLoopBody;                         // 0x0410(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_411[0x7];                                      // 0x0411(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                CallFunc_BreakTransform_Location;                  // 0x0418(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FRotator                               CallFunc_BreakTransform_Rotation;                  // 0x0430(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor)
@@ -82,7 +82,7 @@ DUMPER7_ASSERTS_ApplyScaleToBounds_C_PointLoopBody;
 struct ApplyScaleToBounds_C_NodeTitleOverride final
 {
 public:
-	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   ReturnValue_NodeTitleOverride;                     // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_ApplyScaleToBounds_C_NodeTitleOverride;
 
@@ -91,7 +91,7 @@ DUMPER7_ASSERTS_ApplyScaleToBounds_C_NodeTitleOverride;
 struct ApplyScaleToBounds_C_NodeColorOverride final
 {
 public:
-	struct FLinearColor                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           ReturnValue_NodeColorOverride;                     // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_ApplyScaleToBounds_C_NodeColorOverride;
 

@@ -42,10 +42,10 @@ class FText UWBP_ExporterCorporationLogo_C::UpdateName(class ACrBuildingActorBas
 // Function WBP_ExporterCorporationLogo.WBP_ExporterCorporationLogo_C.SetCorporationLogo
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                          CorporationLogo_0                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          CorporationLogo                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                                    IsDefault                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_ExporterCorporationLogo_C::SetCorporationLogo(class UObject* CorporationLogo_0, bool IsDefault)
+void UWBP_ExporterCorporationLogo_C::SetCorporationLogo(class UObject* CorporationLogo, bool IsDefault)
 {
 	static class UFunction* Func = nullptr;
 
@@ -54,7 +54,7 @@ void UWBP_ExporterCorporationLogo_C::SetCorporationLogo(class UObject* Corporati
 
 	Params::WBP_ExporterCorporationLogo_C_SetCorporationLogo Parms{};
 
-	Parms.CorporationLogo_0 = CorporationLogo_0;
+	Parms.CorporationLogo = CorporationLogo;
 	Parms.IsDefault = IsDefault;
 
 	UObject::ProcessEvent(Func, &Parms);

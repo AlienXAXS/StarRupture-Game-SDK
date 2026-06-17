@@ -22,7 +22,7 @@ SDK_PARAM_NAMESPACE_START
 struct BP_Gatherable_Plant_h_C_ReceiveEndPlay final
 {
 public:
-	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEndPlayReason                                EndPlayReason_ReceiveEndPlay;                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Gatherable_Plant_h_C_ReceiveEndPlay;
 
@@ -50,10 +50,10 @@ DUMPER7_ASSERTS_BP_Gatherable_Plant_h_C_ExecuteUbergraph_BP_Gatherable_Plant_h;
 struct BP_Gatherable_Plant_h_C_BP_OnWaveChangedUpdate final
 {
 public:
-	EEnviroWave                                   WaveType;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EEnviroWaveStage                              WaveStage;                                         // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EEnviroWaveFadeoutSubstage                    FadeoutSubstage;                                   // 0x0002(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EEnviroWaveGrowbackSubstage                   GrowbackSubstage;                                  // 0x0003(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEnviroWave                                   WaveType_BP_OnWaveChangedUpdate;                   // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEnviroWaveStage                              WaveStage_BP_OnWaveChangedUpdate;                  // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEnviroWaveFadeoutSubstage                    FadeoutSubstage_BP_OnWaveChangedUpdate;            // 0x0002(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEnviroWaveGrowbackSubstage                   GrowbackSubstage_BP_OnWaveChangedUpdate;           // 0x0003(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Gatherable_Plant_h_C_BP_OnWaveChangedUpdate;
 

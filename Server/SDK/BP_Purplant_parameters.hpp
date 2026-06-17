@@ -29,7 +29,7 @@ DUMPER7_ASSERTS_BP_Purplant_C_ExecuteUbergraph_BP_Purplant;
 struct BP_Purplant_C_BP_OnLightsVisualsTriggered final
 {
 public:
-	bool                                          bLightsOn;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bLightsOn_BP_OnLightsVisualsTriggered;             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Purplant_C_BP_OnLightsVisualsTriggered;
 

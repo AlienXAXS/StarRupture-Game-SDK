@@ -41,9 +41,9 @@ public:
 
 public:
 	void ReceiveBeginPlay();
-	void OnResourceDetected(TSubclassOf<class UCrItemDataBase> OreItemClass);
+	void OnResourceDetected(TSubclassOf<class UCrItemDataBase> OreItemClass_OnResourceDetected);
 	void OnConstructionFinished();
-	void OnBuildingStateChanged(ECrBuildingState InState);
+	void OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged);
 	void ExecuteUbergraph_BP_MechanicalDrill(int32 EntryPoint);
 
 public:

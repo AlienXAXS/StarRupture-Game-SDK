@@ -39,9 +39,9 @@ void ABP_Gatherable_GoldFruitTree_Large_F_C::ExecuteUbergraph_BP_Gatherable_Gold
 // Function BP_Gatherable_GoldFruitTree_Large_F.BP_Gatherable_GoldFruitTree_Large_F_C.BP_OnLightsVisualsTriggered
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    bLightsOn                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bLightsOn_BP_OnLightsVisualsTriggered                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Gatherable_GoldFruitTree_Large_F_C::BP_OnLightsVisualsTriggered(bool bLightsOn)
+void ABP_Gatherable_GoldFruitTree_Large_F_C::BP_OnLightsVisualsTriggered(bool bLightsOn_BP_OnLightsVisualsTriggered)
 {
 	static class UFunction* Func = nullptr;
 
@@ -50,7 +50,7 @@ void ABP_Gatherable_GoldFruitTree_Large_F_C::BP_OnLightsVisualsTriggered(bool bL
 
 	Params::BP_Gatherable_GoldFruitTree_Large_F_C_BP_OnLightsVisualsTriggered Parms{};
 
-	Parms.bLightsOn = bLightsOn;
+	Parms.bLightsOn_BP_OnLightsVisualsTriggered = bLightsOn_BP_OnLightsVisualsTriggered;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -26,7 +26,7 @@ public:
 
 public:
 	void ReceiveBeginPlay();
-	void OnSulphurActivityChanged(bool bActive);
+	void OnSulphurActivityChanged(bool bActive_OnSulphurActivityChanged);
 	void ExecuteUbergraph_BP_Sulphur_Logic_Large_AbandonedBase(int32 EntryPoint);
 
 public:

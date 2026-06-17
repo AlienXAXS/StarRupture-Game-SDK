@@ -25,7 +25,7 @@ public:
 	class UAudioComponent*                        MenuMusic;                                         // 0x02B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay);
 	void ReceiveDestroyed();
 	void ReceiveBeginPlay();
 	void getLevelName();

@@ -32,7 +32,7 @@ public:
 
 public:
 	void UserConstructionScript();
-	void OnEnviroWaveTick(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress);
+	void OnEnviroWaveTick(EEnviroWave WaveType_OnEnviroWaveTick, EEnviroWaveStage WaveStage_OnEnviroWaveTick, const struct FCrEnviroWaveSettings& WaveSettings_OnEnviroWaveTick, float WaveProgress_OnEnviroWaveTick);
 	void ExecuteUbergraph_BP_HabitatPostProcess(int32 EntryPoint);
 
 public:

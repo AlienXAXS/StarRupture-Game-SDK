@@ -19,7 +19,7 @@ SDK_PARAM_NAMESPACE_START
 struct WBP_QuickUseEntry_C_OnDataRefresh final
 {
 public:
-	int32                                         Param_Index_0;                                     // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Index_OnDataRefresh;                               // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_QuickUseEntry_C_OnDataRefresh;
 

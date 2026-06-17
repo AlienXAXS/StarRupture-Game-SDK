@@ -22,7 +22,7 @@ SDK_PARAM_NAMESPACE_START
 struct WBP_BuildingResultNotification_C_OnPlacementResultNotif final
 {
 public:
-	EAuAPPlacementResult                          PlacementResult;                                   // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EAuAPPlacementResult                          PlacementResult_OnPlacementResultNotif;            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_BuildingResultNotification_C_OnPlacementResultNotif;
 

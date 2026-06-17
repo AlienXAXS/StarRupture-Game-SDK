@@ -29,7 +29,7 @@ DUMPER7_ASSERTS_BP_MaterializedItemCrate_C_UserConstructionScript;
 struct BP_MaterializedItemCrate_C_MaterializePackageOnce final
 {
 public:
-	double                                        Duration_0;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        Duration;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_MaterializedItemCrate_C_MaterializePackageOnce;
 
@@ -38,7 +38,7 @@ DUMPER7_ASSERTS_BP_MaterializedItemCrate_C_MaterializePackageOnce;
 struct BP_MaterializedItemCrate_C_Materialize_Package_In_Loop final
 {
 public:
-	double                                        Duration_0;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        Duration;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_MaterializedItemCrate_C_Materialize_Package_In_Loop;
 

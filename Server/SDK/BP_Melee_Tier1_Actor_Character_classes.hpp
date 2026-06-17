@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "BP_BaseAI_classes.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -33,13 +33,13 @@ public:
 
 public:
 	void UserConstructionScript();
-	void OnVisualVariationChanged(const struct FVector& NewVisualVariationSeed);
+	void OnVisualVariationChanged(const struct FVector& NewVisualVariationSeed_OnVisualVariationChanged);
 	void OnExitActorPool();
 	void OnEnterActorPool();
-	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
+	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam_GetNiagaraEyeSystem);
 	void ExecuteUbergraph_BP_Melee_Tier1_Actor_Character(int32 EntryPoint);
 
-	void OnMeshVisibilityUpdated(bool bIsMeshHidden) const;
+	void OnMeshVisibilityUpdated(bool bIsMeshHidden_OnMeshVisibilityUpdated) const;
 
 public:
 	static class UClass* StaticClass()

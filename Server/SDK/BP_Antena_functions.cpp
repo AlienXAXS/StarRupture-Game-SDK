@@ -33,10 +33,10 @@ void ABP_Antena_C::StopLoopSound()
 // Function BP_Antena.BP_Antena_C.SetUI
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// ECrAntennaState                         InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FLinearColor&              InColor                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrAntennaState                         InState_SetUI                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              InColor_SetUI                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Antena_C::SetUI(ECrAntennaState InState, const struct FLinearColor& InColor)
+void ABP_Antena_C::SetUI(ECrAntennaState InState_SetUI, const struct FLinearColor& InColor_SetUI)
 {
 	static class UFunction* Func = nullptr;
 
@@ -45,8 +45,8 @@ void ABP_Antena_C::SetUI(ECrAntennaState InState, const struct FLinearColor& InC
 
 	Params::BP_Antena_C_SetUI Parms{};
 
-	Parms.InState = InState;
-	Parms.InColor = std::move(InColor);
+	Parms.InState_SetUI = InState_SetUI;
+	Parms.InColor_SetUI = std::move(InColor_SetUI);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -77,9 +77,9 @@ void ABP_Antena_C::Set_Display_State(ECrAntennaState AntennaState, const struct 
 // Function BP_Antena.BP_Antena_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaSeconds_ReceiveTick                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Antena_C::ReceiveTick(float DeltaSeconds)
+void ABP_Antena_C::ReceiveTick(float DeltaSeconds_ReceiveTick)
 {
 	static class UFunction* Func = nullptr;
 
@@ -88,7 +88,7 @@ void ABP_Antena_C::ReceiveTick(float DeltaSeconds)
 
 	Params::BP_Antena_C_ReceiveTick Parms{};
 
-	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.DeltaSeconds_ReceiveTick = DeltaSeconds_ReceiveTick;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -111,7 +111,7 @@ void ABP_Antena_C::ReceiveBeginPlay()
 // Function BP_Antena.BP_Antena_C.PlayInteractionUnSuccessfulSound
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue_PlayInteractionUnSuccessfulSound           (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool ABP_Antena_C::PlayInteractionUnSuccessfulSound()
 {
@@ -131,7 +131,7 @@ bool ABP_Antena_C::PlayInteractionUnSuccessfulSound()
 // Function BP_Antena.BP_Antena_C.PlayInteractionSuccessfulSound
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue_PlayInteractionSuccessfulSound             (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool ABP_Antena_C::PlayInteractionSuccessfulSound()
 {
@@ -151,9 +151,9 @@ bool ABP_Antena_C::PlayInteractionSuccessfulSound()
 // Function BP_Antena.BP_Antena_C.OnStateChanged
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// ECrAntennaState                         NewState                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrAntennaState                         NewState_OnStateChanged                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Antena_C::OnStateChanged(ECrAntennaState NewState)
+void ABP_Antena_C::OnStateChanged(ECrAntennaState NewState_OnStateChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -162,7 +162,7 @@ void ABP_Antena_C::OnStateChanged(ECrAntennaState NewState)
 
 	Params::BP_Antena_C_OnStateChanged Parms{};
 
-	Parms.NewState = NewState;
+	Parms.NewState_OnStateChanged = NewState_OnStateChanged;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -185,9 +185,9 @@ void ABP_Antena_C::OnInfectionTaken()
 // Function BP_Antena.BP_Antena_C.OnChargingProgressUpdate
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// float                                   Progress                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   Progress_OnChargingProgressUpdate                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Antena_C::OnChargingProgressUpdate(float Progress)
+void ABP_Antena_C::OnChargingProgressUpdate(float Progress_OnChargingProgressUpdate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -196,7 +196,7 @@ void ABP_Antena_C::OnChargingProgressUpdate(float Progress)
 
 	Params::BP_Antena_C_OnChargingProgressUpdate Parms{};
 
-	Parms.Progress = Progress;
+	Parms.Progress_OnChargingProgressUpdate = Progress_OnChargingProgressUpdate;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

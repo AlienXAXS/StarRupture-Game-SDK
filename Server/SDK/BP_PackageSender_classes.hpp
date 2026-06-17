@@ -66,9 +66,9 @@ public:
 	void Timeline__FinishedFunc();
 	void SetupSkeletalMesh();
 	void ReceiveBeginPlay();
-	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed);
+	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed_PostPlayBuildingEffect);
 	void OnItemsSent();
-	void Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Dynamic, TArray<class USceneComponent*>* NewParam);
+	void Get_Meshes(class USceneComponent* Static, class USceneComponent* Dynamic, TArray<class USceneComponent*>* NewParam);
 	void ExecuteUbergraph_BP_PackageSender(int32 EntryPoint);
 	void Drone_start();
 	void Door_Timeline__UpdateFunc();

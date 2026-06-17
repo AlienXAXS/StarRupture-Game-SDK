@@ -16447,7 +16447,7 @@ public:
 	bool GetCookedFFTDataForAllPlayingSounds(TArray<struct FSoundWaveSpectralDataPerSound>* OutSoundWaveSpectralData);
 	TSet<class USoundModulatorBase*> GetModulators(const EModulationDestination Destination);
 	void Play(float StartTime);
-	void PlayQuantized(const class UObject* WorldContextObject, class UQuartzClockHandle*& InClockHandle, struct FQuartzQuantizationBoundary& InQuantizationBoundary, const TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name)>& InDelegate, float InStartTime, float InFadeInDuration, float InFadeVolumeLevel, EAudioFaderCurve InFadeCurve);
+	void PlayQuantized(const class UObject* WorldContextObject, class UQuartzClockHandle*& InClockHandle, struct FQuartzQuantizationBoundary& InQuantizationBoundary, const TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name_0)>& InDelegate, float InStartTime, float InFadeInDuration, float InFadeVolumeLevel, EAudioFaderCurve InFadeCurve);
 	void RemoveModulationRouting(const TSet<class USoundModulatorBase*>& Modulators, const EModulationDestination Destination);
 	void SetAttenuationOverrides(const struct FSoundAttenuationSettings& InAttenuationOverrides);
 	void SetAttenuationSettings(class USoundAttenuation* InAttenuationSettings);
@@ -36160,7 +36160,7 @@ public:
 	static float PerlinNoise1D(const float Value);
 	static bool PointsAreCoplanar(const TArray<struct FVector>& Points, float Tolerance);
 	static struct FVector ProjectPointOnToPlane(const struct FVector& Point, const struct FVector& PlaneBase, const struct FVector& PlaneNormal);
-	static struct FVector ProjectVectorOnToPlane(const struct FVector& V, const struct FVector& PlaneNormal);
+	static struct FVector ProjectVectorOntoPlane(const struct FVector& V, const struct FVector& PlaneNormal);
 	static struct FVector ProjectVectorOnToVector(const struct FVector& V, const struct FVector& Target);
 	static float Quat_AngularDistance(const struct FQuat& A, const struct FQuat& B);
 	static void Quat_EnforceShortestArcWith(struct FQuat& A, const struct FQuat& B);

@@ -33,9 +33,9 @@ void ABP_ChimeraPlacementHelperReplicatedBaseCore_C::UserConstructionScript()
 // Function BP_ChimeraPlacementHelperReplicatedBaseCore.BP_ChimeraPlacementHelperReplicatedBaseCore_C.SetMeshColor
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              Color_SetMeshColor                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ChimeraPlacementHelperReplicatedBaseCore_C::SetMeshColor(const struct FLinearColor& Color)
+void ABP_ChimeraPlacementHelperReplicatedBaseCore_C::SetMeshColor(const struct FLinearColor& Color_SetMeshColor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -44,7 +44,7 @@ void ABP_ChimeraPlacementHelperReplicatedBaseCore_C::SetMeshColor(const struct F
 
 	Params::BP_ChimeraPlacementHelperReplicatedBaseCore_C_SetMeshColor Parms{};
 
-	Parms.Color = std::move(Color);
+	Parms.Color_SetMeshColor = std::move(Color_SetMeshColor);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

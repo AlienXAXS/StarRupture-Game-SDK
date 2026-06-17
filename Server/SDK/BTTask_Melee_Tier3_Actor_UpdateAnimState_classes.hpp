@@ -24,7 +24,7 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x00A8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+	void ReceiveExecuteAI(class AAIController* OwnerController_ReceiveExecuteAI, class APawn* ControlledPawn_ReceiveExecuteAI);
 	void ExecuteUbergraph_BTTask_Melee_Tier3_Actor_UpdateAnimState(int32 EntryPoint);
 
 public:

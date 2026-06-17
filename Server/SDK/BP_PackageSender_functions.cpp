@@ -75,9 +75,9 @@ void ABP_PackageSender_C::ReceiveBeginPlay()
 // Function BP_PackageSender.BP_PackageSender_C.PostPlayBuildingEffect
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    bWasBuildingEffectPlayed                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bWasBuildingEffectPlayed_PostPlayBuildingEffect        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PackageSender_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
+void ABP_PackageSender_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed_PostPlayBuildingEffect)
 {
 	static class UFunction* Func = nullptr;
 
@@ -86,7 +86,7 @@ void ABP_PackageSender_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
 
 	Params::BP_PackageSender_C_PostPlayBuildingEffect Parms{};
 
-	Parms.bWasBuildingEffectPlayed = bWasBuildingEffectPlayed;
+	Parms.bWasBuildingEffectPlayed_PostPlayBuildingEffect = bWasBuildingEffectPlayed_PostPlayBuildingEffect;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -109,11 +109,11 @@ void ABP_PackageSender_C::OnItemsSent()
 // Function BP_PackageSender.BP_PackageSender_C.Get Meshes
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class USceneComponent*                  Static_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class USceneComponent*                  Static                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // class USceneComponent*                  Dynamic                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // TArray<class USceneComponent*>*         NewParam                                               (Parm, OutParm, ContainsInstancedReference)
 
-void ABP_PackageSender_C::Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Dynamic, TArray<class USceneComponent*>* NewParam)
+void ABP_PackageSender_C::Get_Meshes(class USceneComponent* Static, class USceneComponent* Dynamic, TArray<class USceneComponent*>* NewParam)
 {
 	static class UFunction* Func = nullptr;
 
@@ -122,7 +122,7 @@ void ABP_PackageSender_C::Get_Meshes(class USceneComponent* Static_0, class USce
 
 	Params::BP_PackageSender_C_Get_Meshes Parms{};
 
-	Parms.Static_0 = Static_0;
+	Parms.Static = Static;
 	Parms.Dynamic = Dynamic;
 
 	UObject::ProcessEvent(Func, &Parms);

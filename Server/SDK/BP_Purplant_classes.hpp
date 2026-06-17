@@ -26,7 +26,7 @@ public:
 
 public:
 	void ExecuteUbergraph_BP_Purplant(int32 EntryPoint);
-	void BP_OnLightsVisualsTriggered(bool bLightsOn);
+	void BP_OnLightsVisualsTriggered(bool bLightsOn_BP_OnLightsVisualsTriggered);
 
 public:
 	static class UClass* StaticClass()

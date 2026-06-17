@@ -22,7 +22,7 @@ SDK_PARAM_NAMESPACE_START
 struct GA_ExploderTier1_Speedup_TempVis_C_K2_OnEndAbility final
 {
 public:
-	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bWasCancelled_K2_OnEndAbility;                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_GA_ExploderTier1_Speedup_TempVis_C_K2_OnEndAbility;
 

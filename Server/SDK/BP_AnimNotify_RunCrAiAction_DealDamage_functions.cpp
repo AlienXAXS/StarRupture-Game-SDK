@@ -19,10 +19,10 @@ SDK_NAMESPACE_START
 // Function BP_AnimNotify_RunCrAiAction_DealDamage.BP_AnimNotify_RunCrAiAction_DealDamage_C.CreateAiAction
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// class AActor*                           Actor                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class UCrAiAction*                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           Actor_CreateAiAction                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class UCrAiAction*                      ReturnValue_CreateAiAction                             (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
 
-class UCrAiAction* UBP_AnimNotify_RunCrAiAction_DealDamage_C::CreateAiAction(class AActor* Actor) const
+class UCrAiAction* UBP_AnimNotify_RunCrAiAction_DealDamage_C::CreateAiAction(class AActor* Actor_CreateAiAction) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -31,7 +31,7 @@ class UCrAiAction* UBP_AnimNotify_RunCrAiAction_DealDamage_C::CreateAiAction(cla
 
 	Params::BP_AnimNotify_RunCrAiAction_DealDamage_C_CreateAiAction Parms{};
 
-	Parms.Actor = Actor;
+	Parms.Actor_CreateAiAction = Actor_CreateAiAction;
 
 	UObject::ProcessEvent(Func, &Parms);
 

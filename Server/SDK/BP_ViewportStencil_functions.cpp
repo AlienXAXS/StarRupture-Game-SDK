@@ -47,12 +47,12 @@ void ABP_ViewportStencil_C::ReceiveBeginPlay()
 // Function BP_ViewportStencil.BP_ViewportStencil_C.OnEnviroWaveTick
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EEnviroWave                             WaveType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EEnviroWaveStage                        WaveStage                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-// float                                   WaveProgress                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEnviroWave                             WaveType_OnEnviroWaveTick                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEnviroWaveStage                        WaveStage_OnEnviroWaveTick                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FCrEnviroWaveSettings&     WaveSettings_OnEnviroWaveTick                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+// float                                   WaveProgress_OnEnviroWaveTick                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ViewportStencil_C::OnEnviroWaveTick(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress)
+void ABP_ViewportStencil_C::OnEnviroWaveTick(EEnviroWave WaveType_OnEnviroWaveTick, EEnviroWaveStage WaveStage_OnEnviroWaveTick, const struct FCrEnviroWaveSettings& WaveSettings_OnEnviroWaveTick, float WaveProgress_OnEnviroWaveTick)
 {
 	static class UFunction* Func = nullptr;
 
@@ -61,10 +61,10 @@ void ABP_ViewportStencil_C::OnEnviroWaveTick(EEnviroWave WaveType, EEnviroWaveSt
 
 	Params::BP_ViewportStencil_C_OnEnviroWaveTick Parms{};
 
-	Parms.WaveType = WaveType;
-	Parms.WaveStage = WaveStage;
-	Parms.WaveSettings = std::move(WaveSettings);
-	Parms.WaveProgress = WaveProgress;
+	Parms.WaveType_OnEnviroWaveTick = WaveType_OnEnviroWaveTick;
+	Parms.WaveStage_OnEnviroWaveTick = WaveStage_OnEnviroWaveTick;
+	Parms.WaveSettings_OnEnviroWaveTick = std::move(WaveSettings_OnEnviroWaveTick);
+	Parms.WaveProgress_OnEnviroWaveTick = WaveProgress_OnEnviroWaveTick;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -73,12 +73,12 @@ void ABP_ViewportStencil_C::OnEnviroWaveTick(EEnviroWave WaveType, EEnviroWaveSt
 // Function BP_ViewportStencil.BP_ViewportStencil_C.OnEnviroWaveStarted
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EEnviroWave                             WaveType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EEnviroWaveStage                        WaveStage                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-// float                                   WaveProgress                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEnviroWave                             WaveType_OnEnviroWaveStarted                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEnviroWaveStage                        WaveStage_OnEnviroWaveStarted                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FCrEnviroWaveSettings&     WaveSettings_OnEnviroWaveStarted                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+// float                                   WaveProgress_OnEnviroWaveStarted                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ViewportStencil_C::OnEnviroWaveStarted(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress)
+void ABP_ViewportStencil_C::OnEnviroWaveStarted(EEnviroWave WaveType_OnEnviroWaveStarted, EEnviroWaveStage WaveStage_OnEnviroWaveStarted, const struct FCrEnviroWaveSettings& WaveSettings_OnEnviroWaveStarted, float WaveProgress_OnEnviroWaveStarted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -87,10 +87,10 @@ void ABP_ViewportStencil_C::OnEnviroWaveStarted(EEnviroWave WaveType, EEnviroWav
 
 	Params::BP_ViewportStencil_C_OnEnviroWaveStarted Parms{};
 
-	Parms.WaveType = WaveType;
-	Parms.WaveStage = WaveStage;
-	Parms.WaveSettings = std::move(WaveSettings);
-	Parms.WaveProgress = WaveProgress;
+	Parms.WaveType_OnEnviroWaveStarted = WaveType_OnEnviroWaveStarted;
+	Parms.WaveStage_OnEnviroWaveStarted = WaveStage_OnEnviroWaveStarted;
+	Parms.WaveSettings_OnEnviroWaveStarted = std::move(WaveSettings_OnEnviroWaveStarted);
+	Parms.WaveProgress_OnEnviroWaveStarted = WaveProgress_OnEnviroWaveStarted;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -99,12 +99,12 @@ void ABP_ViewportStencil_C::OnEnviroWaveStarted(EEnviroWave WaveType, EEnviroWav
 // Function BP_ViewportStencil.BP_ViewportStencil_C.OnEnviroWaveForced
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EEnviroWave                             WaveType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EEnviroWaveStage                        WaveStage                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-// float                                   WaveProgress                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEnviroWave                             WaveType_OnEnviroWaveForced                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEnviroWaveStage                        WaveStage_OnEnviroWaveForced                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FCrEnviroWaveSettings&     WaveSettings_OnEnviroWaveForced                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+// float                                   WaveProgress_OnEnviroWaveForced                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ViewportStencil_C::OnEnviroWaveForced(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress)
+void ABP_ViewportStencil_C::OnEnviroWaveForced(EEnviroWave WaveType_OnEnviroWaveForced, EEnviroWaveStage WaveStage_OnEnviroWaveForced, const struct FCrEnviroWaveSettings& WaveSettings_OnEnviroWaveForced, float WaveProgress_OnEnviroWaveForced)
 {
 	static class UFunction* Func = nullptr;
 
@@ -113,10 +113,10 @@ void ABP_ViewportStencil_C::OnEnviroWaveForced(EEnviroWave WaveType, EEnviroWave
 
 	Params::BP_ViewportStencil_C_OnEnviroWaveForced Parms{};
 
-	Parms.WaveType = WaveType;
-	Parms.WaveStage = WaveStage;
-	Parms.WaveSettings = std::move(WaveSettings);
-	Parms.WaveProgress = WaveProgress;
+	Parms.WaveType_OnEnviroWaveForced = WaveType_OnEnviroWaveForced;
+	Parms.WaveStage_OnEnviroWaveForced = WaveStage_OnEnviroWaveForced;
+	Parms.WaveSettings_OnEnviroWaveForced = std::move(WaveSettings_OnEnviroWaveForced);
+	Parms.WaveProgress_OnEnviroWaveForced = WaveProgress_OnEnviroWaveForced;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -125,10 +125,10 @@ void ABP_ViewportStencil_C::OnEnviroWaveForced(EEnviroWave WaveType, EEnviroWave
 // Function BP_ViewportStencil.BP_ViewportStencil_C.OnEnviroWaveFinished
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EEnviroWave                             WaveType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+// EEnviroWave                             WaveType_OnEnviroWaveFinished                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FCrEnviroWaveSettings&     WaveSettings_OnEnviroWaveFinished                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
 
-void ABP_ViewportStencil_C::OnEnviroWaveFinished(EEnviroWave WaveType, const struct FCrEnviroWaveSettings& WaveSettings)
+void ABP_ViewportStencil_C::OnEnviroWaveFinished(EEnviroWave WaveType_OnEnviroWaveFinished, const struct FCrEnviroWaveSettings& WaveSettings_OnEnviroWaveFinished)
 {
 	static class UFunction* Func = nullptr;
 
@@ -137,8 +137,8 @@ void ABP_ViewportStencil_C::OnEnviroWaveFinished(EEnviroWave WaveType, const str
 
 	Params::BP_ViewportStencil_C_OnEnviroWaveFinished Parms{};
 
-	Parms.WaveType = WaveType;
-	Parms.WaveSettings = std::move(WaveSettings);
+	Parms.WaveType_OnEnviroWaveFinished = WaveType_OnEnviroWaveFinished;
+	Parms.WaveSettings_OnEnviroWaveFinished = std::move(WaveSettings_OnEnviroWaveFinished);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -147,11 +147,11 @@ void ABP_ViewportStencil_C::OnEnviroWaveFinished(EEnviroWave WaveType, const str
 // Function BP_ViewportStencil.BP_ViewportStencil_C.OnEnviroWaveCanceled
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EEnviroWave                             WaveType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EEnviroWaveStage                        WaveStage                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+// EEnviroWave                             WaveType_OnEnviroWaveCanceled                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEnviroWaveStage                        WaveStage_OnEnviroWaveCanceled                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FCrEnviroWaveSettings&     WaveSettings_OnEnviroWaveCanceled                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
 
-void ABP_ViewportStencil_C::OnEnviroWaveCanceled(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings)
+void ABP_ViewportStencil_C::OnEnviroWaveCanceled(EEnviroWave WaveType_OnEnviroWaveCanceled, EEnviroWaveStage WaveStage_OnEnviroWaveCanceled, const struct FCrEnviroWaveSettings& WaveSettings_OnEnviroWaveCanceled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -160,9 +160,9 @@ void ABP_ViewportStencil_C::OnEnviroWaveCanceled(EEnviroWave WaveType, EEnviroWa
 
 	Params::BP_ViewportStencil_C_OnEnviroWaveCanceled Parms{};
 
-	Parms.WaveType = WaveType;
-	Parms.WaveStage = WaveStage;
-	Parms.WaveSettings = std::move(WaveSettings);
+	Parms.WaveType_OnEnviroWaveCanceled = WaveType_OnEnviroWaveCanceled;
+	Parms.WaveStage_OnEnviroWaveCanceled = WaveStage_OnEnviroWaveCanceled;
+	Parms.WaveSettings_OnEnviroWaveCanceled = std::move(WaveSettings_OnEnviroWaveCanceled);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

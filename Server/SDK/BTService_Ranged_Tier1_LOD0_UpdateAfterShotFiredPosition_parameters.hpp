@@ -50,8 +50,8 @@ DUMPER7_ASSERTS_BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C_Updat
 struct BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C_ReceiveActivationAI final
 {
 public:
-	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AAIController*                          OwnerController_ReceiveActivationAI;               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  ControlledPawn_ReceiveActivationAI;                // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C_ReceiveActivationAI;
 

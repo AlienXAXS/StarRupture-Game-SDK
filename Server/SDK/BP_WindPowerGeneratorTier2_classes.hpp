@@ -34,7 +34,7 @@ public:
 
 public:
 	void ReceiveBeginPlay();
-	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed);
+	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed_PostPlayBuildingEffect);
 	void ExecuteUbergraph_BP_WindPowerGeneratorTier2(int32 EntryPoint);
 
 public:

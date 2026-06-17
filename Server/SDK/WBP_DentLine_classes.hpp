@@ -29,7 +29,7 @@ public:
 	void SetSize(double InSize);
 	void SetCurrentColor(const struct FLinearColor& InColor);
 
-	void OnPaint(struct FPaintContext& Context) const;
+	void OnPaint(struct FPaintContext& Context_OnPaint) const;
 
 public:
 	static class UClass* StaticClass()

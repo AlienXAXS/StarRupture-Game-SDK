@@ -33,12 +33,12 @@ public:
 public:
 	void UserConstructionScript();
 	void SetSplineSegment(class USplineMeshComponent* SplineMeshComponent, int32 FirstPointIndex, int32 SecondPointIndex);
-	void SetMeshColor(const struct FLinearColor& Color);
+	void SetMeshColor(const struct FLinearColor& Color_SetMeshColor);
 	void RemoveSteps(int32 Amount);
-	void ReceiveTick(float DeltaSeconds);
-	void OnSplinePointRemoved(int32 PointIndex);
-	void OnSplinePointAdded(int32 PointIndex);
-	void OnConfirmedPoint(const struct FAuAPConfirmPointData& NewPoint);
+	void ReceiveTick(float DeltaSeconds_ReceiveTick);
+	void OnSplinePointRemoved(int32 PointIndex_OnSplinePointRemoved);
+	void OnSplinePointAdded(int32 PointIndex_OnSplinePointAdded);
+	void OnConfirmedPoint(const struct FAuAPConfirmPointData& NewPoint_OnConfirmedPoint);
 	bool IsRamp();
 	bool IsLadder();
 	double GetRampAngle();

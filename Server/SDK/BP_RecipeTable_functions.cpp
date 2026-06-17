@@ -33,9 +33,9 @@ void ABP_RecipeTable_C::ReceiveBeginPlay()
 // Function BP_RecipeTable.BP_RecipeTable_C.OnUIOpened
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    bOpened                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bOpened_OnUIOpened                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_RecipeTable_C::OnUIOpened(bool bOpened)
+void ABP_RecipeTable_C::OnUIOpened(bool bOpened_OnUIOpened)
 {
 	static class UFunction* Func = nullptr;
 
@@ -44,7 +44,7 @@ void ABP_RecipeTable_C::OnUIOpened(bool bOpened)
 
 	Params::BP_RecipeTable_C_OnUIOpened Parms{};
 
-	Parms.bOpened = bOpened;
+	Parms.bOpened_OnUIOpened = bOpened_OnUIOpened;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

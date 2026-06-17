@@ -89,9 +89,9 @@ void ABP_Exploder_Tier1_Actor_Character_C::StartActivationTimer()
 // Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaSeconds_ReceiveTick                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Exploder_Tier1_Actor_Character_C::ReceiveTick(float DeltaSeconds)
+void ABP_Exploder_Tier1_Actor_Character_C::ReceiveTick(float DeltaSeconds_ReceiveTick)
 {
 	static class UFunction* Func = nullptr;
 
@@ -100,7 +100,7 @@ void ABP_Exploder_Tier1_Actor_Character_C::ReceiveTick(float DeltaSeconds)
 
 	Params::BP_Exploder_Tier1_Actor_Character_C_ReceiveTick Parms{};
 
-	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.DeltaSeconds_ReceiveTick = DeltaSeconds_ReceiveTick;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -193,10 +193,10 @@ void ABP_Exploder_Tier1_Actor_Character_C::OnEnableActivationTimer()
 // Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnDiedFromGas
 // (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
-// const struct FHitResult&                LastHit                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-// const struct FGameplayTag&              KillingDamageTag                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FHitResult&                LastHit_OnDiedFromGas                                  (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+// const struct FGameplayTag&              KillingDamageTag_OnDiedFromGas                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Exploder_Tier1_Actor_Character_C::OnDiedFromGas(const struct FHitResult& LastHit, const struct FGameplayTag& KillingDamageTag)
+void ABP_Exploder_Tier1_Actor_Character_C::OnDiedFromGas(const struct FHitResult& LastHit_OnDiedFromGas, const struct FGameplayTag& KillingDamageTag_OnDiedFromGas)
 {
 	static class UFunction* Func = nullptr;
 
@@ -205,8 +205,8 @@ void ABP_Exploder_Tier1_Actor_Character_C::OnDiedFromGas(const struct FHitResult
 
 	Params::BP_Exploder_Tier1_Actor_Character_C_OnDiedFromGas Parms{};
 
-	Parms.LastHit = std::move(LastHit);
-	Parms.KillingDamageTag = std::move(KillingDamageTag);
+	Parms.LastHit_OnDiedFromGas = std::move(LastHit_OnDiedFromGas);
+	Parms.KillingDamageTag_OnDiedFromGas = std::move(KillingDamageTag_OnDiedFromGas);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -215,10 +215,10 @@ void ABP_Exploder_Tier1_Actor_Character_C::OnDiedFromGas(const struct FHitResult
 // Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnAiDied
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// const struct FHitResult&                HitResult                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-// const struct FGameplayTag&              KillingDamageTag                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FHitResult&                HitResult_OnAiDied                                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+// const struct FGameplayTag&              KillingDamageTag_OnAiDied                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Exploder_Tier1_Actor_Character_C::OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag)
+void ABP_Exploder_Tier1_Actor_Character_C::OnAiDied(const struct FHitResult& HitResult_OnAiDied, const struct FGameplayTag& KillingDamageTag_OnAiDied)
 {
 	static class UFunction* Func = nullptr;
 
@@ -227,8 +227,8 @@ void ABP_Exploder_Tier1_Actor_Character_C::OnAiDied(const struct FHitResult& Hit
 
 	Params::BP_Exploder_Tier1_Actor_Character_C_OnAiDied Parms{};
 
-	Parms.HitResult = std::move(HitResult);
-	Parms.KillingDamageTag = std::move(KillingDamageTag);
+	Parms.HitResult_OnAiDied = std::move(HitResult_OnAiDied);
+	Parms.KillingDamageTag_OnAiDied = std::move(KillingDamageTag_OnAiDied);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -237,9 +237,9 @@ void ABP_Exploder_Tier1_Actor_Character_C::OnAiDied(const struct FHitResult& Hit
 // Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.GetNiagaraEyeSystem
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UNiagaraComponent**               NewParam                                               (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UNiagaraComponent**               NewParam_GetNiagaraEyeSystem                           (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Exploder_Tier1_Actor_Character_C::GetNiagaraEyeSystem(class UNiagaraComponent** NewParam)
+void ABP_Exploder_Tier1_Actor_Character_C::GetNiagaraEyeSystem(class UNiagaraComponent** NewParam_GetNiagaraEyeSystem)
 {
 	static class UFunction* Func = nullptr;
 
@@ -250,8 +250,8 @@ void ABP_Exploder_Tier1_Actor_Character_C::GetNiagaraEyeSystem(class UNiagaraCom
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (NewParam != nullptr)
-		*NewParam = Parms.NewParam;
+	if (NewParam_GetNiagaraEyeSystem != nullptr)
+		*NewParam_GetNiagaraEyeSystem = Parms.NewParam_GetNiagaraEyeSystem;
 }
 
 
@@ -298,9 +298,9 @@ bool ABP_Exploder_Tier1_Actor_Character_C::ShouldSpawnHugeCollision() const
 // Function BP_Exploder_Tier1_Actor_Character.BP_Exploder_Tier1_Actor_Character_C.OnMeshVisibilityUpdated
 // (Event, Public, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// bool                                    bIsMeshHidden                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bIsMeshHidden_OnMeshVisibilityUpdated                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Exploder_Tier1_Actor_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidden) const
+void ABP_Exploder_Tier1_Actor_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidden_OnMeshVisibilityUpdated) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -309,7 +309,7 @@ void ABP_Exploder_Tier1_Actor_Character_C::OnMeshVisibilityUpdated(bool bIsMeshH
 
 	Params::BP_Exploder_Tier1_Actor_Character_C_OnMeshVisibilityUpdated Parms{};
 
-	Parms.bIsMeshHidden = bIsMeshHidden;
+	Parms.bIsMeshHidden_OnMeshVisibilityUpdated = bIsMeshHidden_OnMeshVisibilityUpdated;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

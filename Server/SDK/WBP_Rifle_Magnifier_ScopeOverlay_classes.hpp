@@ -53,7 +53,7 @@ public:
 public:
 	void UpdateOverlayColors();
 	void UpdateCrosshairSpread(double Delta_Seconds);
-	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
+	void Tick(const struct FGeometry& MyGeometry_Tick, float InDeltaTime_Tick);
 	void PawnChanged(class APawn* OldPawn, class APawn* NewPawn);
 	void OnTagRemoved_D02CEFB39C498EBE74FA8694A90AFD2C(const struct FGameplayTag& Tag);
 	void OnTagAdded_D02CEFB39C498EBE74FA8694A90AFD2C(const struct FGameplayTag& Tag);

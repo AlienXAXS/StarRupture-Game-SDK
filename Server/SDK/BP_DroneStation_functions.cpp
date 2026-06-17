@@ -75,9 +75,9 @@ void ABP_DroneStation_C::ReceiveBeginPlay()
 // Function BP_DroneStation.BP_DroneStation_C.PostPlayBuildingEffect
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    bWasBuildingEffectPlayed                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bWasBuildingEffectPlayed_PostPlayBuildingEffect        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_DroneStation_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
+void ABP_DroneStation_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed_PostPlayBuildingEffect)
 {
 	static class UFunction* Func = nullptr;
 
@@ -86,7 +86,7 @@ void ABP_DroneStation_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
 
 	Params::BP_DroneStation_C_PostPlayBuildingEffect Parms{};
 
-	Parms.bWasBuildingEffectPlayed = bWasBuildingEffectPlayed;
+	Parms.bWasBuildingEffectPlayed_PostPlayBuildingEffect = bWasBuildingEffectPlayed_PostPlayBuildingEffect;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

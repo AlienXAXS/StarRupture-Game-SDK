@@ -105,7 +105,7 @@ DUMPER7_ASSERTS_BP_Modular_Ladder_C_RemoveCharacterFromLadder;
 struct BP_Modular_Ladder_C_ReceiveTick final
 {
 public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         DeltaSeconds_ReceiveTick;                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Modular_Ladder_C_ReceiveTick;
 
@@ -114,7 +114,7 @@ DUMPER7_ASSERTS_BP_Modular_Ladder_C_ReceiveTick;
 struct BP_Modular_Ladder_C_ReceiveEndPlay final
 {
 public:
-	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEndPlayReason                                EndPlayReason_ReceiveEndPlay;                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Modular_Ladder_C_ReceiveEndPlay;
 

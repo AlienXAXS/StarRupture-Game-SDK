@@ -24,9 +24,9 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_BP_CoolerPassive_Tiles_C;           // 0x0880(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ReceiveTick(float DeltaSeconds);
+	void ReceiveTick(float DeltaSeconds_ReceiveTick);
 	void ReceiveBeginPlay();
-	void ReceiveActorBeginOverlap(class AActor* OtherActor);
+	void ReceiveActorBeginOverlap(class AActor* OtherActor_ReceiveActorBeginOverlap);
 	void ExecuteUbergraph_BP_CoolerPassive_Tiles(int32 EntryPoint);
 
 public:

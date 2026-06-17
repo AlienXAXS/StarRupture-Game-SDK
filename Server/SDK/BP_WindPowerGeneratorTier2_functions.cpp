@@ -33,9 +33,9 @@ void ABP_WindPowerGeneratorTier2_C::ReceiveBeginPlay()
 // Function BP_WindPowerGeneratorTier2.BP_WindPowerGeneratorTier2_C.PostPlayBuildingEffect
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    bWasBuildingEffectPlayed                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bWasBuildingEffectPlayed_PostPlayBuildingEffect        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_WindPowerGeneratorTier2_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
+void ABP_WindPowerGeneratorTier2_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed_PostPlayBuildingEffect)
 {
 	static class UFunction* Func = nullptr;
 
@@ -44,7 +44,7 @@ void ABP_WindPowerGeneratorTier2_C::PostPlayBuildingEffect(bool bWasBuildingEffe
 
 	Params::BP_WindPowerGeneratorTier2_C_PostPlayBuildingEffect Parms{};
 
-	Parms.bWasBuildingEffectPlayed = bWasBuildingEffectPlayed;
+	Parms.bWasBuildingEffectPlayed_PostPlayBuildingEffect = bWasBuildingEffectPlayed_PostPlayBuildingEffect;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

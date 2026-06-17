@@ -19,9 +19,9 @@ SDK_NAMESPACE_START
 // Function BP_Ranged_Tier2_LOD0_DamageAura.BP_Ranged_Tier2_LOD0_DamageAura_C.ReceiveActorEndOverlap
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class AActor*                           OtherActor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           OtherActor_ReceiveActorEndOverlap                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Ranged_Tier2_LOD0_DamageAura_C::ReceiveActorEndOverlap(class AActor* OtherActor)
+void ABP_Ranged_Tier2_LOD0_DamageAura_C::ReceiveActorEndOverlap(class AActor* OtherActor_ReceiveActorEndOverlap)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,7 +30,7 @@ void ABP_Ranged_Tier2_LOD0_DamageAura_C::ReceiveActorEndOverlap(class AActor* Ot
 
 	Params::BP_Ranged_Tier2_LOD0_DamageAura_C_ReceiveActorEndOverlap Parms{};
 
-	Parms.OtherActor = OtherActor;
+	Parms.OtherActor_ReceiveActorEndOverlap = OtherActor_ReceiveActorEndOverlap;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -39,9 +39,9 @@ void ABP_Ranged_Tier2_LOD0_DamageAura_C::ReceiveActorEndOverlap(class AActor* Ot
 // Function BP_Ranged_Tier2_LOD0_DamageAura.BP_Ranged_Tier2_LOD0_DamageAura_C.ReceiveActorBeginOverlap
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class AActor*                           OtherActor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           OtherActor_ReceiveActorBeginOverlap                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Ranged_Tier2_LOD0_DamageAura_C::ReceiveActorBeginOverlap(class AActor* OtherActor)
+void ABP_Ranged_Tier2_LOD0_DamageAura_C::ReceiveActorBeginOverlap(class AActor* OtherActor_ReceiveActorBeginOverlap)
 {
 	static class UFunction* Func = nullptr;
 
@@ -50,7 +50,7 @@ void ABP_Ranged_Tier2_LOD0_DamageAura_C::ReceiveActorBeginOverlap(class AActor* 
 
 	Params::BP_Ranged_Tier2_LOD0_DamageAura_C_ReceiveActorBeginOverlap Parms{};
 
-	Parms.OtherActor = OtherActor;
+	Parms.OtherActor_ReceiveActorBeginOverlap = OtherActor_ReceiveActorBeginOverlap;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -25,7 +25,7 @@ public:
 	class UTextBlock*                             Index_0;                                           // 0x03C8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void OnDataRefresh(int32 Param_Index_0);
+	void OnDataRefresh(int32 Index_OnDataRefresh);
 	void ExecuteUbergraph_WBP_QuickUseEntry(int32 EntryPoint);
 
 public:

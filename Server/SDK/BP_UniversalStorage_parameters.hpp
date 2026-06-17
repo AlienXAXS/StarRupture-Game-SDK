@@ -21,7 +21,7 @@ SDK_PARAM_NAMESPACE_START
 struct BP_UniversalStorage_C_PostPlayBuildingEffect final
 {
 public:
-	bool                                          bWasBuildingEffectPlayed;                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bWasBuildingEffectPlayed_PostPlayBuildingEffect;   // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_UniversalStorage_C_PostPlayBuildingEffect;
 

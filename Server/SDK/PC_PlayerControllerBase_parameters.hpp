@@ -99,8 +99,8 @@ DUMPER7_ASSERTS_PC_PlayerControllerBase_C_cheat_Teleport2player;
 struct PC_PlayerControllerBase_C_CanInputKeyBePassedFromUIOnlyMode final
 {
 public:
-	struct FKey                                   Key;                                               // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
-	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FKey                                   Key_CanInputKeyBePassedFromUIOnlyMode;             // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+	bool                                          ReturnValue_CanInputKeyBePassedFromUIOnlyMode;     // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_KeyKey_ReturnValue;            // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_PC_PlayerControllerBase_C_CanInputKeyBePassedFromUIOnlyMode;

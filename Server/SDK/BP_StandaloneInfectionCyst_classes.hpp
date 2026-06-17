@@ -63,9 +63,9 @@ public:
 	void Set_half_time();
 	void Scale_cyst__UpdateFunc();
 	void Scale_cyst__FinishedFunc();
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay);
 	void ReceiveBeginPlay();
-	void OnGrowthProgress(float Progress);
+	void OnGrowthProgress(float Progress_OnGrowthProgress);
 	void OnDamageTaken_Multicast();
 	void K2_OnDamageTaken_1(class AActor* InInstigator, const struct FHitResult& HitResult, float InDamage);
 	void Infection_grow();
@@ -78,7 +78,7 @@ public:
 	void Dissolve__FinishedFunc();
 	void BP_OnInfectionJustSpawned();
 	void BP_OnDestroyed();
-	void BP_OnDamageProtectionChanged(bool IsActive);
+	void BP_OnDamageProtectionChanged(bool IsActive_BP_OnDamageProtectionChanged);
 
 public:
 	static class UClass* StaticClass()

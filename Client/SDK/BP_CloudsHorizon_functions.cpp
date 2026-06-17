@@ -123,9 +123,9 @@ void ABP_CloudsHorizon_C::ReceiveBeginPlay()
 // Function BP_CloudsHorizon.BP_CloudsHorizon_C.OnDataLayerDeactivate_Exec
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    FromLoad                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    FromLoad_OnDataLayerDeactivate_Exec                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_CloudsHorizon_C::OnDataLayerDeactivate_Exec(bool FromLoad)
+void ABP_CloudsHorizon_C::OnDataLayerDeactivate_Exec(bool FromLoad_OnDataLayerDeactivate_Exec)
 {
 	static class UFunction* Func = nullptr;
 
@@ -134,7 +134,7 @@ void ABP_CloudsHorizon_C::OnDataLayerDeactivate_Exec(bool FromLoad)
 
 	Params::BP_CloudsHorizon_C_OnDataLayerDeactivate_Exec Parms{};
 
-	Parms.FromLoad = FromLoad;
+	Parms.FromLoad_OnDataLayerDeactivate_Exec = FromLoad_OnDataLayerDeactivate_Exec;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -143,9 +143,9 @@ void ABP_CloudsHorizon_C::OnDataLayerDeactivate_Exec(bool FromLoad)
 // Function BP_CloudsHorizon.BP_CloudsHorizon_C.OnDataLayerActivate_Exec
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    FromLoad                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    FromLoad_OnDataLayerActivate_Exec                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_CloudsHorizon_C::OnDataLayerActivate_Exec(bool FromLoad)
+void ABP_CloudsHorizon_C::OnDataLayerActivate_Exec(bool FromLoad_OnDataLayerActivate_Exec)
 {
 	static class UFunction* Func = nullptr;
 
@@ -154,7 +154,7 @@ void ABP_CloudsHorizon_C::OnDataLayerActivate_Exec(bool FromLoad)
 
 	Params::BP_CloudsHorizon_C_OnDataLayerActivate_Exec Parms{};
 
-	Parms.FromLoad = FromLoad;
+	Parms.FromLoad_OnDataLayerActivate_Exec = FromLoad_OnDataLayerActivate_Exec;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -163,10 +163,10 @@ void ABP_CloudsHorizon_C::OnDataLayerActivate_Exec(bool FromLoad)
 // Function BP_CloudsHorizon.BP_CloudsHorizon_C.Is Current Data Layer
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UDataLayerInstance*               DataLayer_0                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class UDataLayerInstance*               DataLayer                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool*                                   Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_CloudsHorizon_C::Is_Current_Data_Layer(class UDataLayerInstance* DataLayer_0, bool* Result)
+void ABP_CloudsHorizon_C::Is_Current_Data_Layer(class UDataLayerInstance* DataLayer, bool* Result)
 {
 	static class UFunction* Func = nullptr;
 
@@ -175,7 +175,7 @@ void ABP_CloudsHorizon_C::Is_Current_Data_Layer(class UDataLayerInstance* DataLa
 
 	Params::BP_CloudsHorizon_C_Is_Current_Data_Layer Parms{};
 
-	Parms.DataLayer_0 = DataLayer_0;
+	Parms.DataLayer = DataLayer;
 
 	UObject::ProcessEvent(Func, &Parms);
 

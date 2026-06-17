@@ -19,9 +19,9 @@ SDK_NAMESPACE_START
 // Function BP_RailDroneBase.BP_RailDroneBase_C.OnRequestInvalidStateChanged
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    bAborted                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bAborted_OnRequestInvalidStateChanged                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_RailDroneBase_C::OnRequestInvalidStateChanged(bool bAborted)
+void ABP_RailDroneBase_C::OnRequestInvalidStateChanged(bool bAborted_OnRequestInvalidStateChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,7 +30,7 @@ void ABP_RailDroneBase_C::OnRequestInvalidStateChanged(bool bAborted)
 
 	Params::BP_RailDroneBase_C_OnRequestInvalidStateChanged Parms{};
 
-	Parms.bAborted = bAborted;
+	Parms.bAborted_OnRequestInvalidStateChanged = bAborted_OnRequestInvalidStateChanged;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -81,9 +81,9 @@ void ABP_RailDroneBase_C::OnPickUpRequested()
 // Function BP_RailDroneBase.BP_RailDroneBase_C.OnCarriedItemChanged
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// const struct FAuSimpleItem&             Item                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FAuSimpleItem&             Item_OnCarriedItemChanged                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
-void ABP_RailDroneBase_C::OnCarriedItemChanged(const struct FAuSimpleItem& Item)
+void ABP_RailDroneBase_C::OnCarriedItemChanged(const struct FAuSimpleItem& Item_OnCarriedItemChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -92,7 +92,7 @@ void ABP_RailDroneBase_C::OnCarriedItemChanged(const struct FAuSimpleItem& Item)
 
 	Params::BP_RailDroneBase_C_OnCarriedItemChanged Parms{};
 
-	Parms.Item = std::move(Item);
+	Parms.Item_OnCarriedItemChanged = std::move(Item_OnCarriedItemChanged);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -121,7 +121,7 @@ void ABP_RailDroneBase_C::ExecuteUbergraph_BP_RailDroneBase(int32 EntryPoint)
 // Function BP_RailDroneBase.BP_RailDroneBase_C.GetCargoComponent
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// class UStaticMeshComponent*             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UStaticMeshComponent*             ReturnValue_GetCargoComponent                          (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 class UStaticMeshComponent* ABP_RailDroneBase_C::GetCargoComponent() const
 {

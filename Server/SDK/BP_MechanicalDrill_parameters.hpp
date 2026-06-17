@@ -21,7 +21,7 @@ SDK_PARAM_NAMESPACE_START
 struct BP_MechanicalDrill_C_OnResourceDetected final
 {
 public:
-	TSubclassOf<class UCrItemDataBase>            OreItemClass;                                      // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	TSubclassOf<class UCrItemDataBase>            OreItemClass_OnResourceDetected;                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_MechanicalDrill_C_OnResourceDetected;
 
@@ -30,7 +30,7 @@ DUMPER7_ASSERTS_BP_MechanicalDrill_C_OnResourceDetected;
 struct BP_MechanicalDrill_C_OnBuildingStateChanged final
 {
 public:
-	ECrBuildingState                              InState;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECrBuildingState                              InState_OnBuildingStateChanged;                    // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_MechanicalDrill_C_OnBuildingStateChanged;
 

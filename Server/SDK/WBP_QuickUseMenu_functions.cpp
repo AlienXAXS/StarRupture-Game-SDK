@@ -33,11 +33,11 @@ void UWBP_QuickUseMenu_C::OnMenuOpened()
 // Function WBP_QuickUseMenu.WBP_QuickUseMenu_C.OnCurrentEntryIndexChange
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   NumberOfEntries                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    bActive                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Index_OnCurrentEntryIndexChange                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   NumberOfEntries_OnCurrentEntryIndexChange              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bActive_OnCurrentEntryIndexChange                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_QuickUseMenu_C::OnCurrentEntryIndexChange(int32 Index_0, int32 NumberOfEntries, bool bActive)
+void UWBP_QuickUseMenu_C::OnCurrentEntryIndexChange(int32 Index_OnCurrentEntryIndexChange, int32 NumberOfEntries_OnCurrentEntryIndexChange, bool bActive_OnCurrentEntryIndexChange)
 {
 	static class UFunction* Func = nullptr;
 
@@ -46,9 +46,9 @@ void UWBP_QuickUseMenu_C::OnCurrentEntryIndexChange(int32 Index_0, int32 NumberO
 
 	Params::WBP_QuickUseMenu_C_OnCurrentEntryIndexChange Parms{};
 
-	Parms.Index_0 = Index_0;
-	Parms.NumberOfEntries = NumberOfEntries;
-	Parms.bActive = bActive;
+	Parms.Index_OnCurrentEntryIndexChange = Index_OnCurrentEntryIndexChange;
+	Parms.NumberOfEntries_OnCurrentEntryIndexChange = NumberOfEntries_OnCurrentEntryIndexChange;
+	Parms.bActive_OnCurrentEntryIndexChange = bActive_OnCurrentEntryIndexChange;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

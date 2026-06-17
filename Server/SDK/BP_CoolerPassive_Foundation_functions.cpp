@@ -19,9 +19,9 @@ SDK_NAMESPACE_START
 // Function BP_CoolerPassive_Foundation.BP_CoolerPassive_Foundation_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaSeconds_ReceiveTick                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_CoolerPassive_Foundation_C::ReceiveTick(float DeltaSeconds)
+void ABP_CoolerPassive_Foundation_C::ReceiveTick(float DeltaSeconds_ReceiveTick)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,7 +30,7 @@ void ABP_CoolerPassive_Foundation_C::ReceiveTick(float DeltaSeconds)
 
 	Params::BP_CoolerPassive_Foundation_C_ReceiveTick Parms{};
 
-	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.DeltaSeconds_ReceiveTick = DeltaSeconds_ReceiveTick;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -53,9 +53,9 @@ void ABP_CoolerPassive_Foundation_C::ReceiveBeginPlay()
 // Function BP_CoolerPassive_Foundation.BP_CoolerPassive_Foundation_C.ReceiveActorBeginOverlap
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class AActor*                           OtherActor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           OtherActor_ReceiveActorBeginOverlap                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_CoolerPassive_Foundation_C::ReceiveActorBeginOverlap(class AActor* OtherActor)
+void ABP_CoolerPassive_Foundation_C::ReceiveActorBeginOverlap(class AActor* OtherActor_ReceiveActorBeginOverlap)
 {
 	static class UFunction* Func = nullptr;
 
@@ -64,7 +64,7 @@ void ABP_CoolerPassive_Foundation_C::ReceiveActorBeginOverlap(class AActor* Othe
 
 	Params::BP_CoolerPassive_Foundation_C_ReceiveActorBeginOverlap Parms{};
 
-	Parms.OtherActor = OtherActor;
+	Parms.OtherActor_ReceiveActorBeginOverlap = OtherActor_ReceiveActorBeginOverlap;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

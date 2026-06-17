@@ -89,7 +89,7 @@ void ABP_Foundable_FE_ControllStation_C::ReceiveBeginPlay()
 // Function BP_Foundable_FE_ControllStation.BP_Foundable_FE_ControllStation_C.OnStorageEmptied
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue_OnStorageEmptied                           (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool ABP_Foundable_FE_ControllStation_C::OnStorageEmptied()
 {

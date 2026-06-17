@@ -33,9 +33,9 @@ void ABP_DroneRailSupportHelper_C::UserConstructionScript()
 // Function BP_DroneRailSupportHelper.BP_DroneRailSupportHelper_C.SetMeshColor
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              Color_SetMeshColor                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_DroneRailSupportHelper_C::SetMeshColor(const struct FLinearColor& Color)
+void ABP_DroneRailSupportHelper_C::SetMeshColor(const struct FLinearColor& Color_SetMeshColor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -44,7 +44,7 @@ void ABP_DroneRailSupportHelper_C::SetMeshColor(const struct FLinearColor& Color
 
 	Params::BP_DroneRailSupportHelper_C_SetMeshColor Parms{};
 
-	Parms.Color = std::move(Color);
+	Parms.Color_SetMeshColor = std::move(Color_SetMeshColor);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -53,9 +53,9 @@ void ABP_DroneRailSupportHelper_C::SetMeshColor(const struct FLinearColor& Color
 // Function BP_DroneRailSupportHelper.BP_DroneRailSupportHelper_C.OnFoundationSetUp
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// const TArray<struct FTransform>&        FoundationTransforms                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const TArray<struct FTransform>&        FoundationTransforms_OnFoundationSetUp                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
-void ABP_DroneRailSupportHelper_C::OnFoundationSetUp(const TArray<struct FTransform>& FoundationTransforms)
+void ABP_DroneRailSupportHelper_C::OnFoundationSetUp(const TArray<struct FTransform>& FoundationTransforms_OnFoundationSetUp)
 {
 	static class UFunction* Func = nullptr;
 
@@ -64,7 +64,7 @@ void ABP_DroneRailSupportHelper_C::OnFoundationSetUp(const TArray<struct FTransf
 
 	Params::BP_DroneRailSupportHelper_C_OnFoundationSetUp Parms{};
 
-	Parms.FoundationTransforms = std::move(FoundationTransforms);
+	Parms.FoundationTransforms_OnFoundationSetUp = std::move(FoundationTransforms_OnFoundationSetUp);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

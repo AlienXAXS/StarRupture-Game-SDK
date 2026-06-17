@@ -129,11 +129,11 @@ void ABP_FireWaveMeteOreChunk_C::BP_OnSpawnedWithResourceDepleted()
 // Function BP_FireWaveMeteOreChunk.BP_FireWaveMeteOreChunk_C.BP_OnGrowbackSubstageChanged
 // (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
-// const struct FCrEnviroWaveSettings&     Settings                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-// EEnviroWaveGrowbackSubstage             Substage                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   Progress                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FCrEnviroWaveSettings&     Settings_BP_OnGrowbackSubstageChanged                  (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+// EEnviroWaveGrowbackSubstage             Substage_BP_OnGrowbackSubstageChanged                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   Progress_BP_OnGrowbackSubstageChanged                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_FireWaveMeteOreChunk_C::BP_OnGrowbackSubstageChanged(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveGrowbackSubstage Substage, float Progress)
+void ABP_FireWaveMeteOreChunk_C::BP_OnGrowbackSubstageChanged(const struct FCrEnviroWaveSettings& Settings_BP_OnGrowbackSubstageChanged, EEnviroWaveGrowbackSubstage Substage_BP_OnGrowbackSubstageChanged, float Progress_BP_OnGrowbackSubstageChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -142,9 +142,9 @@ void ABP_FireWaveMeteOreChunk_C::BP_OnGrowbackSubstageChanged(const struct FCrEn
 
 	Params::BP_FireWaveMeteOreChunk_C_BP_OnGrowbackSubstageChanged Parms{};
 
-	Parms.Settings = std::move(Settings);
-	Parms.Substage = Substage;
-	Parms.Progress = Progress;
+	Parms.Settings_BP_OnGrowbackSubstageChanged = std::move(Settings_BP_OnGrowbackSubstageChanged);
+	Parms.Substage_BP_OnGrowbackSubstageChanged = Substage_BP_OnGrowbackSubstageChanged;
+	Parms.Progress_BP_OnGrowbackSubstageChanged = Progress_BP_OnGrowbackSubstageChanged;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -153,12 +153,12 @@ void ABP_FireWaveMeteOreChunk_C::BP_OnGrowbackSubstageChanged(const struct FCrEn
 // Function BP_FireWaveMeteOreChunk.BP_FireWaveMeteOreChunk_C.BP_OnEnviroWaveStarted
 // (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
-// EEnviroWave                             InWaveType                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EEnviroWaveStage                        InWaveStage                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FCrEnviroWaveSettings&     InWaveSettings                                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-// float                                   InWaveProgress                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEnviroWave                             InWaveType_BP_OnEnviroWaveStarted                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEnviroWaveStage                        InWaveStage_BP_OnEnviroWaveStarted                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FCrEnviroWaveSettings&     InWaveSettings_BP_OnEnviroWaveStarted                  (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+// float                                   InWaveProgress_BP_OnEnviroWaveStarted                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_FireWaveMeteOreChunk_C::BP_OnEnviroWaveStarted(EEnviroWave InWaveType, EEnviroWaveStage InWaveStage, const struct FCrEnviroWaveSettings& InWaveSettings, float InWaveProgress)
+void ABP_FireWaveMeteOreChunk_C::BP_OnEnviroWaveStarted(EEnviroWave InWaveType_BP_OnEnviroWaveStarted, EEnviroWaveStage InWaveStage_BP_OnEnviroWaveStarted, const struct FCrEnviroWaveSettings& InWaveSettings_BP_OnEnviroWaveStarted, float InWaveProgress_BP_OnEnviroWaveStarted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -167,10 +167,10 @@ void ABP_FireWaveMeteOreChunk_C::BP_OnEnviroWaveStarted(EEnviroWave InWaveType, 
 
 	Params::BP_FireWaveMeteOreChunk_C_BP_OnEnviroWaveStarted Parms{};
 
-	Parms.InWaveType = InWaveType;
-	Parms.InWaveStage = InWaveStage;
-	Parms.InWaveSettings = std::move(InWaveSettings);
-	Parms.InWaveProgress = InWaveProgress;
+	Parms.InWaveType_BP_OnEnviroWaveStarted = InWaveType_BP_OnEnviroWaveStarted;
+	Parms.InWaveStage_BP_OnEnviroWaveStarted = InWaveStage_BP_OnEnviroWaveStarted;
+	Parms.InWaveSettings_BP_OnEnviroWaveStarted = std::move(InWaveSettings_BP_OnEnviroWaveStarted);
+	Parms.InWaveProgress_BP_OnEnviroWaveStarted = InWaveProgress_BP_OnEnviroWaveStarted;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

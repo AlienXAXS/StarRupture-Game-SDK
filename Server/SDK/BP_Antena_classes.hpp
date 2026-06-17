@@ -57,15 +57,15 @@ public:
 
 public:
 	void StopLoopSound();
-	void SetUI(ECrAntennaState InState, const struct FLinearColor& InColor);
+	void SetUI(ECrAntennaState InState_SetUI, const struct FLinearColor& InColor_SetUI);
 	void Set_Display_State(ECrAntennaState AntennaState, const struct FLinearColor& Color);
-	void ReceiveTick(float DeltaSeconds);
+	void ReceiveTick(float DeltaSeconds_ReceiveTick);
 	void ReceiveBeginPlay();
 	bool PlayInteractionUnSuccessfulSound();
 	bool PlayInteractionSuccessfulSound();
-	void OnStateChanged(ECrAntennaState NewState);
+	void OnStateChanged(ECrAntennaState NewState_OnStateChanged);
 	void OnInfectionTaken();
-	void OnChargingProgressUpdate(float Progress);
+	void OnChargingProgressUpdate(float Progress_OnChargingProgressUpdate);
 	void OnActivatedFromLoad();
 	void OnActivated();
 	void Finalization_progress__UpdateFunc();

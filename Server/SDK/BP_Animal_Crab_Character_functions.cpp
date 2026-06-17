@@ -75,9 +75,9 @@ void ABP_Animal_Crab_Character_C::SimulateCatch()
 // Function BP_Animal_Crab_Character.BP_Animal_Crab_Character_C.SetTentaclesHidden
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    bHidden_0                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bHidden                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Animal_Crab_Character_C::SetTentaclesHidden(bool bHidden_0)
+void ABP_Animal_Crab_Character_C::SetTentaclesHidden(bool bHidden)
 {
 	static class UFunction* Func = nullptr;
 
@@ -86,7 +86,7 @@ void ABP_Animal_Crab_Character_C::SetTentaclesHidden(bool bHidden_0)
 
 	Params::BP_Animal_Crab_Character_C_SetTentaclesHidden Parms{};
 
-	Parms.bHidden_0 = bHidden_0;
+	Parms.bHidden = bHidden;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -135,9 +135,9 @@ void ABP_Animal_Crab_Character_C::RegisterFXEvent(const struct FGameplayTag& FXE
 // Function BP_Animal_Crab_Character.BP_Animal_Crab_Character_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float                                   DeltaSeconds_0                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaSeconds_ReceiveTick                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Animal_Crab_Character_C::ReceiveTick(float DeltaSeconds_0)
+void ABP_Animal_Crab_Character_C::ReceiveTick(float DeltaSeconds_ReceiveTick)
 {
 	static class UFunction* Func = nullptr;
 
@@ -146,7 +146,7 @@ void ABP_Animal_Crab_Character_C::ReceiveTick(float DeltaSeconds_0)
 
 	Params::BP_Animal_Crab_Character_C_ReceiveTick Parms{};
 
-	Parms.DeltaSeconds_0 = DeltaSeconds_0;
+	Parms.DeltaSeconds_ReceiveTick = DeltaSeconds_ReceiveTick;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -155,9 +155,9 @@ void ABP_Animal_Crab_Character_C::ReceiveTick(float DeltaSeconds_0)
 // Function BP_Animal_Crab_Character.BP_Animal_Crab_Character_C.ReceiveEndPlay
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEndPlayReason                          EndPlayReason_ReceiveEndPlay                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Animal_Crab_Character_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
+void ABP_Animal_Crab_Character_C::ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay)
 {
 	static class UFunction* Func = nullptr;
 
@@ -166,7 +166,7 @@ void ABP_Animal_Crab_Character_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 
 	Params::BP_Animal_Crab_Character_C_ReceiveEndPlay Parms{};
 
-	Parms.EndPlayReason = EndPlayReason;
+	Parms.EndPlayReason_ReceiveEndPlay = EndPlayReason_ReceiveEndPlay;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -319,9 +319,9 @@ bool ABP_Animal_Crab_Character_C::AreTentaclesHidden()
 // Function BP_Animal_Crab_Character.BP_Animal_Crab_Character_C.OnMeshVisibilityUpdated
 // (Event, Public, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// bool                                    bIsMeshHidden                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bIsMeshHidden_OnMeshVisibilityUpdated                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Animal_Crab_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidden) const
+void ABP_Animal_Crab_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidden_OnMeshVisibilityUpdated) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -330,7 +330,7 @@ void ABP_Animal_Crab_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidden) co
 
 	Params::BP_Animal_Crab_Character_C_OnMeshVisibilityUpdated Parms{};
 
-	Parms.bIsMeshHidden = bIsMeshHidden;
+	Parms.bIsMeshHidden_OnMeshVisibilityUpdated = bIsMeshHidden_OnMeshVisibilityUpdated;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

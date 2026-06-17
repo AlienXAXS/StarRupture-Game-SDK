@@ -21,11 +21,11 @@ SDK_PARAM_NAMESPACE_START
 struct BP_HabitatWindowsFireBig_C_OnEnviroWaveTick final
 {
 public:
-	EEnviroWave                                   WaveType;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EEnviroWaveStage                              WaveStage;                                         // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEnviroWave                                   WaveType_OnEnviroWaveTick;                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEnviroWaveStage                              WaveStage_OnEnviroWaveTick;                        // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrEnviroWaveSettings                  WaveSettings;                                      // 0x0004(0x002C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-	float                                         WaveProgress;                                      // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FCrEnviroWaveSettings                  WaveSettings_OnEnviroWaveTick;                     // 0x0004(0x002C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+	float                                         WaveProgress_OnEnviroWaveTick;                     // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_HabitatWindowsFireBig_C_OnEnviroWaveTick;
 
@@ -34,11 +34,11 @@ DUMPER7_ASSERTS_BP_HabitatWindowsFireBig_C_OnEnviroWaveTick;
 struct BP_HabitatWindowsFireBig_C_OnEnviroWaveStarted final
 {
 public:
-	EEnviroWave                                   WaveType;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EEnviroWaveStage                              WaveStage;                                         // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEnviroWave                                   WaveType_OnEnviroWaveStarted;                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEnviroWaveStage                              WaveStage_OnEnviroWaveStarted;                     // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrEnviroWaveSettings                  WaveSettings;                                      // 0x0004(0x002C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-	float                                         WaveProgress;                                      // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FCrEnviroWaveSettings                  WaveSettings_OnEnviroWaveStarted;                  // 0x0004(0x002C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+	float                                         WaveProgress_OnEnviroWaveStarted;                  // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_HabitatWindowsFireBig_C_OnEnviroWaveStarted;
 
@@ -47,11 +47,11 @@ DUMPER7_ASSERTS_BP_HabitatWindowsFireBig_C_OnEnviroWaveStarted;
 struct BP_HabitatWindowsFireBig_C_OnEnviroWaveForced final
 {
 public:
-	EEnviroWave                                   WaveType;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EEnviroWaveStage                              WaveStage;                                         // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEnviroWave                                   WaveType_OnEnviroWaveForced;                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEnviroWaveStage                              WaveStage_OnEnviroWaveForced;                      // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrEnviroWaveSettings                  WaveSettings;                                      // 0x0004(0x002C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-	float                                         WaveProgress;                                      // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FCrEnviroWaveSettings                  WaveSettings_OnEnviroWaveForced;                   // 0x0004(0x002C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+	float                                         WaveProgress_OnEnviroWaveForced;                   // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_HabitatWindowsFireBig_C_OnEnviroWaveForced;
 
@@ -60,9 +60,9 @@ DUMPER7_ASSERTS_BP_HabitatWindowsFireBig_C_OnEnviroWaveForced;
 struct BP_HabitatWindowsFireBig_C_OnEnviroWaveFinished final
 {
 public:
-	EEnviroWave                                   WaveType;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEnviroWave                                   WaveType_OnEnviroWaveFinished;                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrEnviroWaveSettings                  WaveSettings;                                      // 0x0004(0x002C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+	struct FCrEnviroWaveSettings                  WaveSettings_OnEnviroWaveFinished;                 // 0x0004(0x002C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_HabitatWindowsFireBig_C_OnEnviroWaveFinished;
 
@@ -71,10 +71,10 @@ DUMPER7_ASSERTS_BP_HabitatWindowsFireBig_C_OnEnviroWaveFinished;
 struct BP_HabitatWindowsFireBig_C_OnEnviroWaveCanceled final
 {
 public:
-	EEnviroWave                                   WaveType;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EEnviroWaveStage                              WaveStage;                                         // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEnviroWave                                   WaveType_OnEnviroWaveCanceled;                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEnviroWaveStage                              WaveStage_OnEnviroWaveCanceled;                    // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrEnviroWaveSettings                  WaveSettings;                                      // 0x0004(0x002C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+	struct FCrEnviroWaveSettings                  WaveSettings_OnEnviroWaveCanceled;                 // 0x0004(0x002C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_HabitatWindowsFireBig_C_OnEnviroWaveCanceled;
 

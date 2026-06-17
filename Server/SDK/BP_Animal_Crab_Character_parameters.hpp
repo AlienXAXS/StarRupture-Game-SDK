@@ -24,7 +24,7 @@ SDK_PARAM_NAMESPACE_START
 struct BP_Animal_Crab_Character_C_SetTentaclesHidden final
 {
 public:
-	bool                                          bHidden_0;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bHidden;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Animal_Crab_Character_C_SetTentaclesHidden;
 
@@ -51,7 +51,7 @@ DUMPER7_ASSERTS_BP_Animal_Crab_Character_C_RegisterFXEvent;
 struct BP_Animal_Crab_Character_C_ReceiveTick final
 {
 public:
-	float                                         DeltaSeconds_0;                                    // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         DeltaSeconds_ReceiveTick;                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Animal_Crab_Character_C_ReceiveTick;
 
@@ -60,7 +60,7 @@ DUMPER7_ASSERTS_BP_Animal_Crab_Character_C_ReceiveTick;
 struct BP_Animal_Crab_Character_C_ReceiveEndPlay final
 {
 public:
-	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEndPlayReason                                EndPlayReason_ReceiveEndPlay;                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Animal_Crab_Character_C_ReceiveEndPlay;
 
@@ -234,7 +234,7 @@ DUMPER7_ASSERTS_BP_Animal_Crab_Character_C_AreTentaclesHidden;
 struct BP_Animal_Crab_Character_C_OnMeshVisibilityUpdated final
 {
 public:
-	bool                                          bIsMeshHidden;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bIsMeshHidden_OnMeshVisibilityUpdated;             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

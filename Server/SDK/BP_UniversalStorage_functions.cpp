@@ -61,9 +61,9 @@ void ABP_UniversalStorage_C::ReceiveBeginPlay()
 // Function BP_UniversalStorage.BP_UniversalStorage_C.PostPlayBuildingEffect
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    bWasBuildingEffectPlayed                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bWasBuildingEffectPlayed_PostPlayBuildingEffect        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_UniversalStorage_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
+void ABP_UniversalStorage_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed_PostPlayBuildingEffect)
 {
 	static class UFunction* Func = nullptr;
 
@@ -72,7 +72,7 @@ void ABP_UniversalStorage_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlaye
 
 	Params::BP_UniversalStorage_C_PostPlayBuildingEffect Parms{};
 
-	Parms.bWasBuildingEffectPlayed = bWasBuildingEffectPlayed;
+	Parms.bWasBuildingEffectPlayed_PostPlayBuildingEffect = bWasBuildingEffectPlayed_PostPlayBuildingEffect;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

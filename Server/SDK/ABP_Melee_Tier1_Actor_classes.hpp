@@ -253,8 +253,8 @@ public:
 	double                                        DesiredWalkAdditiveAlpha;                          // 0x3CD0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UpdateYawRotationRateForLocomotionState(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType);
-	void UpdateYawRotationRateForAttackType(ECrEnemyAttackType OldAttackType, ECrEnemyAttackType NewAttackType);
+	void UpdateYawRotationRateForLocomotionState(ECrEnemyLocomotionType OldLocomotionType_UpdateYawRotationRateForLocomotionState, ECrEnemyLocomotionType NewLocomotionType_UpdateYawRotationRateForLocomotionState);
+	void UpdateYawRotationRateForAttackType(ECrEnemyAttackType OldAttackType_UpdateYawRotationRateForAttackType, ECrEnemyAttackType NewAttackType_UpdateYawRotationRateForAttackType);
 	void ResetSyncedAnimProgress(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node);
 	void ExecuteUbergraph_ABP_Melee_Tier1_Actor(int32 EntryPoint);
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_FFCFF9FE470A19D60216DFB13B52B8EC();
@@ -312,10 +312,10 @@ public:
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_478531C5489FC81172876288B5972219();
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_2040AA4A44CBA72E035D738429D5D73D();
 	bool CanUseAddWalkAdditive();
-	void BPOnLocomotionTypeChanged(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType);
+	void BPOnLocomotionTypeChanged(ECrEnemyLocomotionType OldLocomotionType_BPOnLocomotionTypeChanged, ECrEnemyLocomotionType NewLocomotionType_BPOnLocomotionTypeChanged);
 	void BPOnDamageReceived();
-	void BPOnAttackTypeChanged(ECrEnemyAttackType OldAttackType, ECrEnemyAttackType NewAttackType);
-	void BlueprintUpdateAnimation(float DeltaTimeX);
+	void BPOnAttackTypeChanged(ECrEnemyAttackType OldAttackType_BPOnAttackTypeChanged, ECrEnemyAttackType NewAttackType_BPOnAttackTypeChanged);
+	void BlueprintUpdateAnimation(float DeltaTimeX_BlueprintUpdateAnimation);
 	void BlueprintBeginPlay();
 	void AttackConduitOnUpdate(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node);
 	void AnimNotify_OnTransition_Walk();
@@ -346,7 +346,7 @@ public:
 	void AnimNotify_EndAnimAction();
 	void AnimNotify_DealDamage();
 	void AnimNotify_AnimationFinishedEvent();
-	void AnimGraph(struct FPoseLink* AnimGraph_0);
+	void AnimGraph(struct FPoseLink* AnimGraph);
 
 public:
 	static class UClass* StaticClass()

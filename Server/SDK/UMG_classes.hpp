@@ -2392,8 +2392,8 @@ public:
 	ETextOverflowPolicy                           OverflowPolicy;                                    // 0x0483(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FShapedTextOptions                     ShapedTextOptions;                                 // 0x0484(0x0003)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 	uint8                                         Pad_487[0x1];                                      // 0x0487(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(const class FText& Text)> OnTextChanged;                           // 0x0488(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const class FText& Text, ETextCommit CommitMethod)> OnTextCommitted; // 0x04A0(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FText& Text_0)> OnTextChanged;                         // 0x0488(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FText& Text_0, ETextCommit CommitMethod)> OnTextCommitted; // 0x04A0(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_4B8[0x10];                                     // 0x04B8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          EnableIntegratedKeyboard;                          // 0x04C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_4C9[0x7];                                      // 0x04C9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -2460,8 +2460,8 @@ public:
 	ETextOverflowPolicy                           OverflowPolicy;                                    // 0x0E7B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FShapedTextOptions                     ShapedTextOptions;                                 // 0x0E7C(0x0003)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 	uint8                                         Pad_E7F[0x1];                                      // 0x0E7F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(const class FText& Text)> OnTextChanged;                           // 0x0E80(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const class FText& Text, ETextCommit CommitMethod)> OnTextCommitted; // 0x0E98(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FText& Text_0)> OnTextChanged;                         // 0x0E80(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FText& Text_0, ETextCommit CommitMethod)> OnTextCommitted; // 0x0E98(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_EB0[0x10];                                     // 0x0EB0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -2731,7 +2731,7 @@ public:
 	bool                                          bAllowGamepadKeys;                                 // 0x0851(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_852[0x6];                                      // 0x0852(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FKey>                           EscapeKeys;                                        // 0x0858(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const struct FInputChord& SelectedKey)> OnKeySelected;             // 0x0868(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FInputChord& SelectedKey_0)> OnKeySelected;           // 0x0868(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnIsSelectingKeyChanged;                           // 0x0880(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_898[0x18];                                     // 0x0898(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -2894,8 +2894,8 @@ public:
 	struct FVirtualKeyboardOptions                VirtualKeyboardOptions;                            // 0x04DA(0x0001)(Edit, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 	EVirtualKeyboardDismissAction                 VirtualKeyboardDismissAction;                      // 0x04DB(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_4DC[0x4];                                      // 0x04DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(const class FText& Text)> OnTextChanged;                           // 0x04E0(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const class FText& Text, ETextCommit CommitMethod)> OnTextCommitted; // 0x04F8(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FText& Text_0)> OnTextChanged;                         // 0x04E0(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FText& Text_0, ETextCommit CommitMethod)> OnTextCommitted; // 0x04F8(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_510[0x10];                                     // 0x0510(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -2945,8 +2945,8 @@ public:
 	bool                                          ModiferKeyForNewLineCommand;                       // 0x0E75(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVirtualKeyboardOptions                VirtualKeyboardOptions;                            // 0x0E76(0x0001)(Edit, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 	EVirtualKeyboardDismissAction                 VirtualKeyboardDismissAction;                      // 0x0E77(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const class FText& Text)> OnTextChanged;                           // 0x0E78(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const class FText& Text, ETextCommit CommitMethod)> OnTextCommitted; // 0x0E90(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FText& Text_0)> OnTextChanged;                         // 0x0E78(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FText& Text_0, ETextCommit CommitMethod)> OnTextCommitted; // 0x0E90(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_EA8[0x18];                                     // 0x0EA8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:

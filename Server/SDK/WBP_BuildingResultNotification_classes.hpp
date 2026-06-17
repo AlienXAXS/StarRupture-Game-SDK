@@ -27,7 +27,7 @@ public:
 	class UWidgetAnimation*                       Show;                                              // 0x03C0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, RepSkip, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnPlacementResultNotif(EAuAPPlacementResult PlacementResult);
+	void OnPlacementResultNotif(EAuAPPlacementResult PlacementResult_OnPlacementResultNotif);
 	void ExecuteUbergraph_WBP_BuildingResultNotification(int32 EntryPoint);
 
 public:

@@ -49,7 +49,7 @@ public:
 
 public:
 	void ExecuteUbergraph_BP_Gatherable_GoldFruitTree_Large_A(int32 EntryPoint);
-	void BP_OnLightsVisualsTriggered(bool bLightsOn);
+	void BP_OnLightsVisualsTriggered(bool bLightsOn_BP_OnLightsVisualsTriggered);
 
 public:
 	static class UClass* StaticClass()

@@ -61,9 +61,9 @@ void ABP_StandaloneInfectionCyst_C::Scale_cyst__FinishedFunc()
 // Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.ReceiveEndPlay
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEndPlayReason                          EndPlayReason_ReceiveEndPlay                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_StandaloneInfectionCyst_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
+void ABP_StandaloneInfectionCyst_C::ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay)
 {
 	static class UFunction* Func = nullptr;
 
@@ -72,7 +72,7 @@ void ABP_StandaloneInfectionCyst_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 
 	Params::BP_StandaloneInfectionCyst_C_ReceiveEndPlay Parms{};
 
-	Parms.EndPlayReason = EndPlayReason;
+	Parms.EndPlayReason_ReceiveEndPlay = EndPlayReason_ReceiveEndPlay;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -95,9 +95,9 @@ void ABP_StandaloneInfectionCyst_C::ReceiveBeginPlay()
 // Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.OnGrowthProgress
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// float                                   Progress                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   Progress_OnGrowthProgress                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_StandaloneInfectionCyst_C::OnGrowthProgress(float Progress)
+void ABP_StandaloneInfectionCyst_C::OnGrowthProgress(float Progress_OnGrowthProgress)
 {
 	static class UFunction* Func = nullptr;
 
@@ -106,7 +106,7 @@ void ABP_StandaloneInfectionCyst_C::OnGrowthProgress(float Progress)
 
 	Params::BP_StandaloneInfectionCyst_C_OnGrowthProgress Parms{};
 
-	Parms.Progress = Progress;
+	Parms.Progress_OnGrowthProgress = Progress_OnGrowthProgress;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -299,9 +299,9 @@ void ABP_StandaloneInfectionCyst_C::BP_OnDestroyed()
 // Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.BP_OnDamageProtectionChanged
 // (Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    IsActive                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsActive_BP_OnDamageProtectionChanged                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_StandaloneInfectionCyst_C::BP_OnDamageProtectionChanged(bool IsActive)
+void ABP_StandaloneInfectionCyst_C::BP_OnDamageProtectionChanged(bool IsActive_BP_OnDamageProtectionChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -310,7 +310,7 @@ void ABP_StandaloneInfectionCyst_C::BP_OnDamageProtectionChanged(bool IsActive)
 
 	Params::BP_StandaloneInfectionCyst_C_BP_OnDamageProtectionChanged Parms{};
 
-	Parms.IsActive = IsActive;
+	Parms.IsActive_BP_OnDamageProtectionChanged = IsActive_BP_OnDamageProtectionChanged;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

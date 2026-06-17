@@ -46,11 +46,11 @@ public:
 	void SetSize(int32 Width, int32 Height);
 	void SetFontSize(int32 FontSize, bool BoldFont);
 	void SetDefault(bool bInDefault);
-	void SetColors(const class UCrCommonUIColorsDevSettings* Settings);
-	void SetButtonEnabled(bool bEnabled);
+	void SetColors(const class UCrCommonUIColorsDevSettings* Settings_SetColors);
+	void SetButtonEnabled(bool bEnabled_SetButtonEnabled);
 	void SetAlignment(EHorizontalAlignment Alignment);
-	void SetActionNamePadding(bool bSet);
-	void PreConstruct(bool IsDesignTime);
+	void SetActionNamePadding(bool bSet_SetActionNamePadding);
+	void PreConstruct(bool IsDesignTime_PreConstruct);
 	void GetHeightSize(double* Height);
 	void ExecuteUbergraph_WBP_ActionButton(int32 EntryPoint);
 	void Construct();

@@ -29,7 +29,7 @@ public:
 
 public:
 	class FText UpdateName(class ACrBuildingActorBase* Owning_Building);
-	void SetCorporationLogo(class UObject* CorporationLogo_0, bool IsDefault);
+	void SetCorporationLogo(class UObject* CorporationLogo, bool IsDefault);
 	class FText GetText();
 	void ExecuteUbergraph_WBP_ExporterCorporationLogo(int32 EntryPoint);
 

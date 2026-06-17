@@ -19,10 +19,10 @@ SDK_NAMESPACE_START
 // Function BP_Storage.BP_Storage_C.UpdateItemCount
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   Count                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   MaxCount                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Count_UpdateItemCount                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   MaxCount_UpdateItemCount                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Storage_C::UpdateItemCount(int32 Count, int32 MaxCount)
+void ABP_Storage_C::UpdateItemCount(int32 Count_UpdateItemCount, int32 MaxCount_UpdateItemCount)
 {
 	static class UFunction* Func = nullptr;
 
@@ -31,8 +31,8 @@ void ABP_Storage_C::UpdateItemCount(int32 Count, int32 MaxCount)
 
 	Params::BP_Storage_C_UpdateItemCount Parms{};
 
-	Parms.Count = Count;
-	Parms.MaxCount = MaxCount;
+	Parms.Count_UpdateItemCount = Count_UpdateItemCount;
+	Parms.MaxCount_UpdateItemCount = MaxCount_UpdateItemCount;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -41,9 +41,9 @@ void ABP_Storage_C::UpdateItemCount(int32 Count, int32 MaxCount)
 // Function BP_Storage.BP_Storage_C.UpdateFilter
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// const class UAuItemDataBase*            ItemFilter                                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UAuItemDataBase*            ItemFilter_UpdateFilter                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Storage_C::UpdateFilter(const class UAuItemDataBase* ItemFilter)
+void ABP_Storage_C::UpdateFilter(const class UAuItemDataBase* ItemFilter_UpdateFilter)
 {
 	static class UFunction* Func = nullptr;
 
@@ -52,7 +52,7 @@ void ABP_Storage_C::UpdateFilter(const class UAuItemDataBase* ItemFilter)
 
 	Params::BP_Storage_C_UpdateFilter Parms{};
 
-	Parms.ItemFilter = ItemFilter;
+	Parms.ItemFilter_UpdateFilter = ItemFilter_UpdateFilter;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -103,9 +103,9 @@ void ABP_Storage_C::ReceiveBeginPlay()
 // Function BP_Storage.BP_Storage_C.PostPlayBuildingEffect
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    bWasBuildingEffectPlayed                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bWasBuildingEffectPlayed_PostPlayBuildingEffect        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Storage_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
+void ABP_Storage_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed_PostPlayBuildingEffect)
 {
 	static class UFunction* Func = nullptr;
 
@@ -114,7 +114,7 @@ void ABP_Storage_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
 
 	Params::BP_Storage_C_PostPlayBuildingEffect Parms{};
 
-	Parms.bWasBuildingEffectPlayed = bWasBuildingEffectPlayed;
+	Parms.bWasBuildingEffectPlayed_PostPlayBuildingEffect = bWasBuildingEffectPlayed_PostPlayBuildingEffect;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

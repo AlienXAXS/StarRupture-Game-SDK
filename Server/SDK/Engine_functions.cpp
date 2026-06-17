@@ -39017,13 +39017,13 @@ void UAudioComponent::Play(float StartTime)
 // const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UQuartzClockHandle*&              InClockHandle                                          (Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FQuartzQuantizationBoundary&     InQuantizationBoundary                                 (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// const TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name)>&InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name_0)>&InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InStartTime                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InFadeInDuration                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InFadeVolumeLevel                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EAudioFaderCurve                        InFadeCurve                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioComponent::PlayQuantized(const class UObject* WorldContextObject, class UQuartzClockHandle*& InClockHandle, struct FQuartzQuantizationBoundary& InQuantizationBoundary, const TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name)>& InDelegate, float InStartTime, float InFadeInDuration, float InFadeVolumeLevel, EAudioFaderCurve InFadeCurve)
+void UAudioComponent::PlayQuantized(const class UObject* WorldContextObject, class UQuartzClockHandle*& InClockHandle, struct FQuartzQuantizationBoundary& InQuantizationBoundary, const TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name_0)>& InDelegate, float InStartTime, float InFadeInDuration, float InFadeVolumeLevel, EAudioFaderCurve InFadeCurve)
 {
 	static class UFunction* Func = nullptr;
 
@@ -103586,21 +103586,21 @@ struct FVector UKismetMathLibrary::ProjectPointOnToPlane(const struct FVector& P
 }
 
 
-// Function Engine.KismetMathLibrary.ProjectVectorOnToPlane
+// Function Engine.KismetMathLibrary.ProjectVectorOntoPlane
 // (Final, RequiredAPI, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
 // const struct FVector&                   V                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FVector&                   PlaneNormal                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector UKismetMathLibrary::ProjectVectorOnToPlane(const struct FVector& V, const struct FVector& PlaneNormal)
+struct FVector UKismetMathLibrary::ProjectVectorOntoPlane(const struct FVector& V, const struct FVector& PlaneNormal)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KismetMathLibrary", "ProjectVectorOnToPlane");
+		Func = StaticClass()->GetFunction("KismetMathLibrary", "ProjectVectorOntoPlane");
 
-	Params::KismetMathLibrary_ProjectVectorOnToPlane Parms{};
+	Params::KismetMathLibrary_ProjectVectorOntoPlane Parms{};
 
 	Parms.V = std::move(V);
 	Parms.PlaneNormal = std::move(PlaneNormal);

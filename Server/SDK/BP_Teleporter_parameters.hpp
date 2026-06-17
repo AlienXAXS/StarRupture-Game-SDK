@@ -22,7 +22,7 @@ SDK_PARAM_NAMESPACE_START
 struct BP_Teleporter_C_OnTeleporterUsed final
 {
 public:
-	bool                                          bLocalPlayer;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bLocalPlayer_OnTeleporterUsed;                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Teleporter_C_OnTeleporterUsed;
 
@@ -31,7 +31,7 @@ DUMPER7_ASSERTS_BP_Teleporter_C_OnTeleporterUsed;
 struct BP_Teleporter_C_OnPlayerArrived final
 {
 public:
-	bool                                          bLocalPlayer;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bLocalPlayer_OnPlayerArrived;                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Teleporter_C_OnPlayerArrived;
 
@@ -40,7 +40,7 @@ DUMPER7_ASSERTS_BP_Teleporter_C_OnPlayerArrived;
 struct BP_Teleporter_C_OnBuildingStateChanged final
 {
 public:
-	ECrBuildingState                              InState;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECrBuildingState                              InState_OnBuildingStateChanged;                    // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Teleporter_C_OnBuildingStateChanged;
 
@@ -49,7 +49,7 @@ DUMPER7_ASSERTS_BP_Teleporter_C_OnBuildingStateChanged;
 struct BP_Teleporter_C_Get_Meshes final
 {
 public:
-	class USceneComponent*                        Static_0;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        Static;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	class USceneComponent*                        Dynamic;                                           // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	TArray<class USceneComponent*>                NewParam;                                          // 0x0010(0x0010)(Parm, OutParm, ContainsInstancedReference)
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

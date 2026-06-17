@@ -27,7 +27,7 @@ public:
 	struct FBlackboardKeySelector                 MoveLocation;                                      // 0x00B8(0x0028)(Edit, BlueprintVisible)
 
 public:
-	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+	void ReceiveExecuteAI(class AAIController* OwnerController_ReceiveExecuteAI, class APawn* ControlledPawn_ReceiveExecuteAI);
 	void ExecuteUbergraph_BTT_FindRandomLocation(int32 EntryPoint);
 
 public:

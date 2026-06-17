@@ -35,7 +35,7 @@ public:
 
 public:
 	void ReceiveBeginPlay();
-	void OnUIOpened(bool bOpened);
+	void OnUIOpened(bool bOpened_OnUIOpened);
 	void ExecuteUbergraph_BP_ResearchTerminal(int32 EntryPoint);
 
 public:

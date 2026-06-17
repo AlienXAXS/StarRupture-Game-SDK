@@ -41,10 +41,10 @@ void UBTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C::UpdateAfterSho
 // Function BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition.BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C.ReceiveActivationAI
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class AAIController*                    OwnerController                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class APawn*                            ControlledPawn                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AAIController*                    OwnerController_ReceiveActivationAI                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class APawn*                            ControlledPawn_ReceiveActivationAI                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UBTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C::ReceiveActivationAI(class AAIController* OwnerController, class APawn* ControlledPawn)
+void UBTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C::ReceiveActivationAI(class AAIController* OwnerController_ReceiveActivationAI, class APawn* ControlledPawn_ReceiveActivationAI)
 {
 	static class UFunction* Func = nullptr;
 
@@ -53,8 +53,8 @@ void UBTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C::ReceiveActivat
 
 	Params::BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C_ReceiveActivationAI Parms{};
 
-	Parms.OwnerController = OwnerController;
-	Parms.ControlledPawn = ControlledPawn;
+	Parms.OwnerController_ReceiveActivationAI = OwnerController_ReceiveActivationAI;
+	Parms.ControlledPawn_ReceiveActivationAI = ControlledPawn_ReceiveActivationAI;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

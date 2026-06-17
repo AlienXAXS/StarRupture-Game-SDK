@@ -12,8 +12,8 @@
 
 #include "Engine_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
-#include "BP_BaseAI_classes.hpp"
 #include "AuActorPlacement_structs.hpp"
+#include "BP_BaseAI_classes.hpp"
 
 
 SDK_NAMESPACE_START

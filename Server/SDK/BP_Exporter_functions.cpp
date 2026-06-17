@@ -61,9 +61,9 @@ void ABP_Exporter_C::OnItemCraftingComplete()
 // Function BP_Exporter.BP_Exporter_C.OnCorporationChanged
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class FName                             NewCorporation                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FName                             NewCorporation_OnCorporationChanged                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Exporter_C::OnCorporationChanged(class FName NewCorporation)
+void ABP_Exporter_C::OnCorporationChanged(class FName NewCorporation_OnCorporationChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -72,7 +72,7 @@ void ABP_Exporter_C::OnCorporationChanged(class FName NewCorporation)
 
 	Params::BP_Exporter_C_OnCorporationChanged Parms{};
 
-	Parms.NewCorporation = NewCorporation;
+	Parms.NewCorporation_OnCorporationChanged = NewCorporation_OnCorporationChanged;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -81,9 +81,9 @@ void ABP_Exporter_C::OnCorporationChanged(class FName NewCorporation)
 // Function BP_Exporter.BP_Exporter_C.OnBuildingStateChanged
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrBuildingState                        InState_OnBuildingStateChanged                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Exporter_C::OnBuildingStateChanged(ECrBuildingState InState)
+void ABP_Exporter_C::OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -92,7 +92,7 @@ void ABP_Exporter_C::OnBuildingStateChanged(ECrBuildingState InState)
 
 	Params::BP_Exporter_C_OnBuildingStateChanged Parms{};
 
-	Parms.InState = InState;
+	Parms.InState_OnBuildingStateChanged = InState_OnBuildingStateChanged;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -56,12 +56,12 @@ public:
 	class UMaterial*                              IconMat;                                           // 0x0748(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UpdateItemCount(int32 Count, int32 MaxCount);
-	void UpdateFilter(const class UAuItemDataBase* ItemFilter);
+	void UpdateItemCount(int32 Count_UpdateItemCount, int32 MaxCount_UpdateItemCount);
+	void UpdateFilter(const class UAuItemDataBase* ItemFilter_UpdateFilter);
 	void Timeline_shelves__UpdateFunc();
 	void Timeline_shelves__FinishedFunc();
 	void ReceiveBeginPlay();
-	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed);
+	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed_PostPlayBuildingEffect);
 	void GetMaterialInstance(class UMaterialInstanceDynamic** MaterialInstance);
 	void ExecuteUbergraph_BP_StorageDepot(int32 EntryPoint);
 

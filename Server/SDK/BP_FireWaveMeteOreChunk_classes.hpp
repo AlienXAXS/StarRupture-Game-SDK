@@ -41,8 +41,8 @@ public:
 	void FireDecalFade(const bool bIsFadeOut);
 	void ExecuteUbergraph_BP_FireWaveMeteOreChunk(int32 EntryPoint);
 	void BP_OnSpawnedWithResourceDepleted();
-	void BP_OnGrowbackSubstageChanged(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveGrowbackSubstage Substage, float Progress);
-	void BP_OnEnviroWaveStarted(EEnviroWave InWaveType, EEnviroWaveStage InWaveStage, const struct FCrEnviroWaveSettings& InWaveSettings, float InWaveProgress);
+	void BP_OnGrowbackSubstageChanged(const struct FCrEnviroWaveSettings& Settings_BP_OnGrowbackSubstageChanged, EEnviroWaveGrowbackSubstage Substage_BP_OnGrowbackSubstageChanged, float Progress_BP_OnGrowbackSubstageChanged);
+	void BP_OnEnviroWaveStarted(EEnviroWave InWaveType_BP_OnEnviroWaveStarted, EEnviroWaveStage InWaveStage_BP_OnEnviroWaveStarted, const struct FCrEnviroWaveSettings& InWaveSettings_BP_OnEnviroWaveStarted, float InWaveProgress_BP_OnEnviroWaveStarted);
 
 public:
 	static class UClass* StaticClass()

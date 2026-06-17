@@ -39,8 +39,8 @@ public:
 	void UserConstructionScript();
 	void ReceiveBeginPlay();
 	void PlaySound();
-	void MaterializePackageOnce(double Duration_0);
-	void Materialize_Package_In_Loop(double Duration_0);
+	void MaterializePackageOnce(double Duration);
+	void Materialize_Package_In_Loop(double Duration);
 	void Interrupt(bool Visibility);
 	void ExecuteUbergraph_BP_MaterializedItemCrate(int32 EntryPoint);
 

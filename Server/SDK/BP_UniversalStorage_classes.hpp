@@ -61,7 +61,7 @@ public:
 	void Timeline_shelves__UpdateFunc();
 	void Timeline_shelves__FinishedFunc();
 	void ReceiveBeginPlay();
-	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed);
+	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed_PostPlayBuildingEffect);
 	void GetMaterialInstance();
 	void ExecuteUbergraph_BP_UniversalStorage(int32 EntryPoint);
 

@@ -33,9 +33,9 @@ void ABP_MechanicalDrillTier2_C::ReceiveBeginPlay()
 // Function BP_MechanicalDrillTier2.BP_MechanicalDrillTier2_C.OnResourceDetected
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// TSubclassOf<class UCrItemDataBase>      OreItemClass                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// TSubclassOf<class UCrItemDataBase>      OreItemClass_OnResourceDetected                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
-void ABP_MechanicalDrillTier2_C::OnResourceDetected(TSubclassOf<class UCrItemDataBase> OreItemClass)
+void ABP_MechanicalDrillTier2_C::OnResourceDetected(TSubclassOf<class UCrItemDataBase> OreItemClass_OnResourceDetected)
 {
 	static class UFunction* Func = nullptr;
 
@@ -44,7 +44,7 @@ void ABP_MechanicalDrillTier2_C::OnResourceDetected(TSubclassOf<class UCrItemDat
 
 	Params::BP_MechanicalDrillTier2_C_OnResourceDetected Parms{};
 
-	Parms.OreItemClass = OreItemClass;
+	Parms.OreItemClass_OnResourceDetected = OreItemClass_OnResourceDetected;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -53,9 +53,9 @@ void ABP_MechanicalDrillTier2_C::OnResourceDetected(TSubclassOf<class UCrItemDat
 // Function BP_MechanicalDrillTier2.BP_MechanicalDrillTier2_C.OnBuildingStateChanged
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrBuildingState                        InState_OnBuildingStateChanged                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_MechanicalDrillTier2_C::OnBuildingStateChanged(ECrBuildingState InState)
+void ABP_MechanicalDrillTier2_C::OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -64,7 +64,7 @@ void ABP_MechanicalDrillTier2_C::OnBuildingStateChanged(ECrBuildingState InState
 
 	Params::BP_MechanicalDrillTier2_C_OnBuildingStateChanged Parms{};
 
-	Parms.InState = InState;
+	Parms.InState_OnBuildingStateChanged = InState_OnBuildingStateChanged;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

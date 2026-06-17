@@ -43,7 +43,7 @@ public:
 
 public:
 	void SetupSkeletalMesh();
-	void OnBuildingStateChanged(ECrBuildingState InState);
+	void OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged);
 	void ExecuteUbergraph_BP_AcidExtractor(int32 EntryPoint);
 
 public:

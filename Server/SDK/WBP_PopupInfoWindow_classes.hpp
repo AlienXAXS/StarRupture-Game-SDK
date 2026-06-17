@@ -31,7 +31,7 @@ public:
 	class UImage*                                 FrameBg_Top;                                       // 0x0658(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void PreConstruct(bool IsDesignTime);
+	void PreConstruct(bool IsDesignTime_PreConstruct);
 	void OnCloseButtonClicked();
 	void ExecuteUbergraph_WBP_PopupInfoWindow(int32 EntryPoint);
 

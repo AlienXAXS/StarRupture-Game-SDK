@@ -31,7 +31,7 @@ public:
 public:
 	void UpdateDisplayedPersonalStorageName();
 	void ReceiveBeginPlay();
-	void OnUIOpened(bool bOpened);
+	void OnUIOpened(bool bOpened_OnUIOpened);
 	void OnNameChanged(const class FString& NewName);
 	void ExecuteUbergraph_BP_PersonalStorageBig(int32 EntryPoint);
 

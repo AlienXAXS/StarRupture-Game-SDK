@@ -59,9 +59,9 @@ void ABP_CoolerPassive_C::OnSocketConnected(class FName SocketName)
 // Function BP_CoolerPassive.BP_CoolerPassive_C.OnHeaterCoolerStateChanged
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// ECrMassHeaterCoolerState                State                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrMassHeaterCoolerState                State_OnHeaterCoolerStateChanged                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_CoolerPassive_C::OnHeaterCoolerStateChanged(ECrMassHeaterCoolerState State)
+void ABP_CoolerPassive_C::OnHeaterCoolerStateChanged(ECrMassHeaterCoolerState State_OnHeaterCoolerStateChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -70,7 +70,7 @@ void ABP_CoolerPassive_C::OnHeaterCoolerStateChanged(ECrMassHeaterCoolerState St
 
 	Params::BP_CoolerPassive_C_OnHeaterCoolerStateChanged Parms{};
 
-	Parms.State = State;
+	Parms.State_OnHeaterCoolerStateChanged = State_OnHeaterCoolerStateChanged;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -79,9 +79,9 @@ void ABP_CoolerPassive_C::OnHeaterCoolerStateChanged(ECrMassHeaterCoolerState St
 // Function BP_CoolerPassive.BP_CoolerPassive_C.OnHeaterCoolerConnectionsChanged
 // (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
-// const TArray<class FName>&              ConnectedSockets                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const TArray<class FName>&              ConnectedSockets_OnHeaterCoolerConnectionsChanged      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
-void ABP_CoolerPassive_C::OnHeaterCoolerConnectionsChanged(const TArray<class FName>& ConnectedSockets)
+void ABP_CoolerPassive_C::OnHeaterCoolerConnectionsChanged(const TArray<class FName>& ConnectedSockets_OnHeaterCoolerConnectionsChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -90,7 +90,7 @@ void ABP_CoolerPassive_C::OnHeaterCoolerConnectionsChanged(const TArray<class FN
 
 	Params::BP_CoolerPassive_C_OnHeaterCoolerConnectionsChanged Parms{};
 
-	Parms.ConnectedSockets = std::move(ConnectedSockets);
+	Parms.ConnectedSockets_OnHeaterCoolerConnectionsChanged = std::move(ConnectedSockets_OnHeaterCoolerConnectionsChanged);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

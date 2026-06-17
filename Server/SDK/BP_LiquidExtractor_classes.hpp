@@ -38,7 +38,7 @@ public:
 
 public:
 	void ReceiveBeginPlay();
-	void OnBuildingStateChanged(ECrBuildingState InState);
+	void OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged);
 	void ExecuteUbergraph_BP_LiquidExtractor(int32 EntryPoint);
 
 public:

@@ -82,7 +82,7 @@ public:
 	bool                                          IsRolled_;                                         // 0x17FB(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UpdateYawRotationRateForLocomotionState(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType);
+	void UpdateYawRotationRateForLocomotionState(ECrEnemyLocomotionType OldLocomotionType_UpdateYawRotationRateForLocomotionState, ECrEnemyLocomotionType NewLocomotionType_UpdateYawRotationRateForLocomotionState);
 	void ExecuteUbergraph_ABP_PanzerHund(int32 EntryPoint);
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_FB8492694E4AD31DAC9BAFBE3ACB0BA7();
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_CB8CD5034E8382664C4022A06E1E1429();
@@ -99,11 +99,11 @@ public:
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_27F76AF94367732BF993B6A30F87DE58();
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_27A2A8374D0CA89334D57BAA78C89F53();
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_BlendListByBool_2B80C4C24105DC5A74E560BEC5E5B115();
-	void BPOnLocomotionTypeChanged(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType);
-	void BlueprintThreadSafeUpdateAnimation(float DeltaTime);
+	void BPOnLocomotionTypeChanged(ECrEnemyLocomotionType OldLocomotionType_BPOnLocomotionTypeChanged, ECrEnemyLocomotionType NewLocomotionType_BPOnLocomotionTypeChanged);
+	void BlueprintThreadSafeUpdateAnimation(float DeltaTime_BlueprintThreadSafeUpdateAnimation);
 	void AnimNotify_EndAnimAction();
 	void AnimNotify_EndAnim();
-	void AnimGraph(struct FPoseLink* AnimGraph_0);
+	void AnimGraph(struct FPoseLink* AnimGraph);
 
 public:
 	static class UClass* StaticClass()

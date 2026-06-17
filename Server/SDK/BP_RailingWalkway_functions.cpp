@@ -19,9 +19,9 @@ SDK_NAMESPACE_START
 // Function BP_RailingWalkway.BP_RailingWalkway_C.OnSplineReady
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class USplineComponent*                 InSpline                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class USplineComponent*                 InSpline_OnSplineReady                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void ABP_RailingWalkway_C::OnSplineReady(class USplineComponent* InSpline)
+void ABP_RailingWalkway_C::OnSplineReady(class USplineComponent* InSpline_OnSplineReady)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,7 +30,7 @@ void ABP_RailingWalkway_C::OnSplineReady(class USplineComponent* InSpline)
 
 	Params::BP_RailingWalkway_C_OnSplineReady Parms{};
 
-	Parms.InSpline = InSpline;
+	Parms.InSpline_OnSplineReady = InSpline_OnSplineReady;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

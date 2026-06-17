@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "BP_Airlock_Door_Base_classes.hpp"
 #include "Engine_structs.hpp"
+#include "BP_Airlock_Door_Base_classes.hpp"
 #include "Chimera_structs.hpp"
 
 
@@ -55,7 +55,7 @@ public:
 	void OnUpdateDoorVisuals();
 	void OnUpdateDoorOpenStateImmediate();
 	void OnUpdateDoorOpenState();
-	void OnUnlocked(class AActor* ActorActivating);
+	void OnUnlocked(class AActor* ActorActivating_OnUnlocked);
 	void OnPlayerExited(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 	void OnPlayerEntered(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult);
 	void HideBattery();

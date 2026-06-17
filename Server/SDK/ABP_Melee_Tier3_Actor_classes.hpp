@@ -243,8 +243,8 @@ public:
 	bool                                          IsInSlowRotationRange;                             // 0x3ECC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UpdateYawRotationRateForLocomotionState(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType);
-	void UpdateYawRotationRateForAttackType(ECrEnemyAttackType OldAttackType, ECrEnemyAttackType NewAttackType);
+	void UpdateYawRotationRateForLocomotionState(ECrEnemyLocomotionType OldLocomotionType_UpdateYawRotationRateForLocomotionState, ECrEnemyLocomotionType NewLocomotionType_UpdateYawRotationRateForLocomotionState);
+	void UpdateYawRotationRateForAttackType(ECrEnemyAttackType OldAttackType_UpdateYawRotationRateForAttackType, ECrEnemyAttackType NewAttackType_UpdateYawRotationRateForAttackType);
 	void ExecuteUbergraph_ABP_Melee_Tier3_Actor(int32 EntryPoint);
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier3_Actor_AnimGraphNode_TwoWayBlend_264657B8450BACD887CEDB90D17A14BD();
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier3_Actor_AnimGraphNode_TransitionResult_FEC1C16B4484C980AD7ABA8A36478F5C();
@@ -312,13 +312,13 @@ public:
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier3_Actor_AnimGraphNode_BlendListByBool_379CB9BC43DB02C51A7E43A368EDBACA();
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier3_Actor_AnimGraphNode_BlendListByBool_2F132AC140A75EDF4E5681B829DF0845();
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier3_Actor_AnimGraphNode_BlendListByBool_0C97BDDE4B20FC0F5F20E3A2E21D3F5D();
-	void BPOnLocomotionTypeChanged(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType);
-	void BPOnAttackTypeChanged(ECrEnemyAttackType OldAttackType, ECrEnemyAttackType NewAttackType);
+	void BPOnLocomotionTypeChanged(ECrEnemyLocomotionType OldLocomotionType_BPOnLocomotionTypeChanged, ECrEnemyLocomotionType NewLocomotionType_BPOnLocomotionTypeChanged);
+	void BPOnAttackTypeChanged(ECrEnemyAttackType OldAttackType_BPOnAttackTypeChanged, ECrEnemyAttackType NewAttackType_BPOnAttackTypeChanged);
 	void AttackConduitOnUpdate(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node);
 	void AnimNotify_EndAttack();
 	void AnimNotify_EndAnimAction();
 	void AnimNotify_EndAnim();
-	void AnimGraph(struct FPoseLink* AnimGraph_0);
+	void AnimGraph(struct FPoseLink* AnimGraph);
 
 public:
 	static class UClass* StaticClass()

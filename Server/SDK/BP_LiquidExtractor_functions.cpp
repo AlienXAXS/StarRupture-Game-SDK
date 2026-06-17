@@ -33,9 +33,9 @@ void ABP_LiquidExtractor_C::ReceiveBeginPlay()
 // Function BP_LiquidExtractor.BP_LiquidExtractor_C.OnBuildingStateChanged
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrBuildingState                        InState_OnBuildingStateChanged                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_LiquidExtractor_C::OnBuildingStateChanged(ECrBuildingState InState)
+void ABP_LiquidExtractor_C::OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -44,7 +44,7 @@ void ABP_LiquidExtractor_C::OnBuildingStateChanged(ECrBuildingState InState)
 
 	Params::BP_LiquidExtractor_C_OnBuildingStateChanged Parms{};
 
-	Parms.InState = InState;
+	Parms.InState_OnBuildingStateChanged = InState_OnBuildingStateChanged;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

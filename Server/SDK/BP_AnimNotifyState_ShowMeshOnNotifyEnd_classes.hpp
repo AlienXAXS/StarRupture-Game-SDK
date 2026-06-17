@@ -20,7 +20,7 @@ SDK_NAMESPACE_START
 class UBP_AnimNotifyState_ShowMeshOnNotifyEnd_C final : public UAnimNotifyState
 {
 public:
-	bool Received_NotifyEnd(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, const struct FAnimNotifyEventReference& EventReference) const;
+	bool Received_NotifyEnd(class USkeletalMeshComponent* MeshComp_Received_NotifyEnd, class UAnimSequenceBase* Animation_Received_NotifyEnd, const struct FAnimNotifyEventReference& EventReference_Received_NotifyEnd) const;
 
 public:
 	static class UClass* StaticClass()

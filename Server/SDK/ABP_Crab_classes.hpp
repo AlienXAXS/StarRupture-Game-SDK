@@ -73,7 +73,7 @@ public:
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_4A5AC1544A98FB586DBB42A51278C2C7();
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_2698D1E144DB7D6840F34883A3156DEC();
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_2495E587484B66035345C7AC5EAA4F74();
-	void AnimGraph(struct FPoseLink* AnimGraph_0);
+	void AnimGraph(struct FPoseLink* AnimGraph);
 
 public:
 	static class UClass* StaticClass()

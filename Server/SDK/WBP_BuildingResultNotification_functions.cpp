@@ -19,9 +19,9 @@ SDK_NAMESPACE_START
 // Function WBP_BuildingResultNotification.WBP_BuildingResultNotification_C.OnPlacementResultNotif
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// EAuAPPlacementResult                    PlacementResult                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EAuAPPlacementResult                    PlacementResult_OnPlacementResultNotif                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_BuildingResultNotification_C::OnPlacementResultNotif(EAuAPPlacementResult PlacementResult)
+void UWBP_BuildingResultNotification_C::OnPlacementResultNotif(EAuAPPlacementResult PlacementResult_OnPlacementResultNotif)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,7 +30,7 @@ void UWBP_BuildingResultNotification_C::OnPlacementResultNotif(EAuAPPlacementRes
 
 	Params::WBP_BuildingResultNotification_C_OnPlacementResultNotif Parms{};
 
-	Parms.PlacementResult = PlacementResult;
+	Parms.PlacementResult_OnPlacementResultNotif = PlacementResult_OnPlacementResultNotif;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

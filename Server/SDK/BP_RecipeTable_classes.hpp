@@ -34,7 +34,7 @@ public:
 
 public:
 	void ReceiveBeginPlay();
-	void OnUIOpened(bool bOpened);
+	void OnUIOpened(bool bOpened_OnUIOpened);
 	void ExecuteUbergraph_BP_RecipeTable(int32 EntryPoint);
 
 public:

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "BP_ExplosionSphereBase_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -25,8 +25,8 @@ public:
 	class UAbilitySystemComponent*                PlayerAbilitySystem_0;                             // 0x02D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveActorEndOverlap(class AActor* OtherActor);
-	void ReceiveActorBeginOverlap(class AActor* OtherActor);
+	void ReceiveActorEndOverlap(class AActor* OtherActor_ReceiveActorEndOverlap);
+	void ReceiveActorBeginOverlap(class AActor* OtherActor_ReceiveActorBeginOverlap);
 	void ExecuteUbergraph_BP_Ranged_Tier2_LOD0_DamageAura(int32 EntryPoint);
 
 public:

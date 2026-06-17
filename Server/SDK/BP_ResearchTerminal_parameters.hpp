@@ -19,7 +19,7 @@ SDK_PARAM_NAMESPACE_START
 struct BP_ResearchTerminal_C_OnUIOpened final
 {
 public:
-	bool                                          bOpened;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bOpened_OnUIOpened;                                // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_ResearchTerminal_C_OnUIOpened;
 

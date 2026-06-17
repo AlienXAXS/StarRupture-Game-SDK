@@ -89,9 +89,9 @@ public:
 	void Timeline_0__UpdateFunc();
 	void Timeline_0__FinishedFunc();
 	void ReceiveBeginPlay();
-	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed);
+	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed_PostPlayBuildingEffect);
 	void OnItemsReceived();
-	void OnBuildingStateChanged(ECrBuildingState InState);
+	void OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged);
 	void ExecuteUbergraph_BP_PackageReceiver(int32 EntryPoint);
 	void Drone_land();
 	void DoorsOpen();

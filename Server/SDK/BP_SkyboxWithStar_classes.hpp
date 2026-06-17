@@ -96,9 +96,9 @@ public:
 	void UpdateStarMaterial();
 	void UpdateRTMaterials();
 	void ReceiveBeginPlay();
-	void OnEnviroWaveTick(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress);
-	void OnEnviroWaveFinished(EEnviroWave WaveType, const struct FCrEnviroWaveSettings& WaveSettings);
-	void OnEnviroWaveCanceled(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings);
+	void OnEnviroWaveTick(EEnviroWave WaveType_OnEnviroWaveTick, EEnviroWaveStage WaveStage_OnEnviroWaveTick, const struct FCrEnviroWaveSettings& WaveSettings_OnEnviroWaveTick, float WaveProgress_OnEnviroWaveTick);
+	void OnEnviroWaveFinished(EEnviroWave WaveType_OnEnviroWaveFinished, const struct FCrEnviroWaveSettings& WaveSettings_OnEnviroWaveFinished);
+	void OnEnviroWaveCanceled(EEnviroWave WaveType_OnEnviroWaveCanceled, EEnviroWaveStage WaveStage_OnEnviroWaveCanceled, const struct FCrEnviroWaveSettings& WaveSettings_OnEnviroWaveCanceled);
 	void InitializeRTMaterials();
 	void ExecuteUbergraph_BP_SkyboxWithStar(int32 EntryPoint);
 	void EveryFrameEvent();

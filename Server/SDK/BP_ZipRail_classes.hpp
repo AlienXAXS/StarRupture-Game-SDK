@@ -37,12 +37,12 @@ public:
 	double                                        TravelDirection;                                   // 0x0738(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveTick(float DeltaSeconds);
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void ReceiveTick(float DeltaSeconds_ReceiveTick);
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay);
 	void ReceiveBeginPlay();
 	void PrepareForGame();
-	void OnSplineReady(class USplineComponent* InSpline);
-	void OnInteract(class APlayerController* InPc);
+	void OnSplineReady(class USplineComponent* InSpline_OnSplineReady);
+	void OnInteract(class APlayerController* InPc_OnInteract);
 	bool IsRamp();
 	bool IsLadder();
 	void InpActEvt_Jump_K2Node_EnhancedInputActionEvent_0(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);

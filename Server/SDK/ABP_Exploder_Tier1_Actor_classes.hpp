@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "AnimGraphRuntime_structs.hpp"
-#include "Engine_structs.hpp"
 #include "ABP_Exploder_Tier1_Actor_structs.hpp"
+#include "Engine_structs.hpp"
 #include "CrAiExploderRuntime_classes.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 
@@ -144,8 +144,8 @@ public:
 	class UAnimSequence*                          JumpMidSequence;                                   // 0x20B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UpdateYawRotationRateForLocomotionState(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType);
-	void UpdateYawRotationRateForAttackType(ECrEnemyAttackType OldAttackType, ECrEnemyAttackType NewAttackType);
+	void UpdateYawRotationRateForLocomotionState(ECrEnemyLocomotionType OldLocomotionType_UpdateYawRotationRateForLocomotionState, ECrEnemyLocomotionType NewLocomotionType_UpdateYawRotationRateForLocomotionState);
+	void UpdateYawRotationRateForAttackType(ECrEnemyAttackType OldAttackType_UpdateYawRotationRateForAttackType, ECrEnemyAttackType NewAttackType_UpdateYawRotationRateForAttackType);
 	void ResetSyncedAnimationProgress(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node);
 	void ExecuteUbergraph_ABP_Exploder_Tier1_Actor(int32 EntryPoint);
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier1_Actor_AnimGraphNode_TransitionResult_EFC83CAC4B607EE049D8DBB67D351AA2();
@@ -184,8 +184,8 @@ public:
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier1_Actor_AnimGraphNode_BlendListByBool_CFC7B08042552C39519FDABB25C9573F();
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier1_Actor_AnimGraphNode_BlendListByBool_A2126B4C48AB3012212A18A20B4F33F1();
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier1_Actor_AnimGraphNode_BlendListByBool_435EB09C477D2327ACF8F39A6E47DC6A();
-	void BPOnLocomotionTypeChanged(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType);
-	void BPOnAttackTypeChanged(ECrEnemyAttackType OldAttackType, ECrEnemyAttackType NewAttackType);
+	void BPOnLocomotionTypeChanged(ECrEnemyLocomotionType OldLocomotionType_BPOnLocomotionTypeChanged, ECrEnemyLocomotionType NewLocomotionType_BPOnLocomotionTypeChanged);
+	void BPOnAttackTypeChanged(ECrEnemyAttackType OldAttackType_BPOnAttackTypeChanged, ECrEnemyAttackType NewAttackType_BPOnAttackTypeChanged);
 	void BlueprintBeginPlay();
 	void AttackConduitOnUpdate(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node);
 	void AnimNotify_OnTransition_Walk();
@@ -204,7 +204,7 @@ public:
 	void AnimNotify_Jumped();
 	void AnimNotify_EndAnimAction();
 	void AnimNotify_AnimationFinishedEvent();
-	void AnimGraph(struct FPoseLink* AnimGraph_0);
+	void AnimGraph(struct FPoseLink* AnimGraph);
 
 public:
 	static class UClass* StaticClass()

@@ -25,7 +25,7 @@ public:
 	double                                        Time;                                              // 0x00C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+	bool PerformConditionCheckAI(class AAIController* OwnerController_PerformConditionCheckAI, class APawn* ControlledPawn_PerformConditionCheckAI);
 
 public:
 	static class UClass* StaticClass()

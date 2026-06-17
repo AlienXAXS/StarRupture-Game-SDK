@@ -40,11 +40,11 @@ public:
 	class UPCGPointData*                          PtData;                                            // 0x0190(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteWithContext(struct FPCGContext& InContext, const struct FPCGDataCollection& Input, struct FPCGDataCollection* Output);
+	void ExecuteWithContext(struct FPCGContext& InContext_ExecuteWithContext, const struct FPCGDataCollection& Input_ExecuteWithContext, struct FPCGDataCollection* Output_ExecuteWithContext);
 
 	class FName NodeTitleOverride() const;
 	struct FLinearColor NodeColorOverride() const;
-	bool IterationLoopBody(const struct FPCGContext& InContext, int64 Iteration, const class UPCGSpatialData* InA, const class UPCGSpatialData* InB, struct FPCGPoint* OutPoint, class UPCGMetadata* OutMetadata) const;
+	bool IterationLoopBody(const struct FPCGContext& InContext_IterationLoopBody, int64 Iteration_IterationLoopBody, const class UPCGSpatialData* InA_IterationLoopBody, const class UPCGSpatialData* InB_IterationLoopBody, struct FPCGPoint* OutPoint_IterationLoopBody, class UPCGMetadata* OutMetadata_IterationLoopBody) const;
 	bool IsCacheableOverride() const;
 
 public:

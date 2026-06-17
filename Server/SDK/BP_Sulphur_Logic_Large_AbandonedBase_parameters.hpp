@@ -19,7 +19,7 @@ SDK_PARAM_NAMESPACE_START
 struct BP_Sulphur_Logic_Large_AbandonedBase_C_OnSulphurActivityChanged final
 {
 public:
-	bool                                          bActive;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bActive_OnSulphurActivityChanged;                  // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Sulphur_Logic_Large_AbandonedBase_C_OnSulphurActivityChanged;
 

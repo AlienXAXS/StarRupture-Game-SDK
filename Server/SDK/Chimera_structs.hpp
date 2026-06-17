@@ -2898,10 +2898,10 @@ struct FCrMassCustomDoorStateFragment final : public FCrMassFragmentWithCustomOn
 {
 public:
 	//bool                                          bState;                                            // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool GetState() const { return static_cast<bool>(Pad_0[0]); }
-	void SetState(bool v) { Pad_0[0] = static_cast<uint8>(v); }
+	bool GetState() const { return *reinterpret_cast<const bool*>(this); }
+	bool SetState(bool newState) { *reinterpret_cast<bool*>(this) = newState; return newState; }
 };
-//DUMPER7_ASSERTS_FCrMassCustomDoorStateFragment; - Drop this and replace with getter/setter functions to avoid issues with bool size across different compilers
+//DUMPER7_ASSERTS_FCrMassCustomDoorStateFragment;
 
 // ScriptStruct Chimera.InfectionEntityHandle
 // 0x0008 (0x0008 - 0x0000)

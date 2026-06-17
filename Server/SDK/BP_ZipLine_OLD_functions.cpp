@@ -197,9 +197,9 @@ void ABP_ZipLine_OLD_C::OnZiplineLocallyCancelled()
 // Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnUntargeted
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class ACrCharacterPlayerBase*           InPlayer                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class ACrCharacterPlayerBase*           InPlayer_OnUntargeted                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ZipLine_OLD_C::OnUntargeted(class ACrCharacterPlayerBase* InPlayer)
+void ABP_ZipLine_OLD_C::OnUntargeted(class ACrCharacterPlayerBase* InPlayer_OnUntargeted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -208,7 +208,7 @@ void ABP_ZipLine_OLD_C::OnUntargeted(class ACrCharacterPlayerBase* InPlayer)
 
 	Params::BP_ZipLine_OLD_C_OnUntargeted Parms{};
 
-	Parms.InPlayer = InPlayer;
+	Parms.InPlayer_OnUntargeted = InPlayer_OnUntargeted;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -217,9 +217,9 @@ void ABP_ZipLine_OLD_C::OnUntargeted(class ACrCharacterPlayerBase* InPlayer)
 // Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnUnoccupied
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class ACrCharacterPlayerBase*           InPlayer                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class ACrCharacterPlayerBase*           InPlayer_OnUnoccupied                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ZipLine_OLD_C::OnUnoccupied(class ACrCharacterPlayerBase* InPlayer)
+void ABP_ZipLine_OLD_C::OnUnoccupied(class ACrCharacterPlayerBase* InPlayer_OnUnoccupied)
 {
 	static class UFunction* Func = nullptr;
 
@@ -228,7 +228,7 @@ void ABP_ZipLine_OLD_C::OnUnoccupied(class ACrCharacterPlayerBase* InPlayer)
 
 	Params::BP_ZipLine_OLD_C_OnUnoccupied Parms{};
 
-	Parms.InPlayer = InPlayer;
+	Parms.InPlayer_OnUnoccupied = InPlayer_OnUnoccupied;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -237,9 +237,9 @@ void ABP_ZipLine_OLD_C::OnUnoccupied(class ACrCharacterPlayerBase* InPlayer)
 // Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnTravellingTo
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class ACrCharacterPlayerBase*           InPlayer                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class ACrCharacterPlayerBase*           InPlayer_OnTravellingTo                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ZipLine_OLD_C::OnTravellingTo(class ACrCharacterPlayerBase* InPlayer)
+void ABP_ZipLine_OLD_C::OnTravellingTo(class ACrCharacterPlayerBase* InPlayer_OnTravellingTo)
 {
 	static class UFunction* Func = nullptr;
 
@@ -248,7 +248,7 @@ void ABP_ZipLine_OLD_C::OnTravellingTo(class ACrCharacterPlayerBase* InPlayer)
 
 	Params::BP_ZipLine_OLD_C_OnTravellingTo Parms{};
 
-	Parms.InPlayer = InPlayer;
+	Parms.InPlayer_OnTravellingTo = InPlayer_OnTravellingTo;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -257,9 +257,9 @@ void ABP_ZipLine_OLD_C::OnTravellingTo(class ACrCharacterPlayerBase* InPlayer)
 // Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnTargeted
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class ACrCharacterPlayerBase*           InPlayer                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class ACrCharacterPlayerBase*           InPlayer_OnTargeted                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ZipLine_OLD_C::OnTargeted(class ACrCharacterPlayerBase* InPlayer)
+void ABP_ZipLine_OLD_C::OnTargeted(class ACrCharacterPlayerBase* InPlayer_OnTargeted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -268,7 +268,7 @@ void ABP_ZipLine_OLD_C::OnTargeted(class ACrCharacterPlayerBase* InPlayer)
 
 	Params::BP_ZipLine_OLD_C_OnTargeted Parms{};
 
-	Parms.InPlayer = InPlayer;
+	Parms.InPlayer_OnTargeted = InPlayer_OnTargeted;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -277,10 +277,10 @@ void ABP_ZipLine_OLD_C::OnTargeted(class ACrCharacterPlayerBase* InPlayer)
 // Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnStopTravellingTo
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class ACrCharacterPlayerBase*           InPlayer                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// bool                                    bCancelled                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ACrCharacterPlayerBase*           InPlayer_OnStopTravellingTo                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                                    bCancelled_OnStopTravellingTo                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ZipLine_OLD_C::OnStopTravellingTo(class ACrCharacterPlayerBase* InPlayer, bool bCancelled)
+void ABP_ZipLine_OLD_C::OnStopTravellingTo(class ACrCharacterPlayerBase* InPlayer_OnStopTravellingTo, bool bCancelled_OnStopTravellingTo)
 {
 	static class UFunction* Func = nullptr;
 
@@ -289,8 +289,8 @@ void ABP_ZipLine_OLD_C::OnStopTravellingTo(class ACrCharacterPlayerBase* InPlaye
 
 	Params::BP_ZipLine_OLD_C_OnStopTravellingTo Parms{};
 
-	Parms.InPlayer = InPlayer;
-	Parms.bCancelled = bCancelled;
+	Parms.InPlayer_OnStopTravellingTo = InPlayer_OnStopTravellingTo;
+	Parms.bCancelled_OnStopTravellingTo = bCancelled_OnStopTravellingTo;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -327,10 +327,10 @@ void ABP_ZipLine_OLD_C::OnPlayerRotationStarted()
 // Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnPlayerRotationFinished
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// const struct FVector_NetQuantize&       NewTargetLocation                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FRotator&                  NewRotation                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// const struct FVector_NetQuantize&       NewTargetLocation_OnPlayerRotationFinished             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FRotator&                  NewRotation_OnPlayerRotationFinished                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_ZipLine_OLD_C::OnPlayerRotationFinished(const struct FVector_NetQuantize& NewTargetLocation, const struct FRotator& NewRotation)
+void ABP_ZipLine_OLD_C::OnPlayerRotationFinished(const struct FVector_NetQuantize& NewTargetLocation_OnPlayerRotationFinished, const struct FRotator& NewRotation_OnPlayerRotationFinished)
 {
 	static class UFunction* Func = nullptr;
 
@@ -339,8 +339,8 @@ void ABP_ZipLine_OLD_C::OnPlayerRotationFinished(const struct FVector_NetQuantiz
 
 	Params::BP_ZipLine_OLD_C_OnPlayerRotationFinished Parms{};
 
-	Parms.NewTargetLocation = std::move(NewTargetLocation);
-	Parms.NewRotation = std::move(NewRotation);
+	Parms.NewTargetLocation_OnPlayerRotationFinished = std::move(NewTargetLocation_OnPlayerRotationFinished);
+	Parms.NewRotation_OnPlayerRotationFinished = std::move(NewRotation_OnPlayerRotationFinished);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -363,10 +363,10 @@ void ABP_ZipLine_OLD_C::OnHideBlockingSphere()
 // Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnConnectionsModified
 // (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
-// const TArray<struct FVector_NetQuantize>&ActiveLocations                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// const TArray<struct FVector_NetQuantize>&InactiveLocations                                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const TArray<struct FVector_NetQuantize>&ActiveLocations_OnConnectionsModified                  (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const TArray<struct FVector_NetQuantize>&InactiveLocations_OnConnectionsModified                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
-void ABP_ZipLine_OLD_C::OnConnectionsModified(const TArray<struct FVector_NetQuantize>& ActiveLocations, const TArray<struct FVector_NetQuantize>& InactiveLocations)
+void ABP_ZipLine_OLD_C::OnConnectionsModified(const TArray<struct FVector_NetQuantize>& ActiveLocations_OnConnectionsModified, const TArray<struct FVector_NetQuantize>& InactiveLocations_OnConnectionsModified)
 {
 	static class UFunction* Func = nullptr;
 
@@ -375,8 +375,8 @@ void ABP_ZipLine_OLD_C::OnConnectionsModified(const TArray<struct FVector_NetQua
 
 	Params::BP_ZipLine_OLD_C_OnConnectionsModified Parms{};
 
-	Parms.ActiveLocations = std::move(ActiveLocations);
-	Parms.InactiveLocations = std::move(InactiveLocations);
+	Parms.ActiveLocations_OnConnectionsModified = std::move(ActiveLocations_OnConnectionsModified);
+	Parms.InactiveLocations_OnConnectionsModified = std::move(InactiveLocations_OnConnectionsModified);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -385,9 +385,9 @@ void ABP_ZipLine_OLD_C::OnConnectionsModified(const TArray<struct FVector_NetQua
 // Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnBuildingStateChanged
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrBuildingState                        InState_OnBuildingStateChanged                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ZipLine_OLD_C::OnBuildingStateChanged(ECrBuildingState InState)
+void ABP_ZipLine_OLD_C::OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -396,7 +396,7 @@ void ABP_ZipLine_OLD_C::OnBuildingStateChanged(ECrBuildingState InState)
 
 	Params::BP_ZipLine_OLD_C_OnBuildingStateChanged Parms{};
 
-	Parms.InState = InState;
+	Parms.InState_OnBuildingStateChanged = InState_OnBuildingStateChanged;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -405,9 +405,9 @@ void ABP_ZipLine_OLD_C::OnBuildingStateChanged(ECrBuildingState InState)
 // Function BP_ZipLine_OLD.BP_ZipLine_OLD_C.OnActivityModified
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool                                    bActive                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bActive_OnActivityModified                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ZipLine_OLD_C::OnActivityModified(bool bActive)
+void ABP_ZipLine_OLD_C::OnActivityModified(bool bActive_OnActivityModified)
 {
 	static class UFunction* Func = nullptr;
 
@@ -416,7 +416,7 @@ void ABP_ZipLine_OLD_C::OnActivityModified(bool bActive)
 
 	Params::BP_ZipLine_OLD_C_OnActivityModified Parms{};
 
-	Parms.bActive = bActive;
+	Parms.bActive_OnActivityModified = bActive_OnActivityModified;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -32,7 +32,7 @@ public:
 
 public:
 	void OnResourceDepletedCosmeticsStart();
-	void OnMiningWeakSpotDepletedCosmeticsStart(const struct FTransform& CosmeticTransform);
+	void OnMiningWeakSpotDepletedCosmeticsStart(const struct FTransform& CosmeticTransform_OnMiningWeakSpotDepletedCosmeticsStart);
 	void OnLoaded_7C60A1274B0C13768DA120904074AA68(class UObject* Loaded);
 	void OnLoaded_6D1D722841EF9BEB99C631B637E34E1F(class UObject* Loaded);
 	void ExecuteUbergraph_BP_MushroomOreMassHighResActorBase(int32 EntryPoint);

@@ -24,8 +24,8 @@ SDK_PARAM_NAMESPACE_START
 struct ABP_Melee_Tier1_Actor_C_UpdateYawRotationRateForLocomotionState final
 {
 public:
-	ECrEnemyLocomotionType                        OldLocomotionType;                                 // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ECrEnemyLocomotionType                        NewLocomotionType;                                 // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECrEnemyLocomotionType                        OldLocomotionType_UpdateYawRotationRateForLocomotionState; // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECrEnemyLocomotionType                        NewLocomotionType_UpdateYawRotationRateForLocomotionState; // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_ABP_Melee_Tier1_Actor_C_UpdateYawRotationRateForLocomotionState;
 
@@ -34,8 +34,8 @@ DUMPER7_ASSERTS_ABP_Melee_Tier1_Actor_C_UpdateYawRotationRateForLocomotionState;
 struct ABP_Melee_Tier1_Actor_C_UpdateYawRotationRateForAttackType final
 {
 public:
-	ECrEnemyAttackType                            OldAttackType;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ECrEnemyAttackType                            NewAttackType;                                     // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECrEnemyAttackType                            OldAttackType_UpdateYawRotationRateForAttackType;  // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECrEnemyAttackType                            NewAttackType_UpdateYawRotationRateForAttackType;  // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_ABP_Melee_Tier1_Actor_C_UpdateYawRotationRateForAttackType;
 
@@ -276,8 +276,8 @@ DUMPER7_ASSERTS_ABP_Melee_Tier1_Actor_C_CanUseAddWalkAdditive;
 struct ABP_Melee_Tier1_Actor_C_BPOnLocomotionTypeChanged final
 {
 public:
-	ECrEnemyLocomotionType                        OldLocomotionType;                                 // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ECrEnemyLocomotionType                        NewLocomotionType;                                 // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECrEnemyLocomotionType                        OldLocomotionType_BPOnLocomotionTypeChanged;       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECrEnemyLocomotionType                        NewLocomotionType_BPOnLocomotionTypeChanged;       // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_ABP_Melee_Tier1_Actor_C_BPOnLocomotionTypeChanged;
 
@@ -286,8 +286,8 @@ DUMPER7_ASSERTS_ABP_Melee_Tier1_Actor_C_BPOnLocomotionTypeChanged;
 struct ABP_Melee_Tier1_Actor_C_BPOnAttackTypeChanged final
 {
 public:
-	ECrEnemyAttackType                            OldAttackType;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ECrEnemyAttackType                            NewAttackType;                                     // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECrEnemyAttackType                            OldAttackType_BPOnAttackTypeChanged;               // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECrEnemyAttackType                            NewAttackType_BPOnAttackTypeChanged;               // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_ABP_Melee_Tier1_Actor_C_BPOnAttackTypeChanged;
 
@@ -296,7 +296,7 @@ DUMPER7_ASSERTS_ABP_Melee_Tier1_Actor_C_BPOnAttackTypeChanged;
 struct ABP_Melee_Tier1_Actor_C_BlueprintUpdateAnimation final
 {
 public:
-	float                                         DeltaTimeX;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         DeltaTimeX_BlueprintUpdateAnimation;               // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_ABP_Melee_Tier1_Actor_C_BlueprintUpdateAnimation;
 
@@ -318,7 +318,7 @@ DUMPER7_ASSERTS_ABP_Melee_Tier1_Actor_C_AttackConduitOnUpdate;
 struct ABP_Melee_Tier1_Actor_C_AnimGraph final
 {
 public:
-	struct FPoseLink                              AnimGraph_0;                                       // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
+	struct FPoseLink                              AnimGraph;                                         // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
 };
 DUMPER7_ASSERTS_ABP_Melee_Tier1_Actor_C_AnimGraph;
 

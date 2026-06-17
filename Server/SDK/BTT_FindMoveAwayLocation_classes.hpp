@@ -34,7 +34,7 @@ public:
 	double                                        RandomAngle;                                       // 0x0128(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn_0);
+	void ReceiveExecuteAI(class AAIController* OwnerController_ReceiveExecuteAI, class APawn* ControlledPawn_ReceiveExecuteAI);
 	void ExecuteUbergraph_BTT_FindMoveAwayLocation(int32 EntryPoint);
 
 public:

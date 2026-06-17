@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "BP_BaseAI_classes.hpp"
+#include "CoreUObject_structs.hpp"
 #include "Chimera_structs.hpp"
 
 
@@ -36,7 +36,7 @@ public:
 	void SetMossVisibility(bool Visible);
 	void SetDustDamageActivity(bool Active);
 	void SetAudioState(const struct FGameplayTag& EventTag);
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay);
 	void ReceiveBeginPlay();
 	void OnWaveFadeoutSubstageChanged_Event(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveFadeoutSubstage Substage, float Progress);
 	void OnRep_IsMossVisible();
@@ -49,7 +49,7 @@ public:
 	void BndEvt__BP_Animal_PanzerHund_Character_Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult);
 	void ActivateDust();
 
-	void OnMeshVisibilityUpdated(bool bIsMeshHidden) const;
+	void OnMeshVisibilityUpdated(bool bIsMeshHidden_OnMeshVisibilityUpdated) const;
 
 public:
 	static class UClass* StaticClass()

@@ -73,9 +73,9 @@ void ABP_SideLadder_C::RemoveCharacterFromLadder(const class ACrCharacterPlayerB
 // Function BP_SideLadder.BP_SideLadder_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaSeconds_ReceiveTick                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_SideLadder_C::ReceiveTick(float DeltaSeconds)
+void ABP_SideLadder_C::ReceiveTick(float DeltaSeconds_ReceiveTick)
 {
 	static class UFunction* Func = nullptr;
 
@@ -84,7 +84,7 @@ void ABP_SideLadder_C::ReceiveTick(float DeltaSeconds)
 
 	Params::BP_SideLadder_C_ReceiveTick Parms{};
 
-	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.DeltaSeconds_ReceiveTick = DeltaSeconds_ReceiveTick;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

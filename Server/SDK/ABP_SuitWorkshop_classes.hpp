@@ -54,7 +54,7 @@ public:
 	void AnimNotify_A_arm_laser_3();
 	void AnimNotify_A_arm_laser_2();
 	void AnimNotify_A_arm_laser_1();
-	void AnimGraph(struct FPoseLink* AnimGraph_0);
+	void AnimGraph(struct FPoseLink* AnimGraph);
 
 public:
 	static class UClass* StaticClass()

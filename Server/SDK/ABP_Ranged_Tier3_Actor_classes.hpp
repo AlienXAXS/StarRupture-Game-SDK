@@ -118,7 +118,7 @@ public:
 	void AttackConduitOnUpdate(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node);
 	void AnimNotify_DealDamage();
 	void AnimNotify_AnimationFinishedEvent();
-	void AnimGraph(struct FPoseLink* AnimGraph_0);
+	void AnimGraph(struct FPoseLink* AnimGraph);
 
 public:
 	static class UClass* StaticClass()

@@ -32,7 +32,7 @@ DUMPER7_ASSERTS_BP_Recycler_C_UserConstructionScript;
 struct BP_Recycler_C_OnUIOpened final
 {
 public:
-	bool                                          bOpened;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bOpened_OnUIOpened;                                // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Recycler_C_OnUIOpened;
 
@@ -41,7 +41,7 @@ DUMPER7_ASSERTS_BP_Recycler_C_OnUIOpened;
 struct BP_Recycler_C_OnBuildingStateChanged final
 {
 public:
-	ECrBuildingState                              InState;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECrBuildingState                              InState_OnBuildingStateChanged;                    // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Recycler_C_OnBuildingStateChanged;
 

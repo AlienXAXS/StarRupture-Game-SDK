@@ -33,7 +33,7 @@ public:
 	class UMaterialInstanceDynamic*               ResourceIconDynamicMaterial;                       // 0x0338(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay);
 	void ReceiveBeginPlay();
 	bool OnStorageEmptied();
 	void OnItemAddedToStorage();

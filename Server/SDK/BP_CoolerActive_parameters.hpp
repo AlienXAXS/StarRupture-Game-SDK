@@ -39,7 +39,7 @@ DUMPER7_ASSERTS_BP_CoolerActive_C_OnSocketConnected;
 struct BP_CoolerActive_C_OnHeaterCoolerStateChanged final
 {
 public:
-	ECrMassHeaterCoolerState                      State;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECrMassHeaterCoolerState                      State_OnHeaterCoolerStateChanged;                  // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_CoolerActive_C_OnHeaterCoolerStateChanged;
 
@@ -48,7 +48,7 @@ DUMPER7_ASSERTS_BP_CoolerActive_C_OnHeaterCoolerStateChanged;
 struct BP_CoolerActive_C_OnHeaterCoolerInventoryChanged final
 {
 public:
-	float                                         UsedSpaceNormalized;                               // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         UsedSpaceNormalized_OnHeaterCoolerInventoryChanged; // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_CoolerActive_C_OnHeaterCoolerInventoryChanged;
 
@@ -57,7 +57,7 @@ DUMPER7_ASSERTS_BP_CoolerActive_C_OnHeaterCoolerInventoryChanged;
 struct BP_CoolerActive_C_OnHeaterCoolerConnectionsChanged final
 {
 public:
-	TArray<class FName>                           ConnectedSockets;                                  // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	TArray<class FName>                           ConnectedSockets_OnHeaterCoolerConnectionsChanged; // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 };
 DUMPER7_ASSERTS_BP_CoolerActive_C_OnHeaterCoolerConnectionsChanged;
 

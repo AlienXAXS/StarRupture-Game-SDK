@@ -75,9 +75,9 @@ void ABP_Exploder_Tier2_Actor_Character_C::SetExplosionAttackTimer(bool bSetTime
 // Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaSeconds_ReceiveTick                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Exploder_Tier2_Actor_Character_C::ReceiveTick(float DeltaSeconds)
+void ABP_Exploder_Tier2_Actor_Character_C::ReceiveTick(float DeltaSeconds_ReceiveTick)
 {
 	static class UFunction* Func = nullptr;
 
@@ -86,7 +86,7 @@ void ABP_Exploder_Tier2_Actor_Character_C::ReceiveTick(float DeltaSeconds)
 
 	Params::BP_Exploder_Tier2_Actor_Character_C_ReceiveTick Parms{};
 
-	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.DeltaSeconds_ReceiveTick = DeltaSeconds_ReceiveTick;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

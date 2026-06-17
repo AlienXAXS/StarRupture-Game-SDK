@@ -82,18 +82,18 @@ public:
 	void OnZiplineTravelLocallyStarted();
 	void OnZiplineModeLocallyStarted();
 	void OnZiplineLocallyCancelled();
-	void OnUntargeted(class ACrCharacterPlayerBase* InPlayer);
-	void OnUnoccupied(class ACrCharacterPlayerBase* InPlayer);
-	void OnTravellingTo(class ACrCharacterPlayerBase* InPlayer);
-	void OnTargeted(class ACrCharacterPlayerBase* InPlayer);
-	void OnStopTravellingTo(class ACrCharacterPlayerBase* InPlayer, bool bCancelled);
+	void OnUntargeted(class ACrCharacterPlayerBase* InPlayer_OnUntargeted);
+	void OnUnoccupied(class ACrCharacterPlayerBase* InPlayer_OnUnoccupied);
+	void OnTravellingTo(class ACrCharacterPlayerBase* InPlayer_OnTravellingTo);
+	void OnTargeted(class ACrCharacterPlayerBase* InPlayer_OnTargeted);
+	void OnStopTravellingTo(class ACrCharacterPlayerBase* InPlayer_OnStopTravellingTo, bool bCancelled_OnStopTravellingTo);
 	void OnShowBlockingSphere();
 	void OnPlayerRotationStarted();
-	void OnPlayerRotationFinished(const struct FVector_NetQuantize& NewTargetLocation, const struct FRotator& NewRotation);
+	void OnPlayerRotationFinished(const struct FVector_NetQuantize& NewTargetLocation_OnPlayerRotationFinished, const struct FRotator& NewRotation_OnPlayerRotationFinished);
 	void OnHideBlockingSphere();
-	void OnConnectionsModified(const TArray<struct FVector_NetQuantize>& ActiveLocations, const TArray<struct FVector_NetQuantize>& InactiveLocations);
-	void OnBuildingStateChanged(ECrBuildingState InState);
-	void OnActivityModified(bool bActive);
+	void OnConnectionsModified(const TArray<struct FVector_NetQuantize>& ActiveLocations_OnConnectionsModified, const TArray<struct FVector_NetQuantize>& InactiveLocations_OnConnectionsModified);
+	void OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged);
+	void OnActivityModified(bool bActive_OnActivityModified);
 	void ExecuteUbergraph_BP_ZipLine_OLD(int32 EntryPoint);
 	void BlockAllBeams(class UNiagaraComponent* NiagaraSystem);
 

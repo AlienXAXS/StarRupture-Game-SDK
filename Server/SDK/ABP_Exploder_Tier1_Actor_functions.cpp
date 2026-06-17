@@ -19,10 +19,10 @@ SDK_NAMESPACE_START
 // Function ABP_Exploder_Tier1_Actor.ABP_Exploder_Tier1_Actor_C.UpdateYawRotationRateForLocomotionState
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// ECrEnemyLocomotionType                  OldLocomotionType                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// ECrEnemyLocomotionType                  NewLocomotionType                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrEnemyLocomotionType                  OldLocomotionType_UpdateYawRotationRateForLocomotionState(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrEnemyLocomotionType                  NewLocomotionType_UpdateYawRotationRateForLocomotionState(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UABP_Exploder_Tier1_Actor_C::UpdateYawRotationRateForLocomotionState(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType)
+void UABP_Exploder_Tier1_Actor_C::UpdateYawRotationRateForLocomotionState(ECrEnemyLocomotionType OldLocomotionType_UpdateYawRotationRateForLocomotionState, ECrEnemyLocomotionType NewLocomotionType_UpdateYawRotationRateForLocomotionState)
 {
 	static class UFunction* Func = nullptr;
 
@@ -31,8 +31,8 @@ void UABP_Exploder_Tier1_Actor_C::UpdateYawRotationRateForLocomotionState(ECrEne
 
 	Params::ABP_Exploder_Tier1_Actor_C_UpdateYawRotationRateForLocomotionState Parms{};
 
-	Parms.OldLocomotionType = OldLocomotionType;
-	Parms.NewLocomotionType = NewLocomotionType;
+	Parms.OldLocomotionType_UpdateYawRotationRateForLocomotionState = OldLocomotionType_UpdateYawRotationRateForLocomotionState;
+	Parms.NewLocomotionType_UpdateYawRotationRateForLocomotionState = NewLocomotionType_UpdateYawRotationRateForLocomotionState;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -41,10 +41,10 @@ void UABP_Exploder_Tier1_Actor_C::UpdateYawRotationRateForLocomotionState(ECrEne
 // Function ABP_Exploder_Tier1_Actor.ABP_Exploder_Tier1_Actor_C.UpdateYawRotationRateForAttackType
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// ECrEnemyAttackType                      OldAttackType                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// ECrEnemyAttackType                      NewAttackType                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrEnemyAttackType                      OldAttackType_UpdateYawRotationRateForAttackType       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrEnemyAttackType                      NewAttackType_UpdateYawRotationRateForAttackType       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UABP_Exploder_Tier1_Actor_C::UpdateYawRotationRateForAttackType(ECrEnemyAttackType OldAttackType, ECrEnemyAttackType NewAttackType)
+void UABP_Exploder_Tier1_Actor_C::UpdateYawRotationRateForAttackType(ECrEnemyAttackType OldAttackType_UpdateYawRotationRateForAttackType, ECrEnemyAttackType NewAttackType_UpdateYawRotationRateForAttackType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -53,8 +53,8 @@ void UABP_Exploder_Tier1_Actor_C::UpdateYawRotationRateForAttackType(ECrEnemyAtt
 
 	Params::ABP_Exploder_Tier1_Actor_C_UpdateYawRotationRateForAttackType Parms{};
 
-	Parms.OldAttackType = OldAttackType;
-	Parms.NewAttackType = NewAttackType;
+	Parms.OldAttackType_UpdateYawRotationRateForAttackType = OldAttackType_UpdateYawRotationRateForAttackType;
+	Parms.NewAttackType_UpdateYawRotationRateForAttackType = NewAttackType_UpdateYawRotationRateForAttackType;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -609,10 +609,10 @@ void UABP_Exploder_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_AB
 // Function ABP_Exploder_Tier1_Actor.ABP_Exploder_Tier1_Actor_C.BPOnLocomotionTypeChanged
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// ECrEnemyLocomotionType                  OldLocomotionType                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// ECrEnemyLocomotionType                  NewLocomotionType                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrEnemyLocomotionType                  OldLocomotionType_BPOnLocomotionTypeChanged            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrEnemyLocomotionType                  NewLocomotionType_BPOnLocomotionTypeChanged            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UABP_Exploder_Tier1_Actor_C::BPOnLocomotionTypeChanged(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType)
+void UABP_Exploder_Tier1_Actor_C::BPOnLocomotionTypeChanged(ECrEnemyLocomotionType OldLocomotionType_BPOnLocomotionTypeChanged, ECrEnemyLocomotionType NewLocomotionType_BPOnLocomotionTypeChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -621,8 +621,8 @@ void UABP_Exploder_Tier1_Actor_C::BPOnLocomotionTypeChanged(ECrEnemyLocomotionTy
 
 	Params::ABP_Exploder_Tier1_Actor_C_BPOnLocomotionTypeChanged Parms{};
 
-	Parms.OldLocomotionType = OldLocomotionType;
-	Parms.NewLocomotionType = NewLocomotionType;
+	Parms.OldLocomotionType_BPOnLocomotionTypeChanged = OldLocomotionType_BPOnLocomotionTypeChanged;
+	Parms.NewLocomotionType_BPOnLocomotionTypeChanged = NewLocomotionType_BPOnLocomotionTypeChanged;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -631,10 +631,10 @@ void UABP_Exploder_Tier1_Actor_C::BPOnLocomotionTypeChanged(ECrEnemyLocomotionTy
 // Function ABP_Exploder_Tier1_Actor.ABP_Exploder_Tier1_Actor_C.BPOnAttackTypeChanged
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// ECrEnemyAttackType                      OldAttackType                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// ECrEnemyAttackType                      NewAttackType                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrEnemyAttackType                      OldAttackType_BPOnAttackTypeChanged                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrEnemyAttackType                      NewAttackType_BPOnAttackTypeChanged                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UABP_Exploder_Tier1_Actor_C::BPOnAttackTypeChanged(ECrEnemyAttackType OldAttackType, ECrEnemyAttackType NewAttackType)
+void UABP_Exploder_Tier1_Actor_C::BPOnAttackTypeChanged(ECrEnemyAttackType OldAttackType_BPOnAttackTypeChanged, ECrEnemyAttackType NewAttackType_BPOnAttackTypeChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -643,8 +643,8 @@ void UABP_Exploder_Tier1_Actor_C::BPOnAttackTypeChanged(ECrEnemyAttackType OldAt
 
 	Params::ABP_Exploder_Tier1_Actor_C_BPOnAttackTypeChanged Parms{};
 
-	Parms.OldAttackType = OldAttackType;
-	Parms.NewAttackType = NewAttackType;
+	Parms.OldAttackType_BPOnAttackTypeChanged = OldAttackType_BPOnAttackTypeChanged;
+	Parms.NewAttackType_BPOnAttackTypeChanged = NewAttackType_BPOnAttackTypeChanged;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -913,9 +913,9 @@ void UABP_Exploder_Tier1_Actor_C::AnimNotify_AnimationFinishedEvent()
 // Function ABP_Exploder_Tier1_Actor.ABP_Exploder_Tier1_Actor_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink*                       AnimGraph_0                                            (Parm, OutParm, NoDestructor)
+// struct FPoseLink*                       AnimGraph                                              (Parm, OutParm, NoDestructor)
 
-void UABP_Exploder_Tier1_Actor_C::AnimGraph(struct FPoseLink* AnimGraph_0)
+void UABP_Exploder_Tier1_Actor_C::AnimGraph(struct FPoseLink* AnimGraph)
 {
 	static class UFunction* Func = nullptr;
 
@@ -926,8 +926,8 @@ void UABP_Exploder_Tier1_Actor_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (AnimGraph_0 != nullptr)
-		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
+	if (AnimGraph != nullptr)
+		*AnimGraph = std::move(Parms.AnimGraph);
 }
 
 

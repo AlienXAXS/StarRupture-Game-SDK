@@ -19,7 +19,7 @@ SDK_NAMESPACE_START
 // Function BTTask_Exploder_Tier2_LOD0_RunCrAiActionBlueprintBase_DealDamageAndSpawnEntity.BTTask_Exploder_Tier2_LOD0_RunCrAiActionBlueprintBase_DealDamageAndSpawnEntity_C.CreateAiAction
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCrAiAction*                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
+// class UCrAiAction*                      ReturnValue_CreateAiAction                             (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
 
 class UCrAiAction* UBTTask_Exploder_Tier2_LOD0_RunCrAiActionBlueprintBase_DealDamageAndSpawnEntity_C::CreateAiAction()
 {

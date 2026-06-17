@@ -27,7 +27,7 @@ public:
 
 public:
 	void OnMenuOpened();
-	void OnCurrentEntryIndexChange(int32 Index_0, int32 NumberOfEntries, bool bActive);
+	void OnCurrentEntryIndexChange(int32 Index_OnCurrentEntryIndexChange, int32 NumberOfEntries_OnCurrentEntryIndexChange, bool bActive_OnCurrentEntryIndexChange);
 	void ExecuteUbergraph_WBP_QuickUseMenu(int32 EntryPoint);
 
 public:

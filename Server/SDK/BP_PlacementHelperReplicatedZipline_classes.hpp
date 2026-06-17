@@ -44,7 +44,7 @@ public:
 	void UpdateAcceptedBeamLocations();
 	void TurnOnBeams();
 	void TurnOffBeams();
-	void OnConnectionsModified(const TArray<struct FVector>& NewAcceptedLocations, const TArray<struct FVector>& NewObstructedLocations, const TArray<struct FVector>& NewBlockedLocations);
+	void OnConnectionsModified(const TArray<struct FVector>& NewAcceptedLocations_OnConnectionsModified, const TArray<struct FVector>& NewObstructedLocations_OnConnectionsModified, const TArray<struct FVector>& NewBlockedLocations_OnConnectionsModified);
 	void ExecuteUbergraph_BP_PlacementHelperReplicatedZipline(int32 EntryPoint);
 
 public:

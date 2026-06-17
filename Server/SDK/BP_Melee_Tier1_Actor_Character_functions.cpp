@@ -33,9 +33,9 @@ void ABP_Melee_Tier1_Actor_Character_C::UserConstructionScript()
 // Function BP_Melee_Tier1_Actor_Character.BP_Melee_Tier1_Actor_Character_C.OnVisualVariationChanged
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// const struct FVector&                   NewVisualVariationSeed                                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   NewVisualVariationSeed_OnVisualVariationChanged        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Melee_Tier1_Actor_Character_C::OnVisualVariationChanged(const struct FVector& NewVisualVariationSeed)
+void ABP_Melee_Tier1_Actor_Character_C::OnVisualVariationChanged(const struct FVector& NewVisualVariationSeed_OnVisualVariationChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -44,7 +44,7 @@ void ABP_Melee_Tier1_Actor_Character_C::OnVisualVariationChanged(const struct FV
 
 	Params::BP_Melee_Tier1_Actor_Character_C_OnVisualVariationChanged Parms{};
 
-	Parms.NewVisualVariationSeed = std::move(NewVisualVariationSeed);
+	Parms.NewVisualVariationSeed_OnVisualVariationChanged = std::move(NewVisualVariationSeed_OnVisualVariationChanged);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -81,9 +81,9 @@ void ABP_Melee_Tier1_Actor_Character_C::OnEnterActorPool()
 // Function BP_Melee_Tier1_Actor_Character.BP_Melee_Tier1_Actor_Character_C.GetNiagaraEyeSystem
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UNiagaraComponent**               NewParam                                               (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UNiagaraComponent**               NewParam_GetNiagaraEyeSystem                           (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Melee_Tier1_Actor_Character_C::GetNiagaraEyeSystem(class UNiagaraComponent** NewParam)
+void ABP_Melee_Tier1_Actor_Character_C::GetNiagaraEyeSystem(class UNiagaraComponent** NewParam_GetNiagaraEyeSystem)
 {
 	static class UFunction* Func = nullptr;
 
@@ -94,8 +94,8 @@ void ABP_Melee_Tier1_Actor_Character_C::GetNiagaraEyeSystem(class UNiagaraCompon
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (NewParam != nullptr)
-		*NewParam = Parms.NewParam;
+	if (NewParam_GetNiagaraEyeSystem != nullptr)
+		*NewParam_GetNiagaraEyeSystem = Parms.NewParam_GetNiagaraEyeSystem;
 }
 
 
@@ -122,9 +122,9 @@ void ABP_Melee_Tier1_Actor_Character_C::ExecuteUbergraph_BP_Melee_Tier1_Actor_Ch
 // Function BP_Melee_Tier1_Actor_Character.BP_Melee_Tier1_Actor_Character_C.OnMeshVisibilityUpdated
 // (Event, Public, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// bool                                    bIsMeshHidden                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bIsMeshHidden_OnMeshVisibilityUpdated                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Melee_Tier1_Actor_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidden) const
+void ABP_Melee_Tier1_Actor_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidden_OnMeshVisibilityUpdated) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -133,7 +133,7 @@ void ABP_Melee_Tier1_Actor_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidd
 
 	Params::BP_Melee_Tier1_Actor_Character_C_OnMeshVisibilityUpdated Parms{};
 
-	Parms.bIsMeshHidden = bIsMeshHidden;
+	Parms.bIsMeshHidden_OnMeshVisibilityUpdated = bIsMeshHidden_OnMeshVisibilityUpdated;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

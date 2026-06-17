@@ -31,7 +31,7 @@ DUMPER7_ASSERTS_BP_Melee_Tier1_Actor_Character_C_UserConstructionScript;
 struct BP_Melee_Tier1_Actor_Character_C_OnVisualVariationChanged final
 {
 public:
-	struct FVector                                NewVisualVariationSeed;                            // 0x0000(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                NewVisualVariationSeed_OnVisualVariationChanged;   // 0x0000(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Melee_Tier1_Actor_Character_C_OnVisualVariationChanged;
 
@@ -49,7 +49,7 @@ DUMPER7_ASSERTS_BP_Melee_Tier1_Actor_Character_C_OnExitActorPool;
 struct BP_Melee_Tier1_Actor_Character_C_GetNiagaraEyeSystem final
 {
 public:
-	class UNiagaraComponent*                      NewParam;                                          // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      NewParam_GetNiagaraEyeSystem;                      // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Melee_Tier1_Actor_Character_C_GetNiagaraEyeSystem;
 
@@ -75,7 +75,7 @@ DUMPER7_ASSERTS_BP_Melee_Tier1_Actor_Character_C_ExecuteUbergraph_BP_Melee_Tier1
 struct BP_Melee_Tier1_Actor_Character_C_OnMeshVisibilityUpdated final
 {
 public:
-	bool                                          bIsMeshHidden;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bIsMeshHidden_OnMeshVisibilityUpdated;             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Melee_Tier1_Actor_Character_C_OnMeshVisibilityUpdated;
 

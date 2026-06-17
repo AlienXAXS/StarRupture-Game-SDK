@@ -89,9 +89,9 @@ void ABP_PackageReceiver_C::ReceiveBeginPlay()
 // Function BP_PackageReceiver.BP_PackageReceiver_C.PostPlayBuildingEffect
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    bWasBuildingEffectPlayed                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bWasBuildingEffectPlayed_PostPlayBuildingEffect        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PackageReceiver_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
+void ABP_PackageReceiver_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed_PostPlayBuildingEffect)
 {
 	static class UFunction* Func = nullptr;
 
@@ -100,7 +100,7 @@ void ABP_PackageReceiver_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed
 
 	Params::BP_PackageReceiver_C_PostPlayBuildingEffect Parms{};
 
-	Parms.bWasBuildingEffectPlayed = bWasBuildingEffectPlayed;
+	Parms.bWasBuildingEffectPlayed_PostPlayBuildingEffect = bWasBuildingEffectPlayed_PostPlayBuildingEffect;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -123,9 +123,9 @@ void ABP_PackageReceiver_C::OnItemsReceived()
 // Function BP_PackageReceiver.BP_PackageReceiver_C.OnBuildingStateChanged
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrBuildingState                        InState_OnBuildingStateChanged                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PackageReceiver_C::OnBuildingStateChanged(ECrBuildingState InState)
+void ABP_PackageReceiver_C::OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -134,7 +134,7 @@ void ABP_PackageReceiver_C::OnBuildingStateChanged(ECrBuildingState InState)
 
 	Params::BP_PackageReceiver_C_OnBuildingStateChanged Parms{};
 
-	Parms.InState = InState;
+	Parms.InState_OnBuildingStateChanged = InState_OnBuildingStateChanged;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

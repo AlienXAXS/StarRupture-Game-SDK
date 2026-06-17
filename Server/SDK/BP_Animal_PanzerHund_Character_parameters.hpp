@@ -78,7 +78,7 @@ DUMPER7_ASSERTS_BP_Animal_PanzerHund_Character_C_SetAudioState;
 struct BP_Animal_PanzerHund_Character_C_ReceiveEndPlay final
 {
 public:
-	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEndPlayReason                                EndPlayReason_ReceiveEndPlay;                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Animal_PanzerHund_Character_C_ReceiveEndPlay;
 
@@ -221,7 +221,7 @@ DUMPER7_ASSERTS_BP_Animal_PanzerHund_Character_C_BndEvt__BP_Animal_PanzerHund_Ch
 struct BP_Animal_PanzerHund_Character_C_OnMeshVisibilityUpdated final
 {
 public:
-	bool                                          bIsMeshHidden;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bIsMeshHidden_OnMeshVisibilityUpdated;             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Animal_PanzerHund_Character_C_OnMeshVisibilityUpdated;
 

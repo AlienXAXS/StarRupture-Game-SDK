@@ -35,7 +35,7 @@ public:
 	void UserConstructionScript();
 	void Spawn_Explosion_Sphere_At_Current_Location(const struct FAuAPMassSpawnedEntityType& EntityType);
 	void SetExplosionAttackTimer(bool bSetTimerActive, double TimeToExplode);
-	void ReceiveTick(float DeltaSeconds);
+	void ReceiveTick(float DeltaSeconds_ReceiveTick);
 	void OnExplosionAttackTimerFinished();
 	void ExecuteUbergraph_BP_Exploder_Tier2_Actor_Character(int32 EntryPoint);
 

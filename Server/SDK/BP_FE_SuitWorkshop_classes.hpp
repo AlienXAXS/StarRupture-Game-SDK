@@ -64,8 +64,8 @@ public:
 	void Timeline__UpdateFunc();
 	void Timeline__FinishedFunc();
 	void ReceiveBeginPlay();
-	void OnUIOpened(bool bOpened);
-	void OnBuildingStateChanged(ECrBuildingState InState);
+	void OnUIOpened(bool bOpened_OnUIOpened);
+	void OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged);
 	void ExecuteUbergraph_BP_FE_SuitWorkshop(int32 EntryPoint);
 	void AttachMeshes();
 	void Arm_D_VFX();

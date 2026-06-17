@@ -23,7 +23,7 @@ SDK_PARAM_NAMESPACE_START
 struct BP_ZipRail_C_ReceiveTick final
 {
 public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         DeltaSeconds_ReceiveTick;                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_ZipRail_C_ReceiveTick;
 
@@ -32,7 +32,7 @@ DUMPER7_ASSERTS_BP_ZipRail_C_ReceiveTick;
 struct BP_ZipRail_C_ReceiveEndPlay final
 {
 public:
-	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEndPlayReason                                EndPlayReason_ReceiveEndPlay;                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_ZipRail_C_ReceiveEndPlay;
 
@@ -41,7 +41,7 @@ DUMPER7_ASSERTS_BP_ZipRail_C_ReceiveEndPlay;
 struct BP_ZipRail_C_OnSplineReady final
 {
 public:
-	class USplineComponent*                       InSpline;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class USplineComponent*                       InSpline_OnSplineReady;                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_ZipRail_C_OnSplineReady;
 
@@ -50,7 +50,7 @@ DUMPER7_ASSERTS_BP_ZipRail_C_OnSplineReady;
 struct BP_ZipRail_C_OnInteract final
 {
 public:
-	class APlayerController*                      InPc;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class APlayerController*                      InPc_OnInteract;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_ZipRail_C_OnInteract;
 
@@ -174,7 +174,7 @@ DUMPER7_ASSERTS_BP_ZipRail_C_EndZiprail;
 struct BP_ZipRail_C_CanBePooled final
 {
 public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue_CanBePooled;                           // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_ZipRail_C_CanBePooled;
 

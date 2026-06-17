@@ -33,9 +33,9 @@ void ABP_Airlock_StartingHUB_C::ReceiveBeginPlay()
 // Function BP_Airlock_StartingHUB.BP_Airlock_StartingHUB_C.PostPlayBuildingEffect
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    bWasBuildingEffectPlayed                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bWasBuildingEffectPlayed_PostPlayBuildingEffect        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Airlock_StartingHUB_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
+void ABP_Airlock_StartingHUB_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed_PostPlayBuildingEffect)
 {
 	static class UFunction* Func = nullptr;
 
@@ -44,7 +44,7 @@ void ABP_Airlock_StartingHUB_C::PostPlayBuildingEffect(bool bWasBuildingEffectPl
 
 	Params::BP_Airlock_StartingHUB_C_PostPlayBuildingEffect Parms{};
 
-	Parms.bWasBuildingEffectPlayed = bWasBuildingEffectPlayed;
+	Parms.bWasBuildingEffectPlayed_PostPlayBuildingEffect = bWasBuildingEffectPlayed_PostPlayBuildingEffect;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -53,9 +53,9 @@ void ABP_Airlock_StartingHUB_C::PostPlayBuildingEffect(bool bWasBuildingEffectPl
 // Function BP_Airlock_StartingHUB.BP_Airlock_StartingHUB_C.OnOpenStateChanged
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool                                    bInOpen                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bInOpen_OnOpenStateChanged                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Airlock_StartingHUB_C::OnOpenStateChanged(bool bInOpen)
+void ABP_Airlock_StartingHUB_C::OnOpenStateChanged(bool bInOpen_OnOpenStateChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -64,7 +64,7 @@ void ABP_Airlock_StartingHUB_C::OnOpenStateChanged(bool bInOpen)
 
 	Params::BP_Airlock_StartingHUB_C_OnOpenStateChanged Parms{};
 
-	Parms.bInOpen = bInOpen;
+	Parms.bInOpen_OnOpenStateChanged = bInOpen_OnOpenStateChanged;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

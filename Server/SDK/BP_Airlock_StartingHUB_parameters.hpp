@@ -21,7 +21,7 @@ SDK_PARAM_NAMESPACE_START
 struct BP_Airlock_StartingHUB_C_PostPlayBuildingEffect final
 {
 public:
-	bool                                          bWasBuildingEffectPlayed;                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bWasBuildingEffectPlayed_PostPlayBuildingEffect;   // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Airlock_StartingHUB_C_PostPlayBuildingEffect;
 
@@ -30,7 +30,7 @@ DUMPER7_ASSERTS_BP_Airlock_StartingHUB_C_PostPlayBuildingEffect;
 struct BP_Airlock_StartingHUB_C_OnOpenStateChanged final
 {
 public:
-	bool                                          bInOpen;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bInOpen_OnOpenStateChanged;                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Airlock_StartingHUB_C_OnOpenStateChanged;
 

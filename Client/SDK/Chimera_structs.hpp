@@ -3177,10 +3177,10 @@ struct FCrMassCustomDoorStateFragment final : public FCrMassFragmentWithCustomOn
 {
 public:
 	//bool                                          bState;                                            // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool GetState() const { return static_cast<bool>(Pad_0[0]); }
-	void SetState(bool v) { Pad_0[0] = static_cast<uint8>(v); }
+	bool GetState() const { return *(bool*)this; }
+	bool SetState(bool NewState) { *(bool*)this = NewState; return NewState; }
 };
-//DUMPER7_ASSERTS_FCrMassCustomDoorStateFragment; -  Drop this and replace with Getter/Setter to avoid compiler issues with bool in a packed struct
+//DUMPER7_ASSERTS_FCrMassCustomDoorStateFragment;
 
 // ScriptStruct Chimera.CrAlienObeliskFragment
 // 0x0038 (0x0038 - 0x0000)

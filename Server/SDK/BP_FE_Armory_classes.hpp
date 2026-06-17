@@ -64,8 +64,8 @@ public:
 public:
 	void RightArmVFX(double LaserLength);
 	void ReceiveBeginPlay();
-	void OnUIOpened(bool bOpened);
-	void OnBuildingStateChanged(ECrBuildingState InState);
+	void OnUIOpened(bool bOpened_OnUIOpened);
+	void OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged);
 	void LeftArmVFX(double LaserLength);
 	void Idle_timeline__UpdateFunc();
 	void Idle_timeline__FinishedFunc();

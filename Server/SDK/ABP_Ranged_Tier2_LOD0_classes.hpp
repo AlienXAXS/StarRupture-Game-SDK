@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "AnimGraphRuntime_structs.hpp"
-#include "Engine_structs.hpp"
 #include "ABP_Ranged_Tier2_LOD0_structs.hpp"
+#include "Engine_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
 
@@ -175,9 +175,9 @@ public:
 	double                                        AttackAnimStartPosition;                           // 0x29A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UpdateYawRotationRateForLocomotionState(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType);
-	void UpdateYawRotationRateForAttackType(ECrEnemyAttackType OldAttackType, ECrEnemyAttackType NewAttackType);
-	void OnJumpTimeSet(float Time);
+	void UpdateYawRotationRateForLocomotionState(ECrEnemyLocomotionType OldLocomotionType_UpdateYawRotationRateForLocomotionState, ECrEnemyLocomotionType NewLocomotionType_UpdateYawRotationRateForLocomotionState);
+	void UpdateYawRotationRateForAttackType(ECrEnemyAttackType OldAttackType_UpdateYawRotationRateForAttackType, ECrEnemyAttackType NewAttackType_UpdateYawRotationRateForAttackType);
+	void OnJumpTimeSet(float Time_OnJumpTimeSet);
 	void ExecuteUbergraph_ABP_Ranged_Tier2_LOD0(int32 EntryPoint);
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier2_LOD0_AnimGraphNode_TransitionResult_FE6860B846EFDAF20C0677AD737EF287();
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier2_LOD0_AnimGraphNode_TransitionResult_F0D5FA894FDA41EB29D033BEC166D117();
@@ -220,9 +220,9 @@ public:
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier2_LOD0_AnimGraphNode_BlendListByBool_FAD9EB5845E6AB26A27539BEA255C84D();
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier2_LOD0_AnimGraphNode_BlendListByBool_C4B0EA7840AEA6C44F324F98EC9C14F7();
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier2_LOD0_AnimGraphNode_BlendListByBool_501CC3B0422A080ABF391B89D19FB1F3();
-	void BPOnLocomotionTypeChanged(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType);
+	void BPOnLocomotionTypeChanged(ECrEnemyLocomotionType OldLocomotionType_BPOnLocomotionTypeChanged, ECrEnemyLocomotionType NewLocomotionType_BPOnLocomotionTypeChanged);
 	void BPOnDamageReceived();
-	void BPOnAttackTypeChanged(ECrEnemyAttackType OldAttackType, ECrEnemyAttackType NewAttackType);
+	void BPOnAttackTypeChanged(ECrEnemyAttackType OldAttackType_BPOnAttackTypeChanged, ECrEnemyAttackType NewAttackType_BPOnAttackTypeChanged);
 	void AttackConduitOnUpdate(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node);
 	void AnimNotify_SFX_TauntStart();
 	void AnimNotify_Landed();
@@ -230,7 +230,7 @@ public:
 	void AnimNotify_EndAttack();
 	void AnimNotify_EndAnim();
 	void AnimNotify_DeathVO_Start();
-	void AnimGraph(struct FPoseLink* AnimGraph_0);
+	void AnimGraph(struct FPoseLink* AnimGraph);
 
 public:
 	static class UClass* StaticClass()

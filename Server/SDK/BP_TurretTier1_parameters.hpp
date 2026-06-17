@@ -22,7 +22,7 @@ SDK_PARAM_NAMESPACE_START
 struct BP_TurretTier1_C_UpdateCosmeticsBasedOnAttackDirection final
 {
 public:
-	struct FVector                                OutCurrentAttackDirection;                         // 0x0000(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                OutCurrentAttackDirection_UpdateCosmeticsBasedOnAttackDirection; // 0x0000(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_TurretTier1_C_UpdateCosmeticsBasedOnAttackDirection;
 
@@ -141,7 +141,7 @@ DUMPER7_ASSERTS_BP_TurretTier1_C_ExecuteUbergraph_BP_TurretTier1;
 struct BP_TurretTier1_C_CosmeticHit final
 {
 public:
-	struct FHitResult                             InHit;                                             // 0x0000(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	struct FHitResult                             InHit_CosmeticHit;                                 // 0x0000(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
 };
 DUMPER7_ASSERTS_BP_TurretTier1_C_CosmeticHit;
 

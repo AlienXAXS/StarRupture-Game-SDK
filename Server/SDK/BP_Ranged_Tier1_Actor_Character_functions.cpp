@@ -61,10 +61,10 @@ void ABP_Ranged_Tier1_Actor_Character_C::OnEnterActorPool()
 // Function BP_Ranged_Tier1_Actor_Character.BP_Ranged_Tier1_Actor_Character_C.OnAiDied
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// const struct FHitResult&                HitResult                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-// const struct FGameplayTag&              KillingDamageTag                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FHitResult&                HitResult_OnAiDied                                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+// const struct FGameplayTag&              KillingDamageTag_OnAiDied                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Ranged_Tier1_Actor_Character_C::OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag)
+void ABP_Ranged_Tier1_Actor_Character_C::OnAiDied(const struct FHitResult& HitResult_OnAiDied, const struct FGameplayTag& KillingDamageTag_OnAiDied)
 {
 	static class UFunction* Func = nullptr;
 
@@ -73,8 +73,8 @@ void ABP_Ranged_Tier1_Actor_Character_C::OnAiDied(const struct FHitResult& HitRe
 
 	Params::BP_Ranged_Tier1_Actor_Character_C_OnAiDied Parms{};
 
-	Parms.HitResult = std::move(HitResult);
-	Parms.KillingDamageTag = std::move(KillingDamageTag);
+	Parms.HitResult_OnAiDied = std::move(HitResult_OnAiDied);
+	Parms.KillingDamageTag_OnAiDied = std::move(KillingDamageTag_OnAiDied);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -83,9 +83,9 @@ void ABP_Ranged_Tier1_Actor_Character_C::OnAiDied(const struct FHitResult& HitRe
 // Function BP_Ranged_Tier1_Actor_Character.BP_Ranged_Tier1_Actor_Character_C.GetNiagaraEyeSystem
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UNiagaraComponent**               NewParam                                               (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UNiagaraComponent**               NewParam_GetNiagaraEyeSystem                           (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Ranged_Tier1_Actor_Character_C::GetNiagaraEyeSystem(class UNiagaraComponent** NewParam)
+void ABP_Ranged_Tier1_Actor_Character_C::GetNiagaraEyeSystem(class UNiagaraComponent** NewParam_GetNiagaraEyeSystem)
 {
 	static class UFunction* Func = nullptr;
 
@@ -96,8 +96,8 @@ void ABP_Ranged_Tier1_Actor_Character_C::GetNiagaraEyeSystem(class UNiagaraCompo
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (NewParam != nullptr)
-		*NewParam = Parms.NewParam;
+	if (NewParam_GetNiagaraEyeSystem != nullptr)
+		*NewParam_GetNiagaraEyeSystem = Parms.NewParam_GetNiagaraEyeSystem;
 }
 
 
@@ -124,9 +124,9 @@ void ABP_Ranged_Tier1_Actor_Character_C::ExecuteUbergraph_BP_Ranged_Tier1_Actor_
 // Function BP_Ranged_Tier1_Actor_Character.BP_Ranged_Tier1_Actor_Character_C.OnMeshVisibilityUpdated
 // (Event, Public, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// bool                                    bIsMeshHidden                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bIsMeshHidden_OnMeshVisibilityUpdated                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Ranged_Tier1_Actor_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidden) const
+void ABP_Ranged_Tier1_Actor_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidden_OnMeshVisibilityUpdated) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -135,7 +135,7 @@ void ABP_Ranged_Tier1_Actor_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHid
 
 	Params::BP_Ranged_Tier1_Actor_Character_C_OnMeshVisibilityUpdated Parms{};
 
-	Parms.bIsMeshHidden = bIsMeshHidden;
+	Parms.bIsMeshHidden_OnMeshVisibilityUpdated = bIsMeshHidden_OnMeshVisibilityUpdated;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

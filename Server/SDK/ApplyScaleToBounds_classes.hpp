@@ -20,9 +20,9 @@ SDK_NAMESPACE_START
 class UApplyScaleToBounds_C final : public UPCGBlueprintElement
 {
 public:
-	void ExecuteWithContext(struct FPCGContext& InContext, const struct FPCGDataCollection& Input, struct FPCGDataCollection* Output);
+	void ExecuteWithContext(struct FPCGContext& InContext_ExecuteWithContext, const struct FPCGDataCollection& Input_ExecuteWithContext, struct FPCGDataCollection* Output_ExecuteWithContext);
 
-	bool PointLoopBody(const struct FPCGContext& InContext, const class UPCGPointData* InData, const struct FPCGPoint& InPoint, struct FPCGPoint* OutPoint, class UPCGMetadata* OutMetadata, int64 Iteration) const;
+	bool PointLoopBody(const struct FPCGContext& InContext_PointLoopBody, const class UPCGPointData* InData_PointLoopBody, const struct FPCGPoint& InPoint_PointLoopBody, struct FPCGPoint* OutPoint_PointLoopBody, class UPCGMetadata* OutMetadata_PointLoopBody, int64 Iteration_PointLoopBody) const;
 	class FName NodeTitleOverride() const;
 	struct FLinearColor NodeColorOverride() const;
 

@@ -145,9 +145,9 @@ void ABP_FE_entrance_door_C::OnUpdateDoorOpenState()
 // Function BP_FE_entrance_door.BP_FE_entrance_door_C.OnUnlocked
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class AActor*                           ActorActivating                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           ActorActivating_OnUnlocked                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_FE_entrance_door_C::OnUnlocked(class AActor* ActorActivating)
+void ABP_FE_entrance_door_C::OnUnlocked(class AActor* ActorActivating_OnUnlocked)
 {
 	static class UFunction* Func = nullptr;
 
@@ -156,7 +156,7 @@ void ABP_FE_entrance_door_C::OnUnlocked(class AActor* ActorActivating)
 
 	Params::BP_FE_entrance_door_C_OnUnlocked Parms{};
 
-	Parms.ActorActivating = ActorActivating;
+	Parms.ActorActivating_OnUnlocked = ActorActivating_OnUnlocked;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

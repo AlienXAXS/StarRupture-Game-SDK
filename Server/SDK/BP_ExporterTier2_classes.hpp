@@ -60,8 +60,8 @@ public:
 	void UserConstructionScript();
 	void ReceiveBeginPlay();
 	void OnItemCraftingComplete();
-	void OnCorporationChanged(class FName NewCorporation);
-	void OnBuildingStateChanged(ECrBuildingState InState);
+	void OnCorporationChanged(class FName NewCorporation_OnCorporationChanged);
+	void OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged);
 	void ExecuteUbergraph_BP_ExporterTier2(int32 EntryPoint);
 	void Attach_meshes();
 

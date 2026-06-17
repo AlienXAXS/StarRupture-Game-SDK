@@ -37,9 +37,9 @@ public:
 
 public:
 	void SetupProfession();
-	void SetSelectedStyles(bool bSelected);
-	void SetSelectedRemote(bool bSelected, const class FText& Name_0);
-	void SetHighlightStyles(bool bHighlight);
+	void SetSelectedStyles(bool bSelected_SetSelectedStyles);
+	void SetSelectedRemote(bool bSelected_SetSelectedRemote, const class FText& Name_SetSelectedRemote);
+	void SetHighlightStyles(bool bHighlight_SetHighlightStyles);
 	void SetColorsInternal();
 	void OnShowBioButtonPressed();
 	void ExecuteUbergraph_WBP_CharacterWidget(int32 EntryPoint);

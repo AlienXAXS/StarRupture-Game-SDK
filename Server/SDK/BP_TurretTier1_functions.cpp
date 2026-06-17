@@ -19,9 +19,9 @@ SDK_NAMESPACE_START
 // Function BP_TurretTier1.BP_TurretTier1_C.UpdateCosmeticsBasedOnAttackDirection
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// const struct FVector&                   OutCurrentAttackDirection                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   OutCurrentAttackDirection_UpdateCosmeticsBasedOnAttackDirection(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_TurretTier1_C::UpdateCosmeticsBasedOnAttackDirection(const struct FVector& OutCurrentAttackDirection)
+void ABP_TurretTier1_C::UpdateCosmeticsBasedOnAttackDirection(const struct FVector& OutCurrentAttackDirection_UpdateCosmeticsBasedOnAttackDirection)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,7 +30,7 @@ void ABP_TurretTier1_C::UpdateCosmeticsBasedOnAttackDirection(const struct FVect
 
 	Params::BP_TurretTier1_C_UpdateCosmeticsBasedOnAttackDirection Parms{};
 
-	Parms.OutCurrentAttackDirection = std::move(OutCurrentAttackDirection);
+	Parms.OutCurrentAttackDirection_UpdateCosmeticsBasedOnAttackDirection = std::move(OutCurrentAttackDirection_UpdateCosmeticsBasedOnAttackDirection);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -143,9 +143,9 @@ void ABP_TurretTier1_C::CosmeticTurretMalfunctionEnded()
 // Function BP_TurretTier1.BP_TurretTier1_C.CosmeticHit
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// const struct FHitResult&                InHit                                                  (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+// const struct FHitResult&                InHit_CosmeticHit                                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
 
-void ABP_TurretTier1_C::CosmeticHit(const struct FHitResult& InHit)
+void ABP_TurretTier1_C::CosmeticHit(const struct FHitResult& InHit_CosmeticHit)
 {
 	static class UFunction* Func = nullptr;
 
@@ -154,7 +154,7 @@ void ABP_TurretTier1_C::CosmeticHit(const struct FHitResult& InHit)
 
 	Params::BP_TurretTier1_C_CosmeticHit Parms{};
 
-	Parms.InHit = std::move(InHit);
+	Parms.InHit_CosmeticHit = std::move(InHit_CosmeticHit);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

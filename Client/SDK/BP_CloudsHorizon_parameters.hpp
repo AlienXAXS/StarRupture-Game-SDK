@@ -130,7 +130,7 @@ DUMPER7_ASSERTS_BP_CloudsHorizon_C_SetCurrentDensity;
 struct BP_CloudsHorizon_C_OnDataLayerDeactivate_Exec final
 {
 public:
-	bool                                          FromLoad;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          FromLoad_OnDataLayerDeactivate_Exec;               // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_CloudsHorizon_C_OnDataLayerDeactivate_Exec;
 
@@ -139,7 +139,7 @@ DUMPER7_ASSERTS_BP_CloudsHorizon_C_OnDataLayerDeactivate_Exec;
 struct BP_CloudsHorizon_C_OnDataLayerActivate_Exec final
 {
 public:
-	bool                                          FromLoad;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          FromLoad_OnDataLayerActivate_Exec;                 // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_CloudsHorizon_C_OnDataLayerActivate_Exec;
 
@@ -148,7 +148,7 @@ DUMPER7_ASSERTS_BP_CloudsHorizon_C_OnDataLayerActivate_Exec;
 struct BP_CloudsHorizon_C_Is_Current_Data_Layer final
 {
 public:
-	class UDataLayerInstance*                     DataLayer_0;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UDataLayerInstance*                     DataLayer;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          Result;                                            // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	const class UDataLayerAsset*                  CallFunc_GetAsset_ReturnValue;                     // 0x0010(0x0008)(ConstParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)

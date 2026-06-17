@@ -59,9 +59,9 @@ void ABP_CoolerActive_C::OnSocketConnected(class FName SocketName)
 // Function BP_CoolerActive.BP_CoolerActive_C.OnHeaterCoolerStateChanged
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// ECrMassHeaterCoolerState                State                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrMassHeaterCoolerState                State_OnHeaterCoolerStateChanged                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_CoolerActive_C::OnHeaterCoolerStateChanged(ECrMassHeaterCoolerState State)
+void ABP_CoolerActive_C::OnHeaterCoolerStateChanged(ECrMassHeaterCoolerState State_OnHeaterCoolerStateChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -70,7 +70,7 @@ void ABP_CoolerActive_C::OnHeaterCoolerStateChanged(ECrMassHeaterCoolerState Sta
 
 	Params::BP_CoolerActive_C_OnHeaterCoolerStateChanged Parms{};
 
-	Parms.State = State;
+	Parms.State_OnHeaterCoolerStateChanged = State_OnHeaterCoolerStateChanged;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -79,9 +79,9 @@ void ABP_CoolerActive_C::OnHeaterCoolerStateChanged(ECrMassHeaterCoolerState Sta
 // Function BP_CoolerActive.BP_CoolerActive_C.OnHeaterCoolerInventoryChanged
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// float                                   UsedSpaceNormalized                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   UsedSpaceNormalized_OnHeaterCoolerInventoryChanged     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_CoolerActive_C::OnHeaterCoolerInventoryChanged(float UsedSpaceNormalized)
+void ABP_CoolerActive_C::OnHeaterCoolerInventoryChanged(float UsedSpaceNormalized_OnHeaterCoolerInventoryChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -90,7 +90,7 @@ void ABP_CoolerActive_C::OnHeaterCoolerInventoryChanged(float UsedSpaceNormalize
 
 	Params::BP_CoolerActive_C_OnHeaterCoolerInventoryChanged Parms{};
 
-	Parms.UsedSpaceNormalized = UsedSpaceNormalized;
+	Parms.UsedSpaceNormalized_OnHeaterCoolerInventoryChanged = UsedSpaceNormalized_OnHeaterCoolerInventoryChanged;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -99,9 +99,9 @@ void ABP_CoolerActive_C::OnHeaterCoolerInventoryChanged(float UsedSpaceNormalize
 // Function BP_CoolerActive.BP_CoolerActive_C.OnHeaterCoolerConnectionsChanged
 // (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
-// const TArray<class FName>&              ConnectedSockets                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const TArray<class FName>&              ConnectedSockets_OnHeaterCoolerConnectionsChanged      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
-void ABP_CoolerActive_C::OnHeaterCoolerConnectionsChanged(const TArray<class FName>& ConnectedSockets)
+void ABP_CoolerActive_C::OnHeaterCoolerConnectionsChanged(const TArray<class FName>& ConnectedSockets_OnHeaterCoolerConnectionsChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -110,7 +110,7 @@ void ABP_CoolerActive_C::OnHeaterCoolerConnectionsChanged(const TArray<class FNa
 
 	Params::BP_CoolerActive_C_OnHeaterCoolerConnectionsChanged Parms{};
 
-	Parms.ConnectedSockets = std::move(ConnectedSockets);
+	Parms.ConnectedSockets_OnHeaterCoolerConnectionsChanged = std::move(ConnectedSockets_OnHeaterCoolerConnectionsChanged);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

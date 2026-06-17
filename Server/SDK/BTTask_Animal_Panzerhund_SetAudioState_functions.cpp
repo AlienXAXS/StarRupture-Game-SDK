@@ -39,10 +39,10 @@ void UBTTask_Animal_Panzerhund_SetAudioState_C::ExecuteUbergraph_BTTask_Animal_P
 // Function BTTask_Animal_Panzerhund_SetAudioState.BTTask_Animal_Panzerhund_SetAudioState_C.ReceiveExecuteAI
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class AAIController*                    OwnerController                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class APawn*                            ControlledPawn                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AAIController*                    OwnerController_ReceiveExecuteAI                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class APawn*                            ControlledPawn_ReceiveExecuteAI                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UBTTask_Animal_Panzerhund_SetAudioState_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
+void UBTTask_Animal_Panzerhund_SetAudioState_C::ReceiveExecuteAI(class AAIController* OwnerController_ReceiveExecuteAI, class APawn* ControlledPawn_ReceiveExecuteAI)
 {
 	static class UFunction* Func = nullptr;
 
@@ -51,8 +51,8 @@ void UBTTask_Animal_Panzerhund_SetAudioState_C::ReceiveExecuteAI(class AAIContro
 
 	Params::BTTask_Animal_Panzerhund_SetAudioState_C_ReceiveExecuteAI Parms{};
 
-	Parms.OwnerController = OwnerController;
-	Parms.ControlledPawn = ControlledPawn;
+	Parms.OwnerController_ReceiveExecuteAI = OwnerController_ReceiveExecuteAI;
+	Parms.ControlledPawn_ReceiveExecuteAI = ControlledPawn_ReceiveExecuteAI;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

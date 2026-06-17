@@ -53,7 +53,7 @@ public:
 public:
 	void ReceiveBeginPlay();
 	void PlayFX();
-	void OnBuildingStateChanged(ECrBuildingState InState);
+	void OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged);
 	void ExecuteUbergraph_BP_Hammer(int32 EntryPoint);
 
 public:

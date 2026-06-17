@@ -36,7 +36,7 @@ DUMPER7_ASSERTS_BP_PlacementHelperConnector_C_SetSplineSegment;
 struct BP_PlacementHelperConnector_C_SetMeshColor final
 {
 public:
-	struct FLinearColor                           Color;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           Color_SetMeshColor;                                // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_PlacementHelperConnector_C_SetMeshColor;
 
@@ -61,7 +61,7 @@ DUMPER7_ASSERTS_BP_PlacementHelperConnector_C_RemoveSteps;
 struct BP_PlacementHelperConnector_C_ReceiveTick final
 {
 public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         DeltaSeconds_ReceiveTick;                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_PlacementHelperConnector_C_ReceiveTick;
 
@@ -70,7 +70,7 @@ DUMPER7_ASSERTS_BP_PlacementHelperConnector_C_ReceiveTick;
 struct BP_PlacementHelperConnector_C_OnSplinePointRemoved final
 {
 public:
-	int32                                         PointIndex;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         PointIndex_OnSplinePointRemoved;                   // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_PlacementHelperConnector_C_OnSplinePointRemoved;
 
@@ -79,7 +79,7 @@ DUMPER7_ASSERTS_BP_PlacementHelperConnector_C_OnSplinePointRemoved;
 struct BP_PlacementHelperConnector_C_OnSplinePointAdded final
 {
 public:
-	int32                                         PointIndex;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         PointIndex_OnSplinePointAdded;                     // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_PlacementHelperConnector_C_OnSplinePointAdded;
 

@@ -30,7 +30,7 @@ public:
 	struct FAuAPMassSpawnedEntityType             Failure_Entity_Type;                               // 0x0098(0x0038)(Edit, BlueprintVisible)
 
 public:
-	class UCrAiAction* CreateAiAction(class AActor* Actor) const;
+	class UCrAiAction* CreateAiAction(class AActor* Actor_CreateAiAction) const;
 
 public:
 	static class UClass* StaticClass()

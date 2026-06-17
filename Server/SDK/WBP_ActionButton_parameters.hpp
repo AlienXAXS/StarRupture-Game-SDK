@@ -110,7 +110,7 @@ DUMPER7_ASSERTS_WBP_ActionButton_C_SetDefault;
 struct WBP_ActionButton_C_SetColors final
 {
 public:
-	const class UCrCommonUIColorsDevSettings*     Settings;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	const class UCrCommonUIColorsDevSettings*     Settings_SetColors;                                // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_ActionButton_C_SetColors;
 
@@ -119,7 +119,7 @@ DUMPER7_ASSERTS_WBP_ActionButton_C_SetColors;
 struct WBP_ActionButton_C_SetButtonEnabled final
 {
 public:
-	bool                                          bEnabled;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bEnabled_SetButtonEnabled;                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_ActionButton_C_SetButtonEnabled;
 
@@ -139,7 +139,7 @@ DUMPER7_ASSERTS_WBP_ActionButton_C_SetAlignment;
 struct WBP_ActionButton_C_SetActionNamePadding final
 {
 public:
-	bool                                          bSet;                                              // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bSet_SetActionNamePadding;                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_ActionButton_C_SetActionNamePadding;
 
@@ -148,7 +148,7 @@ DUMPER7_ASSERTS_WBP_ActionButton_C_SetActionNamePadding;
 struct WBP_ActionButton_C_PreConstruct final
 {
 public:
-	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsDesignTime_PreConstruct;                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_ActionButton_C_PreConstruct;
 

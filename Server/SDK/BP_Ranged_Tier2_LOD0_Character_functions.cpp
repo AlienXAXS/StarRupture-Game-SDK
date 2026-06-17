@@ -33,9 +33,9 @@ void ABP_Ranged_Tier2_LOD0_Character_C::UserConstructionScript()
 // Function BP_Ranged_Tier2_LOD0_Character.BP_Ranged_Tier2_LOD0_Character_C.SetIsAggroEyeColor
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    NewIsAggro                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    NewIsAggro_SetIsAggroEyeColor                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Ranged_Tier2_LOD0_Character_C::SetIsAggroEyeColor(bool NewIsAggro)
+void ABP_Ranged_Tier2_LOD0_Character_C::SetIsAggroEyeColor(bool NewIsAggro_SetIsAggroEyeColor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -44,7 +44,7 @@ void ABP_Ranged_Tier2_LOD0_Character_C::SetIsAggroEyeColor(bool NewIsAggro)
 
 	Params::BP_Ranged_Tier2_LOD0_Character_C_SetIsAggroEyeColor Parms{};
 
-	Parms.NewIsAggro = NewIsAggro;
+	Parms.NewIsAggro_SetIsAggroEyeColor = NewIsAggro_SetIsAggroEyeColor;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -109,11 +109,11 @@ void ABP_Ranged_Tier2_LOD0_Character_C::OnEnterActorPool()
 // Function BP_Ranged_Tier2_LOD0_Character.BP_Ranged_Tier2_LOD0_Character_C.OnDamage
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// class AActor*                           Actor                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// const struct FHitResult&                HitResult                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-// float                                   InDamage                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           Actor_OnDamage                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const struct FHitResult&                HitResult_OnDamage                                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+// float                                   InDamage_OnDamage                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Ranged_Tier2_LOD0_Character_C::OnDamage(class AActor* Actor, const struct FHitResult& HitResult, float InDamage)
+void ABP_Ranged_Tier2_LOD0_Character_C::OnDamage(class AActor* Actor_OnDamage, const struct FHitResult& HitResult_OnDamage, float InDamage_OnDamage)
 {
 	static class UFunction* Func = nullptr;
 
@@ -122,9 +122,9 @@ void ABP_Ranged_Tier2_LOD0_Character_C::OnDamage(class AActor* Actor, const stru
 
 	Params::BP_Ranged_Tier2_LOD0_Character_C_OnDamage Parms{};
 
-	Parms.Actor = Actor;
-	Parms.HitResult = std::move(HitResult);
-	Parms.InDamage = InDamage;
+	Parms.Actor_OnDamage = Actor_OnDamage;
+	Parms.HitResult_OnDamage = std::move(HitResult_OnDamage);
+	Parms.InDamage_OnDamage = InDamage_OnDamage;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -133,10 +133,10 @@ void ABP_Ranged_Tier2_LOD0_Character_C::OnDamage(class AActor* Actor, const stru
 // Function BP_Ranged_Tier2_LOD0_Character.BP_Ranged_Tier2_LOD0_Character_C.OnAiDied
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// const struct FHitResult&                HitResult                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-// const struct FGameplayTag&              KillingDamageTag                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FHitResult&                HitResult_OnAiDied                                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+// const struct FGameplayTag&              KillingDamageTag_OnAiDied                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Ranged_Tier2_LOD0_Character_C::OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag)
+void ABP_Ranged_Tier2_LOD0_Character_C::OnAiDied(const struct FHitResult& HitResult_OnAiDied, const struct FGameplayTag& KillingDamageTag_OnAiDied)
 {
 	static class UFunction* Func = nullptr;
 
@@ -145,8 +145,8 @@ void ABP_Ranged_Tier2_LOD0_Character_C::OnAiDied(const struct FHitResult& HitRes
 
 	Params::BP_Ranged_Tier2_LOD0_Character_C_OnAiDied Parms{};
 
-	Parms.HitResult = std::move(HitResult);
-	Parms.KillingDamageTag = std::move(KillingDamageTag);
+	Parms.HitResult_OnAiDied = std::move(HitResult_OnAiDied);
+	Parms.KillingDamageTag_OnAiDied = std::move(KillingDamageTag_OnAiDied);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -155,9 +155,9 @@ void ABP_Ranged_Tier2_LOD0_Character_C::OnAiDied(const struct FHitResult& HitRes
 // Function BP_Ranged_Tier2_LOD0_Character.BP_Ranged_Tier2_LOD0_Character_C.GetNiagaraEyeSystem
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UNiagaraComponent**               NewParam                                               (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UNiagaraComponent**               NewParam_GetNiagaraEyeSystem                           (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Ranged_Tier2_LOD0_Character_C::GetNiagaraEyeSystem(class UNiagaraComponent** NewParam)
+void ABP_Ranged_Tier2_LOD0_Character_C::GetNiagaraEyeSystem(class UNiagaraComponent** NewParam_GetNiagaraEyeSystem)
 {
 	static class UFunction* Func = nullptr;
 
@@ -168,8 +168,8 @@ void ABP_Ranged_Tier2_LOD0_Character_C::GetNiagaraEyeSystem(class UNiagaraCompon
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (NewParam != nullptr)
-		*NewParam = Parms.NewParam;
+	if (NewParam_GetNiagaraEyeSystem != nullptr)
+		*NewParam_GetNiagaraEyeSystem = Parms.NewParam_GetNiagaraEyeSystem;
 }
 
 
@@ -196,9 +196,9 @@ void ABP_Ranged_Tier2_LOD0_Character_C::ExecuteUbergraph_BP_Ranged_Tier2_LOD0_Ch
 // Function BP_Ranged_Tier2_LOD0_Character.BP_Ranged_Tier2_LOD0_Character_C.OnMeshVisibilityUpdated
 // (Event, Public, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// bool                                    bIsMeshHidden                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bIsMeshHidden_OnMeshVisibilityUpdated                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Ranged_Tier2_LOD0_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidden) const
+void ABP_Ranged_Tier2_LOD0_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidden_OnMeshVisibilityUpdated) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -207,7 +207,7 @@ void ABP_Ranged_Tier2_LOD0_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidd
 
 	Params::BP_Ranged_Tier2_LOD0_Character_C_OnMeshVisibilityUpdated Parms{};
 
-	Parms.bIsMeshHidden = bIsMeshHidden;
+	Parms.bIsMeshHidden_OnMeshVisibilityUpdated = bIsMeshHidden_OnMeshVisibilityUpdated;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

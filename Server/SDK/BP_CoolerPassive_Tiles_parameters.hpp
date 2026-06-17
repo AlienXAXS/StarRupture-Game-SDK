@@ -19,7 +19,7 @@ SDK_PARAM_NAMESPACE_START
 struct BP_CoolerPassive_Tiles_C_ReceiveTick final
 {
 public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         DeltaSeconds_ReceiveTick;                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_CoolerPassive_Tiles_C_ReceiveTick;
 
@@ -28,7 +28,7 @@ DUMPER7_ASSERTS_BP_CoolerPassive_Tiles_C_ReceiveTick;
 struct BP_CoolerPassive_Tiles_C_ReceiveActorBeginOverlap final
 {
 public:
-	class AActor*                                 OtherActor;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 OtherActor_ReceiveActorBeginOverlap;               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_CoolerPassive_Tiles_C_ReceiveActorBeginOverlap;
 

@@ -31,7 +31,7 @@ public:
 	void InpActEvt_K_K2Node_InputDebugKeyEvent_0(const struct FKey& Key, const struct FInputActionValue& ActionValue);
 	void ExecuteUbergraph_PC_PlayerControllerBase(int32 EntryPoint);
 	void cheat_Teleport2player(int32 PlayerId);
-	bool CanInputKeyBePassedFromUIOnlyMode(const struct FKey& Key);
+	bool CanInputKeyBePassedFromUIOnlyMode(const struct FKey& Key_CanInputKeyBePassedFromUIOnlyMode);
 
 public:
 	static class UClass* StaticClass()

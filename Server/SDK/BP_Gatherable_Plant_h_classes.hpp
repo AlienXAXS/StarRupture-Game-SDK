@@ -25,9 +25,9 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Gatherable_Plant_h_C;            // 0x03A8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay);
 	void ExecuteUbergraph_BP_Gatherable_Plant_h(int32 EntryPoint);
-	void BP_OnWaveChangedUpdate(EEnviroWave WaveType, EEnviroWaveStage WaveStage, EEnviroWaveFadeoutSubstage FadeoutSubstage, EEnviroWaveGrowbackSubstage GrowbackSubstage);
+	void BP_OnWaveChangedUpdate(EEnviroWave WaveType_BP_OnWaveChangedUpdate, EEnviroWaveStage WaveStage_BP_OnWaveChangedUpdate, EEnviroWaveFadeoutSubstage FadeoutSubstage_BP_OnWaveChangedUpdate, EEnviroWaveGrowbackSubstage GrowbackSubstage_BP_OnWaveChangedUpdate);
 
 public:
 	static class UClass* StaticClass()

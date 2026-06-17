@@ -75,12 +75,12 @@ void ABP_SkyboxWithStar_C::ReceiveBeginPlay()
 // Function BP_SkyboxWithStar.BP_SkyboxWithStar_C.OnEnviroWaveTick
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EEnviroWave                             WaveType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EEnviroWaveStage                        WaveStage                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-// float                                   WaveProgress                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEnviroWave                             WaveType_OnEnviroWaveTick                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEnviroWaveStage                        WaveStage_OnEnviroWaveTick                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FCrEnviroWaveSettings&     WaveSettings_OnEnviroWaveTick                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+// float                                   WaveProgress_OnEnviroWaveTick                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_SkyboxWithStar_C::OnEnviroWaveTick(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress)
+void ABP_SkyboxWithStar_C::OnEnviroWaveTick(EEnviroWave WaveType_OnEnviroWaveTick, EEnviroWaveStage WaveStage_OnEnviroWaveTick, const struct FCrEnviroWaveSettings& WaveSettings_OnEnviroWaveTick, float WaveProgress_OnEnviroWaveTick)
 {
 	static class UFunction* Func = nullptr;
 
@@ -89,10 +89,10 @@ void ABP_SkyboxWithStar_C::OnEnviroWaveTick(EEnviroWave WaveType, EEnviroWaveSta
 
 	Params::BP_SkyboxWithStar_C_OnEnviroWaveTick Parms{};
 
-	Parms.WaveType = WaveType;
-	Parms.WaveStage = WaveStage;
-	Parms.WaveSettings = std::move(WaveSettings);
-	Parms.WaveProgress = WaveProgress;
+	Parms.WaveType_OnEnviroWaveTick = WaveType_OnEnviroWaveTick;
+	Parms.WaveStage_OnEnviroWaveTick = WaveStage_OnEnviroWaveTick;
+	Parms.WaveSettings_OnEnviroWaveTick = std::move(WaveSettings_OnEnviroWaveTick);
+	Parms.WaveProgress_OnEnviroWaveTick = WaveProgress_OnEnviroWaveTick;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -101,10 +101,10 @@ void ABP_SkyboxWithStar_C::OnEnviroWaveTick(EEnviroWave WaveType, EEnviroWaveSta
 // Function BP_SkyboxWithStar.BP_SkyboxWithStar_C.OnEnviroWaveFinished
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EEnviroWave                             WaveType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+// EEnviroWave                             WaveType_OnEnviroWaveFinished                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FCrEnviroWaveSettings&     WaveSettings_OnEnviroWaveFinished                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
 
-void ABP_SkyboxWithStar_C::OnEnviroWaveFinished(EEnviroWave WaveType, const struct FCrEnviroWaveSettings& WaveSettings)
+void ABP_SkyboxWithStar_C::OnEnviroWaveFinished(EEnviroWave WaveType_OnEnviroWaveFinished, const struct FCrEnviroWaveSettings& WaveSettings_OnEnviroWaveFinished)
 {
 	static class UFunction* Func = nullptr;
 
@@ -113,8 +113,8 @@ void ABP_SkyboxWithStar_C::OnEnviroWaveFinished(EEnviroWave WaveType, const stru
 
 	Params::BP_SkyboxWithStar_C_OnEnviroWaveFinished Parms{};
 
-	Parms.WaveType = WaveType;
-	Parms.WaveSettings = std::move(WaveSettings);
+	Parms.WaveType_OnEnviroWaveFinished = WaveType_OnEnviroWaveFinished;
+	Parms.WaveSettings_OnEnviroWaveFinished = std::move(WaveSettings_OnEnviroWaveFinished);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -123,11 +123,11 @@ void ABP_SkyboxWithStar_C::OnEnviroWaveFinished(EEnviroWave WaveType, const stru
 // Function BP_SkyboxWithStar.BP_SkyboxWithStar_C.OnEnviroWaveCanceled
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EEnviroWave                             WaveType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EEnviroWaveStage                        WaveStage                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FCrEnviroWaveSettings&     WaveSettings                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+// EEnviroWave                             WaveType_OnEnviroWaveCanceled                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEnviroWaveStage                        WaveStage_OnEnviroWaveCanceled                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FCrEnviroWaveSettings&     WaveSettings_OnEnviroWaveCanceled                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
 
-void ABP_SkyboxWithStar_C::OnEnviroWaveCanceled(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings)
+void ABP_SkyboxWithStar_C::OnEnviroWaveCanceled(EEnviroWave WaveType_OnEnviroWaveCanceled, EEnviroWaveStage WaveStage_OnEnviroWaveCanceled, const struct FCrEnviroWaveSettings& WaveSettings_OnEnviroWaveCanceled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -136,9 +136,9 @@ void ABP_SkyboxWithStar_C::OnEnviroWaveCanceled(EEnviroWave WaveType, EEnviroWav
 
 	Params::BP_SkyboxWithStar_C_OnEnviroWaveCanceled Parms{};
 
-	Parms.WaveType = WaveType;
-	Parms.WaveStage = WaveStage;
-	Parms.WaveSettings = std::move(WaveSettings);
+	Parms.WaveType_OnEnviroWaveCanceled = WaveType_OnEnviroWaveCanceled;
+	Parms.WaveStage_OnEnviroWaveCanceled = WaveStage_OnEnviroWaveCanceled;
+	Parms.WaveSettings_OnEnviroWaveCanceled = std::move(WaveSettings_OnEnviroWaveCanceled);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

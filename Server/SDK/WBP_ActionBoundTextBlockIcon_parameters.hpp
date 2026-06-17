@@ -22,7 +22,7 @@ SDK_PARAM_NAMESPACE_START
 struct WBP_ActionBoundTextBlockIcon_C_SetTemporaryIconVisibility final
 {
 public:
-	bool                                          bVisible;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bVisible_SetTemporaryIconVisibility;               // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_ActionBoundTextBlockIcon_C_SetTemporaryIconVisibility;
 
@@ -31,7 +31,7 @@ DUMPER7_ASSERTS_WBP_ActionBoundTextBlockIcon_C_SetTemporaryIconVisibility;
 struct WBP_ActionBoundTextBlockIcon_C_SetTemporaryIconKey final
 {
 public:
-	class FText                                   InText;                                            // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	class FText                                   InText_SetTemporaryIconKey;                        // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 };
 DUMPER7_ASSERTS_WBP_ActionBoundTextBlockIcon_C_SetTemporaryIconKey;
 
@@ -40,7 +40,7 @@ DUMPER7_ASSERTS_WBP_ActionBoundTextBlockIcon_C_SetTemporaryIconKey;
 struct WBP_ActionBoundTextBlockIcon_C_SetLongIconText final
 {
 public:
-	bool                                          bLong;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bLong_SetLongIconText;                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_ActionBoundTextBlockIcon_C_SetLongIconText;
 
@@ -49,7 +49,7 @@ DUMPER7_ASSERTS_WBP_ActionBoundTextBlockIcon_C_SetLongIconText;
 struct WBP_ActionBoundTextBlockIcon_C_SetButtonImageVisibility final
 {
 public:
-	ESlateVisibility                              InVisibility;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ESlateVisibility                              InVisibility_SetButtonImageVisibility;             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_ActionBoundTextBlockIcon_C_SetButtonImageVisibility;
 

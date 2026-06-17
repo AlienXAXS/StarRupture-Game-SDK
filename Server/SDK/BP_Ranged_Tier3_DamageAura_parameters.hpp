@@ -21,7 +21,7 @@ SDK_PARAM_NAMESPACE_START
 struct BP_Ranged_Tier3_DamageAura_C_ReceiveActorEndOverlap final
 {
 public:
-	class AActor*                                 OtherActor;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 OtherActor_ReceiveActorEndOverlap;                 // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Ranged_Tier3_DamageAura_C_ReceiveActorEndOverlap;
 
@@ -30,7 +30,7 @@ DUMPER7_ASSERTS_BP_Ranged_Tier3_DamageAura_C_ReceiveActorEndOverlap;
 struct BP_Ranged_Tier3_DamageAura_C_ReceiveActorBeginOverlap final
 {
 public:
-	class AActor*                                 OtherActor;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 OtherActor_ReceiveActorBeginOverlap;               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Ranged_Tier3_DamageAura_C_ReceiveActorBeginOverlap;
 

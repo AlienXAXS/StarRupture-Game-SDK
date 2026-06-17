@@ -43,9 +43,9 @@ void ABP_PlacementHelperRailingWalkway_C::SetSplineSegment(class USplineMeshComp
 // Function BP_PlacementHelperRailingWalkway.BP_PlacementHelperRailingWalkway_C.SetMeshColor
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              Color_SetMeshColor                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PlacementHelperRailingWalkway_C::SetMeshColor(const struct FLinearColor& Color)
+void ABP_PlacementHelperRailingWalkway_C::SetMeshColor(const struct FLinearColor& Color_SetMeshColor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -54,7 +54,7 @@ void ABP_PlacementHelperRailingWalkway_C::SetMeshColor(const struct FLinearColor
 
 	Params::BP_PlacementHelperRailingWalkway_C_SetMeshColor Parms{};
 
-	Parms.Color = std::move(Color);
+	Parms.Color_SetMeshColor = std::move(Color_SetMeshColor);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -83,9 +83,9 @@ void ABP_PlacementHelperRailingWalkway_C::RemoveSteps(int32 Amount)
 // Function BP_PlacementHelperRailingWalkway.BP_PlacementHelperRailingWalkway_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaSeconds_ReceiveTick                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PlacementHelperRailingWalkway_C::ReceiveTick(float DeltaSeconds)
+void ABP_PlacementHelperRailingWalkway_C::ReceiveTick(float DeltaSeconds_ReceiveTick)
 {
 	static class UFunction* Func = nullptr;
 
@@ -94,7 +94,7 @@ void ABP_PlacementHelperRailingWalkway_C::ReceiveTick(float DeltaSeconds)
 
 	Params::BP_PlacementHelperRailingWalkway_C_ReceiveTick Parms{};
 
-	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.DeltaSeconds_ReceiveTick = DeltaSeconds_ReceiveTick;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -103,9 +103,9 @@ void ABP_PlacementHelperRailingWalkway_C::ReceiveTick(float DeltaSeconds)
 // Function BP_PlacementHelperRailingWalkway.BP_PlacementHelperRailingWalkway_C.OnSplinePointRemoved
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   PointIndex                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PointIndex_OnSplinePointRemoved                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PlacementHelperRailingWalkway_C::OnSplinePointRemoved(int32 PointIndex)
+void ABP_PlacementHelperRailingWalkway_C::OnSplinePointRemoved(int32 PointIndex_OnSplinePointRemoved)
 {
 	static class UFunction* Func = nullptr;
 
@@ -114,7 +114,7 @@ void ABP_PlacementHelperRailingWalkway_C::OnSplinePointRemoved(int32 PointIndex)
 
 	Params::BP_PlacementHelperRailingWalkway_C_OnSplinePointRemoved Parms{};
 
-	Parms.PointIndex = PointIndex;
+	Parms.PointIndex_OnSplinePointRemoved = PointIndex_OnSplinePointRemoved;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -123,9 +123,9 @@ void ABP_PlacementHelperRailingWalkway_C::OnSplinePointRemoved(int32 PointIndex)
 // Function BP_PlacementHelperRailingWalkway.BP_PlacementHelperRailingWalkway_C.OnSplinePointAdded
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   PointIndex                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PointIndex_OnSplinePointAdded                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PlacementHelperRailingWalkway_C::OnSplinePointAdded(int32 PointIndex)
+void ABP_PlacementHelperRailingWalkway_C::OnSplinePointAdded(int32 PointIndex_OnSplinePointAdded)
 {
 	static class UFunction* Func = nullptr;
 
@@ -134,7 +134,7 @@ void ABP_PlacementHelperRailingWalkway_C::OnSplinePointAdded(int32 PointIndex)
 
 	Params::BP_PlacementHelperRailingWalkway_C_OnSplinePointAdded Parms{};
 
-	Parms.PointIndex = PointIndex;
+	Parms.PointIndex_OnSplinePointAdded = PointIndex_OnSplinePointAdded;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

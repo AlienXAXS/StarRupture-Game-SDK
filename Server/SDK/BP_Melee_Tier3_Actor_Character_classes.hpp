@@ -12,8 +12,8 @@
 
 #include "Engine_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "BP_BaseAI_classes.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -65,29 +65,29 @@ public:
 	void UpdateAnimState();
 	void ShowLongAoeAttackEffect();
 	void SetRangedAttackTimer(bool SetTimerActive, double TimeToRangedAttack);
-	void SetMovementAttackStage(EMovementAttackStage MovementAttackStage_0);
+	void SetMovementAttackStage(EMovementAttackStage MovementAttackStage);
 	void SetIsUpCover(bool bNewIsUpCover);
 	void SetIsInSlowRotationRange(bool bNewIsInSlowRotationRange);
 	void SetIsCoverActive(bool bNewIsCoverActive);
-	void SetHasAggroTarget(bool bNewHasAggroTarget);
-	void ReceiveTick(float DeltaSeconds);
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void SetHasAggroTarget(bool bNewHasAggroTarget_SetHasAggroTarget);
+	void ReceiveTick(float DeltaSeconds_ReceiveTick);
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay);
 	void ReceiveBeginPlay();
 	void OnRangedAttackTimerFinished();
 	void OnPrepareForPooling();
 	void OnPrepareForGame();
 	void OnExitActorPool();
 	void OnEnterActorPool();
-	void OnBlackboardConfigured(class UMassEnemyDataAsset* Config);
-	void OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag);
-	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
+	void OnBlackboardConfigured(class UMassEnemyDataAsset* Config_OnBlackboardConfigured);
+	void OnAiDied(const struct FHitResult& HitResult_OnAiDied, const struct FGameplayTag& KillingDamageTag_OnAiDied);
+	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam_GetNiagaraEyeSystem);
 	EMovementAttackStage GetMovementAttackStage();
 	TArray<struct FVector> GetCachedLongAoePoints();
 	void ExecuteUbergraph_BP_Melee_Tier3_Actor_Character(int32 EntryPoint);
 	void CacheLongAoePoints(const TArray<struct FVector>& Points);
 	void AttachWeakpoint();
 
-	void OnMeshVisibilityUpdated(bool bIsMeshHidden) const;
+	void OnMeshVisibilityUpdated(bool bIsMeshHidden_OnMeshVisibilityUpdated) const;
 
 public:
 	static class UClass* StaticClass()

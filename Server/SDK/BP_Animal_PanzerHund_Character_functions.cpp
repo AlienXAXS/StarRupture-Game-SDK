@@ -99,9 +99,9 @@ void ABP_Animal_PanzerHund_Character_C::SetAudioState(const struct FGameplayTag&
 // Function BP_Animal_PanzerHund_Character.BP_Animal_PanzerHund_Character_C.ReceiveEndPlay
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEndPlayReason                          EndPlayReason_ReceiveEndPlay                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Animal_PanzerHund_Character_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
+void ABP_Animal_PanzerHund_Character_C::ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay)
 {
 	static class UFunction* Func = nullptr;
 
@@ -110,7 +110,7 @@ void ABP_Animal_PanzerHund_Character_C::ReceiveEndPlay(EEndPlayReason EndPlayRea
 
 	Params::BP_Animal_PanzerHund_Character_C_ReceiveEndPlay Parms{};
 
-	Parms.EndPlayReason = EndPlayReason;
+	Parms.EndPlayReason_ReceiveEndPlay = EndPlayReason_ReceiveEndPlay;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -323,9 +323,9 @@ void ABP_Animal_PanzerHund_Character_C::ActivateDust()
 // Function BP_Animal_PanzerHund_Character.BP_Animal_PanzerHund_Character_C.OnMeshVisibilityUpdated
 // (Event, Public, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// bool                                    bIsMeshHidden                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bIsMeshHidden_OnMeshVisibilityUpdated                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Animal_PanzerHund_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidden) const
+void ABP_Animal_PanzerHund_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidden_OnMeshVisibilityUpdated) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -334,7 +334,7 @@ void ABP_Animal_PanzerHund_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidd
 
 	Params::BP_Animal_PanzerHund_Character_C_OnMeshVisibilityUpdated Parms{};
 
-	Parms.bIsMeshHidden = bIsMeshHidden;
+	Parms.bIsMeshHidden_OnMeshVisibilityUpdated = bIsMeshHidden_OnMeshVisibilityUpdated;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -36,20 +36,20 @@ public:
 	void TryApplySpeedup();
 	void StartExplosionTimer();
 	void StartActivationTimer();
-	void ReceiveTick(float DeltaSeconds);
+	void ReceiveTick(float DeltaSeconds_ReceiveTick);
 	void OnPrepareForPooling();
 	void OnPrepareForGame();
 	void OnExitActorPool();
 	void OnEnterActorPool();
 	void OnEnableExplosionTimer();
 	void OnEnableActivationTimer();
-	void OnDiedFromGas(const struct FHitResult& LastHit, const struct FGameplayTag& KillingDamageTag);
-	void OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag);
-	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
+	void OnDiedFromGas(const struct FHitResult& LastHit_OnDiedFromGas, const struct FGameplayTag& KillingDamageTag_OnDiedFromGas);
+	void OnAiDied(const struct FHitResult& HitResult_OnAiDied, const struct FGameplayTag& KillingDamageTag_OnAiDied);
+	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam_GetNiagaraEyeSystem);
 	void ExecuteUbergraph_BP_Exploder_Tier1_Actor_Character(int32 EntryPoint);
 
 	bool ShouldSpawnHugeCollision() const;
-	void OnMeshVisibilityUpdated(bool bIsMeshHidden) const;
+	void OnMeshVisibilityUpdated(bool bIsMeshHidden_OnMeshVisibilityUpdated) const;
 	bool IsExploderDead() const;
 
 public:

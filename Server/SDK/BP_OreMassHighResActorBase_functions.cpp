@@ -33,9 +33,9 @@ void ABP_OreMassHighResActorBase_C::OnResourceDepletedCosmeticsStart()
 // Function BP_OreMassHighResActorBase.BP_OreMassHighResActorBase_C.OnMiningWeakSpotDepletedCosmeticsStart
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// const struct FTransform&                CosmeticTransform                                      (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FTransform&                CosmeticTransform_OnMiningWeakSpotDepletedCosmeticsStart(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_OreMassHighResActorBase_C::OnMiningWeakSpotDepletedCosmeticsStart(const struct FTransform& CosmeticTransform)
+void ABP_OreMassHighResActorBase_C::OnMiningWeakSpotDepletedCosmeticsStart(const struct FTransform& CosmeticTransform_OnMiningWeakSpotDepletedCosmeticsStart)
 {
 	static class UFunction* Func = nullptr;
 
@@ -44,7 +44,7 @@ void ABP_OreMassHighResActorBase_C::OnMiningWeakSpotDepletedCosmeticsStart(const
 
 	Params::BP_OreMassHighResActorBase_C_OnMiningWeakSpotDepletedCosmeticsStart Parms{};
 
-	Parms.CosmeticTransform = std::move(CosmeticTransform);
+	Parms.CosmeticTransform_OnMiningWeakSpotDepletedCosmeticsStart = std::move(CosmeticTransform_OnMiningWeakSpotDepletedCosmeticsStart);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

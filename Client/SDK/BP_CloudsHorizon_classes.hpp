@@ -50,9 +50,9 @@ public:
 	void SetupPrimParams();
 	void SetCurrentDensity(double Multiplyer);
 	void ReceiveBeginPlay();
-	void OnDataLayerDeactivate_Exec(bool FromLoad);
-	void OnDataLayerActivate_Exec(bool FromLoad);
-	void Is_Current_Data_Layer(class UDataLayerInstance* DataLayer_0, bool* Result);
+	void OnDataLayerDeactivate_Exec(bool FromLoad_OnDataLayerDeactivate_Exec);
+	void OnDataLayerActivate_Exec(bool FromLoad_OnDataLayerActivate_Exec);
+	void Is_Current_Data_Layer(class UDataLayerInstance* DataLayer, bool* Result);
 	void ExecuteUbergraph_BP_CloudsHorizon(int32 EntryPoint);
 
 public:

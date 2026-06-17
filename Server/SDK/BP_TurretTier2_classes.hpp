@@ -45,7 +45,7 @@ public:
 	struct FVector                                CurrentRotation;                                   // 0x0768(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UpdateCosmeticsBasedOnAttackDirection(const struct FVector& OutCurrentAttackDirection);
+	void UpdateCosmeticsBasedOnAttackDirection(const struct FVector& OutCurrentAttackDirection_UpdateCosmeticsBasedOnAttackDirection);
 	void UpdateAmmoCounter();
 	void Timeline__UpdateFunc();
 	void Timeline__FinishedFunc();
@@ -53,7 +53,7 @@ public:
 	void ExecuteUbergraph_BP_TurretTier2(int32 EntryPoint);
 	void CosmeticTurretMalfunctionStarted();
 	void CosmeticTurretMalfunctionEnded();
-	void CosmeticHit(const struct FHitResult& InHit);
+	void CosmeticHit(const struct FHitResult& InHit_CosmeticHit);
 	void BP_OnInventoryChanged();
 
 public:

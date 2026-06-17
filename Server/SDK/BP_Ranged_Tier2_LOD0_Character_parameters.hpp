@@ -35,7 +35,7 @@ DUMPER7_ASSERTS_BP_Ranged_Tier2_LOD0_Character_C_UserConstructionScript;
 struct BP_Ranged_Tier2_LOD0_Character_C_SetIsAggroEyeColor final
 {
 public:
-	bool                                          NewIsAggro;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          NewIsAggro_SetIsAggroEyeColor;                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Ranged_Tier2_LOD0_Character_C_SetIsAggroEyeColor;
 
@@ -65,9 +65,9 @@ DUMPER7_ASSERTS_BP_Ranged_Tier2_LOD0_Character_C_OnExitActorPool;
 struct BP_Ranged_Tier2_LOD0_Character_C_OnDamage final
 {
 public:
-	class AActor*                                 Actor;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FHitResult                             HitResult;                                         // 0x0008(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	float                                         InDamage;                                          // 0x0108(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 Actor_OnDamage;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             HitResult_OnDamage;                                // 0x0008(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	float                                         InDamage_OnDamage;                                 // 0x0108(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Ranged_Tier2_LOD0_Character_C_OnDamage;
 
@@ -76,8 +76,8 @@ DUMPER7_ASSERTS_BP_Ranged_Tier2_LOD0_Character_C_OnDamage;
 struct BP_Ranged_Tier2_LOD0_Character_C_OnAiDied final
 {
 public:
-	struct FHitResult                             HitResult;                                         // 0x0000(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	struct FGameplayTag                           KillingDamageTag;                                  // 0x0100(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             HitResult_OnAiDied;                                // 0x0000(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	struct FGameplayTag                           KillingDamageTag_OnAiDied;                         // 0x0100(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Ranged_Tier2_LOD0_Character_C_OnAiDied;
 
@@ -86,7 +86,7 @@ DUMPER7_ASSERTS_BP_Ranged_Tier2_LOD0_Character_C_OnAiDied;
 struct BP_Ranged_Tier2_LOD0_Character_C_GetNiagaraEyeSystem final
 {
 public:
-	class UNiagaraComponent*                      NewParam;                                          // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      NewParam_GetNiagaraEyeSystem;                      // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Ranged_Tier2_LOD0_Character_C_GetNiagaraEyeSystem;
 
@@ -123,7 +123,7 @@ DUMPER7_ASSERTS_BP_Ranged_Tier2_LOD0_Character_C_ExecuteUbergraph_BP_Ranged_Tier
 struct BP_Ranged_Tier2_LOD0_Character_C_OnMeshVisibilityUpdated final
 {
 public:
-	bool                                          bIsMeshHidden;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bIsMeshHidden_OnMeshVisibilityUpdated;             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Ranged_Tier2_LOD0_Character_C_OnMeshVisibilityUpdated;
 

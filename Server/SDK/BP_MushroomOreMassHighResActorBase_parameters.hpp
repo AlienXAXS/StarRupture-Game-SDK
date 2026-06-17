@@ -21,7 +21,7 @@ SDK_PARAM_NAMESPACE_START
 struct BP_MushroomOreMassHighResActorBase_C_OnMiningWeakSpotDepletedCosmeticsStart final
 {
 public:
-	struct FTransform                             CosmeticTransform;                                 // 0x0000(0x0060)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FTransform                             CosmeticTransform_OnMiningWeakSpotDepletedCosmeticsStart; // 0x0000(0x0060)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_MushroomOreMassHighResActorBase_C_OnMiningWeakSpotDepletedCosmeticsStart;
 

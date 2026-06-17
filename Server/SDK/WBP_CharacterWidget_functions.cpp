@@ -33,9 +33,9 @@ void UWBP_CharacterWidget_C::SetupProfession()
 // Function WBP_CharacterWidget.WBP_CharacterWidget_C.SetSelectedStyles
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool                                    bSelected                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bSelected_SetSelectedStyles                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_CharacterWidget_C::SetSelectedStyles(bool bSelected)
+void UWBP_CharacterWidget_C::SetSelectedStyles(bool bSelected_SetSelectedStyles)
 {
 	static class UFunction* Func = nullptr;
 
@@ -44,7 +44,7 @@ void UWBP_CharacterWidget_C::SetSelectedStyles(bool bSelected)
 
 	Params::WBP_CharacterWidget_C_SetSelectedStyles Parms{};
 
-	Parms.bSelected = bSelected;
+	Parms.bSelected_SetSelectedStyles = bSelected_SetSelectedStyles;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -53,10 +53,10 @@ void UWBP_CharacterWidget_C::SetSelectedStyles(bool bSelected)
 // Function WBP_CharacterWidget.WBP_CharacterWidget_C.SetSelectedRemote
 // (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
-// bool                                    bSelected                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const class FText&                      Name_0                                                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// bool                                    bSelected_SetSelectedRemote                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FText&                      Name_SetSelectedRemote                                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
-void UWBP_CharacterWidget_C::SetSelectedRemote(bool bSelected, const class FText& Name_0)
+void UWBP_CharacterWidget_C::SetSelectedRemote(bool bSelected_SetSelectedRemote, const class FText& Name_SetSelectedRemote)
 {
 	static class UFunction* Func = nullptr;
 
@@ -65,8 +65,8 @@ void UWBP_CharacterWidget_C::SetSelectedRemote(bool bSelected, const class FText
 
 	Params::WBP_CharacterWidget_C_SetSelectedRemote Parms{};
 
-	Parms.bSelected = bSelected;
-	Parms.Name_0 = std::move(Name_0);
+	Parms.bSelected_SetSelectedRemote = bSelected_SetSelectedRemote;
+	Parms.Name_SetSelectedRemote = std::move(Name_SetSelectedRemote);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -75,9 +75,9 @@ void UWBP_CharacterWidget_C::SetSelectedRemote(bool bSelected, const class FText
 // Function WBP_CharacterWidget.WBP_CharacterWidget_C.SetHighlightStyles
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool                                    bHighlight                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bHighlight_SetHighlightStyles                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_CharacterWidget_C::SetHighlightStyles(bool bHighlight)
+void UWBP_CharacterWidget_C::SetHighlightStyles(bool bHighlight_SetHighlightStyles)
 {
 	static class UFunction* Func = nullptr;
 
@@ -86,7 +86,7 @@ void UWBP_CharacterWidget_C::SetHighlightStyles(bool bHighlight)
 
 	Params::WBP_CharacterWidget_C_SetHighlightStyles Parms{};
 
-	Parms.bHighlight = bHighlight;
+	Parms.bHighlight_SetHighlightStyles = bHighlight_SetHighlightStyles;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -19,7 +19,7 @@ SDK_PARAM_NAMESPACE_START
 struct BP_Foundable_OutsDeadBody_3_light_C_OnStorageEmptied final
 {
 public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue_OnStorageEmptied;                      // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_OnStorageEmptied_ReturnValue;             // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Foundable_OutsDeadBody_3_light_C_OnStorageEmptied;

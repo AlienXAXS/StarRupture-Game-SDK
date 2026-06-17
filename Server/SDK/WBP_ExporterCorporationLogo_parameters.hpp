@@ -35,7 +35,7 @@ DUMPER7_ASSERTS_WBP_ExporterCorporationLogo_C_UpdateName;
 struct WBP_ExporterCorporationLogo_C_SetCorporationLogo final
 {
 public:
-	class UObject*                                CorporationLogo_0;                                 // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                CorporationLogo;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsDefault;                                         // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_ExporterCorporationLogo_C_SetCorporationLogo;

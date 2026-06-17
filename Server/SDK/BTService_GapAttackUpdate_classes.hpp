@@ -38,7 +38,7 @@ public:
 	bool                                          WaitForActivation;                                 // 0x01D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
+	void ReceiveTickAI(class AAIController* OwnerController_ReceiveTickAI, class APawn* ControlledPawn_ReceiveTickAI, float DeltaSeconds_ReceiveTickAI);
 	void OnDeactivateGapAttack();
 	void OnActivateGapAttack();
 	void ExecuteUbergraph_BTService_GapAttackUpdate(int32 EntryPoint);

@@ -19,9 +19,9 @@ SDK_NAMESPACE_START
 // Function GA_ExploderTier1_Speedup_TempVis.GA_ExploderTier1_Speedup_TempVis_C.K2_OnEndAbility
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool                                    bWasCancelled                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bWasCancelled_K2_OnEndAbility                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_ExploderTier1_Speedup_TempVis_C::K2_OnEndAbility(bool bWasCancelled)
+void UGA_ExploderTier1_Speedup_TempVis_C::K2_OnEndAbility(bool bWasCancelled_K2_OnEndAbility)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,7 +30,7 @@ void UGA_ExploderTier1_Speedup_TempVis_C::K2_OnEndAbility(bool bWasCancelled)
 
 	Params::GA_ExploderTier1_Speedup_TempVis_C_K2_OnEndAbility Parms{};
 
-	Parms.bWasCancelled = bWasCancelled;
+	Parms.bWasCancelled_K2_OnEndAbility = bWasCancelled_K2_OnEndAbility;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

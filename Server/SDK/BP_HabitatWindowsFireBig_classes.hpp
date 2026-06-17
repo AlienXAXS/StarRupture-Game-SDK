@@ -33,11 +33,11 @@ public:
 
 public:
 	void ReceiveBeginPlay();
-	void OnEnviroWaveTick(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress);
-	void OnEnviroWaveStarted(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress);
-	void OnEnviroWaveForced(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress);
-	void OnEnviroWaveFinished(EEnviroWave WaveType, const struct FCrEnviroWaveSettings& WaveSettings);
-	void OnEnviroWaveCanceled(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings);
+	void OnEnviroWaveTick(EEnviroWave WaveType_OnEnviroWaveTick, EEnviroWaveStage WaveStage_OnEnviroWaveTick, const struct FCrEnviroWaveSettings& WaveSettings_OnEnviroWaveTick, float WaveProgress_OnEnviroWaveTick);
+	void OnEnviroWaveStarted(EEnviroWave WaveType_OnEnviroWaveStarted, EEnviroWaveStage WaveStage_OnEnviroWaveStarted, const struct FCrEnviroWaveSettings& WaveSettings_OnEnviroWaveStarted, float WaveProgress_OnEnviroWaveStarted);
+	void OnEnviroWaveForced(EEnviroWave WaveType_OnEnviroWaveForced, EEnviroWaveStage WaveStage_OnEnviroWaveForced, const struct FCrEnviroWaveSettings& WaveSettings_OnEnviroWaveForced, float WaveProgress_OnEnviroWaveForced);
+	void OnEnviroWaveFinished(EEnviroWave WaveType_OnEnviroWaveFinished, const struct FCrEnviroWaveSettings& WaveSettings_OnEnviroWaveFinished);
+	void OnEnviroWaveCanceled(EEnviroWave WaveType_OnEnviroWaveCanceled, EEnviroWaveStage WaveStage_OnEnviroWaveCanceled, const struct FCrEnviroWaveSettings& WaveSettings_OnEnviroWaveCanceled);
 	void ExecuteUbergraph_BP_HabitatWindowsFireBig(int32 EntryPoint);
 
 public:

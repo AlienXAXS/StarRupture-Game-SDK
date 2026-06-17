@@ -33,9 +33,9 @@ void ABP_HabitatPostProcess_Quality_C::ReceiveBeginPlay()
 // Function BP_HabitatPostProcess_Quality.BP_HabitatPostProcess_Quality_C.OnGlobalIlluminationQualityChanged
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Quality                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Quality_OnGlobalIlluminationQualityChanged             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_HabitatPostProcess_Quality_C::OnGlobalIlluminationQualityChanged(int32 Quality)
+void ABP_HabitatPostProcess_Quality_C::OnGlobalIlluminationQualityChanged(int32 Quality_OnGlobalIlluminationQualityChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -44,7 +44,7 @@ void ABP_HabitatPostProcess_Quality_C::OnGlobalIlluminationQualityChanged(int32 
 
 	Params::BP_HabitatPostProcess_Quality_C_OnGlobalIlluminationQualityChanged Parms{};
 
-	Parms.Quality = Quality;
+	Parms.Quality_OnGlobalIlluminationQualityChanged = Quality_OnGlobalIlluminationQualityChanged;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -31,7 +31,7 @@ public:
 	double                                        SectionLength;                                     // 0x06E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnSplineReady(class USplineComponent* InSpline);
+	void OnSplineReady(class USplineComponent* InSpline_OnSplineReady);
 	bool IsRamp();
 	bool IsLadder();
 	double GetRampAngle();

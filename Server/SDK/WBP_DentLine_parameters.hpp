@@ -40,7 +40,7 @@ DUMPER7_ASSERTS_WBP_DentLine_C_SetCurrentColor;
 struct WBP_DentLine_C_OnPaint final
 {
 public:
-	struct FPaintContext                          Context;                                           // 0x0000(0x0030)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+	struct FPaintContext                          Context_OnPaint;                                   // 0x0000(0x0030)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
 	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue;                 // 0x0030(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_1;               // 0x0040(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };

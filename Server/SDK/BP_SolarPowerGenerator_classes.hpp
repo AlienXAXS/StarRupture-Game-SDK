@@ -40,10 +40,10 @@ public:
 
 public:
 	void SetupSkeletalMesh();
-	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed);
+	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed_PostPlayBuildingEffect);
 	void ExecuteUbergraph_BP_SolarPowerGenerator(int32 EntryPoint);
 
-	void Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Animated_0, TArray<class UMeshComponent*>* NewParam) const;
+	void Get_Meshes(class USceneComponent* Static, class USceneComponent* Animated, TArray<class UMeshComponent*>* NewParam) const;
 
 public:
 	static class UClass* StaticClass()

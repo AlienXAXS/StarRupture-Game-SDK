@@ -60,11 +60,11 @@ public:
 	void SimulateCatchTimeline__UpdateFunc();
 	void SimulateCatchTimeline__FinishedFunc();
 	void SimulateCatch();
-	void SetTentaclesHidden(bool bHidden_0);
+	void SetTentaclesHidden(bool bHidden);
 	void SetNiagaraActivity(bool NewActive);
 	void RegisterFXEvent(const struct FGameplayTag& FXEventTag);
-	void ReceiveTick(float DeltaSeconds_0);
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void ReceiveTick(float DeltaSeconds_ReceiveTick);
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay);
 	void ReceiveBeginPlay();
 	void OnRep_AreTentaclesHiddenState();
 	void OnPrepareForPooling();
@@ -74,7 +74,7 @@ public:
 	void BndEvt__BP_Animal_Crab_Character_CapsuleComponent_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, const struct FVector& NormalImpulse, const struct FHitResult& Hit);
 	bool AreTentaclesHidden();
 
-	void OnMeshVisibilityUpdated(bool bIsMeshHidden) const;
+	void OnMeshVisibilityUpdated(bool bIsMeshHidden_OnMeshVisibilityUpdated) const;
 
 public:
 	static class UClass* StaticClass()

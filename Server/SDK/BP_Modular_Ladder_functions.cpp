@@ -73,9 +73,9 @@ void ABP_Modular_Ladder_C::RemoveCharacterFromLadder(const class ACrCharacterPla
 // Function BP_Modular_Ladder.BP_Modular_Ladder_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaSeconds_ReceiveTick                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Modular_Ladder_C::ReceiveTick(float DeltaSeconds)
+void ABP_Modular_Ladder_C::ReceiveTick(float DeltaSeconds_ReceiveTick)
 {
 	static class UFunction* Func = nullptr;
 
@@ -84,7 +84,7 @@ void ABP_Modular_Ladder_C::ReceiveTick(float DeltaSeconds)
 
 	Params::BP_Modular_Ladder_C_ReceiveTick Parms{};
 
-	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.DeltaSeconds_ReceiveTick = DeltaSeconds_ReceiveTick;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -93,9 +93,9 @@ void ABP_Modular_Ladder_C::ReceiveTick(float DeltaSeconds)
 // Function BP_Modular_Ladder.BP_Modular_Ladder_C.ReceiveEndPlay
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEndPlayReason                          EndPlayReason_ReceiveEndPlay                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Modular_Ladder_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
+void ABP_Modular_Ladder_C::ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay)
 {
 	static class UFunction* Func = nullptr;
 
@@ -104,7 +104,7 @@ void ABP_Modular_Ladder_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 
 	Params::BP_Modular_Ladder_C_ReceiveEndPlay Parms{};
 
-	Parms.EndPlayReason = EndPlayReason;
+	Parms.EndPlayReason_ReceiveEndPlay = EndPlayReason_ReceiveEndPlay;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -821,7 +821,7 @@ DUMPER7_ASSERTS_FTopLevelAssetPath;
 
 // ScriptStruct CoreUObject.SoftObjectPath
 // 0x0020 (0x0020 - 0x0000)
-struct alignas(0x08) FSoftObjectPath
+struct FSoftObjectPath
 {
 public:
 	struct FTopLevelAssetPath                     AssetPath;                                         // 0x0000(0x0010)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -2637,7 +2637,8 @@ DUMPER7_ASSERTS_FSolarisProfilingData;
 struct alignas(0x08) FInstancedStruct final
 {
 public:
-	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	UScriptStruct*                                ScriptStruct;                                      // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+	uint8*                                        StructMemory;                                      // 0x0008(0x0008)(NOT AUTO-GENERATED PROPERTY)
 };
 DUMPER7_ASSERTS_FInstancedStruct;
 

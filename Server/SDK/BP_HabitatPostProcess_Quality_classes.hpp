@@ -27,7 +27,7 @@ public:
 
 public:
 	void ReceiveBeginPlay();
-	void OnGlobalIlluminationQualityChanged(int32 Quality);
+	void OnGlobalIlluminationQualityChanged(int32 Quality_OnGlobalIlluminationQualityChanged);
 	void ExecuteUbergraph_BP_HabitatPostProcess_Quality(int32 EntryPoint);
 
 public:

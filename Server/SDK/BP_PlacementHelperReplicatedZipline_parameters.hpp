@@ -21,9 +21,9 @@ SDK_PARAM_NAMESPACE_START
 struct BP_PlacementHelperReplicatedZipline_C_OnConnectionsModified final
 {
 public:
-	TArray<struct FVector>                        NewAcceptedLocations;                              // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	TArray<struct FVector>                        NewObstructedLocations;                            // 0x0010(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	TArray<struct FVector>                        NewBlockedLocations;                               // 0x0020(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	TArray<struct FVector>                        NewAcceptedLocations_OnConnectionsModified;        // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	TArray<struct FVector>                        NewObstructedLocations_OnConnectionsModified;      // 0x0010(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	TArray<struct FVector>                        NewBlockedLocations_OnConnectionsModified;         // 0x0020(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 };
 DUMPER7_ASSERTS_BP_PlacementHelperReplicatedZipline_C_OnConnectionsModified;
 

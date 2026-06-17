@@ -32,7 +32,7 @@ public:
 
 public:
 	void PrepareForGame();
-	void OnSplineReady(class USplineComponent* InSpline);
+	void OnSplineReady(class USplineComponent* InSpline_OnSplineReady);
 	bool IsRamp();
 	bool IsLadder();
 	double GetRampAngle();

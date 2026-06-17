@@ -67,7 +67,7 @@ public:
 	void Timeline__FinishedFunc();
 	void SetupSkeletalMesh();
 	void ReceiveBeginPlay();
-	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed);
+	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed_PostPlayBuildingEffect);
 	void PlayBuildingEffect();
 	void ExecuteUbergraph_BP_DroneStation(int32 EntryPoint);
 

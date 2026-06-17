@@ -33,9 +33,9 @@ void ABP_Walkway_C::PrepareForGame()
 // Function BP_Walkway.BP_Walkway_C.OnSplineReady
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class USplineComponent*                 InSpline                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class USplineComponent*                 InSpline_OnSplineReady                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Walkway_C::OnSplineReady(class USplineComponent* InSpline)
+void ABP_Walkway_C::OnSplineReady(class USplineComponent* InSpline_OnSplineReady)
 {
 	static class UFunction* Func = nullptr;
 
@@ -44,7 +44,7 @@ void ABP_Walkway_C::OnSplineReady(class USplineComponent* InSpline)
 
 	Params::BP_Walkway_C_OnSplineReady Parms{};
 
-	Parms.InSpline = InSpline;
+	Parms.InSpline_OnSplineReady = InSpline_OnSplineReady;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -133,7 +133,7 @@ void ABP_Walkway_C::ExecuteUbergraph_BP_Walkway(int32 EntryPoint)
 // Function BP_Walkway.BP_Walkway_C.CanBePooled
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue_CanBePooled                                (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool ABP_Walkway_C::CanBePooled()
 {

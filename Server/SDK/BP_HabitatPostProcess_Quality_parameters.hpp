@@ -19,7 +19,7 @@ SDK_PARAM_NAMESPACE_START
 struct BP_HabitatPostProcess_Quality_C_OnGlobalIlluminationQualityChanged final
 {
 public:
-	int32                                         Quality;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Quality_OnGlobalIlluminationQualityChanged;        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_HabitatPostProcess_Quality_C_OnGlobalIlluminationQualityChanged;
 

@@ -23,7 +23,7 @@ SDK_PARAM_NAMESPACE_START
 struct WBP_CorporationScreenWidget_C_UpdateCorporationPercent final
 {
 public:
-	float                                         InPercent;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         InPercent_UpdateCorporationPercent;                // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_CorporationScreenWidget_C_UpdateCorporationPercent;
 
@@ -32,7 +32,7 @@ DUMPER7_ASSERTS_WBP_CorporationScreenWidget_C_UpdateCorporationPercent;
 struct WBP_CorporationScreenWidget_C_UpdateCorporationLevel final
 {
 public:
-	int32                                         Level;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Level_UpdateCorporationLevel;                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_CorporationScreenWidget_C_UpdateCorporationLevel;
 
@@ -41,7 +41,7 @@ DUMPER7_ASSERTS_WBP_CorporationScreenWidget_C_UpdateCorporationLevel;
 struct WBP_CorporationScreenWidget_C_SetupData final
 {
 public:
-	class UCrCorporationData*                     Data;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UCrCorporationData*                     Data_SetupData;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_CorporationScreenWidget_C_SetupData;
 
@@ -50,7 +50,7 @@ DUMPER7_ASSERTS_WBP_CorporationScreenWidget_C_SetupData;
 struct WBP_CorporationScreenWidget_C_SetMax final
 {
 public:
-	bool                                          BMax;                                              // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          BMax_SetMax;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_CorporationScreenWidget_C_SetMax;
 
@@ -59,7 +59,7 @@ DUMPER7_ASSERTS_WBP_CorporationScreenWidget_C_SetMax;
 struct WBP_CorporationScreenWidget_C_PreConstruct final
 {
 public:
-	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsDesignTime_PreConstruct;                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_CorporationScreenWidget_C_PreConstruct;
 
@@ -68,7 +68,7 @@ DUMPER7_ASSERTS_WBP_CorporationScreenWidget_C_PreConstruct;
 struct WBP_CorporationScreenWidget_C_HasAllRewardsClaimed final
 {
 public:
-	bool                                          bClaimed;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bClaimed_HasAllRewardsClaimed;                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_CorporationScreenWidget_C_HasAllRewardsClaimed;
 

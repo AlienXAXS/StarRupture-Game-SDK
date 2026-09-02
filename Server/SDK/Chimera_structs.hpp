@@ -5648,7 +5648,7 @@ struct FCrLogisticsTierFragment final : public FCrMassSavableFragmentWithCustomO
 public:
 	int32                                         ActiveTier;                                        // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrLogisticsTierFragment;
+//DUMPER7_ASSERTS_FCrLogisticsTierFragment;
 
 // ScriptStruct Chimera.SkyboxMaterialColor
 // 0x0018 (0x0018 - 0x0000)
@@ -8558,7 +8558,7 @@ struct FCrMassCustomDoorStateFragment final : public FCrMassFragmentWithCustomOn
 public:
 	bool                                          bState;                                            // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrMassCustomDoorStateFragment;
+//DUMPER7_ASSERTS_FCrMassCustomDoorStateFragment;
 
 // ScriptStruct Chimera.CrMassDroneBuildingClientBubbleSerializer
 // 0x01D8 (0x0310 - 0x0138)

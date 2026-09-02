@@ -21,11 +21,11 @@ SDK_NAMESPACE_START
 class ABP_Melee_Tier3_Ragdoll_DeathSequenceActor_C final : public ABP_DeathSequenceActor_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0418(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	bool                                          Did_Play_Dissolve_Blood_Cloud_VFX;                 // 0x0420(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_421[0x7];                                      // 0x0421(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPoseSnapshot                          Snapshot;                                          // 0x0428(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance)
-	class ABP_Melee_Tier3_Ragdoll_ReplicatedCollision_C* RagdollReplicatedCollision;                 // 0x0460(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Melee_Tier3_Ragdoll_DeathSequenceActor_C; // 0x0420(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	bool                                          Did_Play_Dissolve_Blood_Cloud_VFX;                 // 0x0428(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_429[0x7];                                      // 0x0429(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPoseSnapshot                          Snapshot;                                          // 0x0430(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class ABP_Melee_Tier3_Ragdoll_ReplicatedCollision_C* RagdollReplicatedCollision;                 // 0x0468(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_Melee_Tier3_Ragdoll_DeathSequenceActor(int32 EntryPoint);
@@ -34,7 +34,6 @@ public:
 	void OnRagdollStart();
 	void OnReuse(const struct FTransform& Transform);
 	void OnTakenFromPool();
-	void OnVisualVariationSeedChanged(const struct FVector& Vector);
 
 public:
 	static class UClass* StaticClass()

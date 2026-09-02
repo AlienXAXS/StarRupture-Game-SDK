@@ -96,6 +96,34 @@ void ABP_Ranged_Tier2_PooledProjectile_C::OnHit(const struct FHitResult& HitResu
 }
 
 
+// Function BP_Ranged_Tier2_PooledProjectile.BP_Ranged_Tier2_PooledProjectile_C.OnProjectileActivated
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Ranged_Tier2_PooledProjectile_C::OnProjectileActivated()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Ranged_Tier2_PooledProjectile_C", "OnProjectileActivated");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Ranged_Tier2_PooledProjectile.BP_Ranged_Tier2_PooledProjectile_C.OnProjectileDeactivated
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Ranged_Tier2_PooledProjectile_C::OnProjectileDeactivated()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Ranged_Tier2_PooledProjectile_C", "OnProjectileDeactivated");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_Ranged_Tier2_PooledProjectile.BP_Ranged_Tier2_PooledProjectile_C.OnProjectileShot
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:

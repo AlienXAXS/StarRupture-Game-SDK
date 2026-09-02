@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "CrAiMeleeRuntime_classes.hpp"
 #include "AnimGraphRuntime_structs.hpp"
-#include "Engine_structs.hpp"
 #include "ABP_Melee_Tier1_Actor_structs.hpp"
+#include "Engine_structs.hpp"
+#include "CrAiMeleeRuntime_classes.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 
 

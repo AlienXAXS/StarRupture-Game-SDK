@@ -12,8 +12,8 @@
 
 #include "GameplayAbilities_structs.hpp"
 #include "GameplayAbilities_classes.hpp"
-#include "Engine_classes.hpp"
 #include "AuItems_classes.hpp"
+#include "Engine_classes.hpp"
 
 
 SDK_NAMESPACE_START

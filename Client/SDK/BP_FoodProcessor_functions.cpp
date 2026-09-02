@@ -84,6 +84,26 @@ void ABP_FoodProcessor_C::OnItemCraftingComplete()
 }
 
 
+// Function BP_FoodProcessor.BP_FoodProcessor_C.OnUIOpened
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bOpened                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_FoodProcessor_C::OnUIOpened(bool bOpened)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_FoodProcessor_C", "OnUIOpened");
+
+	Params::BP_FoodProcessor_C_OnUIOpened Parms{};
+
+	Parms.bOpened = bOpened;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_FoodProcessor.BP_FoodProcessor_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
 

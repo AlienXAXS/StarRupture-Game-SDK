@@ -179,6 +179,55 @@ public:
 };
 DUMPER7_ASSERTS_InterchangePipelineBase_SupportReimport;
 
+// Function InterchangeCore.InterchangeSourceData.SetFilename
+// 0x0018 (0x0018 - 0x0000)
+struct InterchangeSourceData_SetFilename final
+{
+public:
+	class FString                                 InFilename;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_InterchangeSourceData_SetFilename;
+
+// Function InterchangeCore.InterchangeSourceData.GetAllContextObjectTags
+// 0x0010 (0x0010 - 0x0000)
+struct InterchangeSourceData_GetAllContextObjectTags final
+{
+public:
+	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InterchangeSourceData_GetAllContextObjectTags;
+
+// Function InterchangeCore.InterchangeSourceData.GetContextObjectByTag
+// 0x0018 (0x0018 - 0x0000)
+struct InterchangeSourceData_GetContextObjectByTag final
+{
+public:
+	class FString                                 Tag;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InterchangeSourceData_GetContextObjectByTag;
+
+// Function InterchangeCore.InterchangeSourceData.GetFilename
+// 0x0010 (0x0010 - 0x0000)
+struct InterchangeSourceData_GetFilename final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InterchangeSourceData_GetFilename;
+
+// Function InterchangeCore.InterchangeSourceData.SetContextObjectByTag
+// 0x0018 (0x0018 - 0x0000)
+struct InterchangeSourceData_SetContextObjectByTag final
+{
+public:
+	class FString                                 Tag;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                Object;                                            // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_InterchangeSourceData_SetContextObjectByTag;
+
 // Function InterchangeCore.InterchangeTranslatorBase.SetSettings
 // 0x0008 (0x0008 - 0x0000)
 struct InterchangeTranslatorBase_SetSettings final
@@ -243,55 +292,6 @@ public:
 	EInterchangeTranslatorType                    ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_InterchangeTranslatorBase_GetTranslatorType;
-
-// Function InterchangeCore.InterchangeSourceData.SetFilename
-// 0x0018 (0x0018 - 0x0000)
-struct InterchangeSourceData_SetFilename final
-{
-public:
-	class FString                                 InFilename;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_InterchangeSourceData_SetFilename;
-
-// Function InterchangeCore.InterchangeSourceData.GetAllContextObjectTags
-// 0x0010 (0x0010 - 0x0000)
-struct InterchangeSourceData_GetAllContextObjectTags final
-{
-public:
-	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_InterchangeSourceData_GetAllContextObjectTags;
-
-// Function InterchangeCore.InterchangeSourceData.GetContextObjectByTag
-// 0x0018 (0x0018 - 0x0000)
-struct InterchangeSourceData_GetContextObjectByTag final
-{
-public:
-	class FString                                 Tag;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UObject*                                ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_InterchangeSourceData_GetContextObjectByTag;
-
-// Function InterchangeCore.InterchangeSourceData.GetFilename
-// 0x0010 (0x0010 - 0x0000)
-struct InterchangeSourceData_GetFilename final
-{
-public:
-	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_InterchangeSourceData_GetFilename;
-
-// Function InterchangeCore.InterchangeSourceData.SetContextObjectByTag
-// 0x0018 (0x0018 - 0x0000)
-struct InterchangeSourceData_SetContextObjectByTag final
-{
-public:
-	class FString                                 Tag;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UObject*                                Object;                                            // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_InterchangeSourceData_SetContextObjectByTag;
 
 // Function InterchangeCore.InterchangeBaseNode.AddBooleanAttribute
 // 0x0018 (0x0018 - 0x0000)

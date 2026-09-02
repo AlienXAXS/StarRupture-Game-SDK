@@ -10,18 +10,18 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "Chimera_classes.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_WeatherActor.BP_WeatherActor_C
-// 0x0020 (0x15D0 - 0x15B0)
+// 0x0018 (0x02F8 - 0x02E0)
 class ABP_WeatherActor_C final : public ACrWeatherActor
 {
 public:
-	struct FRotator                               Rotator;                                           // 0x15B0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FRotator                               Rotator;                                           // 0x02E0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	static class UClass* StaticClass()

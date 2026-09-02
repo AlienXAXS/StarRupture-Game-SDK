@@ -14,16 +14,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BTTask_Animal_Panzerhund_SetAudioState.BTTask_Animal_Panzerhund_SetAudioState_C.ReceiveExecuteAI
-// 0x0010 (0x0010 - 0x0000)
-struct BTTask_Animal_Panzerhund_SetAudioState_C_ReceiveExecuteAI final
-{
-public:
-	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BTTask_Animal_Panzerhund_SetAudioState_C_ReceiveExecuteAI;
-
 // Function BTTask_Animal_Panzerhund_SetAudioState.BTTask_Animal_Panzerhund_SetAudioState_C.ExecuteUbergraph_BTTask_Animal_Panzerhund_SetAudioState
 // 0x0028 (0x0028 - 0x0000)
 struct BTTask_Animal_Panzerhund_SetAudioState_C_ExecuteUbergraph_BTTask_Animal_Panzerhund_SetAudioState final
@@ -37,6 +27,16 @@ public:
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BTTask_Animal_Panzerhund_SetAudioState_C_ExecuteUbergraph_BTTask_Animal_Panzerhund_SetAudioState;
+
+// Function BTTask_Animal_Panzerhund_SetAudioState.BTTask_Animal_Panzerhund_SetAudioState_C.ReceiveExecuteAI
+// 0x0010 (0x0010 - 0x0000)
+struct BTTask_Animal_Panzerhund_SetAudioState_C_ReceiveExecuteAI final
+{
+public:
+	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BTTask_Animal_Panzerhund_SetAudioState_C_ReceiveExecuteAI;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

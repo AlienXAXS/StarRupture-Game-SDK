@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_PersonalStorage_NonDeconstructible.BP_PersonalStorage_NonDeconstructible_C
-// 0x0000 (0x0870 - 0x0870)
+// 0x0000 (0x08E8 - 0x08E8)
 class ABP_PersonalStorage_NonDeconstructible_C final : public ABP_PersonalStorage_C
 {
 public:

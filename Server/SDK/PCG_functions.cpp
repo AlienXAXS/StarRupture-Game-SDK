@@ -1239,309 +1239,6 @@ void UPCGManagedComponent::SetGeneratedComponentFromBP(TSoftObjectPtr<class UAct
 }
 
 
-// Function PCG.PCGProceduralISMComponent.ClearInstances
-// (Final, Native, Public, BlueprintCallable)
-
-void UPCGProceduralISMComponent::ClearInstances()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGProceduralISMComponent", "ClearInstances");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function PCG.PCGProceduralISMComponent.GetBounds
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FBox*                            OutWorldBounds                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPCGProceduralISMComponent::GetBounds(struct FBox* OutWorldBounds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGProceduralISMComponent", "GetBounds");
-
-	Params::PCGProceduralISMComponent_GetBounds Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutWorldBounds != nullptr)
-		*OutWorldBounds = std::move(Parms.OutWorldBounds);
-}
-
-
-// Function PCG.PCGProceduralISMComponent.SetBounds
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FBox&                      InWorldBounds                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPCGProceduralISMComponent::SetBounds(const struct FBox& InWorldBounds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGProceduralISMComponent", "SetBounds");
-
-	Params::PCGProceduralISMComponent_SetBounds Parms{};
-
-	Parms.InWorldBounds = std::move(InWorldBounds);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function PCG.PCGProceduralISMComponent.SetCullDistances
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   InStartCullDistance                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InEndCullDistance                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPCGProceduralISMComponent::SetCullDistances(int32 InStartCullDistance, int32 InEndCullDistance)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGProceduralISMComponent", "SetCullDistances");
-
-	Params::PCGProceduralISMComponent_SetCullDistances Parms{};
-
-	Parms.InStartCullDistance = InStartCullDistance;
-	Parms.InEndCullDistance = InEndCullDistance;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function PCG.PCGProceduralISMComponent.SetLocalBounds
-// (Final, Native, Protected, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FBox&                      InWorldBounds                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPCGProceduralISMComponent::SetLocalBounds(const struct FBox& InWorldBounds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGProceduralISMComponent", "SetLocalBounds");
-
-	Params::PCGProceduralISMComponent_SetLocalBounds Parms{};
-
-	Parms.InWorldBounds = std::move(InWorldBounds);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function PCG.PCGProceduralISMComponent.SetMinDrawDistance
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   InMinDrawDistance                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPCGProceduralISMComponent::SetMinDrawDistance(int32 InMinDrawDistance)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGProceduralISMComponent", "SetMinDrawDistance");
-
-	Params::PCGProceduralISMComponent_SetMinDrawDistance Parms{};
-
-	Parms.InMinDrawDistance = InMinDrawDistance;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function PCG.PCGProceduralISMComponent.SetNumCustomDataFloats
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   InNumCustomDataFloats                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPCGProceduralISMComponent::SetNumCustomDataFloats(int32 InNumCustomDataFloats)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGProceduralISMComponent", "SetNumCustomDataFloats");
-
-	Params::PCGProceduralISMComponent_SetNumCustomDataFloats Parms{};
-
-	Parms.InNumCustomDataFloats = InNumCustomDataFloats;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function PCG.PCGProceduralISMComponent.SetNumInstances
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   InNumInstances                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPCGProceduralISMComponent::SetNumInstances(int32 InNumInstances)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGProceduralISMComponent", "SetNumInstances");
-
-	Params::PCGProceduralISMComponent_SetNumInstances Parms{};
-
-	Parms.InNumInstances = InNumInstances;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function PCG.PCGProceduralISMComponent.GetCullDistances
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32*                                  OutStartCullDistance                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32*                                  OutEndCullDistance                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPCGProceduralISMComponent::GetCullDistances(int32* OutStartCullDistance, int32* OutEndCullDistance) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGProceduralISMComponent", "GetCullDistances");
-
-	Params::PCGProceduralISMComponent_GetCullDistances Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutStartCullDistance != nullptr)
-		*OutStartCullDistance = Parms.OutStartCullDistance;
-
-	if (OutEndCullDistance != nullptr)
-		*OutEndCullDistance = Parms.OutEndCullDistance;
-}
-
-
-// Function PCG.PCGProceduralISMComponent.GetMinDrawDistance
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32*                                  OutMinDrawDistance                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPCGProceduralISMComponent::GetMinDrawDistance(int32* OutMinDrawDistance) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGProceduralISMComponent", "GetMinDrawDistance");
-
-	Params::PCGProceduralISMComponent_GetMinDrawDistance Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutMinDrawDistance != nullptr)
-		*OutMinDrawDistance = Parms.OutMinDrawDistance;
-}
-
-
-// Function PCG.PCGProceduralISMComponent.GetNumCustomDataFloats
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UPCGProceduralISMComponent::GetNumCustomDataFloats() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGProceduralISMComponent", "GetNumCustomDataFloats");
-
-	Params::PCGProceduralISMComponent_GetNumCustomDataFloats Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function PCG.PCGProceduralISMComponent.GetNumInstances
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UPCGProceduralISMComponent::GetNumInstances() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGProceduralISMComponent", "GetNumInstances");
-
-	Params::PCGProceduralISMComponent_GetNumInstances Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function PCG.PCGPolyLineData.GetAlphaAtDistance
 // (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -2004,23 +1701,21 @@ void UPCGPolyLineData::WriteMetadataToPoint(float InputKey, struct FPCGPoint* Ou
 }
 
 
-// Function PCG.PCGDeterminismTestBlueprintBase.ExecuteTest
-// (RequiredAPI, Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Function PCG.PCGSplineData.Initialize
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
-// const class UPCGNode*                   InPCGNode                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FDeterminismTestResult&          InOutTestResult                                        (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class USplineComponent*           InSpline                                               (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPCGDeterminismTestBlueprintBase::ExecuteTest(const class UPCGNode* InPCGNode, struct FDeterminismTestResult& InOutTestResult)
+void UPCGSplineData::Initialize(const class USplineComponent* InSpline)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PCGDeterminismTestBlueprintBase", "ExecuteTest");
+		Func = Class->GetFunction("PCGSplineData", "Initialize");
 
-	Params::PCGDeterminismTestBlueprintBase_ExecuteTest Parms{};
+	Params::PCGSplineData_Initialize Parms{};
 
-	Parms.InPCGNode = InPCGNode;
-	Parms.InOutTestResult = std::move(InOutTestResult);
+	Parms.InSpline = InSpline;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2028,28 +1723,30 @@ void UPCGDeterminismTestBlueprintBase::ExecuteTest(const class UPCGNode* InPCGNo
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	InOutTestResult = std::move(Parms.InOutTestResult);
 }
 
 
-// Function PCG.PCGIntersectionData.Initialize
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Function PCG.PCGSplineData.K2_Initialize
+// (Final, RequiredAPI, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// const class UPCGSpatialData*            InA                                                    (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class UPCGSpatialData*            InB                                                    (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<struct FSplinePoint>&      InSplinePoints                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    bInClosedLoop                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FTransform&                InTransform                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<int64>&                    InOptionalEntryKeys                                    (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UPCGIntersectionData::Initialize(const class UPCGSpatialData* InA, const class UPCGSpatialData* InB)
+void UPCGSplineData::K2_Initialize(const TArray<struct FSplinePoint>& InSplinePoints, bool bInClosedLoop, const struct FTransform& InTransform, const TArray<int64>& InOptionalEntryKeys)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PCGIntersectionData", "Initialize");
+		Func = Class->GetFunction("PCGSplineData", "K2_Initialize");
 
-	Params::PCGIntersectionData_Initialize Parms{};
+	Params::PCGSplineData_K2_Initialize Parms{};
 
-	Parms.InA = InA;
-	Parms.InB = InB;
+	Parms.InSplinePoints = std::move(InSplinePoints);
+	Parms.bInClosedLoop = bInClosedLoop;
+	Parms.InTransform = std::move(InTransform);
+	Parms.InOptionalEntryKeys = std::move(InOptionalEntryKeys);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2057,6 +1754,56 @@ void UPCGIntersectionData::Initialize(const class UPCGSpatialData* InA, const cl
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function PCG.PCGSplineData.GetMetadataEntryKeysForSplinePoints
+// (Final, RequiredAPI, Native, Protected, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<int64>                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<int64> UPCGSplineData::GetMetadataEntryKeysForSplinePoints() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PCGSplineData", "GetMetadataEntryKeysForSplinePoints");
+
+	Params::PCGSplineData_GetMetadataEntryKeysForSplinePoints Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function PCG.PCGSplineData.GetSplinePoints
+// (Final, RequiredAPI, Native, Protected, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<struct FSplinePoint>             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<struct FSplinePoint> UPCGSplineData::GetSplinePoints() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PCGSplineData", "GetSplinePoints");
+
+	Params::PCGSplineData_GetSplinePoints Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -2107,6 +1854,37 @@ EPCGTextureDensityFunction UPCGBaseTextureData::GetDensityFunctionEquivalent() c
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function PCG.PCGRenderTargetData.Initialize
+// (Final, RequiredAPI, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// class UTextureRenderTarget2D*           InRenderTarget                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FTransform&                InTransform                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInSkipReadbackToCPU                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInTakeOwnershipOfRenderTarget                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPCGRenderTargetData::Initialize(class UTextureRenderTarget2D* InRenderTarget, const struct FTransform& InTransform, bool bInSkipReadbackToCPU, bool bInTakeOwnershipOfRenderTarget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PCGRenderTargetData", "Initialize");
+
+	Params::PCGRenderTargetData_Initialize Parms{};
+
+	Parms.InRenderTarget = InRenderTarget;
+	Parms.InTransform = std::move(InTransform);
+	Parms.bInSkipReadbackToCPU = bInSkipReadbackToCPU;
+	Parms.bInTakeOwnershipOfRenderTarget = bInTakeOwnershipOfRenderTarget;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -3368,58 +3146,6 @@ void UPCGFunctionPrototypes::PrototypeWithPointAndMetadata(const struct FPCGPoin
 }
 
 
-// Function PCG.PCGUnionData.AddData
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// const class UPCGSpatialData*            InData                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPCGUnionData::AddData(const class UPCGSpatialData* InData)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGUnionData", "AddData");
-
-	Params::PCGUnionData_AddData Parms{};
-
-	Parms.InData = InData;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function PCG.PCGUnionData.Initialize
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// const class UPCGSpatialData*            InA                                                    (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class UPCGSpatialData*            InB                                                    (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPCGUnionData::Initialize(const class UPCGSpatialData* InA, const class UPCGSpatialData* InB)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGUnionData", "Initialize");
-
-	Params::PCGUnionData_Initialize Parms{};
-
-	Parms.InA = InA;
-	Parms.InB = InB;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function PCG.PCGOctreeQueries.GetClosestPoint
 // (Final, Native, Static, Private, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -3632,6 +3358,309 @@ TArray<struct FPCGPoint> UPCGOctreeQueries::GetPointsInsideSphere(const class UP
 }
 
 
+// Function PCG.PCGProceduralISMComponent.ClearInstances
+// (Final, Native, Public, BlueprintCallable)
+
+void UPCGProceduralISMComponent::ClearInstances()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PCGProceduralISMComponent", "ClearInstances");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function PCG.PCGProceduralISMComponent.GetBounds
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FBox*                            OutWorldBounds                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPCGProceduralISMComponent::GetBounds(struct FBox* OutWorldBounds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PCGProceduralISMComponent", "GetBounds");
+
+	Params::PCGProceduralISMComponent_GetBounds Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutWorldBounds != nullptr)
+		*OutWorldBounds = std::move(Parms.OutWorldBounds);
+}
+
+
+// Function PCG.PCGProceduralISMComponent.SetBounds
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FBox&                      InWorldBounds                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPCGProceduralISMComponent::SetBounds(const struct FBox& InWorldBounds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PCGProceduralISMComponent", "SetBounds");
+
+	Params::PCGProceduralISMComponent_SetBounds Parms{};
+
+	Parms.InWorldBounds = std::move(InWorldBounds);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function PCG.PCGProceduralISMComponent.SetCullDistances
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InStartCullDistance                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InEndCullDistance                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPCGProceduralISMComponent::SetCullDistances(int32 InStartCullDistance, int32 InEndCullDistance)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PCGProceduralISMComponent", "SetCullDistances");
+
+	Params::PCGProceduralISMComponent_SetCullDistances Parms{};
+
+	Parms.InStartCullDistance = InStartCullDistance;
+	Parms.InEndCullDistance = InEndCullDistance;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function PCG.PCGProceduralISMComponent.SetLocalBounds
+// (Final, Native, Protected, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FBox&                      InWorldBounds                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPCGProceduralISMComponent::SetLocalBounds(const struct FBox& InWorldBounds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PCGProceduralISMComponent", "SetLocalBounds");
+
+	Params::PCGProceduralISMComponent_SetLocalBounds Parms{};
+
+	Parms.InWorldBounds = std::move(InWorldBounds);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function PCG.PCGProceduralISMComponent.SetMinDrawDistance
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InMinDrawDistance                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPCGProceduralISMComponent::SetMinDrawDistance(int32 InMinDrawDistance)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PCGProceduralISMComponent", "SetMinDrawDistance");
+
+	Params::PCGProceduralISMComponent_SetMinDrawDistance Parms{};
+
+	Parms.InMinDrawDistance = InMinDrawDistance;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function PCG.PCGProceduralISMComponent.SetNumCustomDataFloats
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InNumCustomDataFloats                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPCGProceduralISMComponent::SetNumCustomDataFloats(int32 InNumCustomDataFloats)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PCGProceduralISMComponent", "SetNumCustomDataFloats");
+
+	Params::PCGProceduralISMComponent_SetNumCustomDataFloats Parms{};
+
+	Parms.InNumCustomDataFloats = InNumCustomDataFloats;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function PCG.PCGProceduralISMComponent.SetNumInstances
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InNumInstances                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPCGProceduralISMComponent::SetNumInstances(int32 InNumInstances)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PCGProceduralISMComponent", "SetNumInstances");
+
+	Params::PCGProceduralISMComponent_SetNumInstances Parms{};
+
+	Parms.InNumInstances = InNumInstances;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function PCG.PCGProceduralISMComponent.GetCullDistances
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32*                                  OutStartCullDistance                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  OutEndCullDistance                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPCGProceduralISMComponent::GetCullDistances(int32* OutStartCullDistance, int32* OutEndCullDistance) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PCGProceduralISMComponent", "GetCullDistances");
+
+	Params::PCGProceduralISMComponent_GetCullDistances Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutStartCullDistance != nullptr)
+		*OutStartCullDistance = Parms.OutStartCullDistance;
+
+	if (OutEndCullDistance != nullptr)
+		*OutEndCullDistance = Parms.OutEndCullDistance;
+}
+
+
+// Function PCG.PCGProceduralISMComponent.GetMinDrawDistance
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32*                                  OutMinDrawDistance                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPCGProceduralISMComponent::GetMinDrawDistance(int32* OutMinDrawDistance) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PCGProceduralISMComponent", "GetMinDrawDistance");
+
+	Params::PCGProceduralISMComponent_GetMinDrawDistance Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutMinDrawDistance != nullptr)
+		*OutMinDrawDistance = Parms.OutMinDrawDistance;
+}
+
+
+// Function PCG.PCGProceduralISMComponent.GetNumCustomDataFloats
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UPCGProceduralISMComponent::GetNumCustomDataFloats() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PCGProceduralISMComponent", "GetNumCustomDataFloats");
+
+	Params::PCGProceduralISMComponent_GetNumCustomDataFloats Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function PCG.PCGProceduralISMComponent.GetNumInstances
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UPCGProceduralISMComponent::GetNumInstances() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PCGProceduralISMComponent", "GetNumInstances");
+
+	Params::PCGProceduralISMComponent_GetNumInstances Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function PCG.PCGDifferenceData.Initialize
 // (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
@@ -3697,6 +3726,33 @@ void UPCGDifferenceData::SetDensityFunction(EPCGDifferenceDensityFunction InDens
 	Params::PCGDifferenceData_SetDensityFunction Parms{};
 
 	Parms.InDensityFunction = InDensityFunction;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function PCG.PCGIntersectionData.Initialize
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// const class UPCGSpatialData*            InA                                                    (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UPCGSpatialData*            InB                                                    (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPCGIntersectionData::Initialize(const class UPCGSpatialData* InA, const class UPCGSpatialData* InB)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PCGIntersectionData", "Initialize");
+
+	Params::PCGIntersectionData_Initialize Parms{};
+
+	Parms.InA = InA;
+	Parms.InB = InB;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3860,27 +3916,23 @@ bool UPCGPointData::IsEmpty() const
 }
 
 
-// Function PCG.PCGRenderTargetData.Initialize
-// (Final, RequiredAPI, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Function PCG.PCGDeterminismTestBlueprintBase.ExecuteTest
+// (RequiredAPI, Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UTextureRenderTarget2D*           InRenderTarget                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FTransform&                InTransform                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bInSkipReadbackToCPU                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bInTakeOwnershipOfRenderTarget                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UPCGNode*                   InPCGNode                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FDeterminismTestResult&          InOutTestResult                                        (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UPCGRenderTargetData::Initialize(class UTextureRenderTarget2D* InRenderTarget, const struct FTransform& InTransform, bool bInSkipReadbackToCPU, bool bInTakeOwnershipOfRenderTarget)
+void UPCGDeterminismTestBlueprintBase::ExecuteTest(const class UPCGNode* InPCGNode, struct FDeterminismTestResult& InOutTestResult)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PCGRenderTargetData", "Initialize");
+		Func = Class->GetFunction("PCGDeterminismTestBlueprintBase", "ExecuteTest");
 
-	Params::PCGRenderTargetData_Initialize Parms{};
+	Params::PCGDeterminismTestBlueprintBase_ExecuteTest Parms{};
 
-	Parms.InRenderTarget = InRenderTarget;
-	Parms.InTransform = std::move(InTransform);
-	Parms.bInSkipReadbackToCPU = bInSkipReadbackToCPU;
-	Parms.bInTakeOwnershipOfRenderTarget = bInTakeOwnershipOfRenderTarget;
+	Parms.InPCGNode = InPCGNode;
+	Parms.InOutTestResult = std::move(InOutTestResult);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3888,24 +3940,26 @@ void UPCGRenderTargetData::Initialize(class UTextureRenderTarget2D* InRenderTarg
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	InOutTestResult = std::move(Parms.InOutTestResult);
 }
 
 
-// Function PCG.PCGSplineData.Initialize
+// Function PCG.PCGUnionData.AddData
 // (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
-// const class USplineComponent*           InSpline                                               (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UPCGSpatialData*            InData                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPCGSplineData::Initialize(const class USplineComponent* InSpline)
+void UPCGUnionData::AddData(const class UPCGSpatialData* InData)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PCGSplineData", "Initialize");
+		Func = Class->GetFunction("PCGUnionData", "AddData");
 
-	Params::PCGSplineData_Initialize Parms{};
+	Params::PCGUnionData_AddData Parms{};
 
-	Parms.InSpline = InSpline;
+	Parms.InData = InData;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3916,27 +3970,23 @@ void UPCGSplineData::Initialize(const class USplineComponent* InSpline)
 }
 
 
-// Function PCG.PCGSplineData.K2_Initialize
-// (Final, RequiredAPI, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Function PCG.PCGUnionData.Initialize
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
-// const TArray<struct FSplinePoint>&      InSplinePoints                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                                    bInClosedLoop                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FTransform&                InTransform                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const TArray<int64>&                    InOptionalEntryKeys                                    (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const class UPCGSpatialData*            InA                                                    (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UPCGSpatialData*            InB                                                    (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPCGSplineData::K2_Initialize(const TArray<struct FSplinePoint>& InSplinePoints, bool bInClosedLoop, const struct FTransform& InTransform, const TArray<int64>& InOptionalEntryKeys)
+void UPCGUnionData::Initialize(const class UPCGSpatialData* InA, const class UPCGSpatialData* InB)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PCGSplineData", "K2_Initialize");
+		Func = Class->GetFunction("PCGUnionData", "Initialize");
 
-	Params::PCGSplineData_K2_Initialize Parms{};
+	Params::PCGUnionData_Initialize Parms{};
 
-	Parms.InSplinePoints = std::move(InSplinePoints);
-	Parms.bInClosedLoop = bInClosedLoop;
-	Parms.InTransform = std::move(InTransform);
-	Parms.InOptionalEntryKeys = std::move(InOptionalEntryKeys);
+	Parms.InA = InA;
+	Parms.InB = InB;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3944,56 +3994,6 @@ void UPCGSplineData::K2_Initialize(const TArray<struct FSplinePoint>& InSplinePo
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function PCG.PCGSplineData.GetMetadataEntryKeysForSplinePoints
-// (Final, RequiredAPI, Native, Protected, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<int64>                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<int64> UPCGSplineData::GetMetadataEntryKeysForSplinePoints() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGSplineData", "GetMetadataEntryKeysForSplinePoints");
-
-	Params::PCGSplineData_GetMetadataEntryKeysForSplinePoints Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function PCG.PCGSplineData.GetSplinePoints
-// (Final, RequiredAPI, Native, Protected, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<struct FSplinePoint>             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<struct FSplinePoint> UPCGSplineData::GetSplinePoints() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGSplineData", "GetSplinePoints");
-
-	Params::PCGSplineData_GetSplinePoints Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -4783,31 +4783,6 @@ TSubclassOf<class UPCGBlueprintElement> UPCGBlueprintSettings::GetElementType() 
 		Func = Class->GetFunction("PCGBlueprintSettings", "GetElementType");
 
 	Params::PCGBlueprintSettings_GetElementType Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function PCG.PCGWorldActor.BP_GetPCGGridSize
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int64                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int64 APCGWorldActor::BP_GetPCGGridSize() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGWorldActor", "BP_GetPCGGridSize");
-
-	Params::PCGWorldActor_BP_GetPCGGridSize Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -11318,6 +11293,31 @@ void UPCGPinPropertiesBlueprintHelpers::SetRequiredPin(struct FPCGPinProperties&
 	Func->FunctionFlags = Flgs;
 
 	PinProperties = std::move(Parms.PinProperties);
+}
+
+
+// Function PCG.PCGWorldActor.BP_GetPCGGridSize
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int64                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int64 APCGWorldActor::BP_GetPCGGridSize() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PCGWorldActor", "BP_GetPCGGridSize");
+
+	Params::PCGWorldActor_BP_GetPCGGridSize Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 

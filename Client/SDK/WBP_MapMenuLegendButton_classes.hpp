@@ -28,6 +28,7 @@ public:
 
 public:
 	void ExecuteUbergraph_WBP_MapMenuLegendButton(int32 EntryPoint);
+	void OnHoverChangedEvent(class UObject* Item, bool bIsHovered);
 	void SetRightShift(bool RightShift);
 	void SetTopSpace(bool TopSpace);
 

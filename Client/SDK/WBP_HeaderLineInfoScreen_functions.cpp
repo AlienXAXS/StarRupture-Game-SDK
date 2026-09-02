@@ -154,6 +154,26 @@ void UWBP_HeaderLineInfoScreen_C::SetTitleMaxWidth(int32 Size)
 }
 
 
+// Function WBP_HeaderLineInfoScreen.WBP_HeaderLineInfoScreen_C.SetTransformPolicy
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    ToUpper                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_HeaderLineInfoScreen_C::SetTransformPolicy(bool ToUpper)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_HeaderLineInfoScreen_C", "SetTransformPolicy");
+
+	Params::WBP_HeaderLineInfoScreen_C_SetTransformPolicy Parms{};
+
+	Parms.ToUpper = ToUpper;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function WBP_HeaderLineInfoScreen.WBP_HeaderLineInfoScreen_C.ShowRenameButton
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:

@@ -12,13 +12,13 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "Engine_classes.hpp"
+#include "SlateCore_structs.hpp"
 #include "AuUI_structs.hpp"
 #include "Slate_structs.hpp"
 #include "UMG_classes.hpp"
 #include "DeveloperSettings_classes.hpp"
 #include "AuItems_structs.hpp"
-#include "SlateCore_structs.hpp"
+#include "Engine_classes.hpp"
 
 
 SDK_NAMESPACE_START

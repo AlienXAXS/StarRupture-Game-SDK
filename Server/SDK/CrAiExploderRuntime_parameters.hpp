@@ -12,6 +12,7 @@
 
 #include "AuActorPlacement_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -39,6 +40,19 @@ public:
 };
 DUMPER7_ASSERTS_CrAiActionDealDamageAndSpawnEntity_Create_CrAiDealDamageAndSpawnEntity;
 
+// Function CrAiExploderRuntime.CrAiActionExploderSpawnCyst.Create_CrAiActionExploderSpawnCyst
+// 0x0018 (0x0018 - 0x0000)
+struct CrAiActionExploderSpawnCyst_Create_CrAiActionExploderSpawnCyst final
+{
+public:
+	TSubclassOf<class UCrAiActionExploderSpawnCyst> ActionType;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NewMaxLifetimeS;                                   // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrEnemyLocomotionType                        NewLocomotionState;                                // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCrAiActionExploderSpawnCyst*           ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrAiActionExploderSpawnCyst_Create_CrAiActionExploderSpawnCyst;
+
 // Function CrAiExploderRuntime.CrAiActionExploderStartTimer.Create_CrAiActionExploderStartTimer
 // 0x0018 (0x0018 - 0x0000)
 struct CrAiActionExploderStartTimer_Create_CrAiActionExploderStartTimer final
@@ -52,6 +66,19 @@ public:
 	class UCrAiActionExploderStartTimer*          ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrAiActionExploderStartTimer_Create_CrAiActionExploderStartTimer;
+
+// Function CrAiExploderRuntime.CrAiActionExploderT3DigIn.Create_CrAiActionExploderT3DigIn
+// 0x0018 (0x0018 - 0x0000)
+struct CrAiActionExploderT3DigIn_Create_CrAiActionExploderT3DigIn final
+{
+public:
+	TSubclassOf<class UCrAiActionExploderT3DigIn> ActionType;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NewMaxLifetimeS;                                   // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDigOut_0;                                         // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCrAiActionExploderT3DigIn*             ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrAiActionExploderT3DigIn_Create_CrAiActionExploderT3DigIn;
 
 // Function CrAiExploderRuntime.CrAiExploder.IsExploderDead
 // 0x0001 (0x0001 - 0x0000)
@@ -70,6 +97,24 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrAiExploder_ShouldSpawnHugeCollision;
+
+// Function CrAiExploderRuntime.ExploderT3CystActor.SetIsImmortal
+// 0x0001 (0x0001 - 0x0000)
+struct ExploderT3CystActor_SetIsImmortal final
+{
+public:
+	bool                                          bIsImmortal;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ExploderT3CystActor_SetIsImmortal;
+
+// Function CrAiExploderRuntime.ExploderT3CystActor.GetHealthValue
+// 0x0004 (0x0004 - 0x0000)
+struct ExploderT3CystActor_GetHealthValue final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ExploderT3CystActor_GetHealthValue;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

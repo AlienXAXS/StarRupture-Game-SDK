@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "ABP_Ranged_Tier1_Actor_structs.hpp"
 #include "Engine_structs.hpp"
+#include "AnimGraphRuntime_structs.hpp"
+#include "ABP_Ranged_Tier1_Actor_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
-#include "AnimGraphRuntime_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -168,6 +168,11 @@ public:
 	void AnimNotify_AnimationFinishedEvent();
 	void AnimNotify_DealDamage();
 	void AnimNotify_EndAnimAction();
+	void AnimNotify_HitVO_Start();
+	void AnimNotify_HitVO_Start2();
+	void AnimNotify_HitVO_Start3();
+	void AnimNotify_HitVO_Start4();
+	void AnimNotify_HitVO_Start5();
 	void AnimNotify_Jumped();
 	void AnimNotify_Landed();
 	void AnimNotify_OnShootStateExitTransitionFinished();
@@ -191,7 +196,6 @@ public:
 	void AnimNotify_RootMotionOn();
 	void AttackConduitOnUpdate(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node);
 	void BPOnAttackTypeChanged(ECrEnemyAttackType OldAttackType, ECrEnemyAttackType NewAttackType);
-	void BPOnDamageReceived();
 	void BPOnLocomotionTypeChanged(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType);
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_BlendListByBool_0BC67F9F4A6531EA56FC4A8D10B35C89();
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier1_Actor_AnimGraphNode_BlendListByBool_9DD1CAD94BB29DEF19748986EFAA7B11();

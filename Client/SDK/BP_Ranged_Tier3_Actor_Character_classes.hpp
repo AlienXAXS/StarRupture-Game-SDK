@@ -17,11 +17,11 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Ranged_Tier3_Actor_Character.BP_Ranged_Tier3_Actor_Character_C
-// 0x0020 (0x0D20 - 0x0D00)
+// 0x0020 (0x0D40 - 0x0D20)
 class ABP_Ranged_Tier3_Actor_Character_C final : public ABP_BaseAI_C
 {
 public:
-	struct FVector                                Start_Location_Offset;                             // 0x0D00(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                Start_Location_Offset;                             // 0x0D20(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

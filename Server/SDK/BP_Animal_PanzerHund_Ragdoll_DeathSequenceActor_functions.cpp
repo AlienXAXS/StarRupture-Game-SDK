@@ -70,4 +70,44 @@ void ABP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C::OnRagdollStart()
 }
 
 
+// Function BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor.BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C.OnVisualVariationSeedChanged
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FVector&                   NewSeed                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C::OnVisualVariationSeedChanged(const struct FVector& NewSeed)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C", "OnVisualVariationSeedChanged");
+
+	Params::BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C_OnVisualVariationSeedChanged Parms{};
+
+	Parms.NewSeed = std::move(NewSeed);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor.BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C.SetMossVisibility
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Visible                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C::SetMossVisibility(bool Visible)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C", "SetMossVisibility");
+
+	Params::BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C_SetMossVisibility Parms{};
+
+	Parms.Visible = Visible;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 SDK_NAMESPACE_END

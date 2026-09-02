@@ -36,15 +36,6 @@ public:
 };
 DUMPER7_ASSERTS_AudioCapture_IsCapturingAudio;
 
-// Function AudioCapture.AudioCaptureFunctionLibrary.CreateAudioCapture
-// 0x0008 (0x0008 - 0x0000)
-struct AudioCaptureFunctionLibrary_CreateAudioCapture final
-{
-public:
-	class UAudioCapture*                          ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AudioCaptureFunctionLibrary_CreateAudioCapture;
-
 // Function AudioCapture.AudioCaptureBlueprintLibrary.Conv_AudioInputDeviceInfoToString
 // 0x0040 (0x0040 - 0x0000)
 struct AudioCaptureBlueprintLibrary_Conv_AudioInputDeviceInfoToString final
@@ -64,6 +55,15 @@ public:
 	TDelegate<void(const TArray<struct FAudioInputDeviceInfo>& AvailableDevices)> OnObtainDevicesEvent; // 0x0008(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_AudioCaptureBlueprintLibrary_GetAvailableAudioInputDevices;
+
+// Function AudioCapture.AudioCaptureFunctionLibrary.CreateAudioCapture
+// 0x0008 (0x0008 - 0x0000)
+struct AudioCaptureFunctionLibrary_CreateAudioCapture final
+{
+public:
+	class UAudioCapture*                          ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AudioCaptureFunctionLibrary_CreateAudioCapture;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

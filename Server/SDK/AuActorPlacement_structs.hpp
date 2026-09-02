@@ -10,32 +10,16 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
 #include "MassSpawner_structs.hpp"
 #include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "ChimeraMassCommon_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
-// Enum AuActorPlacement.EPlacementSoundType
-// NumValues: 0x000A
-enum class EPlacementSoundType : uint8
-{
-	Universal                                = 0,
-	PlaceSuccess                             = 1,
-	PlaceFail                                = 2,
-	Snap                                     = 3,
-	TilesMultiply                            = 4,
-	RailConnect1                             = 5,
-	RailConnect2                             = 6,
-	Deconstruct                              = 7,
-	None                                     = 8,
-	EPlacementSoundType_MAX                  = 9,
-};
-
 // Enum AuActorPlacement.ECrBuildingID
-// NumValues: 0x0180
+// NumValues: 0x0198
 enum class ECrBuildingID : uint32
 {
 	NONE                                     = 0,
@@ -238,190 +222,214 @@ enum class ECrBuildingID : uint32
 	FactoryVariant                           = 197,
 	FE_Armory                                = 198,
 	FE_SuitWorkshop                          = 199,
-	FoodProcessor                            = 200,
-	Forge                                    = 201,
-	Forge_Variant                            = 202,
-	ForgottenEngine_EngineControlStation     = 203,
-	ForgottenEngine_EntryTerminal            = 204,
-	ForgottenMachine_01_AmmoCrafter          = 205,
-	ForgottenMachine_01_FoodProcessor        = 206,
-	Furnace                                  = 207,
-	Furnace_Variant                          = 208,
-	FurnaceTier2                             = 209,
-	FurnaceTier2_Variant                     = 210,
-	GasExtractor                             = 211,
-	HabitatBig                               = 212,
-	HabitatSmall                             = 213,
-	Hammer                                   = 214,
-	Hammer_variant                           = 215,
-	HorizontalBridge                         = 216,
-	HorizontalBridgeConnector                = 217,
-	HorizontalBridgeSegment                  = 218,
-	Hub                                      = 219,
-	InteriorPowerGenerator                   = 220,
-	ItemPrinter                              = 221,
-	LaserDrill                               = 222,
-	LiquidExtractor                          = 223,
-	MapTerminal                              = 224,
-	MassCollector                            = 225,
-	MechanicalDrill                          = 226,
-	MechanicalDrillFoundation                = 227,
-	MechanicalDrillTier2                     = 228,
-	MilitaryAssembler                        = 229,
-	MilitaryAssembler_Variant                = 230,
-	MiniExporter                             = 231,
-	AnchoredPlatform                         = 232,
-	BasePlatform                             = 233,
-	BasePlatformStability                    = 234,
-	ConnectingPlatform                       = 235,
-	ConnectingPlatform_Triangular            = 236,
-	ConnectingPlatformStability              = 237,
-	Foundation10x6                           = 238,
-	Foundation1x1                            = 239,
-	Foundation2x2                            = 240,
-	Foundation3x3                            = 241,
-	Foundation4x3                            = 242,
-	Foundation4x4                            = 243,
-	Foundation4x5                            = 244,
-	Foundation5x6                            = 245,
-	Foundation6x3                            = 246,
-	Foundation6x4                            = 247,
-	Foundation6x6                            = 248,
-	Foundation7x7                            = 249,
-	Foundation8x7                            = 250,
-	Foundation9x6                            = 251,
-	Foundation9x7                            = 252,
-	Foundation9x9                            = 253,
-	Foundation9x12                           = 254,
-	Foundation4x6                            = 255,
-	Foundation5x4                            = 256,
-	Foundation5x5                            = 257,
-	Foundation6x5                            = 258,
-	Foundation6x7                            = 259,
-	Foundation5x7                            = 260,
-	Foundation3x4                            = 261,
-	Foundation7x6                            = 262,
-	Foundation7x8                            = 263,
-	Ladder                                   = 264,
-	MagneticLift                             = 265,
-	PillarSupport                            = 266,
-	PillarSupport_Triangular                 = 267,
-	Railing                                  = 268,
-	Railing_Triangular                       = 269,
-	SafetyBarrierDiagonal                    = 270,
-	Stairs                                   = 271,
-	StairsBarrierFlatL                       = 272,
-	StairsBarrierFlatR                       = 273,
-	StairsBarrierL                           = 274,
-	StairsBarrierR                           = 275,
-	StairsFlat                               = 276,
-	Tiles10x6                                = 277,
-	Tiles1x1                                 = 278,
-	Tiles2x2                                 = 279,
-	Tiles3x3                                 = 280,
-	Tiles3x4                                 = 281,
-	Tiles4x3                                 = 282,
-	Tiles4x4                                 = 283,
-	Tiles4x5                                 = 284,
-	Tiles4x6                                 = 285,
-	Tiles5x4                                 = 286,
-	Tiles5x5                                 = 287,
-	Tiles5x6                                 = 288,
-	Tiles5x7                                 = 289,
-	Tiles6x3                                 = 290,
-	Tiles6x4                                 = 291,
-	Tiles6x5                                 = 292,
-	Tiles6x6                                 = 293,
-	Tiles6x7                                 = 294,
-	Tiles7x6                                 = 295,
-	Tiles7x7                                 = 296,
-	Tiles7x8                                 = 297,
-	Tiles8x7                                 = 298,
-	Tiles9x6                                 = 299,
-	Tiles9x7                                 = 300,
-	Tiles9x9                                 = 301,
-	Tiles9x12                                = 302,
-	PackageReceiver                          = 303,
-	PackageReceiver_Variant                  = 304,
-	PackageSender                            = 305,
-	PackageSender_Variant                    = 306,
-	ParticleCatcher                          = 307,
-	Pedestal                                 = 308,
-	PersonalStorage                          = 309,
-	PersonalStorage_NonDeconstructible       = 310,
-	PersonalStorageBig                       = 311,
-	PlantGrower                              = 312,
-	Pole                                     = 313,
-	PressurePowerGenerator                   = 314,
-	Pressurizer                              = 315,
-	Pressurizer_variant                      = 316,
-	Radar                                    = 317,
-	RailingWalkway                           = 318,
-	RecipeTable                              = 319,
-	Recycler                                 = 320,
-	Refinery                                 = 321,
-	Refinery_variant                         = 322,
-	ResearchLab                              = 323,
-	ResearchTerminal                         = 324,
-	ResourceRedistributor                    = 325,
-	ResourceRedistributor_Variant            = 326,
-	SealingDoor                              = 327,
-	SideLadder                               = 328,
-	Smelter                                  = 329,
-	Smelter_variant                          = 330,
-	SolarPowerGenerator                      = 331,
-	SolarPowerGeneratorTier2                 = 332,
-	SonicDrill                               = 333,
-	StartingItemPrinter                      = 334,
-	Storage                                  = 335,
-	Storage_Variant                          = 336,
-	StorageDepot                             = 337,
-	StorageDepot_Variant                     = 338,
-	SuitWorkshop                             = 339,
-	Synthetizer                              = 340,
-	Synthetizer_Variant                      = 341,
-	SynthetizerTier2                         = 342,
-	SynthetizerTier2_Variant                 = 343,
-	Table                                    = 344,
-	Teleporter                               = 345,
-	TurretTier1                              = 346,
-	TurretTier2                              = 347,
-	TurretTier2_Variant                      = 348,
-	UniversalStorage                         = 349,
-	UniversalStorage_Variant                 = 350,
-	UpgradeStation                           = 351,
-	VerticalBridge                           = 352,
-	ViewportLeft                             = 353,
-	ViewportMiddle                           = 354,
-	ViewportRight                            = 355,
-	ViewportSingle                           = 356,
-	Walkway                                  = 357,
-	WaterExtractor                           = 358,
-	WaterExtractorFoundation                 = 359,
-	WaveFreezer                              = 360,
-	WaveSmelter                              = 361,
-	WindPowerGenerator                       = 362,
-	WindPowerGeneratorTier2                  = 363,
-	Zipline                                  = 364,
-	Zipline_320                              = 365,
-	Zipline_390                              = 366,
-	Zipline_460                              = 367,
-	Zipline_530                              = 368,
-	Zipline_600                              = 369,
-	Zipline_2x2                              = 370,
-	Zipline_2x2_320                          = 371,
-	Zipline_2x2_390                          = 372,
-	Zipline_2x2_460                          = 373,
-	Zipline_2x2_530                          = 374,
-	Zipline_2x2_600                          = 375,
-	ZipLine_OLD                              = 376,
-	ZiplineSupport                           = 377,
-	ZiplineSupport_2x2                       = 378,
-	ZipRail                                  = 379,
-	Zipline_250                              = 380,
-	Zipline_2x2_250                          = 381,
-	_COUNT                                   = 382,
-	ECrBuildingID_MAX                        = 383,
+	FE2_Powered_Device                       = 200,
+	FoodProcessor                            = 201,
+	Forge                                    = 202,
+	Forge_Variant                            = 203,
+	ForgottenEngine_EngineControlStation     = 204,
+	ForgottenEngine_EntryTerminal            = 205,
+	ForgottenMachine_01_AmmoCrafter          = 206,
+	ForgottenMachine_01_FoodProcessor        = 207,
+	Furnace                                  = 208,
+	Furnace_Variant                          = 209,
+	FurnaceTier2                             = 210,
+	FurnaceTier2_Variant                     = 211,
+	GasExtractor                             = 212,
+	HabitatBig                               = 213,
+	HabitatSmall                             = 214,
+	Hammer                                   = 215,
+	Hammer_variant                           = 216,
+	HorizontalBridge                         = 217,
+	HorizontalBridgeConnector                = 218,
+	HorizontalBridgeSegment                  = 219,
+	Hub                                      = 220,
+	InteriorPowerGenerator                   = 221,
+	ItemPrinter                              = 222,
+	LaserDrill                               = 223,
+	LiquidExtractor                          = 224,
+	MapTerminal                              = 225,
+	MassCollector                            = 226,
+	MechanicalDrill                          = 227,
+	MechanicalDrillFoundation                = 228,
+	MechanicalDrillTier2                     = 229,
+	MilitaryAssembler                        = 230,
+	MilitaryAssembler_Variant                = 231,
+	MiniExporter                             = 232,
+	AnchoredPlatform                         = 233,
+	BasePlatform                             = 234,
+	BasePlatformStability                    = 235,
+	ConnectingPlatform                       = 236,
+	ConnectingPlatform_Triangular            = 237,
+	ConnectingPlatformStability              = 238,
+	Foundation10x6                           = 239,
+	Foundation1x1                            = 240,
+	Foundation2x2                            = 241,
+	Foundation2x3                            = 242,
+	Foundation3x3                            = 243,
+	Foundation3x5                            = 244,
+	Foundation3x6                            = 245,
+	Foundation4x3                            = 246,
+	Foundation4x4                            = 247,
+	Foundation4x5                            = 248,
+	Foundation5x6                            = 249,
+	Foundation6x3                            = 250,
+	Foundation6x4                            = 251,
+	Foundation6x6                            = 252,
+	Foundation7x7                            = 253,
+	Foundation8x7                            = 254,
+	Foundation9x6                            = 255,
+	Foundation9x7                            = 256,
+	Foundation9x9                            = 257,
+	Foundation9x12                           = 258,
+	Foundation4x6                            = 259,
+	Foundation5x4                            = 260,
+	Foundation5x5                            = 261,
+	Foundation6x5                            = 262,
+	Foundation6x7                            = 263,
+	Foundation5x7                            = 264,
+	Foundation3x4                            = 265,
+	Foundation7x6                            = 266,
+	Foundation7x8                            = 267,
+	Ladder                                   = 268,
+	MagneticLift                             = 269,
+	PillarSupport                            = 270,
+	PillarSupport_Triangular                 = 271,
+	Railing                                  = 272,
+	Railing_Triangular                       = 273,
+	SafetyBarrierDiagonal                    = 274,
+	Stairs                                   = 275,
+	StairsBarrierFlatL                       = 276,
+	StairsBarrierFlatR                       = 277,
+	StairsBarrierL                           = 278,
+	StairsBarrierR                           = 279,
+	StairsFlat                               = 280,
+	Tiles10x6                                = 281,
+	Tiles1x1                                 = 282,
+	Tiles2x2                                 = 283,
+	Tiles2x3                                 = 284,
+	Tiles3x3                                 = 285,
+	Tiles3x4                                 = 286,
+	Tiles3x5                                 = 287,
+	Tiles3x6                                 = 288,
+	Tiles4x3                                 = 289,
+	Tiles4x4                                 = 290,
+	Tiles4x5                                 = 291,
+	Tiles4x6                                 = 292,
+	Tiles5x4                                 = 293,
+	Tiles5x5                                 = 294,
+	Tiles5x6                                 = 295,
+	Tiles5x7                                 = 296,
+	Tiles6x3                                 = 297,
+	Tiles6x4                                 = 298,
+	Tiles6x5                                 = 299,
+	Tiles6x6                                 = 300,
+	Tiles6x7                                 = 301,
+	Tiles7x6                                 = 302,
+	Tiles7x7                                 = 303,
+	Tiles7x8                                 = 304,
+	Tiles8x7                                 = 305,
+	Tiles9x6                                 = 306,
+	Tiles9x7                                 = 307,
+	Tiles9x9                                 = 308,
+	Tiles9x12                                = 309,
+	PackageReceiver                          = 310,
+	PackageReceiver_Variant                  = 311,
+	PackageSender                            = 312,
+	PackageSender_Variant                    = 313,
+	ParticleCatcher                          = 314,
+	Pedestal                                 = 315,
+	PersonalStorage                          = 316,
+	PersonalStorage_NonDeconstructible       = 317,
+	PersonalStorageBig                       = 318,
+	PlantGrower                              = 319,
+	Pole                                     = 320,
+	PressurePowerGenerator                   = 321,
+	Pressurizer                              = 322,
+	Pressurizer_variant                      = 323,
+	Radar                                    = 324,
+	RailingWalkway                           = 325,
+	RecipeTable                              = 326,
+	Recycler                                 = 327,
+	Refinery                                 = 328,
+	Refinery_variant                         = 329,
+	ResearchLab                              = 330,
+	ResearchTerminal                         = 331,
+	ResourceRedistributor                    = 332,
+	ResourceRedistributor_Variant            = 333,
+	SealingDoor                              = 334,
+	SideLadder                               = 335,
+	Smelter                                  = 336,
+	Smelter_variant                          = 337,
+	SolarPowerGenerator                      = 338,
+	SolarPowerGeneratorTier2                 = 339,
+	SonicDrill                               = 340,
+	StartingItemPrinter                      = 341,
+	Storage                                  = 342,
+	Storage_Variant                          = 343,
+	StorageDepot                             = 344,
+	StorageDepot_Variant                     = 345,
+	SuitWorkshop                             = 346,
+	Synthetizer                              = 347,
+	Synthetizer_Variant                      = 348,
+	SynthetizerTier2                         = 349,
+	SynthetizerTier2_Variant                 = 350,
+	Table                                    = 351,
+	Teleporter                               = 352,
+	TurretTier1                              = 353,
+	TurretTier2                              = 354,
+	TurretTier2_Variant                      = 355,
+	UniversalStorage                         = 356,
+	UniversalStorage_Variant                 = 357,
+	UpgradeStation                           = 358,
+	VerticalBridge                           = 359,
+	ViewportLeft                             = 360,
+	ViewportMiddle                           = 361,
+	ViewportRight                            = 362,
+	ViewportSingle                           = 363,
+	Walkway                                  = 364,
+	WaterExtractor                           = 365,
+	WaterExtractorFoundation                 = 366,
+	WaveFreezer                              = 367,
+	WaveSmelter                              = 368,
+	WindPowerGenerator                       = 369,
+	WindPowerGeneratorTier2                  = 370,
+	Zipline                                  = 371,
+	Zipline_320                              = 372,
+	Zipline_390                              = 373,
+	Zipline_460                              = 374,
+	Zipline_530                              = 375,
+	Zipline_600                              = 376,
+	Zipline_2x2                              = 377,
+	Zipline_2x2_320                          = 378,
+	Zipline_2x2_390                          = 379,
+	Zipline_2x2_460                          = 380,
+	Zipline_2x2_530                          = 381,
+	Zipline_2x2_600                          = 382,
+	ZipLine_OLD                              = 383,
+	ZiplineSupport                           = 384,
+	ZiplineSupport_2x2                       = 385,
+	ZipRail                                  = 386,
+	Zipline_250                              = 387,
+	Zipline_2x2_250                          = 388,
+	VerticalConnector_110                    = 389,
+	VerticalConnector_180                    = 390,
+	VerticalConnector_250                    = 391,
+	VerticalConnector_320                    = 392,
+	VerticalConnector_390                    = 393,
+	VerticalConnector_460                    = 394,
+	VerticalConnector_530                    = 395,
+	VerticalConnector_600                    = 396,
+	Modular4WayTip                           = 397,
+	SmelterTier2                             = 398,
+	SmelterTier2_Variant                     = 399,
+	FE2_Entrance                             = 400,
+	MilitaryCrafter                          = 401,
+	MilitaryCrafter_Variant                  = 402,
+	DefenseCannon                            = 403,
+	DefenseCannon_Variant                    = 404,
+	DynamicPillar                            = 405,
+	_COUNT                                   = 406,
+	ECrBuildingID_MAX                        = 407,
 };
 
 // Enum AuActorPlacement.ECrDirection
@@ -520,25 +528,6 @@ enum class EAuAPlacementPointsRespectingSurface : uint8
 	EAuAPlacementPointsRespectingSurface_MAX = 7,
 };
 
-// ScriptStruct AuActorPlacement.AuActorPlacementComponentTickFunction
-// 0x0008 (0x0030 - 0x0028)
-struct FAuActorPlacementComponentTickFunction final : public FTickFunction
-{
-public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAuActorPlacementComponentTickFunction;
-
-// ScriptStruct AuActorPlacement.ActorPlacementSounds
-// 0x0010 (0x0010 - 0x0000)
-struct FActorPlacementSounds final
-{
-public:
-	class USoundBase*                             FppSound;                                          // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class USoundBase*                             TppSound;                                          // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FActorPlacementSounds;
-
 // ScriptStruct AuActorPlacement.AuPlacementLocationResultData
 // 0x0030 (0x0030 - 0x0000)
 struct FAuPlacementLocationResultData final
@@ -551,21 +540,6 @@ public:
 	class UStaticMeshSocket*                      Socket;                                            // 0x0028(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 };
 DUMPER7_ASSERTS_FAuPlacementLocationResultData;
-
-// ScriptStruct AuActorPlacement.PlacementSnapSocketsData
-// 0x0040 (0x0040 - 0x0000)
-struct FPlacementSnapSocketsData final
-{
-public:
-	class AActor*                                 HitActor;                                          // 0x0000(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UStaticMeshComponent*                   HitActorSMC;                                       // 0x0008(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UStaticMeshSocket*                      HitActorSocket;                                    // 0x0010(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UStaticMeshSocket*                      HelperSocket;                                      // 0x0018(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	struct FStaticMeshConnnection                 SMConnection;                                      // 0x0020(0x0018)(NativeAccessSpecifierPublic)
-	int32                                         HelperSocketIndex;                                 // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FPlacementSnapSocketsData;
 
 // ScriptStruct AuActorPlacement.AuAPMassSpawnedEntityType
 // 0x0038 (0x0038 - 0x0000)
@@ -673,8 +647,7 @@ struct FAuAPSocketParams final
 public:
 	TArray<class UAuActorPlacementSocketData*>    CompatibleSockets;                                 // 0x0000(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
 	bool                                          bSnapToSocketWholeObject;                          // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSnapToSocketNormalPlane;                          // 0x0011(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                SnapOffset;                                        // 0x0018(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bRotateToSocketForward;                            // 0x0030(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bOnlyInSocketPlane;                                // 0x0031(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -684,18 +657,6 @@ public:
 	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FAuAPSocketParams;
-
-// ScriptStruct AuActorPlacement.AuAPHelperParams
-// 0x0020 (0x0020 - 0x0000)
-struct FAuAPHelperParams final
-{
-public:
-	TSubclassOf<class AAuAPHelperActor>           CustomHelperClass;                                 // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UStaticMesh*                            CustomHelperMesh;                                  // 0x0008(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UMaterialInstance*                      CustomHelperAcceptMaterial;                        // 0x0010(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UMaterialInstance*                      CustomHelperDenyMaterial;                          // 0x0018(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FAuAPHelperParams;
 
 // ScriptStruct AuActorPlacement.AuAPPayloadData
 // 0x0068 (0x0068 - 0x0000)
@@ -760,17 +721,6 @@ public:
 };
 DUMPER7_ASSERTS_FAuAPPayloadDataHandle;
 
-// ScriptStruct AuActorPlacement.AuHelperStabilityConnection
-// 0x0018 (0x0018 - 0x0000)
-struct FAuHelperStabilityConnection final
-{
-public:
-	TArray<struct FVector>                        Neighbours;                                        // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	float                                         Stability;                                         // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAuHelperStabilityConnection;
-
 // ScriptStruct AuActorPlacement.MassFragmentCustomData
 // 0x0004 (0x0004 - 0x0000)
 struct FMassFragmentCustomData final
@@ -789,7 +739,7 @@ public:
 	struct FMassFragmentCustomData                CustomData;                                        // 0x0020(0x0004)(Transient, NoDestructor, Protected, NativeAccessSpecifierProtected)
 	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FMassEntityTemplateID                  TemplateID;                                        // 0x0028(0x0020)(Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         MainMeshZOffset;                                   // 0x0048(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	ECrBuildingID                                 BuildingToRestore;                                 // 0x0048(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                         SpawnServerTimeSeconds;                            // 0x004C(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
 DUMPER7_ASSERTS_FAuAPMassFragment;

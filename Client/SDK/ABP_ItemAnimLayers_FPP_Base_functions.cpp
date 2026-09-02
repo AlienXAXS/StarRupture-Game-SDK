@@ -335,6 +335,20 @@ void UABP_ItemAnimLayers_FPP_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph
 }
 
 
+// Function ABP_ItemAnimLayers_FPP_Base.ABP_ItemAnimLayers_FPP_Base_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_ItemAnimLayers_FPP_Base_AnimGraphNode_TransitionResult_8E63370549DEB9A142A285866AEDD97B
+// (BlueprintEvent)
+
+void UABP_ItemAnimLayers_FPP_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_ItemAnimLayers_FPP_Base_AnimGraphNode_TransitionResult_8E63370549DEB9A142A285866AEDD97B()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_ItemAnimLayers_FPP_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_ItemAnimLayers_FPP_Base_AnimGraphNode_TransitionResult_8E63370549DEB9A142A285866AEDD97B");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function ABP_ItemAnimLayers_FPP_Base.ABP_ItemAnimLayers_FPP_Base_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_ItemAnimLayers_FPP_Base_AnimGraphNode_TransitionResult_99A3DF0D4E9EDCBF6A3BB1A5309F7F5E
 // (BlueprintEvent)
 
@@ -866,6 +880,27 @@ void UABP_ItemAnimLayers_FPP_Base_C::FullBody_StopState(struct FPoseLink* FullBo
 
 	if (FullBody_StopState_0 != nullptr)
 		*FullBody_StopState_0 = std::move(Parms.FullBody_StopState_0);
+}
+
+
+// Function ABP_ItemAnimLayers_FPP_Base.ABP_ItemAnimLayers_FPP_Base_C.FullBody_ZiplineLoop
+// (HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FPoseLink*                       FullBody_ZiplineLoop_0                                 (Parm, OutParm, NoDestructor)
+
+void UABP_ItemAnimLayers_FPP_Base_C::FullBody_ZiplineLoop(struct FPoseLink* FullBody_ZiplineLoop_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_ItemAnimLayers_FPP_Base_C", "FullBody_ZiplineLoop");
+
+	Params::ABP_ItemAnimLayers_FPP_Base_C_FullBody_ZiplineLoop Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (FullBody_ZiplineLoop_0 != nullptr)
+		*FullBody_ZiplineLoop_0 = std::move(Parms.FullBody_ZiplineLoop_0);
 }
 
 
@@ -1584,6 +1619,28 @@ bool UABP_ItemAnimLayers_FPP_Base_C::ShouldDistanceMatchStop()
 	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
+}
+
+
+// Function ABP_ItemAnimLayers_FPP_Base.ABP_ItemAnimLayers_FPP_Base_C.Swim_UpdateCycleAnim
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+
+void UABP_ItemAnimLayers_FPP_Base_C::Swim_UpdateCycleAnim(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_ItemAnimLayers_FPP_Base_C", "Swim_UpdateCycleAnim");
+
+	Params::ABP_ItemAnimLayers_FPP_Base_C_Swim_UpdateCycleAnim Parms{};
+
+	Parms.Context = std::move(Context);
+	Parms.Node = std::move(Node);
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

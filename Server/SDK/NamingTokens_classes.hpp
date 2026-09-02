@@ -50,26 +50,6 @@ public:
 };
 DUMPER7_ASSERTS_UNamingTokens;
 
-// Class NamingTokens.GlobalNamingTokens
-// 0x0000 (0x0108 - 0x0108)
-class UGlobalNamingTokens final : public UNamingTokens
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("GlobalNamingTokens")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"GlobalNamingTokens")
-	}
-	static class UGlobalNamingTokens* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UGlobalNamingTokens>();
-	}
-};
-DUMPER7_ASSERTS_UGlobalNamingTokens;
-
 // Class NamingTokens.NamingTokensEngineSubsystem
 // 0x0120 (0x0150 - 0x0030)
 class UNamingTokensEngineSubsystem final : public UEngineSubsystem
@@ -107,5 +87,25 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UNamingTokensEngineSubsystem;
+
+// Class NamingTokens.GlobalNamingTokens
+// 0x0000 (0x0108 - 0x0108)
+class UGlobalNamingTokens final : public UNamingTokens
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("GlobalNamingTokens")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"GlobalNamingTokens")
+	}
+	static class UGlobalNamingTokens* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UGlobalNamingTokens>();
+	}
+};
+DUMPER7_ASSERTS_UGlobalNamingTokens;
 
 SDK_NAMESPACE_END

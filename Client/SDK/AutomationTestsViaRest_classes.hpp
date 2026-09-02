@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "DeveloperSettings_classes.hpp"
-#include "AutomationTestsViaRest_structs.hpp"
 #include "Engine_classes.hpp"
+#include "AutomationTestsViaRest_structs.hpp"
 
 
 SDK_NAMESPACE_START

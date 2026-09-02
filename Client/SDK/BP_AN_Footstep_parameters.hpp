@@ -13,8 +13,8 @@
 #include "GameplayTags_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Chimera_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "PhysicsCore_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 SDK_NAMESPACE_START

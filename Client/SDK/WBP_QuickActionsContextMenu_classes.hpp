@@ -18,12 +18,13 @@
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_QuickActionsContextMenu.WBP_QuickActionsContextMenu_C
-// 0x0018 (0x0440 - 0x0428)
+// 0x0020 (0x0458 - 0x0438)
 class UWBP_QuickActionsContextMenu_C final : public UCrUW_QuickActionsMenu
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0428(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FDataTableRowHandle                    DefaultConfirmHandle;                              // 0x0430(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0438(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UImage*                                 Image_719;                                         // 0x0440(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	struct FDataTableRowHandle                    DefaultConfirmHandle;                              // 0x0448(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
 
 public:
 	class UCrUW_ActionButton* AddAction(ECrUIInputActionType InAction);

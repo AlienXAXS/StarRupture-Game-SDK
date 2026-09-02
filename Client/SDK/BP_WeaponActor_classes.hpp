@@ -10,19 +10,19 @@
 
 #include "Basic.hpp"
 
-#include "Chimera_classes.hpp"
 #include "Engine_structs.hpp"
+#include "Chimera_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_WeaponActor.BP_WeaponActor_C
-// 0x0010 (0x0388 - 0x0378)
-class ABP_WeaponActor_C final : public ACrWeaponActor
+// 0x0010 (0x03A0 - 0x0390)
+class ABP_WeaponActor_C : public ACrWeaponActor
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0378(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UClass*                                 WeaponData;                                        // 0x0380(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0390(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UClass*                                 WeaponData;                                        // 0x0398(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_WeaponActor(int32 EntryPoint);

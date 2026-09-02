@@ -12,34 +12,38 @@
 
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_BaseAI.BP_BaseAI_C
-// 0x0020 (0x0D00 - 0x0CE0)
+// 0x0020 (0x0D20 - 0x0D00)
 class ABP_BaseAI_C : public AMassEnemyCharacterBase
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0CE0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FLinearColor                           IdleEyeColor;                                      // 0x0CE8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ApplySlowdownAfterDamage;                          // 0x0CF8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0D00(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FLinearColor                           IdleEyeColor;                                      // 0x0D08(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ApplySlowdownAfterDamage;                          // 0x0D18(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void CanChangeEyeColor(bool* Result);
 	void ExecuteUbergraph_BP_BaseAI(int32 EntryPoint);
 	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
-	void NotifyAggroTargetChanged(bool bHasAggroTarget);
+	void NotifyAggroTargetChanged(bool bHasAggroTarget, bool bSetAggroFlare);
 	bool NotifyNearbyPlayerCharactersAboutSpawn();
 	void OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag);
 	void OnDamage(class AActor* Actor, const struct FHitResult& HitResult, float InDamage);
 	void OnEnterActorPool();
 	void OnExitActorPool();
+	void OnEyeStateColorGradientChanged(float NewGetEyeStateColorGradientCoord);
 	void OnPrepareForGame();
 	void OnPrepareForPooling();
 	void PostSetupPooledActorData(bool bNewIsInPool);
 	void ReceiveBeginPlay();
+	void SetAggroFlare();
+	void SetBoostFlare();
 	void SetIsAggroEyeColor(bool NewIsAggro);
 	void SetIsBoostedEyeColor(bool NewIsBoosted);
 	void SetIsJumpEyeBehaviour(bool NewIsJumpEyeBehaviour);

@@ -114,41 +114,6 @@ public:
 };
 DUMPER7_ASSERTS_UInterchangePipelineBase;
 
-// Class InterchangeCore.InterchangeTranslatorBase
-// 0x0020 (0x0048 - 0x0028)
-class UInterchangeTranslatorBase : public UObject
-{
-public:
-	class UInterchangeResultsContainer*           Results;                                           // 0x0028(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UInterchangeSourceData*                 SourceData;                                        // 0x0030(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_38[0x10];                                      // 0x0038(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetSettings(const class UInterchangeTranslatorSettings* InterchangeTranslatorSettings);
-
-	bool CanImportSourceData(const class UInterchangeSourceData* InSourceData) const;
-	class UInterchangeTranslatorSettings* GetSettings() const;
-	const class UInterchangeSourceData* GetSourceData() const;
-	EInterchangeTranslatorAssetType GetSupportedAssetTypes() const;
-	TArray<class FString> GetSupportedFormats() const;
-	EInterchangeTranslatorType GetTranslatorType() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("InterchangeTranslatorBase")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"InterchangeTranslatorBase")
-	}
-	static class UInterchangeTranslatorBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UInterchangeTranslatorBase>();
-	}
-};
-DUMPER7_ASSERTS_UInterchangeTranslatorBase;
-
 // Class InterchangeCore.InterchangeResult
 // 0x0048 (0x0070 - 0x0028)
 class UInterchangeResult : public UObject
@@ -406,6 +371,41 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UInterchangeTranslatorSettings;
+
+// Class InterchangeCore.InterchangeTranslatorBase
+// 0x0020 (0x0048 - 0x0028)
+class UInterchangeTranslatorBase : public UObject
+{
+public:
+	class UInterchangeResultsContainer*           Results;                                           // 0x0028(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UInterchangeSourceData*                 SourceData;                                        // 0x0030(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_38[0x10];                                      // 0x0038(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetSettings(const class UInterchangeTranslatorSettings* InterchangeTranslatorSettings);
+
+	bool CanImportSourceData(const class UInterchangeSourceData* InSourceData) const;
+	class UInterchangeTranslatorSettings* GetSettings() const;
+	const class UInterchangeSourceData* GetSourceData() const;
+	EInterchangeTranslatorAssetType GetSupportedAssetTypes() const;
+	TArray<class FString> GetSupportedFormats() const;
+	EInterchangeTranslatorType GetTranslatorType() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("InterchangeTranslatorBase")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"InterchangeTranslatorBase")
+	}
+	static class UInterchangeTranslatorBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInterchangeTranslatorBase>();
+	}
+};
+DUMPER7_ASSERTS_UInterchangeTranslatorBase;
 
 // Class InterchangeCore.InterchangeBaseNode
 // 0x0038 (0x0060 - 0x0028)

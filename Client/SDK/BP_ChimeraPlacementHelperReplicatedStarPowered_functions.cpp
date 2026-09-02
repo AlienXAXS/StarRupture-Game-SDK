@@ -37,7 +37,7 @@ void ABP_ChimeraPlacementHelperReplicatedStarPowered_C::ExecuteUbergraph_BP_Chim
 
 
 // Function BP_ChimeraPlacementHelperReplicatedStarPowered.BP_ChimeraPlacementHelperReplicatedStarPowered_C.OnFoundationSetUp
-// (Event, Public, HasOutParams, BlueprintEvent)
+// (HasOutParams, BlueprintEvent)
 // Parameters:
 // const TArray<struct FTransform>&        FoundationTransforms                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 

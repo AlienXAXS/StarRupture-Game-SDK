@@ -78,6 +78,20 @@ void AMap_MainMenu_C::getLevelName()
 }
 
 
+// Function Map_MainMenu.Map_MainMenu_C.getCL
+// (BlueprintCallable, BlueprintEvent)
+
+void AMap_MainMenu_C::getCL()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Map_MainMenu_C", "getCL");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function Map_MainMenu.Map_MainMenu_C.ExecuteUbergraph_Map_MainMenu
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:

@@ -137,6 +137,16 @@ public:
 };
 DUMPER7_ASSERTS_AuAbilitiesBPF_GetSpecName;
 
+// Function AuAbilities.AuAbilitiesBPF.GetUseableItemOwner
+// 0x0028 (0x0028 - 0x0000)
+struct AuAbilitiesBPF_GetUseableItemOwner final
+{
+public:
+	struct FGameplayEffectContextHandle           Context;                                           // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TScriptInterface<class IAuUseableItemOwnerInterface> ReturnValue;                                // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AuAbilitiesBPF_GetUseableItemOwner;
+
 // Function AuAbilities.AuAbilitiesBPF.MakeSpecHandle
 // 0x0030 (0x0030 - 0x0000)
 struct AuAbilitiesBPF_MakeSpecHandle final

@@ -14,8 +14,8 @@
 #include "AIModule_structs.hpp"
 #include "AIModule_classes.hpp"
 #include "GameplayTags_structs.hpp"
-#include "Chimera_structs.hpp"
 #include "Engine_classes.hpp"
+#include "Chimera_structs.hpp"
 
 
 SDK_NAMESPACE_START

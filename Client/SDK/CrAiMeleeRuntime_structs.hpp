@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "MassAIBehavior_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassReplication_structs.hpp"
 #include "MassEntity_structs.hpp"
+#include "MassAIBehavior_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -31,34 +31,33 @@ public:
 DUMPER7_ASSERTS_FReplicatedMeleeVertexAnimationData;
 
 // ScriptStruct CrAiMeleeRuntime.ReplicatedMeleeAgent
-// 0x00D0 (0x00F8 - 0x0028)
+// 0x00E8 (0x0110 - 0x0028)
 struct FReplicatedMeleeAgent final : public FReplicatedAgentBase
 {
 public:
 	struct FCrMassEnemyReplicatedAgentPositionYawData PositionYaw;                                   // 0x0028(0x0020)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
 	struct FReplicatedMeleeVertexAnimationData    VertexAnimationData;                               // 0x0048(0x0008)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FMassEnemyCommonReplicationData        CommonReplicationData;                             // 0x0050(0x0050)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FMassEnemyRagdollReplicationData       RagdollReplicationData;                            // 0x00A0(0x0040)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FMassEnemyFrequentlyReplicatedData     FrequentlyReplicatedData;                          // 0x00E0(0x0018)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FMassEnemyCommonReplicationData        CommonReplicationData;                             // 0x0050(0x00A8)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FMassEnemyFrequentlyReplicatedData     FrequentlyReplicatedData;                          // 0x00F8(0x0018)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
 };
 DUMPER7_ASSERTS_FReplicatedMeleeAgent;
 
 // ScriptStruct CrAiMeleeRuntime.MeleeFastArrayItem
-// 0x00F8 (0x0108 - 0x0010)
+// 0x0110 (0x0120 - 0x0010)
 struct FMeleeFastArrayItem final : public FMassFastArrayItemBase
 {
 public:
-	struct FReplicatedMeleeAgent                  Agent;                                             // 0x0010(0x00F8)(NoDestructor, NativeAccessSpecifierPublic)
+	struct FReplicatedMeleeAgent                  Agent;                                             // 0x0010(0x0110)(NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FMeleeFastArrayItem;
 
 // ScriptStruct CrAiMeleeRuntime.MeleeClientBubbleSerializer
-// 0x0220 (0x0358 - 0x0138)
+// 0x0238 (0x0370 - 0x0138)
 struct FMeleeClientBubbleSerializer final : public FMassClientBubbleSerializerBase
 {
 public:
-	uint8                                         Pad_138[0x210];                                    // 0x0138(0x0210)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FMeleeFastArrayItem>            Ais;                                               // 0x0348(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_138[0x228];                                    // 0x0138(0x0228)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FMeleeFastArrayItem>            Ais;                                               // 0x0360(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
 };
 DUMPER7_ASSERTS_FMeleeClientBubbleSerializer;
 

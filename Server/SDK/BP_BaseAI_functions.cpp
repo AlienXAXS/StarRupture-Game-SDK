@@ -76,6 +76,34 @@ void ABP_BaseAI_C::SetIsAggroEyeColor(bool NewIsAggro)
 }
 
 
+// Function BP_BaseAI.BP_BaseAI_C.SetBoostFlare
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_BaseAI_C::SetBoostFlare()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseAI_C", "SetBoostFlare");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_BaseAI.BP_BaseAI_C.SetAggroFlare
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_BaseAI_C::SetAggroFlare()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseAI_C", "SetAggroFlare");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_BaseAI.BP_BaseAI_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
 
@@ -135,6 +163,26 @@ void ABP_BaseAI_C::OnPrepareForGame()
 		Func = Class->GetFunction("BP_BaseAI_C", "OnPrepareForGame");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_BaseAI.BP_BaseAI_C.OnEyeStateColorGradientChanged
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   NewGetEyeStateColorGradientCoord                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_BaseAI_C::OnEyeStateColorGradientChanged(float NewGetEyeStateColorGradientCoord)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseAI_C", "OnEyeStateColorGradientChanged");
+
+	Params::BP_BaseAI_C_OnEyeStateColorGradientChanged Parms{};
+
+	Parms.NewGetEyeStateColorGradientCoord = NewGetEyeStateColorGradientCoord;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -236,8 +284,9 @@ bool ABP_BaseAI_C::NotifyNearbyPlayerCharactersAboutSpawn()
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // bool                                    bHasAggroTarget                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bSetAggroFlare                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_BaseAI_C::NotifyAggroTargetChanged(bool bHasAggroTarget)
+void ABP_BaseAI_C::NotifyAggroTargetChanged(bool bHasAggroTarget, bool bSetAggroFlare)
 {
 	static class UFunction* Func = nullptr;
 
@@ -247,6 +296,7 @@ void ABP_BaseAI_C::NotifyAggroTargetChanged(bool bHasAggroTarget)
 	Params::BP_BaseAI_C_NotifyAggroTargetChanged Parms{};
 
 	Parms.bHasAggroTarget = bHasAggroTarget;
+	Parms.bSetAggroFlare = bSetAggroFlare;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

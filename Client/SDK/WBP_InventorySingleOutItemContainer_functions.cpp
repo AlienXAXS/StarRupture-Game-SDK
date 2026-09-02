@@ -72,4 +72,24 @@ void UWBP_InventorySingleOutItemContainer_C::SetRecipeOutSlot(const struct FSlat
 }
 
 
+// Function WBP_InventorySingleOutItemContainer.WBP_InventorySingleOutItemContainer_C.SetSlotSize
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// double                                  InSize                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_InventorySingleOutItemContainer_C::SetSlotSize(double InSize)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_InventorySingleOutItemContainer_C", "SetSlotSize");
+
+	Params::WBP_InventorySingleOutItemContainer_C_SetSlotSize Parms{};
+
+	Parms.InSize = InSize;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 SDK_NAMESPACE_END

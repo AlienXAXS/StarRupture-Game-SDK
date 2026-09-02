@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_CraftingRecipeName.WBP_CraftingRecipeName_C
-// 0x0000 (0x05E8 - 0x05E8)
+// 0x0000 (0x0608 - 0x0608)
 class UWBP_CraftingRecipeName_C final : public UCrUW_CraftingRecipeName
 {
 public:

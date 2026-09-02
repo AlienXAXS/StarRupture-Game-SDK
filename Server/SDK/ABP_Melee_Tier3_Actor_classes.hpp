@@ -315,6 +315,11 @@ public:
 	void BPOnLocomotionTypeChanged(ECrEnemyLocomotionType OldLocomotionType_BPOnLocomotionTypeChanged, ECrEnemyLocomotionType NewLocomotionType_BPOnLocomotionTypeChanged);
 	void BPOnAttackTypeChanged(ECrEnemyAttackType OldAttackType_BPOnAttackTypeChanged, ECrEnemyAttackType NewAttackType_BPOnAttackTypeChanged);
 	void AttackConduitOnUpdate(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node);
+	void AnimNotify_HitVO_Start5();
+	void AnimNotify_HitVO_Start4();
+	void AnimNotify_HitVO_Start3();
+	void AnimNotify_HitVO_Start2();
+	void AnimNotify_HitVO_Start();
 	void AnimNotify_EndAttack();
 	void AnimNotify_EndAnimAction();
 	void AnimNotify_EndAnim();

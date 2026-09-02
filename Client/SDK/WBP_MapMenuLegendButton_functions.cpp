@@ -36,6 +36,28 @@ void UWBP_MapMenuLegendButton_C::ExecuteUbergraph_WBP_MapMenuLegendButton(int32 
 }
 
 
+// Function WBP_MapMenuLegendButton.WBP_MapMenuLegendButton_C.OnHoverChangedEvent
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          Item                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                                    bIsHovered                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_MapMenuLegendButton_C::OnHoverChangedEvent(class UObject* Item, bool bIsHovered)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_MapMenuLegendButton_C", "OnHoverChangedEvent");
+
+	Params::WBP_MapMenuLegendButton_C_OnHoverChangedEvent Parms{};
+
+	Parms.Item = Item;
+	Parms.bIsHovered = bIsHovered;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function WBP_MapMenuLegendButton.WBP_MapMenuLegendButton_C.SetRightShift
 // (Event, Public, BlueprintEvent)
 // Parameters:

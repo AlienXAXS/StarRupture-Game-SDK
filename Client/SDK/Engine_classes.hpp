@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "RenderCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "AudioPlatformConfiguration_structs.hpp"
 #include "Engine_structs.hpp"
 #include "ClothingSystemRuntimeInterface_structs.hpp"
+#include "RenderCore_structs.hpp"
+#include "AudioPlatformConfiguration_structs.hpp"
 #include "AudioExtensions_structs.hpp"
 #include "AudioExtensions_classes.hpp"
 #include "InputCore_structs.hpp"
@@ -23829,7 +23829,7 @@ public:
 	static float PerlinNoise1D(const float Value);
 	static bool PointsAreCoplanar(const TArray<struct FVector>& Points, float Tolerance);
 	static struct FVector ProjectPointOnToPlane(const struct FVector& Point, const struct FVector& PlaneBase, const struct FVector& PlaneNormal);
-	static struct FVector ProjectVectorOntoPlane(const struct FVector& V, const struct FVector& PlaneNormal);
+	static struct FVector ProjectVectorOnToPlane(const struct FVector& V, const struct FVector& PlaneNormal);
 	static struct FVector ProjectVectorOnToVector(const struct FVector& V, const struct FVector& Target);
 	static float Quat_AngularDistance(const struct FQuat& A, const struct FQuat& B);
 	static void Quat_EnforceShortestArcWith(struct FQuat& A, const struct FQuat& B);
@@ -27757,7 +27757,7 @@ public:
 DUMPER7_ASSERTS_UKismetMaterialLibrary;
 
 // Class Engine.StaticMeshSocket
-// 0x00E0 (0x0108 - 0x0028)
+// 0x00E8 (0x0110 - 0x0028)
 class UStaticMeshSocket final : public UObject
 {
 public:
@@ -27772,6 +27772,8 @@ public:
 	class UDataAsset*                             ReplaceBuilding;                                   // 0x00A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	TArray<class UStaticMesh*>                    BlockedBuildings;                                  // 0x00A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
 	TMap<class FString, bool>                     ComponentVisibility;                               // 0x00B8(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	bool                                          InstanceDependent;                                 // 0x0108(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_109[0x7];                                      // 0x0109(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -31824,7 +31826,8 @@ DUMPER7_ASSERTS_UPawnMovementComponent;
 
 // Class Engine.CharacterMovementComponent
 // 0x0E68 (0x0FF0 - 0x0188)
-class UCharacterMovementComponent : public UPawnMovementComponent
+#pragma pack(push, 0x1)
+class SDK_ALIGN(0x10) UCharacterMovementComponent : public UPawnMovementComponent
 {
 public:
 	uint8                                         Pad_188[0x10];                                     // 0x0188(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
@@ -32021,7 +32024,7 @@ public:
 	uint8                                         Pad_DD0[0x160];                                    // 0x0DD0(0x0160)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FRootMotionMovementParams              RootMotionParams;                                  // 0x0F30(0x0070)(Transient, NoDestructor, NativeAccessSpecifierPublic)
 	struct FVector                                AnimRootMotionVelocity;                            // 0x0FA0(0x0018)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_FB8[0x38];                                     // 0x0FB8(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_FB8[0x30];                                     // 0x0FB8(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void AddForce(const struct FVector& Force);
@@ -32083,6 +32086,7 @@ public:
 		return GetDefaultObjImpl<UCharacterMovementComponent>();
 	}
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_UCharacterMovementComponent;
 
 // Class Engine.DecalComponent

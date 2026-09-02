@@ -17,12 +17,12 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PC_PlayerControllerBase.PC_PlayerControllerBase_C
-// 0x0010 (0x1158 - 0x1148)
+// 0x0010 (0x1238 - 0x1228)
 class APC_PlayerControllerBase_C final : public ACrPlayerControllerBase
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1148(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	double                                        MinPitch;                                          // 0x1150(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1228(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	double                                        MinPitch;                                          // 0x1230(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ReceiveBeginPlay();

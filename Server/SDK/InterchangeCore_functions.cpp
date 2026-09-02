@@ -435,184 +435,6 @@ bool UInterchangePipelineBase::SupportReimport() const
 }
 
 
-// Function InterchangeCore.InterchangeTranslatorBase.SetSettings
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// const class UInterchangeTranslatorSettings*InterchangeTranslatorSettings                          (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UInterchangeTranslatorBase::SetSettings(const class UInterchangeTranslatorSettings* InterchangeTranslatorSettings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InterchangeTranslatorBase", "SetSettings");
-
-	Params::InterchangeTranslatorBase_SetSettings Parms{};
-
-	Parms.InterchangeTranslatorSettings = InterchangeTranslatorSettings;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function InterchangeCore.InterchangeTranslatorBase.CanImportSourceData
-// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const class UInterchangeSourceData*     InSourceData                                           (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UInterchangeTranslatorBase::CanImportSourceData(const class UInterchangeSourceData* InSourceData) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InterchangeTranslatorBase", "CanImportSourceData");
-
-	Params::InterchangeTranslatorBase_CanImportSourceData Parms{};
-
-	Parms.InSourceData = InSourceData;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function InterchangeCore.InterchangeTranslatorBase.GetSettings
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UInterchangeTranslatorSettings*   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UInterchangeTranslatorSettings* UInterchangeTranslatorBase::GetSettings() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InterchangeTranslatorBase", "GetSettings");
-
-	Params::InterchangeTranslatorBase_GetSettings Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function InterchangeCore.InterchangeTranslatorBase.GetSourceData
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const class UInterchangeSourceData*     ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-const class UInterchangeSourceData* UInterchangeTranslatorBase::GetSourceData() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InterchangeTranslatorBase", "GetSourceData");
-
-	Params::InterchangeTranslatorBase_GetSourceData Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function InterchangeCore.InterchangeTranslatorBase.GetSupportedAssetTypes
-// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// EInterchangeTranslatorAssetType         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EInterchangeTranslatorAssetType UInterchangeTranslatorBase::GetSupportedAssetTypes() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InterchangeTranslatorBase", "GetSupportedAssetTypes");
-
-	Params::InterchangeTranslatorBase_GetSupportedAssetTypes Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function InterchangeCore.InterchangeTranslatorBase.GetSupportedFormats
-// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<class FString> UInterchangeTranslatorBase::GetSupportedFormats() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InterchangeTranslatorBase", "GetSupportedFormats");
-
-	Params::InterchangeTranslatorBase_GetSupportedFormats Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function InterchangeCore.InterchangeTranslatorBase.GetTranslatorType
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// EInterchangeTranslatorType              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EInterchangeTranslatorType UInterchangeTranslatorBase::GetTranslatorType() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InterchangeTranslatorBase", "GetTranslatorType");
-
-	Params::InterchangeTranslatorBase_GetTranslatorType Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function InterchangeCore.InterchangeSourceData.SetFilename
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -800,6 +622,184 @@ void UInterchangeTranslatorSettings::SaveSettings()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function InterchangeCore.InterchangeTranslatorBase.SetSettings
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// const class UInterchangeTranslatorSettings*InterchangeTranslatorSettings                          (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInterchangeTranslatorBase::SetSettings(const class UInterchangeTranslatorSettings* InterchangeTranslatorSettings)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InterchangeTranslatorBase", "SetSettings");
+
+	Params::InterchangeTranslatorBase_SetSettings Parms{};
+
+	Parms.InterchangeTranslatorSettings = InterchangeTranslatorSettings;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function InterchangeCore.InterchangeTranslatorBase.CanImportSourceData
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const class UInterchangeSourceData*     InSourceData                                           (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UInterchangeTranslatorBase::CanImportSourceData(const class UInterchangeSourceData* InSourceData) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InterchangeTranslatorBase", "CanImportSourceData");
+
+	Params::InterchangeTranslatorBase_CanImportSourceData Parms{};
+
+	Parms.InSourceData = InSourceData;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function InterchangeCore.InterchangeTranslatorBase.GetSettings
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UInterchangeTranslatorSettings*   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UInterchangeTranslatorSettings* UInterchangeTranslatorBase::GetSettings() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InterchangeTranslatorBase", "GetSettings");
+
+	Params::InterchangeTranslatorBase_GetSettings Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function InterchangeCore.InterchangeTranslatorBase.GetSourceData
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const class UInterchangeSourceData*     ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+const class UInterchangeSourceData* UInterchangeTranslatorBase::GetSourceData() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InterchangeTranslatorBase", "GetSourceData");
+
+	Params::InterchangeTranslatorBase_GetSourceData Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function InterchangeCore.InterchangeTranslatorBase.GetSupportedAssetTypes
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EInterchangeTranslatorAssetType         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EInterchangeTranslatorAssetType UInterchangeTranslatorBase::GetSupportedAssetTypes() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InterchangeTranslatorBase", "GetSupportedAssetTypes");
+
+	Params::InterchangeTranslatorBase_GetSupportedAssetTypes Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function InterchangeCore.InterchangeTranslatorBase.GetSupportedFormats
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class FString> UInterchangeTranslatorBase::GetSupportedFormats() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InterchangeTranslatorBase", "GetSupportedFormats");
+
+	Params::InterchangeTranslatorBase_GetSupportedFormats Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function InterchangeCore.InterchangeTranslatorBase.GetTranslatorType
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EInterchangeTranslatorType              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EInterchangeTranslatorType UInterchangeTranslatorBase::GetTranslatorType() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InterchangeTranslatorBase", "GetTranslatorType");
+
+	Params::InterchangeTranslatorBase_GetTranslatorType Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 

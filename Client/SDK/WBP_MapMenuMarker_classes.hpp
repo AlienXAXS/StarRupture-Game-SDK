@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_MapMenuMarker.WBP_MapMenuMarker_C
-// 0x0000 (0x04C0 - 0x04C0)
+// 0x0000 (0x04D0 - 0x04D0)
 class UWBP_MapMenuMarker_C final : public UCrUW_MapMenuMarker
 {
 public:

@@ -125,6 +125,15 @@ public:
 };
 DUMPER7_ASSERTS_FMassNavigationObstacleGridCellLocationFragment;
 
+// ScriptStruct MassNavigation.MassSteeringFragment
+// 0x0018 (0x0018 - 0x0000)
+struct alignas(0x08) FMassSteeringFragment final : public FMassFragment
+{
+public:
+	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassSteeringFragment;
+
 // ScriptStruct MassNavigation.MassAvoidanceColliderFragment
 // 0x000C (0x000C - 0x0000)
 struct alignas(0x04) FMassAvoidanceColliderFragment final : public FMassFragment
@@ -189,15 +198,6 @@ public:
 	struct FMassSmoothOrientationWeights          Standing;                                          // 0x0010(0x0008)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FMassSmoothOrientationParameters;
-
-// ScriptStruct MassNavigation.MassSteeringFragment
-// 0x0018 (0x0018 - 0x0000)
-struct alignas(0x08) FMassSteeringFragment final : public FMassFragment
-{
-public:
-	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassSteeringFragment;
 
 // ScriptStruct MassNavigation.MassStandingSteeringFragment
 // 0x0028 (0x0028 - 0x0000)

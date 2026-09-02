@@ -157,33 +157,32 @@ public:
 DUMPER7_ASSERTS_AuItemsBPF_EqualId;
 
 // Function AuItems.AuItemsBPF.GetIcon
-// 0x0290 (0x0290 - 0x0000)
+// 0x0280 (0x0280 - 0x0000)
 struct AuItemsBPF_GetIcon final
 {
 public:
-	struct FAuItemEntry                           Item;                                              // 0x0000(0x01D8)(Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D8[0x8];                                      // 0x01D8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            ReturnValue;                                       // 0x01E0(0x00B0)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+	struct FAuItemEntry                           Item;                                              // 0x0000(0x01D0)(Parm, OutParm, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            ReturnValue;                                       // 0x01D0(0x00B0)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_AuItemsBPF_GetIcon;
 
 // Function AuItems.AuItemsBPF.GetItemName
-// 0x01E8 (0x01E8 - 0x0000)
+// 0x01E0 (0x01E0 - 0x0000)
 struct AuItemsBPF_GetItemName final
 {
 public:
-	struct FAuItemEntry                           Item;                                              // 0x0000(0x01D8)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	class FText                                   ReturnValue;                                       // 0x01D8(0x0010)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FAuItemEntry                           Item;                                              // 0x0000(0x01D0)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class FText                                   ReturnValue;                                       // 0x01D0(0x0010)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_AuItemsBPF_GetItemName;
 
 // Function AuItems.AuItemsBPF.GetTags
-// 0x01F8 (0x01F8 - 0x0000)
+// 0x01F0 (0x01F0 - 0x0000)
 struct AuItemsBPF_GetTags final
 {
 public:
-	struct FAuItemEntry                           Item;                                              // 0x0000(0x01D8)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	struct FGameplayTagContainer                  ReturnValue;                                       // 0x01D8(0x0020)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FAuItemEntry                           Item;                                              // 0x0000(0x01D0)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FGameplayTagContainer                  ReturnValue;                                       // 0x01D0(0x0020)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_AuItemsBPF_GetTags;
 
@@ -553,12 +552,12 @@ public:
 DUMPER7_ASSERTS_AuItemsStoreComponent_ClientOnItemMerged;
 
 // Function AuItems.AuItemsStoreComponent.GetItemCopy
-// 0x01E8 (0x01E8 - 0x0000)
+// 0x01E0 (0x01E0 - 0x0000)
 struct AuItemsStoreComponent_GetItemCopy final
 {
 public:
 	struct FAuItemId                              Handle;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAuItemEntry                           ReturnValue;                                       // 0x0010(0x01D8)(Parm, OutParm, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	struct FAuItemEntry                           ReturnValue;                                       // 0x0010(0x01D0)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_AuItemsStoreComponent_GetItemCopy;
 

@@ -71,6 +71,15 @@ enum class EBiomesRuntimeScalability : uint8
 	EBiomesRuntimeScalability_MAX            = 7,
 };
 
+// Enum ErrantBiomesRuntime.EBiomesManualSpawnPointVisualizationVisibility
+// NumValues: 0x0003
+enum class EBiomesManualSpawnPointVisualizationVisibility : uint8
+{
+	AlwaysVisible                            = 0,
+	VisibleWhenBiomesEdModeIsActive          = 1,
+	EBiomesManualSpawnPointVisualizationVisibility_MAX = 2,
+};
+
 // Enum ErrantBiomesRuntime.EBiomesMaskFlags
 // NumValues: 0x0003
 enum class EBiomesMaskFlags : uint32
@@ -113,19 +122,20 @@ enum class EBiomesMaskSamplingMethod : uint8
 };
 
 // Enum ErrantBiomesRuntime.EBiomesSpeciesCompatibility
-// NumValues: 0x0006
+// NumValues: 0x0007
 enum class EBiomesSpeciesCompatibility : uint8
 {
 	Version0                                 = 0,
 	Version1                                 = 1,
 	Version2                                 = 2,
 	Version3                                 = 3,
-	MAX                                      = 4,
-	Latest                                   = 3,
+	Version4                                 = 4,
+	MAX                                      = 5,
+	Latest                                   = 4,
 };
 
 // ScriptStruct ErrantBiomesRuntime.BiomesComponentGenerateTransformsInfo
-// 0x0110 (0x0110 - 0x0000)
+// 0x0120 (0x0120 - 0x0000)
 struct FBiomesComponentGenerateTransformsInfo final
 {
 public:
@@ -138,11 +148,12 @@ public:
 	struct FVector                                WorldScale;                                        // 0x0018(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FTransform                             WorldToLandscape;                                  // 0x0030(0x0060)(Edit, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FMatrix                                WorldToComponent;                                  // 0x0090(0x0080)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 Hash;                                              // 0x0110(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FBiomesComponentGenerateTransformsInfo;
 
 // ScriptStruct ErrantBiomesRuntime.BiomesInstancesSettings
-// 0x00A8 (0x00A8 - 0x0000)
+// 0x00B0 (0x00B0 - 0x0000)
 struct FBiomesInstancesSettings final
 {
 public:
@@ -151,26 +162,36 @@ public:
 	TSubclassOf<class ABiomesRuntimeSpawnerContainer> RuntimeSpawningActorClass;                     // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class ABiomesRuntimeSpawnerContainer*         RuntimeSpawningActorTemplate;                      // 0x0018(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	class UInstancedStaticMeshComponent*          InstanceComponentTemplate;                         // 0x0020(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	EBiomesGroupInstances                         GroupInstances;                                    // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         MinInstancesInGroup;                               // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         InstanceGroupSizeMultiplier;                       // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxInstancesPerRuntimeInstanceComponent;           // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EBiomesRuntimeScalability                     RuntimeScalability;                                // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EBiomesRuntimeSpawning                        RuntimeSpawning;                                   // 0x0039(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3A[0x6];                                       // 0x003A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TSet<class FName>                             DEPRECATED_DataLayers;                             // 0x0040(0x0050)(NativeAccessSpecifierPrivate)
-	bool                                          bCastsShadow;                                      // 0x0090(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          bHasPhysics;                                       // 0x0091(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          bEnableDensityScaling;                             // 0x0092(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_93[0x1];                                       // 0x0093(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         InstanceStartCullDistance;                         // 0x0094(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	int32                                         InstanceEndCullDistance;                           // 0x0098(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	float                                         MinDrawDistance;                                   // 0x009C(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	float                                         LDMaxDrawDistance;                                 // 0x00A0(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_A4[0x4];                                       // 0x00A4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UInstancedSkinnedMeshComponent*         SkinnedInstanceComponentTemplate;                  // 0x0028(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	EBiomesGroupInstances                         GroupInstances;                                    // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         MinInstancesInGroup;                               // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InstanceGroupSizeMultiplier;                       // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxInstancesPerRuntimeInstanceComponent;           // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EBiomesRuntimeScalability                     RuntimeScalability;                                // 0x0040(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EBiomesRuntimeSpawning                        RuntimeSpawning;                                   // 0x0041(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_42[0x6];                                       // 0x0042(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TSet<class FName>                             DEPRECATED_DataLayers;                             // 0x0048(0x0050)(NativeAccessSpecifierPrivate)
+	bool                                          bCastsShadow;                                      // 0x0098(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bHasPhysics;                                       // 0x0099(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bEnableDensityScaling;                             // 0x009A(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_9B[0x1];                                       // 0x009B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         InstanceStartCullDistance;                         // 0x009C(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	int32                                         InstanceEndCullDistance;                           // 0x00A0(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         MinDrawDistance;                                   // 0x00A4(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         LDMaxDrawDistance;                                 // 0x00A8(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_AC[0x4];                                       // 0x00AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FBiomesInstancesSettings;
+
+// ScriptStruct ErrantBiomesRuntime.BiomesManualSpawnPointsTagPoints
+// 0x0010 (0x0010 - 0x0000)
+struct FBiomesManualSpawnPointsTagPoints final
+{
+public:
+	TArray<struct FVector2f>                      Points;                                            // 0x0000(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FBiomesManualSpawnPointsTagPoints;
 
 // ScriptStruct ErrantBiomesRuntime.BiomesMaskAssetInfo
 // 0x0014 (0x0014 - 0x0000)

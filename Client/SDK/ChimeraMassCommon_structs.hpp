@@ -32,20 +32,11 @@ DUMPER7_ASSERTS_FCrMassPersistentEntityID;
 struct FCrMassEntityReplicationHelper final
 {
 public:
-	struct FMassNetworkID                         NetID;                                             // 0x0000(0x0004)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FMassNetworkID                         NetID;                                             // 0x0000(0x0004)(Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrMassPersistentEntityID              Entity;                                            // 0x0008(0x0010)(RepSkip, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FCrMassPersistentEntityID              Entity;                                            // 0x0008(0x0010)(SaveGame, RepSkip, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
 DUMPER7_ASSERTS_FCrMassEntityReplicationHelper;
-
-// ScriptStruct ChimeraMassCommon.CrMassPersistentEntityIDArray
-// 0x0010 (0x0010 - 0x0000)
-struct FCrMassPersistentEntityIDArray final
-{
-public:
-	TArray<struct FCrMassPersistentEntityID>      Values;                                            // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrMassPersistentEntityIDArray;
 
 // ScriptStruct ChimeraMassCommon.CrMassActorReplicationHelper
 // 0x0018 (0x0018 - 0x0000)
@@ -58,13 +49,6 @@ public:
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCrMassActorReplicationHelper;
-
-// ScriptStruct ChimeraMassCommon.CrMassGenericVisualizationTag
-// 0x0000 (0x0001 - 0x0001)
-struct FCrMassGenericVisualizationTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FCrMassGenericVisualizationTag;
 
 // ScriptStruct ChimeraMassCommon.CrMassComponentReplicationHelper
 // 0x0018 (0x0018 - 0x0000)
@@ -93,6 +77,22 @@ struct FCrMassSavableTag : public FMassTag
 {
 };
 DUMPER7_ASSERTS_FCrMassSavableTag;
+
+// ScriptStruct ChimeraMassCommon.CrMassGenericVisualizationTag
+// 0x0000 (0x0001 - 0x0001)
+struct FCrMassGenericVisualizationTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FCrMassGenericVisualizationTag;
+
+// ScriptStruct ChimeraMassCommon.CrMassPersistentEntityIDArray
+// 0x0010 (0x0010 - 0x0000)
+struct FCrMassPersistentEntityIDArray final
+{
+public:
+	TArray<struct FCrMassPersistentEntityID>      Values;                                            // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrMassPersistentEntityIDArray;
 
 // ScriptStruct ChimeraMassCommon.CrReplicatedSoftObjectPtr
 // 0x0030 (0x0030 - 0x0000)

@@ -16,31 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function DatasmithContent.DatasmithImportedSequencesActor.PlayLevelSequence
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// class ULevelSequence*                   SequenceToPlay                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ADatasmithImportedSequencesActor::PlayLevelSequence(class ULevelSequence* SequenceToPlay)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DatasmithImportedSequencesActor", "PlayLevelSequence");
-
-	Params::DatasmithImportedSequencesActor_PlayLevelSequence Parms{};
-
-	Parms.SequenceToPlay = SequenceToPlay;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function DatasmithContent.DatasmithContentBlueprintLibrary.GetDatasmithUserData
 // (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -165,6 +140,31 @@ TArray<class FString> UDatasmithContentBlueprintLibrary::GetDatasmithUserDataVal
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function DatasmithContent.DatasmithImportedSequencesActor.PlayLevelSequence
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// class ULevelSequence*                   SequenceToPlay                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ADatasmithImportedSequencesActor::PlayLevelSequence(class ULevelSequence* SequenceToPlay)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DatasmithImportedSequencesActor", "PlayLevelSequence");
+
+	Params::DatasmithImportedSequencesActor_PlayLevelSequence Parms{};
+
+	Parms.SequenceToPlay = SequenceToPlay;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 

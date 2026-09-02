@@ -17,7 +17,7 @@
 SDK_NAMESPACE_START
 
 // Function WBP_QuickActionsContextMenu.WBP_QuickActionsContextMenu_C.AddAction
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // ECrUIInputActionType                    InAction                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UCrUW_ActionButton*               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
@@ -68,7 +68,7 @@ void UWBP_QuickActionsContextMenu_C::Construct()
 
 
 // Function WBP_QuickActionsContextMenu.WBP_QuickActionsContextMenu_C.ExecuteUbergraph_WBP_QuickActionsContextMenu
-// (Final, UbergraphFunction)
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

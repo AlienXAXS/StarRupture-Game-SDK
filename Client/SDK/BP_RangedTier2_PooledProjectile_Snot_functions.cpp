@@ -72,6 +72,20 @@ void ABP_RangedTier2_PooledProjectile_Snot_C::BndEvt__BP_RangedTier2_PooledProje
 }
 
 
+// Function BP_RangedTier2_PooledProjectile_Snot.BP_RangedTier2_PooledProjectile_Snot_C.DestroyDecal
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_RangedTier2_PooledProjectile_Snot_C::DestroyDecal()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_RangedTier2_PooledProjectile_Snot_C", "DestroyDecal");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_RangedTier2_PooledProjectile_Snot.BP_RangedTier2_PooledProjectile_Snot_C.ExecuteUbergraph_BP_RangedTier2_PooledProjectile_Snot
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -149,6 +163,20 @@ void ABP_RangedTier2_PooledProjectile_Snot_C::ReceiveBeginPlay()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_RangedTier2_PooledProjectile_Snot_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_RangedTier2_PooledProjectile_Snot.BP_RangedTier2_PooledProjectile_Snot_C.SpawnDecal
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_RangedTier2_PooledProjectile_Snot_C::SpawnDecal()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_RangedTier2_PooledProjectile_Snot_C", "SpawnDecal");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

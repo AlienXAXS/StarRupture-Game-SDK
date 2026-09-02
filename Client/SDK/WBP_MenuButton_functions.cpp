@@ -79,7 +79,7 @@ void UWBP_MenuButton_C::ExecuteUbergraph_WBP_MenuButton(int32 EntryPoint)
 
 
 // Function WBP_MenuButton.WBP_MenuButton_C.UpdateButton
-// (Event, Public, BlueprintEvent)
+// (Event, Protected, BlueprintEvent)
 // Parameters:
 // ECommonMessagingResult                  Action                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

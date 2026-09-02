@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 #include "GameplayTags_structs.hpp"
@@ -55,6 +56,15 @@ public:
 };
 DUMPER7_ASSERTS_BP_BaseAI_C_PostSetupPooledActorData;
 
+// Function BP_BaseAI.BP_BaseAI_C.OnEyeStateColorGradientChanged
+// 0x0004 (0x0004 - 0x0000)
+struct BP_BaseAI_C_OnEyeStateColorGradientChanged final
+{
+public:
+	float                                         NewGetEyeStateColorGradientCoord;                  // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_BaseAI_C_OnEyeStateColorGradientChanged;
+
 // Function BP_BaseAI.BP_BaseAI_C.OnDamage
 // 0x0110 (0x0110 - 0x0000)
 struct BP_BaseAI_C_OnDamage final
@@ -90,11 +100,12 @@ public:
 DUMPER7_ASSERTS_BP_BaseAI_C_NotifyNearbyPlayerCharactersAboutSpawn;
 
 // Function BP_BaseAI.BP_BaseAI_C.NotifyAggroTargetChanged
-// 0x0001 (0x0001 - 0x0000)
+// 0x0002 (0x0002 - 0x0000)
 struct BP_BaseAI_C_NotifyAggroTargetChanged final
 {
 public:
 	bool                                          bHasAggroTarget;                                   // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bSetAggroFlare;                                    // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_BaseAI_C_NotifyAggroTargetChanged;
 
@@ -108,14 +119,15 @@ public:
 DUMPER7_ASSERTS_BP_BaseAI_C_GetNiagaraEyeSystem;
 
 // Function BP_BaseAI.BP_BaseAI_C.ExecuteUbergraph_BP_BaseAI
-// 0x0288 (0x0288 - 0x0000)
+// 0x02B0 (0x02B0 - 0x0000)
 struct BP_BaseAI_C_ExecuteUbergraph_BP_BaseAI final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_NotifyNearbyPlayerCharactersAboutSpawn_ReturnValue; // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_Event_bHasAggroTarget;                      // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          K2Node_Event_bSetAggroFlare;                       // 0x0006(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_7[0x1];                                        // 0x0007(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	class UCrAiActionComponent*                   CallFunc_GetAiActionComponent_ReturnValue;         // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	class UCrAiActionSetEyeState*                 CallFunc_Create_CrAiActionSetEyeState_ReturnValue; // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	struct FHitResult                             K2Node_Event_HitResult_1;                          // 0x0018(0x0100)(ConstParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
@@ -145,20 +157,27 @@ public:
 	class UNiagaraComponent*                      CallFunc_GetNiagaraEyeSystem_NewParam_2;           // 0x0278(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_Event_bNewIsInPool;                         // 0x0280(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0281(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_CanChangeEyeColor_Result_3;               // 0x0282(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_283[0x5];                                      // 0x0283(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class UNiagaraComponent*                      CallFunc_GetNiagaraEyeSystem_NewParam_3;           // 0x0288(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x0290(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_291[0x3];                                      // 0x0291(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         K2Node_Event_NewGetEyeStateColorGradientCoord;     // 0x0294(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_CanChangeEyeColor_Result_4;               // 0x0298(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_299[0x7];                                      // 0x0299(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UNiagaraComponent*                      CallFunc_GetNiagaraEyeSystem_NewParam_4;           // 0x02A0(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_4;                    // 0x02A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_BaseAI_C_ExecuteUbergraph_BP_BaseAI;
 
 // Function BP_BaseAI.BP_BaseAI_C.CanChangeEyeColor
-// 0x0020 (0x0020 - 0x0000)
+// 0x0003 (0x0003 - 0x0000)
 struct BP_BaseAI_C_CanChangeEyeColor final
 {
 public:
 	bool                                          Result;                                            // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAnimInstance*                          CallFunc_GetAnimInstance_ReturnValue;              // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UMassEnemyAnimationInstance*            K2Node_DynamicCast_AsMass_Enemy_Animation_Instance; // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_NotEqual_ByteByte_ReturnValue;            // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EMassEnemyInitializationState                 CallFunc_GetMassEnemyInitializationState_ReturnValue; // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_BaseAI_C_CanChangeEyeColor;
 

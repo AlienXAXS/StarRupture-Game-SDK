@@ -10,15 +10,15 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
+#include "BS_WeaponFOV_structs.hpp"
+#include "Engine_structs.hpp"
+#include "GameplayTags_structs.hpp"
+#include "GameplayAbilities_structs.hpp"
 #include "Chimera_structs.hpp"
 #include "Chimera_classes.hpp"
-#include "Engine_structs.hpp"
 #include "CommonInput_structs.hpp"
 #include "AuCamera_structs.hpp"
-#include "BS_WeaponFOV_structs.hpp"
-#include "GameplayAbilities_structs.hpp"
-#include "GameplayTags_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "AuActorPlacement_structs.hpp"
 #include "EPlayerState_structs.hpp"
 
@@ -26,98 +26,100 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_PlayerCharacter.BP_PlayerCharacter_C
-// 0x03F0 (0x1940 - 0x1550)
+// 0x03D0 (0x1990 - 0x15C0)
 class ABP_PlayerCharacter_C final : public ACrCharacterPlayerBase
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1550(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UBP_CustomToolActorsManager_C*          BP_CustomToolActorsManager;                        // 0x1558(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UCrAgentAudioSourceComponent*           CrAgentAudioSource;                                // 0x1560(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UBillboardComponent*                    StatusIcon;                                        // 0x1568(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UPlayer_DPS_Evaluation_Comp_C*          Player_DPS_Evaluation_Comp;                        // 0x1570(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UBP_FPP_CameraAnimsComp_C*              BP_FPP_CameraAnimsComp;                            // 0x1578(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USkeletalMeshComponent*                 SKM_Legs;                                          // 0x1580(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USpringArmComponent*                    SpringArm;                                         // 0x1588(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UNiagaraComponent*                      WindyDust;                                         // 0x1590(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UChildActorComponent*                   TPP_Player_Cosmetics_ChildActor;                   // 0x1598(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UChildActorComponent*                   FPP_Player_Cosmetics_ChildActor;                   // 0x15A0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USpringArmComponent*                    SpringArmFpp;                                      // 0x15A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UBP_HeadBobbingComp_C*                  BP_HeadBobbingComp;                                // 0x15B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UCameraComponent*                       FPPMontageCamera;                                  // 0x15B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UCrHeroComponent*                       CrHeroComponent;                                   // 0x15C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	float                                         Timeline_ShakeScale_4511BEB9664BA65AD90ED1A1985F1BC6; // 0x15C8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ETimelineDirection                            Timeline__Direction_4511BEB9664BA65AD90ED1A1985F1BC6; // 0x15CC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_15CD[0x3];                                     // 0x15CD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTimelineComponent*                     Timeline;                                          // 0x15D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	float                                         FocusInteractionDirection_Lerp_FFBD6D444F930AD27A3B74A76ED8EB1F; // 0x15D8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ETimelineDirection                            FocusInteractionDirection__Direction_FFBD6D444F930AD27A3B74A76ED8EB1F; // 0x15DC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_15DD[0x3];                                     // 0x15DD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTimelineComponent*                     FocusInteractionDirection;                         // 0x15E0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	struct FBS_WeaponFOV                          DefaultFOV;                                        // 0x15E8(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsCrouching_;                                      // 0x1610(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1611[0x3];                                     // 0x1611(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         DeathType;                                         // 0x1614(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayTag                           Damage_Tag;                                        // 0x1618(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	bool                                          isMontagePlaying_;                                 // 0x1620(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1621[0x3];                                     // 0x1621(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         WeaponId;                                          // 0x1624(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class UAnimMontage*>                   OccupyingSpawnPointMontages;                       // 0x1628(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TMulticastInlineDelegate<void()>              OnJumpEventDisptacher;                             // 0x1638(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TMulticastInlineDelegate<void()>              OnLandedEventDispatcher;                           // 0x1650(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	struct FVector                                InitialRelativeFPPCameraLocation;                  // 0x1668(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class UClass*>                         SpawnPointImmunityGE;                              // 0x1680(0x0010)(Edit, BlueprintVisible)
-	TArray<struct FActiveGameplayEffectHandle>    ActiveImmunityEffectHandles;                       // 0x1690(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TSubclassOf<class UGameplayEffect>            DeathClearEffect;                                  // 0x16A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	bool                                          CanZipline;                                        // 0x16A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_16A9[0x7];                                     // 0x16A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                ZipStart;                                          // 0x16B0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                ZipEnd;                                            // 0x16C8(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FText                                   In_Tool_Tip_Text;                                  // 0x16E0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	double                                        ZiplineSpeedModifier;                              // 0x16F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UCurveVector*                           WeaponSwayCurve;                                   // 0x16F8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                WeaponSwayVector;                                  // 0x1700(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CanMove_;                                          // 0x1718(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x15C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UBP_CustomToolActorsManager_C*          BP_CustomToolActorsManager;                        // 0x15C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCrAgentAudioSourceComponent*           CrAgentAudioSource;                                // 0x15D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UBillboardComponent*                    StatusIcon;                                        // 0x15D8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UPlayer_DPS_Evaluation_Comp_C*          Player_DPS_Evaluation_Comp;                        // 0x15E0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UBP_FPP_CameraAnimsComp_C*              BP_FPP_CameraAnimsComp;                            // 0x15E8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USkeletalMeshComponent*                 SKM_Legs;                                          // 0x15F0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USpringArmComponent*                    SpringArm;                                         // 0x15F8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      WindyDust;                                         // 0x1600(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UChildActorComponent*                   TPP_Player_Cosmetics_ChildActor;                   // 0x1608(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UChildActorComponent*                   FPP_Player_Cosmetics_ChildActor;                   // 0x1610(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USpringArmComponent*                    SpringArmFpp;                                      // 0x1618(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UBP_HeadBobbingComp_C*                  BP_HeadBobbingComp;                                // 0x1620(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCameraComponent*                       FPPMontageCamera;                                  // 0x1628(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCrHeroComponent*                       CrHeroComponent;                                   // 0x1630(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	float                                         Timeline_ShakeScale_4511BEB9664BA65AD90ED1A1985F1BC6; // 0x1638(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ETimelineDirection                            Timeline__Direction_4511BEB9664BA65AD90ED1A1985F1BC6; // 0x163C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_163D[0x3];                                     // 0x163D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTimelineComponent*                     Timeline;                                          // 0x1640(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	float                                         FocusInteractionDirection_Lerp_FFBD6D444F930AD27A3B74A76ED8EB1F; // 0x1648(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ETimelineDirection                            FocusInteractionDirection__Direction_FFBD6D444F930AD27A3B74A76ED8EB1F; // 0x164C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_164D[0x3];                                     // 0x164D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTimelineComponent*                     FocusInteractionDirection;                         // 0x1650(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	struct FBS_WeaponFOV                          DefaultFOV;                                        // 0x1658(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsCrouching_;                                      // 0x1680(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1681[0x3];                                     // 0x1681(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         DeathType;                                         // 0x1684(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTag                           Damage_Tag;                                        // 0x1688(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	bool                                          isMontagePlaying_;                                 // 0x1690(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1691[0x3];                                     // 0x1691(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         WeaponId;                                          // 0x1694(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class UAnimMontage*>                   OccupyingSpawnPointMontages;                       // 0x1698(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMulticastInlineDelegate<void()>              OnJumpEventDisptacher;                             // 0x16A8(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void()>              OnLandedEventDispatcher;                           // 0x16C0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	struct FVector                                InitialRelativeFPPCameraLocation;                  // 0x16D8(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class UClass*>                         SpawnPointImmunityGE;                              // 0x16F0(0x0010)(Edit, BlueprintVisible)
+	TArray<struct FActiveGameplayEffectHandle>    ActiveImmunityEffectHandles;                       // 0x1700(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TSubclassOf<class UGameplayEffect>            DeathClearEffect;                                  // 0x1710(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	bool                                          CanZipline;                                        // 0x1718(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_1719[0x7];                                     // 0x1719(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 AnimationName;                                     // 0x1720(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-	bool                                          IsOnZipline;                                       // 0x1730(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsDeconstructing_;                                 // 0x1731(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          HasLeftHandSocket;                                 // 0x1732(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1733[0xD];                                     // 0x1733(0x000D)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             WeaponLeftHandSocketTransform;                     // 0x1740(0x0060)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TSubclassOf<class UAnimInstance>              Unarmed_Anim_Layers_FPP;                           // 0x17A0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	class UAudioComponent*                        Player_Slide_SFX;                                  // 0x17A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UAudioComponent*                        AudioComponentDialogue;                            // 0x17B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	TArray<class UDialogueWave*>                  LoadedDialogueWaves;                               // 0x17B8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	class UCrSurfaceFootstepData*                 FootstepSounds;                                    // 0x17C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	TArray<class UW_ChimeraHitmark_C*>            HitmarksWidgets;                                   // 0x17D0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
-	struct FAuCameraAdditiveHandle                SlideCameraModifier;                               // 0x17E0(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
-	struct FAuCameraAdditiveHandle                SprintCameraModifier;                              // 0x17E8(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
-	class UCrAsyncTaskGameplayTag*                ZiplineTagAsyncTask;                               // 0x17F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	class ABP_ZiplineArm_C*                       ZiplineArmActor;                                   // 0x17F8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	bool                                          RidingZipline;                                     // 0x1800(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1801[0x7];                                     // 0x1801(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCrAsyncTaskGameplayTag*                CrAsyncTaskListenForInWater;                       // 0x1808(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	bool                                          Landed;                                            // 0x1810(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1811[0x7];                                     // 0x1811(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<ECrHitmarkType, class UW_ChimeraHitmark_C*> DisplayedHitmarksPertype;                       // 0x1818(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
-	class UCrAsyncTaskEffectStackChanged*         ListenInfectionEffectAsync_Task;                   // 0x1868(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	TMulticastInlineDelegate<void()>              DashCostFailed;                                    // 0x1870(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TMap<EProfessionType, class UCrPlayerCharacterSpecificPossessionSettings*> ProfessionsData;      // 0x1888(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
-	bool                                          CurrentDialogueIsImportant;                        // 0x18D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_18D9[0x3];                                     // 0x18D9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   CurrentDialogueResponseName;                       // 0x18DC(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_18E4[0x4];                                     // 0x18E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UDialogueWave*                          LoadedDialogueWave;                                // 0x18E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UAudioComponent*                        ZiplineSound;                                      // 0x18F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UAudioComponent*                        ZiplineEndSound;                                   // 0x18F8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          CurrentDialogueIsLocal;                            // 0x1900(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1901[0x7];                                     // 0x1901(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TSoftObjectPtr<class UDialogueWave>           CurrentDialogueWaveLoadingInProgress;              // 0x1908(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	bool                                          CurrentDialogueIsSilent;                           // 0x1930(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1931[0x7];                                     // 0x1931(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        DialogueTimeoutDuration;                           // 0x1938(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                ZipStart;                                          // 0x1720(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                ZipEnd;                                            // 0x1738(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FText                                   In_Tool_Tip_Text;                                  // 0x1750(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	double                                        ZiplineSpeedModifier;                              // 0x1760(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UCurveVector*                           WeaponSwayCurve;                                   // 0x1768(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                WeaponSwayVector;                                  // 0x1770(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CanMove_;                                          // 0x1788(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1789[0x7];                                     // 0x1789(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 AnimationName;                                     // 0x1790(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	bool                                          IsOnZipline;                                       // 0x17A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsDeconstructing_;                                 // 0x17A1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          HasLeftHandSocket;                                 // 0x17A2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_17A3[0xD];                                     // 0x17A3(0x000D)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             WeaponLeftHandSocketTransform;                     // 0x17B0(0x0060)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TSubclassOf<class UAnimInstance>              Unarmed_Anim_Layers_FPP;                           // 0x1810(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	class UAudioComponent*                        Player_Slide_SFX;                                  // 0x1818(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UAudioComponent*                        AudioComponentDialogue;                            // 0x1820(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	TArray<class UDialogueWave*>                  LoadedDialogueWaves;                               // 0x1828(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class UCrSurfaceFootstepData*                 FootstepSounds;                                    // 0x1838(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	TArray<class UW_ChimeraHitmark_C*>            HitmarksWidgets;                                   // 0x1840(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	struct FAuCameraAdditiveHandle                SlideCameraModifier;                               // 0x1850(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
+	struct FAuCameraAdditiveHandle                SprintCameraModifier;                              // 0x1858(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
+	class UCrAsyncTaskGameplayTag*                ZiplineTagAsyncTask;                               // 0x1860(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class ABP_ZiplineArm_C*                       ZiplineArmActor;                                   // 0x1868(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	bool                                          RidingZipline;                                     // 0x1870(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1871[0x7];                                     // 0x1871(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCrAsyncTaskGameplayTag*                CrAsyncTaskListenForInWater;                       // 0x1878(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	bool                                          Landed;                                            // 0x1880(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1881[0x7];                                     // 0x1881(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<ECrHitmarkType, class UW_ChimeraHitmark_C*> DisplayedHitmarksPertype;                       // 0x1888(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	class UCrAsyncTaskEffectStackChanged*         ListenInfectionEffectAsync_Task;                   // 0x18D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	TMulticastInlineDelegate<void()>              DashCostFailed;                                    // 0x18E0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMap<EProfessionType, class UCrPlayerCharacterSpecificPossessionSettings*> ProfessionsData;      // 0x18F8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	bool                                          CurrentDialogueIsImportant;                        // 0x1948(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1949[0x3];                                     // 0x1949(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   CurrentDialogueResponseName;                       // 0x194C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1954[0x4];                                     // 0x1954(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UDialogueWave*                          LoadedDialogueWave;                                // 0x1958(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UAudioComponent*                        ZiplineSound;                                      // 0x1960(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UAudioComponent*                        ZiplineEndSound;                                   // 0x1968(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CurrentDialogueIsLocal;                            // 0x1970(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          SilentDialogue;                                    // 0x1971(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1972[0x6];                                     // 0x1972(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        DialogueTimeoutDuration;                           // 0x1978(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ABP_ZiplineArm_C*                       ZiplineArmBP;                                      // 0x1980(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	float                                         CurrentSlope;                                      // 0x1988(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsCharacterOnSlope;                                // 0x198C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void AnyPlayerChangedDeconstructionModeChanged(bool IsAnyPlayerDeconstructing);
 	bool BlockEnergyLoweringDuringSprint();
 	void BndEvt__BP_PlayerCharacter_CapsuleComponent_K2Node_ComponentBoundEvent_3_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, const struct FVector& NormalImpulse, const struct FHitResult& Hit);
 	void BndEvt__BP_PlayerCharacter_FlashlightComponent_K2Node_ComponentBoundEvent_0_OnFlashlightActivated__DelegateSignature();
@@ -136,6 +138,7 @@ public:
 	void FocusInteractionDirection__UpdateFunc();
 	void ForceRemoveAllHitmarks();
 	TArray<class AActor*> GetAllIgnoreActorForLocalInteractionTraces();
+	bool GetCurrentWeaponCustomActionPayload(const struct FGameplayTag& Tag, struct FInstancedStruct* OutPayload);
 	struct FVector GetDropItemsLocation();
 	TArray<struct FVector> GetDropItemsLocations(int32 LocationsAmount);
 	void GetFppCameraHeight(double* Height);
@@ -176,6 +179,7 @@ public:
 	void On_Sprinting_Changed(class ACharacter* Character, bool bIsNowSprinting);
 	void OnBlendOut_3C917D864D3A56CADF569987ABEAC42F(class FName NotifyName);
 	void OnBPStartOccupyingSpawnPoint();
+	void OnCameraSwitched(bool bNewInFPP);
 	void OnCompleted_3C917D864D3A56CADF569987ABEAC42F(class FName NotifyName);
 	void OnDashMovementModeChanged(bool bIsDoingDash);
 	void OnDialogueWaveLoaded(class UDialogueWave* DialogueWaveLoaded);
@@ -214,6 +218,7 @@ public:
 	void ReceivePossessed(class AController* NewController);
 	void ReceiveTick(float DeltaSeconds);
 	void ResetFPPCameraTransform(bool Delay);
+	void ResolveLandingOnAi(const struct FHitResult& Hit);
 	void ServerSetCrouching(bool bIsCrouching);
 	void Set_Zipline(bool Enable, const struct FVector& Pos1, const struct FVector& Pos2);
 	void SetDeconstruct(bool bInDeconstruct);
@@ -228,6 +233,7 @@ public:
 	void Timeline__UpdateFunc();
 	void UpdateCharacterCollisionBasedOnDeadStatus();
 	bool UpdateCharacterCosmeticsForCurrentProfession();
+	void UpdateCurrentSlope();
 	void UpdateHitmarksSounds(ECrHitmarkType New_Hitmark_Type, bool* Fade_Out_Previous_, bool* Play_New_Hitmark_Sound);
 	void UserConstructionScript();
 

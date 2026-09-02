@@ -23,6 +23,30 @@
 
 SDK_NAMESPACE_START
 
+// Class SmartObjectsModule.SmartObjectPersistentCollection
+// 0x0108 (0x03B0 - 0x02A8)
+class ASmartObjectPersistentCollection final : public AActor
+{
+public:
+	struct FSmartObjectContainer                  SmartObjectContainer;                              // 0x02A8(0x0100)(Edit, EditConst, ContainsInstancedReference, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_3A8[0x8];                                      // 0x03A8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SmartObjectPersistentCollection")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SmartObjectPersistentCollection")
+	}
+	static class ASmartObjectPersistentCollection* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ASmartObjectPersistentCollection>();
+	}
+};
+DUMPER7_ASSERTS_ASmartObjectPersistentCollection;
+
 // Class SmartObjectsModule.EnvQueryGenerator_SmartObjects
 // 0x00F0 (0x0140 - 0x0050)
 class UEnvQueryGenerator_SmartObjects final : public UEnvQueryGenerator
@@ -70,6 +94,26 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UEnvQueryItemType_SmartObject;
+
+// Class SmartObjectsModule.SmartObjectDebugRenderingComponent
+// 0x0000 (0x05A0 - 0x05A0)
+class USmartObjectDebugRenderingComponent : public UDebugDrawComponent
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SmartObjectDebugRenderingComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SmartObjectDebugRenderingComponent")
+	}
+	static class USmartObjectDebugRenderingComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USmartObjectDebugRenderingComponent>();
+	}
+};
+DUMPER7_ASSERTS_USmartObjectDebugRenderingComponent;
 
 // Class SmartObjectsModule.SmartObjectSettings
 // 0x0018 (0x0050 - 0x0038)
@@ -199,6 +243,49 @@ public:
 };
 DUMPER7_ASSERTS_USmartObjectBlueprintFunctionLibrary;
 
+// Class SmartObjectsModule.SmartObjectSpacePartition
+// 0x0000 (0x0028 - 0x0028)
+class USmartObjectSpacePartition : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SmartObjectSpacePartition")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SmartObjectSpacePartition")
+	}
+	static class USmartObjectSpacePartition* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USmartObjectSpacePartition>();
+	}
+};
+DUMPER7_ASSERTS_USmartObjectSpacePartition;
+
+// Class SmartObjectsModule.SmartObjectHashGrid
+// 0x00A8 (0x00D0 - 0x0028)
+class USmartObjectHashGrid final : public USmartObjectSpacePartition
+{
+public:
+	uint8                                         Pad_28[0xA8];                                      // 0x0028(0x00A8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SmartObjectHashGrid")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SmartObjectHashGrid")
+	}
+	static class USmartObjectHashGrid* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USmartObjectHashGrid>();
+	}
+};
+DUMPER7_ASSERTS_USmartObjectHashGrid;
+
 // Class SmartObjectsModule.SmartObjectCollection
 // 0x00B0 (0x0358 - 0x02A8)
 class ASmartObjectCollection final : public AActor
@@ -289,26 +376,6 @@ public:
 };
 DUMPER7_ASSERTS_USmartObjectContainerRenderingComponent;
 
-// Class SmartObjectsModule.SmartObjectDebugRenderingComponent
-// 0x0000 (0x05A0 - 0x05A0)
-class USmartObjectDebugRenderingComponent : public UDebugDrawComponent
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SmartObjectDebugRenderingComponent")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SmartObjectDebugRenderingComponent")
-	}
-	static class USmartObjectDebugRenderingComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USmartObjectDebugRenderingComponent>();
-	}
-};
-DUMPER7_ASSERTS_USmartObjectDebugRenderingComponent;
-
 // Class SmartObjectsModule.SmartObjectBehaviorDefinition
 // 0x0000 (0x0028 - 0x0028)
 class USmartObjectBehaviorDefinition : public UObject
@@ -380,49 +447,6 @@ public:
 };
 DUMPER7_ASSERTS_USmartObjectDefinition;
 
-// Class SmartObjectsModule.SmartObjectSpacePartition
-// 0x0000 (0x0028 - 0x0028)
-class USmartObjectSpacePartition : public UObject
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SmartObjectSpacePartition")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SmartObjectSpacePartition")
-	}
-	static class USmartObjectSpacePartition* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USmartObjectSpacePartition>();
-	}
-};
-DUMPER7_ASSERTS_USmartObjectSpacePartition;
-
-// Class SmartObjectsModule.SmartObjectHashGrid
-// 0x00A8 (0x00D0 - 0x0028)
-class USmartObjectHashGrid final : public USmartObjectSpacePartition
-{
-public:
-	uint8                                         Pad_28[0xA8];                                      // 0x0028(0x00A8)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SmartObjectHashGrid")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SmartObjectHashGrid")
-	}
-	static class USmartObjectHashGrid* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USmartObjectHashGrid>();
-	}
-};
-DUMPER7_ASSERTS_USmartObjectHashGrid;
-
 // Class SmartObjectsModule.SmartObjectOctree
 // 0x00C8 (0x00F0 - 0x0028)
 class USmartObjectOctree final : public USmartObjectSpacePartition
@@ -445,30 +469,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_USmartObjectOctree;
-
-// Class SmartObjectsModule.SmartObjectPersistentCollection
-// 0x0108 (0x03B0 - 0x02A8)
-class ASmartObjectPersistentCollection final : public AActor
-{
-public:
-	struct FSmartObjectContainer                  SmartObjectContainer;                              // 0x02A8(0x0100)(Edit, EditConst, ContainsInstancedReference, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_3A8[0x8];                                      // 0x03A8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SmartObjectPersistentCollection")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SmartObjectPersistentCollection")
-	}
-	static class ASmartObjectPersistentCollection* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ASmartObjectPersistentCollection>();
-	}
-};
-DUMPER7_ASSERTS_ASmartObjectPersistentCollection;
 
 // Class SmartObjectsModule.SmartObjectRenderingComponent
 // 0x0000 (0x0530 - 0x0530)

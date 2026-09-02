@@ -84,37 +84,37 @@ void UWBP_CorporationRecipeSlot_C::SetFillAlignment()
 }
 
 
-// Function WBP_CorporationRecipeSlot.WBP_CorporationRecipeSlot_C.SetRecipeFinished
+// Function WBP_CorporationRecipeSlot.WBP_CorporationRecipeSlot_C.SetRecipeDisabled
 // (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bLevelFinished                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_CorporationRecipeSlot_C::SetRecipeFinished()
+void UWBP_CorporationRecipeSlot_C::SetRecipeDisabled(bool bLevelFinished)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CorporationRecipeSlot_C", "SetRecipeFinished");
+		Func = Class->GetFunction("WBP_CorporationRecipeSlot_C", "SetRecipeDisabled");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::WBP_CorporationRecipeSlot_C_SetRecipeDisabled Parms{};
+
+	Parms.bLevelFinished = bLevelFinished;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
 // Function WBP_CorporationRecipeSlot.WBP_CorporationRecipeSlot_C.SetRecipeLocked
 // (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bLocked                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_CorporationRecipeSlot_C::SetRecipeLocked(bool bLocked)
+void UWBP_CorporationRecipeSlot_C::SetRecipeLocked()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("WBP_CorporationRecipeSlot_C", "SetRecipeLocked");
 
-	Params::WBP_CorporationRecipeSlot_C_SetRecipeLocked Parms{};
-
-	Parms.bLocked = bLocked;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

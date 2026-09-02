@@ -35,24 +35,13 @@ public:
 };
 DUMPER7_ASSERTS_BP_PlacementHelperReplicatedBase_C_SetMeshColor;
 
-// Function BP_PlacementHelperReplicatedBase.BP_PlacementHelperReplicatedBase_C.OnFoundationSetUp
-// 0x0010 (0x0010 - 0x0000)
-struct BP_PlacementHelperReplicatedBase_C_OnFoundationSetUp final
-{
-public:
-	TArray<struct FTransform>                     FoundationTransforms;                              // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-};
-DUMPER7_ASSERTS_BP_PlacementHelperReplicatedBase_C_OnFoundationSetUp;
-
 // Function BP_PlacementHelperReplicatedBase.BP_PlacementHelperReplicatedBase_C.ExecuteUbergraph_BP_PlacementHelperReplicatedBase
-// 0x0028 (0x0028 - 0x0000)
+// 0x0014 (0x0014 - 0x0000)
 struct BP_PlacementHelperReplicatedBase_C_ExecuteUbergraph_BP_PlacementHelperReplicatedBase final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FLinearColor                           K2Node_Event_Color;                                // 0x0004(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FTransform>                     K2Node_Event_FoundationTransforms;                 // 0x0018(0x0010)(ConstParm, ReferenceParm)
 };
 DUMPER7_ASSERTS_BP_PlacementHelperReplicatedBase_C_ExecuteUbergraph_BP_PlacementHelperReplicatedBase;
 

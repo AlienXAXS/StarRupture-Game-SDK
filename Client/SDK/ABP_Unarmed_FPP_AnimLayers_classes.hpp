@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass ABP_Unarmed_FPP_AnimLayers.ABP_Unarmed_FPP_AnimLayers_C
-// 0x0000 (0x3410 - 0x3410)
+// 0x0000 (0x3510 - 0x3510)
 class UABP_Unarmed_FPP_AnimLayers_C final : public UABP_ItemAnimLayers_FPP_Base_C
 {
 public:

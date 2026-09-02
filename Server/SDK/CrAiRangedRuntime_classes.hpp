@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "MassSpawner_classes.hpp"
-#include "Engine_classes.hpp"
 #include "CrAiRangedRuntime_structs.hpp"
+#include "Engine_classes.hpp"
 #include "Chimera_classes.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
@@ -45,11 +45,11 @@ public:
 DUMPER7_ASSERTS_UCrAiRangedAnimationStateSyncComponent;
 
 // Class CrAiRangedRuntime.CrMassRangedBubbleReplicatedSerializerHolder
-// 0x0308 (0x05C0 - 0x02B8)
+// 0x0320 (0x05D8 - 0x02B8)
 class ACrMassRangedBubbleReplicatedSerializerHolder final : public ACrMassBubbleReplicatedSerializerHolder
 {
 public:
-	struct FRangedClientBubbleSerializer          Serializer;                                        // 0x02B8(0x0308)(Net, Transient, NativeAccessSpecifierPublic)
+	struct FRangedClientBubbleSerializer          Serializer;                                        // 0x02B8(0x0320)(Net, Transient, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -88,12 +88,12 @@ public:
 DUMPER7_ASSERTS_ARangedClientBubbleInfo;
 
 // Class CrAiRangedRuntime.CrAiRangedDataAsset
-// 0x0018 (0x0720 - 0x0708)
+// 0x0018 (0x0778 - 0x0760)
 class UCrAiRangedDataAsset final : public UMassEnemyDataAsset
 {
 public:
-	struct FAiFloatConfigurationValue             MinRangedAttackRange;                              // 0x0708(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FAiFloatConfigurationValue             MaxRangedAttackRange;                              // 0x0714(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FAiFloatConfigurationValue             MinRangedAttackRange;                              // 0x0760(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FAiFloatConfigurationValue             MaxRangedAttackRange;                              // 0x076C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()

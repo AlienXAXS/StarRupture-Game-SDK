@@ -16,8 +16,8 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_PlacementHelperReplicatedCustom_Ladder.BP_PlacementHelperReplicatedCustom_Ladder_C
-// 0x0000 (0x09B0 - 0x09B0)
-class ABP_PlacementHelperReplicatedCustom_Ladder_C final : public ABP_PlacementHelperReplicatedCustom_C
+// 0x0000 (0x0B70 - 0x0B70)
+class ABP_PlacementHelperReplicatedCustom_Ladder_C : public ABP_PlacementHelperReplicatedCustom_C
 {
 public:
 	static class UClass* StaticClass()

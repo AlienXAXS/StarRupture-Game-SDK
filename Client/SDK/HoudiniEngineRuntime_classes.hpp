@@ -12,14 +12,113 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "HoudiniEngineRuntime_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "DeveloperSettings_classes.hpp"
+#include "HoudiniEngineRuntime_structs.hpp"
 #include "PhysicsCore_structs.hpp"
 
 
 SDK_NAMESPACE_START
+
+// Class HoudiniEngineRuntime.HoudiniEngineEditorSettings
+// 0x0000 (0x0038 - 0x0038)
+class UHoudiniEngineEditorSettings final : public UDeveloperSettings
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("HoudiniEngineEditorSettings")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"HoudiniEngineEditorSettings")
+	}
+	static class UHoudiniEngineEditorSettings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UHoudiniEngineEditorSettings>();
+	}
+};
+DUMPER7_ASSERTS_UHoudiniEngineEditorSettings;
+
+// Class HoudiniEngineRuntime.HoudiniParameter
+// 0x00E0 (0x0108 - 0x0028)
+class UHoudiniParameter : public UObject
+{
+public:
+	class FString                                 Name_0;                                            // 0x0028(0x0010)(ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FString                                 Label;                                             // 0x0038(0x0010)(ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EHoudiniParameterType                         ParmType;                                          // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EHoudiniParameterChoiceListType               ChoiceListType;                                    // 0x0049(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_4A[0x2];                                       // 0x004A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint32                                        TupleSize;                                         // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         NodeID;                                            // 0x0050(0x0004)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         ParmId;                                            // 0x0054(0x0004)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         ParentParmId;                                      // 0x0058(0x0004)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         ChildIndex;                                        // 0x005C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsVisible;                                        // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsParentFolderVisible;                            // 0x0061(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsDisabled;                                       // 0x0062(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bHasChanged;                                       // 0x0063(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bNeedsToTriggerUpdate;                             // 0x0064(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsDefault;                                        // 0x0065(0x0001)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsSpare;                                          // 0x0066(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bJoinNext;                                         // 0x0067(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsLabelVisible;                                   // 0x0068(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsChildOfMultiParm;                               // 0x0069(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsDirectChildOfMultiParm;                         // 0x006A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bPendingRevertToDefault;                           // 0x006B(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 TuplePendingRevertToDefault;                       // 0x0070(0x0010)(ZeroConstructor, DuplicateTransient, Protected, NativeAccessSpecifierProtected)
+	class FString                                 Help;                                              // 0x0080(0x0010)(ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint32                                        TagCount;                                          // 0x0090(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         ValueIndex;                                        // 0x0094(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bHasExpression;                                    // 0x0098(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bShowExpression;                                   // 0x0099(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_9A[0x6];                                       // 0x009A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ParamExpression;                                   // 0x00A0(0x0010)(ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TMap<class FString, class FString>            Tags;                                              // 0x00B0(0x0050)(Protected, NativeAccessSpecifierProtected)
+	bool                                          bAutoUpdate;                                       // 0x0100(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_101[0x7];                                      // 0x0101(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("HoudiniParameter")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"HoudiniParameter")
+	}
+	static class UHoudiniParameter* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UHoudiniParameter>();
+	}
+};
+DUMPER7_ASSERTS_UHoudiniParameter;
+
+// Class HoudiniEngineRuntime.HoudiniParameterLabel
+// 0x0010 (0x0118 - 0x0108)
+class UHoudiniParameterLabel final : public UHoudiniParameter
+{
+public:
+	TArray<class FString>                         LabelStrings;                                      // 0x0108(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("HoudiniParameterLabel")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"HoudiniParameterLabel")
+	}
+	static class UHoudiniParameterLabel* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UHoudiniParameterLabel>();
+	}
+};
+DUMPER7_ASSERTS_UHoudiniParameterLabel;
 
 // Class HoudiniEngineRuntime.HoudiniAsset
 // 0x0028 (0x0050 - 0x0028)
@@ -49,6 +148,102 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UHoudiniAsset;
+
+// Class HoudiniEngineRuntime.HoudiniEngineCopyPropertiesInterface
+// 0x0000 (0x0000 - 0x0000)
+class IHoudiniEngineCopyPropertiesInterface final
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("HoudiniEngineCopyPropertiesInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"HoudiniEngineCopyPropertiesInterface")
+	}
+	static class IHoudiniEngineCopyPropertiesInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IHoudiniEngineCopyPropertiesInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IHoudiniEngineCopyPropertiesInterface;
+
+// Class HoudiniEngineRuntime.HoudiniInputObject
+// 0x01F8 (0x0220 - 0x0028)
+class UHoudiniInputObject : public UObject
+{
+public:
+	TSoftObjectPtr<class UObject>                 InputObject;                                       // 0x0028(0x0028)(UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EHoudiniInputObjectType                       Type;                                              // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_51[0x3];                                       // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGuid                                  Guid;                                              // 0x0054(0x0010)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_64[0xFC];                                      // 0x0064(0x00FC)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bHasChanged;                                       // 0x0160(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bNeedsToTriggerUpdate;                             // 0x0161(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bTransformChanged;                                 // 0x0162(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_163[0x5];                                      // 0x0163(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FString>                         MaterialReferences;                                // 0x0168(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	struct FHoudiniInputObjectSettings            CachedInputSettings;                               // 0x0178(0x0024)(NoDestructor, Protected, NativeAccessSpecifierProtected)
+	bool                                          bCanDeleteHoudiniNodes;                            // 0x019C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bInputNodeHandleOverridesNodeIds;                  // 0x019D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_19E[0x2];                                      // 0x019E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Transform;                                         // 0x01A0(0x0060)(IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FRotator                               UserInputRotator;                                  // 0x0200(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         InputNodeId;                                       // 0x0218(0x0004)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	int32                                         InputObjectNodeId;                                 // 0x021C(0x0004)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("HoudiniInputObject")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"HoudiniInputObject")
+	}
+	static class UHoudiniInputObject* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UHoudiniInputObject>();
+	}
+};
+DUMPER7_ASSERTS_UHoudiniInputObject;
+
+// Class HoudiniEngineRuntime.HoudiniInputHoudiniSplineComponent
+// 0x0010 (0x0230 - 0x0220)
+class UHoudiniInputHoudiniSplineComponent final : public UHoudiniInputObject
+{
+public:
+	EHoudiniCurveType                             CurveType;                                         // 0x0220(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EHoudiniCurveMethod                           CurveMethod;                                       // 0x0221(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Reversed;                                          // 0x0222(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_223[0x5];                                      // 0x0223(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class UHoudiniSplineComponent*                CachedComponent;                                   // 0x0228(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("HoudiniInputHoudiniSplineComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"HoudiniInputHoudiniSplineComponent")
+	}
+	static class UHoudiniInputHoudiniSplineComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UHoudiniInputHoudiniSplineComponent>();
+	}
+};
+DUMPER7_ASSERTS_UHoudiniInputHoudiniSplineComponent;
 
 // Class HoudiniEngineRuntime.HoudiniAssetActor
 // 0x0008 (0x02B0 - 0x02A8)
@@ -168,6 +363,68 @@ public:
 };
 DUMPER7_ASSERTS_UHoudiniAssetComponent;
 
+// Class HoudiniEngineRuntime.HoudiniInputActor
+// 0x0190 (0x03B0 - 0x0220)
+class UHoudiniInputActor : public UHoudiniInputObject
+{
+public:
+	int32                                         SplinesMeshObjectNodeId;                           // 0x0220(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SplinesMeshNodeId;                                 // 0x0224(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_228[0xF8];                                     // 0x0228(0x00F8)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UHoudiniInputSceneComponent*>    ActorComponents;                                   // 0x0320(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	TSet<TSoftObjectPtr<class UObject>>           ActorSceneComponents;                              // 0x0330(0x0050)(Protected, UObjectWrapper, NativeAccessSpecifierProtected)
+	int32                                         LastUpdateNumComponentsAdded;                      // 0x0380(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         LastUpdateNumComponentsRemoved;                    // 0x0384(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         NumSplineMeshComponents;                           // 0x0388(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FGuid                                  GeneratedSplinesMeshPackageGuid;                   // 0x038C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_39C[0x4];                                      // 0x039C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UStaticMesh*                            GeneratedSplinesMesh;                              // 0x03A0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	bool                                          bUsedMergeSplinesMeshAtLastTranslate;              // 0x03A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_3A9[0x7];                                      // 0x03A9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("HoudiniInputActor")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"HoudiniInputActor")
+	}
+	static class UHoudiniInputActor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UHoudiniInputActor>();
+	}
+};
+DUMPER7_ASSERTS_UHoudiniInputActor;
+
+// Class HoudiniEngineRuntime.HoudiniInputBrush
+// 0x0020 (0x03D0 - 0x03B0)
+class UHoudiniInputBrush final : public UHoudiniInputActor
+{
+public:
+	TArray<struct FHoudiniBrushInfo>              BrushesInfo;                                       // 0x03B0(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	class UModel*                                 CombinedModel;                                     // 0x03C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	bool                                          bIgnoreInputObject;                                // 0x03C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EBrushType                                    CachedInputBrushType;                              // 0x03C9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_3CA[0x6];                                      // 0x03CA(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("HoudiniInputBrush")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"HoudiniInputBrush")
+	}
+	static class UHoudiniInputBrush* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UHoudiniInputBrush>();
+	}
+};
+DUMPER7_ASSERTS_UHoudiniInputBrush;
+
 // Class HoudiniEngineRuntime.HoudiniAssetBlueprintComponent
 // 0x0100 (0x0BE0 - 0x0AE0)
 class UHoudiniAssetBlueprintComponent final : public UHoudiniAssetComponent
@@ -204,55 +461,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UHoudiniAssetBlueprintComponent;
-
-// Class HoudiniEngineRuntime.HoudiniEngineCopyPropertiesInterface
-// 0x0000 (0x0000 - 0x0000)
-class IHoudiniEngineCopyPropertiesInterface final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("HoudiniEngineCopyPropertiesInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"HoudiniEngineCopyPropertiesInterface")
-	}
-	static class IHoudiniEngineCopyPropertiesInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IHoudiniEngineCopyPropertiesInterface>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IHoudiniEngineCopyPropertiesInterface;
-
-// Class HoudiniEngineRuntime.HoudiniEngineEditorSettings
-// 0x0000 (0x0038 - 0x0038)
-class UHoudiniEngineEditorSettings final : public UDeveloperSettings
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("HoudiniEngineEditorSettings")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"HoudiniEngineEditorSettings")
-	}
-	static class UHoudiniEngineEditorSettings* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UHoudiniEngineEditorSettings>();
-	}
-};
-DUMPER7_ASSERTS_UHoudiniEngineEditorSettings;
 
 // Class HoudiniEngineRuntime.HoudiniHandleParameter
 // 0x0010 (0x0038 - 0x0028)
@@ -383,46 +591,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UHoudiniInput;
-
-// Class HoudiniEngineRuntime.HoudiniInputObject
-// 0x01F8 (0x0220 - 0x0028)
-class UHoudiniInputObject : public UObject
-{
-public:
-	TSoftObjectPtr<class UObject>                 InputObject;                                       // 0x0028(0x0028)(UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EHoudiniInputObjectType                       Type;                                              // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_51[0x3];                                       // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGuid                                  Guid;                                              // 0x0054(0x0010)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_64[0xFC];                                      // 0x0064(0x00FC)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bHasChanged;                                       // 0x0160(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bNeedsToTriggerUpdate;                             // 0x0161(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bTransformChanged;                                 // 0x0162(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_163[0x5];                                      // 0x0163(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FString>                         MaterialReferences;                                // 0x0168(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	struct FHoudiniInputObjectSettings            CachedInputSettings;                               // 0x0178(0x0024)(NoDestructor, Protected, NativeAccessSpecifierProtected)
-	bool                                          bCanDeleteHoudiniNodes;                            // 0x019C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bInputNodeHandleOverridesNodeIds;                  // 0x019D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_19E[0x2];                                      // 0x019E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             Transform;                                         // 0x01A0(0x0060)(IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FRotator                               UserInputRotator;                                  // 0x0200(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         InputNodeId;                                       // 0x0218(0x0004)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	int32                                         InputObjectNodeId;                                 // 0x021C(0x0004)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("HoudiniInputObject")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"HoudiniInputObject")
-	}
-	static class UHoudiniInputObject* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UHoudiniInputObject>();
-	}
-};
-DUMPER7_ASSERTS_UHoudiniInputObject;
 
 // Class HoudiniEngineRuntime.HoudiniInputStaticMesh
 // 0x0000 (0x0220 - 0x0220)
@@ -645,33 +813,6 @@ public:
 };
 DUMPER7_ASSERTS_UHoudiniInputSkeletalMeshComponent;
 
-// Class HoudiniEngineRuntime.HoudiniInputHoudiniSplineComponent
-// 0x0010 (0x0230 - 0x0220)
-class UHoudiniInputHoudiniSplineComponent final : public UHoudiniInputObject
-{
-public:
-	EHoudiniCurveType                             CurveType;                                         // 0x0220(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EHoudiniCurveMethod                           CurveMethod;                                       // 0x0221(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Reversed;                                          // 0x0222(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_223[0x5];                                      // 0x0223(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	class UHoudiniSplineComponent*                CachedComponent;                                   // 0x0228(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("HoudiniInputHoudiniSplineComponent")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"HoudiniInputHoudiniSplineComponent")
-	}
-	static class UHoudiniInputHoudiniSplineComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UHoudiniInputHoudiniSplineComponent>();
-	}
-};
-DUMPER7_ASSERTS_UHoudiniInputHoudiniSplineComponent;
-
 // Class HoudiniEngineRuntime.HoudiniInputCameraComponent
 // 0x0010 (0x02A0 - 0x0290)
 class UHoudiniInputCameraComponent final : public UHoudiniInputSceneComponent
@@ -726,41 +867,6 @@ public:
 };
 DUMPER7_ASSERTS_UHoudiniInputHoudiniAsset;
 
-// Class HoudiniEngineRuntime.HoudiniInputActor
-// 0x0190 (0x03B0 - 0x0220)
-class UHoudiniInputActor : public UHoudiniInputObject
-{
-public:
-	int32                                         SplinesMeshObjectNodeId;                           // 0x0220(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SplinesMeshNodeId;                                 // 0x0224(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_228[0xF8];                                     // 0x0228(0x00F8)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UHoudiniInputSceneComponent*>    ActorComponents;                                   // 0x0320(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
-	TSet<TSoftObjectPtr<class UObject>>           ActorSceneComponents;                              // 0x0330(0x0050)(Protected, UObjectWrapper, NativeAccessSpecifierProtected)
-	int32                                         LastUpdateNumComponentsAdded;                      // 0x0380(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         LastUpdateNumComponentsRemoved;                    // 0x0384(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         NumSplineMeshComponents;                           // 0x0388(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FGuid                                  GeneratedSplinesMeshPackageGuid;                   // 0x038C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_39C[0x4];                                      // 0x039C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UStaticMesh*                            GeneratedSplinesMesh;                              // 0x03A0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	bool                                          bUsedMergeSplinesMeshAtLastTranslate;              // 0x03A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_3A9[0x7];                                      // 0x03A9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("HoudiniInputActor")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"HoudiniInputActor")
-	}
-	static class UHoudiniInputActor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UHoudiniInputActor>();
-	}
-};
-DUMPER7_ASSERTS_UHoudiniInputActor;
-
 // Class HoudiniEngineRuntime.HoudiniInputLevelInstance
 // 0x0060 (0x0410 - 0x03B0)
 class UHoudiniInputLevelInstance final : public UHoudiniInputActor
@@ -810,33 +916,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UHoudiniInputLandscape;
-
-// Class HoudiniEngineRuntime.HoudiniInputBrush
-// 0x0020 (0x03D0 - 0x03B0)
-class UHoudiniInputBrush final : public UHoudiniInputActor
-{
-public:
-	TArray<struct FHoudiniBrushInfo>              BrushesInfo;                                       // 0x03B0(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	class UModel*                                 CombinedModel;                                     // 0x03C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	bool                                          bIgnoreInputObject;                                // 0x03C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EBrushType                                    CachedInputBrushType;                              // 0x03C9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_3CA[0x6];                                      // 0x03CA(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("HoudiniInputBrush")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"HoudiniInputBrush")
-	}
-	static class UHoudiniInputBrush* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UHoudiniInputBrush>();
-	}
-};
-DUMPER7_ASSERTS_UHoudiniInputBrush;
 
 // Class HoudiniEngineRuntime.HoudiniInputDataTable
 // 0x0000 (0x0220 - 0x0220)
@@ -1271,62 +1350,6 @@ public:
 };
 DUMPER7_ASSERTS_UHoudiniOutput;
 
-// Class HoudiniEngineRuntime.HoudiniParameter
-// 0x00E0 (0x0108 - 0x0028)
-class UHoudiniParameter : public UObject
-{
-public:
-	class FString                                 Name_0;                                            // 0x0028(0x0010)(ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FString                                 Label;                                             // 0x0038(0x0010)(ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EHoudiniParameterType                         ParmType;                                          // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EHoudiniParameterChoiceListType               ChoiceListType;                                    // 0x0049(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_4A[0x2];                                       // 0x004A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	uint32                                        TupleSize;                                         // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         NodeID;                                            // 0x0050(0x0004)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         ParmId;                                            // 0x0054(0x0004)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         ParentParmId;                                      // 0x0058(0x0004)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         ChildIndex;                                        // 0x005C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsVisible;                                        // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsParentFolderVisible;                            // 0x0061(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsDisabled;                                       // 0x0062(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bHasChanged;                                       // 0x0063(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bNeedsToTriggerUpdate;                             // 0x0064(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsDefault;                                        // 0x0065(0x0001)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsSpare;                                          // 0x0066(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bJoinNext;                                         // 0x0067(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsLabelVisible;                                   // 0x0068(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsChildOfMultiParm;                               // 0x0069(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsDirectChildOfMultiParm;                         // 0x006A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bPendingRevertToDefault;                           // 0x006B(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 TuplePendingRevertToDefault;                       // 0x0070(0x0010)(ZeroConstructor, DuplicateTransient, Protected, NativeAccessSpecifierProtected)
-	class FString                                 Help;                                              // 0x0080(0x0010)(ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint32                                        TagCount;                                          // 0x0090(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         ValueIndex;                                        // 0x0094(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bHasExpression;                                    // 0x0098(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bShowExpression;                                   // 0x0099(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_9A[0x6];                                       // 0x009A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ParamExpression;                                   // 0x00A0(0x0010)(ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TMap<class FString, class FString>            Tags;                                              // 0x00B0(0x0050)(Protected, NativeAccessSpecifierProtected)
-	bool                                          bAutoUpdate;                                       // 0x0100(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_101[0x7];                                      // 0x0101(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("HoudiniParameter")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"HoudiniParameter")
-	}
-	static class UHoudiniParameter* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UHoudiniParameter>();
-	}
-};
-DUMPER7_ASSERTS_UHoudiniParameter;
-
 // Class HoudiniEngineRuntime.HoudiniParameterButton
 // 0x0000 (0x0108 - 0x0108)
 class UHoudiniParameterButton final : public UHoudiniParameter
@@ -1584,29 +1607,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UHoudiniParameterInt;
-
-// Class HoudiniEngineRuntime.HoudiniParameterLabel
-// 0x0010 (0x0118 - 0x0108)
-class UHoudiniParameterLabel final : public UHoudiniParameter
-{
-public:
-	TArray<class FString>                         LabelStrings;                                      // 0x0108(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("HoudiniParameterLabel")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"HoudiniParameterLabel")
-	}
-	static class UHoudiniParameterLabel* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UHoudiniParameterLabel>();
-	}
-};
-DUMPER7_ASSERTS_UHoudiniParameterLabel;
 
 // Class HoudiniEngineRuntime.HoudiniParameterMultiParm
 // 0x0048 (0x0150 - 0x0108)

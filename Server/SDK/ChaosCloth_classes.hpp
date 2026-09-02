@@ -14,8 +14,8 @@
 #include "ClothingSystemRuntimeCommon_classes.hpp"
 #include "ChaosCloth_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "ClothingSystemRuntimeInterface_classes.hpp"
 #include "Chaos_structs.hpp"
+#include "ClothingSystemRuntimeInterface_classes.hpp"
 
 
 SDK_NAMESPACE_START

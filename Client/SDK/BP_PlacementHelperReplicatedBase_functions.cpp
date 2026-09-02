@@ -17,7 +17,7 @@
 SDK_NAMESPACE_START
 
 // Function BP_PlacementHelperReplicatedBase.BP_PlacementHelperReplicatedBase_C.ExecuteUbergraph_BP_PlacementHelperReplicatedBase
-// (Final, UbergraphFunction, HasDefaults)
+// (Final, UbergraphFunction)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -31,26 +31,6 @@ void ABP_PlacementHelperReplicatedBase_C::ExecuteUbergraph_BP_PlacementHelperRep
 	Params::BP_PlacementHelperReplicatedBase_C_ExecuteUbergraph_BP_PlacementHelperReplicatedBase Parms{};
 
 	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_PlacementHelperReplicatedBase.BP_PlacementHelperReplicatedBase_C.OnFoundationSetUp
-// (Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const TArray<struct FTransform>&        FoundationTransforms                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-
-void ABP_PlacementHelperReplicatedBase_C::OnFoundationSetUp(const TArray<struct FTransform>& FoundationTransforms)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperReplicatedBase_C", "OnFoundationSetUp");
-
-	Params::BP_PlacementHelperReplicatedBase_C_OnFoundationSetUp Parms{};
-
-	Parms.FoundationTransforms = std::move(FoundationTransforms);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

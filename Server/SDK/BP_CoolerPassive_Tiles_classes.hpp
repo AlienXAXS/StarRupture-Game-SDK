@@ -17,11 +17,11 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_CoolerPassive_Tiles.BP_CoolerPassive_Tiles_C
-// 0x0008 (0x0888 - 0x0880)
+// 0x0008 (0x0900 - 0x08F8)
 class ABP_CoolerPassive_Tiles_C final : public ABP_Modular_Foundation_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_CoolerPassive_Tiles_C;           // 0x0880(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_CoolerPassive_Tiles_C;           // 0x08F8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ReceiveTick(float DeltaSeconds_ReceiveTick);

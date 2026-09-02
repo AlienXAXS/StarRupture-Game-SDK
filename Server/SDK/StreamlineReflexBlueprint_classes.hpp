@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "StreamlineBlueprint_structs.hpp"
-#include "Engine_classes.hpp"
 #include "StreamlineReflexBlueprint_structs.hpp"
+#include "Engine_classes.hpp"
+#include "StreamlineBlueprint_structs.hpp"
 
 
 SDK_NAMESPACE_START

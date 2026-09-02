@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Airlock_NonDeconstructible.BP_Airlock_NonDeconstructible_C
-// 0x0000 (0x0948 - 0x0948)
+// 0x0000 (0x0A30 - 0x0A30)
 class ABP_Airlock_NonDeconstructible_C final : public ABP_Airlock_C
 {
 public:

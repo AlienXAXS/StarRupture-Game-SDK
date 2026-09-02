@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "Synthesis_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -1191,6 +1191,91 @@ public:
 };
 DUMPER7_ASSERTS_SubmixEffectMultibandCompressorPreset_SetSettings;
 
+// Function Synthesis.SynthSamplePlayer.SeekToTime
+// 0x0008 (0x0008 - 0x0000)
+struct SynthSamplePlayer_SeekToTime final
+{
+public:
+	float                                         TimeSec;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESamplePlayerSeekType                         SeekType;                                          // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bWrap;                                             // 0x0005(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_SynthSamplePlayer_SeekToTime;
+
+// Function Synthesis.SynthSamplePlayer.SetPitch
+// 0x0008 (0x0008 - 0x0000)
+struct SynthSamplePlayer_SetPitch final
+{
+public:
+	float                                         InPitch;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TimeSec;                                           // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SynthSamplePlayer_SetPitch;
+
+// Function Synthesis.SynthSamplePlayer.SetScrubMode
+// 0x0001 (0x0001 - 0x0000)
+struct SynthSamplePlayer_SetScrubMode final
+{
+public:
+	bool                                          bScrubMode;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SynthSamplePlayer_SetScrubMode;
+
+// Function Synthesis.SynthSamplePlayer.SetScrubTimeWidth
+// 0x0004 (0x0004 - 0x0000)
+struct SynthSamplePlayer_SetScrubTimeWidth final
+{
+public:
+	float                                         InScrubTimeWidthSec;                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SynthSamplePlayer_SetScrubTimeWidth;
+
+// Function Synthesis.SynthSamplePlayer.SetSoundWave
+// 0x0008 (0x0008 - 0x0000)
+struct SynthSamplePlayer_SetSoundWave final
+{
+public:
+	class USoundWave*                             InSoundWave;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SynthSamplePlayer_SetSoundWave;
+
+// Function Synthesis.SynthSamplePlayer.GetCurrentPlaybackProgressPercent
+// 0x0004 (0x0004 - 0x0000)
+struct SynthSamplePlayer_GetCurrentPlaybackProgressPercent final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SynthSamplePlayer_GetCurrentPlaybackProgressPercent;
+
+// Function Synthesis.SynthSamplePlayer.GetCurrentPlaybackProgressTime
+// 0x0004 (0x0004 - 0x0000)
+struct SynthSamplePlayer_GetCurrentPlaybackProgressTime final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SynthSamplePlayer_GetCurrentPlaybackProgressTime;
+
+// Function Synthesis.SynthSamplePlayer.GetSampleDuration
+// 0x0004 (0x0004 - 0x0000)
+struct SynthSamplePlayer_GetSampleDuration final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SynthSamplePlayer_GetSampleDuration;
+
+// Function Synthesis.SynthSamplePlayer.IsLoaded
+// 0x0001 (0x0001 - 0x0000)
+struct SynthSamplePlayer_IsLoaded final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SynthSamplePlayer_IsLoaded;
+
 // Function Synthesis.SubmixEffectStereoDelayPreset.SetSettings
 // 0x0024 (0x0024 - 0x0000)
 struct SubmixEffectStereoDelayPreset_SetSettings final
@@ -1897,91 +1982,6 @@ public:
 	float                                         InVolume;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_SynthComponentToneGenerator_SetVolume;
-
-// Function Synthesis.SynthSamplePlayer.SeekToTime
-// 0x0008 (0x0008 - 0x0000)
-struct SynthSamplePlayer_SeekToTime final
-{
-public:
-	float                                         TimeSec;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESamplePlayerSeekType                         SeekType;                                          // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bWrap;                                             // 0x0005(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_SynthSamplePlayer_SeekToTime;
-
-// Function Synthesis.SynthSamplePlayer.SetPitch
-// 0x0008 (0x0008 - 0x0000)
-struct SynthSamplePlayer_SetPitch final
-{
-public:
-	float                                         InPitch;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TimeSec;                                           // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SynthSamplePlayer_SetPitch;
-
-// Function Synthesis.SynthSamplePlayer.SetScrubMode
-// 0x0001 (0x0001 - 0x0000)
-struct SynthSamplePlayer_SetScrubMode final
-{
-public:
-	bool                                          bScrubMode;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SynthSamplePlayer_SetScrubMode;
-
-// Function Synthesis.SynthSamplePlayer.SetScrubTimeWidth
-// 0x0004 (0x0004 - 0x0000)
-struct SynthSamplePlayer_SetScrubTimeWidth final
-{
-public:
-	float                                         InScrubTimeWidthSec;                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SynthSamplePlayer_SetScrubTimeWidth;
-
-// Function Synthesis.SynthSamplePlayer.SetSoundWave
-// 0x0008 (0x0008 - 0x0000)
-struct SynthSamplePlayer_SetSoundWave final
-{
-public:
-	class USoundWave*                             InSoundWave;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SynthSamplePlayer_SetSoundWave;
-
-// Function Synthesis.SynthSamplePlayer.GetCurrentPlaybackProgressPercent
-// 0x0004 (0x0004 - 0x0000)
-struct SynthSamplePlayer_GetCurrentPlaybackProgressPercent final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SynthSamplePlayer_GetCurrentPlaybackProgressPercent;
-
-// Function Synthesis.SynthSamplePlayer.GetCurrentPlaybackProgressTime
-// 0x0004 (0x0004 - 0x0000)
-struct SynthSamplePlayer_GetCurrentPlaybackProgressTime final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SynthSamplePlayer_GetCurrentPlaybackProgressTime;
-
-// Function Synthesis.SynthSamplePlayer.GetSampleDuration
-// 0x0004 (0x0004 - 0x0000)
-struct SynthSamplePlayer_GetSampleDuration final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SynthSamplePlayer_GetSampleDuration;
-
-// Function Synthesis.SynthSamplePlayer.IsLoaded
-// 0x0001 (0x0001 - 0x0000)
-struct SynthSamplePlayer_IsLoaded final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SynthSamplePlayer_IsLoaded;
 
 // Function Synthesis.SynthesisUtilitiesBlueprintFunctionLibrary.GetLinearFrequency
 // 0x0018 (0x0018 - 0x0000)

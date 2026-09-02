@@ -27,9 +27,9 @@ public:
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02F0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_BP_WorldSpawnerRegion(int32 EntryPoint);
-	void ReceiveActorBeginOverlap(class AActor* OtherActor);
 	void ReceiveBeginPlay();
+	void ReceiveActorBeginOverlap(class AActor* OtherActor_ReceiveActorBeginOverlap);
+	void ExecuteUbergraph_BP_WorldSpawnerRegion(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

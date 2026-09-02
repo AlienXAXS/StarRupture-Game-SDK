@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "ChimeraUI_classes.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ChimeraUI_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -35,7 +35,7 @@ public:
 	void Construct();
 	void ExecuteUbergraph_WBP_CraftingRecipeSlot(int32 EntryPoint);
 	void SetFillAlignment();
-	void SetRecipeLocked(bool bLocked);
+	void SetRecipeLocked();
 	void ShowChooseText(bool Show);
 	void ShowHighlight(bool bHighlight);
 	void ShowItemNameInIcon(const class FText& InText);

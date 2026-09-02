@@ -12,34 +12,38 @@
 
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_BaseAI.BP_BaseAI_C
-// 0x0020 (0x0D00 - 0x0CE0)
+// 0x0020 (0x0D20 - 0x0D00)
 class ABP_BaseAI_C : public AMassEnemyCharacterBase
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0CE0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FLinearColor                           IdleEyeColor;                                      // 0x0CE8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ApplySlowdownAfterDamage;                          // 0x0CF8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0D00(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FLinearColor                           IdleEyeColor;                                      // 0x0D08(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ApplySlowdownAfterDamage;                          // 0x0D18(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void SetIsJumpEyeBehaviour(bool NewIsJumpEyeBehaviour);
 	void SetIsBoostedEyeColor(bool NewIsBoosted);
 	void SetIsAggroEyeColor(bool NewIsAggro);
+	void SetBoostFlare();
+	void SetAggroFlare();
 	void ReceiveBeginPlay();
 	void PostSetupPooledActorData(bool bNewIsInPool);
 	void OnPrepareForPooling();
 	void OnPrepareForGame();
+	void OnEyeStateColorGradientChanged(float NewGetEyeStateColorGradientCoord);
 	void OnExitActorPool();
 	void OnEnterActorPool();
 	void OnDamage(class AActor* Actor, const struct FHitResult& HitResult, float InDamage);
 	void OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag);
 	bool NotifyNearbyPlayerCharactersAboutSpawn();
-	void NotifyAggroTargetChanged(bool bHasAggroTarget);
+	void NotifyAggroTargetChanged(bool bHasAggroTarget, bool bSetAggroFlare);
 	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
 	void ExecuteUbergraph_BP_BaseAI(int32 EntryPoint);
 	void CanChangeEyeColor(bool* Result);

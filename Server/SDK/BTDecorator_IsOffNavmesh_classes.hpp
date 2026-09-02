@@ -17,13 +17,14 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BTDecorator_IsOffNavmesh.BTDecorator_IsOffNavmesh_C
-// 0x0030 (0x00D0 - 0x00A0)
+// 0x0038 (0x00D8 - 0x00A0)
 class UBTDecorator_IsOffNavmesh_C final : public UBTDecorator_BlueprintBase
 {
 public:
 	bool                                          ChceckTargetReachable;                             // 0x00A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_A1[0x7];                                       // 0x00A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FBlackboardKeySelector                 TargetActor;                                       // 0x00A8(0x0028)(Edit, BlueprintVisible)
+	double                                        MaxObstacleHeightNavmeshNoChange;                  // 0x00D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	bool PerformConditionCheckAI(class AAIController* OwnerController_PerformConditionCheckAI, class APawn* ControlledPawn_PerformConditionCheckAI);

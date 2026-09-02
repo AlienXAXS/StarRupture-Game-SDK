@@ -16,13 +16,16 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Foundable_InsideDeadBody_Sol_A.BP_Foundable_InsideDeadBody_Sol_A_C
-// 0x0018 (0x0330 - 0x0318)
+// 0x0018 (0x0338 - 0x0320)
 class ABP_Foundable_InsideDeadBody_Sol_A_C final : public ABP_Foundable_Base_C
 {
 public:
-	class UStaticMeshComponent*                   Cube3;                                             // 0x0318(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   DeadBody;                                          // 0x0320(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   Cube5;                                             // 0x0328(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   Cube3;                                             // 0x0320(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   DeadBody;                                          // 0x0328(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   Cube5;                                             // 0x0330(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+
+public:
+	bool OnStorageEmptied();
 
 public:
 	static class UClass* StaticClass()

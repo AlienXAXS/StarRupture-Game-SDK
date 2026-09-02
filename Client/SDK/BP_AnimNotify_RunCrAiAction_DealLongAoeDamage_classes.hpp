@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_AnimNotify_RunCrAiAction_DealLongAoeDamage.BP_AnimNotify_RunCrAiAction_DealLongAoeDamage_C
-// 0x0030 (0x0068 - 0x0038)
+// 0x0038 (0x0070 - 0x0038)
 class UBP_AnimNotify_RunCrAiAction_DealLongAoeDamage_C final : public UCrAnimNotify_RunAiAction
 {
 public:
@@ -30,6 +30,9 @@ public:
 	float                                         PlayerPushDuration;                                // 0x005C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         EnemyActorPushVelocity;                            // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         EnemyEntityPushVelocity;                           // 0x0064(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          AddAdditionalFirstPoint;                           // 0x0068(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_69[0x3];                                       // 0x0069(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         AdditionalFirstPointDistFromInstigator;            // 0x006C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	class UCrAiAction* CreateAiAction(class AActor* Actor) const;

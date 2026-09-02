@@ -14,7 +14,7 @@
 SDK_NAMESPACE_START
 
 // Enum AuNotification.FAuNotificationType
-// NumValues: 0x000F
+// NumValues: 0x0010
 enum class EFAuNotificationType : uint32
 {
 	NONE                                     = 18446744073709551615,
@@ -31,7 +31,8 @@ enum class EFAuNotificationType : uint32
 	FeatureUnlocked                          = 10,
 	BlueprintUnlocked                        = 11,
 	BuildingUpgradetTaskCompleted            = 12,
-	FAuNotificationType_MAX                  = 13,
+	ItemDestroyed                            = 13,
+	FAuNotificationType_MAX                  = 14,
 };
 
 // ScriptStruct AuNotification.AuNotificationSetting

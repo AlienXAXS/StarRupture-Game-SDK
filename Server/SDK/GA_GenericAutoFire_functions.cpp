@@ -569,6 +569,28 @@ void UGA_GenericAutoFire_C::OnTick_0E6849794CE62F5F48580D82ABC44E88(float TimeHe
 }
 
 
+// Function GA_GenericAutoFire.GA_GenericAutoFire_C.OnTickNotLocalPlayer_0E6849794CE62F5F48580D82ABC44E88
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   TimeHeld                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bEnded                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UGA_GenericAutoFire_C::OnTickNotLocalPlayer_0E6849794CE62F5F48580D82ABC44E88(float TimeHeld, bool bEnded)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_GenericAutoFire_C", "OnTickNotLocalPlayer_0E6849794CE62F5F48580D82ABC44E88");
+
+	Params::GA_GenericAutoFire_C_OnTickNotLocalPlayer_0E6849794CE62F5F48580D82ABC44E88 Parms{};
+
+	Parms.TimeHeld = TimeHeld;
+	Parms.bEnded = bEnded;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function GA_GenericAutoFire.GA_GenericAutoFire_C.Removed_BA9B6F24428A5AA9C8C82D82CBB42554
 // (BlueprintCallable, BlueprintEvent)
 

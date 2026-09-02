@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "AuAbilities_structs.hpp"
 #include "Chimera_structs.hpp"
 #include "AuWeapon_structs.hpp"
-#include "AuAbilities_structs.hpp"
 
 
 SDK_NAMESPACE_START

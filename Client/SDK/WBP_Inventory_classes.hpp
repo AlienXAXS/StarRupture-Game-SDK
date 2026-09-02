@@ -17,7 +17,7 @@
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_Inventory.WBP_Inventory_C
-// 0x0000 (0x0628 - 0x0628)
+// 0x0000 (0x0648 - 0x0648)
 class UWBP_Inventory_C final : public UCrUW_Inventory
 {
 public:

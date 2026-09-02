@@ -33,9 +33,9 @@ void ABP_ChimeraPlacementHelperReplicatedStarPowered_C::UserConstructionScript()
 // Function BP_ChimeraPlacementHelperReplicatedStarPowered.BP_ChimeraPlacementHelperReplicatedStarPowered_C.SetMeshColor
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// const struct FLinearColor&              Color_SetMeshColor                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ChimeraPlacementHelperReplicatedStarPowered_C::SetMeshColor(const struct FLinearColor& Color_SetMeshColor)
+void ABP_ChimeraPlacementHelperReplicatedStarPowered_C::SetMeshColor(const struct FLinearColor& Color)
 {
 	static class UFunction* Func = nullptr;
 
@@ -44,18 +44,18 @@ void ABP_ChimeraPlacementHelperReplicatedStarPowered_C::SetMeshColor(const struc
 
 	Params::BP_ChimeraPlacementHelperReplicatedStarPowered_C_SetMeshColor Parms{};
 
-	Parms.Color_SetMeshColor = std::move(Color_SetMeshColor);
+	Parms.Color = std::move(Color);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
 // Function BP_ChimeraPlacementHelperReplicatedStarPowered.BP_ChimeraPlacementHelperReplicatedStarPowered_C.OnFoundationSetUp
-// (Event, Public, HasOutParams, BlueprintEvent)
+// (HasOutParams, BlueprintEvent)
 // Parameters:
-// const TArray<struct FTransform>&        FoundationTransforms_OnFoundationSetUp                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const TArray<struct FTransform>&        FoundationTransforms                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
-void ABP_ChimeraPlacementHelperReplicatedStarPowered_C::OnFoundationSetUp(const TArray<struct FTransform>& FoundationTransforms_OnFoundationSetUp)
+void ABP_ChimeraPlacementHelperReplicatedStarPowered_C::OnFoundationSetUp(const TArray<struct FTransform>& FoundationTransforms)
 {
 	static class UFunction* Func = nullptr;
 
@@ -64,7 +64,7 @@ void ABP_ChimeraPlacementHelperReplicatedStarPowered_C::OnFoundationSetUp(const 
 
 	Params::BP_ChimeraPlacementHelperReplicatedStarPowered_C_OnFoundationSetUp Parms{};
 
-	Parms.FoundationTransforms_OnFoundationSetUp = std::move(FoundationTransforms_OnFoundationSetUp);
+	Parms.FoundationTransforms = std::move(FoundationTransforms);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

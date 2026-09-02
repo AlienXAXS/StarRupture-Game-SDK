@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Chimera_structs.hpp"
 #include "AIModule_structs.hpp"
 #include "AIModule_classes.hpp"
+#include "Chimera_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "GameplayTags_structs.hpp"
 #include "Engine_classes.hpp"

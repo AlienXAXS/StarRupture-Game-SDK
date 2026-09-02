@@ -17,7 +17,7 @@
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_RecipesBoxWidget.WBP_RecipesBoxWidget_C
-// 0x0058 (0x0470 - 0x0418)
+// 0x0068 (0x0480 - 0x0418)
 class UWBP_RecipesBoxWidget_C final : public UCrUW_CorporationRecipes
 {
 public:
@@ -30,6 +30,8 @@ public:
 	class FString                                 A;                                                 // 0x0448(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	class FText                                   NewVar;                                            // 0x0458(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	bool                                          IgnoreFocusColor;                                  // 0x0468(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_469[0x7];                                      // 0x0469(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   MaxText;                                           // 0x0470(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void BndEvt__WBP_CorporationRecipes_DropDownButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
@@ -46,6 +48,7 @@ public:
 	void SetLevelButtonFocus(bool bFocused);
 	void SetLineFinished();
 	void SetLowerWidth();
+	void SetMaxLevel();
 	void SetTitle(const class FText& InText);
 	void SetWidgetTitle(const class FText& Text);
 	void SetWidth(double InSize);

@@ -39,17 +39,6 @@ enum class ERemoteControlHttpVerbs : uint16
 	ERemoteControlHttpVerbs_MAX              = 33,
 };
 
-// ScriptStruct WebRemoteControl.RCObjectDescription
-// 0x0030 (0x0030 - 0x0000)
-struct FRCObjectDescription final
-{
-public:
-	class FString                                 Name;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Class;                                             // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Path;                                              // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRCObjectDescription;
-
 // ScriptStruct WebRemoteControl.RCPropertyDescription
 // 0x00B8 (0x00B8 - 0x0000)
 struct FRCPropertyDescription final
@@ -76,6 +65,38 @@ public:
 	TArray<struct FRCPropertyDescription>         Arguments;                                         // 0x0020(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRCFunctionDescription;
+
+// ScriptStruct WebRemoteControl.DescribeObjectResponse
+// 0x0038 (0x0038 - 0x0000)
+struct FDescribeObjectResponse final
+{
+public:
+	class FString                                 Name;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UObject>                    Class;                                             // 0x0010(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	TArray<struct FRCPropertyDescription>         Properties;                                        // 0x0018(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FRCFunctionDescription>         Functions;                                         // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FDescribeObjectResponse;
+
+// ScriptStruct WebRemoteControl.RCObjectDescription
+// 0x0030 (0x0030 - 0x0000)
+struct FRCObjectDescription final
+{
+public:
+	class FString                                 Name;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Class;                                             // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Path;                                              // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRCObjectDescription;
+
+// ScriptStruct WebRemoteControl.CheckPassphraseResponse
+// 0x0001 (0x0001 - 0x0000)
+struct FCheckPassphraseResponse final
+{
+public:
+	bool                                          keyCorrect;                                        // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCheckPassphraseResponse;
 
 // ScriptStruct WebRemoteControl.RCExposedPropertyDescription
 // 0x0130 (0x0130 - 0x0000)
@@ -581,27 +602,6 @@ public:
 	struct FRCPresetDescription                   Preset;                                            // 0x0000(0x0050)(NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FGetPresetResponse;
-
-// ScriptStruct WebRemoteControl.CheckPassphraseResponse
-// 0x0001 (0x0001 - 0x0000)
-struct FCheckPassphraseResponse final
-{
-public:
-	bool                                          keyCorrect;                                        // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCheckPassphraseResponse;
-
-// ScriptStruct WebRemoteControl.DescribeObjectResponse
-// 0x0038 (0x0038 - 0x0000)
-struct FDescribeObjectResponse final
-{
-public:
-	class FString                                 Name;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UObject>                    Class;                                             // 0x0010(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	TArray<struct FRCPropertyDescription>         Properties;                                        // 0x0018(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FRCFunctionDescription>         Functions;                                         // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FDescribeObjectResponse;
 
 // ScriptStruct WebRemoteControl.SearchAssetResponse
 // 0x0010 (0x0010 - 0x0000)

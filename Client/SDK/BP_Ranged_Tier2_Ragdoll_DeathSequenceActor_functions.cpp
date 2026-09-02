@@ -70,24 +70,4 @@ void ABP_Ranged_Tier2_Ragdoll_DeathSequenceActor_C::OnRagdollStart()
 }
 
 
-// Function BP_Ranged_Tier2_Ragdoll_DeathSequenceActor.BP_Ranged_Tier2_Ragdoll_DeathSequenceActor_C.OnVisualVariationSeedChanged
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FVector&                   Vector                                                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Ranged_Tier2_Ragdoll_DeathSequenceActor_C::OnVisualVariationSeedChanged(const struct FVector& Vector)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier2_Ragdoll_DeathSequenceActor_C", "OnVisualVariationSeedChanged");
-
-	Params::BP_Ranged_Tier2_Ragdoll_DeathSequenceActor_C_OnVisualVariationSeedChanged Parms{};
-
-	Parms.Vector = std::move(Vector);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 SDK_NAMESPACE_END

@@ -17,6 +17,24 @@
 
 SDK_NAMESPACE_START
 
+// ScriptStruct MassCommon.MassSnorm8Vector
+// 0x0003 (0x0003 - 0x0000)
+struct FMassSnorm8Vector final
+{
+public:
+	int8                                          X;                                                 // 0x0000(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int8                                          Y;                                                 // 0x0001(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int8                                          Z;                                                 // 0x0002(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+};
+DUMPER7_ASSERTS_FMassSnorm8Vector;
+
+// ScriptStruct MassCommon.MassNetworkID
+// 0x0000 (0x0004 - 0x0004)
+struct FMassNetworkID final : public FSequentialIDBase
+{
+};
+DUMPER7_ASSERTS_FMassNetworkID;
+
 // ScriptStruct MassCommon.TransformFragment
 // 0x0060 (0x0060 - 0x0000)
 struct FTransformFragment final : public FMassFragment
@@ -25,13 +43,6 @@ public:
 	struct FTransform                             Transform;                                         // 0x0000(0x0060)(Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
 DUMPER7_ASSERTS_FTransformFragment;
-
-// ScriptStruct MassCommon.MassNetworkID
-// 0x0000 (0x0004 - 0x0004)
-struct FMassNetworkID final : public FSequentialIDBase
-{
-};
-DUMPER7_ASSERTS_FMassNetworkID;
 
 // ScriptStruct MassCommon.AgentRadiusFragment
 // 0x0004 (0x0004 - 0x0000)
@@ -68,17 +79,6 @@ public:
 	int16                                         Value;                                             // 0x0000(0x0002)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
 DUMPER7_ASSERTS_FMassInt16Real10;
-
-// ScriptStruct MassCommon.MassSnorm8Vector
-// 0x0003 (0x0003 - 0x0000)
-struct FMassSnorm8Vector final
-{
-public:
-	int8                                          X;                                                 // 0x0000(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int8                                          Y;                                                 // 0x0001(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int8                                          Z;                                                 // 0x0002(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-};
-DUMPER7_ASSERTS_FMassSnorm8Vector;
 
 // ScriptStruct MassCommon.MassSnorm8Vector2D
 // 0x0002 (0x0002 - 0x0000)

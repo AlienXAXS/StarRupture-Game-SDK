@@ -277,26 +277,6 @@ void ABP_Melee_Tier3_Actor_Character_C::ReceiveEndPlay(EEndPlayReason EndPlayRea
 }
 
 
-// Function BP_Melee_Tier3_Actor_Character.BP_Melee_Tier3_Actor_Character_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Melee_Tier3_Actor_Character_C::ReceiveTick(float DeltaSeconds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "ReceiveTick");
-
-	Params::BP_Melee_Tier3_Actor_Character_C_ReceiveTick Parms{};
-
-	Parms.DeltaSeconds = DeltaSeconds;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_Melee_Tier3_Actor_Character.BP_Melee_Tier3_Actor_Character_C.SetHasAggroTarget
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:

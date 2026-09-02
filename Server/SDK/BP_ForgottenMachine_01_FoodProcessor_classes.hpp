@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ForgottenMachine_01_FoodProcessor.BP_ForgottenMachine_01_FoodProcessor_C
-// 0x0000 (0x0750 - 0x0750)
+// 0x0000 (0x07D0 - 0x07D0)
 class ABP_ForgottenMachine_01_FoodProcessor_C final : public ABP_FoodProcessor_C
 {
 public:

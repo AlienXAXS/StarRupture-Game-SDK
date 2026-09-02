@@ -17,13 +17,13 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ForgottenEngine_EntryTerminal.BP_ForgottenEngine_EntryTerminal_C
-// 0x0018 (0x0700 - 0x06E8)
+// 0x0018 (0x0778 - 0x0760)
 class ABP_ForgottenEngine_EntryTerminal_C final : public ACrMegamachineMissingPartDevice
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x06E8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UStaticMeshComponent*                   Trigger;                                           // 0x06F0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class ABP_FE_entrance_door_C*                 EntranceDoor;                                      // 0x06F8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0760(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UStaticMeshComponent*                   Trigger;                                           // 0x0768(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class ABP_FE_entrance_door_C*                 EntranceDoor;                                      // 0x0770(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ReceiveBeginPlay();

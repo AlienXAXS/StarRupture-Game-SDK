@@ -16,8 +16,8 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ChimeraPlacementHelperReplicatedExtractor.BP_ChimeraPlacementHelperReplicatedExtractor_C
-// 0x0000 (0x0890 - 0x0890)
-class ABP_ChimeraPlacementHelperReplicatedExtractor_C final : public ACrAPHelperActorExtractor
+// 0x0000 (0x0A40 - 0x0A40)
+class ABP_ChimeraPlacementHelperReplicatedExtractor_C : public ACrAPHelperActorExtractor
 {
 public:
 	static class UClass* StaticClass()

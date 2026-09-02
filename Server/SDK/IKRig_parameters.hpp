@@ -107,6 +107,326 @@ public:
 };
 DUMPER7_ASSERTS_IKRetargetIKChainsController_SetSettings;
 
+// Function IKRig.RetargetProfileLibrary.CopyRetargetProfileFromRetargetAsset
+// 0x0130 (0x0130 - 0x0000)
+struct RetargetProfileLibrary_CopyRetargetProfileFromRetargetAsset final
+{
+public:
+	const class UIKRetargeter*                    InRetargetAsset;                                   // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRetargetProfile                       ReturnValue;                                       // 0x0008(0x0128)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_RetargetProfileLibrary_CopyRetargetProfileFromRetargetAsset;
+
+// Function IKRig.RetargetProfileLibrary.GetOpControllerFromRetargetProfile
+// 0x0138 (0x0138 - 0x0000)
+struct RetargetProfileLibrary_GetOpControllerFromRetargetProfile final
+{
+public:
+	struct FRetargetProfile                       InRetargetProfile;                                 // 0x0000(0x0128)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class FName                                   InRetargetOpName;                                  // 0x0128(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UIKRetargetOpControllerBase*            ReturnValue;                                       // 0x0130(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_RetargetProfileLibrary_GetOpControllerFromRetargetProfile;
+
+// Function IKRig.IKGoalCreatorInterface.AddIKGoals
+// 0x0050 (0x0050 - 0x0000)
+struct IKGoalCreatorInterface_AddIKGoals final
+{
+public:
+	TMap<class FName, struct FIKRigGoal>          OutGoals;                                          // 0x0000(0x0050)(Parm, OutParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKGoalCreatorInterface_AddIKGoals;
+
+// Function IKRig.IKRetargetPelvisMotionController.GetSettings
+// 0x00C8 (0x00C8 - 0x0000)
+struct IKRetargetPelvisMotionController_GetSettings final
+{
+public:
+	struct FIKRetargetPelvisMotionOpSettings      ReturnValue;                                       // 0x0000(0x00C8)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetPelvisMotionController_GetSettings;
+
+// Function IKRig.IKRetargetPelvisMotionController.GetSourcePelvisBone
+// 0x0008 (0x0008 - 0x0000)
+struct IKRetargetPelvisMotionController_GetSourcePelvisBone final
+{
+public:
+	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetPelvisMotionController_GetSourcePelvisBone;
+
+// Function IKRig.IKRetargetPelvisMotionController.GetTargetPelvisBone
+// 0x0008 (0x0008 - 0x0000)
+struct IKRetargetPelvisMotionController_GetTargetPelvisBone final
+{
+public:
+	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetPelvisMotionController_GetTargetPelvisBone;
+
+// Function IKRig.IKRetargetPelvisMotionController.SetSettings
+// 0x00C8 (0x00C8 - 0x0000)
+struct IKRetargetPelvisMotionController_SetSettings final
+{
+public:
+	struct FIKRetargetPelvisMotionOpSettings      InSettings;                                        // 0x0000(0x00C8)(Parm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetPelvisMotionController_SetSettings;
+
+// Function IKRig.IKRetargetPelvisMotionController.SetSourcePelvisBone
+// 0x0008 (0x0008 - 0x0000)
+struct IKRetargetPelvisMotionController_SetSourcePelvisBone final
+{
+public:
+	class FName                                   InSourcePelvisBone;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetPelvisMotionController_SetSourcePelvisBone;
+
+// Function IKRig.IKRetargetPelvisMotionController.SetTargetPelvisBone
+// 0x0008 (0x0008 - 0x0000)
+struct IKRetargetPelvisMotionController_SetTargetPelvisBone final
+{
+public:
+	class FName                                   InTargetPelvisBone;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetPelvisMotionController_SetTargetPelvisBone;
+
+// Function IKRig.IKRetargetPinBoneController.GetAllBonePairs
+// 0x0050 (0x0050 - 0x0000)
+struct IKRetargetPinBoneController_GetAllBonePairs final
+{
+public:
+	TMap<class FName, class FName>                ReturnValue;                                       // 0x0000(0x0050)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetPinBoneController_GetAllBonePairs;
+
+// Function IKRig.IKRetargetPinBoneController.GetSettings
+// 0x00F0 (0x00F0 - 0x0000)
+struct IKRetargetPinBoneController_GetSettings final
+{
+public:
+	struct FIKRetargetPinBoneOpSettings           ReturnValue;                                       // 0x0000(0x00F0)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetPinBoneController_GetSettings;
+
+// Function IKRig.IKRetargetPinBoneController.SetBonePair
+// 0x0010 (0x0010 - 0x0000)
+struct IKRetargetPinBoneController_SetBonePair final
+{
+public:
+	class FName                                   InBoneToCopyFrom;                                  // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   InBoneToCopyTo;                                    // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetPinBoneController_SetBonePair;
+
+// Function IKRig.IKRetargetPinBoneController.SetSettings
+// 0x00F0 (0x00F0 - 0x0000)
+struct IKRetargetPinBoneController_SetSettings final
+{
+public:
+	struct FIKRetargetPinBoneOpSettings           InSettings;                                        // 0x0000(0x00F0)(Parm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetPinBoneController_SetSettings;
+
+// Function IKRig.IKRetargetAdditivePoseController.GetSettings
+// 0x0020 (0x0020 - 0x0000)
+struct IKRetargetAdditivePoseController_GetSettings final
+{
+public:
+	struct FIKRetargetAdditivePoseOpSettings      ReturnValue;                                       // 0x0000(0x0020)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetAdditivePoseController_GetSettings;
+
+// Function IKRig.IKRetargetAdditivePoseController.SetSettings
+// 0x0020 (0x0020 - 0x0000)
+struct IKRetargetAdditivePoseController_SetSettings final
+{
+public:
+	struct FIKRetargetAdditivePoseOpSettings      InSettings;                                        // 0x0000(0x0020)(Parm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetAdditivePoseController_SetSettings;
+
+// Function IKRig.IKRetargetRootMotionController.GetSettings
+// 0x00C0 (0x00C0 - 0x0000)
+struct IKRetargetRootMotionController_GetSettings final
+{
+public:
+	struct FIKRetargetRootMotionOpSettings        ReturnValue;                                       // 0x0000(0x00C0)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetRootMotionController_GetSettings;
+
+// Function IKRig.IKRetargetRootMotionController.GetSourceRootBone
+// 0x0008 (0x0008 - 0x0000)
+struct IKRetargetRootMotionController_GetSourceRootBone final
+{
+public:
+	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetRootMotionController_GetSourceRootBone;
+
+// Function IKRig.IKRetargetRootMotionController.GetTargetPelvisBone
+// 0x0008 (0x0008 - 0x0000)
+struct IKRetargetRootMotionController_GetTargetPelvisBone final
+{
+public:
+	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetRootMotionController_GetTargetPelvisBone;
+
+// Function IKRig.IKRetargetRootMotionController.GetTargetRootBone
+// 0x0008 (0x0008 - 0x0000)
+struct IKRetargetRootMotionController_GetTargetRootBone final
+{
+public:
+	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetRootMotionController_GetTargetRootBone;
+
+// Function IKRig.IKRetargetRootMotionController.SetSettings
+// 0x00C0 (0x00C0 - 0x0000)
+struct IKRetargetRootMotionController_SetSettings final
+{
+public:
+	struct FIKRetargetRootMotionOpSettings        InSettings;                                        // 0x0000(0x00C0)(Parm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetRootMotionController_SetSettings;
+
+// Function IKRig.IKRetargetRootMotionController.SetSourceRootBone
+// 0x0008 (0x0008 - 0x0000)
+struct IKRetargetRootMotionController_SetSourceRootBone final
+{
+public:
+	class FName                                   InSourceRootBone;                                  // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetRootMotionController_SetSourceRootBone;
+
+// Function IKRig.IKRetargetRootMotionController.SetTargetPelvisBone
+// 0x0008 (0x0008 - 0x0000)
+struct IKRetargetRootMotionController_SetTargetPelvisBone final
+{
+public:
+	class FName                                   InTargetPelvisBone;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetRootMotionController_SetTargetPelvisBone;
+
+// Function IKRig.IKRetargetRootMotionController.SetTargetRootBone
+// 0x0008 (0x0008 - 0x0000)
+struct IKRetargetRootMotionController_SetTargetRootBone final
+{
+public:
+	class FName                                   InTargetRootBone;                                  // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetRootMotionController_SetTargetRootBone;
+
+// Function IKRig.IKRetargetRunIKRigController.GetSettings
+// 0x0040 (0x0040 - 0x0000)
+struct IKRetargetRunIKRigController_GetSettings final
+{
+public:
+	struct FIKRetargetRunIKRigOpSettings          ReturnValue;                                       // 0x0000(0x0040)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetRunIKRigController_GetSettings;
+
+// Function IKRig.IKRetargetRunIKRigController.SetSettings
+// 0x0040 (0x0040 - 0x0000)
+struct IKRetargetRunIKRigController_SetSettings final
+{
+public:
+	struct FIKRetargetRunIKRigOpSettings          InSettings;                                        // 0x0000(0x0040)(Parm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetRunIKRigController_SetSettings;
+
+// Function IKRig.IKRetargetScaleSourceController.GetSettings
+// 0x0018 (0x0018 - 0x0000)
+struct IKRetargetScaleSourceController_GetSettings final
+{
+public:
+	struct FIKRetargetScaleSourceOpSettings       ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetScaleSourceController_GetSettings;
+
+// Function IKRig.IKRetargetScaleSourceController.SetSettings
+// 0x0018 (0x0018 - 0x0000)
+struct IKRetargetScaleSourceController_SetSettings final
+{
+public:
+	struct FIKRetargetScaleSourceOpSettings       InSettings;                                        // 0x0000(0x0018)(Parm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetScaleSourceController_SetSettings;
+
+// Function IKRig.IKRetargetSpeedPlantingController.GetSettings
+// 0x0038 (0x0038 - 0x0000)
+struct IKRetargetSpeedPlantingController_GetSettings final
+{
+public:
+	struct FIKRetargetSpeedPlantingOpSettings     ReturnValue;                                       // 0x0000(0x0038)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetSpeedPlantingController_GetSettings;
+
+// Function IKRig.IKRetargetSpeedPlantingController.SetSettings
+// 0x0038 (0x0038 - 0x0000)
+struct IKRetargetSpeedPlantingController_SetSettings final
+{
+public:
+	struct FIKRetargetSpeedPlantingOpSettings     InSettings;                                        // 0x0000(0x0038)(Parm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetSpeedPlantingController_SetSettings;
+
+// Function IKRig.IKRetargetStrideWarpingController.GetSettings
+// 0x0060 (0x0060 - 0x0000)
+struct IKRetargetStrideWarpingController_GetSettings final
+{
+public:
+	struct FIKRetargetStrideWarpingOpSettings     ReturnValue;                                       // 0x0000(0x0060)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetStrideWarpingController_GetSettings;
+
+// Function IKRig.IKRetargetStrideWarpingController.SetSettings
+// 0x0060 (0x0060 - 0x0000)
+struct IKRetargetStrideWarpingController_SetSettings final
+{
+public:
+	struct FIKRetargetStrideWarpingOpSettings     InSettings;                                        // 0x0000(0x0060)(Parm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRetargetStrideWarpingController_SetSettings;
+
+// Function IKRig.IKRigComponent.SetIKRigGoal
+// 0x00B0 (0x00B0 - 0x0000)
+struct IKRigComponent_SetIKRigGoal final
+{
+public:
+	struct FIKRigGoal                             Goal;                                              // 0x0000(0x00B0)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_IKRigComponent_SetIKRigGoal;
+
+// Function IKRig.IKRigComponent.SetIKRigGoalPositionAndRotation
+// 0x0050 (0x0050 - 0x0000)
+struct IKRigComponent_SetIKRigGoalPositionAndRotation final
+{
+public:
+	class FName                                   GoalName;                                          // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Position;                                          // 0x0008(0x0018)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FQuat                                  Rotation;                                          // 0x0020(0x0020)(ConstParm, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PositionAlpha;                                     // 0x0040(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RotationAlpha;                                     // 0x0044(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_48[0x8];                                       // 0x0048(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_IKRigComponent_SetIKRigGoalPositionAndRotation;
+
+// Function IKRig.IKRigComponent.SetIKRigGoalTransform
+// 0x0080 (0x0080 - 0x0000)
+struct IKRigComponent_SetIKRigGoalTransform final
+{
+public:
+	class FName                                   GoalName;                                          // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Transform;                                         // 0x0010(0x0060)(ConstParm, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PositionAlpha;                                     // 0x0070(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RotationAlpha;                                     // 0x0074(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_78[0x8];                                       // 0x0078(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_IKRigComponent_SetIKRigGoalTransform;
+
 // Function IKRig.IKRetargeter.GetChainSettingsFromRetargetAsset
 // 0x00D0 (0x00D0 - 0x0000)
 struct IKRetargeter_GetChainSettingsFromRetargetAsset final
@@ -268,326 +588,6 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_IKRetargeter_HasTargetIKRig;
-
-// Function IKRig.RetargetProfileLibrary.CopyRetargetProfileFromRetargetAsset
-// 0x0130 (0x0130 - 0x0000)
-struct RetargetProfileLibrary_CopyRetargetProfileFromRetargetAsset final
-{
-public:
-	const class UIKRetargeter*                    InRetargetAsset;                                   // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRetargetProfile                       ReturnValue;                                       // 0x0008(0x0128)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_RetargetProfileLibrary_CopyRetargetProfileFromRetargetAsset;
-
-// Function IKRig.RetargetProfileLibrary.GetOpControllerFromRetargetProfile
-// 0x0138 (0x0138 - 0x0000)
-struct RetargetProfileLibrary_GetOpControllerFromRetargetProfile final
-{
-public:
-	struct FRetargetProfile                       InRetargetProfile;                                 // 0x0000(0x0128)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	class FName                                   InRetargetOpName;                                  // 0x0128(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UIKRetargetOpControllerBase*            ReturnValue;                                       // 0x0130(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_RetargetProfileLibrary_GetOpControllerFromRetargetProfile;
-
-// Function IKRig.IKGoalCreatorInterface.AddIKGoals
-// 0x0050 (0x0050 - 0x0000)
-struct IKGoalCreatorInterface_AddIKGoals final
-{
-public:
-	TMap<class FName, struct FIKRigGoal>          OutGoals;                                          // 0x0000(0x0050)(Parm, OutParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKGoalCreatorInterface_AddIKGoals;
-
-// Function IKRig.IKRetargetPelvisMotionController.GetSettings
-// 0x00C8 (0x00C8 - 0x0000)
-struct IKRetargetPelvisMotionController_GetSettings final
-{
-public:
-	struct FIKRetargetPelvisMotionOpSettings      ReturnValue;                                       // 0x0000(0x00C8)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetPelvisMotionController_GetSettings;
-
-// Function IKRig.IKRetargetPelvisMotionController.GetSourcePelvisBone
-// 0x0008 (0x0008 - 0x0000)
-struct IKRetargetPelvisMotionController_GetSourcePelvisBone final
-{
-public:
-	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetPelvisMotionController_GetSourcePelvisBone;
-
-// Function IKRig.IKRetargetPelvisMotionController.GetTargetPelvisBone
-// 0x0008 (0x0008 - 0x0000)
-struct IKRetargetPelvisMotionController_GetTargetPelvisBone final
-{
-public:
-	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetPelvisMotionController_GetTargetPelvisBone;
-
-// Function IKRig.IKRetargetPelvisMotionController.SetSettings
-// 0x00C8 (0x00C8 - 0x0000)
-struct IKRetargetPelvisMotionController_SetSettings final
-{
-public:
-	struct FIKRetargetPelvisMotionOpSettings      InSettings;                                        // 0x0000(0x00C8)(Parm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetPelvisMotionController_SetSettings;
-
-// Function IKRig.IKRetargetPelvisMotionController.SetSourcePelvisBone
-// 0x0008 (0x0008 - 0x0000)
-struct IKRetargetPelvisMotionController_SetSourcePelvisBone final
-{
-public:
-	class FName                                   InSourcePelvisBone;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetPelvisMotionController_SetSourcePelvisBone;
-
-// Function IKRig.IKRetargetPelvisMotionController.SetTargetPelvisBone
-// 0x0008 (0x0008 - 0x0000)
-struct IKRetargetPelvisMotionController_SetTargetPelvisBone final
-{
-public:
-	class FName                                   InTargetPelvisBone;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetPelvisMotionController_SetTargetPelvisBone;
-
-// Function IKRig.IKRetargetPinBoneController.GetAllBonePairs
-// 0x0050 (0x0050 - 0x0000)
-struct IKRetargetPinBoneController_GetAllBonePairs final
-{
-public:
-	TMap<class FName, class FName>                ReturnValue;                                       // 0x0000(0x0050)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetPinBoneController_GetAllBonePairs;
-
-// Function IKRig.IKRetargetPinBoneController.GetSettings
-// 0x00F0 (0x00F0 - 0x0000)
-struct IKRetargetPinBoneController_GetSettings final
-{
-public:
-	struct FIKRetargetPinBoneOpSettings           ReturnValue;                                       // 0x0000(0x00F0)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetPinBoneController_GetSettings;
-
-// Function IKRig.IKRetargetPinBoneController.SetBonePair
-// 0x0010 (0x0010 - 0x0000)
-struct IKRetargetPinBoneController_SetBonePair final
-{
-public:
-	class FName                                   InBoneToCopyFrom;                                  // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   InBoneToCopyTo;                                    // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetPinBoneController_SetBonePair;
-
-// Function IKRig.IKRetargetPinBoneController.SetSettings
-// 0x00F0 (0x00F0 - 0x0000)
-struct IKRetargetPinBoneController_SetSettings final
-{
-public:
-	struct FIKRetargetPinBoneOpSettings           InSettings;                                        // 0x0000(0x00F0)(Parm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetPinBoneController_SetSettings;
-
-// Function IKRig.IKRetargetStrideWarpingController.GetSettings
-// 0x0060 (0x0060 - 0x0000)
-struct IKRetargetStrideWarpingController_GetSettings final
-{
-public:
-	struct FIKRetargetStrideWarpingOpSettings     ReturnValue;                                       // 0x0000(0x0060)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetStrideWarpingController_GetSettings;
-
-// Function IKRig.IKRetargetStrideWarpingController.SetSettings
-// 0x0060 (0x0060 - 0x0000)
-struct IKRetargetStrideWarpingController_SetSettings final
-{
-public:
-	struct FIKRetargetStrideWarpingOpSettings     InSettings;                                        // 0x0000(0x0060)(Parm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetStrideWarpingController_SetSettings;
-
-// Function IKRig.IKRetargetAdditivePoseController.GetSettings
-// 0x0020 (0x0020 - 0x0000)
-struct IKRetargetAdditivePoseController_GetSettings final
-{
-public:
-	struct FIKRetargetAdditivePoseOpSettings      ReturnValue;                                       // 0x0000(0x0020)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetAdditivePoseController_GetSettings;
-
-// Function IKRig.IKRetargetAdditivePoseController.SetSettings
-// 0x0020 (0x0020 - 0x0000)
-struct IKRetargetAdditivePoseController_SetSettings final
-{
-public:
-	struct FIKRetargetAdditivePoseOpSettings      InSettings;                                        // 0x0000(0x0020)(Parm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetAdditivePoseController_SetSettings;
-
-// Function IKRig.IKRetargetRootMotionController.GetSettings
-// 0x00C0 (0x00C0 - 0x0000)
-struct IKRetargetRootMotionController_GetSettings final
-{
-public:
-	struct FIKRetargetRootMotionOpSettings        ReturnValue;                                       // 0x0000(0x00C0)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetRootMotionController_GetSettings;
-
-// Function IKRig.IKRetargetRootMotionController.GetSourceRootBone
-// 0x0008 (0x0008 - 0x0000)
-struct IKRetargetRootMotionController_GetSourceRootBone final
-{
-public:
-	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetRootMotionController_GetSourceRootBone;
-
-// Function IKRig.IKRetargetRootMotionController.GetTargetPelvisBone
-// 0x0008 (0x0008 - 0x0000)
-struct IKRetargetRootMotionController_GetTargetPelvisBone final
-{
-public:
-	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetRootMotionController_GetTargetPelvisBone;
-
-// Function IKRig.IKRetargetRootMotionController.GetTargetRootBone
-// 0x0008 (0x0008 - 0x0000)
-struct IKRetargetRootMotionController_GetTargetRootBone final
-{
-public:
-	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetRootMotionController_GetTargetRootBone;
-
-// Function IKRig.IKRetargetRootMotionController.SetSettings
-// 0x00C0 (0x00C0 - 0x0000)
-struct IKRetargetRootMotionController_SetSettings final
-{
-public:
-	struct FIKRetargetRootMotionOpSettings        InSettings;                                        // 0x0000(0x00C0)(Parm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetRootMotionController_SetSettings;
-
-// Function IKRig.IKRetargetRootMotionController.SetSourceRootBone
-// 0x0008 (0x0008 - 0x0000)
-struct IKRetargetRootMotionController_SetSourceRootBone final
-{
-public:
-	class FName                                   InSourceRootBone;                                  // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetRootMotionController_SetSourceRootBone;
-
-// Function IKRig.IKRetargetRootMotionController.SetTargetPelvisBone
-// 0x0008 (0x0008 - 0x0000)
-struct IKRetargetRootMotionController_SetTargetPelvisBone final
-{
-public:
-	class FName                                   InTargetPelvisBone;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetRootMotionController_SetTargetPelvisBone;
-
-// Function IKRig.IKRetargetRootMotionController.SetTargetRootBone
-// 0x0008 (0x0008 - 0x0000)
-struct IKRetargetRootMotionController_SetTargetRootBone final
-{
-public:
-	class FName                                   InTargetRootBone;                                  // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetRootMotionController_SetTargetRootBone;
-
-// Function IKRig.IKRetargetRunIKRigController.GetSettings
-// 0x0040 (0x0040 - 0x0000)
-struct IKRetargetRunIKRigController_GetSettings final
-{
-public:
-	struct FIKRetargetRunIKRigOpSettings          ReturnValue;                                       // 0x0000(0x0040)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetRunIKRigController_GetSettings;
-
-// Function IKRig.IKRetargetRunIKRigController.SetSettings
-// 0x0040 (0x0040 - 0x0000)
-struct IKRetargetRunIKRigController_SetSettings final
-{
-public:
-	struct FIKRetargetRunIKRigOpSettings          InSettings;                                        // 0x0000(0x0040)(Parm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetRunIKRigController_SetSettings;
-
-// Function IKRig.IKRetargetScaleSourceController.GetSettings
-// 0x0018 (0x0018 - 0x0000)
-struct IKRetargetScaleSourceController_GetSettings final
-{
-public:
-	struct FIKRetargetScaleSourceOpSettings       ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetScaleSourceController_GetSettings;
-
-// Function IKRig.IKRetargetScaleSourceController.SetSettings
-// 0x0018 (0x0018 - 0x0000)
-struct IKRetargetScaleSourceController_SetSettings final
-{
-public:
-	struct FIKRetargetScaleSourceOpSettings       InSettings;                                        // 0x0000(0x0018)(Parm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetScaleSourceController_SetSettings;
-
-// Function IKRig.IKRetargetSpeedPlantingController.GetSettings
-// 0x0038 (0x0038 - 0x0000)
-struct IKRetargetSpeedPlantingController_GetSettings final
-{
-public:
-	struct FIKRetargetSpeedPlantingOpSettings     ReturnValue;                                       // 0x0000(0x0038)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetSpeedPlantingController_GetSettings;
-
-// Function IKRig.IKRetargetSpeedPlantingController.SetSettings
-// 0x0038 (0x0038 - 0x0000)
-struct IKRetargetSpeedPlantingController_SetSettings final
-{
-public:
-	struct FIKRetargetSpeedPlantingOpSettings     InSettings;                                        // 0x0000(0x0038)(Parm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRetargetSpeedPlantingController_SetSettings;
-
-// Function IKRig.IKRigComponent.SetIKRigGoal
-// 0x00B0 (0x00B0 - 0x0000)
-struct IKRigComponent_SetIKRigGoal final
-{
-public:
-	struct FIKRigGoal                             Goal;                                              // 0x0000(0x00B0)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_IKRigComponent_SetIKRigGoal;
-
-// Function IKRig.IKRigComponent.SetIKRigGoalPositionAndRotation
-// 0x0050 (0x0050 - 0x0000)
-struct IKRigComponent_SetIKRigGoalPositionAndRotation final
-{
-public:
-	class FName                                   GoalName;                                          // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Position;                                          // 0x0008(0x0018)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FQuat                                  Rotation;                                          // 0x0020(0x0020)(ConstParm, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PositionAlpha;                                     // 0x0040(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RotationAlpha;                                     // 0x0044(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_48[0x8];                                       // 0x0048(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_IKRigComponent_SetIKRigGoalPositionAndRotation;
-
-// Function IKRig.IKRigComponent.SetIKRigGoalTransform
-// 0x0080 (0x0080 - 0x0000)
-struct IKRigComponent_SetIKRigGoalTransform final
-{
-public:
-	class FName                                   GoalName;                                          // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             Transform;                                         // 0x0010(0x0060)(ConstParm, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PositionAlpha;                                     // 0x0070(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RotationAlpha;                                     // 0x0074(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_78[0x8];                                       // 0x0078(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_IKRigComponent_SetIKRigGoalTransform;
 
 // Function IKRig.IKRigSolverControllerBase.GetEnabled
 // 0x0001 (0x0001 - 0x0000)

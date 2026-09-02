@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "ChimeraUI_classes.hpp"
-#include "CoreUObject_structs.hpp"
 #include "Chimera_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "ChimeraUI_classes.hpp"
 
 
 SDK_NAMESPACE_START

@@ -10,22 +10,22 @@
 
 #include "Basic.hpp"
 
-#include "Chimera_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Chimera_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Modular_Tiles_Base.BP_Modular_Tiles_Base_C
-// 0x0030 (0x0880 - 0x0850)
+// 0x0030 (0x08F8 - 0x08C8)
 class ABP_Modular_Tiles_Base_C : public ACrFoundation
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0850(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UCrInteriorsMapperBoxComponent*         CrInteriorsMapperBox;                              // 0x0858(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UInstancedStaticMeshComponent*          Tiles;                                             // 0x0860(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                StartingPos;                                       // 0x0868(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x08C8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UCrInteriorsMapperBoxComponent*         CrInteriorsMapperBox;                              // 0x08D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UInstancedStaticMeshComponent*          Tiles;                                             // 0x08D8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                StartingPos;                                       // 0x08E0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_Modular_Tiles_Base(int32 EntryPoint);

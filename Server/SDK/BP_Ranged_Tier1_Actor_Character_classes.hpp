@@ -17,13 +17,13 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Ranged_Tier1_Actor_Character.BP_Ranged_Tier1_Actor_Character_C
-// 0x0020 (0x0D20 - 0x0D00)
+// 0x0020 (0x0D40 - 0x0D20)
 class ABP_Ranged_Tier1_Actor_Character_C final : public ABP_BaseAI_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Ranged_Tier1_Actor_Character_C;  // 0x0D00(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UCrAiRangedAnimationStateSyncComponent* CrAiRangedAnimationStateSync;                      // 0x0D08(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UNiagaraComponent*                      NiagaraEyes;                                       // 0x0D10(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Ranged_Tier1_Actor_Character_C;  // 0x0D20(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UCrAiRangedAnimationStateSyncComponent* CrAiRangedAnimationStateSync;                      // 0x0D28(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      NiagaraEyes;                                       // 0x0D30(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void UserConstructionScript();

@@ -66,21 +66,15 @@ void UWBP_CraftingRecipeSlot_C::SetFillAlignment()
 
 // Function WBP_CraftingRecipeSlot.WBP_CraftingRecipeSlot_C.SetRecipeLocked
 // (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bLocked                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_CraftingRecipeSlot_C::SetRecipeLocked(bool bLocked)
+void UWBP_CraftingRecipeSlot_C::SetRecipeLocked()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("WBP_CraftingRecipeSlot_C", "SetRecipeLocked");
 
-	Params::WBP_CraftingRecipeSlot_C_SetRecipeLocked Parms{};
-
-	Parms.bLocked = bLocked;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

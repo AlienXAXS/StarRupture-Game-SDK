@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_FrontendStateComponent.BP_FrontendStateComponent_C
-// 0x0000 (0x0140 - 0x0140)
+// 0x0000 (0x0150 - 0x0150)
 class UBP_FrontendStateComponent_C final : public UCrFrontendStateComponent
 {
 public:

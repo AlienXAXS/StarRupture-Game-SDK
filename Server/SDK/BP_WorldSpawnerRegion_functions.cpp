@@ -16,6 +16,40 @@
 
 SDK_NAMESPACE_START
 
+// Function BP_WorldSpawnerRegion.BP_WorldSpawnerRegion_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_WorldSpawnerRegion_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_WorldSpawnerRegion_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_WorldSpawnerRegion.BP_WorldSpawnerRegion_C.ReceiveActorBeginOverlap
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class AActor*                           OtherActor_ReceiveActorBeginOverlap                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void ABP_WorldSpawnerRegion_C::ReceiveActorBeginOverlap(class AActor* OtherActor_ReceiveActorBeginOverlap)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_WorldSpawnerRegion_C", "ReceiveActorBeginOverlap");
+
+	Params::BP_WorldSpawnerRegion_C_ReceiveActorBeginOverlap Parms{};
+
+	Parms.OtherActor_ReceiveActorBeginOverlap = OtherActor_ReceiveActorBeginOverlap;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_WorldSpawnerRegion.BP_WorldSpawnerRegion_C.ExecuteUbergraph_BP_WorldSpawnerRegion
 // (Final, UbergraphFunction)
 // Parameters:
@@ -33,40 +67,6 @@ void ABP_WorldSpawnerRegion_C::ExecuteUbergraph_BP_WorldSpawnerRegion(int32 Entr
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_WorldSpawnerRegion.BP_WorldSpawnerRegion_C.ReceiveActorBeginOverlap
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class AActor*                           OtherActor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void ABP_WorldSpawnerRegion_C::ReceiveActorBeginOverlap(class AActor* OtherActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WorldSpawnerRegion_C", "ReceiveActorBeginOverlap");
-
-	Params::BP_WorldSpawnerRegion_C_ReceiveActorBeginOverlap Parms{};
-
-	Parms.OtherActor = OtherActor;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_WorldSpawnerRegion.BP_WorldSpawnerRegion_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_WorldSpawnerRegion_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WorldSpawnerRegion_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 

@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "Chimera_structs.hpp"
-#include "Chimera_classes.hpp"
 #include "Engine_structs.hpp"
 #include "AuItems_structs.hpp"
+#include "Chimera_structs.hpp"
+#include "Chimera_classes.hpp"
 
 
 SDK_NAMESPACE_START

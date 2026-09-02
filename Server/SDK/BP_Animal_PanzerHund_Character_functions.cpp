@@ -36,6 +36,26 @@ bool ABP_Animal_PanzerHund_Character_C::ShouldMossBeActive()
 }
 
 
+// Function BP_Animal_PanzerHund_Character.BP_Animal_PanzerHund_Character_C.SetRolledCollision
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    NewIsRolledCollision                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Animal_PanzerHund_Character_C::SetRolledCollision(bool NewIsRolledCollision)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Animal_PanzerHund_Character_C", "SetRolledCollision");
+
+	Params::BP_Animal_PanzerHund_Character_C_SetRolledCollision Parms{};
+
+	Parms.NewIsRolledCollision = NewIsRolledCollision;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_Animal_PanzerHund_Character.BP_Animal_PanzerHund_Character_C.SetMossVisibility
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -151,6 +171,20 @@ void ABP_Animal_PanzerHund_Character_C::OnWaveFadeoutSubstageChanged_Event(const
 	Parms.Progress = Progress;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Animal_PanzerHund_Character.BP_Animal_PanzerHund_Character_C.OnRep_IsRolledCollision
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Animal_PanzerHund_Character_C::OnRep_IsRolledCollision()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Animal_PanzerHund_Character_C", "OnRep_IsRolledCollision");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

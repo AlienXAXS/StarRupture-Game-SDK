@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
+#include "ABP_Melee_Tier3_Actor_structs.hpp"
 #include "Engine_structs.hpp"
+#include "AnimGraphRuntime_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
-#include "AnimGraphRuntime_structs.hpp"
-#include "ABP_Melee_Tier3_Actor_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -247,6 +247,11 @@ public:
 	void AnimNotify_EndAnim();
 	void AnimNotify_EndAnimAction();
 	void AnimNotify_EndAttack();
+	void AnimNotify_HitVO_Start();
+	void AnimNotify_HitVO_Start2();
+	void AnimNotify_HitVO_Start3();
+	void AnimNotify_HitVO_Start4();
+	void AnimNotify_HitVO_Start5();
 	void AttackConduitOnUpdate(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node);
 	void BPOnAttackTypeChanged(ECrEnemyAttackType OldAttackType, ECrEnemyAttackType NewAttackType);
 	void BPOnLocomotionTypeChanged(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType);

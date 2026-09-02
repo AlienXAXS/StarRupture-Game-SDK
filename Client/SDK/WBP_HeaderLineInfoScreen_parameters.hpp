@@ -85,6 +85,15 @@ public:
 };
 DUMPER7_ASSERTS_WBP_HeaderLineInfoScreen_C_SetTitleMaxWidth;
 
+// Function WBP_HeaderLineInfoScreen.WBP_HeaderLineInfoScreen_C.SetTransformPolicy
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_HeaderLineInfoScreen_C_SetTransformPolicy final
+{
+public:
+	bool                                          ToUpper;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_HeaderLineInfoScreen_C_SetTransformPolicy;
+
 // Function WBP_HeaderLineInfoScreen.WBP_HeaderLineInfoScreen_C.ShowRenameButton
 // 0x0001 (0x0001 - 0x0000)
 struct WBP_HeaderLineInfoScreen_C_ShowRenameButton final

@@ -43,7 +43,7 @@ public:
 DUMPER7_ASSERTS_UAuInventoryBPF;
 
 // Class AuInventory.AuInventoryComponent
-// 0x0000 (0x09D0 - 0x09D0)
+// 0x0000 (0x09C8 - 0x09C8)
 class UAuInventoryComponent : public UAuItemsComponent
 {
 public:

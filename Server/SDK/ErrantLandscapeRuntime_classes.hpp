@@ -12,9 +12,9 @@
 
 #include "DeveloperSettings_classes.hpp"
 #include "Engine_classes.hpp"
-#include "ErrantLandscapeRuntime_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "ErrantLandscapeRuntime_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -26,7 +26,9 @@ class UElProjectSettings final : public UDeveloperSettings
 public:
 	bool                                          bEnableRuntimeLandscape;                           // 0x0038(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bEnableRuntimeNavigationUpdates;                   // 0x0039(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3A[0x6];                                       // 0x003A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bFlushGrassComponents;                             // 0x003A(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableBrushPriorityConflictError;                 // 0x003B(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -402,17 +404,17 @@ public:
 DUMPER7_ASSERTS_AElRtStaticLayerPartitions;
 
 // Class ErrantLandscapeRuntime.ElRtWorldSubsystem
-// 0x03C0 (0x0400 - 0x0040)
+// 0x0400 (0x0440 - 0x0040)
 class alignas(0x40) UElRtWorldSubsystem final : public UTickableWorldSubsystem
 {
 public:
 	TMulticastInlineDelegate<void(const TArray<class ULandscapeComponent*>& LandscapeComponents)> OnLandscapeCollisionsUpdated; // 0x0040(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_58[0xC8];                                      // 0x0058(0x00C8)(Fixing Size After Last Property [ Dumper-7 ])
-	class ALandscape*                             DefaultLandscape;                                  // 0x0120(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TMap<TSoftObjectPtr<class ALandscape>, class AElRtStaticLayerPartitions*> StaticLayerPartitions; // 0x0128(0x0050)(Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
-	class UElProjectSettings*                     ProjectSettings;                                   // 0x0178(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TMap<class UTexture*, class UTexture*>        CachedTextures;                                    // 0x0180(0x0050)(Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_1D0[0x230];                                    // 0x01D0(0x0230)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_58[0x118];                                     // 0x0058(0x0118)(Fixing Size After Last Property [ Dumper-7 ])
+	class ALandscape*                             DefaultLandscape;                                  // 0x0170(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TMap<TSoftObjectPtr<class ALandscape>, class AElRtStaticLayerPartitions*> StaticLayerPartitions; // 0x0178(0x0050)(Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	class UElProjectSettings*                     ProjectSettings;                                   // 0x01C8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TMap<class UTexture*, class UTexture*>        CachedTextures;                                    // 0x01D0(0x0050)(Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_220[0x220];                                    // 0x0220(0x0220)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void QueueRender(const struct FBox2D& InWorldUpdateBounds);

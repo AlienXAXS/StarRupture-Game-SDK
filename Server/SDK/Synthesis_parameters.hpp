@@ -1209,6 +1209,60 @@ public:
 };
 DUMPER7_ASSERTS_SubmixEffectStereoToQuadPreset_SetSettings;
 
+// Function Synthesis.Synth2DSlider.SetIndentHandle
+// 0x0001 (0x0001 - 0x0000)
+struct Synth2DSlider_SetIndentHandle final
+{
+public:
+	bool                                          InValue;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Synth2DSlider_SetIndentHandle;
+
+// Function Synthesis.Synth2DSlider.SetLocked
+// 0x0001 (0x0001 - 0x0000)
+struct Synth2DSlider_SetLocked final
+{
+public:
+	bool                                          InValue;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Synth2DSlider_SetLocked;
+
+// Function Synthesis.Synth2DSlider.SetSliderHandleColor
+// 0x0010 (0x0010 - 0x0000)
+struct Synth2DSlider_SetSliderHandleColor final
+{
+public:
+	struct FLinearColor                           InValue;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Synth2DSlider_SetSliderHandleColor;
+
+// Function Synthesis.Synth2DSlider.SetStepSize
+// 0x0004 (0x0004 - 0x0000)
+struct Synth2DSlider_SetStepSize final
+{
+public:
+	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Synth2DSlider_SetStepSize;
+
+// Function Synthesis.Synth2DSlider.SetValue
+// 0x0010 (0x0010 - 0x0000)
+struct Synth2DSlider_SetValue final
+{
+public:
+	struct FVector2D                              InValue;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Synth2DSlider_SetValue;
+
+// Function Synthesis.Synth2DSlider.GetValue
+// 0x0010 (0x0010 - 0x0000)
+struct Synth2DSlider_GetValue final
+{
+public:
+	struct FVector2D                              ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Synth2DSlider_GetValue;
+
 // Function Synthesis.SubmixEffectTapDelayPreset.AddTap
 // 0x0004 (0x0004 - 0x0000)
 struct SubmixEffectTapDelayPreset_AddTap final
@@ -2010,60 +2064,6 @@ public:
 	float                                         ReturnValue;                                       // 0x0014(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_SynthesisUtilitiesBlueprintFunctionLibrary_GetLogFrequency;
-
-// Function Synthesis.Synth2DSlider.SetIndentHandle
-// 0x0001 (0x0001 - 0x0000)
-struct Synth2DSlider_SetIndentHandle final
-{
-public:
-	bool                                          InValue;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Synth2DSlider_SetIndentHandle;
-
-// Function Synthesis.Synth2DSlider.SetLocked
-// 0x0001 (0x0001 - 0x0000)
-struct Synth2DSlider_SetLocked final
-{
-public:
-	bool                                          InValue;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Synth2DSlider_SetLocked;
-
-// Function Synthesis.Synth2DSlider.SetSliderHandleColor
-// 0x0010 (0x0010 - 0x0000)
-struct Synth2DSlider_SetSliderHandleColor final
-{
-public:
-	struct FLinearColor                           InValue;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Synth2DSlider_SetSliderHandleColor;
-
-// Function Synthesis.Synth2DSlider.SetStepSize
-// 0x0004 (0x0004 - 0x0000)
-struct Synth2DSlider_SetStepSize final
-{
-public:
-	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Synth2DSlider_SetStepSize;
-
-// Function Synthesis.Synth2DSlider.SetValue
-// 0x0010 (0x0010 - 0x0000)
-struct Synth2DSlider_SetValue final
-{
-public:
-	struct FVector2D                              InValue;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Synth2DSlider_SetValue;
-
-// Function Synthesis.Synth2DSlider.GetValue
-// 0x0010 (0x0010 - 0x0000)
-struct Synth2DSlider_GetValue final
-{
-public:
-	struct FVector2D                              ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Synth2DSlider_GetValue;
 
 // Function Synthesis.SynthKnob.SetLocked
 // 0x0001 (0x0001 - 0x0000)

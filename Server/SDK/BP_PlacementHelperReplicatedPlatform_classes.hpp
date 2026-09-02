@@ -16,8 +16,8 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_PlacementHelperReplicatedPlatform.BP_PlacementHelperReplicatedPlatform_C
-// 0x0000 (0x09B0 - 0x09B0)
-class ABP_PlacementHelperReplicatedPlatform_C final : public ACrAPHelperActorCustom
+// 0x0000 (0x0B70 - 0x0B70)
+class ABP_PlacementHelperReplicatedPlatform_C : public ACrAPHelperActorCustom
 {
 public:
 	static class UClass* StaticClass()

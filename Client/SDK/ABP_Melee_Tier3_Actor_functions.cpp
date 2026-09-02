@@ -79,6 +79,76 @@ void UABP_Melee_Tier3_Actor_C::AnimNotify_EndAttack()
 }
 
 
+// Function ABP_Melee_Tier3_Actor.ABP_Melee_Tier3_Actor_C.AnimNotify_HitVO_Start
+// (BlueprintCallable, BlueprintEvent)
+
+void UABP_Melee_Tier3_Actor_C::AnimNotify_HitVO_Start()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Melee_Tier3_Actor_C", "AnimNotify_HitVO_Start");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Melee_Tier3_Actor.ABP_Melee_Tier3_Actor_C.AnimNotify_HitVO_Start2
+// (BlueprintCallable, BlueprintEvent)
+
+void UABP_Melee_Tier3_Actor_C::AnimNotify_HitVO_Start2()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Melee_Tier3_Actor_C", "AnimNotify_HitVO_Start2");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Melee_Tier3_Actor.ABP_Melee_Tier3_Actor_C.AnimNotify_HitVO_Start3
+// (BlueprintCallable, BlueprintEvent)
+
+void UABP_Melee_Tier3_Actor_C::AnimNotify_HitVO_Start3()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Melee_Tier3_Actor_C", "AnimNotify_HitVO_Start3");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Melee_Tier3_Actor.ABP_Melee_Tier3_Actor_C.AnimNotify_HitVO_Start4
+// (BlueprintCallable, BlueprintEvent)
+
+void UABP_Melee_Tier3_Actor_C::AnimNotify_HitVO_Start4()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Melee_Tier3_Actor_C", "AnimNotify_HitVO_Start4");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Melee_Tier3_Actor.ABP_Melee_Tier3_Actor_C.AnimNotify_HitVO_Start5
+// (BlueprintCallable, BlueprintEvent)
+
+void UABP_Melee_Tier3_Actor_C::AnimNotify_HitVO_Start5()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Melee_Tier3_Actor_C", "AnimNotify_HitVO_Start5");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function ABP_Melee_Tier3_Actor.ABP_Melee_Tier3_Actor_C.AttackConduitOnUpdate
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -1070,7 +1140,7 @@ void UABP_Melee_Tier3_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 
 // Function ABP_Melee_Tier3_Actor.ABP_Melee_Tier3_Actor_C.ExecuteUbergraph_ABP_Melee_Tier3_Actor
-// (Final, UbergraphFunction)
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

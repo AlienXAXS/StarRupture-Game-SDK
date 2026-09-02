@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // ScriptStruct ABP_Unarmed_FPP_AnimLayers.ABP_Unarmed_FPP_AnimLayers_C.AnimBlueprintGeneratedConstantData
-// 0x0000 (0x1BE8 - 0x1BE8)
+// 0x0000 (0x1C98 - 0x1C98)
 struct ABP_Unarmed_FPP_AnimLayers::FAnimBlueprintGeneratedConstantData final : public ABP_ItemAnimLayers_FPP_Base::FAnimBlueprintGeneratedConstantData
 {
 };

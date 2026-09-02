@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "Chimera_classes.hpp"
+#include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -46,6 +46,8 @@ public:
 	void DoShotgunAttack(const struct FCrAiProjectileParameters& ProjectileParameters_0);
 	void ExecuteUbergraph_BP_Ranged_Tier2_PooledProjectile(int32 EntryPoint);
 	void OnHit(const struct FHitResult& HitResult);
+	void OnProjectileActivated();
+	void OnProjectileDeactivated();
 	void OnProjectileShot(const struct FCrAiProjectileParameters& InProjectileParameters);
 	void OnReleasedToPool();
 	void SpawnSnotProjectiles(const struct FVector& BigSnotLocation, const struct FVector& SmallProjectilesLocation, bool SpawnBigSnot);

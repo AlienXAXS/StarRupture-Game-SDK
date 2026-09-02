@@ -56,6 +56,26 @@ void ABP_Foundable_Enemy_Loot_Base_C::ReceiveTick(float DeltaSeconds)
 }
 
 
+// Function BP_Foundable_Enemy_Loot_Base.BP_Foundable_Enemy_Loot_Base_C.ReceiveEndPlay
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Foundable_Enemy_Loot_Base_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Foundable_Enemy_Loot_Base_C", "ReceiveEndPlay");
+
+	Params::BP_Foundable_Enemy_Loot_Base_C_ReceiveEndPlay Parms{};
+
+	Parms.EndPlayReason = EndPlayReason;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_Foundable_Enemy_Loot_Base.BP_Foundable_Enemy_Loot_Base_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
 
@@ -87,6 +107,27 @@ void ABP_Foundable_Enemy_Loot_Base_C::ExecuteUbergraph_BP_Foundable_Enemy_Loot_B
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Foundable_Enemy_Loot_Base.BP_Foundable_Enemy_Loot_Base_C.CanPlaySound
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// bool*                                   bRet                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Foundable_Enemy_Loot_Base_C::CanPlaySound(bool* bRet)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Foundable_Enemy_Loot_Base_C", "CanPlaySound");
+
+	Params::BP_Foundable_Enemy_Loot_Base_C_CanPlaySound Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (bRet != nullptr)
+		*bRet = Parms.bRet;
 }
 
 

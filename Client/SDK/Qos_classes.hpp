@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "Qos_structs.hpp"
 #include "OnlineSubsystemUtils_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "Qos_structs.hpp"
 
 
 SDK_NAMESPACE_START

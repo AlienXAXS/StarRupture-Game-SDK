@@ -52,5 +52,18 @@ public:
 };
 DUMPER7_ASSERTS_WBP_InventorySingleOutItemContainer_C_SetRecipeOutSlot;
 
+// Function WBP_InventorySingleOutItemContainer.WBP_InventorySingleOutItemContainer_C.SetSlotSize
+// 0x0030 (0x0030 - 0x0000)
+struct WBP_InventorySingleOutItemContainer_C_SetSlotSize final
+{
+public:
+	double                                        InSize;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue;                 // 0x0008(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UWidget*                                CallFunc_GetChildAt_ReturnValue;                   // 0x0018(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UWBP_InventoryOutSlot_C*                K2Node_DynamicCast_AsWBP_Inventory_Out_Slot;       // 0x0020(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_InventorySingleOutItemContainer_C_SetSlotSize;
+
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

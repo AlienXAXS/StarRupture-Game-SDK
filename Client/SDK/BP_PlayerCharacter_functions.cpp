@@ -16,6 +16,26 @@
 
 SDK_NAMESPACE_START
 
+// Function BP_PlayerCharacter.BP_PlayerCharacter_C.AnyPlayerChangedDeconstructionModeChanged
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    IsAnyPlayerDeconstructing                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_PlayerCharacter_C::AnyPlayerChangedDeconstructionModeChanged(bool IsAnyPlayerDeconstructing)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PlayerCharacter_C", "AnyPlayerChangedDeconstructionModeChanged");
+
+	Params::BP_PlayerCharacter_C_AnyPlayerChangedDeconstructionModeChanged Parms{};
+
+	Parms.IsAnyPlayerDeconstructing = IsAnyPlayerDeconstructing;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_PlayerCharacter.BP_PlayerCharacter_C.BlockEnergyLoweringDuringSprint
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -336,6 +356,33 @@ TArray<class AActor*> ABP_PlayerCharacter_C::GetAllIgnoreActorForLocalInteractio
 	Params::BP_PlayerCharacter_C_GetAllIgnoreActorForLocalInteractionTraces Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BP_PlayerCharacter.BP_PlayerCharacter_C.GetCurrentWeaponCustomActionPayload
+// (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FGameplayTag&              Tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// struct FInstancedStruct*                OutPayload                                             (Parm, OutParm)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool ABP_PlayerCharacter_C::GetCurrentWeaponCustomActionPayload(const struct FGameplayTag& Tag, struct FInstancedStruct* OutPayload)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PlayerCharacter_C", "GetCurrentWeaponCustomActionPayload");
+
+	Params::BP_PlayerCharacter_C_GetCurrentWeaponCustomActionPayload Parms{};
+
+	Parms.Tag = std::move(Tag);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (OutPayload != nullptr)
+		*OutPayload = std::move(Parms.OutPayload);
 
 	return Parms.ReturnValue;
 }
@@ -1253,6 +1300,26 @@ void ABP_PlayerCharacter_C::OnBPStartOccupyingSpawnPoint()
 }
 
 
+// Function BP_PlayerCharacter.BP_PlayerCharacter_C.OnCameraSwitched
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bNewInFPP                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_PlayerCharacter_C::OnCameraSwitched(bool bNewInFPP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnCameraSwitched");
+
+	Params::BP_PlayerCharacter_C_OnCameraSwitched Parms{};
+
+	Parms.bNewInFPP = bNewInFPP;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_PlayerCharacter.BP_PlayerCharacter_C.OnCompleted_3C917D864D3A56CADF569987ABEAC42F
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -1952,6 +2019,26 @@ void ABP_PlayerCharacter_C::ResetFPPCameraTransform(bool Delay)
 }
 
 
+// Function BP_PlayerCharacter.BP_PlayerCharacter_C.ResolveLandingOnAi
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FHitResult&                Hit                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+
+void ABP_PlayerCharacter_C::ResolveLandingOnAi(const struct FHitResult& Hit)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PlayerCharacter_C", "ResolveLandingOnAi");
+
+	Params::BP_PlayerCharacter_C_ResolveLandingOnAi Parms{};
+
+	Parms.Hit = std::move(Hit);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_PlayerCharacter.BP_PlayerCharacter_C.ServerSetCrouching
 // (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -2193,6 +2280,20 @@ bool ABP_PlayerCharacter_C::UpdateCharacterCosmeticsForCurrentProfession()
 	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
+}
+
+
+// Function BP_PlayerCharacter.BP_PlayerCharacter_C.UpdateCurrentSlope
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_PlayerCharacter_C::UpdateCurrentSlope()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PlayerCharacter_C", "UpdateCurrentSlope");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

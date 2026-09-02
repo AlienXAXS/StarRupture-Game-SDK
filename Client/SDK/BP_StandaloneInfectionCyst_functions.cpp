@@ -64,6 +64,27 @@ void ABP_StandaloneInfectionCyst_C::BP_OnInfectionJustSpawned()
 }
 
 
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.CalculateImmunityProgressFromTimers
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// double*                                 Progress                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_StandaloneInfectionCyst_C::CalculateImmunityProgressFromTimers(double* Progress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "CalculateImmunityProgressFromTimers");
+
+	Params::BP_StandaloneInfectionCyst_C_CalculateImmunityProgressFromTimers Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Progress != nullptr)
+		*Progress = Parms.Progress;
+}
+
+
 // Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.Dissolve__FinishedFunc
 // (BlueprintEvent)
 
@@ -220,6 +241,26 @@ void ABP_StandaloneInfectionCyst_C::OnDamageTaken_Multicast()
 }
 
 
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.OnGrowthChanged
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// double                                  Progress                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_StandaloneInfectionCyst_C::OnGrowthChanged(double Progress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "OnGrowthChanged");
+
+	Params::BP_StandaloneInfectionCyst_C_OnGrowthChanged Parms{};
+
+	Parms.Progress = Progress;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.OnGrowthProgress
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -311,6 +352,20 @@ void ABP_StandaloneInfectionCyst_C::Set_half_time()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "Set_half_time");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.UpdateInfectionEffect
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_StandaloneInfectionCyst_C::UpdateInfectionEffect()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "UpdateInfectionEffect");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

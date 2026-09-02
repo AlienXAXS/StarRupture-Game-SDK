@@ -118,30 +118,6 @@ public:
 };
 DUMPER7_ASSERTS_UMassCrowdMemberTrait;
 
-// Class MassCrowd.MassDebugCrowdVisualizationProcessor
-// 0x0360 (0x0420 - 0x00C0)
-class alignas(0x10) UMassDebugCrowdVisualizationProcessor final : public UMassProcessor
-{
-public:
-	class UWorld*                                 World;                                             // 0x00C0(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_C8[0x358];                                     // 0x00C8(0x0358)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MassDebugCrowdVisualizationProcessor")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MassDebugCrowdVisualizationProcessor")
-	}
-	static class UMassDebugCrowdVisualizationProcessor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMassDebugCrowdVisualizationProcessor>();
-	}
-};
-DUMPER7_ASSERTS_UMassDebugCrowdVisualizationProcessor;
-
 // Class MassCrowd.MassCrowdLaneTrackingSignalProcessor
 // 0x0008 (0x0490 - 0x0488)
 class UMassCrowdLaneTrackingSignalProcessor final : public UMassSignalProcessorBase
@@ -539,6 +515,30 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMassCrowdVisualizationProcessor;
+
+// Class MassCrowd.MassDebugCrowdVisualizationProcessor
+// 0x0360 (0x0420 - 0x00C0)
+class alignas(0x10) UMassDebugCrowdVisualizationProcessor final : public UMassProcessor
+{
+public:
+	class UWorld*                                 World;                                             // 0x00C0(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_C8[0x358];                                     // 0x00C8(0x0358)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MassDebugCrowdVisualizationProcessor")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MassDebugCrowdVisualizationProcessor")
+	}
+	static class UMassDebugCrowdVisualizationProcessor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMassDebugCrowdVisualizationProcessor>();
+	}
+};
+DUMPER7_ASSERTS_UMassDebugCrowdVisualizationProcessor;
 
 // Class MassCrowd.MassCrowdVisualizationTrait
 // 0x0000 (0x0160 - 0x0160)

@@ -154,14 +154,17 @@ public:
 };
 DUMPER7_ASSERTS_FSpriteGeometryCollection;
 
-// ScriptStruct Paper2D.SpriteAssetInitParameters
+// ScriptStruct Paper2D.PaperTileMetadata
 // 0x0040 (0x0040 - 0x0000)
-struct alignas(0x08) FSpriteAssetInitParameters final
+struct FPaperTileMetadata final
 {
 public:
-	uint8                                         Pad_0[0x40];                                       // 0x0000(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FName                                   UserDataName;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSpriteGeometryCollection              CollisionData;                                     // 0x0008(0x0030)(Edit, NativeAccessSpecifierPublic)
+	uint8                                         TerrainMembership[0x4];                            // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FSpriteAssetInitParameters;
+DUMPER7_ASSERTS_FPaperTileMetadata;
 
 // ScriptStruct Paper2D.PaperFlipbookKeyFrame
 // 0x0010 (0x0010 - 0x0000)
@@ -173,6 +176,15 @@ public:
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FPaperFlipbookKeyFrame;
+
+// ScriptStruct Paper2D.SpriteAssetInitParameters
+// 0x0040 (0x0040 - 0x0000)
+struct alignas(0x08) FSpriteAssetInitParameters final
+{
+public:
+	uint8                                         Pad_0[0x40];                                       // 0x0000(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSpriteAssetInitParameters;
 
 // ScriptStruct Paper2D.SpriteInstanceData
 // 0x0090 (0x0090 - 0x0000)
@@ -222,18 +234,6 @@ public:
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FPaperTileInfo;
-
-// ScriptStruct Paper2D.PaperTileMetadata
-// 0x0040 (0x0040 - 0x0000)
-struct FPaperTileMetadata final
-{
-public:
-	class FName                                   UserDataName;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSpriteGeometryCollection              CollisionData;                                     // 0x0008(0x0030)(Edit, NativeAccessSpecifierPublic)
-	uint8                                         TerrainMembership[0x4];                            // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FPaperTileMetadata;
 
 // ScriptStruct Paper2D.PaperTileSetTerrain
 // 0x0018 (0x0018 - 0x0000)

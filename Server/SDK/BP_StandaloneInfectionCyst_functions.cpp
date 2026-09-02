@@ -16,6 +16,20 @@
 
 SDK_NAMESPACE_START
 
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.UpdateInfectionEffect
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_StandaloneInfectionCyst_C::UpdateInfectionEffect()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "UpdateInfectionEffect");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.Set_half_time
 // (BlueprintCallable, BlueprintEvent)
 
@@ -107,6 +121,26 @@ void ABP_StandaloneInfectionCyst_C::OnGrowthProgress(float Progress_OnGrowthProg
 	Params::BP_StandaloneInfectionCyst_C_OnGrowthProgress Parms{};
 
 	Parms.Progress_OnGrowthProgress = Progress_OnGrowthProgress;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.OnGrowthChanged
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// double                                  Progress                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_StandaloneInfectionCyst_C::OnGrowthChanged(double Progress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "OnGrowthChanged");
+
+	Params::BP_StandaloneInfectionCyst_C_OnGrowthChanged Parms{};
+
+	Parms.Progress = Progress;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -265,6 +299,27 @@ void ABP_StandaloneInfectionCyst_C::Dissolve__FinishedFunc()
 		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "Dissolve__FinishedFunc");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.CalculateImmunityProgressFromTimers
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// double*                                 Progress                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_StandaloneInfectionCyst_C::CalculateImmunityProgressFromTimers(double* Progress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "CalculateImmunityProgressFromTimers");
+
+	Params::BP_StandaloneInfectionCyst_C_CalculateImmunityProgressFromTimers Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Progress != nullptr)
+		*Progress = Parms.Progress;
 }
 
 

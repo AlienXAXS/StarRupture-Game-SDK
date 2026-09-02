@@ -12,9 +12,9 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "CommonUI_classes.hpp"
-#include "AuActorWidgets_structs.hpp"
 #include "Engine_classes.hpp"
+#include "AuActorWidgets_structs.hpp"
+#include "CommonUI_classes.hpp"
 
 
 SDK_NAMESPACE_START

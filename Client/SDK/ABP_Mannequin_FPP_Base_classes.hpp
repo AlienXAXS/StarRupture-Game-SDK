@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "Chimera_classes.hpp"
 #include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "ABP_Mannequin_FPP_Base_structs.hpp"
-#include "EAnimEnum_RootYawOffsetMode_structs.hpp"
-#include "EAnimEnum_CardinalDirection_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
+#include "EAnimEnum_CardinalDirection_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "EAnimEnum_RootYawOffsetMode_structs.hpp"
+#include "Chimera_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -363,6 +363,7 @@ public:
 	void FullBody_SlideOutState(struct FPoseLink* FullBody_SlideOutState_0);
 	void FullBody_StartState(struct FPoseLink* FullBody_StartState_0);
 	void FullBody_StopState(struct FPoseLink* FullBody_StopState_0);
+	void FullBody_ZiplineLoop(struct FPoseLink* FullBody_ZiplineLoop_0);
 	void FullBodyAdditives(struct FPoseLink* FullBodyAdditives_0);
 	class ACrCharacterPlayerBase* Get_Cr_Character_Thread_Safe();
 	void GetCameraDisplacement(double DeltaTime);

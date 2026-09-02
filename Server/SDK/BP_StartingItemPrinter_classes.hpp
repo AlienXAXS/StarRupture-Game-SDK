@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_StartingItemPrinter.BP_StartingItemPrinter_C
-// 0x0000 (0x0750 - 0x0750)
+// 0x0000 (0x07C8 - 0x07C8)
 class ABP_StartingItemPrinter_C final : public ABP_ItemPrinter_C
 {
 public:

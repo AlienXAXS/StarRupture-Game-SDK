@@ -18,16 +18,20 @@
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_CraftingSelectionWidget.WBP_CraftingSelectionWidget_C
-// 0x0008 (0x0648 - 0x0640)
+// 0x0020 (0x06A0 - 0x0680)
 class UWBP_CraftingSelectionWidget_C final : public UCrUW_CraftingSelectionWidget
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0640(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0680(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UOverlay*                               OverlayNoResults;                                  // 0x0688(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 Image_302;                                         // 0x0690(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 Image_145;                                         // 0x0698(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
 	void BndEvt__WBP_CraftingSelectionWidget_ScrollBox_0_K2Node_ComponentBoundEvent_0_OnScrollBarVisibilityChangedEvent__DelegateSignature(ESlateVisibility NewVisibility);
 	void Construct();
 	void ExecuteUbergraph_WBP_CraftingSelectionWidget(int32 EntryPoint);
+	void SetListStateVisual();
 
 public:
 	static class UClass* StaticClass()

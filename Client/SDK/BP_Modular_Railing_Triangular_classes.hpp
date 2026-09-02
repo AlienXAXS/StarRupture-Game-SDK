@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Modular_Railing_Triangular.BP_Modular_Railing_Triangular_C
-// 0x0000 (0x0840 - 0x0840)
+// 0x0000 (0x08B8 - 0x08B8)
 class ABP_Modular_Railing_Triangular_C final : public ACrCustomBuilding
 {
 public:

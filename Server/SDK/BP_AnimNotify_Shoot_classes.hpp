@@ -16,9 +16,12 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_AnimNotify_Shoot.BP_AnimNotify_Shoot_C
-// 0x0000 (0x0038 - 0x0038)
+// 0x0010 (0x0048 - 0x0038)
 class UBP_AnimNotify_Shoot_C final : public UAnimNotify
 {
+public:
+	class FString                                 OverrideSocketName;                                // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+
 public:
 	bool Received_Notify(class USkeletalMeshComponent* MeshComp_Received_Notify, class UAnimSequenceBase* Animation_Received_Notify, const struct FAnimNotifyEventReference& EventReference_Received_Notify) const;
 	class UCrAiAction* CreateAiAction(class AActor* Actor) const;

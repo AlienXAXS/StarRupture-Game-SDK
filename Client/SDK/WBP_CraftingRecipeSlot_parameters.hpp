@@ -24,23 +24,13 @@ public:
 	class UWBP_ActionButton_C*                    K2Node_DynamicCast_AsWBP_Action_Button;            // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_Event_Show;                                 // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_bLocked;                              // 0x0012(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_13[0x5];                                       // 0x0013(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UOverlaySlot*                           CallFunc_SlotAsOverlaySlot_ReturnValue;            // 0x0018(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	class FText                                   K2Node_Event_InText;                               // 0x0020(0x0010)(ConstParm)
 	bool                                          K2Node_Event_bHighlight;                           // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_Event_bSelected;                            // 0x0031(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_CraftingRecipeSlot_C_ExecuteUbergraph_WBP_CraftingRecipeSlot;
-
-// Function WBP_CraftingRecipeSlot.WBP_CraftingRecipeSlot_C.SetRecipeLocked
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_CraftingRecipeSlot_C_SetRecipeLocked final
-{
-public:
-	bool                                          bLocked;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_CraftingRecipeSlot_C_SetRecipeLocked;
 
 // Function WBP_CraftingRecipeSlot.WBP_CraftingRecipeSlot_C.ShowChooseText
 // 0x0001 (0x0001 - 0x0000)

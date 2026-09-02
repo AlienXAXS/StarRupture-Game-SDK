@@ -16,11 +16,11 @@
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_MapMenuMapArea.WBP_MapMenuMapArea_C
-// 0x0010 (0x05C0 - 0x05B0)
+// 0x0010 (0x05D0 - 0x05C0)
 class UWBP_MapMenuMapArea_C final : public UCrUW_MapMenuMapArea
 {
 public:
-	class UImage*                                 Image_Background;                                  // 0x05B0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 Image_Background;                                  // 0x05C0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

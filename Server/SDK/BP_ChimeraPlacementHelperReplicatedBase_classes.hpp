@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ChimeraPlacementHelperReplicatedBase.BP_ChimeraPlacementHelperReplicatedBase_C
-// 0x0000 (0x08B0 - 0x08B0)
+// 0x0000 (0x0A60 - 0x0A60)
 #pragma pack(push, 0x1)
 class SDK_ALIGN(0x10) ABP_ChimeraPlacementHelperReplicatedBase_C : public ABP_PlacementHelperReplicatedBase_C
 {

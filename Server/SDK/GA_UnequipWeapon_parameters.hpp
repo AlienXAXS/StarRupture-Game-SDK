@@ -18,7 +18,7 @@ SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
 // Function GA_UnequipWeapon.GA_UnequipWeapon_C.ExecuteUbergraph_GA_UnequipWeapon
-// 0x01B0 (0x01B0 - 0x0000)
+// 0x01C0 (0x01C0 - 0x0000)
 struct GA_UnequipWeapon_C_ExecuteUbergraph_GA_UnequipWeapon final
 {
 public:
@@ -47,18 +47,22 @@ public:
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0110(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_111[0x7];                                      // 0x0111(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TDelegate<void(class FName NotifyName)>       K2Node_CreateDelegate_OutputDelegate_7;            // 0x0118(0x0018)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_CanUnequipWeapon_ReturnValue;             // 0x0130(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_131[0x7];                                      // 0x0131(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAbilitySystemComponent*                CallFunc_GetAbilitySystemComponent_ReturnValue;    // 0x0138(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class ACrWeaponActor*                         CallFunc_GetEquippedWeaponActor_ReturnValue;       // 0x0140(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_BP_GetOwnedGameplayTags_self_CastInput; // 0x0148(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayTagContainer                  CallFunc_BP_GetOwnedGameplayTags_ReturnValue;      // 0x0158(0x0020)()
-	class UCrWeaponComponent*                     CallFunc_BP_GetWeaponComponent_ReturnValue;        // 0x0178(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UAnimMontage*                           CallFunc_GetFppUnEquipMontage_ReturnValue;         // 0x0180(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UAnimMontage*                           CallFunc_GetTppUnEquipMontage_ReturnValue;         // 0x0188(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FCrMontagePair                         K2Node_MakeStruct_CrMontagePair;                   // 0x0190(0x0010)(NoDestructor)
-	class UCrAbilityTask_PlayMontage*             CallFunc_CreatePlayMontagePairAndWaitProxy_ReturnValue; // 0x01A0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x01A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AController*                            CallFunc_GetController_ReturnValue;                // 0x0130(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class ACrPlayerControllerBase*                K2Node_DynamicCast_AsCr_Player_Controller_Base;    // 0x0138(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0140(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_CanUnequipWeapon_ReturnValue;             // 0x0141(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0142(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_143[0x5];                                      // 0x0143(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class ACrWeaponActor*                         CallFunc_GetEquippedWeaponActor_ReturnValue;       // 0x0148(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UAbilitySystemComponent*                CallFunc_GetAbilitySystemComponent_ReturnValue;    // 0x0150(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_BP_GetOwnedGameplayTags_self_CastInput; // 0x0158(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTagContainer                  CallFunc_BP_GetOwnedGameplayTags_ReturnValue;      // 0x0168(0x0020)()
+	class UCrWeaponComponent*                     CallFunc_BP_GetWeaponComponent_ReturnValue;        // 0x0188(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UAnimMontage*                           CallFunc_GetTppUnEquipMontage_ReturnValue;         // 0x0190(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UAnimMontage*                           CallFunc_GetFppUnEquipMontage_ReturnValue;         // 0x0198(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FCrMontagePair                         K2Node_MakeStruct_CrMontagePair;                   // 0x01A0(0x0010)(NoDestructor)
+	class UCrAbilityTask_PlayMontage*             CallFunc_CreatePlayMontagePairAndWaitProxy_ReturnValue; // 0x01B0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x01B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_GA_UnequipWeapon_C_ExecuteUbergraph_GA_UnequipWeapon;
 

@@ -37,7 +37,7 @@ void ABP_DroneRailSupportHelper_C::ExecuteUbergraph_BP_DroneRailSupportHelper(in
 
 
 // Function BP_DroneRailSupportHelper.BP_DroneRailSupportHelper_C.OnFoundationSetUp
-// (Event, Public, HasOutParams, BlueprintEvent)
+// (HasOutParams, BlueprintEvent)
 // Parameters:
 // const TArray<struct FTransform>&        FoundationTransforms                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 

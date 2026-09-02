@@ -16,6 +16,53 @@
 
 SDK_NAMESPACE_START
 
+// Function AuWeapon.AuAT_WaitADSUpdate.WaitADSUpdate
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAuAT_WaitADSUpdate*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UAuAT_WaitADSUpdate* UAuAT_WaitADSUpdate::WaitADSUpdate(class UGameplayAbility* OwningAbility)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("AuAT_WaitADSUpdate", "WaitADSUpdate");
+
+	Params::AuAT_WaitADSUpdate_WaitADSUpdate Parms{};
+
+	Parms.OwningAbility = OwningAbility;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AuWeapon.AuAT_WaitADSUpdate.OnTickCallback
+// (Final, Native, Public)
+
+void UAuAT_WaitADSUpdate::OnTickCallback()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AuAT_WaitADSUpdate", "OnTickCallback");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function AuWeapon.AuAT_WaitObserveReloadWeapon.WaitObserveReloadWeapon
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -753,6 +800,25 @@ void UAuWeaponComponent::ClientWeaponCheckFailed()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("AuWeaponComponent", "ClientWeaponCheckFailed");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AuWeapon.AuWeaponComponent.ExecuteFireLogic
+// (Final, Native, Public, BlueprintCallable)
+
+void UAuWeaponComponent::ExecuteFireLogic()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AuWeaponComponent", "ExecuteFireLogic");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

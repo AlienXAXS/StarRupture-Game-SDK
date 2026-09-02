@@ -117,15 +117,6 @@ public:
 };
 DUMPER7_ASSERTS_FMassTag;
 
-// ScriptStruct MassEntity.MassSubsystemRequirements
-// 0x0048 (0x0048 - 0x0000)
-struct alignas(0x08) FMassSubsystemRequirements final
-{
-public:
-	uint8                                         Pad_0[0x48];                                       // 0x0000(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassSubsystemRequirements;
-
 // ScriptStruct MassEntity.MassEntityHandle
 // 0x0008 (0x0008 - 0x0000)
 struct alignas(0x08) FMassEntityHandle final
@@ -309,5 +300,14 @@ public:
 	TArray<class FName>                           ExecuteAfter;                                      // 0x0018(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FMassProcessorExecutionOrder;
+
+// ScriptStruct MassEntity.MassSubsystemRequirements
+// 0x0048 (0x0048 - 0x0000)
+struct alignas(0x08) FMassSubsystemRequirements final
+{
+public:
+	uint8                                         Pad_0[0x48];                                       // 0x0000(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassSubsystemRequirements;
 
 SDK_NAMESPACE_END

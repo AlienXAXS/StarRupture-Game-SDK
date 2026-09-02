@@ -849,6 +849,27 @@ void UABP_Mannequin_FPP_Base_C::FullBody_StopState(struct FPoseLink* FullBody_St
 }
 
 
+// Function ABP_Mannequin_FPP_Base.ABP_Mannequin_FPP_Base_C.FullBody_ZiplineLoop
+// (HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FPoseLink*                       FullBody_ZiplineLoop_0                                 (Parm, OutParm, NoDestructor)
+
+void UABP_Mannequin_FPP_Base_C::FullBody_ZiplineLoop(struct FPoseLink* FullBody_ZiplineLoop_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Mannequin_FPP_Base_C", "FullBody_ZiplineLoop");
+
+	Params::ABP_Mannequin_FPP_Base_C_FullBody_ZiplineLoop Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (FullBody_ZiplineLoop_0 != nullptr)
+		*FullBody_ZiplineLoop_0 = std::move(Parms.FullBody_ZiplineLoop_0);
+}
+
+
 // Function ABP_Mannequin_FPP_Base.ABP_Mannequin_FPP_Base_C.FullBodyAdditives
 // (HasOutParams, BlueprintCallable)
 // Parameters:

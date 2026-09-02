@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Modular_SafetyBarrierDiagonal.BP_Modular_SafetyBarrierDiagonal_C
-// 0x0000 (0x0840 - 0x0840)
+// 0x0000 (0x08B8 - 0x08B8)
 class ABP_Modular_SafetyBarrierDiagonal_C final : public ACrCustomBuilding
 {
 public:

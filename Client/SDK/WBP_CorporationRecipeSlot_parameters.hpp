@@ -52,9 +52,8 @@ public:
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue_2;              // 0x0128(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FText                                   CallFunc_Conv_StringToText_ReturnValue_2;          // 0x0138(0x0010)()
 	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x0148(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_bLocked;                              // 0x0149(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_Show;                                 // 0x014A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_14B[0x5];                                      // 0x014B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          K2Node_Event_Show;                                 // 0x0149(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_14A[0x6];                                      // 0x014A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UWBP_ActionButton_C*                    K2Node_DynamicCast_AsWBP_Action_Button;            // 0x0150(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0158(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_Event_bShow;                                // 0x0159(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -71,6 +70,7 @@ public:
 	struct FSlateColor                            K2Node_MakeStruct_SlateColor;                      // 0x01A4(0x0014)()
 	bool                                          K2Node_Event_bSelected;                            // 0x01B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x01B9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_Event_bLevelFinished;                       // 0x01BA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_CorporationRecipeSlot_C_ExecuteUbergraph_WBP_CorporationRecipeSlot;
 
@@ -83,14 +83,14 @@ public:
 };
 DUMPER7_ASSERTS_WBP_CorporationRecipeSlot_C_SetColors;
 
-// Function WBP_CorporationRecipeSlot.WBP_CorporationRecipeSlot_C.SetRecipeLocked
+// Function WBP_CorporationRecipeSlot.WBP_CorporationRecipeSlot_C.SetRecipeDisabled
 // 0x0001 (0x0001 - 0x0000)
-struct WBP_CorporationRecipeSlot_C_SetRecipeLocked final
+struct WBP_CorporationRecipeSlot_C_SetRecipeDisabled final
 {
 public:
-	bool                                          bLocked;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bLevelFinished;                                    // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_WBP_CorporationRecipeSlot_C_SetRecipeLocked;
+DUMPER7_ASSERTS_WBP_CorporationRecipeSlot_C_SetRecipeDisabled;
 
 // Function WBP_CorporationRecipeSlot.WBP_CorporationRecipeSlot_C.ShowChooseText
 // 0x0001 (0x0001 - 0x0000)

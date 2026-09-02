@@ -51,11 +51,11 @@ void ABP_DroneRailSupportHelper_C::SetMeshColor(const struct FLinearColor& Color
 
 
 // Function BP_DroneRailSupportHelper.BP_DroneRailSupportHelper_C.OnFoundationSetUp
-// (Event, Public, HasOutParams, BlueprintEvent)
+// (HasOutParams, BlueprintEvent)
 // Parameters:
-// const TArray<struct FTransform>&        FoundationTransforms_OnFoundationSetUp                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const TArray<struct FTransform>&        FoundationTransforms                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
-void ABP_DroneRailSupportHelper_C::OnFoundationSetUp(const TArray<struct FTransform>& FoundationTransforms_OnFoundationSetUp)
+void ABP_DroneRailSupportHelper_C::OnFoundationSetUp(const TArray<struct FTransform>& FoundationTransforms)
 {
 	static class UFunction* Func = nullptr;
 
@@ -64,7 +64,7 @@ void ABP_DroneRailSupportHelper_C::OnFoundationSetUp(const TArray<struct FTransf
 
 	Params::BP_DroneRailSupportHelper_C_OnFoundationSetUp Parms{};
 
-	Parms.FoundationTransforms_OnFoundationSetUp = std::move(FoundationTransforms_OnFoundationSetUp);
+	Parms.FoundationTransforms = std::move(FoundationTransforms);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

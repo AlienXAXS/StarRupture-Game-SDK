@@ -83,7 +83,7 @@ void UABP_Exploder_Tier1_Actor_C::ResetSyncedAnimationProgress(const struct FAni
 
 
 // Function ABP_Exploder_Tier1_Actor.ABP_Exploder_Tier1_Actor_C.ExecuteUbergraph_ABP_Exploder_Tier1_Actor
-// (Final, UbergraphFunction)
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -877,6 +877,76 @@ void UABP_Exploder_Tier1_Actor_C::AnimNotify_Jumped()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("ABP_Exploder_Tier1_Actor_C", "AnimNotify_Jumped");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier1_Actor.ABP_Exploder_Tier1_Actor_C.AnimNotify_HitVO_Start5
+// (BlueprintCallable, BlueprintEvent)
+
+void UABP_Exploder_Tier1_Actor_C::AnimNotify_HitVO_Start5()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Exploder_Tier1_Actor_C", "AnimNotify_HitVO_Start5");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier1_Actor.ABP_Exploder_Tier1_Actor_C.AnimNotify_HitVO_Start4
+// (BlueprintCallable, BlueprintEvent)
+
+void UABP_Exploder_Tier1_Actor_C::AnimNotify_HitVO_Start4()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Exploder_Tier1_Actor_C", "AnimNotify_HitVO_Start4");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier1_Actor.ABP_Exploder_Tier1_Actor_C.AnimNotify_HitVO_Start3
+// (BlueprintCallable, BlueprintEvent)
+
+void UABP_Exploder_Tier1_Actor_C::AnimNotify_HitVO_Start3()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Exploder_Tier1_Actor_C", "AnimNotify_HitVO_Start3");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier1_Actor.ABP_Exploder_Tier1_Actor_C.AnimNotify_HitVO_Start2
+// (BlueprintCallable, BlueprintEvent)
+
+void UABP_Exploder_Tier1_Actor_C::AnimNotify_HitVO_Start2()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Exploder_Tier1_Actor_C", "AnimNotify_HitVO_Start2");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier1_Actor.ABP_Exploder_Tier1_Actor_C.AnimNotify_HitVO_Start
+// (BlueprintCallable, BlueprintEvent)
+
+void UABP_Exploder_Tier1_Actor_C::AnimNotify_HitVO_Start()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Exploder_Tier1_Actor_C", "AnimNotify_HitVO_Start");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

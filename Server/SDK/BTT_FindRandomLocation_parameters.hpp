@@ -27,7 +27,7 @@ public:
 DUMPER7_ASSERTS_BTT_FindRandomLocation_C_ReceiveExecuteAI;
 
 // Function BTT_FindRandomLocation.BTT_FindRandomLocation_C.ExecuteUbergraph_BTT_FindRandomLocation
-// 0x0060 (0x0060 - 0x0000)
+// 0x0098 (0x0098 - 0x0000)
 struct BTT_FindRandomLocation_C_ExecuteUbergraph_BTT_FindRandomLocation final
 {
 public:
@@ -39,10 +39,13 @@ public:
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0028(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_BPGetManagedRandomPointOnNavmesh_OutLocationIfSuccess; // 0x0040(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_BPGetManagedRandomPointOnNavmesh_ReturnValue; // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_59[0x3];                                       // 0x0059(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_BPGetManagedRandomPointOnNavmesh_Radius_ImplicitCast; // 0x005C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 CallFunc_GetBlackboardValueAsActor_ReturnValue;    // 0x0040(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_1;        // 0x0048(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_SelectVector_ReturnValue;                 // 0x0060(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_BPGetManagedRandomPointOnNavmesh_OutLocationIfSuccess; // 0x0078(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BPGetManagedRandomPointOnNavmesh_ReturnValue; // 0x0090(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_91[0x3];                                       // 0x0091(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_BPGetManagedRandomPointOnNavmesh_Radius_ImplicitCast; // 0x0094(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BTT_FindRandomLocation_C_ExecuteUbergraph_BTT_FindRandomLocation;
 

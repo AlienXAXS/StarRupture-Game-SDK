@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "MassAIBehavior_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "AuActorPlacement_structs.hpp"
 #include "MassReplication_structs.hpp"
-#include "MassEntity_structs.hpp"
 #include "Chimera_structs.hpp"
+#include "MassAIBehavior_structs.hpp"
+#include "MassEntity_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -61,42 +61,42 @@ DUMPER7_ASSERTS_FCrMassExploderInfectionClientBubbleSerializer;
 struct FReplicatedExploderVertexAnimationData final
 {
 public:
-	bool                                          bIsActivated;                                      // 0x0000(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          bIsExploded;                                       // 0x0001(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         CurrentAimStateID;                                 // 0x0002(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bShouldPlayHitReaction;                            // 0x0000(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bIsActivated;                                      // 0x0001(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bIsExploded;                                       // 0x0002(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         CurrentAimStateID;                                 // 0x0003(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	float                                         EnterStateTimestamp;                               // 0x0004(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
 DUMPER7_ASSERTS_FReplicatedExploderVertexAnimationData;
 
 // ScriptStruct CrAiExploderRuntime.ReplicatedExploderAgent
-// 0x0090 (0x00B8 - 0x0028)
+// 0x00E8 (0x0110 - 0x0028)
 struct FReplicatedExploderAgent final : public FReplicatedAgentBase
 {
 public:
 	struct FCrMassEnemyReplicatedAgentPositionYawData PositionYaw;                                   // 0x0028(0x0020)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
 	struct FReplicatedExploderVertexAnimationData VertexAnimationData;                               // 0x0048(0x0008)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FMassEnemyCommonReplicationData        CommonReplicationData;                             // 0x0050(0x0050)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FMassEnemyFrequentlyReplicatedData     FrequentlyReplicatedData;                          // 0x00A0(0x0018)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FMassEnemyCommonReplicationData        CommonReplicationData;                             // 0x0050(0x00A8)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FMassEnemyFrequentlyReplicatedData     FrequentlyReplicatedData;                          // 0x00F8(0x0018)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
 };
 DUMPER7_ASSERTS_FReplicatedExploderAgent;
 
 // ScriptStruct CrAiExploderRuntime.ExploderFastArrayItem
-// 0x00B8 (0x00C8 - 0x0010)
+// 0x0110 (0x0120 - 0x0010)
 struct FExploderFastArrayItem final : public FMassFastArrayItemBase
 {
 public:
-	struct FReplicatedExploderAgent               Agent;                                             // 0x0010(0x00B8)(NoDestructor, NativeAccessSpecifierPublic)
+	struct FReplicatedExploderAgent               Agent;                                             // 0x0010(0x0110)(NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FExploderFastArrayItem;
 
 // ScriptStruct CrAiExploderRuntime.ExploderClientBubbleSerializer
-// 0x0208 (0x0340 - 0x0138)
+// 0x0248 (0x0380 - 0x0138)
 struct FExploderClientBubbleSerializer final : public FMassClientBubbleSerializerBase
 {
 public:
-	uint8                                         Pad_138[0x1F8];                                    // 0x0138(0x01F8)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FExploderFastArrayItem>         Ais;                                               // 0x0330(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_138[0x238];                                    // 0x0138(0x0238)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FExploderFastArrayItem>         Ais;                                               // 0x0370(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
 };
 DUMPER7_ASSERTS_FExploderClientBubbleSerializer;
 
@@ -120,11 +120,32 @@ public:
 DUMPER7_ASSERTS_FExploderStateEvaluator;
 
 // ScriptStruct CrAiExploderRuntime.ExploderFollowTargetTask
-// 0x0000 (0x0088 - 0x0088)
+// 0x0008 (0x0090 - 0x0088)
 struct FExploderFollowTargetTask final : public FMassEnemyFollowTargetTask
 {
+public:
+	uint8                                         Pad_88[0x8];                                       // 0x0088(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FExploderFollowTargetTask;
+
+// ScriptStruct CrAiExploderRuntime.ExploderHitReactionAnimationsGlobalTaskInstanceData
+// 0x0001 (0x0001 - 0x0000)
+struct FExploderHitReactionAnimationsGlobalTaskInstanceData final : public FMassEnemyStateTreeTaskBaseInstanceData
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FExploderHitReactionAnimationsGlobalTaskInstanceData;
+
+// ScriptStruct CrAiExploderRuntime.ExploderHitReactionAnimationsGlobalTask
+// 0x0020 (0x0048 - 0x0028)
+struct FExploderHitReactionAnimationsGlobalTask final : public FMassStateTreeTaskBase
+{
+public:
+	uint8                                         Pad_28[0x10];                                      // 0x0028(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<EMassEnemyVertexAnimState>             AnimationPoolToPlay;                               // 0x0038(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FExploderHitReactionAnimationsGlobalTask;
 
 // ScriptStruct CrAiExploderRuntime.ExploderTier1Tag
 // 0x0000 (0x0001 - 0x0001)
@@ -154,13 +175,6 @@ struct FExploderTier3LodGroupTag final : public FMassTag
 };
 DUMPER7_ASSERTS_FExploderTier3LodGroupTag;
 
-// ScriptStruct CrAiExploderRuntime.ExploderUpdateAttackTag
-// 0x0000 (0x0001 - 0x0001)
-struct FExploderUpdateAttackTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FExploderUpdateAttackTag;
-
 // ScriptStruct CrAiExploderRuntime.ExploderSpawnExplosionSphereTag
 // 0x0000 (0x0001 - 0x0001)
 struct FExploderSpawnExplosionSphereTag final : public FMassTag
@@ -169,11 +183,11 @@ struct FExploderSpawnExplosionSphereTag final : public FMassTag
 DUMPER7_ASSERTS_FExploderSpawnExplosionSphereTag;
 
 // ScriptStruct CrAiExploderRuntime.ExploderStateDataFragment
-// 0x000C (0x000C - 0x0000)
+// 0x0010 (0x0010 - 0x0000)
 struct alignas(0x04) FExploderStateDataFragment final : public FMassFragment
 {
 public:
-	uint8                                         Pad_0[0xC];                                        // 0x0000(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FExploderStateDataFragment;
 
@@ -207,6 +221,15 @@ public:
 	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FExploderInfectionSphereConfigurationFragment;
+
+// ScriptStruct CrAiExploderRuntime.ExploderInfectionSphereFragment
+// 0x0001 (0x0001 - 0x0000)
+struct FExploderInfectionSphereFragment final : public FMassFragment
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FExploderInfectionSphereFragment;
 
 // ScriptStruct CrAiExploderRuntime.CrMassInfectionCloudNiagaraParameterDriver
 // 0x0008 (0x0010 - 0x0008)

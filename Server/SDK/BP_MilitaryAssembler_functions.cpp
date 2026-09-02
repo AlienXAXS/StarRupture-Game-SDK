@@ -44,6 +44,20 @@ void ABP_MilitaryAssembler_C::ReceiveBeginPlay()
 }
 
 
+// Function BP_MilitaryAssembler.BP_MilitaryAssembler_C.OnItemCraftingComplete
+// (Event, Public, BlueprintEvent)
+
+void ABP_MilitaryAssembler_C::OnItemCraftingComplete()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MilitaryAssembler_C", "OnItemCraftingComplete");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_MilitaryAssembler.BP_MilitaryAssembler_C.OnBuildingStateChanged
 // (Event, Public, BlueprintEvent)
 // Parameters:

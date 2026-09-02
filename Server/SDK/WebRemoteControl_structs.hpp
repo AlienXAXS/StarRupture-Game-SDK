@@ -39,6 +39,28 @@ enum class ERemoteControlHttpVerbs : uint16
 	ERemoteControlHttpVerbs_MAX              = 33,
 };
 
+// ScriptStruct WebRemoteControl.RCPresetFieldRenamed
+// 0x0010 (0x0010 - 0x0000)
+struct FRCPresetFieldRenamed final
+{
+public:
+	class FName                                   OldFieldLabel;                                     // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   NewFieldLabel;                                     // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRCPresetFieldRenamed;
+
+// ScriptStruct WebRemoteControl.RCPresetFieldsRenamedEvent
+// 0x0038 (0x0038 - 0x0000)
+struct FRCPresetFieldsRenamedEvent final
+{
+public:
+	class FString                                 Type;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   PresetName;                                        // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PresetId;                                          // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FRCPresetFieldRenamed>          RenamedFields;                                     // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRCPresetFieldsRenamedEvent;
+
 // ScriptStruct WebRemoteControl.RCObjectDescription
 // 0x0030 (0x0030 - 0x0000)
 struct FRCObjectDescription final
@@ -49,6 +71,19 @@ public:
 	class FString                                 Path;                                              // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRCObjectDescription;
+
+// ScriptStruct WebRemoteControl.RCPresetControllersRemovedEvent
+// 0x0048 (0x0048 - 0x0000)
+struct FRCPresetControllersRemovedEvent final
+{
+public:
+	class FString                                 Type;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   PresetName;                                        // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PresetId;                                          // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FName>                           RemovedControllers;                                // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class FString>                         RemovedControllerIds;                              // 0x0038(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRCPresetControllersRemovedEvent;
 
 // ScriptStruct WebRemoteControl.RCPropertyDescription
 // 0x00B8 (0x00B8 - 0x0000)
@@ -66,6 +101,18 @@ public:
 };
 DUMPER7_ASSERTS_FRCPropertyDescription;
 
+// ScriptStruct WebRemoteControl.RCPresetControllersRenamedEvent
+// 0x0038 (0x0038 - 0x0000)
+struct FRCPresetControllersRenamedEvent final
+{
+public:
+	class FString                                 Type;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   PresetName;                                        // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PresetId;                                          // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FRCPresetFieldRenamed>          RenamedControllers;                                // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRCPresetControllersRenamedEvent;
+
 // ScriptStruct WebRemoteControl.RCFunctionDescription
 // 0x0030 (0x0030 - 0x0000)
 struct FRCFunctionDescription final
@@ -76,6 +123,17 @@ public:
 	TArray<struct FRCPropertyDescription>         Arguments;                                         // 0x0020(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRCFunctionDescription;
+
+// ScriptStruct WebRemoteControl.RCCompressionChangedEvent
+// 0x0018 (0x0018 - 0x0000)
+struct FRCCompressionChangedEvent final
+{
+public:
+	class FString                                 Type;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERCWebSocketCompressionMode                   Mode;                                              // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRCCompressionChangedEvent;
 
 // ScriptStruct WebRemoteControl.RCExposedPropertyDescription
 // 0x0130 (0x0130 - 0x0000)
@@ -113,6 +171,31 @@ public:
 };
 DUMPER7_ASSERTS_FRCExposedActorDescription;
 
+// ScriptStruct WebRemoteControl.RCPresetFieldsRemovedEvent
+// 0x0048 (0x0048 - 0x0000)
+struct FRCPresetFieldsRemovedEvent final
+{
+public:
+	class FString                                 Type;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   PresetName;                                        // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PresetId;                                          // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FName>                           RemovedFields;                                     // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class FString>                         RemovedFieldIds;                                   // 0x0038(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRCPresetFieldsRemovedEvent;
+
+// ScriptStruct WebRemoteControl.RCPresetLayoutGroupDescription
+// 0x0038 (0x0038 - 0x0000)
+struct FRCPresetLayoutGroupDescription final
+{
+public:
+	class FName                                   Name;                                              // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FRCExposedPropertyDescription>  ExposedProperties;                                 // 0x0008(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FRCExposedFunctionDescription>  ExposedFunctions;                                  // 0x0018(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FRCExposedActorDescription>     ExposedActors;                                     // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRCPresetLayoutGroupDescription;
+
 // ScriptStruct WebRemoteControl.RCControllerDescription
 // 0x0098 (0x0098 - 0x0000)
 struct FRCControllerDescription final
@@ -127,39 +210,6 @@ public:
 };
 DUMPER7_ASSERTS_FRCControllerDescription;
 
-// ScriptStruct WebRemoteControl.RCControllerModifiedDescription
-// 0x0020 (0x0020 - 0x0000)
-struct FRCControllerModifiedDescription final
-{
-public:
-	TArray<struct FRCControllerDescription>       Controllers;                                       // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class FString>                         ChangedValues;                                     // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRCControllerModifiedDescription;
-
-// ScriptStruct WebRemoteControl.RCPresetLayoutGroupDescription
-// 0x0038 (0x0038 - 0x0000)
-struct FRCPresetLayoutGroupDescription final
-{
-public:
-	class FName                                   Name;                                              // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FRCExposedPropertyDescription>  ExposedProperties;                                 // 0x0008(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FRCExposedFunctionDescription>  ExposedFunctions;                                  // 0x0018(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FRCExposedActorDescription>     ExposedActors;                                     // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRCPresetLayoutGroupDescription;
-
-// ScriptStruct WebRemoteControl.RCPresetModifiedEntitiesDescription
-// 0x0030 (0x0030 - 0x0000)
-struct FRCPresetModifiedEntitiesDescription final
-{
-public:
-	TArray<struct FRCExposedPropertyDescription>  ModifiedRCProperties;                              // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FRCExposedFunctionDescription>  ModifiedRCFunctions;                               // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FRCExposedActorDescription>     ModifiedRCActors;                                  // 0x0020(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRCPresetModifiedEntitiesDescription;
-
 // ScriptStruct WebRemoteControl.RCPresetDescription
 // 0x0050 (0x0050 - 0x0000)
 struct FRCPresetDescription final
@@ -173,6 +223,85 @@ public:
 };
 DUMPER7_ASSERTS_FRCPresetDescription;
 
+// ScriptStruct WebRemoteControl.RCPresetLayoutModified
+// 0x0060 (0x0060 - 0x0000)
+struct FRCPresetLayoutModified final
+{
+public:
+	class FString                                 Type;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRCPresetDescription                   Preset;                                            // 0x0010(0x0050)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRCPresetLayoutModified;
+
+// ScriptStruct WebRemoteControl.CheckPassphraseResponse
+// 0x0001 (0x0001 - 0x0000)
+struct FCheckPassphraseResponse final
+{
+public:
+	bool                                          keyCorrect;                                        // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCheckPassphraseResponse;
+
+// ScriptStruct WebRemoteControl.RCControllerModifiedDescription
+// 0x0020 (0x0020 - 0x0000)
+struct FRCControllerModifiedDescription final
+{
+public:
+	TArray<struct FRCControllerDescription>       Controllers;                                       // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class FString>                         ChangedValues;                                     // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRCControllerModifiedDescription;
+
+// ScriptStruct WebRemoteControl.GetPresetResponse
+// 0x0050 (0x0050 - 0x0000)
+struct FGetPresetResponse final
+{
+public:
+	struct FRCPresetDescription                   Preset;                                            // 0x0000(0x0050)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGetPresetResponse;
+
+// ScriptStruct WebRemoteControl.SetEntityLabelResponse
+// 0x0010 (0x0010 - 0x0000)
+struct FSetEntityLabelResponse final
+{
+public:
+	class FString                                 AssignedLabel;                                     // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSetEntityLabelResponse;
+
+// ScriptStruct WebRemoteControl.RCPresetModifiedEntitiesDescription
+// 0x0030 (0x0030 - 0x0000)
+struct FRCPresetModifiedEntitiesDescription final
+{
+public:
+	TArray<struct FRCExposedPropertyDescription>  ModifiedRCProperties;                              // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FRCExposedFunctionDescription>  ModifiedRCFunctions;                               // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FRCExposedActorDescription>     ModifiedRCActors;                                  // 0x0020(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRCPresetModifiedEntitiesDescription;
+
+// ScriptStruct WebRemoteControl.GetMetadataResponse
+// 0x0050 (0x0050 - 0x0000)
+struct FGetMetadataResponse final
+{
+public:
+	TMap<class FString, class FString>            MetaData;                                          // 0x0000(0x0050)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGetMetadataResponse;
+
+// ScriptStruct WebRemoteControl.RCPresetEntitiesModifiedEvent
+// 0x0058 (0x0058 - 0x0000)
+struct FRCPresetEntitiesModifiedEvent final
+{
+public:
+	class FString                                 Type;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   PresetName;                                        // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PresetId;                                          // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRCPresetModifiedEntitiesDescription   ModifiedEntities;                                  // 0x0028(0x0030)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRCPresetEntitiesModifiedEvent;
+
 // ScriptStruct WebRemoteControl.RCShortPresetDescription
 // 0x0020 (0x0020 - 0x0000)
 struct FRCShortPresetDescription final
@@ -183,6 +312,18 @@ public:
 	class FName                                   Path;                                              // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRCShortPresetDescription;
+
+// ScriptStruct WebRemoteControl.RCPresetFieldsAddedEvent
+// 0x0078 (0x0078 - 0x0000)
+struct FRCPresetFieldsAddedEvent final
+{
+public:
+	class FString                                 Type;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   PresetName;                                        // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PresetId;                                          // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRCPresetDescription                   Description;                                       // 0x0028(0x0050)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRCPresetFieldsAddedEvent;
 
 // ScriptStruct WebRemoteControl.RCAssetDescription
 // 0x0068 (0x0068 - 0x0000)
@@ -195,16 +336,6 @@ public:
 	TMap<class FName, class FString>              MetaData;                                          // 0x0018(0x0050)(NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRCAssetDescription;
-
-// ScriptStruct WebRemoteControl.RCPresetFieldRenamed
-// 0x0010 (0x0010 - 0x0000)
-struct FRCPresetFieldRenamed final
-{
-public:
-	class FName                                   OldFieldLabel;                                     // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   NewFieldLabel;                                     // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRCPresetFieldRenamed;
 
 // ScriptStruct WebRemoteControl.RCAssetFilter
 // 0x0098 (0x0098 - 0x0000)
@@ -573,24 +704,6 @@ public:
 };
 DUMPER7_ASSERTS_FListPresetsResponse;
 
-// ScriptStruct WebRemoteControl.GetPresetResponse
-// 0x0050 (0x0050 - 0x0000)
-struct FGetPresetResponse final
-{
-public:
-	struct FRCPresetDescription                   Preset;                                            // 0x0000(0x0050)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGetPresetResponse;
-
-// ScriptStruct WebRemoteControl.CheckPassphraseResponse
-// 0x0001 (0x0001 - 0x0000)
-struct FCheckPassphraseResponse final
-{
-public:
-	bool                                          keyCorrect;                                        // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCheckPassphraseResponse;
-
 // ScriptStruct WebRemoteControl.DescribeObjectResponse
 // 0x0038 (0x0038 - 0x0000)
 struct FDescribeObjectResponse final
@@ -630,36 +743,6 @@ public:
 };
 DUMPER7_ASSERTS_FGetMetadataFieldResponse;
 
-// ScriptStruct WebRemoteControl.GetMetadataResponse
-// 0x0050 (0x0050 - 0x0000)
-struct FGetMetadataResponse final
-{
-public:
-	TMap<class FString, class FString>            MetaData;                                          // 0x0000(0x0050)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGetMetadataResponse;
-
-// ScriptStruct WebRemoteControl.SetEntityLabelResponse
-// 0x0010 (0x0010 - 0x0000)
-struct FSetEntityLabelResponse final
-{
-public:
-	class FString                                 AssignedLabel;                                     // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSetEntityLabelResponse;
-
-// ScriptStruct WebRemoteControl.RCPresetFieldsRenamedEvent
-// 0x0038 (0x0038 - 0x0000)
-struct FRCPresetFieldsRenamedEvent final
-{
-public:
-	class FString                                 Type;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   PresetName;                                        // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 PresetId;                                          // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FRCPresetFieldRenamed>          RenamedFields;                                     // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRCPresetFieldsRenamedEvent;
-
 // ScriptStruct WebRemoteControl.RCPresetMetadataModified
 // 0x0078 (0x0078 - 0x0000)
 struct FRCPresetMetadataModified final
@@ -671,78 +754,6 @@ public:
 	TMap<class FString, class FString>            MetaData;                                          // 0x0028(0x0050)(NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRCPresetMetadataModified;
-
-// ScriptStruct WebRemoteControl.RCPresetLayoutModified
-// 0x0060 (0x0060 - 0x0000)
-struct FRCPresetLayoutModified final
-{
-public:
-	class FString                                 Type;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRCPresetDescription                   Preset;                                            // 0x0010(0x0050)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRCPresetLayoutModified;
-
-// ScriptStruct WebRemoteControl.RCPresetFieldsRemovedEvent
-// 0x0048 (0x0048 - 0x0000)
-struct FRCPresetFieldsRemovedEvent final
-{
-public:
-	class FString                                 Type;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   PresetName;                                        // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 PresetId;                                          // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class FName>                           RemovedFields;                                     // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class FString>                         RemovedFieldIds;                                   // 0x0038(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRCPresetFieldsRemovedEvent;
-
-// ScriptStruct WebRemoteControl.RCPresetFieldsAddedEvent
-// 0x0078 (0x0078 - 0x0000)
-struct FRCPresetFieldsAddedEvent final
-{
-public:
-	class FString                                 Type;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   PresetName;                                        // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 PresetId;                                          // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRCPresetDescription                   Description;                                       // 0x0028(0x0050)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRCPresetFieldsAddedEvent;
-
-// ScriptStruct WebRemoteControl.RCPresetEntitiesModifiedEvent
-// 0x0058 (0x0058 - 0x0000)
-struct FRCPresetEntitiesModifiedEvent final
-{
-public:
-	class FString                                 Type;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   PresetName;                                        // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 PresetId;                                          // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRCPresetModifiedEntitiesDescription   ModifiedEntities;                                  // 0x0028(0x0030)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRCPresetEntitiesModifiedEvent;
-
-// ScriptStruct WebRemoteControl.RCPresetControllersRenamedEvent
-// 0x0038 (0x0038 - 0x0000)
-struct FRCPresetControllersRenamedEvent final
-{
-public:
-	class FString                                 Type;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   PresetName;                                        // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 PresetId;                                          // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FRCPresetFieldRenamed>          RenamedControllers;                                // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRCPresetControllersRenamedEvent;
-
-// ScriptStruct WebRemoteControl.RCPresetControllersRemovedEvent
-// 0x0048 (0x0048 - 0x0000)
-struct FRCPresetControllersRemovedEvent final
-{
-public:
-	class FString                                 Type;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   PresetName;                                        // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 PresetId;                                          // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class FName>                           RemovedControllers;                                // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class FString>                         RemovedControllerIds;                              // 0x0038(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRCPresetControllersRemovedEvent;
 
 // ScriptStruct WebRemoteControl.RCPresetControllersAddedEvent
 // 0x0078 (0x0078 - 0x0000)
@@ -800,16 +811,5 @@ public:
 	int64                                         SequenceNumber;                                    // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRCTransactionEndedEvent;
-
-// ScriptStruct WebRemoteControl.RCCompressionChangedEvent
-// 0x0018 (0x0018 - 0x0000)
-struct FRCCompressionChangedEvent final
-{
-public:
-	class FString                                 Type;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERCWebSocketCompressionMode                   Mode;                                              // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FRCCompressionChangedEvent;
 
 SDK_NAMESPACE_END

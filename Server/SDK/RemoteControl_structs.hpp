@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "RemoteControlCommon_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "RemoteControlCommon_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -359,25 +359,6 @@ public:
 };
 DUMPER7_ASSERTS_FRCMetadata_int8;
 
-// ScriptStruct RemoteControl.ColorWheelColorBase
-// 0x0018 (0x0018 - 0x0000)
-struct FColorWheelColorBase
-{
-public:
-	struct FVector2D                              Position;                                          // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        Value;                                             // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FColorWheelColorBase;
-
-// ScriptStruct RemoteControl.ColorGradingWheelColor
-// 0x0008 (0x0020 - 0x0018)
-struct FColorGradingWheelColor final : public FColorWheelColorBase
-{
-public:
-	double                                        Luminance;                                         // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FColorGradingWheelColor;
-
 // ScriptStruct RemoteControl.RCMetadata_int16
 // 0x0008 (0x0010 - 0x0008)
 struct FRCMetadata_int16 final : public FRCFieldMetadata
@@ -401,15 +382,6 @@ public:
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FRCMetadata_int32;
-
-// ScriptStruct RemoteControl.RCMetadata_UScriptStruct
-// 0x0028 (0x0030 - 0x0008)
-struct FRCMetadata_UScriptStruct final : public FRCFieldMetadata
-{
-public:
-	TSoftObjectPtr<class UScriptStruct>           DefaultValue;                                      // 0x0008(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FRCMetadata_UScriptStruct;
 
 // ScriptStruct RemoteControl.RCMetadata_int64
 // 0x0018 (0x0020 - 0x0008)
@@ -481,6 +453,15 @@ public:
 };
 DUMPER7_ASSERTS_FRCMetadata_UClass;
 
+// ScriptStruct RemoteControl.RCMetadata_UScriptStruct
+// 0x0028 (0x0030 - 0x0008)
+struct FRCMetadata_UScriptStruct final : public FRCFieldMetadata
+{
+public:
+	TSoftObjectPtr<class UScriptStruct>           DefaultValue;                                      // 0x0008(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRCMetadata_UScriptStruct;
+
 // ScriptStruct RemoteControl.RCMetadata_bool
 // 0x0008 (0x0010 - 0x0008)
 struct FRCMetadata_bool final : public FRCFieldMetadata
@@ -512,6 +493,16 @@ public:
 };
 DUMPER7_ASSERTS_FRemoteControlOptionalExposeArgs;
 
+// ScriptStruct RemoteControl.ColorWheelColorBase
+// 0x0018 (0x0018 - 0x0000)
+struct FColorWheelColorBase
+{
+public:
+	struct FVector2D                              Position;                                          // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        Value;                                             // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FColorWheelColorBase;
+
 // ScriptStruct RemoteControl.ColorWheelColor
 // 0x0008 (0x0020 - 0x0018)
 struct FColorWheelColor final : public FColorWheelColorBase
@@ -520,6 +511,15 @@ public:
 	double                                        Alpha;                                             // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FColorWheelColor;
+
+// ScriptStruct RemoteControl.ColorGradingWheelColor
+// 0x0008 (0x0020 - 0x0018)
+struct FColorGradingWheelColor final : public FColorWheelColorBase
+{
+public:
+	double                                        Luminance;                                         // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FColorGradingWheelColor;
 
 // ScriptStruct RemoteControl.RemoteControlInstanceMaterial
 // 0x0050 (0x01A0 - 0x0150)

@@ -17,7 +17,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Foundable_Base.BP_Foundable_Base_C
-// 0x0028 (0x0318 - 0x02F0)
+// 0x0030 (0x0320 - 0x02F0)
 class ABP_Foundable_Base_C : public ACrStorageAsBuilding
 {
 public:
@@ -26,6 +26,7 @@ public:
 	class USceneComponent*                        OnlyWhen_Empty;                                    // 0x0300(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class USceneComponent*                        OnlyWhenNotEmpty;                                  // 0x0308(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0310(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	bool                                          PlaySoundOnEmptied;                                // 0x0318(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void UpdateMaterialsForStorageState();

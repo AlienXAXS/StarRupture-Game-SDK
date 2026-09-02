@@ -49,16 +49,17 @@ enum class EMetaSoundBuilderResult : uint8
 	EMetaSoundBuilderResult_MAX              = 2,
 };
 
-// ScriptStruct MetasoundEngine.MetaSoundAsyncAssetDependencies
-// 0x0030 (0x0030 - 0x0000)
-struct FMetaSoundAsyncAssetDependencies final
+// ScriptStruct MetasoundEngine.MetaSoundQualitySettings
+// 0x0020 (0x0020 - 0x0000)
+struct FMetaSoundQualitySettings final
 {
 public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                MetaSound;                                         // 0x0008(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_10[0x20];                                      // 0x0010(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FGuid                                  UniqueID;                                          // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name;                                              // 0x0010(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FPerPlatformInt                        SampleRate;                                        // 0x0018(0x0004)(Edit, Config, NoDestructor, NativeAccessSpecifierPublic)
+	struct FPerPlatformFloat                      BlockRate;                                         // 0x001C(0x0004)(Edit, Config, NoDestructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FMetaSoundAsyncAssetDependencies;
+DUMPER7_ASSERTS_FMetaSoundQualitySettings;
 
 // ScriptStruct MetasoundEngine.MetaSoundOutput
 // 0x0008 (0x0010 - 0x0008)
@@ -68,6 +69,15 @@ public:
 	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FMetaSoundOutput;
+
+// ScriptStruct MetasoundEngine.MetaSoundNodeHandle
+// 0x0010 (0x0010 - 0x0000)
+struct FMetaSoundNodeHandle final
+{
+public:
+	struct FGuid                                  NodeID;                                            // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMetaSoundNodeHandle;
 
 // ScriptStruct MetasoundEngine.DefaultMetaSoundAssetAutoUpdateSettings
 // 0x0020 (0x0020 - 0x0000)
@@ -88,18 +98,6 @@ public:
 };
 DUMPER7_ASSERTS_FMetaSoundPageSettings;
 
-// ScriptStruct MetasoundEngine.MetaSoundQualitySettings
-// 0x0020 (0x0020 - 0x0000)
-struct FMetaSoundQualitySettings final
-{
-public:
-	struct FGuid                                  UniqueID;                                          // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Name;                                              // 0x0010(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FPerPlatformInt                        SampleRate;                                        // 0x0018(0x0004)(Edit, Config, NoDestructor, NativeAccessSpecifierPublic)
-	struct FPerPlatformFloat                      BlockRate;                                         // 0x001C(0x0004)(Edit, Config, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMetaSoundQualitySettings;
-
 // ScriptStruct MetasoundEngine.MetaSoundAssetDirectory
 // 0x0010 (0x0010 - 0x0000)
 struct FMetaSoundAssetDirectory final
@@ -109,12 +107,16 @@ public:
 };
 DUMPER7_ASSERTS_FMetaSoundAssetDirectory;
 
-// ScriptStruct MetasoundEngine.MetaSoundBuilderNodeInputHandle
-// 0x0000 (0x0020 - 0x0020)
-struct FMetaSoundBuilderNodeInputHandle final : public FMetasoundFrontendVertexHandle
+// ScriptStruct MetasoundEngine.MetaSoundAsyncAssetDependencies
+// 0x0030 (0x0030 - 0x0000)
+struct FMetaSoundAsyncAssetDependencies final
 {
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                MetaSound;                                         // 0x0008(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_10[0x20];                                      // 0x0010(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FMetaSoundBuilderNodeInputHandle;
+DUMPER7_ASSERTS_FMetaSoundAsyncAssetDependencies;
 
 // ScriptStruct MetasoundEngine.MetaSoundBuilderNodeOutputHandle
 // 0x0000 (0x0020 - 0x0020)
@@ -123,14 +125,12 @@ struct FMetaSoundBuilderNodeOutputHandle final : public FMetasoundFrontendVertex
 };
 DUMPER7_ASSERTS_FMetaSoundBuilderNodeOutputHandle;
 
-// ScriptStruct MetasoundEngine.MetaSoundNodeHandle
-// 0x0010 (0x0010 - 0x0000)
-struct FMetaSoundNodeHandle final
+// ScriptStruct MetasoundEngine.MetaSoundBuilderNodeInputHandle
+// 0x0000 (0x0020 - 0x0020)
+struct FMetaSoundBuilderNodeInputHandle final : public FMetasoundFrontendVertexHandle
 {
-public:
-	struct FGuid                                  NodeID;                                            // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FMetaSoundNodeHandle;
+DUMPER7_ASSERTS_FMetaSoundBuilderNodeInputHandle;
 
 // ScriptStruct MetasoundEngine.MetaSoundBuilderOptions
 // 0x0020 (0x0020 - 0x0000)

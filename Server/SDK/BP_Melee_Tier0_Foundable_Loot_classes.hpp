@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Melee_Tier0_Foundable_Loot.BP_Melee_Tier0_Foundable_Loot_C
-// 0x0000 (0x0350 - 0x0350)
+// 0x0000 (0x0358 - 0x0358)
 class ABP_Melee_Tier0_Foundable_Loot_C final : public ABP_Foundable_Enemy_Loot_Base_C
 {
 public:

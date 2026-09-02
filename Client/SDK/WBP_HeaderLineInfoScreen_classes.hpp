@@ -42,6 +42,7 @@ public:
 	void SetTextStyle(bool isHighlight);
 	void SetTitle(const class FText& InTitle);
 	void SetTitleMaxWidth(int32 Size);
+	void SetTransformPolicy(bool ToUpper);
 	void ShowRenameButton(bool ShowButton);
 
 public:

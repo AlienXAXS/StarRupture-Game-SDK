@@ -40,6 +40,7 @@ public:
 	static class FString GetNxAttributeName(const struct FAuGameplayAttribute& Attribute);
 	static const class UAuItemDataBase* GetOwnerItem(const struct FGameplayEffectContextHandle& Context);
 	static class FString GetSpecName(const struct FGameplayEffectSpecHandle& Spec);
+	static TScriptInterface<class IAuUseableItemOwnerInterface> GetUseableItemOwner(const struct FGameplayEffectContextHandle& Context);
 	static struct FGameplayEffectSpecHandle MakeSpecHandle(TSubclassOf<class UGameplayEffect> InGameplayEffect, class AActor* InInstigator, class AActor* InEffectCauser, float InLevel);
 	static void RemoveEffectsFromTarget(const TArray<struct FActiveGameplayEffectHandle>& Handles, const struct FGameplayAbilityTargetDataHandle& Target);
 	static class UAuAbilityPMC* SetAbilityProjectile(const struct FGameplayAbilityTargetDataHandle& To, class AActor* Instigator, const struct FGameplayEffectSpecHandle& EffectSpec, float InSpeed, const struct FVector& InLocation);

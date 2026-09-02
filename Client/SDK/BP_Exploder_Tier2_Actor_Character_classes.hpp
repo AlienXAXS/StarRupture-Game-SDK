@@ -11,33 +11,43 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "AuActorPlacement_structs.hpp"
+#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "BP_BaseAI_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C
-// 0x00A0 (0x0DA0 - 0x0D00)
+// 0x0070 (0x0D90 - 0x0D20)
 class ABP_Exploder_Tier2_Actor_Character_C final : public ABP_BaseAI_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Exploder_Tier2_Actor_Character_C; // 0x0D00(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FTimerHandle                           ExplosionAttackTimerHandle;                        // 0x0D08(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	struct FAuAPMassSpawnedEntityType             SmallExplosionSphereEntityConfig;                  // 0x0D10(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FAuAPMassSpawnedEntityType             BigExplosionSphereEntityConfig;                    // 0x0D48(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance)
-	double                                        LastAttackTimestamp;                               // 0x0D80(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        InfectionAttackCooldown;                           // 0x0D88(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ECrEnemyAttackType                            Attack_Type;                                       // 0x0D90(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Exploder_Tier2_Actor_Character_C; // 0x0D20(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UNiagaraComponent*                      NiagaraEyes;                                       // 0x0D28(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_Tendrils;                                       // 0x0D30(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FAuAPMassSpawnedEntityType             Entity_Type;                                       // 0x0D38(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<double>                                MovementFailedTimestamp;                           // 0x0D70(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FCrMassEnemyBPEntityHandle             InfectionEntityHandle;                             // 0x0D80(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
+	struct FCrMassEnemyBPMassNetworkID            InfectionNetworkID;                                // 0x0D88(0x0004)(Edit, BlueprintVisible, Net, DisableEditOnInstance, NoDestructor)
 
 public:
+	void DeactivateVFX();
 	void ExecuteUbergraph_BP_Exploder_Tier2_Actor_Character(int32 EntryPoint);
-	void OnExplosionAttackTimerFinished();
+	int32 GetMovementFailsNum();
+	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
+	void OnExitActorPool();
+	void OnPrepareForPooling();
+	void ReceiveBeginPlay();
 	void ReceiveTick(float DeltaSeconds);
-	void SetExplosionAttackTimer(bool bSetTimerActive, double TimeToExplode);
-	void Spawn_Explosion_Sphere_At_Current_Location(const struct FAuAPMassSpawnedEntityType& EntityType);
-	void UserConstructionScript();
+	void RegisterMovementFailed(double MovementFailedExpTime);
+	void StartActivationTimer();
+	void StartExplosionTimer();
+	void TryDestroyInfectionEntity(bool Instant);
+	void TrySpawnInfectionEntity();
+
+	bool IsExploderDead() const;
+	bool ShouldSpawnHugeCollision() const;
 
 public:
 	static class UClass* StaticClass()

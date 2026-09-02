@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
+#include "CoreUObject_classes.hpp"
 #include "GameplayTags_structs.hpp"
 #include "DeveloperSettings_classes.hpp"
 #include "SmartObjectsModule_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "CoreUObject_classes.hpp"
 #include "AIModule_classes.hpp"
 #include "Engine_classes.hpp"
 #include "WorldConditions_structs.hpp"
@@ -99,26 +99,6 @@ public:
 };
 DUMPER7_ASSERTS_USmartObjectSettings;
 
-// Class SmartObjectsModule.SmartObjectBehaviorDefinition
-// 0x0000 (0x0028 - 0x0028)
-class USmartObjectBehaviorDefinition : public UObject
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SmartObjectBehaviorDefinition")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SmartObjectBehaviorDefinition")
-	}
-	static class USmartObjectBehaviorDefinition* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USmartObjectBehaviorDefinition>();
-	}
-};
-DUMPER7_ASSERTS_USmartObjectBehaviorDefinition;
-
 // Class SmartObjectsModule.BlackboardKeyType_SOClaimHandle
 // 0x0028 (0x0058 - 0x0030)
 class UBlackboardKeyType_SOClaimHandle final : public UBlackboardKeyType
@@ -141,6 +121,52 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UBlackboardKeyType_SOClaimHandle;
+
+// Class SmartObjectsModule.GenericSmartObject
+// 0x0008 (0x02B0 - 0x02A8)
+class AGenericSmartObject final : public AActor
+{
+public:
+	class USmartObjectComponent*                  SOComponent;                                       // 0x02A8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoClear, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("GenericSmartObject")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"GenericSmartObject")
+	}
+	static class AGenericSmartObject* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AGenericSmartObject>();
+	}
+};
+DUMPER7_ASSERTS_AGenericSmartObject;
+
+// Class SmartObjectsModule.SmartObjectTest
+// 0x0008 (0x0030 - 0x0028)
+class USmartObjectTest : public UObject
+{
+public:
+	class ASmartObjectTestingActor*               SmartObjectTestingActor;                           // 0x0028(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SmartObjectTest")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SmartObjectTest")
+	}
+	static class USmartObjectTest* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USmartObjectTest>();
+	}
+};
+DUMPER7_ASSERTS_USmartObjectTest;
 
 // Class SmartObjectsModule.SmartObjectBlueprintFunctionLibrary
 // 0x0000 (0x0028 - 0x0028)
@@ -196,29 +222,6 @@ public:
 };
 DUMPER7_ASSERTS_USmartObjectBlueprintFunctionLibrary;
 
-// Class SmartObjectsModule.GenericSmartObject
-// 0x0008 (0x02B0 - 0x02A8)
-class AGenericSmartObject final : public AActor
-{
-public:
-	class USmartObjectComponent*                  SOComponent;                                       // 0x02A8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoClear, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("GenericSmartObject")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"GenericSmartObject")
-	}
-	static class AGenericSmartObject* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<AGenericSmartObject>();
-	}
-};
-DUMPER7_ASSERTS_AGenericSmartObject;
-
 // Class SmartObjectsModule.SmartObjectCollection
 // 0x00B0 (0x0358 - 0x02A8)
 class ASmartObjectCollection final : public AActor
@@ -245,6 +248,49 @@ public:
 	}
 };
 DUMPER7_ASSERTS_ASmartObjectCollection;
+
+// Class SmartObjectsModule.SmartObjectSpacePartition
+// 0x0000 (0x0028 - 0x0028)
+class USmartObjectSpacePartition : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SmartObjectSpacePartition")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SmartObjectSpacePartition")
+	}
+	static class USmartObjectSpacePartition* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USmartObjectSpacePartition>();
+	}
+};
+DUMPER7_ASSERTS_USmartObjectSpacePartition;
+
+// Class SmartObjectsModule.SmartObjectOctree
+// 0x00C8 (0x00F0 - 0x0028)
+class USmartObjectOctree final : public USmartObjectSpacePartition
+{
+public:
+	uint8                                         Pad_28[0xC8];                                      // 0x0028(0x00C8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SmartObjectOctree")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SmartObjectOctree")
+	}
+	static class USmartObjectOctree* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USmartObjectOctree>();
+	}
+};
+DUMPER7_ASSERTS_USmartObjectOctree;
 
 // Class SmartObjectsModule.SmartObjectComponent
 // 0x00A0 (0x02F0 - 0x0250)
@@ -329,6 +375,46 @@ public:
 };
 DUMPER7_ASSERTS_USmartObjectDebugRenderingComponent;
 
+// Class SmartObjectsModule.SmartObjectBehaviorDefinition
+// 0x0000 (0x0028 - 0x0028)
+class USmartObjectBehaviorDefinition : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SmartObjectBehaviorDefinition")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SmartObjectBehaviorDefinition")
+	}
+	static class USmartObjectBehaviorDefinition* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USmartObjectBehaviorDefinition>();
+	}
+};
+DUMPER7_ASSERTS_USmartObjectBehaviorDefinition;
+
+// Class SmartObjectsModule.SmartObjectSubsystemRenderingComponent
+// 0x0000 (0x0580 - 0x0580)
+class USmartObjectSubsystemRenderingComponent final : public USmartObjectDebugRenderingComponent
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SmartObjectSubsystemRenderingComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SmartObjectSubsystemRenderingComponent")
+	}
+	static class USmartObjectSubsystemRenderingComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USmartObjectSubsystemRenderingComponent>();
+	}
+};
+DUMPER7_ASSERTS_USmartObjectSubsystemRenderingComponent;
+
 // Class SmartObjectsModule.SmartObjectDefinition
 // 0x01F0 (0x0220 - 0x0030)
 class USmartObjectDefinition final : public UDataAsset
@@ -380,26 +466,6 @@ public:
 };
 DUMPER7_ASSERTS_USmartObjectDefinition;
 
-// Class SmartObjectsModule.SmartObjectSpacePartition
-// 0x0000 (0x0028 - 0x0028)
-class USmartObjectSpacePartition : public UObject
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SmartObjectSpacePartition")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SmartObjectSpacePartition")
-	}
-	static class USmartObjectSpacePartition* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USmartObjectSpacePartition>();
-	}
-};
-DUMPER7_ASSERTS_USmartObjectSpacePartition;
-
 // Class SmartObjectsModule.SmartObjectHashGrid
 // 0x00A8 (0x00D0 - 0x0028)
 class USmartObjectHashGrid final : public USmartObjectSpacePartition
@@ -422,29 +488,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_USmartObjectHashGrid;
-
-// Class SmartObjectsModule.SmartObjectOctree
-// 0x00C8 (0x00F0 - 0x0028)
-class USmartObjectOctree final : public USmartObjectSpacePartition
-{
-public:
-	uint8                                         Pad_28[0xC8];                                      // 0x0028(0x00C8)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SmartObjectOctree")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SmartObjectOctree")
-	}
-	static class USmartObjectOctree* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USmartObjectOctree>();
-	}
-};
-DUMPER7_ASSERTS_USmartObjectOctree;
 
 // Class SmartObjectsModule.SmartObjectPersistentCollection
 // 0x0108 (0x03B0 - 0x02A8)
@@ -549,26 +592,6 @@ public:
 };
 DUMPER7_ASSERTS_USmartObjectSubsystem;
 
-// Class SmartObjectsModule.SmartObjectSubsystemRenderingComponent
-// 0x0000 (0x0580 - 0x0580)
-class USmartObjectSubsystemRenderingComponent final : public USmartObjectDebugRenderingComponent
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SmartObjectSubsystemRenderingComponent")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SmartObjectSubsystemRenderingComponent")
-	}
-	static class USmartObjectSubsystemRenderingComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USmartObjectSubsystemRenderingComponent>();
-	}
-};
-DUMPER7_ASSERTS_USmartObjectSubsystemRenderingComponent;
-
 // Class SmartObjectsModule.SmartObjectSubsystemRenderingActor
 // 0x0008 (0x02B0 - 0x02A8)
 class ASmartObjectSubsystemRenderingActor final : public AActor
@@ -591,29 +614,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_ASmartObjectSubsystemRenderingActor;
-
-// Class SmartObjectsModule.SmartObjectTest
-// 0x0008 (0x0030 - 0x0028)
-class USmartObjectTest : public UObject
-{
-public:
-	class ASmartObjectTestingActor*               SmartObjectTestingActor;                           // 0x0028(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SmartObjectTest")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SmartObjectTest")
-	}
-	static class USmartObjectTest* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USmartObjectTest>();
-	}
-};
-DUMPER7_ASSERTS_USmartObjectTest;
 
 // Class SmartObjectsModule.SmartObjectSimpleQueryTest
 // 0x0110 (0x0140 - 0x0030)

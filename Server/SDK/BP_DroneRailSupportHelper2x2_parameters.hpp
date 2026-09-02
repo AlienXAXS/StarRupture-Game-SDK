@@ -40,7 +40,7 @@ DUMPER7_ASSERTS_BP_DroneRailSupportHelper2x2_C_SetMeshColor;
 struct BP_DroneRailSupportHelper2x2_C_OnFoundationSetUp final
 {
 public:
-	TArray<struct FTransform>                     FoundationTransforms_OnFoundationSetUp;            // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	TArray<struct FTransform>                     FoundationTransforms;                              // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 };
 DUMPER7_ASSERTS_BP_DroneRailSupportHelper2x2_C_OnFoundationSetUp;
 

@@ -17,11 +17,12 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_AnimNotify_FXEvent.BP_AnimNotify_FXEvent_C
-// 0x0008 (0x0040 - 0x0038)
+// 0x0010 (0x0048 - 0x0038)
 class UBP_AnimNotify_FXEvent_C final : public UAnimNotify
 {
 public:
 	struct FGameplayTag                           FXEventTag;                                        // 0x0038(0x0008)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash)
+	bool                                          bCanTriggerForDeadAis;                             // 0x0040(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	bool Received_Notify(class USkeletalMeshComponent* MeshComp_Received_Notify, class UAnimSequenceBase* Animation_Received_Notify, const struct FAnimNotifyEventReference& EventReference_Received_Notify) const;

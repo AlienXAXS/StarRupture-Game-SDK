@@ -17,18 +17,19 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_DroneRailSupportHelper2x2.BP_DroneRailSupportHelper2x2_C
-// 0x0020 (0x08B0 - 0x0890)
+// 0x0020 (0x0A60 - 0x0A40)
 class ABP_DroneRailSupportHelper2x2_C final : public ACrAPHelperActorBase
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0890(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UInstancedStaticMeshComponent*          TileIndicatorsISM;                                 // 0x0898(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               TileIndicatorISMDynamicMaterial;                   // 0x08A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_A38[0x8];                                      // 0x0A38(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0A40(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UInstancedStaticMeshComponent*          TileIndicatorsISM;                                 // 0x0A48(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               TileIndicatorISMDynamicMaterial;                   // 0x0A50(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void UserConstructionScript();
 	void SetMeshColor(const struct FLinearColor& Color_SetMeshColor);
-	void OnFoundationSetUp(const TArray<struct FTransform>& FoundationTransforms_OnFoundationSetUp);
+	void OnFoundationSetUp(const TArray<struct FTransform>& FoundationTransforms);
 	void ExecuteUbergraph_BP_DroneRailSupportHelper2x2(int32 EntryPoint);
 
 public:

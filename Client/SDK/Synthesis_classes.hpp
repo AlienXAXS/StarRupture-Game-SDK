@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "AudioMixer_classes.hpp"
-#include "Synthesis_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "Synthesis_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "UMG_classes.hpp"
@@ -849,6 +849,44 @@ public:
 };
 DUMPER7_ASSERTS_USubmixEffectMultibandCompressorPreset;
 
+// Class Synthesis.SynthSamplePlayer
+// 0x0140 (0x0A00 - 0x08C0)
+class USynthSamplePlayer final : public USynthComponent
+{
+public:
+	class USoundWave*                             SoundWave;                                         // 0x08C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	TMulticastInlineDelegate<void()>              OnSampleLoaded;                                    // 0x08C8(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(float ProgressPercent, float ProgressTimeSeconds)> OnSamplePlaybackProgress; // 0x08E0(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8F8[0x108];                                    // 0x08F8(0x0108)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SeekToTime(float TimeSec, ESamplePlayerSeekType SeekType, bool bWrap);
+	void SetPitch(float InPitch, float TimeSec);
+	void SetScrubMode(bool bScrubMode);
+	void SetScrubTimeWidth(float InScrubTimeWidthSec);
+	void SetSoundWave(class USoundWave* InSoundWave);
+
+	float GetCurrentPlaybackProgressPercent() const;
+	float GetCurrentPlaybackProgressTime() const;
+	float GetSampleDuration() const;
+	bool IsLoaded() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SynthSamplePlayer")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SynthSamplePlayer")
+	}
+	static class USynthSamplePlayer* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USynthSamplePlayer>();
+	}
+};
+DUMPER7_ASSERTS_USynthSamplePlayer;
+
 // Class Synthesis.SubmixEffectStereoDelayPreset
 // 0x0070 (0x00D8 - 0x0068)
 class USubmixEffectStereoDelayPreset final : public USoundEffectSubmixPreset
@@ -1120,44 +1158,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_USynthComponentToneGenerator;
-
-// Class Synthesis.SynthSamplePlayer
-// 0x0140 (0x0A00 - 0x08C0)
-class USynthSamplePlayer final : public USynthComponent
-{
-public:
-	class USoundWave*                             SoundWave;                                         // 0x08C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	TMulticastInlineDelegate<void()>              OnSampleLoaded;                                    // 0x08C8(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(float ProgressPercent, float ProgressTimeSeconds)> OnSamplePlaybackProgress; // 0x08E0(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8F8[0x108];                                    // 0x08F8(0x0108)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SeekToTime(float TimeSec, ESamplePlayerSeekType SeekType, bool bWrap);
-	void SetPitch(float InPitch, float TimeSec);
-	void SetScrubMode(bool bScrubMode);
-	void SetScrubTimeWidth(float InScrubTimeWidthSec);
-	void SetSoundWave(class USoundWave* InSoundWave);
-
-	float GetCurrentPlaybackProgressPercent() const;
-	float GetCurrentPlaybackProgressTime() const;
-	float GetSampleDuration() const;
-	bool IsLoaded() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SynthSamplePlayer")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SynthSamplePlayer")
-	}
-	static class USynthSamplePlayer* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USynthSamplePlayer>();
-	}
-};
-DUMPER7_ASSERTS_USynthSamplePlayer;
 
 // Class Synthesis.SynthesisUtilitiesBlueprintFunctionLibrary
 // 0x0000 (0x0028 - 0x0028)

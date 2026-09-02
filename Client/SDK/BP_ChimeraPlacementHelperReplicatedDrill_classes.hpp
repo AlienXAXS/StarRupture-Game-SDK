@@ -16,8 +16,8 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ChimeraPlacementHelperReplicatedDrill.BP_ChimeraPlacementHelperReplicatedDrill_C
-// 0x0000 (0x0890 - 0x0890)
-class ABP_ChimeraPlacementHelperReplicatedDrill_C final : public ACrAPHelperActorDrill
+// 0x0000 (0x0A40 - 0x0A40)
+class ABP_ChimeraPlacementHelperReplicatedDrill_C : public ACrAPHelperActorDrill
 {
 public:
 	static class UClass* StaticClass()

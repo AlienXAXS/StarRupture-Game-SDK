@@ -24,15 +24,6 @@ public:
 };
 DUMPER7_ASSERTS_FMassNavMeshPathPoint;
 
-// ScriptStruct MassNavMeshNavigation.MassNavMeshShortPathFragment
-// 0x0290 (0x0290 - 0x0000)
-struct alignas(0x08) FMassNavMeshShortPathFragment final : public FMassFragment
-{
-public:
-	uint8                                         Pad_0[0x290];                                      // 0x0000(0x0290)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassNavMeshShortPathFragment;
-
 // ScriptStruct MassNavMeshNavigation.MassNavMeshCachedPathFragment
 // 0x0028 (0x0028 - 0x0000)
 struct alignas(0x08) FMassNavMeshCachedPathFragment final : public FMassFragment
@@ -41,6 +32,15 @@ public:
 	uint8                                         Pad_0[0x28];                                       // 0x0000(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FMassNavMeshCachedPathFragment;
+
+// ScriptStruct MassNavMeshNavigation.MassNavMeshShortPathFragment
+// 0x0290 (0x0290 - 0x0000)
+struct alignas(0x08) FMassNavMeshShortPathFragment final : public FMassFragment
+{
+public:
+	uint8                                         Pad_0[0x290];                                      // 0x0000(0x0290)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassNavMeshShortPathFragment;
 
 // ScriptStruct MassNavMeshNavigation.MassNavMeshBoundaryFragment
 // 0x0018 (0x0018 - 0x0000)

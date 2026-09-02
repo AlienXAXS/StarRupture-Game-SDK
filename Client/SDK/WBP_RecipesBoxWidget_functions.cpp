@@ -260,6 +260,20 @@ void UWBP_RecipesBoxWidget_C::SetLowerWidth()
 }
 
 
+// Function WBP_RecipesBoxWidget.WBP_RecipesBoxWidget_C.SetMaxLevel
+// (Event, Public, BlueprintEvent)
+
+void UWBP_RecipesBoxWidget_C::SetMaxLevel()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_RecipesBoxWidget_C", "SetMaxLevel");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function WBP_RecipesBoxWidget.WBP_RecipesBoxWidget_C.SetTitle
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:

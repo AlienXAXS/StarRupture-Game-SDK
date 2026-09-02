@@ -17,19 +17,19 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ChimeraPlacementHelperReplicatedBaseCore.BP_ChimeraPlacementHelperReplicatedBaseCore_C
-// 0x0020 (0x08D0 - 0x08B0)
-class ABP_ChimeraPlacementHelperReplicatedBaseCore_C final : public ABP_ChimeraPlacementHelperReplicatedBase_C
+// 0x0020 (0x0A80 - 0x0A60)
+class ABP_ChimeraPlacementHelperReplicatedBaseCore_C : public ABP_ChimeraPlacementHelperReplicatedBase_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_ChimeraPlacementHelperReplicatedBaseCore_C; // 0x08A8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UDecalComponent*                        RangeOutline;                                      // 0x08B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   RangeVis;                                          // 0x08B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               RangeDecalMaterial;                                // 0x08C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               RangeVisMaterial;                                  // 0x08C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_ChimeraPlacementHelperReplicatedBaseCore_C; // 0x0A58(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UDecalComponent*                        RangeOutline;                                      // 0x0A60(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   RangeVis;                                          // 0x0A68(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               RangeDecalMaterial;                                // 0x0A70(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               RangeVisMaterial;                                  // 0x0A78(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void UserConstructionScript();
-	void SetMeshColor(const struct FLinearColor& Color_SetMeshColor);
+	void SetMeshColor(const struct FLinearColor& Color);
 	void ReceiveBeginPlay();
 	void ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedBaseCore(int32 EntryPoint);
 

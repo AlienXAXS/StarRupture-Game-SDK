@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_DroneRailHelperT3a.BP_DroneRailHelperT3a_C
-// 0x0000 (0x09F0 - 0x09F0)
+// 0x0000 (0x0B90 - 0x0B90)
 class ABP_DroneRailHelperT3a_C final : public ABP_DroneRailHelperT1_C
 {
 public:

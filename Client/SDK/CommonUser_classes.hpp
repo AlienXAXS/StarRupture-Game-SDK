@@ -172,7 +172,7 @@ public:
 DUMPER7_ASSERTS_UCommonSession_SearchSessionRequest;
 
 // Class CommonUser.CommonSessionSubsystem
-// 0x0200 (0x0230 - 0x0030)
+// 0x0218 (0x0248 - 0x0030)
 class UCommonSessionSubsystem final : public UGameInstanceSubsystem
 {
 public:
@@ -190,15 +190,17 @@ public:
 	bool                                          bUseLobbiesDefault;                                // 0x0178(0x0001)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUseLobbiesVoiceChatDefault;                       // 0x0179(0x0001)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUseBeacons;                                       // 0x017A(0x0001)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17B[0x75];                                     // 0x017B(0x0075)(Fixing Size After Last Property [ Dumper-7 ])
-	TWeakObjectPtr<class AOnlineBeaconHost>       BeaconHostListener;                                // 0x01F0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UPartyBeaconState*                      ReservationBeaconHostState;                        // 0x01F8(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TWeakObjectPtr<class APartyBeaconHost>        ReservationBeaconHost;                             // 0x0200(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class APartyBeaconClient>      ReservationBeaconClient;                           // 0x0208(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         BeaconTeamCount;                                   // 0x0210(0x0004)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         BeaconTeamSize;                                    // 0x0214(0x0004)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         BeaconMaxReservations;                             // 0x0218(0x0004)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_21C[0x14];                                     // 0x021C(0x0014)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17B[0x4D];                                     // 0x017B(0x004D)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCommonSession_SearchResult*            PendingJoinRequest;                                // 0x01C8(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_1D0[0x38];                                     // 0x01D0(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
+	TWeakObjectPtr<class AOnlineBeaconHost>       BeaconHostListener;                                // 0x0208(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UPartyBeaconState*                      ReservationBeaconHostState;                        // 0x0210(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TWeakObjectPtr<class APartyBeaconHost>        ReservationBeaconHost;                             // 0x0218(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class APartyBeaconClient>      ReservationBeaconClient;                           // 0x0220(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         BeaconTeamCount;                                   // 0x0228(0x0004)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         BeaconTeamSize;                                    // 0x022C(0x0004)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         BeaconMaxReservations;                             // 0x0230(0x0004)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_234[0x14];                                     // 0x0234(0x0014)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void CleanUpSessions();

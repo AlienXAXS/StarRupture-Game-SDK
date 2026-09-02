@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
+#include "DataflowEnginePlugin_structs.hpp"
 #include "DataflowCore_structs.hpp"
 #include "Chaos_structs.hpp"
-#include "DataflowEnginePlugin_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -28,21 +28,15 @@ enum class EDataflowWeightMapOverrideType : uint8
 	EDataflowWeightMapOverrideType_MAX       = 3,
 };
 
-// ScriptStruct DataflowNodes.DataflowFunctionProperty
-// 0x0018 (0x0018 - 0x0000)
-struct alignas(0x08) FDataflowFunctionProperty final
+// ScriptStruct DataflowNodes.DataflowSkinWeightData
+// 0x0020 (0x0020 - 0x0000)
+struct FDataflowSkinWeightData final
 {
 public:
-	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<float>                                 BoneWeights;                                       // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 BoneIndices;                                       // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FDataflowFunctionProperty;
-
-// ScriptStruct DataflowNodes.DataflowPrimitiveNode
-// 0x0000 (0x0288 - 0x0288)
-struct FDataflowPrimitiveNode : public FDataflowNode
-{
-};
-DUMPER7_ASSERTS_FDataflowPrimitiveNode;
+DUMPER7_ASSERTS_FDataflowSkinWeightData;
 
 // ScriptStruct DataflowNodes.ScalarVertexPropertyGroup
 // 0x0008 (0x0008 - 0x0000)
@@ -53,52 +47,12 @@ public:
 };
 DUMPER7_ASSERTS_FScalarVertexPropertyGroup;
 
-// ScriptStruct DataflowNodes.DataflowCollectionAddScalarVertexPropertyNode
-// 0x0100 (0x0388 - 0x0288)
-struct FDataflowCollectionAddScalarVertexPropertyNode final : public FDataflowNode
+// ScriptStruct DataflowNodes.DataflowPrimitiveNode
+// 0x0000 (0x0288 - 0x0288)
+struct FDataflowPrimitiveNode : public FDataflowNode
 {
-public:
-	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
-	class FString                                 Name;                                              // 0x0338(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCollectionAttributeKey                AttributeKey;                                      // 0x0348(0x0020)(NativeAccessSpecifierPublic)
-	TArray<float>                                 VertexWeights;                                     // 0x0368(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FScalarVertexPropertyGroup             TargetGroup;                                       // 0x0378(0x0008)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	EDataflowWeightMapOverrideType                OverrideType;                                      // 0x0380(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_381[0x7];                                      // 0x0381(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FDataflowCollectionAddScalarVertexPropertyNode;
-
-// ScriptStruct DataflowNodes.MakeAttributeKeyDataflowNode
-// 0x0040 (0x02C8 - 0x0288)
-struct FMakeAttributeKeyDataflowNode final : public FDataflowNode
-{
-public:
-	class FString                                 GroupIn;                                           // 0x0288(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 AttributeIn;                                       // 0x0298(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCollectionAttributeKey                AttributeKeyOut;                                   // 0x02A8(0x0020)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMakeAttributeKeyDataflowNode;
-
-// ScriptStruct DataflowNodes.BreakAttributeKeyDataflowNode
-// 0x0040 (0x02C8 - 0x0288)
-struct FBreakAttributeKeyDataflowNode final : public FDataflowNode
-{
-public:
-	struct FCollectionAttributeKey                AttributeKeyIn;                                    // 0x0288(0x0020)(NativeAccessSpecifierPublic)
-	class FString                                 AttributeOut;                                      // 0x02A8(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 GroupOut;                                          // 0x02B8(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FBreakAttributeKeyDataflowNode;
-
-// ScriptStruct DataflowNodes.DataflowSkinWeightData
-// 0x0020 (0x0020 - 0x0000)
-struct FDataflowSkinWeightData final
-{
-public:
-	TArray<float>                                 BoneWeights;                                       // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 BoneIndices;                                       // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FDataflowSkinWeightData;
+DUMPER7_ASSERTS_FDataflowPrimitiveNode;
 
 // ScriptStruct DataflowNodes.DataflowCollectionEditSkinWeightsNode
 // 0x0170 (0x03F8 - 0x0288)
@@ -121,6 +75,62 @@ public:
 };
 DUMPER7_ASSERTS_FDataflowCollectionEditSkinWeightsNode;
 
+// ScriptStruct DataflowNodes.DataflowFunctionProperty
+// 0x0018 (0x0018 - 0x0000)
+struct alignas(0x08) FDataflowFunctionProperty final
+{
+public:
+	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FDataflowFunctionProperty;
+
+// ScriptStruct DataflowNodes.SelectionSetDataflowNode
+// 0x0020 (0x02A8 - 0x0288)
+struct FSelectionSetDataflowNode final : public FDataflowNode
+{
+public:
+	class FString                                 Indices;                                           // 0x0288(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<int32>                                 IndicesOut;                                        // 0x0298(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSelectionSetDataflowNode;
+
+// ScriptStruct DataflowNodes.MakeAttributeKeyDataflowNode
+// 0x0040 (0x02C8 - 0x0288)
+struct FMakeAttributeKeyDataflowNode final : public FDataflowNode
+{
+public:
+	class FString                                 GroupIn;                                           // 0x0288(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 AttributeIn;                                       // 0x0298(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCollectionAttributeKey                AttributeKeyOut;                                   // 0x02A8(0x0020)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMakeAttributeKeyDataflowNode;
+
+// ScriptStruct DataflowNodes.DataflowCollectionAddScalarVertexPropertyNode
+// 0x0100 (0x0388 - 0x0288)
+struct FDataflowCollectionAddScalarVertexPropertyNode final : public FDataflowNode
+{
+public:
+	struct FManagedArrayCollection                Collection;                                        // 0x0288(0x00B0)(NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0338(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCollectionAttributeKey                AttributeKey;                                      // 0x0348(0x0020)(NativeAccessSpecifierPublic)
+	TArray<float>                                 VertexWeights;                                     // 0x0368(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FScalarVertexPropertyGroup             TargetGroup;                                       // 0x0378(0x0008)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	EDataflowWeightMapOverrideType                OverrideType;                                      // 0x0380(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_381[0x7];                                      // 0x0381(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FDataflowCollectionAddScalarVertexPropertyNode;
+
+// ScriptStruct DataflowNodes.BreakAttributeKeyDataflowNode
+// 0x0040 (0x02C8 - 0x0288)
+struct FBreakAttributeKeyDataflowNode final : public FDataflowNode
+{
+public:
+	struct FCollectionAttributeKey                AttributeKeyIn;                                    // 0x0288(0x0020)(NativeAccessSpecifierPublic)
+	class FString                                 AttributeOut;                                      // 0x02A8(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 GroupOut;                                          // 0x02B8(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FBreakAttributeKeyDataflowNode;
+
 // ScriptStruct DataflowNodes.FloatOverrideDataflowNode
 // 0x0018 (0x02A0 - 0x0288)
 struct FFloatOverrideDataflowNode final : public FDataflowNode
@@ -132,16 +142,6 @@ public:
 	uint8                                         Pad_29C[0x4];                                      // 0x029C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FFloatOverrideDataflowNode;
-
-// ScriptStruct DataflowNodes.SelectionSetDataflowNode
-// 0x0020 (0x02A8 - 0x0288)
-struct FSelectionSetDataflowNode final : public FDataflowNode
-{
-public:
-	class FString                                 Indices;                                           // 0x0288(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<int32>                                 IndicesOut;                                        // 0x0298(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSelectionSetDataflowNode;
 
 // ScriptStruct DataflowNodes.GetSkeletalMeshDataflowNode
 // 0x0010 (0x0298 - 0x0288)

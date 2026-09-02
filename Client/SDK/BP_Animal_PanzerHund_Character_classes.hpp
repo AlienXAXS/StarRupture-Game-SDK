@@ -10,26 +10,31 @@
 
 #include "Basic.hpp"
 
-#include "Chimera_structs.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "BP_BaseAI_classes.hpp"
+#include "Chimera_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Animal_PanzerHund_Character.BP_Animal_PanzerHund_Character_C
-// 0x0050 (0x0D50 - 0x0D00)
+// 0x0080 (0x0DA0 - 0x0D20)
 class ABP_Animal_PanzerHund_Character_C final : public ABP_BaseAI_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Animal_PanzerHund_Character_C;   // 0x0D00(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USphereComponent*                       DustDamageSphere;                                  // 0x0D08(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UGroomComponent*                        Fur;                                               // 0x0D10(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UCrAiAnimalPanzerHundUpdateStateComponent* CrAiAnimalPanzerHundUpdateState;                // 0x0D18(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UNiagaraComponent*                      DustNiagaraComp;                                   // 0x0D20(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                HuntJumpVelocity;                                  // 0x0D28(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsMossVisible;                                     // 0x0D40(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Animal_PanzerHund_Character_C;   // 0x0D20(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UCapsuleComponent*                      RolledCollisionCapsule;                            // 0x0D28(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USphereComponent*                       DustDamageSphere;                                  // 0x0D30(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UGroomComponent*                        Fur;                                               // 0x0D38(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCrAiAnimalPanzerHundUpdateStateComponent* CrAiAnimalPanzerHundUpdateState;                // 0x0D40(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      DustNiagaraComp;                                   // 0x0D48(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                HuntJumpVelocity;                                  // 0x0D50(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsMossVisible;                                     // 0x0D68(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsRolledCollision;                                 // 0x0D69(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_D6A[0x6];                                      // 0x0D6A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                MossVisualVariation;                               // 0x0D70(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                NoMossVisualVariation;                             // 0x0D88(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ActivateDust();
@@ -41,12 +46,14 @@ public:
 	void OnPrepareForGame();
 	void OnPrepareForPooling();
 	void OnRep_IsMossVisible();
+	void OnRep_IsRolledCollision();
 	void OnWaveFadeoutSubstageChanged_Event(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveFadeoutSubstage Substage, float Progress);
 	void ReceiveBeginPlay();
 	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 	void SetAudioState(const struct FGameplayTag& EventTag);
 	void SetDustDamageActivity(bool Active);
 	void SetMossVisibility(bool Visible);
+	void SetRolledCollision(bool NewIsRolledCollision);
 	bool ShouldMossBeActive();
 
 	void OnMeshVisibilityUpdated(bool bIsMeshHidden) const;

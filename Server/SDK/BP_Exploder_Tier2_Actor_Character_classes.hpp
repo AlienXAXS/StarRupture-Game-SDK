@@ -19,25 +19,35 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C
-// 0x00A0 (0x0DA0 - 0x0D00)
+// 0x0070 (0x0D90 - 0x0D20)
 class ABP_Exploder_Tier2_Actor_Character_C final : public ABP_BaseAI_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Exploder_Tier2_Actor_Character_C; // 0x0D00(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FTimerHandle                           ExplosionAttackTimerHandle;                        // 0x0D08(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	struct FAuAPMassSpawnedEntityType             SmallExplosionSphereEntityConfig;                  // 0x0D10(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FAuAPMassSpawnedEntityType             BigExplosionSphereEntityConfig;                    // 0x0D48(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance)
-	double                                        LastAttackTimestamp;                               // 0x0D80(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        InfectionAttackCooldown;                           // 0x0D88(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ECrEnemyAttackType                            Attack_Type;                                       // 0x0D90(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Exploder_Tier2_Actor_Character_C; // 0x0D20(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UNiagaraComponent*                      NiagaraEyes;                                       // 0x0D28(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_Tendrils;                                       // 0x0D30(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FAuAPMassSpawnedEntityType             Entity_Type;                                       // 0x0D38(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<double>                                MovementFailedTimestamp;                           // 0x0D70(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FCrMassEnemyBPEntityHandle             InfectionEntityHandle;                             // 0x0D80(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
+	struct FCrMassEnemyBPMassNetworkID            InfectionNetworkID;                                // 0x0D88(0x0004)(Edit, BlueprintVisible, Net, DisableEditOnInstance, NoDestructor)
 
 public:
-	void UserConstructionScript();
-	void Spawn_Explosion_Sphere_At_Current_Location(const struct FAuAPMassSpawnedEntityType& EntityType);
-	void SetExplosionAttackTimer(bool bSetTimerActive, double TimeToExplode);
+	void TrySpawnInfectionEntity();
+	void TryDestroyInfectionEntity(bool Instant);
+	void StartExplosionTimer();
+	void StartActivationTimer();
+	void RegisterMovementFailed(double MovementFailedExpTime);
 	void ReceiveTick(float DeltaSeconds_ReceiveTick);
-	void OnExplosionAttackTimerFinished();
+	void ReceiveBeginPlay();
+	void OnPrepareForPooling();
+	void OnExitActorPool();
+	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam_GetNiagaraEyeSystem);
+	int32 GetMovementFailsNum();
 	void ExecuteUbergraph_BP_Exploder_Tier2_Actor_Character(int32 EntryPoint);
+	void DeactivateVFX();
+
+	bool ShouldSpawnHugeCollision() const;
+	bool IsExploderDead() const;
 
 public:
 	static class UClass* StaticClass()

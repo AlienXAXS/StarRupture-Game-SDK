@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "PBIK_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "IKRig_structs.hpp"
+#include "PBIK_structs.hpp"
 #include "Engine_classes.hpp"
+#include "IKRig_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -289,71 +289,6 @@ public:
 };
 DUMPER7_ASSERTS_URetargetRootSettings;
 
-// Class IKRig.IKRetargeter
-// 0x01E0 (0x0208 - 0x0028)
-class UIKRetargeter final : public UObject
-{
-public:
-	int32                                         Version;                                           // 0x0028(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UIKRigDefinition*                       SourceIKRigAsset;                                  // 0x0030(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UIKRigDefinition*                       TargetIKRigAsset;                                  // 0x0038(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	TArray<struct FInstancedStruct>               RetargetOps;                                       // 0x0040(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	TMap<class FName, struct FRetargetProfile>    Profiles;                                          // 0x0050(0x0050)(NativeAccessSpecifierPrivate)
-	class FName                                   CurrentProfile;                                    // 0x00A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	TMap<class FName, struct FIKRetargetPose>     SourceRetargetPoses;                               // 0x00A8(0x0050)(NativeAccessSpecifierPrivate)
-	TMap<class FName, struct FIKRetargetPose>     TargetRetargetPoses;                               // 0x00F8(0x0050)(NativeAccessSpecifierPrivate)
-	class FName                                   CurrentSourceRetargetPose;                         // 0x0148(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class FName                                   CurrentTargetRetargetPose;                         // 0x0150(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          bRetargetRoot;                                     // 0x0158(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          bRetargetFK;                                       // 0x0159(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          bRetargetIK;                                       // 0x015A(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_15B[0x1];                                      // 0x015B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         TargetActorOffset;                                 // 0x015C(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	float                                         TargetActorScale;                                  // 0x0160(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_164[0x4];                                      // 0x0164(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FName, struct FIKRetargetPose>     RetargetPoses;                                     // 0x0168(0x0050)(NativeAccessSpecifierPrivate)
-	class FName                                   CurrentRetargetPose;                               // 0x01B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	struct FRetargetChainMapping                  ChainMap;                                          // 0x01C0(0x0020)(Deprecated, NativeAccessSpecifierPrivate)
-	TArray<class URetargetChainSettings*>         ChainSettings;                                     // 0x01E0(0x0010)(ZeroConstructor, Deprecated, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
-	class URetargetRootSettings*                  RootSettings;                                      // 0x01F0(0x0008)(ZeroConstructor, Deprecated, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class UIKRetargetGlobalSettings*              GlobalSettings;                                    // 0x01F8(0x0008)(ZeroConstructor, Deprecated, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	class URetargetOpStack*                       OpStack;                                           // 0x0200(0x0008)(ZeroConstructor, Deprecated, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-
-public:
-	static struct FTargetChainSettings GetChainSettingsFromRetargetAsset(const class UIKRetargeter* RetargetAsset, const class FName TargetChainName, const class FName OptionalProfileName);
-	static struct FTargetChainSettings GetChainSettingsFromRetargetProfile(struct FRetargetProfile& RetargetProfile, const class FName TargetChainName);
-	static struct FTargetChainSettings GetChainUsingGoalFromRetargetAsset(const class UIKRetargeter* RetargetAsset, const class FName IKGoalName);
-	static void GetGlobalSettingsFromRetargetAsset(const class UIKRetargeter* RetargetAsset, const class FName OptionalProfileName, struct FRetargetGlobalSettings* OutSettings);
-	static struct FRetargetGlobalSettings GetGlobalSettingsFromRetargetProfile(struct FRetargetProfile& RetargetProfile);
-	static void GetRootSettingsFromRetargetAsset(const class UIKRetargeter* RetargetAsset, const class FName OptionalProfileName, struct FTargetRootSettings* OutSettings);
-	static struct FTargetRootSettings GetRootSettingsFromRetargetProfile(struct FRetargetProfile& RetargetProfile);
-	static void SetChainFKSettingsInRetargetProfile(struct FRetargetProfile& RetargetProfile, const struct FTargetChainFKSettings& FKSettings, const class FName TargetChainName);
-	static void SetChainIKSettingsInRetargetProfile(struct FRetargetProfile& RetargetProfile, const struct FTargetChainIKSettings& IKSettings, const class FName TargetChainName);
-	static void SetChainSettingsInRetargetProfile(struct FRetargetProfile& RetargetProfile, const struct FTargetChainSettings& ChainSettings_0, const class FName TargetChainName);
-	static void SetChainSpeedPlantSettingsInRetargetProfile(struct FRetargetProfile& RetargetProfile, const struct FTargetChainSpeedPlantSettings& SpeedPlantSettings, const class FName TargetChainName);
-	static void SetGlobalSettingsInRetargetProfile(struct FRetargetProfile& RetargetProfile, const struct FRetargetGlobalSettings& GlobalSettings_0);
-	static void SetRootSettingsInRetargetProfile(struct FRetargetProfile& RetargetProfile, const struct FTargetRootSettings& RootSettings_0);
-
-	bool HasSourceIKRig() const;
-	bool HasTargetIKRig() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("IKRetargeter")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"IKRetargeter")
-	}
-	static class UIKRetargeter* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UIKRetargeter>();
-	}
-};
-DUMPER7_ASSERTS_UIKRetargeter;
-
 // Class IKRig.IKRetargetGlobalSettings
 // 0x0038 (0x0060 - 0x0028)
 class UIKRetargetGlobalSettings final : public UObject
@@ -400,38 +335,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_URetargetOpStack;
-
-// Class IKRig.RootMotionGeneratorOp
-// 0x0080 (0x00B0 - 0x0030)
-class URootMotionGeneratorOp final : public URetargetOpBase
-{
-public:
-	class FName                                   SourceRootBone;                                    // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   TargetRootBone;                                    // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   TargetPelvisBone;                                  // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERootMotionSource                             RootMotionSource;                                  // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERootMotionHeightSource                       RootHeightSource;                                  // 0x0049(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPropagateToNonRetargetedChildren;                 // 0x004A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bMaintainOffsetFromPelvis;                         // 0x004B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRotateWithPelvis;                                 // 0x004C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4D[0x3];                                       // 0x004D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             GlobalOffset;                                      // 0x0050(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("RootMotionGeneratorOp")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"RootMotionGeneratorOp")
-	}
-	static class URootMotionGeneratorOp* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<URootMotionGeneratorOp>();
-	}
-};
-DUMPER7_ASSERTS_URootMotionGeneratorOp;
 
 // Class IKRig.RetargetProfileLibrary
 // 0x0000 (0x0028 - 0x0028)
@@ -544,30 +447,6 @@ public:
 };
 DUMPER7_ASSERTS_UIKRetargetPinBoneController;
 
-// Class IKRig.IKRetargetStrideWarpingController
-// 0x0000 (0x0030 - 0x0030)
-class UIKRetargetStrideWarpingController final : public UIKRetargetOpControllerBase
-{
-public:
-	struct FIKRetargetStrideWarpingOpSettings GetSettings();
-	void SetSettings(const struct FIKRetargetStrideWarpingOpSettings& InSettings);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("IKRetargetStrideWarpingController")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"IKRetargetStrideWarpingController")
-	}
-	static class UIKRetargetStrideWarpingController* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UIKRetargetStrideWarpingController>();
-	}
-};
-DUMPER7_ASSERTS_UIKRetargetStrideWarpingController;
-
 // Class IKRig.PinBoneOp
 // 0x00F0 (0x0120 - 0x0030)
 class UPinBoneOp final : public URetargetOpBase
@@ -657,6 +536,38 @@ public:
 };
 DUMPER7_ASSERTS_UIKRetargetRootMotionController;
 
+// Class IKRig.RootMotionGeneratorOp
+// 0x0080 (0x00B0 - 0x0030)
+class URootMotionGeneratorOp final : public URetargetOpBase
+{
+public:
+	class FName                                   SourceRootBone;                                    // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   TargetRootBone;                                    // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   TargetPelvisBone;                                  // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERootMotionSource                             RootMotionSource;                                  // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERootMotionHeightSource                       RootHeightSource;                                  // 0x0049(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPropagateToNonRetargetedChildren;                 // 0x004A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bMaintainOffsetFromPelvis;                         // 0x004B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRotateWithPelvis;                                 // 0x004C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4D[0x3];                                       // 0x004D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             GlobalOffset;                                      // 0x0050(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("RootMotionGeneratorOp")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"RootMotionGeneratorOp")
+	}
+	static class URootMotionGeneratorOp* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<URootMotionGeneratorOp>();
+	}
+};
+DUMPER7_ASSERTS_URootMotionGeneratorOp;
+
 // Class IKRig.IKRetargetRunIKRigController
 // 0x0000 (0x0030 - 0x0030)
 class UIKRetargetRunIKRigController final : public UIKRetargetOpControllerBase
@@ -729,6 +640,30 @@ public:
 };
 DUMPER7_ASSERTS_UIKRetargetSpeedPlantingController;
 
+// Class IKRig.IKRetargetStrideWarpingController
+// 0x0000 (0x0030 - 0x0030)
+class UIKRetargetStrideWarpingController final : public UIKRetargetOpControllerBase
+{
+public:
+	struct FIKRetargetStrideWarpingOpSettings GetSettings();
+	void SetSettings(const struct FIKRetargetStrideWarpingOpSettings& InSettings);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("IKRetargetStrideWarpingController")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"IKRetargetStrideWarpingController")
+	}
+	static class UIKRetargetStrideWarpingController* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UIKRetargetStrideWarpingController>();
+	}
+};
+DUMPER7_ASSERTS_UIKRetargetStrideWarpingController;
+
 // Class IKRig.IKRigComponent
 // 0x0020 (0x00D8 - 0x00B8)
 class UIKRigComponent final : public UActorComponent
@@ -757,6 +692,71 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UIKRigComponent;
+
+// Class IKRig.IKRetargeter
+// 0x01E0 (0x0208 - 0x0028)
+class UIKRetargeter final : public UObject
+{
+public:
+	int32                                         Version;                                           // 0x0028(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UIKRigDefinition*                       SourceIKRigAsset;                                  // 0x0030(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UIKRigDefinition*                       TargetIKRigAsset;                                  // 0x0038(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	TArray<struct FInstancedStruct>               RetargetOps;                                       // 0x0040(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	TMap<class FName, struct FRetargetProfile>    Profiles;                                          // 0x0050(0x0050)(NativeAccessSpecifierPrivate)
+	class FName                                   CurrentProfile;                                    // 0x00A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TMap<class FName, struct FIKRetargetPose>     SourceRetargetPoses;                               // 0x00A8(0x0050)(NativeAccessSpecifierPrivate)
+	TMap<class FName, struct FIKRetargetPose>     TargetRetargetPoses;                               // 0x00F8(0x0050)(NativeAccessSpecifierPrivate)
+	class FName                                   CurrentSourceRetargetPose;                         // 0x0148(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class FName                                   CurrentTargetRetargetPose;                         // 0x0150(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bRetargetRoot;                                     // 0x0158(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bRetargetFK;                                       // 0x0159(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bRetargetIK;                                       // 0x015A(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_15B[0x1];                                      // 0x015B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         TargetActorOffset;                                 // 0x015C(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         TargetActorScale;                                  // 0x0160(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_164[0x4];                                      // 0x0164(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FName, struct FIKRetargetPose>     RetargetPoses;                                     // 0x0168(0x0050)(NativeAccessSpecifierPrivate)
+	class FName                                   CurrentRetargetPose;                               // 0x01B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FRetargetChainMapping                  ChainMap;                                          // 0x01C0(0x0020)(Deprecated, NativeAccessSpecifierPrivate)
+	TArray<class URetargetChainSettings*>         ChainSettings;                                     // 0x01E0(0x0010)(ZeroConstructor, Deprecated, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
+	class URetargetRootSettings*                  RootSettings;                                      // 0x01F0(0x0008)(ZeroConstructor, Deprecated, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UIKRetargetGlobalSettings*              GlobalSettings;                                    // 0x01F8(0x0008)(ZeroConstructor, Deprecated, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class URetargetOpStack*                       OpStack;                                           // 0x0200(0x0008)(ZeroConstructor, Deprecated, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+
+public:
+	static struct FTargetChainSettings GetChainSettingsFromRetargetAsset(const class UIKRetargeter* RetargetAsset, const class FName TargetChainName, const class FName OptionalProfileName);
+	static struct FTargetChainSettings GetChainSettingsFromRetargetProfile(struct FRetargetProfile& RetargetProfile, const class FName TargetChainName);
+	static struct FTargetChainSettings GetChainUsingGoalFromRetargetAsset(const class UIKRetargeter* RetargetAsset, const class FName IKGoalName);
+	static void GetGlobalSettingsFromRetargetAsset(const class UIKRetargeter* RetargetAsset, const class FName OptionalProfileName, struct FRetargetGlobalSettings* OutSettings);
+	static struct FRetargetGlobalSettings GetGlobalSettingsFromRetargetProfile(struct FRetargetProfile& RetargetProfile);
+	static void GetRootSettingsFromRetargetAsset(const class UIKRetargeter* RetargetAsset, const class FName OptionalProfileName, struct FTargetRootSettings* OutSettings);
+	static struct FTargetRootSettings GetRootSettingsFromRetargetProfile(struct FRetargetProfile& RetargetProfile);
+	static void SetChainFKSettingsInRetargetProfile(struct FRetargetProfile& RetargetProfile, const struct FTargetChainFKSettings& FKSettings, const class FName TargetChainName);
+	static void SetChainIKSettingsInRetargetProfile(struct FRetargetProfile& RetargetProfile, const struct FTargetChainIKSettings& IKSettings, const class FName TargetChainName);
+	static void SetChainSettingsInRetargetProfile(struct FRetargetProfile& RetargetProfile, const struct FTargetChainSettings& ChainSettings_0, const class FName TargetChainName);
+	static void SetChainSpeedPlantSettingsInRetargetProfile(struct FRetargetProfile& RetargetProfile, const struct FTargetChainSpeedPlantSettings& SpeedPlantSettings, const class FName TargetChainName);
+	static void SetGlobalSettingsInRetargetProfile(struct FRetargetProfile& RetargetProfile, const struct FRetargetGlobalSettings& GlobalSettings_0);
+	static void SetRootSettingsInRetargetProfile(struct FRetargetProfile& RetargetProfile, const struct FTargetRootSettings& RootSettings_0);
+
+	bool HasSourceIKRig() const;
+	bool HasTargetIKRig() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("IKRetargeter")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"IKRetargeter")
+	}
+	static class UIKRetargeter* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UIKRetargeter>();
+	}
+};
+DUMPER7_ASSERTS_UIKRetargeter;
 
 // Class IKRig.IKRetargetProcessor
 // 0x02B0 (0x02D8 - 0x0028)

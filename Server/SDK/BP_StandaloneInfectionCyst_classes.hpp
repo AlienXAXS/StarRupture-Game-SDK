@@ -17,12 +17,12 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C
-// 0x00D8 (0x03A0 - 0x02C8)
+// 0x00E0 (0x03A8 - 0x02C8)
 class ABP_StandaloneInfectionCyst_C final : public ACrStandaloneInfectionActor
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02C8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UStaticMeshComponent*                   TempVisualDamageProtectionSphere;                  // 0x02D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      NS_InfectionCystEmissions;                         // 0x02D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class USceneComponent*                        FX_position;                                       // 0x02D8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class UPointLightComponent*                   PointLight;                                        // 0x02E0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class UStaticMeshComponent*                   SM_Blob;                                           // 0x02E8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
@@ -58,14 +58,18 @@ public:
 	float                                         Dissolve_Duration;                                 // 0x0390(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Immune_Transition_Duration;                        // 0x0394(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Deactivated_Transition_Duration;                   // 0x0398(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_39C[0x4];                                      // 0x039C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        ImmunityChangeTimestamp;                           // 0x03A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void UpdateInfectionEffect();
 	void Set_half_time();
 	void Scale_cyst__UpdateFunc();
 	void Scale_cyst__FinishedFunc();
 	void ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay);
 	void ReceiveBeginPlay();
 	void OnGrowthProgress(float Progress_OnGrowthProgress);
+	void OnGrowthChanged(double Progress);
 	void OnDamageTaken_Multicast();
 	void K2_OnDamageTaken_1(class AActor* InInstigator, const struct FHitResult& HitResult, float InDamage);
 	void Infection_grow();
@@ -76,6 +80,7 @@ public:
 	void ExecuteUbergraph_BP_StandaloneInfectionCyst(int32 EntryPoint);
 	void Dissolve__UpdateFunc();
 	void Dissolve__FinishedFunc();
+	void CalculateImmunityProgressFromTimers(double* Progress);
 	void BP_OnInfectionJustSpawned();
 	void BP_OnDestroyed();
 	void BP_OnDamageProtectionChanged(bool IsActive_BP_OnDamageProtectionChanged);

@@ -400,7 +400,7 @@ const bool UAuItemsBPF::EqualId(const struct FAuItemId& A, const struct FAuItemI
 // Function AuItems.AuItemsBPF.GetIcon
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FAuItemEntry*                    Item                                                   (Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// struct FAuItemEntry*                    Item                                                   (Parm, OutParm, NativeAccessSpecifierPublic)
 // struct FSlateBrush                      ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FSlateBrush UAuItemsBPF::GetIcon(struct FAuItemEntry* Item)
@@ -429,7 +429,7 @@ struct FSlateBrush UAuItemsBPF::GetIcon(struct FAuItemEntry* Item)
 // Function AuItems.AuItemsBPF.GetItemName
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// const struct FAuItemEntry&              Item                                                   (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FAuItemEntry&              Item                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // const class FText                       ReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 const class FText UAuItemsBPF::GetItemName(const struct FAuItemEntry& Item)
@@ -457,7 +457,7 @@ const class FText UAuItemsBPF::GetItemName(const struct FAuItemEntry& Item)
 // Function AuItems.AuItemsBPF.GetTags
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// const struct FAuItemEntry&              Item                                                   (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FAuItemEntry&              Item                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // const struct FGameplayTagContainer      ReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 const struct FGameplayTagContainer UAuItemsBPF::GetTags(const struct FAuItemEntry& Item)
@@ -1619,7 +1619,7 @@ void UAuItemsStoreComponent::OnRep_ItemsDataArray()
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // const struct FAuItemId&                 Handle                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAuItemEntry                     ReturnValue                                            (Parm, OutParm, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// struct FAuItemEntry                     ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FAuItemEntry UAuItemsStoreComponent::GetItemCopy(const struct FAuItemId& Handle) const
 {

@@ -70,4 +70,18 @@ void UWBP_CraftingSelectionWidget_C::ExecuteUbergraph_WBP_CraftingSelectionWidge
 }
 
 
+// Function WBP_CraftingSelectionWidget.WBP_CraftingSelectionWidget_C.SetListStateVisual
+// (Event, Protected, BlueprintEvent)
+
+void UWBP_CraftingSelectionWidget_C::SetListStateVisual()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_CraftingSelectionWidget_C", "SetListStateVisual");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 SDK_NAMESPACE_END

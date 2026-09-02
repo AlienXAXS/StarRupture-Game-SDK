@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "PCG_classes.hpp"
-#include "ErrantBiomesPCG_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "ErrantBiomesPCG_structs.hpp"
+#include "PCG_classes.hpp"
 #include "Engine_classes.hpp"
 
 
@@ -133,13 +133,13 @@ public:
 DUMPER7_ASSERTS_ABiomesPCGWorldSettings;
 
 // Class ErrantBiomesPCG.BiomesPCGWorldSubsystem
-// 0x00B0 (0x00E0 - 0x0030)
+// 0x00C0 (0x00F0 - 0x0030)
 class UBiomesPCGWorldSubsystem final : public UWorldSubsystem
 {
 public:
-	uint8                                         Pad_30[0x58];                                      // 0x0030(0x0058)(Fixing Size After Last Property [ Dumper-7 ])
-	class ABiomesPCGWorldSettings*                BiomesPCGWorldSettings;                            // 0x0088(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_90[0x50];                                      // 0x0090(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x68];                                      // 0x0030(0x0068)(Fixing Size After Last Property [ Dumper-7 ])
+	class ABiomesPCGWorldSettings*                BiomesPCGWorldSettings;                            // 0x0098(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_A0[0x50];                                      // 0x00A0(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

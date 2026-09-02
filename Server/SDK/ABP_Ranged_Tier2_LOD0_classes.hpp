@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "AnimGraphRuntime_structs.hpp"
-#include "ABP_Ranged_Tier2_LOD0_structs.hpp"
 #include "Engine_structs.hpp"
+#include "ABP_Ranged_Tier2_LOD0_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
 
@@ -221,12 +221,16 @@ public:
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier2_LOD0_AnimGraphNode_BlendListByBool_C4B0EA7840AEA6C44F324F98EC9C14F7();
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ranged_Tier2_LOD0_AnimGraphNode_BlendListByBool_501CC3B0422A080ABF391B89D19FB1F3();
 	void BPOnLocomotionTypeChanged(ECrEnemyLocomotionType OldLocomotionType_BPOnLocomotionTypeChanged, ECrEnemyLocomotionType NewLocomotionType_BPOnLocomotionTypeChanged);
-	void BPOnDamageReceived();
 	void BPOnAttackTypeChanged(ECrEnemyAttackType OldAttackType_BPOnAttackTypeChanged, ECrEnemyAttackType NewAttackType_BPOnAttackTypeChanged);
 	void AttackConduitOnUpdate(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node);
 	void AnimNotify_SFX_TauntStart();
 	void AnimNotify_Landed();
 	void AnimNotify_Jumped();
+	void AnimNotify_HitVO_Start5();
+	void AnimNotify_HitVO_Start4();
+	void AnimNotify_HitVO_Start3();
+	void AnimNotify_HitVO_Start2();
+	void AnimNotify_HitVO_Start();
 	void AnimNotify_EndAttack();
 	void AnimNotify_EndAnim();
 	void AnimNotify_DeathVO_Start();

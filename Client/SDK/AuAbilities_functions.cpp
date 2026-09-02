@@ -332,6 +332,34 @@ class FString UAuAbilitiesBPF::GetSpecName(const struct FGameplayEffectSpecHandl
 }
 
 
+// Function AuAbilities.AuAbilitiesBPF.GetUseableItemOwner
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FGameplayEffectContextHandle&Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// TScriptInterface<class IAuUseableItemOwnerInterface>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+TScriptInterface<class IAuUseableItemOwnerInterface> UAuAbilitiesBPF::GetUseableItemOwner(const struct FGameplayEffectContextHandle& Context)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("AuAbilitiesBPF", "GetUseableItemOwner");
+
+	Params::AuAbilitiesBPF_GetUseableItemOwner Parms{};
+
+	Parms.Context = std::move(Context);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function AuAbilities.AuAbilitiesBPF.MakeSpecHandle
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:

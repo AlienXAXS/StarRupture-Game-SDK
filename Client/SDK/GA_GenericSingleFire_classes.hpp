@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Chimera_classes.hpp"
-#include "Engine_structs.hpp"
 #include "AuAbilities_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 SDK_NAMESPACE_START

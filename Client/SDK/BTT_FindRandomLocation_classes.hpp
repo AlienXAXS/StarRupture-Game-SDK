@@ -18,13 +18,16 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BTT_FindRandomLocation.BTT_FindRandomLocation_C
-// 0x0038 (0x00E0 - 0x00A8)
+// 0x0068 (0x0110 - 0x00A8)
 class UBTT_FindRandomLocation_C final : public UBTTask_BlueprintBase
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x00A8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	double                                        Radius;                                            // 0x00B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FBlackboardKeySelector                 MoveLocation;                                      // 0x00B8(0x0028)(Edit, BlueprintVisible)
+	bool                                          FindAroundControlledPawn;                          // 0x00E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_E1[0x7];                                       // 0x00E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBlackboardKeySelector                 FindAroundActor;                                   // 0x00E8(0x0028)(Edit, BlueprintVisible)
 
 public:
 	void ExecuteUbergraph_BTT_FindRandomLocation(int32 EntryPoint);

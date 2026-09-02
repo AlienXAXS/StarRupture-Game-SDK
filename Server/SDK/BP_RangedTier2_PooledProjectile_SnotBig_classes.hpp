@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_RangedTier2_PooledProjectile_SnotBig.BP_RangedTier2_PooledProjectile_SnotBig_C
-// 0x0000 (0x0380 - 0x0380)
+// 0x0000 (0x0398 - 0x0398)
 class ABP_RangedTier2_PooledProjectile_SnotBig_C final : public ABP_RangedTier2_PooledProjectile_Snot_C
 {
 public:

@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Chimera_classes.hpp"
 #include "GameplayAbilities_classes.hpp"
 #include "Engine_classes.hpp"
-#include "Chimera_classes.hpp"
 
 
 SDK_NAMESPACE_START

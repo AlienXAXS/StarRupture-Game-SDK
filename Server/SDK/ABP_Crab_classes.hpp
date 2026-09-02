@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "MassAIPrototypeEnemyRuntime_classes.hpp"
+#include "ABP_Crab_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 #include "Engine_structs.hpp"
-#include "ABP_Crab_structs.hpp"
-#include "MassAIPrototypeEnemyRuntime_classes.hpp"
 
 
 SDK_NAMESPACE_START

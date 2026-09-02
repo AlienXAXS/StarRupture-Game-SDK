@@ -28,12 +28,13 @@ enum class EBiomesPCGMaskDataSource : uint8
 };
 
 // Enum ErrantBiomesPCG.EBiomesPCGMaskType
-// NumValues: 0x0003
+// NumValues: 0x0004
 enum class EBiomesPCGMaskType : uint8
 {
 	MaterialMask                             = 0,
 	AssetMask                                = 1,
-	EBiomesPCGMaskType_MAX                   = 2,
+	BiomeMask                                = 2,
+	EBiomesPCGMaskType_MAX                   = 3,
 };
 
 // Enum ErrantBiomesPCG.EBiomesPCGLimit

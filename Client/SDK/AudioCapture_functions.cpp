@@ -108,31 +108,6 @@ void UAudioCapture::StopCapturingAudio()
 }
 
 
-// Function AudioCapture.AudioCaptureFunctionLibrary.CreateAudioCapture
-// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UAudioCapture*                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UAudioCapture* UAudioCaptureFunctionLibrary::CreateAudioCapture()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("AudioCaptureFunctionLibrary", "CreateAudioCapture");
-
-	Params::AudioCaptureFunctionLibrary_CreateAudioCapture Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function AudioCapture.AudioCaptureBlueprintLibrary.Conv_AudioInputDeviceInfoToString
 // (Final, RequiredAPI, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
@@ -185,6 +160,31 @@ void UAudioCaptureBlueprintLibrary::GetAvailableAudioInputDevices(const class UO
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AudioCapture.AudioCaptureFunctionLibrary.CreateAudioCapture
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UAudioCapture*                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UAudioCapture* UAudioCaptureFunctionLibrary::CreateAudioCapture()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("AudioCaptureFunctionLibrary", "CreateAudioCapture");
+
+	Params::AudioCaptureFunctionLibrary_CreateAudioCapture Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 

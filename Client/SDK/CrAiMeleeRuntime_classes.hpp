@@ -10,14 +10,14 @@
 
 #include "Basic.hpp"
 
+#include "Chimera_classes.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "Chimera_classes.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
+#include "CoreUObject_classes.hpp"
 #include "CrAiMeleeRuntime_structs.hpp"
 #include "MassSpawner_classes.hpp"
-#include "CoreUObject_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -97,11 +97,11 @@ public:
 DUMPER7_ASSERTS_UCrAiMeleeAnimUpdateProcessor;
 
 // Class CrAiMeleeRuntime.CrMassMeleeBubbleReplicatedSerializerHolder
-// 0x0358 (0x0610 - 0x02B8)
+// 0x0370 (0x0628 - 0x02B8)
 class ACrMassMeleeBubbleReplicatedSerializerHolder final : public ACrMassBubbleReplicatedSerializerHolder
 {
 public:
-	struct FMeleeClientBubbleSerializer           Serializer;                                        // 0x02B8(0x0358)(Net, Transient, NativeAccessSpecifierPublic)
+	struct FMeleeClientBubbleSerializer           Serializer;                                        // 0x02B8(0x0370)(Net, Transient, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -140,18 +140,18 @@ public:
 DUMPER7_ASSERTS_AMeleeClientBubbleInfo;
 
 // Class CrAiMeleeRuntime.CrAiMeleeDataAsset
-// 0x0060 (0x0768 - 0x0708)
+// 0x0060 (0x07C0 - 0x0760)
 class UCrAiMeleeDataAsset final : public UMassEnemyDataAsset
 {
 public:
-	struct FAiFloatConfigurationValue             AoeAttackRange;                                    // 0x0708(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FAiFloatConfigurationValue             TimeToRangedAttackS;                               // 0x0714(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FAiFloatConfigurationValue             MatchTargetSpeedRangeAttack;                       // 0x0720(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FAiFloatConfigurationValue             MatchTargetSpeedRange;                             // 0x072C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FAiFloatConfigurationValue             MatchTargetSpeedModifier;                          // 0x0738(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FAiFloatConfigurationValue             MatchTargetSpeedModifierAttack;                    // 0x0744(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FAiFloatConfigurationValue             WalkBackRange;                                     // 0x0750(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FAiFloatConfigurationValue             JumpAttackRange;                                   // 0x075C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FAiFloatConfigurationValue             AoeAttackRange;                                    // 0x0760(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FAiFloatConfigurationValue             TimeToRangedAttackS;                               // 0x076C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FAiFloatConfigurationValue             MatchTargetSpeedRangeAttack;                       // 0x0778(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FAiFloatConfigurationValue             MatchTargetSpeedRange;                             // 0x0784(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FAiFloatConfigurationValue             MatchTargetSpeedModifier;                          // 0x0790(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FAiFloatConfigurationValue             MatchTargetSpeedModifierAttack;                    // 0x079C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FAiFloatConfigurationValue             WalkBackRange;                                     // 0x07A8(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FAiFloatConfigurationValue             JumpAttackRange;                                   // 0x07B4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()

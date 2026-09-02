@@ -45,29 +45,6 @@ public:
 };
 DUMPER7_ASSERTS_UAudioCapture;
 
-// Class AudioCapture.AudioCaptureFunctionLibrary
-// 0x0000 (0x0028 - 0x0028)
-class UAudioCaptureFunctionLibrary final : public UBlueprintFunctionLibrary
-{
-public:
-	static class UAudioCapture* CreateAudioCapture();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AudioCaptureFunctionLibrary")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AudioCaptureFunctionLibrary")
-	}
-	static class UAudioCaptureFunctionLibrary* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAudioCaptureFunctionLibrary>();
-	}
-};
-DUMPER7_ASSERTS_UAudioCaptureFunctionLibrary;
-
 // Class AudioCapture.AudioCaptureBlueprintLibrary
 // 0x0000 (0x0028 - 0x0028)
 class UAudioCaptureBlueprintLibrary final : public UBlueprintFunctionLibrary
@@ -91,6 +68,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAudioCaptureBlueprintLibrary;
+
+// Class AudioCapture.AudioCaptureFunctionLibrary
+// 0x0000 (0x0028 - 0x0028)
+class UAudioCaptureFunctionLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static class UAudioCapture* CreateAudioCapture();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AudioCaptureFunctionLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AudioCaptureFunctionLibrary")
+	}
+	static class UAudioCaptureFunctionLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAudioCaptureFunctionLibrary>();
+	}
+};
+DUMPER7_ASSERTS_UAudioCaptureFunctionLibrary;
 
 // Class AudioCapture.AudioCaptureComponent
 // 0x00C0 (0x0980 - 0x08C0)

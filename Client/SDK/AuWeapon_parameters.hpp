@@ -21,6 +21,16 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function AuWeapon.AuAT_WaitADSUpdate.WaitADSUpdate
+// 0x0010 (0x0010 - 0x0000)
+struct AuAT_WaitADSUpdate_WaitADSUpdate final
+{
+public:
+	class UGameplayAbility*                       OwningAbility;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAuAT_WaitADSUpdate*                    ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AuAT_WaitADSUpdate_WaitADSUpdate;
+
 // Function AuWeapon.AuAT_WaitObserveReloadWeapon.WaitObserveReloadWeapon
 // 0x0018 (0x0018 - 0x0000)
 struct AuAT_WaitObserveReloadWeapon_WaitObserveReloadWeapon final

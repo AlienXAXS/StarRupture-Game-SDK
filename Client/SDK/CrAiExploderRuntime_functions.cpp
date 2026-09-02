@@ -64,6 +64,38 @@ class UCrAiActionDealDamageAndSpawnEntity* UCrAiActionDealDamageAndSpawnEntity::
 }
 
 
+// Function CrAiExploderRuntime.CrAiActionExploderSpawnCyst.Create_CrAiActionExploderSpawnCyst
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCrAiActionExploderSpawnCyst>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyLocomotionType                  NewLocomotionState                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionExploderSpawnCyst*     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionExploderSpawnCyst* UCrAiActionExploderSpawnCyst::Create_CrAiActionExploderSpawnCyst(TSubclassOf<class UCrAiActionExploderSpawnCyst> ActionType, float NewMaxLifetimeS, ECrEnemyLocomotionType NewLocomotionState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionExploderSpawnCyst", "Create_CrAiActionExploderSpawnCyst");
+
+	Params::CrAiActionExploderSpawnCyst_Create_CrAiActionExploderSpawnCyst Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.NewLocomotionState = NewLocomotionState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function CrAiExploderRuntime.CrAiActionExploderStartTimer.Create_CrAiActionExploderStartTimer
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -95,6 +127,57 @@ class UCrAiActionExploderStartTimer* UCrAiActionExploderStartTimer::Create_CrAiA
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function CrAiExploderRuntime.CrAiActionExploderT3DigIn.Create_CrAiActionExploderT3DigIn
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCrAiActionExploderT3DigIn>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bDigOut_0                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionExploderT3DigIn*       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionExploderT3DigIn* UCrAiActionExploderT3DigIn::Create_CrAiActionExploderT3DigIn(TSubclassOf<class UCrAiActionExploderT3DigIn> ActionType, float NewMaxLifetimeS, bool bDigOut_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionExploderT3DigIn", "Create_CrAiActionExploderT3DigIn");
+
+	Params::CrAiActionExploderT3DigIn_Create_CrAiActionExploderT3DigIn Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.bDigOut_0 = bDigOut_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CrAiExploderRuntime.ExploderStateSyncComponent.Reset
+// (Final, Native, Public, BlueprintCallable)
+
+void UExploderStateSyncComponent::Reset()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ExploderStateSyncComponent", "Reset");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -186,15 +269,15 @@ bool ICrAiExploder::ShouldSpawnHugeCollision() const
 }
 
 
-// Function CrAiExploderRuntime.ExploderStateSyncComponent.Reset
+// Function CrAiExploderRuntime.ExploderT3CystActor.DestroyInfection
 // (Final, Native, Public, BlueprintCallable)
 
-void UExploderStateSyncComponent::Reset()
+void AExploderT3CystActor::DestroyInfection()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ExploderStateSyncComponent", "Reset");
+		Func = Class->GetFunction("ExploderT3CystActor", "DestroyInfection");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -202,6 +285,94 @@ void UExploderStateSyncComponent::Reset()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CrAiExploderRuntime.ExploderT3CystActor.SetIsImmortal
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bIsImmortal                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AExploderT3CystActor::SetIsImmortal(bool bIsImmortal)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ExploderT3CystActor", "SetIsImmortal");
+
+	Params::ExploderT3CystActor_SetIsImmortal Parms{};
+
+	Parms.bIsImmortal = bIsImmortal;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CrAiExploderRuntime.ExploderT3CystActor.SpawnInfection
+// (Final, Native, Public, BlueprintCallable)
+
+void AExploderT3CystActor::SpawnInfection()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ExploderT3CystActor", "SpawnInfection");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CrAiExploderRuntime.ExploderT3CystActor.StartInfectionVisualizationHide
+// (Final, Native, Public, BlueprintCallable)
+
+void AExploderT3CystActor::StartInfectionVisualizationHide()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ExploderT3CystActor", "StartInfectionVisualizationHide");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CrAiExploderRuntime.ExploderT3CystActor.GetHealthValue
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float AExploderT3CystActor::GetHealthValue() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ExploderT3CystActor", "GetHealthValue");
+
+	Params::ExploderT3CystActor_GetHealthValue Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 

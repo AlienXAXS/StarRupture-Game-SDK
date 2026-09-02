@@ -17,13 +17,13 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_MechanicalDrillFoundation.BP_MechanicalDrillFoundation_C
-// 0x0018 (0x0890 - 0x0878)
+// 0x0018 (0x0908 - 0x08F0)
 class ABP_MechanicalDrillFoundation_C final : public ABP_Modular_Foundation_Unique_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_MechanicalDrillFoundation_C;     // 0x0878(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UBoxComponent*                          SnapCollider3;                                     // 0x0880(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UBoxComponent*                          SnapCollider2;                                     // 0x0888(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_MechanicalDrillFoundation_C;     // 0x08F0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UBoxComponent*                          SnapCollider3;                                     // 0x08F8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UBoxComponent*                          SnapCollider2;                                     // 0x0900(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ReceiveTick(float DeltaSeconds_ReceiveTick);

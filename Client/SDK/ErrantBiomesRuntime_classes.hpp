@@ -192,6 +192,141 @@ public:
 };
 DUMPER7_ASSERTS_UBiomesErrantPathsInteropMask;
 
+// Class ErrantBiomesRuntime.BiomesManualSpawnPointComponent
+// 0x0000 (0x0530 - 0x0530)
+class UBiomesManualSpawnPointComponent final : public UPrimitiveComponent
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BiomesManualSpawnPointComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BiomesManualSpawnPointComponent")
+	}
+	static class UBiomesManualSpawnPointComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBiomesManualSpawnPointComponent>();
+	}
+};
+DUMPER7_ASSERTS_UBiomesManualSpawnPointComponent;
+
+// Class ErrantBiomesRuntime.BiomesManualSpawnPointsAsset
+// 0x0068 (0x0090 - 0x0028)
+class UBiomesManualSpawnPointsAsset final : public UObject
+{
+public:
+	int32                                         ComponentX;                                        // 0x0028(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, AssetRegistrySearchable, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ComponentY;                                        // 0x002C(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, AssetRegistrySearchable, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ComponentGenerateTransformsInfoHash;               // 0x0030(0x0010)(Edit, ZeroConstructor, EditConst, AssetRegistrySearchable, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<struct FGuid, struct FBiomesManualSpawnPointsTagPoints> PointsPerTag;                       // 0x0040(0x0050)(Edit, EditConst, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BiomesManualSpawnPointsAsset")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BiomesManualSpawnPointsAsset")
+	}
+	static class UBiomesManualSpawnPointsAsset* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBiomesManualSpawnPointsAsset>();
+	}
+};
+DUMPER7_ASSERTS_UBiomesManualSpawnPointsAsset;
+
+// Class ErrantBiomesRuntime.BiomesSpawnPointsSettings
+// 0x0000 (0x0028 - 0x0028)
+class UBiomesSpawnPointsSettings : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BiomesSpawnPointsSettings")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BiomesSpawnPointsSettings")
+	}
+	static class UBiomesSpawnPointsSettings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBiomesSpawnPointsSettings>();
+	}
+};
+DUMPER7_ASSERTS_UBiomesSpawnPointsSettings;
+
+// Class ErrantBiomesRuntime.BiomesManualSpawnPointsSettings
+// 0x0050 (0x0078 - 0x0028)
+class UBiomesManualSpawnPointsSettings final : public UBiomesSpawnPointsSettings
+{
+public:
+	TSet<class UBiomesManualSpawnPointsTag*>      SpawnPointTags;                                    // 0x0028(0x0050)(Edit, BlueprintVisible, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BiomesManualSpawnPointsSettings")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BiomesManualSpawnPointsSettings")
+	}
+	static class UBiomesManualSpawnPointsSettings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBiomesManualSpawnPointsSettings>();
+	}
+};
+DUMPER7_ASSERTS_UBiomesManualSpawnPointsSettings;
+
+// Class ErrantBiomesRuntime.BiomesManualSpawnPointsTag
+// 0x0010 (0x0038 - 0x0028)
+class UBiomesManualSpawnPointsTag final : public UObject
+{
+public:
+	struct FGuid                                  TagGuid;                                           // 0x0028(0x0010)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, AssetRegistrySearchable, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BiomesManualSpawnPointsTag")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BiomesManualSpawnPointsTag")
+	}
+	static class UBiomesManualSpawnPointsTag* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBiomesManualSpawnPointsTag>();
+	}
+};
+DUMPER7_ASSERTS_UBiomesManualSpawnPointsTag;
+
+// Class ErrantBiomesRuntime.BiomesManualSpawnPointsWorldSubsystem
+// 0x0308 (0x0338 - 0x0030)
+class UBiomesManualSpawnPointsWorldSubsystem final : public UWorldSubsystem
+{
+public:
+	uint8                                         Pad_30[0x308];                                     // 0x0030(0x0308)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BiomesManualSpawnPointsWorldSubsystem")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BiomesManualSpawnPointsWorldSubsystem")
+	}
+	static class UBiomesManualSpawnPointsWorldSubsystem* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBiomesManualSpawnPointsWorldSubsystem>();
+	}
+};
+DUMPER7_ASSERTS_UBiomesManualSpawnPointsWorldSubsystem;
+
 // Class ErrantBiomesRuntime.BiomesMaskAsset
 // 0x0018 (0x0040 - 0x0028)
 class UBiomesMaskAsset : public UObject
@@ -382,16 +517,16 @@ public:
 DUMPER7_ASSERTS_UBiomesMaskTextureData;
 
 // Class ErrantBiomesRuntime.BiomesMaskWorldSubsystem
-// 0x0490 (0x04D0 - 0x0040)
+// 0x04E0 (0x0520 - 0x0040)
 class UBiomesMaskWorldSubsystem final : public UTickableWorldSubsystem
 {
 public:
 	uint8                                         Pad_40[0x60];                                      // 0x0040(0x0060)(Fixing Size After Last Property [ Dumper-7 ])
 	class UBiomesMaskEngineSubsystem*             MaskEditorSubsystem;                               // 0x00A0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_A8[0x2E0];                                     // 0x00A8(0x02E0)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<EBiomesMaskType, class UTextureRenderTarget2D*> FallbackRenderTargets;                      // 0x0388(0x0050)(Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_3D8[0xF0];                                     // 0x03D8(0x00F0)(Fixing Size After Last Property [ Dumper-7 ])
-	class UBiomesWorldInfo*                       BiomesWorldInfo;                                   // 0x04C8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_A8[0x330];                                     // 0x00A8(0x0330)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<EBiomesMaskType, class UTextureRenderTarget2D*> FallbackRenderTargets;                      // 0x03D8(0x0050)(Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_428[0xF0];                                     // 0x0428(0x00F0)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBiomesWorldInfo*                       BiomesWorldInfo;                                   // 0x0518(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 
 public:
 	static class UClass* StaticClass()
@@ -482,27 +617,29 @@ public:
 DUMPER7_ASSERTS_UBiomesRuntimeProjectSettings;
 
 // Class ErrantBiomesRuntime.BiomesRuntimeSpawnerComponent
-// 0x0158 (0x0210 - 0x00B8)
+// 0x01F0 (0x02A8 - 0x00B8)
 class UBiomesRuntimeSpawnerComponent final : public UActorComponent
 {
 public:
 	double                                        MaxSpawningDistanceSquared;                        // 0x00B8(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<double>                                AssetMaxSpawningDistanceSquared;                   // 0x00C0(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D0[0x40];                                      // 0x00D0(0x0040)(Fixing Size After Last Property [ Dumper-7 ])
-	class UBiomesSpeciesInfo*                     SpeciesInfo;                                       // 0x0110(0x0008)(Edit, ZeroConstructor, EditConst, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	int32                                         SpawnPointsGridIndex;                              // 0x0118(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FIntPoint                              ComponentXY;                                       // 0x011C(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_124[0x4];                                      // 0x0124(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TSoftObjectPtr<class ULandscapeComponent>     LandscapeComponent;                                // 0x0128(0x0028)(Edit, ExportObject, EditConst, InstancedReference, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FBiomesInstanceComponentPartitions> InstanceComponentPartitions;                   // 0x0150(0x0010)(Edit, ZeroConstructor, EditConst, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	struct FBox2D                                 WorldBounds2D;                                     // 0x0160(0x0028)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 AssetNumPartitions;                                // 0x0188(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
-	struct FVector                                LocalInstancesLocationOffset;                      // 0x0198(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ActorTemplateHash;                                 // 0x01B0(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<TSoftObjectPtr<class UHierarchicalInstancedStaticMeshComponent>> InstanceComponents;      // 0x01C0(0x0010)(ExportObject, ZeroConstructor, Deprecated, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
-	float                                         MaxSpawningDistance;                               // 0x01D0(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1D4[0x4];                                      // 0x01D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBox                                   WorldBounds;                                       // 0x01D8(0x0038)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_D0[0x50];                                      // 0x00D0(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBiomesSpeciesInfo*                     SpeciesInfo;                                       // 0x0120(0x0008)(Edit, ZeroConstructor, EditConst, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	int32                                         SpeciesInfoSpawnPointsIndex;                       // 0x0128(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12C[0x4];                                      // 0x012C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSet<TSoftObjectPtr<class UObject>>           RequiredAssets;                                    // 0x0130(0x0050)(Edit, EditConst, UObjectWrapper, NativeAccessSpecifierPublic)
+	struct FIntPoint                              ComponentXY;                                       // 0x0180(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class ULandscapeComponent>     LandscapeComponent;                                // 0x0188(0x0028)(Edit, ExportObject, EditConst, InstancedReference, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FBiomesInstanceComponentPartitions> InstanceComponentPartitions;                   // 0x01B0(0x0010)(Edit, ZeroConstructor, EditConst, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	struct FBox                                   WorldBounds3D;                                     // 0x01C0(0x0038)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<int32>                                 AssetNumPartitions;                                // 0x01F8(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
+	struct FVector                                LocalInstancesLocationOffset;                      // 0x0208(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ActorTemplateHash;                                 // 0x0220(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<TSoftObjectPtr<class UHierarchicalInstancedStaticMeshComponent>> InstanceComponents;      // 0x0230(0x0010)(ExportObject, ZeroConstructor, Deprecated, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
+	float                                         MaxSpawningDistance;                               // 0x0240(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_244[0x4];                                      // 0x0244(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBox                                   WorldBounds;                                       // 0x0248(0x0038)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FBox2D                                 WorldBounds2D;                                     // 0x0280(0x0028)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
@@ -576,11 +713,11 @@ public:
 DUMPER7_ASSERTS_ABiomesRuntimeSpawner;
 
 // Class ErrantBiomesRuntime.BiomesRuntimeSpawningSubsystem
-// 0x06C0 (0x06F0 - 0x0030)
+// 0x0680 (0x06B0 - 0x0030)
 class UBiomesRuntimeSpawningSubsystem final : public UWorldSubsystem
 {
 public:
-	uint8                                         Pad_30[0x6C0];                                     // 0x0030(0x06C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x680];                                     // 0x0030(0x0680)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -625,8 +762,102 @@ public:
 };
 DUMPER7_ASSERTS_UBiomesSpawnPointsGrid;
 
+// Class ErrantBiomesRuntime.BiomesSpawnPointsGridSettings
+// 0x0008 (0x0030 - 0x0028)
+class UBiomesSpawnPointsGridSettings final : public UBiomesSpawnPointsSettings
+{
+public:
+	int32                                         Spacing;                                           // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SpawnPointsSeed;                                   // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BiomesSpawnPointsGridSettings")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BiomesSpawnPointsGridSettings")
+	}
+	static class UBiomesSpawnPointsGridSettings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBiomesSpawnPointsGridSettings>();
+	}
+};
+DUMPER7_ASSERTS_UBiomesSpawnPointsGridSettings;
+
+// Class ErrantBiomesRuntime.BiomesSpawnPointsGridSubsystem
+// 0x01F8 (0x0228 - 0x0030)
+class UBiomesSpawnPointsGridSubsystem final : public UWorldSubsystem
+{
+public:
+	uint8                                         Pad_30[0x1F8];                                     // 0x0030(0x01F8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BiomesSpawnPointsGridSubsystem")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BiomesSpawnPointsGridSubsystem")
+	}
+	static class UBiomesSpawnPointsGridSubsystem* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBiomesSpawnPointsGridSubsystem>();
+	}
+};
+DUMPER7_ASSERTS_UBiomesSpawnPointsGridSubsystem;
+
+// Class ErrantBiomesRuntime.BiomesSpawnPointsRegularGridSettings
+// 0x0008 (0x0030 - 0x0028)
+class UBiomesSpawnPointsRegularGridSettings final : public UBiomesSpawnPointsSettings
+{
+public:
+	int32                                         Spacing;                                           // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BiomesSpawnPointsRegularGridSettings")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BiomesSpawnPointsRegularGridSettings")
+	}
+	static class UBiomesSpawnPointsRegularGridSettings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBiomesSpawnPointsRegularGridSettings>();
+	}
+};
+DUMPER7_ASSERTS_UBiomesSpawnPointsRegularGridSettings;
+
+// Class ErrantBiomesRuntime.BiomesSpawnPointsRegularGridSubsystem
+// 0x0150 (0x0180 - 0x0030)
+class UBiomesSpawnPointsRegularGridSubsystem final : public UEngineSubsystem
+{
+public:
+	uint8                                         Pad_30[0x150];                                     // 0x0030(0x0150)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BiomesSpawnPointsRegularGridSubsystem")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BiomesSpawnPointsRegularGridSubsystem")
+	}
+	static class UBiomesSpawnPointsRegularGridSubsystem* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBiomesSpawnPointsRegularGridSubsystem>();
+	}
+};
+DUMPER7_ASSERTS_UBiomesSpawnPointsRegularGridSubsystem;
+
 // Class ErrantBiomesRuntime.BiomesSpeciesInfo
-// 0x01B8 (0x01E8 - 0x0030)
+// 0x01D0 (0x0200 - 0x0030)
 class UBiomesSpeciesInfo final : public UDataAsset
 {
 public:
@@ -636,11 +867,12 @@ public:
 	TArray<struct FBox>                           AssetBounds;                                       // 0x0070(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
 	TArray<bool>                                  AssetNeedsInstanceBufferCPUAccess;                 // 0x0080(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
 	TArray<int32>                                 AssetDesiredInstancesPerLeaf;                      // 0x0090(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
-	class UBiomesSpawnPointsGrid*                 SpawnPointsGrid;                                   // 0x00A0(0x0008)(Edit, ZeroConstructor, EditConst, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	TArray<struct FBiomesInstancesSettings>       AssetInstancesSettings;                            // 0x00A8(0x0010)(Edit, ZeroConstructor, EditConst, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	struct FBiomesSpeciesGenerateTransformsInfo   SpeciesGenerationInfo;                             // 0x00B8(0x0078)(Edit, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	TArray<struct FBiomesInstanceableBpInfo>      InstanceableBpInfos;                               // 0x0130(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
-	struct FBiomesInstancesSettings               InstancesSettings;                                 // 0x0140(0x00A8)(Deprecated, ContainsInstancedReference, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FBiomesInstancesSettings>       AssetInstancesSettings;                            // 0x00A0(0x0010)(Edit, ZeroConstructor, EditConst, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	struct FBiomesSpeciesGenerateTransformsInfo   SpeciesGenerationInfo;                             // 0x00B0(0x0078)(Edit, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	TArray<struct FBiomesInstanceableBpInfo>      InstanceableBpInfos;                               // 0x0128(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
+	TArray<class UBiomesSpawnPointsSettings*>     SpawnPointsSettings;                               // 0x0138(0x0010)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	class UBiomesSpawnPointsGrid*                 SpawnPointsGrid;                                   // 0x0148(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FBiomesInstancesSettings               InstancesSettings;                                 // 0x0150(0x00B0)(Deprecated, ContainsInstancedReference, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -659,11 +891,11 @@ public:
 DUMPER7_ASSERTS_UBiomesSpeciesInfo;
 
 // Class ErrantBiomesRuntime.BiomesWorldInfo
-// 0x0110 (0x0140 - 0x0030)
+// 0x0120 (0x0150 - 0x0030)
 class UBiomesWorldInfo final : public UDataAsset
 {
 public:
-	struct FBiomesComponentGenerateTransformsInfo ComponentGenerateTransformsInfo;                   // 0x0030(0x0110)(Edit, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	struct FBiomesComponentGenerateTransformsInfo ComponentGenerateTransformsInfo;                   // 0x0030(0x0120)(Edit, EditConst, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()

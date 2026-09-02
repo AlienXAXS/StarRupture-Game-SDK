@@ -29,6 +29,7 @@ public:
 	void ReceiveDestroyed();
 	void ReceiveBeginPlay();
 	void getLevelName();
+	void getCL();
 	void ExecuteUbergraph_Map_MainMenu(int32 EntryPoint);
 	void droneFPV();
 

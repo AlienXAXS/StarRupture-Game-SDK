@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Chimera_classes.hpp"
-#include "Engine_structs.hpp"
 #include "AuAbilities_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -66,6 +66,7 @@ public:
 	void OnRelease_0E6849794CE62F5F48580D82ABC44E88(float TimeHeld, bool bEnded);
 	void OnServerTraceResult(const struct FAuTargetData& OutHits, const TArray<struct FHitResult>& RawHits, bool bServerConfirmed);
 	void OnTick_0E6849794CE62F5F48580D82ABC44E88(float TimeHeld, bool bEnded);
+	void OnTickNotLocalPlayer_0E6849794CE62F5F48580D82ABC44E88(float TimeHeld, bool bEnded);
 	void Removed_BA9B6F24428A5AA9C8C82D82CBB42554();
 
 public:

@@ -16,142 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.SpawnDecal
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void ABP_Exploder_Tier3_PooledProjectile_Snot_C::SpawnDecal()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "SpawnDecal");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Exploder_Tier3_PooledProjectile_Snot_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.OnProjectileShot
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FCrAiProjectileParameters& InProjectileParameters_OnProjectileShot                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-
-void ABP_Exploder_Tier3_PooledProjectile_Snot_C::OnProjectileShot(const struct FCrAiProjectileParameters& InProjectileParameters_OnProjectileShot)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "OnProjectileShot");
-
-	Params::BP_Exploder_Tier3_PooledProjectile_Snot_C_OnProjectileShot Parms{};
-
-	Parms.InProjectileParameters_OnProjectileShot = std::move(InProjectileParameters_OnProjectileShot);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.OnProjectileDeactivated
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Exploder_Tier3_PooledProjectile_Snot_C::OnProjectileDeactivated()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "OnProjectileDeactivated");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.OnProjectileActivated
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Exploder_Tier3_PooledProjectile_Snot_C::OnProjectileActivated()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "OnProjectileActivated");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectile_Snot
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Exploder_Tier3_PooledProjectile_Snot_C::ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectile_Snot(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectile_Snot");
-
-	Params::BP_Exploder_Tier3_PooledProjectile_Snot_C_ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectile_Snot Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.DestroyDecal
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Exploder_Tier3_PooledProjectile_Snot_C::DestroyDecal()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "DestroyDecal");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UPrimitiveComponent*              OverlappedComponent                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-// class AActor*                           OtherActor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class UPrimitiveComponent*              OtherComp                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-// int32                                   OtherBodyIndex                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Exploder_Tier3_PooledProjectile_Snot_C::BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature");
-
-	Params::BP_Exploder_Tier3_PooledProjectile_Snot_C_BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature Parms{};
-
-	Parms.OverlappedComponent = OverlappedComponent;
-	Parms.OtherActor = OtherActor;
-	Parms.OtherComp = OtherComp;
-	Parms.OtherBodyIndex = OtherBodyIndex;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature
 // (HasOutParams, BlueprintEvent)
 // Parameters:
@@ -182,43 +46,139 @@ void ABP_Exploder_Tier3_PooledProjectile_Snot_C::BndEvt__BP_RangedTier2_PooledPr
 }
 
 
-// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.ShouldForceReturnToPool
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature
+// (BlueprintEvent)
 // Parameters:
-// bool                                    ReturnValue_ShouldForceReturnToPool                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UPrimitiveComponent*              OverlappedComponent                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           OtherActor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class UPrimitiveComponent*              OtherComp                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// int32                                   OtherBodyIndex                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-bool ABP_Exploder_Tier3_PooledProjectile_Snot_C::ShouldForceReturnToPool() const
+void ABP_Exploder_Tier3_PooledProjectile_Snot_C::BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "ShouldForceReturnToPool");
+		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature");
 
-	Params::BP_Exploder_Tier3_PooledProjectile_Snot_C_ShouldForceReturnToPool Parms{};
+	Params::BP_Exploder_Tier3_PooledProjectile_Snot_C_BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature Parms{};
+
+	Parms.OverlappedComponent = OverlappedComponent;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.OtherBodyIndex = OtherBodyIndex;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
 }
 
 
-// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.CanReturnToPoolAfterHit
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue_CanReturnToPoolAfterHit                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.DestroyDecal
+// (Public, BlueprintCallable, BlueprintEvent)
 
-bool ABP_Exploder_Tier3_PooledProjectile_Snot_C::CanReturnToPoolAfterHit() const
+void ABP_Exploder_Tier3_PooledProjectile_Snot_C::DestroyDecal()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "CanReturnToPoolAfterHit");
+		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "DestroyDecal");
 
-	Params::BP_Exploder_Tier3_PooledProjectile_Snot_C_CanReturnToPoolAfterHit Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectile_Snot
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Exploder_Tier3_PooledProjectile_Snot_C::ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectile_Snot(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectile_Snot");
+
+	Params::BP_Exploder_Tier3_PooledProjectile_Snot_C_ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectile_Snot Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
 
-	return Parms.ReturnValue;
+
+// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.OnProjectileActivated
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier3_PooledProjectile_Snot_C::OnProjectileActivated()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "OnProjectileActivated");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.OnProjectileDeactivated
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier3_PooledProjectile_Snot_C::OnProjectileDeactivated()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "OnProjectileDeactivated");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.OnProjectileShot
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FCrAiProjectileParameters& InProjectileParameters                                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+
+void ABP_Exploder_Tier3_PooledProjectile_Snot_C::OnProjectileShot(const struct FCrAiProjectileParameters& InProjectileParameters)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "OnProjectileShot");
+
+	Params::BP_Exploder_Tier3_PooledProjectile_Snot_C_OnProjectileShot Parms{};
+
+	Parms.InProjectileParameters = std::move(InProjectileParameters);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Exploder_Tier3_PooledProjectile_Snot_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.SpawnDecal
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier3_PooledProjectile_Snot_C::SpawnDecal()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "SpawnDecal");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -235,6 +195,46 @@ bool ABP_Exploder_Tier3_PooledProjectile_Snot_C::CanReturnToPool() const
 		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "CanReturnToPool");
 
 	Params::BP_Exploder_Tier3_PooledProjectile_Snot_C_CanReturnToPool Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.CanReturnToPoolAfterHit
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool ABP_Exploder_Tier3_PooledProjectile_Snot_C::CanReturnToPoolAfterHit() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "CanReturnToPoolAfterHit");
+
+	Params::BP_Exploder_Tier3_PooledProjectile_Snot_C_CanReturnToPoolAfterHit Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.ShouldForceReturnToPool
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool ABP_Exploder_Tier3_PooledProjectile_Snot_C::ShouldForceReturnToPool() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "ShouldForceReturnToPool");
+
+	Params::BP_Exploder_Tier3_PooledProjectile_Snot_C_ShouldForceReturnToPool Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 

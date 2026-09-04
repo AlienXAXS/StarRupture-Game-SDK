@@ -16,37 +16,145 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Exploder_Tier3_PooledProjectile.BP_Exploder_Tier3_PooledProjectile_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Function BP_Exploder_Tier3_PooledProjectile.BP_Exploder_Tier3_PooledProjectile_C.AddInstantInfectionToCharacter
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class ACharacter*                       Chatacter                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Exploder_Tier3_PooledProjectile_C::UserConstructionScript()
+void ABP_Exploder_Tier3_PooledProjectile_C::AddInstantInfectionToCharacter(class ACharacter* Chatacter)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_C", "UserConstructionScript");
+		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_C", "AddInstantInfectionToCharacter");
+
+	Params::BP_Exploder_Tier3_PooledProjectile_C_AddInstantInfectionToCharacter Parms{};
+
+	Parms.Chatacter = Chatacter;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Exploder_Tier3_PooledProjectile.BP_Exploder_Tier3_PooledProjectile_C.DoShotgunAttack
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FCrAiProjectileParameters& ProjectileParameters_0                                 (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+
+void ABP_Exploder_Tier3_PooledProjectile_C::DoShotgunAttack(const struct FCrAiProjectileParameters& ProjectileParameters_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_C", "DoShotgunAttack");
+
+	Params::BP_Exploder_Tier3_PooledProjectile_C_DoShotgunAttack Parms{};
+
+	Parms.ProjectileParameters_0 = std::move(ProjectileParameters_0);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Exploder_Tier3_PooledProjectile.BP_Exploder_Tier3_PooledProjectile_C.ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectile
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Exploder_Tier3_PooledProjectile_C::ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectile(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_C", "ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectile");
+
+	Params::BP_Exploder_Tier3_PooledProjectile_C_ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectile Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Exploder_Tier3_PooledProjectile.BP_Exploder_Tier3_PooledProjectile_C.OnHit
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FHitResult&                HitResult                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+
+void ABP_Exploder_Tier3_PooledProjectile_C::OnHit(const struct FHitResult& HitResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_C", "OnHit");
+
+	Params::BP_Exploder_Tier3_PooledProjectile_C_OnHit Parms{};
+
+	Parms.HitResult = std::move(HitResult);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Exploder_Tier3_PooledProjectile.BP_Exploder_Tier3_PooledProjectile_C.OnProjectileActivated
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier3_PooledProjectile_C::OnProjectileActivated()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_C", "OnProjectileActivated");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_Exploder_Tier3_PooledProjectile.BP_Exploder_Tier3_PooledProjectile_C.SplashWithSnotProjectiles
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FHitResult&                HitResult                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+// Function BP_Exploder_Tier3_PooledProjectile.BP_Exploder_Tier3_PooledProjectile_C.OnProjectileDeactivated
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_Exploder_Tier3_PooledProjectile_C::SplashWithSnotProjectiles(const struct FHitResult& HitResult)
+void ABP_Exploder_Tier3_PooledProjectile_C::OnProjectileDeactivated()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_C", "SplashWithSnotProjectiles");
+		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_C", "OnProjectileDeactivated");
 
-	Params::BP_Exploder_Tier3_PooledProjectile_C_SplashWithSnotProjectiles Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.HitResult = std::move(HitResult);
+
+// Function BP_Exploder_Tier3_PooledProjectile.BP_Exploder_Tier3_PooledProjectile_C.OnProjectileShot
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FCrAiProjectileParameters& InProjectileParameters                                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+
+void ABP_Exploder_Tier3_PooledProjectile_C::OnProjectileShot(const struct FCrAiProjectileParameters& InProjectileParameters)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_C", "OnProjectileShot");
+
+	Params::BP_Exploder_Tier3_PooledProjectile_C_OnProjectileShot Parms{};
+
+	Parms.InProjectileParameters = std::move(InProjectileParameters);
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Exploder_Tier3_PooledProjectile.BP_Exploder_Tier3_PooledProjectile_C.OnReleasedToPool
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier3_PooledProjectile_C::OnReleasedToPool()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_C", "OnReleasedToPool");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -74,145 +182,37 @@ void ABP_Exploder_Tier3_PooledProjectile_C::SpawnSnotProjectiles(const struct FV
 }
 
 
-// Function BP_Exploder_Tier3_PooledProjectile.BP_Exploder_Tier3_PooledProjectile_C.OnReleasedToPool
+// Function BP_Exploder_Tier3_PooledProjectile.BP_Exploder_Tier3_PooledProjectile_C.SplashWithSnotProjectiles
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FHitResult&                HitResult                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+
+void ABP_Exploder_Tier3_PooledProjectile_C::SplashWithSnotProjectiles(const struct FHitResult& HitResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_C", "SplashWithSnotProjectiles");
+
+	Params::BP_Exploder_Tier3_PooledProjectile_C_SplashWithSnotProjectiles Parms{};
+
+	Parms.HitResult = std::move(HitResult);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Exploder_Tier3_PooledProjectile.BP_Exploder_Tier3_PooledProjectile_C.UserConstructionScript
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_Exploder_Tier3_PooledProjectile_C::OnReleasedToPool()
+void ABP_Exploder_Tier3_PooledProjectile_C::UserConstructionScript()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_C", "OnReleasedToPool");
+		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_C", "UserConstructionScript");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier3_PooledProjectile.BP_Exploder_Tier3_PooledProjectile_C.OnProjectileShot
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FCrAiProjectileParameters& InProjectileParameters_OnProjectileShot                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-
-void ABP_Exploder_Tier3_PooledProjectile_C::OnProjectileShot(const struct FCrAiProjectileParameters& InProjectileParameters_OnProjectileShot)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_C", "OnProjectileShot");
-
-	Params::BP_Exploder_Tier3_PooledProjectile_C_OnProjectileShot Parms{};
-
-	Parms.InProjectileParameters_OnProjectileShot = std::move(InProjectileParameters_OnProjectileShot);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Exploder_Tier3_PooledProjectile.BP_Exploder_Tier3_PooledProjectile_C.OnProjectileDeactivated
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Exploder_Tier3_PooledProjectile_C::OnProjectileDeactivated()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_C", "OnProjectileDeactivated");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier3_PooledProjectile.BP_Exploder_Tier3_PooledProjectile_C.OnProjectileActivated
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Exploder_Tier3_PooledProjectile_C::OnProjectileActivated()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_C", "OnProjectileActivated");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier3_PooledProjectile.BP_Exploder_Tier3_PooledProjectile_C.OnHit
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FHitResult&                HitResult_OnHit                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-
-void ABP_Exploder_Tier3_PooledProjectile_C::OnHit(const struct FHitResult& HitResult_OnHit)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_C", "OnHit");
-
-	Params::BP_Exploder_Tier3_PooledProjectile_C_OnHit Parms{};
-
-	Parms.HitResult_OnHit = std::move(HitResult_OnHit);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Exploder_Tier3_PooledProjectile.BP_Exploder_Tier3_PooledProjectile_C.ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectile
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Exploder_Tier3_PooledProjectile_C::ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectile(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_C", "ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectile");
-
-	Params::BP_Exploder_Tier3_PooledProjectile_C_ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectile Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Exploder_Tier3_PooledProjectile.BP_Exploder_Tier3_PooledProjectile_C.DoShotgunAttack
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FCrAiProjectileParameters& ProjectileParameters                                   (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-
-void ABP_Exploder_Tier3_PooledProjectile_C::DoShotgunAttack(const struct FCrAiProjectileParameters& ProjectileParameters)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_C", "DoShotgunAttack");
-
-	Params::BP_Exploder_Tier3_PooledProjectile_C_DoShotgunAttack Parms{};
-
-	Parms.ProjectileParameters = std::move(ProjectileParameters);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Exploder_Tier3_PooledProjectile.BP_Exploder_Tier3_PooledProjectile_C.AddInstantInfectionToCharacter
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class ACharacter*                       Chatacter                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Exploder_Tier3_PooledProjectile_C::AddInstantInfectionToCharacter(class ACharacter* Chatacter)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_C", "AddInstantInfectionToCharacter");
-
-	Params::BP_Exploder_Tier3_PooledProjectile_C_AddInstantInfectionToCharacter Parms{};
-
-	Parms.Chatacter = Chatacter;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 

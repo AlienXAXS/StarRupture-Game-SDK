@@ -12,8 +12,8 @@
 
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
-#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "BP_BaseAI_classes.hpp"
+#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -61,32 +61,32 @@ public:
 	class FName                                   Is_In_Slow_Rotation_Range;                         // 0x0DEC(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UserConstructionScript();
-	void UpdateAnimState();
-	void ShowLongAoeAttackEffect();
-	void SetRangedAttackTimer(bool SetTimerActive, double TimeToRangedAttack);
-	void SetMovementAttackStage(EMovementAttackStage MovementAttackStage);
-	void SetIsUpCover(bool bNewIsUpCover);
-	void SetIsInSlowRotationRange(bool bNewIsInSlowRotationRange);
-	void SetIsCoverActive(bool bNewIsCoverActive);
-	void SetHasAggroTarget(bool bNewHasAggroTarget_SetHasAggroTarget);
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay);
-	void ReceiveBeginPlay();
-	void OnRangedAttackTimerFinished();
-	void OnPrepareForPooling();
-	void OnPrepareForGame();
-	void OnExitActorPool();
-	void OnEnterActorPool();
-	void OnBlackboardConfigured(class UMassEnemyDataAsset* Config_OnBlackboardConfigured);
-	void OnAiDied(const struct FHitResult& HitResult_OnAiDied, const struct FGameplayTag& KillingDamageTag_OnAiDied);
-	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam_GetNiagaraEyeSystem);
-	EMovementAttackStage GetMovementAttackStage();
-	TArray<struct FVector> GetCachedLongAoePoints();
-	void ExecuteUbergraph_BP_Melee_Tier3_Actor_Character(int32 EntryPoint);
-	void CacheLongAoePoints(const TArray<struct FVector>& Points);
 	void AttachWeakpoint();
+	void CacheLongAoePoints(const TArray<struct FVector>& Points);
+	void ExecuteUbergraph_BP_Melee_Tier3_Actor_Character(int32 EntryPoint);
+	TArray<struct FVector> GetCachedLongAoePoints();
+	EMovementAttackStage GetMovementAttackStage();
+	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
+	void OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag);
+	void OnBlackboardConfigured(class UMassEnemyDataAsset* Config);
+	void OnEnterActorPool();
+	void OnExitActorPool();
+	void OnPrepareForGame();
+	void OnPrepareForPooling();
+	void OnRangedAttackTimerFinished();
+	void ReceiveBeginPlay();
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void SetHasAggroTarget(bool bNewHasAggroTarget);
+	void SetIsCoverActive(bool bNewIsCoverActive);
+	void SetIsInSlowRotationRange(bool bNewIsInSlowRotationRange);
+	void SetIsUpCover(bool bNewIsUpCover);
+	void SetMovementAttackStage(EMovementAttackStage MovementAttackStage_0);
+	void SetRangedAttackTimer(bool SetTimerActive, double TimeToRangedAttack);
+	void ShowLongAoeAttackEffect();
+	void UpdateAnimState();
+	void UserConstructionScript();
 
-	void OnMeshVisibilityUpdated(bool bIsMeshHidden_OnMeshVisibilityUpdated) const;
+	void OnMeshVisibilityUpdated(bool bIsMeshHidden) const;
 
 public:
 	static class UClass* StaticClass()

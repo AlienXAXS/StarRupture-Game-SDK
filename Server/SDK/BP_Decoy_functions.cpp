@@ -16,26 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Decoy.BP_Decoy_C.OnBuildingStateChanged
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// ECrBuildingState                        InState_OnBuildingStateChanged                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Decoy_C::OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Decoy_C", "OnBuildingStateChanged");
-
-	Params::BP_Decoy_C_OnBuildingStateChanged Parms{};
-
-	Parms.InState_OnBuildingStateChanged = InState_OnBuildingStateChanged;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_Decoy.BP_Decoy_C.ExecuteUbergraph_BP_Decoy
 // (Final, UbergraphFunction)
 // Parameters:
@@ -51,6 +31,26 @@ void ABP_Decoy_C::ExecuteUbergraph_BP_Decoy(int32 EntryPoint)
 	Params::BP_Decoy_C_ExecuteUbergraph_BP_Decoy Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Decoy.BP_Decoy_C.OnBuildingStateChanged
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Decoy_C::OnBuildingStateChanged(ECrBuildingState InState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Decoy_C", "OnBuildingStateChanged");
+
+	Params::BP_Decoy_C_OnBuildingStateChanged Parms{};
+
+	Parms.InState = InState;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

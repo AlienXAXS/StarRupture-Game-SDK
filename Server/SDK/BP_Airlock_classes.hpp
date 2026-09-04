@@ -59,9 +59,9 @@ public:
 
 public:
 	void ReceiveBeginPlay();
-	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed);
-	void PlayInteractionUnSuccessfulSound(EDoorState DoorState);
-	void OnOpenStateChanged(bool bInOpen);
+	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed_PostPlayBuildingEffect);
+	void PlayInteractionUnSuccessfulSound(EDoorState DoorState_PlayInteractionUnSuccessfulSound);
+	void OnOpenStateChanged(bool bInOpen_OnOpenStateChanged);
 	void ExecuteUbergraph_BP_Airlock(int32 EntryPoint);
 
 	const class UShapeComponent* GetAirlockInteriorComponent() const;

@@ -17,33 +17,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_ExporterTier2.BP_ExporterTier2_C.UserConstructionScript
-// 0x0010 (0x0010 - 0x0000)
-struct BP_ExporterTier2_C_UserConstructionScript final
-{
-public:
-	TArray<class UWidgetComponent*>               K2Node_MakeArray_Array;                            // 0x0000(0x0010)(ReferenceParm, ContainsInstancedReference)
-};
-DUMPER7_ASSERTS_BP_ExporterTier2_C_UserConstructionScript;
-
-// Function BP_ExporterTier2.BP_ExporterTier2_C.OnCorporationChanged
-// 0x0008 (0x0008 - 0x0000)
-struct BP_ExporterTier2_C_OnCorporationChanged final
-{
-public:
-	class FName                                   NewCorporation_OnCorporationChanged;               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_ExporterTier2_C_OnCorporationChanged;
-
-// Function BP_ExporterTier2.BP_ExporterTier2_C.OnBuildingStateChanged
-// 0x0001 (0x0001 - 0x0000)
-struct BP_ExporterTier2_C_OnBuildingStateChanged final
-{
-public:
-	ECrBuildingState                              InState_OnBuildingStateChanged;                    // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_ExporterTier2_C_OnBuildingStateChanged;
-
 // Function BP_ExporterTier2.BP_ExporterTier2_C.ExecuteUbergraph_BP_ExporterTier2
 // 0x00C8 (0x00C8 - 0x0000)
 struct BP_ExporterTier2_C_ExecuteUbergraph_BP_ExporterTier2 final
@@ -89,6 +62,33 @@ public:
 	bool                                          CallFunc_K2_AttachToComponent_ReturnValue;         // 0x00C6(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_ExporterTier2_C_ExecuteUbergraph_BP_ExporterTier2;
+
+// Function BP_ExporterTier2.BP_ExporterTier2_C.OnBuildingStateChanged
+// 0x0001 (0x0001 - 0x0000)
+struct BP_ExporterTier2_C_OnBuildingStateChanged final
+{
+public:
+	ECrBuildingState                              InState;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_ExporterTier2_C_OnBuildingStateChanged;
+
+// Function BP_ExporterTier2.BP_ExporterTier2_C.OnCorporationChanged
+// 0x0008 (0x0008 - 0x0000)
+struct BP_ExporterTier2_C_OnCorporationChanged final
+{
+public:
+	class FName                                   NewCorporation;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_ExporterTier2_C_OnCorporationChanged;
+
+// Function BP_ExporterTier2.BP_ExporterTier2_C.UserConstructionScript
+// 0x0010 (0x0010 - 0x0000)
+struct BP_ExporterTier2_C_UserConstructionScript final
+{
+public:
+	TArray<class UWidgetComponent*>               K2Node_MakeArray_Array;                            // 0x0000(0x0010)(ReferenceParm, ContainsInstancedReference)
+};
+DUMPER7_ASSERTS_BP_ExporterTier2_C_UserConstructionScript;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

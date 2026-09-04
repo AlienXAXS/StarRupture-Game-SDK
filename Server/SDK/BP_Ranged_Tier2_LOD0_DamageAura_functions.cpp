@@ -16,46 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Ranged_Tier2_LOD0_DamageAura.BP_Ranged_Tier2_LOD0_DamageAura_C.ReceiveActorEndOverlap
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class AActor*                           OtherActor_ReceiveActorEndOverlap                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Ranged_Tier2_LOD0_DamageAura_C::ReceiveActorEndOverlap(class AActor* OtherActor_ReceiveActorEndOverlap)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier2_LOD0_DamageAura_C", "ReceiveActorEndOverlap");
-
-	Params::BP_Ranged_Tier2_LOD0_DamageAura_C_ReceiveActorEndOverlap Parms{};
-
-	Parms.OtherActor_ReceiveActorEndOverlap = OtherActor_ReceiveActorEndOverlap;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Ranged_Tier2_LOD0_DamageAura.BP_Ranged_Tier2_LOD0_DamageAura_C.ReceiveActorBeginOverlap
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class AActor*                           OtherActor_ReceiveActorBeginOverlap                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Ranged_Tier2_LOD0_DamageAura_C::ReceiveActorBeginOverlap(class AActor* OtherActor_ReceiveActorBeginOverlap)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier2_LOD0_DamageAura_C", "ReceiveActorBeginOverlap");
-
-	Params::BP_Ranged_Tier2_LOD0_DamageAura_C_ReceiveActorBeginOverlap Parms{};
-
-	Parms.OtherActor_ReceiveActorBeginOverlap = OtherActor_ReceiveActorBeginOverlap;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_Ranged_Tier2_LOD0_DamageAura.BP_Ranged_Tier2_LOD0_DamageAura_C.ExecuteUbergraph_BP_Ranged_Tier2_LOD0_DamageAura
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -71,6 +31,46 @@ void ABP_Ranged_Tier2_LOD0_DamageAura_C::ExecuteUbergraph_BP_Ranged_Tier2_LOD0_D
 	Params::BP_Ranged_Tier2_LOD0_DamageAura_C_ExecuteUbergraph_BP_Ranged_Tier2_LOD0_DamageAura Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Ranged_Tier2_LOD0_DamageAura.BP_Ranged_Tier2_LOD0_DamageAura_C.ReceiveActorBeginOverlap
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class AActor*                           OtherActor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Ranged_Tier2_LOD0_DamageAura_C::ReceiveActorBeginOverlap(class AActor* OtherActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Ranged_Tier2_LOD0_DamageAura_C", "ReceiveActorBeginOverlap");
+
+	Params::BP_Ranged_Tier2_LOD0_DamageAura_C_ReceiveActorBeginOverlap Parms{};
+
+	Parms.OtherActor = OtherActor;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Ranged_Tier2_LOD0_DamageAura.BP_Ranged_Tier2_LOD0_DamageAura_C.ReceiveActorEndOverlap
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class AActor*                           OtherActor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Ranged_Tier2_LOD0_DamageAura_C::ReceiveActorEndOverlap(class AActor* OtherActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Ranged_Tier2_LOD0_DamageAura_C", "ReceiveActorEndOverlap");
+
+	Params::BP_Ranged_Tier2_LOD0_DamageAura_C_ReceiveActorEndOverlap Parms{};
+
+	Parms.OtherActor = OtherActor;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

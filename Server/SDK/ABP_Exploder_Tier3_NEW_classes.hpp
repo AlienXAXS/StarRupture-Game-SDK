@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "ABP_Exploder_Tier3_NEW_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 #include "Engine_structs.hpp"
-#include "ABP_Exploder_Tier3_NEW_structs.hpp"
 #include "CrAiExploderRuntime_classes.hpp"
 
 
@@ -44,17 +44,17 @@ public:
 	double                                        SpeedFactor;                                       // 0x0A78(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_ABP_Exploder_Tier3_NEW(int32 EntryPoint);
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_E85ADFF54A7408F17FD73FBF2A86427C();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_E7E954D04B751C08E2DBEEB20F40F630();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_9BB479A741AAC706FF40AB8132B733CE();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_8C7F31AF4006081D4F1B1BAEB7798288();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_6BBE2EE64B4E70E4447360BB00F8FEB1();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_170F179142B44E5B5B91D1B2861E5462();
-	void BlueprintUpdateAnimation(float DeltaTimeX_BlueprintUpdateAnimation);
-	void AnimNotify_EndAnimAction();
+	void AnimGraph(struct FPoseLink* AnimGraph_0);
 	void AnimNotify_AnimationFinishedEvent();
-	void AnimGraph(struct FPoseLink* AnimGraph);
+	void AnimNotify_EndAnimAction();
+	void BlueprintUpdateAnimation(float DeltaTimeX);
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_170F179142B44E5B5B91D1B2861E5462();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_6BBE2EE64B4E70E4447360BB00F8FEB1();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_8C7F31AF4006081D4F1B1BAEB7798288();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_9BB479A741AAC706FF40AB8132B733CE();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_E7E954D04B751C08E2DBEEB20F40F630();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_E85ADFF54A7408F17FD73FBF2A86427C();
+	void ExecuteUbergraph_ABP_Exploder_Tier3_NEW(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

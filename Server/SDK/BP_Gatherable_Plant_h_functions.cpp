@@ -16,21 +16,27 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Gatherable_Plant_h.BP_Gatherable_Plant_h_C.ReceiveEndPlay
+// Function BP_Gatherable_Plant_h.BP_Gatherable_Plant_h_C.BP_OnWaveChangedUpdate
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// EEndPlayReason                          EndPlayReason_ReceiveEndPlay                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEnviroWave                             WaveType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEnviroWaveStage                        WaveStage                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEnviroWaveFadeoutSubstage              FadeoutSubstage                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEnviroWaveGrowbackSubstage             GrowbackSubstage                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Gatherable_Plant_h_C::ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay)
+void ABP_Gatherable_Plant_h_C::BP_OnWaveChangedUpdate(EEnviroWave WaveType, EEnviroWaveStage WaveStage, EEnviroWaveFadeoutSubstage FadeoutSubstage, EEnviroWaveGrowbackSubstage GrowbackSubstage)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Gatherable_Plant_h_C", "ReceiveEndPlay");
+		Func = Class->GetFunction("BP_Gatherable_Plant_h_C", "BP_OnWaveChangedUpdate");
 
-	Params::BP_Gatherable_Plant_h_C_ReceiveEndPlay Parms{};
+	Params::BP_Gatherable_Plant_h_C_BP_OnWaveChangedUpdate Parms{};
 
-	Parms.EndPlayReason_ReceiveEndPlay = EndPlayReason_ReceiveEndPlay;
+	Parms.WaveType = WaveType;
+	Parms.WaveStage = WaveStage;
+	Parms.FadeoutSubstage = FadeoutSubstage;
+	Parms.GrowbackSubstage = GrowbackSubstage;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -56,27 +62,21 @@ void ABP_Gatherable_Plant_h_C::ExecuteUbergraph_BP_Gatherable_Plant_h(int32 Entr
 }
 
 
-// Function BP_Gatherable_Plant_h.BP_Gatherable_Plant_h_C.BP_OnWaveChangedUpdate
+// Function BP_Gatherable_Plant_h.BP_Gatherable_Plant_h_C.ReceiveEndPlay
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// EEnviroWave                             WaveType_BP_OnWaveChangedUpdate                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EEnviroWaveStage                        WaveStage_BP_OnWaveChangedUpdate                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EEnviroWaveFadeoutSubstage              FadeoutSubstage_BP_OnWaveChangedUpdate                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EEnviroWaveGrowbackSubstage             GrowbackSubstage_BP_OnWaveChangedUpdate                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Gatherable_Plant_h_C::BP_OnWaveChangedUpdate(EEnviroWave WaveType_BP_OnWaveChangedUpdate, EEnviroWaveStage WaveStage_BP_OnWaveChangedUpdate, EEnviroWaveFadeoutSubstage FadeoutSubstage_BP_OnWaveChangedUpdate, EEnviroWaveGrowbackSubstage GrowbackSubstage_BP_OnWaveChangedUpdate)
+void ABP_Gatherable_Plant_h_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Gatherable_Plant_h_C", "BP_OnWaveChangedUpdate");
+		Func = Class->GetFunction("BP_Gatherable_Plant_h_C", "ReceiveEndPlay");
 
-	Params::BP_Gatherable_Plant_h_C_BP_OnWaveChangedUpdate Parms{};
+	Params::BP_Gatherable_Plant_h_C_ReceiveEndPlay Parms{};
 
-	Parms.WaveType_BP_OnWaveChangedUpdate = WaveType_BP_OnWaveChangedUpdate;
-	Parms.WaveStage_BP_OnWaveChangedUpdate = WaveStage_BP_OnWaveChangedUpdate;
-	Parms.FadeoutSubstage_BP_OnWaveChangedUpdate = FadeoutSubstage_BP_OnWaveChangedUpdate;
-	Parms.GrowbackSubstage_BP_OnWaveChangedUpdate = GrowbackSubstage_BP_OnWaveChangedUpdate;
+	Parms.EndPlayReason = EndPlayReason;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

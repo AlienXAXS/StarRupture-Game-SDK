@@ -16,6 +16,48 @@
 
 SDK_NAMESPACE_START
 
+// Function BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition.BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C.ExecuteUbergraph_BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C::ExecuteUbergraph_BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C", "ExecuteUbergraph_BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition");
+
+	Params::BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C_ExecuteUbergraph_BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition.BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C.ReceiveActivationAI
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class AAIController*                    OwnerController                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class APawn*                            ControlledPawn                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void UBTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C::ReceiveActivationAI(class AAIController* OwnerController, class APawn* ControlledPawn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C", "ReceiveActivationAI");
+
+	Params::BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C_ReceiveActivationAI Parms{};
+
+	Parms.OwnerController = OwnerController;
+	Parms.ControlledPawn = ControlledPawn;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition.BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C.UpdateAfterShotFiredPosition
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -33,48 +75,6 @@ void UBTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C::UpdateAfterSho
 
 	Parms.Pawn = Pawn;
 	Parms.Controller = Controller;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition.BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C.ReceiveActivationAI
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class AAIController*                    OwnerController_ReceiveActivationAI                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class APawn*                            ControlledPawn_ReceiveActivationAI                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void UBTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C::ReceiveActivationAI(class AAIController* OwnerController_ReceiveActivationAI, class APawn* ControlledPawn_ReceiveActivationAI)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C", "ReceiveActivationAI");
-
-	Params::BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C_ReceiveActivationAI Parms{};
-
-	Parms.OwnerController_ReceiveActivationAI = OwnerController_ReceiveActivationAI;
-	Parms.ControlledPawn_ReceiveActivationAI = ControlledPawn_ReceiveActivationAI;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition.BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C.ExecuteUbergraph_BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UBTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C::ExecuteUbergraph_BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C", "ExecuteUbergraph_BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition");
-
-	Params::BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition_C_ExecuteUbergraph_BTService_Ranged_Tier1_LOD0_UpdateAfterShotFiredPosition Parms{};
-
-	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -53,12 +53,12 @@ public:
 	bool                                          CystDestroyed;                                     // 0x0468(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void SpawnEnemy();
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay);
-	void ReceiveBeginPlay();
-	void OnRep_CystDestroyed();
-	void OnCystDestroyed_Event(class AExploderT3CystActor* Cyst);
 	void ExecuteUbergraph_BP_Exploder_Tier3_CystActor(int32 EntryPoint);
+	void OnCystDestroyed_Event(class AExploderT3CystActor* Cyst);
+	void OnRep_CystDestroyed();
+	void ReceiveBeginPlay();
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void SpawnEnemy();
 
 public:
 	static class UClass* StaticClass()

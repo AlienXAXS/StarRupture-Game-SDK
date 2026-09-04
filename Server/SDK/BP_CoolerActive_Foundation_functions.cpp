@@ -16,21 +16,41 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_CoolerActive_Foundation.BP_CoolerActive_Foundation_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
+// Function BP_CoolerActive_Foundation.BP_CoolerActive_Foundation_C.ExecuteUbergraph_BP_CoolerActive_Foundation
+// (Final, UbergraphFunction)
 // Parameters:
-// float                                   DeltaSeconds_ReceiveTick                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_CoolerActive_Foundation_C::ReceiveTick(float DeltaSeconds_ReceiveTick)
+void ABP_CoolerActive_Foundation_C::ExecuteUbergraph_BP_CoolerActive_Foundation(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CoolerActive_Foundation_C", "ReceiveTick");
+		Func = Class->GetFunction("BP_CoolerActive_Foundation_C", "ExecuteUbergraph_BP_CoolerActive_Foundation");
 
-	Params::BP_CoolerActive_Foundation_C_ReceiveTick Parms{};
+	Params::BP_CoolerActive_Foundation_C_ExecuteUbergraph_BP_CoolerActive_Foundation Parms{};
 
-	Parms.DeltaSeconds_ReceiveTick = DeltaSeconds_ReceiveTick;
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_CoolerActive_Foundation.BP_CoolerActive_Foundation_C.ReceiveActorBeginOverlap
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class AActor*                           OtherActor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void ABP_CoolerActive_Foundation_C::ReceiveActorBeginOverlap(class AActor* OtherActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_CoolerActive_Foundation_C", "ReceiveActorBeginOverlap");
+
+	Params::BP_CoolerActive_Foundation_C_ReceiveActorBeginOverlap Parms{};
+
+	Parms.OtherActor = OtherActor;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -50,41 +70,21 @@ void ABP_CoolerActive_Foundation_C::ReceiveBeginPlay()
 }
 
 
-// Function BP_CoolerActive_Foundation.BP_CoolerActive_Foundation_C.ReceiveActorBeginOverlap
+// Function BP_CoolerActive_Foundation.BP_CoolerActive_Foundation_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class AActor*                           OtherActor_ReceiveActorBeginOverlap                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_CoolerActive_Foundation_C::ReceiveActorBeginOverlap(class AActor* OtherActor_ReceiveActorBeginOverlap)
+void ABP_CoolerActive_Foundation_C::ReceiveTick(float DeltaSeconds)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CoolerActive_Foundation_C", "ReceiveActorBeginOverlap");
+		Func = Class->GetFunction("BP_CoolerActive_Foundation_C", "ReceiveTick");
 
-	Params::BP_CoolerActive_Foundation_C_ReceiveActorBeginOverlap Parms{};
+	Params::BP_CoolerActive_Foundation_C_ReceiveTick Parms{};
 
-	Parms.OtherActor_ReceiveActorBeginOverlap = OtherActor_ReceiveActorBeginOverlap;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_CoolerActive_Foundation.BP_CoolerActive_Foundation_C.ExecuteUbergraph_BP_CoolerActive_Foundation
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_CoolerActive_Foundation_C::ExecuteUbergraph_BP_CoolerActive_Foundation(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CoolerActive_Foundation_C", "ExecuteUbergraph_BP_CoolerActive_Foundation");
-
-	Params::BP_CoolerActive_Foundation_C_ExecuteUbergraph_BP_CoolerActive_Foundation Parms{};
-
-	Parms.EntryPoint = EntryPoint;
+	Parms.DeltaSeconds = DeltaSeconds;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

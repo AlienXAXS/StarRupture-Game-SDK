@@ -16,16 +16,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BTT_Exploder_Tier3_GetRandomCystLocation.BTT_Exploder_Tier3_GetRandomCystLocation_C.ReceiveExecuteAI
-// 0x0010 (0x0010 - 0x0000)
-struct BTT_Exploder_Tier3_GetRandomCystLocation_C_ReceiveExecuteAI final
-{
-public:
-	class AAIController*                          OwnerController_ReceiveExecuteAI;                  // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  ControlledPawn_ReceiveExecuteAI;                   // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BTT_Exploder_Tier3_GetRandomCystLocation_C_ReceiveExecuteAI;
-
 // Function BTT_Exploder_Tier3_GetRandomCystLocation.BTT_Exploder_Tier3_GetRandomCystLocation_C.ExecuteUbergraph_BTT_Exploder_Tier3_GetRandomCystLocation
 // 0x00A8 (0x00A8 - 0x0000)
 struct BTT_Exploder_Tier3_GetRandomCystLocation_C_ExecuteUbergraph_BTT_Exploder_Tier3_GetRandomCystLocation final
@@ -53,6 +43,16 @@ public:
 	bool                                          CallFunc_GreaterEqual_DoubleDouble_ReturnValue;    // 0x00A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BTT_Exploder_Tier3_GetRandomCystLocation_C_ExecuteUbergraph_BTT_Exploder_Tier3_GetRandomCystLocation;
+
+// Function BTT_Exploder_Tier3_GetRandomCystLocation.BTT_Exploder_Tier3_GetRandomCystLocation_C.ReceiveExecuteAI
+// 0x0010 (0x0010 - 0x0000)
+struct BTT_Exploder_Tier3_GetRandomCystLocation_C_ReceiveExecuteAI final
+{
+public:
+	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BTT_Exploder_Tier3_GetRandomCystLocation_C_ReceiveExecuteAI;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

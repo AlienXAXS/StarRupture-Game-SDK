@@ -17,34 +17,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_Exploder_Tier3_CystActor.BP_Exploder_Tier3_CystActor_C.ReceiveEndPlay
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Exploder_Tier3_CystActor_C_ReceiveEndPlay final
-{
-public:
-	EEndPlayReason                                EndPlayReason_ReceiveEndPlay;                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Exploder_Tier3_CystActor_C_ReceiveEndPlay;
-
-// Function BP_Exploder_Tier3_CystActor.BP_Exploder_Tier3_CystActor_C.OnRep_CystDestroyed
-// 0x0002 (0x0002 - 0x0000)
-struct BP_Exploder_Tier3_CystActor_C_OnRep_CystDestroyed final
-{
-public:
-	bool                                          CallFunc_HasAuthority_ReturnValue;                 // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Exploder_Tier3_CystActor_C_OnRep_CystDestroyed;
-
-// Function BP_Exploder_Tier3_CystActor.BP_Exploder_Tier3_CystActor_C.OnCystDestroyed_Event
-// 0x0008 (0x0008 - 0x0000)
-struct BP_Exploder_Tier3_CystActor_C_OnCystDestroyed_Event final
-{
-public:
-	class AExploderT3CystActor*                   Cyst;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Exploder_Tier3_CystActor_C_OnCystDestroyed_Event;
-
 // Function BP_Exploder_Tier3_CystActor.BP_Exploder_Tier3_CystActor_C.ExecuteUbergraph_BP_Exploder_Tier3_CystActor
 // 0x0130 (0x0130 - 0x0000)
 struct BP_Exploder_Tier3_CystActor_C_ExecuteUbergraph_BP_Exploder_Tier3_CystActor final
@@ -85,6 +57,34 @@ public:
 	float                                         CallFunc_RotateAngleAxis_AngleDeg_ImplicitCast;    // 0x012C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Exploder_Tier3_CystActor_C_ExecuteUbergraph_BP_Exploder_Tier3_CystActor;
+
+// Function BP_Exploder_Tier3_CystActor.BP_Exploder_Tier3_CystActor_C.OnCystDestroyed_Event
+// 0x0008 (0x0008 - 0x0000)
+struct BP_Exploder_Tier3_CystActor_C_OnCystDestroyed_Event final
+{
+public:
+	class AExploderT3CystActor*                   Cyst;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Exploder_Tier3_CystActor_C_OnCystDestroyed_Event;
+
+// Function BP_Exploder_Tier3_CystActor.BP_Exploder_Tier3_CystActor_C.OnRep_CystDestroyed
+// 0x0002 (0x0002 - 0x0000)
+struct BP_Exploder_Tier3_CystActor_C_OnRep_CystDestroyed final
+{
+public:
+	bool                                          CallFunc_HasAuthority_ReturnValue;                 // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Exploder_Tier3_CystActor_C_OnRep_CystDestroyed;
+
+// Function BP_Exploder_Tier3_CystActor.BP_Exploder_Tier3_CystActor_C.ReceiveEndPlay
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Exploder_Tier3_CystActor_C_ReceiveEndPlay final
+{
+public:
+	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Exploder_Tier3_CystActor_C_ReceiveEndPlay;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

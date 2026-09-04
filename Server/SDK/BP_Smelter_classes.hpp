@@ -43,11 +43,11 @@ public:
 	ECrBuildingState                              BuildingState;                                     // 0x07E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void SetupSkeletalMesh();
-	void OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged);
 	void ExecuteUbergraph_BP_Smelter(int32 EntryPoint);
+	void OnBuildingStateChanged(ECrBuildingState InState);
+	void SetupSkeletalMesh();
 
-	void Get_Meshes(class USceneComponent* Static, class USceneComponent* Animated, TArray<class UMeshComponent*>* NewParam) const;
+	void Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Animated_0, TArray<class UMeshComponent*>* NewParam) const;
 
 public:
 	static class UClass* StaticClass()

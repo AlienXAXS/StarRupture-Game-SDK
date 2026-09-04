@@ -16,71 +16,31 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Recycler.BP_Recycler_C.UserConstructionScript
-// (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function BP_Recycler.BP_Recycler_C.Arms_timeline__FinishedFunc
+// (BlueprintEvent)
 
-void ABP_Recycler_C::UserConstructionScript()
+void ABP_Recycler_C::Arms_timeline__FinishedFunc()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Recycler_C", "UserConstructionScript");
+		Func = Class->GetFunction("BP_Recycler_C", "Arms_timeline__FinishedFunc");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_Recycler.BP_Recycler_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_Recycler.BP_Recycler_C.Arms_timeline__UpdateFunc
+// (BlueprintEvent)
 
-void ABP_Recycler_C::ReceiveBeginPlay()
+void ABP_Recycler_C::Arms_timeline__UpdateFunc()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Recycler_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_Recycler_C", "Arms_timeline__UpdateFunc");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Recycler.BP_Recycler_C.OnUIOpened
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bOpened_OnUIOpened                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Recycler_C::OnUIOpened(bool bOpened_OnUIOpened)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Recycler_C", "OnUIOpened");
-
-	Params::BP_Recycler_C_OnUIOpened Parms{};
-
-	Parms.bOpened_OnUIOpened = bOpened_OnUIOpened;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Recycler.BP_Recycler_C.OnBuildingStateChanged
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// ECrBuildingState                        InState_OnBuildingStateChanged                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Recycler_C::OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Recycler_C", "OnBuildingStateChanged");
-
-	Params::BP_Recycler_C_OnBuildingStateChanged Parms{};
-
-	Parms.InState_OnBuildingStateChanged = InState_OnBuildingStateChanged;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -104,29 +64,69 @@ void ABP_Recycler_C::ExecuteUbergraph_BP_Recycler(int32 EntryPoint)
 }
 
 
-// Function BP_Recycler.BP_Recycler_C.Arms_timeline__UpdateFunc
-// (BlueprintEvent)
+// Function BP_Recycler.BP_Recycler_C.OnBuildingStateChanged
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Recycler_C::Arms_timeline__UpdateFunc()
+void ABP_Recycler_C::OnBuildingStateChanged(ECrBuildingState InState)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Recycler_C", "Arms_timeline__UpdateFunc");
+		Func = Class->GetFunction("BP_Recycler_C", "OnBuildingStateChanged");
+
+	Params::BP_Recycler_C_OnBuildingStateChanged Parms{};
+
+	Parms.InState = InState;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Recycler.BP_Recycler_C.OnUIOpened
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bOpened                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Recycler_C::OnUIOpened(bool bOpened)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Recycler_C", "OnUIOpened");
+
+	Params::BP_Recycler_C_OnUIOpened Parms{};
+
+	Parms.bOpened = bOpened;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Recycler.BP_Recycler_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Recycler_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Recycler_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_Recycler.BP_Recycler_C.Arms_timeline__FinishedFunc
-// (BlueprintEvent)
+// Function BP_Recycler.BP_Recycler_C.UserConstructionScript
+// (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void ABP_Recycler_C::Arms_timeline__FinishedFunc()
+void ABP_Recycler_C::UserConstructionScript()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Recycler_C", "Arms_timeline__FinishedFunc");
+		Func = Class->GetFunction("BP_Recycler_C", "UserConstructionScript");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

@@ -16,26 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function WBP_CorporationPointsCounter.WBP_CorporationPointsCounter_C.PreConstruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    IsDesignTime_PreConstruct                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UWBP_CorporationPointsCounter_C::PreConstruct(bool IsDesignTime_PreConstruct)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CorporationPointsCounter_C", "PreConstruct");
-
-	Params::WBP_CorporationPointsCounter_C_PreConstruct Parms{};
-
-	Parms.IsDesignTime_PreConstruct = IsDesignTime_PreConstruct;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function WBP_CorporationPointsCounter.WBP_CorporationPointsCounter_C.ExecuteUbergraph_WBP_CorporationPointsCounter
 // (Final, UbergraphFunction)
 // Parameters:
@@ -51,6 +31,26 @@ void UWBP_CorporationPointsCounter_C::ExecuteUbergraph_WBP_CorporationPointsCoun
 	Params::WBP_CorporationPointsCounter_C_ExecuteUbergraph_WBP_CorporationPointsCounter Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_CorporationPointsCounter.WBP_CorporationPointsCounter_C.PreConstruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_CorporationPointsCounter_C::PreConstruct(bool IsDesignTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_CorporationPointsCounter_C", "PreConstruct");
+
+	Params::WBP_CorporationPointsCounter_C_PreConstruct Parms{};
+
+	Parms.IsDesignTime = IsDesignTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

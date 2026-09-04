@@ -20,7 +20,7 @@ SDK_NAMESPACE_START
 class UEQS_Exploder_Tier3_Prototype_Context_ExcludedLocations_C final : public UEnvQueryContext_BlueprintBase
 {
 public:
-	void ProvideLocationsSet(class UObject* QuerierObject_ProvideLocationsSet, class AActor* QuerierActor_ProvideLocationsSet, TArray<struct FVector>* ResultingLocationSet_ProvideLocationsSet) const;
+	void ProvideLocationsSet(class UObject* QuerierObject, class AActor* QuerierActor, TArray<struct FVector>* ResultingLocationSet) const;
 
 public:
 	static class UClass* StaticClass()

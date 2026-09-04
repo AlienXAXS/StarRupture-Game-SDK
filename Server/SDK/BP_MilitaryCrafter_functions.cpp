@@ -19,11 +19,11 @@ SDK_NAMESPACE_START
 // Function BP_MilitaryCrafter.BP_MilitaryCrafter_C.Get Meshes
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class USceneComponent*                  Static                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class USceneComponent*                  Static_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // class USceneComponent*                  Animated                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // TArray<class UMeshComponent*>*          NewParam                                               (Parm, OutParm, ContainsInstancedReference)
 
-void ABP_MilitaryCrafter_C::Get_Meshes(class USceneComponent* Static, class USceneComponent* Animated, TArray<class UMeshComponent*>* NewParam)
+void ABP_MilitaryCrafter_C::Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Animated, TArray<class UMeshComponent*>* NewParam)
 {
 	static class UFunction* Func = nullptr;
 
@@ -32,7 +32,7 @@ void ABP_MilitaryCrafter_C::Get_Meshes(class USceneComponent* Static, class USce
 
 	Params::BP_MilitaryCrafter_C_Get_Meshes Parms{};
 
-	Parms.Static = Static;
+	Parms.Static_0 = Static_0;
 	Parms.Animated = Animated;
 
 	UObject::ProcessEvent(Func, &Parms);

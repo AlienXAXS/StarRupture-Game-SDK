@@ -16,33 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_AnimNotify_Shoot.BP_AnimNotify_Shoot_C.Received_Notify
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// class USkeletalMeshComponent*           MeshComp_Received_Notify                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-// class UAnimSequenceBase*                Animation_Received_Notify                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// const struct FAnimNotifyEventReference& EventReference_Received_Notify                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// bool                                    ReturnValue_Received_Notify                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-bool UBP_AnimNotify_Shoot_C::Received_Notify(class USkeletalMeshComponent* MeshComp_Received_Notify, class UAnimSequenceBase* Animation_Received_Notify, const struct FAnimNotifyEventReference& EventReference_Received_Notify) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AnimNotify_Shoot_C", "Received_Notify");
-
-	Params::BP_AnimNotify_Shoot_C_Received_Notify Parms{};
-
-	Parms.MeshComp_Received_Notify = MeshComp_Received_Notify;
-	Parms.Animation_Received_Notify = Animation_Received_Notify;
-	Parms.EventReference_Received_Notify = std::move(EventReference_Received_Notify);
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
 // Function BP_AnimNotify_Shoot.BP_AnimNotify_Shoot_C.CreateAiAction
 // (HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
@@ -59,6 +32,33 @@ class UCrAiAction* UBP_AnimNotify_Shoot_C::CreateAiAction(class AActor* Actor) c
 	Params::BP_AnimNotify_Shoot_C_CreateAiAction Parms{};
 
 	Parms.Actor = Actor;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BP_AnimNotify_Shoot.BP_AnimNotify_Shoot_C.Received_Notify
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// class USkeletalMeshComponent*           MeshComp                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UAnimSequenceBase*                Animation                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const struct FAnimNotifyEventReference& EventReference                                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool UBP_AnimNotify_Shoot_C::Received_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, const struct FAnimNotifyEventReference& EventReference) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_AnimNotify_Shoot_C", "Received_Notify");
+
+	Params::BP_AnimNotify_Shoot_C_Received_Notify Parms{};
+
+	Parms.MeshComp = MeshComp;
+	Parms.Animation = Animation;
+	Parms.EventReference = std::move(EventReference);
 
 	UObject::ProcessEvent(Func, &Parms);
 

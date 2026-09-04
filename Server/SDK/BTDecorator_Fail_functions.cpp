@@ -19,10 +19,10 @@ SDK_NAMESPACE_START
 // Function BTDecorator_Fail.BTDecorator_Fail_C.PerformConditionCheck
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AActor*                           OwnerActor_PerformConditionCheck                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// bool                                    ReturnValue_PerformConditionCheck                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           OwnerActor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-bool UBTDecorator_Fail_C::PerformConditionCheck(class AActor* OwnerActor_PerformConditionCheck)
+bool UBTDecorator_Fail_C::PerformConditionCheck(class AActor* OwnerActor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -31,7 +31,7 @@ bool UBTDecorator_Fail_C::PerformConditionCheck(class AActor* OwnerActor_Perform
 
 	Params::BTDecorator_Fail_C_PerformConditionCheck Parms{};
 
-	Parms.OwnerActor_PerformConditionCheck = OwnerActor_PerformConditionCheck;
+	Parms.OwnerActor = OwnerActor;
 
 	UObject::ProcessEvent(Func, &Parms);
 

@@ -27,7 +27,7 @@ public:
 	float                                         BuildingAttackDistance;                            // 0x004C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	class UCrAiAction* CreateAiAction(class AActor* Actor_CreateAiAction) const;
+	class UCrAiAction* CreateAiAction(class AActor* Actor) const;
 
 public:
 	static class UClass* StaticClass()

@@ -17,83 +17,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_FE2_Pillars.BP_FE2_Pillars_C.SetUI
-// 0x0014 (0x0014 - 0x0000)
-struct BP_FE2_Pillars_C_SetUI final
-{
-public:
-	ECrAntennaState                               InState_SetUI;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLinearColor                           InColor_SetUI;                                     // 0x0004(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_FE2_Pillars_C_SetUI;
-
-// Function BP_FE2_Pillars.BP_FE2_Pillars_C.Set_Display_State
-// 0x0030 (0x0030 - 0x0000)
-struct BP_FE2_Pillars_C_Set_Display_State final
-{
-public:
-	ECrAntennaState                               AntennaState;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLinearColor                           Color;                                             // 0x0004(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UUserWidget*                            CallFunc_GetUserWidgetObject_ReturnValue;          // 0x0018(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UWBP_AntennaDisplay_C*                  K2Node_DynamicCast_AsWBP_Antenna_Display;          // 0x0020(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_FE2_Pillars_C_Set_Display_State;
-
-// Function BP_FE2_Pillars.BP_FE2_Pillars_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct BP_FE2_Pillars_C_ReceiveTick final
-{
-public:
-	float                                         DeltaSeconds_ReceiveTick;                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_FE2_Pillars_C_ReceiveTick;
-
-// Function BP_FE2_Pillars.BP_FE2_Pillars_C.PlayInteractionUnSuccessfulSound
-// 0x0028 (0x0028 - 0x0000)
-struct BP_FE2_Pillars_C_PlayInteractionUnSuccessfulSound final
-{
-public:
-	bool                                          ReturnValue_PlayInteractionUnSuccessfulSound;      // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0008(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_PlayInteractionUnSuccessfulSound_ReturnValue; // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_FE2_Pillars_C_PlayInteractionUnSuccessfulSound;
-
-// Function BP_FE2_Pillars.BP_FE2_Pillars_C.PlayInteractionSuccessfulSound
-// 0x0028 (0x0028 - 0x0000)
-struct BP_FE2_Pillars_C_PlayInteractionSuccessfulSound final
-{
-public:
-	bool                                          ReturnValue_PlayInteractionSuccessfulSound;        // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0008(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_PlayInteractionSuccessfulSound_ReturnValue; // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_FE2_Pillars_C_PlayInteractionSuccessfulSound;
-
-// Function BP_FE2_Pillars.BP_FE2_Pillars_C.OnStateChanged
-// 0x0001 (0x0001 - 0x0000)
-struct BP_FE2_Pillars_C_OnStateChanged final
-{
-public:
-	ECrAntennaState                               NewState_OnStateChanged;                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_FE2_Pillars_C_OnStateChanged;
-
-// Function BP_FE2_Pillars.BP_FE2_Pillars_C.OnChargingProgressUpdate
-// 0x0004 (0x0004 - 0x0000)
-struct BP_FE2_Pillars_C_OnChargingProgressUpdate final
-{
-public:
-	float                                         Progress_OnChargingProgressUpdate;                 // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_FE2_Pillars_C_OnChargingProgressUpdate;
-
 // Function BP_FE2_Pillars.BP_FE2_Pillars_C.ExecuteUbergraph_BP_FE2_Pillars
 // 0x00C8 (0x00C8 - 0x0000)
 struct BP_FE2_Pillars_C_ExecuteUbergraph_BP_FE2_Pillars final
@@ -138,6 +61,83 @@ public:
 	double                                        CallFunc_SetPercent_Percent_ImplicitCast;          // 0x00C0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_FE2_Pillars_C_ExecuteUbergraph_BP_FE2_Pillars;
+
+// Function BP_FE2_Pillars.BP_FE2_Pillars_C.OnChargingProgressUpdate
+// 0x0004 (0x0004 - 0x0000)
+struct BP_FE2_Pillars_C_OnChargingProgressUpdate final
+{
+public:
+	float                                         Progress;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_FE2_Pillars_C_OnChargingProgressUpdate;
+
+// Function BP_FE2_Pillars.BP_FE2_Pillars_C.OnStateChanged
+// 0x0001 (0x0001 - 0x0000)
+struct BP_FE2_Pillars_C_OnStateChanged final
+{
+public:
+	ECrAntennaState                               NewState;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_FE2_Pillars_C_OnStateChanged;
+
+// Function BP_FE2_Pillars.BP_FE2_Pillars_C.PlayInteractionSuccessfulSound
+// 0x0028 (0x0028 - 0x0000)
+struct BP_FE2_Pillars_C_PlayInteractionSuccessfulSound final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0008(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_PlayInteractionSuccessfulSound_ReturnValue; // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_FE2_Pillars_C_PlayInteractionSuccessfulSound;
+
+// Function BP_FE2_Pillars.BP_FE2_Pillars_C.PlayInteractionUnSuccessfulSound
+// 0x0028 (0x0028 - 0x0000)
+struct BP_FE2_Pillars_C_PlayInteractionUnSuccessfulSound final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0008(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_PlayInteractionUnSuccessfulSound_ReturnValue; // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_FE2_Pillars_C_PlayInteractionUnSuccessfulSound;
+
+// Function BP_FE2_Pillars.BP_FE2_Pillars_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_FE2_Pillars_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_FE2_Pillars_C_ReceiveTick;
+
+// Function BP_FE2_Pillars.BP_FE2_Pillars_C.Set_Display_State
+// 0x0030 (0x0030 - 0x0000)
+struct BP_FE2_Pillars_C_Set_Display_State final
+{
+public:
+	ECrAntennaState                               AntennaState;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           Color;                                             // 0x0004(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UUserWidget*                            CallFunc_GetUserWidgetObject_ReturnValue;          // 0x0018(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UWBP_AntennaDisplay_C*                  K2Node_DynamicCast_AsWBP_Antenna_Display;          // 0x0020(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_FE2_Pillars_C_Set_Display_State;
+
+// Function BP_FE2_Pillars.BP_FE2_Pillars_C.SetUI
+// 0x0014 (0x0014 - 0x0000)
+struct BP_FE2_Pillars_C_SetUI final
+{
+public:
+	ECrAntennaState                               InState;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           InColor;                                           // 0x0004(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_FE2_Pillars_C_SetUI;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

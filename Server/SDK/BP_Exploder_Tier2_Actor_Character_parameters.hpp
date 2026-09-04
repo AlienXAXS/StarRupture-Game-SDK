@@ -17,69 +17,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.TryDestroyInfectionEntity
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Exploder_Tier2_Actor_Character_C_TryDestroyInfectionEntity final
-{
-public:
-	bool                                          Instant;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Exploder_Tier2_Actor_Character_C_TryDestroyInfectionEntity;
-
-// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.RegisterMovementFailed
-// 0x0058 (0x0058 - 0x0000)
-struct BP_Exploder_Tier2_Actor_Character_C_RegisterMovementFailed final
-{
-public:
-	double                                        MovementFailedExpTime;                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable;                     // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Subtract_IntInt_ReturnValue;              // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_GreaterEqual_IntInt_ReturnValue;          // 0x0014(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        CallFunc_GetTimeSeconds_ReturnValue;               // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Array_Get_Item;                           // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        CallFunc_Subtract_DoubleDouble_ReturnValue;        // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Subtract_IntInt_ReturnValue_1;            // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Greater_DoubleDouble_ReturnValue;         // 0x003C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Max_ReturnValue;                          // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        CallFunc_GetTimeSeconds_ReturnValue_1;             // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Exploder_Tier2_Actor_Character_C_RegisterMovementFailed;
-
-// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct BP_Exploder_Tier2_Actor_Character_C_ReceiveTick final
-{
-public:
-	float                                         DeltaSeconds_ReceiveTick;                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Exploder_Tier2_Actor_Character_C_ReceiveTick;
-
-// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.GetNiagaraEyeSystem
-// 0x0008 (0x0008 - 0x0000)
-struct BP_Exploder_Tier2_Actor_Character_C_GetNiagaraEyeSystem final
-{
-public:
-	class UNiagaraComponent*                      NewParam_GetNiagaraEyeSystem;                      // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Exploder_Tier2_Actor_Character_C_GetNiagaraEyeSystem;
-
-// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.GetMovementFailsNum
-// 0x0008 (0x0008 - 0x0000)
-struct BP_Exploder_Tier2_Actor_Character_C_GetMovementFailsNum final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Exploder_Tier2_Actor_Character_C_GetMovementFailsNum;
-
 // Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.ExecuteUbergraph_BP_Exploder_Tier2_Actor_Character
 // 0x0078 (0x0078 - 0x0000)
 struct BP_Exploder_Tier2_Actor_Character_C_ExecuteUbergraph_BP_Exploder_Tier2_Actor_Character final
@@ -108,14 +45,68 @@ public:
 };
 DUMPER7_ASSERTS_BP_Exploder_Tier2_Actor_Character_C_ExecuteUbergraph_BP_Exploder_Tier2_Actor_Character;
 
-// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.ShouldSpawnHugeCollision
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Exploder_Tier2_Actor_Character_C_ShouldSpawnHugeCollision final
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.GetMovementFailsNum
+// 0x0008 (0x0008 - 0x0000)
+struct BP_Exploder_Tier2_Actor_Character_C_GetMovementFailsNum final
 {
 public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_Exploder_Tier2_Actor_Character_C_ShouldSpawnHugeCollision;
+DUMPER7_ASSERTS_BP_Exploder_Tier2_Actor_Character_C_GetMovementFailsNum;
+
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.GetNiagaraEyeSystem
+// 0x0008 (0x0008 - 0x0000)
+struct BP_Exploder_Tier2_Actor_Character_C_GetNiagaraEyeSystem final
+{
+public:
+	class UNiagaraComponent*                      NewParam;                                          // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Exploder_Tier2_Actor_Character_C_GetNiagaraEyeSystem;
+
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_Exploder_Tier2_Actor_Character_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Exploder_Tier2_Actor_Character_C_ReceiveTick;
+
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.RegisterMovementFailed
+// 0x0058 (0x0058 - 0x0000)
+struct BP_Exploder_Tier2_Actor_Character_C_RegisterMovementFailed final
+{
+public:
+	double                                        MovementFailedExpTime;                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Subtract_IntInt_ReturnValue;              // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GreaterEqual_IntInt_ReturnValue;          // 0x0014(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_GetTimeSeconds_ReturnValue;               // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Array_Get_Item;                           // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_Subtract_DoubleDouble_ReturnValue;        // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Subtract_IntInt_ReturnValue_1;            // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Greater_DoubleDouble_ReturnValue;         // 0x003C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Max_ReturnValue;                          // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_GetTimeSeconds_ReturnValue_1;             // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Exploder_Tier2_Actor_Character_C_RegisterMovementFailed;
+
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.TryDestroyInfectionEntity
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Exploder_Tier2_Actor_Character_C_TryDestroyInfectionEntity final
+{
+public:
+	bool                                          Instant;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Exploder_Tier2_Actor_Character_C_TryDestroyInfectionEntity;
 
 // Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.IsExploderDead
 // 0x0002 (0x0002 - 0x0000)
@@ -126,6 +117,15 @@ public:
 	bool                                          CallFunc_IsDead_ReturnValue;                       // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Exploder_Tier2_Actor_Character_C_IsExploderDead;
+
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.ShouldSpawnHugeCollision
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Exploder_Tier2_Actor_Character_C_ShouldSpawnHugeCollision final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Exploder_Tier2_Actor_Character_C_ShouldSpawnHugeCollision;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

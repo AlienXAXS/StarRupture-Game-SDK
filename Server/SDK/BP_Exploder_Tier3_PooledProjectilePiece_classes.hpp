@@ -28,10 +28,10 @@ public:
 	float                                         InfectionMagnitudeOnHitCharacter;                  // 0x0358(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnProjectileShot(const struct FCrAiProjectileParameters& InProjectileParameters_OnProjectileShot);
-	void OnHit(const struct FHitResult& HitResult_OnHit);
-	void ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectilePiece(int32 EntryPoint);
 	void AddInstantInfectionToCharacter(class ACharacter* InCharacter);
+	void ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectilePiece(int32 EntryPoint);
+	void OnHit(const struct FHitResult& HitResult);
+	void OnProjectileShot(const struct FCrAiProjectileParameters& InProjectileParameters);
 
 public:
 	static class UClass* StaticClass()

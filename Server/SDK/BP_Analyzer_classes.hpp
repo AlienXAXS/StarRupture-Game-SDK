@@ -29,8 +29,8 @@ public:
 	class UStaticMeshComponent*                   MainMesh;                                          // 0x07C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnUIOpened(bool bOpened_OnUIOpened);
 	void ExecuteUbergraph_BP_Analyzer(int32 EntryPoint);
+	void OnUIOpened(bool bOpened);
 
 public:
 	static class UClass* StaticClass()

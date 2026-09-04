@@ -16,34 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_ForgottenEngine_EntryTerminal.BP_ForgottenEngine_EntryTerminal_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_ForgottenEngine_EntryTerminal_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ForgottenEngine_EntryTerminal_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_ForgottenEngine_EntryTerminal.BP_ForgottenEngine_EntryTerminal_C.OnMachineActivated
-// (Event, Public, BlueprintEvent)
-
-void ABP_ForgottenEngine_EntryTerminal_C::OnMachineActivated()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ForgottenEngine_EntryTerminal_C", "OnMachineActivated");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_ForgottenEngine_EntryTerminal.BP_ForgottenEngine_EntryTerminal_C.ExecuteUbergraph_BP_ForgottenEngine_EntryTerminal
 // (Final, UbergraphFunction)
 // Parameters:
@@ -61,6 +33,34 @@ void ABP_ForgottenEngine_EntryTerminal_C::ExecuteUbergraph_BP_ForgottenEngine_En
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_ForgottenEngine_EntryTerminal.BP_ForgottenEngine_EntryTerminal_C.OnMachineActivated
+// (Event, Public, BlueprintEvent)
+
+void ABP_ForgottenEngine_EntryTerminal_C::OnMachineActivated()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ForgottenEngine_EntryTerminal_C", "OnMachineActivated");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_ForgottenEngine_EntryTerminal.BP_ForgottenEngine_EntryTerminal_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_ForgottenEngine_EntryTerminal_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ForgottenEngine_EntryTerminal_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

@@ -16,40 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Sulphur_Logic_Large_AbandonedBase.BP_Sulphur_Logic_Large_AbandonedBase_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Sulphur_Logic_Large_AbandonedBase_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Sulphur_Logic_Large_AbandonedBase_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Sulphur_Logic_Large_AbandonedBase.BP_Sulphur_Logic_Large_AbandonedBase_C.OnSulphurActivityChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bActive_OnSulphurActivityChanged                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Sulphur_Logic_Large_AbandonedBase_C::OnSulphurActivityChanged(bool bActive_OnSulphurActivityChanged)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Sulphur_Logic_Large_AbandonedBase_C", "OnSulphurActivityChanged");
-
-	Params::BP_Sulphur_Logic_Large_AbandonedBase_C_OnSulphurActivityChanged Parms{};
-
-	Parms.bActive_OnSulphurActivityChanged = bActive_OnSulphurActivityChanged;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_Sulphur_Logic_Large_AbandonedBase.BP_Sulphur_Logic_Large_AbandonedBase_C.ExecuteUbergraph_BP_Sulphur_Logic_Large_AbandonedBase
 // (Final, UbergraphFunction)
 // Parameters:
@@ -67,6 +33,40 @@ void ABP_Sulphur_Logic_Large_AbandonedBase_C::ExecuteUbergraph_BP_Sulphur_Logic_
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Sulphur_Logic_Large_AbandonedBase.BP_Sulphur_Logic_Large_AbandonedBase_C.OnSulphurActivityChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bActive                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Sulphur_Logic_Large_AbandonedBase_C::OnSulphurActivityChanged(bool bActive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Sulphur_Logic_Large_AbandonedBase_C", "OnSulphurActivityChanged");
+
+	Params::BP_Sulphur_Logic_Large_AbandonedBase_C_OnSulphurActivityChanged Parms{};
+
+	Parms.bActive = bActive;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Sulphur_Logic_Large_AbandonedBase.BP_Sulphur_Logic_Large_AbandonedBase_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Sulphur_Logic_Large_AbandonedBase_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Sulphur_Logic_Large_AbandonedBase_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

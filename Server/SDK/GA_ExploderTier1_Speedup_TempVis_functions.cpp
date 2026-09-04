@@ -16,37 +16,23 @@
 
 SDK_NAMESPACE_START
 
-// Function GA_ExploderTier1_Speedup_TempVis.GA_ExploderTier1_Speedup_TempVis_C.K2_OnEndAbility
-// (Event, Protected, BlueprintEvent)
+// Function GA_ExploderTier1_Speedup_TempVis.GA_ExploderTier1_Speedup_TempVis_C.ExecuteUbergraph_GA_ExploderTier1_Speedup_TempVis
+// (Final, UbergraphFunction)
 // Parameters:
-// bool                                    bWasCancelled_K2_OnEndAbility                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_ExploderTier1_Speedup_TempVis_C::K2_OnEndAbility(bool bWasCancelled_K2_OnEndAbility)
+void UGA_ExploderTier1_Speedup_TempVis_C::ExecuteUbergraph_GA_ExploderTier1_Speedup_TempVis(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_ExploderTier1_Speedup_TempVis_C", "K2_OnEndAbility");
+		Func = Class->GetFunction("GA_ExploderTier1_Speedup_TempVis_C", "ExecuteUbergraph_GA_ExploderTier1_Speedup_TempVis");
 
-	Params::GA_ExploderTier1_Speedup_TempVis_C_K2_OnEndAbility Parms{};
+	Params::GA_ExploderTier1_Speedup_TempVis_C_ExecuteUbergraph_GA_ExploderTier1_Speedup_TempVis Parms{};
 
-	Parms.bWasCancelled_K2_OnEndAbility = bWasCancelled_K2_OnEndAbility;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function GA_ExploderTier1_Speedup_TempVis.GA_ExploderTier1_Speedup_TempVis_C.K2_ActivateAbility
-// (Event, Protected, BlueprintEvent)
-
-void UGA_ExploderTier1_Speedup_TempVis_C::K2_ActivateAbility()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_ExploderTier1_Speedup_TempVis_C", "K2_ActivateAbility");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -74,21 +60,35 @@ void UGA_ExploderTier1_Speedup_TempVis_C::GetSpeedupEyeColorByAiTag(const struct
 }
 
 
-// Function GA_ExploderTier1_Speedup_TempVis.GA_ExploderTier1_Speedup_TempVis_C.ExecuteUbergraph_GA_ExploderTier1_Speedup_TempVis
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function GA_ExploderTier1_Speedup_TempVis.GA_ExploderTier1_Speedup_TempVis_C.K2_ActivateAbility
+// (Event, Protected, BlueprintEvent)
 
-void UGA_ExploderTier1_Speedup_TempVis_C::ExecuteUbergraph_GA_ExploderTier1_Speedup_TempVis(int32 EntryPoint)
+void UGA_ExploderTier1_Speedup_TempVis_C::K2_ActivateAbility()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_ExploderTier1_Speedup_TempVis_C", "ExecuteUbergraph_GA_ExploderTier1_Speedup_TempVis");
+		Func = Class->GetFunction("GA_ExploderTier1_Speedup_TempVis_C", "K2_ActivateAbility");
 
-	Params::GA_ExploderTier1_Speedup_TempVis_C_ExecuteUbergraph_GA_ExploderTier1_Speedup_TempVis Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
+
+// Function GA_ExploderTier1_Speedup_TempVis.GA_ExploderTier1_Speedup_TempVis_C.K2_OnEndAbility
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bWasCancelled                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UGA_ExploderTier1_Speedup_TempVis_C::K2_OnEndAbility(bool bWasCancelled)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_ExploderTier1_Speedup_TempVis_C", "K2_OnEndAbility");
+
+	Params::GA_ExploderTier1_Speedup_TempVis_C_K2_OnEndAbility Parms{};
+
+	Parms.bWasCancelled = bWasCancelled;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

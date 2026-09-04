@@ -12,8 +12,8 @@
 
 #include "Engine_structs.hpp"
 #include "AuActorPlacement_structs.hpp"
-#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "BP_BaseAI_classes.hpp"
+#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -32,22 +32,22 @@ public:
 	struct FCrMassEnemyBPMassNetworkID            InfectionNetworkID;                                // 0x0D88(0x0004)(Edit, BlueprintVisible, Net, DisableEditOnInstance, NoDestructor)
 
 public:
-	void TrySpawnInfectionEntity();
-	void TryDestroyInfectionEntity(bool Instant);
-	void StartExplosionTimer();
-	void StartActivationTimer();
-	void RegisterMovementFailed(double MovementFailedExpTime);
-	void ReceiveTick(float DeltaSeconds_ReceiveTick);
-	void ReceiveBeginPlay();
-	void OnPrepareForPooling();
-	void OnExitActorPool();
-	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam_GetNiagaraEyeSystem);
-	int32 GetMovementFailsNum();
-	void ExecuteUbergraph_BP_Exploder_Tier2_Actor_Character(int32 EntryPoint);
 	void DeactivateVFX();
+	void ExecuteUbergraph_BP_Exploder_Tier2_Actor_Character(int32 EntryPoint);
+	int32 GetMovementFailsNum();
+	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
+	void OnExitActorPool();
+	void OnPrepareForPooling();
+	void ReceiveBeginPlay();
+	void ReceiveTick(float DeltaSeconds);
+	void RegisterMovementFailed(double MovementFailedExpTime);
+	void StartActivationTimer();
+	void StartExplosionTimer();
+	void TryDestroyInfectionEntity(bool Instant);
+	void TrySpawnInfectionEntity();
 
-	bool ShouldSpawnHugeCollision() const;
 	bool IsExploderDead() const;
+	bool ShouldSpawnHugeCollision() const;
 
 public:
 	static class UClass* StaticClass()

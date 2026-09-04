@@ -16,40 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_WindPowerGenerator.BP_WindPowerGenerator_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_WindPowerGenerator_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WindPowerGenerator_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_WindPowerGenerator.BP_WindPowerGenerator_C.PostPlayBuildingEffect
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bWasBuildingEffectPlayed_PostPlayBuildingEffect        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_WindPowerGenerator_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed_PostPlayBuildingEffect)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WindPowerGenerator_C", "PostPlayBuildingEffect");
-
-	Params::BP_WindPowerGenerator_C_PostPlayBuildingEffect Parms{};
-
-	Parms.bWasBuildingEffectPlayed_PostPlayBuildingEffect = bWasBuildingEffectPlayed_PostPlayBuildingEffect;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_WindPowerGenerator.BP_WindPowerGenerator_C.ExecuteUbergraph_BP_WindPowerGenerator
 // (Final, UbergraphFunction)
 // Parameters:
@@ -67,6 +33,40 @@ void ABP_WindPowerGenerator_C::ExecuteUbergraph_BP_WindPowerGenerator(int32 Entr
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_WindPowerGenerator.BP_WindPowerGenerator_C.PostPlayBuildingEffect
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bWasBuildingEffectPlayed                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_WindPowerGenerator_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_WindPowerGenerator_C", "PostPlayBuildingEffect");
+
+	Params::BP_WindPowerGenerator_C_PostPlayBuildingEffect Parms{};
+
+	Parms.bWasBuildingEffectPlayed = bWasBuildingEffectPlayed;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_WindPowerGenerator.BP_WindPowerGenerator_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_WindPowerGenerator_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_WindPowerGenerator_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

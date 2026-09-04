@@ -17,32 +17,22 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_Foundable_Enemy_Loot_Base.BP_Foundable_Enemy_Loot_Base_C.SimulateDrop
-// 0x0018 (0x0018 - 0x0000)
-struct BP_Foundable_Enemy_Loot_Base_C_SimulateDrop final
+// Function BP_Foundable_Enemy_Loot_Base.BP_Foundable_Enemy_Loot_Base_C.CanPlaySound
+// 0x0058 (0x0058 - 0x0000)
+struct BP_Foundable_Enemy_Loot_Base_C_CanPlaySound final
 {
 public:
-	struct FVector                                StartLocation;                                     // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bRet;                                              // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0008(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  CallFunc_GetPlayerPawn_ReturnValue;                // 0x0020(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_1;        // 0x0028(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_Vector_Distance_ReturnValue;              // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_DoubleDouble_ReturnValue;            // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_Foundable_Enemy_Loot_Base_C_SimulateDrop;
-
-// Function BP_Foundable_Enemy_Loot_Base.BP_Foundable_Enemy_Loot_Base_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct BP_Foundable_Enemy_Loot_Base_C_ReceiveTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Foundable_Enemy_Loot_Base_C_ReceiveTick;
-
-// Function BP_Foundable_Enemy_Loot_Base.BP_Foundable_Enemy_Loot_Base_C.ReceiveEndPlay
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Foundable_Enemy_Loot_Base_C_ReceiveEndPlay final
-{
-public:
-	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Foundable_Enemy_Loot_Base_C_ReceiveEndPlay;
+DUMPER7_ASSERTS_BP_Foundable_Enemy_Loot_Base_C_CanPlaySound;
 
 // Function BP_Foundable_Enemy_Loot_Base.BP_Foundable_Enemy_Loot_Base_C.ExecuteUbergraph_BP_Foundable_Enemy_Loot_Base
 // 0x02F0 (0x02F0 - 0x0000)
@@ -86,22 +76,32 @@ public:
 };
 DUMPER7_ASSERTS_BP_Foundable_Enemy_Loot_Base_C_ExecuteUbergraph_BP_Foundable_Enemy_Loot_Base;
 
-// Function BP_Foundable_Enemy_Loot_Base.BP_Foundable_Enemy_Loot_Base_C.CanPlaySound
-// 0x0058 (0x0058 - 0x0000)
-struct BP_Foundable_Enemy_Loot_Base_C_CanPlaySound final
+// Function BP_Foundable_Enemy_Loot_Base.BP_Foundable_Enemy_Loot_Base_C.ReceiveEndPlay
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Foundable_Enemy_Loot_Base_C_ReceiveEndPlay final
 {
 public:
-	bool                                          bRet;                                              // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0008(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  CallFunc_GetPlayerPawn_ReturnValue;                // 0x0020(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_1;        // 0x0028(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        CallFunc_Vector_Distance_ReturnValue;              // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_DoubleDouble_ReturnValue;            // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_Foundable_Enemy_Loot_Base_C_CanPlaySound;
+DUMPER7_ASSERTS_BP_Foundable_Enemy_Loot_Base_C_ReceiveEndPlay;
+
+// Function BP_Foundable_Enemy_Loot_Base.BP_Foundable_Enemy_Loot_Base_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_Foundable_Enemy_Loot_Base_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Foundable_Enemy_Loot_Base_C_ReceiveTick;
+
+// Function BP_Foundable_Enemy_Loot_Base.BP_Foundable_Enemy_Loot_Base_C.SimulateDrop
+// 0x0018 (0x0018 - 0x0000)
+struct BP_Foundable_Enemy_Loot_Base_C_SimulateDrop final
+{
+public:
+	struct FVector                                StartLocation;                                     // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Foundable_Enemy_Loot_Base_C_SimulateDrop;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

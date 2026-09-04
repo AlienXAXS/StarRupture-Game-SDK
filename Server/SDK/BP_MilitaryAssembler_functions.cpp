@@ -16,15 +16,81 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_MilitaryAssembler.BP_MilitaryAssembler_C.SetupSkeletalMesh
-// (Event, Public, BlueprintEvent)
+// Function BP_MilitaryAssembler.BP_MilitaryAssembler_C.ExecuteUbergraph_BP_MilitaryAssembler
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_MilitaryAssembler_C::SetupSkeletalMesh()
+void ABP_MilitaryAssembler_C::ExecuteUbergraph_BP_MilitaryAssembler(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MilitaryAssembler_C", "SetupSkeletalMesh");
+		Func = Class->GetFunction("BP_MilitaryAssembler_C", "ExecuteUbergraph_BP_MilitaryAssembler");
+
+	Params::BP_MilitaryAssembler_C_ExecuteUbergraph_BP_MilitaryAssembler Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_MilitaryAssembler.BP_MilitaryAssembler_C.Get Meshes
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class USceneComponent*                  Static_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class USceneComponent*                  Animated_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// TArray<class UMeshComponent*>*          NewParam                                               (Parm, OutParm, ContainsInstancedReference)
+
+void ABP_MilitaryAssembler_C::Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Animated_0, TArray<class UMeshComponent*>* NewParam)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MilitaryAssembler_C", "Get Meshes");
+
+	Params::BP_MilitaryAssembler_C_Get_Meshes Parms{};
+
+	Parms.Static_0 = Static_0;
+	Parms.Animated_0 = Animated_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (NewParam != nullptr)
+		*NewParam = std::move(Parms.NewParam);
+}
+
+
+// Function BP_MilitaryAssembler.BP_MilitaryAssembler_C.OnBuildingStateChanged
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_MilitaryAssembler_C::OnBuildingStateChanged(ECrBuildingState InState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MilitaryAssembler_C", "OnBuildingStateChanged");
+
+	Params::BP_MilitaryAssembler_C_OnBuildingStateChanged Parms{};
+
+	Parms.InState = InState;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_MilitaryAssembler.BP_MilitaryAssembler_C.OnItemCraftingComplete
+// (Event, Public, BlueprintEvent)
+
+void ABP_MilitaryAssembler_C::OnItemCraftingComplete()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MilitaryAssembler_C", "OnItemCraftingComplete");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -44,83 +110,17 @@ void ABP_MilitaryAssembler_C::ReceiveBeginPlay()
 }
 
 
-// Function BP_MilitaryAssembler.BP_MilitaryAssembler_C.OnItemCraftingComplete
+// Function BP_MilitaryAssembler.BP_MilitaryAssembler_C.SetupSkeletalMesh
 // (Event, Public, BlueprintEvent)
 
-void ABP_MilitaryAssembler_C::OnItemCraftingComplete()
+void ABP_MilitaryAssembler_C::SetupSkeletalMesh()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MilitaryAssembler_C", "OnItemCraftingComplete");
+		Func = Class->GetFunction("BP_MilitaryAssembler_C", "SetupSkeletalMesh");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_MilitaryAssembler.BP_MilitaryAssembler_C.OnBuildingStateChanged
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// ECrBuildingState                        InState_OnBuildingStateChanged                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_MilitaryAssembler_C::OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MilitaryAssembler_C", "OnBuildingStateChanged");
-
-	Params::BP_MilitaryAssembler_C_OnBuildingStateChanged Parms{};
-
-	Parms.InState_OnBuildingStateChanged = InState_OnBuildingStateChanged;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_MilitaryAssembler.BP_MilitaryAssembler_C.Get Meshes
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class USceneComponent*                  Static                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-// class USceneComponent*                  Animated                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-// TArray<class UMeshComponent*>*          NewParam                                               (Parm, OutParm, ContainsInstancedReference)
-
-void ABP_MilitaryAssembler_C::Get_Meshes(class USceneComponent* Static, class USceneComponent* Animated, TArray<class UMeshComponent*>* NewParam)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MilitaryAssembler_C", "Get Meshes");
-
-	Params::BP_MilitaryAssembler_C_Get_Meshes Parms{};
-
-	Parms.Static = Static;
-	Parms.Animated = Animated;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (NewParam != nullptr)
-		*NewParam = std::move(Parms.NewParam);
-}
-
-
-// Function BP_MilitaryAssembler.BP_MilitaryAssembler_C.ExecuteUbergraph_BP_MilitaryAssembler
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_MilitaryAssembler_C::ExecuteUbergraph_BP_MilitaryAssembler(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MilitaryAssembler_C", "ExecuteUbergraph_BP_MilitaryAssembler");
-
-	Params::BP_MilitaryAssembler_C_ExecuteUbergraph_BP_MilitaryAssembler Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 

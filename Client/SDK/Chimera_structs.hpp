@@ -10136,7 +10136,7 @@ public:
 DUMPER7_ASSERTS_FCrConnectionAlwaysRelevantNodePair;
 
 // ScriptStruct Chimera.CrMetaFileInfo
-// 0x0050 (0x0050 - 0x0000)
+// 0x0058 (0x0058 - 0x0000)
 struct FCrMetaFileInfo final
 {
 public:
@@ -10148,6 +10148,8 @@ public:
 	bool                                          bCustomGame;                                       // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FCrCustomGameSettings                  CustomGameSettings;                                // 0x002C(0x0024)(NoDestructor, NativeAccessSpecifierPublic)
+	ECrOnlineSessionMode                          OnlineSessionMode;                                 // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCrMetaFileInfo;
 

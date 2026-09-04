@@ -14,6 +14,16 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function BP_Modular_StairsBarrierR.BP_Modular_StairsBarrierR_C.GetBuildingMeshes
+// 0x0018 (0x0018 - 0x0000)
+struct BP_Modular_StairsBarrierR_C_GetBuildingMeshes final
+{
+public:
+	class UMeshComponent*                         MainBody;                                          // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	TArray<class UMeshComponent*>                 AdditionalMeshes;                                  // 0x0008(0x0010)(Parm, OutParm, ContainsInstancedReference)
+};
+DUMPER7_ASSERTS_BP_Modular_StairsBarrierR_C_GetBuildingMeshes;
+
 // Function BP_Modular_StairsBarrierR.BP_Modular_StairsBarrierR_C.GetBuildingProgressMeshes
 // 0x0050 (0x0050 - 0x0000)
 struct BP_Modular_StairsBarrierR_C_GetBuildingProgressMeshes final
@@ -28,16 +38,6 @@ public:
 	double                                        ProgressPercentage;                                // 0x0048(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Modular_StairsBarrierR_C_GetBuildingProgressMeshes;
-
-// Function BP_Modular_StairsBarrierR.BP_Modular_StairsBarrierR_C.GetBuildingMeshes
-// 0x0018 (0x0018 - 0x0000)
-struct BP_Modular_StairsBarrierR_C_GetBuildingMeshes final
-{
-public:
-	class UMeshComponent*                         MainBody;                                          // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	TArray<class UMeshComponent*>                 AdditionalMeshes;                                  // 0x0008(0x0010)(Parm, OutParm, ContainsInstancedReference)
-};
-DUMPER7_ASSERTS_BP_Modular_StairsBarrierR_C_GetBuildingMeshes;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

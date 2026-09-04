@@ -29,12 +29,12 @@ public:
 	bool                                          PlaySoundOnEmptied;                                // 0x0318(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UpdateMaterialsForStorageState();
-	void UpdateFoundableVisibilityForStorageState(bool BeginPlay);
-	void ReceiveBeginPlay();
-	void PlayEmptiedSound();
-	bool OnStorageEmptied();
 	void ExecuteUbergraph_BP_Foundable_Base(int32 EntryPoint);
+	bool OnStorageEmptied();
+	void PlayEmptiedSound();
+	void ReceiveBeginPlay();
+	void UpdateFoundableVisibilityForStorageState(bool BeginPlay);
+	void UpdateMaterialsForStorageState();
 
 public:
 	static class UClass* StaticClass()

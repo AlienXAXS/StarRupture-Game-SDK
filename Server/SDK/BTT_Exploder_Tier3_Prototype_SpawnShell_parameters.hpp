@@ -16,16 +16,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BTT_Exploder_Tier3_Prototype_SpawnShell.BTT_Exploder_Tier3_Prototype_SpawnShell_C.ReceiveExecuteAI
-// 0x0010 (0x0010 - 0x0000)
-struct BTT_Exploder_Tier3_Prototype_SpawnShell_C_ReceiveExecuteAI final
-{
-public:
-	class AAIController*                          OwnerController_ReceiveExecuteAI;                  // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  ControlledPawn_ReceiveExecuteAI;                   // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BTT_Exploder_Tier3_Prototype_SpawnShell_C_ReceiveExecuteAI;
-
 // Function BTT_Exploder_Tier3_Prototype_SpawnShell.BTT_Exploder_Tier3_Prototype_SpawnShell_C.ExecuteUbergraph_BTT_Exploder_Tier3_Prototype_SpawnShell
 // 0x00D0 (0x00D0 - 0x0000)
 struct BTT_Exploder_Tier3_Prototype_SpawnShell_C_ExecuteUbergraph_BTT_Exploder_Tier3_Prototype_SpawnShell final
@@ -46,6 +36,16 @@ public:
 	class ABP_Exploder_Tier3_Prototype_ShellActor_C* CallFunc_FinishSpawningActor_ReturnValue;       // 0x00C8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BTT_Exploder_Tier3_Prototype_SpawnShell_C_ExecuteUbergraph_BTT_Exploder_Tier3_Prototype_SpawnShell;
+
+// Function BTT_Exploder_Tier3_Prototype_SpawnShell.BTT_Exploder_Tier3_Prototype_SpawnShell_C.ReceiveExecuteAI
+// 0x0010 (0x0010 - 0x0000)
+struct BTT_Exploder_Tier3_Prototype_SpawnShell_C_ReceiveExecuteAI final
+{
+public:
+	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BTT_Exploder_Tier3_Prototype_SpawnShell_C_ReceiveExecuteAI;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

@@ -14,15 +14,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_DroneVerticalConnector.BP_DroneVerticalConnector_C.OnTierSet
-// 0x0004 (0x0004 - 0x0000)
-struct BP_DroneVerticalConnector_C_OnTierSet final
-{
-public:
-	int32                                         NewTier_OnTierSet;                                 // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_DroneVerticalConnector_C_OnTierSet;
-
 // Function BP_DroneVerticalConnector.BP_DroneVerticalConnector_C.ExecuteUbergraph_BP_DroneVerticalConnector
 // 0x0018 (0x0018 - 0x0000)
 struct BP_DroneVerticalConnector_C_ExecuteUbergraph_BP_DroneVerticalConnector final
@@ -33,6 +24,15 @@ public:
 	class FText                                   CallFunc_Conv_IntToText_ReturnValue;               // 0x0008(0x0010)()
 };
 DUMPER7_ASSERTS_BP_DroneVerticalConnector_C_ExecuteUbergraph_BP_DroneVerticalConnector;
+
+// Function BP_DroneVerticalConnector.BP_DroneVerticalConnector_C.OnTierSet
+// 0x0004 (0x0004 - 0x0000)
+struct BP_DroneVerticalConnector_C_OnTierSet final
+{
+public:
+	int32                                         NewTier;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_DroneVerticalConnector_C_OnTierSet;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

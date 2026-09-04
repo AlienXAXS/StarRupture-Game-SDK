@@ -16,43 +16,59 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_PlacementHelperReplicatedZipline.BP_PlacementHelperReplicatedZipline_C.UpdateBlockedBeamLocations
-// (BlueprintCallable, BlueprintEvent)
+// Function BP_PlacementHelperReplicatedZipline.BP_PlacementHelperReplicatedZipline_C.ExecuteUbergraph_BP_PlacementHelperReplicatedZipline
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PlacementHelperReplicatedZipline_C::UpdateBlockedBeamLocations()
+void ABP_PlacementHelperReplicatedZipline_C::ExecuteUbergraph_BP_PlacementHelperReplicatedZipline(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperReplicatedZipline_C", "UpdateBlockedBeamLocations");
+		Func = Class->GetFunction("BP_PlacementHelperReplicatedZipline_C", "ExecuteUbergraph_BP_PlacementHelperReplicatedZipline");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_PlacementHelperReplicatedZipline_C_ExecuteUbergraph_BP_PlacementHelperReplicatedZipline Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_PlacementHelperReplicatedZipline.BP_PlacementHelperReplicatedZipline_C.UpdateBeamsLocations
-// (BlueprintCallable, BlueprintEvent)
+// Function BP_PlacementHelperReplicatedZipline.BP_PlacementHelperReplicatedZipline_C.OnConnectionsModified
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// const TArray<struct FVector>&           NewAcceptedLocations                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const TArray<struct FVector>&           NewObstructedLocations                                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const TArray<struct FVector>&           NewBlockedLocations                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
-void ABP_PlacementHelperReplicatedZipline_C::UpdateBeamsLocations()
+void ABP_PlacementHelperReplicatedZipline_C::OnConnectionsModified(const TArray<struct FVector>& NewAcceptedLocations, const TArray<struct FVector>& NewObstructedLocations, const TArray<struct FVector>& NewBlockedLocations)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperReplicatedZipline_C", "UpdateBeamsLocations");
+		Func = Class->GetFunction("BP_PlacementHelperReplicatedZipline_C", "OnConnectionsModified");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_PlacementHelperReplicatedZipline_C_OnConnectionsModified Parms{};
+
+	Parms.NewAcceptedLocations = std::move(NewAcceptedLocations);
+	Parms.NewObstructedLocations = std::move(NewObstructedLocations);
+	Parms.NewBlockedLocations = std::move(NewBlockedLocations);
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_PlacementHelperReplicatedZipline.BP_PlacementHelperReplicatedZipline_C.UpdateAcceptedBeamLocations
+// Function BP_PlacementHelperReplicatedZipline.BP_PlacementHelperReplicatedZipline_C.TurnOffBeams
 // (BlueprintCallable, BlueprintEvent)
 
-void ABP_PlacementHelperReplicatedZipline_C::UpdateAcceptedBeamLocations()
+void ABP_PlacementHelperReplicatedZipline_C::TurnOffBeams()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperReplicatedZipline_C", "UpdateAcceptedBeamLocations");
+		Func = Class->GetFunction("BP_PlacementHelperReplicatedZipline_C", "TurnOffBeams");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -72,61 +88,45 @@ void ABP_PlacementHelperReplicatedZipline_C::TurnOnBeams()
 }
 
 
-// Function BP_PlacementHelperReplicatedZipline.BP_PlacementHelperReplicatedZipline_C.TurnOffBeams
+// Function BP_PlacementHelperReplicatedZipline.BP_PlacementHelperReplicatedZipline_C.UpdateAcceptedBeamLocations
 // (BlueprintCallable, BlueprintEvent)
 
-void ABP_PlacementHelperReplicatedZipline_C::TurnOffBeams()
+void ABP_PlacementHelperReplicatedZipline_C::UpdateAcceptedBeamLocations()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperReplicatedZipline_C", "TurnOffBeams");
+		Func = Class->GetFunction("BP_PlacementHelperReplicatedZipline_C", "UpdateAcceptedBeamLocations");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_PlacementHelperReplicatedZipline.BP_PlacementHelperReplicatedZipline_C.OnConnectionsModified
-// (Event, Protected, HasOutParams, BlueprintEvent)
-// Parameters:
-// const TArray<struct FVector>&           NewAcceptedLocations_OnConnectionsModified             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// const TArray<struct FVector>&           NewObstructedLocations_OnConnectionsModified           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// const TArray<struct FVector>&           NewBlockedLocations_OnConnectionsModified              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// Function BP_PlacementHelperReplicatedZipline.BP_PlacementHelperReplicatedZipline_C.UpdateBeamsLocations
+// (BlueprintCallable, BlueprintEvent)
 
-void ABP_PlacementHelperReplicatedZipline_C::OnConnectionsModified(const TArray<struct FVector>& NewAcceptedLocations_OnConnectionsModified, const TArray<struct FVector>& NewObstructedLocations_OnConnectionsModified, const TArray<struct FVector>& NewBlockedLocations_OnConnectionsModified)
+void ABP_PlacementHelperReplicatedZipline_C::UpdateBeamsLocations()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperReplicatedZipline_C", "OnConnectionsModified");
+		Func = Class->GetFunction("BP_PlacementHelperReplicatedZipline_C", "UpdateBeamsLocations");
 
-	Params::BP_PlacementHelperReplicatedZipline_C_OnConnectionsModified Parms{};
-
-	Parms.NewAcceptedLocations_OnConnectionsModified = std::move(NewAcceptedLocations_OnConnectionsModified);
-	Parms.NewObstructedLocations_OnConnectionsModified = std::move(NewObstructedLocations_OnConnectionsModified);
-	Parms.NewBlockedLocations_OnConnectionsModified = std::move(NewBlockedLocations_OnConnectionsModified);
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_PlacementHelperReplicatedZipline.BP_PlacementHelperReplicatedZipline_C.ExecuteUbergraph_BP_PlacementHelperReplicatedZipline
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_PlacementHelperReplicatedZipline.BP_PlacementHelperReplicatedZipline_C.UpdateBlockedBeamLocations
+// (BlueprintCallable, BlueprintEvent)
 
-void ABP_PlacementHelperReplicatedZipline_C::ExecuteUbergraph_BP_PlacementHelperReplicatedZipline(int32 EntryPoint)
+void ABP_PlacementHelperReplicatedZipline_C::UpdateBlockedBeamLocations()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperReplicatedZipline_C", "ExecuteUbergraph_BP_PlacementHelperReplicatedZipline");
+		Func = Class->GetFunction("BP_PlacementHelperReplicatedZipline_C", "UpdateBlockedBeamLocations");
 
-	Params::BP_PlacementHelperReplicatedZipline_C_ExecuteUbergraph_BP_PlacementHelperReplicatedZipline Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

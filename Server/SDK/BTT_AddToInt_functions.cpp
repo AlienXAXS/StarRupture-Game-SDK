@@ -16,28 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BTT_AddToInt.BTT_AddToInt_C.ReceiveExecuteAI
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class AAIController*                    OwnerController_ReceiveExecuteAI                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class APawn*                            ControlledPawn_ReceiveExecuteAI                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void UBTT_AddToInt_C::ReceiveExecuteAI(class AAIController* OwnerController_ReceiveExecuteAI, class APawn* ControlledPawn_ReceiveExecuteAI)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTT_AddToInt_C", "ReceiveExecuteAI");
-
-	Params::BTT_AddToInt_C_ReceiveExecuteAI Parms{};
-
-	Parms.OwnerController_ReceiveExecuteAI = OwnerController_ReceiveExecuteAI;
-	Parms.ControlledPawn_ReceiveExecuteAI = ControlledPawn_ReceiveExecuteAI;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BTT_AddToInt.BTT_AddToInt_C.ExecuteUbergraph_BTT_AddToInt
 // (Final, UbergraphFunction)
 // Parameters:
@@ -53,6 +31,28 @@ void UBTT_AddToInt_C::ExecuteUbergraph_BTT_AddToInt(int32 EntryPoint)
 	Params::BTT_AddToInt_C_ExecuteUbergraph_BTT_AddToInt Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BTT_AddToInt.BTT_AddToInt_C.ReceiveExecuteAI
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class AAIController*                    OwnerController                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class APawn*                            ControlledPawn                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void UBTT_AddToInt_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BTT_AddToInt_C", "ReceiveExecuteAI");
+
+	Params::BTT_AddToInt_C_ReceiveExecuteAI Parms{};
+
+	Parms.OwnerController = OwnerController;
+	Parms.ControlledPawn = ControlledPawn;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

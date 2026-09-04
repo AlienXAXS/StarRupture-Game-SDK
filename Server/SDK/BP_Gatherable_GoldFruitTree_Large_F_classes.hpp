@@ -47,8 +47,8 @@ public:
 	class USceneComponent*                        Scene;                                             // 0x0460(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void BP_OnLightsVisualsTriggered(bool bLightsOn);
 	void ExecuteUbergraph_BP_Gatherable_GoldFruitTree_Large_F(int32 EntryPoint);
-	void BP_OnLightsVisualsTriggered(bool bLightsOn_BP_OnLightsVisualsTriggered);
 
 public:
 	static class UClass* StaticClass()

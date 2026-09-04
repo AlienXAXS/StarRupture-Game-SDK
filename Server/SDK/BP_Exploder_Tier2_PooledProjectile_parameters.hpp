@@ -18,24 +18,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_Exploder_Tier2_PooledProjectile.BP_Exploder_Tier2_PooledProjectile_C.OnProjectileShot
-// 0x0060 (0x0060 - 0x0000)
-struct BP_Exploder_Tier2_PooledProjectile_C_OnProjectileShot final
-{
-public:
-	struct FCrAiProjectileParameters              InProjectileParameters_OnProjectileShot;           // 0x0000(0x0060)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-};
-DUMPER7_ASSERTS_BP_Exploder_Tier2_PooledProjectile_C_OnProjectileShot;
-
-// Function BP_Exploder_Tier2_PooledProjectile.BP_Exploder_Tier2_PooledProjectile_C.OnHit
-// 0x0100 (0x0100 - 0x0000)
-struct BP_Exploder_Tier2_PooledProjectile_C_OnHit final
-{
-public:
-	struct FHitResult                             HitResult_OnHit;                                   // 0x0000(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-};
-DUMPER7_ASSERTS_BP_Exploder_Tier2_PooledProjectile_C_OnHit;
-
 // Function BP_Exploder_Tier2_PooledProjectile.BP_Exploder_Tier2_PooledProjectile_C.ExecuteUbergraph_BP_Exploder_Tier2_PooledProjectile
 // 0x02D0 (0x02D0 - 0x0000)
 struct BP_Exploder_Tier2_PooledProjectile_C_ExecuteUbergraph_BP_Exploder_Tier2_PooledProjectile final
@@ -78,12 +60,30 @@ public:
 };
 DUMPER7_ASSERTS_BP_Exploder_Tier2_PooledProjectile_C_ExecuteUbergraph_BP_Exploder_Tier2_PooledProjectile;
 
+// Function BP_Exploder_Tier2_PooledProjectile.BP_Exploder_Tier2_PooledProjectile_C.OnHit
+// 0x0100 (0x0100 - 0x0000)
+struct BP_Exploder_Tier2_PooledProjectile_C_OnHit final
+{
+public:
+	struct FHitResult                             HitResult;                                         // 0x0000(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+};
+DUMPER7_ASSERTS_BP_Exploder_Tier2_PooledProjectile_C_OnHit;
+
+// Function BP_Exploder_Tier2_PooledProjectile.BP_Exploder_Tier2_PooledProjectile_C.OnProjectileShot
+// 0x0060 (0x0060 - 0x0000)
+struct BP_Exploder_Tier2_PooledProjectile_C_OnProjectileShot final
+{
+public:
+	struct FCrAiProjectileParameters              InProjectileParameters;                            // 0x0000(0x0060)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_Exploder_Tier2_PooledProjectile_C_OnProjectileShot;
+
 // Function BP_Exploder_Tier2_PooledProjectile.BP_Exploder_Tier2_PooledProjectile_C.CanReturnToPoolAfterHit
 // 0x0001 (0x0001 - 0x0000)
 struct BP_Exploder_Tier2_PooledProjectile_C_CanReturnToPoolAfterHit final
 {
 public:
-	bool                                          ReturnValue_CanReturnToPoolAfterHit;               // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Exploder_Tier2_PooledProjectile_C_CanReturnToPoolAfterHit;
 

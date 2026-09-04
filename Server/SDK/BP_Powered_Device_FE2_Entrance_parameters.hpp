@@ -19,7 +19,7 @@ SDK_PARAM_NAMESPACE_START
 struct BP_Powered_Device_FE2_Entrance_C_Get_Meshes final
 {
 public:
-	class USceneComponent*                        Static;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        Static_0;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	class USceneComponent*                        Animated;                                          // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	TArray<class UMeshComponent*>                 NewParam;                                          // 0x0010(0x0010)(Parm, OutParm, ContainsInstancedReference)
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

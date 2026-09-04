@@ -25,10 +25,10 @@ public:
 	class UStaticMeshComponent*                   Sphere;                                            // 0x0358(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnProjectileShot(const struct FCrAiProjectileParameters& InProjectileParameters_OnProjectileShot);
-	void OnProjectileDestroyd();
-	void OnHit(const struct FHitResult& HitResult_OnHit);
 	void ExecuteUbergraph_BP_Exploder_Tier2_PooledProjectile(int32 EntryPoint);
+	void OnHit(const struct FHitResult& HitResult);
+	void OnProjectileDestroyd();
+	void OnProjectileShot(const struct FCrAiProjectileParameters& InProjectileParameters);
 
 	bool CanReturnToPoolAfterHit() const;
 

@@ -31,26 +31,26 @@ public:
 	class UAudioComponent*                        SFX_Pulse;                                         // 0x0D58(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UserConstructionScript();
-	void TryApplySpeedupRemoveActivator();
-	void TryApplySpeedup();
-	void StartExplosionTimer();
-	void StartActivationTimer();
-	void ReceiveTick(float DeltaSeconds_ReceiveTick);
-	void OnPrepareForPooling();
-	void OnPrepareForGame();
-	void OnExitActorPool();
-	void OnEnterActorPool();
-	void OnEnableExplosionTimer();
-	void OnEnableActivationTimer();
-	void OnDiedFromGas(const struct FHitResult& LastHit_OnDiedFromGas, const struct FGameplayTag& KillingDamageTag_OnDiedFromGas);
-	void OnAiDied(const struct FHitResult& HitResult_OnAiDied, const struct FGameplayTag& KillingDamageTag_OnAiDied);
-	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam_GetNiagaraEyeSystem);
 	void ExecuteUbergraph_BP_Exploder_Tier1_Actor_Character(int32 EntryPoint);
+	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
+	void OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag);
+	void OnDiedFromGas(const struct FHitResult& LastHit, const struct FGameplayTag& KillingDamageTag);
+	void OnEnableActivationTimer();
+	void OnEnableExplosionTimer();
+	void OnEnterActorPool();
+	void OnExitActorPool();
+	void OnPrepareForGame();
+	void OnPrepareForPooling();
+	void ReceiveTick(float DeltaSeconds);
+	void StartActivationTimer();
+	void StartExplosionTimer();
+	void TryApplySpeedup();
+	void TryApplySpeedupRemoveActivator();
+	void UserConstructionScript();
 
-	bool ShouldSpawnHugeCollision() const;
-	void OnMeshVisibilityUpdated(bool bIsMeshHidden_OnMeshVisibilityUpdated) const;
 	bool IsExploderDead() const;
+	void OnMeshVisibilityUpdated(bool bIsMeshHidden) const;
+	bool ShouldSpawnHugeCollision() const;
 
 public:
 	static class UClass* StaticClass()

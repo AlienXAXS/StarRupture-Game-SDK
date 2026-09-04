@@ -46,23 +46,23 @@ public:
 	double                                        LastTimeInfectionTaken;                            // 0x0830(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void StopLoopSound();
-	void SetUI(ECrAntennaState InState_SetUI, const struct FLinearColor& InColor_SetUI);
-	void Set_Display_State(ECrAntennaState AntennaState, const struct FLinearColor& Color);
-	void ReceiveTick(float DeltaSeconds_ReceiveTick);
-	void ReceiveBeginPlay();
-	bool PlayInteractionUnSuccessfulSound();
-	bool PlayInteractionSuccessfulSound();
-	void OnStateChanged(ECrAntennaState NewState_OnStateChanged);
-	void OnInfectionTaken();
-	void OnChargingProgressUpdate(float Progress_OnChargingProgressUpdate);
-	void OnActivatedFromLoad();
-	void OnActivated();
-	void Finalization_progress__UpdateFunc();
-	void Finalization_progress__FinishedFunc();
-	void ExecuteUbergraph_BP_FE2_Pillar(int32 EntryPoint);
-	void Activation_progress__UpdateFunc();
 	void Activation_progress__FinishedFunc();
+	void Activation_progress__UpdateFunc();
+	void ExecuteUbergraph_BP_FE2_Pillar(int32 EntryPoint);
+	void Finalization_progress__FinishedFunc();
+	void Finalization_progress__UpdateFunc();
+	void OnActivated();
+	void OnActivatedFromLoad();
+	void OnChargingProgressUpdate(float Progress);
+	void OnInfectionTaken();
+	void OnStateChanged(ECrAntennaState NewState);
+	bool PlayInteractionSuccessfulSound();
+	bool PlayInteractionUnSuccessfulSound();
+	void ReceiveBeginPlay();
+	void ReceiveTick(float DeltaSeconds);
+	void Set_Display_State(ECrAntennaState AntennaState, const struct FLinearColor& Color);
+	void SetUI(ECrAntennaState InState, const struct FLinearColor& InColor);
+	void StopLoopSound();
 
 public:
 	static class UClass* StaticClass()

@@ -17,14 +17,14 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_DefenseCannon.BP_DefenseCannon_C.UpdateCosmeticsBasedOnAttackDirection
-// 0x0018 (0x0018 - 0x0000)
-struct BP_DefenseCannon_C_UpdateCosmeticsBasedOnAttackDirection final
+// Function BP_DefenseCannon.BP_DefenseCannon_C.CosmeticHit
+// 0x0100 (0x0100 - 0x0000)
+struct BP_DefenseCannon_C_CosmeticHit final
 {
 public:
-	struct FVector                                OutCurrentAttackDirection_UpdateCosmeticsBasedOnAttackDirection; // 0x0000(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             InHit;                                             // 0x0000(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
 };
-DUMPER7_ASSERTS_BP_DefenseCannon_C_UpdateCosmeticsBasedOnAttackDirection;
+DUMPER7_ASSERTS_BP_DefenseCannon_C_CosmeticHit;
 
 // Function BP_DefenseCannon.BP_DefenseCannon_C.ExecuteUbergraph_BP_DefenseCannon
 // 0x0800 (0x0800 - 0x0000)
@@ -107,14 +107,14 @@ public:
 };
 DUMPER7_ASSERTS_BP_DefenseCannon_C_ExecuteUbergraph_BP_DefenseCannon;
 
-// Function BP_DefenseCannon.BP_DefenseCannon_C.CosmeticHit
-// 0x0100 (0x0100 - 0x0000)
-struct BP_DefenseCannon_C_CosmeticHit final
+// Function BP_DefenseCannon.BP_DefenseCannon_C.UpdateCosmeticsBasedOnAttackDirection
+// 0x0018 (0x0018 - 0x0000)
+struct BP_DefenseCannon_C_UpdateCosmeticsBasedOnAttackDirection final
 {
 public:
-	struct FHitResult                             InHit_CosmeticHit;                                 // 0x0000(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	struct FVector                                OutCurrentAttackDirection;                         // 0x0000(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_DefenseCannon_C_CosmeticHit;
+DUMPER7_ASSERTS_BP_DefenseCannon_C_UpdateCosmeticsBasedOnAttackDirection;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

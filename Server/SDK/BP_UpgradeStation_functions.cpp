@@ -16,40 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_UpgradeStation.BP_UpgradeStation_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_UpgradeStation_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_UpgradeStation_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_UpgradeStation.BP_UpgradeStation_C.OnUIOpened
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bOpened_OnUIOpened                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_UpgradeStation_C::OnUIOpened(bool bOpened_OnUIOpened)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_UpgradeStation_C", "OnUIOpened");
-
-	Params::BP_UpgradeStation_C_OnUIOpened Parms{};
-
-	Parms.bOpened_OnUIOpened = bOpened_OnUIOpened;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_UpgradeStation.BP_UpgradeStation_C.ExecuteUbergraph_BP_UpgradeStation
 // (Final, UbergraphFunction)
 // Parameters:
@@ -67,6 +33,40 @@ void ABP_UpgradeStation_C::ExecuteUbergraph_BP_UpgradeStation(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_UpgradeStation.BP_UpgradeStation_C.OnUIOpened
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bOpened                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_UpgradeStation_C::OnUIOpened(bool bOpened)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_UpgradeStation_C", "OnUIOpened");
+
+	Params::BP_UpgradeStation_C_OnUIOpened Parms{};
+
+	Parms.bOpened = bOpened;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_UpgradeStation.BP_UpgradeStation_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_UpgradeStation_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_UpgradeStation_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

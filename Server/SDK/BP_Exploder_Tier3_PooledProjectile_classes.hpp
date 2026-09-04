@@ -42,17 +42,17 @@ public:
 	struct FRandomStream                          RandomStream;                                      // 0x03DC(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor)
 
 public:
-	void UserConstructionScript();
-	void SplashWithSnotProjectiles(const struct FHitResult& HitResult);
-	void SpawnSnotProjectiles(const struct FVector& BigSnotLocation, const struct FVector& SmallProjectilesLocation, bool SpawnBigSnot);
-	void OnReleasedToPool();
-	void OnProjectileShot(const struct FCrAiProjectileParameters& InProjectileParameters_OnProjectileShot);
-	void OnProjectileDeactivated();
-	void OnProjectileActivated();
-	void OnHit(const struct FHitResult& HitResult_OnHit);
-	void ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectile(int32 EntryPoint);
-	void DoShotgunAttack(const struct FCrAiProjectileParameters& ProjectileParameters);
 	void AddInstantInfectionToCharacter(class ACharacter* Chatacter);
+	void DoShotgunAttack(const struct FCrAiProjectileParameters& ProjectileParameters_0);
+	void ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectile(int32 EntryPoint);
+	void OnHit(const struct FHitResult& HitResult);
+	void OnProjectileActivated();
+	void OnProjectileDeactivated();
+	void OnProjectileShot(const struct FCrAiProjectileParameters& InProjectileParameters);
+	void OnReleasedToPool();
+	void SpawnSnotProjectiles(const struct FVector& BigSnotLocation, const struct FVector& SmallProjectilesLocation, bool SpawnBigSnot);
+	void SplashWithSnotProjectiles(const struct FHitResult& HitResult);
+	void UserConstructionScript();
 
 public:
 	static class UClass* StaticClass()

@@ -16,28 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BTT_Exploder_Tier3_ResetExcludedLocations.BTT_Exploder_Tier3_ResetExcludedLocations_C.ReceiveExecuteAI
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class AAIController*                    OwnerController_ReceiveExecuteAI                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class APawn*                            ControlledPawn_ReceiveExecuteAI                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void UBTT_Exploder_Tier3_ResetExcludedLocations_C::ReceiveExecuteAI(class AAIController* OwnerController_ReceiveExecuteAI, class APawn* ControlledPawn_ReceiveExecuteAI)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTT_Exploder_Tier3_ResetExcludedLocations_C", "ReceiveExecuteAI");
-
-	Params::BTT_Exploder_Tier3_ResetExcludedLocations_C_ReceiveExecuteAI Parms{};
-
-	Parms.OwnerController_ReceiveExecuteAI = OwnerController_ReceiveExecuteAI;
-	Parms.ControlledPawn_ReceiveExecuteAI = ControlledPawn_ReceiveExecuteAI;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BTT_Exploder_Tier3_ResetExcludedLocations.BTT_Exploder_Tier3_ResetExcludedLocations_C.ExecuteUbergraph_BTT_Exploder_Tier3_ResetExcludedLocations
 // (Final, UbergraphFunction)
 // Parameters:
@@ -53,6 +31,28 @@ void UBTT_Exploder_Tier3_ResetExcludedLocations_C::ExecuteUbergraph_BTT_Exploder
 	Params::BTT_Exploder_Tier3_ResetExcludedLocations_C_ExecuteUbergraph_BTT_Exploder_Tier3_ResetExcludedLocations Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BTT_Exploder_Tier3_ResetExcludedLocations.BTT_Exploder_Tier3_ResetExcludedLocations_C.ReceiveExecuteAI
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class AAIController*                    OwnerController                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class APawn*                            ControlledPawn                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void UBTT_Exploder_Tier3_ResetExcludedLocations_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BTT_Exploder_Tier3_ResetExcludedLocations_C", "ReceiveExecuteAI");
+
+	Params::BTT_Exploder_Tier3_ResetExcludedLocations_C_ReceiveExecuteAI Parms{};
+
+	Parms.OwnerController = OwnerController;
+	Parms.ControlledPawn = ControlledPawn;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

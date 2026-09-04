@@ -16,24 +16,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_GasExtractor.BP_GasExtractor_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct BP_GasExtractor_C_ReceiveTick final
-{
-public:
-	float                                         DeltaSeconds_ReceiveTick;                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_GasExtractor_C_ReceiveTick;
-
-// Function BP_GasExtractor.BP_GasExtractor_C.OnBuildingStateChanged
-// 0x0001 (0x0001 - 0x0000)
-struct BP_GasExtractor_C_OnBuildingStateChanged final
-{
-public:
-	ECrBuildingState                              InState_OnBuildingStateChanged;                    // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_GasExtractor_C_OnBuildingStateChanged;
-
 // Function BP_GasExtractor.BP_GasExtractor_C.ExecuteUbergraph_BP_GasExtractor
 // 0x00B8 (0x00B8 - 0x0000)
 struct BP_GasExtractor_C_ExecuteUbergraph_BP_GasExtractor final
@@ -72,13 +54,31 @@ public:
 };
 DUMPER7_ASSERTS_BP_GasExtractor_C_ExecuteUbergraph_BP_GasExtractor;
 
+// Function BP_GasExtractor.BP_GasExtractor_C.OnBuildingStateChanged
+// 0x0001 (0x0001 - 0x0000)
+struct BP_GasExtractor_C_OnBuildingStateChanged final
+{
+public:
+	ECrBuildingState                              InState;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_GasExtractor_C_OnBuildingStateChanged;
+
+// Function BP_GasExtractor.BP_GasExtractor_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_GasExtractor_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_GasExtractor_C_ReceiveTick;
+
 // Function BP_GasExtractor.BP_GasExtractor_C.Get Meshes
 // 0x00B0 (0x00B0 - 0x0000)
 struct BP_GasExtractor_C_Get_Meshes final
 {
 public:
-	class USceneComponent*                        Static;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class USceneComponent*                        Animated;                                          // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        Static_0;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        Animated_0;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	TArray<class UMeshComponent*>                 NewParam;                                          // 0x0010(0x0010)(Parm, OutParm, ContainsInstancedReference)
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0024(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

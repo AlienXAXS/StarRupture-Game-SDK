@@ -16,6 +16,26 @@
 
 SDK_NAMESPACE_START
 
+// Function BP_Gatherable_GoldFruitTree_Large_A.BP_Gatherable_GoldFruitTree_Large_A_C.BP_OnLightsVisualsTriggered
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bLightsOn                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Gatherable_GoldFruitTree_Large_A_C::BP_OnLightsVisualsTriggered(bool bLightsOn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Gatherable_GoldFruitTree_Large_A_C", "BP_OnLightsVisualsTriggered");
+
+	Params::BP_Gatherable_GoldFruitTree_Large_A_C_BP_OnLightsVisualsTriggered Parms{};
+
+	Parms.bLightsOn = bLightsOn;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_Gatherable_GoldFruitTree_Large_A.BP_Gatherable_GoldFruitTree_Large_A_C.ExecuteUbergraph_BP_Gatherable_GoldFruitTree_Large_A
 // (Final, UbergraphFunction)
 // Parameters:
@@ -31,26 +51,6 @@ void ABP_Gatherable_GoldFruitTree_Large_A_C::ExecuteUbergraph_BP_Gatherable_Gold
 	Params::BP_Gatherable_GoldFruitTree_Large_A_C_ExecuteUbergraph_BP_Gatherable_GoldFruitTree_Large_A Parms{};
 
 	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Gatherable_GoldFruitTree_Large_A.BP_Gatherable_GoldFruitTree_Large_A_C.BP_OnLightsVisualsTriggered
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bLightsOn_BP_OnLightsVisualsTriggered                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Gatherable_GoldFruitTree_Large_A_C::BP_OnLightsVisualsTriggered(bool bLightsOn_BP_OnLightsVisualsTriggered)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Gatherable_GoldFruitTree_Large_A_C", "BP_OnLightsVisualsTriggered");
-
-	Params::BP_Gatherable_GoldFruitTree_Large_A_C_BP_OnLightsVisualsTriggered Parms{};
-
-	Parms.bLightsOn_BP_OnLightsVisualsTriggered = bLightsOn_BP_OnLightsVisualsTriggered;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

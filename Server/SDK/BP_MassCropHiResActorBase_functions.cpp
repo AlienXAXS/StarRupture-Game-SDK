@@ -16,34 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_MassCropHiResActorBase.BP_MassCropHiResActorBase_C.OnResourceReplenishedCosmeticsStart
-// (Event, Public, BlueprintEvent)
-
-void ABP_MassCropHiResActorBase_C::OnResourceReplenishedCosmeticsStart()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MassCropHiResActorBase_C", "OnResourceReplenishedCosmeticsStart");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_MassCropHiResActorBase.BP_MassCropHiResActorBase_C.OnCropDepletedCosmeticsStart
-// (Event, Protected, BlueprintEvent)
-
-void ABP_MassCropHiResActorBase_C::OnCropDepletedCosmeticsStart()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MassCropHiResActorBase_C", "OnCropDepletedCosmeticsStart");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_MassCropHiResActorBase.BP_MassCropHiResActorBase_C.ExecuteUbergraph_BP_MassCropHiResActorBase
 // (Final, UbergraphFunction)
 // Parameters:
@@ -61,6 +33,34 @@ void ABP_MassCropHiResActorBase_C::ExecuteUbergraph_BP_MassCropHiResActorBase(in
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_MassCropHiResActorBase.BP_MassCropHiResActorBase_C.OnCropDepletedCosmeticsStart
+// (Event, Protected, BlueprintEvent)
+
+void ABP_MassCropHiResActorBase_C::OnCropDepletedCosmeticsStart()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MassCropHiResActorBase_C", "OnCropDepletedCosmeticsStart");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_MassCropHiResActorBase.BP_MassCropHiResActorBase_C.OnResourceReplenishedCosmeticsStart
+// (Event, Public, BlueprintEvent)
+
+void ABP_MassCropHiResActorBase_C::OnResourceReplenishedCosmeticsStart()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MassCropHiResActorBase_C", "OnResourceReplenishedCosmeticsStart");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

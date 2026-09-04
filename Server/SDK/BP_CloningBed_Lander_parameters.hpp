@@ -19,7 +19,7 @@ SDK_PARAM_NAMESPACE_START
 struct BP_CloningBed_Lander_C_K2_GetInteractionActionText final
 {
 public:
-	class FText                                   ReturnValue_K2_GetInteractionActionText;           // 0x0000(0x0010)(Parm, OutParm, ReturnParm)
+	class FText                                   ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ReturnParm)
 };
 DUMPER7_ASSERTS_BP_CloningBed_Lander_C_K2_GetInteractionActionText;
 

@@ -40,14 +40,14 @@ public:
 	struct FProgressBarStyle                      NormalStyle;                                       // 0x0640(0x0230)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
-	void UpdateCorporationPercent(float InPercent_UpdateCorporationPercent);
-	void UpdateCorporationLevel(int32 Level_UpdateCorporationLevel);
-	void SetupData(class UCrCorporationData* Data_SetupData);
-	void SetMax(bool BMax_SetMax);
-	void PreConstruct(bool IsDesignTime_PreConstruct);
-	void HasAllRewardsClaimed(bool bClaimed_HasAllRewardsClaimed);
-	float Get_CorpoProgress_Percent();
 	void ExecuteUbergraph_WBP_CorporationScreenWidget(int32 EntryPoint);
+	float Get_CorpoProgress_Percent();
+	void HasAllRewardsClaimed(bool bClaimed);
+	void PreConstruct(bool IsDesignTime);
+	void SetMax(bool BMax);
+	void SetupData(class UCrCorporationData* Data);
+	void UpdateCorporationLevel(int32 Level);
+	void UpdateCorporationPercent(float InPercent);
 
 public:
 	static class UClass* StaticClass()

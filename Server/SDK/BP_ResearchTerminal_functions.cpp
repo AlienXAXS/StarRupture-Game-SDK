@@ -16,40 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_ResearchTerminal.BP_ResearchTerminal_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_ResearchTerminal_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ResearchTerminal_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_ResearchTerminal.BP_ResearchTerminal_C.OnUIOpened
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bOpened_OnUIOpened                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_ResearchTerminal_C::OnUIOpened(bool bOpened_OnUIOpened)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ResearchTerminal_C", "OnUIOpened");
-
-	Params::BP_ResearchTerminal_C_OnUIOpened Parms{};
-
-	Parms.bOpened_OnUIOpened = bOpened_OnUIOpened;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_ResearchTerminal.BP_ResearchTerminal_C.ExecuteUbergraph_BP_ResearchTerminal
 // (Final, UbergraphFunction)
 // Parameters:
@@ -67,6 +33,40 @@ void ABP_ResearchTerminal_C::ExecuteUbergraph_BP_ResearchTerminal(int32 EntryPoi
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_ResearchTerminal.BP_ResearchTerminal_C.OnUIOpened
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bOpened                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_ResearchTerminal_C::OnUIOpened(bool bOpened)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ResearchTerminal_C", "OnUIOpened");
+
+	Params::BP_ResearchTerminal_C_OnUIOpened Parms{};
+
+	Parms.bOpened = bOpened;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_ResearchTerminal.BP_ResearchTerminal_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_ResearchTerminal_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ResearchTerminal_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

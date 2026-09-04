@@ -16,95 +16,21 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_GeyserOreMassHighResActorBase.BP_GeyserOreMassHighResActorBase_C.OnResourceDepletedCosmeticsStart
-// (Event, Public, BlueprintEvent)
-
-void ABP_GeyserOreMassHighResActorBase_C::OnResourceDepletedCosmeticsStart()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GeyserOreMassHighResActorBase_C", "OnResourceDepletedCosmeticsStart");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_GeyserOreMassHighResActorBase.BP_GeyserOreMassHighResActorBase_C.OnMiningWeakSpotDepletedCosmeticsStart
-// (Event, Public, BlueprintEvent)
+// Function BP_GeyserOreMassHighResActorBase.BP_GeyserOreMassHighResActorBase_C.BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature
+// (BlueprintEvent)
 // Parameters:
-// const struct FTransform&                CosmeticTransform_OnMiningWeakSpotDepletedCosmeticsStart(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UNiagaraComponent*                PSystem                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void ABP_GeyserOreMassHighResActorBase_C::OnMiningWeakSpotDepletedCosmeticsStart(const struct FTransform& CosmeticTransform_OnMiningWeakSpotDepletedCosmeticsStart)
+void ABP_GeyserOreMassHighResActorBase_C::BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature(class UNiagaraComponent* PSystem)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GeyserOreMassHighResActorBase_C", "OnMiningWeakSpotDepletedCosmeticsStart");
+		Func = Class->GetFunction("BP_GeyserOreMassHighResActorBase_C", "BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature");
 
-	Params::BP_GeyserOreMassHighResActorBase_C_OnMiningWeakSpotDepletedCosmeticsStart Parms{};
+	Params::BP_GeyserOreMassHighResActorBase_C_BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature Parms{};
 
-	Parms.CosmeticTransform_OnMiningWeakSpotDepletedCosmeticsStart = std::move(CosmeticTransform_OnMiningWeakSpotDepletedCosmeticsStart);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_GeyserOreMassHighResActorBase.BP_GeyserOreMassHighResActorBase_C.OnLoaded_800BCDF1400ED570091EE3B4035FA14A
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UObject*                          Loaded                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void ABP_GeyserOreMassHighResActorBase_C::OnLoaded_800BCDF1400ED570091EE3B4035FA14A(class UObject* Loaded)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GeyserOreMassHighResActorBase_C", "OnLoaded_800BCDF1400ED570091EE3B4035FA14A");
-
-	Params::BP_GeyserOreMassHighResActorBase_C_OnLoaded_800BCDF1400ED570091EE3B4035FA14A Parms{};
-
-	Parms.Loaded = Loaded;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_GeyserOreMassHighResActorBase.BP_GeyserOreMassHighResActorBase_C.OnLoaded_289CDE4840164C5933F5318A1A408B42
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UObject*                          Loaded                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void ABP_GeyserOreMassHighResActorBase_C::OnLoaded_289CDE4840164C5933F5318A1A408B42(class UObject* Loaded)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GeyserOreMassHighResActorBase_C", "OnLoaded_289CDE4840164C5933F5318A1A408B42");
-
-	Params::BP_GeyserOreMassHighResActorBase_C_OnLoaded_289CDE4840164C5933F5318A1A408B42 Parms{};
-
-	Parms.Loaded = Loaded;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_GeyserOreMassHighResActorBase.BP_GeyserOreMassHighResActorBase_C.ExecuteUbergraph_BP_GeyserOreMassHighResActorBase
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_GeyserOreMassHighResActorBase_C::ExecuteUbergraph_BP_GeyserOreMassHighResActorBase(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GeyserOreMassHighResActorBase_C", "ExecuteUbergraph_BP_GeyserOreMassHighResActorBase");
-
-	Params::BP_GeyserOreMassHighResActorBase_C_ExecuteUbergraph_BP_GeyserOreMassHighResActorBase Parms{};
-
-	Parms.EntryPoint = EntryPoint;
+	Parms.PSystem = PSystem;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -130,23 +56,97 @@ void ABP_GeyserOreMassHighResActorBase_C::BndEvt__BP_OreMassHighResActorBase_Dep
 }
 
 
-// Function BP_GeyserOreMassHighResActorBase.BP_GeyserOreMassHighResActorBase_C.BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature
-// (BlueprintEvent)
+// Function BP_GeyserOreMassHighResActorBase.BP_GeyserOreMassHighResActorBase_C.ExecuteUbergraph_BP_GeyserOreMassHighResActorBase
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// class UNiagaraComponent*                PSystem                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_GeyserOreMassHighResActorBase_C::BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature(class UNiagaraComponent* PSystem)
+void ABP_GeyserOreMassHighResActorBase_C::ExecuteUbergraph_BP_GeyserOreMassHighResActorBase(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GeyserOreMassHighResActorBase_C", "BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature");
+		Func = Class->GetFunction("BP_GeyserOreMassHighResActorBase_C", "ExecuteUbergraph_BP_GeyserOreMassHighResActorBase");
 
-	Params::BP_GeyserOreMassHighResActorBase_C_BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature Parms{};
+	Params::BP_GeyserOreMassHighResActorBase_C_ExecuteUbergraph_BP_GeyserOreMassHighResActorBase Parms{};
 
-	Parms.PSystem = PSystem;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_GeyserOreMassHighResActorBase.BP_GeyserOreMassHighResActorBase_C.OnLoaded_289CDE4840164C5933F5318A1A408B42
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          Loaded                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void ABP_GeyserOreMassHighResActorBase_C::OnLoaded_289CDE4840164C5933F5318A1A408B42(class UObject* Loaded)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GeyserOreMassHighResActorBase_C", "OnLoaded_289CDE4840164C5933F5318A1A408B42");
+
+	Params::BP_GeyserOreMassHighResActorBase_C_OnLoaded_289CDE4840164C5933F5318A1A408B42 Parms{};
+
+	Parms.Loaded = Loaded;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_GeyserOreMassHighResActorBase.BP_GeyserOreMassHighResActorBase_C.OnLoaded_800BCDF1400ED570091EE3B4035FA14A
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          Loaded                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void ABP_GeyserOreMassHighResActorBase_C::OnLoaded_800BCDF1400ED570091EE3B4035FA14A(class UObject* Loaded)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GeyserOreMassHighResActorBase_C", "OnLoaded_800BCDF1400ED570091EE3B4035FA14A");
+
+	Params::BP_GeyserOreMassHighResActorBase_C_OnLoaded_800BCDF1400ED570091EE3B4035FA14A Parms{};
+
+	Parms.Loaded = Loaded;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_GeyserOreMassHighResActorBase.BP_GeyserOreMassHighResActorBase_C.OnMiningWeakSpotDepletedCosmeticsStart
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// const struct FTransform&                CosmeticTransform                                      (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_GeyserOreMassHighResActorBase_C::OnMiningWeakSpotDepletedCosmeticsStart(const struct FTransform& CosmeticTransform)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GeyserOreMassHighResActorBase_C", "OnMiningWeakSpotDepletedCosmeticsStart");
+
+	Params::BP_GeyserOreMassHighResActorBase_C_OnMiningWeakSpotDepletedCosmeticsStart Parms{};
+
+	Parms.CosmeticTransform = std::move(CosmeticTransform);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_GeyserOreMassHighResActorBase.BP_GeyserOreMassHighResActorBase_C.OnResourceDepletedCosmeticsStart
+// (Event, Public, BlueprintEvent)
+
+void ABP_GeyserOreMassHighResActorBase_C::OnResourceDepletedCosmeticsStart()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GeyserOreMassHighResActorBase_C", "OnResourceDepletedCosmeticsStart");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

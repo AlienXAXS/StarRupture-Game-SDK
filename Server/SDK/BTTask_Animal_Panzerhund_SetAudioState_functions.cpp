@@ -16,6 +16,28 @@
 
 SDK_NAMESPACE_START
 
+// Function BTTask_Animal_Panzerhund_SetAudioState.BTTask_Animal_Panzerhund_SetAudioState_C.ReceiveExecuteAI
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class AAIController*                    OwnerController                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class APawn*                            ControlledPawn                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void UBTTask_Animal_Panzerhund_SetAudioState_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BTTask_Animal_Panzerhund_SetAudioState_C", "ReceiveExecuteAI");
+
+	Params::BTTask_Animal_Panzerhund_SetAudioState_C_ReceiveExecuteAI Parms{};
+
+	Parms.OwnerController = OwnerController;
+	Parms.ControlledPawn = ControlledPawn;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BTTask_Animal_Panzerhund_SetAudioState.BTTask_Animal_Panzerhund_SetAudioState_C.ExecuteUbergraph_BTTask_Animal_Panzerhund_SetAudioState
 // (Final, UbergraphFunction)
 // Parameters:
@@ -31,28 +53,6 @@ void UBTTask_Animal_Panzerhund_SetAudioState_C::ExecuteUbergraph_BTTask_Animal_P
 	Params::BTTask_Animal_Panzerhund_SetAudioState_C_ExecuteUbergraph_BTTask_Animal_Panzerhund_SetAudioState Parms{};
 
 	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BTTask_Animal_Panzerhund_SetAudioState.BTTask_Animal_Panzerhund_SetAudioState_C.ReceiveExecuteAI
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class AAIController*                    OwnerController_ReceiveExecuteAI                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class APawn*                            ControlledPawn_ReceiveExecuteAI                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void UBTTask_Animal_Panzerhund_SetAudioState_C::ReceiveExecuteAI(class AAIController* OwnerController_ReceiveExecuteAI, class APawn* ControlledPawn_ReceiveExecuteAI)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTTask_Animal_Panzerhund_SetAudioState_C", "ReceiveExecuteAI");
-
-	Params::BTTask_Animal_Panzerhund_SetAudioState_C_ReceiveExecuteAI Parms{};
-
-	Parms.OwnerController_ReceiveExecuteAI = OwnerController_ReceiveExecuteAI;
-	Parms.ControlledPawn_ReceiveExecuteAI = ControlledPawn_ReceiveExecuteAI;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

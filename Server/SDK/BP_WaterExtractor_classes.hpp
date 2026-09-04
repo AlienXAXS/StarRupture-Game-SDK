@@ -37,9 +37,9 @@ public:
 	class UAudioComponent*                        Sound;                                             // 0x07B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveBeginPlay();
-	void OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged);
 	void ExecuteUbergraph_BP_WaterExtractor(int32 EntryPoint);
+	void OnBuildingStateChanged(ECrBuildingState InState);
+	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

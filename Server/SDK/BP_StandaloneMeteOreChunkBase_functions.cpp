@@ -16,101 +16,37 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.Timeline__UpdateFunc
-// (BlueprintEvent)
-
-void ABP_StandaloneMeteOreChunkBase_C::Timeline__UpdateFunc()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneMeteOreChunkBase_C", "Timeline__UpdateFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.Timeline__FinishedFunc
-// (BlueprintEvent)
-
-void ABP_StandaloneMeteOreChunkBase_C::Timeline__FinishedFunc()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneMeteOreChunkBase_C", "Timeline__FinishedFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_StandaloneMeteOreChunkBase_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneMeteOreChunkBase_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.OnResourceDepletedCosmeticsStart
+// Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.BP_OnSpawnedWithResourceDepleted
 // (Event, Public, BlueprintEvent)
 
-void ABP_StandaloneMeteOreChunkBase_C::OnResourceDepletedCosmeticsStart()
+void ABP_StandaloneMeteOreChunkBase_C::BP_OnSpawnedWithResourceDepleted()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneMeteOreChunkBase_C", "OnResourceDepletedCosmeticsStart");
+		Func = Class->GetFunction("BP_StandaloneMeteOreChunkBase_C", "BP_OnSpawnedWithResourceDepleted");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.GetCurrentGrowbackSubstage
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.ExecuteUbergraph_BP_StandaloneMeteOreChunkBase
+// (Final, UbergraphFunction)
 // Parameters:
-// EEnviroWaveGrowbackSubstage*            GrowbackSubstage                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_StandaloneMeteOreChunkBase_C::GetCurrentGrowbackSubstage(EEnviroWaveGrowbackSubstage* GrowbackSubstage)
+void ABP_StandaloneMeteOreChunkBase_C::ExecuteUbergraph_BP_StandaloneMeteOreChunkBase(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneMeteOreChunkBase_C", "GetCurrentGrowbackSubstage");
+		Func = Class->GetFunction("BP_StandaloneMeteOreChunkBase_C", "ExecuteUbergraph_BP_StandaloneMeteOreChunkBase");
 
-	Params::BP_StandaloneMeteOreChunkBase_C_GetCurrentGrowbackSubstage Parms{};
+	Params::BP_StandaloneMeteOreChunkBase_C_ExecuteUbergraph_BP_StandaloneMeteOreChunkBase Parms{};
 
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (GrowbackSubstage != nullptr)
-		*GrowbackSubstage = Parms.GrowbackSubstage;
-}
-
-
-// Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.GetCurrentFadeoutSubstage
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// EEnviroWaveFadeoutSubstage*             GrowbackSubstage                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_StandaloneMeteOreChunkBase_C::GetCurrentFadeoutSubstage(EEnviroWaveFadeoutSubstage* GrowbackSubstage)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneMeteOreChunkBase_C", "GetCurrentFadeoutSubstage");
-
-	Params::BP_StandaloneMeteOreChunkBase_C_GetCurrentFadeoutSubstage Parms{};
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	if (GrowbackSubstage != nullptr)
-		*GrowbackSubstage = Parms.GrowbackSubstage;
 }
 
 
@@ -135,35 +71,99 @@ void ABP_StandaloneMeteOreChunkBase_C::GetCurrentEnvironmentalWaveStage(EEnviroW
 }
 
 
-// Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.ExecuteUbergraph_BP_StandaloneMeteOreChunkBase
-// (Final, UbergraphFunction)
+// Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.GetCurrentFadeoutSubstage
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEnviroWaveFadeoutSubstage*             GrowbackSubstage                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_StandaloneMeteOreChunkBase_C::ExecuteUbergraph_BP_StandaloneMeteOreChunkBase(int32 EntryPoint)
+void ABP_StandaloneMeteOreChunkBase_C::GetCurrentFadeoutSubstage(EEnviroWaveFadeoutSubstage* GrowbackSubstage)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneMeteOreChunkBase_C", "ExecuteUbergraph_BP_StandaloneMeteOreChunkBase");
+		Func = Class->GetFunction("BP_StandaloneMeteOreChunkBase_C", "GetCurrentFadeoutSubstage");
 
-	Params::BP_StandaloneMeteOreChunkBase_C_ExecuteUbergraph_BP_StandaloneMeteOreChunkBase Parms{};
-
-	Parms.EntryPoint = EntryPoint;
+	Params::BP_StandaloneMeteOreChunkBase_C_GetCurrentFadeoutSubstage Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	if (GrowbackSubstage != nullptr)
+		*GrowbackSubstage = Parms.GrowbackSubstage;
 }
 
 
-// Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.BP_OnSpawnedWithResourceDepleted
-// (Event, Public, BlueprintEvent)
+// Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.GetCurrentGrowbackSubstage
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// EEnviroWaveGrowbackSubstage*            GrowbackSubstage                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_StandaloneMeteOreChunkBase_C::BP_OnSpawnedWithResourceDepleted()
+void ABP_StandaloneMeteOreChunkBase_C::GetCurrentGrowbackSubstage(EEnviroWaveGrowbackSubstage* GrowbackSubstage)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneMeteOreChunkBase_C", "BP_OnSpawnedWithResourceDepleted");
+		Func = Class->GetFunction("BP_StandaloneMeteOreChunkBase_C", "GetCurrentGrowbackSubstage");
+
+	Params::BP_StandaloneMeteOreChunkBase_C_GetCurrentGrowbackSubstage Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (GrowbackSubstage != nullptr)
+		*GrowbackSubstage = Parms.GrowbackSubstage;
+}
+
+
+// Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.OnResourceDepletedCosmeticsStart
+// (Event, Public, BlueprintEvent)
+
+void ABP_StandaloneMeteOreChunkBase_C::OnResourceDepletedCosmeticsStart()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_StandaloneMeteOreChunkBase_C", "OnResourceDepletedCosmeticsStart");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_StandaloneMeteOreChunkBase_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_StandaloneMeteOreChunkBase_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.Timeline__FinishedFunc
+// (BlueprintEvent)
+
+void ABP_StandaloneMeteOreChunkBase_C::Timeline__FinishedFunc()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_StandaloneMeteOreChunkBase_C", "Timeline__FinishedFunc");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.Timeline__UpdateFunc
+// (BlueprintEvent)
+
+void ABP_StandaloneMeteOreChunkBase_C::Timeline__UpdateFunc()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_StandaloneMeteOreChunkBase_C", "Timeline__UpdateFunc");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

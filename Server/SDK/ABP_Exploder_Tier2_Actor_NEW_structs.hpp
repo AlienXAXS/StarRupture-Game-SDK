@@ -16,15 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// ScriptStruct ABP_Exploder_Tier2_Actor_NEW.ABP_Exploder_Tier2_Actor_NEW_C.AnimBlueprintGeneratedMutableData
-// 0x0001 (0x0002 - 0x0001)
-struct ABP_Exploder_Tier2_Actor_NEW::FAnimBlueprintGeneratedMutableData final : public FAnimBlueprintMutableData
-{
-public:
-	uint8                                         __ByteProperty;                                    // 0x0001(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_ABP_Exploder_Tier2_Actor_NEW__FAnimBlueprintGeneratedMutableData;
-
 // ScriptStruct ABP_Exploder_Tier2_Actor_NEW.ABP_Exploder_Tier2_Actor_NEW_C.AnimBlueprintGeneratedConstantData
 // 0x0EE7 (0x0EE8 - 0x0001)
 struct ABP_Exploder_Tier2_Actor_NEW::FAnimBlueprintGeneratedConstantData final : public FAnimBlueprintConstantData
@@ -156,5 +147,14 @@ public:
 	struct FAnimNodeExposedValueHandler_PropertyAccess AnimGraphNode_TwoWayBlend;                    // 0x0EB8(0x0030)()
 };
 DUMPER7_ASSERTS_ABP_Exploder_Tier2_Actor_NEW__FAnimBlueprintGeneratedConstantData;
+
+// ScriptStruct ABP_Exploder_Tier2_Actor_NEW.ABP_Exploder_Tier2_Actor_NEW_C.AnimBlueprintGeneratedMutableData
+// 0x0001 (0x0002 - 0x0001)
+struct ABP_Exploder_Tier2_Actor_NEW::FAnimBlueprintGeneratedMutableData final : public FAnimBlueprintMutableData
+{
+public:
+	uint8                                         __ByteProperty;                                    // 0x0001(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_ABP_Exploder_Tier2_Actor_NEW__FAnimBlueprintGeneratedMutableData;
 
 SDK_NAMESPACE_END

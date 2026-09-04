@@ -36,11 +36,11 @@ public:
 	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer;                      // 0x0770(0x0048)()
 
 public:
-	void ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor(int32 EntryPoint);
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor_AnimGraphNode_BlendListByBool_A5846897452E5C73BAFFEF871CC1DD2A();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor_AnimGraphNode_BlendListByBool_3DA41B154F0CEEF45F1690911F953BF7();
+	void AnimGraph(struct FPoseLink* AnimGraph_0);
 	void BlueprintInitializeAnimation();
-	void AnimGraph(struct FPoseLink* AnimGraph);
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor_AnimGraphNode_BlendListByBool_3DA41B154F0CEEF45F1690911F953BF7();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor_AnimGraphNode_BlendListByBool_A5846897452E5C73BAFFEF871CC1DD2A();
+	void ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

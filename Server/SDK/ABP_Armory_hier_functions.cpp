@@ -16,119 +16,36 @@
 
 SDK_NAMESPACE_START
 
-// Function ABP_Armory_hier.ABP_Armory_hier_C.ExecuteUbergraph_ABP_Armory_hier
-// (Final, UbergraphFunction)
+// Function ABP_Armory_hier.ABP_Armory_hier_C.AnimGraph
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FPoseLink*                       AnimGraph_0                                            (Parm, OutParm, NoDestructor)
 
-void UABP_Armory_hier_C::ExecuteUbergraph_ABP_Armory_hier(int32 EntryPoint)
+void UABP_Armory_hier_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Armory_hier_C", "ExecuteUbergraph_ABP_Armory_hier");
+		Func = Class->GetFunction("ABP_Armory_hier_C", "AnimGraph");
 
-	Params::ABP_Armory_hier_C_ExecuteUbergraph_ABP_Armory_hier Parms{};
-
-	Parms.EntryPoint = EntryPoint;
+	Params::ABP_Armory_hier_C_AnimGraph Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	if (AnimGraph_0 != nullptr)
+		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
 }
 
 
-// Function ABP_Armory_hier.ABP_Armory_hier_C.BlueprintBeginPlay
-// (Event, Public, BlueprintEvent)
-
-void UABP_Armory_hier_C::BlueprintBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Armory_hier_C", "BlueprintBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ABP_Armory_hier.ABP_Armory_hier_C.AnimNotify_Right_arm_laser_4
+// Function ABP_Armory_hier.ABP_Armory_hier_C.AnimNotify_Left_arm_laser_1
 // (BlueprintCallable, BlueprintEvent)
 
-void UABP_Armory_hier_C::AnimNotify_Right_arm_laser_4()
+void UABP_Armory_hier_C::AnimNotify_Left_arm_laser_1()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Armory_hier_C", "AnimNotify_Right_arm_laser_4");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ABP_Armory_hier.ABP_Armory_hier_C.AnimNotify_Right_arm_laser_3
-// (BlueprintCallable, BlueprintEvent)
-
-void UABP_Armory_hier_C::AnimNotify_Right_arm_laser_3()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Armory_hier_C", "AnimNotify_Right_arm_laser_3");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ABP_Armory_hier.ABP_Armory_hier_C.AnimNotify_Right_arm_laser_2
-// (BlueprintCallable, BlueprintEvent)
-
-void UABP_Armory_hier_C::AnimNotify_Right_arm_laser_2()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Armory_hier_C", "AnimNotify_Right_arm_laser_2");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ABP_Armory_hier.ABP_Armory_hier_C.AnimNotify_Right_arm_laser_1
-// (BlueprintCallable, BlueprintEvent)
-
-void UABP_Armory_hier_C::AnimNotify_Right_arm_laser_1()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Armory_hier_C", "AnimNotify_Right_arm_laser_1");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ABP_Armory_hier.ABP_Armory_hier_C.AnimNotify_Left_arm_laser_4
-// (BlueprintCallable, BlueprintEvent)
-
-void UABP_Armory_hier_C::AnimNotify_Left_arm_laser_4()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Armory_hier_C", "AnimNotify_Left_arm_laser_4");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ABP_Armory_hier.ABP_Armory_hier_C.AnimNotify_Left_arm_laser_3
-// (BlueprintCallable, BlueprintEvent)
-
-void UABP_Armory_hier_C::AnimNotify_Left_arm_laser_3()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Armory_hier_C", "AnimNotify_Left_arm_laser_3");
+		Func = Class->GetFunction("ABP_Armory_hier_C", "AnimNotify_Left_arm_laser_1");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -148,38 +65,121 @@ void UABP_Armory_hier_C::AnimNotify_Left_arm_laser_2()
 }
 
 
-// Function ABP_Armory_hier.ABP_Armory_hier_C.AnimNotify_Left_arm_laser_1
+// Function ABP_Armory_hier.ABP_Armory_hier_C.AnimNotify_Left_arm_laser_3
 // (BlueprintCallable, BlueprintEvent)
 
-void UABP_Armory_hier_C::AnimNotify_Left_arm_laser_1()
+void UABP_Armory_hier_C::AnimNotify_Left_arm_laser_3()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Armory_hier_C", "AnimNotify_Left_arm_laser_1");
+		Func = Class->GetFunction("ABP_Armory_hier_C", "AnimNotify_Left_arm_laser_3");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ABP_Armory_hier.ABP_Armory_hier_C.AnimGraph
-// (HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FPoseLink*                       AnimGraph                                              (Parm, OutParm, NoDestructor)
+// Function ABP_Armory_hier.ABP_Armory_hier_C.AnimNotify_Left_arm_laser_4
+// (BlueprintCallable, BlueprintEvent)
 
-void UABP_Armory_hier_C::AnimGraph(struct FPoseLink* AnimGraph)
+void UABP_Armory_hier_C::AnimNotify_Left_arm_laser_4()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Armory_hier_C", "AnimGraph");
+		Func = Class->GetFunction("ABP_Armory_hier_C", "AnimNotify_Left_arm_laser_4");
 
-	Params::ABP_Armory_hier_C_AnimGraph Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Armory_hier.ABP_Armory_hier_C.AnimNotify_Right_arm_laser_1
+// (BlueprintCallable, BlueprintEvent)
+
+void UABP_Armory_hier_C::AnimNotify_Right_arm_laser_1()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Armory_hier_C", "AnimNotify_Right_arm_laser_1");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Armory_hier.ABP_Armory_hier_C.AnimNotify_Right_arm_laser_2
+// (BlueprintCallable, BlueprintEvent)
+
+void UABP_Armory_hier_C::AnimNotify_Right_arm_laser_2()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Armory_hier_C", "AnimNotify_Right_arm_laser_2");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Armory_hier.ABP_Armory_hier_C.AnimNotify_Right_arm_laser_3
+// (BlueprintCallable, BlueprintEvent)
+
+void UABP_Armory_hier_C::AnimNotify_Right_arm_laser_3()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Armory_hier_C", "AnimNotify_Right_arm_laser_3");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Armory_hier.ABP_Armory_hier_C.AnimNotify_Right_arm_laser_4
+// (BlueprintCallable, BlueprintEvent)
+
+void UABP_Armory_hier_C::AnimNotify_Right_arm_laser_4()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Armory_hier_C", "AnimNotify_Right_arm_laser_4");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Armory_hier.ABP_Armory_hier_C.BlueprintBeginPlay
+// (Event, Public, BlueprintEvent)
+
+void UABP_Armory_hier_C::BlueprintBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Armory_hier_C", "BlueprintBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Armory_hier.ABP_Armory_hier_C.ExecuteUbergraph_ABP_Armory_hier
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UABP_Armory_hier_C::ExecuteUbergraph_ABP_Armory_hier(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Armory_hier_C", "ExecuteUbergraph_ABP_Armory_hier");
+
+	Params::ABP_Armory_hier_C_ExecuteUbergraph_ABP_Armory_hier Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	if (AnimGraph != nullptr)
-		*AnimGraph = std::move(Parms.AnimGraph);
 }
 
 

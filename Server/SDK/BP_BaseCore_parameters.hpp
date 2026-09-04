@@ -17,44 +17,54 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_BaseCore.BP_BaseCore_C.SetBaseCoreAreaVisibility
+// Function BP_BaseCore.BP_BaseCore_C.BP_OnActiveCoolingChanged
 // 0x0001 (0x0001 - 0x0000)
-struct BP_BaseCore_C_SetBaseCoreAreaVisibility final
+struct BP_BaseCore_C_BP_OnActiveCoolingChanged final
 {
 public:
-	bool                                          Visible_SetBaseCoreAreaVisibility;                 // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ActiveCooling;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_BaseCore_C_SetBaseCoreAreaVisibility;
+DUMPER7_ASSERTS_BP_BaseCore_C_BP_OnActiveCoolingChanged;
 
-// Function BP_BaseCore.BP_BaseCore_C.ReceiveEndPlay
-// 0x0001 (0x0001 - 0x0000)
-struct BP_BaseCore_C_ReceiveEndPlay final
+// Function BP_BaseCore.BP_BaseCore_C.BP_OnBaseCoreInfectionActorDestroyed
+// 0x0020 (0x0020 - 0x0000)
+struct BP_BaseCore_C_BP_OnBaseCoreInfectionActorDestroyed final
 {
 public:
-	EEndPlayReason                                EndPlayReason_ReceiveEndPlay;                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          LastActor;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                ActorLocation;                                     // 0x0008(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_BaseCore_C_ReceiveEndPlay;
+DUMPER7_ASSERTS_BP_BaseCore_C_BP_OnBaseCoreInfectionActorDestroyed;
 
-// Function BP_BaseCore.BP_BaseCore_C.PlayAlarm
+// Function BP_BaseCore.BP_BaseCore_C.BP_OnBeingAttackedStateChanged
+// 0x0001 (0x0001 - 0x0000)
+struct BP_BaseCore_C_BP_OnBeingAttackedStateChanged final
+{
+public:
+	bool                                          bUnderAttack;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_BaseCore_C_BP_OnBeingAttackedStateChanged;
+
+// Function BP_BaseCore.BP_BaseCore_C.BP_OnInfectionChanged
+// 0x0008 (0x0008 - 0x0000)
+struct BP_BaseCore_C_BP_OnInfectionChanged final
+{
+public:
+	float                                         Infection;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          InfectionActive;                                   // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_BaseCore_C_BP_OnInfectionChanged;
+
+// Function BP_BaseCore.BP_BaseCore_C.BP_OnUpgreadLevelChanged
 // 0x0002 (0x0002 - 0x0000)
-struct BP_BaseCore_C_PlayAlarm final
+struct BP_BaseCore_C_BP_OnUpgreadLevelChanged final
 {
 public:
-	bool                                          Slow;                                              // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Fast;                                              // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         NewUpgreadLevel;                                   // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Immediately;                                       // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_BaseCore_C_PlayAlarm;
-
-// Function BP_BaseCore.BP_BaseCore_C.IsPlayingAttackSound
-// 0x0003 (0x0003 - 0x0000)
-struct BP_BaseCore_C_IsPlayingAttackSound final
-{
-public:
-	bool                                          Result;                                            // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsPlaying_ReturnValue;                    // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_BaseCore_C_IsPlayingAttackSound;
+DUMPER7_ASSERTS_BP_BaseCore_C_BP_OnUpgreadLevelChanged;
 
 // Function BP_BaseCore.BP_BaseCore_C.ExecuteUbergraph_BP_BaseCore
 // 0x00E8 (0x00E8 - 0x0000)
@@ -114,54 +124,44 @@ public:
 };
 DUMPER7_ASSERTS_BP_BaseCore_C_ExecuteUbergraph_BP_BaseCore;
 
-// Function BP_BaseCore.BP_BaseCore_C.BP_OnUpgreadLevelChanged
+// Function BP_BaseCore.BP_BaseCore_C.IsPlayingAttackSound
+// 0x0003 (0x0003 - 0x0000)
+struct BP_BaseCore_C_IsPlayingAttackSound final
+{
+public:
+	bool                                          Result;                                            // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsPlaying_ReturnValue;                    // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_BaseCore_C_IsPlayingAttackSound;
+
+// Function BP_BaseCore.BP_BaseCore_C.PlayAlarm
 // 0x0002 (0x0002 - 0x0000)
-struct BP_BaseCore_C_BP_OnUpgreadLevelChanged final
+struct BP_BaseCore_C_PlayAlarm final
 {
 public:
-	uint8                                         NewUpgreadLevel_BP_OnUpgreadLevelChanged;          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Immediately_BP_OnUpgreadLevelChanged;              // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Slow;                                              // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Fast;                                              // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_BaseCore_C_BP_OnUpgreadLevelChanged;
+DUMPER7_ASSERTS_BP_BaseCore_C_PlayAlarm;
 
-// Function BP_BaseCore.BP_BaseCore_C.BP_OnInfectionChanged
-// 0x0008 (0x0008 - 0x0000)
-struct BP_BaseCore_C_BP_OnInfectionChanged final
-{
-public:
-	float                                         Infection_BP_OnInfectionChanged;                   // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          InfectionActive_BP_OnInfectionChanged;             // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_BaseCore_C_BP_OnInfectionChanged;
-
-// Function BP_BaseCore.BP_BaseCore_C.BP_OnBeingAttackedStateChanged
+// Function BP_BaseCore.BP_BaseCore_C.ReceiveEndPlay
 // 0x0001 (0x0001 - 0x0000)
-struct BP_BaseCore_C_BP_OnBeingAttackedStateChanged final
+struct BP_BaseCore_C_ReceiveEndPlay final
 {
 public:
-	bool                                          bUnderAttack_BP_OnBeingAttackedStateChanged;       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_BaseCore_C_BP_OnBeingAttackedStateChanged;
+DUMPER7_ASSERTS_BP_BaseCore_C_ReceiveEndPlay;
 
-// Function BP_BaseCore.BP_BaseCore_C.BP_OnBaseCoreInfectionActorDestroyed
-// 0x0020 (0x0020 - 0x0000)
-struct BP_BaseCore_C_BP_OnBaseCoreInfectionActorDestroyed final
-{
-public:
-	bool                                          LastActor_BP_OnBaseCoreInfectionActorDestroyed;    // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                ActorLocation_BP_OnBaseCoreInfectionActorDestroyed; // 0x0008(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_BaseCore_C_BP_OnBaseCoreInfectionActorDestroyed;
-
-// Function BP_BaseCore.BP_BaseCore_C.BP_OnActiveCoolingChanged
+// Function BP_BaseCore.BP_BaseCore_C.SetBaseCoreAreaVisibility
 // 0x0001 (0x0001 - 0x0000)
-struct BP_BaseCore_C_BP_OnActiveCoolingChanged final
+struct BP_BaseCore_C_SetBaseCoreAreaVisibility final
 {
 public:
-	bool                                          ActiveCooling_BP_OnActiveCoolingChanged;           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Visible;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_BaseCore_C_BP_OnActiveCoolingChanged;
+DUMPER7_ASSERTS_BP_BaseCore_C_SetBaseCoreAreaVisibility;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

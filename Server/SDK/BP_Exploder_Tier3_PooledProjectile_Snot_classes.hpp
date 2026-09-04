@@ -35,19 +35,19 @@ public:
 	double                                        SnotDecalFadeoutStartDelay;                        // 0x0390(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void SpawnDecal();
-	void ReceiveBeginPlay();
-	void OnProjectileShot(const struct FCrAiProjectileParameters& InProjectileParameters_OnProjectileShot);
-	void OnProjectileDeactivated();
-	void OnProjectileActivated();
-	void ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectile_Snot(int32 EntryPoint);
-	void DestroyDecal();
-	void BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 	void BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult);
+	void BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+	void DestroyDecal();
+	void ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectile_Snot(int32 EntryPoint);
+	void OnProjectileActivated();
+	void OnProjectileDeactivated();
+	void OnProjectileShot(const struct FCrAiProjectileParameters& InProjectileParameters);
+	void ReceiveBeginPlay();
+	void SpawnDecal();
 
-	bool ShouldForceReturnToPool() const;
-	bool CanReturnToPoolAfterHit() const;
 	bool CanReturnToPool() const;
+	bool CanReturnToPoolAfterHit() const;
+	bool ShouldForceReturnToPool() const;
 
 public:
 	static class UClass* StaticClass()

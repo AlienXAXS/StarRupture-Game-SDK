@@ -16,24 +16,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_SuitWorkshop.BP_SuitWorkshop_C.OnUIOpened
-// 0x0001 (0x0001 - 0x0000)
-struct BP_SuitWorkshop_C_OnUIOpened final
-{
-public:
-	bool                                          bOpened_OnUIOpened;                                // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_SuitWorkshop_C_OnUIOpened;
-
-// Function BP_SuitWorkshop.BP_SuitWorkshop_C.OnBuildingStateChanged
-// 0x0001 (0x0001 - 0x0000)
-struct BP_SuitWorkshop_C_OnBuildingStateChanged final
-{
-public:
-	ECrBuildingState                              InState_OnBuildingStateChanged;                    // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_SuitWorkshop_C_OnBuildingStateChanged;
-
 // Function BP_SuitWorkshop.BP_SuitWorkshop_C.ExecuteUbergraph_BP_SuitWorkshop
 // 0x00C0 (0x00C0 - 0x0000)
 struct BP_SuitWorkshop_C_ExecuteUbergraph_BP_SuitWorkshop final
@@ -80,6 +62,24 @@ public:
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x00B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_SuitWorkshop_C_ExecuteUbergraph_BP_SuitWorkshop;
+
+// Function BP_SuitWorkshop.BP_SuitWorkshop_C.OnBuildingStateChanged
+// 0x0001 (0x0001 - 0x0000)
+struct BP_SuitWorkshop_C_OnBuildingStateChanged final
+{
+public:
+	ECrBuildingState                              InState;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_SuitWorkshop_C_OnBuildingStateChanged;
+
+// Function BP_SuitWorkshop.BP_SuitWorkshop_C.OnUIOpened
+// 0x0001 (0x0001 - 0x0000)
+struct BP_SuitWorkshop_C_OnUIOpened final
+{
+public:
+	bool                                          bOpened;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_SuitWorkshop_C_OnUIOpened;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

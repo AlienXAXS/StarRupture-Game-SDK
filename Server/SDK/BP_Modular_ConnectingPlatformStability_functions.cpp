@@ -16,34 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Modular_ConnectingPlatformStability.BP_Modular_ConnectingPlatformStability_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Modular_ConnectingPlatformStability_C::UserConstructionScript()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Modular_ConnectingPlatformStability_C", "UserConstructionScript");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Modular_ConnectingPlatformStability.BP_Modular_ConnectingPlatformStability_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Modular_ConnectingPlatformStability_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Modular_ConnectingPlatformStability_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_Modular_ConnectingPlatformStability.BP_Modular_ConnectingPlatformStability_C.ExecuteUbergraph_BP_Modular_ConnectingPlatformStability
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -61,6 +33,34 @@ void ABP_Modular_ConnectingPlatformStability_C::ExecuteUbergraph_BP_Modular_Conn
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Modular_ConnectingPlatformStability.BP_Modular_ConnectingPlatformStability_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Modular_ConnectingPlatformStability_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Modular_ConnectingPlatformStability_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Modular_ConnectingPlatformStability.BP_Modular_ConnectingPlatformStability_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Modular_ConnectingPlatformStability_C::UserConstructionScript()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Modular_ConnectingPlatformStability_C", "UserConstructionScript");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

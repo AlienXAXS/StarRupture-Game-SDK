@@ -16,54 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Hammer.BP_Hammer_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Hammer_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Hammer_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Hammer.BP_Hammer_C.PlayFX
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_Hammer_C::PlayFX()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Hammer_C", "PlayFX");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Hammer.BP_Hammer_C.OnBuildingStateChanged
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// ECrBuildingState                        InState_OnBuildingStateChanged                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Hammer_C::OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Hammer_C", "OnBuildingStateChanged");
-
-	Params::BP_Hammer_C_OnBuildingStateChanged Parms{};
-
-	Parms.InState_OnBuildingStateChanged = InState_OnBuildingStateChanged;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_Hammer.BP_Hammer_C.ExecuteUbergraph_BP_Hammer
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -81,6 +33,54 @@ void ABP_Hammer_C::ExecuteUbergraph_BP_Hammer(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Hammer.BP_Hammer_C.OnBuildingStateChanged
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Hammer_C::OnBuildingStateChanged(ECrBuildingState InState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Hammer_C", "OnBuildingStateChanged");
+
+	Params::BP_Hammer_C_OnBuildingStateChanged Parms{};
+
+	Parms.InState = InState;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Hammer.BP_Hammer_C.PlayFX
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Hammer_C::PlayFX()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Hammer_C", "PlayFX");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Hammer.BP_Hammer_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Hammer_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Hammer_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

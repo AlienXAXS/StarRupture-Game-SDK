@@ -19,11 +19,11 @@ SDK_NAMESPACE_START
 // Function EQS_Exploder_Tier3_Context_ExcludedAndCystsLocations.EQS_Exploder_Tier3_Context_ExcludedAndCystsLocations_C.ProvideLocationsSet
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// class UObject*                          QuerierObject_ProvideLocationsSet                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class AActor*                           QuerierActor_ProvideLocationsSet                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// TArray<struct FVector>*                 ResultingLocationSet_ProvideLocationsSet               (Parm, OutParm)
+// class UObject*                          QuerierObject                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           QuerierActor                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// TArray<struct FVector>*                 ResultingLocationSet                                   (Parm, OutParm)
 
-void UEQS_Exploder_Tier3_Context_ExcludedAndCystsLocations_C::ProvideLocationsSet(class UObject* QuerierObject_ProvideLocationsSet, class AActor* QuerierActor_ProvideLocationsSet, TArray<struct FVector>* ResultingLocationSet_ProvideLocationsSet) const
+void UEQS_Exploder_Tier3_Context_ExcludedAndCystsLocations_C::ProvideLocationsSet(class UObject* QuerierObject, class AActor* QuerierActor, TArray<struct FVector>* ResultingLocationSet) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -32,13 +32,13 @@ void UEQS_Exploder_Tier3_Context_ExcludedAndCystsLocations_C::ProvideLocationsSe
 
 	Params::EQS_Exploder_Tier3_Context_ExcludedAndCystsLocations_C_ProvideLocationsSet Parms{};
 
-	Parms.QuerierObject_ProvideLocationsSet = QuerierObject_ProvideLocationsSet;
-	Parms.QuerierActor_ProvideLocationsSet = QuerierActor_ProvideLocationsSet;
+	Parms.QuerierObject = QuerierObject;
+	Parms.QuerierActor = QuerierActor;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (ResultingLocationSet_ProvideLocationsSet != nullptr)
-		*ResultingLocationSet_ProvideLocationsSet = std::move(Parms.ResultingLocationSet_ProvideLocationsSet);
+	if (ResultingLocationSet != nullptr)
+		*ResultingLocationSet = std::move(Parms.ResultingLocationSet);
 }
 
 

@@ -38,12 +38,12 @@ public:
 	double                                        Explosion_Radius;                                  // 0x0480(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveBeginPlay();
-	void Multicast_Explode();
-	void IsMultiDamageActor(class AActor* Actor, bool* NewParam);
-	void Explosion_logic_on_server_and_standalone();
-	void ExecuteUbergraph_Sniper_ExplosiveActor(int32 EntryPoint);
 	void CheckOcclusion(const struct FVector& TraceEnd, bool* IsOccluded);
+	void ExecuteUbergraph_Sniper_ExplosiveActor(int32 EntryPoint);
+	void Explosion_logic_on_server_and_standalone();
+	void IsMultiDamageActor(class AActor* Actor, bool* NewParam);
+	void Multicast_Explode();
+	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

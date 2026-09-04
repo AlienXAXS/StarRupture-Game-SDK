@@ -19,7 +19,7 @@ SDK_NAMESPACE_START
 // Function BP_CloningBed_Lander.BP_CloningBed_Lander_C.K2_GetInteractionActionText
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FText                             ReturnValue_K2_GetInteractionActionText                (Parm, OutParm, ReturnParm)
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 class FText ABP_CloningBed_Lander_C::K2_GetInteractionActionText()
 {

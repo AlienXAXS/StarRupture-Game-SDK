@@ -16,91 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Ranged_Tier1_Reskin_A_Actor_Character.BP_Ranged_Tier1_Reskin_A_Actor_Character_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Ranged_Tier1_Reskin_A_Actor_Character_C::UserConstructionScript()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier1_Reskin_A_Actor_Character_C", "UserConstructionScript");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Ranged_Tier1_Reskin_A_Actor_Character.BP_Ranged_Tier1_Reskin_A_Actor_Character_C.OnExitActorPool
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Ranged_Tier1_Reskin_A_Actor_Character_C::OnExitActorPool()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier1_Reskin_A_Actor_Character_C", "OnExitActorPool");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Ranged_Tier1_Reskin_A_Actor_Character.BP_Ranged_Tier1_Reskin_A_Actor_Character_C.OnEnterActorPool
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Ranged_Tier1_Reskin_A_Actor_Character_C::OnEnterActorPool()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier1_Reskin_A_Actor_Character_C", "OnEnterActorPool");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Ranged_Tier1_Reskin_A_Actor_Character.BP_Ranged_Tier1_Reskin_A_Actor_Character_C.OnAiDied
-// (Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const struct FHitResult&                HitResult_OnAiDied                                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-// const struct FGameplayTag&              KillingDamageTag_OnAiDied                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Ranged_Tier1_Reskin_A_Actor_Character_C::OnAiDied(const struct FHitResult& HitResult_OnAiDied, const struct FGameplayTag& KillingDamageTag_OnAiDied)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier1_Reskin_A_Actor_Character_C", "OnAiDied");
-
-	Params::BP_Ranged_Tier1_Reskin_A_Actor_Character_C_OnAiDied Parms{};
-
-	Parms.HitResult_OnAiDied = std::move(HitResult_OnAiDied);
-	Parms.KillingDamageTag_OnAiDied = std::move(KillingDamageTag_OnAiDied);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Ranged_Tier1_Reskin_A_Actor_Character.BP_Ranged_Tier1_Reskin_A_Actor_Character_C.GetNiagaraEyeSystem
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UNiagaraComponent**               NewParam_GetNiagaraEyeSystem                           (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Ranged_Tier1_Reskin_A_Actor_Character_C::GetNiagaraEyeSystem(class UNiagaraComponent** NewParam_GetNiagaraEyeSystem)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier1_Reskin_A_Actor_Character_C", "GetNiagaraEyeSystem");
-
-	Params::BP_Ranged_Tier1_Reskin_A_Actor_Character_C_GetNiagaraEyeSystem Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (NewParam_GetNiagaraEyeSystem != nullptr)
-		*NewParam_GetNiagaraEyeSystem = Parms.NewParam_GetNiagaraEyeSystem;
-}
-
-
 // Function BP_Ranged_Tier1_Reskin_A_Actor_Character.BP_Ranged_Tier1_Reskin_A_Actor_Character_C.ExecuteUbergraph_BP_Ranged_Tier1_Reskin_A_Actor_Character
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -121,12 +36,97 @@ void ABP_Ranged_Tier1_Reskin_A_Actor_Character_C::ExecuteUbergraph_BP_Ranged_Tie
 }
 
 
+// Function BP_Ranged_Tier1_Reskin_A_Actor_Character.BP_Ranged_Tier1_Reskin_A_Actor_Character_C.GetNiagaraEyeSystem
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UNiagaraComponent**               NewParam                                               (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Ranged_Tier1_Reskin_A_Actor_Character_C::GetNiagaraEyeSystem(class UNiagaraComponent** NewParam)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Ranged_Tier1_Reskin_A_Actor_Character_C", "GetNiagaraEyeSystem");
+
+	Params::BP_Ranged_Tier1_Reskin_A_Actor_Character_C_GetNiagaraEyeSystem Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (NewParam != nullptr)
+		*NewParam = Parms.NewParam;
+}
+
+
+// Function BP_Ranged_Tier1_Reskin_A_Actor_Character.BP_Ranged_Tier1_Reskin_A_Actor_Character_C.OnAiDied
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const struct FHitResult&                HitResult                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+// const struct FGameplayTag&              KillingDamageTag                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Ranged_Tier1_Reskin_A_Actor_Character_C::OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Ranged_Tier1_Reskin_A_Actor_Character_C", "OnAiDied");
+
+	Params::BP_Ranged_Tier1_Reskin_A_Actor_Character_C_OnAiDied Parms{};
+
+	Parms.HitResult = std::move(HitResult);
+	Parms.KillingDamageTag = std::move(KillingDamageTag);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Ranged_Tier1_Reskin_A_Actor_Character.BP_Ranged_Tier1_Reskin_A_Actor_Character_C.OnEnterActorPool
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Ranged_Tier1_Reskin_A_Actor_Character_C::OnEnterActorPool()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Ranged_Tier1_Reskin_A_Actor_Character_C", "OnEnterActorPool");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Ranged_Tier1_Reskin_A_Actor_Character.BP_Ranged_Tier1_Reskin_A_Actor_Character_C.OnExitActorPool
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Ranged_Tier1_Reskin_A_Actor_Character_C::OnExitActorPool()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Ranged_Tier1_Reskin_A_Actor_Character_C", "OnExitActorPool");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Ranged_Tier1_Reskin_A_Actor_Character.BP_Ranged_Tier1_Reskin_A_Actor_Character_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Ranged_Tier1_Reskin_A_Actor_Character_C::UserConstructionScript()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Ranged_Tier1_Reskin_A_Actor_Character_C", "UserConstructionScript");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_Ranged_Tier1_Reskin_A_Actor_Character.BP_Ranged_Tier1_Reskin_A_Actor_Character_C.OnMeshVisibilityUpdated
 // (Event, Public, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// bool                                    bIsMeshHidden_OnMeshVisibilityUpdated                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bIsMeshHidden                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Ranged_Tier1_Reskin_A_Actor_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidden_OnMeshVisibilityUpdated) const
+void ABP_Ranged_Tier1_Reskin_A_Actor_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidden) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -135,7 +135,7 @@ void ABP_Ranged_Tier1_Reskin_A_Actor_Character_C::OnMeshVisibilityUpdated(bool b
 
 	Params::BP_Ranged_Tier1_Reskin_A_Actor_Character_C_OnMeshVisibilityUpdated Parms{};
 
-	Parms.bIsMeshHidden_OnMeshVisibilityUpdated = bIsMeshHidden_OnMeshVisibilityUpdated;
+	Parms.bIsMeshHidden = bIsMeshHidden;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

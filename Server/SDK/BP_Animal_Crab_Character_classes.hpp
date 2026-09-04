@@ -56,25 +56,25 @@ public:
 	class UNiagaraComponent*                      Niagara;                                           // 0x0E40(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void StopCatach();
-	void SimulateCatchTimeline__UpdateFunc();
-	void SimulateCatchTimeline__FinishedFunc();
-	void SimulateCatch();
-	void SetTentaclesHidden(bool bHidden);
-	void SetNiagaraActivity(bool NewActive);
-	void RegisterFXEvent(const struct FGameplayTag& FXEventTag);
-	void ReceiveTick(float DeltaSeconds_ReceiveTick);
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay);
-	void ReceiveBeginPlay();
-	void OnRep_AreTentaclesHiddenState();
-	void OnPrepareForPooling();
-	void OnPrepareForGame();
-	class UCrAiAnimalCrabUpdateStateComponent* GetCrabUpdateStateComponent();
-	void ExecuteUbergraph_BP_Animal_Crab_Character(int32 EntryPoint);
-	void BndEvt__BP_Animal_Crab_Character_CapsuleComponent_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, const struct FVector& NormalImpulse, const struct FHitResult& Hit);
 	bool AreTentaclesHidden();
+	void BndEvt__BP_Animal_Crab_Character_CapsuleComponent_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, const struct FVector& NormalImpulse, const struct FHitResult& Hit);
+	void ExecuteUbergraph_BP_Animal_Crab_Character(int32 EntryPoint);
+	class UCrAiAnimalCrabUpdateStateComponent* GetCrabUpdateStateComponent();
+	void OnPrepareForGame();
+	void OnPrepareForPooling();
+	void OnRep_AreTentaclesHiddenState();
+	void ReceiveBeginPlay();
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void ReceiveTick(float DeltaSeconds_0);
+	void RegisterFXEvent(const struct FGameplayTag& FXEventTag);
+	void SetNiagaraActivity(bool NewActive);
+	void SetTentaclesHidden(bool bHidden_0);
+	void SimulateCatch();
+	void SimulateCatchTimeline__FinishedFunc();
+	void SimulateCatchTimeline__UpdateFunc();
+	void StopCatach();
 
-	void OnMeshVisibilityUpdated(bool bIsMeshHidden_OnMeshVisibilityUpdated) const;
+	void OnMeshVisibilityUpdated(bool bIsMeshHidden) const;
 
 public:
 	static class UClass* StaticClass()

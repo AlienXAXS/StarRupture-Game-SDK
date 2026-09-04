@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "ControlRig_structs.hpp"
-#include "ControlRig_classes.hpp"
 #include "AnimationCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ControlRig_structs.hpp"
+#include "ControlRig_classes.hpp"
 #include "PBIK_structs.hpp"
 #include "Engine_structs.hpp"
 #include "RigVM_structs.hpp"
@@ -21,6 +21,178 @@
 
 
 SDK_NAMESPACE_START
+
+// RigVMBlueprintGeneratedClass CR_PanzerHund.CR_PanzerHund_C
+// 0x00A8 (0x0CB0 - 0x0C08)
+class UCR_PanzerHund_C final : public UControlRig
+{
+public:
+	bool                                          ShouldDoIKTrace;                                   // 0x0C08(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C09[0x3];                                      // 0x0C09(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   IK_Bone_name;                                      // 0x0C0C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C14[0xC];                                      // 0x0C14(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FQuat                                  HitNormalRot_L;                                    // 0x0C20(0x0020)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FQuat                                  HitNormalRot_R;                                    // 0x0C40(0x0020)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        Feet_ZOffset_R;                                    // 0x0C60(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        Feet_ZOffset_L;                                    // 0x0C68(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        ZOffset_pelvis;                                    // 0x0C70(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C78[0x8];                                      // 0x0C78(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FQuat                                  FeetRotationCorrection;                            // 0x0C80(0x0020)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ShouldDoIK;                                        // 0x0CA0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+public:
+	static class UClass* StaticClass()
+	{
+		BP_STATIC_CLASS_IMPL("CR_PanzerHund_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CR_PanzerHund_C")
+	}
+	static class UCR_PanzerHund_C* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCR_PanzerHund_C>();
+	}
+};
+DUMPER7_ASSERTS_UCR_PanzerHund_C;
+
+// RigVMMemoryStorageGeneratorClass CR_PanzerHund.RigVMMemory_Literal
+// 0x0988 (0x09B0 - 0x0028)
+class URigVMMemory_Literal final : public URigVMMemoryStorage
+{
+public:
+	float                                         RigVMModel___DebugHierarchy_Scale__Const;          // 0x0028(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           RigVMModel___DebugHierarchy_Color__Const;          // 0x002C(0x0010)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	float                                         RigVMModel___DebugHierarchy_Thickness__Const;      // 0x003C(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FTransform                             RigVMModel___DebugHierarchy_WorldOffset__Const;    // 0x0040(0x0060)(Edit, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	bool                                          RigVMModel___DebugHierarchy_bEnabled__Const;       // 0x00A0(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_A1[0x3];                                       // 0x00A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRigElementKey                         RigVMModel___ParentConstraint_1_1_1_Child__Const;  // 0x00A4(0x000C)(Edit, EditConst, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FTransformFilter                       RigVMModel___ParentConstraint_1_1_1_Filter__Const; // 0x00B0(0x0009)(Edit, EditConst, NonTransactional, NoDestructor)
+	uint8                                         Pad_B9[0x7];                                       // 0x00B9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FConstraintParent>              RigVMModel___ParentConstraint_1_1_1_Parents__Const; // 0x00C0(0x0010)(Edit, EditConst, NonTransactional)
+	struct FRigUnit_ParentConstraint_AdvancedSettings RigVMModel___ParentConstraint_1_1_1_AdvancedSettings__Const; // 0x00D0(0x0002)(Edit, EditConst, NonTransactional, NoDestructor)
+	uint8                                         Pad_D2[0x2];                                       // 0x00D2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         RigVMModel___ParentConstraint_1_1_1_Weight__Const; // 0x00D4(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FRigElementKey                         RigVMModel___ParentConstraint_Child__Const;        // 0x00D8(0x000C)(Edit, EditConst, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_E4[0x4];                                       // 0x00E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FConstraintParent>              RigVMModel___ParentConstraint_Parents__Const;      // 0x00E8(0x0010)(Edit, EditConst, NonTransactional)
+	struct FRigElementKey                         RigVMModel___ParentConstraint_1_Child__Const;      // 0x00F8(0x000C)(Edit, EditConst, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_104[0x4];                                      // 0x0104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FConstraintParent>              RigVMModel___ParentConstraint_1_Parents__Const;    // 0x0108(0x0010)(Edit, EditConst, NonTransactional)
+	struct FRigElementKey                         RigVMModel___ParentConstraint_2_Child__Const;      // 0x0118(0x000C)(Edit, EditConst, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_124[0x4];                                      // 0x0124(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FConstraintParent>              RigVMModel___ParentConstraint_2_Parents__Const;    // 0x0128(0x0010)(Edit, EditConst, NonTransactional)
+	struct FRigElementKey                         RigVMModel___ParentConstraint_1_1_Child__Const;    // 0x0138(0x000C)(Edit, EditConst, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_144[0x4];                                      // 0x0144(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FConstraintParent>              RigVMModel___ParentConstraint_1_1_Parents__Const;  // 0x0148(0x0010)(Edit, EditConst, NonTransactional)
+	struct FVector                                TraceFeetOffset___TraceFeetOffset_Return_Offset__Const; // 0x0158(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	ERigVMTransformSpace                          TraceFeetOffset___TraceFeetOffset_RigUnit_GetTransform_Space__Const; // 0x0170(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	bool                                          TraceFeetOffset___TraceFeetOffset_RigUnit_GetTransform_bInitial__Const; // 0x0171(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_172[0x6];                                      // 0x0172(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                TraceFeetOffset___TraceFeetOffset_Add_B__Const;    // 0x0178(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                TraceFeetOffset___TraceFeetOffset_Subtract_B__Const; // 0x0190(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	ETraceTypeQuery                               TraceFeetOffset___TraceFeetOffset_SphereTraceByTraceChannel_TraceChannel__Const; // 0x01A8(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1A9[0x3];                                      // 0x01A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         TraceFeetOffset___TraceFeetOffset_SphereTraceByTraceChannel_Radius__Const; // 0x01AC(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	float                                         TraceFeetOffset___TraceFeetOffset_AlphaInterp_Scale__Const; // 0x01B0(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	float                                         TraceFeetOffset___TraceFeetOffset_AlphaInterp_Bias__Const; // 0x01B4(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FInputRange                            TraceFeetOffset___TraceFeetOffset_AlphaInterp_InRange__Const; // 0x01B8(0x0008)(Edit, EditConst, NonTransactional, NoDestructor)
+	float                                         TraceFeetOffset___TraceFeetOffset_AlphaInterp_InterpSpeedIncreasing__Const; // 0x01C0(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1C4[0xC];                                      // 0x01C4(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             TraceFeetOffset___TraceFeetOffset_AimBoneMath_InputTransform__Const; // 0x01D0(0x0060)(Edit, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FRigUnit_AimItem_Target                TraceFeetOffset___TraceFeetOffset_AimBoneMath_Primary__Const; // 0x0230(0x0048)(Edit, EditConst, NonTransactional, NoDestructor)
+	struct FRigUnit_AimItem_Target                TraceFeetOffset___TraceFeetOffset_AimBoneMath_Secondary__Const; // 0x0278(0x0048)(Edit, EditConst, NonTransactional, NoDestructor)
+	struct FRigUnit_AimBone_DebugSettings         TraceFeetOffset___TraceFeetOffset_AimBoneMath_DebugSettings__Const; // 0x02C0(0x0070)(Edit, EditConst, NonTransactional, NoDestructor)
+	struct FVector                                TraceFeetOffset_1___TraceFeetOffset_Return_Offset__Const; // 0x0330(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	ERigVMTransformSpace                          TraceFeetOffset_1___TraceFeetOffset_RigUnit_GetTransform_Space__Const; // 0x0348(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	bool                                          TraceFeetOffset_1___TraceFeetOffset_RigUnit_GetTransform_bInitial__Const; // 0x0349(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_34A[0x6];                                      // 0x034A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                TraceFeetOffset_1___TraceFeetOffset_Add_B__Const;  // 0x0350(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                TraceFeetOffset_1___TraceFeetOffset_Subtract_B__Const; // 0x0368(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	ETraceTypeQuery                               TraceFeetOffset_1___TraceFeetOffset_SphereTraceByTraceChannel_TraceChannel__Const; // 0x0380(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_381[0x3];                                      // 0x0381(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         TraceFeetOffset_1___TraceFeetOffset_SphereTraceByTraceChannel_Radius__Const; // 0x0384(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	float                                         TraceFeetOffset_1___TraceFeetOffset_AlphaInterp_Scale__Const; // 0x0388(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	float                                         TraceFeetOffset_1___TraceFeetOffset_AlphaInterp_Bias__Const; // 0x038C(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FInputRange                            TraceFeetOffset_1___TraceFeetOffset_AlphaInterp_InRange__Const; // 0x0390(0x0008)(Edit, EditConst, NonTransactional, NoDestructor)
+	float                                         TraceFeetOffset_1___TraceFeetOffset_AlphaInterp_InterpSpeedIncreasing__Const; // 0x0398(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_39C[0x4];                                      // 0x039C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             TraceFeetOffset_1___TraceFeetOffset_AimBoneMath_InputTransform__Const; // 0x03A0(0x0060)(Edit, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FRigUnit_AimItem_Target                TraceFeetOffset_1___TraceFeetOffset_AimBoneMath_Primary__Const; // 0x0400(0x0048)(Edit, EditConst, NonTransactional, NoDestructor)
+	struct FRigUnit_AimItem_Target                TraceFeetOffset_1___TraceFeetOffset_AimBoneMath_Secondary__Const; // 0x0448(0x0048)(Edit, EditConst, NonTransactional, NoDestructor)
+	struct FRigUnit_AimBone_DebugSettings         TraceFeetOffset_1___TraceFeetOffset_AimBoneMath_DebugSettings__Const; // 0x0490(0x0070)(Edit, EditConst, NonTransactional, NoDestructor)
+	struct FVector                                TraceFeetOffset_1_1___TraceFeetOffset_Return_Offset__Const; // 0x0500(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	ERigVMTransformSpace                          TraceFeetOffset_1_1___TraceFeetOffset_RigUnit_GetTransform_Space__Const; // 0x0518(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	bool                                          TraceFeetOffset_1_1___TraceFeetOffset_RigUnit_GetTransform_bInitial__Const; // 0x0519(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_51A[0x6];                                      // 0x051A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                TraceFeetOffset_1_1___TraceFeetOffset_Add_B__Const; // 0x0520(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                TraceFeetOffset_1_1___TraceFeetOffset_Subtract_B__Const; // 0x0538(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	ETraceTypeQuery                               TraceFeetOffset_1_1___TraceFeetOffset_SphereTraceByTraceChannel_TraceChannel__Const; // 0x0550(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_551[0x3];                                      // 0x0551(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         TraceFeetOffset_1_1___TraceFeetOffset_SphereTraceByTraceChannel_Radius__Const; // 0x0554(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	float                                         TraceFeetOffset_1_1___TraceFeetOffset_AlphaInterp_Scale__Const; // 0x0558(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	float                                         TraceFeetOffset_1_1___TraceFeetOffset_AlphaInterp_Bias__Const; // 0x055C(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FInputRange                            TraceFeetOffset_1_1___TraceFeetOffset_AlphaInterp_InRange__Const; // 0x0560(0x0008)(Edit, EditConst, NonTransactional, NoDestructor)
+	float                                         TraceFeetOffset_1_1___TraceFeetOffset_AlphaInterp_InterpSpeedIncreasing__Const; // 0x0568(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_56C[0x4];                                      // 0x056C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             TraceFeetOffset_1_1___TraceFeetOffset_AimBoneMath_InputTransform__Const; // 0x0570(0x0060)(Edit, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FRigUnit_AimItem_Target                TraceFeetOffset_1_1___TraceFeetOffset_AimBoneMath_Primary__Const; // 0x05D0(0x0048)(Edit, EditConst, NonTransactional, NoDestructor)
+	struct FRigUnit_AimItem_Target                TraceFeetOffset_1_1___TraceFeetOffset_AimBoneMath_Secondary__Const; // 0x0618(0x0048)(Edit, EditConst, NonTransactional, NoDestructor)
+	struct FRigUnit_AimBone_DebugSettings         TraceFeetOffset_1_1___TraceFeetOffset_AimBoneMath_DebugSettings__Const; // 0x0660(0x0070)(Edit, EditConst, NonTransactional, NoDestructor)
+	struct FVector                                TraceFeetOffset_1_1_1___TraceFeetOffset_Return_Offset__Const; // 0x06D0(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	ERigVMTransformSpace                          TraceFeetOffset_1_1_1___TraceFeetOffset_RigUnit_GetTransform_Space__Const; // 0x06E8(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	bool                                          TraceFeetOffset_1_1_1___TraceFeetOffset_RigUnit_GetTransform_bInitial__Const; // 0x06E9(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_6EA[0x6];                                      // 0x06EA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                TraceFeetOffset_1_1_1___TraceFeetOffset_Add_B__Const; // 0x06F0(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                TraceFeetOffset_1_1_1___TraceFeetOffset_Subtract_B__Const; // 0x0708(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	ETraceTypeQuery                               TraceFeetOffset_1_1_1___TraceFeetOffset_SphereTraceByTraceChannel_TraceChannel__Const; // 0x0720(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_721[0x3];                                      // 0x0721(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         TraceFeetOffset_1_1_1___TraceFeetOffset_SphereTraceByTraceChannel_Radius__Const; // 0x0724(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	float                                         TraceFeetOffset_1_1_1___TraceFeetOffset_AlphaInterp_Scale__Const; // 0x0728(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	float                                         TraceFeetOffset_1_1_1___TraceFeetOffset_AlphaInterp_Bias__Const; // 0x072C(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FInputRange                            TraceFeetOffset_1_1_1___TraceFeetOffset_AlphaInterp_InRange__Const; // 0x0730(0x0008)(Edit, EditConst, NonTransactional, NoDestructor)
+	float                                         TraceFeetOffset_1_1_1___TraceFeetOffset_AlphaInterp_InterpSpeedIncreasing__Const; // 0x0738(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_73C[0x4];                                      // 0x073C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             TraceFeetOffset_1_1_1___TraceFeetOffset_AimBoneMath_InputTransform__Const; // 0x0740(0x0060)(Edit, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FRigUnit_AimItem_Target                TraceFeetOffset_1_1_1___TraceFeetOffset_AimBoneMath_Primary__Const; // 0x07A0(0x0048)(Edit, EditConst, NonTransactional, NoDestructor)
+	struct FRigUnit_AimItem_Target                TraceFeetOffset_1_1_1___TraceFeetOffset_AimBoneMath_Secondary__Const; // 0x07E8(0x0048)(Edit, EditConst, NonTransactional, NoDestructor)
+	struct FRigUnit_AimBone_DebugSettings         TraceFeetOffset_1_1_1___TraceFeetOffset_AimBoneMath_DebugSettings__Const; // 0x0830(0x0070)(Edit, EditConst, NonTransactional, NoDestructor)
+	double                                        RigVMModel___VariableNode_4_1_Value__Const;        // 0x08A0(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_8A8[0x8];                                      // 0x08A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FQuat                                  RigVMModel___VariableNode_2_1_Value__Const;        // 0x08B0(0x0020)(Edit, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	TArray<struct FRigUnit_ModifyTransforms_PerItem> RigVMModel___ModifyTransforms_ItemToModify__Const; // 0x08D0(0x0010)(Edit, EditConst, NonTransactional)
+	float                                         RigVMModel___ModifyTransforms_WeightMinimum__Const; // 0x08E0(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	EControlRigModifyBoneMode                     RigVMModel___ModifyTransforms_Mode__Const;         // 0x08E4(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_8E5[0x3];                                      // 0x08E5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   RigVMModel___PBIK_Root__Const;                     // 0x08E8(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	TArray<struct FPBIKEffector>                  RigVMModel___PBIK_Effectors__Const;                // 0x08F0(0x0010)(Edit, EditConst, NonTransactional)
+	ERigVMTransformSpace                          RigVMModel___RigUnit_GetTransform_5_Space__Const;  // 0x0900(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	bool                                          RigVMModel___RigUnit_GetTransform_5_bInitial__Const; // 0x0901(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_902[0x6];                                      // 0x0902(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                RigVMModel___Add_4_B__Const;                       // 0x0908(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                RigVMModel___Add_4_3_B__Const;                     // 0x0920(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	double                                        RigVMModel___Multiply_3_B__Const;                  // 0x0938(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	TArray<struct FPBIKBoneSetting>               RigVMModel___PBIK_BoneSettings__Const;             // 0x0940(0x0010)(Edit, EditConst, NonTransactional)
+	TArray<class FName>                           RigVMModel___PBIK_ExcludedBones__Const;            // 0x0950(0x0010)(Edit, EditConst, NonTransactional)
+	struct FPBIKSolverSettings                    RigVMModel___PBIK_Settings__Const;                 // 0x0960(0x0040)(Edit, EditConst, NonTransactional, NoDestructor)
+	struct FPBIKDebug                             RigVMModel___PBIK_Debug__Const;                    // 0x09A0(0x0008)(Edit, EditConst, NonTransactional, NoDestructor)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("RigVMMemory_Literal")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"RigVMMemory_Literal")
+	}
+	static class URigVMMemory_Literal* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<URigVMMemory_Literal>();
+	}
+};
+DUMPER7_ASSERTS_URigVMMemory_Literal;
 
 // RigVMMemoryStorageGeneratorClass CR_PanzerHund.RigVMMemory_Work
 // 0x0E78 (0x0EA0 - 0x0028)
@@ -184,177 +356,5 @@ public:
 	}
 };
 DUMPER7_ASSERTS_URigVMMemory_Work;
-
-// RigVMMemoryStorageGeneratorClass CR_PanzerHund.RigVMMemory_Literal
-// 0x0988 (0x09B0 - 0x0028)
-class URigVMMemory_Literal final : public URigVMMemoryStorage
-{
-public:
-	float                                         RigVMModel___DebugHierarchy_Scale__Const;          // 0x0028(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           RigVMModel___DebugHierarchy_Color__Const;          // 0x002C(0x0010)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	float                                         RigVMModel___DebugHierarchy_Thickness__Const;      // 0x003C(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	struct FTransform                             RigVMModel___DebugHierarchy_WorldOffset__Const;    // 0x0040(0x0060)(Edit, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	bool                                          RigVMModel___DebugHierarchy_bEnabled__Const;       // 0x00A0(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_A1[0x3];                                       // 0x00A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRigElementKey                         RigVMModel___ParentConstraint_1_1_1_Child__Const;  // 0x00A4(0x000C)(Edit, EditConst, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	struct FTransformFilter                       RigVMModel___ParentConstraint_1_1_1_Filter__Const; // 0x00B0(0x0009)(Edit, EditConst, NonTransactional, NoDestructor)
-	uint8                                         Pad_B9[0x7];                                       // 0x00B9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FConstraintParent>              RigVMModel___ParentConstraint_1_1_1_Parents__Const; // 0x00C0(0x0010)(Edit, EditConst, NonTransactional)
-	struct FRigUnit_ParentConstraint_AdvancedSettings RigVMModel___ParentConstraint_1_1_1_AdvancedSettings__Const; // 0x00D0(0x0002)(Edit, EditConst, NonTransactional, NoDestructor)
-	uint8                                         Pad_D2[0x2];                                       // 0x00D2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         RigVMModel___ParentConstraint_1_1_1_Weight__Const; // 0x00D4(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	struct FRigElementKey                         RigVMModel___ParentConstraint_Child__Const;        // 0x00D8(0x000C)(Edit, EditConst, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_E4[0x4];                                       // 0x00E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FConstraintParent>              RigVMModel___ParentConstraint_Parents__Const;      // 0x00E8(0x0010)(Edit, EditConst, NonTransactional)
-	struct FRigElementKey                         RigVMModel___ParentConstraint_1_Child__Const;      // 0x00F8(0x000C)(Edit, EditConst, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_104[0x4];                                      // 0x0104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FConstraintParent>              RigVMModel___ParentConstraint_1_Parents__Const;    // 0x0108(0x0010)(Edit, EditConst, NonTransactional)
-	struct FRigElementKey                         RigVMModel___ParentConstraint_2_Child__Const;      // 0x0118(0x000C)(Edit, EditConst, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_124[0x4];                                      // 0x0124(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FConstraintParent>              RigVMModel___ParentConstraint_2_Parents__Const;    // 0x0128(0x0010)(Edit, EditConst, NonTransactional)
-	struct FRigElementKey                         RigVMModel___ParentConstraint_1_1_Child__Const;    // 0x0138(0x000C)(Edit, EditConst, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_144[0x4];                                      // 0x0144(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FConstraintParent>              RigVMModel___ParentConstraint_1_1_Parents__Const;  // 0x0148(0x0010)(Edit, EditConst, NonTransactional)
-	struct FVector                                TraceFeetOffset___TraceFeetOffset_Return_Offset__Const; // 0x0158(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	ERigVMTransformSpace                          TraceFeetOffset___TraceFeetOffset_RigUnit_GetTransform_Space__Const; // 0x0170(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	bool                                          TraceFeetOffset___TraceFeetOffset_RigUnit_GetTransform_bInitial__Const; // 0x0171(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_172[0x6];                                      // 0x0172(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                TraceFeetOffset___TraceFeetOffset_Add_B__Const;    // 0x0178(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                TraceFeetOffset___TraceFeetOffset_Subtract_B__Const; // 0x0190(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	ETraceTypeQuery                               TraceFeetOffset___TraceFeetOffset_SphereTraceByTraceChannel_TraceChannel__Const; // 0x01A8(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1A9[0x3];                                      // 0x01A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         TraceFeetOffset___TraceFeetOffset_SphereTraceByTraceChannel_Radius__Const; // 0x01AC(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	float                                         TraceFeetOffset___TraceFeetOffset_AlphaInterp_Scale__Const; // 0x01B0(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	float                                         TraceFeetOffset___TraceFeetOffset_AlphaInterp_Bias__Const; // 0x01B4(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	struct FInputRange                            TraceFeetOffset___TraceFeetOffset_AlphaInterp_InRange__Const; // 0x01B8(0x0008)(Edit, EditConst, NonTransactional, NoDestructor)
-	float                                         TraceFeetOffset___TraceFeetOffset_AlphaInterp_InterpSpeedIncreasing__Const; // 0x01C0(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1C4[0xC];                                      // 0x01C4(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             TraceFeetOffset___TraceFeetOffset_AimBoneMath_InputTransform__Const; // 0x01D0(0x0060)(Edit, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	struct FRigUnit_AimItem_Target                TraceFeetOffset___TraceFeetOffset_AimBoneMath_Primary__Const; // 0x0230(0x0048)(Edit, EditConst, NonTransactional, NoDestructor)
-	struct FRigUnit_AimItem_Target                TraceFeetOffset___TraceFeetOffset_AimBoneMath_Secondary__Const; // 0x0278(0x0048)(Edit, EditConst, NonTransactional, NoDestructor)
-	struct FRigUnit_AimBone_DebugSettings         TraceFeetOffset___TraceFeetOffset_AimBoneMath_DebugSettings__Const; // 0x02C0(0x0070)(Edit, EditConst, NonTransactional, NoDestructor)
-	struct FVector                                TraceFeetOffset_1___TraceFeetOffset_Return_Offset__Const; // 0x0330(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	ERigVMTransformSpace                          TraceFeetOffset_1___TraceFeetOffset_RigUnit_GetTransform_Space__Const; // 0x0348(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	bool                                          TraceFeetOffset_1___TraceFeetOffset_RigUnit_GetTransform_bInitial__Const; // 0x0349(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_34A[0x6];                                      // 0x034A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                TraceFeetOffset_1___TraceFeetOffset_Add_B__Const;  // 0x0350(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                TraceFeetOffset_1___TraceFeetOffset_Subtract_B__Const; // 0x0368(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	ETraceTypeQuery                               TraceFeetOffset_1___TraceFeetOffset_SphereTraceByTraceChannel_TraceChannel__Const; // 0x0380(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_381[0x3];                                      // 0x0381(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         TraceFeetOffset_1___TraceFeetOffset_SphereTraceByTraceChannel_Radius__Const; // 0x0384(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	float                                         TraceFeetOffset_1___TraceFeetOffset_AlphaInterp_Scale__Const; // 0x0388(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	float                                         TraceFeetOffset_1___TraceFeetOffset_AlphaInterp_Bias__Const; // 0x038C(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	struct FInputRange                            TraceFeetOffset_1___TraceFeetOffset_AlphaInterp_InRange__Const; // 0x0390(0x0008)(Edit, EditConst, NonTransactional, NoDestructor)
-	float                                         TraceFeetOffset_1___TraceFeetOffset_AlphaInterp_InterpSpeedIncreasing__Const; // 0x0398(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_39C[0x4];                                      // 0x039C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             TraceFeetOffset_1___TraceFeetOffset_AimBoneMath_InputTransform__Const; // 0x03A0(0x0060)(Edit, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	struct FRigUnit_AimItem_Target                TraceFeetOffset_1___TraceFeetOffset_AimBoneMath_Primary__Const; // 0x0400(0x0048)(Edit, EditConst, NonTransactional, NoDestructor)
-	struct FRigUnit_AimItem_Target                TraceFeetOffset_1___TraceFeetOffset_AimBoneMath_Secondary__Const; // 0x0448(0x0048)(Edit, EditConst, NonTransactional, NoDestructor)
-	struct FRigUnit_AimBone_DebugSettings         TraceFeetOffset_1___TraceFeetOffset_AimBoneMath_DebugSettings__Const; // 0x0490(0x0070)(Edit, EditConst, NonTransactional, NoDestructor)
-	struct FVector                                TraceFeetOffset_1_1___TraceFeetOffset_Return_Offset__Const; // 0x0500(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	ERigVMTransformSpace                          TraceFeetOffset_1_1___TraceFeetOffset_RigUnit_GetTransform_Space__Const; // 0x0518(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	bool                                          TraceFeetOffset_1_1___TraceFeetOffset_RigUnit_GetTransform_bInitial__Const; // 0x0519(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_51A[0x6];                                      // 0x051A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                TraceFeetOffset_1_1___TraceFeetOffset_Add_B__Const; // 0x0520(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                TraceFeetOffset_1_1___TraceFeetOffset_Subtract_B__Const; // 0x0538(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	ETraceTypeQuery                               TraceFeetOffset_1_1___TraceFeetOffset_SphereTraceByTraceChannel_TraceChannel__Const; // 0x0550(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_551[0x3];                                      // 0x0551(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         TraceFeetOffset_1_1___TraceFeetOffset_SphereTraceByTraceChannel_Radius__Const; // 0x0554(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	float                                         TraceFeetOffset_1_1___TraceFeetOffset_AlphaInterp_Scale__Const; // 0x0558(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	float                                         TraceFeetOffset_1_1___TraceFeetOffset_AlphaInterp_Bias__Const; // 0x055C(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	struct FInputRange                            TraceFeetOffset_1_1___TraceFeetOffset_AlphaInterp_InRange__Const; // 0x0560(0x0008)(Edit, EditConst, NonTransactional, NoDestructor)
-	float                                         TraceFeetOffset_1_1___TraceFeetOffset_AlphaInterp_InterpSpeedIncreasing__Const; // 0x0568(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_56C[0x4];                                      // 0x056C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             TraceFeetOffset_1_1___TraceFeetOffset_AimBoneMath_InputTransform__Const; // 0x0570(0x0060)(Edit, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	struct FRigUnit_AimItem_Target                TraceFeetOffset_1_1___TraceFeetOffset_AimBoneMath_Primary__Const; // 0x05D0(0x0048)(Edit, EditConst, NonTransactional, NoDestructor)
-	struct FRigUnit_AimItem_Target                TraceFeetOffset_1_1___TraceFeetOffset_AimBoneMath_Secondary__Const; // 0x0618(0x0048)(Edit, EditConst, NonTransactional, NoDestructor)
-	struct FRigUnit_AimBone_DebugSettings         TraceFeetOffset_1_1___TraceFeetOffset_AimBoneMath_DebugSettings__Const; // 0x0660(0x0070)(Edit, EditConst, NonTransactional, NoDestructor)
-	struct FVector                                TraceFeetOffset_1_1_1___TraceFeetOffset_Return_Offset__Const; // 0x06D0(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	ERigVMTransformSpace                          TraceFeetOffset_1_1_1___TraceFeetOffset_RigUnit_GetTransform_Space__Const; // 0x06E8(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	bool                                          TraceFeetOffset_1_1_1___TraceFeetOffset_RigUnit_GetTransform_bInitial__Const; // 0x06E9(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_6EA[0x6];                                      // 0x06EA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                TraceFeetOffset_1_1_1___TraceFeetOffset_Add_B__Const; // 0x06F0(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                TraceFeetOffset_1_1_1___TraceFeetOffset_Subtract_B__Const; // 0x0708(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	ETraceTypeQuery                               TraceFeetOffset_1_1_1___TraceFeetOffset_SphereTraceByTraceChannel_TraceChannel__Const; // 0x0720(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_721[0x3];                                      // 0x0721(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         TraceFeetOffset_1_1_1___TraceFeetOffset_SphereTraceByTraceChannel_Radius__Const; // 0x0724(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	float                                         TraceFeetOffset_1_1_1___TraceFeetOffset_AlphaInterp_Scale__Const; // 0x0728(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	float                                         TraceFeetOffset_1_1_1___TraceFeetOffset_AlphaInterp_Bias__Const; // 0x072C(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	struct FInputRange                            TraceFeetOffset_1_1_1___TraceFeetOffset_AlphaInterp_InRange__Const; // 0x0730(0x0008)(Edit, EditConst, NonTransactional, NoDestructor)
-	float                                         TraceFeetOffset_1_1_1___TraceFeetOffset_AlphaInterp_InterpSpeedIncreasing__Const; // 0x0738(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_73C[0x4];                                      // 0x073C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             TraceFeetOffset_1_1_1___TraceFeetOffset_AimBoneMath_InputTransform__Const; // 0x0740(0x0060)(Edit, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	struct FRigUnit_AimItem_Target                TraceFeetOffset_1_1_1___TraceFeetOffset_AimBoneMath_Primary__Const; // 0x07A0(0x0048)(Edit, EditConst, NonTransactional, NoDestructor)
-	struct FRigUnit_AimItem_Target                TraceFeetOffset_1_1_1___TraceFeetOffset_AimBoneMath_Secondary__Const; // 0x07E8(0x0048)(Edit, EditConst, NonTransactional, NoDestructor)
-	struct FRigUnit_AimBone_DebugSettings         TraceFeetOffset_1_1_1___TraceFeetOffset_AimBoneMath_DebugSettings__Const; // 0x0830(0x0070)(Edit, EditConst, NonTransactional, NoDestructor)
-	double                                        RigVMModel___VariableNode_4_1_Value__Const;        // 0x08A0(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_8A8[0x8];                                      // 0x08A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FQuat                                  RigVMModel___VariableNode_2_1_Value__Const;        // 0x08B0(0x0020)(Edit, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	TArray<struct FRigUnit_ModifyTransforms_PerItem> RigVMModel___ModifyTransforms_ItemToModify__Const; // 0x08D0(0x0010)(Edit, EditConst, NonTransactional)
-	float                                         RigVMModel___ModifyTransforms_WeightMinimum__Const; // 0x08E0(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	EControlRigModifyBoneMode                     RigVMModel___ModifyTransforms_Mode__Const;         // 0x08E4(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_8E5[0x3];                                      // 0x08E5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   RigVMModel___PBIK_Root__Const;                     // 0x08E8(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	TArray<struct FPBIKEffector>                  RigVMModel___PBIK_Effectors__Const;                // 0x08F0(0x0010)(Edit, EditConst, NonTransactional)
-	ERigVMTransformSpace                          RigVMModel___RigUnit_GetTransform_5_Space__Const;  // 0x0900(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	bool                                          RigVMModel___RigUnit_GetTransform_5_bInitial__Const; // 0x0901(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_902[0x6];                                      // 0x0902(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                RigVMModel___Add_4_B__Const;                       // 0x0908(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                RigVMModel___Add_4_3_B__Const;                     // 0x0920(0x0018)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	double                                        RigVMModel___Multiply_3_B__Const;                  // 0x0938(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	TArray<struct FPBIKBoneSetting>               RigVMModel___PBIK_BoneSettings__Const;             // 0x0940(0x0010)(Edit, EditConst, NonTransactional)
-	TArray<class FName>                           RigVMModel___PBIK_ExcludedBones__Const;            // 0x0950(0x0010)(Edit, EditConst, NonTransactional)
-	struct FPBIKSolverSettings                    RigVMModel___PBIK_Settings__Const;                 // 0x0960(0x0040)(Edit, EditConst, NonTransactional, NoDestructor)
-	struct FPBIKDebug                             RigVMModel___PBIK_Debug__Const;                    // 0x09A0(0x0008)(Edit, EditConst, NonTransactional, NoDestructor)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("RigVMMemory_Literal")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"RigVMMemory_Literal")
-	}
-	static class URigVMMemory_Literal* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<URigVMMemory_Literal>();
-	}
-};
-DUMPER7_ASSERTS_URigVMMemory_Literal;
-
-// RigVMBlueprintGeneratedClass CR_PanzerHund.CR_PanzerHund_C
-// 0x00A8 (0x0CB0 - 0x0C08)
-class UCR_PanzerHund_C final : public UControlRig
-{
-public:
-	bool                                          ShouldDoIKTrace;                                   // 0x0C08(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_C09[0x3];                                      // 0x0C09(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   IK_Bone_name;                                      // 0x0C0C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_C14[0xC];                                      // 0x0C14(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FQuat                                  HitNormalRot_L;                                    // 0x0C20(0x0020)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FQuat                                  HitNormalRot_R;                                    // 0x0C40(0x0020)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        Feet_ZOffset_R;                                    // 0x0C60(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        Feet_ZOffset_L;                                    // 0x0C68(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        ZOffset_pelvis;                                    // 0x0C70(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_C78[0x8];                                      // 0x0C78(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FQuat                                  FeetRotationCorrection;                            // 0x0C80(0x0020)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ShouldDoIK;                                        // 0x0CA0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-public:
-	static class UClass* StaticClass()
-	{
-		BP_STATIC_CLASS_IMPL("CR_PanzerHund_C")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CR_PanzerHund_C")
-	}
-	static class UCR_PanzerHund_C* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCR_PanzerHund_C>();
-	}
-};
-DUMPER7_ASSERTS_UCR_PanzerHund_C;
 
 SDK_NAMESPACE_END

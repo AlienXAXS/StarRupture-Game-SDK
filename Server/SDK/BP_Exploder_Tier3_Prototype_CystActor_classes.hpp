@@ -46,14 +46,14 @@ public:
 	bool                                          IsImmortal;                                        // 0x03F8(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void SpawnSpline();
-	void SetImmortalForDuration(double Duration);
-	void ReceiveTick(float DeltaSeconds_ReceiveTick);
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay);
-	void ReceiveBeginPlay();
-	void OnRep_IsImmortal();
-	void ExecuteUbergraph_BP_Exploder_Tier3_Prototype_CystActor(int32 EntryPoint);
 	void DisableImmortal();
+	void ExecuteUbergraph_BP_Exploder_Tier3_Prototype_CystActor(int32 EntryPoint);
+	void OnRep_IsImmortal();
+	void ReceiveBeginPlay();
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void ReceiveTick(float DeltaSeconds);
+	void SetImmortalForDuration(double Duration);
+	void SpawnSpline();
 
 public:
 	static class UClass* StaticClass()

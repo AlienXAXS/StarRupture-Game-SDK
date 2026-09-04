@@ -23,7 +23,7 @@ public:
 	TMap<int32, int32>                            NumRequiredLocations;                              // 0x00A0(0x0050)(Edit, BlueprintVisible)
 
 public:
-	bool PerformConditionCheckAI(class AAIController* OwnerController_PerformConditionCheckAI, class APawn* ControlledPawn_PerformConditionCheckAI);
+	bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 
 public:
 	static class UClass* StaticClass()

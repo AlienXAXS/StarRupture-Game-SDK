@@ -20,8 +20,8 @@ SDK_NAMESPACE_START
 class ABP_Modular_StairsBarrierFlatR_C final : public ACrCustomBuilding
 {
 public:
-	void GetBuildingProgressMeshes(float BuildingProgressPercentage, TArray<class UMeshComponent*>* OutMeshesToHide, TArray<class UMeshComponent*>* OutMeshesToShow) const;
 	void GetBuildingMeshes(class UMeshComponent** MainBody, TArray<class UMeshComponent*>* AdditionalMeshes) const;
+	void GetBuildingProgressMeshes(float BuildingProgressPercentage, TArray<class UMeshComponent*>* OutMeshesToHide, TArray<class UMeshComponent*>* OutMeshesToShow) const;
 
 public:
 	static class UClass* StaticClass()

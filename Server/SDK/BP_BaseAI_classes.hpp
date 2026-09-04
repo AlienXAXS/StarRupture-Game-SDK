@@ -28,25 +28,25 @@ public:
 	bool                                          ApplySlowdownAfterDamage;                          // 0x0D18(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void SetIsJumpEyeBehaviour(bool NewIsJumpEyeBehaviour);
-	void SetIsBoostedEyeColor(bool NewIsBoosted);
-	void SetIsAggroEyeColor(bool NewIsAggro);
-	void SetBoostFlare();
-	void SetAggroFlare();
-	void ReceiveBeginPlay();
-	void PostSetupPooledActorData(bool bNewIsInPool);
-	void OnPrepareForPooling();
-	void OnPrepareForGame();
-	void OnEyeStateColorGradientChanged(float NewGetEyeStateColorGradientCoord);
-	void OnExitActorPool();
-	void OnEnterActorPool();
-	void OnDamage(class AActor* Actor, const struct FHitResult& HitResult, float InDamage);
-	void OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag);
-	bool NotifyNearbyPlayerCharactersAboutSpawn();
-	void NotifyAggroTargetChanged(bool bHasAggroTarget, bool bSetAggroFlare);
-	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
-	void ExecuteUbergraph_BP_BaseAI(int32 EntryPoint);
 	void CanChangeEyeColor(bool* Result);
+	void ExecuteUbergraph_BP_BaseAI(int32 EntryPoint);
+	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
+	void NotifyAggroTargetChanged(bool bHasAggroTarget, bool bSetAggroFlare);
+	bool NotifyNearbyPlayerCharactersAboutSpawn();
+	void OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag);
+	void OnDamage(class AActor* Actor, const struct FHitResult& HitResult, float InDamage);
+	void OnEnterActorPool();
+	void OnExitActorPool();
+	void OnEyeStateColorGradientChanged(float NewGetEyeStateColorGradientCoord);
+	void OnPrepareForGame();
+	void OnPrepareForPooling();
+	void PostSetupPooledActorData(bool bNewIsInPool);
+	void ReceiveBeginPlay();
+	void SetAggroFlare();
+	void SetBoostFlare();
+	void SetIsAggroEyeColor(bool NewIsAggro);
+	void SetIsBoostedEyeColor(bool NewIsBoosted);
+	void SetIsJumpEyeBehaviour(bool NewIsJumpEyeBehaviour);
 
 	struct FColor GetIdleEyeColor() const;
 

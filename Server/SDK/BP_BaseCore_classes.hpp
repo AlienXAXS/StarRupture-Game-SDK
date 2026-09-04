@@ -35,19 +35,19 @@ public:
 	bool                                          FastAlarmCoreAttacked;                             // 0x0741(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void SetBaseCoreAreaVisibility(bool Visible_SetBaseCoreAreaVisibility);
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay);
-	void ReceiveBeginPlay();
-	void PlayAlarm(bool Slow, bool Fast);
-	void IsPlayingAttackSound(bool* Result);
-	void ExecuteUbergraph_BP_BaseCore(int32 EntryPoint);
-	void BP_UpdateBaseCoreArea();
-	void BP_OnUpgreadLevelChanged(uint8 NewUpgreadLevel_BP_OnUpgreadLevelChanged, bool Immediately_BP_OnUpgreadLevelChanged);
-	void BP_OnInfectionChanged(float Infection_BP_OnInfectionChanged, bool InfectionActive_BP_OnInfectionChanged);
+	void BP_OnActiveCoolingChanged(bool ActiveCooling);
+	void BP_OnBaseCoreInfectionActorDestroyed(bool LastActor, const struct FVector& ActorLocation);
+	void BP_OnBeingAttackedStateChanged(bool bUnderAttack);
 	void BP_OnInfectedChanged();
-	void BP_OnBeingAttackedStateChanged(bool bUnderAttack_BP_OnBeingAttackedStateChanged);
-	void BP_OnBaseCoreInfectionActorDestroyed(bool LastActor_BP_OnBaseCoreInfectionActorDestroyed, const struct FVector& ActorLocation_BP_OnBaseCoreInfectionActorDestroyed);
-	void BP_OnActiveCoolingChanged(bool ActiveCooling_BP_OnActiveCoolingChanged);
+	void BP_OnInfectionChanged(float Infection, bool InfectionActive);
+	void BP_OnUpgreadLevelChanged(uint8 NewUpgreadLevel, bool Immediately);
+	void BP_UpdateBaseCoreArea();
+	void ExecuteUbergraph_BP_BaseCore(int32 EntryPoint);
+	void IsPlayingAttackSound(bool* Result);
+	void PlayAlarm(bool Slow, bool Fast);
+	void ReceiveBeginPlay();
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void SetBaseCoreAreaVisibility(bool Visible);
 
 public:
 	static class UClass* StaticClass()

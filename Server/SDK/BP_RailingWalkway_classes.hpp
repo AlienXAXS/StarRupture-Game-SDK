@@ -31,11 +31,11 @@ public:
 	double                                        SectionLength;                                     // 0x0758(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnSplineReady(class USplineComponent* InSpline_OnSplineReady);
-	bool IsRamp();
-	bool IsLadder();
-	double GetRampAngle();
 	void ExecuteUbergraph_BP_RailingWalkway(int32 EntryPoint);
+	double GetRampAngle();
+	bool IsLadder();
+	bool IsRamp();
+	void OnSplineReady(class USplineComponent* InSpline);
 
 public:
 	static class UClass* StaticClass()

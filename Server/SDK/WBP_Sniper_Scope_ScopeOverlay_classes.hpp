@@ -43,16 +43,16 @@ public:
 	double                                        CurrentSpread;                                     // 0x0500(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UpdateOverlayColors();
-	void UpdateCrosshairSpread(double Delta_Seconds);
-	void Tick(const struct FGeometry& MyGeometry_Tick, float InDeltaTime_Tick);
-	void PawnChanged(class APawn* OldPawn, class APawn* NewPawn);
-	void OnTagRemoved_9D08466543D5D2C4AC0E5AB4CA70AAC6(const struct FGameplayTag& Tag);
-	void OnTagAdded_9D08466543D5D2C4AC0E5AB4CA70AAC6(const struct FGameplayTag& Tag);
-	struct FSlateBrush Get_ScopeOverlay_Brush();
-	void ExecuteUbergraph_WBP_Sniper_Scope_ScopeOverlay(int32 EntryPoint);
-	void Destruct();
 	void Construct();
+	void Destruct();
+	void ExecuteUbergraph_WBP_Sniper_Scope_ScopeOverlay(int32 EntryPoint);
+	struct FSlateBrush Get_ScopeOverlay_Brush();
+	void OnTagAdded_9D08466543D5D2C4AC0E5AB4CA70AAC6(const struct FGameplayTag& Tag);
+	void OnTagRemoved_9D08466543D5D2C4AC0E5AB4CA70AAC6(const struct FGameplayTag& Tag);
+	void PawnChanged(class APawn* OldPawn, class APawn* NewPawn);
+	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
+	void UpdateCrosshairSpread(double Delta_Seconds);
+	void UpdateOverlayColors();
 
 public:
 	static class UClass* StaticClass()

@@ -29,11 +29,11 @@ public:
 	class UStaticMeshComponent*                   SM_PersonalStorage_back;                           // 0x08E0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UpdateDisplayedPersonalStorageName();
-	void ReceiveBeginPlay();
-	void OnUIOpened(bool bOpened);
-	void OnNameChanged(const class FString& NewName);
 	void ExecuteUbergraph_BP_PersonalStorage(int32 EntryPoint);
+	void OnNameChanged(const class FString& NewName);
+	void OnUIOpened(bool bOpened);
+	void ReceiveBeginPlay();
+	void UpdateDisplayedPersonalStorageName();
 
 public:
 	static class UClass* StaticClass()

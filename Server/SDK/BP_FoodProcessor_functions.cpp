@@ -16,43 +16,69 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_FoodProcessor.BP_FoodProcessor_C.Timeline__UpdateFunc
-// (BlueprintEvent)
+// Function BP_FoodProcessor.BP_FoodProcessor_C.CustomEvent
+// (BlueprintCallable, BlueprintEvent)
 
-void ABP_FoodProcessor_C::Timeline__UpdateFunc()
+void ABP_FoodProcessor_C::CustomEvent()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FoodProcessor_C", "Timeline__UpdateFunc");
+		Func = Class->GetFunction("BP_FoodProcessor_C", "CustomEvent");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_FoodProcessor.BP_FoodProcessor_C.Timeline__FinishedFunc
-// (BlueprintEvent)
+// Function BP_FoodProcessor.BP_FoodProcessor_C.ExecuteUbergraph_BP_FoodProcessor
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_FoodProcessor_C::Timeline__FinishedFunc()
+void ABP_FoodProcessor_C::ExecuteUbergraph_BP_FoodProcessor(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FoodProcessor_C", "Timeline__FinishedFunc");
+		Func = Class->GetFunction("BP_FoodProcessor_C", "ExecuteUbergraph_BP_FoodProcessor");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_FoodProcessor_C_ExecuteUbergraph_BP_FoodProcessor Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_FoodProcessor.BP_FoodProcessor_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_FoodProcessor.BP_FoodProcessor_C.OnBuildingStateChanged
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_FoodProcessor_C::ReceiveBeginPlay()
+void ABP_FoodProcessor_C::OnBuildingStateChanged(ECrBuildingState InState)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FoodProcessor_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_FoodProcessor_C", "OnBuildingStateChanged");
+
+	Params::BP_FoodProcessor_C_OnBuildingStateChanged Parms{};
+
+	Parms.InState = InState;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_FoodProcessor.BP_FoodProcessor_C.OnItemCraftingComplete
+// (Event, Public, BlueprintEvent)
+
+void ABP_FoodProcessor_C::OnItemCraftingComplete()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_FoodProcessor_C", "OnItemCraftingComplete");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -78,69 +104,43 @@ void ABP_FoodProcessor_C::OnUIOpened(bool bOpened)
 }
 
 
-// Function BP_FoodProcessor.BP_FoodProcessor_C.OnItemCraftingComplete
-// (Event, Public, BlueprintEvent)
+// Function BP_FoodProcessor.BP_FoodProcessor_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ABP_FoodProcessor_C::OnItemCraftingComplete()
+void ABP_FoodProcessor_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FoodProcessor_C", "OnItemCraftingComplete");
+		Func = Class->GetFunction("BP_FoodProcessor_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_FoodProcessor.BP_FoodProcessor_C.OnBuildingStateChanged
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_FoodProcessor.BP_FoodProcessor_C.Timeline__FinishedFunc
+// (BlueprintEvent)
 
-void ABP_FoodProcessor_C::OnBuildingStateChanged(ECrBuildingState InState)
+void ABP_FoodProcessor_C::Timeline__FinishedFunc()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FoodProcessor_C", "OnBuildingStateChanged");
+		Func = Class->GetFunction("BP_FoodProcessor_C", "Timeline__FinishedFunc");
 
-	Params::BP_FoodProcessor_C_OnBuildingStateChanged Parms{};
-
-	Parms.InState = InState;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_FoodProcessor.BP_FoodProcessor_C.ExecuteUbergraph_BP_FoodProcessor
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_FoodProcessor.BP_FoodProcessor_C.Timeline__UpdateFunc
+// (BlueprintEvent)
 
-void ABP_FoodProcessor_C::ExecuteUbergraph_BP_FoodProcessor(int32 EntryPoint)
+void ABP_FoodProcessor_C::Timeline__UpdateFunc()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FoodProcessor_C", "ExecuteUbergraph_BP_FoodProcessor");
-
-	Params::BP_FoodProcessor_C_ExecuteUbergraph_BP_FoodProcessor Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_FoodProcessor.BP_FoodProcessor_C.CustomEvent
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_FoodProcessor_C::CustomEvent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FoodProcessor_C", "CustomEvent");
+		Func = Class->GetFunction("BP_FoodProcessor_C", "Timeline__UpdateFunc");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

@@ -39,13 +39,13 @@ public:
 	int32                                         BeamOffsetNumber;                                  // 0x0C20(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UpdateBlockedBeamLocations();
-	void UpdateBeamsLocations();
-	void UpdateAcceptedBeamLocations();
-	void TurnOnBeams();
-	void TurnOffBeams();
-	void OnConnectionsModified(const TArray<struct FVector>& NewAcceptedLocations_OnConnectionsModified, const TArray<struct FVector>& NewObstructedLocations_OnConnectionsModified, const TArray<struct FVector>& NewBlockedLocations_OnConnectionsModified);
 	void ExecuteUbergraph_BP_PlacementHelperReplicatedZipline(int32 EntryPoint);
+	void OnConnectionsModified(const TArray<struct FVector>& NewAcceptedLocations, const TArray<struct FVector>& NewObstructedLocations, const TArray<struct FVector>& NewBlockedLocations);
+	void TurnOffBeams();
+	void TurnOnBeams();
+	void UpdateAcceptedBeamLocations();
+	void UpdateBeamsLocations();
+	void UpdateBlockedBeamLocations();
 
 public:
 	static class UClass* StaticClass()

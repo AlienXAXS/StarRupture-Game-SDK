@@ -29,9 +29,9 @@ public:
 	class UCrInteriorsMapperBoxComponent*         CrInteriorsMapperBox;                              // 0x08E0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UserConstructionScript();
-	void ReceiveBeginPlay();
 	void ExecuteUbergraph_BP_Modular_BasePlatformStability(int32 EntryPoint);
+	void ReceiveBeginPlay();
+	void UserConstructionScript();
 
 	void GetBuildingMeshes(class UMeshComponent** MainBody, TArray<class UMeshComponent*>* AdditionalMeshes) const;
 

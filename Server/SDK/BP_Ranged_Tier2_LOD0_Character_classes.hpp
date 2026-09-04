@@ -27,18 +27,18 @@ public:
 	double                                        InjuryPoseAlpha;                                   // 0x0D38(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UserConstructionScript();
-	void SetIsAggroEyeColor(bool NewIsAggro_SetIsAggroEyeColor);
-	void OnRep_InjuryPoseAlpha();
-	void OnPrepareForGame();
-	void OnExitActorPool();
-	void OnEnterActorPool();
-	void OnDamage(class AActor* Actor_OnDamage, const struct FHitResult& HitResult_OnDamage, float InDamage_OnDamage);
-	void OnAiDied(const struct FHitResult& HitResult_OnAiDied, const struct FGameplayTag& KillingDamageTag_OnAiDied);
-	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam_GetNiagaraEyeSystem);
 	void ExecuteUbergraph_BP_Ranged_Tier2_LOD0_Character(int32 EntryPoint);
+	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
+	void OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag);
+	void OnDamage(class AActor* Actor, const struct FHitResult& HitResult, float InDamage);
+	void OnEnterActorPool();
+	void OnExitActorPool();
+	void OnPrepareForGame();
+	void OnRep_InjuryPoseAlpha();
+	void SetIsAggroEyeColor(bool NewIsAggro);
+	void UserConstructionScript();
 
-	void OnMeshVisibilityUpdated(bool bIsMeshHidden_OnMeshVisibilityUpdated) const;
+	void OnMeshVisibilityUpdated(bool bIsMeshHidden) const;
 
 public:
 	static class UClass* StaticClass()

@@ -16,40 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_RecipeTable.BP_RecipeTable_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_RecipeTable_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_RecipeTable_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_RecipeTable.BP_RecipeTable_C.OnUIOpened
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bOpened_OnUIOpened                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_RecipeTable_C::OnUIOpened(bool bOpened_OnUIOpened)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_RecipeTable_C", "OnUIOpened");
-
-	Params::BP_RecipeTable_C_OnUIOpened Parms{};
-
-	Parms.bOpened_OnUIOpened = bOpened_OnUIOpened;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_RecipeTable.BP_RecipeTable_C.ExecuteUbergraph_BP_RecipeTable
 // (Final, UbergraphFunction)
 // Parameters:
@@ -67,6 +33,40 @@ void ABP_RecipeTable_C::ExecuteUbergraph_BP_RecipeTable(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_RecipeTable.BP_RecipeTable_C.OnUIOpened
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bOpened                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_RecipeTable_C::OnUIOpened(bool bOpened)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_RecipeTable_C", "OnUIOpened");
+
+	Params::BP_RecipeTable_C_OnUIOpened Parms{};
+
+	Parms.bOpened = bOpened;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_RecipeTable.BP_RecipeTable_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_RecipeTable_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_RecipeTable_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

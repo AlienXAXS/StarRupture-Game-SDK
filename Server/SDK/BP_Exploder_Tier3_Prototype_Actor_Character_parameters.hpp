@@ -17,42 +17,71 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_Exploder_Tier3_Prototype_Actor_Character.BP_Exploder_Tier3_Prototype_Actor_Character_C.ResetExcludedLocations
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Exploder_Tier3_Prototype_Actor_Character_C_ResetExcludedLocations final
+// Function BP_Exploder_Tier3_Prototype_Actor_Character.BP_Exploder_Tier3_Prototype_Actor_Character_C.AddExcludedLocation
+// 0x0028 (0x0028 - 0x0000)
+struct BP_Exploder_Tier3_Prototype_Actor_Character_C_AddExcludedLocation final
+{
+public:
+	struct FVector                                NewItem;                                           // 0x0000(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          DigIn;                                             // 0x0018(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Add_ReturnValue_1;                  // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Exploder_Tier3_Prototype_Actor_Character_C_AddExcludedLocation;
+
+// Function BP_Exploder_Tier3_Prototype_Actor_Character.BP_Exploder_Tier3_Prototype_Actor_Character_C.ExecuteUbergraph_BP_Exploder_Tier3_Prototype_Actor_Character
+// 0x0028 (0x0028 - 0x0000)
+struct BP_Exploder_Tier3_Prototype_Actor_Character_C_ExecuteUbergraph_BP_Exploder_Tier3_Prototype_Actor_Character final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue;              // 0x0004(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TScriptInterface<class IMassEnemyActor>       K2Node_DynamicCast_AsMass_Enemy_Actor;             // 0x0010(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GetFloatAttributeFromAbilitySystemComponent_bSuccessfullyFoundAttribute; // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_22[0x2];                                       // 0x0022(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_GetFloatAttributeFromAbilitySystemComponent_ReturnValue; // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Exploder_Tier3_Prototype_Actor_Character_C_ExecuteUbergraph_BP_Exploder_Tier3_Prototype_Actor_Character;
+
+// Function BP_Exploder_Tier3_Prototype_Actor_Character.BP_Exploder_Tier3_Prototype_Actor_Character_C.GetExcludedLocations
+// 0x0030 (0x0030 - 0x0000)
+struct BP_Exploder_Tier3_Prototype_Actor_Character_C_GetExcludedLocations final
 {
 public:
 	bool                                          DigIn;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FVector>                        Result;                                            // 0x0008(0x0010)(Parm, OutParm)
+	bool                                          Temp_bool_Variable;                                // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FVector>                        K2Node_Select_Default;                             // 0x0020(0x0010)(ReferenceParm)
 };
-DUMPER7_ASSERTS_BP_Exploder_Tier3_Prototype_Actor_Character_C_ResetExcludedLocations;
+DUMPER7_ASSERTS_BP_Exploder_Tier3_Prototype_Actor_Character_C_GetExcludedLocations;
 
-// Function BP_Exploder_Tier3_Prototype_Actor_Character.BP_Exploder_Tier3_Prototype_Actor_Character_C.RegisterCyst
-// 0x0058 (0x0058 - 0x0000)
-struct BP_Exploder_Tier3_Prototype_Actor_Character_C_RegisterCyst final
+// Function BP_Exploder_Tier3_Prototype_Actor_Character.BP_Exploder_Tier3_Prototype_Actor_Character_C.GetNiagaraEyeSystem
+// 0x0008 (0x0008 - 0x0000)
+struct BP_Exploder_Tier3_Prototype_Actor_Character_C_GetNiagaraEyeSystem final
 {
 public:
-	class AExploderT3CystActor*                   Cyst;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Multiply_DoubleDouble_ReturnValue;        // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(class AExploderT3CystActor* Cyst)> K2Node_CreateDelegate_OutputDelegate;          // 0x0018(0x0018)(ZeroConstructor, HasGetValueTypeHash)
-	double                                        CallFunc_Conv_IntToDouble_ReturnValue;             // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Divide_DoubleDouble_ReturnValue;          // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        CallFunc_Multiply_DoubleDouble_A_ImplicitCast;     // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_VariableSet_DestroyCystDamage_ImplicitCast; // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      NewParam;                                          // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_Exploder_Tier3_Prototype_Actor_Character_C_RegisterCyst;
+DUMPER7_ASSERTS_BP_Exploder_Tier3_Prototype_Actor_Character_C_GetNiagaraEyeSystem;
 
-// Function BP_Exploder_Tier3_Prototype_Actor_Character.BP_Exploder_Tier3_Prototype_Actor_Character_C.OnExitActorPool
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Exploder_Tier3_Prototype_Actor_Character_C_OnExitActorPool final
+// Function BP_Exploder_Tier3_Prototype_Actor_Character.BP_Exploder_Tier3_Prototype_Actor_Character_C.HideCysts
+// 0x0020 (0x0020 - 0x0000)
+struct BP_Exploder_Tier3_Prototype_Actor_Character_C_HideCysts final
 {
 public:
-	bool                                          CallFunc_IsActive_ReturnValue;                     // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AExploderT3CystActor*                   CallFunc_Array_Get_Item;                           // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_Exploder_Tier3_Prototype_Actor_Character_C_OnExitActorPool;
+DUMPER7_ASSERTS_BP_Exploder_Tier3_Prototype_Actor_Character_C_HideCysts;
 
 // Function BP_Exploder_Tier3_Prototype_Actor_Character.BP_Exploder_Tier3_Prototype_Actor_Character_C.OnCystDestroyed
 // 0x00B8 (0x00B8 - 0x0000)
@@ -86,78 +115,49 @@ public:
 };
 DUMPER7_ASSERTS_BP_Exploder_Tier3_Prototype_Actor_Character_C_OnCystDestroyed;
 
-// Function BP_Exploder_Tier3_Prototype_Actor_Character.BP_Exploder_Tier3_Prototype_Actor_Character_C.HideCysts
-// 0x0020 (0x0020 - 0x0000)
-struct BP_Exploder_Tier3_Prototype_Actor_Character_C_HideCysts final
+// Function BP_Exploder_Tier3_Prototype_Actor_Character.BP_Exploder_Tier3_Prototype_Actor_Character_C.OnExitActorPool
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Exploder_Tier3_Prototype_Actor_Character_C_OnExitActorPool final
 {
 public:
-	int32                                         Temp_int_Array_Index_Variable;                     // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AExploderT3CystActor*                   CallFunc_Array_Get_Item;                           // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsActive_ReturnValue;                     // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_Exploder_Tier3_Prototype_Actor_Character_C_HideCysts;
+DUMPER7_ASSERTS_BP_Exploder_Tier3_Prototype_Actor_Character_C_OnExitActorPool;
 
-// Function BP_Exploder_Tier3_Prototype_Actor_Character.BP_Exploder_Tier3_Prototype_Actor_Character_C.GetNiagaraEyeSystem
-// 0x0008 (0x0008 - 0x0000)
-struct BP_Exploder_Tier3_Prototype_Actor_Character_C_GetNiagaraEyeSystem final
+// Function BP_Exploder_Tier3_Prototype_Actor_Character.BP_Exploder_Tier3_Prototype_Actor_Character_C.RegisterCyst
+// 0x0058 (0x0058 - 0x0000)
+struct BP_Exploder_Tier3_Prototype_Actor_Character_C_RegisterCyst final
 {
 public:
-	class UNiagaraComponent*                      NewParam_GetNiagaraEyeSystem;                      // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class AExploderT3CystActor*                   Cyst;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Multiply_DoubleDouble_ReturnValue;        // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(class AExploderT3CystActor* Cyst)> K2Node_CreateDelegate_OutputDelegate;          // 0x0018(0x0018)(ZeroConstructor, HasGetValueTypeHash)
+	double                                        CallFunc_Conv_IntToDouble_ReturnValue;             // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Divide_DoubleDouble_ReturnValue;          // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_Multiply_DoubleDouble_A_ImplicitCast;     // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_VariableSet_DestroyCystDamage_ImplicitCast; // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_Exploder_Tier3_Prototype_Actor_Character_C_GetNiagaraEyeSystem;
+DUMPER7_ASSERTS_BP_Exploder_Tier3_Prototype_Actor_Character_C_RegisterCyst;
 
-// Function BP_Exploder_Tier3_Prototype_Actor_Character.BP_Exploder_Tier3_Prototype_Actor_Character_C.GetExcludedLocations
-// 0x0030 (0x0030 - 0x0000)
-struct BP_Exploder_Tier3_Prototype_Actor_Character_C_GetExcludedLocations final
+// Function BP_Exploder_Tier3_Prototype_Actor_Character.BP_Exploder_Tier3_Prototype_Actor_Character_C.ResetExcludedLocations
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Exploder_Tier3_Prototype_Actor_Character_C_ResetExcludedLocations final
 {
 public:
 	bool                                          DigIn;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FVector>                        Result;                                            // 0x0008(0x0010)(Parm, OutParm)
-	bool                                          Temp_bool_Variable;                                // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FVector>                        K2Node_Select_Default;                             // 0x0020(0x0010)(ReferenceParm)
 };
-DUMPER7_ASSERTS_BP_Exploder_Tier3_Prototype_Actor_Character_C_GetExcludedLocations;
-
-// Function BP_Exploder_Tier3_Prototype_Actor_Character.BP_Exploder_Tier3_Prototype_Actor_Character_C.ExecuteUbergraph_BP_Exploder_Tier3_Prototype_Actor_Character
-// 0x0028 (0x0028 - 0x0000)
-struct BP_Exploder_Tier3_Prototype_Actor_Character_C_ExecuteUbergraph_BP_Exploder_Tier3_Prototype_Actor_Character final
-{
-public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   CallFunc_MakeLiteralName_ReturnValue;              // 0x0004(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IMassEnemyActor>       K2Node_DynamicCast_AsMass_Enemy_Actor;             // 0x0010(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_GetFloatAttributeFromAbilitySystemComponent_bSuccessfullyFoundAttribute; // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_22[0x2];                                       // 0x0022(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_GetFloatAttributeFromAbilitySystemComponent_ReturnValue; // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Exploder_Tier3_Prototype_Actor_Character_C_ExecuteUbergraph_BP_Exploder_Tier3_Prototype_Actor_Character;
-
-// Function BP_Exploder_Tier3_Prototype_Actor_Character.BP_Exploder_Tier3_Prototype_Actor_Character_C.AddExcludedLocation
-// 0x0028 (0x0028 - 0x0000)
-struct BP_Exploder_Tier3_Prototype_Actor_Character_C_AddExcludedLocation final
-{
-public:
-	struct FVector                                NewItem;                                           // 0x0000(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          DigIn;                                             // 0x0018(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Add_ReturnValue_1;                  // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Exploder_Tier3_Prototype_Actor_Character_C_AddExcludedLocation;
+DUMPER7_ASSERTS_BP_Exploder_Tier3_Prototype_Actor_Character_C_ResetExcludedLocations;
 
 // Function BP_Exploder_Tier3_Prototype_Actor_Character.BP_Exploder_Tier3_Prototype_Actor_Character_C.OnMeshVisibilityUpdated
 // 0x0001 (0x0001 - 0x0000)
 struct BP_Exploder_Tier3_Prototype_Actor_Character_C_OnMeshVisibilityUpdated final
 {
 public:
-	bool                                          bIsMeshHidden_OnMeshVisibilityUpdated;             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bIsMeshHidden;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Exploder_Tier3_Prototype_Actor_Character_C_OnMeshVisibilityUpdated;
 

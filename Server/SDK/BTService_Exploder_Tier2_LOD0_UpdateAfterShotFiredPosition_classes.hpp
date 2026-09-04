@@ -27,9 +27,9 @@ public:
 	struct FBlackboardKeySelector                 Out_Calcualted_Position;                           // 0x00A8(0x0028)(Edit, BlueprintVisible)
 
 public:
-	void UpdateAfterShotFiredPosition(class AActor* Pawn, class AAIController* Controller);
-	void ReceiveActivationAI(class AAIController* OwnerController_ReceiveActivationAI, class APawn* ControlledPawn_ReceiveActivationAI);
 	void ExecuteUbergraph_BTService_Exploder_Tier2_LOD0_UpdateAfterShotFiredPosition(int32 EntryPoint);
+	void ReceiveActivationAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+	void UpdateAfterShotFiredPosition(class AActor* Pawn, class AAIController* Controller);
 
 public:
 	static class UClass* StaticClass()

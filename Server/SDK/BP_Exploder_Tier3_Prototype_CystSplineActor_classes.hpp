@@ -30,11 +30,11 @@ public:
 	TArray<struct FVector>                        SplineCystPathPoints;                              // 0x02E0(0x0010)(Edit, BlueprintVisible, Net, DisableEditOnInstance, RepNotify)
 
 public:
-	void PrepareSplinePoints();
-	void PrepareSplineMeshes();
-	void PrepareSpline();
-	void OnRep_SplineCystPathPoints();
 	struct FVector AdjustPointToGround(const struct FVector& Point, const struct FVector& Deviation);
+	void OnRep_SplineCystPathPoints();
+	void PrepareSpline();
+	void PrepareSplineMeshes();
+	void PrepareSplinePoints();
 
 public:
 	static class UClass* StaticClass()

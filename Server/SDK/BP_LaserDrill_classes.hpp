@@ -42,12 +42,12 @@ public:
 	TArray<class UMeshComponent*>                 tab_meshes;                                        // 0x07D8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 
 public:
-	void SetupSkeletalMesh();
-	void OnConstructionFinished();
-	void OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged);
 	void ExecuteUbergraph_BP_LaserDrill(int32 EntryPoint);
+	void OnBuildingStateChanged(ECrBuildingState InState);
+	void OnConstructionFinished();
+	void SetupSkeletalMesh();
 
-	void Get_Meshes(class USceneComponent* Static, class USceneComponent* Animated, TArray<class UMeshComponent*>* NewParam) const;
+	void Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Animated_0, TArray<class UMeshComponent*>* NewParam) const;
 
 public:
 	static class UClass* StaticClass()

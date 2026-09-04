@@ -14,16 +14,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BTT_AddToInt.BTT_AddToInt_C.ReceiveExecuteAI
-// 0x0010 (0x0010 - 0x0000)
-struct BTT_AddToInt_C_ReceiveExecuteAI final
-{
-public:
-	class AAIController*                          OwnerController_ReceiveExecuteAI;                  // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  ControlledPawn_ReceiveExecuteAI;                   // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BTT_AddToInt_C_ReceiveExecuteAI;
-
 // Function BTT_AddToInt.BTT_AddToInt_C.ExecuteUbergraph_BTT_AddToInt
 // 0x0020 (0x0020 - 0x0000)
 struct BTT_AddToInt_C_ExecuteUbergraph_BTT_AddToInt final
@@ -37,6 +27,16 @@ public:
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BTT_AddToInt_C_ExecuteUbergraph_BTT_AddToInt;
+
+// Function BTT_AddToInt.BTT_AddToInt_C.ReceiveExecuteAI
+// 0x0010 (0x0010 - 0x0000)
+struct BTT_AddToInt_C_ReceiveExecuteAI final
+{
+public:
+	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BTT_AddToInt_C_ReceiveExecuteAI;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

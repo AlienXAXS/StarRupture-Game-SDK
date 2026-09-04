@@ -16,60 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Airlock_StartingHUB.BP_Airlock_StartingHUB_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Airlock_StartingHUB_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_StartingHUB_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Airlock_StartingHUB.BP_Airlock_StartingHUB_C.PostPlayBuildingEffect
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bWasBuildingEffectPlayed_PostPlayBuildingEffect        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Airlock_StartingHUB_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed_PostPlayBuildingEffect)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_StartingHUB_C", "PostPlayBuildingEffect");
-
-	Params::BP_Airlock_StartingHUB_C_PostPlayBuildingEffect Parms{};
-
-	Parms.bWasBuildingEffectPlayed_PostPlayBuildingEffect = bWasBuildingEffectPlayed_PostPlayBuildingEffect;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Airlock_StartingHUB.BP_Airlock_StartingHUB_C.OnOpenStateChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bInOpen_OnOpenStateChanged                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Airlock_StartingHUB_C::OnOpenStateChanged(bool bInOpen_OnOpenStateChanged)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_StartingHUB_C", "OnOpenStateChanged");
-
-	Params::BP_Airlock_StartingHUB_C_OnOpenStateChanged Parms{};
-
-	Parms.bInOpen_OnOpenStateChanged = bInOpen_OnOpenStateChanged;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_Airlock_StartingHUB.BP_Airlock_StartingHUB_C.ExecuteUbergraph_BP_Airlock_StartingHUB
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -87,6 +33,60 @@ void ABP_Airlock_StartingHUB_C::ExecuteUbergraph_BP_Airlock_StartingHUB(int32 En
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Airlock_StartingHUB.BP_Airlock_StartingHUB_C.OnOpenStateChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bInOpen                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Airlock_StartingHUB_C::OnOpenStateChanged(bool bInOpen)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Airlock_StartingHUB_C", "OnOpenStateChanged");
+
+	Params::BP_Airlock_StartingHUB_C_OnOpenStateChanged Parms{};
+
+	Parms.bInOpen = bInOpen;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Airlock_StartingHUB.BP_Airlock_StartingHUB_C.PostPlayBuildingEffect
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bWasBuildingEffectPlayed                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Airlock_StartingHUB_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Airlock_StartingHUB_C", "PostPlayBuildingEffect");
+
+	Params::BP_Airlock_StartingHUB_C_PostPlayBuildingEffect Parms{};
+
+	Parms.bWasBuildingEffectPlayed = bWasBuildingEffectPlayed;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Airlock_StartingHUB.BP_Airlock_StartingHUB_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Airlock_StartingHUB_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Airlock_StartingHUB_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

@@ -37,19 +37,19 @@ public:
 	int32                                         MaxCystsNum;                                       // 0x0D90(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ResetExcludedLocations();
-	void RegisterCyst(class AExploderT3CystActor* Cyst);
-	void ReceiveTick(float DeltaSeconds_ReceiveTick);
-	void ReceiveBeginPlay();
-	void OnExitActorPool();
-	void OnEnterActorPool();
-	void OnCystDestroyed(class AExploderT3CystActor* Cyst);
-	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam_GetNiagaraEyeSystem);
-	void GetCystsLocations(TArray<struct FVector>* Result);
-	void ExecuteUbergraph_BP_Exploder_Tier3_Actor_Character(int32 EntryPoint);
 	void AddExcludedLocation(const struct FVector& NewItem);
+	void ExecuteUbergraph_BP_Exploder_Tier3_Actor_Character(int32 EntryPoint);
+	void GetCystsLocations(TArray<struct FVector>* Result);
+	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
+	void OnCystDestroyed(class AExploderT3CystActor* Cyst);
+	void OnEnterActorPool();
+	void OnExitActorPool();
+	void ReceiveBeginPlay();
+	void ReceiveTick(float DeltaSeconds);
+	void RegisterCyst(class AExploderT3CystActor* Cyst);
+	void ResetExcludedLocations();
 
-	void OnMeshVisibilityUpdated(bool bIsMeshHidden_OnMeshVisibilityUpdated) const;
+	void OnMeshVisibilityUpdated(bool bIsMeshHidden) const;
 
 public:
 	static class UClass* StaticClass()

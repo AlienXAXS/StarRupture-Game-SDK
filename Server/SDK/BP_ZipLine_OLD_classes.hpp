@@ -71,31 +71,31 @@ public:
 	class UAudioComponent*                        SFX_Travel_Start;                                  // 0x0898(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UpdateDetailedBeamActivity();
-	void UpdateAllBeamLocationsByActivity(bool bActiveConnections);
-	void UpdateAllBeamLocations();
-	void TurnOnBeams(class UNiagaraComponent* NiagaraSystem);
-	void TurnOffBeams(class UNiagaraComponent* Niagara_System);
-	void SetDetailedBeamLocation(const struct FVector& Target_Location);
-	void Open__UpdateFunc();
-	void Open__FinishedFunc();
-	void OnZiplineTravelLocallyStarted();
-	void OnZiplineModeLocallyStarted();
-	void OnZiplineLocallyCancelled();
-	void OnUntargeted(class ACrCharacterPlayerBase* InPlayer_OnUntargeted);
-	void OnUnoccupied(class ACrCharacterPlayerBase* InPlayer_OnUnoccupied);
-	void OnTravellingTo(class ACrCharacterPlayerBase* InPlayer_OnTravellingTo);
-	void OnTargeted(class ACrCharacterPlayerBase* InPlayer_OnTargeted);
-	void OnStopTravellingTo(class ACrCharacterPlayerBase* InPlayer_OnStopTravellingTo, bool bCancelled_OnStopTravellingTo);
-	void OnShowBlockingSphere();
-	void OnPlayerRotationStarted();
-	void OnPlayerRotationFinished(const struct FVector_NetQuantize& NewTargetLocation_OnPlayerRotationFinished, const struct FRotator& NewRotation_OnPlayerRotationFinished);
-	void OnHideBlockingSphere();
-	void OnConnectionsModified(const TArray<struct FVector_NetQuantize>& ActiveLocations_OnConnectionsModified, const TArray<struct FVector_NetQuantize>& InactiveLocations_OnConnectionsModified);
-	void OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged);
-	void OnActivityModified(bool bActive_OnActivityModified);
-	void ExecuteUbergraph_BP_ZipLine_OLD(int32 EntryPoint);
 	void BlockAllBeams(class UNiagaraComponent* NiagaraSystem);
+	void ExecuteUbergraph_BP_ZipLine_OLD(int32 EntryPoint);
+	void OnActivityModified(bool bActive);
+	void OnBuildingStateChanged(ECrBuildingState InState);
+	void OnConnectionsModified(const TArray<struct FVector_NetQuantize>& ActiveLocations, const TArray<struct FVector_NetQuantize>& InactiveLocations);
+	void OnHideBlockingSphere();
+	void OnPlayerRotationFinished(const struct FVector_NetQuantize& NewTargetLocation, const struct FRotator& NewRotation);
+	void OnPlayerRotationStarted();
+	void OnShowBlockingSphere();
+	void OnStopTravellingTo(class ACrCharacterPlayerBase* InPlayer, bool bCancelled);
+	void OnTargeted(class ACrCharacterPlayerBase* InPlayer);
+	void OnTravellingTo(class ACrCharacterPlayerBase* InPlayer);
+	void OnUnoccupied(class ACrCharacterPlayerBase* InPlayer);
+	void OnUntargeted(class ACrCharacterPlayerBase* InPlayer);
+	void OnZiplineLocallyCancelled();
+	void OnZiplineModeLocallyStarted();
+	void OnZiplineTravelLocallyStarted();
+	void Open__FinishedFunc();
+	void Open__UpdateFunc();
+	void SetDetailedBeamLocation(const struct FVector& Target_Location);
+	void TurnOffBeams(class UNiagaraComponent* Niagara_System);
+	void TurnOnBeams(class UNiagaraComponent* NiagaraSystem);
+	void UpdateAllBeamLocations();
+	void UpdateAllBeamLocationsByActivity(bool bActiveConnections);
+	void UpdateDetailedBeamActivity();
 
 public:
 	static class UClass* StaticClass()

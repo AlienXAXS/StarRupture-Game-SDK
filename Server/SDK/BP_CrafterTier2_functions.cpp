@@ -16,80 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_CrafterTier2.BP_CrafterTier2_C.SetupSkeletalMesh
-// (Event, Public, BlueprintEvent)
-
-void ABP_CrafterTier2_C::SetupSkeletalMesh()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CrafterTier2_C", "SetupSkeletalMesh");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_CrafterTier2.BP_CrafterTier2_C.OnItemCraftingComplete
-// (Event, Public, BlueprintEvent)
-
-void ABP_CrafterTier2_C::OnItemCraftingComplete()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CrafterTier2_C", "OnItemCraftingComplete");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_CrafterTier2.BP_CrafterTier2_C.OnBuildingStateChanged
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// ECrBuildingState                        InState_OnBuildingStateChanged                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_CrafterTier2_C::OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CrafterTier2_C", "OnBuildingStateChanged");
-
-	Params::BP_CrafterTier2_C_OnBuildingStateChanged Parms{};
-
-	Parms.InState_OnBuildingStateChanged = InState_OnBuildingStateChanged;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_CrafterTier2.BP_CrafterTier2_C.Get Meshes
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class USceneComponent*                  Static                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-// class USceneComponent*                  Animated                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-// TArray<class UMeshComponent*>*          NewParam                                               (Parm, OutParm, ContainsInstancedReference)
-
-void ABP_CrafterTier2_C::Get_Meshes(class USceneComponent* Static, class USceneComponent* Animated, TArray<class UMeshComponent*>* NewParam)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CrafterTier2_C", "Get Meshes");
-
-	Params::BP_CrafterTier2_C_Get_Meshes Parms{};
-
-	Parms.Static = Static;
-	Parms.Animated = Animated;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (NewParam != nullptr)
-		*NewParam = std::move(Parms.NewParam);
-}
-
-
 // Function BP_CrafterTier2.BP_CrafterTier2_C.ExecuteUbergraph_BP_CrafterTier2
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -107,6 +33,80 @@ void ABP_CrafterTier2_C::ExecuteUbergraph_BP_CrafterTier2(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_CrafterTier2.BP_CrafterTier2_C.Get Meshes
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class USceneComponent*                  Static_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class USceneComponent*                  Animated_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// TArray<class UMeshComponent*>*          NewParam                                               (Parm, OutParm, ContainsInstancedReference)
+
+void ABP_CrafterTier2_C::Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Animated_0, TArray<class UMeshComponent*>* NewParam)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_CrafterTier2_C", "Get Meshes");
+
+	Params::BP_CrafterTier2_C_Get_Meshes Parms{};
+
+	Parms.Static_0 = Static_0;
+	Parms.Animated_0 = Animated_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (NewParam != nullptr)
+		*NewParam = std::move(Parms.NewParam);
+}
+
+
+// Function BP_CrafterTier2.BP_CrafterTier2_C.OnBuildingStateChanged
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_CrafterTier2_C::OnBuildingStateChanged(ECrBuildingState InState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_CrafterTier2_C", "OnBuildingStateChanged");
+
+	Params::BP_CrafterTier2_C_OnBuildingStateChanged Parms{};
+
+	Parms.InState = InState;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_CrafterTier2.BP_CrafterTier2_C.OnItemCraftingComplete
+// (Event, Public, BlueprintEvent)
+
+void ABP_CrafterTier2_C::OnItemCraftingComplete()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_CrafterTier2_C", "OnItemCraftingComplete");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_CrafterTier2.BP_CrafterTier2_C.SetupSkeletalMesh
+// (Event, Public, BlueprintEvent)
+
+void ABP_CrafterTier2_C::SetupSkeletalMesh()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_CrafterTier2_C", "SetupSkeletalMesh");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

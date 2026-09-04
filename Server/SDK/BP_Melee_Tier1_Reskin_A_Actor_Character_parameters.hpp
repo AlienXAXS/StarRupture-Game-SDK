@@ -16,43 +16,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_Melee_Tier1_Reskin_A_Actor_Character.BP_Melee_Tier1_Reskin_A_Actor_Character_C.UserConstructionScript
-// 0x0002 (0x0002 - 0x0000)
-struct BP_Melee_Tier1_Reskin_A_Actor_Character_C_UserConstructionScript final
-{
-public:
-	bool                                          CallFunc_K2_AttachToComponent_ReturnValue;         // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_K2_AttachToComponent_ReturnValue_1;       // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Melee_Tier1_Reskin_A_Actor_Character_C_UserConstructionScript;
-
-// Function BP_Melee_Tier1_Reskin_A_Actor_Character.BP_Melee_Tier1_Reskin_A_Actor_Character_C.OnVisualVariationChanged
-// 0x0018 (0x0018 - 0x0000)
-struct BP_Melee_Tier1_Reskin_A_Actor_Character_C_OnVisualVariationChanged final
-{
-public:
-	struct FVector                                NewVisualVariationSeed_OnVisualVariationChanged;   // 0x0000(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Melee_Tier1_Reskin_A_Actor_Character_C_OnVisualVariationChanged;
-
-// Function BP_Melee_Tier1_Reskin_A_Actor_Character.BP_Melee_Tier1_Reskin_A_Actor_Character_C.OnExitActorPool
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Melee_Tier1_Reskin_A_Actor_Character_C_OnExitActorPool final
-{
-public:
-	bool                                          CallFunc_IsActive_ReturnValue;                     // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Melee_Tier1_Reskin_A_Actor_Character_C_OnExitActorPool;
-
-// Function BP_Melee_Tier1_Reskin_A_Actor_Character.BP_Melee_Tier1_Reskin_A_Actor_Character_C.GetNiagaraEyeSystem
-// 0x0008 (0x0008 - 0x0000)
-struct BP_Melee_Tier1_Reskin_A_Actor_Character_C_GetNiagaraEyeSystem final
-{
-public:
-	class UNiagaraComponent*                      NewParam_GetNiagaraEyeSystem;                      // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Melee_Tier1_Reskin_A_Actor_Character_C_GetNiagaraEyeSystem;
-
 // Function BP_Melee_Tier1_Reskin_A_Actor_Character.BP_Melee_Tier1_Reskin_A_Actor_Character_C.ExecuteUbergraph_BP_Melee_Tier1_Reskin_A_Actor_Character
 // 0x0048 (0x0048 - 0x0000)
 struct BP_Melee_Tier1_Reskin_A_Actor_Character_C_ExecuteUbergraph_BP_Melee_Tier1_Reskin_A_Actor_Character final
@@ -70,12 +33,49 @@ public:
 };
 DUMPER7_ASSERTS_BP_Melee_Tier1_Reskin_A_Actor_Character_C_ExecuteUbergraph_BP_Melee_Tier1_Reskin_A_Actor_Character;
 
+// Function BP_Melee_Tier1_Reskin_A_Actor_Character.BP_Melee_Tier1_Reskin_A_Actor_Character_C.GetNiagaraEyeSystem
+// 0x0008 (0x0008 - 0x0000)
+struct BP_Melee_Tier1_Reskin_A_Actor_Character_C_GetNiagaraEyeSystem final
+{
+public:
+	class UNiagaraComponent*                      NewParam;                                          // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Melee_Tier1_Reskin_A_Actor_Character_C_GetNiagaraEyeSystem;
+
+// Function BP_Melee_Tier1_Reskin_A_Actor_Character.BP_Melee_Tier1_Reskin_A_Actor_Character_C.OnExitActorPool
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Melee_Tier1_Reskin_A_Actor_Character_C_OnExitActorPool final
+{
+public:
+	bool                                          CallFunc_IsActive_ReturnValue;                     // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Melee_Tier1_Reskin_A_Actor_Character_C_OnExitActorPool;
+
+// Function BP_Melee_Tier1_Reskin_A_Actor_Character.BP_Melee_Tier1_Reskin_A_Actor_Character_C.OnVisualVariationChanged
+// 0x0018 (0x0018 - 0x0000)
+struct BP_Melee_Tier1_Reskin_A_Actor_Character_C_OnVisualVariationChanged final
+{
+public:
+	struct FVector                                NewVisualVariationSeed;                            // 0x0000(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Melee_Tier1_Reskin_A_Actor_Character_C_OnVisualVariationChanged;
+
+// Function BP_Melee_Tier1_Reskin_A_Actor_Character.BP_Melee_Tier1_Reskin_A_Actor_Character_C.UserConstructionScript
+// 0x0002 (0x0002 - 0x0000)
+struct BP_Melee_Tier1_Reskin_A_Actor_Character_C_UserConstructionScript final
+{
+public:
+	bool                                          CallFunc_K2_AttachToComponent_ReturnValue;         // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_K2_AttachToComponent_ReturnValue_1;       // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Melee_Tier1_Reskin_A_Actor_Character_C_UserConstructionScript;
+
 // Function BP_Melee_Tier1_Reskin_A_Actor_Character.BP_Melee_Tier1_Reskin_A_Actor_Character_C.OnMeshVisibilityUpdated
 // 0x0001 (0x0001 - 0x0000)
 struct BP_Melee_Tier1_Reskin_A_Actor_Character_C_OnMeshVisibilityUpdated final
 {
 public:
-	bool                                          bIsMeshHidden_OnMeshVisibilityUpdated;             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bIsMeshHidden;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Melee_Tier1_Reskin_A_Actor_Character_C_OnMeshVisibilityUpdated;
 

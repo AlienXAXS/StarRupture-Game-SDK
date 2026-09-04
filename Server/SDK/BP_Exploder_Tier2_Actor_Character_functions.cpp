@@ -16,15 +16,186 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.TrySpawnInfectionEntity
-// (BlueprintCallable, BlueprintEvent)
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.DeactivateVFX
+// (Net, NetMulticast, BlueprintCallable, BlueprintEvent)
 
-void ABP_Exploder_Tier2_Actor_Character_C::TrySpawnInfectionEntity()
+void ABP_Exploder_Tier2_Actor_Character_C::DeactivateVFX()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "TrySpawnInfectionEntity");
+		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "DeactivateVFX");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.ExecuteUbergraph_BP_Exploder_Tier2_Actor_Character
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Exploder_Tier2_Actor_Character_C::ExecuteUbergraph_BP_Exploder_Tier2_Actor_Character(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "ExecuteUbergraph_BP_Exploder_Tier2_Actor_Character");
+
+	Params::BP_Exploder_Tier2_Actor_Character_C_ExecuteUbergraph_BP_Exploder_Tier2_Actor_Character Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.GetMovementFailsNum
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+int32 ABP_Exploder_Tier2_Actor_Character_C::GetMovementFailsNum()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "GetMovementFailsNum");
+
+	Params::BP_Exploder_Tier2_Actor_Character_C_GetMovementFailsNum Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.GetNiagaraEyeSystem
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UNiagaraComponent**               NewParam                                               (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Exploder_Tier2_Actor_Character_C::GetNiagaraEyeSystem(class UNiagaraComponent** NewParam)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "GetNiagaraEyeSystem");
+
+	Params::BP_Exploder_Tier2_Actor_Character_C_GetNiagaraEyeSystem Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (NewParam != nullptr)
+		*NewParam = Parms.NewParam;
+}
+
+
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.OnExitActorPool
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier2_Actor_Character_C::OnExitActorPool()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "OnExitActorPool");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.OnPrepareForPooling
+// (Event, Public, BlueprintEvent)
+
+void ABP_Exploder_Tier2_Actor_Character_C::OnPrepareForPooling()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "OnPrepareForPooling");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Exploder_Tier2_Actor_Character_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Exploder_Tier2_Actor_Character_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "ReceiveTick");
+
+	Params::BP_Exploder_Tier2_Actor_Character_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.RegisterMovementFailed
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// double                                  MovementFailedExpTime                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Exploder_Tier2_Actor_Character_C::RegisterMovementFailed(double MovementFailedExpTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "RegisterMovementFailed");
+
+	Params::BP_Exploder_Tier2_Actor_Character_C_RegisterMovementFailed Parms{};
+
+	Parms.MovementFailedExpTime = MovementFailedExpTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.StartActivationTimer
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier2_Actor_Character_C::StartActivationTimer()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "StartActivationTimer");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.StartExplosionTimer
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier2_Actor_Character_C::StartExplosionTimer()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "StartExplosionTimer");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -50,208 +221,17 @@ void ABP_Exploder_Tier2_Actor_Character_C::TryDestroyInfectionEntity(bool Instan
 }
 
 
-// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.StartExplosionTimer
-// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.TrySpawnInfectionEntity
+// (BlueprintCallable, BlueprintEvent)
 
-void ABP_Exploder_Tier2_Actor_Character_C::StartExplosionTimer()
+void ABP_Exploder_Tier2_Actor_Character_C::TrySpawnInfectionEntity()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "StartExplosionTimer");
+		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "TrySpawnInfectionEntity");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.StartActivationTimer
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Exploder_Tier2_Actor_Character_C::StartActivationTimer()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "StartActivationTimer");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.RegisterMovementFailed
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// double                                  MovementFailedExpTime                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Exploder_Tier2_Actor_Character_C::RegisterMovementFailed(double MovementFailedExpTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "RegisterMovementFailed");
-
-	Params::BP_Exploder_Tier2_Actor_Character_C_RegisterMovementFailed Parms{};
-
-	Parms.MovementFailedExpTime = MovementFailedExpTime;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaSeconds_ReceiveTick                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Exploder_Tier2_Actor_Character_C::ReceiveTick(float DeltaSeconds_ReceiveTick)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "ReceiveTick");
-
-	Params::BP_Exploder_Tier2_Actor_Character_C_ReceiveTick Parms{};
-
-	Parms.DeltaSeconds_ReceiveTick = DeltaSeconds_ReceiveTick;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Exploder_Tier2_Actor_Character_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.OnPrepareForPooling
-// (Event, Public, BlueprintEvent)
-
-void ABP_Exploder_Tier2_Actor_Character_C::OnPrepareForPooling()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "OnPrepareForPooling");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.OnExitActorPool
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Exploder_Tier2_Actor_Character_C::OnExitActorPool()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "OnExitActorPool");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.GetNiagaraEyeSystem
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UNiagaraComponent**               NewParam_GetNiagaraEyeSystem                           (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Exploder_Tier2_Actor_Character_C::GetNiagaraEyeSystem(class UNiagaraComponent** NewParam_GetNiagaraEyeSystem)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "GetNiagaraEyeSystem");
-
-	Params::BP_Exploder_Tier2_Actor_Character_C_GetNiagaraEyeSystem Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (NewParam_GetNiagaraEyeSystem != nullptr)
-		*NewParam_GetNiagaraEyeSystem = Parms.NewParam_GetNiagaraEyeSystem;
-}
-
-
-// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.GetMovementFailsNum
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-int32 ABP_Exploder_Tier2_Actor_Character_C::GetMovementFailsNum()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "GetMovementFailsNum");
-
-	Params::BP_Exploder_Tier2_Actor_Character_C_GetMovementFailsNum Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.ExecuteUbergraph_BP_Exploder_Tier2_Actor_Character
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Exploder_Tier2_Actor_Character_C::ExecuteUbergraph_BP_Exploder_Tier2_Actor_Character(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "ExecuteUbergraph_BP_Exploder_Tier2_Actor_Character");
-
-	Params::BP_Exploder_Tier2_Actor_Character_C_ExecuteUbergraph_BP_Exploder_Tier2_Actor_Character Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.DeactivateVFX
-// (Net, NetMulticast, BlueprintCallable, BlueprintEvent)
-
-void ABP_Exploder_Tier2_Actor_Character_C::DeactivateVFX()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "DeactivateVFX");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.ShouldSpawnHugeCollision
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-bool ABP_Exploder_Tier2_Actor_Character_C::ShouldSpawnHugeCollision() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "ShouldSpawnHugeCollision");
-
-	Params::BP_Exploder_Tier2_Actor_Character_C_ShouldSpawnHugeCollision Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
 }
 
 
@@ -268,6 +248,26 @@ bool ABP_Exploder_Tier2_Actor_Character_C::IsExploderDead() const
 		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "IsExploderDead");
 
 	Params::BP_Exploder_Tier2_Actor_Character_C_IsExploderDead Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.ShouldSpawnHugeCollision
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool ABP_Exploder_Tier2_Actor_Character_C::ShouldSpawnHugeCollision() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "ShouldSpawnHugeCollision");
+
+	Params::BP_Exploder_Tier2_Actor_Character_C_ShouldSpawnHugeCollision Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 

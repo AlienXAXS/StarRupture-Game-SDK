@@ -17,43 +17,39 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.ReceiveEndPlay
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.BP_OnDamageProtectionChanged
 // 0x0001 (0x0001 - 0x0000)
-struct BP_StandaloneInfectionCyst_C_ReceiveEndPlay final
+struct BP_StandaloneInfectionCyst_C_BP_OnDamageProtectionChanged final
 {
 public:
-	EEndPlayReason                                EndPlayReason_ReceiveEndPlay;                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsActive;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_StandaloneInfectionCyst_C_ReceiveEndPlay;
+DUMPER7_ASSERTS_BP_StandaloneInfectionCyst_C_BP_OnDamageProtectionChanged;
 
-// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.OnGrowthProgress
-// 0x0004 (0x0004 - 0x0000)
-struct BP_StandaloneInfectionCyst_C_OnGrowthProgress final
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.CalculateImmunityProgressFromTimers
+// 0x0078 (0x0078 - 0x0000)
+struct BP_StandaloneInfectionCyst_C_CalculateImmunityProgressFromTimers final
 {
 public:
-	float                                         Progress_OnGrowthProgress;                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        Progress;                                          // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        TimerLocal;                                        // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Divide_DoubleDouble_ReturnValue;          // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Subtract_DoubleDouble_ReturnValue;        // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Divide_DoubleDouble_ReturnValue_1;        // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_SelectFloat_ReturnValue;                  // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_GetTimeSeconds_ReturnValue;               // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_SelectFloat_ReturnValue_1;                // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_LessEqual_DoubleDouble_ReturnValue;       // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_Subtract_DoubleDouble_ReturnValue_1;      // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_NotEqual_DoubleDouble_ReturnValue;        // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_Divide_DoubleDouble_B_ImplicitCast;       // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Divide_DoubleDouble_B_ImplicitCast_1;     // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_SelectFloat_B_ImplicitCast;               // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_SelectFloat_A_ImplicitCast;               // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_StandaloneInfectionCyst_C_OnGrowthProgress;
-
-// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.OnGrowthChanged
-// 0x0008 (0x0008 - 0x0000)
-struct BP_StandaloneInfectionCyst_C_OnGrowthChanged final
-{
-public:
-	double                                        Progress;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_StandaloneInfectionCyst_C_OnGrowthChanged;
-
-// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.K2_OnDamageTaken_1
-// 0x0110 (0x0110 - 0x0000)
-struct BP_StandaloneInfectionCyst_C_K2_OnDamageTaken_1 final
-{
-public:
-	class AActor*                                 InInstigator;                                      // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FHitResult                             HitResult;                                         // 0x0008(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	float                                         InDamage;                                          // 0x0108(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_StandaloneInfectionCyst_C_K2_OnDamageTaken_1;
+DUMPER7_ASSERTS_BP_StandaloneInfectionCyst_C_CalculateImmunityProgressFromTimers;
 
 // Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.ExecuteUbergraph_BP_StandaloneInfectionCyst
 // 0x0430 (0x0430 - 0x0000)
@@ -141,39 +137,43 @@ public:
 };
 DUMPER7_ASSERTS_BP_StandaloneInfectionCyst_C_ExecuteUbergraph_BP_StandaloneInfectionCyst;
 
-// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.CalculateImmunityProgressFromTimers
-// 0x0078 (0x0078 - 0x0000)
-struct BP_StandaloneInfectionCyst_C_CalculateImmunityProgressFromTimers final
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.K2_OnDamageTaken_1
+// 0x0110 (0x0110 - 0x0000)
+struct BP_StandaloneInfectionCyst_C_K2_OnDamageTaken_1 final
 {
 public:
-	double                                        Progress;                                          // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        TimerLocal;                                        // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Divide_DoubleDouble_ReturnValue;          // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Subtract_DoubleDouble_ReturnValue;        // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Divide_DoubleDouble_ReturnValue_1;        // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_SelectFloat_ReturnValue;                  // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_GetTimeSeconds_ReturnValue;               // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_SelectFloat_ReturnValue_1;                // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_LessEqual_DoubleDouble_ReturnValue;       // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        CallFunc_Subtract_DoubleDouble_ReturnValue_1;      // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_NotEqual_DoubleDouble_ReturnValue;        // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        CallFunc_Divide_DoubleDouble_B_ImplicitCast;       // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Divide_DoubleDouble_B_ImplicitCast_1;     // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_SelectFloat_B_ImplicitCast;               // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_SelectFloat_A_ImplicitCast;               // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 InInstigator;                                      // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             HitResult;                                         // 0x0008(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	float                                         InDamage;                                          // 0x0108(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_StandaloneInfectionCyst_C_CalculateImmunityProgressFromTimers;
+DUMPER7_ASSERTS_BP_StandaloneInfectionCyst_C_K2_OnDamageTaken_1;
 
-// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.BP_OnDamageProtectionChanged
-// 0x0001 (0x0001 - 0x0000)
-struct BP_StandaloneInfectionCyst_C_BP_OnDamageProtectionChanged final
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.OnGrowthChanged
+// 0x0008 (0x0008 - 0x0000)
+struct BP_StandaloneInfectionCyst_C_OnGrowthChanged final
 {
 public:
-	bool                                          IsActive_BP_OnDamageProtectionChanged;             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        Progress;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_StandaloneInfectionCyst_C_BP_OnDamageProtectionChanged;
+DUMPER7_ASSERTS_BP_StandaloneInfectionCyst_C_OnGrowthChanged;
+
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.OnGrowthProgress
+// 0x0004 (0x0004 - 0x0000)
+struct BP_StandaloneInfectionCyst_C_OnGrowthProgress final
+{
+public:
+	float                                         Progress;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_StandaloneInfectionCyst_C_OnGrowthProgress;
+
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.ReceiveEndPlay
+// 0x0001 (0x0001 - 0x0000)
+struct BP_StandaloneInfectionCyst_C_ReceiveEndPlay final
+{
+public:
+	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_StandaloneInfectionCyst_C_ReceiveEndPlay;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

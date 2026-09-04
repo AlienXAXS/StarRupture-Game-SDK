@@ -31,10 +31,10 @@ public:
 	bool                                          WasWorking;                                        // 0x0780(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay);
-	void OnConstructionFinished();
-	void OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged);
 	void ExecuteUbergraph_BP_SonicDrill(int32 EntryPoint);
+	void OnBuildingStateChanged(ECrBuildingState InState);
+	void OnConstructionFinished();
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 
 	void GetBuildingMeshes(class UMeshComponent** MainBody, TArray<class UMeshComponent*>* AdditionalMeshes) const;
 

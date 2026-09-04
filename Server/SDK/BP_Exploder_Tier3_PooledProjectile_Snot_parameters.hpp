@@ -18,27 +18,41 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.SpawnDecal
-// 0x0170 (0x0170 - 0x0000)
-struct BP_Exploder_Tier3_PooledProjectile_Snot_C_SpawnDecal final
+// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature
+// 0x0120 (0x0120 - 0x0000)
+struct BP_Exploder_Tier3_PooledProjectile_Snot_C_BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature final
 {
 public:
-	struct FTransform                             DecalRelativeTransform;                            // 0x0000(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UDecalComponent*                        CallFunc_AddComponentByClass_ReturnValue;          // 0x0060(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	struct FHitResult                             CallFunc_K2_SetRelativeRotation_SweepHitResult;    // 0x0068(0x0100)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	float                                         CallFunc_SetFadeOut_Duration_ImplicitCast;         // 0x0168(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_SetFadeOut_StartDelay_ImplicitCast;       // 0x016C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bFromSweep;                                        // 0x001C(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             SweepResult;                                       // 0x0020(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
 };
-DUMPER7_ASSERTS_BP_Exploder_Tier3_PooledProjectile_Snot_C_SpawnDecal;
+DUMPER7_ASSERTS_BP_Exploder_Tier3_PooledProjectile_Snot_C_BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature;
 
-// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.OnProjectileShot
-// 0x0060 (0x0060 - 0x0000)
-struct BP_Exploder_Tier3_PooledProjectile_Snot_C_OnProjectileShot final
+// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature
+// 0x0020 (0x0020 - 0x0000)
+struct BP_Exploder_Tier3_PooledProjectile_Snot_C_BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature final
 {
 public:
-	struct FCrAiProjectileParameters              InProjectileParameters_OnProjectileShot;           // 0x0000(0x0060)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_Exploder_Tier3_PooledProjectile_Snot_C_OnProjectileShot;
+DUMPER7_ASSERTS_BP_Exploder_Tier3_PooledProjectile_Snot_C_BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature;
+
+// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.DestroyDecal
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Exploder_Tier3_PooledProjectile_Snot_C_DestroyDecal final
+{
+public:
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Exploder_Tier3_PooledProjectile_Snot_C_DestroyDecal;
 
 // Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectile_Snot
 // 0x0208 (0x0208 - 0x0000)
@@ -85,66 +99,27 @@ public:
 };
 DUMPER7_ASSERTS_BP_Exploder_Tier3_PooledProjectile_Snot_C_ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectile_Snot;
 
-// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.DestroyDecal
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Exploder_Tier3_PooledProjectile_Snot_C_DestroyDecal final
+// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.OnProjectileShot
+// 0x0060 (0x0060 - 0x0000)
+struct BP_Exploder_Tier3_PooledProjectile_Snot_C_OnProjectileShot final
 {
 public:
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FCrAiProjectileParameters              InProjectileParameters;                            // 0x0000(0x0060)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
 };
-DUMPER7_ASSERTS_BP_Exploder_Tier3_PooledProjectile_Snot_C_DestroyDecal;
+DUMPER7_ASSERTS_BP_Exploder_Tier3_PooledProjectile_Snot_C_OnProjectileShot;
 
-// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature
-// 0x0020 (0x0020 - 0x0000)
-struct BP_Exploder_Tier3_PooledProjectile_Snot_C_BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature final
+// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.SpawnDecal
+// 0x0170 (0x0170 - 0x0000)
+struct BP_Exploder_Tier3_PooledProjectile_Snot_C_SpawnDecal final
 {
 public:
-	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FTransform                             DecalRelativeTransform;                            // 0x0000(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UDecalComponent*                        CallFunc_AddComponentByClass_ReturnValue;          // 0x0060(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             CallFunc_K2_SetRelativeRotation_SweepHitResult;    // 0x0068(0x0100)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	float                                         CallFunc_SetFadeOut_Duration_ImplicitCast;         // 0x0168(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_SetFadeOut_StartDelay_ImplicitCast;       // 0x016C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_Exploder_Tier3_PooledProjectile_Snot_C_BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature;
-
-// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature
-// 0x0120 (0x0120 - 0x0000)
-struct BP_Exploder_Tier3_PooledProjectile_Snot_C_BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature final
-{
-public:
-	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bFromSweep;                                        // 0x001C(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FHitResult                             SweepResult;                                       // 0x0020(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-};
-DUMPER7_ASSERTS_BP_Exploder_Tier3_PooledProjectile_Snot_C_BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature;
-
-// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.ShouldForceReturnToPool
-// 0x0028 (0x0028 - 0x0000)
-struct BP_Exploder_Tier3_PooledProjectile_Snot_C_ShouldForceReturnToPool final
-{
-public:
-	bool                                          ReturnValue_ShouldForceReturnToPool;               // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        CallFunc_GetTimeSeconds_ReturnValue;               // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Greater_DoubleDouble_ReturnValue;         // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        CallFunc_Subtract_DoubleDouble_ReturnValue;        // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Greater_DoubleDouble_ReturnValue_1;       // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Exploder_Tier3_PooledProjectile_Snot_C_ShouldForceReturnToPool;
-
-// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.CanReturnToPoolAfterHit
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Exploder_Tier3_PooledProjectile_Snot_C_CanReturnToPoolAfterHit final
-{
-public:
-	bool                                          ReturnValue_CanReturnToPoolAfterHit;               // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Exploder_Tier3_PooledProjectile_Snot_C_CanReturnToPoolAfterHit;
+DUMPER7_ASSERTS_BP_Exploder_Tier3_PooledProjectile_Snot_C_SpawnDecal;
 
 // Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.CanReturnToPool
 // 0x0028 (0x0028 - 0x0000)
@@ -161,6 +136,31 @@ public:
 	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Exploder_Tier3_PooledProjectile_Snot_C_CanReturnToPool;
+
+// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.CanReturnToPoolAfterHit
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Exploder_Tier3_PooledProjectile_Snot_C_CanReturnToPoolAfterHit final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Exploder_Tier3_PooledProjectile_Snot_C_CanReturnToPoolAfterHit;
+
+// Function BP_Exploder_Tier3_PooledProjectile_Snot.BP_Exploder_Tier3_PooledProjectile_Snot_C.ShouldForceReturnToPool
+// 0x0028 (0x0028 - 0x0000)
+struct BP_Exploder_Tier3_PooledProjectile_Snot_C_ShouldForceReturnToPool final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_GetTimeSeconds_ReturnValue;               // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Greater_DoubleDouble_ReturnValue;         // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_Subtract_DoubleDouble_ReturnValue;        // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Greater_DoubleDouble_ReturnValue_1;       // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Exploder_Tier3_PooledProjectile_Snot_C_ShouldForceReturnToPool;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

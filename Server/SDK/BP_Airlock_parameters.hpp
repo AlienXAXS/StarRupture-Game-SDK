@@ -22,7 +22,7 @@ SDK_PARAM_NAMESPACE_START
 struct BP_Airlock_C_PostPlayBuildingEffect final
 {
 public:
-	bool                                          bWasBuildingEffectPlayed;                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bWasBuildingEffectPlayed_PostPlayBuildingEffect;   // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Airlock_C_PostPlayBuildingEffect;
 
@@ -31,7 +31,7 @@ DUMPER7_ASSERTS_BP_Airlock_C_PostPlayBuildingEffect;
 struct BP_Airlock_C_PlayInteractionUnSuccessfulSound final
 {
 public:
-	EDoorState                                    DoorState;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EDoorState                                    DoorState_PlayInteractionUnSuccessfulSound;        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Airlock_C_PlayInteractionUnSuccessfulSound;
 
@@ -40,7 +40,7 @@ DUMPER7_ASSERTS_BP_Airlock_C_PlayInteractionUnSuccessfulSound;
 struct BP_Airlock_C_OnOpenStateChanged final
 {
 public:
-	bool                                          bInOpen;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bInOpen_OnOpenStateChanged;                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Airlock_C_OnOpenStateChanged;
 
@@ -161,7 +161,7 @@ DUMPER7_ASSERTS_BP_Airlock_C_ExecuteUbergraph_BP_Airlock;
 struct BP_Airlock_C_GetAirlockInteriorComponent final
 {
 public:
-	const class UShapeComponent*                  ReturnValue;                                       // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	const class UShapeComponent*                  ReturnValue_GetAirlockInteriorComponent;           // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Airlock_C_GetAirlockInteriorComponent;
 
@@ -170,7 +170,7 @@ DUMPER7_ASSERTS_BP_Airlock_C_GetAirlockInteriorComponent;
 struct BP_Airlock_C_GetAirlockHabitatExteriorComponent final
 {
 public:
-	const class UShapeComponent*                  ReturnValue;                                       // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	const class UShapeComponent*                  ReturnValue_GetAirlockHabitatExteriorComponent;    // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Airlock_C_GetAirlockHabitatExteriorComponent;
 

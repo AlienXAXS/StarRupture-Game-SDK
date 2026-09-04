@@ -16,103 +16,15 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Exploder_Tier3_Prototype_CystActor.BP_Exploder_Tier3_Prototype_CystActor_C.SpawnSpline
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void ABP_Exploder_Tier3_Prototype_CystActor_C::SpawnSpline()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystActor_C", "SpawnSpline");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier3_Prototype_CystActor.BP_Exploder_Tier3_Prototype_CystActor_C.SetImmortalForDuration
+// Function BP_Exploder_Tier3_Prototype_CystActor.BP_Exploder_Tier3_Prototype_CystActor_C.DisableImmortal
 // (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// double                                  Duration                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Exploder_Tier3_Prototype_CystActor_C::SetImmortalForDuration(double Duration)
+void ABP_Exploder_Tier3_Prototype_CystActor_C::DisableImmortal()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystActor_C", "SetImmortalForDuration");
-
-	Params::BP_Exploder_Tier3_Prototype_CystActor_C_SetImmortalForDuration Parms{};
-
-	Parms.Duration = Duration;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Exploder_Tier3_Prototype_CystActor.BP_Exploder_Tier3_Prototype_CystActor_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaSeconds_ReceiveTick                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Exploder_Tier3_Prototype_CystActor_C::ReceiveTick(float DeltaSeconds_ReceiveTick)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystActor_C", "ReceiveTick");
-
-	Params::BP_Exploder_Tier3_Prototype_CystActor_C_ReceiveTick Parms{};
-
-	Parms.DeltaSeconds_ReceiveTick = DeltaSeconds_ReceiveTick;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Exploder_Tier3_Prototype_CystActor.BP_Exploder_Tier3_Prototype_CystActor_C.ReceiveEndPlay
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// EEndPlayReason                          EndPlayReason_ReceiveEndPlay                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Exploder_Tier3_Prototype_CystActor_C::ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystActor_C", "ReceiveEndPlay");
-
-	Params::BP_Exploder_Tier3_Prototype_CystActor_C_ReceiveEndPlay Parms{};
-
-	Parms.EndPlayReason_ReceiveEndPlay = EndPlayReason_ReceiveEndPlay;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Exploder_Tier3_Prototype_CystActor.BP_Exploder_Tier3_Prototype_CystActor_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Exploder_Tier3_Prototype_CystActor_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystActor_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier3_Prototype_CystActor.BP_Exploder_Tier3_Prototype_CystActor_C.OnRep_IsImmortal
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_Exploder_Tier3_Prototype_CystActor_C::OnRep_IsImmortal()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystActor_C", "OnRep_IsImmortal");
+		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystActor_C", "DisableImmortal");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -138,15 +50,103 @@ void ABP_Exploder_Tier3_Prototype_CystActor_C::ExecuteUbergraph_BP_Exploder_Tier
 }
 
 
-// Function BP_Exploder_Tier3_Prototype_CystActor.BP_Exploder_Tier3_Prototype_CystActor_C.DisableImmortal
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function BP_Exploder_Tier3_Prototype_CystActor.BP_Exploder_Tier3_Prototype_CystActor_C.OnRep_IsImmortal
+// (BlueprintCallable, BlueprintEvent)
 
-void ABP_Exploder_Tier3_Prototype_CystActor_C::DisableImmortal()
+void ABP_Exploder_Tier3_Prototype_CystActor_C::OnRep_IsImmortal()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystActor_C", "DisableImmortal");
+		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystActor_C", "OnRep_IsImmortal");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier3_Prototype_CystActor.BP_Exploder_Tier3_Prototype_CystActor_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Exploder_Tier3_Prototype_CystActor_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystActor_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier3_Prototype_CystActor.BP_Exploder_Tier3_Prototype_CystActor_C.ReceiveEndPlay
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Exploder_Tier3_Prototype_CystActor_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystActor_C", "ReceiveEndPlay");
+
+	Params::BP_Exploder_Tier3_Prototype_CystActor_C_ReceiveEndPlay Parms{};
+
+	Parms.EndPlayReason = EndPlayReason;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Exploder_Tier3_Prototype_CystActor.BP_Exploder_Tier3_Prototype_CystActor_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Exploder_Tier3_Prototype_CystActor_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystActor_C", "ReceiveTick");
+
+	Params::BP_Exploder_Tier3_Prototype_CystActor_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Exploder_Tier3_Prototype_CystActor.BP_Exploder_Tier3_Prototype_CystActor_C.SetImmortalForDuration
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// double                                  Duration                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Exploder_Tier3_Prototype_CystActor_C::SetImmortalForDuration(double Duration)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystActor_C", "SetImmortalForDuration");
+
+	Params::BP_Exploder_Tier3_Prototype_CystActor_C_SetImmortalForDuration Parms{};
+
+	Parms.Duration = Duration;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Exploder_Tier3_Prototype_CystActor.BP_Exploder_Tier3_Prototype_CystActor_C.SpawnSpline
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier3_Prototype_CystActor_C::SpawnSpline()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystActor_C", "SpawnSpline");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

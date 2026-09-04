@@ -14,16 +14,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BTTask_Exploder_Tier2_Actor_RegisterMovementFailed.BTTask_Exploder_Tier2_Actor_RegisterMovementFailed_C.ReceiveExecuteAI
-// 0x0010 (0x0010 - 0x0000)
-struct BTTask_Exploder_Tier2_Actor_RegisterMovementFailed_C_ReceiveExecuteAI final
-{
-public:
-	class AAIController*                          OwnerController_ReceiveExecuteAI;                  // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  ControlledPawn_ReceiveExecuteAI;                   // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BTTask_Exploder_Tier2_Actor_RegisterMovementFailed_C_ReceiveExecuteAI;
-
 // Function BTTask_Exploder_Tier2_Actor_RegisterMovementFailed.BTTask_Exploder_Tier2_Actor_RegisterMovementFailed_C.ExecuteUbergraph_BTTask_Exploder_Tier2_Actor_RegisterMovementFailed
 // 0x0040 (0x0040 - 0x0000)
 struct BTTask_Exploder_Tier2_Actor_RegisterMovementFailed_C_ExecuteUbergraph_BTTask_Exploder_Tier2_Actor_RegisterMovementFailed final
@@ -42,6 +32,16 @@ public:
 	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0030(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BTTask_Exploder_Tier2_Actor_RegisterMovementFailed_C_ExecuteUbergraph_BTTask_Exploder_Tier2_Actor_RegisterMovementFailed;
+
+// Function BTTask_Exploder_Tier2_Actor_RegisterMovementFailed.BTTask_Exploder_Tier2_Actor_RegisterMovementFailed_C.ReceiveExecuteAI
+// 0x0010 (0x0010 - 0x0000)
+struct BTTask_Exploder_Tier2_Actor_RegisterMovementFailed_C_ReceiveExecuteAI final
+{
+public:
+	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BTTask_Exploder_Tier2_Actor_RegisterMovementFailed_C_ReceiveExecuteAI;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

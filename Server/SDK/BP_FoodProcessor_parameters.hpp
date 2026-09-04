@@ -16,24 +16,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_FoodProcessor.BP_FoodProcessor_C.OnUIOpened
-// 0x0001 (0x0001 - 0x0000)
-struct BP_FoodProcessor_C_OnUIOpened final
-{
-public:
-	bool                                          bOpened;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_FoodProcessor_C_OnUIOpened;
-
-// Function BP_FoodProcessor.BP_FoodProcessor_C.OnBuildingStateChanged
-// 0x0001 (0x0001 - 0x0000)
-struct BP_FoodProcessor_C_OnBuildingStateChanged final
-{
-public:
-	ECrBuildingState                              InState;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_FoodProcessor_C_OnBuildingStateChanged;
-
 // Function BP_FoodProcessor.BP_FoodProcessor_C.ExecuteUbergraph_BP_FoodProcessor
 // 0x0050 (0x0050 - 0x0000)
 struct BP_FoodProcessor_C_ExecuteUbergraph_BP_FoodProcessor final
@@ -58,6 +40,24 @@ public:
 	bool                                          K2Node_Event_bOpened;                              // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_FoodProcessor_C_ExecuteUbergraph_BP_FoodProcessor;
+
+// Function BP_FoodProcessor.BP_FoodProcessor_C.OnBuildingStateChanged
+// 0x0001 (0x0001 - 0x0000)
+struct BP_FoodProcessor_C_OnBuildingStateChanged final
+{
+public:
+	ECrBuildingState                              InState;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_FoodProcessor_C_OnBuildingStateChanged;
+
+// Function BP_FoodProcessor.BP_FoodProcessor_C.OnUIOpened
+// 0x0001 (0x0001 - 0x0000)
+struct BP_FoodProcessor_C_OnUIOpened final
+{
+public:
+	bool                                          bOpened;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_FoodProcessor_C_OnUIOpened;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

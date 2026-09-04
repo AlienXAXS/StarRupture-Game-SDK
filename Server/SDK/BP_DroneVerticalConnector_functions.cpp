@@ -16,26 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_DroneVerticalConnector.BP_DroneVerticalConnector_C.OnTierSet
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// int32                                   NewTier_OnTierSet                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_DroneVerticalConnector_C::OnTierSet(int32 NewTier_OnTierSet)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneVerticalConnector_C", "OnTierSet");
-
-	Params::BP_DroneVerticalConnector_C_OnTierSet Parms{};
-
-	Parms.NewTier_OnTierSet = NewTier_OnTierSet;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_DroneVerticalConnector.BP_DroneVerticalConnector_C.ExecuteUbergraph_BP_DroneVerticalConnector
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -51,6 +31,26 @@ void ABP_DroneVerticalConnector_C::ExecuteUbergraph_BP_DroneVerticalConnector(in
 	Params::BP_DroneVerticalConnector_C_ExecuteUbergraph_BP_DroneVerticalConnector Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_DroneVerticalConnector.BP_DroneVerticalConnector_C.OnTierSet
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   NewTier                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_DroneVerticalConnector_C::OnTierSet(int32 NewTier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_DroneVerticalConnector_C", "OnTierSet");
+
+	Params::BP_DroneVerticalConnector_C_OnTierSet Parms{};
+
+	Parms.NewTier = NewTier;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

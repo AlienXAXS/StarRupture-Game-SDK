@@ -16,57 +16,17 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_MechanicalDrillTier2.BP_MechanicalDrillTier2_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_MechanicalDrillTier2.BP_MechanicalDrillTier2_C.CustomEvent
+// (BlueprintCallable, BlueprintEvent)
 
-void ABP_MechanicalDrillTier2_C::ReceiveBeginPlay()
+void ABP_MechanicalDrillTier2_C::CustomEvent()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MechanicalDrillTier2_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_MechanicalDrillTier2_C", "CustomEvent");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_MechanicalDrillTier2.BP_MechanicalDrillTier2_C.OnResourceDetected
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// TSubclassOf<class UCrItemDataBase>      OreItemClass_OnResourceDetected                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-
-void ABP_MechanicalDrillTier2_C::OnResourceDetected(TSubclassOf<class UCrItemDataBase> OreItemClass_OnResourceDetected)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MechanicalDrillTier2_C", "OnResourceDetected");
-
-	Params::BP_MechanicalDrillTier2_C_OnResourceDetected Parms{};
-
-	Parms.OreItemClass_OnResourceDetected = OreItemClass_OnResourceDetected;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_MechanicalDrillTier2.BP_MechanicalDrillTier2_C.OnBuildingStateChanged
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// ECrBuildingState                        InState_OnBuildingStateChanged                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_MechanicalDrillTier2_C::OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MechanicalDrillTier2_C", "OnBuildingStateChanged");
-
-	Params::BP_MechanicalDrillTier2_C_OnBuildingStateChanged Parms{};
-
-	Parms.InState_OnBuildingStateChanged = InState_OnBuildingStateChanged;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -90,15 +50,55 @@ void ABP_MechanicalDrillTier2_C::ExecuteUbergraph_BP_MechanicalDrillTier2(int32 
 }
 
 
-// Function BP_MechanicalDrillTier2.BP_MechanicalDrillTier2_C.CustomEvent
-// (BlueprintCallable, BlueprintEvent)
+// Function BP_MechanicalDrillTier2.BP_MechanicalDrillTier2_C.OnBuildingStateChanged
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_MechanicalDrillTier2_C::CustomEvent()
+void ABP_MechanicalDrillTier2_C::OnBuildingStateChanged(ECrBuildingState InState)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MechanicalDrillTier2_C", "CustomEvent");
+		Func = Class->GetFunction("BP_MechanicalDrillTier2_C", "OnBuildingStateChanged");
+
+	Params::BP_MechanicalDrillTier2_C_OnBuildingStateChanged Parms{};
+
+	Parms.InState = InState;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_MechanicalDrillTier2.BP_MechanicalDrillTier2_C.OnResourceDetected
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// TSubclassOf<class UCrItemDataBase>      OreItemClass                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+
+void ABP_MechanicalDrillTier2_C::OnResourceDetected(TSubclassOf<class UCrItemDataBase> OreItemClass)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MechanicalDrillTier2_C", "OnResourceDetected");
+
+	Params::BP_MechanicalDrillTier2_C_OnResourceDetected Parms{};
+
+	Parms.OreItemClass = OreItemClass;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_MechanicalDrillTier2.BP_MechanicalDrillTier2_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_MechanicalDrillTier2_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MechanicalDrillTier2_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

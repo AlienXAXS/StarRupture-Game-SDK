@@ -23,8 +23,8 @@ public:
 	class FName                                   Key_Name;                                          // 0x0030(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	bool Received_NotifyEnd(class USkeletalMeshComponent* MeshComp_Received_NotifyEnd, class UAnimSequenceBase* Animation_Received_NotifyEnd, const struct FAnimNotifyEventReference& EventReference_Received_NotifyEnd) const;
-	bool Received_NotifyBegin(class USkeletalMeshComponent* MeshComp_Received_NotifyBegin, class UAnimSequenceBase* Animation_Received_NotifyBegin, float TotalDuration_Received_NotifyBegin, const struct FAnimNotifyEventReference& EventReference_Received_NotifyBegin) const;
+	bool Received_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration, const struct FAnimNotifyEventReference& EventReference) const;
+	bool Received_NotifyEnd(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, const struct FAnimNotifyEventReference& EventReference) const;
 
 public:
 	static class UClass* StaticClass()

@@ -21,9 +21,9 @@ SDK_PARAM_NAMESPACE_START
 struct EQS_Exploder_Tier3_Context_ExcludedAndCystsLocations_C_ProvideLocationsSet final
 {
 public:
-	class UObject*                                QuerierObject_ProvideLocationsSet;                 // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 QuerierActor_ProvideLocationsSet;                  // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	TArray<struct FVector>                        ResultingLocationSet_ProvideLocationsSet;          // 0x0010(0x0010)(Parm, OutParm)
+	class UObject*                                QuerierObject;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 QuerierActor;                                      // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TArray<struct FVector>                        ResultingLocationSet;                              // 0x0010(0x0010)(Parm, OutParm)
 	TArray<struct FVector>                        LResult;                                           // 0x0020(0x0010)(Edit, BlueprintVisible)
 	class ABP_Exploder_Tier3_Actor_Character_C*   K2Node_DynamicCast_AsBP_Exploder_Tier_3_Actor_Character; // 0x0030(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

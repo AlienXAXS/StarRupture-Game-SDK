@@ -16,6 +16,15 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function ABP_Exploder_Tier3_Prototype_Actor.ABP_Exploder_Tier3_Prototype_Actor_C.AnimGraph
+// 0x0010 (0x0010 - 0x0000)
+struct ABP_Exploder_Tier3_Prototype_Actor_C_AnimGraph final
+{
+public:
+	struct FPoseLink                              AnimGraph_0;                                       // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
+};
+DUMPER7_ASSERTS_ABP_Exploder_Tier3_Prototype_Actor_C_AnimGraph;
+
 // Function ABP_Exploder_Tier3_Prototype_Actor.ABP_Exploder_Tier3_Prototype_Actor_C.ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor
 // 0x0038 (0x0038 - 0x0000)
 struct ABP_Exploder_Tier3_Prototype_Actor_C_ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor final
@@ -32,15 +41,6 @@ public:
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_ABP_Exploder_Tier3_Prototype_Actor_C_ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor;
-
-// Function ABP_Exploder_Tier3_Prototype_Actor.ABP_Exploder_Tier3_Prototype_Actor_C.AnimGraph
-// 0x0010 (0x0010 - 0x0000)
-struct ABP_Exploder_Tier3_Prototype_Actor_C_AnimGraph final
-{
-public:
-	struct FPoseLink                              AnimGraph;                                         // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
-};
-DUMPER7_ASSERTS_ABP_Exploder_Tier3_Prototype_Actor_C_AnimGraph;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

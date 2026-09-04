@@ -16,74 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_GasExtractor.BP_GasExtractor_C.SetupSkeletalMesh
-// (Event, Public, BlueprintEvent)
-
-void ABP_GasExtractor_C::SetupSkeletalMesh()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GasExtractor_C", "SetupSkeletalMesh");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_GasExtractor.BP_GasExtractor_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaSeconds_ReceiveTick                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_GasExtractor_C::ReceiveTick(float DeltaSeconds_ReceiveTick)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GasExtractor_C", "ReceiveTick");
-
-	Params::BP_GasExtractor_C_ReceiveTick Parms{};
-
-	Parms.DeltaSeconds_ReceiveTick = DeltaSeconds_ReceiveTick;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_GasExtractor.BP_GasExtractor_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_GasExtractor_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GasExtractor_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_GasExtractor.BP_GasExtractor_C.OnBuildingStateChanged
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// ECrBuildingState                        InState_OnBuildingStateChanged                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_GasExtractor_C::OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GasExtractor_C", "OnBuildingStateChanged");
-
-	Params::BP_GasExtractor_C_OnBuildingStateChanged Parms{};
-
-	Parms.InState_OnBuildingStateChanged = InState_OnBuildingStateChanged;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_GasExtractor.BP_GasExtractor_C.ExecuteUbergraph_BP_GasExtractor
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -104,14 +36,82 @@ void ABP_GasExtractor_C::ExecuteUbergraph_BP_GasExtractor(int32 EntryPoint)
 }
 
 
+// Function BP_GasExtractor.BP_GasExtractor_C.OnBuildingStateChanged
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_GasExtractor_C::OnBuildingStateChanged(ECrBuildingState InState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GasExtractor_C", "OnBuildingStateChanged");
+
+	Params::BP_GasExtractor_C_OnBuildingStateChanged Parms{};
+
+	Parms.InState = InState;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_GasExtractor.BP_GasExtractor_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_GasExtractor_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GasExtractor_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GasExtractor.BP_GasExtractor_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_GasExtractor_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GasExtractor_C", "ReceiveTick");
+
+	Params::BP_GasExtractor_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_GasExtractor.BP_GasExtractor_C.SetupSkeletalMesh
+// (Event, Public, BlueprintEvent)
+
+void ABP_GasExtractor_C::SetupSkeletalMesh()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GasExtractor_C", "SetupSkeletalMesh");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_GasExtractor.BP_GasExtractor_C.Get Meshes
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// class USceneComponent*                  Static                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-// class USceneComponent*                  Animated                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class USceneComponent*                  Static_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class USceneComponent*                  Animated_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // TArray<class UMeshComponent*>*          NewParam                                               (Parm, OutParm, ContainsInstancedReference)
 
-void ABP_GasExtractor_C::Get_Meshes(class USceneComponent* Static, class USceneComponent* Animated, TArray<class UMeshComponent*>* NewParam) const
+void ABP_GasExtractor_C::Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Animated_0, TArray<class UMeshComponent*>* NewParam) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -120,8 +120,8 @@ void ABP_GasExtractor_C::Get_Meshes(class USceneComponent* Static, class USceneC
 
 	Params::BP_GasExtractor_C_Get_Meshes Parms{};
 
-	Parms.Static = Static;
-	Parms.Animated = Animated;
+	Parms.Static_0 = Static_0;
+	Parms.Animated_0 = Animated_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 

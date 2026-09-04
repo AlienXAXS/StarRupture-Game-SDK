@@ -51,13 +51,13 @@ public:
 	int32                                         PrimitiveDataAnimTimeIdx;                          // 0x0828(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void SetupSkeletalMesh();
-	void ReceiveTick(float DeltaSeconds_ReceiveTick);
-	void ReceiveBeginPlay();
-	void OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged);
 	void ExecuteUbergraph_BP_GasExtractor(int32 EntryPoint);
+	void OnBuildingStateChanged(ECrBuildingState InState);
+	void ReceiveBeginPlay();
+	void ReceiveTick(float DeltaSeconds);
+	void SetupSkeletalMesh();
 
-	void Get_Meshes(class USceneComponent* Static, class USceneComponent* Animated, TArray<class UMeshComponent*>* NewParam) const;
+	void Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Animated_0, TArray<class UMeshComponent*>* NewParam) const;
 
 public:
 	static class UClass* StaticClass()

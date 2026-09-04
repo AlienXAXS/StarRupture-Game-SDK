@@ -42,14 +42,14 @@ public:
 	class UTimelineComponent*                     Timeline;                                          // 0x07C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void Timeline__UpdateFunc();
-	void Timeline__FinishedFunc();
-	void ReceiveBeginPlay();
-	void OnUIOpened(bool bOpened);
-	void OnItemCraftingComplete();
-	void OnBuildingStateChanged(ECrBuildingState InState);
-	void ExecuteUbergraph_BP_FoodProcessor(int32 EntryPoint);
 	void CustomEvent();
+	void ExecuteUbergraph_BP_FoodProcessor(int32 EntryPoint);
+	void OnBuildingStateChanged(ECrBuildingState InState);
+	void OnItemCraftingComplete();
+	void OnUIOpened(bool bOpened);
+	void ReceiveBeginPlay();
+	void Timeline__FinishedFunc();
+	void Timeline__UpdateFunc();
 
 public:
 	static class UClass* StaticClass()

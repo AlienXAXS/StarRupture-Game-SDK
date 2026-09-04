@@ -16,71 +16,57 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Melee_Tier3_LongAoE_SlamAttack.BP_Melee_Tier3_LongAoE_SlamAttack_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_Melee_Tier3_LongAoE_SlamAttack.BP_Melee_Tier3_LongAoE_SlamAttack_C.DecalDarkTimeline__FinishedFunc
+// (BlueprintEvent)
 
-void ABP_Melee_Tier3_LongAoE_SlamAttack_C::ReceiveBeginPlay()
+void ABP_Melee_Tier3_LongAoE_SlamAttack_C::DecalDarkTimeline__FinishedFunc()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "DecalDarkTimeline__FinishedFunc");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_Melee_Tier3_LongAoE_SlamAttack.BP_Melee_Tier3_LongAoE_SlamAttack_C.LightFadeTimeline__UpdateFunc
+// Function BP_Melee_Tier3_LongAoE_SlamAttack.BP_Melee_Tier3_LongAoE_SlamAttack_C.DecalDarkTimeline__UpdateFunc
 // (BlueprintEvent)
 
-void ABP_Melee_Tier3_LongAoE_SlamAttack_C::LightFadeTimeline__UpdateFunc()
+void ABP_Melee_Tier3_LongAoE_SlamAttack_C::DecalDarkTimeline__UpdateFunc()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "LightFadeTimeline__UpdateFunc");
+		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "DecalDarkTimeline__UpdateFunc");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_Melee_Tier3_LongAoE_SlamAttack.BP_Melee_Tier3_LongAoE_SlamAttack_C.LightFadeTimeline__FinishedFunc
+// Function BP_Melee_Tier3_LongAoE_SlamAttack.BP_Melee_Tier3_LongAoE_SlamAttack_C.DecalLightTimeline__FinishedFunc
 // (BlueprintEvent)
 
-void ABP_Melee_Tier3_LongAoE_SlamAttack_C::LightFadeTimeline__FinishedFunc()
+void ABP_Melee_Tier3_LongAoE_SlamAttack_C::DecalLightTimeline__FinishedFunc()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "LightFadeTimeline__FinishedFunc");
+		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "DecalLightTimeline__FinishedFunc");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_Melee_Tier3_LongAoE_SlamAttack.BP_Melee_Tier3_LongAoE_SlamAttack_C.FadeTimeline__UpdateFunc
+// Function BP_Melee_Tier3_LongAoE_SlamAttack.BP_Melee_Tier3_LongAoE_SlamAttack_C.DecalLightTimeline__UpdateFunc
 // (BlueprintEvent)
 
-void ABP_Melee_Tier3_LongAoE_SlamAttack_C::FadeTimeline__UpdateFunc()
+void ABP_Melee_Tier3_LongAoE_SlamAttack_C::DecalLightTimeline__UpdateFunc()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "FadeTimeline__UpdateFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Melee_Tier3_LongAoE_SlamAttack.BP_Melee_Tier3_LongAoE_SlamAttack_C.FadeTimeline__FinishedFunc
-// (BlueprintEvent)
-
-void ABP_Melee_Tier3_LongAoE_SlamAttack_C::FadeTimeline__FinishedFunc()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "FadeTimeline__FinishedFunc");
+		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "DecalLightTimeline__UpdateFunc");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -106,57 +92,71 @@ void ABP_Melee_Tier3_LongAoE_SlamAttack_C::ExecuteUbergraph_BP_Melee_Tier3_LongA
 }
 
 
-// Function BP_Melee_Tier3_LongAoE_SlamAttack.BP_Melee_Tier3_LongAoE_SlamAttack_C.DecalLightTimeline__UpdateFunc
+// Function BP_Melee_Tier3_LongAoE_SlamAttack.BP_Melee_Tier3_LongAoE_SlamAttack_C.FadeTimeline__FinishedFunc
 // (BlueprintEvent)
 
-void ABP_Melee_Tier3_LongAoE_SlamAttack_C::DecalLightTimeline__UpdateFunc()
+void ABP_Melee_Tier3_LongAoE_SlamAttack_C::FadeTimeline__FinishedFunc()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "DecalLightTimeline__UpdateFunc");
+		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "FadeTimeline__FinishedFunc");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_Melee_Tier3_LongAoE_SlamAttack.BP_Melee_Tier3_LongAoE_SlamAttack_C.DecalLightTimeline__FinishedFunc
+// Function BP_Melee_Tier3_LongAoE_SlamAttack.BP_Melee_Tier3_LongAoE_SlamAttack_C.FadeTimeline__UpdateFunc
 // (BlueprintEvent)
 
-void ABP_Melee_Tier3_LongAoE_SlamAttack_C::DecalLightTimeline__FinishedFunc()
+void ABP_Melee_Tier3_LongAoE_SlamAttack_C::FadeTimeline__UpdateFunc()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "DecalLightTimeline__FinishedFunc");
+		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "FadeTimeline__UpdateFunc");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_Melee_Tier3_LongAoE_SlamAttack.BP_Melee_Tier3_LongAoE_SlamAttack_C.DecalDarkTimeline__UpdateFunc
+// Function BP_Melee_Tier3_LongAoE_SlamAttack.BP_Melee_Tier3_LongAoE_SlamAttack_C.LightFadeTimeline__FinishedFunc
 // (BlueprintEvent)
 
-void ABP_Melee_Tier3_LongAoE_SlamAttack_C::DecalDarkTimeline__UpdateFunc()
+void ABP_Melee_Tier3_LongAoE_SlamAttack_C::LightFadeTimeline__FinishedFunc()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "DecalDarkTimeline__UpdateFunc");
+		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "LightFadeTimeline__FinishedFunc");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_Melee_Tier3_LongAoE_SlamAttack.BP_Melee_Tier3_LongAoE_SlamAttack_C.DecalDarkTimeline__FinishedFunc
+// Function BP_Melee_Tier3_LongAoE_SlamAttack.BP_Melee_Tier3_LongAoE_SlamAttack_C.LightFadeTimeline__UpdateFunc
 // (BlueprintEvent)
 
-void ABP_Melee_Tier3_LongAoE_SlamAttack_C::DecalDarkTimeline__FinishedFunc()
+void ABP_Melee_Tier3_LongAoE_SlamAttack_C::LightFadeTimeline__UpdateFunc()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "DecalDarkTimeline__FinishedFunc");
+		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "LightFadeTimeline__UpdateFunc");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Melee_Tier3_LongAoE_SlamAttack.BP_Melee_Tier3_LongAoE_SlamAttack_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Melee_Tier3_LongAoE_SlamAttack_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

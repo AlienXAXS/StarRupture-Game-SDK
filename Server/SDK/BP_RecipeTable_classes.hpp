@@ -33,9 +33,9 @@ public:
 	class UWBP_ResearchTerminalWidget_C*          ResearchTerminalWidget;                            // 0x06F8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveBeginPlay();
-	void OnUIOpened(bool bOpened_OnUIOpened);
 	void ExecuteUbergraph_BP_RecipeTable(int32 EntryPoint);
+	void OnUIOpened(bool bOpened);
+	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

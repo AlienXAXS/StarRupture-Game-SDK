@@ -16,16 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// ScriptStruct ABP_Exploder_Tier3_Prototype_Actor.ABP_Exploder_Tier3_Prototype_Actor_C.AnimBlueprintGeneratedMutableData
-// 0x0002 (0x0003 - 0x0001)
-struct ABP_Exploder_Tier3_Prototype_Actor::FAnimBlueprintGeneratedMutableData final : public FAnimBlueprintMutableData
-{
-public:
-	bool                                          __BoolProperty;                                    // 0x0001(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          __BoolProperty_0;                                  // 0x0002(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_ABP_Exploder_Tier3_Prototype_Actor__FAnimBlueprintGeneratedMutableData;
-
 // ScriptStruct ABP_Exploder_Tier3_Prototype_Actor.ABP_Exploder_Tier3_Prototype_Actor_C.AnimBlueprintGeneratedConstantData
 // 0x0287 (0x0288 - 0x0001)
 struct ABP_Exploder_Tier3_Prototype_Actor::FAnimBlueprintGeneratedConstantData final : public FAnimBlueprintConstantData
@@ -64,5 +54,15 @@ public:
 	struct FAnimNodeExposedValueHandler_PropertyAccess AnimGraphNode_SequencePlayer;                 // 0x0258(0x0030)()
 };
 DUMPER7_ASSERTS_ABP_Exploder_Tier3_Prototype_Actor__FAnimBlueprintGeneratedConstantData;
+
+// ScriptStruct ABP_Exploder_Tier3_Prototype_Actor.ABP_Exploder_Tier3_Prototype_Actor_C.AnimBlueprintGeneratedMutableData
+// 0x0002 (0x0003 - 0x0001)
+struct ABP_Exploder_Tier3_Prototype_Actor::FAnimBlueprintGeneratedMutableData final : public FAnimBlueprintMutableData
+{
+public:
+	bool                                          __BoolProperty;                                    // 0x0001(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          __BoolProperty_0;                                  // 0x0002(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_ABP_Exploder_Tier3_Prototype_Actor__FAnimBlueprintGeneratedMutableData;
 
 SDK_NAMESPACE_END

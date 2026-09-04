@@ -37,8 +37,8 @@ public:
 	class UAuActorPlacementSocketsComponent*      AuActorPlacementSockets;                           // 0x0750(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnTierSet(int32 NewTier_OnTierSet);
 	void ExecuteUbergraph_BP_DroneVerticalConnector(int32 EntryPoint);
+	void OnTierSet(int32 NewTier);
 
 public:
 	static class UClass* StaticClass()

@@ -21,7 +21,7 @@ SDK_NAMESPACE_START
 class UBTDecorator_IsJustSpawned_C final : public UBTDecorator_BlueprintBase
 {
 public:
-	bool PerformConditionCheckAI(class AAIController* OwnerController_PerformConditionCheckAI, class APawn* ControlledPawn_PerformConditionCheckAI);
+	bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 
 public:
 	static class UClass* StaticClass()

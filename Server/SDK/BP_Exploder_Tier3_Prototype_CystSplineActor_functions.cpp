@@ -16,62 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Exploder_Tier3_Prototype_CystSplineActor.BP_Exploder_Tier3_Prototype_CystSplineActor_C.PrepareSplinePoints
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Exploder_Tier3_Prototype_CystSplineActor_C::PrepareSplinePoints()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystSplineActor_C", "PrepareSplinePoints");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier3_Prototype_CystSplineActor.BP_Exploder_Tier3_Prototype_CystSplineActor_C.PrepareSplineMeshes
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void ABP_Exploder_Tier3_Prototype_CystSplineActor_C::PrepareSplineMeshes()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystSplineActor_C", "PrepareSplineMeshes");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier3_Prototype_CystSplineActor.BP_Exploder_Tier3_Prototype_CystSplineActor_C.PrepareSpline
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Exploder_Tier3_Prototype_CystSplineActor_C::PrepareSpline()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystSplineActor_C", "PrepareSpline");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier3_Prototype_CystSplineActor.BP_Exploder_Tier3_Prototype_CystSplineActor_C.OnRep_SplineCystPathPoints
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_Exploder_Tier3_Prototype_CystSplineActor_C::OnRep_SplineCystPathPoints()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystSplineActor_C", "OnRep_SplineCystPathPoints");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_Exploder_Tier3_Prototype_CystSplineActor.BP_Exploder_Tier3_Prototype_CystSplineActor_C.AdjustPointToGround
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -94,6 +38,62 @@ struct FVector ABP_Exploder_Tier3_Prototype_CystSplineActor_C::AdjustPointToGrou
 	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
+}
+
+
+// Function BP_Exploder_Tier3_Prototype_CystSplineActor.BP_Exploder_Tier3_Prototype_CystSplineActor_C.OnRep_SplineCystPathPoints
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier3_Prototype_CystSplineActor_C::OnRep_SplineCystPathPoints()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystSplineActor_C", "OnRep_SplineCystPathPoints");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier3_Prototype_CystSplineActor.BP_Exploder_Tier3_Prototype_CystSplineActor_C.PrepareSpline
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier3_Prototype_CystSplineActor_C::PrepareSpline()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystSplineActor_C", "PrepareSpline");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier3_Prototype_CystSplineActor.BP_Exploder_Tier3_Prototype_CystSplineActor_C.PrepareSplineMeshes
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier3_Prototype_CystSplineActor_C::PrepareSplineMeshes()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystSplineActor_C", "PrepareSplineMeshes");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier3_Prototype_CystSplineActor.BP_Exploder_Tier3_Prototype_CystSplineActor_C.PrepareSplinePoints
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier3_Prototype_CystSplineActor_C::PrepareSplinePoints()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystSplineActor_C", "PrepareSplinePoints");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

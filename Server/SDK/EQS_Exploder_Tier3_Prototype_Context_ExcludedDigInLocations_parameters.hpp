@@ -21,9 +21,9 @@ SDK_PARAM_NAMESPACE_START
 struct EQS_Exploder_Tier3_Prototype_Context_ExcludedDigInLocations_C_ProvideLocationsSet final
 {
 public:
-	class UObject*                                QuerierObject_ProvideLocationsSet;                 // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 QuerierActor_ProvideLocationsSet;                  // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	TArray<struct FVector>                        ResultingLocationSet_ProvideLocationsSet;          // 0x0010(0x0010)(Parm, OutParm)
+	class UObject*                                QuerierObject;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 QuerierActor;                                      // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TArray<struct FVector>                        ResultingLocationSet;                              // 0x0010(0x0010)(Parm, OutParm)
 	class ABP_Exploder_Tier3_Prototype_Actor_Character_C* K2Node_DynamicCast_AsBP_Exploder_Tier_3_Prototype_Actor_Character; // 0x0020(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])

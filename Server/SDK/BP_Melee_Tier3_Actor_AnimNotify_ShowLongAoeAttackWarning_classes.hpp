@@ -20,7 +20,7 @@ SDK_NAMESPACE_START
 class UBP_Melee_Tier3_Actor_AnimNotify_ShowLongAoeAttackWarning_C final : public UAnimNotify
 {
 public:
-	bool Received_Notify(class USkeletalMeshComponent* MeshComp_Received_Notify, class UAnimSequenceBase* Animation_Received_Notify, const struct FAnimNotifyEventReference& EventReference_Received_Notify) const;
+	bool Received_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, const struct FAnimNotifyEventReference& EventReference) const;
 
 public:
 	static class UClass* StaticClass()

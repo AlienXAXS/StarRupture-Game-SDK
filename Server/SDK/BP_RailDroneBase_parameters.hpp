@@ -16,24 +16,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_RailDroneBase.BP_RailDroneBase_C.OnRequestInvalidStateChanged
-// 0x0001 (0x0001 - 0x0000)
-struct BP_RailDroneBase_C_OnRequestInvalidStateChanged final
-{
-public:
-	bool                                          bAborted_OnRequestInvalidStateChanged;             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_RailDroneBase_C_OnRequestInvalidStateChanged;
-
-// Function BP_RailDroneBase.BP_RailDroneBase_C.OnCarriedItemChanged
-// 0x0030 (0x0030 - 0x0000)
-struct BP_RailDroneBase_C_OnCarriedItemChanged final
-{
-public:
-	struct FAuSimpleItem                          Item_OnCarriedItemChanged;                         // 0x0000(0x0030)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_RailDroneBase_C_OnCarriedItemChanged;
-
 // Function BP_RailDroneBase.BP_RailDroneBase_C.ExecuteUbergraph_BP_RailDroneBase
 // 0x0048 (0x0048 - 0x0000)
 struct BP_RailDroneBase_C_ExecuteUbergraph_BP_RailDroneBase final
@@ -47,12 +29,30 @@ public:
 };
 DUMPER7_ASSERTS_BP_RailDroneBase_C_ExecuteUbergraph_BP_RailDroneBase;
 
+// Function BP_RailDroneBase.BP_RailDroneBase_C.OnCarriedItemChanged
+// 0x0030 (0x0030 - 0x0000)
+struct BP_RailDroneBase_C_OnCarriedItemChanged final
+{
+public:
+	struct FAuSimpleItem                          Item;                                              // 0x0000(0x0030)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_RailDroneBase_C_OnCarriedItemChanged;
+
+// Function BP_RailDroneBase.BP_RailDroneBase_C.OnRequestInvalidStateChanged
+// 0x0001 (0x0001 - 0x0000)
+struct BP_RailDroneBase_C_OnRequestInvalidStateChanged final
+{
+public:
+	bool                                          bAborted;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_RailDroneBase_C_OnRequestInvalidStateChanged;
+
 // Function BP_RailDroneBase.BP_RailDroneBase_C.GetCargoComponent
 // 0x0008 (0x0008 - 0x0000)
 struct BP_RailDroneBase_C_GetCargoComponent final
 {
 public:
-	class UStaticMeshComponent*                   ReturnValue_GetCargoComponent;                     // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_RailDroneBase_C_GetCargoComponent;
 

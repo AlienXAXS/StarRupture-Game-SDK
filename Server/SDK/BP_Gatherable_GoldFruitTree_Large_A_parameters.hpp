@@ -14,6 +14,15 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function BP_Gatherable_GoldFruitTree_Large_A.BP_Gatherable_GoldFruitTree_Large_A_C.BP_OnLightsVisualsTriggered
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Gatherable_GoldFruitTree_Large_A_C_BP_OnLightsVisualsTriggered final
+{
+public:
+	bool                                          bLightsOn;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Gatherable_GoldFruitTree_Large_A_C_BP_OnLightsVisualsTriggered;
+
 // Function BP_Gatherable_GoldFruitTree_Large_A.BP_Gatherable_GoldFruitTree_Large_A_C.ExecuteUbergraph_BP_Gatherable_GoldFruitTree_Large_A
 // 0x0008 (0x0008 - 0x0000)
 struct BP_Gatherable_GoldFruitTree_Large_A_C_ExecuteUbergraph_BP_Gatherable_GoldFruitTree_Large_A final
@@ -23,15 +32,6 @@ public:
 	bool                                          K2Node_Event_bLightsOn;                            // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Gatherable_GoldFruitTree_Large_A_C_ExecuteUbergraph_BP_Gatherable_GoldFruitTree_Large_A;
-
-// Function BP_Gatherable_GoldFruitTree_Large_A.BP_Gatherable_GoldFruitTree_Large_A_C.BP_OnLightsVisualsTriggered
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Gatherable_GoldFruitTree_Large_A_C_BP_OnLightsVisualsTriggered final
-{
-public:
-	bool                                          bLightsOn_BP_OnLightsVisualsTriggered;             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Gatherable_GoldFruitTree_Large_A_C_BP_OnLightsVisualsTriggered;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

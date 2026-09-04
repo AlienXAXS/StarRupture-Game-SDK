@@ -20,7 +20,7 @@ SDK_NAMESPACE_START
 class UBTDecorator_Fail_C final : public UBTDecorator_BlueprintBase
 {
 public:
-	bool PerformConditionCheck(class AActor* OwnerActor_PerformConditionCheck);
+	bool PerformConditionCheck(class AActor* OwnerActor);
 
 public:
 	static class UClass* StaticClass()

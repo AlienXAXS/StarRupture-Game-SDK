@@ -19,23 +19,20 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_Exploder_Tier3_PooledProjectilePiece.BP_Exploder_Tier3_PooledProjectilePiece_C.OnProjectileShot
-// 0x0060 (0x0060 - 0x0000)
-struct BP_Exploder_Tier3_PooledProjectilePiece_C_OnProjectileShot final
+// Function BP_Exploder_Tier3_PooledProjectilePiece.BP_Exploder_Tier3_PooledProjectilePiece_C.AddInstantInfectionToCharacter
+// 0x0040 (0x0040 - 0x0000)
+struct BP_Exploder_Tier3_PooledProjectilePiece_C_AddInstantInfectionToCharacter final
 {
 public:
-	struct FCrAiProjectileParameters              InProjectileParameters_OnProjectileShot;           // 0x0000(0x0060)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+	class ACharacter*                             InCharacter;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UAbilitySystemComponent*                CallFunc_GetAbilitySystemComponent_ReturnValue;    // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayEffectSpecHandle              CallFunc_MakeOutgoingSpec_ReturnValue;             // 0x0010(0x0010)()
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayEffectSpecHandle              CallFunc_AssignTagSetByCallerMagnitude_ReturnValue; // 0x0028(0x0010)()
+	struct FActiveGameplayEffectHandle            CallFunc_BP_ApplyGameplayEffectSpecToSelf_ReturnValue; // 0x0038(0x0008)(NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_Exploder_Tier3_PooledProjectilePiece_C_OnProjectileShot;
-
-// Function BP_Exploder_Tier3_PooledProjectilePiece.BP_Exploder_Tier3_PooledProjectilePiece_C.OnHit
-// 0x0100 (0x0100 - 0x0000)
-struct BP_Exploder_Tier3_PooledProjectilePiece_C_OnHit final
-{
-public:
-	struct FHitResult                             HitResult_OnHit;                                   // 0x0000(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-};
-DUMPER7_ASSERTS_BP_Exploder_Tier3_PooledProjectilePiece_C_OnHit;
+DUMPER7_ASSERTS_BP_Exploder_Tier3_PooledProjectilePiece_C_AddInstantInfectionToCharacter;
 
 // Function BP_Exploder_Tier3_PooledProjectilePiece.BP_Exploder_Tier3_PooledProjectilePiece_C.ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectilePiece
 // 0x02D0 (0x02D0 - 0x0000)
@@ -79,20 +76,23 @@ public:
 };
 DUMPER7_ASSERTS_BP_Exploder_Tier3_PooledProjectilePiece_C_ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectilePiece;
 
-// Function BP_Exploder_Tier3_PooledProjectilePiece.BP_Exploder_Tier3_PooledProjectilePiece_C.AddInstantInfectionToCharacter
-// 0x0040 (0x0040 - 0x0000)
-struct BP_Exploder_Tier3_PooledProjectilePiece_C_AddInstantInfectionToCharacter final
+// Function BP_Exploder_Tier3_PooledProjectilePiece.BP_Exploder_Tier3_PooledProjectilePiece_C.OnHit
+// 0x0100 (0x0100 - 0x0000)
+struct BP_Exploder_Tier3_PooledProjectilePiece_C_OnHit final
 {
 public:
-	class ACharacter*                             InCharacter;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UAbilitySystemComponent*                CallFunc_GetAbilitySystemComponent_ReturnValue;    // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayEffectSpecHandle              CallFunc_MakeOutgoingSpec_ReturnValue;             // 0x0010(0x0010)()
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayEffectSpecHandle              CallFunc_AssignTagSetByCallerMagnitude_ReturnValue; // 0x0028(0x0010)()
-	struct FActiveGameplayEffectHandle            CallFunc_BP_ApplyGameplayEffectSpecToSelf_ReturnValue; // 0x0038(0x0008)(NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             HitResult;                                         // 0x0000(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
 };
-DUMPER7_ASSERTS_BP_Exploder_Tier3_PooledProjectilePiece_C_AddInstantInfectionToCharacter;
+DUMPER7_ASSERTS_BP_Exploder_Tier3_PooledProjectilePiece_C_OnHit;
+
+// Function BP_Exploder_Tier3_PooledProjectilePiece.BP_Exploder_Tier3_PooledProjectilePiece_C.OnProjectileShot
+// 0x0060 (0x0060 - 0x0000)
+struct BP_Exploder_Tier3_PooledProjectilePiece_C_OnProjectileShot final
+{
+public:
+	struct FCrAiProjectileParameters              InProjectileParameters;                            // 0x0000(0x0060)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_Exploder_Tier3_PooledProjectilePiece_C_OnProjectileShot;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

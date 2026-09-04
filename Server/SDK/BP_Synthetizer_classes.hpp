@@ -42,8 +42,8 @@ public:
 	ECrBuildingState                              In_State;                                          // 0x07D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged);
 	void ExecuteUbergraph_BP_Synthetizer(int32 EntryPoint);
+	void OnBuildingStateChanged(ECrBuildingState InState);
 
 public:
 	static class UClass* StaticClass()

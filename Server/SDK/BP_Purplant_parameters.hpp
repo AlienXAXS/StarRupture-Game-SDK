@@ -14,6 +14,15 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function BP_Purplant.BP_Purplant_C.BP_OnLightsVisualsTriggered
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Purplant_C_BP_OnLightsVisualsTriggered final
+{
+public:
+	bool                                          bLightsOn;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Purplant_C_BP_OnLightsVisualsTriggered;
+
 // Function BP_Purplant.BP_Purplant_C.ExecuteUbergraph_BP_Purplant
 // 0x0008 (0x0008 - 0x0000)
 struct BP_Purplant_C_ExecuteUbergraph_BP_Purplant final
@@ -23,15 +32,6 @@ public:
 	bool                                          K2Node_Event_bLightsOn;                            // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Purplant_C_ExecuteUbergraph_BP_Purplant;
-
-// Function BP_Purplant.BP_Purplant_C.BP_OnLightsVisualsTriggered
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Purplant_C_BP_OnLightsVisualsTriggered final
-{
-public:
-	bool                                          bLightsOn_BP_OnLightsVisualsTriggered;             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Purplant_C_BP_OnLightsVisualsTriggered;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

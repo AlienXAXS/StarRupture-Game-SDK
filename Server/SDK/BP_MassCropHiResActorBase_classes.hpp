@@ -25,9 +25,9 @@ public:
 	class UAudioComponent*                        CropDepletedSound;                                 // 0x0360(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnResourceReplenishedCosmeticsStart();
-	void OnCropDepletedCosmeticsStart();
 	void ExecuteUbergraph_BP_MassCropHiResActorBase(int32 EntryPoint);
+	void OnCropDepletedCosmeticsStart();
+	void OnResourceReplenishedCosmeticsStart();
 
 public:
 	static class UClass* StaticClass()

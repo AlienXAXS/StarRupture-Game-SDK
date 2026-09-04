@@ -16,29 +16,59 @@
 
 SDK_NAMESPACE_START
 
-// Function Sniper_ExplosiveActor.Sniper_ExplosiveActor_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function Sniper_ExplosiveActor.Sniper_ExplosiveActor_C.CheckOcclusion
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FVector&                   TraceEnd                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   IsOccluded                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ASniper_ExplosiveActor_C::ReceiveBeginPlay()
+void ASniper_ExplosiveActor_C::CheckOcclusion(const struct FVector& TraceEnd, bool* IsOccluded)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Sniper_ExplosiveActor_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("Sniper_ExplosiveActor_C", "CheckOcclusion");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::Sniper_ExplosiveActor_C_CheckOcclusion Parms{};
+
+	Parms.TraceEnd = std::move(TraceEnd);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (IsOccluded != nullptr)
+		*IsOccluded = Parms.IsOccluded;
 }
 
 
-// Function Sniper_ExplosiveActor.Sniper_ExplosiveActor_C.Multicast_Explode
-// (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
+// Function Sniper_ExplosiveActor.Sniper_ExplosiveActor_C.ExecuteUbergraph_Sniper_ExplosiveActor
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ASniper_ExplosiveActor_C::Multicast_Explode()
+void ASniper_ExplosiveActor_C::ExecuteUbergraph_Sniper_ExplosiveActor(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Sniper_ExplosiveActor_C", "Multicast_Explode");
+		Func = Class->GetFunction("Sniper_ExplosiveActor_C", "ExecuteUbergraph_Sniper_ExplosiveActor");
+
+	Params::Sniper_ExplosiveActor_C_ExecuteUbergraph_Sniper_ExplosiveActor Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Sniper_ExplosiveActor.Sniper_ExplosiveActor_C.Explosion logic on server and standalone
+// (BlueprintCallable, BlueprintEvent)
+
+void ASniper_ExplosiveActor_C::Explosion_logic_on_server_and_standalone()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Sniper_ExplosiveActor_C", "Explosion logic on server and standalone");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -68,61 +98,31 @@ void ASniper_ExplosiveActor_C::IsMultiDamageActor(class AActor* Actor, bool* New
 }
 
 
-// Function Sniper_ExplosiveActor.Sniper_ExplosiveActor_C.Explosion logic on server and standalone
-// (BlueprintCallable, BlueprintEvent)
+// Function Sniper_ExplosiveActor.Sniper_ExplosiveActor_C.Multicast_Explode
+// (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
 
-void ASniper_ExplosiveActor_C::Explosion_logic_on_server_and_standalone()
+void ASniper_ExplosiveActor_C::Multicast_Explode()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Sniper_ExplosiveActor_C", "Explosion logic on server and standalone");
+		Func = Class->GetFunction("Sniper_ExplosiveActor_C", "Multicast_Explode");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function Sniper_ExplosiveActor.Sniper_ExplosiveActor_C.ExecuteUbergraph_Sniper_ExplosiveActor
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function Sniper_ExplosiveActor.Sniper_ExplosiveActor_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ASniper_ExplosiveActor_C::ExecuteUbergraph_Sniper_ExplosiveActor(int32 EntryPoint)
+void ASniper_ExplosiveActor_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Sniper_ExplosiveActor_C", "ExecuteUbergraph_Sniper_ExplosiveActor");
+		Func = Class->GetFunction("Sniper_ExplosiveActor_C", "ReceiveBeginPlay");
 
-	Params::Sniper_ExplosiveActor_C_ExecuteUbergraph_Sniper_ExplosiveActor Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Sniper_ExplosiveActor.Sniper_ExplosiveActor_C.CheckOcclusion
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FVector&                   TraceEnd                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool*                                   IsOccluded                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ASniper_ExplosiveActor_C::CheckOcclusion(const struct FVector& TraceEnd, bool* IsOccluded)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Sniper_ExplosiveActor_C", "CheckOcclusion");
-
-	Params::Sniper_ExplosiveActor_C_CheckOcclusion Parms{};
-
-	Parms.TraceEnd = std::move(TraceEnd);
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (IsOccluded != nullptr)
-		*IsOccluded = Parms.IsOccluded;
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

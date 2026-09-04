@@ -36,12 +36,12 @@ public:
 	class UTimelineComponent*                     FadeTimeline;                                      // 0x02E8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveBeginPlay();
-	void LightFadeTimeline__UpdateFunc();
-	void LightFadeTimeline__FinishedFunc();
-	void FadeTimeline__UpdateFunc();
-	void FadeTimeline__FinishedFunc();
 	void ExecuteUbergraph_BP_Exploder_Tier2_ExplosionDamageAura(int32 EntryPoint);
+	void FadeTimeline__FinishedFunc();
+	void FadeTimeline__UpdateFunc();
+	void LightFadeTimeline__FinishedFunc();
+	void LightFadeTimeline__UpdateFunc();
+	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

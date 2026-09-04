@@ -16,24 +16,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_Airlock_StartingHUB.BP_Airlock_StartingHUB_C.PostPlayBuildingEffect
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Airlock_StartingHUB_C_PostPlayBuildingEffect final
-{
-public:
-	bool                                          bWasBuildingEffectPlayed_PostPlayBuildingEffect;   // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Airlock_StartingHUB_C_PostPlayBuildingEffect;
-
-// Function BP_Airlock_StartingHUB.BP_Airlock_StartingHUB_C.OnOpenStateChanged
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Airlock_StartingHUB_C_OnOpenStateChanged final
-{
-public:
-	bool                                          bInOpen_OnOpenStateChanged;                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Airlock_StartingHUB_C_OnOpenStateChanged;
-
 // Function BP_Airlock_StartingHUB.BP_Airlock_StartingHUB_C.ExecuteUbergraph_BP_Airlock_StartingHUB
 // 0x0250 (0x0250 - 0x0000)
 struct BP_Airlock_StartingHUB_C_ExecuteUbergraph_BP_Airlock_StartingHUB final
@@ -135,6 +117,24 @@ public:
 	bool                                          CallFunc_K2_AttachToComponent_ReturnValue_1;       // 0x0248(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Airlock_StartingHUB_C_ExecuteUbergraph_BP_Airlock_StartingHUB;
+
+// Function BP_Airlock_StartingHUB.BP_Airlock_StartingHUB_C.OnOpenStateChanged
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Airlock_StartingHUB_C_OnOpenStateChanged final
+{
+public:
+	bool                                          bInOpen;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Airlock_StartingHUB_C_OnOpenStateChanged;
+
+// Function BP_Airlock_StartingHUB.BP_Airlock_StartingHUB_C.PostPlayBuildingEffect
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Airlock_StartingHUB_C_PostPlayBuildingEffect final
+{
+public:
+	bool                                          bWasBuildingEffectPlayed;                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Airlock_StartingHUB_C_PostPlayBuildingEffect;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

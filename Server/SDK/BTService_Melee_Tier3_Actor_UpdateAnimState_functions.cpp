@@ -16,30 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BTService_Melee_Tier3_Actor_UpdateAnimState.BTService_Melee_Tier3_Actor_UpdateAnimState_C.ReceiveTickAI
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class AAIController*                    OwnerController_ReceiveTickAI                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class APawn*                            ControlledPawn_ReceiveTickAI                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// float                                   DeltaSeconds_ReceiveTickAI                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UBTService_Melee_Tier3_Actor_UpdateAnimState_C::ReceiveTickAI(class AAIController* OwnerController_ReceiveTickAI, class APawn* ControlledPawn_ReceiveTickAI, float DeltaSeconds_ReceiveTickAI)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTService_Melee_Tier3_Actor_UpdateAnimState_C", "ReceiveTickAI");
-
-	Params::BTService_Melee_Tier3_Actor_UpdateAnimState_C_ReceiveTickAI Parms{};
-
-	Parms.OwnerController_ReceiveTickAI = OwnerController_ReceiveTickAI;
-	Parms.ControlledPawn_ReceiveTickAI = ControlledPawn_ReceiveTickAI;
-	Parms.DeltaSeconds_ReceiveTickAI = DeltaSeconds_ReceiveTickAI;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BTService_Melee_Tier3_Actor_UpdateAnimState.BTService_Melee_Tier3_Actor_UpdateAnimState_C.ExecuteUbergraph_BTService_Melee_Tier3_Actor_UpdateAnimState
 // (Final, UbergraphFunction)
 // Parameters:
@@ -55,6 +31,30 @@ void UBTService_Melee_Tier3_Actor_UpdateAnimState_C::ExecuteUbergraph_BTService_
 	Params::BTService_Melee_Tier3_Actor_UpdateAnimState_C_ExecuteUbergraph_BTService_Melee_Tier3_Actor_UpdateAnimState Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BTService_Melee_Tier3_Actor_UpdateAnimState.BTService_Melee_Tier3_Actor_UpdateAnimState_C.ReceiveTickAI
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class AAIController*                    OwnerController                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class APawn*                            ControlledPawn                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBTService_Melee_Tier3_Actor_UpdateAnimState_C::ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BTService_Melee_Tier3_Actor_UpdateAnimState_C", "ReceiveTickAI");
+
+	Params::BTService_Melee_Tier3_Actor_UpdateAnimState_C_ReceiveTickAI Parms{};
+
+	Parms.OwnerController = OwnerController;
+	Parms.ControlledPawn = ControlledPawn;
+	Parms.DeltaSeconds = DeltaSeconds;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

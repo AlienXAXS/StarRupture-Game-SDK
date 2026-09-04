@@ -16,28 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BTT_PlaySoundAtLocation.BTT_PlaySoundAtLocation_C.ReceiveExecuteAI
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class AAIController*                    OwnerController_ReceiveExecuteAI                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class APawn*                            ControlledPawn_ReceiveExecuteAI                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void UBTT_PlaySoundAtLocation_C::ReceiveExecuteAI(class AAIController* OwnerController_ReceiveExecuteAI, class APawn* ControlledPawn_ReceiveExecuteAI)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTT_PlaySoundAtLocation_C", "ReceiveExecuteAI");
-
-	Params::BTT_PlaySoundAtLocation_C_ReceiveExecuteAI Parms{};
-
-	Parms.OwnerController_ReceiveExecuteAI = OwnerController_ReceiveExecuteAI;
-	Parms.ControlledPawn_ReceiveExecuteAI = ControlledPawn_ReceiveExecuteAI;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BTT_PlaySoundAtLocation.BTT_PlaySoundAtLocation_C.ExecuteUbergraph_BTT_PlaySoundAtLocation
 // (Final, UbergraphFunction)
 // Parameters:
@@ -53,6 +31,28 @@ void UBTT_PlaySoundAtLocation_C::ExecuteUbergraph_BTT_PlaySoundAtLocation(int32 
 	Params::BTT_PlaySoundAtLocation_C_ExecuteUbergraph_BTT_PlaySoundAtLocation Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BTT_PlaySoundAtLocation.BTT_PlaySoundAtLocation_C.ReceiveExecuteAI
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class AAIController*                    OwnerController                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class APawn*                            ControlledPawn                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void UBTT_PlaySoundAtLocation_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BTT_PlaySoundAtLocation_C", "ReceiveExecuteAI");
+
+	Params::BTT_PlaySoundAtLocation_C_ReceiveExecuteAI Parms{};
+
+	Parms.OwnerController = OwnerController;
+	Parms.ControlledPawn = ControlledPawn;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

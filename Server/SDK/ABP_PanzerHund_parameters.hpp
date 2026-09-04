@@ -17,15 +17,36 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function ABP_PanzerHund.ABP_PanzerHund_C.UpdateYawRotationRateForLocomotionState
-// 0x0002 (0x0002 - 0x0000)
-struct ABP_PanzerHund_C_UpdateYawRotationRateForLocomotionState final
+// Function ABP_PanzerHund.ABP_PanzerHund_C.AnimGraph
+// 0x0010 (0x0010 - 0x0000)
+struct ABP_PanzerHund_C_AnimGraph final
 {
 public:
-	ECrEnemyLocomotionType                        OldLocomotionType_UpdateYawRotationRateForLocomotionState; // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ECrEnemyLocomotionType                        NewLocomotionType_UpdateYawRotationRateForLocomotionState; // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPoseLink                              AnimGraph_0;                                       // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
 };
-DUMPER7_ASSERTS_ABP_PanzerHund_C_UpdateYawRotationRateForLocomotionState;
+DUMPER7_ASSERTS_ABP_PanzerHund_C_AnimGraph;
+
+// Function ABP_PanzerHund.ABP_PanzerHund_C.BlueprintThreadSafeUpdateAnimation
+// 0x0008 (0x0008 - 0x0000)
+struct ABP_PanzerHund_C_BlueprintThreadSafeUpdateAnimation final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_1;        // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x0006(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_ABP_PanzerHund_C_BlueprintThreadSafeUpdateAnimation;
+
+// Function ABP_PanzerHund.ABP_PanzerHund_C.BPOnLocomotionTypeChanged
+// 0x0002 (0x0002 - 0x0000)
+struct ABP_PanzerHund_C_BPOnLocomotionTypeChanged final
+{
+public:
+	ECrEnemyLocomotionType                        OldLocomotionType;                                 // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECrEnemyLocomotionType                        NewLocomotionType;                                 // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_ABP_PanzerHund_C_BPOnLocomotionTypeChanged;
 
 // Function ABP_PanzerHund.ABP_PanzerHund_C.ExecuteUbergraph_ABP_PanzerHund
 // 0x0140 (0x0140 - 0x0000)
@@ -116,36 +137,15 @@ public:
 };
 DUMPER7_ASSERTS_ABP_PanzerHund_C_ExecuteUbergraph_ABP_PanzerHund;
 
-// Function ABP_PanzerHund.ABP_PanzerHund_C.BPOnLocomotionTypeChanged
+// Function ABP_PanzerHund.ABP_PanzerHund_C.UpdateYawRotationRateForLocomotionState
 // 0x0002 (0x0002 - 0x0000)
-struct ABP_PanzerHund_C_BPOnLocomotionTypeChanged final
+struct ABP_PanzerHund_C_UpdateYawRotationRateForLocomotionState final
 {
 public:
-	ECrEnemyLocomotionType                        OldLocomotionType_BPOnLocomotionTypeChanged;       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ECrEnemyLocomotionType                        NewLocomotionType_BPOnLocomotionTypeChanged;       // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECrEnemyLocomotionType                        OldLocomotionType;                                 // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECrEnemyLocomotionType                        NewLocomotionType;                                 // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_ABP_PanzerHund_C_BPOnLocomotionTypeChanged;
-
-// Function ABP_PanzerHund.ABP_PanzerHund_C.BlueprintThreadSafeUpdateAnimation
-// 0x0008 (0x0008 - 0x0000)
-struct ABP_PanzerHund_C_BlueprintThreadSafeUpdateAnimation final
-{
-public:
-	float                                         DeltaTime_BlueprintThreadSafeUpdateAnimation;      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_1;        // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x0006(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_ABP_PanzerHund_C_BlueprintThreadSafeUpdateAnimation;
-
-// Function ABP_PanzerHund.ABP_PanzerHund_C.AnimGraph
-// 0x0010 (0x0010 - 0x0000)
-struct ABP_PanzerHund_C_AnimGraph final
-{
-public:
-	struct FPoseLink                              AnimGraph;                                         // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
-};
-DUMPER7_ASSERTS_ABP_PanzerHund_C_AnimGraph;
+DUMPER7_ASSERTS_ABP_PanzerHund_C_UpdateYawRotationRateForLocomotionState;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

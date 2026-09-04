@@ -12,10 +12,10 @@
 
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "EPlayerState_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
 #include "Chimera_structs.hpp"
-#include "EPlayerState_structs.hpp"
 #include "ModularGameplay_structs.hpp"
 #include "AuActorPlacement_structs.hpp"
 #include "ContextualDialog_structs.hpp"

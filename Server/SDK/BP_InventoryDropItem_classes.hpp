@@ -33,13 +33,13 @@ public:
 	class UMaterialInstanceDynamic*               ResourceIconDynamicMaterial;                       // 0x0338(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay);
-	void ReceiveBeginPlay();
-	bool OnStorageEmptied();
-	void OnItemAddedToStorage();
-	void InitItemTextureInDynamicMaterial();
-	void ExecuteUbergraph_BP_InventoryDropItem(int32 EntryPoint);
 	void CanPlaySound(bool* bRet);
+	void ExecuteUbergraph_BP_InventoryDropItem(int32 EntryPoint);
+	void InitItemTextureInDynamicMaterial();
+	void OnItemAddedToStorage();
+	bool OnStorageEmptied();
+	void ReceiveBeginPlay();
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 
 public:
 	static class UClass* StaticClass()

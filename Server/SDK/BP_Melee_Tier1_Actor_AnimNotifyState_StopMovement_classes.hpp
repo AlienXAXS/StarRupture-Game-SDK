@@ -20,8 +20,8 @@ SDK_NAMESPACE_START
 class UBP_Melee_Tier1_Actor_AnimNotifyState_StopMovement_C final : public UAnimNotifyState
 {
 public:
-	bool Received_NotifyEnd(class USkeletalMeshComponent* MeshComp_Received_NotifyEnd, class UAnimSequenceBase* Animation_Received_NotifyEnd, const struct FAnimNotifyEventReference& EventReference_Received_NotifyEnd) const;
-	bool Received_NotifyBegin(class USkeletalMeshComponent* MeshComp_Received_NotifyBegin, class UAnimSequenceBase* Animation_Received_NotifyBegin, float TotalDuration_Received_NotifyBegin, const struct FAnimNotifyEventReference& EventReference_Received_NotifyBegin) const;
+	bool Received_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration, const struct FAnimNotifyEventReference& EventReference) const;
+	bool Received_NotifyEnd(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, const struct FAnimNotifyEventReference& EventReference) const;
 
 public:
 	static class UClass* StaticClass()

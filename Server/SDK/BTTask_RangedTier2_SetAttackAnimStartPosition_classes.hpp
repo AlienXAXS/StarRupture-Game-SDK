@@ -25,8 +25,8 @@ public:
 	double                                        Attack_Anim_Start_Position;                        // 0x00B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 	void ExecuteUbergraph_BTTask_RangedTier2_SetAttackAnimStartPosition(int32 EntryPoint);
-	void ReceiveExecuteAI(class AAIController* OwnerController_ReceiveExecuteAI, class APawn* ControlledPawn_ReceiveExecuteAI);
 
 public:
 	static class UClass* StaticClass()

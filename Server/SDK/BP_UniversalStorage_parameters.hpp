@@ -16,15 +16,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_UniversalStorage.BP_UniversalStorage_C.PostPlayBuildingEffect
-// 0x0001 (0x0001 - 0x0000)
-struct BP_UniversalStorage_C_PostPlayBuildingEffect final
-{
-public:
-	bool                                          bWasBuildingEffectPlayed_PostPlayBuildingEffect;   // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_UniversalStorage_C_PostPlayBuildingEffect;
-
 // Function BP_UniversalStorage.BP_UniversalStorage_C.ExecuteUbergraph_BP_UniversalStorage
 // 0x0430 (0x0430 - 0x0000)
 struct BP_UniversalStorage_C_ExecuteUbergraph_BP_UniversalStorage final
@@ -72,6 +63,15 @@ public:
 	double                                        CallFunc_Lerp_Alpha_ImplicitCast;                  // 0x0428(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_UniversalStorage_C_ExecuteUbergraph_BP_UniversalStorage;
+
+// Function BP_UniversalStorage.BP_UniversalStorage_C.PostPlayBuildingEffect
+// 0x0001 (0x0001 - 0x0000)
+struct BP_UniversalStorage_C_PostPlayBuildingEffect final
+{
+public:
+	bool                                          bWasBuildingEffectPlayed;                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_UniversalStorage_C_PostPlayBuildingEffect;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

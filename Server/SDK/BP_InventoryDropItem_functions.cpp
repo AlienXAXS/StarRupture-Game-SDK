@@ -16,85 +16,24 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_InventoryDropItem.BP_InventoryDropItem_C.ReceiveEndPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_InventoryDropItem.BP_InventoryDropItem_C.CanPlaySound
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// EEndPlayReason                          EndPlayReason_ReceiveEndPlay                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   bRet                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_InventoryDropItem_C::ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay)
+void ABP_InventoryDropItem_C::CanPlaySound(bool* bRet)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_InventoryDropItem_C", "ReceiveEndPlay");
+		Func = Class->GetFunction("BP_InventoryDropItem_C", "CanPlaySound");
 
-	Params::BP_InventoryDropItem_C_ReceiveEndPlay Parms{};
-
-	Parms.EndPlayReason_ReceiveEndPlay = EndPlayReason_ReceiveEndPlay;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_InventoryDropItem.BP_InventoryDropItem_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_InventoryDropItem_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_InventoryDropItem_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_InventoryDropItem.BP_InventoryDropItem_C.OnStorageEmptied
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    ReturnValue_OnStorageEmptied                           (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-bool ABP_InventoryDropItem_C::OnStorageEmptied()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_InventoryDropItem_C", "OnStorageEmptied");
-
-	Params::BP_InventoryDropItem_C_OnStorageEmptied Parms{};
+	Params::BP_InventoryDropItem_C_CanPlaySound Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	return Parms.ReturnValue;
-}
-
-
-// Function BP_InventoryDropItem.BP_InventoryDropItem_C.OnItemAddedToStorage
-// (Event, Public, BlueprintEvent)
-
-void ABP_InventoryDropItem_C::OnItemAddedToStorage()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_InventoryDropItem_C", "OnItemAddedToStorage");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_InventoryDropItem.BP_InventoryDropItem_C.InitItemTextureInDynamicMaterial
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_InventoryDropItem_C::InitItemTextureInDynamicMaterial()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_InventoryDropItem_C", "InitItemTextureInDynamicMaterial");
-
-	UObject::ProcessEvent(Func, nullptr);
+	if (bRet != nullptr)
+		*bRet = Parms.bRet;
 }
 
 
@@ -118,24 +57,85 @@ void ABP_InventoryDropItem_C::ExecuteUbergraph_BP_InventoryDropItem(int32 EntryP
 }
 
 
-// Function BP_InventoryDropItem.BP_InventoryDropItem_C.CanPlaySound
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// bool*                                   bRet                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_InventoryDropItem.BP_InventoryDropItem_C.InitItemTextureInDynamicMaterial
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_InventoryDropItem_C::CanPlaySound(bool* bRet)
+void ABP_InventoryDropItem_C::InitItemTextureInDynamicMaterial()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_InventoryDropItem_C", "CanPlaySound");
+		Func = Class->GetFunction("BP_InventoryDropItem_C", "InitItemTextureInDynamicMaterial");
 
-	Params::BP_InventoryDropItem_C_CanPlaySound Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_InventoryDropItem.BP_InventoryDropItem_C.OnItemAddedToStorage
+// (Event, Public, BlueprintEvent)
+
+void ABP_InventoryDropItem_C::OnItemAddedToStorage()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_InventoryDropItem_C", "OnItemAddedToStorage");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_InventoryDropItem.BP_InventoryDropItem_C.OnStorageEmptied
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool ABP_InventoryDropItem_C::OnStorageEmptied()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_InventoryDropItem_C", "OnStorageEmptied");
+
+	Params::BP_InventoryDropItem_C_OnStorageEmptied Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (bRet != nullptr)
-		*bRet = Parms.bRet;
+	return Parms.ReturnValue;
+}
+
+
+// Function BP_InventoryDropItem.BP_InventoryDropItem_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_InventoryDropItem_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_InventoryDropItem_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_InventoryDropItem.BP_InventoryDropItem_C.ReceiveEndPlay
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_InventoryDropItem_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_InventoryDropItem_C", "ReceiveEndPlay");
+
+	Params::BP_InventoryDropItem_C_ReceiveEndPlay Parms{};
+
+	Parms.EndPlayReason = EndPlayReason;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

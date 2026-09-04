@@ -33,9 +33,9 @@ void ABP_Airlock_C::ReceiveBeginPlay()
 // Function BP_Airlock.BP_Airlock_C.PostPlayBuildingEffect
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    bWasBuildingEffectPlayed                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bWasBuildingEffectPlayed_PostPlayBuildingEffect        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Airlock_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
+void ABP_Airlock_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed_PostPlayBuildingEffect)
 {
 	static class UFunction* Func = nullptr;
 
@@ -44,7 +44,7 @@ void ABP_Airlock_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
 
 	Params::BP_Airlock_C_PostPlayBuildingEffect Parms{};
 
-	Parms.bWasBuildingEffectPlayed = bWasBuildingEffectPlayed;
+	Parms.bWasBuildingEffectPlayed_PostPlayBuildingEffect = bWasBuildingEffectPlayed_PostPlayBuildingEffect;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -53,9 +53,9 @@ void ABP_Airlock_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
 // Function BP_Airlock.BP_Airlock_C.PlayInteractionUnSuccessfulSound
 // (Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EDoorState                              DoorState                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EDoorState                              DoorState_PlayInteractionUnSuccessfulSound             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Airlock_C::PlayInteractionUnSuccessfulSound(EDoorState DoorState)
+void ABP_Airlock_C::PlayInteractionUnSuccessfulSound(EDoorState DoorState_PlayInteractionUnSuccessfulSound)
 {
 	static class UFunction* Func = nullptr;
 
@@ -64,7 +64,7 @@ void ABP_Airlock_C::PlayInteractionUnSuccessfulSound(EDoorState DoorState)
 
 	Params::BP_Airlock_C_PlayInteractionUnSuccessfulSound Parms{};
 
-	Parms.DoorState = DoorState;
+	Parms.DoorState_PlayInteractionUnSuccessfulSound = DoorState_PlayInteractionUnSuccessfulSound;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -73,9 +73,9 @@ void ABP_Airlock_C::PlayInteractionUnSuccessfulSound(EDoorState DoorState)
 // Function BP_Airlock.BP_Airlock_C.OnOpenStateChanged
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool                                    bInOpen                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bInOpen_OnOpenStateChanged                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Airlock_C::OnOpenStateChanged(bool bInOpen)
+void ABP_Airlock_C::OnOpenStateChanged(bool bInOpen_OnOpenStateChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -84,7 +84,7 @@ void ABP_Airlock_C::OnOpenStateChanged(bool bInOpen)
 
 	Params::BP_Airlock_C_OnOpenStateChanged Parms{};
 
-	Parms.bInOpen = bInOpen;
+	Parms.bInOpen_OnOpenStateChanged = bInOpen_OnOpenStateChanged;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -113,7 +113,7 @@ void ABP_Airlock_C::ExecuteUbergraph_BP_Airlock(int32 EntryPoint)
 // Function BP_Airlock.BP_Airlock_C.GetAirlockInteriorComponent
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// const class UShapeComponent*            ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// const class UShapeComponent*            ReturnValue_GetAirlockInteriorComponent                (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 const class UShapeComponent* ABP_Airlock_C::GetAirlockInteriorComponent() const
 {
@@ -133,7 +133,7 @@ const class UShapeComponent* ABP_Airlock_C::GetAirlockInteriorComponent() const
 // Function BP_Airlock.BP_Airlock_C.GetAirlockHabitatExteriorComponent
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// const class UShapeComponent*            ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// const class UShapeComponent*            ReturnValue_GetAirlockHabitatExteriorComponent         (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 const class UShapeComponent* ABP_Airlock_C::GetAirlockHabitatExteriorComponent() const
 {

@@ -24,7 +24,7 @@ public:
 	struct FBlackboardKeySelector                 TragetActor_BBKey;                                 // 0x00A0(0x0028)(Edit, BlueprintVisible)
 
 public:
-	bool PerformConditionCheckAI(class AAIController* OwnerController_PerformConditionCheckAI, class APawn* ControlledPawn_PerformConditionCheckAI);
+	bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 
 public:
 	static class UClass* StaticClass()

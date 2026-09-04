@@ -17,14 +17,30 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_FireWaveMeteOreChunk.BP_FireWaveMeteOreChunk_C.FireDecalFade
-// 0x0001 (0x0001 - 0x0000)
-struct BP_FireWaveMeteOreChunk_C_FireDecalFade final
+// Function BP_FireWaveMeteOreChunk.BP_FireWaveMeteOreChunk_C.BP_OnEnviroWaveStarted
+// 0x0034 (0x0034 - 0x0000)
+struct BP_FireWaveMeteOreChunk_C_BP_OnEnviroWaveStarted final
 {
 public:
-	bool                                          bIsFadeOut;                                        // 0x0000(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEnviroWave                                   InWaveType;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEnviroWaveStage                              InWaveStage;                                       // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCrEnviroWaveSettings                  InWaveSettings;                                    // 0x0004(0x002C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+	float                                         InWaveProgress;                                    // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_FireWaveMeteOreChunk_C_FireDecalFade;
+DUMPER7_ASSERTS_BP_FireWaveMeteOreChunk_C_BP_OnEnviroWaveStarted;
+
+// Function BP_FireWaveMeteOreChunk.BP_FireWaveMeteOreChunk_C.BP_OnGrowbackSubstageChanged
+// 0x0034 (0x0034 - 0x0000)
+struct BP_FireWaveMeteOreChunk_C_BP_OnGrowbackSubstageChanged final
+{
+public:
+	struct FCrEnviroWaveSettings                  Settings;                                          // 0x0000(0x002C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+	EEnviroWaveGrowbackSubstage                   Substage;                                          // 0x002C(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Progress;                                          // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_FireWaveMeteOreChunk_C_BP_OnGrowbackSubstageChanged;
 
 // Function BP_FireWaveMeteOreChunk.BP_FireWaveMeteOreChunk_C.ExecuteUbergraph_BP_FireWaveMeteOreChunk
 // 0x0108 (0x0108 - 0x0000)
@@ -69,30 +85,14 @@ public:
 };
 DUMPER7_ASSERTS_BP_FireWaveMeteOreChunk_C_ExecuteUbergraph_BP_FireWaveMeteOreChunk;
 
-// Function BP_FireWaveMeteOreChunk.BP_FireWaveMeteOreChunk_C.BP_OnGrowbackSubstageChanged
-// 0x0034 (0x0034 - 0x0000)
-struct BP_FireWaveMeteOreChunk_C_BP_OnGrowbackSubstageChanged final
+// Function BP_FireWaveMeteOreChunk.BP_FireWaveMeteOreChunk_C.FireDecalFade
+// 0x0001 (0x0001 - 0x0000)
+struct BP_FireWaveMeteOreChunk_C_FireDecalFade final
 {
 public:
-	struct FCrEnviroWaveSettings                  Settings_BP_OnGrowbackSubstageChanged;             // 0x0000(0x002C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-	EEnviroWaveGrowbackSubstage                   Substage_BP_OnGrowbackSubstageChanged;             // 0x002C(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Progress_BP_OnGrowbackSubstageChanged;             // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bIsFadeOut;                                        // 0x0000(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_FireWaveMeteOreChunk_C_BP_OnGrowbackSubstageChanged;
-
-// Function BP_FireWaveMeteOreChunk.BP_FireWaveMeteOreChunk_C.BP_OnEnviroWaveStarted
-// 0x0034 (0x0034 - 0x0000)
-struct BP_FireWaveMeteOreChunk_C_BP_OnEnviroWaveStarted final
-{
-public:
-	EEnviroWave                                   InWaveType_BP_OnEnviroWaveStarted;                 // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EEnviroWaveStage                              InWaveStage_BP_OnEnviroWaveStarted;                // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrEnviroWaveSettings                  InWaveSettings_BP_OnEnviroWaveStarted;             // 0x0004(0x002C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-	float                                         InWaveProgress_BP_OnEnviroWaveStarted;             // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_FireWaveMeteOreChunk_C_BP_OnEnviroWaveStarted;
+DUMPER7_ASSERTS_BP_FireWaveMeteOreChunk_C_FireDecalFade;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

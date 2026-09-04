@@ -19,11 +19,11 @@ SDK_NAMESPACE_START
 // Function BP_FE2_Powered_Device.BP_FE2_Powered_Device_C.Get Meshes
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// class USceneComponent*                  Static                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class USceneComponent*                  Static_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // class USceneComponent*                  Animated                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // TArray<class UMeshComponent*>*          NewParam                                               (Parm, OutParm, ContainsInstancedReference)
 
-void ABP_FE2_Powered_Device_C::Get_Meshes(class USceneComponent* Static, class USceneComponent* Animated, TArray<class UMeshComponent*>* NewParam) const
+void ABP_FE2_Powered_Device_C::Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Animated, TArray<class UMeshComponent*>* NewParam) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -32,7 +32,7 @@ void ABP_FE2_Powered_Device_C::Get_Meshes(class USceneComponent* Static, class U
 
 	Params::BP_FE2_Powered_Device_C_Get_Meshes Parms{};
 
-	Parms.Static = Static;
+	Parms.Static_0 = Static_0;
 	Parms.Animated = Animated;
 
 	UObject::ProcessEvent(Func, &Parms);

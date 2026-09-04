@@ -16,35 +16,36 @@
 
 SDK_NAMESPACE_START
 
-// Function ABP_Exploder_Tier3_Prototype_Actor.ABP_Exploder_Tier3_Prototype_Actor_C.ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor
-// (Final, UbergraphFunction)
+// Function ABP_Exploder_Tier3_Prototype_Actor.ABP_Exploder_Tier3_Prototype_Actor_C.AnimGraph
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FPoseLink*                       AnimGraph_0                                            (Parm, OutParm, NoDestructor)
 
-void UABP_Exploder_Tier3_Prototype_Actor_C::ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor(int32 EntryPoint)
+void UABP_Exploder_Tier3_Prototype_Actor_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier3_Prototype_Actor_C", "ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor");
+		Func = Class->GetFunction("ABP_Exploder_Tier3_Prototype_Actor_C", "AnimGraph");
 
-	Params::ABP_Exploder_Tier3_Prototype_Actor_C_ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor Parms{};
-
-	Parms.EntryPoint = EntryPoint;
+	Params::ABP_Exploder_Tier3_Prototype_Actor_C_AnimGraph Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	if (AnimGraph_0 != nullptr)
+		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
 }
 
 
-// Function ABP_Exploder_Tier3_Prototype_Actor.ABP_Exploder_Tier3_Prototype_Actor_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor_AnimGraphNode_BlendListByBool_A5846897452E5C73BAFFEF871CC1DD2A
-// (BlueprintEvent)
+// Function ABP_Exploder_Tier3_Prototype_Actor.ABP_Exploder_Tier3_Prototype_Actor_C.BlueprintInitializeAnimation
+// (Event, Public, BlueprintEvent)
 
-void UABP_Exploder_Tier3_Prototype_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor_AnimGraphNode_BlendListByBool_A5846897452E5C73BAFFEF871CC1DD2A()
+void UABP_Exploder_Tier3_Prototype_Actor_C::BlueprintInitializeAnimation()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier3_Prototype_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor_AnimGraphNode_BlendListByBool_A5846897452E5C73BAFFEF871CC1DD2A");
+		Func = Class->GetFunction("ABP_Exploder_Tier3_Prototype_Actor_C", "BlueprintInitializeAnimation");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -64,38 +65,37 @@ void UABP_Exploder_Tier3_Prototype_Actor_C::EvaluateGraphExposedInputs_ExecuteUb
 }
 
 
-// Function ABP_Exploder_Tier3_Prototype_Actor.ABP_Exploder_Tier3_Prototype_Actor_C.BlueprintInitializeAnimation
-// (Event, Public, BlueprintEvent)
+// Function ABP_Exploder_Tier3_Prototype_Actor.ABP_Exploder_Tier3_Prototype_Actor_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor_AnimGraphNode_BlendListByBool_A5846897452E5C73BAFFEF871CC1DD2A
+// (BlueprintEvent)
 
-void UABP_Exploder_Tier3_Prototype_Actor_C::BlueprintInitializeAnimation()
+void UABP_Exploder_Tier3_Prototype_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor_AnimGraphNode_BlendListByBool_A5846897452E5C73BAFFEF871CC1DD2A()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier3_Prototype_Actor_C", "BlueprintInitializeAnimation");
+		Func = Class->GetFunction("ABP_Exploder_Tier3_Prototype_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor_AnimGraphNode_BlendListByBool_A5846897452E5C73BAFFEF871CC1DD2A");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ABP_Exploder_Tier3_Prototype_Actor.ABP_Exploder_Tier3_Prototype_Actor_C.AnimGraph
-// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function ABP_Exploder_Tier3_Prototype_Actor.ABP_Exploder_Tier3_Prototype_Actor_C.ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor
+// (Final, UbergraphFunction)
 // Parameters:
-// struct FPoseLink*                       AnimGraph                                              (Parm, OutParm, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UABP_Exploder_Tier3_Prototype_Actor_C::AnimGraph(struct FPoseLink* AnimGraph)
+void UABP_Exploder_Tier3_Prototype_Actor_C::ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier3_Prototype_Actor_C", "AnimGraph");
+		Func = Class->GetFunction("ABP_Exploder_Tier3_Prototype_Actor_C", "ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor");
 
-	Params::ABP_Exploder_Tier3_Prototype_Actor_C_AnimGraph Parms{};
+	Params::ABP_Exploder_Tier3_Prototype_Actor_C_ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	if (AnimGraph != nullptr)
-		*AnimGraph = std::move(Parms.AnimGraph);
 }
 
 

@@ -29,8 +29,8 @@ public:
 	struct FBlackboardKeySelector                 CantApproachTargetBBKey;                           // 0x00C0(0x0028)(Edit, BlueprintVisible)
 
 public:
-	void ReceiveExecuteAI(class AAIController* OwnerController_ReceiveExecuteAI, class APawn* ControlledPawn_ReceiveExecuteAI);
 	void ExecuteUbergraph_BTTask_Exploder_Tier2_Actor_RegisterMovementFailed(int32 EntryPoint);
+	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 
 public:
 	static class UClass* StaticClass()

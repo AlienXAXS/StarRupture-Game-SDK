@@ -10,15 +10,15 @@
 
 #include "Basic.hpp"
 
-#include "BS_WeaponFOV_structs.hpp"
 #include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "BS_WeaponFOV_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
 #include "Chimera_structs.hpp"
 #include "Chimera_classes.hpp"
 #include "CommonInput_structs.hpp"
 #include "AuCamera_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "AuActorPlacement_structs.hpp"
 #include "EPlayerState_structs.hpp"
 

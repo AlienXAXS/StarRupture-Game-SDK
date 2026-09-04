@@ -16,16 +16,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BTT_PlaySoundAtLocation.BTT_PlaySoundAtLocation_C.ReceiveExecuteAI
-// 0x0010 (0x0010 - 0x0000)
-struct BTT_PlaySoundAtLocation_C_ReceiveExecuteAI final
-{
-public:
-	class AAIController*                          OwnerController_ReceiveExecuteAI;                  // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  ControlledPawn_ReceiveExecuteAI;                   // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BTT_PlaySoundAtLocation_C_ReceiveExecuteAI;
-
 // Function BTT_PlaySoundAtLocation.BTT_PlaySoundAtLocation_C.ExecuteUbergraph_BTT_PlaySoundAtLocation
 // 0x0030 (0x0030 - 0x0000)
 struct BTT_PlaySoundAtLocation_C_ExecuteUbergraph_BTT_PlaySoundAtLocation final
@@ -38,6 +28,16 @@ public:
 	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0018(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BTT_PlaySoundAtLocation_C_ExecuteUbergraph_BTT_PlaySoundAtLocation;
+
+// Function BTT_PlaySoundAtLocation.BTT_PlaySoundAtLocation_C.ReceiveExecuteAI
+// 0x0010 (0x0010 - 0x0000)
+struct BTT_PlaySoundAtLocation_C_ReceiveExecuteAI final
+{
+public:
+	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BTT_PlaySoundAtLocation_C_ReceiveExecuteAI;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

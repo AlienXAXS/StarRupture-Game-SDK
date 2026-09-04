@@ -62,28 +62,28 @@ public:
 	double                                        ImmunityChangeTimestamp;                           // 0x03A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UpdateInfectionEffect();
-	void Set_half_time();
-	void Scale_cyst__UpdateFunc();
-	void Scale_cyst__FinishedFunc();
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay);
-	void ReceiveBeginPlay();
-	void OnGrowthProgress(float Progress_OnGrowthProgress);
-	void OnGrowthChanged(double Progress);
-	void OnDamageTaken_Multicast();
-	void K2_OnDamageTaken_1(class AActor* InInstigator, const struct FHitResult& HitResult, float InDamage);
-	void Infection_grow();
-	void ImmunityTransition__UpdateFunc();
-	void ImmunityTransition__FinishedFunc();
-	void ImmunityDeactivated();
-	void ImmunityActivated();
-	void ExecuteUbergraph_BP_StandaloneInfectionCyst(int32 EntryPoint);
-	void Dissolve__UpdateFunc();
-	void Dissolve__FinishedFunc();
-	void CalculateImmunityProgressFromTimers(double* Progress);
-	void BP_OnInfectionJustSpawned();
+	void BP_OnDamageProtectionChanged(bool IsActive);
 	void BP_OnDestroyed();
-	void BP_OnDamageProtectionChanged(bool IsActive_BP_OnDamageProtectionChanged);
+	void BP_OnInfectionJustSpawned();
+	void CalculateImmunityProgressFromTimers(double* Progress);
+	void Dissolve__FinishedFunc();
+	void Dissolve__UpdateFunc();
+	void ExecuteUbergraph_BP_StandaloneInfectionCyst(int32 EntryPoint);
+	void ImmunityActivated();
+	void ImmunityDeactivated();
+	void ImmunityTransition__FinishedFunc();
+	void ImmunityTransition__UpdateFunc();
+	void Infection_grow();
+	void K2_OnDamageTaken_1(class AActor* InInstigator, const struct FHitResult& HitResult, float InDamage);
+	void OnDamageTaken_Multicast();
+	void OnGrowthChanged(double Progress);
+	void OnGrowthProgress(float Progress);
+	void ReceiveBeginPlay();
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void Scale_cyst__FinishedFunc();
+	void Scale_cyst__UpdateFunc();
+	void Set_half_time();
+	void UpdateInfectionEffect();
 
 public:
 	static class UClass* StaticClass()

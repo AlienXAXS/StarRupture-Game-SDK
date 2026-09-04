@@ -2214,7 +2214,7 @@ DUMPER7_ASSERTS_UCrUW_CrosshairBase;
 
 // Class ChimeraUI.CrUW_CrosshairDot
 // 0x0018 (0x03F8 - 0x03E0)
-class UCrUW_CrosshairDot final : public UCrUW_CrosshairBase
+class UCrUW_CrosshairDot : public UCrUW_CrosshairBase
 {
 public:
 	float                                         LookingAtBuildingDotScale;                         // 0x03E0(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -2526,7 +2526,7 @@ DUMPER7_ASSERTS_UCrUW_ArmorySlot;
 
 // Class ChimeraUI.CrUW_ArmoryWeaponDetails
 // 0x00B0 (0x06A0 - 0x05F0)
-class UCrUW_ArmoryWeaponDetails final : public UCrUW_ActivatableWidget
+class UCrUW_ArmoryWeaponDetails : public UCrUW_ActivatableWidget
 {
 public:
 	class UWidgetSwitcher*                        WidgetSwitcher;                                    // 0x05F0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
@@ -6656,7 +6656,7 @@ DUMPER7_ASSERTS_UCrUW_CraftingStatus;
 
 // Class ChimeraUI.CrUW_CrosshairDynamic
 // 0x0058 (0x0438 - 0x03E0)
-class UCrUW_CrosshairDynamic final : public UCrUW_CrosshairBase
+class UCrUW_CrosshairDynamic : public UCrUW_CrosshairBase
 {
 public:
 	ECrosshairType                                CrosshairType;                                     // 0x03E0(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -9223,7 +9223,7 @@ public:
 DUMPER7_ASSERTS_UCrUW_LootboxMenu;
 
 // Class ChimeraUI.CrUW_MainMenuWidget
-// 0x00F0 (0x06E0 - 0x05F0)
+// 0x0110 (0x0700 - 0x05F0)
 class UCrUW_MainMenuWidget final : public UCrUW_ActivatableWidget
 {
 public:
@@ -9234,7 +9234,7 @@ public:
 	TSubclassOf<class UTabButton>                 LeftButtonClass;                                   // 0x0618(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TMap<ECrMenuType, class FText>                ButtonsTexts;                                      // 0x0620(0x0050)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
 	TMap<int32, ECrMenuType>                      ButtonsIndexes;                                    // 0x0670(0x0050)(NativeAccessSpecifierPrivate)
-	uint8                                         Pad_6C0[0x20];                                     // 0x06C0(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_6C0[0x40];                                     // 0x06C0(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ButtonClicked(int32 Index_0);

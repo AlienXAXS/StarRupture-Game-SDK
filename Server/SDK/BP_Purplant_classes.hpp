@@ -25,8 +25,8 @@ public:
 	class UPointLightComponent*                   PointLight;                                        // 0x03B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void BP_OnLightsVisualsTriggered(bool bLightsOn);
 	void ExecuteUbergraph_BP_Purplant(int32 EntryPoint);
-	void BP_OnLightsVisualsTriggered(bool bLightsOn_BP_OnLightsVisualsTriggered);
 
 public:
 	static class UClass* StaticClass()

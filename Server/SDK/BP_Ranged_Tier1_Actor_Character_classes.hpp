@@ -26,14 +26,14 @@ public:
 	class UNiagaraComponent*                      NiagaraEyes;                                       // 0x0D30(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UserConstructionScript();
-	void OnExitActorPool();
-	void OnEnterActorPool();
-	void OnAiDied(const struct FHitResult& HitResult_OnAiDied, const struct FGameplayTag& KillingDamageTag_OnAiDied);
-	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam_GetNiagaraEyeSystem);
 	void ExecuteUbergraph_BP_Ranged_Tier1_Actor_Character(int32 EntryPoint);
+	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
+	void OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag);
+	void OnEnterActorPool();
+	void OnExitActorPool();
+	void UserConstructionScript();
 
-	void OnMeshVisibilityUpdated(bool bIsMeshHidden_OnMeshVisibilityUpdated) const;
+	void OnMeshVisibilityUpdated(bool bIsMeshHidden) const;
 
 public:
 	static class UClass* StaticClass()

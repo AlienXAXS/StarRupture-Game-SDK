@@ -17,12 +17,12 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_CoolerPassive_Foundation.BP_CoolerPassive_Foundation_C
-// 0x0010 (0x0908 - 0x08F8)
+// 0x0010 (0x08C8 - 0x08B8)
 class ABP_CoolerPassive_Foundation_C final : public ABP_Modular_Foundation_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_CoolerPassive_Foundation_C;      // 0x08F8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UBoxComponent*                          PillarCollisions;                                  // 0x0900(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_CoolerPassive_Foundation_C;      // 0x08B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UBoxComponent*                          PillarCollisions;                                  // 0x08C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_CoolerPassive_Foundation(int32 EntryPoint);

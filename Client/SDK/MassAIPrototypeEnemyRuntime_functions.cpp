@@ -441,127 +441,6 @@ void ABaseAttackSpawnIndicator::OnRep_Died()
 }
 
 
-// Function MassAIPrototypeEnemyRuntime.CrAiActionShowProjectileAndPrepareForLaunch.Create_CrAiActionShowProjectileAndPrepareForLaunch
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCrAiActionShowProjectileAndPrepareForLaunch>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class ACrAiProjectileActor> PooledProjectileType_0                                 (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FName&                      ProjectileAttachMeshSlotName_0                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrEnemyAttackType                      NewAttackType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAiActionShowProjectileAndPrepareForLaunch*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAiActionShowProjectileAndPrepareForLaunch* UCrAiActionShowProjectileAndPrepareForLaunch::Create_CrAiActionShowProjectileAndPrepareForLaunch(TSubclassOf<class UCrAiActionShowProjectileAndPrepareForLaunch> ActionType, float NewMaxLifetimeS, TSubclassOf<class ACrAiProjectileActor> PooledProjectileType_0, const class FName& ProjectileAttachMeshSlotName_0, ECrEnemyAttackType NewAttackType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionShowProjectileAndPrepareForLaunch", "Create_CrAiActionShowProjectileAndPrepareForLaunch");
-
-	Params::CrAiActionShowProjectileAndPrepareForLaunch_Create_CrAiActionShowProjectileAndPrepareForLaunch Parms{};
-
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-	Parms.PooledProjectileType_0 = PooledProjectileType_0;
-	Parms.ProjectileAttachMeshSlotName_0 = ProjectileAttachMeshSlotName_0;
-	Parms.NewAttackType = NewAttackType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionShowProjectileAndPrepareForLaunch.OnAnimFinished
-// (Final, Native, Public)
-// Parameters:
-// class AActor*                           Actor                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrEnemyLocomotionType                  CrEnemyLocomotion                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrEnemyAttackType                      CrEnemyAttack                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrEnemyJumpState                       CrEnemyJumpState                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrAiActionShowProjectileAndPrepareForLaunch::OnAnimFinished(class AActor* Actor, ECrEnemyLocomotionType CrEnemyLocomotion, ECrEnemyAttackType CrEnemyAttack, ECrEnemyJumpState CrEnemyJumpState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAiActionShowProjectileAndPrepareForLaunch", "OnAnimFinished");
-
-	Params::CrAiActionShowProjectileAndPrepareForLaunch_OnAnimFinished Parms{};
-
-	Parms.Actor = Actor;
-	Parms.CrEnemyLocomotion = CrEnemyLocomotion;
-	Parms.CrEnemyAttack = CrEnemyAttack;
-	Parms.CrEnemyJumpState = CrEnemyJumpState;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionShowProjectileAndPrepareForLaunch.OnShootAnimEvent
-// (Final, Native, Public)
-// Parameters:
-// class AActor*                           AiActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    OverrideSocketName                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrAiActionShowProjectileAndPrepareForLaunch::OnShootAnimEvent(class AActor* AiActor, const class FString& OverrideSocketName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAiActionShowProjectileAndPrepareForLaunch", "OnShootAnimEvent");
-
-	Params::CrAiActionShowProjectileAndPrepareForLaunch_OnShootAnimEvent Parms{};
-
-	Parms.AiActor = AiActor;
-	Parms.OverrideSocketName = std::move(OverrideSocketName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionShowProjectileAndPrepareForLaunch.OnShootAnimEventOnClient
-// (Final, Native, Public)
-// Parameters:
-// class AActor*                           AiActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    OverrideSocketName                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrAiActionShowProjectileAndPrepareForLaunch::OnShootAnimEventOnClient(class AActor* AiActor, const class FString& OverrideSocketName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAiActionShowProjectileAndPrepareForLaunch", "OnShootAnimEventOnClient");
-
-	Params::CrAiActionShowProjectileAndPrepareForLaunch_OnShootAnimEventOnClient Parms{};
-
-	Parms.AiActor = AiActor;
-	Parms.OverrideSocketName = std::move(OverrideSocketName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function MassAIPrototypeEnemyRuntime.BaseAttackVisualizationInterface.OnActivateDonut
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 
@@ -789,6 +668,44 @@ void ADonutVisualizationActor::UpdateFloatingTrails()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionSpawnEntity.Create_CrAiActionSpawnEntity
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCrAiActionSpawnEntity>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAuAPMassSpawnedEntityType&EntityType_0                                           (Parm, NativeAccessSpecifierPublic)
+// const struct FTransform&                SpawnTransform_0                                       (Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bSaveSpawnedEntity_0                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FBlackboardKeySelector&    SpawnedEntityBBKey_0                                   (Parm, NativeAccessSpecifierPublic)
+// class UCrAiActionSpawnEntity*           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionSpawnEntity* UCrAiActionSpawnEntity::Create_CrAiActionSpawnEntity(TSubclassOf<class UCrAiActionSpawnEntity> ActionType, float NewMaxLifetimeS, const struct FAuAPMassSpawnedEntityType& EntityType_0, const struct FTransform& SpawnTransform_0, bool bSaveSpawnedEntity_0, const struct FBlackboardKeySelector& SpawnedEntityBBKey_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionSpawnEntity", "Create_CrAiActionSpawnEntity");
+
+	Params::CrAiActionSpawnEntity_Create_CrAiActionSpawnEntity Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.EntityType_0 = std::move(EntityType_0);
+	Parms.SpawnTransform_0 = std::move(SpawnTransform_0);
+	Parms.bSaveSpawnedEntity_0 = bSaveSpawnedEntity_0;
+	Parms.SpawnedEntityBBKey_0 = std::move(SpawnedEntityBBKey_0);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -2072,6 +1989,127 @@ class UCrAiActionShowMesh* UCrAiActionShowMesh::Create_CrAiActionShowMesh(TSubcl
 }
 
 
+// Function MassAIPrototypeEnemyRuntime.CrAiActionShowProjectileAndPrepareForLaunch.Create_CrAiActionShowProjectileAndPrepareForLaunch
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCrAiActionShowProjectileAndPrepareForLaunch>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class ACrAiProjectileActor> PooledProjectileType_0                                 (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      ProjectileAttachMeshSlotName_0                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyAttackType                      NewAttackType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionShowProjectileAndPrepareForLaunch*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionShowProjectileAndPrepareForLaunch* UCrAiActionShowProjectileAndPrepareForLaunch::Create_CrAiActionShowProjectileAndPrepareForLaunch(TSubclassOf<class UCrAiActionShowProjectileAndPrepareForLaunch> ActionType, float NewMaxLifetimeS, TSubclassOf<class ACrAiProjectileActor> PooledProjectileType_0, const class FName& ProjectileAttachMeshSlotName_0, ECrEnemyAttackType NewAttackType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionShowProjectileAndPrepareForLaunch", "Create_CrAiActionShowProjectileAndPrepareForLaunch");
+
+	Params::CrAiActionShowProjectileAndPrepareForLaunch_Create_CrAiActionShowProjectileAndPrepareForLaunch Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.PooledProjectileType_0 = PooledProjectileType_0;
+	Parms.ProjectileAttachMeshSlotName_0 = ProjectileAttachMeshSlotName_0;
+	Parms.NewAttackType = NewAttackType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionShowProjectileAndPrepareForLaunch.OnAnimFinished
+// (Final, Native, Public)
+// Parameters:
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyLocomotionType                  CrEnemyLocomotion                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyAttackType                      CrEnemyAttack                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyJumpState                       CrEnemyJumpState                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrAiActionShowProjectileAndPrepareForLaunch::OnAnimFinished(class AActor* Actor, ECrEnemyLocomotionType CrEnemyLocomotion, ECrEnemyAttackType CrEnemyAttack, ECrEnemyJumpState CrEnemyJumpState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAiActionShowProjectileAndPrepareForLaunch", "OnAnimFinished");
+
+	Params::CrAiActionShowProjectileAndPrepareForLaunch_OnAnimFinished Parms{};
+
+	Parms.Actor = Actor;
+	Parms.CrEnemyLocomotion = CrEnemyLocomotion;
+	Parms.CrEnemyAttack = CrEnemyAttack;
+	Parms.CrEnemyJumpState = CrEnemyJumpState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionShowProjectileAndPrepareForLaunch.OnShootAnimEvent
+// (Final, Native, Public)
+// Parameters:
+// class AActor*                           AiActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    OverrideSocketName                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrAiActionShowProjectileAndPrepareForLaunch::OnShootAnimEvent(class AActor* AiActor, const class FString& OverrideSocketName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAiActionShowProjectileAndPrepareForLaunch", "OnShootAnimEvent");
+
+	Params::CrAiActionShowProjectileAndPrepareForLaunch_OnShootAnimEvent Parms{};
+
+	Parms.AiActor = AiActor;
+	Parms.OverrideSocketName = std::move(OverrideSocketName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionShowProjectileAndPrepareForLaunch.OnShootAnimEventOnClient
+// (Final, Native, Public)
+// Parameters:
+// class AActor*                           AiActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    OverrideSocketName                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrAiActionShowProjectileAndPrepareForLaunch::OnShootAnimEventOnClient(class AActor* AiActor, const class FString& OverrideSocketName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAiActionShowProjectileAndPrepareForLaunch", "OnShootAnimEventOnClient");
+
+	Params::CrAiActionShowProjectileAndPrepareForLaunch_OnShootAnimEventOnClient Parms{};
+
+	Parms.AiActor = AiActor;
+	Parms.OverrideSocketName = std::move(OverrideSocketName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function MassAIPrototypeEnemyRuntime.CrAiActionSignalEntity.Create_CrAiActionSignalEntity
 // (Final, Native, Static, Public)
 // Parameters:
@@ -2174,44 +2212,6 @@ class UCrAiActionSpawnEnemyEntity* UCrAiActionSpawnEnemyEntity::Create_CrAiActio
 	Parms.SpawnTransform_0 = std::move(SpawnTransform_0);
 	Parms.bInstantSpawn_0 = bInstantSpawn_0;
 	Parms.ForcedTarget_0 = std::move(ForcedTarget_0);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionSpawnEntity.Create_CrAiActionSpawnEntity
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCrAiActionSpawnEntity>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FAuAPMassSpawnedEntityType&EntityType_0                                           (Parm, NativeAccessSpecifierPublic)
-// const struct FTransform&                SpawnTransform_0                                       (Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bSaveSpawnedEntity_0                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FBlackboardKeySelector&    SpawnedEntityBBKey_0                                   (Parm, NativeAccessSpecifierPublic)
-// class UCrAiActionSpawnEntity*           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAiActionSpawnEntity* UCrAiActionSpawnEntity::Create_CrAiActionSpawnEntity(TSubclassOf<class UCrAiActionSpawnEntity> ActionType, float NewMaxLifetimeS, const struct FAuAPMassSpawnedEntityType& EntityType_0, const struct FTransform& SpawnTransform_0, bool bSaveSpawnedEntity_0, const struct FBlackboardKeySelector& SpawnedEntityBBKey_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionSpawnEntity", "Create_CrAiActionSpawnEntity");
-
-	Params::CrAiActionSpawnEntity_Create_CrAiActionSpawnEntity Parms{};
-
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-	Parms.EntityType_0 = std::move(EntityType_0);
-	Parms.SpawnTransform_0 = std::move(SpawnTransform_0);
-	Parms.bSaveSpawnedEntity_0 = bSaveSpawnedEntity_0;
-	Parms.SpawnedEntityBBKey_0 = std::move(SpawnedEntityBBKey_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

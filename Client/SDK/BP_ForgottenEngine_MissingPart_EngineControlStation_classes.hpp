@@ -17,12 +17,12 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ForgottenEngine_MissingPart_EngineControlStation.BP_ForgottenEngine_MissingPart_EngineControlStation_C
-// 0x0010 (0x0770 - 0x0760)
+// 0x0010 (0x0778 - 0x0768)
 class ABP_ForgottenEngine_MissingPart_EngineControlStation_C final : public ACrMegamachineMissingPartDevice
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0760(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UStaticMeshComponent*                   Cube;                                              // 0x0768(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0768(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UStaticMeshComponent*                   Cube;                                              // 0x0770(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_ForgottenEngine_MissingPart_EngineControlStation(int32 EntryPoint);

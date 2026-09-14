@@ -16,6 +16,18 @@
 
 SDK_NAMESPACE_START
 
+// ScriptStruct ChimeraMassCommon.CrMassComponentReplicationHelper
+// 0x0018 (0x0018 - 0x0000)
+struct FCrMassComponentReplicationHelper final
+{
+public:
+	struct FMassNetworkID                         NetID;                                             // 0x0000(0x0004)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UObject>                    ComponentClass;                                    // 0x0008(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TWeakObjectPtr<class UActorComponent>         Component;                                         // 0x0010(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+};
+DUMPER7_ASSERTS_FCrMassComponentReplicationHelper;
+
 // ScriptStruct ChimeraMassCommon.CrMassPersistentEntityID
 // 0x0010 (0x0010 - 0x0000)
 struct FCrMassPersistentEntityID final
@@ -49,18 +61,6 @@ public:
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCrMassActorReplicationHelper;
-
-// ScriptStruct ChimeraMassCommon.CrMassComponentReplicationHelper
-// 0x0018 (0x0018 - 0x0000)
-struct FCrMassComponentReplicationHelper final
-{
-public:
-	struct FMassNetworkID                         NetID;                                             // 0x0000(0x0004)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UObject>                    ComponentClass;                                    // 0x0008(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TWeakObjectPtr<class UActorComponent>         Component;                                         // 0x0010(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-};
-DUMPER7_ASSERTS_FCrMassComponentReplicationHelper;
 
 // ScriptStruct ChimeraMassCommon.CrMassSavableFragment
 // 0x0000 (0x0000 - 0x0000)

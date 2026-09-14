@@ -63,15 +63,6 @@ enum class EDataRegistryAvailability : uint8
 	EDataRegistryAvailability_MAX            = 6,
 };
 
-// ScriptStruct DataRegistry.DataRegistryLookup
-// 0x0020 (0x0020 - 0x0000)
-struct alignas(0x08) FDataRegistryLookup final
-{
-public:
-	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FDataRegistryLookup;
-
 // ScriptStruct DataRegistry.DataRegistryType
 // 0x0008 (0x0008 - 0x0000)
 struct FDataRegistryType final
@@ -93,6 +84,24 @@ public:
 };
 DUMPER7_ASSERTS_FSoftDataRegistryOrTable;
 
+// ScriptStruct DataRegistry.DataRegistryLookup
+// 0x0020 (0x0020 - 0x0000)
+struct alignas(0x08) FDataRegistryLookup final
+{
+public:
+	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FDataRegistryLookup;
+
+// ScriptStruct DataRegistry.DataRegistrySourceItemId
+// 0x0040 (0x0040 - 0x0000)
+struct alignas(0x08) FDataRegistrySourceItemId final
+{
+public:
+	uint8                                         Pad_0[0x40];                                       // 0x0000(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FDataRegistrySourceItemId;
+
 // ScriptStruct DataRegistry.DataRegistryId
 // 0x0010 (0x0010 - 0x0000)
 struct FDataRegistryId final
@@ -103,14 +112,20 @@ public:
 };
 DUMPER7_ASSERTS_FDataRegistryId;
 
-// ScriptStruct DataRegistry.DataRegistrySourceItemId
-// 0x0040 (0x0040 - 0x0000)
-struct alignas(0x08) FDataRegistrySourceItemId final
+// ScriptStruct DataRegistry.DataRegistryCachePolicy
+// 0x0014 (0x0014 - 0x0000)
+struct FDataRegistryCachePolicy final
 {
 public:
-	uint8                                         Pad_0[0x40];                                       // 0x0000(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bCacheIsAlwaysVolatile;                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseCurveTableCacheVersion;                        // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         MinNumberKept;                                     // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxNumberKept;                                     // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ForceKeepSeconds;                                  // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ForceReleaseSeconds;                               // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FDataRegistrySourceItemId;
+DUMPER7_ASSERTS_FDataRegistryCachePolicy;
 
 // ScriptStruct DataRegistry.DataRegistrySource_DataTableRules
 // 0x0008 (0x0008 - 0x0000)
@@ -131,21 +146,6 @@ public:
 	struct FGameplayTag                           BaseGameplayTag;                                   // 0x0000(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FDataRegistryIdFormat;
-
-// ScriptStruct DataRegistry.DataRegistryCachePolicy
-// 0x0014 (0x0014 - 0x0000)
-struct FDataRegistryCachePolicy final
-{
-public:
-	bool                                          bCacheIsAlwaysVolatile;                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseCurveTableCacheVersion;                        // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         MinNumberKept;                                     // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxNumberKept;                                     // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ForceKeepSeconds;                                  // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ForceReleaseSeconds;                               // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FDataRegistryCachePolicy;
 
 // ScriptStruct DataRegistry.DataRegistryOrTableRow
 // 0x0028 (0x0028 - 0x0000)

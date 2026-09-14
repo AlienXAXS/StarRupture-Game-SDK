@@ -17,6 +17,28 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function ModelingComponents.PointSetComponent.AddPoints
+// 0x0020 (0x0020 - 0x0000)
+struct PointSetComponent_AddPoints final
+{
+public:
+	TArray<struct FVector>                        Positions;                                         // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FColor                                 InColor;                                           // 0x0010(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InSize;                                            // 0x0014(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InDepthBias;                                       // 0x0018(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x001C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PointSetComponent_AddPoints;
+
+// Function ModelingComponents.PointSetComponent.SetPointMaterial
+// 0x0008 (0x0008 - 0x0000)
+struct PointSetComponent_SetPointMaterial final
+{
+public:
+	class UMaterialInterface*                     InPointMaterial;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PointSetComponent_SetPointMaterial;
+
 // Function ModelingComponents.OctreeDynamicMeshComponent.SetDynamicMesh
 // 0x0008 (0x0008 - 0x0000)
 struct OctreeDynamicMeshComponent_SetDynamicMesh final
@@ -257,28 +279,6 @@ public:
 	class APreviewGeometryActor*                  ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_PreviewGeometry_GetActor;
-
-// Function ModelingComponents.PointSetComponent.AddPoints
-// 0x0020 (0x0020 - 0x0000)
-struct PointSetComponent_AddPoints final
-{
-public:
-	TArray<struct FVector>                        Positions;                                         // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	struct FColor                                 InColor;                                           // 0x0010(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         InSize;                                            // 0x0014(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         InDepthBias;                                       // 0x0018(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ReturnValue;                                       // 0x001C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PointSetComponent_AddPoints;
-
-// Function ModelingComponents.PointSetComponent.SetPointMaterial
-// 0x0008 (0x0008 - 0x0000)
-struct PointSetComponent_SetPointMaterial final
-{
-public:
-	class UMaterialInterface*                     InPointMaterial;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PointSetComponent_SetPointMaterial;
 
 // Function ModelingComponents.ModelingObjectsCreationAPI.CreateMaterialObject
 // 0x0038 (0x0038 - 0x0000)

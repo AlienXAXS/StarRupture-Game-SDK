@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_AcidExtractor_ExtractorHelper.BP_AcidExtractor_ExtractorHelper_C
-// 0x0000 (0x0A40 - 0x0A40)
+// 0x0000 (0x0A00 - 0x0A00)
 class ABP_AcidExtractor_ExtractorHelper_C final : public ABP_ChimeraPlacementHelperReplicatedExtractor_C
 {
 public:

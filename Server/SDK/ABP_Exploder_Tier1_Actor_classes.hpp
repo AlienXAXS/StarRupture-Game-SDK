@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "AnimGraphRuntime_structs.hpp"
-#include "ABP_Exploder_Tier1_Actor_structs.hpp"
 #include "Engine_structs.hpp"
+#include "ABP_Exploder_Tier1_Actor_structs.hpp"
 #include "CrAiExploderRuntime_classes.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 

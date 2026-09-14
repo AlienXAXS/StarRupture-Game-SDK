@@ -14,8 +14,8 @@
 #include "PCG_classes.hpp"
 #include "PCGGeometryScriptInterop_structs.hpp"
 #include "GeometryScriptingCore_structs.hpp"
-#include "ModelingOperators_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ModelingOperators_structs.hpp"
 
 
 SDK_NAMESPACE_START

@@ -17,14 +17,14 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Modular_PillarSupport.BP_Modular_PillarSupport_C
-// 0x0020 (0x08D8 - 0x08B8)
+// 0x0020 (0x0898 - 0x0878)
 class ABP_Modular_PillarSupport_C final : public ACrCustomBuilding
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x08B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UCrInteriorsMapperBoxComponent*         CrInteriorsMapperBox;                              // 0x08C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UBoxComponent*                          Box;                                               // 0x08C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   PoleCapBottomDetail;                               // 0x08D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0878(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UCrInteriorsMapperBoxComponent*         CrInteriorsMapperBox;                              // 0x0880(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UBoxComponent*                          Box;                                               // 0x0888(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   PoleCapBottomDetail;                               // 0x0890(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_Modular_PillarSupport(int32 EntryPoint);

@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_SolarPowerGeneratorTier2_Helper.BP_SolarPowerGeneratorTier2_Helper_C
-// 0x0000 (0x0A70 - 0x0A70)
+// 0x0000 (0x0A30 - 0x0A30)
 class ABP_SolarPowerGeneratorTier2_Helper_C final : public ABP_ChimeraPlacementHelperReplicatedStarPowered_C
 {
 public:

@@ -16,14 +16,14 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_DronePole_460.BP_DronePole_460_C
-// 0x0020 (0x06E0 - 0x06C0)
+// 0x0020 (0x06E8 - 0x06C8)
 class ABP_DronePole_460_C final : public ACrDronePathPoint
 {
 public:
-	class UStaticMeshComponent*                   Pole;                                              // 0x06C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   PlacementHelper;                                   // 0x06C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   MainMesh;                                          // 0x06D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UAuActorPlacementSocketsComponent*      AuActorPlacementSockets;                           // 0x06D8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   Pole;                                              // 0x06C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   PlacementHelper;                                   // 0x06D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   MainMesh;                                          // 0x06D8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UAuActorPlacementSocketsComponent*      AuActorPlacementSockets;                           // 0x06E0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

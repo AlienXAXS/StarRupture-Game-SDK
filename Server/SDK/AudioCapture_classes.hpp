@@ -68,30 +68,6 @@ public:
 };
 DUMPER7_ASSERTS_UAudioCaptureFunctionLibrary;
 
-// Class AudioCapture.AudioCaptureBlueprintLibrary
-// 0x0000 (0x0028 - 0x0028)
-class UAudioCaptureBlueprintLibrary final : public UBlueprintFunctionLibrary
-{
-public:
-	static class FString Conv_AudioInputDeviceInfoToString(const struct FAudioInputDeviceInfo& Info);
-	static void GetAvailableAudioInputDevices(const class UObject* WorldContextObject, const TDelegate<void(const TArray<struct FAudioInputDeviceInfo>& AvailableDevices)>& OnObtainDevicesEvent);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AudioCaptureBlueprintLibrary")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AudioCaptureBlueprintLibrary")
-	}
-	static class UAudioCaptureBlueprintLibrary* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAudioCaptureBlueprintLibrary>();
-	}
-};
-DUMPER7_ASSERTS_UAudioCaptureBlueprintLibrary;
-
 // Class AudioCapture.AudioCaptureComponent
 // 0x00C0 (0x0980 - 0x08C0)
 class UAudioCaptureComponent final : public USynthComponent
@@ -115,5 +91,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAudioCaptureComponent;
+
+// Class AudioCapture.AudioCaptureBlueprintLibrary
+// 0x0000 (0x0028 - 0x0028)
+class UAudioCaptureBlueprintLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static class FString Conv_AudioInputDeviceInfoToString(const struct FAudioInputDeviceInfo& Info);
+	static void GetAvailableAudioInputDevices(const class UObject* WorldContextObject, const TDelegate<void(const TArray<struct FAudioInputDeviceInfo>& AvailableDevices)>& OnObtainDevicesEvent);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AudioCaptureBlueprintLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AudioCaptureBlueprintLibrary")
+	}
+	static class UAudioCaptureBlueprintLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAudioCaptureBlueprintLibrary>();
+	}
+};
+DUMPER7_ASSERTS_UAudioCaptureBlueprintLibrary;
 
 SDK_NAMESPACE_END

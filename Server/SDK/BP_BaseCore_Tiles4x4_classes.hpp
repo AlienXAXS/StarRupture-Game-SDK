@@ -17,11 +17,11 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_BaseCore_Tiles4x4.BP_BaseCore_Tiles4x4_C
-// 0x0008 (0x0900 - 0x08F8)
+// 0x0008 (0x08C0 - 0x08B8)
 class ABP_BaseCore_Tiles4x4_C final : public ABP_Modular_Tiles_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_BaseCore_Tiles4x4_C;             // 0x08F8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_BaseCore_Tiles4x4_C;             // 0x08B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_BP_BaseCore_Tiles4x4(int32 EntryPoint);

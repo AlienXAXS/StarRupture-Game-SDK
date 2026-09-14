@@ -16,15 +16,15 @@
 
 SDK_NAMESPACE_START
 
-// Function ChimeraUI.CrUW_CheatItemsTab.HandleOnButtonPressed
-// (Final, Native, Private)
+// Function ChimeraUI.CrUW_CheatBuildindingCategoryButton.OnCategoryButtonClicked
+// (Final, Native, Protected)
 
-void UCrUW_CheatItemsTab::HandleOnButtonPressed()
+void UCrUW_CheatBuildindingCategoryButton::OnCategoryButtonClicked()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CheatItemsTab", "HandleOnButtonPressed");
+		Func = Class->GetFunction("CrUW_CheatBuildindingCategoryButton", "OnCategoryButtonClicked");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -35,21 +35,41 @@ void UCrUW_CheatItemsTab::HandleOnButtonPressed()
 }
 
 
-// Function ChimeraUI.CrUW_CheatItemsTab.OnFilterTextChanged
-// (Final, Native, Public, HasOutParams)
+// Function ChimeraUI.CrUW_CheatBuildindingCategoryButton.OnCategoryTypeChange
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// const class FText&                      NewText                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// ECrBuildingType                         InType                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_CheatItemsTab::OnFilterTextChanged(const class FText& NewText)
+void UCrUW_CheatBuildindingCategoryButton::OnCategoryTypeChange(ECrBuildingType InType)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CheatItemsTab", "OnFilterTextChanged");
+		Func = Class->GetFunction("CrUW_CheatBuildindingCategoryButton", "OnCategoryTypeChange");
 
-	Params::CrUW_CheatItemsTab_OnFilterTextChanged Parms{};
+	Params::CrUW_CheatBuildindingCategoryButton_OnCategoryTypeChange Parms{};
 
-	Parms.NewText = std::move(NewText);
+	Parms.InType = InType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CheatBuildindingCategoryButton.SetCategoryType
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// ECrBuildingType                         InType                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CheatBuildindingCategoryButton::SetCategoryType(ECrBuildingType InType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CheatBuildindingCategoryButton", "SetCategoryType");
+
+	Params::CrUW_CheatBuildindingCategoryButton_SetCategoryType Parms{};
+
+	Parms.InType = InType;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -60,21 +80,133 @@ void UCrUW_CheatItemsTab::OnFilterTextChanged(const class FText& NewText)
 }
 
 
-// Function ChimeraUI.CrUW_CheatItemsTab.OnItemAmountChanged
+// Function ChimeraUI.CrUW_ActivatableWidget.BindCloseActions
+// (Final, Native, Public, BlueprintCallable)
+
+void UCrUW_ActivatableWidget::BindCloseActions()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_ActivatableWidget", "BindCloseActions");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_ActivatableWidget.OnWidgetInitialized
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class AActor*                           InActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class APlayerController*                InPc                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_ActivatableWidget::OnWidgetInitialized(class AActor* InActor, class APlayerController* InPc)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_ActivatableWidget", "OnWidgetInitialized");
+
+	Params::CrUW_ActivatableWidget_OnWidgetInitialized Parms{};
+
+	Parms.InActor = InActor;
+	Parms.InPc = InPc;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_ActivatableWidget.TurnOffCloseAction
+// (Final, Native, Public, BlueprintCallable)
+
+void UCrUW_ActivatableWidget::TurnOffCloseAction()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_ActivatableWidget", "TurnOffCloseAction");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_ActivatableWidget.TurnOnCloseAction
+// (Final, Native, Public, BlueprintCallable)
+
+void UCrUW_ActivatableWidget::TurnOnCloseAction()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_ActivatableWidget", "TurnOnCloseAction");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_BuildingInventory.BPOnShowForActor
+// (Event, Public, BlueprintEvent)
+
+void UCrUW_BuildingInventory::BPOnShowForActor()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_BuildingInventory", "BPOnShowForActor");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_BuildingInventory.HandlePickAllClicked
+// (Final, Native, Private)
+
+void UCrUW_BuildingInventory::HandlePickAllClicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_BuildingInventory", "HandlePickAllClicked");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CloningBedPlayerInfo.SetPlayerInfo
 // (Final, Native, Public)
 // Parameters:
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EProfessionType                         Profession                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_CheatItemsTab::OnItemAmountChanged(float NewValue)
+void UCrUW_CloningBedPlayerInfo::SetPlayerInfo(EProfessionType Profession)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CheatItemsTab", "OnItemAmountChanged");
+		Func = Class->GetFunction("CrUW_CloningBedPlayerInfo", "SetPlayerInfo");
 
-	Params::CrUW_CheatItemsTab_OnItemAmountChanged Parms{};
+	Params::CrUW_CloningBedPlayerInfo_SetPlayerInfo Parms{};
 
-	Parms.NewValue = NewValue;
+	Parms.Profession = Profession;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -85,358 +217,35 @@ void UCrUW_CheatItemsTab::OnItemAmountChanged(float NewValue)
 }
 
 
-// Function ChimeraUI.CrUW_CheatItemsTab.SetItemAmount
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CheatItemsTab::SetItemAmount(int32 Amount)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CheatItemsTab", "SetItemAmount");
-
-	Params::CrUW_CheatItemsTab_SetItemAmount Parms{};
-
-	Parms.Amount = Amount;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CheatItemsTab.SetItemFilter
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class FText&                      Text                                                   (Parm, NativeAccessSpecifierPublic)
-
-void UCrUW_CheatItemsTab::SetItemFilter(const class FText& Text)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CheatItemsTab", "SetItemFilter");
-
-	Params::CrUW_CheatItemsTab_SetItemFilter Parms{};
-
-	Parms.Text = std::move(Text);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CheatItemsTab.GetItemAmount
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UCrUW_CheatItemsTab::GetItemAmount() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CheatItemsTab", "GetItemAmount");
-
-	Params::CrUW_CheatItemsTab_GetItemAmount Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ChimeraUI.CrUW_CheatItemsTab.GetWantedItemAmount
-// (Event, Public, BlueprintEvent, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UCrUW_CheatItemsTab::GetWantedItemAmount() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CheatItemsTab", "GetWantedItemAmount");
-
-	Params::CrUW_CheatItemsTab_GetWantedItemAmount Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ChimeraUI.CrUW_QuickUseMenu.OnCurrentEntryIndexChange
+// Function ChimeraUI.CrUW_CloningBedPlayerInfo.SetupDetails
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   NumberOfEntries                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bActive                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EProfessionType                         Profession                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_QuickUseMenu::OnCurrentEntryIndexChange(int32 Index_0, int32 NumberOfEntries, bool bActive)
+void UCrUW_CloningBedPlayerInfo::SetupDetails(EProfessionType Profession)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_QuickUseMenu", "OnCurrentEntryIndexChange");
+		Func = Class->GetFunction("CrUW_CloningBedPlayerInfo", "SetupDetails");
 
-	Params::CrUW_QuickUseMenu_OnCurrentEntryIndexChange Parms{};
+	Params::CrUW_CloningBedPlayerInfo_SetupDetails Parms{};
 
-	Parms.Index_0 = Index_0;
-	Parms.NumberOfEntries = NumberOfEntries;
-	Parms.bActive = bActive;
+	Parms.Profession = Profession;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function ChimeraUI.CrUW_QuickUseMenu.OnMenuOpened
-// (Event, Public, BlueprintEvent)
-
-void UCrUW_QuickUseMenu::OnMenuOpened()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_QuickUseMenu", "OnMenuOpened");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_BuildingMenuButton.FocusRecived
-// (Event, Protected, BlueprintEvent)
-
-void UCrUW_BuildingMenuButton::FocusRecived()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingMenuButton", "FocusRecived");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_BuildingMenuButton.HandleOnButtonClick
-// (Final, Native, Private)
-
-void UCrUW_BuildingMenuButton::HandleOnButtonClick()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingMenuButton", "HandleOnButtonClick");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_BuildingMenuButton.IsAffordable
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UCrUW_BuildingMenuButton::IsAffordable()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingMenuButton", "IsAffordable");
-
-	Params::CrUW_BuildingMenuButton_IsAffordable Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ChimeraUI.CrUW_BuildingOptionButtons.OnEquipBuildingTool
-// (Final, Native, Private)
-
-void UCrUW_BuildingOptionButtons::OnEquipBuildingTool()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingOptionButtons", "OnEquipBuildingTool");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_BuildingOptionButtons.OnItemPostEquip
-// (Final, Native, Private)
-
-void UCrUW_BuildingOptionButtons::OnItemPostEquip()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingOptionButtons", "OnItemPostEquip");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_BuildingOptionButtons.OnPossesed
-// (Final, Native, Private)
-// Parameters:
-// class APawn*                            InPawn                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_BuildingOptionButtons::OnPossesed(class APawn* InPawn)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingOptionButtons", "OnPossesed");
-
-	Params::CrUW_BuildingOptionButtons_OnPossesed Parms{};
-
-	Parms.InPawn = InPawn;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_BuildingOptionButtons.OnSetPlacementModeModifier
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// EPlacementModeModifier                  Mode                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_BuildingOptionButtons::OnSetPlacementModeModifier(EPlacementModeModifier Mode)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingOptionButtons", "OnSetPlacementModeModifier");
-
-	Params::CrUW_BuildingOptionButtons_OnSetPlacementModeModifier Parms{};
-
-	Parms.Mode = Mode;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_BuildingOptionButtons.OnUnequipBuildingTool
-// (Final, Native, Private)
-
-void UCrUW_BuildingOptionButtons::OnUnequipBuildingTool()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingOptionButtons", "OnUnequipBuildingTool");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_BuildingOptionButtons.OnUnlockedFeaturesChanged
+// Function ChimeraUI.CrUW_BuildingMenuCategoryButton.OnCategoryButtonClicked
 // (Final, Native, Protected)
-// Parameters:
-// const TArray<ECrCorporationUnlockedFeatures>&UnlockedFeatures                                       (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UCrUW_BuildingOptionButtons::OnUnlockedFeaturesChanged(const TArray<ECrCorporationUnlockedFeatures>& UnlockedFeatures)
+void UCrUW_BuildingMenuCategoryButton::OnCategoryButtonClicked()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingOptionButtons", "OnUnlockedFeaturesChanged");
-
-	Params::CrUW_BuildingOptionButtons_OnUnlockedFeaturesChanged Parms{};
-
-	Parms.UnlockedFeatures = std::move(UnlockedFeatures);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_BuildingOptionButtons.OnUnPossesed
-// (Final, Native, Private)
-// Parameters:
-// class APawn*                            InPawn                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_BuildingOptionButtons::OnUnPossesed(class APawn* InPawn)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingOptionButtons", "OnUnPossesed");
-
-	Params::CrUW_BuildingOptionButtons_OnUnPossesed Parms{};
-
-	Parms.InPawn = InPawn;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CheatGem.DecreaseClicked
-// (Final, Native, Private)
-
-void UCrUW_CheatGem::DecreaseClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CheatGem", "DecreaseClicked");
+		Func = Class->GetFunction("CrUW_BuildingMenuCategoryButton", "OnCategoryButtonClicked");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -447,22 +256,102 @@ void UCrUW_CheatGem::DecreaseClicked()
 }
 
 
-// Function ChimeraUI.CrUW_CheatGem.IncreaseClicked
-// (Final, Native, Private)
+// Function ChimeraUI.CrUW_BuildingMenuCategoryButton.OnCategoryTypeChange
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// ECrBuildingUIType                       InType                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_CheatGem::IncreaseClicked()
+void UCrUW_BuildingMenuCategoryButton::OnCategoryTypeChange(ECrBuildingUIType InType)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CheatGem", "IncreaseClicked");
+		Func = Class->GetFunction("CrUW_BuildingMenuCategoryButton", "OnCategoryTypeChange");
+
+	Params::CrUW_BuildingMenuCategoryButton_OnCategoryTypeChange Parms{};
+
+	Parms.InType = InType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_BuildingMenuCategoryButton.SetCategoryUIType
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// ECrBuildingUIType                       InType                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_BuildingMenuCategoryButton::SetCategoryUIType(ECrBuildingUIType InType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_BuildingMenuCategoryButton", "SetCategoryUIType");
+
+	Params::CrUW_BuildingMenuCategoryButton_SetCategoryUIType Parms{};
+
+	Parms.InType = InType;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_BuildingPlacementIndicator.OnPlacementCancelled
+// (Event, Protected, BlueprintEvent)
+
+void UCrUW_BuildingPlacementIndicator::OnPlacementCancelled()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_BuildingPlacementIndicator", "OnPlacementCancelled");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_BuildingPlacementIndicator.OnPlaceStateChange
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// EAuAPlacementConditionResult            NewState                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_BuildingPlacementIndicator::OnPlaceStateChange(EAuAPlacementConditionResult NewState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_BuildingPlacementIndicator", "OnPlaceStateChange");
+
+	Params::CrUW_BuildingPlacementIndicator_OnPlaceStateChange Parms{};
+
+	Parms.NewState = NewState;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_Cooler.SetColors
+// (Event, Protected, HasDefaults, BlueprintEvent)
+// Parameters:
+// const struct FLinearColor&              HighlightColor                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_Cooler::SetColors(const struct FLinearColor& HighlightColor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_Cooler", "SetColors");
+
+	Params::CrUW_Cooler_SetColors Parms{};
+
+	Parms.HighlightColor = std::move(HighlightColor);
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -1008,15 +897,15 @@ void ACrHUD::OnShowObjectivesHUD()
 }
 
 
-// Function ChimeraUI.CrUW_CorpLevelUpHud.HandleTriggerFadeOut
-// (Final, Native, Public)
+// Function ChimeraUI.CrUW_CheatMenu.HandleOnLoadGameClicked
+// (Final, Native, Private)
 
-void UCrUW_CorpLevelUpHud::HandleTriggerFadeOut()
+void UCrUW_CheatMenu::HandleOnLoadGameClicked()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorpLevelUpHud", "HandleTriggerFadeOut");
+		Func = Class->GetFunction("CrUW_CheatMenu", "HandleOnLoadGameClicked");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1027,43 +916,15 @@ void UCrUW_CorpLevelUpHud::HandleTriggerFadeOut()
 }
 
 
-// Function ChimeraUI.CrUW_CorpLevelUpHud.TriggerFadeIn
-// (Event, Public, BlueprintEvent)
+// Function ChimeraUI.CrUW_CheatMenu.HandleOnSaveGameClicked
+// (Final, Native, Private)
 
-void UCrUW_CorpLevelUpHud::TriggerFadeIn()
+void UCrUW_CheatMenu::HandleOnSaveGameClicked()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorpLevelUpHud", "TriggerFadeIn");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_CorpLevelUpHud.TriggerFadeOut
-// (Event, Public, BlueprintEvent)
-
-void UCrUW_CorpLevelUpHud::TriggerFadeOut()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorpLevelUpHud", "TriggerFadeOut");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_ActivatableWidget.BindCloseActions
-// (Final, Native, Public, BlueprintCallable)
-
-void UCrUW_ActivatableWidget::BindCloseActions()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ActivatableWidget", "BindCloseActions");
+		Func = Class->GetFunction("CrUW_CheatMenu", "HandleOnSaveGameClicked");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1074,221 +935,21 @@ void UCrUW_ActivatableWidget::BindCloseActions()
 }
 
 
-// Function ChimeraUI.CrUW_ActivatableWidget.OnWidgetInitialized
-// (Event, Public, BlueprintEvent)
+// Function ChimeraUI.CrUW_CheatMenu.OnCategoryLoaded
+// (Final, Native, Private)
 // Parameters:
-// class AActor*                           InActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class APlayerController*                InPc                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSoftClassPtr<class UClass>             SoftClass                                              (Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_ActivatableWidget::OnWidgetInitialized(class AActor* InActor, class APlayerController* InPc)
+void UCrUW_CheatMenu::OnCategoryLoaded(TSoftClassPtr<class UClass> SoftClass)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ActivatableWidget", "OnWidgetInitialized");
+		Func = Class->GetFunction("CrUW_CheatMenu", "OnCategoryLoaded");
 
-	Params::CrUW_ActivatableWidget_OnWidgetInitialized Parms{};
+	Params::CrUW_CheatMenu_OnCategoryLoaded Parms{};
 
-	Parms.InActor = InActor;
-	Parms.InPc = InPc;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_ActivatableWidget.TurnOffCloseAction
-// (Final, Native, Public, BlueprintCallable)
-
-void UCrUW_ActivatableWidget::TurnOffCloseAction()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ActivatableWidget", "TurnOffCloseAction");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_ActivatableWidget.TurnOnCloseAction
-// (Final, Native, Public, BlueprintCallable)
-
-void UCrUW_ActivatableWidget::TurnOnCloseAction()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ActivatableWidget", "TurnOnCloseAction");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_BuildingUIWithTabs.HandleCopy
-// (Final, Native, Protected)
-
-void UCrUW_BuildingUIWithTabs::HandleCopy()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingUIWithTabs", "HandleCopy");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_BuildingUIWithTabs.HandlePaste
-// (Final, Native, Protected)
-
-void UCrUW_BuildingUIWithTabs::HandlePaste()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingUIWithTabs", "HandlePaste");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_BuildingUIWithTabs.RegisterOnDataPointChanged
-// (Final, Native, Protected, BlueprintCallable)
-
-void UCrUW_BuildingUIWithTabs::RegisterOnDataPointChanged()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingUIWithTabs", "RegisterOnDataPointChanged");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_BuildingUIWithTabs.RemoveOnDataPointChanged
-// (Final, Native, Protected, BlueprintCallable)
-
-void UCrUW_BuildingUIWithTabs::RemoveOnDataPointChanged()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingUIWithTabs", "RemoveOnDataPointChanged");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_BuildingUIWithTabs.SetActiveTab
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// EUIWidgetType                           TabType                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_BuildingUIWithTabs::SetActiveTab(EUIWidgetType TabType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingUIWithTabs", "SetActiveTab");
-
-	Params::CrUW_BuildingUIWithTabs_SetActiveTab Parms{};
-
-	Parms.TabType = TabType;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_BuildingUIWithTabs.SetDataPointValue
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// int32                                   InPoints                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_BuildingUIWithTabs::SetDataPointValue(int32 InPoints)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingUIWithTabs", "SetDataPointValue");
-
-	Params::CrUW_BuildingUIWithTabs_SetDataPointValue Parms{};
-
-	Parms.InPoints = InPoints;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_BuildingUIWithTabs.SetTabWidgetBackground
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// int32                                   Tabs                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bHasScrollbar                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_BuildingUIWithTabs::SetTabWidgetBackground(int32 Tabs, bool bHasScrollbar)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingUIWithTabs", "SetTabWidgetBackground");
-
-	Params::CrUW_BuildingUIWithTabs_SetTabWidgetBackground Parms{};
-
-	Parms.Tabs = Tabs;
-	Parms.bHasScrollbar = bHasScrollbar;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_BuildingUIWithTabs.TabChanged
-// (Final, Native, Public)
-// Parameters:
-// int32                                   Old                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Active                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_BuildingUIWithTabs::TabChanged(int32 Old, int32 Active)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingUIWithTabs", "TabChanged");
-
-	Params::CrUW_BuildingUIWithTabs_TabChanged Parms{};
-
-	Parms.Old = Old;
-	Parms.Active = Active;
+	Parms.SoftClass = SoftClass;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1522,81 +1183,141 @@ void UCrMapManuSubsystem::OnWorldBeginPlayFinished()
 }
 
 
-// Function ChimeraUI.CrUW_CloningBedPanel.AddWidgetToGrid
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class UCrUW_CloningBedPlayer*           InWidget                                               (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   WidgetNumber                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function ChimeraUI.CrUW_ParamBarHud.Init
+// (Native, Public)
 
-void UCrUW_CloningBedPanel::AddWidgetToGrid(class UCrUW_CloningBedPlayer* InWidget, int32 WidgetNumber)
+void UCrUW_ParamBarHud::Init()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CloningBedPanel", "AddWidgetToGrid");
+		Func = Class->GetFunction("CrUW_ParamBarHud", "Init");
 
-	Params::CrUW_CloningBedPanel_AddWidgetToGrid Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
-	Parms.InWidget = InWidget;
-	Parms.WidgetNumber = WidgetNumber;
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_ParamBarHud.OnPossess
+// (Final, Native, Public)
+// Parameters:
+// class APawn*                            InPawn                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_ParamBarHud::OnPossess(class APawn* InPawn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_ParamBarHud", "OnPossess");
+
+	Params::CrUW_ParamBarHud_OnPossess Parms{};
+
+	Parms.InPawn = InPawn;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_ParamBarHud.OnProgressBarChanged
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bIsRed                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_ParamBarHud::OnProgressBarChanged(bool bIsRed)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_ParamBarHud", "OnProgressBarChanged");
+
+	Params::CrUW_ParamBarHud_OnProgressBarChanged Parms{};
+
+	Parms.bIsRed = bIsRed;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function ChimeraUI.CrUW_CloningBedPanel.GetGridSize
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function ChimeraUI.CrUW_ParamBarHud.OnProgressBarHidden
+// (Event, Public, BlueprintEvent)
 
-int32 UCrUW_CloningBedPanel::GetGridSize()
+void UCrUW_ParamBarHud::OnProgressBarHidden()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CloningBedPanel", "GetGridSize");
+		Func = Class->GetFunction("CrUW_ParamBarHud", "OnProgressBarHidden");
 
-	Params::CrUW_CloningBedPanel_GetGridSize Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_FEMainProgress.SetColors
+// (Final, Native, Public, BlueprintCallable)
+
+void UCrUW_FEMainProgress::SetColors()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_FEMainProgress", "SetColors");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CrosshairBase.CanShoot
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCrUW_CrosshairBase::CanShoot() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CrosshairBase", "CanShoot");
+
+	Params::CrUW_CrosshairBase_CanShoot Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }
 
 
-// Function ChimeraUI.CrUW_CloningBedPanel.SetColors
-// (Event, Protected, HasDefaults, BlueprintEvent)
+// Function ChimeraUI.CrUW_CrosshairBase.GetCrosshairColor
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// const struct FLinearColor&              OrangeColor                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FLinearColor                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_CloningBedPanel::SetColors(const struct FLinearColor& OrangeColor)
+struct FLinearColor UCrUW_CrosshairBase::GetCrosshairColor() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CloningBedPanel", "SetColors");
+		Func = Class->GetFunction("CrUW_CrosshairBase", "GetCrosshairColor");
 
-	Params::CrUW_CloningBedPanel_SetColors Parms{};
-
-	Parms.OrangeColor = std::move(OrangeColor);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CraftingRecipeSlot.GetTooltipWidget
-// (Final, Native, Protected)
-// Parameters:
-// class UUserWidget*                      ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UUserWidget* UCrUW_CraftingRecipeSlot::GetTooltipWidget()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingRecipeSlot", "GetTooltipWidget");
-
-	Params::CrUW_CraftingRecipeSlot_GetTooltipWidget Parms{};
+	Params::CrUW_CrosshairBase_GetCrosshairColor Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1606,286 +1327,6 @@ class UUserWidget* UCrUW_CraftingRecipeSlot::GetTooltipWidget()
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function ChimeraUI.CrUW_CraftingRecipeSlot.SetColors
-// (Event, Protected, HasDefaults, BlueprintEvent)
-// Parameters:
-// const struct FLinearColor&              HighlightColor                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CraftingRecipeSlot::SetColors(const struct FLinearColor& HighlightColor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingRecipeSlot", "SetColors");
-
-	Params::CrUW_CraftingRecipeSlot_SetColors Parms{};
-
-	Parms.HighlightColor = std::move(HighlightColor);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CraftingRecipeSlot.SetFillAlignment
-// (Event, Public, BlueprintEvent)
-
-void UCrUW_CraftingRecipeSlot::SetFillAlignment()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingRecipeSlot", "SetFillAlignment");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_CraftingRecipeSlot.SetRecipeDisabled
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bLevelFinished                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CraftingRecipeSlot::SetRecipeDisabled(bool bLevelFinished)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingRecipeSlot", "SetRecipeDisabled");
-
-	Params::CrUW_CraftingRecipeSlot_SetRecipeDisabled Parms{};
-
-	Parms.bLevelFinished = bLevelFinished;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CraftingRecipeSlot.SetRecipeLocked
-// (Event, Public, BlueprintEvent)
-
-void UCrUW_CraftingRecipeSlot::SetRecipeLocked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingRecipeSlot", "SetRecipeLocked");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_CraftingRecipeSlot.SetRecipeLockedCurrentLevel
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bIsCurrentLevel_0                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CraftingRecipeSlot::SetRecipeLockedCurrentLevel(bool bIsCurrentLevel_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingRecipeSlot", "SetRecipeLockedCurrentLevel");
-
-	Params::CrUW_CraftingRecipeSlot_SetRecipeLockedCurrentLevel Parms{};
-
-	Parms.bIsCurrentLevel_0 = bIsCurrentLevel_0;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CraftingRecipeSlot.ShowChooseText
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    Show                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CraftingRecipeSlot::ShowChooseText(bool Show)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingRecipeSlot", "ShowChooseText");
-
-	Params::CrUW_CraftingRecipeSlot_ShowChooseText Parms{};
-
-	Parms.Show = Show;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CraftingRecipeSlot.ShowHighlight
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bHighlight                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CraftingRecipeSlot::ShowHighlight(bool bHighlight)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingRecipeSlot", "ShowHighlight");
-
-	Params::CrUW_CraftingRecipeSlot_ShowHighlight Parms{};
-
-	Parms.bHighlight = bHighlight;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CraftingRecipeSlot.ShowItemNameInIcon
-// (Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const class FText&                      InText                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrUW_CraftingRecipeSlot::ShowItemNameInIcon(const class FText& InText)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingRecipeSlot", "ShowItemNameInIcon");
-
-	Params::CrUW_CraftingRecipeSlot_ShowItemNameInIcon Parms{};
-
-	Parms.InText = std::move(InText);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CraftingRecipeSlot.ShowPoints
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bShow                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Points                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CraftingRecipeSlot::ShowPoints(bool bShow, int32 Points)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingRecipeSlot", "ShowPoints");
-
-	Params::CrUW_CraftingRecipeSlot_ShowPoints Parms{};
-
-	Parms.bShow = bShow;
-	Parms.Points = Points;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CraftingRecipeSlot.ShowSelection
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bSelected                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CraftingRecipeSlot::ShowSelection(bool bSelected)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingRecipeSlot", "ShowSelection");
-
-	Params::CrUW_CraftingRecipeSlot_ShowSelection Parms{};
-
-	Parms.bSelected = bSelected;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CraftingBottomPanel.HandlePickAllClicked
-// (Final, Native, Public)
-
-void UCrUW_CraftingBottomPanel::HandlePickAllClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingBottomPanel", "HandlePickAllClicked");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CraftingBottomPanel.HandleTransfer
-// (Final, Native, Public)
-
-void UCrUW_CraftingBottomPanel::HandleTransfer()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingBottomPanel", "HandleTransfer");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CraftingBottomPanel.HandleTransfer100
-// (Final, Native, Public)
-
-void UCrUW_CraftingBottomPanel::HandleTransfer100()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingBottomPanel", "HandleTransfer100");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CraftingBottomPanel.InfiniteCrafting
-// (Final, Native, Public)
-
-void UCrUW_CraftingBottomPanel::InfiniteCrafting()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingBottomPanel", "InfiniteCrafting");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CraftingBottomPanel.SetEmptyOutItem
-// (Event, Protected, BlueprintEvent)
-
-void UCrUW_CraftingBottomPanel::SetEmptyOutItem()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingBottomPanel", "SetEmptyOutItem");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -1917,43 +1358,59 @@ class USoundBase* UCrUIAudioData::GetSound(EUIAudioSoundType Type)
 }
 
 
-// Function ChimeraUI.CrUW_CustomGame.AddCategoryLine
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// ECrCustomGameCategory                   InCategory                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function ChimeraUI.CrUW_CutsceneLetterBox.Hide
+// (Final, Native, Public)
 
-void UCrUW_CustomGame::AddCategoryLine(ECrCustomGameCategory InCategory)
+void UCrUW_CutsceneLetterBox::Hide()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CustomGame", "AddCategoryLine");
+		Func = Class->GetFunction("CrUW_CutsceneLetterBox", "Hide");
 
-	Params::CrUW_CustomGame_AddCategoryLine Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
-	Parms.InCategory = InCategory;
+	UObject::ProcessEvent(Func, nullptr);
 
-	UObject::ProcessEvent(Func, &Parms);
+	Func->FunctionFlags = Flgs;
 }
 
 
-// Function ChimeraUI.CrUW_CustomGame.OnOptionChanged
-// (Final, Native, Protected)
-// Parameters:
-// ECrCustomGameOption                     InOption                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function ChimeraUI.CrUW_CutsceneLetterBox.HideHint
+// (Final, Native, Public, BlueprintCallable)
 
-void UCrUW_CustomGame::OnOptionChanged(ECrCustomGameOption InOption, float InValue)
+void UCrUW_CutsceneLetterBox::HideHint()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CustomGame", "OnOptionChanged");
+		Func = Class->GetFunction("CrUW_CutsceneLetterBox", "HideHint");
 
-	Params::CrUW_CustomGame_OnOptionChanged Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
-	Parms.InOption = InOption;
-	Parms.InValue = InValue;
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CutsceneLetterBox.OnAnyInputKeyDetected
+// (Final, Native, Public)
+// Parameters:
+// const struct FKey&                      Key                                                    (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CutsceneLetterBox::OnAnyInputKeyDetected(const struct FKey& Key)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CutsceneLetterBox", "OnAnyInputKeyDetected");
+
+	Params::CrUW_CutsceneLetterBox_OnAnyInputKeyDetected Parms{};
+
+	Parms.Key = std::move(Key);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1964,28 +1421,134 @@ void UCrUW_CustomGame::OnOptionChanged(ECrCustomGameOption InOption, float InVal
 }
 
 
-// Function ChimeraUI.CrUW_CustomGame.OnOptionHighlighted
-// (Final, Native, Protected)
-// Parameters:
-// ECrCustomGameOption                     InOption                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function ChimeraUI.CrUW_CutsceneLetterBox.OnHide
+// (Native, Event, Public, BlueprintEvent)
 
-void UCrUW_CustomGame::OnOptionHighlighted(ECrCustomGameOption InOption, float InValue)
+void UCrUW_CutsceneLetterBox::OnHide()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CustomGame", "OnOptionHighlighted");
-
-	Params::CrUW_CustomGame_OnOptionHighlighted Parms{};
-
-	Parms.InOption = InOption;
-	Parms.InValue = InValue;
+		Func = Class->GetFunction("CrUW_CutsceneLetterBox", "OnHide");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CutsceneLetterBox.OnHideCompleted
+// (Final, Native, Public, BlueprintCallable)
+
+void UCrUW_CutsceneLetterBox::OnHideCompleted()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CutsceneLetterBox", "OnHideCompleted");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CutsceneLetterBox.OnHideHint
+// (Native, Event, Public, BlueprintEvent)
+
+void UCrUW_CutsceneLetterBox::OnHideHint()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CutsceneLetterBox", "OnHideHint");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CutsceneLetterBox.OnShow
+// (Native, Event, Public, BlueprintEvent)
+
+void UCrUW_CutsceneLetterBox::OnShow()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CutsceneLetterBox", "OnShow");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CutsceneLetterBox.OnShowHint
+// (Native, Event, Public, BlueprintEvent)
+
+void UCrUW_CutsceneLetterBox::OnShowHint()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CutsceneLetterBox", "OnShowHint");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CutsceneLetterBox.Show
+// (Final, Native, Public)
+
+void UCrUW_CutsceneLetterBox::Show()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CutsceneLetterBox", "Show");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CutsceneLetterBox.ShowHint
+// (Final, Native, Public, BlueprintCallable)
+
+void UCrUW_CutsceneLetterBox::ShowHint()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CutsceneLetterBox", "ShowHint");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -2165,17 +1728,209 @@ void UCrUW_AbandonBaseInfo::SetInfectionStatus(bool bInInfected, bool bIsInfecti
 }
 
 
-// Function ChimeraUI.CrUW_CraftingRecipeSelectionListViewElement.OnSetEmpty
+// Function ChimeraUI.CrUW_CorporationRecipes.EnableLine
 // (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bEnabled                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_CraftingRecipeSelectionListViewElement::OnSetEmpty()
+void UCrUW_CorporationRecipes::EnableLine(bool bEnabled)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingRecipeSelectionListViewElement", "OnSetEmpty");
+		Func = Class->GetFunction("CrUW_CorporationRecipes", "EnableLine");
+
+	Params::CrUW_CorporationRecipes_EnableLine Parms{};
+
+	Parms.bEnabled = bEnabled;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CorporationRecipes.PlayClickSound
+// (Final, Native, Public, BlueprintCallable)
+
+void UCrUW_CorporationRecipes::PlayClickSound()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CorporationRecipes", "PlayClickSound");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CorporationRecipes.SetColors
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// const class UCrCommonUIColorsDevSettings*Settings                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CorporationRecipes::SetColors(const class UCrCommonUIColorsDevSettings* Settings)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CorporationRecipes", "SetColors");
+
+	Params::CrUW_CorporationRecipes_SetColors Parms{};
+
+	Parms.Settings = Settings;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CorporationRecipes.SetExpanded
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bExpand                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CorporationRecipes::SetExpanded(bool bExpand)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CorporationRecipes", "SetExpanded");
+
+	Params::CrUW_CorporationRecipes_SetExpanded Parms{};
+
+	Parms.bExpand = bExpand;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CorporationRecipes.SetLevel
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   Level                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CorporationRecipes::SetLevel(int32 Level)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CorporationRecipes", "SetLevel");
+
+	Params::CrUW_CorporationRecipes_SetLevel Parms{};
+
+	Parms.Level = Level;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CorporationRecipes.SetLevelButtonFocus
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bFocused                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CorporationRecipes::SetLevelButtonFocus(bool bFocused)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CorporationRecipes", "SetLevelButtonFocus");
+
+	Params::CrUW_CorporationRecipes_SetLevelButtonFocus Parms{};
+
+	Parms.bFocused = bFocused;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CorporationRecipes.SetLineFinished
+// (Event, Public, BlueprintEvent)
+
+void UCrUW_CorporationRecipes::SetLineFinished()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CorporationRecipes", "SetLineFinished");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_CorporationRecipes.SetLowerWidth
+// (Event, Public, BlueprintEvent)
+
+void UCrUW_CorporationRecipes::SetLowerWidth()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CorporationRecipes", "SetLowerWidth");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_CorporationRecipes.SetMaxLevel
+// (Event, Public, BlueprintEvent)
+
+void UCrUW_CorporationRecipes::SetMaxLevel()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CorporationRecipes", "SetMaxLevel");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_CorporationRecipes.SetWidgetTitle
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FText&                      Text                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrUW_CorporationRecipes::SetWidgetTitle(const class FText& Text)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CorporationRecipes", "SetWidgetTitle");
+
+	Params::CrUW_CorporationRecipes_SetWidgetTitle Parms{};
+
+	Parms.Text = std::move(Text);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CorporationRecipes.GetAllGridSlots
+// (Final, Native, Public, Const)
+// Parameters:
+// TArray<class UWidget*>                  ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+TArray<class UWidget*> UCrUW_CorporationRecipes::GetAllGridSlots() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CorporationRecipes", "GetAllGridSlots");
+
+	Params::CrUW_CorporationRecipes_GetAllGridSlots Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -2379,21 +2134,124 @@ void UCrUW_ActionButton::SetInputActionWidgetVisibility(bool bInVisible)
 }
 
 
-// Function ChimeraUI.CrUW_DatapadBaseWidget.OnDatapadRead
-// (Final, Native, Protected, BlueprintCallable)
+// Function ChimeraUI.CrUW_CraftingStatus.GetCraftingType
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// class FName                             RowName                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class ACrCrafter>           CraftingClass                                          (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_DatapadBaseWidget::OnDatapadRead(class FName RowName)
+void UCrUW_CraftingStatus::GetCraftingType(TSubclassOf<class ACrCrafter> CraftingClass)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_DatapadBaseWidget", "OnDatapadRead");
+		Func = Class->GetFunction("CrUW_CraftingStatus", "GetCraftingType");
 
-	Params::CrUW_DatapadBaseWidget_OnDatapadRead Parms{};
+	Params::CrUW_CraftingStatus_GetCraftingType Parms{};
 
-	Parms.RowName = RowName;
+	Parms.CraftingClass = CraftingClass;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CraftingStatus.HandleRecipeSelectionButtonClicked
+// (Final, Native, Protected)
+
+void UCrUW_CraftingStatus::HandleRecipeSelectionButtonClicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingStatus", "HandleRecipeSelectionButtonClicked");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CraftingStatus.HandleTransferRequiredItemsClicked
+// (Final, Native, Private)
+
+void UCrUW_CraftingStatus::HandleTransferRequiredItemsClicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingStatus", "HandleTransferRequiredItemsClicked");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CraftingStatus.HandleTransferRequiredItemsx100Clicked
+// (Final, Native, Private)
+
+void UCrUW_CraftingStatus::HandleTransferRequiredItemsx100Clicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingStatus", "HandleTransferRequiredItemsx100Clicked");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CraftingStatus.OnRecipeChanged
+// (Event, Protected, BlueprintEvent)
+
+void UCrUW_CraftingStatus::OnRecipeChanged()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingStatus", "OnRecipeChanged");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_CraftingStatus.OnRecipeCleared
+// (Event, Protected, BlueprintEvent)
+
+void UCrUW_CraftingStatus::OnRecipeCleared()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingStatus", "OnRecipeCleared");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_CraftingStatus.GetSelectedRecipe
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const class UCrItemRecipeData*          ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+const class UCrItemRecipeData* UCrUW_CraftingStatus::GetSelectedRecipe() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingStatus", "GetSelectedRecipe");
+
+	Params::CrUW_CraftingStatus_GetSelectedRecipe Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2401,226 +2259,8 @@ void UCrUW_DatapadBaseWidget::OnDatapadRead(class FName RowName)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
 
-
-// Function ChimeraUI.CrUW_DatapadMessage.SetTitle
-// (Event, Protected, HasOutParams, BlueprintEvent)
-// Parameters:
-// const class FText&                      Author                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// const class FText&                      Date                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrUW_DatapadMessage::SetTitle(const class FText& Author, const class FText& Date)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_DatapadMessage", "SetTitle");
-
-	Params::CrUW_DatapadMessage_SetTitle Parms{};
-
-	Parms.Author = std::move(Author);
-	Parms.Date = std::move(Date);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CorporationSlot.SendingStatusChanged
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bSendInProgress                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CorporationSlot::SendingStatusChanged(bool bSendInProgress)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorporationSlot", "SendingStatusChanged");
-
-	Params::CrUW_CorporationSlot_SendingStatusChanged Parms{};
-
-	Parms.bSendInProgress = bSendInProgress;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CorporationSlot.SetBiggerVersion
-// (Event, Public, BlueprintEvent)
-
-void UCrUW_CorporationSlot::SetBiggerVersion()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorporationSlot", "SetBiggerVersion");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_CorporationSlot.SetColors
-// (Event, Protected, HasDefaults, BlueprintEvent)
-// Parameters:
-// const struct FLinearColor&              HighlightColor                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FLinearColor&              OrangeColor                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CorporationSlot::SetColors(const struct FLinearColor& HighlightColor, const struct FLinearColor& OrangeColor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorporationSlot", "SetColors");
-
-	Params::CrUW_CorporationSlot_SetColors Parms{};
-
-	Parms.HighlightColor = std::move(HighlightColor);
-	Parms.OrangeColor = std::move(OrangeColor);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CorporationSlot.SetOutputPoints
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// int32                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CorporationSlot::SetOutputPoints(int32 Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorporationSlot", "SetOutputPoints");
-
-	Params::CrUW_CorporationSlot_SetOutputPoints Parms{};
-
-	Parms.Value = Value;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CorporationSlot.SetPoints
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// int32                                   CurrentValue                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Max                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CorporationSlot::SetPoints(int32 CurrentValue, int32 Max)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorporationSlot", "SetPoints");
-
-	Params::CrUW_CorporationSlot_SetPoints Parms{};
-
-	Parms.CurrentValue = CurrentValue;
-	Parms.Max = Max;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CorporationSlot.SetUnlocked
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bLocked                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CorporationSlot::SetUnlocked(bool bLocked)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorporationSlot", "SetUnlocked");
-
-	Params::CrUW_CorporationSlot_SetUnlocked Parms{};
-
-	Parms.bLocked = bLocked;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CorporationSlot.SetupBackground
-// (Event, Protected, HasDefaults, BlueprintEvent)
-// Parameters:
-// const struct FColor&                    InColor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CorporationSlot::SetupBackground(const struct FColor& InColor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorporationSlot", "SetupBackground");
-
-	Params::CrUW_CorporationSlot_SetupBackground Parms{};
-
-	Parms.InColor = std::move(InColor);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CorporationSlot.ShowChooseText
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    Show                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CorporationSlot::ShowChooseText(bool Show)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorporationSlot", "ShowChooseText");
-
-	Params::CrUW_CorporationSlot_ShowChooseText Parms{};
-
-	Parms.Show = Show;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CorporationSlot.ShowHighlight
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bHighlight                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CorporationSlot::ShowHighlight(bool bHighlight)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorporationSlot", "ShowHighlight");
-
-	Params::CrUW_CorporationSlot_ShowHighlight Parms{};
-
-	Parms.bHighlight = bHighlight;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CorporationSlot.ShowUnclaimedRewardsIcon
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bShow                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CorporationSlot::ShowUnclaimedRewardsIcon(bool bShow)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorporationSlot", "ShowUnclaimedRewardsIcon");
-
-	Params::CrUW_CorporationSlot_ShowUnclaimedRewardsIcon Parms{};
-
-	Parms.bShow = bShow;
-
-	UObject::ProcessEvent(Func, &Parms);
+	return Parms.ReturnValue;
 }
 
 
@@ -2805,6 +2445,97 @@ void UCrUW_AlienObeliskWarning::SetCoreIntegrityBar(float IntegrityValue, const 
 	Parms.Color = std::move(Color);
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_BaseOption.SetHoverVisuals
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bHovered                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_BaseOption::SetHoverVisuals(bool bHovered)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_BaseOption", "SetHoverVisuals");
+
+	Params::CrUW_BaseOption_SetHoverVisuals Parms{};
+
+	Parms.bHovered = bHovered;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_BaseOption.SetNoBottomLine
+// (Event, Public, BlueprintEvent)
+
+void UCrUW_BaseOption::SetNoBottomLine()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_BaseOption", "SetNoBottomLine");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_WidgetOptionToggle.OnButtonOffClicked
+// (Final, Native, Protected)
+
+void UCrUW_WidgetOptionToggle::OnButtonOffClicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_WidgetOptionToggle", "OnButtonOffClicked");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_WidgetOptionToggle.OnButtonOnClicked
+// (Final, Native, Protected)
+
+void UCrUW_WidgetOptionToggle::OnButtonOnClicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_WidgetOptionToggle", "OnButtonOnClicked");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_WidgetOptionToggle.UpdateSelection
+// (Final, Native, Protected, BlueprintCallable)
+
+void UCrUW_WidgetOptionToggle::UpdateSelection()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_WidgetOptionToggle", "UpdateSelection");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -3115,44 +2846,109 @@ void UCrUW_AntennaActivated::TriggerFadeOut()
 }
 
 
-// Function ChimeraUI.CrUW_CrosshairBase.CanShoot
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function ChimeraUI.CrUW_CraftingProgress.OnRecipeChanged
+// (Event, Protected, BlueprintEvent)
 
-bool UCrUW_CrosshairBase::CanShoot() const
+void UCrUW_CraftingProgress::OnRecipeChanged()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CrosshairBase", "CanShoot");
+		Func = Class->GetFunction("CrUW_CraftingProgress", "OnRecipeChanged");
 
-	Params::CrUW_CrosshairBase_CanShoot Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ChimeraUI.CrUW_CrosshairBase.GetCrosshairColor
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FLinearColor                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function ChimeraUI.CrUW_CraftingProgress.OnRecipeCleared
+// (Event, Protected, BlueprintEvent)
 
-struct FLinearColor UCrUW_CrosshairBase::GetCrosshairColor() const
+void UCrUW_CraftingProgress::OnRecipeCleared()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CrosshairBase", "GetCrosshairColor");
+		Func = Class->GetFunction("CrUW_CraftingProgress", "OnRecipeCleared");
 
-	Params::CrUW_CrosshairBase_GetCrosshairColor Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_CraftingProgress.SetProgressStopButtonVisibility
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bVisible                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CraftingProgress::SetProgressStopButtonVisibility(bool bVisible)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingProgress", "SetProgressStopButtonVisibility");
+
+	Params::CrUW_CraftingProgress_SetProgressStopButtonVisibility Parms{};
+
+	Parms.bVisible = bVisible;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CraftingProgress.UpdateProgress
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// float                                   InPercent                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CraftingProgress::UpdateProgress(float InPercent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingProgress", "UpdateProgress");
+
+	Params::CrUW_CraftingProgress_UpdateProgress Parms{};
+
+	Parms.InPercent = InPercent;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CraftingProgress.UpdateProgressByDigits
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   Tens                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Ones                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CraftingProgress::UpdateProgressByDigits(int32 Tens, int32 Ones)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingProgress", "UpdateProgressByDigits");
+
+	Params::CrUW_CraftingProgress_UpdateProgressByDigits Parms{};
+
+	Parms.Tens = Tens;
+	Parms.Ones = Ones;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CraftingProgress.GetSelectedRecipe
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const class UCrItemRecipeData*          ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+const class UCrItemRecipeData* UCrUW_CraftingProgress::GetSelectedRecipe() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingProgress", "GetSelectedRecipe");
+
+	Params::CrUW_CraftingProgress_GetSelectedRecipe Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3364,61 +3160,62 @@ void UCrUW_Armory::UpdateAllCost(const struct FSlateBrush& InBrush, const class 
 }
 
 
-// Function ChimeraUI.CrUW_JoinSessionMenu.CancelInputClicked
-// (Final, Native, Protected)
+// Function ChimeraUI.CrUW_WeaponTooltip.SetItemInfo
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FText&                      InName                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FText&                      InDescription                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UCrUW_JoinSessionMenu::CancelInputClicked()
+void UCrUW_WeaponTooltip::SetItemInfo(const class FText& InName, const class FText& InDescription)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_JoinSessionMenu", "CancelInputClicked");
+		Func = Class->GetFunction("CrUW_WeaponTooltip", "SetItemInfo");
+
+	Params::CrUW_WeaponTooltip_SetItemInfo Parms{};
+
+	Parms.InName = std::move(InName);
+	Parms.InDescription = std::move(InDescription);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function ChimeraUI.CrUW_JoinSessionMenu.ConfirmInputClicked
-// (Final, Native, Protected)
+// Function ChimeraUI.CrUW_WeaponTooltip.SetItemName
+// (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// const class FString&                    InText                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    InPassword                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FText&                      InText                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UCrUW_JoinSessionMenu::ConfirmInputClicked(const class FString& InText, const class FString& InPassword)
+void UCrUW_WeaponTooltip::SetItemName(const class FText& InText)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_JoinSessionMenu", "ConfirmInputClicked");
+		Func = Class->GetFunction("CrUW_WeaponTooltip", "SetItemName");
 
-	Params::CrUW_JoinSessionMenu_ConfirmInputClicked Parms{};
+	Params::CrUW_WeaponTooltip_SetItemName Parms{};
 
 	Parms.InText = std::move(InText);
-	Parms.InPassword = std::move(InPassword);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
-// Function ChimeraUI.CrUW_JoinSessionMenu.CreateDedicatedServerPopup
-// (Final, Native, Protected)
+// Function ChimeraUI.CrUW_LoadSessionMenu.DebugDeleteAllSaveGames
+// (Final, Native, Public, BlueprintCallable)
 
-void UCrUW_JoinSessionMenu::CreateDedicatedServerPopup()
+void UCrUW_LoadSessionMenu::DebugDeleteAllSaveGames()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_JoinSessionMenu", "CreateDedicatedServerPopup");
+		Func = Class->GetFunction("CrUW_LoadSessionMenu", "DebugDeleteAllSaveGames");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3429,15 +3226,15 @@ void UCrUW_JoinSessionMenu::CreateDedicatedServerPopup()
 }
 
 
-// Function ChimeraUI.CrUW_JoinSessionMenu.JoinGameClicked
+// Function ChimeraUI.CrUW_LoadSessionMenu.DeleteSessionClicked
 // (Final, Native, Protected)
 
-void UCrUW_JoinSessionMenu::JoinGameClicked()
+void UCrUW_LoadSessionMenu::DeleteSessionClicked()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_JoinSessionMenu", "JoinGameClicked");
+		Func = Class->GetFunction("CrUW_LoadSessionMenu", "DeleteSessionClicked");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3448,94 +3245,15 @@ void UCrUW_JoinSessionMenu::JoinGameClicked()
 }
 
 
-// Function ChimeraUI.CrUW_JoinSessionMenu.OnJoinSessionComplete
-// (Final, Native, Private, HasOutParams)
-// Parameters:
-// const struct FOnlineResultInformation&  Result                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrUW_JoinSessionMenu::OnJoinSessionComplete(const struct FOnlineResultInformation& Result)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_JoinSessionMenu", "OnJoinSessionComplete");
-
-	Params::CrUW_JoinSessionMenu_OnJoinSessionComplete Parms{};
-
-	Parms.Result = std::move(Result);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_JoinSessionMenu.OnSessionSearchFinished
-// (Final, Native, Private, HasOutParams)
-// Parameters:
-// bool                                    bSucceeded                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FText&                      ErrorMessage                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrUW_JoinSessionMenu::OnSessionSearchFinished(bool bSucceeded, const class FText& ErrorMessage)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_JoinSessionMenu", "OnSessionSearchFinished");
-
-	Params::CrUW_JoinSessionMenu_OnSessionSearchFinished Parms{};
-
-	Parms.bSucceeded = bSucceeded;
-	Parms.ErrorMessage = std::move(ErrorMessage);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_JoinSessionMenu.OnSessionSearchInProgress
-// (Final, Native, Private, HasOutParams)
-// Parameters:
-// bool                                    bSucceeded                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FText&                      ErrorMessage                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrUW_JoinSessionMenu::OnSessionSearchInProgress(bool bSucceeded, const class FText& ErrorMessage)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_JoinSessionMenu", "OnSessionSearchInProgress");
-
-	Params::CrUW_JoinSessionMenu_OnSessionSearchInProgress Parms{};
-
-	Parms.bSucceeded = bSucceeded;
-	Parms.ErrorMessage = std::move(ErrorMessage);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_JoinSessionMenu.RefreshClicked
+// Function ChimeraUI.CrUW_LoadSessionMenu.DeleteSessionSaveClicked
 // (Final, Native, Protected)
 
-void UCrUW_JoinSessionMenu::RefreshClicked()
+void UCrUW_LoadSessionMenu::DeleteSessionSaveClicked()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_JoinSessionMenu", "RefreshClicked");
+		Func = Class->GetFunction("CrUW_LoadSessionMenu", "DeleteSessionSaveClicked");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3546,41 +3264,62 @@ void UCrUW_JoinSessionMenu::RefreshClicked()
 }
 
 
-// Function ChimeraUI.CrUW_JoinSessionMenu.RunSpinAnimation
+// Function ChimeraUI.CrUW_LoadSessionMenu.ExpandedSessionChanged
+// (Final, Native, Protected)
+// Parameters:
+// int32                                   ExpandedIndex                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_LoadSessionMenu::ExpandedSessionChanged(int32 ExpandedIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_LoadSessionMenu", "ExpandedSessionChanged");
+
+	Params::CrUW_LoadSessionMenu_ExpandedSessionChanged Parms{};
+
+	Parms.ExpandedIndex = ExpandedIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_LoadSessionMenu.GrayoutSessionTypeText
 // (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bRun                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_JoinSessionMenu::RunSpinAnimation(bool bRun)
+void UCrUW_LoadSessionMenu::GrayoutSessionTypeText()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_JoinSessionMenu", "RunSpinAnimation");
+		Func = Class->GetFunction("CrUW_LoadSessionMenu", "GrayoutSessionTypeText");
 
-	Params::CrUW_JoinSessionMenu_RunSpinAnimation Parms{};
-
-	Parms.bRun = bRun;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ChimeraUI.CrUW_JoinSessionMenu.SetSelectedResultIndex
-// (Final, Native, Private)
+// Function ChimeraUI.CrUW_LoadSessionMenu.HandleRotatorChangedValue
+// (Final, Native, Protected)
 // Parameters:
-// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bUserInitiated                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_JoinSessionMenu::SetSelectedResultIndex(int32 InIndex)
+void UCrUW_LoadSessionMenu::HandleRotatorChangedValue(int32 Value, bool bUserInitiated)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_JoinSessionMenu", "SetSelectedResultIndex");
+		Func = Class->GetFunction("CrUW_LoadSessionMenu", "HandleRotatorChangedValue");
 
-	Params::CrUW_JoinSessionMenu_SetSelectedResultIndex Parms{};
+	Params::CrUW_LoadSessionMenu_HandleRotatorChangedValue Parms{};
 
-	Parms.InIndex = InIndex;
+	Parms.Value = Value;
+	Parms.bUserInitiated = bUserInitiated;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3591,55 +3330,178 @@ void UCrUW_JoinSessionMenu::SetSelectedResultIndex(int32 InIndex)
 }
 
 
-// Function ChimeraUI.CrUW_JoinSessionMenu.SetupButtons
+// Function ChimeraUI.CrUW_LoadSessionMenu.LoadButtonClicked
+// (Final, Native, Protected)
+
+void UCrUW_LoadSessionMenu::LoadButtonClicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_LoadSessionMenu", "LoadButtonClicked");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_LoadSessionMenu.OnCustomGameClicked
+// (Final, Native, Protected)
+
+void UCrUW_LoadSessionMenu::OnCustomGameClicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_LoadSessionMenu", "OnCustomGameClicked");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_LoadSessionMenu.OptionDecreaseClicked
+// (Final, Native, Protected)
+
+void UCrUW_LoadSessionMenu::OptionDecreaseClicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_LoadSessionMenu", "OptionDecreaseClicked");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_LoadSessionMenu.OptionIncreaseClicked
+// (Final, Native, Protected)
+
+void UCrUW_LoadSessionMenu::OptionIncreaseClicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_LoadSessionMenu", "OptionIncreaseClicked");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_LoadSessionMenu.PTRSavesCheckboxChanged
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// bool                                    bin                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_LoadSessionMenu::PTRSavesCheckboxChanged(bool bin)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_LoadSessionMenu", "PTRSavesCheckboxChanged");
+
+	Params::CrUW_LoadSessionMenu_PTRSavesCheckboxChanged Parms{};
+
+	Parms.bin = bin;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_LoadSessionMenu.SelectedSaveChanged
+// (Final, Native, Protected)
+// Parameters:
+// const class FString&                    InSelectedItem                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ItemSession                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrSlotType                             InSlotType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InItemIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_LoadSessionMenu::SelectedSaveChanged(const class FString& InSelectedItem, const class FString& ItemSession, ECrSlotType InSlotType, int32 InItemIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_LoadSessionMenu", "SelectedSaveChanged");
+
+	Params::CrUW_LoadSessionMenu_SelectedSaveChanged Parms{};
+
+	Parms.InSelectedItem = std::move(InSelectedItem);
+	Parms.ItemSession = std::move(ItemSession);
+	Parms.InSlotType = InSlotType;
+	Parms.InItemIndex = InItemIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_LoadSessionMenu.SetSessionOnlineMode
+// (Final, Native, Protected)
+// Parameters:
+// ECrOnlineSessionMode                    InMode                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_LoadSessionMenu::SetSessionOnlineMode(ECrOnlineSessionMode InMode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_LoadSessionMenu", "SetSessionOnlineMode");
+
+	Params::CrUW_LoadSessionMenu_SetSessionOnlineMode Parms{};
+
+	Parms.InMode = InMode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_LoadSessionMenu.SetupButtons
 // (Event, Protected, BlueprintEvent)
 // Parameters:
 // bool                                    bLowerFont                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_JoinSessionMenu::SetupButtons(bool bLowerFont)
+void UCrUW_LoadSessionMenu::SetupButtons(bool bLowerFont)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_JoinSessionMenu", "SetupButtons");
+		Func = Class->GetFunction("CrUW_LoadSessionMenu", "SetupButtons");
 
-	Params::CrUW_JoinSessionMenu_SetupButtons Parms{};
+	Params::CrUW_LoadSessionMenu_SetupButtons Parms{};
 
 	Parms.bLowerFont = bLowerFont;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_JoinSessionMenu.ShowNoSessionsWidget
-// (Event, Protected, BlueprintEvent)
-
-void UCrUW_JoinSessionMenu::ShowNoSessionsWidget()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_JoinSessionMenu", "ShowNoSessionsWidget");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_JoinSessionMenu.ShowSearchingInProgress
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    InProgress                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_JoinSessionMenu::ShowSearchingInProgress(bool InProgress)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_JoinSessionMenu", "ShowSearchingInProgress");
-
-	Params::CrUW_JoinSessionMenu_ShowSearchingInProgress Parms{};
-
-	Parms.InProgress = InProgress;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -3857,21 +3719,21 @@ void UCrUW_GenericArmorySlot::ShowCostBox(bool InShow)
 }
 
 
-// Function ChimeraUI.CrUW_CraftingQueue.HandleOnQueueElementClicked
-// (Final, Native, Private)
+// Function ChimeraUI.CrUW_DatapadBaseWidget.OnDatapadRead
+// (Final, Native, Protected, BlueprintCallable)
 // Parameters:
-// class UObject*                          ListItem                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             RowName                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_CraftingQueue::HandleOnQueueElementClicked(class UObject* ListItem)
+void UCrUW_DatapadBaseWidget::OnDatapadRead(class FName RowName)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingQueue", "HandleOnQueueElementClicked");
+		Func = Class->GetFunction("CrUW_DatapadBaseWidget", "OnDatapadRead");
 
-	Params::CrUW_CraftingQueue_HandleOnQueueElementClicked Parms{};
+	Params::CrUW_DatapadBaseWidget_OnDatapadRead Parms{};
 
-	Parms.ListItem = ListItem;
+	Parms.RowName = RowName;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3882,28 +3744,23 @@ void UCrUW_CraftingQueue::HandleOnQueueElementClicked(class UObject* ListItem)
 }
 
 
-// Function ChimeraUI.CrUW_CraftingQueue.GetCraftingProgress
-// (Final, Native, Private, Const)
+// Function ChimeraUI.CrUW_DatapadComputer.SetAuthor
+// (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FText&                      Author                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-float UCrUW_CraftingQueue::GetCraftingProgress() const
+void UCrUW_DatapadComputer::SetAuthor(const class FText& Author)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingQueue", "GetCraftingProgress");
+		Func = Class->GetFunction("CrUW_DatapadComputer", "SetAuthor");
 
-	Params::CrUW_CraftingQueue_GetCraftingProgress Parms{};
+	Params::CrUW_DatapadComputer_SetAuthor Parms{};
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
+	Parms.Author = std::move(Author);
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -4023,71 +3880,21 @@ bool UCrUW_ArmoryWeaponDetails::IsWeaponUnlocked(class UCrWeaponItemDataBase* We
 }
 
 
-// Function ChimeraUI.CrUW_GenericAmmoCounter.OnTimerEnded
+// Function ChimeraUI.CrUW_MainMenuWidget.ButtonClicked
 // (Final, Native, Protected)
-
-void UCrUW_GenericAmmoCounter::OnTimerEnded()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_GenericAmmoCounter", "OnTimerEnded");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_GenericAmmoCounter.SetColors
-// (Final, Native, Public, BlueprintCallable)
-
-void UCrUW_GenericAmmoCounter::SetColors()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_GenericAmmoCounter", "SetColors");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_GenericAmmoCounter.UpdateAmmo
-// (Event, Public, BlueprintEvent)
-
-void UCrUW_GenericAmmoCounter::UpdateAmmo()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_GenericAmmoCounter", "UpdateAmmo");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_GenericAmmoCounter.GetCurrentAmmoCount
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UCrUW_GenericAmmoCounter::GetCurrentAmmoCount() const
+void UCrUW_MainMenuWidget::ButtonClicked(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_GenericAmmoCounter", "GetCurrentAmmoCount");
+		Func = Class->GetFunction("CrUW_MainMenuWidget", "ButtonClicked");
 
-	Params::CrUW_GenericAmmoCounter_GetCurrentAmmoCount Parms{};
+	Params::CrUW_MainMenuWidget_ButtonClicked Parms{};
+
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4095,24 +3902,24 @@ float UCrUW_GenericAmmoCounter::GetCurrentAmmoCount() const
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function ChimeraUI.CrUW_GenericAmmoCounter.GetCurrentInventoryMaxAmmoCount
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function ChimeraUI.CrUW_MainMenuWidget.OnContinueButtonClicked
+// (Final, Native, Protected)
 // Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UCrUW_GenericAmmoCounter::GetCurrentInventoryMaxAmmoCount() const
+void UCrUW_MainMenuWidget::OnContinueButtonClicked(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_GenericAmmoCounter", "GetCurrentInventoryMaxAmmoCount");
+		Func = Class->GetFunction("CrUW_MainMenuWidget", "OnContinueButtonClicked");
 
-	Params::CrUW_GenericAmmoCounter_GetCurrentInventoryMaxAmmoCount Parms{};
+	Params::CrUW_MainMenuWidget_OnContinueButtonClicked Parms{};
+
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4120,58 +3927,48 @@ float UCrUW_GenericAmmoCounter::GetCurrentInventoryMaxAmmoCount() const
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function ChimeraUI.CrUW_GenericAmmoCounter.GetCurrentWeaponMaxMagAmmo
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function ChimeraUI.CrUW_MainMenuWidget.SetColors
+// (Event, Protected, HasDefaults, BlueprintEvent)
 // Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLinearColor&              OrangeColor                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UCrUW_GenericAmmoCounter::GetCurrentWeaponMaxMagAmmo() const
+void UCrUW_MainMenuWidget::SetColors(const struct FLinearColor& OrangeColor)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_GenericAmmoCounter", "GetCurrentWeaponMaxMagAmmo");
+		Func = Class->GetFunction("CrUW_MainMenuWidget", "SetColors");
 
-	Params::CrUW_GenericAmmoCounter_GetCurrentWeaponMaxMagAmmo Parms{};
+	Params::CrUW_MainMenuWidget_SetColors Parms{};
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
+	Parms.OrangeColor = std::move(OrangeColor);
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function ChimeraUI.CrUW_GenericAmmoCounter.GetEquippedWeaponAmmoItemType
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function ChimeraUI.CrUW_MainMenuWidget.SetContinueTimestamp
+// (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
-// const struct FSlateBrush                ReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+// const class FText&                      InText                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FText&                      InSessionName                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-const struct FSlateBrush UCrUW_GenericAmmoCounter::GetEquippedWeaponAmmoItemType() const
+void UCrUW_MainMenuWidget::SetContinueTimestamp(const class FText& InText, const class FText& InSessionName)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_GenericAmmoCounter", "GetEquippedWeaponAmmoItemType");
+		Func = Class->GetFunction("CrUW_MainMenuWidget", "SetContinueTimestamp");
 
-	Params::CrUW_GenericAmmoCounter_GetEquippedWeaponAmmoItemType Parms{};
+	Params::CrUW_MainMenuWidget_SetContinueTimestamp Parms{};
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
+	Parms.InText = std::move(InText);
+	Parms.InSessionName = std::move(InSessionName);
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -4435,15 +4232,15 @@ void UCrUW_AttributeBar::SetStatData(const struct FCrSurvivalStat& InStat)
 }
 
 
-// Function ChimeraUI.CrUW_ParamBarHud.Init
-// (Native, Public)
+// Function ChimeraUI.CrUW_CraftingRecipeSelection.HandleConfirm
+// (Final, Native, Private)
 
-void UCrUW_ParamBarHud::Init()
+void UCrUW_CraftingRecipeSelection::HandleConfirm()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ParamBarHud", "Init");
+		Func = Class->GetFunction("CrUW_CraftingRecipeSelection", "HandleConfirm");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4454,246 +4251,25 @@ void UCrUW_ParamBarHud::Init()
 }
 
 
-// Function ChimeraUI.CrUW_ParamBarHud.OnPossess
-// (Final, Native, Public)
-// Parameters:
-// class APawn*                            InPawn                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_ParamBarHud::OnPossess(class APawn* InPawn)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ParamBarHud", "OnPossess");
-
-	Params::CrUW_ParamBarHud_OnPossess Parms{};
-
-	Parms.InPawn = InPawn;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_ParamBarHud.OnProgressBarChanged
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bIsRed                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_ParamBarHud::OnProgressBarChanged(bool bIsRed)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ParamBarHud", "OnProgressBarChanged");
-
-	Params::CrUW_ParamBarHud_OnProgressBarChanged Parms{};
-
-	Parms.bIsRed = bIsRed;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_ParamBarHud.OnProgressBarHidden
-// (Event, Public, BlueprintEvent)
-
-void UCrUW_ParamBarHud::OnProgressBarHidden()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ParamBarHud", "OnProgressBarHidden");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_ButtonBase.ButtonPressed
-// (Event, Protected, BlueprintEvent)
-
-void UCrUW_ButtonBase::ButtonPressed()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ButtonBase", "ButtonPressed");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_ButtonBase.GetColors
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// const class UCrCommonUIColorsDevSettings*ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-const class UCrCommonUIColorsDevSettings* UCrUW_ButtonBase::GetColors()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ButtonBase", "GetColors");
-
-	Params::CrUW_ButtonBase_GetColors Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ChimeraUI.CrUW_ButtonBase.HandleButtonFocus
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bFocused                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_ButtonBase::HandleButtonFocus(bool bFocused)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ButtonBase", "HandleButtonFocus");
-
-	Params::CrUW_ButtonBase_HandleButtonFocus Parms{};
-
-	Parms.bFocused = bFocused;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_ButtonBase.SetButtonText
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const class FText&                      InText                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrUW_ButtonBase::SetButtonText(const class FText& InText)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ButtonBase", "SetButtonText");
-
-	Params::CrUW_ButtonBase_SetButtonText Parms{};
-
-	Parms.InText = std::move(InText);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_ButtonBase.UpdateButton
+// Function ChimeraUI.CrUW_WeaponsToolsTab.AddModIcon
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// ECommonMessagingResult                  Action                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrWeaponModDataAsset*            ModDA                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   WeaponIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_ButtonBase::UpdateButton(ECommonMessagingResult Action)
+void UCrUW_WeaponsToolsTab::AddModIcon(class UCrWeaponModDataAsset* ModDA, int32 WeaponIndex)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ButtonBase", "UpdateButton");
+		Func = Class->GetFunction("CrUW_WeaponsToolsTab", "AddModIcon");
 
-	Params::CrUW_ButtonBase_UpdateButton Parms{};
+	Params::CrUW_WeaponsToolsTab_AddModIcon Parms{};
 
-	Parms.Action = Action;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_ButtonBase.UpdateButtonStyle
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bIsFocused                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_ButtonBase::UpdateButtonStyle(bool bIsFocused)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ButtonBase", "UpdateButtonStyle");
-
-	Params::CrUW_ButtonBase_UpdateButtonStyle Parms{};
-
-	Parms.bIsFocused = bIsFocused;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
+	Parms.ModDA = ModDA;
+	Parms.WeaponIndex = WeaponIndex;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_ButtonBase.UpdateButtonText
-// (Final, Native, Protected, HasOutParams)
-// Parameters:
-// const class FText&                      InText                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrUW_ButtonBase::UpdateButtonText(const class FText& InText)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ButtonBase", "UpdateButtonText");
-
-	Params::CrUW_ButtonBase_UpdateButtonText Parms{};
-
-	Parms.InText = std::move(InText);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_TabButtonBase.SetTabLabelInfo_Implementation
-// (Native, Protected, HasOutParams)
-// Parameters:
-// const struct FCrTabDescriptor&          TabLabelInfo                                           (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void UCrUW_TabButtonBase::SetTabLabelInfo_Implementation(const struct FCrTabDescriptor& TabLabelInfo)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_TabButtonBase", "SetTabLabelInfo_Implementation");
-
-	Params::CrUW_TabButtonBase_SetTabLabelInfo_Implementation Parms{};
-
-	Parms.TabLabelInfo = std::move(TabLabelInfo);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -4784,31 +4360,57 @@ class UCrUW_AttributeBar* UCrUW_AttributeStatsWidget::SetupPlayerBar(EAttributeT
 }
 
 
-// Function ChimeraUI.SurvivalStatsData.GetStatData
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EAttributeType                          InType                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FCrSurvivalStat                  ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+// Function ChimeraUI.CrUW_EncyclopediaInfoMenu.ClearEntryAuthorBP
+// (Event, Public, BlueprintEvent)
 
-struct FCrSurvivalStat USurvivalStatsData::GetStatData(EAttributeType InType)
+void UCrUW_EncyclopediaInfoMenu::ClearEntryAuthorBP()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SurvivalStatsData", "GetStatData");
+		Func = Class->GetFunction("CrUW_EncyclopediaInfoMenu", "ClearEntryAuthorBP");
 
-	Params::SurvivalStatsData_GetStatData Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.InType = InType;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
+// Function ChimeraUI.CrUW_EncyclopediaInfoMenu.SetEntryAuthorBP
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const struct FEncyclopediaEntryAuthor&  AuthorData                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrUW_EncyclopediaInfoMenu::SetEntryAuthorBP(const struct FEncyclopediaEntryAuthor& AuthorData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_EncyclopediaInfoMenu", "SetEntryAuthorBP");
+
+	Params::CrUW_EncyclopediaInfoMenu_SetEntryAuthorBP Parms{};
+
+	Parms.AuthorData = std::move(AuthorData);
 
 	UObject::ProcessEvent(Func, &Parms);
+}
 
-	Func->FunctionFlags = Flgs;
 
-	return Parms.ReturnValue;
+// Function ChimeraUI.CrUW_EncyclopediaInfoMenu.SetEntryTitleBP
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FText&                      Title                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrUW_EncyclopediaInfoMenu::SetEntryTitleBP(const class FText& Title)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_EncyclopediaInfoMenu", "SetEntryTitleBP");
+
+	Params::CrUW_EncyclopediaInfoMenu_SetEntryTitleBP Parms{};
+
+	Parms.Title = std::move(Title);
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -4863,64 +4465,6 @@ void UCrUW_AttributeWarningIcon::SetPlayerState(class APlayerState* PlayerState_
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CraftingSelectionWidget.OnSearchBoxClearPressed
-// (Final, Native, Protected)
-
-void UCrUW_CraftingSelectionWidget::OnSearchBoxClearPressed()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingSelectionWidget", "OnSearchBoxClearPressed");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CraftingSelectionWidget.SearchBoxTextChanged
-// (Final, Native, Protected, HasOutParams)
-// Parameters:
-// const class FText&                      InText                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrUW_CraftingSelectionWidget::SearchBoxTextChanged(const class FText& InText)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingSelectionWidget", "SearchBoxTextChanged");
-
-	Params::CrUW_CraftingSelectionWidget_SearchBoxTextChanged Parms{};
-
-	Parms.InText = std::move(InText);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CraftingSelectionWidget.SetListStateVisual
-// (Event, Protected, BlueprintEvent)
-
-void UCrUW_CraftingSelectionWidget::SetListStateVisual()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingSelectionWidget", "SetListStateVisual");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -5016,49 +4560,40 @@ void UCrUW_AutosaveNotice::OnAutosaveWarning(float WarningDuration)
 }
 
 
-// Function ChimeraUI.CrUW_BaseOption.SetHoverVisuals
-// (Event, Public, BlueprintEvent)
+// Function ChimeraUI.CrUW_ChatHud.HandleTextChanged
+// (Final, Native, Protected, HasOutParams)
 // Parameters:
-// bool                                    bHovered                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FText&                      InText                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UCrUW_BaseOption::SetHoverVisuals(bool bHovered)
+void UCrUW_ChatHud::HandleTextChanged(const class FText& InText)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BaseOption", "SetHoverVisuals");
+		Func = Class->GetFunction("CrUW_ChatHud", "HandleTextChanged");
 
-	Params::CrUW_BaseOption_SetHoverVisuals Parms{};
+	Params::CrUW_ChatHud_HandleTextChanged Parms{};
 
-	Parms.bHovered = bHovered;
+	Parms.InText = std::move(InText);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
-// Function ChimeraUI.CrUW_BaseOption.SetNoBottomLine
-// (Event, Public, BlueprintEvent)
+// Function ChimeraUI.CrUW_ChatHud.OnCommit
+// (Final, Native, Public, BlueprintCallable)
 
-void UCrUW_BaseOption::SetNoBottomLine()
+void UCrUW_ChatHud::OnCommit()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BaseOption", "SetNoBottomLine");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_WidgetOptionToggle.OnButtonOffClicked
-// (Final, Native, Protected)
-
-void UCrUW_WidgetOptionToggle::OnButtonOffClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_WidgetOptionToggle", "OnButtonOffClicked");
+		Func = Class->GetFunction("CrUW_ChatHud", "OnCommit");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5069,59 +4604,21 @@ void UCrUW_WidgetOptionToggle::OnButtonOffClicked()
 }
 
 
-// Function ChimeraUI.CrUW_WidgetOptionToggle.OnButtonOnClicked
-// (Final, Native, Protected)
-
-void UCrUW_WidgetOptionToggle::OnButtonOnClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_WidgetOptionToggle", "OnButtonOnClicked");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_WidgetOptionToggle.UpdateSelection
+// Function ChimeraUI.CrUW_ChatHud.SetState
 // (Final, Native, Protected, BlueprintCallable)
-
-void UCrUW_WidgetOptionToggle::UpdateSelection()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_WidgetOptionToggle", "UpdateSelection");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_EnergyHud.InitEnergyChangeDelegate
-// (Final, Native, Private)
 // Parameters:
-// class ACrCharacterPlayerBase*           InCharacter                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrChatHudState                         State                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_EnergyHud::InitEnergyChangeDelegate(class ACrCharacterPlayerBase* InCharacter)
+void UCrUW_ChatHud::SetState(ECrChatHudState State)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EnergyHud", "InitEnergyChangeDelegate");
+		Func = Class->GetFunction("CrUW_ChatHud", "SetState");
 
-	Params::CrUW_EnergyHud_InitEnergyChangeDelegate Parms{};
+	Params::CrUW_ChatHud_SetState Parms{};
 
-	Parms.InCharacter = InCharacter;
+	Parms.State = State;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5132,72 +4629,23 @@ void UCrUW_EnergyHud::InitEnergyChangeDelegate(class ACrCharacterPlayerBase* InC
 }
 
 
-// Function ChimeraUI.CrUW_EnergyHud.OnPlayerSetProfession
-// (Final, Native, Private)
-
-void UCrUW_EnergyHud::OnPlayerSetProfession()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EnergyHud", "OnPlayerSetProfession");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_EnergyHud.OnPossesed
-// (Final, Native, Private)
+// Function ChimeraUI.CrUW_ChatHud.UpdateUI
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// class APawn*                            InPawn                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrChatHudState                         CurrentState                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_EnergyHud::OnPossesed(class APawn* InPawn)
+void UCrUW_ChatHud::UpdateUI(ECrChatHudState CurrentState)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EnergyHud", "OnPossesed");
+		Func = Class->GetFunction("CrUW_ChatHud", "UpdateUI");
 
-	Params::CrUW_EnergyHud_OnPossesed Parms{};
+	Params::CrUW_ChatHud_UpdateUI Parms{};
 
-	Parms.InPawn = InPawn;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
+	Parms.CurrentState = CurrentState;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_EnergyHud.OnUnPossesed
-// (Final, Native, Private)
-// Parameters:
-// class APawn*                            InPawn                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_EnergyHud::OnUnPossesed(class APawn* InPawn)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EnergyHud", "OnUnPossesed");
-
-	Params::CrUW_EnergyHud_OnUnPossesed Parms{};
-
-	Parms.InPawn = InPawn;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -5571,21 +5019,33 @@ void UCrUW_BaseCoreDeconstruction::SetDeconstructionBlockerInfo(bool Avaiable)
 }
 
 
-// Function ChimeraUI.CrUW_CheatAITab.SpawnAI
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UClass*                           Class_0                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function ChimeraUI.CrUW_EncyclopediaEntryButton.BP_OnSelectionChange
+// (Event, Public, BlueprintEvent)
 
-void UCrUW_CheatAITab::SpawnAI(class UClass* Class_0)
+void UCrUW_EncyclopediaEntryButton::BP_OnSelectionChange()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CheatAITab", "SpawnAI");
+		Func = Class->GetFunction("CrUW_EncyclopediaEntryButton", "BP_OnSelectionChange");
 
-	Params::CrUW_CheatAITab_SpawnAI Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.Class_0 = Class_0;
+
+// Function ChimeraUI.CrUW_EncyclopediaEntryButton.GetIsEntryLocked
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCrUW_EncyclopediaEntryButton::GetIsEntryLocked() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_EncyclopediaEntryButton", "GetIsEntryLocked");
+
+	Params::CrUW_EncyclopediaEntryButton_GetIsEntryLocked Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5593,6 +5053,33 @@ void UCrUW_CheatAITab::SpawnAI(class UClass* Class_0)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ChimeraUI.CrUW_EncyclopediaEntryButton.GetIsSelected
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCrUW_EncyclopediaEntryButton::GetIsSelected() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_EncyclopediaEntryButton", "GetIsSelected");
+
+	Params::CrUW_EncyclopediaEntryButton_GetIsSelected Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -5613,31 +5100,6 @@ void UCrUW_BaseCoreDeconstructionBottomPanel::SetDeconstractionTime(int32 TimeIn
 	Parms.TimeInSeconds = TimeInSeconds;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_FoodEffectHud.NativeGetTooltipWidget
-// (Final, Native, Protected)
-// Parameters:
-// class UUserWidget*                      ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UUserWidget* UCrUW_FoodEffectHud::NativeGetTooltipWidget()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_FoodEffectHud", "NativeGetTooltipWidget");
-
-	Params::CrUW_FoodEffectHud_NativeGetTooltipWidget Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -5926,15 +5388,43 @@ void UCrUW_BaseCoreLevelWidget::UpgradeLevelChosenPressed()
 }
 
 
-// Function ChimeraUI.CrUW_EncyclopediaMenu.HandleOnDeactivate
-// (Final, Native, Private)
+// Function ChimeraUI.CrUW_DroneJunctionFilterSelection.BP_OnFilterItemSelected
+// (Event, Protected, BlueprintEvent)
 
-void UCrUW_EncyclopediaMenu::HandleOnDeactivate()
+void UCrUW_DroneJunctionFilterSelection::BP_OnFilterItemSelected()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EncyclopediaMenu", "HandleOnDeactivate");
+		Func = Class->GetFunction("CrUW_DroneJunctionFilterSelection", "BP_OnFilterItemSelected");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_DroneJunctionFilterSelection.BP_OnSlotIndexSet
+// (Event, Protected, BlueprintEvent)
+
+void UCrUW_DroneJunctionFilterSelection::BP_OnSlotIndexSet()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_DroneJunctionFilterSelection", "BP_OnSlotIndexSet");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_DroneJunctionFilterSelection.HandleOnFilterCleared
+// (Final, Native, Protected)
+
+void UCrUW_DroneJunctionFilterSelection::HandleOnFilterCleared()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_DroneJunctionFilterSelection", "HandleOnFilterCleared");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5945,180 +5435,21 @@ void UCrUW_EncyclopediaMenu::HandleOnDeactivate()
 }
 
 
-// Function ChimeraUI.CrUW_EncyclopediaMenu.HandleOnDebugButtonClicked
-// (Final, Native, Private)
-
-void UCrUW_EncyclopediaMenu::HandleOnDebugButtonClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EncyclopediaMenu", "HandleOnDebugButtonClicked");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_EncyclopediaMenu.OnCategoryButtonPressed
-// (Final, Native, Public)
+// Function ChimeraUI.CrUW_DroneJunctionFilterSelection.HandleOnFilterItemSelected
+// (Final, Native, Protected)
 // Parameters:
-// class FName                             Category                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          ListItem                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_EncyclopediaMenu::OnCategoryButtonPressed(class FName Category)
+void UCrUW_DroneJunctionFilterSelection::HandleOnFilterItemSelected(class UObject* ListItem)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EncyclopediaMenu", "OnCategoryButtonPressed");
+		Func = Class->GetFunction("CrUW_DroneJunctionFilterSelection", "HandleOnFilterItemSelected");
 
-	Params::CrUW_EncyclopediaMenu_OnCategoryButtonPressed Parms{};
+	Params::CrUW_DroneJunctionFilterSelection_HandleOnFilterItemSelected Parms{};
 
-	Parms.Category = Category;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_EncyclopediaMenu.OnCategorySelected
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class FName                             Category                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_EncyclopediaMenu::OnCategorySelected(class FName Category)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EncyclopediaMenu", "OnCategorySelected");
-
-	Params::CrUW_EncyclopediaMenu_OnCategorySelected Parms{};
-
-	Parms.Category = Category;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_EncyclopediaMenu.OnEncyclopediaEntryChanged
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// const struct FCrEncyclopediaEntryStatus&EntryData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UCrUW_EncyclopediaMenu::OnEncyclopediaEntryChanged(const struct FCrEncyclopediaEntryStatus& EntryData)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EncyclopediaMenu", "OnEncyclopediaEntryChanged");
-
-	Params::CrUW_EncyclopediaMenu_OnEncyclopediaEntryChanged Parms{};
-
-	Parms.EntryData = std::move(EntryData);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_EncyclopediaMenu.OnEntryButtonHovered
-// (Final, Native, Public)
-// Parameters:
-// class UCrUW_EncyclopediaEntryButton*    Button                                                 (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_EncyclopediaMenu::OnEntryButtonHovered(class UCrUW_EncyclopediaEntryButton* Button)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EncyclopediaMenu", "OnEntryButtonHovered");
-
-	Params::CrUW_EncyclopediaMenu_OnEntryButtonHovered Parms{};
-
-	Parms.Button = Button;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_EncyclopediaMenu.OnEntryButtonPressed
-// (Final, Native, Public)
-// Parameters:
-// class UCrUW_EncyclopediaEntryButton*    Button                                                 (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_EncyclopediaMenu::OnEntryButtonPressed(class UCrUW_EncyclopediaEntryButton* Button)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EncyclopediaMenu", "OnEntryButtonPressed");
-
-	Params::CrUW_EncyclopediaMenu_OnEntryButtonPressed Parms{};
-
-	Parms.Button = Button;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_EncyclopediaMenu.OnEntrySelected
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class FName                             EntryID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_EncyclopediaMenu::OnEntrySelected(class FName EntryID)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EncyclopediaMenu", "OnEntrySelected");
-
-	Params::CrUW_EncyclopediaMenu_OnEntrySelected Parms{};
-
-	Parms.EntryID = EntryID;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_EncyclopediaMenu.OnHyperlinkPressed
-// (Final, Native, Public)
-// Parameters:
-// const class FString&                    HyperlinkID                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_EncyclopediaMenu::OnHyperlinkPressed(const class FString& HyperlinkID)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EncyclopediaMenu", "OnHyperlinkPressed");
-
-	Params::CrUW_EncyclopediaMenu_OnHyperlinkPressed Parms{};
-
-	Parms.HyperlinkID = std::move(HyperlinkID);
+	Parms.ListItem = ListItem;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6502,55 +5833,6 @@ void UCrUW_BaseCoreUpgrade::SetBaseCoreUpgradeDescription(const class FString& D
 }
 
 
-// Function ChimeraUI.CrUW_GemInventorySlot.HandleSkillLevelChanged
-// (Final, Native, Private)
-// Parameters:
-// ECrPlayerProgressionSkill               InSkill                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InLevel                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_GemInventorySlot::HandleSkillLevelChanged(ECrPlayerProgressionSkill InSkill, int32 InLevel)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_GemInventorySlot", "HandleSkillLevelChanged");
-
-	Params::CrUW_GemInventorySlot_HandleSkillLevelChanged Parms{};
-
-	Parms.InSkill = InSkill;
-	Parms.InLevel = InLevel;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_GemInventorySlot.UpdateVisuals
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bInLocked                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Level                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_GemInventorySlot::UpdateVisuals(bool bInLocked, int32 Level)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_GemInventorySlot", "UpdateVisuals");
-
-	Params::CrUW_GemInventorySlot_UpdateVisuals Parms{};
-
-	Parms.bInLocked = bInLocked;
-	Parms.Level = Level;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function ChimeraUI.CrUW_BTConstrucionHud.OnPlaceStateChange
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -6616,6 +5898,262 @@ void UCrUW_BTConstrucionHud::SetStabilityText(const class FText& Text)
 }
 
 
+// Function ChimeraUI.CrUW_ExportingWidget.HandleTransfer
+// (Final, Native, Private)
+
+void UCrUW_ExportingWidget::HandleTransfer()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_ExportingWidget", "HandleTransfer");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_ExportingWidget.HandleTransfer100
+// (Final, Native, Private)
+
+void UCrUW_ExportingWidget::HandleTransfer100()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_ExportingWidget", "HandleTransfer100");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_ExportingWidget.OnExporterRecipeCrafted
+// (Final, Native, Private)
+// Parameters:
+// int32                                   CraftMultipler                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_ExportingWidget::OnExporterRecipeCrafted(int32 CraftMultipler)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_ExportingWidget", "OnExporterRecipeCrafted");
+
+	Params::CrUW_ExportingWidget_OnExporterRecipeCrafted Parms{};
+
+	Parms.CraftMultipler = CraftMultipler;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_ExportingWidget.RefreshCurrentCorpoPoints
+// (Final, Native, Protected, BlueprintCallable)
+
+void UCrUW_ExportingWidget::RefreshCurrentCorpoPoints()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_ExportingWidget", "RefreshCurrentCorpoPoints");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_ExportingWidget.SetAnimationInProgress
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// bool                                    InAnimationInProgress                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_ExportingWidget::SetAnimationInProgress(bool InAnimationInProgress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_ExportingWidget", "SetAnimationInProgress");
+
+	Params::CrUW_ExportingWidget_SetAnimationInProgress Parms{};
+
+	Parms.InAnimationInProgress = InAnimationInProgress;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_ExportingWidget.SetBackgroundCorpoImage
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// const struct FSlateBrush&               CorporationIcon                                        (Parm, NativeAccessSpecifierPublic)
+
+void UCrUW_ExportingWidget::SetBackgroundCorpoImage(const struct FSlateBrush& CorporationIcon)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_ExportingWidget", "SetBackgroundCorpoImage");
+
+	Params::CrUW_ExportingWidget_SetBackgroundCorpoImage Parms{};
+
+	Parms.CorporationIcon = std::move(CorporationIcon);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_ExportingWidget.SetOutputPoints
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_ExportingWidget::SetOutputPoints(int32 Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_ExportingWidget", "SetOutputPoints");
+
+	Params::CrUW_ExportingWidget_SetOutputPoints Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_ExportingWidget.SetPoints
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   CurrentValue                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Max                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_ExportingWidget::SetPoints(int32 CurrentValue, int32 Max)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_ExportingWidget", "SetPoints");
+
+	Params::CrUW_ExportingWidget_SetPoints Parms{};
+
+	Parms.CurrentValue = CurrentValue;
+	Parms.Max = Max;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_ExportingWidget.SetupAnimation
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   Number                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_ExportingWidget::SetupAnimation(int32 Number)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_ExportingWidget", "SetupAnimation");
+
+	Params::CrUW_ExportingWidget_SetupAnimation Parms{};
+
+	Parms.Number = Number;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_ExportingWidget.SetupBackground
+// (Event, Protected, HasDefaults, BlueprintEvent)
+// Parameters:
+// const struct FColor&                    InColor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_ExportingWidget::SetupBackground(const struct FColor& InColor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_ExportingWidget", "SetupBackground");
+
+	Params::CrUW_ExportingWidget_SetupBackground Parms{};
+
+	Parms.InColor = std::move(InColor);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_ExportingWidget.TriggerAnimation
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   Reputation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_ExportingWidget::TriggerAnimation(int32 Reputation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_ExportingWidget", "TriggerAnimation");
+
+	Params::CrUW_ExportingWidget_TriggerAnimation Parms{};
+
+	Parms.Reputation = Reputation;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_ExportingWidget.UpdateSendProgress
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   Tens                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Ones                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_ExportingWidget::UpdateSendProgress(int32 Tens, int32 Ones)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_ExportingWidget", "UpdateSendProgress");
+
+	Params::CrUW_ExportingWidget_UpdateSendProgress Parms{};
+
+	Parms.Tens = Tens;
+	Parms.Ones = Ones;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function ChimeraUI.CrUW_BTDeconstrucionHud.OnPawnPossessedChanged
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -6663,142 +6201,23 @@ void UCrUW_BTDeconstrucionHud::SetInProgress(bool Set)
 }
 
 
-// Function ChimeraUI.CrUW_CorporationScreenWidget.HasAllRewardsClaimed
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bClaimed                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CorporationScreenWidget::HasAllRewardsClaimed(bool bClaimed)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorporationScreenWidget", "HasAllRewardsClaimed");
-
-	Params::CrUW_CorporationScreenWidget_HasAllRewardsClaimed Parms{};
-
-	Parms.bClaimed = bClaimed;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CorporationScreenWidget.SetMax
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    BMax                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CorporationScreenWidget::SetMax(bool BMax)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorporationScreenWidget", "SetMax");
-
-	Params::CrUW_CorporationScreenWidget_SetMax Parms{};
-
-	Parms.BMax = BMax;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CorporationScreenWidget.SetupData
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class UCrCorporationData*               Data                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CorporationScreenWidget::SetupData(class UCrCorporationData* Data)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorporationScreenWidget", "SetupData");
-
-	Params::CrUW_CorporationScreenWidget_SetupData Parms{};
-
-	Parms.Data = Data;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CorporationScreenWidget.UpdateCorporationLevel
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// int32                                   Level                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CorporationScreenWidget::UpdateCorporationLevel(int32 Level)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorporationScreenWidget", "UpdateCorporationLevel");
-
-	Params::CrUW_CorporationScreenWidget_UpdateCorporationLevel Parms{};
-
-	Parms.Level = Level;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CorporationScreenWidget.UpdateCorporationPercent
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   InPercent                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CorporationScreenWidget::UpdateCorporationPercent(float InPercent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorporationScreenWidget", "UpdateCorporationPercent");
-
-	Params::CrUW_CorporationScreenWidget_UpdateCorporationPercent Parms{};
-
-	Parms.InPercent = InPercent;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_FEDisplay.GetWidgetHeight
+// Function ChimeraUI.CrUW_CorporationsList.SetDisabledOpacity
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bDisabled                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UCrUW_FEDisplay::GetWidgetHeight()
+void UCrUW_CorporationsList::SetDisabledOpacity(bool bDisabled)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_FEDisplay", "GetWidgetHeight");
+		Func = Class->GetFunction("CrUW_CorporationsList", "SetDisabledOpacity");
 
-	Params::CrUW_FEDisplay_GetWidgetHeight Parms{};
+	Params::CrUW_CorporationsList_SetDisabledOpacity Parms{};
+
+	Parms.bDisabled = bDisabled;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ChimeraUI.CrUW_FEDisplay.SetColors
-// (Final, Native, Public, BlueprintCallable)
-
-void UCrUW_FEDisplay::SetColors()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_FEDisplay", "SetColors");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -6833,6 +6252,208 @@ void UCrUW_BuildingCopyMessagePopup::TriggerFadeOut()
 		Func = Class->GetFunction("CrUW_BuildingCopyMessagePopup", "TriggerFadeOut");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_EffectsHud.InitDelegates
+// (Final, Native, Private)
+
+void UCrUW_EffectsHud::InitDelegates()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_EffectsHud", "InitDelegates");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_EffectsHud.OnPossess
+// (Final, Native, Private)
+// Parameters:
+// class APawn*                            InPawn                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_EffectsHud::OnPossess(class APawn* InPawn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_EffectsHud", "OnPossess");
+
+	Params::CrUW_EffectsHud_OnPossess Parms{};
+
+	Parms.InPawn = InPawn;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CrafterInterior.HandleCraftingMultiplierChanged
+// (Final, Native, Protected)
+
+void UCrUW_CrafterInterior::HandleCraftingMultiplierChanged()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CrafterInterior", "HandleCraftingMultiplierChanged");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CrafterInterior.HandleItemsToCraftChanged
+// (Final, Native, Protected)
+
+void UCrUW_CrafterInterior::HandleItemsToCraftChanged()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CrafterInterior", "HandleItemsToCraftChanged");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CrafterInterior.HandleOpenTooltip
+// (Final, Native, Protected)
+
+void UCrUW_CrafterInterior::HandleOpenTooltip()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CrafterInterior", "HandleOpenTooltip");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CrafterInterior.HandleTransfer
+// (Final, Native, Protected)
+
+void UCrUW_CrafterInterior::HandleTransfer()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CrafterInterior", "HandleTransfer");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CrafterInterior.HandleTransfer100
+// (Final, Native, Protected)
+
+void UCrUW_CrafterInterior::HandleTransfer100()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CrafterInterior", "HandleTransfer100");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CrafterInterior.HideTooltip
+// (Final, Native, Protected)
+
+void UCrUW_CrafterInterior::HideTooltip()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CrafterInterior", "HideTooltip");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CrafterInterior.NativeGetTooltipWidget
+// (Final, Native, Protected)
+// Parameters:
+// class UUserWidget*                      ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UUserWidget* UCrUW_CrafterInterior::NativeGetTooltipWidget()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CrafterInterior", "NativeGetTooltipWidget");
+
+	Params::CrUW_CrafterInterior_NativeGetTooltipWidget Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ChimeraUI.CrUW_CrafterInterior.ShowTooltip
+// (Final, Native, Protected)
+
+void UCrUW_CrafterInterior::ShowTooltip()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CrafterInterior", "ShowTooltip");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -6892,46 +6513,6 @@ void UCrUW_BuildingRefund::SetupInfo(class ACrBuildingActorBase* InBuilding)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_EncyclopediaDatapadInfoMenu.SetEntryAuthorTextBP
-// (Event, Protected, HasOutParams, BlueprintEvent)
-// Parameters:
-// const class FText&                      Author                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrUW_EncyclopediaDatapadInfoMenu::SetEntryAuthorTextBP(const class FText& Author)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EncyclopediaDatapadInfoMenu", "SetEntryAuthorTextBP");
-
-	Params::CrUW_EncyclopediaDatapadInfoMenu_SetEntryAuthorTextBP Parms{};
-
-	Parms.Author = std::move(Author);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_EncyclopediaDatapadInfoMenu.SetEntryTitleBP
-// (Event, Protected, HasOutParams, BlueprintEvent)
-// Parameters:
-// const class FText&                      Title                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrUW_EncyclopediaDatapadInfoMenu::SetEntryTitleBP(const class FText& Title)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EncyclopediaDatapadInfoMenu", "SetEntryTitleBP");
-
-	Params::CrUW_EncyclopediaDatapadInfoMenu_SetEntryTitleBP Parms{};
-
-	Parms.Title = std::move(Title);
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -6996,191 +6577,33 @@ void UCrUW_BuildingDeconstructionInfo::OnSetupInfo()
 }
 
 
-// Function ChimeraUI.CrUW_CraftingProgressInterior.CraftMultiplierHundred
-// (Final, Native, Protected)
-
-void UCrUW_CraftingProgressInterior::CraftMultiplierHundred()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingProgressInterior", "CraftMultiplierHundred");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CraftingProgressInterior.CraftMultiplierTen
-// (Final, Native, Protected)
-
-void UCrUW_CraftingProgressInterior::CraftMultiplierTen()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingProgressInterior", "CraftMultiplierTen");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CraftingProgressInterior.InitButtons
+// Function ChimeraUI.CrUW_ButtonBase.ButtonPressed
 // (Event, Protected, BlueprintEvent)
 
-void UCrUW_CraftingProgressInterior::InitButtons()
+void UCrUW_ButtonBase::ButtonPressed()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingProgressInterior", "InitButtons");
+		Func = Class->GetFunction("CrUW_ButtonBase", "ButtonPressed");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ChimeraUI.CrUW_CraftingProgressInterior.OnRecipeChanged
-// (Event, Protected, BlueprintEvent)
-
-void UCrUW_CraftingProgressInterior::OnRecipeChanged()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingProgressInterior", "OnRecipeChanged");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_CraftingProgressInterior.OnRecipeCleared
-// (Event, Protected, BlueprintEvent)
-
-void UCrUW_CraftingProgressInterior::OnRecipeCleared()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingProgressInterior", "OnRecipeCleared");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_CraftingProgressInterior.SetColors
-// (Event, Protected, BlueprintEvent)
+// Function ChimeraUI.CrUW_ButtonBase.GetColors
+// (Final, Native, Protected, BlueprintCallable)
 // Parameters:
-// const class UCrCommonUIColorsDevSettings*Settings                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UCrCommonUIColorsDevSettings*ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_CraftingProgressInterior::SetColors(const class UCrCommonUIColorsDevSettings* Settings)
+const class UCrCommonUIColorsDevSettings* UCrUW_ButtonBase::GetColors()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingProgressInterior", "SetColors");
+		Func = Class->GetFunction("CrUW_ButtonBase", "GetColors");
 
-	Params::CrUW_CraftingProgressInterior_SetColors Parms{};
-
-	Parms.Settings = Settings;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CraftingProgressInterior.SetFoodProcessorVersion
-// (Event, Public, BlueprintEvent)
-
-void UCrUW_CraftingProgressInterior::SetFoodProcessorVersion()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingProgressInterior", "SetFoodProcessorVersion");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_CraftingProgressInterior.SetMaxMultiplier
-// (Final, Native, Protected)
-
-void UCrUW_CraftingProgressInterior::SetMaxMultiplier()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingProgressInterior", "SetMaxMultiplier");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CraftingProgressInterior.SetMinMultiplier
-// (Final, Native, Protected)
-
-void UCrUW_CraftingProgressInterior::SetMinMultiplier()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingProgressInterior", "SetMinMultiplier");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CraftingProgressInterior.UpdateMaxInfo
-// (Event, Protected, HasOutParams, BlueprintEvent)
-// Parameters:
-// const class FText&                      Text                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrUW_CraftingProgressInterior::UpdateMaxInfo(const class FText& Text)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingProgressInterior", "UpdateMaxInfo");
-
-	Params::CrUW_CraftingProgressInterior_UpdateMaxInfo Parms{};
-
-	Parms.Text = std::move(Text);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CraftingProgressInterior.GetSelectedRecipe
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const class UCrItemRecipeData*          ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-const class UCrItemRecipeData* UCrUW_CraftingProgressInterior::GetSelectedRecipe() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingProgressInterior", "GetSelectedRecipe");
-
-	Params::CrUW_CraftingProgressInterior_GetSelectedRecipe Parms{};
+	Params::CrUW_ButtonBase_GetColors Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -7190,6 +6613,185 @@ const class UCrItemRecipeData* UCrUW_CraftingProgressInterior::GetSelectedRecipe
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function ChimeraUI.CrUW_ButtonBase.HandleButtonFocus
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bFocused                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_ButtonBase::HandleButtonFocus(bool bFocused)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_ButtonBase", "HandleButtonFocus");
+
+	Params::CrUW_ButtonBase_HandleButtonFocus Parms{};
+
+	Parms.bFocused = bFocused;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_ButtonBase.SetButtonText
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FText&                      InText                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrUW_ButtonBase::SetButtonText(const class FText& InText)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_ButtonBase", "SetButtonText");
+
+	Params::CrUW_ButtonBase_SetButtonText Parms{};
+
+	Parms.InText = std::move(InText);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_ButtonBase.UpdateButton
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// ECommonMessagingResult                  Action                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_ButtonBase::UpdateButton(ECommonMessagingResult Action)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_ButtonBase", "UpdateButton");
+
+	Params::CrUW_ButtonBase_UpdateButton Parms{};
+
+	Parms.Action = Action;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_ButtonBase.UpdateButtonStyle
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bIsFocused                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_ButtonBase::UpdateButtonStyle(bool bIsFocused)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_ButtonBase", "UpdateButtonStyle");
+
+	Params::CrUW_ButtonBase_UpdateButtonStyle Parms{};
+
+	Parms.bIsFocused = bIsFocused;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_ButtonBase.UpdateButtonText
+// (Final, Native, Protected, HasOutParams)
+// Parameters:
+// const class FText&                      InText                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrUW_ButtonBase::UpdateButtonText(const class FText& InText)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_ButtonBase", "UpdateButtonText");
+
+	Params::CrUW_ButtonBase_UpdateButtonText Parms{};
+
+	Parms.InText = std::move(InText);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_FriendsButton.ButtonClicked
+// (Final, Native, Protected)
+
+void UCrUW_FriendsButton::ButtonClicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_FriendsButton", "ButtonClicked");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_FriendsButton.SetButtonEmpty
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bEmpty                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_FriendsButton::SetButtonEmpty(bool bEmpty)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_FriendsButton", "SetButtonEmpty");
+
+	Params::CrUW_FriendsButton_SetButtonEmpty Parms{};
+
+	Parms.bEmpty = bEmpty;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CraftingQueueListViewElement.HandleOnStoppedStatusChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bStopped                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CraftingQueueListViewElement::HandleOnStoppedStatusChanged(bool bStopped)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingQueueListViewElement", "HandleOnStoppedStatusChanged");
+
+	Params::CrUW_CraftingQueueListViewElement_HandleOnStoppedStatusChanged Parms{};
+
+	Parms.bStopped = bStopped;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -7306,6 +6908,111 @@ void UCrUW_BuildingInfoBuildingMenu::SetBuildingName(const class FText& InName)
 	Parms.InName = std::move(InName);
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_EncyclopediaSubcategoryGrid.SetGridExpanded
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    Expanded                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_EncyclopediaSubcategoryGrid::SetGridExpanded(bool Expanded)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_EncyclopediaSubcategoryGrid", "SetGridExpanded");
+
+	Params::CrUW_EncyclopediaSubcategoryGrid_SetGridExpanded Parms{};
+
+	Parms.Expanded = Expanded;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_EncyclopediaSubcategoryGrid.SetSubCategoryTitleBP
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FText&                      Title                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrUW_EncyclopediaSubcategoryGrid::SetSubCategoryTitleBP(const class FText& Title)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_EncyclopediaSubcategoryGrid", "SetSubCategoryTitleBP");
+
+	Params::CrUW_EncyclopediaSubcategoryGrid_SetSubCategoryTitleBP Parms{};
+
+	Parms.Title = std::move(Title);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_EncyclopediaSubcategoryGrid.SetSubcategoryTitleStyleBP
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// const bool                              isHighlight                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_EncyclopediaSubcategoryGrid::SetSubcategoryTitleStyleBP(const bool isHighlight)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_EncyclopediaSubcategoryGrid", "SetSubcategoryTitleStyleBP");
+
+	Params::CrUW_EncyclopediaSubcategoryGrid_SetSubcategoryTitleStyleBP Parms{};
+
+	Parms.isHighlight = isHighlight;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_EncyclopediaSubcategoryGrid.SetUnreadStatusIcons
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    Unread                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_EncyclopediaSubcategoryGrid::SetUnreadStatusIcons(bool Unread)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_EncyclopediaSubcategoryGrid", "SetUnreadStatusIcons");
+
+	Params::CrUW_EncyclopediaSubcategoryGrid_SetUnreadStatusIcons Parms{};
+
+	Parms.Unread = Unread;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_EncyclopediaSubcategoryGrid.GetUniformGridPanel
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UUniformGridPanel*                ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UUniformGridPanel* UCrUW_EncyclopediaSubcategoryGrid::GetUniformGridPanel() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_EncyclopediaSubcategoryGrid", "GetUniformGridPanel");
+
+	Params::CrUW_EncyclopediaSubcategoryGrid_GetUniformGridPanel Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -7887,99 +7594,6 @@ float UCrUW_BuildingInGameInfo::GetHeatCapacity() const
 }
 
 
-// Function ChimeraUI.CrUW_ExportingSelectionWidget.SetCorpoColor
-// (Event, Protected, HasDefaults, BlueprintEvent)
-// Parameters:
-// const struct FColor&                    InColor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_ExportingSelectionWidget::SetCorpoColor(const struct FColor& InColor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ExportingSelectionWidget", "SetCorpoColor");
-
-	Params::CrUW_ExportingSelectionWidget_SetCorpoColor Parms{};
-
-	Parms.InColor = std::move(InColor);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_ExportingSelectionWidget.SetDisabledOpacity
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bInDisabled                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_ExportingSelectionWidget::SetDisabledOpacity(bool bInDisabled)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ExportingSelectionWidget", "SetDisabledOpacity");
-
-	Params::CrUW_ExportingSelectionWidget_SetDisabledOpacity Parms{};
-
-	Parms.bInDisabled = bInDisabled;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_ExportingSelectionWidget.SetNoCorpoSelectedState
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bInNoCorpo                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_ExportingSelectionWidget::SetNoCorpoSelectedState(bool bInNoCorpo)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ExportingSelectionWidget", "SetNoCorpoSelectedState");
-
-	Params::CrUW_ExportingSelectionWidget_SetNoCorpoSelectedState Parms{};
-
-	Parms.bInNoCorpo = bInNoCorpo;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_BuildingInventory.BPOnShowForActor
-// (Event, Public, BlueprintEvent)
-
-void UCrUW_BuildingInventory::BPOnShowForActor()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingInventory", "BPOnShowForActor");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_BuildingInventory.HandlePickAllClicked
-// (Final, Native, Private)
-
-void UCrUW_BuildingInventory::HandlePickAllClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingInventory", "HandlePickAllClicked");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function ChimeraUI.CrUW_BuildingLogisticsInfo.OnPriorityChange
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -8108,60 +7722,181 @@ void UCrUW_BuildingMenu::UpdateFocus()
 }
 
 
-// Function ChimeraUI.CrUW_BuildingMenuCategoryButton.OnCategoryButtonClicked
+// Function ChimeraUI.CrUW_BuildingMenuButton.FocusRecived
+// (Event, Protected, BlueprintEvent)
+
+void UCrUW_BuildingMenuButton::FocusRecived()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_BuildingMenuButton", "FocusRecived");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_BuildingMenuButton.HandleOnButtonClick
+// (Final, Native, Private)
+
+void UCrUW_BuildingMenuButton::HandleOnButtonClick()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_BuildingMenuButton", "HandleOnButtonClick");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_BuildingMenuButton.IsAffordable
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCrUW_BuildingMenuButton::IsAffordable()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_BuildingMenuButton", "IsAffordable");
+
+	Params::CrUW_BuildingMenuButton_IsAffordable Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ChimeraUI.CrUW_BuildingOptionButtons.OnEquipBuildingTool
+// (Final, Native, Private)
+
+void UCrUW_BuildingOptionButtons::OnEquipBuildingTool()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_BuildingOptionButtons", "OnEquipBuildingTool");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_BuildingOptionButtons.OnItemPostEquip
+// (Final, Native, Private)
+
+void UCrUW_BuildingOptionButtons::OnItemPostEquip()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_BuildingOptionButtons", "OnItemPostEquip");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_BuildingOptionButtons.OnPossesed
+// (Final, Native, Private)
+// Parameters:
+// class APawn*                            InPawn                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_BuildingOptionButtons::OnPossesed(class APawn* InPawn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_BuildingOptionButtons", "OnPossesed");
+
+	Params::CrUW_BuildingOptionButtons_OnPossesed Parms{};
+
+	Parms.InPawn = InPawn;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_BuildingOptionButtons.OnSetPlacementModeModifier
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// EPlacementModeModifier                  Mode                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_BuildingOptionButtons::OnSetPlacementModeModifier(EPlacementModeModifier Mode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_BuildingOptionButtons", "OnSetPlacementModeModifier");
+
+	Params::CrUW_BuildingOptionButtons_OnSetPlacementModeModifier Parms{};
+
+	Parms.Mode = Mode;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_BuildingOptionButtons.OnUnequipBuildingTool
+// (Final, Native, Private)
+
+void UCrUW_BuildingOptionButtons::OnUnequipBuildingTool()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_BuildingOptionButtons", "OnUnequipBuildingTool");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_BuildingOptionButtons.OnUnlockedFeaturesChanged
 // (Final, Native, Protected)
-
-void UCrUW_BuildingMenuCategoryButton::OnCategoryButtonClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingMenuCategoryButton", "OnCategoryButtonClicked");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_BuildingMenuCategoryButton.OnCategoryTypeChange
-// (Event, Public, BlueprintEvent)
 // Parameters:
-// ECrBuildingUIType                       InType                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<ECrCorporationUnlockedFeatures>&UnlockedFeatures                                       (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UCrUW_BuildingMenuCategoryButton::OnCategoryTypeChange(ECrBuildingUIType InType)
+void UCrUW_BuildingOptionButtons::OnUnlockedFeaturesChanged(const TArray<ECrCorporationUnlockedFeatures>& UnlockedFeatures)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingMenuCategoryButton", "OnCategoryTypeChange");
+		Func = Class->GetFunction("CrUW_BuildingOptionButtons", "OnUnlockedFeaturesChanged");
 
-	Params::CrUW_BuildingMenuCategoryButton_OnCategoryTypeChange Parms{};
+	Params::CrUW_BuildingOptionButtons_OnUnlockedFeaturesChanged Parms{};
 
-	Parms.InType = InType;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_BuildingMenuCategoryButton.SetCategoryUIType
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// ECrBuildingUIType                       InType                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_BuildingMenuCategoryButton::SetCategoryUIType(ECrBuildingUIType InType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingMenuCategoryButton", "SetCategoryUIType");
-
-	Params::CrUW_BuildingMenuCategoryButton_SetCategoryUIType Parms{};
-
-	Parms.InType = InType;
+	Parms.UnlockedFeatures = std::move(UnlockedFeatures);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -8172,37 +7907,28 @@ void UCrUW_BuildingMenuCategoryButton::SetCategoryUIType(ECrBuildingUIType InTyp
 }
 
 
-// Function ChimeraUI.CrUW_BuildingPlacementIndicator.OnPlacementCancelled
-// (Event, Protected, BlueprintEvent)
-
-void UCrUW_BuildingPlacementIndicator::OnPlacementCancelled()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingPlacementIndicator", "OnPlacementCancelled");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_BuildingPlacementIndicator.OnPlaceStateChange
-// (Event, Protected, BlueprintEvent)
+// Function ChimeraUI.CrUW_BuildingOptionButtons.OnUnPossesed
+// (Final, Native, Private)
 // Parameters:
-// EAuAPlacementConditionResult            NewState                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class APawn*                            InPawn                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_BuildingPlacementIndicator::OnPlaceStateChange(EAuAPlacementConditionResult NewState)
+void UCrUW_BuildingOptionButtons::OnUnPossesed(class APawn* InPawn)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_BuildingPlacementIndicator", "OnPlaceStateChange");
+		Func = Class->GetFunction("CrUW_BuildingOptionButtons", "OnUnPossesed");
 
-	Params::CrUW_BuildingPlacementIndicator_OnPlaceStateChange Parms{};
+	Params::CrUW_BuildingOptionButtons_OnUnPossesed Parms{};
 
-	Parms.NewState = NewState;
+	Parms.InPawn = InPawn;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -8325,6 +8051,171 @@ bool UCrUW_BuildingTooltipsDeconstruct::IsBuildingToolEquipped() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function ChimeraUI.CrUW_BuildingUIWithTabs.HandleCopy
+// (Final, Native, Protected)
+
+void UCrUW_BuildingUIWithTabs::HandleCopy()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_BuildingUIWithTabs", "HandleCopy");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_BuildingUIWithTabs.HandlePaste
+// (Final, Native, Protected)
+
+void UCrUW_BuildingUIWithTabs::HandlePaste()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_BuildingUIWithTabs", "HandlePaste");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_BuildingUIWithTabs.RegisterOnDataPointChanged
+// (Final, Native, Protected, BlueprintCallable)
+
+void UCrUW_BuildingUIWithTabs::RegisterOnDataPointChanged()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_BuildingUIWithTabs", "RegisterOnDataPointChanged");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_BuildingUIWithTabs.RemoveOnDataPointChanged
+// (Final, Native, Protected, BlueprintCallable)
+
+void UCrUW_BuildingUIWithTabs::RemoveOnDataPointChanged()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_BuildingUIWithTabs", "RemoveOnDataPointChanged");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_BuildingUIWithTabs.SetActiveTab
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// EUIWidgetType                           TabType                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_BuildingUIWithTabs::SetActiveTab(EUIWidgetType TabType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_BuildingUIWithTabs", "SetActiveTab");
+
+	Params::CrUW_BuildingUIWithTabs_SetActiveTab Parms{};
+
+	Parms.TabType = TabType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_BuildingUIWithTabs.SetDataPointValue
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   InPoints                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_BuildingUIWithTabs::SetDataPointValue(int32 InPoints)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_BuildingUIWithTabs", "SetDataPointValue");
+
+	Params::CrUW_BuildingUIWithTabs_SetDataPointValue Parms{};
+
+	Parms.InPoints = InPoints;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_BuildingUIWithTabs.SetTabWidgetBackground
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   Tabs                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bHasScrollbar                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_BuildingUIWithTabs::SetTabWidgetBackground(int32 Tabs, bool bHasScrollbar)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_BuildingUIWithTabs", "SetTabWidgetBackground");
+
+	Params::CrUW_BuildingUIWithTabs_SetTabWidgetBackground Parms{};
+
+	Parms.Tabs = Tabs;
+	Parms.bHasScrollbar = bHasScrollbar;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_BuildingUIWithTabs.TabChanged
+// (Final, Native, Public)
+// Parameters:
+// int32                                   Old                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Active                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_BuildingUIWithTabs::TabChanged(int32 Old, int32 Active)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_BuildingUIWithTabs", "TabChanged");
+
+	Params::CrUW_BuildingUIWithTabs_TabChanged Parms{};
+
+	Parms.Old = Old;
+	Parms.Active = Active;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -8739,65 +8630,21 @@ void UCrUW_CharacterWidget::SetupProfession()
 }
 
 
-// Function ChimeraUI.CrUW_ChatHud.HandleTextChanged
-// (Final, Native, Protected, HasOutParams)
-// Parameters:
-// const class FText&                      InText                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrUW_ChatHud::HandleTextChanged(const class FText& InText)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ChatHud", "HandleTextChanged");
-
-	Params::CrUW_ChatHud_HandleTextChanged Parms{};
-
-	Parms.InText = std::move(InText);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_ChatHud.OnCommit
+// Function ChimeraUI.CrUW_CheatAITab.SpawnAI
 // (Final, Native, Public, BlueprintCallable)
-
-void UCrUW_ChatHud::OnCommit()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ChatHud", "OnCommit");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_ChatHud.SetState
-// (Final, Native, Protected, BlueprintCallable)
 // Parameters:
-// ECrChatHudState                         State                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UClass*                           Class_0                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_ChatHud::SetState(ECrChatHudState State)
+void UCrUW_CheatAITab::SpawnAI(class UClass* Class_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ChatHud", "SetState");
+		Func = Class->GetFunction("CrUW_CheatAITab", "SpawnAI");
 
-	Params::CrUW_ChatHud_SetState Parms{};
+	Params::CrUW_CheatAITab_SpawnAI Parms{};
 
-	Parms.State = State;
+	Parms.Class_0 = Class_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -8805,26 +8652,6 @@ void UCrUW_ChatHud::SetState(ECrChatHudState State)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_ChatHud.UpdateUI
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// ECrChatHudState                         CurrentState                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_ChatHud::UpdateUI(ECrChatHudState CurrentState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ChatHud", "UpdateUI");
-
-	Params::CrUW_ChatHud_UpdateUI Parms{};
-
-	Parms.CurrentState = CurrentState;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -8993,70 +8820,6 @@ void UCrUW_CheatBuildindingButton::HandleOnFullBuildButtonClick()
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CheatBuildindingCategoryButton.OnCategoryButtonClicked
-// (Final, Native, Protected)
-
-void UCrUW_CheatBuildindingCategoryButton::OnCategoryButtonClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CheatBuildindingCategoryButton", "OnCategoryButtonClicked");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CheatBuildindingCategoryButton.OnCategoryTypeChange
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// ECrBuildingType                         InType                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CheatBuildindingCategoryButton::OnCategoryTypeChange(ECrBuildingType InType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CheatBuildindingCategoryButton", "OnCategoryTypeChange");
-
-	Params::CrUW_CheatBuildindingCategoryButton_OnCategoryTypeChange Parms{};
-
-	Parms.InType = InType;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CheatBuildindingCategoryButton.SetCategoryType
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// ECrBuildingType                         InType                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CheatBuildindingCategoryButton::SetCategoryType(ECrBuildingType InType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CheatBuildindingCategoryButton", "SetCategoryType");
-
-	Params::CrUW_CheatBuildindingCategoryButton_SetCategoryType Parms{};
-
-	Parms.InType = InType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -9321,15 +9084,15 @@ void UCrUW_WeaponsCheatVerticalBox::GiveDefaultWeapons()
 }
 
 
-// Function ChimeraUI.CrUW_CheatMenu.HandleOnLoadGameClicked
+// Function ChimeraUI.CrUW_CheatGem.DecreaseClicked
 // (Final, Native, Private)
 
-void UCrUW_CheatMenu::HandleOnLoadGameClicked()
+void UCrUW_CheatGem::DecreaseClicked()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CheatMenu", "HandleOnLoadGameClicked");
+		Func = Class->GetFunction("CrUW_CheatGem", "DecreaseClicked");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -9340,15 +9103,15 @@ void UCrUW_CheatMenu::HandleOnLoadGameClicked()
 }
 
 
-// Function ChimeraUI.CrUW_CheatMenu.HandleOnSaveGameClicked
+// Function ChimeraUI.CrUW_CheatGem.IncreaseClicked
 // (Final, Native, Private)
 
-void UCrUW_CheatMenu::HandleOnSaveGameClicked()
+void UCrUW_CheatGem::IncreaseClicked()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CheatMenu", "HandleOnSaveGameClicked");
+		Func = Class->GetFunction("CrUW_CheatGem", "IncreaseClicked");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -9359,21 +9122,40 @@ void UCrUW_CheatMenu::HandleOnSaveGameClicked()
 }
 
 
-// Function ChimeraUI.CrUW_CheatMenu.OnCategoryLoaded
+// Function ChimeraUI.CrUW_CheatItemsTab.HandleOnButtonPressed
 // (Final, Native, Private)
+
+void UCrUW_CheatItemsTab::HandleOnButtonPressed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CheatItemsTab", "HandleOnButtonPressed");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CheatItemsTab.OnFilterTextChanged
+// (Final, Native, Public, HasOutParams)
 // Parameters:
-// TSoftClassPtr<class UClass>             SoftClass                                              (Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FText&                      NewText                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UCrUW_CheatMenu::OnCategoryLoaded(TSoftClassPtr<class UClass> SoftClass)
+void UCrUW_CheatItemsTab::OnFilterTextChanged(const class FText& NewText)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CheatMenu", "OnCategoryLoaded");
+		Func = Class->GetFunction("CrUW_CheatItemsTab", "OnFilterTextChanged");
 
-	Params::CrUW_CheatMenu_OnCategoryLoaded Parms{};
+	Params::CrUW_CheatItemsTab_OnFilterTextChanged Parms{};
 
-	Parms.SoftClass = SoftClass;
+	Parms.NewText = std::move(NewText);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -9381,6 +9163,126 @@ void UCrUW_CheatMenu::OnCategoryLoaded(TSoftClassPtr<class UClass> SoftClass)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CheatItemsTab.OnItemAmountChanged
+// (Final, Native, Public)
+// Parameters:
+// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CheatItemsTab::OnItemAmountChanged(float NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CheatItemsTab", "OnItemAmountChanged");
+
+	Params::CrUW_CheatItemsTab_OnItemAmountChanged Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CheatItemsTab.SetItemAmount
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CheatItemsTab::SetItemAmount(int32 Amount)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CheatItemsTab", "SetItemAmount");
+
+	Params::CrUW_CheatItemsTab_SetItemAmount Parms{};
+
+	Parms.Amount = Amount;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CheatItemsTab.SetItemFilter
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FText&                      Text                                                   (Parm, NativeAccessSpecifierPublic)
+
+void UCrUW_CheatItemsTab::SetItemFilter(const class FText& Text)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CheatItemsTab", "SetItemFilter");
+
+	Params::CrUW_CheatItemsTab_SetItemFilter Parms{};
+
+	Parms.Text = std::move(Text);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CheatItemsTab.GetItemAmount
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UCrUW_CheatItemsTab::GetItemAmount() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CheatItemsTab", "GetItemAmount");
+
+	Params::CrUW_CheatItemsTab_GetItemAmount Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ChimeraUI.CrUW_CheatItemsTab.GetWantedItemAmount
+// (Event, Public, BlueprintEvent, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UCrUW_CheatItemsTab::GetWantedItemAmount() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CheatItemsTab", "GetWantedItemAmount");
+
+	Params::CrUW_CheatItemsTab_GetWantedItemAmount Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
 }
 
 
@@ -9497,21 +9399,23 @@ int32 UCrUW_CheatMenuCategoryButton::GetButtonIndex() const
 }
 
 
-// Function ChimeraUI.CrUW_CloningBedPlayerInfo.SetPlayerInfo
-// (Final, Native, Public)
+// Function ChimeraUI.CrUW_CloningBed.OnActorEndPlay
+// (Final, Native, Protected)
 // Parameters:
-// EProfessionType                         Profession                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EEndPlayReason                          Reason                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_CloningBedPlayerInfo::SetPlayerInfo(EProfessionType Profession)
+void UCrUW_CloningBed::OnActorEndPlay(class AActor* Actor, EEndPlayReason Reason)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CloningBedPlayerInfo", "SetPlayerInfo");
+		Func = Class->GetFunction("CrUW_CloningBed", "OnActorEndPlay");
 
-	Params::CrUW_CloningBedPlayerInfo_SetPlayerInfo Parms{};
+	Params::CrUW_CloningBed_OnActorEndPlay Parms{};
 
-	Parms.Profession = Profession;
+	Parms.Actor = Actor;
+	Parms.Reason = Reason;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -9522,21 +9426,63 @@ void UCrUW_CloningBedPlayerInfo::SetPlayerInfo(EProfessionType Profession)
 }
 
 
-// Function ChimeraUI.CrUW_CloningBedPlayerInfo.SetupDetails
-// (Event, Public, BlueprintEvent)
+// Function ChimeraUI.CrUW_CloningBedPanel.AddWidgetToGrid
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// EProfessionType                         Profession                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrUW_CloningBedPlayer*           InWidget                                               (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   WidgetNumber                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_CloningBedPlayerInfo::SetupDetails(EProfessionType Profession)
+void UCrUW_CloningBedPanel::AddWidgetToGrid(class UCrUW_CloningBedPlayer* InWidget, int32 WidgetNumber)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CloningBedPlayerInfo", "SetupDetails");
+		Func = Class->GetFunction("CrUW_CloningBedPanel", "AddWidgetToGrid");
 
-	Params::CrUW_CloningBedPlayerInfo_SetupDetails Parms{};
+	Params::CrUW_CloningBedPanel_AddWidgetToGrid Parms{};
 
-	Parms.Profession = Profession;
+	Parms.InWidget = InWidget;
+	Parms.WidgetNumber = WidgetNumber;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CloningBedPanel.GetGridSize
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UCrUW_CloningBedPanel::GetGridSize()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CloningBedPanel", "GetGridSize");
+
+	Params::CrUW_CloningBedPanel_GetGridSize Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ChimeraUI.CrUW_CloningBedPanel.SetColors
+// (Event, Protected, HasDefaults, BlueprintEvent)
+// Parameters:
+// const struct FLinearColor&              OrangeColor                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CloningBedPanel::SetColors(const struct FLinearColor& OrangeColor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CloningBedPanel", "SetColors");
+
+	Params::CrUW_CloningBedPanel_SetColors Parms{};
+
+	Parms.OrangeColor = std::move(OrangeColor);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -9689,55 +9635,15 @@ void UCrUW_ConnectToServer::SetColors()
 }
 
 
-// Function ChimeraUI.CrUW_Cooler.SetColors
-// (Event, Protected, HasDefaults, BlueprintEvent)
-// Parameters:
-// const struct FLinearColor&              HighlightColor                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function ChimeraUI.CrUW_CorpLevelUpHud.HandleTriggerFadeOut
+// (Final, Native, Public)
 
-void UCrUW_Cooler::SetColors(const struct FLinearColor& HighlightColor)
+void UCrUW_CorpLevelUpHud::HandleTriggerFadeOut()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_Cooler", "SetColors");
-
-	Params::CrUW_Cooler_SetColors Parms{};
-
-	Parms.HighlightColor = std::move(HighlightColor);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CorporationRecipes.EnableLine
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bEnabled                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CorporationRecipes::EnableLine(bool bEnabled)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorporationRecipes", "EnableLine");
-
-	Params::CrUW_CorporationRecipes_EnableLine Parms{};
-
-	Parms.bEnabled = bEnabled;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CorporationRecipes.PlayClickSound
-// (Final, Native, Public, BlueprintCallable)
-
-void UCrUW_CorporationRecipes::PlayClickSound()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorporationRecipes", "PlayClickSound");
+		Func = Class->GetFunction("CrUW_CorpLevelUpHud", "HandleTriggerFadeOut");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -9748,59 +9654,107 @@ void UCrUW_CorporationRecipes::PlayClickSound()
 }
 
 
-// Function ChimeraUI.CrUW_CorporationRecipes.SetColors
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// const class UCrCommonUIColorsDevSettings*Settings                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function ChimeraUI.CrUW_CorpLevelUpHud.TriggerFadeIn
+// (Event, Public, BlueprintEvent)
 
-void UCrUW_CorporationRecipes::SetColors(const class UCrCommonUIColorsDevSettings* Settings)
+void UCrUW_CorpLevelUpHud::TriggerFadeIn()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorporationRecipes", "SetColors");
+		Func = Class->GetFunction("CrUW_CorpLevelUpHud", "TriggerFadeIn");
 
-	Params::CrUW_CorporationRecipes_SetColors Parms{};
-
-	Parms.Settings = Settings;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ChimeraUI.CrUW_CorporationRecipes.SetExpanded
+// Function ChimeraUI.CrUW_CorpLevelUpHud.TriggerFadeOut
+// (Event, Public, BlueprintEvent)
+
+void UCrUW_CorpLevelUpHud::TriggerFadeOut()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CorpLevelUpHud", "TriggerFadeOut");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_CorporationScreenWidget.HasAllRewardsClaimed
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    bExpand                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bClaimed                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_CorporationRecipes::SetExpanded(bool bExpand)
+void UCrUW_CorporationScreenWidget::HasAllRewardsClaimed(bool bClaimed)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorporationRecipes", "SetExpanded");
+		Func = Class->GetFunction("CrUW_CorporationScreenWidget", "HasAllRewardsClaimed");
 
-	Params::CrUW_CorporationRecipes_SetExpanded Parms{};
+	Params::CrUW_CorporationScreenWidget_HasAllRewardsClaimed Parms{};
 
-	Parms.bExpand = bExpand;
+	Parms.bClaimed = bClaimed;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function ChimeraUI.CrUW_CorporationRecipes.SetLevel
+// Function ChimeraUI.CrUW_CorporationScreenWidget.SetMax
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    BMax                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CorporationScreenWidget::SetMax(bool BMax)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CorporationScreenWidget", "SetMax");
+
+	Params::CrUW_CorporationScreenWidget_SetMax Parms{};
+
+	Parms.BMax = BMax;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CorporationScreenWidget.SetupData
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class UCrCorporationData*               Data                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CorporationScreenWidget::SetupData(class UCrCorporationData* Data)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CorporationScreenWidget", "SetupData");
+
+	Params::CrUW_CorporationScreenWidget_SetupData Parms{};
+
+	Parms.Data = Data;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CorporationScreenWidget.UpdateCorporationLevel
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // int32                                   Level                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_CorporationRecipes::SetLevel(int32 Level)
+void UCrUW_CorporationScreenWidget::UpdateCorporationLevel(int32 Level)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorporationRecipes", "SetLevel");
+		Func = Class->GetFunction("CrUW_CorporationScreenWidget", "UpdateCorporationLevel");
 
-	Params::CrUW_CorporationRecipes_SetLevel Parms{};
+	Params::CrUW_CorporationScreenWidget_UpdateCorporationLevel Parms{};
 
 	Parms.Level = Level;
 
@@ -9808,352 +9762,19 @@ void UCrUW_CorporationRecipes::SetLevel(int32 Level)
 }
 
 
-// Function ChimeraUI.CrUW_CorporationRecipes.SetLevelButtonFocus
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bFocused                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CorporationRecipes::SetLevelButtonFocus(bool bFocused)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorporationRecipes", "SetLevelButtonFocus");
-
-	Params::CrUW_CorporationRecipes_SetLevelButtonFocus Parms{};
-
-	Parms.bFocused = bFocused;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CorporationRecipes.SetLineFinished
+// Function ChimeraUI.CrUW_CorporationScreenWidget.UpdateCorporationPercent
 // (Event, Public, BlueprintEvent)
-
-void UCrUW_CorporationRecipes::SetLineFinished()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorporationRecipes", "SetLineFinished");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_CorporationRecipes.SetLowerWidth
-// (Event, Public, BlueprintEvent)
-
-void UCrUW_CorporationRecipes::SetLowerWidth()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorporationRecipes", "SetLowerWidth");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_CorporationRecipes.SetMaxLevel
-// (Event, Public, BlueprintEvent)
-
-void UCrUW_CorporationRecipes::SetMaxLevel()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorporationRecipes", "SetMaxLevel");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_CorporationRecipes.SetWidgetTitle
-// (Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const class FText&                      Text                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrUW_CorporationRecipes::SetWidgetTitle(const class FText& Text)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorporationRecipes", "SetWidgetTitle");
-
-	Params::CrUW_CorporationRecipes_SetWidgetTitle Parms{};
-
-	Parms.Text = std::move(Text);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CorporationRecipes.GetAllGridSlots
-// (Final, Native, Public, Const)
-// Parameters:
-// TArray<class UWidget*>                  ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-TArray<class UWidget*> UCrUW_CorporationRecipes::GetAllGridSlots() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorporationRecipes", "GetAllGridSlots");
-
-	Params::CrUW_CorporationRecipes_GetAllGridSlots Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ChimeraUI.CrUW_CorporationsList.SetDisabledOpacity
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bDisabled                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CorporationsList::SetDisabledOpacity(bool bDisabled)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CorporationsList", "SetDisabledOpacity");
-
-	Params::CrUW_CorporationsList_SetDisabledOpacity Parms{};
-
-	Parms.bDisabled = bDisabled;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CrafterInterior.HandleCraftingMultiplierChanged
-// (Final, Native, Protected)
-
-void UCrUW_CrafterInterior::HandleCraftingMultiplierChanged()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CrafterInterior", "HandleCraftingMultiplierChanged");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CrafterInterior.HandleItemsToCraftChanged
-// (Final, Native, Protected)
-
-void UCrUW_CrafterInterior::HandleItemsToCraftChanged()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CrafterInterior", "HandleItemsToCraftChanged");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CrafterInterior.HandleOpenTooltip
-// (Final, Native, Protected)
-
-void UCrUW_CrafterInterior::HandleOpenTooltip()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CrafterInterior", "HandleOpenTooltip");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CrafterInterior.HandleTransfer
-// (Final, Native, Protected)
-
-void UCrUW_CrafterInterior::HandleTransfer()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CrafterInterior", "HandleTransfer");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CrafterInterior.HandleTransfer100
-// (Final, Native, Protected)
-
-void UCrUW_CrafterInterior::HandleTransfer100()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CrafterInterior", "HandleTransfer100");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CrafterInterior.HideTooltip
-// (Final, Native, Protected)
-
-void UCrUW_CrafterInterior::HideTooltip()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CrafterInterior", "HideTooltip");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CrafterInterior.NativeGetTooltipWidget
-// (Final, Native, Protected)
-// Parameters:
-// class UUserWidget*                      ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UUserWidget* UCrUW_CrafterInterior::NativeGetTooltipWidget()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CrafterInterior", "NativeGetTooltipWidget");
-
-	Params::CrUW_CrafterInterior_NativeGetTooltipWidget Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ChimeraUI.CrUW_CrafterInterior.ShowTooltip
-// (Final, Native, Protected)
-
-void UCrUW_CrafterInterior::ShowTooltip()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CrafterInterior", "ShowTooltip");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CraftingProgress.OnRecipeChanged
-// (Event, Protected, BlueprintEvent)
-
-void UCrUW_CraftingProgress::OnRecipeChanged()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingProgress", "OnRecipeChanged");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_CraftingProgress.OnRecipeCleared
-// (Event, Protected, BlueprintEvent)
-
-void UCrUW_CraftingProgress::OnRecipeCleared()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingProgress", "OnRecipeCleared");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_CraftingProgress.SetProgressStopButtonVisibility
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bVisible                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CraftingProgress::SetProgressStopButtonVisibility(bool bVisible)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingProgress", "SetProgressStopButtonVisibility");
-
-	Params::CrUW_CraftingProgress_SetProgressStopButtonVisibility Parms{};
-
-	Parms.bVisible = bVisible;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CraftingProgress.UpdateProgress
-// (Event, Protected, BlueprintEvent)
 // Parameters:
 // float                                   InPercent                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_CraftingProgress::UpdateProgress(float InPercent)
+void UCrUW_CorporationScreenWidget::UpdateCorporationPercent(float InPercent)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingProgress", "UpdateProgress");
+		Func = Class->GetFunction("CrUW_CorporationScreenWidget", "UpdateCorporationPercent");
 
-	Params::CrUW_CraftingProgress_UpdateProgress Parms{};
+	Params::CrUW_CorporationScreenWidget_UpdateCorporationPercent Parms{};
 
 	Parms.InPercent = InPercent;
 
@@ -10161,121 +9782,303 @@ void UCrUW_CraftingProgress::UpdateProgress(float InPercent)
 }
 
 
-// Function ChimeraUI.CrUW_CraftingProgress.UpdateProgressByDigits
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// int32                                   Tens                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Ones                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CraftingProgress::UpdateProgressByDigits(int32 Tens, int32 Ones)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingProgress", "UpdateProgressByDigits");
-
-	Params::CrUW_CraftingProgress_UpdateProgressByDigits Parms{};
-
-	Parms.Tens = Tens;
-	Parms.Ones = Ones;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CraftingProgress.GetSelectedRecipe
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const class UCrItemRecipeData*          ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-const class UCrItemRecipeData* UCrUW_CraftingProgress::GetSelectedRecipe() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingProgress", "GetSelectedRecipe");
-
-	Params::CrUW_CraftingProgress_GetSelectedRecipe Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ChimeraUI.CrUW_CraftingQueueListViewElement.HandleOnStoppedStatusChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bStopped                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_CraftingQueueListViewElement::HandleOnStoppedStatusChanged(bool bStopped)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingQueueListViewElement", "HandleOnStoppedStatusChanged");
-
-	Params::CrUW_CraftingQueueListViewElement_HandleOnStoppedStatusChanged Parms{};
-
-	Parms.bStopped = bStopped;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_CraftingRecipeSelection.HandleConfirm
-// (Final, Native, Private)
-
-void UCrUW_CraftingRecipeSelection::HandleConfirm()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingRecipeSelection", "HandleConfirm");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CraftingStatus.GetCraftingType
+// Function ChimeraUI.CrUW_CorporationSlot.SendingStatusChanged
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// TSubclassOf<class ACrCrafter>           CraftingClass                                          (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bSendInProgress                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_CraftingStatus::GetCraftingType(TSubclassOf<class ACrCrafter> CraftingClass)
+void UCrUW_CorporationSlot::SendingStatusChanged(bool bSendInProgress)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingStatus", "GetCraftingType");
+		Func = Class->GetFunction("CrUW_CorporationSlot", "SendingStatusChanged");
 
-	Params::CrUW_CraftingStatus_GetCraftingType Parms{};
+	Params::CrUW_CorporationSlot_SendingStatusChanged Parms{};
 
-	Parms.CraftingClass = CraftingClass;
+	Parms.bSendInProgress = bSendInProgress;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function ChimeraUI.CrUW_CraftingStatus.HandleRecipeSelectionButtonClicked
+// Function ChimeraUI.CrUW_CorporationSlot.SetBiggerVersion
+// (Event, Public, BlueprintEvent)
+
+void UCrUW_CorporationSlot::SetBiggerVersion()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CorporationSlot", "SetBiggerVersion");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_CorporationSlot.SetColors
+// (Event, Protected, HasDefaults, BlueprintEvent)
+// Parameters:
+// const struct FLinearColor&              HighlightColor                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLinearColor&              OrangeColor                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CorporationSlot::SetColors(const struct FLinearColor& HighlightColor, const struct FLinearColor& OrangeColor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CorporationSlot", "SetColors");
+
+	Params::CrUW_CorporationSlot_SetColors Parms{};
+
+	Parms.HighlightColor = std::move(HighlightColor);
+	Parms.OrangeColor = std::move(OrangeColor);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CorporationSlot.SetOutputPoints
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CorporationSlot::SetOutputPoints(int32 Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CorporationSlot", "SetOutputPoints");
+
+	Params::CrUW_CorporationSlot_SetOutputPoints Parms{};
+
+	Parms.Value = Value;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CorporationSlot.SetPoints
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   CurrentValue                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Max                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CorporationSlot::SetPoints(int32 CurrentValue, int32 Max)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CorporationSlot", "SetPoints");
+
+	Params::CrUW_CorporationSlot_SetPoints Parms{};
+
+	Parms.CurrentValue = CurrentValue;
+	Parms.Max = Max;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CorporationSlot.SetUnlocked
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bLocked                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CorporationSlot::SetUnlocked(bool bLocked)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CorporationSlot", "SetUnlocked");
+
+	Params::CrUW_CorporationSlot_SetUnlocked Parms{};
+
+	Parms.bLocked = bLocked;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CorporationSlot.SetupBackground
+// (Event, Protected, HasDefaults, BlueprintEvent)
+// Parameters:
+// const struct FColor&                    InColor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CorporationSlot::SetupBackground(const struct FColor& InColor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CorporationSlot", "SetupBackground");
+
+	Params::CrUW_CorporationSlot_SetupBackground Parms{};
+
+	Parms.InColor = std::move(InColor);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CorporationSlot.ShowChooseText
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    Show                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CorporationSlot::ShowChooseText(bool Show)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CorporationSlot", "ShowChooseText");
+
+	Params::CrUW_CorporationSlot_ShowChooseText Parms{};
+
+	Parms.Show = Show;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CorporationSlot.ShowHighlight
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bHighlight                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CorporationSlot::ShowHighlight(bool bHighlight)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CorporationSlot", "ShowHighlight");
+
+	Params::CrUW_CorporationSlot_ShowHighlight Parms{};
+
+	Parms.bHighlight = bHighlight;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CorporationSlot.ShowUnclaimedRewardsIcon
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bShow                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CorporationSlot::ShowUnclaimedRewardsIcon(bool bShow)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CorporationSlot", "ShowUnclaimedRewardsIcon");
+
+	Params::CrUW_CorporationSlot_ShowUnclaimedRewardsIcon Parms{};
+
+	Parms.bShow = bShow;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CraftingBottomPanel.HandlePickAllClicked
+// (Final, Native, Public)
+
+void UCrUW_CraftingBottomPanel::HandlePickAllClicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingBottomPanel", "HandlePickAllClicked");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CraftingBottomPanel.HandleTransfer
+// (Final, Native, Public)
+
+void UCrUW_CraftingBottomPanel::HandleTransfer()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingBottomPanel", "HandleTransfer");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CraftingBottomPanel.HandleTransfer100
+// (Final, Native, Public)
+
+void UCrUW_CraftingBottomPanel::HandleTransfer100()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingBottomPanel", "HandleTransfer100");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CraftingBottomPanel.InfiniteCrafting
+// (Final, Native, Public)
+
+void UCrUW_CraftingBottomPanel::InfiniteCrafting()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingBottomPanel", "InfiniteCrafting");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CraftingBottomPanel.SetEmptyOutItem
+// (Event, Protected, BlueprintEvent)
+
+void UCrUW_CraftingBottomPanel::SetEmptyOutItem()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingBottomPanel", "SetEmptyOutItem");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_CraftingProgressInterior.CraftMultiplierHundred
 // (Final, Native, Protected)
 
-void UCrUW_CraftingStatus::HandleRecipeSelectionButtonClicked()
+void UCrUW_CraftingProgressInterior::CraftMultiplierHundred()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingStatus", "HandleRecipeSelectionButtonClicked");
+		Func = Class->GetFunction("CrUW_CraftingProgressInterior", "CraftMultiplierHundred");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -10286,15 +10089,15 @@ void UCrUW_CraftingStatus::HandleRecipeSelectionButtonClicked()
 }
 
 
-// Function ChimeraUI.CrUW_CraftingStatus.HandleTransferRequiredItemsClicked
-// (Final, Native, Private)
+// Function ChimeraUI.CrUW_CraftingProgressInterior.CraftMultiplierTen
+// (Final, Native, Protected)
 
-void UCrUW_CraftingStatus::HandleTransferRequiredItemsClicked()
+void UCrUW_CraftingProgressInterior::CraftMultiplierTen()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingStatus", "HandleTransferRequiredItemsClicked");
+		Func = Class->GetFunction("CrUW_CraftingProgressInterior", "CraftMultiplierTen");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -10305,66 +10108,153 @@ void UCrUW_CraftingStatus::HandleTransferRequiredItemsClicked()
 }
 
 
-// Function ChimeraUI.CrUW_CraftingStatus.HandleTransferRequiredItemsx100Clicked
-// (Final, Native, Private)
-
-void UCrUW_CraftingStatus::HandleTransferRequiredItemsx100Clicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingStatus", "HandleTransferRequiredItemsx100Clicked");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CraftingStatus.OnRecipeChanged
+// Function ChimeraUI.CrUW_CraftingProgressInterior.InitButtons
 // (Event, Protected, BlueprintEvent)
 
-void UCrUW_CraftingStatus::OnRecipeChanged()
+void UCrUW_CraftingProgressInterior::InitButtons()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingStatus", "OnRecipeChanged");
+		Func = Class->GetFunction("CrUW_CraftingProgressInterior", "InitButtons");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ChimeraUI.CrUW_CraftingStatus.OnRecipeCleared
+// Function ChimeraUI.CrUW_CraftingProgressInterior.OnRecipeChanged
 // (Event, Protected, BlueprintEvent)
 
-void UCrUW_CraftingStatus::OnRecipeCleared()
+void UCrUW_CraftingProgressInterior::OnRecipeChanged()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingStatus", "OnRecipeCleared");
+		Func = Class->GetFunction("CrUW_CraftingProgressInterior", "OnRecipeChanged");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ChimeraUI.CrUW_CraftingStatus.GetSelectedRecipe
+// Function ChimeraUI.CrUW_CraftingProgressInterior.OnRecipeCleared
+// (Event, Protected, BlueprintEvent)
+
+void UCrUW_CraftingProgressInterior::OnRecipeCleared()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingProgressInterior", "OnRecipeCleared");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_CraftingProgressInterior.SetColors
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// const class UCrCommonUIColorsDevSettings*Settings                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CraftingProgressInterior::SetColors(const class UCrCommonUIColorsDevSettings* Settings)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingProgressInterior", "SetColors");
+
+	Params::CrUW_CraftingProgressInterior_SetColors Parms{};
+
+	Parms.Settings = Settings;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CraftingProgressInterior.SetFoodProcessorVersion
+// (Event, Public, BlueprintEvent)
+
+void UCrUW_CraftingProgressInterior::SetFoodProcessorVersion()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingProgressInterior", "SetFoodProcessorVersion");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_CraftingProgressInterior.SetMaxMultiplier
+// (Final, Native, Protected)
+
+void UCrUW_CraftingProgressInterior::SetMaxMultiplier()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingProgressInterior", "SetMaxMultiplier");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CraftingProgressInterior.SetMinMultiplier
+// (Final, Native, Protected)
+
+void UCrUW_CraftingProgressInterior::SetMinMultiplier()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingProgressInterior", "SetMinMultiplier");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CraftingProgressInterior.UpdateMaxInfo
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FText&                      Text                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrUW_CraftingProgressInterior::UpdateMaxInfo(const class FText& Text)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingProgressInterior", "UpdateMaxInfo");
+
+	Params::CrUW_CraftingProgressInterior_UpdateMaxInfo Parms{};
+
+	Parms.Text = std::move(Text);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CraftingProgressInterior.GetSelectedRecipe
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // const class UCrItemRecipeData*          ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-const class UCrItemRecipeData* UCrUW_CraftingStatus::GetSelectedRecipe() const
+const class UCrItemRecipeData* UCrUW_CraftingProgressInterior::GetSelectedRecipe() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CraftingStatus", "GetSelectedRecipe");
+		Func = Class->GetFunction("CrUW_CraftingProgressInterior", "GetSelectedRecipe");
 
-	Params::CrUW_CraftingStatus_GetSelectedRecipe Parms{};
+	Params::CrUW_CraftingProgressInterior_GetSelectedRecipe Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -10374,6 +10264,343 @@ const class UCrItemRecipeData* UCrUW_CraftingStatus::GetSelectedRecipe() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function ChimeraUI.CrUW_CraftingQueue.HandleOnQueueElementClicked
+// (Final, Native, Private)
+// Parameters:
+// class UObject*                          ListItem                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CraftingQueue::HandleOnQueueElementClicked(class UObject* ListItem)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingQueue", "HandleOnQueueElementClicked");
+
+	Params::CrUW_CraftingQueue_HandleOnQueueElementClicked Parms{};
+
+	Parms.ListItem = ListItem;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CraftingQueue.GetCraftingProgress
+// (Final, Native, Private, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UCrUW_CraftingQueue::GetCraftingProgress() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingQueue", "GetCraftingProgress");
+
+	Params::CrUW_CraftingQueue_GetCraftingProgress Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ChimeraUI.CrUW_CraftingRecipeSelectionListViewElement.OnSetEmpty
+// (Event, Public, BlueprintEvent)
+
+void UCrUW_CraftingRecipeSelectionListViewElement::OnSetEmpty()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingRecipeSelectionListViewElement", "OnSetEmpty");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_CraftingRecipeSlot.GetTooltipWidget
+// (Final, Native, Protected)
+// Parameters:
+// class UUserWidget*                      ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UUserWidget* UCrUW_CraftingRecipeSlot::GetTooltipWidget()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingRecipeSlot", "GetTooltipWidget");
+
+	Params::CrUW_CraftingRecipeSlot_GetTooltipWidget Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ChimeraUI.CrUW_CraftingRecipeSlot.SetColors
+// (Event, Protected, HasDefaults, BlueprintEvent)
+// Parameters:
+// const struct FLinearColor&              HighlightColor                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CraftingRecipeSlot::SetColors(const struct FLinearColor& HighlightColor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingRecipeSlot", "SetColors");
+
+	Params::CrUW_CraftingRecipeSlot_SetColors Parms{};
+
+	Parms.HighlightColor = std::move(HighlightColor);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CraftingRecipeSlot.SetFillAlignment
+// (Event, Public, BlueprintEvent)
+
+void UCrUW_CraftingRecipeSlot::SetFillAlignment()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingRecipeSlot", "SetFillAlignment");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_CraftingRecipeSlot.SetRecipeDisabled
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bLevelFinished                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CraftingRecipeSlot::SetRecipeDisabled(bool bLevelFinished)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingRecipeSlot", "SetRecipeDisabled");
+
+	Params::CrUW_CraftingRecipeSlot_SetRecipeDisabled Parms{};
+
+	Parms.bLevelFinished = bLevelFinished;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CraftingRecipeSlot.SetRecipeLocked
+// (Event, Public, BlueprintEvent)
+
+void UCrUW_CraftingRecipeSlot::SetRecipeLocked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingRecipeSlot", "SetRecipeLocked");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_CraftingRecipeSlot.SetRecipeLockedCurrentLevel
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bIsCurrentLevel_0                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CraftingRecipeSlot::SetRecipeLockedCurrentLevel(bool bIsCurrentLevel_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingRecipeSlot", "SetRecipeLockedCurrentLevel");
+
+	Params::CrUW_CraftingRecipeSlot_SetRecipeLockedCurrentLevel Parms{};
+
+	Parms.bIsCurrentLevel_0 = bIsCurrentLevel_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CraftingRecipeSlot.ShowChooseText
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    Show                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CraftingRecipeSlot::ShowChooseText(bool Show)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingRecipeSlot", "ShowChooseText");
+
+	Params::CrUW_CraftingRecipeSlot_ShowChooseText Parms{};
+
+	Parms.Show = Show;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CraftingRecipeSlot.ShowHighlight
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bHighlight                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CraftingRecipeSlot::ShowHighlight(bool bHighlight)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingRecipeSlot", "ShowHighlight");
+
+	Params::CrUW_CraftingRecipeSlot_ShowHighlight Parms{};
+
+	Parms.bHighlight = bHighlight;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CraftingRecipeSlot.ShowItemNameInIcon
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FText&                      InText                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrUW_CraftingRecipeSlot::ShowItemNameInIcon(const class FText& InText)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingRecipeSlot", "ShowItemNameInIcon");
+
+	Params::CrUW_CraftingRecipeSlot_ShowItemNameInIcon Parms{};
+
+	Parms.InText = std::move(InText);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CraftingRecipeSlot.ShowPoints
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bShow                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Points                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CraftingRecipeSlot::ShowPoints(bool bShow, int32 Points)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingRecipeSlot", "ShowPoints");
+
+	Params::CrUW_CraftingRecipeSlot_ShowPoints Parms{};
+
+	Parms.bShow = bShow;
+	Parms.Points = Points;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CraftingRecipeSlot.ShowSelection
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bSelected                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CraftingRecipeSlot::ShowSelection(bool bSelected)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingRecipeSlot", "ShowSelection");
+
+	Params::CrUW_CraftingRecipeSlot_ShowSelection Parms{};
+
+	Parms.bSelected = bSelected;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CraftingSelectionWidget.OnSearchBoxClearPressed
+// (Final, Native, Protected)
+
+void UCrUW_CraftingSelectionWidget::OnSearchBoxClearPressed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingSelectionWidget", "OnSearchBoxClearPressed");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CraftingSelectionWidget.SearchBoxTextChanged
+// (Final, Native, Protected, HasOutParams)
+// Parameters:
+// const class FText&                      InText                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrUW_CraftingSelectionWidget::SearchBoxTextChanged(const class FText& InText)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingSelectionWidget", "SearchBoxTextChanged");
+
+	Params::CrUW_CraftingSelectionWidget_SearchBoxTextChanged Parms{};
+
+	Parms.InText = std::move(InText);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_CraftingSelectionWidget.SetListStateVisual
+// (Event, Protected, BlueprintEvent)
+
+void UCrUW_CraftingSelectionWidget::SetListStateVisual()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CraftingSelectionWidget", "SetListStateVisual");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -10396,59 +10623,43 @@ void UCrUW_CrosshairDynamic::UpdateCrosshairTextures()
 }
 
 
-// Function ChimeraUI.CrUW_CutsceneLetterBox.Hide
-// (Final, Native, Public)
-
-void UCrUW_CutsceneLetterBox::Hide()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CutsceneLetterBox", "Hide");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CutsceneLetterBox.HideHint
-// (Final, Native, Public, BlueprintCallable)
-
-void UCrUW_CutsceneLetterBox::HideHint()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CutsceneLetterBox", "HideHint");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CutsceneLetterBox.OnAnyInputKeyDetected
-// (Final, Native, Public)
+// Function ChimeraUI.CrUW_CustomGame.AddCategoryLine
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// const struct FKey&                      Key                                                    (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrCustomGameCategory                   InCategory                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_CutsceneLetterBox::OnAnyInputKeyDetected(const struct FKey& Key)
+void UCrUW_CustomGame::AddCategoryLine(ECrCustomGameCategory InCategory)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CutsceneLetterBox", "OnAnyInputKeyDetected");
+		Func = Class->GetFunction("CrUW_CustomGame", "AddCategoryLine");
 
-	Params::CrUW_CutsceneLetterBox_OnAnyInputKeyDetected Parms{};
+	Params::CrUW_CustomGame_AddCategoryLine Parms{};
 
-	Parms.Key = std::move(Key);
+	Parms.InCategory = InCategory;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_CustomGame.OnOptionChanged
+// (Final, Native, Protected)
+// Parameters:
+// ECrCustomGameOption                     InOption                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_CustomGame::OnOptionChanged(ECrCustomGameOption InOption, float InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_CustomGame", "OnOptionChanged");
+
+	Params::CrUW_CustomGame_OnOptionChanged Parms{};
+
+	Parms.InOption = InOption;
+	Parms.InValue = InValue;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -10459,154 +10670,50 @@ void UCrUW_CutsceneLetterBox::OnAnyInputKeyDetected(const struct FKey& Key)
 }
 
 
-// Function ChimeraUI.CrUW_CutsceneLetterBox.OnHide
-// (Native, Event, Public, BlueprintEvent)
+// Function ChimeraUI.CrUW_CustomGame.OnOptionHighlighted
+// (Final, Native, Protected)
+// Parameters:
+// ECrCustomGameOption                     InOption                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_CutsceneLetterBox::OnHide()
+void UCrUW_CustomGame::OnOptionHighlighted(ECrCustomGameOption InOption, float InValue)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CutsceneLetterBox", "OnHide");
+		Func = Class->GetFunction("CrUW_CustomGame", "OnOptionHighlighted");
+
+	Params::CrUW_CustomGame_OnOptionHighlighted Parms{};
+
+	Parms.InOption = InOption;
+	Parms.InValue = InValue;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function ChimeraUI.CrUW_CutsceneLetterBox.OnHideCompleted
-// (Final, Native, Public, BlueprintCallable)
-
-void UCrUW_CutsceneLetterBox::OnHideCompleted()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CutsceneLetterBox", "OnHideCompleted");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CutsceneLetterBox.OnHideHint
-// (Native, Event, Public, BlueprintEvent)
-
-void UCrUW_CutsceneLetterBox::OnHideHint()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CutsceneLetterBox", "OnHideHint");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CutsceneLetterBox.OnShow
-// (Native, Event, Public, BlueprintEvent)
-
-void UCrUW_CutsceneLetterBox::OnShow()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CutsceneLetterBox", "OnShow");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CutsceneLetterBox.OnShowHint
-// (Native, Event, Public, BlueprintEvent)
-
-void UCrUW_CutsceneLetterBox::OnShowHint()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CutsceneLetterBox", "OnShowHint");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CutsceneLetterBox.Show
-// (Final, Native, Public)
-
-void UCrUW_CutsceneLetterBox::Show()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CutsceneLetterBox", "Show");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_CutsceneLetterBox.ShowHint
-// (Final, Native, Public, BlueprintCallable)
-
-void UCrUW_CutsceneLetterBox::ShowHint()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_CutsceneLetterBox", "ShowHint");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_DatapadComputer.SetAuthor
+// Function ChimeraUI.CrUW_DatapadMessage.SetTitle
 // (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
 // const class FText&                      Author                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FText&                      Date                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UCrUW_DatapadComputer::SetAuthor(const class FText& Author)
+void UCrUW_DatapadMessage::SetTitle(const class FText& Author, const class FText& Date)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_DatapadComputer", "SetAuthor");
+		Func = Class->GetFunction("CrUW_DatapadMessage", "SetTitle");
 
-	Params::CrUW_DatapadComputer_SetAuthor Parms{};
+	Params::CrUW_DatapadMessage_SetTitle Parms{};
 
 	Parms.Author = std::move(Author);
+	Parms.Date = std::move(Date);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -10753,78 +10860,6 @@ void UCrUW_DeathScreen::SetDeathScreenCloningBedState(ECrDeathScreenCloningBedSt
 	Parms.CloningBedState = CloningBedState;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_DroneJunctionFilterSelection.BP_OnFilterItemSelected
-// (Event, Protected, BlueprintEvent)
-
-void UCrUW_DroneJunctionFilterSelection::BP_OnFilterItemSelected()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_DroneJunctionFilterSelection", "BP_OnFilterItemSelected");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_DroneJunctionFilterSelection.BP_OnSlotIndexSet
-// (Event, Protected, BlueprintEvent)
-
-void UCrUW_DroneJunctionFilterSelection::BP_OnSlotIndexSet()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_DroneJunctionFilterSelection", "BP_OnSlotIndexSet");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_DroneJunctionFilterSelection.HandleOnFilterCleared
-// (Final, Native, Protected)
-
-void UCrUW_DroneJunctionFilterSelection::HandleOnFilterCleared()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_DroneJunctionFilterSelection", "HandleOnFilterCleared");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_DroneJunctionFilterSelection.HandleOnFilterItemSelected
-// (Final, Native, Protected)
-// Parameters:
-// class UObject*                          ListItem                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_DroneJunctionFilterSelection::HandleOnFilterItemSelected(class UObject* ListItem)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_DroneJunctionFilterSelection", "HandleOnFilterItemSelected");
-
-	Params::CrUW_DroneJunctionFilterSelection_HandleOnFilterItemSelected Parms{};
-
-	Parms.ListItem = ListItem;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -10976,50 +11011,6 @@ struct FVector2D UCrUW_DynamicFallenCoop::GetWidgetSize() const
 }
 
 
-// Function ChimeraUI.CrUW_EffectsHud.InitDelegates
-// (Final, Native, Private)
-
-void UCrUW_EffectsHud::InitDelegates()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EffectsHud", "InitDelegates");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_EffectsHud.OnPossess
-// (Final, Native, Private)
-// Parameters:
-// class APawn*                            InPawn                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_EffectsHud::OnPossess(class APawn* InPawn)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EffectsHud", "OnPossess");
-
-	Params::CrUW_EffectsHud_OnPossess Parms{};
-
-	Parms.InPawn = InPawn;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function ChimeraUI.CrUW_EncyclopediaAudiologInfoMenu.OnButtonPlayClicked
 // (Final, Native, Private)
 
@@ -11116,117 +11107,39 @@ void UCrUW_EncyclopediaCategoryButton::OnCategoryButtonClicked()
 }
 
 
-// Function ChimeraUI.CrUW_EncyclopediaEntryButton.BP_OnSelectionChange
-// (Event, Public, BlueprintEvent)
-
-void UCrUW_EncyclopediaEntryButton::BP_OnSelectionChange()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EncyclopediaEntryButton", "BP_OnSelectionChange");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_EncyclopediaEntryButton.GetIsEntryLocked
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function ChimeraUI.CrUW_EncyclopediaDatapadInfoMenu.SetEntryAuthorTextBP
+// (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FText&                      Author                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-bool UCrUW_EncyclopediaEntryButton::GetIsEntryLocked() const
+void UCrUW_EncyclopediaDatapadInfoMenu::SetEntryAuthorTextBP(const class FText& Author)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EncyclopediaEntryButton", "GetIsEntryLocked");
+		Func = Class->GetFunction("CrUW_EncyclopediaDatapadInfoMenu", "SetEntryAuthorTextBP");
 
-	Params::CrUW_EncyclopediaEntryButton_GetIsEntryLocked Parms{};
+	Params::CrUW_EncyclopediaDatapadInfoMenu_SetEntryAuthorTextBP Parms{};
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ChimeraUI.CrUW_EncyclopediaEntryButton.GetIsSelected
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UCrUW_EncyclopediaEntryButton::GetIsSelected() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EncyclopediaEntryButton", "GetIsSelected");
-
-	Params::CrUW_EncyclopediaEntryButton_GetIsSelected Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ChimeraUI.CrUW_EncyclopediaInfoMenu.ClearEntryAuthorBP
-// (Event, Public, BlueprintEvent)
-
-void UCrUW_EncyclopediaInfoMenu::ClearEntryAuthorBP()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EncyclopediaInfoMenu", "ClearEntryAuthorBP");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_EncyclopediaInfoMenu.SetEntryAuthorBP
-// (Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const struct FEncyclopediaEntryAuthor&  AuthorData                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrUW_EncyclopediaInfoMenu::SetEntryAuthorBP(const struct FEncyclopediaEntryAuthor& AuthorData)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EncyclopediaInfoMenu", "SetEntryAuthorBP");
-
-	Params::CrUW_EncyclopediaInfoMenu_SetEntryAuthorBP Parms{};
-
-	Parms.AuthorData = std::move(AuthorData);
+	Parms.Author = std::move(Author);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function ChimeraUI.CrUW_EncyclopediaInfoMenu.SetEntryTitleBP
-// (Event, Public, HasOutParams, BlueprintEvent)
+// Function ChimeraUI.CrUW_EncyclopediaDatapadInfoMenu.SetEntryTitleBP
+// (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
 // const class FText&                      Title                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UCrUW_EncyclopediaInfoMenu::SetEntryTitleBP(const class FText& Title)
+void UCrUW_EncyclopediaDatapadInfoMenu::SetEntryTitleBP(const class FText& Title)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EncyclopediaInfoMenu", "SetEntryTitleBP");
+		Func = Class->GetFunction("CrUW_EncyclopediaDatapadInfoMenu", "SetEntryTitleBP");
 
-	Params::CrUW_EncyclopediaInfoMenu_SetEntryTitleBP Parms{};
+	Params::CrUW_EncyclopediaDatapadInfoMenu_SetEntryTitleBP Parms{};
 
 	Parms.Title = std::move(Title);
 
@@ -11234,120 +11147,15 @@ void UCrUW_EncyclopediaInfoMenu::SetEntryTitleBP(const class FText& Title)
 }
 
 
-// Function ChimeraUI.CrUW_EncyclopediaSubcategoryGrid.SetGridExpanded
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    Expanded                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_EncyclopediaSubcategoryGrid::SetGridExpanded(bool Expanded)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EncyclopediaSubcategoryGrid", "SetGridExpanded");
-
-	Params::CrUW_EncyclopediaSubcategoryGrid_SetGridExpanded Parms{};
-
-	Parms.Expanded = Expanded;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_EncyclopediaSubcategoryGrid.SetSubCategoryTitleBP
-// (Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const class FText&                      Title                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrUW_EncyclopediaSubcategoryGrid::SetSubCategoryTitleBP(const class FText& Title)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EncyclopediaSubcategoryGrid", "SetSubCategoryTitleBP");
-
-	Params::CrUW_EncyclopediaSubcategoryGrid_SetSubCategoryTitleBP Parms{};
-
-	Parms.Title = std::move(Title);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_EncyclopediaSubcategoryGrid.SetSubcategoryTitleStyleBP
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// const bool                              isHighlight                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_EncyclopediaSubcategoryGrid::SetSubcategoryTitleStyleBP(const bool isHighlight)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EncyclopediaSubcategoryGrid", "SetSubcategoryTitleStyleBP");
-
-	Params::CrUW_EncyclopediaSubcategoryGrid_SetSubcategoryTitleStyleBP Parms{};
-
-	Parms.isHighlight = isHighlight;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_EncyclopediaSubcategoryGrid.SetUnreadStatusIcons
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    Unread                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_EncyclopediaSubcategoryGrid::SetUnreadStatusIcons(bool Unread)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EncyclopediaSubcategoryGrid", "SetUnreadStatusIcons");
-
-	Params::CrUW_EncyclopediaSubcategoryGrid_SetUnreadStatusIcons Parms{};
-
-	Parms.Unread = Unread;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_EncyclopediaSubcategoryGrid.GetUniformGridPanel
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UUniformGridPanel*                ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UUniformGridPanel* UCrUW_EncyclopediaSubcategoryGrid::GetUniformGridPanel() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_EncyclopediaSubcategoryGrid", "GetUniformGridPanel");
-
-	Params::CrUW_EncyclopediaSubcategoryGrid_GetUniformGridPanel Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ChimeraUI.CrUW_ExportingWidget.HandleTransfer
+// Function ChimeraUI.CrUW_EncyclopediaMenu.HandleOnDeactivate
 // (Final, Native, Private)
 
-void UCrUW_ExportingWidget::HandleTransfer()
+void UCrUW_EncyclopediaMenu::HandleOnDeactivate()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ExportingWidget", "HandleTransfer");
+		Func = Class->GetFunction("CrUW_EncyclopediaMenu", "HandleOnDeactivate");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -11358,15 +11166,15 @@ void UCrUW_ExportingWidget::HandleTransfer()
 }
 
 
-// Function ChimeraUI.CrUW_ExportingWidget.HandleTransfer100
+// Function ChimeraUI.CrUW_EncyclopediaMenu.HandleOnDebugButtonClicked
 // (Final, Native, Private)
 
-void UCrUW_ExportingWidget::HandleTransfer100()
+void UCrUW_EncyclopediaMenu::HandleOnDebugButtonClicked()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ExportingWidget", "HandleTransfer100");
+		Func = Class->GetFunction("CrUW_EncyclopediaMenu", "HandleOnDebugButtonClicked");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -11377,21 +11185,21 @@ void UCrUW_ExportingWidget::HandleTransfer100()
 }
 
 
-// Function ChimeraUI.CrUW_ExportingWidget.OnExporterRecipeCrafted
-// (Final, Native, Private)
+// Function ChimeraUI.CrUW_EncyclopediaMenu.OnCategoryButtonPressed
+// (Final, Native, Public)
 // Parameters:
-// int32                                   CraftMultipler                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             Category                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_ExportingWidget::OnExporterRecipeCrafted(int32 CraftMultipler)
+void UCrUW_EncyclopediaMenu::OnCategoryButtonPressed(class FName Category)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ExportingWidget", "OnExporterRecipeCrafted");
+		Func = Class->GetFunction("CrUW_EncyclopediaMenu", "OnCategoryButtonPressed");
 
-	Params::CrUW_ExportingWidget_OnExporterRecipeCrafted Parms{};
+	Params::CrUW_EncyclopediaMenu_OnCategoryButtonPressed Parms{};
 
-	Parms.CraftMultipler = CraftMultipler;
+	Parms.Category = Category;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -11402,15 +11210,180 @@ void UCrUW_ExportingWidget::OnExporterRecipeCrafted(int32 CraftMultipler)
 }
 
 
-// Function ChimeraUI.CrUW_ExportingWidget.RefreshCurrentCorpoPoints
-// (Final, Native, Protected, BlueprintCallable)
+// Function ChimeraUI.CrUW_EncyclopediaMenu.OnCategorySelected
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class FName                             Category                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_ExportingWidget::RefreshCurrentCorpoPoints()
+void UCrUW_EncyclopediaMenu::OnCategorySelected(class FName Category)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ExportingWidget", "RefreshCurrentCorpoPoints");
+		Func = Class->GetFunction("CrUW_EncyclopediaMenu", "OnCategorySelected");
+
+	Params::CrUW_EncyclopediaMenu_OnCategorySelected Parms{};
+
+	Parms.Category = Category;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_EncyclopediaMenu.OnEncyclopediaEntryChanged
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// const struct FCrEncyclopediaEntryStatus&EntryData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UCrUW_EncyclopediaMenu::OnEncyclopediaEntryChanged(const struct FCrEncyclopediaEntryStatus& EntryData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_EncyclopediaMenu", "OnEncyclopediaEntryChanged");
+
+	Params::CrUW_EncyclopediaMenu_OnEncyclopediaEntryChanged Parms{};
+
+	Parms.EntryData = std::move(EntryData);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_EncyclopediaMenu.OnEntryButtonHovered
+// (Final, Native, Public)
+// Parameters:
+// class UCrUW_EncyclopediaEntryButton*    Button                                                 (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_EncyclopediaMenu::OnEntryButtonHovered(class UCrUW_EncyclopediaEntryButton* Button)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_EncyclopediaMenu", "OnEntryButtonHovered");
+
+	Params::CrUW_EncyclopediaMenu_OnEntryButtonHovered Parms{};
+
+	Parms.Button = Button;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_EncyclopediaMenu.OnEntryButtonPressed
+// (Final, Native, Public)
+// Parameters:
+// class UCrUW_EncyclopediaEntryButton*    Button                                                 (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_EncyclopediaMenu::OnEntryButtonPressed(class UCrUW_EncyclopediaEntryButton* Button)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_EncyclopediaMenu", "OnEntryButtonPressed");
+
+	Params::CrUW_EncyclopediaMenu_OnEntryButtonPressed Parms{};
+
+	Parms.Button = Button;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_EncyclopediaMenu.OnEntrySelected
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class FName                             EntryID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_EncyclopediaMenu::OnEntrySelected(class FName EntryID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_EncyclopediaMenu", "OnEntrySelected");
+
+	Params::CrUW_EncyclopediaMenu_OnEntrySelected Parms{};
+
+	Parms.EntryID = EntryID;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_EncyclopediaMenu.OnHyperlinkPressed
+// (Final, Native, Public)
+// Parameters:
+// const class FString&                    HyperlinkID                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_EncyclopediaMenu::OnHyperlinkPressed(const class FString& HyperlinkID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_EncyclopediaMenu", "OnHyperlinkPressed");
+
+	Params::CrUW_EncyclopediaMenu_OnHyperlinkPressed Parms{};
+
+	Parms.HyperlinkID = std::move(HyperlinkID);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_EnergyHud.InitEnergyChangeDelegate
+// (Final, Native, Private)
+// Parameters:
+// class ACrCharacterPlayerBase*           InCharacter                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_EnergyHud::InitEnergyChangeDelegate(class ACrCharacterPlayerBase* InCharacter)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_EnergyHud", "InitEnergyChangeDelegate");
+
+	Params::CrUW_EnergyHud_InitEnergyChangeDelegate Parms{};
+
+	Parms.InCharacter = InCharacter;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_EnergyHud.OnPlayerSetProfession
+// (Final, Native, Private)
+
+void UCrUW_EnergyHud::OnPlayerSetProfession()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_EnergyHud", "OnPlayerSetProfession");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -11421,21 +11394,21 @@ void UCrUW_ExportingWidget::RefreshCurrentCorpoPoints()
 }
 
 
-// Function ChimeraUI.CrUW_ExportingWidget.SetAnimationInProgress
-// (Final, Native, Protected, BlueprintCallable)
+// Function ChimeraUI.CrUW_EnergyHud.OnPossesed
+// (Final, Native, Private)
 // Parameters:
-// bool                                    InAnimationInProgress                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class APawn*                            InPawn                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_ExportingWidget::SetAnimationInProgress(bool InAnimationInProgress)
+void UCrUW_EnergyHud::OnPossesed(class APawn* InPawn)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ExportingWidget", "SetAnimationInProgress");
+		Func = Class->GetFunction("CrUW_EnergyHud", "OnPossesed");
 
-	Params::CrUW_ExportingWidget_SetAnimationInProgress Parms{};
+	Params::CrUW_EnergyHud_OnPossesed Parms{};
 
-	Parms.InAnimationInProgress = InAnimationInProgress;
+	Parms.InPawn = InPawn;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -11446,41 +11419,21 @@ void UCrUW_ExportingWidget::SetAnimationInProgress(bool InAnimationInProgress)
 }
 
 
-// Function ChimeraUI.CrUW_ExportingWidget.SetBackgroundCorpoImage
-// (Event, Protected, BlueprintEvent)
+// Function ChimeraUI.CrUW_EnergyHud.OnUnPossesed
+// (Final, Native, Private)
 // Parameters:
-// const struct FSlateBrush&               CorporationIcon                                        (Parm, NativeAccessSpecifierPublic)
+// class APawn*                            InPawn                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_ExportingWidget::SetBackgroundCorpoImage(const struct FSlateBrush& CorporationIcon)
+void UCrUW_EnergyHud::OnUnPossesed(class APawn* InPawn)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ExportingWidget", "SetBackgroundCorpoImage");
+		Func = Class->GetFunction("CrUW_EnergyHud", "OnUnPossesed");
 
-	Params::CrUW_ExportingWidget_SetBackgroundCorpoImage Parms{};
+	Params::CrUW_EnergyHud_OnUnPossesed Parms{};
 
-	Parms.CorporationIcon = std::move(CorporationIcon);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_ExportingWidget.SetOutputPoints
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_ExportingWidget::SetOutputPoints(int32 Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ExportingWidget", "SetOutputPoints");
-
-	Params::CrUW_ExportingWidget_SetOutputPoints Parms{};
-
-	Parms.Value = Value;
+	Parms.InPawn = InPawn;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -11491,61 +11444,19 @@ void UCrUW_ExportingWidget::SetOutputPoints(int32 Value)
 }
 
 
-// Function ChimeraUI.CrUW_ExportingWidget.SetPoints
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// int32                                   CurrentValue                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Max                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_ExportingWidget::SetPoints(int32 CurrentValue, int32 Max)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ExportingWidget", "SetPoints");
-
-	Params::CrUW_ExportingWidget_SetPoints Parms{};
-
-	Parms.CurrentValue = CurrentValue;
-	Parms.Max = Max;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_ExportingWidget.SetupAnimation
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// int32                                   Number                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_ExportingWidget::SetupAnimation(int32 Number)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ExportingWidget", "SetupAnimation");
-
-	Params::CrUW_ExportingWidget_SetupAnimation Parms{};
-
-	Parms.Number = Number;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_ExportingWidget.SetupBackground
+// Function ChimeraUI.CrUW_ExportingSelectionWidget.SetCorpoColor
 // (Event, Protected, HasDefaults, BlueprintEvent)
 // Parameters:
 // const struct FColor&                    InColor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_ExportingWidget::SetupBackground(const struct FColor& InColor)
+void UCrUW_ExportingSelectionWidget::SetCorpoColor(const struct FColor& InColor)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ExportingWidget", "SetupBackground");
+		Func = Class->GetFunction("CrUW_ExportingSelectionWidget", "SetCorpoColor");
 
-	Params::CrUW_ExportingWidget_SetupBackground Parms{};
+	Params::CrUW_ExportingSelectionWidget_SetCorpoColor Parms{};
 
 	Parms.InColor = std::move(InColor);
 
@@ -11553,57 +11464,75 @@ void UCrUW_ExportingWidget::SetupBackground(const struct FColor& InColor)
 }
 
 
-// Function ChimeraUI.CrUW_ExportingWidget.TriggerAnimation
-// (Event, Protected, BlueprintEvent)
+// Function ChimeraUI.CrUW_ExportingSelectionWidget.SetDisabledOpacity
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   Reputation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInDisabled                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_ExportingWidget::TriggerAnimation(int32 Reputation)
+void UCrUW_ExportingSelectionWidget::SetDisabledOpacity(bool bInDisabled)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ExportingWidget", "TriggerAnimation");
+		Func = Class->GetFunction("CrUW_ExportingSelectionWidget", "SetDisabledOpacity");
 
-	Params::CrUW_ExportingWidget_TriggerAnimation Parms{};
+	Params::CrUW_ExportingSelectionWidget_SetDisabledOpacity Parms{};
 
-	Parms.Reputation = Reputation;
+	Parms.bInDisabled = bInDisabled;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function ChimeraUI.CrUW_ExportingWidget.UpdateSendProgress
-// (Event, Protected, BlueprintEvent)
+// Function ChimeraUI.CrUW_ExportingSelectionWidget.SetNoCorpoSelectedState
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   Tens                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Ones                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInNoCorpo                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_ExportingWidget::UpdateSendProgress(int32 Tens, int32 Ones)
+void UCrUW_ExportingSelectionWidget::SetNoCorpoSelectedState(bool bInNoCorpo)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ExportingWidget", "UpdateSendProgress");
+		Func = Class->GetFunction("CrUW_ExportingSelectionWidget", "SetNoCorpoSelectedState");
 
-	Params::CrUW_ExportingWidget_UpdateSendProgress Parms{};
+	Params::CrUW_ExportingSelectionWidget_SetNoCorpoSelectedState Parms{};
 
-	Parms.Tens = Tens;
-	Parms.Ones = Ones;
+	Parms.bInNoCorpo = bInNoCorpo;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function ChimeraUI.CrUW_FEMainProgress.SetColors
+// Function ChimeraUI.CrUW_FEDisplay.GetWidgetHeight
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UCrUW_FEDisplay::GetWidgetHeight()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_FEDisplay", "GetWidgetHeight");
+
+	Params::CrUW_FEDisplay_GetWidgetHeight Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ChimeraUI.CrUW_FEDisplay.SetColors
 // (Final, Native, Public, BlueprintCallable)
 
-void UCrUW_FEMainProgress::SetColors()
+void UCrUW_FEDisplay::SetColors()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_FEMainProgress", "SetColors");
+		Func = Class->GetFunction("CrUW_FEDisplay", "SetColors");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -11614,40 +11543,266 @@ void UCrUW_FEMainProgress::SetColors()
 }
 
 
-// Function ChimeraUI.CrUW_FriendsButton.ButtonClicked
+// Function ChimeraUI.CrUW_FoodEffectHud.NativeGetTooltipWidget
 // (Final, Native, Protected)
+// Parameters:
+// class UUserWidget*                      ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_FriendsButton::ButtonClicked()
+class UUserWidget* UCrUW_FoodEffectHud::NativeGetTooltipWidget()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_FriendsButton", "ButtonClicked");
+		Func = Class->GetFunction("CrUW_FoodEffectHud", "NativeGetTooltipWidget");
+
+	Params::CrUW_FoodEffectHud_NativeGetTooltipWidget Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ChimeraUI.CrUW_GemInventorySlot.HandleSkillLevelChanged
+// (Final, Native, Private)
+// Parameters:
+// ECrPlayerProgressionSkill               InSkill                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InLevel                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_GemInventorySlot::HandleSkillLevelChanged(ECrPlayerProgressionSkill InSkill, int32 InLevel)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_GemInventorySlot", "HandleSkillLevelChanged");
+
+	Params::CrUW_GemInventorySlot_HandleSkillLevelChanged Parms{};
+
+	Parms.InSkill = InSkill;
+	Parms.InLevel = InLevel;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function ChimeraUI.CrUW_FriendsButton.SetButtonEmpty
+// Function ChimeraUI.CrUW_GemInventorySlot.UpdateVisuals
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool                                    bEmpty                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInLocked                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Level                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_FriendsButton::SetButtonEmpty(bool bEmpty)
+void UCrUW_GemInventorySlot::UpdateVisuals(bool bInLocked, int32 Level)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_FriendsButton", "SetButtonEmpty");
+		Func = Class->GetFunction("CrUW_GemInventorySlot", "UpdateVisuals");
 
-	Params::CrUW_FriendsButton_SetButtonEmpty Parms{};
+	Params::CrUW_GemInventorySlot_UpdateVisuals Parms{};
 
-	Parms.bEmpty = bEmpty;
+	Parms.bInLocked = bInLocked;
+	Parms.Level = Level;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_SettingsListEntrySetting_KeyboardInput.HandleClearClicked
+// (Final, Native, Protected)
+
+void UCrUW_SettingsListEntrySetting_KeyboardInput::HandleClearClicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_SettingsListEntrySetting_KeyboardInput", "HandleClearClicked");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_GenericAmmoCounter.OnTimerEnded
+// (Final, Native, Protected)
+
+void UCrUW_GenericAmmoCounter::OnTimerEnded()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_GenericAmmoCounter", "OnTimerEnded");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_GenericAmmoCounter.SetColors
+// (Final, Native, Public, BlueprintCallable)
+
+void UCrUW_GenericAmmoCounter::SetColors()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_GenericAmmoCounter", "SetColors");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_GenericAmmoCounter.UpdateAmmo
+// (Event, Public, BlueprintEvent)
+
+void UCrUW_GenericAmmoCounter::UpdateAmmo()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_GenericAmmoCounter", "UpdateAmmo");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_GenericAmmoCounter.GetCurrentAmmoCount
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UCrUW_GenericAmmoCounter::GetCurrentAmmoCount() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_GenericAmmoCounter", "GetCurrentAmmoCount");
+
+	Params::CrUW_GenericAmmoCounter_GetCurrentAmmoCount Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ChimeraUI.CrUW_GenericAmmoCounter.GetCurrentInventoryMaxAmmoCount
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UCrUW_GenericAmmoCounter::GetCurrentInventoryMaxAmmoCount() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_GenericAmmoCounter", "GetCurrentInventoryMaxAmmoCount");
+
+	Params::CrUW_GenericAmmoCounter_GetCurrentInventoryMaxAmmoCount Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ChimeraUI.CrUW_GenericAmmoCounter.GetCurrentWeaponMaxMagAmmo
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UCrUW_GenericAmmoCounter::GetCurrentWeaponMaxMagAmmo() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_GenericAmmoCounter", "GetCurrentWeaponMaxMagAmmo");
+
+	Params::CrUW_GenericAmmoCounter_GetCurrentWeaponMaxMagAmmo Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ChimeraUI.CrUW_GenericAmmoCounter.GetEquippedWeaponAmmoItemType
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FSlateBrush                ReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+const struct FSlateBrush UCrUW_GenericAmmoCounter::GetEquippedWeaponAmmoItemType() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_GenericAmmoCounter", "GetEquippedWeaponAmmoItemType");
+
+	Params::CrUW_GenericAmmoCounter_GetEquippedWeaponAmmoItemType Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ChimeraUI.CrUW_SkillsTab.SetWarningIconColor
+// (Event, Protected, HasDefaults, BlueprintEvent)
+// Parameters:
+// const struct FLinearColor&              InColor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_SkillsTab::SetWarningIconColor(const struct FLinearColor& InColor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_SkillsTab", "SetWarningIconColor");
+
+	Params::CrUW_SkillsTab_SetWarningIconColor Parms{};
+
+	Parms.InColor = std::move(InColor);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -11954,126 +12109,6 @@ void UCrUW_HealthHud::OnPossess(class APawn* InPawn)
 }
 
 
-// Function ChimeraUI.CrUW_StorageInventory.HandleClearSelectionClicked
-// (Final, Native, Private)
-
-void UCrUW_StorageInventory::HandleClearSelectionClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_StorageInventory", "HandleClearSelectionClicked");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_StorageInventory.HandleDecreaseInventoryClicked
-// (Final, Native, Private)
-
-void UCrUW_StorageInventory::HandleDecreaseInventoryClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_StorageInventory", "HandleDecreaseInventoryClicked");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_StorageInventory.HandleIncreaseInventoryClicked
-// (Final, Native, Private)
-
-void UCrUW_StorageInventory::HandleIncreaseInventoryClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_StorageInventory", "HandleIncreaseInventoryClicked");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_StorageInventory.HandleOnFilterItemSelected
-// (Final, Native, Private)
-// Parameters:
-// class UObject*                          ListItem                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_StorageInventory::HandleOnFilterItemSelected(class UObject* ListItem)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_StorageInventory", "HandleOnFilterItemSelected");
-
-	Params::CrUW_StorageInventory_HandleOnFilterItemSelected Parms{};
-
-	Parms.ListItem = ListItem;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_StorageInventory.HandlePickAllClicked
-// (Final, Native, Private)
-
-void UCrUW_StorageInventory::HandlePickAllClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_StorageInventory", "HandlePickAllClicked");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_StorageInventory.HandleSelectFilterClicked
-// (Final, Native, Private)
-
-void UCrUW_StorageInventory::HandleSelectFilterClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_StorageInventory", "HandleSelectFilterClicked");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function ChimeraUI.CrUW_HeaterCoolerInfo.UpdateState
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -12191,6 +12226,67 @@ int32 UCrUW_HeaterCoolerInfo::GetTotalSocketNum() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function ChimeraUI.CrUW_ShotgunAmmoCounter.CalculateLowAmmoFactor
+// (Event, Protected, BlueprintEvent)
+
+void UCrUW_ShotgunAmmoCounter::CalculateLowAmmoFactor()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_ShotgunAmmoCounter", "CalculateLowAmmoFactor");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_ShotgunAmmoCounter.GetAmmoText
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+class FText UCrUW_ShotgunAmmoCounter::GetAmmoText()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_ShotgunAmmoCounter", "GetAmmoText");
+
+	Params::CrUW_ShotgunAmmoCounter_GetAmmoText Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ChimeraUI.CrUW_ShotgunAmmoCounter.SetBulletState
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    HasBullet                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_ShotgunAmmoCounter::SetBulletState(int32 Index_0, bool HasBullet)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_ShotgunAmmoCounter", "SetBulletState");
+
+	Params::CrUW_ShotgunAmmoCounter_SetBulletState Parms{};
+
+	Parms.Index_0 = Index_0;
+	Parms.HasBullet = HasBullet;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -12370,44 +12466,6 @@ void UCrUW_HintHUD::OnUserSettingsChanged(class UEnhancedInputUserSettings* InSe
 }
 
 
-// Function ChimeraUI.CrUW_SafeZoneEditor.HandleBackClicked
-// (Final, Native, Private)
-
-void UCrUW_SafeZoneEditor::HandleBackClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_SafeZoneEditor", "HandleBackClicked");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_SafeZoneEditor.HandleDoneClicked
-// (Final, Native, Private)
-
-void UCrUW_SafeZoneEditor::HandleDoneClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_SafeZoneEditor", "HandleDoneClicked");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function ChimeraUI.CrUW_HitIndicator.CreateHitIndicator
 // (Final, Native, Protected, HasDefaults)
 // Parameters:
@@ -12425,6 +12483,113 @@ void UCrUW_HitIndicator::CreateHitIndicator(const struct FVector& InDirection, E
 
 	Parms.InDirection = std::move(InDirection);
 	Parms.InHitReactionType = InHitReactionType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_SubObjectiveEntry.OnCompleted
+// (Native, Event, Public, BlueprintEvent)
+
+void UCrUW_SubObjectiveEntry::OnCompleted()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_SubObjectiveEntry", "OnCompleted");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_SubObjectiveEntry.OnKeyProfileChanged
+// (Final, Native, Public)
+// Parameters:
+// const class UEnhancedPlayerMappableKeyProfile*InNewProfile                                           (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_SubObjectiveEntry::OnKeyProfileChanged(const class UEnhancedPlayerMappableKeyProfile* InNewProfile)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_SubObjectiveEntry", "OnKeyProfileChanged");
+
+	Params::CrUW_SubObjectiveEntry_OnKeyProfileChanged Parms{};
+
+	Parms.InNewProfile = InNewProfile;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_SubObjectiveEntry.OnUpdated
+// (Native, Event, Public, BlueprintEvent)
+
+void UCrUW_SubObjectiveEntry::OnUpdated()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_SubObjectiveEntry", "OnUpdated");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_SubObjectiveEntry.OnUserSettingsApplied
+// (Final, Native, Public)
+
+void UCrUW_SubObjectiveEntry::OnUserSettingsApplied()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_SubObjectiveEntry", "OnUserSettingsApplied");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_SubObjectiveEntry.OnUserSettingsChanged
+// (Final, Native, Public)
+// Parameters:
+// class UEnhancedInputUserSettings*       InSettings                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_SubObjectiveEntry::OnUserSettingsChanged(class UEnhancedInputUserSettings* InSettings)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_SubObjectiveEntry", "OnUserSettingsChanged");
+
+	Params::CrUW_SubObjectiveEntry_OnUserSettingsChanged Parms{};
+
+	Parms.InSettings = InSettings;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -12569,25 +12734,6 @@ void UCrUW_HUDCentralNotification::TriggerFadeOut()
 		Func = Class->GetFunction("CrUW_HUDCentralNotification", "TriggerFadeOut");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_PickAll.HandleClickClicked
-// (Final, Native, Private)
-
-void UCrUW_PickAll::HandleClickClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_PickAll", "HandleClickClicked");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -12927,6 +13073,25 @@ void UCrUW_HUDLayout::ShowBlur(bool bShow)
 }
 
 
+// Function ChimeraUI.CrUW_PickAll.HandleClickClicked
+// (Final, Native, Private)
+
+void UCrUW_PickAll::HandleClickClicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_PickAll", "HandleClickClicked");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function ChimeraUI.CrUW_HudRoundTimer.SetProgress
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -12944,6 +13109,226 @@ void UCrUW_HudRoundTimer::SetProgress(float Value)
 	Parms.Value = Value;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_SettingsProxy.ApplyChanges
+// (Native, Protected, BlueprintCallable)
+
+void UCrUW_SettingsProxy::ApplyChanges()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_SettingsProxy", "ApplyChanges");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_SettingsProxy.AttemptToPopNavigation
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCrUW_SettingsProxy::AttemptToPopNavigation()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_SettingsProxy", "AttemptToPopNavigation");
+
+	Params::CrUW_SettingsProxy_AttemptToPopNavigation Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ChimeraUI.CrUW_SettingsProxy.CancelChanges
+// (Native, Protected, BlueprintCallable)
+
+void UCrUW_SettingsProxy::CancelChanges()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_SettingsProxy", "CancelChanges");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_SettingsProxy.GetSettingCollection
+// (Final, Native, Protected, HasOutParams, BlueprintCallable)
+// Parameters:
+// class FName                             SettingDevName                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   HasAnySettings                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UGameSettingCollection*           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UGameSettingCollection* UCrUW_SettingsProxy::GetSettingCollection(class FName SettingDevName, bool* HasAnySettings)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_SettingsProxy", "GetSettingCollection");
+
+	Params::CrUW_SettingsProxy_GetSettingCollection Parms{};
+
+	Parms.SettingDevName = SettingDevName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (HasAnySettings != nullptr)
+		*HasAnySettings = Parms.HasAnySettings;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ChimeraUI.CrUW_SettingsProxy.NavigateToSetting
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// class FName                             SettingDevName                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_SettingsProxy::NavigateToSetting(class FName SettingDevName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_SettingsProxy", "NavigateToSetting");
+
+	Params::CrUW_SettingsProxy_NavigateToSetting Parms{};
+
+	Parms.SettingDevName = SettingDevName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_SettingsProxy.NavigateToSettings
+// (Final, Native, Protected, HasOutParams, BlueprintCallable)
+// Parameters:
+// const TArray<class FName>&              SettingDevNames                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrUW_SettingsProxy::NavigateToSettings(const TArray<class FName>& SettingDevNames)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_SettingsProxy", "NavigateToSettings");
+
+	Params::CrUW_SettingsProxy_NavigateToSettings Parms{};
+
+	Parms.SettingDevNames = std::move(SettingDevNames);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_SettingsProxy.OnSelectedTabEvent
+// (Final, Native, Protected)
+// Parameters:
+// class FName                             TabId                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_SettingsProxy::OnSelectedTabEvent(class FName TabId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_SettingsProxy", "OnSelectedTabEvent");
+
+	Params::CrUW_SettingsProxy_OnSelectedTabEvent Parms{};
+
+	Parms.TabId = TabId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_SettingsProxy.OnSettingsDirtyStateChanged
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bSettingsDirty                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_SettingsProxy::OnSettingsDirtyStateChanged(bool bSettingsDirty)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_SettingsProxy", "OnSettingsDirtyStateChanged");
+
+	Params::CrUW_SettingsProxy_OnSettingsDirtyStateChanged Parms{};
+
+	Parms.bSettingsDirty = bSettingsDirty;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_SettingsProxy.HaveSettingsBeenChanged
+// (Final, Native, Protected, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCrUW_SettingsProxy::HaveSettingsBeenChanged() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_SettingsProxy", "HaveSettingsBeenChanged");
+
+	Params::CrUW_SettingsProxy_HaveSettingsBeenChanged Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -13033,26 +13418,6 @@ void UCrUW_InGameMenu::SetTargetSessionOnlineMode(ECrOnlineSessionMode InTargetM
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_SkillsTab.SetWarningIconColor
-// (Event, Protected, HasDefaults, BlueprintEvent)
-// Parameters:
-// const struct FLinearColor&              InColor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_SkillsTab::SetWarningIconColor(const struct FLinearColor& InColor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_SkillsTab", "SetWarningIconColor");
-
-	Params::CrUW_SkillsTab_SetWarningIconColor Parms{};
-
-	Parms.InColor = std::move(InColor);
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -13222,15 +13587,116 @@ void UCrUW_TakeRemainingItems::SetBackgroundColor(const struct FColor& Color)
 }
 
 
-// Function ChimeraUI.CrUW_TeleporterButton.HandleOnButtonClicked
+// Function ChimeraUI.CrUW_StorageInventory.HandleClearSelectionClicked
 // (Final, Native, Private)
 
-void UCrUW_TeleporterButton::HandleOnButtonClicked()
+void UCrUW_StorageInventory::HandleClearSelectionClicked()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_TeleporterButton", "HandleOnButtonClicked");
+		Func = Class->GetFunction("CrUW_StorageInventory", "HandleClearSelectionClicked");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_StorageInventory.HandleDecreaseInventoryClicked
+// (Final, Native, Private)
+
+void UCrUW_StorageInventory::HandleDecreaseInventoryClicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_StorageInventory", "HandleDecreaseInventoryClicked");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_StorageInventory.HandleIncreaseInventoryClicked
+// (Final, Native, Private)
+
+void UCrUW_StorageInventory::HandleIncreaseInventoryClicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_StorageInventory", "HandleIncreaseInventoryClicked");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_StorageInventory.HandleOnFilterItemSelected
+// (Final, Native, Private)
+// Parameters:
+// class UObject*                          ListItem                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_StorageInventory::HandleOnFilterItemSelected(class UObject* ListItem)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_StorageInventory", "HandleOnFilterItemSelected");
+
+	Params::CrUW_StorageInventory_HandleOnFilterItemSelected Parms{};
+
+	Parms.ListItem = ListItem;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_StorageInventory.HandlePickAllClicked
+// (Final, Native, Private)
+
+void UCrUW_StorageInventory::HandlePickAllClicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_StorageInventory", "HandlePickAllClicked");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_StorageInventory.HandleSelectFilterClicked
+// (Final, Native, Private)
+
+void UCrUW_StorageInventory::HandleSelectFilterClicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_StorageInventory", "HandleSelectFilterClicked");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -13319,6 +13785,25 @@ void UCrUW_InputPasswordPopup::SetTitle(bool bSetPassword)
 }
 
 
+// Function ChimeraUI.CrUW_TeleporterButton.HandleOnButtonClicked
+// (Final, Native, Private)
+
+void UCrUW_TeleporterButton::HandleOnButtonClicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_TeleporterButton", "HandleOnButtonClicked");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function ChimeraUI.CrUW_InteractionInfo.GetInteractionAdditionalText
 // (Final, Native, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
@@ -13389,103 +13874,23 @@ void UCrUW_InteractionInfo::OnSetupInfo(class AActor* InteractionActor)
 }
 
 
-// Function ChimeraUI.CrUW_SubObjectiveEntry.OnCompleted
-// (Native, Event, Public, BlueprintEvent)
-
-void UCrUW_SubObjectiveEntry::OnCompleted()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_SubObjectiveEntry", "OnCompleted");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_SubObjectiveEntry.OnKeyProfileChanged
-// (Final, Native, Public)
+// Function ChimeraUI.CrUW_UpgradeStationPanel.OnActorEndPlay
+// (Final, Native, Protected)
 // Parameters:
-// const class UEnhancedPlayerMappableKeyProfile*InNewProfile                                           (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EEndPlayReason                          Reason                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_SubObjectiveEntry::OnKeyProfileChanged(const class UEnhancedPlayerMappableKeyProfile* InNewProfile)
+void UCrUW_UpgradeStationPanel::OnActorEndPlay(class AActor* Actor, EEndPlayReason Reason)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_SubObjectiveEntry", "OnKeyProfileChanged");
+		Func = Class->GetFunction("CrUW_UpgradeStationPanel", "OnActorEndPlay");
 
-	Params::CrUW_SubObjectiveEntry_OnKeyProfileChanged Parms{};
+	Params::CrUW_UpgradeStationPanel_OnActorEndPlay Parms{};
 
-	Parms.InNewProfile = InNewProfile;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_SubObjectiveEntry.OnUpdated
-// (Native, Event, Public, BlueprintEvent)
-
-void UCrUW_SubObjectiveEntry::OnUpdated()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_SubObjectiveEntry", "OnUpdated");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_SubObjectiveEntry.OnUserSettingsApplied
-// (Final, Native, Public)
-
-void UCrUW_SubObjectiveEntry::OnUserSettingsApplied()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_SubObjectiveEntry", "OnUserSettingsApplied");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_SubObjectiveEntry.OnUserSettingsChanged
-// (Final, Native, Public)
-// Parameters:
-// class UEnhancedInputUserSettings*       InSettings                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_SubObjectiveEntry::OnUserSettingsChanged(class UEnhancedInputUserSettings* InSettings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_SubObjectiveEntry", "OnUserSettingsChanged");
-
-	Params::CrUW_SubObjectiveEntry_OnUserSettingsChanged Parms{};
-
-	Parms.InSettings = InSettings;
+	Parms.Actor = Actor;
+	Parms.Reason = Reason;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -13695,6 +14100,50 @@ void UCrUW_InventoryContainer::SetSlotOffset(class UGridSlot* InSlot)
 }
 
 
+// Function ChimeraUI.CrUW_InventoryFilterSelection.HandleOnFilterCleared
+// (Final, Native, Protected)
+
+void UCrUW_InventoryFilterSelection::HandleOnFilterCleared()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_InventoryFilterSelection", "HandleOnFilterCleared");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_InventoryFilterSelection.HandleOnFilterItemSelected
+// (Final, Native, Protected)
+// Parameters:
+// class UObject*                          ListItem                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_InventoryFilterSelection::HandleOnFilterItemSelected(class UObject* ListItem)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_InventoryFilterSelection", "HandleOnFilterItemSelected");
+
+	Params::CrUW_InventoryFilterSelection_HandleOnFilterItemSelected Parms{};
+
+	Parms.ListItem = ListItem;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function ChimeraUI.CrUW_TooltipPrompt.SetShowTooltip
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -13752,123 +14201,6 @@ void UCrUW_TooltipPrompt::SetupExpand(bool bSupport)
 	Parms.bSupport = bSupport;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_InventoryFilterSelection.HandleOnFilterCleared
-// (Final, Native, Protected)
-
-void UCrUW_InventoryFilterSelection::HandleOnFilterCleared()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_InventoryFilterSelection", "HandleOnFilterCleared");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_InventoryFilterSelection.HandleOnFilterItemSelected
-// (Final, Native, Protected)
-// Parameters:
-// class UObject*                          ListItem                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_InventoryFilterSelection::HandleOnFilterItemSelected(class UObject* ListItem)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_InventoryFilterSelection", "HandleOnFilterItemSelected");
-
-	Params::CrUW_InventoryFilterSelection_HandleOnFilterItemSelected Parms{};
-
-	Parms.ListItem = ListItem;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_WeaponSlot.GetTooltip
-// (Final, Native, Public)
-// Parameters:
-// class UUserWidget*                      ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UUserWidget* UCrUW_WeaponSlot::GetTooltip()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_WeaponSlot", "GetTooltip");
-
-	Params::CrUW_WeaponSlot_GetTooltip Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ChimeraUI.CrUW_WeaponSlot.SetEmptySlot
-// (Event, Public, BlueprintEvent)
-
-void UCrUW_WeaponSlot::SetEmptySlot()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_WeaponSlot", "SetEmptySlot");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_WeaponSlot.SetIcon
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// const struct FSlateBrush&               InBrush                                                (Parm, NativeAccessSpecifierPublic)
-
-void UCrUW_WeaponSlot::SetIcon(const struct FSlateBrush& InBrush)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_WeaponSlot", "SetIcon");
-
-	Params::CrUW_WeaponSlot_SetIcon Parms{};
-
-	Parms.InBrush = std::move(InBrush);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_WeaponSlot.SetLockedView
-// (Event, Public, BlueprintEvent)
-
-void UCrUW_WeaponSlot::SetLockedView()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_WeaponSlot", "SetLockedView");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -14224,182 +14556,6 @@ void UCrUW_InventoryScreen::TakeAllActionClicked()
 }
 
 
-// Function ChimeraUI.CrUW_UpgradeBuildingWidget.ClaimButtonClicked
-// (Final, Native, Protected)
-
-void UCrUW_UpgradeBuildingWidget::ClaimButtonClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_UpgradeBuildingWidget", "ClaimButtonClicked");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_UpgradeBuildingWidget.ClaimButtonHovered
-// (Final, Native, Protected)
-
-void UCrUW_UpgradeBuildingWidget::ClaimButtonHovered()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_UpgradeBuildingWidget", "ClaimButtonHovered");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_UpgradeBuildingWidget.HandleOnTaskUpgradeTaskCompleted
-// (Final, Native, Private, HasOutParams)
-// Parameters:
-// const struct FCrBuildingUpgradeTask&    InTask                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrUW_UpgradeBuildingWidget::HandleOnTaskUpgradeTaskCompleted(const struct FCrBuildingUpgradeTask& InTask)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_UpgradeBuildingWidget", "HandleOnTaskUpgradeTaskCompleted");
-
-	Params::CrUW_UpgradeBuildingWidget_HandleOnTaskUpgradeTaskCompleted Parms{};
-
-	Parms.InTask = std::move(InTask);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_UpgradeBuildingWidget.PlayClickSound
-// (Final, Native, Protected, BlueprintCallable)
-
-void UCrUW_UpgradeBuildingWidget::PlayClickSound()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_UpgradeBuildingWidget", "PlayClickSound");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_UpgradeBuildingWidget.RequiredLevelReached
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bReached                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_UpgradeBuildingWidget::RequiredLevelReached(bool bReached)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_UpgradeBuildingWidget", "RequiredLevelReached");
-
-	Params::CrUW_UpgradeBuildingWidget_RequiredLevelReached Parms{};
-
-	Parms.bReached = bReached;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_UpgradeBuildingWidget.SetColors
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// const class UCrCommonUIColorsDevSettings*Settings                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_UpgradeBuildingWidget::SetColors(const class UCrCommonUIColorsDevSettings* Settings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_UpgradeBuildingWidget", "SetColors");
-
-	Params::CrUW_UpgradeBuildingWidget_SetColors Parms{};
-
-	Parms.Settings = Settings;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_UpgradeBuildingWidget.SetLevel
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// int32                                   InLevel                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_UpgradeBuildingWidget::SetLevel(int32 InLevel)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_UpgradeBuildingWidget", "SetLevel");
-
-	Params::CrUW_UpgradeBuildingWidget_SetLevel Parms{};
-
-	Parms.InLevel = InLevel;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_UpgradeBuildingWidget.SetLevelButtonFocus
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bFocused                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_UpgradeBuildingWidget::SetLevelButtonFocus(bool bFocused)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_UpgradeBuildingWidget", "SetLevelButtonFocus");
-
-	Params::CrUW_UpgradeBuildingWidget_SetLevelButtonFocus Parms{};
-
-	Parms.bFocused = bFocused;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_UpgradeBuildingWidget.SetRewardClaimed
-// (Event, Public, BlueprintEvent)
-
-void UCrUW_UpgradeBuildingWidget::SetRewardClaimed()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_UpgradeBuildingWidget", "SetRewardClaimed");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function ChimeraUI.CrUW_InventorySplitWindow.ExecuteAction
 // (Final, Native, Public)
 
@@ -14527,6 +14683,31 @@ void UCrUW_InventorySplitWindow::UpdateAmountText(int32 Amount)
 }
 
 
+// Function ChimeraUI.CrUW_WidgetOptionSlider.OnSliderValueChanged
+// (Final, Native, Protected)
+// Parameters:
+// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_WidgetOptionSlider::OnSliderValueChanged(float InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_WidgetOptionSlider", "OnSliderValueChanged");
+
+	Params::CrUW_WidgetOptionSlider_OnSliderValueChanged Parms{};
+
+	Parms.InValue = InValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function ChimeraUI.CrUW_ItemSelectionGroup.EnableLine
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -14629,278 +14810,6 @@ TArray<class UWidget*> UCrUW_ItemSelectionGroup::GetAllGridSlots() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function ChimeraUI.Cr_UW_InventoryToolTip.AddEffect
-// (Event, Protected, HasOutParams, BlueprintEvent)
-// Parameters:
-// int32                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FSlateBrush&               InIcon                                                 (Parm, NativeAccessSpecifierPublic)
-// const class FText&                      InDescription                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCr_UW_InventoryToolTip::AddEffect(int32 InValue, const struct FSlateBrush& InIcon, const class FText& InDescription)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Cr_UW_InventoryToolTip", "AddEffect");
-
-	Params::Cr_UW_InventoryToolTip_AddEffect Parms{};
-
-	Parms.InValue = InValue;
-	Parms.InIcon = std::move(InIcon);
-	Parms.InDescription = std::move(InDescription);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.Cr_UW_InventoryToolTip.GetTypeText
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// EUIItemType                             Type                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-class FText UCr_UW_InventoryToolTip::GetTypeText(EUIItemType Type)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Cr_UW_InventoryToolTip", "GetTypeText");
-
-	Params::Cr_UW_InventoryToolTip_GetTypeText Parms{};
-
-	Parms.Type = Type;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ChimeraUI.Cr_UW_InventoryToolTip.SetCraftedInVisibility
-// (Event, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// ESlateVisibility                        InVisibility                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCr_UW_InventoryToolTip::SetCraftedInVisibility(ESlateVisibility InVisibility)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Cr_UW_InventoryToolTip", "SetCraftedInVisibility");
-
-	Params::Cr_UW_InventoryToolTip_SetCraftedInVisibility Parms{};
-
-	Parms.InVisibility = InVisibility;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.Cr_UW_InventoryToolTip.SetGatheredFromVisibility
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// ESlateVisibility                        InVisibility                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCr_UW_InventoryToolTip::SetGatheredFromVisibility(ESlateVisibility InVisibility)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Cr_UW_InventoryToolTip", "SetGatheredFromVisibility");
-
-	Params::Cr_UW_InventoryToolTip_SetGatheredFromVisibility Parms{};
-
-	Parms.InVisibility = InVisibility;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.Cr_UW_InventoryToolTip.SetSupportTransfer
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bSupport                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCr_UW_InventoryToolTip::SetSupportTransfer(bool bSupport)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Cr_UW_InventoryToolTip", "SetSupportTransfer");
-
-	Params::Cr_UW_InventoryToolTip_SetSupportTransfer Parms{};
-
-	Parms.bSupport = bSupport;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupCraftingType
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// const EUICraftingType                   InType                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCr_UW_InventoryToolTip::SetupCraftingType(const EUICraftingType InType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Cr_UW_InventoryToolTip", "SetupCraftingType");
-
-	Params::Cr_UW_InventoryToolTip_SetupCraftingType Parms{};
-
-	Parms.InType = InType;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupDataPoints
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// int32                                   Points                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCr_UW_InventoryToolTip::SetupDataPoints(int32 Points)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Cr_UW_InventoryToolTip", "SetupDataPoints");
-
-	Params::Cr_UW_InventoryToolTip_SetupDataPoints Parms{};
-
-	Parms.Points = Points;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupEffectTooltip
-// (Final, Native, Public)
-// Parameters:
-// const struct FFoodEffectData&           InEffect                                               (Parm, NativeAccessSpecifierPublic)
-
-void UCr_UW_InventoryToolTip::SetupEffectTooltip(const struct FFoodEffectData& InEffect)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Cr_UW_InventoryToolTip", "SetupEffectTooltip");
-
-	Params::Cr_UW_InventoryToolTip_SetupEffectTooltip Parms{};
-
-	Parms.InEffect = std::move(InEffect);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupExpand
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bSupport                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCr_UW_InventoryToolTip::SetupExpand(bool bSupport)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Cr_UW_InventoryToolTip", "SetupExpand");
-
-	Params::Cr_UW_InventoryToolTip_SetupExpand Parms{};
-
-	Parms.bSupport = bSupport;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupInfoBox
-// (Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const class FText&                      Name_0                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// const int32                             Number                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const int32                             Max                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const EUIItemType                       UIType                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const bool                              IsUsable                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCr_UW_InventoryToolTip::SetupInfoBox(const class FText& Name_0, const int32 Number, const int32 Max, const EUIItemType UIType, const bool IsUsable)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Cr_UW_InventoryToolTip", "SetupInfoBox");
-
-	Params::Cr_UW_InventoryToolTip_SetupInfoBox Parms{};
-
-	Parms.Name_0 = std::move(Name_0);
-	Parms.Number = Number;
-	Parms.Max = Max;
-	Parms.UIType = UIType;
-	Parms.IsUsable = IsUsable;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupMinimalTooltip
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const class FText&                      InDescription                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// const class FText&                      Title                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCr_UW_InventoryToolTip::SetupMinimalTooltip(const class FText& InDescription, const class FText& Title)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Cr_UW_InventoryToolTip", "SetupMinimalTooltip");
-
-	Params::Cr_UW_InventoryToolTip_SetupMinimalTooltip Parms{};
-
-	Parms.InDescription = std::move(InDescription);
-	Parms.Title = std::move(Title);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupMinimalVersion
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bHideItemType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCr_UW_InventoryToolTip::SetupMinimalVersion(bool bHideItemType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Cr_UW_InventoryToolTip", "SetupMinimalVersion");
-
-	Params::Cr_UW_InventoryToolTip_SetupMinimalVersion Parms{};
-
-	Parms.bHideItemType = bHideItemType;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -15099,34 +15008,15 @@ void UCrUW_ItemSelectionSlot::ShowSelection(bool bSelected)
 }
 
 
-// Function ChimeraUI.CrUW_LoadSessionMenu.DebugDeleteAllSaveGames
-// (Final, Native, Public, BlueprintCallable)
-
-void UCrUW_LoadSessionMenu::DebugDeleteAllSaveGames()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_LoadSessionMenu", "DebugDeleteAllSaveGames");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_LoadSessionMenu.DeleteSessionClicked
+// Function ChimeraUI.CrUW_JoinSessionMenu.CancelInputClicked
 // (Final, Native, Protected)
 
-void UCrUW_LoadSessionMenu::DeleteSessionClicked()
+void UCrUW_JoinSessionMenu::CancelInputClicked()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_LoadSessionMenu", "DeleteSessionClicked");
+		Func = Class->GetFunction("CrUW_JoinSessionMenu", "CancelInputClicked");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -15137,40 +15027,23 @@ void UCrUW_LoadSessionMenu::DeleteSessionClicked()
 }
 
 
-// Function ChimeraUI.CrUW_LoadSessionMenu.DeleteSessionSaveClicked
-// (Final, Native, Protected)
-
-void UCrUW_LoadSessionMenu::DeleteSessionSaveClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_LoadSessionMenu", "DeleteSessionSaveClicked");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_LoadSessionMenu.ExpandedSessionChanged
+// Function ChimeraUI.CrUW_JoinSessionMenu.ConfirmInputClicked
 // (Final, Native, Protected)
 // Parameters:
-// int32                                   ExpandedIndex                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InText                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InPassword                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_LoadSessionMenu::ExpandedSessionChanged(int32 ExpandedIndex)
+void UCrUW_JoinSessionMenu::ConfirmInputClicked(const class FString& InText, const class FString& InPassword)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_LoadSessionMenu", "ExpandedSessionChanged");
+		Func = Class->GetFunction("CrUW_JoinSessionMenu", "ConfirmInputClicked");
 
-	Params::CrUW_LoadSessionMenu_ExpandedSessionChanged Parms{};
+	Params::CrUW_JoinSessionMenu_ConfirmInputClicked Parms{};
 
-	Parms.ExpandedIndex = ExpandedIndex;
+	Parms.InText = std::move(InText);
+	Parms.InPassword = std::move(InPassword);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -15181,37 +15054,177 @@ void UCrUW_LoadSessionMenu::ExpandedSessionChanged(int32 ExpandedIndex)
 }
 
 
-// Function ChimeraUI.CrUW_LoadSessionMenu.GrayoutSessionTypeText
+// Function ChimeraUI.CrUW_JoinSessionMenu.CreateDedicatedServerPopup
+// (Final, Native, Protected)
+
+void UCrUW_JoinSessionMenu::CreateDedicatedServerPopup()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_JoinSessionMenu", "CreateDedicatedServerPopup");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_JoinSessionMenu.JoinGameClicked
+// (Final, Native, Protected)
+
+void UCrUW_JoinSessionMenu::JoinGameClicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_JoinSessionMenu", "JoinGameClicked");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_JoinSessionMenu.OnJoinSessionComplete
+// (Final, Native, Private, HasOutParams)
+// Parameters:
+// const struct FOnlineResultInformation&  Result                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrUW_JoinSessionMenu::OnJoinSessionComplete(const struct FOnlineResultInformation& Result)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_JoinSessionMenu", "OnJoinSessionComplete");
+
+	Params::CrUW_JoinSessionMenu_OnJoinSessionComplete Parms{};
+
+	Parms.Result = std::move(Result);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_JoinSessionMenu.OnSessionSearchFinished
+// (Final, Native, Private, HasOutParams)
+// Parameters:
+// bool                                    bSucceeded                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FText&                      ErrorMessage                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrUW_JoinSessionMenu::OnSessionSearchFinished(bool bSucceeded, const class FText& ErrorMessage)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_JoinSessionMenu", "OnSessionSearchFinished");
+
+	Params::CrUW_JoinSessionMenu_OnSessionSearchFinished Parms{};
+
+	Parms.bSucceeded = bSucceeded;
+	Parms.ErrorMessage = std::move(ErrorMessage);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_JoinSessionMenu.OnSessionSearchInProgress
+// (Final, Native, Private, HasOutParams)
+// Parameters:
+// bool                                    bSucceeded                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FText&                      ErrorMessage                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrUW_JoinSessionMenu::OnSessionSearchInProgress(bool bSucceeded, const class FText& ErrorMessage)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_JoinSessionMenu", "OnSessionSearchInProgress");
+
+	Params::CrUW_JoinSessionMenu_OnSessionSearchInProgress Parms{};
+
+	Parms.bSucceeded = bSucceeded;
+	Parms.ErrorMessage = std::move(ErrorMessage);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_JoinSessionMenu.RefreshClicked
+// (Final, Native, Protected)
+
+void UCrUW_JoinSessionMenu::RefreshClicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_JoinSessionMenu", "RefreshClicked");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_JoinSessionMenu.RunSpinAnimation
 // (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bRun                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_LoadSessionMenu::GrayoutSessionTypeText()
+void UCrUW_JoinSessionMenu::RunSpinAnimation(bool bRun)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_LoadSessionMenu", "GrayoutSessionTypeText");
+		Func = Class->GetFunction("CrUW_JoinSessionMenu", "RunSpinAnimation");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::CrUW_JoinSessionMenu_RunSpinAnimation Parms{};
+
+	Parms.bRun = bRun;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function ChimeraUI.CrUW_LoadSessionMenu.HandleRotatorChangedValue
-// (Final, Native, Protected)
+// Function ChimeraUI.CrUW_JoinSessionMenu.SetSelectedResultIndex
+// (Final, Native, Private)
 // Parameters:
-// int32                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUserInitiated                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InIndex                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_LoadSessionMenu::HandleRotatorChangedValue(int32 Value, bool bUserInitiated)
+void UCrUW_JoinSessionMenu::SetSelectedResultIndex(int32 InIndex)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_LoadSessionMenu", "HandleRotatorChangedValue");
+		Func = Class->GetFunction("CrUW_JoinSessionMenu", "SetSelectedResultIndex");
 
-	Params::CrUW_LoadSessionMenu_HandleRotatorChangedValue Parms{};
+	Params::CrUW_JoinSessionMenu_SetSelectedResultIndex Parms{};
 
-	Parms.Value = Value;
-	Parms.bUserInitiated = bUserInitiated;
+	Parms.InIndex = InIndex;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -15222,178 +15235,55 @@ void UCrUW_LoadSessionMenu::HandleRotatorChangedValue(int32 Value, bool bUserIni
 }
 
 
-// Function ChimeraUI.CrUW_LoadSessionMenu.LoadButtonClicked
-// (Final, Native, Protected)
-
-void UCrUW_LoadSessionMenu::LoadButtonClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_LoadSessionMenu", "LoadButtonClicked");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_LoadSessionMenu.OnCustomGameClicked
-// (Final, Native, Protected)
-
-void UCrUW_LoadSessionMenu::OnCustomGameClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_LoadSessionMenu", "OnCustomGameClicked");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_LoadSessionMenu.OptionDecreaseClicked
-// (Final, Native, Protected)
-
-void UCrUW_LoadSessionMenu::OptionDecreaseClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_LoadSessionMenu", "OptionDecreaseClicked");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_LoadSessionMenu.OptionIncreaseClicked
-// (Final, Native, Protected)
-
-void UCrUW_LoadSessionMenu::OptionIncreaseClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_LoadSessionMenu", "OptionIncreaseClicked");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_LoadSessionMenu.PTRSavesCheckboxChanged
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// bool                                    bin                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_LoadSessionMenu::PTRSavesCheckboxChanged(bool bin)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_LoadSessionMenu", "PTRSavesCheckboxChanged");
-
-	Params::CrUW_LoadSessionMenu_PTRSavesCheckboxChanged Parms{};
-
-	Parms.bin = bin;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_LoadSessionMenu.SelectedSaveChanged
-// (Final, Native, Protected)
-// Parameters:
-// const class FString&                    InSelectedItem                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    ItemSession                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrSlotType                             InSlotType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InItemIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_LoadSessionMenu::SelectedSaveChanged(const class FString& InSelectedItem, const class FString& ItemSession, ECrSlotType InSlotType, int32 InItemIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_LoadSessionMenu", "SelectedSaveChanged");
-
-	Params::CrUW_LoadSessionMenu_SelectedSaveChanged Parms{};
-
-	Parms.InSelectedItem = std::move(InSelectedItem);
-	Parms.ItemSession = std::move(ItemSession);
-	Parms.InSlotType = InSlotType;
-	Parms.InItemIndex = InItemIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_LoadSessionMenu.SetSessionOnlineMode
-// (Final, Native, Protected)
-// Parameters:
-// ECrOnlineSessionMode                    InMode                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_LoadSessionMenu::SetSessionOnlineMode(ECrOnlineSessionMode InMode)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_LoadSessionMenu", "SetSessionOnlineMode");
-
-	Params::CrUW_LoadSessionMenu_SetSessionOnlineMode Parms{};
-
-	Parms.InMode = InMode;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_LoadSessionMenu.SetupButtons
+// Function ChimeraUI.CrUW_JoinSessionMenu.SetupButtons
 // (Event, Protected, BlueprintEvent)
 // Parameters:
 // bool                                    bLowerFont                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_LoadSessionMenu::SetupButtons(bool bLowerFont)
+void UCrUW_JoinSessionMenu::SetupButtons(bool bLowerFont)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_LoadSessionMenu", "SetupButtons");
+		Func = Class->GetFunction("CrUW_JoinSessionMenu", "SetupButtons");
 
-	Params::CrUW_LoadSessionMenu_SetupButtons Parms{};
+	Params::CrUW_JoinSessionMenu_SetupButtons Parms{};
 
 	Parms.bLowerFont = bLowerFont;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_JoinSessionMenu.ShowNoSessionsWidget
+// (Event, Protected, BlueprintEvent)
+
+void UCrUW_JoinSessionMenu::ShowNoSessionsWidget()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_JoinSessionMenu", "ShowNoSessionsWidget");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_JoinSessionMenu.ShowSearchingInProgress
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    InProgress                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_JoinSessionMenu::ShowSearchingInProgress(bool InProgress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_JoinSessionMenu", "ShowSearchingInProgress");
+
+	Params::CrUW_JoinSessionMenu_ShowSearchingInProgress Parms{};
+
+	Parms.InProgress = InProgress;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -15566,6 +15456,34 @@ void UCrUW_Lobby::StartLoadSessionClicked()
 }
 
 
+// Function ChimeraUI.UIItemTypesColors.GetTypeColor
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// EUIItemType                             Type                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FColor                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FColor UUIItemTypesColors::GetTypeColor(EUIItemType Type)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIItemTypesColors", "GetTypeColor");
+
+	Params::UIItemTypesColors_GetTypeColor Parms{};
+
+	Parms.Type = Type;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function ChimeraUI.CrUW_LootboxMenu.SetTitleText
 // (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
@@ -15581,98 +15499,6 @@ void UCrUW_LootboxMenu::SetTitleText(const class FText& InText)
 	Params::CrUW_LootboxMenu_SetTitleText Parms{};
 
 	Parms.InText = std::move(InText);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_MainMenuWidget.ButtonClicked
-// (Final, Native, Protected)
-// Parameters:
-// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_MainMenuWidget::ButtonClicked(int32 Index_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_MainMenuWidget", "ButtonClicked");
-
-	Params::CrUW_MainMenuWidget_ButtonClicked Parms{};
-
-	Parms.Index_0 = Index_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_MainMenuWidget.OnContinueButtonClicked
-// (Final, Native, Protected)
-// Parameters:
-// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_MainMenuWidget::OnContinueButtonClicked(int32 Index_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_MainMenuWidget", "OnContinueButtonClicked");
-
-	Params::CrUW_MainMenuWidget_OnContinueButtonClicked Parms{};
-
-	Parms.Index_0 = Index_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_MainMenuWidget.SetColors
-// (Event, Protected, HasDefaults, BlueprintEvent)
-// Parameters:
-// const struct FLinearColor&              OrangeColor                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_MainMenuWidget::SetColors(const struct FLinearColor& OrangeColor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_MainMenuWidget", "SetColors");
-
-	Params::CrUW_MainMenuWidget_SetColors Parms{};
-
-	Parms.OrangeColor = std::move(OrangeColor);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_MainMenuWidget.SetContinueTimestamp
-// (Event, Protected, HasOutParams, BlueprintEvent)
-// Parameters:
-// const class FText&                      InText                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// const class FText&                      InSessionName                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrUW_MainMenuWidget::SetContinueTimestamp(const class FText& InText, const class FText& InSessionName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_MainMenuWidget", "SetContinueTimestamp");
-
-	Params::CrUW_MainMenuWidget_SetContinueTimestamp Parms{};
-
-	Parms.InText = std::move(InText);
-	Parms.InSessionName = std::move(InSessionName);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -15924,6 +15750,79 @@ void UCrUW_ManagerServerScreen::OnUIActionChanged(EUIAction NewStatus)
 }
 
 
+// Function ChimeraUI.CrUW_WeaponSlot.GetTooltip
+// (Final, Native, Public)
+// Parameters:
+// class UUserWidget*                      ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UUserWidget* UCrUW_WeaponSlot::GetTooltip()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_WeaponSlot", "GetTooltip");
+
+	Params::CrUW_WeaponSlot_GetTooltip Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ChimeraUI.CrUW_WeaponSlot.SetEmptySlot
+// (Event, Public, BlueprintEvent)
+
+void UCrUW_WeaponSlot::SetEmptySlot()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_WeaponSlot", "SetEmptySlot");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_WeaponSlot.SetIcon
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// const struct FSlateBrush&               InBrush                                                (Parm, NativeAccessSpecifierPublic)
+
+void UCrUW_WeaponSlot::SetIcon(const struct FSlateBrush& InBrush)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_WeaponSlot", "SetIcon");
+
+	Params::CrUW_WeaponSlot_SetIcon Parms{};
+
+	Parms.InBrush = std::move(InBrush);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_WeaponSlot.SetLockedView
+// (Event, Public, BlueprintEvent)
+
+void UCrUW_WeaponSlot::SetLockedView()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_WeaponSlot", "SetLockedView");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function ChimeraUI.CrUW_MapMenu.HandleCenterOnPlayerInput
 // (Final, Native, Private)
 
@@ -16139,6 +16038,34 @@ void UCrUW_MapMenu::ZoomValueFromSlider(float ZoomValue)
 }
 
 
+// Function ChimeraUI.SurvivalStatsData.GetStatData
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EAttributeType                          InType                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FCrSurvivalStat                  ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FCrSurvivalStat USurvivalStatsData::GetStatData(EAttributeType InType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SurvivalStatsData", "GetStatData");
+
+	Params::SurvivalStatsData_GetStatData Parms{};
+
+	Parms.InType = InType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function ChimeraUI.CrUW_MapMenuCrosshair.HandleInputMethodChanged
 // (Final, Native, Protected)
 // Parameters:
@@ -16164,21 +16091,22 @@ void UCrUW_MapMenuCrosshair::HandleInputMethodChanged(ECommonInputType NewInputM
 }
 
 
-// Function ChimeraUI.CrUW_WidgetOptionSlider.OnSliderValueChanged
-// (Final, Native, Protected)
+// Function ChimeraUI.CrWidgetFactory.FindWidgetClassForData
+// (Native, Event, Public, BlueprintEvent, Const)
 // Parameters:
-// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UObject*                    Data                                                   (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UUserWidget>          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCrUW_WidgetOptionSlider::OnSliderValueChanged(float InValue)
+TSubclassOf<class UUserWidget> UCrWidgetFactory::FindWidgetClassForData(const class UObject* Data) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_WidgetOptionSlider", "OnSliderValueChanged");
+		Func = Class->GetFunction("CrWidgetFactory", "FindWidgetClassForData");
 
-	Params::CrUW_WidgetOptionSlider_OnSliderValueChanged Parms{};
+	Params::CrWidgetFactory_FindWidgetClassForData Parms{};
 
-	Parms.InValue = InValue;
+	Parms.Data = Data;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -16186,6 +16114,8 @@ void UCrUW_WidgetOptionSlider::OnSliderValueChanged(float InValue)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -16715,28 +16645,275 @@ void UCrUW_MapMenuMapArea::OnWarningLocation(const TArray<struct FVector3f>& Loc
 }
 
 
-// Function ChimeraUI.CrTabButtonInterface.SetTabLabelInfo
-// (Native, Event, Public, HasOutParams, BlueprintEvent)
+// Function ChimeraUI.Cr_UW_InventoryToolTip.AddEffect
+// (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
-// const struct FCrTabDescriptor&          TabDescriptor                                          (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// int32                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FSlateBrush&               InIcon                                                 (Parm, NativeAccessSpecifierPublic)
+// const class FText&                      InDescription                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void ICrTabButtonInterface::SetTabLabelInfo(const struct FCrTabDescriptor& TabDescriptor)
+void UCr_UW_InventoryToolTip::AddEffect(int32 InValue, const struct FSlateBrush& InIcon, const class FText& InDescription)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("CrTabButtonInterface", "SetTabLabelInfo");
+		Func = Class->GetFunction("Cr_UW_InventoryToolTip", "AddEffect");
 
-	Params::CrTabButtonInterface_SetTabLabelInfo Parms{};
+	Params::Cr_UW_InventoryToolTip_AddEffect Parms{};
 
-	Parms.TabDescriptor = std::move(TabDescriptor);
+	Parms.InValue = InValue;
+	Parms.InIcon = std::move(InIcon);
+	Parms.InDescription = std::move(InDescription);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.Cr_UW_InventoryToolTip.GetTypeText
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// EUIItemType                             Type                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+class FText UCr_UW_InventoryToolTip::GetTypeText(EUIItemType Type)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Cr_UW_InventoryToolTip", "GetTypeText");
+
+	Params::Cr_UW_InventoryToolTip_GetTypeText Parms{};
+
+	Parms.Type = Type;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	AsUObject()->ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ChimeraUI.Cr_UW_InventoryToolTip.SetCraftedInVisibility
+// (Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ESlateVisibility                        InVisibility                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCr_UW_InventoryToolTip::SetCraftedInVisibility(ESlateVisibility InVisibility)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Cr_UW_InventoryToolTip", "SetCraftedInVisibility");
+
+	Params::Cr_UW_InventoryToolTip_SetCraftedInVisibility Parms{};
+
+	Parms.InVisibility = InVisibility;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.Cr_UW_InventoryToolTip.SetGatheredFromVisibility
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// ESlateVisibility                        InVisibility                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCr_UW_InventoryToolTip::SetGatheredFromVisibility(ESlateVisibility InVisibility)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Cr_UW_InventoryToolTip", "SetGatheredFromVisibility");
+
+	Params::Cr_UW_InventoryToolTip_SetGatheredFromVisibility Parms{};
+
+	Parms.InVisibility = InVisibility;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.Cr_UW_InventoryToolTip.SetSupportTransfer
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bSupport                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCr_UW_InventoryToolTip::SetSupportTransfer(bool bSupport)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Cr_UW_InventoryToolTip", "SetSupportTransfer");
+
+	Params::Cr_UW_InventoryToolTip_SetSupportTransfer Parms{};
+
+	Parms.bSupport = bSupport;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupCraftingType
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// const EUICraftingType                   InType                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCr_UW_InventoryToolTip::SetupCraftingType(const EUICraftingType InType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Cr_UW_InventoryToolTip", "SetupCraftingType");
+
+	Params::Cr_UW_InventoryToolTip_SetupCraftingType Parms{};
+
+	Parms.InType = InType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupDataPoints
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   Points                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCr_UW_InventoryToolTip::SetupDataPoints(int32 Points)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Cr_UW_InventoryToolTip", "SetupDataPoints");
+
+	Params::Cr_UW_InventoryToolTip_SetupDataPoints Parms{};
+
+	Parms.Points = Points;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupEffectTooltip
+// (Final, Native, Public)
+// Parameters:
+// const struct FFoodEffectData&           InEffect                                               (Parm, NativeAccessSpecifierPublic)
+
+void UCr_UW_InventoryToolTip::SetupEffectTooltip(const struct FFoodEffectData& InEffect)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Cr_UW_InventoryToolTip", "SetupEffectTooltip");
+
+	Params::Cr_UW_InventoryToolTip_SetupEffectTooltip Parms{};
+
+	Parms.InEffect = std::move(InEffect);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupExpand
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bSupport                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCr_UW_InventoryToolTip::SetupExpand(bool bSupport)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Cr_UW_InventoryToolTip", "SetupExpand");
+
+	Params::Cr_UW_InventoryToolTip_SetupExpand Parms{};
+
+	Parms.bSupport = bSupport;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupInfoBox
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FText&                      Name_0                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const int32                             Number                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             Max                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EUIItemType                       UIType                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              IsUsable                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCr_UW_InventoryToolTip::SetupInfoBox(const class FText& Name_0, const int32 Number, const int32 Max, const EUIItemType UIType, const bool IsUsable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Cr_UW_InventoryToolTip", "SetupInfoBox");
+
+	Params::Cr_UW_InventoryToolTip_SetupInfoBox Parms{};
+
+	Parms.Name_0 = std::move(Name_0);
+	Parms.Number = Number;
+	Parms.Max = Max;
+	Parms.UIType = UIType;
+	Parms.IsUsable = IsUsable;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupMinimalTooltip
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FText&                      InDescription                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FText&                      Title                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCr_UW_InventoryToolTip::SetupMinimalTooltip(const class FText& InDescription, const class FText& Title)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Cr_UW_InventoryToolTip", "SetupMinimalTooltip");
+
+	Params::Cr_UW_InventoryToolTip_SetupMinimalTooltip Parms{};
+
+	Parms.InDescription = std::move(InDescription);
+	Parms.Title = std::move(Title);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupMinimalVersion
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bHideItemType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCr_UW_InventoryToolTip::SetupMinimalVersion(bool bHideItemType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Cr_UW_InventoryToolTip", "SetupMinimalVersion");
+
+	Params::Cr_UW_InventoryToolTip_SetupMinimalVersion Parms{};
+
+	Parms.bHideItemType = bHideItemType;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -16790,31 +16967,66 @@ void UCrUW_MapMenuMarkersList::OnMarkerPriorityChange(class UCrUW_MapMenuMarker*
 }
 
 
-// Function ChimeraUI.UIItemTypesColors.GetTypeColor
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Function ChimeraUI.CrTabButtonInterface.SetTabLabelInfo
+// (Native, Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// EUIItemType                             Type                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FColor                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrTabDescriptor&          TabDescriptor                                          (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-struct FColor UUIItemTypesColors::GetTypeColor(EUIItemType Type)
+void ICrTabButtonInterface::SetTabLabelInfo(const struct FCrTabDescriptor& TabDescriptor)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIItemTypesColors", "GetTypeColor");
+		Func = AsUObject()->Class->GetFunction("CrTabButtonInterface", "SetTabLabelInfo");
 
-	Params::UIItemTypesColors_GetTypeColor Parms{};
+	Params::CrTabButtonInterface_SetTabLabelInfo Parms{};
 
-	Parms.Type = Type;
+	Parms.TabDescriptor = std::move(TabDescriptor);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
 
-	return Parms.ReturnValue;
+
+// Function ChimeraUI.CrUW_SafeZoneEditor.HandleBackClicked
+// (Final, Native, Private)
+
+void UCrUW_SafeZoneEditor::HandleBackClicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_SafeZoneEditor", "HandleBackClicked");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_SafeZoneEditor.HandleDoneClicked
+// (Final, Native, Private)
+
+void UCrUW_SafeZoneEditor::HandleDoneClicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_SafeZoneEditor", "HandleDoneClicked");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -16980,25 +17192,6 @@ void UCrUW_MarketingWidget::ReadMoreClicked()
 }
 
 
-// Function ChimeraUI.CrUW_SettingsListEntrySetting_KeyboardInput.HandleClearClicked
-// (Final, Native, Protected)
-
-void UCrUW_SettingsListEntrySetting_KeyboardInput::HandleClearClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_SettingsListEntrySetting_KeyboardInput", "HandleClearClicked");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function ChimeraUI.CrUW_Message.SetColors
 // (Event, Public, HasDefaults, BlueprintEvent)
 // Parameters:
@@ -17076,34 +17269,6 @@ void UCrUW_MessageHud::TriggerFadeOutAnimation()
 		Func = Class->GetFunction("CrUW_MessageHud", "TriggerFadeOutAnimation");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrWidgetFactory.FindWidgetClassForData
-// (Native, Event, Public, BlueprintEvent, Const)
-// Parameters:
-// const class UObject*                    Data                                                   (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UUserWidget>          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-TSubclassOf<class UUserWidget> UCrWidgetFactory::FindWidgetClassForData(const class UObject* Data) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrWidgetFactory", "FindWidgetClassForData");
-
-	Params::CrWidgetFactory_FindWidgetClassForData Parms{};
-
-	Parms.Data = Data;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -19408,6 +19573,220 @@ void UCrUW_QuickUseEntry::OnDataRefresh(int32 Index_0)
 }
 
 
+// Function ChimeraUI.CrUW_QuickUseMenu.OnCurrentEntryIndexChange
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   NumberOfEntries                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bActive                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_QuickUseMenu::OnCurrentEntryIndexChange(int32 Index_0, int32 NumberOfEntries, bool bActive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_QuickUseMenu", "OnCurrentEntryIndexChange");
+
+	Params::CrUW_QuickUseMenu_OnCurrentEntryIndexChange Parms{};
+
+	Parms.Index_0 = Index_0;
+	Parms.NumberOfEntries = NumberOfEntries;
+	Parms.bActive = bActive;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_QuickUseMenu.OnMenuOpened
+// (Event, Public, BlueprintEvent)
+
+void UCrUW_QuickUseMenu::OnMenuOpened()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_QuickUseMenu", "OnMenuOpened");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_UpgradeBuildingWidget.ClaimButtonClicked
+// (Final, Native, Protected)
+
+void UCrUW_UpgradeBuildingWidget::ClaimButtonClicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_UpgradeBuildingWidget", "ClaimButtonClicked");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_UpgradeBuildingWidget.ClaimButtonHovered
+// (Final, Native, Protected)
+
+void UCrUW_UpgradeBuildingWidget::ClaimButtonHovered()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_UpgradeBuildingWidget", "ClaimButtonHovered");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_UpgradeBuildingWidget.HandleOnTaskUpgradeTaskCompleted
+// (Final, Native, Private, HasOutParams)
+// Parameters:
+// const struct FCrBuildingUpgradeTask&    InTask                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCrUW_UpgradeBuildingWidget::HandleOnTaskUpgradeTaskCompleted(const struct FCrBuildingUpgradeTask& InTask)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_UpgradeBuildingWidget", "HandleOnTaskUpgradeTaskCompleted");
+
+	Params::CrUW_UpgradeBuildingWidget_HandleOnTaskUpgradeTaskCompleted Parms{};
+
+	Parms.InTask = std::move(InTask);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_UpgradeBuildingWidget.PlayClickSound
+// (Final, Native, Protected, BlueprintCallable)
+
+void UCrUW_UpgradeBuildingWidget::PlayClickSound()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_UpgradeBuildingWidget", "PlayClickSound");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ChimeraUI.CrUW_UpgradeBuildingWidget.RequiredLevelReached
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bReached                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_UpgradeBuildingWidget::RequiredLevelReached(bool bReached)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_UpgradeBuildingWidget", "RequiredLevelReached");
+
+	Params::CrUW_UpgradeBuildingWidget_RequiredLevelReached Parms{};
+
+	Parms.bReached = bReached;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_UpgradeBuildingWidget.SetColors
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// const class UCrCommonUIColorsDevSettings*Settings                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_UpgradeBuildingWidget::SetColors(const class UCrCommonUIColorsDevSettings* Settings)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_UpgradeBuildingWidget", "SetColors");
+
+	Params::CrUW_UpgradeBuildingWidget_SetColors Parms{};
+
+	Parms.Settings = Settings;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_UpgradeBuildingWidget.SetLevel
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   InLevel                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_UpgradeBuildingWidget::SetLevel(int32 InLevel)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_UpgradeBuildingWidget", "SetLevel");
+
+	Params::CrUW_UpgradeBuildingWidget_SetLevel Parms{};
+
+	Parms.InLevel = InLevel;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_UpgradeBuildingWidget.SetLevelButtonFocus
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bFocused                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_UpgradeBuildingWidget::SetLevelButtonFocus(bool bFocused)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_UpgradeBuildingWidget", "SetLevelButtonFocus");
+
+	Params::CrUW_UpgradeBuildingWidget_SetLevelButtonFocus Parms{};
+
+	Parms.bFocused = bFocused;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_UpgradeBuildingWidget.SetRewardClaimed
+// (Event, Public, BlueprintEvent)
+
+void UCrUW_UpgradeBuildingWidget::SetRewardClaimed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_UpgradeBuildingWidget", "SetRewardClaimed");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function ChimeraUI.CrUW_RecipeDetails.AddOrderName
 // (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
@@ -19933,53 +20312,6 @@ void UCrUW_RecipeTableRecipeItem::SetHovered(bool bHovered)
 	Params::CrUW_RecipeTableRecipeItem_SetHovered Parms{};
 
 	Parms.bHovered = bHovered;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ChimeraUI.CrUW_WeaponTooltip.SetItemInfo
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const class FText&                      InName                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// const class FText&                      InDescription                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrUW_WeaponTooltip::SetItemInfo(const class FText& InName, const class FText& InDescription)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_WeaponTooltip", "SetItemInfo");
-
-	Params::CrUW_WeaponTooltip_SetItemInfo Parms{};
-
-	Parms.InName = std::move(InName);
-	Parms.InDescription = std::move(InDescription);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_WeaponTooltip.SetItemName
-// (Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const class FText&                      InText                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrUW_WeaponTooltip::SetItemName(const class FText& InText)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_WeaponTooltip", "SetItemName");
-
-	Params::CrUW_WeaponTooltip_SetItemName Parms{};
-
-	Parms.InText = std::move(InText);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -20743,6 +21075,33 @@ void UCrUW_ResearchTerminalInfo::ShowOutputWidget()
 		Func = Class->GetFunction("CrUW_ResearchTerminalInfo", "ShowOutputWidget");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ChimeraUI.CrUW_ResearchTerminalPanel.OnActorEndPlay
+// (Final, Native, Protected)
+// Parameters:
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EEndPlayReason                          Reason                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrUW_ResearchTerminalPanel::OnActorEndPlay(class AActor* Actor, EEndPlayReason Reason)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_ResearchTerminalPanel", "OnActorEndPlay");
+
+	Params::CrUW_ResearchTerminalPanel_OnActorEndPlay Parms{};
+
+	Parms.Actor = Actor;
+	Parms.Reason = Reason;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -22057,226 +22416,6 @@ void UCrUW_SessionWidget::ShowSelection(bool bShow)
 }
 
 
-// Function ChimeraUI.CrUW_SettingsProxy.ApplyChanges
-// (Native, Protected, BlueprintCallable)
-
-void UCrUW_SettingsProxy::ApplyChanges()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_SettingsProxy", "ApplyChanges");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_SettingsProxy.AttemptToPopNavigation
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UCrUW_SettingsProxy::AttemptToPopNavigation()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_SettingsProxy", "AttemptToPopNavigation");
-
-	Params::CrUW_SettingsProxy_AttemptToPopNavigation Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ChimeraUI.CrUW_SettingsProxy.CancelChanges
-// (Native, Protected, BlueprintCallable)
-
-void UCrUW_SettingsProxy::CancelChanges()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_SettingsProxy", "CancelChanges");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_SettingsProxy.GetSettingCollection
-// (Final, Native, Protected, HasOutParams, BlueprintCallable)
-// Parameters:
-// class FName                             SettingDevName                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool*                                   HasAnySettings                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UGameSettingCollection*           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UGameSettingCollection* UCrUW_SettingsProxy::GetSettingCollection(class FName SettingDevName, bool* HasAnySettings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_SettingsProxy", "GetSettingCollection");
-
-	Params::CrUW_SettingsProxy_GetSettingCollection Parms{};
-
-	Parms.SettingDevName = SettingDevName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (HasAnySettings != nullptr)
-		*HasAnySettings = Parms.HasAnySettings;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ChimeraUI.CrUW_SettingsProxy.NavigateToSetting
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// class FName                             SettingDevName                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_SettingsProxy::NavigateToSetting(class FName SettingDevName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_SettingsProxy", "NavigateToSetting");
-
-	Params::CrUW_SettingsProxy_NavigateToSetting Parms{};
-
-	Parms.SettingDevName = SettingDevName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_SettingsProxy.NavigateToSettings
-// (Final, Native, Protected, HasOutParams, BlueprintCallable)
-// Parameters:
-// const TArray<class FName>&              SettingDevNames                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UCrUW_SettingsProxy::NavigateToSettings(const TArray<class FName>& SettingDevNames)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_SettingsProxy", "NavigateToSettings");
-
-	Params::CrUW_SettingsProxy_NavigateToSettings Parms{};
-
-	Parms.SettingDevNames = std::move(SettingDevNames);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_SettingsProxy.OnSelectedTabEvent
-// (Final, Native, Protected)
-// Parameters:
-// class FName                             TabId                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_SettingsProxy::OnSelectedTabEvent(class FName TabId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_SettingsProxy", "OnSelectedTabEvent");
-
-	Params::CrUW_SettingsProxy_OnSelectedTabEvent Parms{};
-
-	Parms.TabId = TabId;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_SettingsProxy.OnSettingsDirtyStateChanged
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bSettingsDirty                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_SettingsProxy::OnSettingsDirtyStateChanged(bool bSettingsDirty)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_SettingsProxy", "OnSettingsDirtyStateChanged");
-
-	Params::CrUW_SettingsProxy_OnSettingsDirtyStateChanged Parms{};
-
-	Parms.bSettingsDirty = bSettingsDirty;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_SettingsProxy.HaveSettingsBeenChanged
-// (Final, Native, Protected, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UCrUW_SettingsProxy::HaveSettingsBeenChanged() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_SettingsProxy", "HaveSettingsBeenChanged");
-
-	Params::CrUW_SettingsProxy_HaveSettingsBeenChanged Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function ChimeraUI.CrUW_ShieldHud.HideMiningBar
 // (Final, Native, Private)
 
@@ -22337,67 +22476,6 @@ void UCrUW_ShieldHud::OnPossess(class APawn* InPawn)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ChimeraUI.CrUW_ShotgunAmmoCounter.CalculateLowAmmoFactor
-// (Event, Protected, BlueprintEvent)
-
-void UCrUW_ShotgunAmmoCounter::CalculateLowAmmoFactor()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ShotgunAmmoCounter", "CalculateLowAmmoFactor");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ChimeraUI.CrUW_ShotgunAmmoCounter.GetAmmoText
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-class FText UCrUW_ShotgunAmmoCounter::GetAmmoText()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ShotgunAmmoCounter", "GetAmmoText");
-
-	Params::CrUW_ShotgunAmmoCounter_GetAmmoText Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ChimeraUI.CrUW_ShotgunAmmoCounter.SetBulletState
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    HasBullet                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_ShotgunAmmoCounter::SetBulletState(int32 Index_0, bool HasBullet)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_ShotgunAmmoCounter", "SetBulletState");
-
-	Params::CrUW_ShotgunAmmoCounter_SetBulletState Parms{};
-
-	Parms.Index_0 = Index_0;
-	Parms.HasBullet = HasBullet;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -23419,28 +23497,6 @@ bool UCrUW_WaveTimeCounter::GetPause() const
 }
 
 
-// Function ChimeraUI.CrUW_WeaponsToolsTab.AddModIcon
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class UCrWeaponModDataAsset*            ModDA                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   WeaponIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrUW_WeaponsToolsTab::AddModIcon(class UCrWeaponModDataAsset* ModDA, int32 WeaponIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrUW_WeaponsToolsTab", "AddModIcon");
-
-	Params::CrUW_WeaponsToolsTab_AddModIcon Parms{};
-
-	Parms.ModDA = ModDA;
-	Parms.WeaponIndex = WeaponIndex;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function ChimeraUI.CrUW_WidgetOptionRotator.OnOptionDecreaseClicked
 // (Final, Native, Protected)
 
@@ -23837,6 +23893,31 @@ void UCrUW_BoundActionButton::SetTemporaryIconVisibility(bool bVisible)
 	Parms.bVisible = bVisible;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ChimeraUI.CrUW_TabButtonBase.SetTabLabelInfo_Implementation
+// (Native, Protected, HasOutParams)
+// Parameters:
+// const struct FCrTabDescriptor&          TabLabelInfo                                           (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UCrUW_TabButtonBase::SetTabLabelInfo_Implementation(const struct FCrTabDescriptor& TabLabelInfo)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrUW_TabButtonBase", "SetTabLabelInfo_Implementation");
+
+	Params::CrUW_TabButtonBase_SetTabLabelInfo_Implementation Parms{};
+
+	Parms.TabLabelInfo = std::move(TabLabelInfo);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 

@@ -82,6 +82,15 @@ enum class EShaderParamModifier : uint8
 	EShaderParamModifier_MAX                 = 4,
 };
 
+// ScriptStruct ComputeFramework.ShaderValueTypeHandle
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x08) FShaderValueTypeHandle final
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FShaderValueTypeHandle;
+
 // ScriptStruct ComputeFramework.ComputeGraphEdge
 // 0x0038 (0x0038 - 0x0000)
 struct FComputeGraphEdge final
@@ -108,15 +117,6 @@ public:
 };
 DUMPER7_ASSERTS_FComputeGraphInstance;
 
-// ScriptStruct ComputeFramework.ShaderValueTypeHandle
-// 0x0008 (0x0008 - 0x0000)
-struct alignas(0x08) FShaderValueTypeHandle final
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FShaderValueTypeHandle;
-
 // ScriptStruct ComputeFramework.ComputeKernelPermutationBool
 // 0x0018 (0x0018 - 0x0000)
 struct FComputeKernelPermutationBool final
@@ -127,17 +127,6 @@ public:
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FComputeKernelPermutationBool;
-
-// ScriptStruct ComputeFramework.ComputeKernelPermutationVector
-// 0x0058 (0x0058 - 0x0000)
-struct FComputeKernelPermutationVector final
-{
-public:
-	TMap<class FString, uint32>                   Permutations;                                      // 0x0000(0x0050)(NativeAccessSpecifierPublic)
-	uint32                                        BitCount;                                          // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FComputeKernelPermutationVector;
 
 // ScriptStruct ComputeFramework.ComputeKernelPermutationSet
 // 0x0010 (0x0010 - 0x0000)
@@ -166,6 +155,17 @@ public:
 	TArray<struct FComputeKernelDefinition>       Defines;                                           // 0x0000(0x0010)(Edit, EditFixedSize, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FComputeKernelDefinitionSet;
+
+// ScriptStruct ComputeFramework.ComputeKernelPermutationVector
+// 0x0058 (0x0058 - 0x0000)
+struct FComputeKernelPermutationVector final
+{
+public:
+	TMap<class FString, uint32>                   Permutations;                                      // 0x0000(0x0050)(NativeAccessSpecifierPublic)
+	uint32                                        BitCount;                                          // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FComputeKernelPermutationVector;
 
 // ScriptStruct ComputeFramework.ArrayShaderValue
 // 0x0010 (0x0010 - 0x0000)

@@ -16,13 +16,13 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_HabitatSmall_UniqueHelper.BP_HabitatSmall_UniqueHelper_C
-// 0x0010 (0x0B80 - 0x0B70)
+// 0x0010 (0x0B40 - 0x0B30)
 class ABP_HabitatSmall_UniqueHelper_C final : public ACrAPHelperActorCustom
 {
 public:
-	uint8                                         Pad_B68[0x8];                                      // 0x0B68(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UInstancedStaticMeshComponent*          TileIndicatorsISM;                                 // 0x0B70(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               TileIndicatorISMDynamicMaterial;                   // 0x0B78(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_B28[0x8];                                      // 0x0B28(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UInstancedStaticMeshComponent*          TileIndicatorsISM;                                 // 0x0B30(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               TileIndicatorISMDynamicMaterial;                   // 0x0B38(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_PlacementHelperReplicatedCustom.BP_PlacementHelperReplicatedCustom_C
-// 0x0000 (0x0B70 - 0x0B70)
+// 0x0000 (0x0B30 - 0x0B30)
 class ABP_PlacementHelperReplicatedCustom_C : public ACrAPHelperActorCustom
 {
 public:

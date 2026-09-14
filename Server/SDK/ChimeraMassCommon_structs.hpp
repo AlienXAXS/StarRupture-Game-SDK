@@ -16,15 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// ScriptStruct ChimeraMassCommon.CrMassSavableFragment
-// 0x0000 (0x0000 - 0x0000)
-#pragma pack(push, 0x1)
-struct SDK_ALIGN(0x01) FCrMassSavableFragment : public FMassFragment
-{
-};
-#pragma pack(pop)
-DUMPER7_ASSERTS_FCrMassSavableFragment;
-
 // ScriptStruct ChimeraMassCommon.CrMassPersistentEntityID
 // 0x0010 (0x0010 - 0x0000)
 struct FCrMassPersistentEntityID final
@@ -46,6 +37,15 @@ public:
 	struct FCrMassPersistentEntityID              Entity;                                            // 0x0008(0x0010)(SaveGame, RepSkip, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
 DUMPER7_ASSERTS_FCrMassEntityReplicationHelper;
+
+// ScriptStruct ChimeraMassCommon.CrMassPersistentEntityIDArray
+// 0x0010 (0x0010 - 0x0000)
+struct FCrMassPersistentEntityIDArray final
+{
+public:
+	TArray<struct FCrMassPersistentEntityID>      Values;                                            // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrMassPersistentEntityIDArray;
 
 // ScriptStruct ChimeraMassCommon.CrMassActorReplicationHelper
 // 0x0018 (0x0018 - 0x0000)
@@ -71,6 +71,15 @@ public:
 };
 DUMPER7_ASSERTS_FCrMassComponentReplicationHelper;
 
+// ScriptStruct ChimeraMassCommon.CrMassSavableFragment
+// 0x0000 (0x0000 - 0x0000)
+#pragma pack(push, 0x1)
+struct SDK_ALIGN(0x01) FCrMassSavableFragment : public FMassFragment
+{
+};
+#pragma pack(pop)
+DUMPER7_ASSERTS_FCrMassSavableFragment;
+
 // ScriptStruct ChimeraMassCommon.CrMassSavableTag
 // 0x0000 (0x0001 - 0x0001)
 struct FCrMassSavableTag : public FMassTag
@@ -84,15 +93,6 @@ struct FCrMassGenericVisualizationTag final : public FMassTag
 {
 };
 DUMPER7_ASSERTS_FCrMassGenericVisualizationTag;
-
-// ScriptStruct ChimeraMassCommon.CrMassPersistentEntityIDArray
-// 0x0010 (0x0010 - 0x0000)
-struct FCrMassPersistentEntityIDArray final
-{
-public:
-	TArray<struct FCrMassPersistentEntityID>      Values;                                            // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrMassPersistentEntityIDArray;
 
 // ScriptStruct ChimeraMassCommon.CrReplicatedSoftObjectPtr
 // 0x0030 (0x0030 - 0x0000)

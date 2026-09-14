@@ -6,7 +6,7 @@
 * https://github.com/Encryqed/Dumper-7
 */
 
-// Package: BP_Foundable_DeadBody_B
+// Package: BP_Foundable_DeadBody_A
 
 #include "Basic.hpp"
 
@@ -15,9 +15,9 @@
 
 SDK_NAMESPACE_START
 
-// BlueprintGeneratedClass BP_Foundable_DeadBody_B.BP_Foundable_DeadBody_B_C
+// BlueprintGeneratedClass BP_Foundable_DeadBody_A.BP_Foundable_DeadBody_A_C
 // 0x0018 (0x0338 - 0x0320)
-class ABP_Foundable_DeadBody_B_C final : public ABP_Foundable_Base_C
+class ABP_Foundable_DeadBody_A_C final : public ABP_Foundable_Base_C
 {
 public:
 	class UStaticMeshComponent*                   Cube3;                                             // 0x0320(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
@@ -27,17 +27,17 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		BP_STATIC_CLASS_IMPL("BP_Foundable_DeadBody_B_C")
+		BP_STATIC_CLASS_IMPL("BP_Foundable_DeadBody_A_C")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"BP_Foundable_DeadBody_B_C")
+		STATIC_NAME_IMPL(L"BP_Foundable_DeadBody_A_C")
 	}
-	static class ABP_Foundable_DeadBody_B_C* GetDefaultObj()
+	static class ABP_Foundable_DeadBody_A_C* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<ABP_Foundable_DeadBody_B_C>();
+		return GetDefaultObjImpl<ABP_Foundable_DeadBody_A_C>();
 	}
 };
-DUMPER7_ASSERTS_ABP_Foundable_DeadBody_B_C;
+DUMPER7_ASSERTS_ABP_Foundable_DeadBody_A_C;
 
 SDK_NAMESPACE_END

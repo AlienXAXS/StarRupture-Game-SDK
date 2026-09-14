@@ -162,25 +162,6 @@ class UCrAiActionExploderT3DigIn* UCrAiActionExploderT3DigIn::Create_CrAiActionE
 }
 
 
-// Function CrAiExploderRuntime.ExploderStateSyncComponent.Reset
-// (Final, Native, Public, BlueprintCallable)
-
-void UExploderStateSyncComponent::Reset()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ExploderStateSyncComponent", "Reset");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function CrAiExploderRuntime.CrAiExploder.StartActivationTimer
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 
@@ -266,6 +247,25 @@ bool ICrAiExploder::ShouldSpawnHugeCollision() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function CrAiExploderRuntime.ExploderStateSyncComponent.Reset
+// (Final, Native, Public, BlueprintCallable)
+
+void UExploderStateSyncComponent::Reset()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ExploderStateSyncComponent", "Reset");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 

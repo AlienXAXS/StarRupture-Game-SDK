@@ -74,19 +74,23 @@ public:
 DUMPER7_ASSERTS_FStaticMeshInstanceVisualizationDescHandle;
 
 // ScriptStruct MassRepresentation.MassRepresentationFragment
-// 0x0080 (0x0080 - 0x0000)
+// 0x0090 (0x0090 - 0x0000)
 struct FMassRepresentationFragment final : public FMassFragment
 {
 public:
 	EMassRepresentationType                       CurrentRepresentation;                             // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EMassRepresentationType                       PrevRepresentation;                                // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int16                                         HighResTemplateActorIndex;                         // 0x0002(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int16                                         LowResTemplateActorIndex;                          // 0x0004(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FStaticMeshInstanceVisualizationDescHandle StaticMeshDescHandle;                          // 0x0006(0x0002)(NoDestructor, NativeAccessSpecifierPublic)
-	struct FMassActorSpawnRequestHandle           ActorSpawnRequestHandle;                           // 0x0008(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             PrevTransform;                                     // 0x0010(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PrevLODSignificance;                               // 0x0070(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_74[0xC];                                       // 0x0074(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bAllowInitialISMFallback;                          // 0x0002(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int16                                         HighResTemplateActorIndex;                         // 0x0004(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int16                                         LowResTemplateActorIndex;                          // 0x0006(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FStaticMeshInstanceVisualizationDescHandle StaticMeshDescHandle;                          // 0x0008(0x0002)(NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x2];                                        // 0x000A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMassActorSpawnRequestHandle           ActorSpawnRequestHandle;                           // 0x000C(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0xC];                                       // 0x0014(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             PrevTransform;                                     // 0x0020(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PrevLODSignificance;                               // 0x0080(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_84[0xC];                                       // 0x0084(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FMassRepresentationFragment;
 

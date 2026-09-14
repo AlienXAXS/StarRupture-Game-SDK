@@ -12,8 +12,8 @@
 
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "ChimeraUI_classes.hpp"
 #include "CommonGame_structs.hpp"
+#include "ChimeraUI_classes.hpp"
 
 
 SDK_NAMESPACE_START

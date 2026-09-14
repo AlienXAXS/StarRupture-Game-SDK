@@ -996,6 +996,60 @@ public:
 };
 DUMPER7_ASSERTS_SourceEffectWaveShaperPreset_SetSettings;
 
+// Function Synthesis.Synth2DSlider.SetIndentHandle
+// 0x0001 (0x0001 - 0x0000)
+struct Synth2DSlider_SetIndentHandle final
+{
+public:
+	bool                                          InValue;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Synth2DSlider_SetIndentHandle;
+
+// Function Synthesis.Synth2DSlider.SetLocked
+// 0x0001 (0x0001 - 0x0000)
+struct Synth2DSlider_SetLocked final
+{
+public:
+	bool                                          InValue;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Synth2DSlider_SetLocked;
+
+// Function Synthesis.Synth2DSlider.SetSliderHandleColor
+// 0x0010 (0x0010 - 0x0000)
+struct Synth2DSlider_SetSliderHandleColor final
+{
+public:
+	struct FLinearColor                           InValue;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Synth2DSlider_SetSliderHandleColor;
+
+// Function Synthesis.Synth2DSlider.SetStepSize
+// 0x0004 (0x0004 - 0x0000)
+struct Synth2DSlider_SetStepSize final
+{
+public:
+	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Synth2DSlider_SetStepSize;
+
+// Function Synthesis.Synth2DSlider.SetValue
+// 0x0010 (0x0010 - 0x0000)
+struct Synth2DSlider_SetValue final
+{
+public:
+	struct FVector2D                              InValue;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Synth2DSlider_SetValue;
+
+// Function Synthesis.Synth2DSlider.GetValue
+// 0x0010 (0x0010 - 0x0000)
+struct Synth2DSlider_GetValue final
+{
+public:
+	struct FVector2D                              ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Synth2DSlider_GetValue;
+
 // Function Synthesis.SubmixEffectConvolutionReverbPreset.SetImpulseResponse
 // 0x0008 (0x0008 - 0x0000)
 struct SubmixEffectConvolutionReverbPreset_SetImpulseResponse final
@@ -1046,6 +1100,201 @@ public:
 	struct FSubmixEffectDelaySettings             ReturnValue;                                       // 0x0010(0x000C)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_SubmixEffectDelayStatics_SetMaximumDelayLength;
+
+// Function Synthesis.GranularSynth.NoteOff
+// 0x0008 (0x0008 - 0x0000)
+struct GranularSynth_NoteOff final
+{
+public:
+	float                                         Note;                                              // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bKill;                                             // 0x0004(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_GranularSynth_NoteOff;
+
+// Function Synthesis.GranularSynth.NoteOn
+// 0x000C (0x000C - 0x0000)
+struct GranularSynth_NoteOn final
+{
+public:
+	float                                         Note;                                              // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Velocity;                                          // 0x0004(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Duration;                                          // 0x0008(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GranularSynth_NoteOn;
+
+// Function Synthesis.GranularSynth.SetAttackTime
+// 0x0004 (0x0004 - 0x0000)
+struct GranularSynth_SetAttackTime final
+{
+public:
+	float                                         AttackTimeMsec;                                    // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GranularSynth_SetAttackTime;
+
+// Function Synthesis.GranularSynth.SetDecayTime
+// 0x0004 (0x0004 - 0x0000)
+struct GranularSynth_SetDecayTime final
+{
+public:
+	float                                         DecayTimeMsec;                                     // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GranularSynth_SetDecayTime;
+
+// Function Synthesis.GranularSynth.SetGrainDuration
+// 0x0018 (0x0018 - 0x0000)
+struct GranularSynth_SetGrainDuration final
+{
+public:
+	float                                         BaseDurationMsec;                                  // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              DurationRange;                                     // 0x0008(0x0010)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GranularSynth_SetGrainDuration;
+
+// Function Synthesis.GranularSynth.SetGrainEnvelopeType
+// 0x0001 (0x0001 - 0x0000)
+struct GranularSynth_SetGrainEnvelopeType final
+{
+public:
+	EGranularSynthEnvelopeType                    EnvelopeType;                                      // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GranularSynth_SetGrainEnvelopeType;
+
+// Function Synthesis.GranularSynth.SetGrainPan
+// 0x0018 (0x0018 - 0x0000)
+struct GranularSynth_SetGrainPan final
+{
+public:
+	float                                         BasePan;                                           // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              PanRange;                                          // 0x0008(0x0010)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GranularSynth_SetGrainPan;
+
+// Function Synthesis.GranularSynth.SetGrainPitch
+// 0x0018 (0x0018 - 0x0000)
+struct GranularSynth_SetGrainPitch final
+{
+public:
+	float                                         BasePitch;                                         // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              PitchRange;                                        // 0x0008(0x0010)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GranularSynth_SetGrainPitch;
+
+// Function Synthesis.GranularSynth.SetGrainProbability
+// 0x0004 (0x0004 - 0x0000)
+struct GranularSynth_SetGrainProbability final
+{
+public:
+	float                                         InGrainProbability;                                // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GranularSynth_SetGrainProbability;
+
+// Function Synthesis.GranularSynth.SetGrainsPerSecond
+// 0x0004 (0x0004 - 0x0000)
+struct GranularSynth_SetGrainsPerSecond final
+{
+public:
+	float                                         InGrainsPerSecond;                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GranularSynth_SetGrainsPerSecond;
+
+// Function Synthesis.GranularSynth.SetGrainVolume
+// 0x0018 (0x0018 - 0x0000)
+struct GranularSynth_SetGrainVolume final
+{
+public:
+	float                                         BaseVolume;                                        // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              VolumeRange;                                       // 0x0008(0x0010)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GranularSynth_SetGrainVolume;
+
+// Function Synthesis.GranularSynth.SetPlaybackSpeed
+// 0x0004 (0x0004 - 0x0000)
+struct GranularSynth_SetPlaybackSpeed final
+{
+public:
+	float                                         InPlayheadRate;                                    // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GranularSynth_SetPlaybackSpeed;
+
+// Function Synthesis.GranularSynth.SetPlayheadTime
+// 0x000C (0x000C - 0x0000)
+struct GranularSynth_SetPlayheadTime final
+{
+public:
+	float                                         InPositionSec;                                     // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LerpTimeSec;                                       // 0x0004(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGranularSynthSeekType                        SeekType;                                          // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_GranularSynth_SetPlayheadTime;
+
+// Function Synthesis.GranularSynth.SetReleaseTimeMsec
+// 0x0004 (0x0004 - 0x0000)
+struct GranularSynth_SetReleaseTimeMsec final
+{
+public:
+	float                                         ReleaseTimeMsec;                                   // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GranularSynth_SetReleaseTimeMsec;
+
+// Function Synthesis.GranularSynth.SetScrubMode
+// 0x0001 (0x0001 - 0x0000)
+struct GranularSynth_SetScrubMode final
+{
+public:
+	bool                                          bScrubMode;                                        // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GranularSynth_SetScrubMode;
+
+// Function Synthesis.GranularSynth.SetSoundWave
+// 0x0008 (0x0008 - 0x0000)
+struct GranularSynth_SetSoundWave final
+{
+public:
+	class USoundWave*                             InSoundWave;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GranularSynth_SetSoundWave;
+
+// Function Synthesis.GranularSynth.SetSustainGain
+// 0x0004 (0x0004 - 0x0000)
+struct GranularSynth_SetSustainGain final
+{
+public:
+	float                                         SustainGain;                                       // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GranularSynth_SetSustainGain;
+
+// Function Synthesis.GranularSynth.GetCurrentPlayheadTime
+// 0x0004 (0x0004 - 0x0000)
+struct GranularSynth_GetCurrentPlayheadTime final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GranularSynth_GetCurrentPlayheadTime;
+
+// Function Synthesis.GranularSynth.GetSampleDuration
+// 0x0004 (0x0004 - 0x0000)
+struct GranularSynth_GetSampleDuration final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GranularSynth_GetSampleDuration;
+
+// Function Synthesis.GranularSynth.IsLoaded
+// 0x0001 (0x0001 - 0x0000)
+struct GranularSynth_IsLoaded final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GranularSynth_IsLoaded;
 
 // Function Synthesis.SubmixEffectDelayPreset.SetDefaultSettings
 // 0x000C (0x000C - 0x0000)
@@ -1367,201 +1616,6 @@ public:
 	struct FTapDelayInfo                          TapInfo;                                           // 0x0004(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_SubmixEffectTapDelayPreset_SetTap;
-
-// Function Synthesis.GranularSynth.NoteOff
-// 0x0008 (0x0008 - 0x0000)
-struct GranularSynth_NoteOff final
-{
-public:
-	float                                         Note;                                              // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bKill;                                             // 0x0004(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_GranularSynth_NoteOff;
-
-// Function Synthesis.GranularSynth.NoteOn
-// 0x000C (0x000C - 0x0000)
-struct GranularSynth_NoteOn final
-{
-public:
-	float                                         Note;                                              // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Velocity;                                          // 0x0004(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Duration;                                          // 0x0008(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GranularSynth_NoteOn;
-
-// Function Synthesis.GranularSynth.SetAttackTime
-// 0x0004 (0x0004 - 0x0000)
-struct GranularSynth_SetAttackTime final
-{
-public:
-	float                                         AttackTimeMsec;                                    // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GranularSynth_SetAttackTime;
-
-// Function Synthesis.GranularSynth.SetDecayTime
-// 0x0004 (0x0004 - 0x0000)
-struct GranularSynth_SetDecayTime final
-{
-public:
-	float                                         DecayTimeMsec;                                     // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GranularSynth_SetDecayTime;
-
-// Function Synthesis.GranularSynth.SetGrainDuration
-// 0x0018 (0x0018 - 0x0000)
-struct GranularSynth_SetGrainDuration final
-{
-public:
-	float                                         BaseDurationMsec;                                  // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2D                              DurationRange;                                     // 0x0008(0x0010)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GranularSynth_SetGrainDuration;
-
-// Function Synthesis.GranularSynth.SetGrainEnvelopeType
-// 0x0001 (0x0001 - 0x0000)
-struct GranularSynth_SetGrainEnvelopeType final
-{
-public:
-	EGranularSynthEnvelopeType                    EnvelopeType;                                      // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GranularSynth_SetGrainEnvelopeType;
-
-// Function Synthesis.GranularSynth.SetGrainPan
-// 0x0018 (0x0018 - 0x0000)
-struct GranularSynth_SetGrainPan final
-{
-public:
-	float                                         BasePan;                                           // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2D                              PanRange;                                          // 0x0008(0x0010)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GranularSynth_SetGrainPan;
-
-// Function Synthesis.GranularSynth.SetGrainPitch
-// 0x0018 (0x0018 - 0x0000)
-struct GranularSynth_SetGrainPitch final
-{
-public:
-	float                                         BasePitch;                                         // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2D                              PitchRange;                                        // 0x0008(0x0010)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GranularSynth_SetGrainPitch;
-
-// Function Synthesis.GranularSynth.SetGrainProbability
-// 0x0004 (0x0004 - 0x0000)
-struct GranularSynth_SetGrainProbability final
-{
-public:
-	float                                         InGrainProbability;                                // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GranularSynth_SetGrainProbability;
-
-// Function Synthesis.GranularSynth.SetGrainsPerSecond
-// 0x0004 (0x0004 - 0x0000)
-struct GranularSynth_SetGrainsPerSecond final
-{
-public:
-	float                                         InGrainsPerSecond;                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GranularSynth_SetGrainsPerSecond;
-
-// Function Synthesis.GranularSynth.SetGrainVolume
-// 0x0018 (0x0018 - 0x0000)
-struct GranularSynth_SetGrainVolume final
-{
-public:
-	float                                         BaseVolume;                                        // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2D                              VolumeRange;                                       // 0x0008(0x0010)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GranularSynth_SetGrainVolume;
-
-// Function Synthesis.GranularSynth.SetPlaybackSpeed
-// 0x0004 (0x0004 - 0x0000)
-struct GranularSynth_SetPlaybackSpeed final
-{
-public:
-	float                                         InPlayheadRate;                                    // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GranularSynth_SetPlaybackSpeed;
-
-// Function Synthesis.GranularSynth.SetPlayheadTime
-// 0x000C (0x000C - 0x0000)
-struct GranularSynth_SetPlayheadTime final
-{
-public:
-	float                                         InPositionSec;                                     // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LerpTimeSec;                                       // 0x0004(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGranularSynthSeekType                        SeekType;                                          // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_GranularSynth_SetPlayheadTime;
-
-// Function Synthesis.GranularSynth.SetReleaseTimeMsec
-// 0x0004 (0x0004 - 0x0000)
-struct GranularSynth_SetReleaseTimeMsec final
-{
-public:
-	float                                         ReleaseTimeMsec;                                   // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GranularSynth_SetReleaseTimeMsec;
-
-// Function Synthesis.GranularSynth.SetScrubMode
-// 0x0001 (0x0001 - 0x0000)
-struct GranularSynth_SetScrubMode final
-{
-public:
-	bool                                          bScrubMode;                                        // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GranularSynth_SetScrubMode;
-
-// Function Synthesis.GranularSynth.SetSoundWave
-// 0x0008 (0x0008 - 0x0000)
-struct GranularSynth_SetSoundWave final
-{
-public:
-	class USoundWave*                             InSoundWave;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GranularSynth_SetSoundWave;
-
-// Function Synthesis.GranularSynth.SetSustainGain
-// 0x0004 (0x0004 - 0x0000)
-struct GranularSynth_SetSustainGain final
-{
-public:
-	float                                         SustainGain;                                       // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GranularSynth_SetSustainGain;
-
-// Function Synthesis.GranularSynth.GetCurrentPlayheadTime
-// 0x0004 (0x0004 - 0x0000)
-struct GranularSynth_GetCurrentPlayheadTime final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GranularSynth_GetCurrentPlayheadTime;
-
-// Function Synthesis.GranularSynth.GetSampleDuration
-// 0x0004 (0x0004 - 0x0000)
-struct GranularSynth_GetSampleDuration final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GranularSynth_GetSampleDuration;
-
-// Function Synthesis.GranularSynth.IsLoaded
-// 0x0001 (0x0001 - 0x0000)
-struct GranularSynth_IsLoaded final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GranularSynth_IsLoaded;
 
 // Function Synthesis.SynthComponentMonoWaveTable.GetCurveTangent
 // 0x0008 (0x0008 - 0x0000)
@@ -2010,60 +2064,6 @@ public:
 	float                                         ReturnValue;                                       // 0x0014(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_SynthesisUtilitiesBlueprintFunctionLibrary_GetLogFrequency;
-
-// Function Synthesis.Synth2DSlider.SetIndentHandle
-// 0x0001 (0x0001 - 0x0000)
-struct Synth2DSlider_SetIndentHandle final
-{
-public:
-	bool                                          InValue;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Synth2DSlider_SetIndentHandle;
-
-// Function Synthesis.Synth2DSlider.SetLocked
-// 0x0001 (0x0001 - 0x0000)
-struct Synth2DSlider_SetLocked final
-{
-public:
-	bool                                          InValue;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Synth2DSlider_SetLocked;
-
-// Function Synthesis.Synth2DSlider.SetSliderHandleColor
-// 0x0010 (0x0010 - 0x0000)
-struct Synth2DSlider_SetSliderHandleColor final
-{
-public:
-	struct FLinearColor                           InValue;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Synth2DSlider_SetSliderHandleColor;
-
-// Function Synthesis.Synth2DSlider.SetStepSize
-// 0x0004 (0x0004 - 0x0000)
-struct Synth2DSlider_SetStepSize final
-{
-public:
-	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Synth2DSlider_SetStepSize;
-
-// Function Synthesis.Synth2DSlider.SetValue
-// 0x0010 (0x0010 - 0x0000)
-struct Synth2DSlider_SetValue final
-{
-public:
-	struct FVector2D                              InValue;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Synth2DSlider_SetValue;
-
-// Function Synthesis.Synth2DSlider.GetValue
-// 0x0010 (0x0010 - 0x0000)
-struct Synth2DSlider_GetValue final
-{
-public:
-	struct FVector2D                              ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Synth2DSlider_GetValue;
 
 // Function Synthesis.SynthKnob.SetLocked
 // 0x0001 (0x0001 - 0x0000)

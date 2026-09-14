@@ -16,26 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BTTask_Exploder_Tier2_Actor_RegisterMovementFailed.BTTask_Exploder_Tier2_Actor_RegisterMovementFailed_C.ExecuteUbergraph_BTTask_Exploder_Tier2_Actor_RegisterMovementFailed
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UBTTask_Exploder_Tier2_Actor_RegisterMovementFailed_C::ExecuteUbergraph_BTTask_Exploder_Tier2_Actor_RegisterMovementFailed(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTTask_Exploder_Tier2_Actor_RegisterMovementFailed_C", "ExecuteUbergraph_BTTask_Exploder_Tier2_Actor_RegisterMovementFailed");
-
-	Params::BTTask_Exploder_Tier2_Actor_RegisterMovementFailed_C_ExecuteUbergraph_BTTask_Exploder_Tier2_Actor_RegisterMovementFailed Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BTTask_Exploder_Tier2_Actor_RegisterMovementFailed.BTTask_Exploder_Tier2_Actor_RegisterMovementFailed_C.ReceiveExecuteAI
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -53,6 +33,26 @@ void UBTTask_Exploder_Tier2_Actor_RegisterMovementFailed_C::ReceiveExecuteAI(cla
 
 	Parms.OwnerController = OwnerController;
 	Parms.ControlledPawn = ControlledPawn;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BTTask_Exploder_Tier2_Actor_RegisterMovementFailed.BTTask_Exploder_Tier2_Actor_RegisterMovementFailed_C.ExecuteUbergraph_BTTask_Exploder_Tier2_Actor_RegisterMovementFailed
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBTTask_Exploder_Tier2_Actor_RegisterMovementFailed_C::ExecuteUbergraph_BTTask_Exploder_Tier2_Actor_RegisterMovementFailed(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BTTask_Exploder_Tier2_Actor_RegisterMovementFailed_C", "ExecuteUbergraph_BTTask_Exploder_Tier2_Actor_RegisterMovementFailed");
+
+	Params::BTTask_Exploder_Tier2_Actor_RegisterMovementFailed_C_ExecuteUbergraph_BTTask_Exploder_Tier2_Actor_RegisterMovementFailed Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

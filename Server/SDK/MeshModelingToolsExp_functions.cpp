@@ -66,6 +66,31 @@ const TArray<class FString> UBakeInputMeshProperties::GetTargetUVLayerNamesFunc(
 }
 
 
+// Function MeshModelingToolsExp.BakeMultiMeshInputToolProperties.GetTargetUVLayerNamesFunc
+// (Final, Native, Public, Const)
+// Parameters:
+// const TArray<class FString>             ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+const TArray<class FString> UBakeMultiMeshInputToolProperties::GetTargetUVLayerNamesFunc() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BakeMultiMeshInputToolProperties", "GetTargetUVLayerNamesFunc");
+
+	Params::BakeMultiMeshInputToolProperties_GetTargetUVLayerNamesFunc Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function MeshModelingToolsExp.BakeTexture2DProperties.GetUVLayerNamesFunc
 // (Final, Native, Public, Const)
 // Parameters:
@@ -116,31 +141,6 @@ const TArray<class FString> UBakeMultiTexture2DProperties::GetUVLayerNamesFunc()
 }
 
 
-// Function MeshModelingToolsExp.BakeMultiMeshInputToolProperties.GetTargetUVLayerNamesFunc
-// (Final, Native, Public, Const)
-// Parameters:
-// const TArray<class FString>             ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-const TArray<class FString> UBakeMultiMeshInputToolProperties::GetTargetUVLayerNamesFunc() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BakeMultiMeshInputToolProperties", "GetTargetUVLayerNamesFunc");
-
-	Params::BakeMultiMeshInputToolProperties_GetTargetUVLayerNamesFunc Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function MeshModelingToolsExp.RevolveSplineToolActionPropertySet.ResetAxis
 // (Final, Native, Public)
 
@@ -150,120 +150,6 @@ void URevolveSplineToolActionPropertySet::ResetAxis()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("RevolveSplineToolActionPropertySet", "ResetAxis");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.SimpleCollisionEditorToolActionProperties.AddBox
-// (Final, Native, Public)
-
-void USimpleCollisionEditorToolActionProperties::AddBox()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SimpleCollisionEditorToolActionProperties", "AddBox");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.SimpleCollisionEditorToolActionProperties.AddCapsule
-// (Final, Native, Public)
-
-void USimpleCollisionEditorToolActionProperties::AddCapsule()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SimpleCollisionEditorToolActionProperties", "AddCapsule");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.SimpleCollisionEditorToolActionProperties.AddSphere
-// (Final, Native, Public)
-
-void USimpleCollisionEditorToolActionProperties::AddSphere()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SimpleCollisionEditorToolActionProperties", "AddSphere");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.SimpleCollisionEditorToolActionProperties.Delete
-// (Final, Native, Public)
-
-void USimpleCollisionEditorToolActionProperties::Delete()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SimpleCollisionEditorToolActionProperties", "Delete");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.SimpleCollisionEditorToolActionProperties.DeleteAll
-// (Final, Native, Public)
-
-void USimpleCollisionEditorToolActionProperties::DeleteAll()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SimpleCollisionEditorToolActionProperties", "DeleteAll");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingToolsExp.SimpleCollisionEditorToolActionProperties.Duplicate
-// (Final, Native, Public)
-
-void USimpleCollisionEditorToolActionProperties::Duplicate()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SimpleCollisionEditorToolActionProperties", "Duplicate");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1099,6 +985,120 @@ void UMirrorToolActionPropertySet::Up()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("MirrorToolActionPropertySet", "Up");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.SimpleCollisionEditorToolActionProperties.AddBox
+// (Final, Native, Public)
+
+void USimpleCollisionEditorToolActionProperties::AddBox()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SimpleCollisionEditorToolActionProperties", "AddBox");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.SimpleCollisionEditorToolActionProperties.AddCapsule
+// (Final, Native, Public)
+
+void USimpleCollisionEditorToolActionProperties::AddCapsule()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SimpleCollisionEditorToolActionProperties", "AddCapsule");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.SimpleCollisionEditorToolActionProperties.AddSphere
+// (Final, Native, Public)
+
+void USimpleCollisionEditorToolActionProperties::AddSphere()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SimpleCollisionEditorToolActionProperties", "AddSphere");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.SimpleCollisionEditorToolActionProperties.Delete
+// (Final, Native, Public)
+
+void USimpleCollisionEditorToolActionProperties::Delete()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SimpleCollisionEditorToolActionProperties", "Delete");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.SimpleCollisionEditorToolActionProperties.DeleteAll
+// (Final, Native, Public)
+
+void USimpleCollisionEditorToolActionProperties::DeleteAll()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SimpleCollisionEditorToolActionProperties", "DeleteAll");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingToolsExp.SimpleCollisionEditorToolActionProperties.Duplicate
+// (Final, Native, Public)
+
+void USimpleCollisionEditorToolActionProperties::Duplicate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SimpleCollisionEditorToolActionProperties", "Duplicate");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

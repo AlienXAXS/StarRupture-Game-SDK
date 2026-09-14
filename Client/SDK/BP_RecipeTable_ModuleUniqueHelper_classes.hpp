@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_RecipeTable_ModuleUniqueHelper.BP_RecipeTable_ModuleUniqueHelper_C
-// 0x0000 (0x0B70 - 0x0B70)
+// 0x0000 (0x0B30 - 0x0B30)
 class ABP_RecipeTable_ModuleUniqueHelper_C final : public ABP_PlacementHelperReplicatedModule_C
 {
 public:

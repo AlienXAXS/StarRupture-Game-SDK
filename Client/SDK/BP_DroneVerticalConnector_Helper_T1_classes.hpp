@@ -10,20 +10,20 @@
 
 #include "Basic.hpp"
 
-#include "BP_PlacementHelperReplicated_VerticalConnector_classes.hpp"
-#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
+#include "BP_PlacementHelperReplicated_VerticalConnector_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_DroneVerticalConnector_Helper_T1.BP_DroneVerticalConnector_Helper_T1_C
-// 0x0020 (0x0AF0 - 0x0AD0)
+// 0x0020 (0x0AB0 - 0x0A90)
 class ABP_DroneVerticalConnector_Helper_T1_C : public ABP_PlacementHelperReplicated_VerticalConnector_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_DroneVerticalConnector_Helper_T1_C; // 0x0AD0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FVector                                TRUE_0;                                            // 0x0AD8(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_DroneVerticalConnector_Helper_T1_C; // 0x0A90(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FVector                                TRUE_0;                                            // 0x0A98(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void OnSetReplacingExistingActor(bool bSet);

@@ -10,18 +10,18 @@
 
 #include "Basic.hpp"
 
-#include "GameplayAbilities_classes.hpp"
-#include "Chimera_structs.hpp"
-#include "Chimera_classes.hpp"
-#include "MassAIPrototypeEnemyRuntime_structs.hpp"
-#include "Engine_structs.hpp"
-#include "Engine_classes.hpp"
-#include "MassEntity_structs.hpp"
-#include "MassEntity_classes.hpp"
 #include "AIModule_structs.hpp"
 #include "AIModule_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "MassAIPrototypeEnemyRuntime_structs.hpp"
+#include "GameplayAbilities_classes.hpp"
+#include "Chimera_structs.hpp"
+#include "Chimera_classes.hpp"
+#include "Engine_structs.hpp"
+#include "Engine_classes.hpp"
+#include "MassEntity_structs.hpp"
+#include "MassEntity_classes.hpp"
 #include "AuActorPlacement_structs.hpp"
 #include "MassSpawner_classes.hpp"
 #include "GameplayTags_structs.hpp"
@@ -226,67 +226,28 @@ public:
 };
 DUMPER7_ASSERTS_ABaseAttackSpawnIndicator;
 
-// Class MassAIPrototypeEnemyRuntime.CrAiActionShowProjectileAndPrepareForLaunch
-// 0x0028 (0x00B0 - 0x0088)
-class UCrAiActionShowProjectileAndPrepareForLaunch final : public UCrAiAction
+// Class MassAIPrototypeEnemyRuntime.MassEnemyBuildingAttackSlotSubsystem
+// 0x00A0 (0x00D8 - 0x0038)
+class UMassEnemyBuildingAttackSlotSubsystem final : public UMassSubsystemBase
 {
 public:
-	bool                                          bWaitForAnimFinishEvent;                           // 0x0088(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrEnemyAttackType                            AttackType;                                        // 0x0089(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8A[0x6];                                       // 0x008A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class ACrAiProjectileActor>       PooledProjectileType;                              // 0x0090(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   ProjectileAttachMeshSlotName;                      // 0x0098(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A0[0x10];                                      // 0x00A0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UCrAiActionShowProjectileAndPrepareForLaunch* Create_CrAiActionShowProjectileAndPrepareForLaunch(TSubclassOf<class UCrAiActionShowProjectileAndPrepareForLaunch> ActionType, float NewMaxLifetimeS, TSubclassOf<class ACrAiProjectileActor> PooledProjectileType_0, const class FName& ProjectileAttachMeshSlotName_0, ECrEnemyAttackType NewAttackType);
-
-	void OnAnimFinished(class AActor* Actor, ECrEnemyLocomotionType CrEnemyLocomotion, ECrEnemyAttackType CrEnemyAttack, ECrEnemyJumpState CrEnemyJumpState);
-	void OnShootAnimEvent(class AActor* AiActor, const class FString& OverrideSocketName);
-	void OnShootAnimEventOnClient(class AActor* AiActor, const class FString& OverrideSocketName);
+	uint8                                         Pad_38[0xA0];                                      // 0x0038(0x00A0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrAiActionShowProjectileAndPrepareForLaunch")
+		STATIC_CLASS_IMPL("MassEnemyBuildingAttackSlotSubsystem")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrAiActionShowProjectileAndPrepareForLaunch")
+		STATIC_NAME_IMPL(L"MassEnemyBuildingAttackSlotSubsystem")
 	}
-	static class UCrAiActionShowProjectileAndPrepareForLaunch* GetDefaultObj()
+	static class UMassEnemyBuildingAttackSlotSubsystem* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrAiActionShowProjectileAndPrepareForLaunch>();
+		return GetDefaultObjImpl<UMassEnemyBuildingAttackSlotSubsystem>();
 	}
 };
-DUMPER7_ASSERTS_UCrAiActionShowProjectileAndPrepareForLaunch;
-
-// Class MassAIPrototypeEnemyRuntime.BTTask_MoveBackToNavmesh
-// 0x0050 (0x00C0 - 0x0070)
-class UBTTask_MoveBackToNavmesh final : public UBTTaskNode
-{
-public:
-	struct FBlackboardKeySelector                 DesiredDestination;                                // 0x0070(0x0028)(Edit, NativeAccessSpecifierPublic)
-	struct FVector                                Extents;                                           // 0x0098(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ArriveRadius;                                      // 0x00B0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LerpSpeed;                                         // 0x00B4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   NavAgentName;                                      // 0x00B8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("BTTask_MoveBackToNavmesh")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"BTTask_MoveBackToNavmesh")
-	}
-	static class UBTTask_MoveBackToNavmesh* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTTask_MoveBackToNavmesh>();
-	}
-};
-DUMPER7_ASSERTS_UBTTask_MoveBackToNavmesh;
+DUMPER7_ASSERTS_UMassEnemyBuildingAttackSlotSubsystem;
 
 // Class MassAIPrototypeEnemyRuntime.CrMassBaseAttackStateProcessor
 // 0x0350 (0x0410 - 0x00C0)
@@ -464,28 +425,62 @@ public:
 };
 DUMPER7_ASSERTS_AMovingTowardsBaseNavmeshInvokerActor;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemyClientAnimSyncProcessor
-// 0x0350 (0x0410 - 0x00C0)
-class UMassEnemyClientAnimSyncProcessor final : public UMassProcessor
+// Class MassAIPrototypeEnemyRuntime.CrAiActionSpawnEntity
+// 0x00C8 (0x0150 - 0x0088)
+class UCrAiActionSpawnEntity : public UCrAiAction
 {
 public:
-	uint8                                         Pad_C0[0x350];                                     // 0x00C0(0x0350)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FAuAPMassSpawnedEntityType             EntityType;                                        // 0x0088(0x0038)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FTransform                             SpawnTransform;                                    // 0x00C0(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSaveSpawnedEntity;                                // 0x0120(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_121[0x7];                                      // 0x0121(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBlackboardKeySelector                 SpawnedEntityBBKey;                                // 0x0128(0x0028)(Edit, NativeAccessSpecifierPublic)
+
+public:
+	static class UCrAiActionSpawnEntity* Create_CrAiActionSpawnEntity(TSubclassOf<class UCrAiActionSpawnEntity> ActionType, float NewMaxLifetimeS, const struct FAuAPMassSpawnedEntityType& EntityType_0, const struct FTransform& SpawnTransform_0, bool bSaveSpawnedEntity_0, const struct FBlackboardKeySelector& SpawnedEntityBBKey_0);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MassEnemyClientAnimSyncProcessor")
+		STATIC_CLASS_IMPL("CrAiActionSpawnEntity")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MassEnemyClientAnimSyncProcessor")
+		STATIC_NAME_IMPL(L"CrAiActionSpawnEntity")
 	}
-	static class UMassEnemyClientAnimSyncProcessor* GetDefaultObj()
+	static class UCrAiActionSpawnEntity* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMassEnemyClientAnimSyncProcessor>();
+		return GetDefaultObjImpl<UCrAiActionSpawnEntity>();
 	}
 };
-DUMPER7_ASSERTS_UMassEnemyClientAnimSyncProcessor;
+DUMPER7_ASSERTS_UCrAiActionSpawnEntity;
+
+// Class MassAIPrototypeEnemyRuntime.BTTask_SpawnEntity
+// 0x0090 (0x0100 - 0x0070)
+class UBTTask_SpawnEntity final : public UBTTaskNode
+{
+public:
+	struct FBlackboardKeySelector                 SpawnLocationKey;                                  // 0x0070(0x0028)(Edit, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                 SelfActorKey;                                      // 0x0098(0x0028)(Edit, NativeAccessSpecifierPublic)
+	bool                                          bSpawnAtSelfActorLocation;                         // 0x00C0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C1[0x7];                                       // 0x00C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FAuAPMassSpawnedEntityType             EntityType;                                        // 0x00C8(0x0038)(Edit, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BTTask_SpawnEntity")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BTTask_SpawnEntity")
+	}
+	static class UBTTask_SpawnEntity* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTTask_SpawnEntity>();
+	}
+};
+DUMPER7_ASSERTS_UBTTask_SpawnEntity;
 
 // Class MassAIPrototypeEnemyRuntime.MovingTowardsBaseActor
 // 0x0020 (0x02C8 - 0x02A8)
@@ -515,6 +510,33 @@ public:
 	}
 };
 DUMPER7_ASSERTS_AMovingTowardsBaseActor;
+
+// Class MassAIPrototypeEnemyRuntime.CrAiActionBtTaskSpawnEntity
+// 0x0080 (0x0150 - 0x00D0)
+class UCrAiActionBtTaskSpawnEntity final : public UBTTask_RunCrAiAction
+{
+public:
+	struct FAuAPMassSpawnedEntityType             EntityType;                                        // 0x00D0(0x0038)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	bool                                          bUseSelfActorLocation;                             // 0x0108(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_109[0x7];                                      // 0x0109(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBlackboardKeySelector                 EntityLocationKey;                                 // 0x0110(0x0028)(Edit, NativeAccessSpecifierPublic)
+	struct FVector                                EntityScale;                                       // 0x0138(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrAiActionBtTaskSpawnEntity")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrAiActionBtTaskSpawnEntity")
+	}
+	static class UCrAiActionBtTaskSpawnEntity* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrAiActionBtTaskSpawnEntity>();
+	}
+};
+DUMPER7_ASSERTS_UCrAiActionBtTaskSpawnEntity;
 
 // Class MassAIPrototypeEnemyRuntime.CrBaseSiteAttackSpawnHandler
 // 0x0028 (0x0050 - 0x0028)
@@ -612,134 +634,6 @@ public:
 };
 DUMPER7_ASSERTS_UBaseSiteAttackSubsystem;
 
-// Class MassAIPrototypeEnemyRuntime.BTService_CrCalculateCurrentAiStateData
-// 0x0138 (0x01A8 - 0x0070)
-class UBTService_CrCalculateCurrentAiStateData final : public UBTService
-{
-public:
-	struct FBlackboardKeySelector                 SelfActorKey;                                      // 0x0070(0x0028)(Edit, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                 TargetActorKey;                                    // 0x0098(0x0028)(Edit, NativeAccessSpecifierPublic)
-	float                                         UpdateIntervalS;                                   // 0x00C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RandomUpdateDeviationS;                            // 0x00C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FCrAiBtDistanceCheck>           DistanceCheckDefinitions;                          // 0x00C8(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FCrAiBtAngleCheck>              AngleCheckDefinitions;                             // 0x00D8(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FCrAiBtPathCheck>               NavPathCheckDefinitions;                           // 0x00E8(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FCrAiBtLineOfSightCheck>        LosCheckDefinitions;                               // 0x00F8(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FCrAiBtSweepCheck>              SweepCheckDefinitions;                             // 0x0108(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FCrAiBtVelocityCheck>           VelocityCheckDefinitions;                          // 0x0118(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FCrAiBtTimestampCheck>          TimestampCheckDefinitions;                         // 0x0128(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FCrAiBtTrajectoryCheck>         TrajectoryCheckDefinitions;                        // 0x0138(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FCrAiEnemiesInRadiusCheck>      AiEnemiesInRadiusCheckDefinitions;                 // 0x0148(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                 TargetPositionAfter1s;                             // 0x0158(0x0028)(Edit, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                 SelfPositionWithTargetVAfter1s;                    // 0x0180(0x0028)(Edit, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("BTService_CrCalculateCurrentAiStateData")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"BTService_CrCalculateCurrentAiStateData")
-	}
-	static class UBTService_CrCalculateCurrentAiStateData* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTService_CrCalculateCurrentAiStateData>();
-	}
-};
-DUMPER7_ASSERTS_UBTService_CrCalculateCurrentAiStateData;
-
-// Class MassAIPrototypeEnemyRuntime.CrEQSTestingPawn
-// 0x0000 (0x0710 - 0x0710)
-class ACrEQSTestingPawn final : public AEQSTestingPawn
-{
-public:
-	class AActor*                                 Target;                                            // 0x0708(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrEQSTestingPawn")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrEQSTestingPawn")
-	}
-	static class ACrEQSTestingPawn* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ACrEQSTestingPawn>();
-	}
-};
-DUMPER7_ASSERTS_ACrEQSTestingPawn;
-
-// Class MassAIPrototypeEnemyRuntime.BTTask_FindRandomLocationInFence
-// 0x0028 (0x0098 - 0x0070)
-class UBTTask_FindRandomLocationInFence final : public UBTTaskNode
-{
-public:
-	struct FBlackboardKeySelector                 LocationKey;                                       // 0x0070(0x0028)(Edit, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("BTTask_FindRandomLocationInFence")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"BTTask_FindRandomLocationInFence")
-	}
-	static class UBTTask_FindRandomLocationInFence* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTTask_FindRandomLocationInFence>();
-	}
-};
-DUMPER7_ASSERTS_UBTTask_FindRandomLocationInFence;
-
-// Class MassAIPrototypeEnemyRuntime.BTService_UpdateAggroTarget
-// 0x0350 (0x03C0 - 0x0070)
-class UBTService_UpdateAggroTarget final : public UBTService
-{
-public:
-	float                                         UpdateIntervalS;                                   // 0x0070(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         RandomUpdateDeviationS;                            // 0x0074(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FBlackboardKeySelector                 SearchRadiusKey;                                   // 0x0078(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FBlackboardKeySelector                 MinSearchIntervalS;                                // 0x00A0(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FBlackboardKeySelector                 EntityKey;                                         // 0x00C8(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FBlackboardKeySelector                 SelfActorKey;                                      // 0x00F0(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FBlackboardKeySelector                 ActorKey;                                          // 0x0118(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FBlackboardKeySelector                 PositionKey;                                       // 0x0140(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FBlackboardKeySelector                 IsPositionFakeKey;                                 // 0x0168(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FBlackboardKeySelector                 IsInActiveFenceKey;                                // 0x0190(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FBlackboardKeySelector                 MinAggroKey;                                       // 0x01B8(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FBlackboardKeySelector                 AttackRadiusKey;                                   // 0x01E0(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FBlackboardKeySelector                 MaxBuildingAttackRadiusKey;                        // 0x0208(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FBlackboardKeySelector                 IsNewTargetKey;                                    // 0x0230(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FBlackboardKeySelector                 TimeToUnsetAggroTargetAfterAggroLostKey;           // 0x0258(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FBlackboardKeySelector                 LostAggroTargetTimestampKey;                       // 0x0280(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FBlackboardKeySelector                 ChangeAggroTargetMultiplierKey;                    // 0x02A8(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FBlackboardKeySelector                 HasValidTargetKey;                                 // 0x02D0(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FBlackboardKeySelector                 AggroTargetTypeKey;                                // 0x02F8(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FBlackboardKeySelector                 AggroTargetExtentsKey;                             // 0x0320(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FBlackboardKeySelector                 BuildingTargetAttackLocation;                      // 0x0348(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FBlackboardKeySelector                 BuildingTargetCenterLocation;                      // 0x0370(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FBlackboardKeySelector                 TargetRotator;                                     // 0x0398(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("BTService_UpdateAggroTarget")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"BTService_UpdateAggroTarget")
-	}
-	static class UBTService_UpdateAggroTarget* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTService_UpdateAggroTarget>();
-	}
-};
-DUMPER7_ASSERTS_UBTService_UpdateAggroTarget;
-
 // Class MassAIPrototypeEnemyRuntime.CrAiActionBtTaskAttack
 // 0x0108 (0x01D8 - 0x00D0)
 class UCrAiActionBtTaskAttack : public UBTTask_RunCrAiAction
@@ -789,33 +683,114 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionBtTaskAttack;
 
-// Class MassAIPrototypeEnemyRuntime.CrAiActionBtTaskShootAtLocation
-// 0x0048 (0x0220 - 0x01D8)
-class UCrAiActionBtTaskShootAtLocation : public UCrAiActionBtTaskAttack
+// Class MassAIPrototypeEnemyRuntime.BTService_CrCalculateCurrentAiStateData
+// 0x0138 (0x01A8 - 0x0070)
+class UBTService_CrCalculateCurrentAiStateData final : public UBTService
 {
 public:
-	TSubclassOf<class ACrAiProjectileActor>       PooledProjectileType;                              // 0x01D8(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ArcParam;                                          // 0x01E0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         GravityOverride;                                   // 0x01E4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   ProjectileSpawnSlotName;                           // 0x01E8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2f                              ShootVelocityVarianceRange;                        // 0x01F0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                 TargetLocationKey;                                 // 0x01F8(0x0028)(Edit, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                 SelfActorKey;                                      // 0x0070(0x0028)(Edit, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                 TargetActorKey;                                    // 0x0098(0x0028)(Edit, NativeAccessSpecifierPublic)
+	float                                         UpdateIntervalS;                                   // 0x00C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RandomUpdateDeviationS;                            // 0x00C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FCrAiBtDistanceCheck>           DistanceCheckDefinitions;                          // 0x00C8(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FCrAiBtAngleCheck>              AngleCheckDefinitions;                             // 0x00D8(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FCrAiBtPathCheck>               NavPathCheckDefinitions;                           // 0x00E8(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FCrAiBtLineOfSightCheck>        LosCheckDefinitions;                               // 0x00F8(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FCrAiBtSweepCheck>              SweepCheckDefinitions;                             // 0x0108(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FCrAiBtVelocityCheck>           VelocityCheckDefinitions;                          // 0x0118(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FCrAiBtTimestampCheck>          TimestampCheckDefinitions;                         // 0x0128(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FCrAiBtTrajectoryCheck>         TrajectoryCheckDefinitions;                        // 0x0138(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FCrAiEnemiesInRadiusCheck>      AiEnemiesInRadiusCheckDefinitions;                 // 0x0148(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                 TargetPositionAfter1s;                             // 0x0158(0x0028)(Edit, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                 SelfPositionWithTargetVAfter1s;                    // 0x0180(0x0028)(Edit, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("CrAiActionBtTaskShootAtLocation")
+		STATIC_CLASS_IMPL("BTService_CrCalculateCurrentAiStateData")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"CrAiActionBtTaskShootAtLocation")
+		STATIC_NAME_IMPL(L"BTService_CrCalculateCurrentAiStateData")
 	}
-	static class UCrAiActionBtTaskShootAtLocation* GetDefaultObj()
+	static class UBTService_CrCalculateCurrentAiStateData* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UCrAiActionBtTaskShootAtLocation>();
+		return GetDefaultObjImpl<UBTService_CrCalculateCurrentAiStateData>();
 	}
 };
-DUMPER7_ASSERTS_UCrAiActionBtTaskShootAtLocation;
+DUMPER7_ASSERTS_UBTService_CrCalculateCurrentAiStateData;
+
+// Class MassAIPrototypeEnemyRuntime.MassEnemyEntityCollisionIsmWrapperActor
+// 0x0060 (0x0308 - 0x02A8)
+class AMassEnemyEntityCollisionIsmWrapperActor final : public AActor
+{
+public:
+	uint8                                         Pad_2A8[0x20];                                     // 0x02A8(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftObjectPtr<class UStaticMesh>             CollisionSM;                                       // 0x02C8(0x0028)(Net, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCrAbilitySystemComponent*              AbilitySystem;                                     // 0x02F0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCrAIBaseAttributeSet*                  BaseAttributes;                                    // 0x02F8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UMassEnemyEntityCollisionIsmWrapperComponent* EntityCollisionIsmWrapperComponent;          // 0x0300(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MassEnemyEntityCollisionIsmWrapperActor")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MassEnemyEntityCollisionIsmWrapperActor")
+	}
+	static class AMassEnemyEntityCollisionIsmWrapperActor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AMassEnemyEntityCollisionIsmWrapperActor>();
+	}
+};
+DUMPER7_ASSERTS_AMassEnemyEntityCollisionIsmWrapperActor;
+
+// Class MassAIPrototypeEnemyRuntime.BTService_UpdateAggroTarget
+// 0x0350 (0x03C0 - 0x0070)
+class UBTService_UpdateAggroTarget final : public UBTService
+{
+public:
+	float                                         UpdateIntervalS;                                   // 0x0070(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         RandomUpdateDeviationS;                            // 0x0074(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FBlackboardKeySelector                 SearchRadiusKey;                                   // 0x0078(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FBlackboardKeySelector                 MinSearchIntervalS;                                // 0x00A0(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FBlackboardKeySelector                 EntityKey;                                         // 0x00C8(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FBlackboardKeySelector                 SelfActorKey;                                      // 0x00F0(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FBlackboardKeySelector                 ActorKey;                                          // 0x0118(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FBlackboardKeySelector                 PositionKey;                                       // 0x0140(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FBlackboardKeySelector                 IsPositionFakeKey;                                 // 0x0168(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FBlackboardKeySelector                 IsInActiveFenceKey;                                // 0x0190(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FBlackboardKeySelector                 MinAggroKey;                                       // 0x01B8(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FBlackboardKeySelector                 AttackRadiusKey;                                   // 0x01E0(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FBlackboardKeySelector                 MaxBuildingAttackRadiusKey;                        // 0x0208(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FBlackboardKeySelector                 IsNewTargetKey;                                    // 0x0230(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FBlackboardKeySelector                 TimeToUnsetAggroTargetAfterAggroLostKey;           // 0x0258(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FBlackboardKeySelector                 LostAggroTargetTimestampKey;                       // 0x0280(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FBlackboardKeySelector                 ChangeAggroTargetMultiplierKey;                    // 0x02A8(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FBlackboardKeySelector                 HasValidTargetKey;                                 // 0x02D0(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FBlackboardKeySelector                 AggroTargetTypeKey;                                // 0x02F8(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FBlackboardKeySelector                 AggroTargetExtentsKey;                             // 0x0320(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FBlackboardKeySelector                 BuildingTargetAttackLocation;                      // 0x0348(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FBlackboardKeySelector                 BuildingTargetCenterLocation;                      // 0x0370(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FBlackboardKeySelector                 TargetRotator;                                     // 0x0398(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BTService_UpdateAggroTarget")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BTService_UpdateAggroTarget")
+	}
+	static class UBTService_UpdateAggroTarget* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTService_UpdateAggroTarget>();
+	}
+};
+DUMPER7_ASSERTS_UBTService_UpdateAggroTarget;
 
 // Class MassAIPrototypeEnemyRuntime.CrAiActionAttack
 // 0x0050 (0x00D8 - 0x0088)
@@ -974,29 +949,49 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionBtTaskSetFocus;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemyEntityCollisionIsmWrapperComponent
-// 0x0068 (0x0120 - 0x00B8)
-class UMassEnemyEntityCollisionIsmWrapperComponent final : public UActorComponent
+// Class MassAIPrototypeEnemyRuntime.CrAiEQSPlayerCharactersContext
+// 0x0000 (0x0028 - 0x0028)
+class UCrAiEQSPlayerCharactersContext final : public UEnvQueryContext_Querier
 {
 public:
-	class UInstancedStaticMeshComponent*          CollisionIsmComponent;                             // 0x00B8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_C0[0x60];                                      // 0x00C0(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrAiEQSPlayerCharactersContext")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrAiEQSPlayerCharactersContext")
+	}
+	static class UCrAiEQSPlayerCharactersContext* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrAiEQSPlayerCharactersContext>();
+	}
+};
+DUMPER7_ASSERTS_UCrAiEQSPlayerCharactersContext;
+
+// Class MassAIPrototypeEnemyRuntime.BTTask_CacheSpawnLocation
+// 0x0050 (0x00C0 - 0x0070)
+class UBTTask_CacheSpawnLocation final : public UBTTaskNode
+{
+public:
+	struct FBlackboardKeySelector                 SelfActorKey;                                      // 0x0070(0x0028)(Edit, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                 SpawnLocationKey;                                  // 0x0098(0x0028)(Edit, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MassEnemyEntityCollisionIsmWrapperComponent")
+		STATIC_CLASS_IMPL("BTTask_CacheSpawnLocation")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MassEnemyEntityCollisionIsmWrapperComponent")
+		STATIC_NAME_IMPL(L"BTTask_CacheSpawnLocation")
 	}
-	static class UMassEnemyEntityCollisionIsmWrapperComponent* GetDefaultObj()
+	static class UBTTask_CacheSpawnLocation* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMassEnemyEntityCollisionIsmWrapperComponent>();
+		return GetDefaultObjImpl<UBTTask_CacheSpawnLocation>();
 	}
 };
-DUMPER7_ASSERTS_UMassEnemyEntityCollisionIsmWrapperComponent;
+DUMPER7_ASSERTS_UBTTask_CacheSpawnLocation;
 
 // Class MassAIPrototypeEnemyRuntime.CrAiActionBtTaskSetHasAggroTarget
 // 0x0008 (0x00D8 - 0x00D0)
@@ -1046,230 +1041,6 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionBtTaskRotateToFocus;
 
-// Class MassAIPrototypeEnemyRuntime.MassEnemyDataAsset
-// 0x0730 (0x0760 - 0x0030)
-class UMassEnemyDataAsset : public UDataAsset
-{
-public:
-	struct FGameplayTagContainer                  AiTags;                                            // 0x0030(0x0020)(Edit, NativeAccessSpecifierPublic)
-	TArray<struct FAiFloatConfigurationValue>     PrototypeFloatBBVariables;                         // 0x0050(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FAiBoolConfigurationValue>      PrototypeBoolBBVariables;                          // 0x0060(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             Height;                                            // 0x0070(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             MinScale;                                          // 0x007C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             MaxScale;                                          // 0x0088(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             ScaleSteps;                                        // 0x0094(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             ZOffset;                                           // 0x00A0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             HismScale;                                         // 0x00AC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             HismZOffset;                                       // 0x00B8(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             HP;                                                // 0x00C4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             WeakpointDamageMultiplier;                         // 0x00D0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiBoolConfigurationValue              bCanApplyCustomGameAiHpModifier;                   // 0x00DC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             DisappearAfterDeathTimeS;                          // 0x00E8(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             NoRagdollDissolveTimeS;                            // 0x00F4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             NotVisibleTimeToDespawnS;                          // 0x0100(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             RuleViolationTimeToDespawnS;                       // 0x010C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             RuleViolationSpawnerBlockedTimeToDespawnS;         // 0x0118(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             MinVelocityToApplyRotation;                        // 0x0124(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             MinDistToTargetToApplyRotation;                    // 0x0130(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             VelocityRotationLerpFactor;                        // 0x013C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             TargetRotationLerpFactor;                          // 0x0148(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             RotateInPlaceSpeed;                                // 0x0154(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             DesiredSurfaceAlignSpeed;                          // 0x0160(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	class FName                                   NavmeshAgentName;                                  // 0x016C(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             ActorReachRadius;                                  // 0x0174(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             FallbackActorReachRadius;                          // 0x0180(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             MaxAllowedNavmeshPointOffset;                      // 0x018C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             MaxAllowedStoppedTime;                             // 0x0198(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             MinPathLegTravelledRatio;                          // 0x01A4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             MovementSpeed;                                     // 0x01B0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             JumpSpeed;                                         // 0x01BC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             RecoverySpeed;                                     // 0x01C8(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             PathNodeArriveRadius;                              // 0x01D4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bUsePathNodeArriveRadiusAlsoForActor;              // 0x01E0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E1[0x3];                                      // 0x01E1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAiFloatConfigurationValue             PathNodeJumpArriveRadius;                          // 0x01E4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             PathStartJumpArriveRadius;                         // 0x01F0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             PathEndJumpLocationSpreadRadius;                   // 0x01FC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             PathNodeJumpArriveZThreshold;                      // 0x0208(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             JumpDestinationFreeSpaceRadiusMultiplier;          // 0x0214(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             JumpTakeOffTime;                                   // 0x0220(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             JumpLandTime;                                      // 0x022C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             NavmeshRescuePointSavePeriod;                      // 0x0238(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             NavmeshRescuePointSaveRandTimeDeviation;           // 0x0244(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             MaxPathLegLength;                                  // 0x0250(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             MinPathZDeltaToSplit;                              // 0x025C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiVectorConfigurationValue            PathSplitNavSearchExtents;                         // 0x0268(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             GroundTraceUpOffset;                               // 0x0288(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             GroundTraceDownOffset;                             // 0x0294(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             GroundZLocationAdjustmentSpeed;                    // 0x02A0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             GroundRotationAdjustmentSpeed;                     // 0x02AC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         GroundMaxRotationAngle;                            // 0x02B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             MaxAcceleration;                                   // 0x02BC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             SpeedVariance;                                     // 0x02C8(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             HeightSmoothingTime;                               // 0x02D4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             ObstacleDetectionDistance;                         // 0x02E0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiVector2ConfigurationValue           DesiredSeparation;                                 // 0x02EC(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiVector2ConfigurationValue           MaxFlockingForce;                                  // 0x02FC(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiVector2ConfigurationValue           SeparationForceMultiplier;                         // 0x030C(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiVector2ConfigurationValue           CohesionForceMultiplier;                           // 0x031C(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiVector2ConfigurationValue           AlignmentForceMultiplier;                          // 0x032C(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             FlockingForceSmoothFactorForLowVelocity;           // 0x033C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiBoolConfigurationValue              ScaleFlockingForcesByVelocity;                     // 0x0348(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             MinPercentOfMaxVelocityToAddFlocking;              // 0x0354(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiBoolConfigurationValue              bIsAffectedByWave;                                 // 0x0360(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             UpdateAggroTargetTimePeriodS;                      // 0x036C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             UpdateNonBuildingAggroTargetsTimePeriodS;          // 0x0378(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             UpdateAggroTargetPositionTimePeriodS;              // 0x0384(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             UpdateAggroTargetTimeRandomPartS;                  // 0x0390(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             UpdateNonBuildingAggroTargetTimeRandomPartS;       // 0x039C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             AggroTargetAcquisitionDistance;                    // 0x03A8(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             MinMeaningfullAggro;                               // 0x03B4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             DamageWithoutAggroTargetDuration;                  // 0x03C0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             DamageSignalWithoutAggroTargetRange;               // 0x03CC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             DamageUnlockingCustomGameAggroTargetRange;         // 0x03D8(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             TimeToUnsetAggroTargetAfterAggroLost;              // 0x03E4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             ChangeAggroTargetMultiplier;                       // 0x03F0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             MaxAggroSearchResults;                             // 0x03FC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiBoolConfigurationValue              ShouldSkipValidBuildingAttackLocationSearch;       // 0x0408(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             ForcedTargetAggro;                                 // 0x0414(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiBoolConfigurationValue              BanCanMonitorDistanceToBanTarget;                  // 0x0420(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             BanMinTimeWithoutNextAttackToBan;                  // 0x042C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             BanMinTimeWithoutAnyAttackToBan;                   // 0x0438(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             MaxAcceptableDistanceForGrenade;                   // 0x0444(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             MaxAcceptableZDistanceForGrenade;                  // 0x0450(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             MaxAllowedGrenadeViolationTimeS;                   // 0x045C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiBoolConfigurationValue              bEnableDebug;                                      // 0x0468(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiBoolConfigurationValue              bEnableFlockingDebug;                              // 0x0474(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiBoolConfigurationValue              bEnablePathFollowingDebug;                         // 0x0480(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiBoolConfigurationValue              bEnableAnimationDebug;                             // 0x048C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             TauntAnimCooldown;                                 // 0x0498(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4A4[0x4];                                      // 0x04A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class ACrAiDeathSequenceActor>    DeathSequenceActorClass;                           // 0x04A8(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             DeathSequenceMaxForceImpulse;                      // 0x04B0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             DeathSequenceMinForceImpulse;                      // 0x04BC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             DestroyEntityAfterRagdollStartTimeS;               // 0x04C8(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             DeathSequenceRagdollTimeS;                         // 0x04D4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             DeathSequenceTimeToDissolveS;                      // 0x04E0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             DeathSequenceDissolveTimeS;                        // 0x04EC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             DeathSequenceDistanceToMinForceImpulse;            // 0x04F8(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_504[0x4];                                      // 0x0504(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<struct FGameplayTag, struct FDeathSequenceDamageForceConfig> DeathSequenceDamagesForceMultiplier; // 0x0508(0x0050)(Edit, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             DeathSequenceActorScaleMultiplier;                 // 0x0558(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             DeathSequenceMeshScaleMultiplier;                  // 0x0564(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiBoolConfigurationValue              bManuallyStartDeathSequence;                       // 0x0570(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_57C[0x4];                                      // 0x057C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UGameplayEffect>            AttackDamageEffectPlayer;                          // 0x0580(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UGameplayEffect>            AttackDamageEffectAi;                              // 0x0588(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             AttackBuildingInfectionDamage;                     // 0x0590(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             AttackConeHalfAngleDeg;                            // 0x059C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             DistanceWithoutAttackSlot;                         // 0x05A8(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             AttackSlotRequestLifetimeS;                        // 0x05B4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             AttackCooldownS;                                   // 0x05C0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             AttackWindupS;                                     // 0x05CC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             AttackRange;                                       // 0x05D8(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             ArtificialAvoidanceRadiusExpansion;                // 0x05E4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             AvoidanceWeight;                                   // 0x05F0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             AvoidanceConsiderationRadius;                      // 0x05FC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             CrowdAvoidanceCheckInterval;                       // 0x0608(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             CrowdAvoidanceAdditionalArriveRadiusPerCorrection; // 0x0614(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             MaxCrowdAvoidanceAdditionalArriveRadius;           // 0x0620(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             MinDistanceForCrowdAvoidance;                      // 0x062C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             CrowdAvoidanceDetectionAngle;                      // 0x0638(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             CrowdSignificantLocationChange;                    // 0x0644(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         StuckAvoidanceMaxTargetCollidingEntities;          // 0x0650(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StuckAvoidanceToRecoveryTime;                      // 0x0654(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxStuckAvoidanceRecoveryTime;                     // 0x0658(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StuckAvoidanceVelocityTolerance;                   // 0x065C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CollisionAvoidanceVelocityModifier;                // 0x0660(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AvoidanceTargetLocationSignificantChange;          // 0x0664(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AvoidanceWeaknessDurationAfterStopMovement;        // 0x0668(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AvoidanceWeaknessRefAngleAfterStopMovement;        // 0x066C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MinDistanceToTargetDisableAvoidance;               // 0x0670(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MinSpeedToForceEnabledAvoidance;                   // 0x0674(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<ECrAggroTargetType>                    AggroTargetsWithDisabledAvoidanceByDefault;        // 0x0678(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FAiVector2ConfigurationValue           LodChangeCooldown;                                 // 0x0688(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             LodChangeDelay;                                    // 0x0698(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             ActorSetVisibleDelay;                              // 0x06A4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	class UCrLootConfigAsset*                     LootConfig;                                        // 0x06B0(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	struct FAiFloatConfigurationValue             NavmeshTraceRadius;                                // 0x06B8(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             MinRecoveryJump;                                   // 0x06C4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	TArray<struct FVector>                        MaxRecoveryJump;                                   // 0x06D0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             MinDistToRotateForRecoveryJump;                    // 0x06E0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         MaxInfectionBoostStacks;                           // 0x06EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             DurationToAddInfectionBoostStack;                  // 0x06F0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             SpeedUpPerInfectionStack;                          // 0x06FC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             DurationToRemoveInfectionBoostStacks;              // 0x0708(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             MaxBuildingAttackRangeXY;                          // 0x0714(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             MaxBuildingAttackRangeZ;                           // 0x0720(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             MaxAttackLocationDistanceToBuildingXY;             // 0x072C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             MaxAttackLocationDistanceToBuildingZ;              // 0x0738(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             BuildingAttackLocationReachDistance;               // 0x0744(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             DurationToSetSpawnAnimationStartedState;           // 0x0750(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_75C[0x4];                                      // 0x075C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MassEnemyDataAsset")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MassEnemyDataAsset")
-	}
-	static class UMassEnemyDataAsset* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMassEnemyDataAsset>();
-	}
-};
-DUMPER7_ASSERTS_UMassEnemyDataAsset;
-
-// Class MassAIPrototypeEnemyRuntime.CrAiActionBtTaskPlayAnimation
-// 0x0008 (0x00D8 - 0x00D0)
-class UCrAiActionBtTaskPlayAnimation : public UBTTask_RunCrAiAction
-{
-public:
-	ECrEnemyLocomotionType                        LocomotionType;                                    // 0x00D0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bWaitForAnimFinishEvent;                           // 0x00D1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bFinishImmediately;                                // 0x00D2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bOrientRotationToMovement;                         // 0x00D3(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D4[0x4];                                       // 0x00D4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrAiActionBtTaskPlayAnimation")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrAiActionBtTaskPlayAnimation")
-	}
-	static class UCrAiActionBtTaskPlayAnimation* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrAiActionBtTaskPlayAnimation>();
-	}
-};
-DUMPER7_ASSERTS_UCrAiActionBtTaskPlayAnimation;
-
-// Class MassAIPrototypeEnemyRuntime.CrAiActionBtTaskSpawnAnimation
-// 0x0000 (0x00D8 - 0x00D8)
-class UCrAiActionBtTaskSpawnAnimation final : public UCrAiActionBtTaskPlayAnimation
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrAiActionBtTaskSpawnAnimation")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrAiActionBtTaskSpawnAnimation")
-	}
-	static class UCrAiActionBtTaskSpawnAnimation* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrAiActionBtTaskSpawnAnimation>();
-	}
-};
-DUMPER7_ASSERTS_UCrAiActionBtTaskSpawnAnimation;
-
 // Class MassAIPrototypeEnemyRuntime.CrAiActionBtTaskMovementAttack
 // 0x0008 (0x01E0 - 0x01D8)
 class UCrAiActionBtTaskMovementAttack final : public UCrAiActionBtTaskAttack
@@ -1293,29 +1064,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCrAiActionBtTaskMovementAttack;
-
-// Class MassAIPrototypeEnemyRuntime.MassEnemyBuildingAttackSlotSubsystem
-// 0x00A0 (0x00D8 - 0x0038)
-class UMassEnemyBuildingAttackSlotSubsystem final : public UMassSubsystemBase
-{
-public:
-	uint8                                         Pad_38[0xA0];                                      // 0x0038(0x00A0)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MassEnemyBuildingAttackSlotSubsystem")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MassEnemyBuildingAttackSlotSubsystem")
-	}
-	static class UMassEnemyBuildingAttackSlotSubsystem* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMassEnemyBuildingAttackSlotSubsystem>();
-	}
-};
-DUMPER7_ASSERTS_UMassEnemyBuildingAttackSlotSubsystem;
 
 // Class MassAIPrototypeEnemyRuntime.CrAiActionBtTaskJumpAttack
 // 0x0020 (0x01F8 - 0x01D8)
@@ -1347,6 +1095,33 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionBtTaskJumpAttack;
 
+// Class MassAIPrototypeEnemyRuntime.CrAiActionBtTaskPlayAnimation
+// 0x0008 (0x00D8 - 0x00D0)
+class UCrAiActionBtTaskPlayAnimation : public UBTTask_RunCrAiAction
+{
+public:
+	ECrEnemyLocomotionType                        LocomotionType;                                    // 0x00D0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bWaitForAnimFinishEvent;                           // 0x00D1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFinishImmediately;                                // 0x00D2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOrientRotationToMovement;                         // 0x00D3(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D4[0x4];                                       // 0x00D4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrAiActionBtTaskPlayAnimation")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrAiActionBtTaskPlayAnimation")
+	}
+	static class UCrAiActionBtTaskPlayAnimation* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrAiActionBtTaskPlayAnimation>();
+	}
+};
+DUMPER7_ASSERTS_UCrAiActionBtTaskPlayAnimation;
+
 // Class MassAIPrototypeEnemyRuntime.CrAiActionBtTaskDealDamage
 // 0x0040 (0x0110 - 0x00D0)
 class UCrAiActionBtTaskDealDamage final : public UBTTask_RunCrAiAction
@@ -1375,33 +1150,6 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionBtTaskDealDamage;
 
-// Class MassAIPrototypeEnemyRuntime.CrAiActionBtTaskSpawnEntity
-// 0x0080 (0x0150 - 0x00D0)
-class UCrAiActionBtTaskSpawnEntity final : public UBTTask_RunCrAiAction
-{
-public:
-	struct FAuAPMassSpawnedEntityType             EntityType;                                        // 0x00D0(0x0038)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	bool                                          bUseSelfActorLocation;                             // 0x0108(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_109[0x7];                                      // 0x0109(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBlackboardKeySelector                 EntityLocationKey;                                 // 0x0110(0x0028)(Edit, NativeAccessSpecifierPublic)
-	struct FVector                                EntityScale;                                       // 0x0138(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrAiActionBtTaskSpawnEntity")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrAiActionBtTaskSpawnEntity")
-	}
-	static class UCrAiActionBtTaskSpawnEntity* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrAiActionBtTaskSpawnEntity>();
-	}
-};
-DUMPER7_ASSERTS_UCrAiActionBtTaskSpawnEntity;
-
 // Class MassAIPrototypeEnemyRuntime.CrAiActionBtTaskJumpBackToNavmesh
 // 0x0028 (0x00F8 - 0x00D0)
 class UCrAiActionBtTaskJumpBackToNavmesh final : public UBTTask_RunCrAiAction
@@ -1425,6 +1173,26 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionBtTaskJumpBackToNavmesh;
 
+// Class MassAIPrototypeEnemyRuntime.CrAiActionBtTaskSpawnAnimation
+// 0x0000 (0x00D8 - 0x00D8)
+class UCrAiActionBtTaskSpawnAnimation final : public UCrAiActionBtTaskPlayAnimation
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrAiActionBtTaskSpawnAnimation")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrAiActionBtTaskSpawnAnimation")
+	}
+	static class UCrAiActionBtTaskSpawnAnimation* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrAiActionBtTaskSpawnAnimation>();
+	}
+};
+DUMPER7_ASSERTS_UCrAiActionBtTaskSpawnAnimation;
+
 // Class MassAIPrototypeEnemyRuntime.CrAiActionBtTaskJumpBack
 // 0x0028 (0x00F8 - 0x00D0)
 class UCrAiActionBtTaskJumpBack final : public UBTTask_RunCrAiAction
@@ -1447,6 +1215,34 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCrAiActionBtTaskJumpBack;
+
+// Class MassAIPrototypeEnemyRuntime.CrAiActionBtTaskShootAtLocation
+// 0x0048 (0x0220 - 0x01D8)
+class UCrAiActionBtTaskShootAtLocation : public UCrAiActionBtTaskAttack
+{
+public:
+	TSubclassOf<class ACrAiProjectileActor>       PooledProjectileType;                              // 0x01D8(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ArcParam;                                          // 0x01E0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GravityOverride;                                   // 0x01E4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ProjectileSpawnSlotName;                           // 0x01E8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2f                              ShootVelocityVarianceRange;                        // 0x01F0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                 TargetLocationKey;                                 // 0x01F8(0x0028)(Edit, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrAiActionBtTaskShootAtLocation")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrAiActionBtTaskShootAtLocation")
+	}
+	static class UCrAiActionBtTaskShootAtLocation* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrAiActionBtTaskShootAtLocation>();
+	}
+};
+DUMPER7_ASSERTS_UCrAiActionBtTaskShootAtLocation;
 
 // Class MassAIPrototypeEnemyRuntime.CrAiActionBtTaskShoot
 // 0x0038 (0x0258 - 0x0220)
@@ -2159,6 +1955,41 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionShowMesh;
 
+// Class MassAIPrototypeEnemyRuntime.CrAiActionShowProjectileAndPrepareForLaunch
+// 0x0028 (0x00B0 - 0x0088)
+class UCrAiActionShowProjectileAndPrepareForLaunch final : public UCrAiAction
+{
+public:
+	bool                                          bWaitForAnimFinishEvent;                           // 0x0088(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrEnemyAttackType                            AttackType;                                        // 0x0089(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8A[0x6];                                       // 0x008A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class ACrAiProjectileActor>       PooledProjectileType;                              // 0x0090(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ProjectileAttachMeshSlotName;                      // 0x0098(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A0[0x10];                                      // 0x00A0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UCrAiActionShowProjectileAndPrepareForLaunch* Create_CrAiActionShowProjectileAndPrepareForLaunch(TSubclassOf<class UCrAiActionShowProjectileAndPrepareForLaunch> ActionType, float NewMaxLifetimeS, TSubclassOf<class ACrAiProjectileActor> PooledProjectileType_0, const class FName& ProjectileAttachMeshSlotName_0, ECrEnemyAttackType NewAttackType);
+
+	void OnAnimFinished(class AActor* Actor, ECrEnemyLocomotionType CrEnemyLocomotion, ECrEnemyAttackType CrEnemyAttack, ECrEnemyJumpState CrEnemyJumpState);
+	void OnShootAnimEvent(class AActor* AiActor, const class FString& OverrideSocketName);
+	void OnShootAnimEventOnClient(class AActor* AiActor, const class FString& OverrideSocketName);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrAiActionShowProjectileAndPrepareForLaunch")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrAiActionShowProjectileAndPrepareForLaunch")
+	}
+	static class UCrAiActionShowProjectileAndPrepareForLaunch* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrAiActionShowProjectileAndPrepareForLaunch>();
+	}
+};
+DUMPER7_ASSERTS_UCrAiActionShowProjectileAndPrepareForLaunch;
+
 // Class MassAIPrototypeEnemyRuntime.CrAiActionSignalEntity
 // 0x0018 (0x00A0 - 0x0088)
 class UCrAiActionSignalEntity final : public UCrAiAction
@@ -2246,36 +2077,6 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionSpawnEnemyEntity;
 
-// Class MassAIPrototypeEnemyRuntime.CrAiActionSpawnEntity
-// 0x00C8 (0x0150 - 0x0088)
-class UCrAiActionSpawnEntity : public UCrAiAction
-{
-public:
-	struct FAuAPMassSpawnedEntityType             EntityType;                                        // 0x0088(0x0038)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FTransform                             SpawnTransform;                                    // 0x00C0(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSaveSpawnedEntity;                                // 0x0120(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_121[0x7];                                      // 0x0121(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBlackboardKeySelector                 SpawnedEntityBBKey;                                // 0x0128(0x0028)(Edit, NativeAccessSpecifierPublic)
-
-public:
-	static class UCrAiActionSpawnEntity* Create_CrAiActionSpawnEntity(TSubclassOf<class UCrAiActionSpawnEntity> ActionType, float NewMaxLifetimeS, const struct FAuAPMassSpawnedEntityType& EntityType_0, const struct FTransform& SpawnTransform_0, bool bSaveSpawnedEntity_0, const struct FBlackboardKeySelector& SpawnedEntityBBKey_0);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrAiActionSpawnEntity")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrAiActionSpawnEntity")
-	}
-	static class UCrAiActionSpawnEntity* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrAiActionSpawnEntity>();
-	}
-};
-DUMPER7_ASSERTS_UCrAiActionSpawnEntity;
-
 // Class MassAIPrototypeEnemyRuntime.CrAiActionTaunt
 // 0x0018 (0x00B0 - 0x0098)
 class UCrAiActionTaunt final : public UCrAiActionPlayAnimation
@@ -2336,6 +2137,29 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiCrowdDeveloperSettings;
 
+// Class MassAIPrototypeEnemyRuntime.CrEQSTestingPawn
+// 0x0000 (0x0710 - 0x0710)
+class ACrEQSTestingPawn final : public AEQSTestingPawn
+{
+public:
+	class AActor*                                 Target;                                            // 0x0708(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrEQSTestingPawn")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrEQSTestingPawn")
+	}
+	static class ACrEQSTestingPawn* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ACrEQSTestingPawn>();
+	}
+};
+DUMPER7_ASSERTS_ACrEQSTestingPawn;
+
 // Class MassAIPrototypeEnemyRuntime.CrAiEQSTargetContext
 // 0x0000 (0x0028 - 0x0028)
 class UCrAiEQSTargetContext final : public UEnvQueryContext_Querier
@@ -2381,26 +2205,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCrAiDotTest;
-
-// Class MassAIPrototypeEnemyRuntime.CrAiEQSPlayerCharactersContext
-// 0x0000 (0x0028 - 0x0028)
-class UCrAiEQSPlayerCharactersContext final : public UEnvQueryContext_Querier
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrAiEQSPlayerCharactersContext")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrAiEQSPlayerCharactersContext")
-	}
-	static class UCrAiEQSPlayerCharactersContext* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrAiEQSPlayerCharactersContext>();
-	}
-};
-DUMPER7_ASSERTS_UCrAiEQSPlayerCharactersContext;
 
 // Class MassAIPrototypeEnemyRuntime.CrAiEQSSpawnLocationContext
 // 0x0000 (0x0028 - 0x0028)
@@ -3841,6 +3645,33 @@ public:
 };
 DUMPER7_ASSERTS_UBTTask_MoveToWithTracking;
 
+// Class MassAIPrototypeEnemyRuntime.BTTask_MoveBackToNavmesh
+// 0x0050 (0x00C0 - 0x0070)
+class UBTTask_MoveBackToNavmesh final : public UBTTaskNode
+{
+public:
+	struct FBlackboardKeySelector                 DesiredDestination;                                // 0x0070(0x0028)(Edit, NativeAccessSpecifierPublic)
+	struct FVector                                Extents;                                           // 0x0098(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ArriveRadius;                                      // 0x00B0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LerpSpeed;                                         // 0x00B4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   NavAgentName;                                      // 0x00B8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BTTask_MoveBackToNavmesh")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BTTask_MoveBackToNavmesh")
+	}
+	static class UBTTask_MoveBackToNavmesh* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTTask_MoveBackToNavmesh>();
+	}
+};
+DUMPER7_ASSERTS_UBTTask_MoveBackToNavmesh;
+
 // Class MassAIPrototypeEnemyRuntime.BTTask_SetTagCooldownBB
 // 0x0028 (0x00C0 - 0x0098)
 class UBTTask_SetTagCooldownBB final : public UBTTask_SetTagCooldown
@@ -3917,33 +3748,6 @@ public:
 };
 DUMPER7_ASSERTS_UBTTask_SetArcParamOverride;
 
-// Class MassAIPrototypeEnemyRuntime.BTTask_SpawnEntity
-// 0x0090 (0x0100 - 0x0070)
-class UBTTask_SpawnEntity final : public UBTTaskNode
-{
-public:
-	struct FBlackboardKeySelector                 SpawnLocationKey;                                  // 0x0070(0x0028)(Edit, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                 SelfActorKey;                                      // 0x0098(0x0028)(Edit, NativeAccessSpecifierPublic)
-	bool                                          bSpawnAtSelfActorLocation;                         // 0x00C0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C1[0x7];                                       // 0x00C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAuAPMassSpawnedEntityType             EntityType;                                        // 0x00C8(0x0038)(Edit, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("BTTask_SpawnEntity")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"BTTask_SpawnEntity")
-	}
-	static class UBTTask_SpawnEntity* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTTask_SpawnEntity>();
-	}
-};
-DUMPER7_ASSERTS_UBTTask_SpawnEntity;
-
 // Class MassAIPrototypeEnemyRuntime.BTTask_DestroyEntity
 // 0x0028 (0x0098 - 0x0070)
 class UBTTask_DestroyEntity final : public UBTTaskNode
@@ -3997,6 +3801,29 @@ public:
 };
 DUMPER7_ASSERTS_UBTTask_FindRandomPositionOnNavmesh;
 
+// Class MassAIPrototypeEnemyRuntime.BTTask_FindRandomLocationInFence
+// 0x0028 (0x0098 - 0x0070)
+class UBTTask_FindRandomLocationInFence final : public UBTTaskNode
+{
+public:
+	struct FBlackboardKeySelector                 LocationKey;                                       // 0x0070(0x0028)(Edit, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BTTask_FindRandomLocationInFence")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BTTask_FindRandomLocationInFence")
+	}
+	static class UBTTask_FindRandomLocationInFence* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTTask_FindRandomLocationInFence>();
+	}
+};
+DUMPER7_ASSERTS_UBTTask_FindRandomLocationInFence;
+
 // Class MassAIPrototypeEnemyRuntime.BTTask_SaveCurrentTimestampToBB
 // 0x0050 (0x00C0 - 0x0070)
 class UBTTask_SaveCurrentTimestampToBB final : public UBTTaskNode
@@ -4045,30 +3872,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UBTTask_SetMassEnemyState;
-
-// Class MassAIPrototypeEnemyRuntime.BTTask_CacheSpawnLocation
-// 0x0050 (0x00C0 - 0x0070)
-class UBTTask_CacheSpawnLocation final : public UBTTaskNode
-{
-public:
-	struct FBlackboardKeySelector                 SelfActorKey;                                      // 0x0070(0x0028)(Edit, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                 SpawnLocationKey;                                  // 0x0098(0x0028)(Edit, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("BTTask_CacheSpawnLocation")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"BTTask_CacheSpawnLocation")
-	}
-	static class UBTTask_CacheSpawnLocation* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTTask_CacheSpawnLocation>();
-	}
-};
-DUMPER7_ASSERTS_UBTTask_CacheSpawnLocation;
 
 // Class MassAIPrototypeEnemyRuntime.BTTask_SignalEntity
 // 0x0030 (0x00A0 - 0x0070)
@@ -4273,6 +4076,29 @@ public:
 };
 DUMPER7_ASSERTS_UMassEnemyCharacterMovementComponent;
 
+// Class MassAIPrototypeEnemyRuntime.MassEnemyClientAnimSyncProcessor
+// 0x0350 (0x0410 - 0x00C0)
+class UMassEnemyClientAnimSyncProcessor final : public UMassProcessor
+{
+public:
+	uint8                                         Pad_C0[0x350];                                     // 0x00C0(0x0350)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MassEnemyClientAnimSyncProcessor")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MassEnemyClientAnimSyncProcessor")
+	}
+	static class UMassEnemyClientAnimSyncProcessor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMassEnemyClientAnimSyncProcessor>();
+	}
+};
+DUMPER7_ASSERTS_UMassEnemyClientAnimSyncProcessor;
+
 // Class MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface
 // 0x0000 (0x0000 - 0x0000)
 class IMassEnemyDamageInterface final
@@ -4318,6 +4144,183 @@ public:
 };
 DUMPER7_ASSERTS_IMassEnemyDamageInterface;
 
+// Class MassAIPrototypeEnemyRuntime.MassEnemyDataAsset
+// 0x0730 (0x0760 - 0x0030)
+class UMassEnemyDataAsset : public UDataAsset
+{
+public:
+	struct FGameplayTagContainer                  AiTags;                                            // 0x0030(0x0020)(Edit, NativeAccessSpecifierPublic)
+	TArray<struct FAiFloatConfigurationValue>     PrototypeFloatBBVariables;                         // 0x0050(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FAiBoolConfigurationValue>      PrototypeBoolBBVariables;                          // 0x0060(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             Height;                                            // 0x0070(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             MinScale;                                          // 0x007C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             MaxScale;                                          // 0x0088(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             ScaleSteps;                                        // 0x0094(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             ZOffset;                                           // 0x00A0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             HismScale;                                         // 0x00AC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             HismZOffset;                                       // 0x00B8(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             HP;                                                // 0x00C4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             WeakpointDamageMultiplier;                         // 0x00D0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiBoolConfigurationValue              bCanApplyCustomGameAiHpModifier;                   // 0x00DC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             DisappearAfterDeathTimeS;                          // 0x00E8(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             NoRagdollDissolveTimeS;                            // 0x00F4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             NotVisibleTimeToDespawnS;                          // 0x0100(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             RuleViolationTimeToDespawnS;                       // 0x010C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             RuleViolationSpawnerBlockedTimeToDespawnS;         // 0x0118(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             MinVelocityToApplyRotation;                        // 0x0124(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             MinDistToTargetToApplyRotation;                    // 0x0130(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             VelocityRotationLerpFactor;                        // 0x013C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             TargetRotationLerpFactor;                          // 0x0148(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             RotateInPlaceSpeed;                                // 0x0154(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             DesiredSurfaceAlignSpeed;                          // 0x0160(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	class FName                                   NavmeshAgentName;                                  // 0x016C(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             ActorReachRadius;                                  // 0x0174(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             FallbackActorReachRadius;                          // 0x0180(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             MaxAllowedNavmeshPointOffset;                      // 0x018C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             MaxAllowedStoppedTime;                             // 0x0198(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             MinPathLegTravelledRatio;                          // 0x01A4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             MovementSpeed;                                     // 0x01B0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             JumpSpeed;                                         // 0x01BC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             RecoverySpeed;                                     // 0x01C8(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             PathNodeArriveRadius;                              // 0x01D4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bUsePathNodeArriveRadiusAlsoForActor;              // 0x01E0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1E1[0x3];                                      // 0x01E1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FAiFloatConfigurationValue             PathNodeJumpArriveRadius;                          // 0x01E4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             PathStartJumpArriveRadius;                         // 0x01F0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             PathEndJumpLocationSpreadRadius;                   // 0x01FC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             PathNodeJumpArriveZThreshold;                      // 0x0208(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             JumpDestinationFreeSpaceRadiusMultiplier;          // 0x0214(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             JumpTakeOffTime;                                   // 0x0220(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             JumpLandTime;                                      // 0x022C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             NavmeshRescuePointSavePeriod;                      // 0x0238(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             NavmeshRescuePointSaveRandTimeDeviation;           // 0x0244(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             MaxPathLegLength;                                  // 0x0250(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             MinPathZDeltaToSplit;                              // 0x025C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiVectorConfigurationValue            PathSplitNavSearchExtents;                         // 0x0268(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             GroundTraceUpOffset;                               // 0x0288(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             GroundTraceDownOffset;                             // 0x0294(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             GroundZLocationAdjustmentSpeed;                    // 0x02A0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             GroundRotationAdjustmentSpeed;                     // 0x02AC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         GroundMaxRotationAngle;                            // 0x02B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             MaxAcceleration;                                   // 0x02BC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             SpeedVariance;                                     // 0x02C8(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             HeightSmoothingTime;                               // 0x02D4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             ObstacleDetectionDistance;                         // 0x02E0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiVector2ConfigurationValue           DesiredSeparation;                                 // 0x02EC(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiVector2ConfigurationValue           MaxFlockingForce;                                  // 0x02FC(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiVector2ConfigurationValue           SeparationForceMultiplier;                         // 0x030C(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiVector2ConfigurationValue           CohesionForceMultiplier;                           // 0x031C(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiVector2ConfigurationValue           AlignmentForceMultiplier;                          // 0x032C(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             FlockingForceSmoothFactorForLowVelocity;           // 0x033C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiBoolConfigurationValue              ScaleFlockingForcesByVelocity;                     // 0x0348(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             MinPercentOfMaxVelocityToAddFlocking;              // 0x0354(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiBoolConfigurationValue              bIsAffectedByWave;                                 // 0x0360(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             UpdateAggroTargetTimePeriodS;                      // 0x036C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             UpdateNonBuildingAggroTargetsTimePeriodS;          // 0x0378(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             UpdateAggroTargetPositionTimePeriodS;              // 0x0384(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             UpdateAggroTargetTimeRandomPartS;                  // 0x0390(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             UpdateNonBuildingAggroTargetTimeRandomPartS;       // 0x039C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             AggroTargetAcquisitionDistance;                    // 0x03A8(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             MinMeaningfullAggro;                               // 0x03B4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             DamageWithoutAggroTargetDuration;                  // 0x03C0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             DamageSignalWithoutAggroTargetRange;               // 0x03CC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             DamageUnlockingCustomGameAggroTargetRange;         // 0x03D8(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             TimeToUnsetAggroTargetAfterAggroLost;              // 0x03E4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             ChangeAggroTargetMultiplier;                       // 0x03F0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             MaxAggroSearchResults;                             // 0x03FC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiBoolConfigurationValue              ShouldSkipValidBuildingAttackLocationSearch;       // 0x0408(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             ForcedTargetAggro;                                 // 0x0414(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiBoolConfigurationValue              BanCanMonitorDistanceToBanTarget;                  // 0x0420(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             BanMinTimeWithoutNextAttackToBan;                  // 0x042C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             BanMinTimeWithoutAnyAttackToBan;                   // 0x0438(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             MaxAcceptableDistanceForGrenade;                   // 0x0444(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             MaxAcceptableZDistanceForGrenade;                  // 0x0450(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             MaxAllowedGrenadeViolationTimeS;                   // 0x045C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiBoolConfigurationValue              bEnableDebug;                                      // 0x0468(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiBoolConfigurationValue              bEnableFlockingDebug;                              // 0x0474(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiBoolConfigurationValue              bEnablePathFollowingDebug;                         // 0x0480(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiBoolConfigurationValue              bEnableAnimationDebug;                             // 0x048C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             TauntAnimCooldown;                                 // 0x0498(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4A4[0x4];                                      // 0x04A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class ACrAiDeathSequenceActor>    DeathSequenceActorClass;                           // 0x04A8(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             DeathSequenceMaxForceImpulse;                      // 0x04B0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             DeathSequenceMinForceImpulse;                      // 0x04BC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             DestroyEntityAfterRagdollStartTimeS;               // 0x04C8(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             DeathSequenceRagdollTimeS;                         // 0x04D4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             DeathSequenceTimeToDissolveS;                      // 0x04E0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             DeathSequenceDissolveTimeS;                        // 0x04EC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             DeathSequenceDistanceToMinForceImpulse;            // 0x04F8(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_504[0x4];                                      // 0x0504(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<struct FGameplayTag, struct FDeathSequenceDamageForceConfig> DeathSequenceDamagesForceMultiplier; // 0x0508(0x0050)(Edit, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             DeathSequenceActorScaleMultiplier;                 // 0x0558(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             DeathSequenceMeshScaleMultiplier;                  // 0x0564(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiBoolConfigurationValue              bManuallyStartDeathSequence;                       // 0x0570(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_57C[0x4];                                      // 0x057C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UGameplayEffect>            AttackDamageEffectPlayer;                          // 0x0580(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UGameplayEffect>            AttackDamageEffectAi;                              // 0x0588(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             AttackBuildingInfectionDamage;                     // 0x0590(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             AttackConeHalfAngleDeg;                            // 0x059C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             DistanceWithoutAttackSlot;                         // 0x05A8(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             AttackSlotRequestLifetimeS;                        // 0x05B4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             AttackCooldownS;                                   // 0x05C0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             AttackWindupS;                                     // 0x05CC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             AttackRange;                                       // 0x05D8(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             ArtificialAvoidanceRadiusExpansion;                // 0x05E4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             AvoidanceWeight;                                   // 0x05F0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             AvoidanceConsiderationRadius;                      // 0x05FC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             CrowdAvoidanceCheckInterval;                       // 0x0608(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             CrowdAvoidanceAdditionalArriveRadiusPerCorrection; // 0x0614(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             MaxCrowdAvoidanceAdditionalArriveRadius;           // 0x0620(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             MinDistanceForCrowdAvoidance;                      // 0x062C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             CrowdAvoidanceDetectionAngle;                      // 0x0638(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             CrowdSignificantLocationChange;                    // 0x0644(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         StuckAvoidanceMaxTargetCollidingEntities;          // 0x0650(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StuckAvoidanceToRecoveryTime;                      // 0x0654(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxStuckAvoidanceRecoveryTime;                     // 0x0658(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StuckAvoidanceVelocityTolerance;                   // 0x065C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CollisionAvoidanceVelocityModifier;                // 0x0660(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AvoidanceTargetLocationSignificantChange;          // 0x0664(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AvoidanceWeaknessDurationAfterStopMovement;        // 0x0668(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AvoidanceWeaknessRefAngleAfterStopMovement;        // 0x066C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MinDistanceToTargetDisableAvoidance;               // 0x0670(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MinSpeedToForceEnabledAvoidance;                   // 0x0674(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<ECrAggroTargetType>                    AggroTargetsWithDisabledAvoidanceByDefault;        // 0x0678(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FAiVector2ConfigurationValue           LodChangeCooldown;                                 // 0x0688(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             LodChangeDelay;                                    // 0x0698(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             ActorSetVisibleDelay;                              // 0x06A4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	class UCrLootConfigAsset*                     LootConfig;                                        // 0x06B0(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FAiFloatConfigurationValue             NavmeshTraceRadius;                                // 0x06B8(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             MinRecoveryJump;                                   // 0x06C4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	TArray<struct FVector>                        MaxRecoveryJump;                                   // 0x06D0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             MinDistToRotateForRecoveryJump;                    // 0x06E0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         MaxInfectionBoostStacks;                           // 0x06EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             DurationToAddInfectionBoostStack;                  // 0x06F0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             SpeedUpPerInfectionStack;                          // 0x06FC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             DurationToRemoveInfectionBoostStacks;              // 0x0708(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             MaxBuildingAttackRangeXY;                          // 0x0714(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             MaxBuildingAttackRangeZ;                           // 0x0720(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             MaxAttackLocationDistanceToBuildingXY;             // 0x072C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             MaxAttackLocationDistanceToBuildingZ;              // 0x0738(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             BuildingAttackLocationReachDistance;               // 0x0744(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             DurationToSetSpawnAnimationStartedState;           // 0x0750(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_75C[0x4];                                      // 0x075C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MassEnemyDataAsset")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MassEnemyDataAsset")
+	}
+	static class UMassEnemyDataAsset* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMassEnemyDataAsset>();
+	}
+};
+DUMPER7_ASSERTS_UMassEnemyDataAsset;
+
 // Class MassAIPrototypeEnemyRuntime.MassEnemyDespawnProcessor
 // 0x0350 (0x0410 - 0x00C0)
 class UMassEnemyDespawnProcessor final : public UMassProcessor
@@ -4340,33 +4343,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMassEnemyDespawnProcessor;
-
-// Class MassAIPrototypeEnemyRuntime.MassEnemyEntityCollisionIsmWrapperActor
-// 0x0060 (0x0308 - 0x02A8)
-class AMassEnemyEntityCollisionIsmWrapperActor final : public AActor
-{
-public:
-	uint8                                         Pad_2A8[0x20];                                     // 0x02A8(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
-	TSoftObjectPtr<class UStaticMesh>             CollisionSM;                                       // 0x02C8(0x0028)(Net, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCrAbilitySystemComponent*              AbilitySystem;                                     // 0x02F0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCrAIBaseAttributeSet*                  BaseAttributes;                                    // 0x02F8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UMassEnemyEntityCollisionIsmWrapperComponent* EntityCollisionIsmWrapperComponent;          // 0x0300(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MassEnemyEntityCollisionIsmWrapperActor")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MassEnemyEntityCollisionIsmWrapperActor")
-	}
-	static class AMassEnemyEntityCollisionIsmWrapperActor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<AMassEnemyEntityCollisionIsmWrapperActor>();
-	}
-};
-DUMPER7_ASSERTS_AMassEnemyEntityCollisionIsmWrapperActor;
 
 // Class MassAIPrototypeEnemyRuntime.MassEnemyEntityCollisionIsmWrapperSubsystem
 // 0x0050 (0x0080 - 0x0030)
@@ -4439,6 +4415,30 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMassEnemyEntityHismWrapperUpdateProcessor;
+
+// Class MassAIPrototypeEnemyRuntime.MassEnemyEntityCollisionIsmWrapperComponent
+// 0x0068 (0x0120 - 0x00B8)
+class UMassEnemyEntityCollisionIsmWrapperComponent final : public UActorComponent
+{
+public:
+	class UInstancedStaticMeshComponent*          CollisionIsmComponent;                             // 0x00B8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_C0[0x60];                                      // 0x00C0(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MassEnemyEntityCollisionIsmWrapperComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MassEnemyEntityCollisionIsmWrapperComponent")
+	}
+	static class UMassEnemyEntityCollisionIsmWrapperComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMassEnemyEntityCollisionIsmWrapperComponent>();
+	}
+};
+DUMPER7_ASSERTS_UMassEnemyEntityCollisionIsmWrapperComponent;
 
 // Class MassAIPrototypeEnemyRuntime.MassEnemyEventQueueSubsystem
 // 0x0030 (0x0070 - 0x0040)

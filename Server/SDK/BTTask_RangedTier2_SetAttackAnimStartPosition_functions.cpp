@@ -16,6 +16,26 @@
 
 SDK_NAMESPACE_START
 
+// Function BTTask_RangedTier2_SetAttackAnimStartPosition.BTTask_RangedTier2_SetAttackAnimStartPosition_C.ExecuteUbergraph_BTTask_RangedTier2_SetAttackAnimStartPosition
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBTTask_RangedTier2_SetAttackAnimStartPosition_C::ExecuteUbergraph_BTTask_RangedTier2_SetAttackAnimStartPosition(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BTTask_RangedTier2_SetAttackAnimStartPosition_C", "ExecuteUbergraph_BTTask_RangedTier2_SetAttackAnimStartPosition");
+
+	Params::BTTask_RangedTier2_SetAttackAnimStartPosition_C_ExecuteUbergraph_BTTask_RangedTier2_SetAttackAnimStartPosition Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BTTask_RangedTier2_SetAttackAnimStartPosition.BTTask_RangedTier2_SetAttackAnimStartPosition_C.ReceiveExecuteAI
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -33,26 +53,6 @@ void UBTTask_RangedTier2_SetAttackAnimStartPosition_C::ReceiveExecuteAI(class AA
 
 	Parms.OwnerController = OwnerController;
 	Parms.ControlledPawn = ControlledPawn;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BTTask_RangedTier2_SetAttackAnimStartPosition.BTTask_RangedTier2_SetAttackAnimStartPosition_C.ExecuteUbergraph_BTTask_RangedTier2_SetAttackAnimStartPosition
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UBTTask_RangedTier2_SetAttackAnimStartPosition_C::ExecuteUbergraph_BTTask_RangedTier2_SetAttackAnimStartPosition(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTTask_RangedTier2_SetAttackAnimStartPosition_C", "ExecuteUbergraph_BTTask_RangedTier2_SetAttackAnimStartPosition");
-
-	Params::BTTask_RangedTier2_SetAttackAnimStartPosition_C_ExecuteUbergraph_BTTask_RangedTier2_SetAttackAnimStartPosition Parms{};
-
-	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

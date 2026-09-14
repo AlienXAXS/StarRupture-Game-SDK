@@ -49,14 +49,17 @@ enum class EMetaSoundBuilderResult : uint8
 	EMetaSoundBuilderResult_MAX              = 2,
 };
 
-// ScriptStruct MetasoundEngine.MetaSoundAssetDirectory
-// 0x0010 (0x0010 - 0x0000)
-struct FMetaSoundAssetDirectory final
+// ScriptStruct MetasoundEngine.MetaSoundQualitySettings
+// 0x0020 (0x0020 - 0x0000)
+struct FMetaSoundQualitySettings final
 {
 public:
-	struct FDirectoryPath                         Directory;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGuid                                  UniqueID;                                          // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name;                                              // 0x0010(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FPerPlatformInt                        SampleRate;                                        // 0x0018(0x0004)(Edit, Config, NoDestructor, NativeAccessSpecifierPublic)
+	struct FPerPlatformFloat                      BlockRate;                                         // 0x001C(0x0004)(Edit, Config, NoDestructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FMetaSoundAssetDirectory;
+DUMPER7_ASSERTS_FMetaSoundQualitySettings;
 
 // ScriptStruct MetasoundEngine.MetaSoundOutput
 // 0x0008 (0x0010 - 0x0008)
@@ -86,17 +89,14 @@ public:
 };
 DUMPER7_ASSERTS_FMetaSoundPageSettings;
 
-// ScriptStruct MetasoundEngine.MetaSoundQualitySettings
-// 0x0020 (0x0020 - 0x0000)
-struct FMetaSoundQualitySettings final
+// ScriptStruct MetasoundEngine.MetaSoundAssetDirectory
+// 0x0010 (0x0010 - 0x0000)
+struct FMetaSoundAssetDirectory final
 {
 public:
-	struct FGuid                                  UniqueID;                                          // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Name;                                              // 0x0010(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FPerPlatformInt                        SampleRate;                                        // 0x0018(0x0004)(Edit, Config, NoDestructor, NativeAccessSpecifierPublic)
-	struct FPerPlatformFloat                      BlockRate;                                         // 0x001C(0x0004)(Edit, Config, NoDestructor, NativeAccessSpecifierPublic)
+	struct FDirectoryPath                         Directory;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FMetaSoundQualitySettings;
+DUMPER7_ASSERTS_FMetaSoundAssetDirectory;
 
 // ScriptStruct MetasoundEngine.MetaSoundAsyncAssetDependencies
 // 0x0030 (0x0030 - 0x0000)

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "AIModule_classes.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
+#include "AIModule_classes.hpp"
 
 
 SDK_NAMESPACE_START

@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "AuItems_structs.hpp"
 #include "AuCamera_structs.hpp"
 #include "GameplayTags_structs.hpp"
-#include "AuItems_structs.hpp"
 
 
 SDK_NAMESPACE_START

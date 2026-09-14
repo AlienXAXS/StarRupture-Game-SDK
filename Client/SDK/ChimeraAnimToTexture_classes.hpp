@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "ChimeraAnimToTexture_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "AnimToTexture_classes.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 SDK_NAMESPACE_START

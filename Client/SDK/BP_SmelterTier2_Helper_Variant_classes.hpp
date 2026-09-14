@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_SmelterTier2_Helper_Variant.BP_SmelterTier2_Helper_Variant_C
-// 0x0000 (0x0A60 - 0x0A60)
+// 0x0000 (0x0A20 - 0x0A20)
 class ABP_SmelterTier2_Helper_Variant_C final : public ABP_ChimeraPlacementHelperReplicatedBase_C
 {
 public:

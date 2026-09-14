@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "ErrantBiomesPCG_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "ErrantBiomesPCG_structs.hpp"
 #include "PCG_classes.hpp"
 #include "Engine_classes.hpp"
 

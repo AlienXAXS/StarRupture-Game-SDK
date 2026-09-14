@@ -12,13 +12,13 @@
 
 #include "CoreUObject_structs.hpp"
 #include "StreamlineDLSSGBlueprint_structs.hpp"
-#include "StreamlineDeepDVCBlueprint_structs.hpp"
+#include "NISBlueprint_structs.hpp"
 #include "DLSSBlueprint_structs.hpp"
 #include "StreamlineReflexBlueprint_structs.hpp"
-#include "NISBlueprint_structs.hpp"
 #include "E_BuiltInAAModes_structs.hpp"
 #include "InputCore_structs.hpp"
 #include "StreamlineBlueprint_structs.hpp"
+#include "StreamlineDeepDVCBlueprint_structs.hpp"
 
 
 SDK_NAMESPACE_START

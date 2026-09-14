@@ -16,12 +16,12 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_DronePole_320_2x2_Helper.BP_DronePole_320_2x2_Helper_C
-// 0x0010 (0x0A70 - 0x0A60)
+// 0x0010 (0x0A30 - 0x0A20)
 class ABP_DronePole_320_2x2_Helper_C final : public ABP_PlacementHelperReplicatedBase_C
 {
 public:
-	class UInstancedStaticMeshComponent*          DynamicFoundationISM;                              // 0x0A58(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   Pole;                                              // 0x0A60(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UInstancedStaticMeshComponent*          DynamicFoundationISM;                              // 0x0A18(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   Pole;                                              // 0x0A20(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

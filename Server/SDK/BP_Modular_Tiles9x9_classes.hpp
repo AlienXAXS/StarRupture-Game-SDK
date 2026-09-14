@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Modular_Tiles9x9.BP_Modular_Tiles9x9_C
-// 0x0000 (0x08F8 - 0x08F8)
+// 0x0000 (0x08B8 - 0x08B8)
 class ABP_Modular_Tiles9x9_C final : public ABP_Modular_Tiles_Base_C
 {
 public:

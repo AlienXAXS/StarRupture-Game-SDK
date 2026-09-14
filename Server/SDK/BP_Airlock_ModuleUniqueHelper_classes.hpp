@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Airlock_ModuleUniqueHelper.BP_Airlock_ModuleUniqueHelper_C
-// 0x0000 (0x0B70 - 0x0B70)
+// 0x0000 (0x0B30 - 0x0B30)
 class ABP_Airlock_ModuleUniqueHelper_C final : public ABP_PlacementHelperReplicatedModule_C
 {
 public:

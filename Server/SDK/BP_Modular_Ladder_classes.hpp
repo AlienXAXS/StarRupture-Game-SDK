@@ -17,21 +17,21 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Modular_Ladder.BP_Modular_Ladder_C
-// 0x00A8 (0x0960 - 0x08B8)
-class ABP_Modular_Ladder_C final : public ACrCustomBuilding
+// 0x00A8 (0x0920 - 0x0878)
+class ABP_Modular_Ladder_C final : public ACrLadder
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x08B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UBoxComponent*                          SnapCollider1;                                     // 0x08C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   TopMount1_Dynamic;                                 // 0x08C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   BottomMount_Dynamic;                               // 0x08D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   TopMount_Dynamic;                                  // 0x08D8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UBoxComponent*                          LadderTrigger;                                     // 0x08E0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	TArray<double>                                FootstepsHights;                                   // 0x08E8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TMap<class ACrCharacterPlayerBase*, double>   CharactersOnLadder;                                // 0x08F8(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
-	double                                        CachedLadderHight;                                 // 0x0948(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class USoundBase*                             FootstepSound;                                     // 0x0950(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	class FName                                   LadderSurfaceID;                                   // 0x0958(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0878(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UBoxComponent*                          SnapCollider1;                                     // 0x0880(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   TopMount1_Dynamic;                                 // 0x0888(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   BottomMount_Dynamic;                               // 0x0890(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   TopMount_Dynamic;                                  // 0x0898(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UBoxComponent*                          LadderTrigger;                                     // 0x08A0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	TArray<double>                                FootstepsHights;                                   // 0x08A8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMap<class ACrCharacterPlayerBase*, double>   CharactersOnLadder;                                // 0x08B8(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
+	double                                        CachedLadderHight;                                 // 0x0908(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class USoundBase*                             FootstepSound;                                     // 0x0910(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class FName                                   LadderSurfaceID;                                   // 0x0918(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void UpdateCharactersHights();

@@ -39,19 +39,6 @@ enum class ETargetingTraceType : uint8
 	ETargetingTraceType_MAX                  = 4,
 };
 
-// ScriptStruct TargetingSystem.TargetingSourceContext
-// 0x0038 (0x0038 - 0x0000)
-struct FTargetingSourceContext final
-{
-public:
-	class AActor*                                 SourceActor;                                       // 0x0000(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class AActor*                                 InstigatorActor;                                   // 0x0008(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	struct FVector                                SourceLocation;                                    // 0x0010(0x0018)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   SourceSocketName;                                  // 0x0028(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UObject*                                SourceObject;                                      // 0x0030(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FTargetingSourceContext;
-
 // ScriptStruct TargetingSystem.TargetingRequestHandle
 // 0x0004 (0x0004 - 0x0000)
 struct alignas(0x04) FTargetingRequestHandle final
@@ -60,24 +47,6 @@ public:
 	uint8                                         Pad_0[0x4];                                        // 0x0000(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FTargetingRequestHandle;
-
-// ScriptStruct TargetingSystem.CollisionQueryTaskData
-// 0x0010 (0x0010 - 0x0000)
-struct FCollisionQueryTaskData final
-{
-public:
-	TArray<class AActor*>                         IgnoredActors;                                     // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCollisionQueryTaskData;
-
-// ScriptStruct TargetingSystem.TargetingTaskSet
-// 0x0010 (0x0010 - 0x0000)
-struct FTargetingTaskSet final
-{
-public:
-	TArray<class UTargetingTask*>                 Tasks;                                             // 0x0000(0x0010)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FTargetingTaskSet;
 
 // ScriptStruct TargetingSystem.TargetingDefaultResultData
 // 0x0108 (0x0108 - 0x0000)
@@ -98,6 +67,37 @@ public:
 	TArray<struct FTargetingDefaultResultData>    TargetResults;                                     // 0x0000(0x0010)(ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FTargetingDefaultResultsSet;
+
+// ScriptStruct TargetingSystem.CollisionQueryTaskData
+// 0x0010 (0x0010 - 0x0000)
+struct FCollisionQueryTaskData final
+{
+public:
+	TArray<class AActor*>                         IgnoredActors;                                     // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCollisionQueryTaskData;
+
+// ScriptStruct TargetingSystem.TargetingTaskSet
+// 0x0010 (0x0010 - 0x0000)
+struct FTargetingTaskSet final
+{
+public:
+	TArray<class UTargetingTask*>                 Tasks;                                             // 0x0000(0x0010)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FTargetingTaskSet;
+
+// ScriptStruct TargetingSystem.TargetingSourceContext
+// 0x0038 (0x0038 - 0x0000)
+struct FTargetingSourceContext final
+{
+public:
+	class AActor*                                 SourceActor;                                       // 0x0000(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class AActor*                                 InstigatorActor;                                   // 0x0008(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FVector                                SourceLocation;                                    // 0x0010(0x0018)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   SourceSocketName;                                  // 0x0028(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                SourceObject;                                      // 0x0030(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FTargetingSourceContext;
 
 // ScriptStruct TargetingSystem.TargetingRequestData
 // 0x0040 (0x0040 - 0x0000)

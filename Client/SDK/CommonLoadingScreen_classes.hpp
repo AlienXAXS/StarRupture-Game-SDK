@@ -48,7 +48,7 @@ public:
 DUMPER7_ASSERTS_ILoadingProcessInterface;
 
 // Class CommonLoadingScreen.CommonLoadingScreenSettings
-// 0x0058 (0x0090 - 0x0038)
+// 0x0068 (0x00A0 - 0x0038)
 class UCommonLoadingScreenSettings final : public UDeveloperSettingsBackedByCVars
 {
 public:
@@ -62,7 +62,10 @@ public:
 	bool                                          ForceLoadingScreenVisible;                         // 0x0089(0x0001)(Edit, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          HoldLoadingScreenAdditionalSecsEvenInEditor;       // 0x008A(0x0001)(Edit, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ForceTickLoadingScreenEvenInEditor;                // 0x008B(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8C[0x4];                                       // 0x008C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_8C[0x4];                                       // 0x008C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        LoadingScreenMassActorSpawningTimeSliceMultiplier; // 0x0090(0x0008)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LoadingScreenLevelStreamingActorsUpdateTimeLimit;  // 0x0098(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9C[0x4];                                       // 0x009C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -81,11 +84,11 @@ public:
 DUMPER7_ASSERTS_UCommonLoadingScreenSettings;
 
 // Class CommonLoadingScreen.LoadingScreenManager
-// 0x0088 (0x00B8 - 0x0030)
+// 0x0098 (0x00C8 - 0x0030)
 class ULoadingScreenManager final : public UGameInstanceSubsystem
 {
 public:
-	uint8                                         Pad_30[0x88];                                      // 0x0030(0x0088)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x98];                                      // 0x0030(0x0098)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class FString GetDebugReasonForShowingOrHidingLoadingScreen() const;

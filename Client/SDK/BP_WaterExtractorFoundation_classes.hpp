@@ -17,11 +17,11 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_WaterExtractorFoundation.BP_WaterExtractorFoundation_C
-// 0x0008 (0x08F8 - 0x08F0)
+// 0x0008 (0x08B8 - 0x08B0)
 class ABP_WaterExtractorFoundation_C final : public ABP_Modular_Foundation_Unique_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_WaterExtractorFoundation_C;      // 0x08F0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_WaterExtractorFoundation_C;      // 0x08B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_BP_WaterExtractorFoundation(int32 EntryPoint);

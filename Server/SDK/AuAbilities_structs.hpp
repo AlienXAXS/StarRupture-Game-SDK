@@ -76,18 +76,6 @@ enum class ENxDebugDrawType : uint8
 	ENxDebugDrawType_MAX                     = 2,
 };
 
-// ScriptStruct AuAbilities.AuReplicatedProjectile
-// 0x0028 (0x0028 - 0x0000)
-struct FAuReplicatedProjectile final
-{
-public:
-	struct FGameplayAbilitySpecHandle             Spec;                                              // 0x0000(0x0004)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FPredictionKey                         Key;                                               // 0x0004(0x0010)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class AAuAbilityProjectile*>           Projectiles;                                       // 0x0018(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FAuReplicatedProjectile;
-
 // ScriptStruct AuAbilities.AuCustomTargetHandle
 // 0x0001 (0x0001 - 0x0000)
 struct FAuCustomTargetHandle final
@@ -96,6 +84,15 @@ public:
 	uint8                                         ID;                                                // 0x0000(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
 DUMPER7_ASSERTS_FAuCustomTargetHandle;
+
+// ScriptStruct AuAbilities.AttributeEffectHandle
+// 0x0050 (0x0050 - 0x0000)
+struct alignas(0x08) FAttributeEffectHandle final
+{
+public:
+	uint8                                         Pad_0[0x50];                                       // 0x0000(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAttributeEffectHandle;
 
 // ScriptStruct AuAbilities.AuTargetDataHandle
 // 0x0002 (0x0002 - 0x0000)
@@ -131,14 +128,19 @@ public:
 };
 DUMPER7_ASSERTS_FAuTargetData;
 
-// ScriptStruct AuAbilities.AuGameplayAbilityActorInfo
-// 0x0010 (0x0058 - 0x0048)
-struct FAuGameplayAbilityActorInfo : public FGameplayAbilityActorInfo
+// ScriptStruct AuAbilities.AuGATD_HitResultArray
+// 0x00C8 (0x00D0 - 0x0008)
+struct FAuGATD_HitResultArray final : public FGameplayAbilityTargetData
 {
 public:
-	TScriptInterface<class IAuTargetingInterface> TargetingInterface;                                // 0x0048(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayAbilityTargetingLocationInfo  SourceLocation;                                    // 0x0010(0x0090)(ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FHitResult>                     HitResults;                                        // 0x00A0(0x0010)(ZeroConstructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FCrMassEntityReplicationHelper> MassEntityHandles;                                 // 0x00B0(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	struct FAuTargetDataHandle                    Handle;                                            // 0x00C0(0x0002)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_C2[0xE];                                       // 0x00C2(0x000E)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FAuGameplayAbilityActorInfo;
+DUMPER7_ASSERTS_FAuGATD_HitResultArray;
 
 // ScriptStruct AuAbilities.AuCustomTraceDataHandle
 // 0x0018 (0x0018 - 0x0000)
@@ -149,6 +151,15 @@ public:
 	class UScriptStruct*                          Type;                                              // 0x0010(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 };
 DUMPER7_ASSERTS_FAuCustomTraceDataHandle;
+
+// ScriptStruct AuAbilities.AuGameplayAbilityActorInfo
+// 0x0010 (0x0058 - 0x0048)
+struct FAuGameplayAbilityActorInfo : public FGameplayAbilityActorInfo
+{
+public:
+	TScriptInterface<class IAuTargetingInterface> TargetingInterface;                                // 0x0048(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAuGameplayAbilityActorInfo;
 
 // ScriptStruct AuAbilities.AuGameplayEffectContext
 // 0x0018 (0x00E8 - 0x00D0)
@@ -190,6 +201,18 @@ public:
 	struct FPredictionKey                         Key;                                               // 0x0004(0x0010)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FAuAbilityReplicationHandle;
+
+// ScriptStruct AuAbilities.AuReplicatedProjectile
+// 0x0028 (0x0028 - 0x0000)
+struct FAuReplicatedProjectile final
+{
+public:
+	struct FGameplayAbilitySpecHandle             Spec;                                              // 0x0000(0x0004)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FPredictionKey                         Key;                                               // 0x0004(0x0010)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class AAuAbilityProjectile*>           Projectiles;                                       // 0x0018(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FAuReplicatedProjectile;
 
 // ScriptStruct AuAbilities.AuMinimalActiveEffect
 // 0x0024 (0x0030 - 0x000C)
@@ -269,15 +292,6 @@ public:
 	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FAuGameplayCueCustomTraceReplicatedData;
-
-// ScriptStruct AuAbilities.AttributeEffectHandle
-// 0x0050 (0x0050 - 0x0000)
-struct alignas(0x08) FAttributeEffectHandle final
-{
-public:
-	uint8                                         Pad_0[0x50];                                       // 0x0000(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAttributeEffectHandle;
 
 // ScriptStruct AuAbilities.AuTargetingCameraNetUpdate
 // 0x0030 (0x0030 - 0x0000)
@@ -481,19 +495,5 @@ public:
 	uint8                                         Pad_32[0x6];                                       // 0x0032(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FAuCustomTraceRequest;
-
-// ScriptStruct AuAbilities.AuGATD_HitResultArray
-// 0x00C8 (0x00D0 - 0x0008)
-struct FAuGATD_HitResultArray final : public FGameplayAbilityTargetData
-{
-public:
-	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayAbilityTargetingLocationInfo  SourceLocation;                                    // 0x0010(0x0090)(ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FHitResult>                     HitResults;                                        // 0x00A0(0x0010)(ZeroConstructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FCrMassEntityReplicationHelper> MassEntityHandles;                                 // 0x00B0(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	struct FAuTargetDataHandle                    Handle;                                            // 0x00C0(0x0002)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_C2[0xE];                                       // 0x00C2(0x000E)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAuGATD_HitResultArray;
 
 SDK_NAMESPACE_END

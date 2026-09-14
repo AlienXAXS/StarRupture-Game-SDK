@@ -108,15 +108,6 @@ enum class EMassFragmentPresence : uint8
 	MAX                                      = 4,
 };
 
-// ScriptStruct MassEntity.MassConstSharedFragment
-// 0x0000 (0x0000 - 0x0000)
-#pragma pack(push, 0x1)
-struct SDK_ALIGN(0x01) FMassConstSharedFragment
-{
-};
-#pragma pack(pop)
-DUMPER7_ASSERTS_FMassConstSharedFragment;
-
 // ScriptStruct MassEntity.MassEntityHandle
 // 0x0008 (0x0008 - 0x0000)
 struct alignas(0x08) FMassEntityHandle final
@@ -126,6 +117,15 @@ public:
 	int32                                         SerialNumber;                                      // 0x0004(0x0004)(Edit, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FMassEntityHandle;
+
+// ScriptStruct MassEntity.MassSharedFragment
+// 0x0000 (0x0000 - 0x0000)
+#pragma pack(push, 0x1)
+struct SDK_ALIGN(0x01) FMassSharedFragment
+{
+};
+#pragma pack(pop)
+DUMPER7_ASSERTS_FMassSharedFragment;
 
 // ScriptStruct MassEntity.MassGenericDebugEvent
 // 0x0001 (0x0001 - 0x0000)
@@ -172,14 +172,14 @@ struct SDK_ALIGN(0x01) FMassChunkFragment
 #pragma pack(pop)
 DUMPER7_ASSERTS_FMassChunkFragment;
 
-// ScriptStruct MassEntity.MassSharedFragment
+// ScriptStruct MassEntity.MassConstSharedFragment
 // 0x0000 (0x0000 - 0x0000)
 #pragma pack(push, 0x1)
-struct SDK_ALIGN(0x01) FMassSharedFragment
+struct SDK_ALIGN(0x01) FMassConstSharedFragment
 {
 };
 #pragma pack(pop)
-DUMPER7_ASSERTS_FMassSharedFragment;
+DUMPER7_ASSERTS_FMassConstSharedFragment;
 
 // ScriptStruct MassEntity.MassFragmentRequirements
 // 0x0278 (0x0278 - 0x0000)

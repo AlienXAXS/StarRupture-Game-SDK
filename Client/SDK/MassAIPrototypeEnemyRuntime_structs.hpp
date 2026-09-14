@@ -545,6 +545,15 @@ public:
 };
 DUMPER7_ASSERTS_FCrAiBtDistanceCheck;
 
+// ScriptStruct MassAIPrototypeEnemyRuntime.StateTreeCondition_IsSpawnerDisabledDueToEnviroWaveInstanceData
+// 0x0001 (0x0001 - 0x0000)
+struct FStateTreeCondition_IsSpawnerDisabledDueToEnviroWaveInstanceData final
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FStateTreeCondition_IsSpawnerDisabledDueToEnviroWaveInstanceData;
+
 // ScriptStruct MassAIPrototypeEnemyRuntime.CrAiBtAngleCheck
 // 0x0098 (0x00D0 - 0x0038)
 struct FCrAiBtAngleCheck final : public FCrAiBtCheckBase
@@ -579,14 +588,14 @@ public:
 };
 DUMPER7_ASSERTS_FCrAiBtPathCheck;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.StateTreeCondition_IsSpawnerNavmeshGeneratedInstanceData
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnerDebugGlobalTaskInstanceData
 // 0x0001 (0x0001 - 0x0000)
-struct FStateTreeCondition_IsSpawnerNavmeshGeneratedInstanceData final
+struct FMassEnemySpawnerDebugGlobalTaskInstanceData final
 {
 public:
 	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FStateTreeCondition_IsSpawnerNavmeshGeneratedInstanceData;
+DUMPER7_ASSERTS_FMassEnemySpawnerDebugGlobalTaskInstanceData;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.CrAiBtLineOfSightCheck
 // 0x00F8 (0x0130 - 0x0038)
@@ -626,26 +635,18 @@ public:
 };
 DUMPER7_ASSERTS_FCrAiBtSweepCheck;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnerTaskBase
-// 0x0010 (0x0038 - 0x0028)
-struct FMassEnemySpawnerTaskBase : public FMassStateTreeTaskBase
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerLogic
+// 0x0010 (0x0010 - 0x0000)
+struct FMassEnemySpawnerTriggerLogic final
 {
 public:
-	uint8                                         Pad_28[0x6];                                       // 0x0028(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bSetTaskName;                                      // 0x002E(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_2F[0x1];                                       // 0x002F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   StateName;                                         // 0x0030(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EMassEnemySpawnerTriggerType                  TriggerType;                                       // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bActivateAiAggroOnEnter;                           // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         EnterCount;                                        // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	int32                                         ExitCount;                                         // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
-DUMPER7_ASSERTS_FMassEnemySpawnerTaskBase;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.FMassEnemySpawnerEnviroWaveTask
-// 0x0008 (0x0040 - 0x0038)
-struct FFMassEnemySpawnerEnviroWaveTask final : public FMassEnemySpawnerTaskBase
-{
-public:
-	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FFMassEnemySpawnerEnviroWaveTask;
+DUMPER7_ASSERTS_FMassEnemySpawnerTriggerLogic;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.CrAiBtTrajectoryCheck
 // 0x00D8 (0x0110 - 0x0038)
@@ -683,14 +684,32 @@ public:
 };
 DUMPER7_ASSERTS_FCrAiBtVelocityCheck;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnSubsystemTickFunction
-// 0x0018 (0x0040 - 0x0028)
-struct FMassEnemySpawnSubsystemTickFunction final : public FTickFunction
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyStateTreeTaskBaseInstanceData
+// 0x0000 (0x0000 - 0x0000)
+#pragma pack(push, 0x1)
+struct SDK_ALIGN(0x01) FMassEnemyStateTreeTaskBaseInstanceData
+{
+};
+#pragma pack(pop)
+DUMPER7_ASSERTS_FMassEnemyStateTreeTaskBaseInstanceData;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyTimedTaskInstanceData
+// 0x0000 (0x0000 - 0x0000)
+#pragma pack(push, 0x1)
+struct SDK_ALIGN(0x01) FMassEnemyTimedTaskInstanceData : public FMassEnemyStateTreeTaskBaseInstanceData
+{
+};
+#pragma pack(pop)
+DUMPER7_ASSERTS_FMassEnemyTimedTaskInstanceData;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyWanderTaskInstanceData
+// 0x0001 (0x0001 - 0x0000)
+struct FMassEnemyWanderTaskInstanceData final : public FMassEnemyTimedTaskInstanceData
 {
 public:
-	uint8                                         Pad_28[0x18];                                      // 0x0028(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FMassEnemySpawnSubsystemTickFunction;
+DUMPER7_ASSERTS_FMassEnemyWanderTaskInstanceData;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.CrAiBtTimestampCheck
 // 0x0038 (0x0070 - 0x0038)
@@ -712,50 +731,6 @@ public:
 	TArray<struct FCrAiNumberCheckBoolCondition>  BooleanConditions;                                 // 0x0040(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCrAiEnemiesInRadiusCheck;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyStateTreeTaskBase
-// 0x0010 (0x0038 - 0x0028)
-struct FMassEnemyStateTreeTaskBase : public FMassStateTreeTaskBase
-{
-public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   StateName;                                         // 0x0030(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-};
-DUMPER7_ASSERTS_FMassEnemyStateTreeTaskBase;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyTimedTask
-// 0x0018 (0x0050 - 0x0038)
-struct FMassEnemyTimedTask : public FMassEnemyStateTreeTaskBase
-{
-public:
-	uint8                                         Pad_38[0xC];                                       // 0x0038(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         TaskRunTimeS;                                      // 0x0044(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         TaskTickTimeS;                                     // 0x0048(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          IsMovementTask;                                    // 0x004C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_4D[0x3];                                       // 0x004D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassEnemyTimedTask;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyWanderTask
-// 0x0030 (0x0080 - 0x0050)
-struct FMassEnemyWanderTask : public FMassEnemyTimedTask
-{
-public:
-	uint8                                         Pad_50[0x18];                                      // 0x0050(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         PointSearchRadius;                                 // 0x0068(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         ArriveDistance;                                    // 0x006C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         ForcedMaxMoveSpeed;                                // 0x0070(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FName                                   NavAgentName;                                      // 0x0074(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_7C[0x4];                                       // 0x007C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassEnemyWanderTask;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyRunAwayTask
-// 0x0000 (0x0080 - 0x0080)
-struct FMassEnemyRunAwayTask final : public FMassEnemyWanderTask
-{
-};
-DUMPER7_ASSERTS_FMassEnemyRunAwayTask;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.CrAiActionDataMovement
 // 0x0050 (0x0050 - 0x0000)
@@ -804,6 +779,27 @@ public:
 };
 DUMPER7_ASSERTS_FCrUseNavLinkActionConfiguration;
 
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnerTaskBase
+// 0x0010 (0x0038 - 0x0028)
+struct FMassEnemySpawnerTaskBase : public FMassStateTreeTaskBase
+{
+public:
+	uint8                                         Pad_28[0x6];                                       // 0x0028(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bSetTaskName;                                      // 0x002E(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_2F[0x1];                                       // 0x002F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   StateName;                                         // 0x0030(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+};
+DUMPER7_ASSERTS_FMassEnemySpawnerTaskBase;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.FMassEnemySpawnerProvideNavmeshTask
+// 0x0008 (0x0040 - 0x0038)
+struct FFMassEnemySpawnerProvideNavmeshTask final : public FMassEnemySpawnerTaskBase
+{
+public:
+	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FFMassEnemySpawnerProvideNavmeshTask;
+
 // ScriptStruct MassAIPrototypeEnemyRuntime.NavlinkCrowdData
 // 0x0050 (0x0050 - 0x0000)
 struct alignas(0x08) FNavlinkCrowdData final
@@ -822,14 +818,38 @@ public:
 };
 DUMPER7_ASSERTS_FCrMassAvoidanceFragment;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.StateTreeCondition_IsSpawnerDisabledDueToEnviroWaveInstanceData
-// 0x0001 (0x0001 - 0x0000)
-struct FStateTreeCondition_IsSpawnerDisabledDueToEnviroWaveInstanceData final
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyStateTreeTaskBase
+// 0x0010 (0x0038 - 0x0028)
+struct FMassEnemyStateTreeTaskBase : public FMassStateTreeTaskBase
 {
 public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   StateName;                                         // 0x0030(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
-DUMPER7_ASSERTS_FStateTreeCondition_IsSpawnerDisabledDueToEnviroWaveInstanceData;
+DUMPER7_ASSERTS_FMassEnemyStateTreeTaskBase;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyTimedTask
+// 0x0018 (0x0050 - 0x0038)
+struct FMassEnemyTimedTask : public FMassEnemyStateTreeTaskBase
+{
+public:
+	uint8                                         Pad_38[0xC];                                       // 0x0038(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         TaskRunTimeS;                                      // 0x0044(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         TaskTickTimeS;                                     // 0x0048(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          IsMovementTask;                                    // 0x004C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_4D[0x3];                                       // 0x004D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassEnemyTimedTask;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyUpdateTargetPositionTask
+// 0x0018 (0x0068 - 0x0050)
+struct FMassEnemyUpdateTargetPositionTask final : public FMassEnemyTimedTask
+{
+public:
+	class FName                                   NavAgentName;                                      // 0x0050(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_58[0x10];                                      // 0x0058(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassEnemyUpdateTargetPositionTask;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.CrBaseAttackSpawnIndicatorTag
 // 0x0000 (0x0001 - 0x0001)
@@ -847,16 +867,14 @@ public:
 };
 DUMPER7_ASSERTS_FMassEnemyCrowdData;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyLookAtTask
-// 0x0008 (0x0058 - 0x0050)
-struct FMassEnemyLookAtTask final : public FMassEnemyTimedTask
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnerHeartbeatTaskInstanceData
+// 0x0004 (0x0004 - 0x0000)
+struct alignas(0x04) FMassEnemySpawnerHeartbeatTaskInstanceData final
 {
 public:
-	uint8                                         Pad_50[0x6];                                       // 0x0050(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bTrackCurrentTargetPosition;                       // 0x0056(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_57[0x1];                                       // 0x0057(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x4];                                        // 0x0000(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FMassEnemyLookAtTask;
+DUMPER7_ASSERTS_FMassEnemySpawnerHeartbeatTaskInstanceData;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.CrMassEnemyReplicatedAgentPositionYawData
 // 0x0020 (0x0020 - 0x0000)
@@ -940,14 +958,65 @@ public:
 };
 DUMPER7_ASSERTS_FCrMassEnemyClientBubbleSerializer;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnerTaskBaseInstanceData
-// 0x0001 (0x0001 - 0x0000)
-struct FMassEnemySpawnerTaskBaseInstanceData final
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyVertexAnimConfigurationNextStateDefinition
+// 0x0008 (0x0008 - 0x0000)
+struct FMassEnemyVertexAnimConfigurationNextStateDefinition final
 {
 public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	EMassEnemyVertexAnimState                     State;                                             // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Weight;                                            // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FMassEnemySpawnerTaskBaseInstanceData;
+DUMPER7_ASSERTS_FMassEnemyVertexAnimConfigurationNextStateDefinition;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyAnimEventData
+// 0x000C (0x000C - 0x0000)
+struct FMassEnemyAnimEventData final
+{
+public:
+	float                                         AnimProgress;                                      // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           EventTag;                                          // 0x0004(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMassEnemyAnimEventData;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyVertexAnimConfigurationData
+// 0x0038 (0x0038 - 0x0000)
+struct FMassEnemyVertexAnimConfigurationData final
+{
+public:
+	int32                                         AnimIndex;                                         // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         StartFrame;                                        // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         EndFrame;                                          // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Playrate;                                          // 0x000C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StartBlendOutProgress;                             // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bLooped;                                           // 0x0014(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FMassEnemyVertexAnimConfigurationNextStateDefinition> NextStates;                  // 0x0018(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FMassEnemyAnimEventData>        Events;                                            // 0x0028(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMassEnemyVertexAnimConfigurationData;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyVertexAnimParameters
+// 0x0060 (0x0060 - 0x0000)
+struct FMassEnemyVertexAnimParameters final
+{
+public:
+	TMap<EMassEnemyVertexAnimState, struct FMassEnemyVertexAnimConfigurationData> AnimConfigMap;     // 0x0000(0x0050)(Edit, NativeAccessSpecifierPublic)
+	float                                         JumpAnimationMiddleStartFrame;                     // 0x0050(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         JumpAnimationLandingStartFrame;                    // 0x0054(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AttackAnimDealDamageEventProgress;                 // 0x0058(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassEnemyVertexAnimParameters;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnSubsystemTickFunction
+// 0x0018 (0x0040 - 0x0028)
+struct FMassEnemySpawnSubsystemTickFunction final : public FTickFunction
+{
+public:
+	uint8                                         Pad_28[0x18];                                      // 0x0028(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassEnemySpawnSubsystemTickFunction;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.CrAnimState
 // 0x0028 (0x0028 - 0x0000)
@@ -958,23 +1027,21 @@ public:
 };
 DUMPER7_ASSERTS_FCrAnimState;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyStateTreeTaskBaseInstanceData
-// 0x0000 (0x0000 - 0x0000)
-#pragma pack(push, 0x1)
-struct SDK_ALIGN(0x01) FMassEnemyStateTreeTaskBaseInstanceData
+// ScriptStruct MassAIPrototypeEnemyRuntime.CrAnimState_SimpleAnimState
+// 0x0040 (0x0068 - 0x0028)
+struct FCrAnimState_SimpleAnimState : public FCrAnimState
 {
+public:
+	uint8                                         Pad_28[0x40];                                      // 0x0028(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-#pragma pack(pop)
-DUMPER7_ASSERTS_FMassEnemyStateTreeTaskBaseInstanceData;
+DUMPER7_ASSERTS_FCrAnimState_SimpleAnimState;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyTimedTaskInstanceData
-// 0x0000 (0x0000 - 0x0000)
-#pragma pack(push, 0x1)
-struct SDK_ALIGN(0x01) FMassEnemyTimedTaskInstanceData : public FMassEnemyStateTreeTaskBaseInstanceData
+// ScriptStruct MassAIPrototypeEnemyRuntime.CrAnimState_Idle
+// 0x0000 (0x0068 - 0x0068)
+struct FCrAnimState_Idle final : public FCrAnimState_SimpleAnimState
 {
 };
-#pragma pack(pop)
-DUMPER7_ASSERTS_FMassEnemyTimedTaskInstanceData;
+DUMPER7_ASSERTS_FCrAnimState_Idle;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyStateReplicatedData
 // 0x0018 (0x0018 - 0x0000)
@@ -1030,39 +1097,23 @@ public:
 };
 DUMPER7_ASSERTS_FCrMassEnemyClientBubbleSerializerBase;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.CrAnimState_SimpleAnimState
-// 0x0040 (0x0068 - 0x0028)
-struct FCrAnimState_SimpleAnimState : public FCrAnimState
-{
-public:
-	uint8                                         Pad_28[0x40];                                      // 0x0028(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrAnimState_SimpleAnimState;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.CrAnimState_Walk
-// 0x0020 (0x0088 - 0x0068)
-struct FCrAnimState_Walk : public FCrAnimState_SimpleAnimState
-{
-public:
-	uint8                                         Pad_68[0x20];                                      // 0x0068(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrAnimState_Walk;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.CrAnimState_WalkBack
-// 0x0000 (0x0088 - 0x0088)
-struct FCrAnimState_WalkBack final : public FCrAnimState_Walk
-{
-};
-DUMPER7_ASSERTS_FCrAnimState_WalkBack;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.FMassEnemySpawnerUpdateTriggersTask
+// ScriptStruct MassAIPrototypeEnemyRuntime.FMassEnemySpawnerResetOnEnviroWaveTask
 // 0x0008 (0x0040 - 0x0038)
-struct FFMassEnemySpawnerUpdateTriggersTask final : public FMassEnemySpawnerTaskBase
+struct FFMassEnemySpawnerResetOnEnviroWaveTask final : public FMassEnemySpawnerTaskBase
 {
 public:
 	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FFMassEnemySpawnerUpdateTriggersTask;
+DUMPER7_ASSERTS_FFMassEnemySpawnerResetOnEnviroWaveTask;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.CrAnimState_Jump
+// 0x0028 (0x0090 - 0x0068)
+struct FCrAnimState_Jump final : public FCrAnimState_SimpleAnimState
+{
+public:
+	uint8                                         Pad_68[0x28];                                      // 0x0068(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrAnimState_Jump;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.CrNavPathPoint
 // 0x0058 (0x0058 - 0x0000)
@@ -1080,12 +1131,16 @@ public:
 };
 DUMPER7_ASSERTS_FCrNavPathPoint;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.CrAnimState_AttackBuilding
-// 0x0000 (0x0068 - 0x0068)
-struct FCrAnimState_AttackBuilding final : public FCrAnimState_SimpleAnimState
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyLookAtTask
+// 0x0008 (0x0058 - 0x0050)
+struct FMassEnemyLookAtTask final : public FMassEnemyTimedTask
 {
+public:
+	uint8                                         Pad_50[0x6];                                       // 0x0050(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bTrackCurrentTargetPosition;                       // 0x0056(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_57[0x1];                                       // 0x0057(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrAnimState_AttackBuilding;
+DUMPER7_ASSERTS_FMassEnemyLookAtTask;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.CrNavmeshMovementFragment
 // 0x0278 (0x0278 - 0x0000)
@@ -1163,14 +1218,12 @@ public:
 };
 DUMPER7_ASSERTS_FEnemyPoolData;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.AttackAggroTargetTask
-// 0x0010 (0x0060 - 0x0050)
-struct FAttackAggroTargetTask final : public FMassEnemyTimedTask
+// ScriptStruct MassAIPrototypeEnemyRuntime.CrAnimState_Taunt
+// 0x0000 (0x0068 - 0x0068)
+struct FCrAnimState_Taunt : public FCrAnimState_SimpleAnimState
 {
-public:
-	uint8                                         Pad_50[0x10];                                      // 0x0050(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FAttackAggroTargetTask;
+DUMPER7_ASSERTS_FCrAnimState_Taunt;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyAnimationFragment
 // 0x0014 (0x0014 - 0x0000)
@@ -1193,14 +1246,14 @@ public:
 };
 DUMPER7_ASSERTS_FMassEnemyAnimDebugData;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.CrAnimState_Spawn
-// 0x0028 (0x0090 - 0x0068)
-struct FCrAnimState_Spawn final : public FCrAnimState_SimpleAnimState
+// ScriptStruct MassAIPrototypeEnemyRuntime.StateTreeCondition_IsSpawnerNavmeshGeneratedInstanceData
+// 0x0001 (0x0001 - 0x0000)
+struct FStateTreeCondition_IsSpawnerNavmeshGeneratedInstanceData final
 {
 public:
-	uint8                                         Pad_68[0x28];                                      // 0x0068(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrAnimState_Spawn;
+DUMPER7_ASSERTS_FStateTreeCondition_IsSpawnerNavmeshGeneratedInstanceData;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.AttackRequestData
 // 0x0028 (0x0028 - 0x0000)
@@ -1226,18 +1279,12 @@ public:
 };
 DUMPER7_ASSERTS_FAttackSlotRequest;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerLogic
-// 0x0010 (0x0010 - 0x0000)
-struct FMassEnemySpawnerTriggerLogic final
+// ScriptStruct MassAIPrototypeEnemyRuntime.ForceHighLodTag
+// 0x0000 (0x0001 - 0x0001)
+struct FForceHighLodTag final : public FMassTag
 {
-public:
-	EMassEnemySpawnerTriggerType                  TriggerType;                                       // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bActivateAiAggroOnEnter;                           // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         EnterCount;                                        // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	int32                                         ExitCount;                                         // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
-DUMPER7_ASSERTS_FMassEnemySpawnerTriggerLogic;
+DUMPER7_ASSERTS_FForceHighLodTag;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.TargetAttackData
 // 0x0230 (0x0230 - 0x0000)
@@ -1287,12 +1334,21 @@ public:
 };
 DUMPER7_ASSERTS_FMassEnemySpawnGroupDefinition;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.AttackWindUpTag
-// 0x0000 (0x0001 - 0x0001)
-struct FAttackWindUpTag final : public FMassTag
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyRunFromTargetTask
+// 0x0040 (0x0090 - 0x0050)
+struct FMassEnemyRunFromTargetTask final : public FMassEnemyTimedTask
 {
+public:
+	uint8                                         Pad_50[0x20];                                      // 0x0050(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         DistanceToStartRunFromTarget;                      // 0x0070(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         DistanceToEndRunFromTarget;                        // 0x0074(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         PointSearchRadius;                                 // 0x0078(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         MoveAwayDistance;                                  // 0x007C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         ArriveRadius;                                      // 0x0080(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         CooldownTimeS;                                     // 0x0084(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   NavAgentName;                                      // 0x0088(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
-DUMPER7_ASSERTS_FAttackWindUpTag;
+DUMPER7_ASSERTS_FMassEnemyRunFromTargetTask;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnPresetDefinition
 // 0x0018 (0x0018 - 0x0000)
@@ -1316,17 +1372,12 @@ public:
 };
 DUMPER7_ASSERTS_FMassEnemyBaseSpawnerPhaseDefinition;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyTimedWithStopMoveTask
-// 0x0028 (0x0078 - 0x0050)
-struct FMassEnemyTimedWithStopMoveTask : public FMassEnemyTimedTask
+// ScriptStruct MassAIPrototypeEnemyRuntime.TemperatureModifierTag
+// 0x0000 (0x0001 - 0x0001)
+struct FTemperatureModifierTag final : public FMassTag
 {
-public:
-	bool                                          ForceStopMovement;                                 // 0x0050(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_51[0x3];                                       // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   NavAgentName;                                      // 0x0054(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5C[0x1C];                                      // 0x005C(0x001C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FMassEnemyTimedWithStopMoveTask;
+DUMPER7_ASSERTS_FTemperatureModifierTag;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyBuildingAttackSlotData
 // 0x0028 (0x0028 - 0x0000)
@@ -1347,15 +1398,6 @@ public:
 	class FName                                   DebugData;                                         // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FYawRotationOverrideData;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySetTagTaskInstanceData
-// 0x0001 (0x0001 - 0x0000)
-struct FMassEnemySetTagTaskInstanceData final : public FMassEnemyTimedTaskInstanceData
-{
-public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassEnemySetTagTaskInstanceData;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.CrAiSimpleFocusData
 // 0x0020 (0x0020 - 0x0000)
@@ -1382,6 +1424,15 @@ public:
 };
 DUMPER7_ASSERTS_FAdvancedGroundAdjustmentParameters;
 
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyFollowTargetTaskInstanceData
+// 0x0001 (0x0001 - 0x0000)
+struct FMassEnemyFollowTargetTaskInstanceData final : public FMassEnemyTimedTaskInstanceData
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassEnemyFollowTargetTaskInstanceData;
+
 // ScriptStruct MassAIPrototypeEnemyRuntime.StateTreeCondition_HasActorInstanceData
 // 0x0001 (0x0001 - 0x0000)
 struct FStateTreeCondition_HasActorInstanceData final
@@ -1402,14 +1453,12 @@ public:
 };
 DUMPER7_ASSERTS_FStateTreeCondition_HasActor;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyWanderTaskInstanceData
-// 0x0001 (0x0001 - 0x0000)
-struct FMassEnemyWanderTaskInstanceData final : public FMassEnemyTimedTaskInstanceData
+// ScriptStruct MassAIPrototypeEnemyRuntime.DisableMassMovementTag
+// 0x0000 (0x0001 - 0x0001)
+struct FDisableMassMovementTag final : public FMassTag
 {
-public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FMassEnemyWanderTaskInstanceData;
+DUMPER7_ASSERTS_FDisableMassMovementTag;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.StateTreeCondition_ShouldFinishActorActionInstanceData
 // 0x0001 (0x0001 - 0x0000)
@@ -1432,12 +1481,26 @@ public:
 };
 DUMPER7_ASSERTS_FStateTreeCondition_ShouldFinishActorAction;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.ForceHighLodTag
-// 0x0000 (0x0001 - 0x0001)
-struct FForceHighLodTag final : public FMassTag
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyWanderTask
+// 0x0030 (0x0080 - 0x0050)
+struct FMassEnemyWanderTask : public FMassEnemyTimedTask
+{
+public:
+	uint8                                         Pad_50[0x18];                                      // 0x0050(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         PointSearchRadius;                                 // 0x0068(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         ArriveDistance;                                    // 0x006C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         ForcedMaxMoveSpeed;                                // 0x0070(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   NavAgentName;                                      // 0x0074(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_7C[0x4];                                       // 0x007C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassEnemyWanderTask;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyRunAwayTask
+// 0x0000 (0x0080 - 0x0080)
+struct FMassEnemyRunAwayTask final : public FMassEnemyWanderTask
 {
 };
-DUMPER7_ASSERTS_FForceHighLodTag;
+DUMPER7_ASSERTS_FMassEnemyRunAwayTask;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.StateTreeCondition_IsCurrentTargetValidInstanceData
 // 0x0001 (0x0001 - 0x0000)
@@ -1459,14 +1522,19 @@ public:
 };
 DUMPER7_ASSERTS_FStateTreeCondition_IsCurrentTargetValid;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyHitReactionAnimationsGlobalTaskInstanceData
-// 0x0001 (0x0001 - 0x0000)
-struct FMassEnemyHitReactionAnimationsGlobalTaskInstanceData final : public FMassEnemyStateTreeTaskBaseInstanceData
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyFollowActorTask
+// 0x0028 (0x0078 - 0x0050)
+struct FMassEnemyFollowActorTask final : public FMassEnemyTimedTask
 {
 public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_50[0x18];                                      // 0x0050(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bTrackActorPositionChanges;                        // 0x0068(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bContinueMovementWhenTargetReached;                // 0x0069(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_6A[0x2];                                       // 0x006A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ApproachDistance;                                  // 0x006C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   NavAgentName;                                      // 0x0070(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
-DUMPER7_ASSERTS_FMassEnemyHitReactionAnimationsGlobalTaskInstanceData;
+DUMPER7_ASSERTS_FMassEnemyFollowActorTask;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.StateTreeCondition_CanRunAwayInstanceData
 // 0x0001 (0x0001 - 0x0000)
@@ -1488,22 +1556,27 @@ public:
 };
 DUMPER7_ASSERTS_FStateTreeCondition_CanRunAway;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyGoToRandomPositionTask
-// 0x0040 (0x0090 - 0x0050)
-struct FMassEnemyGoToRandomPositionTask : public FMassEnemyTimedTask
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnerEvaluatorInstanceData
+// 0x0014 (0x0014 - 0x0000)
+struct FMassEnemySpawnerEvaluatorInstanceData final
 {
 public:
-	uint8                                         Pad_50[0x20];                                      // 0x0050(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         PointSearchRadius;                                 // 0x0070(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         ArriveRadius;                                      // 0x0074(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bLookForPositionsAroundTarget;                     // 0x0078(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_79[0x3];                                       // 0x0079(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         HalfAllowedAngleDeg;                               // 0x007C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         SearchCenterDistance;                              // 0x0080(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FName                                   NavmeshAgentName;                                  // 0x0084(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_8C[0x4];                                       // 0x008C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bIsAnyAiAlive;                                     // 0x0000(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         bIsSpawningFinished;                               // 0x0004(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShouldProvideNavmesh;                             // 0x0008(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsSpawnerActive;                                  // 0x0009(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bTriggersDisabled;                                 // 0x000A(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsSavedAsFinished;                                // 0x000B(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCanSaveAsFinished;                                // 0x000C(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCanRemoveEntity;                                  // 0x000D(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAffectedByWave;                                   // 0x000E(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFinishConditionMet;                               // 0x000F(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bResetOnEnviroWave;                                // 0x0010(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsResetWaveStageActive;                           // 0x0011(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12[0x2];                                       // 0x0012(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FMassEnemyGoToRandomPositionTask;
+DUMPER7_ASSERTS_FMassEnemySpawnerEvaluatorInstanceData;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.StateTreeCondition_CurrentTargetPlayerInstanceData
 // 0x0001 (0x0001 - 0x0000)
@@ -1525,14 +1598,14 @@ public:
 };
 DUMPER7_ASSERTS_FStateTreeCondition_IsCurrentTargetPlayer;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnerHeartbeatTaskInstanceData
-// 0x0004 (0x0004 - 0x0000)
-struct alignas(0x04) FMassEnemySpawnerHeartbeatTaskInstanceData final
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySetTagTaskInstanceData
+// 0x0001 (0x0001 - 0x0000)
+struct FMassEnemySetTagTaskInstanceData final : public FMassEnemyTimedTaskInstanceData
 {
 public:
-	uint8                                         Pad_0[0x4];                                        // 0x0000(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FMassEnemySpawnerHeartbeatTaskInstanceData;
+DUMPER7_ASSERTS_FMassEnemySetTagTaskInstanceData;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.StateTreeCondition_CurrentTargetBuildingInstanceData
 // 0x0001 (0x0001 - 0x0000)
@@ -1554,14 +1627,14 @@ public:
 };
 DUMPER7_ASSERTS_FStateTreeCondition_IsCurrentTargetBuilding;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyFollowTargetTaskInstanceData
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnerTaskBaseInstanceData
 // 0x0001 (0x0001 - 0x0000)
-struct FMassEnemyFollowTargetTaskInstanceData final : public FMassEnemyTimedTaskInstanceData
+struct FMassEnemySpawnerTaskBaseInstanceData final
 {
 public:
 	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FMassEnemyFollowTargetTaskInstanceData;
+DUMPER7_ASSERTS_FMassEnemySpawnerTaskBaseInstanceData;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.StateTreeCondition_IsVelocityNearlyZeroInstanceData
 // 0x0001 (0x0001 - 0x0000)
@@ -1584,14 +1657,33 @@ public:
 };
 DUMPER7_ASSERTS_FStateTreeCondition_IsVelocityNearlyZero;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnerDebugGlobalTaskInstanceData
-// 0x0001 (0x0001 - 0x0000)
-struct FMassEnemySpawnerDebugGlobalTaskInstanceData final
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyGoToRandomPositionTask
+// 0x0040 (0x0090 - 0x0050)
+struct FMassEnemyGoToRandomPositionTask : public FMassEnemyTimedTask
 {
 public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_50[0x20];                                      // 0x0050(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         PointSearchRadius;                                 // 0x0070(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         ArriveRadius;                                      // 0x0074(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bLookForPositionsAroundTarget;                     // 0x0078(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_79[0x3];                                       // 0x0079(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         HalfAllowedAngleDeg;                               // 0x007C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         SearchCenterDistance;                              // 0x0080(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FName                                   NavmeshAgentName;                                  // 0x0084(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_8C[0x4];                                       // 0x008C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FMassEnemySpawnerDebugGlobalTaskInstanceData;
+DUMPER7_ASSERTS_FMassEnemyGoToRandomPositionTask;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyStrafeAfterShootingTask
+// 0x0010 (0x00A0 - 0x0090)
+struct FMassEnemyStrafeAfterShootingTask final : public FMassEnemyGoToRandomPositionTask
+{
+public:
+	uint8                                         Pad_90[0x8];                                       // 0x0090(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         StrafeBaseDistance;                                // 0x0098(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_9C[0x4];                                       // 0x009C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassEnemyStrafeAfterShootingTask;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.StateTreeCondition_IsAggroTargetInAttackConeInstanceData
 // 0x0004 (0x0004 - 0x0000)
@@ -1613,12 +1705,14 @@ public:
 };
 DUMPER7_ASSERTS_FStateTreeCondition_IsAggroTargetInAttackCone;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyEnableISMVisualizationTag
-// 0x0000 (0x0001 - 0x0001)
-struct FMassEnemyEnableISMVisualizationTag final : public FMassTag
+// ScriptStruct MassAIPrototypeEnemyRuntime.FMassEnemySpawnerEnviroWaveTask
+// 0x0008 (0x0040 - 0x0038)
+struct FFMassEnemySpawnerEnviroWaveTask final : public FMassEnemySpawnerTaskBase
 {
+public:
+	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FMassEnemyEnableISMVisualizationTag;
+DUMPER7_ASSERTS_FFMassEnemySpawnerEnviroWaveTask;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.StateTreeCondition_IsWithinDistanceToAggroTargetInstanceData
 // 0x0008 (0x0008 - 0x0000)
@@ -1643,14 +1737,14 @@ public:
 };
 DUMPER7_ASSERTS_FStateTreeCondition_IsWithinDistanceToAggroTarget;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.FMassEnemySpawnerResetOnEnviroWaveTask
-// 0x0008 (0x0040 - 0x0038)
-struct FFMassEnemySpawnerResetOnEnviroWaveTask final : public FMassEnemySpawnerTaskBase
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyHitReactionAnimationsGlobalTaskInstanceData
+// 0x0001 (0x0001 - 0x0000)
+struct FMassEnemyHitReactionAnimationsGlobalTaskInstanceData final : public FMassEnemyStateTreeTaskBaseInstanceData
 {
 public:
-	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FFMassEnemySpawnerResetOnEnviroWaveTask;
+DUMPER7_ASSERTS_FMassEnemyHitReactionAnimationsGlobalTaskInstanceData;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.StateTreeCondition_IsWithinAttackDistanceToBuildingInstanceData
 // 0x0001 (0x0001 - 0x0000)
@@ -1672,14 +1766,14 @@ public:
 };
 DUMPER7_ASSERTS_FStateTreeCondition_IsWithinAttackDistanceToBuilding;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyRotateInPlaceTaskInstanceData
-// 0x0001 (0x0001 - 0x0000)
-struct FMassEnemyRotateInPlaceTaskInstanceData final : public FMassEnemyTimedTaskInstanceData
+// ScriptStruct MassAIPrototypeEnemyRuntime.FMassEnemySpawnerUpdateTriggersTask
+// 0x0008 (0x0040 - 0x0038)
+struct FFMassEnemySpawnerUpdateTriggersTask final : public FMassEnemySpawnerTaskBase
 {
 public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FMassEnemyRotateInPlaceTaskInstanceData;
+DUMPER7_ASSERTS_FFMassEnemySpawnerUpdateTriggersTask;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.StateTreeCondition_IsStabilizedInCrowdInstanceData
 // 0x0001 (0x0001 - 0x0000)
@@ -1702,14 +1796,12 @@ public:
 };
 DUMPER7_ASSERTS_FStateTreeCondition_IsStabilizedInCrowd;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.FMassEnemySpawnerProvideNavmeshTask
-// 0x0008 (0x0040 - 0x0038)
-struct FFMassEnemySpawnerProvideNavmeshTask final : public FMassEnemySpawnerTaskBase
+// ScriptStruct MassAIPrototypeEnemyRuntime.AttackWindUpTag
+// 0x0000 (0x0001 - 0x0001)
+struct FAttackWindUpTag final : public FMassTag
 {
-public:
-	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FFMassEnemySpawnerProvideNavmeshTask;
+DUMPER7_ASSERTS_FAttackWindUpTag;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.StateTreeCondition_IsInArriveRadiusToTargetInstanceData
 // 0x0001 (0x0001 - 0x0000)
@@ -1732,12 +1824,14 @@ public:
 };
 DUMPER7_ASSERTS_FStateTreeCondition_IsInArriveRadiusToTarget;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.TemperatureModifierTag
-// 0x0000 (0x0001 - 0x0001)
-struct FTemperatureModifierTag final : public FMassTag
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnTask
+// 0x0020 (0x0070 - 0x0050)
+struct FMassEnemySpawnTask final : public FMassEnemyTimedTask
 {
+public:
+	uint8                                         Pad_50[0x20];                                      // 0x0050(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FTemperatureModifierTag;
+DUMPER7_ASSERTS_FMassEnemySpawnTask;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.StateTreeCondition_IsDeadInstanceData
 // 0x0001 (0x0001 - 0x0000)
@@ -1757,15 +1851,24 @@ public:
 };
 DUMPER7_ASSERTS_FStateTreeCondition_IsDead;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.CrMassEnemyVisualizationLODSharedFragment
-// 0x2088 (0x2088 - 0x0000)
-struct FCrMassEnemyVisualizationLODSharedFragment final : public FMassSharedFragment
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyTimedWithStopMoveTask
+// 0x0028 (0x0078 - 0x0050)
+struct FMassEnemyTimedWithStopMoveTask : public FMassEnemyTimedTask
 {
 public:
-	uint8                                         Pad_0[0x2080];                                     // 0x0000(0x2080)(Fixing Size After Last Property [ Dumper-7 ])
-	class UScriptStruct*                          FilterTag;                                         // 0x2080(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	bool                                          ForceStopMovement;                                 // 0x0050(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_51[0x3];                                       // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   NavAgentName;                                      // 0x0054(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5C[0x1C];                                      // 0x005C(0x001C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCrMassEnemyVisualizationLODSharedFragment;
+DUMPER7_ASSERTS_FMassEnemyTimedWithStopMoveTask;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyIdleTask
+// 0x0000 (0x0078 - 0x0078)
+struct FMassEnemyIdleTask final : public FMassEnemyTimedWithStopMoveTask
+{
+};
+DUMPER7_ASSERTS_FMassEnemyIdleTask;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.StateTreeCondition_CanAttackInstanceData
 // 0x0001 (0x0001 - 0x0000)
@@ -1791,12 +1894,51 @@ public:
 };
 DUMPER7_ASSERTS_FStateTreeCondition_CanAttack;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyTauntTask
-// 0x0000 (0x0078 - 0x0078)
-struct FMassEnemyTauntTask final : public FMassEnemyTimedWithStopMoveTask
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyLODScoreConfiguration
+// 0x0028 (0x0028 - 0x0000)
+struct FMassEnemyLODScoreConfiguration final
 {
+public:
+	float                                         OffLODThresholdDistance;                           // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HighLODThresholdDistance;                          // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MediumLODThresholdDistance;                        // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DistanceScoreZeroScoreDistance;                    // 0x000C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DistanceScoreMultiplier;                           // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FrustumScoreMultiplier;                            // 0x0014(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HighLODScoreMultiplier;                            // 0x0018(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         VisiblityScoreMultiplier;                          // 0x001C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseFixedScoreDivider;                             // 0x0020(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         FixedScoreDivider;                                 // 0x0024(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FMassEnemyTauntTask;
+DUMPER7_ASSERTS_FMassEnemyLODScoreConfiguration;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyNetModeLODConfiguration
+// 0x00D0 (0x00D0 - 0x0000)
+struct FMassEnemyNetModeLODConfiguration
+{
+public:
+	TSoftClassPtr<class UClass>                   Actor;                                             // 0x0000(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UMassRepresentationSubsystem> RepresentationSubsystemClass;                    // 0x0028(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMassRepresentationParameters          RepresentationParams;                              // 0x0030(0x0028)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FMassVisualizationLODParameters        LODParams;                                         // 0x0058(0x0048)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	EMassLOD                                      HighestNiagaraRelevantLOD;                         // 0x00A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A1[0x3];                                       // 0x00A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMassEnemyLODScoreConfiguration        LODScoreConfiguration;                             // 0x00A4(0x0028)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_CC[0x4];                                       // 0x00CC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassEnemyNetModeLODConfiguration;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyNetModeLODServerConfiguration
+// 0x0020 (0x00F0 - 0x00D0)
+struct FMassEnemyNetModeLODServerConfiguration final : public FMassEnemyNetModeLODConfiguration
+{
+public:
+	float                                         UpdateInterval[0x4];                               // 0x00D0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class AMassClientBubbleInfoBase>  BubbleInfoClass;                                   // 0x00E0(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UMassReplicatorBase>        ReplicatorClass;                                   // 0x00E8(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMassEnemyNetModeLODServerConfiguration;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.StateTreeCondition_ShouldJumpInstanceData
 // 0x0001 (0x0001 - 0x0000)
@@ -1818,14 +1960,14 @@ public:
 };
 DUMPER7_ASSERTS_FStateTreeCondition_ShouldJump;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnAnimFragment
+// ScriptStruct MassAIPrototypeEnemyRuntime.CrMassEnemyBPMassNetworkID
 // 0x0004 (0x0004 - 0x0000)
-struct alignas(0x04) FMassEnemySpawnAnimFragment final : public FMassFragment
+struct FCrMassEnemyBPMassNetworkID final
 {
 public:
-	uint8                                         Pad_0[0x4];                                        // 0x0000(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FMassNetworkID                         Handle;                                            // 0x0000(0x0004)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FMassEnemySpawnAnimFragment;
+DUMPER7_ASSERTS_FCrMassEnemyBPMassNetworkID;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.StateTreeCondition_IsJumpBlockedInstanceData
 // 0x0001 (0x0001 - 0x0000)
@@ -1847,6 +1989,15 @@ public:
 };
 DUMPER7_ASSERTS_FStateTreeCondition_IsJumpBlocked;
 
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyEntityTypeFragment
+// 0x0002 (0x0002 - 0x0000)
+struct FMassEnemyEntityTypeFragment final : public FMassFragment
+{
+public:
+	uint8                                         Pad_0[0x2];                                        // 0x0000(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassEnemyEntityTypeFragment;
+
 // ScriptStruct MassAIPrototypeEnemyRuntime.StateTreeCondition_IsAiInitializedInstanceData
 // 0x0001 (0x0001 - 0x0000)
 struct FStateTreeCondition_IsAiInitializedInstanceData final
@@ -1867,16 +2018,12 @@ public:
 };
 DUMPER7_ASSERTS_FStateTreeCondition_IsAiInitialized;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnLocationConfigurationSharedFragment
-// 0x0008 (0x0008 - 0x0000)
-struct FMassEnemySpawnLocationConfigurationSharedFragment final : public FMassConstSharedFragment
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyDeathTask
+// 0x0000 (0x0078 - 0x0078)
+struct FMassEnemyDeathTask final : public FMassEnemyTimedWithStopMoveTask
 {
-public:
-	float                                         SpawnLocationDistanceActionOnActorRepresentationRemoved; // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrOnActorRepresentationRemovedActionType     ActionType;                                        // 0x0004(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FMassEnemySpawnLocationConfigurationSharedFragment;
+DUMPER7_ASSERTS_FMassEnemyDeathTask;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.StateTreeCondition_IsMovementFinishedInstanceData
 // 0x0001 (0x0001 - 0x0000)
@@ -1898,14 +2045,14 @@ public:
 };
 DUMPER7_ASSERTS_FStateTreeCondition_IsMovementFinished;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnTask
-// 0x0020 (0x0070 - 0x0050)
-struct FMassEnemySpawnTask final : public FMassEnemyTimedTask
+// ScriptStruct MassAIPrototypeEnemyRuntime.NiagaraVertexAnimFragment
+// 0x00D8 (0x00D8 - 0x0000)
+struct alignas(0x08) FNiagaraVertexAnimFragment final : public FMassFragment
 {
 public:
-	uint8                                         Pad_50[0x20];                                      // 0x0050(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0xD8];                                       // 0x0000(0x00D8)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FMassEnemySpawnTask;
+DUMPER7_ASSERTS_FNiagaraVertexAnimFragment;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.AiFloatConfigurationValue
 // 0x000C (0x000C - 0x0000)
@@ -1927,15 +2074,14 @@ public:
 };
 DUMPER7_ASSERTS_FAiVector2ConfigurationValue;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyAnimEventData
-// 0x000C (0x000C - 0x0000)
-struct FMassEnemyAnimEventData final
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyTimedWithStopMoveTaskInstanceData
+// 0x0001 (0x0001 - 0x0000)
+struct FMassEnemyTimedWithStopMoveTaskInstanceData : public FMassEnemyTimedTaskInstanceData
 {
 public:
-	float                                         AnimProgress;                                      // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           EventTag;                                          // 0x0004(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FMassEnemyAnimEventData;
+DUMPER7_ASSERTS_FMassEnemyTimedWithStopMoveTaskInstanceData;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.AiBoolConfigurationValue
 // 0x000C (0x000C - 0x0000)
@@ -1958,15 +2104,6 @@ public:
 };
 DUMPER7_ASSERTS_FAiVectorConfigurationValue;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyAttackTask
-// 0x0018 (0x0090 - 0x0078)
-struct FMassEnemyAttackTask final : public FMassEnemyTimedWithStopMoveTask
-{
-public:
-	uint8                                         Pad_78[0x18];                                      // 0x0078(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassEnemyAttackTask;
-
 // ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyIsmCollisionConfig
 // 0x0028 (0x0028 - 0x0000)
 struct FMassEnemyIsmCollisionConfig final : public FMassConstSharedFragment
@@ -1985,6 +2122,15 @@ public:
 };
 DUMPER7_ASSERTS_FMassEnemyIsmCollisionConfigHashHelperStruct;
 
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnAnimFragment
+// 0x0004 (0x0004 - 0x0000)
+struct alignas(0x04) FMassEnemySpawnAnimFragment final : public FMassFragment
+{
+public:
+	uint8                                         Pad_0[0x4];                                        // 0x0000(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassEnemySpawnAnimFragment;
+
 // ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyIsmCollisionEnabled
 // 0x0000 (0x0001 - 0x0001)
 struct FMassEnemyIsmCollisionEnabled final : public FMassTag
@@ -2000,15 +2146,6 @@ public:
 	uint8                                         Pad_0[0x4];                                        // 0x0000(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FMassEnemyEntityHismWrapperFragment;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyEntityTypeFragment
-// 0x0002 (0x0002 - 0x0000)
-struct FMassEnemyEntityTypeFragment final : public FMassFragment
-{
-public:
-	uint8                                         Pad_0[0x2];                                        // 0x0000(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassEnemyEntityTypeFragment;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyEntityCollisionISMData
 // 0x00D0 (0x00D0 - 0x0000)
@@ -2032,6 +2169,13 @@ public:
 };
 DUMPER7_ASSERTS_FMassEnemyEntityToIsmCollisionInstanceMapping;
 
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyJumpTask
+// 0x0000 (0x0078 - 0x0078)
+struct FMassEnemyJumpTask final : public FMassEnemyTimedWithStopMoveTask
+{
+};
+DUMPER7_ASSERTS_FMassEnemyJumpTask;
+
 // ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyConfigurationEvaluatorInstanceData
 // 0x0320 (0x0320 - 0x0000)
 struct FMassEnemyConfigurationEvaluatorInstanceData final
@@ -2049,13 +2193,6 @@ public:
 	uint8                                         Pad_20[0x8];                                       // 0x0020(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FMassEnemyConfigurationEvaluator;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyFinishActorAnimTask
-// 0x0000 (0x0078 - 0x0078)
-struct FMassEnemyFinishActorAnimTask final : public FMassEnemyTimedWithStopMoveTask
-{
-};
-DUMPER7_ASSERTS_FMassEnemyFinishActorAnimTask;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyDealDamageQueuedEvent
 // 0x0148 (0x0148 - 0x0000)
@@ -2106,47 +2243,6 @@ public:
 };
 DUMPER7_ASSERTS_FFlockingCalculatorBase;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyVertexAnimConfigurationNextStateDefinition
-// 0x0008 (0x0008 - 0x0000)
-struct FMassEnemyVertexAnimConfigurationNextStateDefinition final
-{
-public:
-	EMassEnemyVertexAnimState                     State;                                             // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Weight;                                            // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMassEnemyVertexAnimConfigurationNextStateDefinition;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyVertexAnimConfigurationData
-// 0x0038 (0x0038 - 0x0000)
-struct FMassEnemyVertexAnimConfigurationData final
-{
-public:
-	int32                                         AnimIndex;                                         // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         StartFrame;                                        // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         EndFrame;                                          // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Playrate;                                          // 0x000C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StartBlendOutProgress;                             // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bLooped;                                           // 0x0014(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FMassEnemyVertexAnimConfigurationNextStateDefinition> NextStates;                  // 0x0018(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FMassEnemyAnimEventData>        Events;                                            // 0x0028(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMassEnemyVertexAnimConfigurationData;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyVertexAnimParameters
-// 0x0060 (0x0060 - 0x0000)
-struct FMassEnemyVertexAnimParameters final
-{
-public:
-	TMap<EMassEnemyVertexAnimState, struct FMassEnemyVertexAnimConfigurationData> AnimConfigMap;     // 0x0000(0x0050)(Edit, NativeAccessSpecifierPublic)
-	float                                         JumpAnimationMiddleStartFrame;                     // 0x0050(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         JumpAnimationLandingStartFrame;                    // 0x0054(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AttackAnimDealDamageEventProgress;                 // 0x0058(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassEnemyVertexAnimParameters;
-
 // ScriptStruct MassAIPrototypeEnemyRuntime.CohesionSteeringCalculator
 // 0x0000 (0x0028 - 0x0028)
 struct FCohesionSteeringCalculator final : public FFlockingCalculatorBase
@@ -2160,6 +2256,16 @@ struct FSeparationSteeringCalculator final : public FFlockingCalculatorBase
 {
 };
 DUMPER7_ASSERTS_FSeparationSteeringCalculator;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.CrMassEnemyVisualizationLODSharedFragment
+// 0x2088 (0x2088 - 0x0000)
+struct FCrMassEnemyVisualizationLODSharedFragment final : public FMassSharedFragment
+{
+public:
+	uint8                                         Pad_0[0x2080];                                     // 0x0000(0x2080)(Fixing Size After Last Property [ Dumper-7 ])
+	class UScriptStruct*                          FilterTag;                                         // 0x2080(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrMassEnemyVisualizationLODSharedFragment;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.AlignmentSteeringCalculator
 // 0x0000 (0x0028 - 0x0028)
@@ -2177,51 +2283,15 @@ public:
 };
 DUMPER7_ASSERTS_FMassEnemyFlockElementFragment;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyLODScoreConfiguration
-// 0x0028 (0x0028 - 0x0000)
-struct FMassEnemyLODScoreConfiguration final
+// ScriptStruct MassAIPrototypeEnemyRuntime.CrAnimState_Death
+// 0x0050 (0x00B8 - 0x0068)
+struct FCrAnimState_Death final : public FCrAnimState_SimpleAnimState
 {
 public:
-	float                                         OffLODThresholdDistance;                           // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         HighLODThresholdDistance;                          // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MediumLODThresholdDistance;                        // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DistanceScoreZeroScoreDistance;                    // 0x000C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DistanceScoreMultiplier;                           // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FrustumScoreMultiplier;                            // 0x0014(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         HighLODScoreMultiplier;                            // 0x0018(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         VisiblityScoreMultiplier;                          // 0x001C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseFixedScoreDivider;                             // 0x0020(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         FixedScoreDivider;                                 // 0x0024(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_68[0x48];                                      // 0x0068(0x0048)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCrAiDeathSequenceSubsystem*            AiDeathSequenceSubsystem;                          // 0x00B0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 };
-DUMPER7_ASSERTS_FMassEnemyLODScoreConfiguration;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyNetModeLODConfiguration
-// 0x00D0 (0x00D0 - 0x0000)
-struct FMassEnemyNetModeLODConfiguration
-{
-public:
-	TSoftClassPtr<class UClass>                   Actor;                                             // 0x0000(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UMassRepresentationSubsystem> RepresentationSubsystemClass;                    // 0x0028(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMassRepresentationParameters          RepresentationParams;                              // 0x0030(0x0028)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FMassVisualizationLODParameters        LODParams;                                         // 0x0058(0x0048)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	EMassLOD                                      HighestNiagaraRelevantLOD;                         // 0x00A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A1[0x3];                                       // 0x00A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMassEnemyLODScoreConfiguration        LODScoreConfiguration;                             // 0x00A4(0x0028)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_CC[0x4];                                       // 0x00CC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassEnemyNetModeLODConfiguration;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyNetModeLODServerConfiguration
-// 0x0020 (0x00F0 - 0x00D0)
-struct FMassEnemyNetModeLODServerConfiguration final : public FMassEnemyNetModeLODConfiguration
-{
-public:
-	float                                         UpdateInterval[0x4];                               // 0x00D0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class AMassClientBubbleInfoBase>  BubbleInfoClass;                                   // 0x00E0(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UMassReplicatorBase>        ReplicatorClass;                                   // 0x00E8(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMassEnemyNetModeLODServerConfiguration;
+DUMPER7_ASSERTS_FCrAnimState_Death;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.CrMassEnemyReplicatedTransformFragment
 // 0x0048 (0x0048 - 0x0000)
@@ -2241,18 +2311,21 @@ public:
 };
 DUMPER7_ASSERTS_FMassEnemyCommonReplicationDataFragment;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnerSpawnedAiData
-// 0x0010 (0x0010 - 0x0000)
-struct FMassEnemySpawnerSpawnedAiData final
+// ScriptStruct MassAIPrototypeEnemyRuntime.CrAnimState_Walk
+// 0x0020 (0x0088 - 0x0068)
+struct FCrAnimState_Walk : public FCrAnimState_SimpleAnimState
 {
 public:
-	struct FMassEntityHandle                      EntityHandle;                                      // 0x0000(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         BurstIndex;                                        // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsAlive;                                          // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsReserved;                                       // 0x000D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_68[0x20];                                      // 0x0068(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FMassEnemySpawnerSpawnedAiData;
+DUMPER7_ASSERTS_FCrAnimState_Walk;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.CrAnimState_WalkBack
+// 0x0000 (0x0088 - 0x0088)
+struct FCrAnimState_WalkBack final : public FCrAnimState_Walk
+{
+};
+DUMPER7_ASSERTS_FCrAnimState_WalkBack;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyTemperatureModificatorFragment
 // 0x0004 (0x0004 - 0x0000)
@@ -2272,14 +2345,31 @@ public:
 };
 DUMPER7_ASSERTS_FCrStateTreeFragment;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.CrAnimState_Jump
-// 0x0028 (0x0090 - 0x0068)
-struct FCrAnimState_Jump final : public FCrAnimState_SimpleAnimState
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnerSpawnDataEntry
+// 0x0038 (0x0038 - 0x0000)
+struct FMassEnemySpawnerSpawnDataEntry final
 {
 public:
-	uint8                                         Pad_68[0x28];                                      // 0x0068(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FGameplayTagContainer                  AiType;                                            // 0x0000(0x0020)(NativeAccessSpecifierPublic)
+	float                                         ToSpawnCount;                                      // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SpawnPositionIndexesToUse;                         // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGuid                                  PresetEntryId;                                     // 0x0028(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrAnimState_Jump;
+DUMPER7_ASSERTS_FMassEnemySpawnerSpawnDataEntry;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnerSpawnData
+// 0x0020 (0x0020 - 0x0000)
+struct FMassEnemySpawnerSpawnData final
+{
+public:
+	float                                         TimeSinceSpawningStartS;                           // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsSpawningFinished;                               // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         AiRemainingToSpawn;                                // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FMassEnemySpawnerSpawnDataEntry> Entries;                                          // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMassEnemySpawnerSpawnData;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.FlockingForcesFragment
 // 0x0030 (0x0030 - 0x0000)
@@ -2299,6 +2389,164 @@ public:
 	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FStateTreeTimedTaskFragment;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyScaleFragment
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x04) FMassEnemyScaleFragment final : public FMassFragment
+{
+public:
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassEnemyScaleFragment;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.CrMassEnemyCastShadowsFragment
+// 0x000C (0x000C - 0x0000)
+struct FCrMassEnemyCastShadowsFragment final : public FMassFragment
+{
+public:
+	float                                         DistToLocalPlayerSquared;                          // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LocalISMSignificance;                              // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCanCastShadows;                                   // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrMassEnemyCastShadowsFragment;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnerConfiguration
+// 0x0014 (0x0014 - 0x0000)
+struct FMassEnemySpawnerConfiguration final
+{
+public:
+	ECrSpawnerResetPolicy                         SpawnerResetPolicy;                                // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrSpawnFenceType                             FenceType;                                         // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WaitForNavmeshUpdateTimeS;                         // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bForceDisablePCG;                                  // 0x000C(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowDebug;                                        // 0x000D(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ForcedDisableSphereRadius;                         // 0x0010(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMassEnemySpawnerConfiguration;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.AiHandlerFragment
+// 0x0028 (0x0028 - 0x0000)
+struct FAiHandlerFragment final : public FMassFragment
+{
+public:
+	uint8                                         Pad_0[0x24];                                       // 0x0000(0x0024)(Fixing Size After Last Property [ Dumper-7 ])
+	ECrSpawnPositionIndexFlag                     SpawnPosition;                                     // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAiHandlerFragment;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnerFenceFragment
+// 0x0040 (0x0040 - 0x0000)
+struct FMassEnemySpawnerFenceFragment final : public FMassFragment
+{
+public:
+	ECrSpawnFenceType                             FenceType;                                         // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBox                                   FenceBox;                                          // 0x0008(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMassEnemySpawnerFenceFragment;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.CrAnimState_Spawn
+// 0x0028 (0x0090 - 0x0068)
+struct FCrAnimState_Spawn final : public FCrAnimState_SimpleAnimState
+{
+public:
+	uint8                                         Pad_68[0x28];                                      // 0x0068(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrAnimState_Spawn;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.CrOrientedBox
+// 0x0068 (0x0068 - 0x0000)
+struct alignas(0x08) FCrOrientedBox final
+{
+public:
+	uint8                                         Pad_0[0x68];                                       // 0x0000(0x0068)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrOrientedBox;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyTargetFragment
+// 0x01B8 (0x01B8 - 0x0000)
+struct FMassEnemyTargetFragment final : public FMassFragment
+{
+public:
+	uint8                                         Pad_0[0xC8];                                       // 0x0000(0x00C8)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMassEntityHandle                      ForcedTargetEntityHandle;                          // 0x00C8(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMassEntityHandle                      CachedTargetEntityHandle;                          // 0x00D0(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D8[0x31];                                      // 0x00D8(0x0031)(Fixing Size After Last Property [ Dumper-7 ])
+	ECrAggroTargetType                            TargetAggroType;                                   // 0x0109(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_10A[0x56];                                     // 0x010A(0x0056)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMassEntityHandle                      TargetEntityHandle;                                // 0x0160(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TMap<struct FMassEntityHandle, float>         BannedTargets;                                     // 0x0168(0x0050)(NativeAccessSpecifierPrivate)
+};
+DUMPER7_ASSERTS_FMassEnemyTargetFragment;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyActorSyncFragment
+// 0x0040 (0x0040 - 0x0000)
+struct alignas(0x08) FMassEnemyActorSyncFragment final : public FMassFragment
+{
+public:
+	uint8                                         Pad_0[0x40];                                       // 0x0000(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassEnemyActorSyncFragment;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyTaskDataFragment
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x04) FMassEnemyTaskDataFragment final : public FMassFragment
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassEnemyTaskDataFragment;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyVisualVariationDataFragment
+// 0x0018 (0x0018 - 0x0000)
+struct alignas(0x08) FMassEnemyVisualVariationDataFragment final : public FMassFragment
+{
+public:
+	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassEnemyVisualVariationDataFragment;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyRotateInPlaceTaskInstanceData
+// 0x0001 (0x0001 - 0x0000)
+struct FMassEnemyRotateInPlaceTaskInstanceData final : public FMassEnemyTimedTaskInstanceData
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassEnemyRotateInPlaceTaskInstanceData;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyInfectionBoostFragment
+// 0x000C (0x000C - 0x0000)
+struct alignas(0x04) FMassEnemyInfectionBoostFragment final : public FMassFragment
+{
+public:
+	uint8                                         Pad_0[0xC];                                        // 0x0000(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassEnemyInfectionBoostFragment;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyEyeStateFragment
+// 0x0001 (0x0001 - 0x0000)
+struct FMassEnemyEyeStateFragment final : public FMassFragment
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassEnemyEyeStateFragment;
+
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnerSpawnedAiData
+// 0x0010 (0x0010 - 0x0000)
+struct FMassEnemySpawnerSpawnedAiData final
+{
+public:
+	struct FMassEntityHandle                      EntityHandle;                                      // 0x0000(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         BurstIndex;                                        // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsAlive;                                          // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsReserved;                                       // 0x000D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassEnemySpawnerSpawnedAiData;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnerPresetEntryData
 // 0x00B0 (0x00B0 - 0x0000)
@@ -2362,163 +2610,6 @@ public:
 };
 DUMPER7_ASSERTS_FMassEnemySpawnerPreset;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyScaleFragment
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x04) FMassEnemyScaleFragment final : public FMassFragment
-{
-public:
-	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassEnemyScaleFragment;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.CrMassEnemyCastShadowsFragment
-// 0x000C (0x000C - 0x0000)
-struct FCrMassEnemyCastShadowsFragment final : public FMassFragment
-{
-public:
-	float                                         DistToLocalPlayerSquared;                          // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LocalISMSignificance;                              // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCanCastShadows;                                   // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrMassEnemyCastShadowsFragment;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyUpdateTargetPositionTask
-// 0x0018 (0x0068 - 0x0050)
-struct FMassEnemyUpdateTargetPositionTask final : public FMassEnemyTimedTask
-{
-public:
-	class FName                                   NavAgentName;                                      // 0x0050(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_58[0x10];                                      // 0x0058(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassEnemyUpdateTargetPositionTask;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.AiHandlerFragment
-// 0x0028 (0x0028 - 0x0000)
-struct FAiHandlerFragment final : public FMassFragment
-{
-public:
-	uint8                                         Pad_0[0x24];                                       // 0x0000(0x0024)(Fixing Size After Last Property [ Dumper-7 ])
-	ECrSpawnPositionIndexFlag                     SpawnPosition;                                     // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAiHandlerFragment;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnerFenceFragment
-// 0x0040 (0x0040 - 0x0000)
-struct FMassEnemySpawnerFenceFragment final : public FMassFragment
-{
-public:
-	ECrSpawnFenceType                             FenceType;                                         // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBox                                   FenceBox;                                          // 0x0008(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMassEnemySpawnerFenceFragment;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.CrMassEnemyBPMassNetworkID
-// 0x0004 (0x0004 - 0x0000)
-struct FCrMassEnemyBPMassNetworkID final
-{
-public:
-	struct FMassNetworkID                         Handle;                                            // 0x0000(0x0004)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrMassEnemyBPMassNetworkID;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.CrOrientedBox
-// 0x0068 (0x0068 - 0x0000)
-struct alignas(0x08) FCrOrientedBox final
-{
-public:
-	uint8                                         Pad_0[0x68];                                       // 0x0000(0x0068)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrOrientedBox;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyTargetFragment
-// 0x01B8 (0x01B8 - 0x0000)
-struct FMassEnemyTargetFragment final : public FMassFragment
-{
-public:
-	uint8                                         Pad_0[0xC8];                                       // 0x0000(0x00C8)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMassEntityHandle                      ForcedTargetEntityHandle;                          // 0x00C8(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMassEntityHandle                      CachedTargetEntityHandle;                          // 0x00D0(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D8[0x31];                                      // 0x00D8(0x0031)(Fixing Size After Last Property [ Dumper-7 ])
-	ECrAggroTargetType                            TargetAggroType;                                   // 0x0109(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10A[0x56];                                     // 0x010A(0x0056)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMassEntityHandle                      TargetEntityHandle;                                // 0x0160(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	TMap<struct FMassEntityHandle, float>         BannedTargets;                                     // 0x0168(0x0050)(NativeAccessSpecifierPrivate)
-};
-DUMPER7_ASSERTS_FMassEnemyTargetFragment;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.CrAnimState_Death
-// 0x0050 (0x00B8 - 0x0068)
-struct FCrAnimState_Death final : public FCrAnimState_SimpleAnimState
-{
-public:
-	uint8                                         Pad_68[0x48];                                      // 0x0068(0x0048)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCrAiDeathSequenceSubsystem*            AiDeathSequenceSubsystem;                          // 0x00B0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrAnimState_Death;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyActorSyncFragment
-// 0x0040 (0x0040 - 0x0000)
-struct alignas(0x08) FMassEnemyActorSyncFragment final : public FMassFragment
-{
-public:
-	uint8                                         Pad_0[0x40];                                       // 0x0000(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassEnemyActorSyncFragment;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyTaskDataFragment
-// 0x0008 (0x0008 - 0x0000)
-struct alignas(0x04) FMassEnemyTaskDataFragment final : public FMassFragment
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassEnemyTaskDataFragment;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyVisualVariationDataFragment
-// 0x0018 (0x0018 - 0x0000)
-struct alignas(0x08) FMassEnemyVisualVariationDataFragment final : public FMassFragment
-{
-public:
-	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassEnemyVisualVariationDataFragment;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.CrAnimState_Idle
-// 0x0000 (0x0068 - 0x0068)
-struct FCrAnimState_Idle final : public FCrAnimState_SimpleAnimState
-{
-};
-DUMPER7_ASSERTS_FCrAnimState_Idle;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyInfectionBoostFragment
-// 0x000C (0x000C - 0x0000)
-struct alignas(0x04) FMassEnemyInfectionBoostFragment final : public FMassFragment
-{
-public:
-	uint8                                         Pad_0[0xC];                                        // 0x0000(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassEnemyInfectionBoostFragment;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyEyeStateFragment
-// 0x0001 (0x0001 - 0x0000)
-struct FMassEnemyEyeStateFragment final : public FMassFragment
-{
-public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassEnemyEyeStateFragment;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyTimedWithStopMoveTaskInstanceData
-// 0x0001 (0x0001 - 0x0000)
-struct FMassEnemyTimedWithStopMoveTaskInstanceData : public FMassEnemyTimedTaskInstanceData
-{
-public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassEnemyTimedWithStopMoveTaskInstanceData;
-
 // ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyVFXEventData
 // 0x0008 (0x0008 - 0x0000)
 struct FMassEnemyVFXEventData final
@@ -2537,20 +2628,14 @@ public:
 };
 DUMPER7_ASSERTS_FMassEnemyOneShotSFXEventData;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnerConfiguration
-// 0x0014 (0x0014 - 0x0000)
-struct FMassEnemySpawnerConfiguration final
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyAttackTask
+// 0x0018 (0x0090 - 0x0078)
+struct FMassEnemyAttackTask final : public FMassEnemyTimedWithStopMoveTask
 {
 public:
-	ECrSpawnerResetPolicy                         SpawnerResetPolicy;                                // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrSpawnFenceType                             FenceType;                                         // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WaitForNavmeshUpdateTimeS;                         // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bForceDisablePCG;                                  // 0x000C(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShowDebug;                                        // 0x000D(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ForcedDisableSphereRadius;                         // 0x0010(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_78[0x18];                                      // 0x0078(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FMassEnemySpawnerConfiguration;
+DUMPER7_ASSERTS_FMassEnemyAttackTask;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyStateSFXEventData
 // 0x0008 (0x0008 - 0x0000)
@@ -2570,12 +2655,12 @@ public:
 };
 DUMPER7_ASSERTS_FMassEnemyFootstepEventData;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyIdleTask
-// 0x0000 (0x0078 - 0x0078)
-struct FMassEnemyIdleTask final : public FMassEnemyTimedWithStopMoveTask
+// ScriptStruct MassAIPrototypeEnemyRuntime.CrAnimState_AttackBuilding
+// 0x0000 (0x0068 - 0x0068)
+struct FCrAnimState_AttackBuilding final : public FCrAnimState_SimpleAnimState
 {
 };
-DUMPER7_ASSERTS_FMassEnemyIdleTask;
+DUMPER7_ASSERTS_FCrAnimState_AttackBuilding;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyEventData
 // 0x0040 (0x0040 - 0x0000)
@@ -2601,12 +2686,12 @@ public:
 };
 DUMPER7_ASSERTS_FMassEnemyAudioStateAdditionalData;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.CrAnimState_Taunt
-// 0x0000 (0x0068 - 0x0068)
-struct FCrAnimState_Taunt : public FCrAnimState_SimpleAnimState
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyTauntTask
+// 0x0000 (0x0078 - 0x0078)
+struct FMassEnemyTauntTask final : public FMassEnemyTimedWithStopMoveTask
 {
 };
-DUMPER7_ASSERTS_FCrAnimState_Taunt;
+DUMPER7_ASSERTS_FMassEnemyTauntTask;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyFXEventConfigurationSharedFragment
 // 0x0008 (0x0008 - 0x0000)
@@ -2625,13 +2710,6 @@ public:
 	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FMassEnemyFXEventFragment;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyJumpTask
-// 0x0000 (0x0078 - 0x0078)
-struct FMassEnemyJumpTask final : public FMassEnemyTimedWithStopMoveTask
-{
-};
-DUMPER7_ASSERTS_FMassEnemyJumpTask;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyHealthFragment
 // 0x0068 (0x0068 - 0x0000)
@@ -2655,6 +2733,13 @@ public:
 };
 DUMPER7_ASSERTS_FMassEnemyPrototypeSpawnData;
 
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyFinishActorAnimTask
+// 0x0000 (0x0078 - 0x0078)
+struct FMassEnemyFinishActorAnimTask final : public FMassEnemyTimedWithStopMoveTask
+{
+};
+DUMPER7_ASSERTS_FMassEnemyFinishActorAnimTask;
+
 // ScriptStruct MassAIPrototypeEnemyRuntime.MassBasePrototypeSpawnData
 // 0x0010 (0x0010 - 0x0000)
 struct alignas(0x08) FMassBasePrototypeSpawnData final
@@ -2673,13 +2758,6 @@ public:
 };
 DUMPER7_ASSERTS_FMassEnemySpawnerTriggerData;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyDeathTask
-// 0x0000 (0x0078 - 0x0078)
-struct FMassEnemyDeathTask final : public FMassEnemyTimedWithStopMoveTask
-{
-};
-DUMPER7_ASSERTS_FMassEnemyDeathTask;
-
 // ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnerSpawnPositionBoxData
 // 0x0050 (0x0050 - 0x0000)
 struct alignas(0x08) FMassEnemySpawnerSpawnPositionBoxData final
@@ -2696,32 +2774,6 @@ struct FMassEnemySpawnerTag final : public FMassTag
 };
 DUMPER7_ASSERTS_FMassEnemySpawnerTag;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnerSpawnDataEntry
-// 0x0038 (0x0038 - 0x0000)
-struct FMassEnemySpawnerSpawnDataEntry final
-{
-public:
-	struct FGameplayTagContainer                  AiType;                                            // 0x0000(0x0020)(NativeAccessSpecifierPublic)
-	float                                         ToSpawnCount;                                      // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SpawnPositionIndexesToUse;                         // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGuid                                  PresetEntryId;                                     // 0x0028(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMassEnemySpawnerSpawnDataEntry;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnerSpawnData
-// 0x0020 (0x0020 - 0x0000)
-struct FMassEnemySpawnerSpawnData final
-{
-public:
-	float                                         TimeSinceSpawningStartS;                           // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsSpawningFinished;                               // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         AiRemainingToSpawn;                                // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FMassEnemySpawnerSpawnDataEntry> Entries;                                          // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMassEnemySpawnerSpawnData;
-
 // ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnerFragment
 // 0x0190 (0x0190 - 0x0000)
 struct alignas(0x10) FMassEnemySpawnerFragment final : public FMassFragment
@@ -2732,28 +2784,6 @@ public:
 	uint8                                         Pad_20[0x170];                                     // 0x0020(0x0170)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FMassEnemySpawnerFragment;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnerEvaluatorInstanceData
-// 0x0014 (0x0014 - 0x0000)
-struct FMassEnemySpawnerEvaluatorInstanceData final
-{
-public:
-	bool                                          bIsAnyAiAlive;                                     // 0x0000(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         bIsSpawningFinished;                               // 0x0004(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShouldProvideNavmesh;                             // 0x0008(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsSpawnerActive;                                  // 0x0009(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bTriggersDisabled;                                 // 0x000A(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsSavedAsFinished;                                // 0x000B(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCanSaveAsFinished;                                // 0x000C(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCanRemoveEntity;                                  // 0x000D(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAffectedByWave;                                   // 0x000E(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bFinishConditionMet;                               // 0x000F(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bResetOnEnviroWave;                                // 0x0010(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsResetWaveStageActive;                           // 0x0011(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12[0x2];                                       // 0x0012(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassEnemySpawnerEvaluatorInstanceData;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnerEvaluator
 // 0x0008 (0x0028 - 0x0020)
@@ -2879,6 +2909,15 @@ public:
 };
 DUMPER7_ASSERTS_FAttackAggroTargetTaskInstanceData;
 
+// ScriptStruct MassAIPrototypeEnemyRuntime.AttackAggroTargetTask
+// 0x0010 (0x0060 - 0x0050)
+struct FAttackAggroTargetTask final : public FMassEnemyTimedTask
+{
+public:
+	uint8                                         Pad_50[0x10];                                      // 0x0050(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAttackAggroTargetTask;
+
 // ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyFollowActorTaskInstanceData
 // 0x0001 (0x0001 - 0x0000)
 struct FMassEnemyFollowActorTaskInstanceData final : public FMassEnemyTimedTaskInstanceData
@@ -2887,20 +2926,6 @@ public:
 	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FMassEnemyFollowActorTaskInstanceData;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyFollowActorTask
-// 0x0028 (0x0078 - 0x0050)
-struct FMassEnemyFollowActorTask final : public FMassEnemyTimedTask
-{
-public:
-	uint8                                         Pad_50[0x18];                                      // 0x0050(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bTrackActorPositionChanges;                        // 0x0068(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bContinueMovementWhenTargetReached;                // 0x0069(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_6A[0x2];                                       // 0x006A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ApproachDistance;                                  // 0x006C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FName                                   NavAgentName;                                      // 0x0070(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-};
-DUMPER7_ASSERTS_FMassEnemyFollowActorTask;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyGoToRandomPositionInstanceData
 // 0x0001 (0x0001 - 0x0000)
@@ -2919,22 +2944,6 @@ public:
 	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FMassEnemyRunFromTargetInstanceData;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyRunFromTargetTask
-// 0x0040 (0x0090 - 0x0050)
-struct FMassEnemyRunFromTargetTask final : public FMassEnemyTimedTask
-{
-public:
-	uint8                                         Pad_50[0x20];                                      // 0x0050(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         DistanceToStartRunFromTarget;                      // 0x0070(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         DistanceToEndRunFromTarget;                        // 0x0074(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         PointSearchRadius;                                 // 0x0078(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         MoveAwayDistance;                                  // 0x007C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         ArriveRadius;                                      // 0x0080(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         CooldownTimeS;                                     // 0x0084(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FName                                   NavAgentName;                                      // 0x0088(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-};
-DUMPER7_ASSERTS_FMassEnemyRunFromTargetTask;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.ShootAtAggroTargetTaskInstanceData
 // 0x0001 (0x0001 - 0x0000)
@@ -2965,17 +2974,6 @@ public:
 };
 DUMPER7_ASSERTS_FShootAtAggroTargetTask;
 
-// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyStrafeAfterShootingTask
-// 0x0010 (0x00A0 - 0x0090)
-struct FMassEnemyStrafeAfterShootingTask final : public FMassEnemyGoToRandomPositionTask
-{
-public:
-	uint8                                         Pad_90[0x8];                                       // 0x0090(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         StrafeBaseDistance;                                // 0x0098(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_9C[0x4];                                       // 0x009C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassEnemyStrafeAfterShootingTask;
-
 // ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyEnableNiagaraVisualizationTag
 // 0x0000 (0x0001 - 0x0001)
 struct FMassEnemyEnableNiagaraVisualizationTag final : public FMassTag
@@ -2983,19 +2981,19 @@ struct FMassEnemyEnableNiagaraVisualizationTag final : public FMassTag
 };
 DUMPER7_ASSERTS_FMassEnemyEnableNiagaraVisualizationTag;
 
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyEnableISMVisualizationTag
+// 0x0000 (0x0001 - 0x0001)
+struct FMassEnemyEnableISMVisualizationTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FMassEnemyEnableISMVisualizationTag;
+
 // ScriptStruct MassAIPrototypeEnemyRuntime.DefaultLodGroupTag
 // 0x0000 (0x0001 - 0x0001)
 struct FDefaultLodGroupTag final : public FMassTag
 {
 };
 DUMPER7_ASSERTS_FDefaultLodGroupTag;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.DisableMassMovementTag
-// 0x0000 (0x0001 - 0x0001)
-struct FDisableMassMovementTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FDisableMassMovementTag;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.HasAttackSlotTag
 // 0x0000 (0x0001 - 0x0001)
@@ -3178,6 +3176,17 @@ public:
 };
 DUMPER7_ASSERTS_FMassEnemySpawnLocationFragment;
 
+// ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemySpawnLocationConfigurationSharedFragment
+// 0x0008 (0x0008 - 0x0000)
+struct FMassEnemySpawnLocationConfigurationSharedFragment final : public FMassConstSharedFragment
+{
+public:
+	float                                         SpawnLocationDistanceActionOnActorRepresentationRemoved; // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrOnActorRepresentationRemovedActionType     ActionType;                                        // 0x0004(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassEnemySpawnLocationConfigurationSharedFragment;
+
 // ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyAnimationSyncData
 // 0x0048 (0x0048 - 0x0000)
 struct alignas(0x08) FMassEnemyAnimationSyncData final
@@ -3190,15 +3199,6 @@ public:
 	uint8                                         Pad_8[0x40];                                       // 0x0008(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FMassEnemyAnimationSyncData;
-
-// ScriptStruct MassAIPrototypeEnemyRuntime.NiagaraVertexAnimFragment
-// 0x00D8 (0x00D8 - 0x0000)
-struct alignas(0x08) FNiagaraVertexAnimFragment final : public FMassFragment
-{
-public:
-	uint8                                         Pad_0[0xD8];                                       // 0x0000(0x00D8)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FNiagaraVertexAnimFragment;
 
 // ScriptStruct MassAIPrototypeEnemyRuntime.MassEnemyVertexAnimConfigurationSharedFragment
 // 0x0070 (0x0070 - 0x0000)

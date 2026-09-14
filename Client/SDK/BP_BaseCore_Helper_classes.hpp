@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_BaseCore_Helper.BP_BaseCore_Helper_C
-// 0x0000 (0x0A80 - 0x0A80)
+// 0x0000 (0x0A40 - 0x0A40)
 class ABP_BaseCore_Helper_C final : public ABP_ChimeraPlacementHelperReplicatedBaseCore_C
 {
 public:

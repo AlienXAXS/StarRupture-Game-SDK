@@ -293,13 +293,13 @@ public:
 DUMPER7_ASSERTS_UAuAT_WaitSingleShotCharged;
 
 // Class AuWeapon.AuAT_WaitSwapWeapon
-// 0x0148 (0x01C8 - 0x0080)
+// 0x0150 (0x01D0 - 0x0080)
 class UAuAT_WaitSwapWeapon final : public UAbilityTask
 {
 public:
-	uint8                                         Pad_80[0x118];                                     // 0x0080(0x0118)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void()>              OnSwap;                                            // 0x0198(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, Protected, NativeAccessSpecifierProtected)
-	TMulticastInlineDelegate<void()>              InProgress;                                        // 0x01B0(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_80[0x120];                                     // 0x0080(0x0120)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void()>              OnSwap;                                            // 0x01A0(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, Protected, NativeAccessSpecifierProtected)
+	TMulticastInlineDelegate<void()>              InProgress;                                        // 0x01B8(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, Protected, NativeAccessSpecifierProtected)
 
 public:
 	static class UAuAT_WaitSwapWeapon* WaitSwapWeapon(class UGameplayAbility* OwningAbility, class FName TaskInstanceName, bool bInHolsterWeapon);

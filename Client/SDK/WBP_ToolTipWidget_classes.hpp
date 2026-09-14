@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
+#include "UMG_structs.hpp"
 #include "ChimeraUI_classes.hpp"
 #include "AuItems_structs.hpp"
-#include "UMG_structs.hpp"
 
 
 SDK_NAMESPACE_START

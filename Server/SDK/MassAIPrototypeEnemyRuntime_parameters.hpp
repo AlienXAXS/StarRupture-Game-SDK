@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "MassEntity_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "Chimera_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "MassEntity_structs.hpp"
 #include "MassCommon_structs.hpp"
 #include "Engine_structs.hpp"
 #include "AuActorPlacement_structs.hpp"
@@ -78,6 +78,311 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_AbstractMassEnemySpawner_IsTriggerActive;
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionSignalEntity.Create_CrAiActionSignalEntity
+// 0x0028 (0x0028 - 0x0000)
+struct CrAiActionSignalEntity_Create_CrAiActionSignalEntity final
+{
+public:
+	TSubclassOf<class UCrAiActionSignalEntity>    ActionType;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NewMaxLifetimeS;                                   // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMassNetworkID                         NetworkID_0;                                       // 0x000C(0x0004)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMassEntityHandle                      EntityHandle_0;                                    // 0x0010(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   SignalName_0;                                      // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCrAiActionSignalEntity*                ReturnValue;                                       // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrAiActionSignalEntity_Create_CrAiActionSignalEntity;
+
+// Function MassAIPrototypeEnemyRuntime.BaseAttackVisualizationInterface.OnAttackIndicatorSpawned
+// 0x0018 (0x0018 - 0x0000)
+struct BaseAttackVisualizationInterface_OnAttackIndicatorSpawned final
+{
+public:
+	struct FVector                                Location;                                          // 0x0000(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_BaseAttackVisualizationInterface_OnAttackIndicatorSpawned;
+
+// Function MassAIPrototypeEnemyRuntime.BaseAttackVisualizationInterface.SetFloatingTrailObjectCount
+// 0x0004 (0x0004 - 0x0000)
+struct BaseAttackVisualizationInterface_SetFloatingTrailObjectCount final
+{
+public:
+	int32                                         Count;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_BaseAttackVisualizationInterface_SetFloatingTrailObjectCount;
+
+// Function MassAIPrototypeEnemyRuntime.DonutVisualizationActor.ClearArrayByIndex
+// 0x0018 (0x0018 - 0x0000)
+struct DonutVisualizationActor_ClearArrayByIndex final
+{
+public:
+	TArray<class UNiagaraComponent*>              Array;                                             // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_DonutVisualizationActor_ClearArrayByIndex;
+
+// Function MassAIPrototypeEnemyRuntime.DonutVisualizationActor.SetFloatingTrailObjectCount
+// 0x0004 (0x0004 - 0x0000)
+struct DonutVisualizationActor_SetFloatingTrailObjectCount final
+{
+public:
+	int32                                         Count;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_DonutVisualizationActor_SetFloatingTrailObjectCount;
+
+// Function MassAIPrototypeEnemyRuntime.DonutVisualizationActor.StartFallingRandomFloatingTrail
+// 0x0018 (0x0018 - 0x0000)
+struct DonutVisualizationActor_StartFallingRandomFloatingTrail final
+{
+public:
+	struct FVector                                TargetLocation;                                    // 0x0000(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_DonutVisualizationActor_StartFallingRandomFloatingTrail;
+
+// Function MassAIPrototypeEnemyRuntime.DonutVisualizationActor.UpdateFallingTrails
+// 0x0004 (0x0004 - 0x0000)
+struct DonutVisualizationActor_UpdateFallingTrails final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_DonutVisualizationActor_UpdateFallingTrails;
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAllowedAttackConeHalfAngle
+// 0x0004 (0x0004 - 0x0000)
+struct MassEnemyDamageInterface_SetAllowedAttackConeHalfAngle final
+{
+public:
+	float                                         NewAttackConeHalfAngle;                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MassEnemyDamageInterface_SetAllowedAttackConeHalfAngle;
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAllowedAttackDistance
+// 0x0004 (0x0004 - 0x0000)
+struct MassEnemyDamageInterface_SetAllowedAttackDistance final
+{
+public:
+	float                                         NewAttackDistance;                                 // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MassEnemyDamageInterface_SetAllowedAttackDistance;
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAllowedBuildingAttackDistance
+// 0x0004 (0x0004 - 0x0000)
+struct MassEnemyDamageInterface_SetAllowedBuildingAttackDistance final
+{
+public:
+	float                                         NewAttackDistance;                                 // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MassEnemyDamageInterface_SetAllowedBuildingAttackDistance;
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAttackTargetPosition
+// 0x0018 (0x0018 - 0x0000)
+struct MassEnemyDamageInterface_SetAttackTargetPosition final
+{
+public:
+	struct FVector                                NewAttackTargetPosition;                           // 0x0000(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MassEnemyDamageInterface_SetAttackTargetPosition;
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetBuildingInfectionDamage
+// 0x0004 (0x0004 - 0x0000)
+struct MassEnemyDamageInterface_SetBuildingInfectionDamage final
+{
+public:
+	float                                         NewBuildingInfectionDamage;                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MassEnemyDamageInterface_SetBuildingInfectionDamage;
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetDamageGameplayEffect
+// 0x0008 (0x0008 - 0x0000)
+struct MassEnemyDamageInterface_SetDamageGameplayEffect final
+{
+public:
+	TSubclassOf<class UGameplayEffect>            DamageEffect;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MassEnemyDamageInterface_SetDamageGameplayEffect;
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAggroTargetActor
+// 0x0008 (0x0008 - 0x0000)
+struct MassEnemyDamageInterface_GetAggroTargetActor final
+{
+public:
+	class AActor*                                 ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MassEnemyDamageInterface_GetAggroTargetActor;
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAllowedAttackConeHalfAngle
+// 0x0004 (0x0004 - 0x0000)
+struct MassEnemyDamageInterface_GetAllowedAttackConeHalfAngle final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MassEnemyDamageInterface_GetAllowedAttackConeHalfAngle;
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAllowedAttackDistance
+// 0x0004 (0x0004 - 0x0000)
+struct MassEnemyDamageInterface_GetAllowedAttackDistance final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MassEnemyDamageInterface_GetAllowedAttackDistance;
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAllowedBuildingAttackDistance
+// 0x0004 (0x0004 - 0x0000)
+struct MassEnemyDamageInterface_GetAllowedBuildingAttackDistance final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MassEnemyDamageInterface_GetAllowedBuildingAttackDistance;
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAttackTargetPosition
+// 0x0018 (0x0018 - 0x0000)
+struct MassEnemyDamageInterface_GetAttackTargetPosition final
+{
+public:
+	struct FVector                                ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MassEnemyDamageInterface_GetAttackTargetPosition;
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetBuildingInfectionDamage
+// 0x0004 (0x0004 - 0x0000)
+struct MassEnemyDamageInterface_GetBuildingInfectionDamage final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MassEnemyDamageInterface_GetBuildingInfectionDamage;
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetDamageGameplayEffect
+// 0x0008 (0x0008 - 0x0000)
+struct MassEnemyDamageInterface_GetDamageGameplayEffect final
+{
+public:
+	TSubclassOf<class UGameplayEffect>            ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MassEnemyDamageInterface_GetDamageGameplayEffect;
+
+// Function MassAIPrototypeEnemyRuntime.BaseSiteAttackSubsystem.OnBaseCoreInfected
+// 0x0008 (0x0008 - 0x0000)
+struct BaseSiteAttackSubsystem_OnBaseCoreInfected final
+{
+public:
+	struct FMassEntityHandle                      Core;                                              // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_BaseSiteAttackSubsystem_OnBaseCoreInfected;
+
+// Function MassAIPrototypeEnemyRuntime.BaseSiteAttackSubsystem.OnBaseCoreInfectionActorDestroyed
+// 0x0010 (0x0010 - 0x0000)
+struct BaseSiteAttackSubsystem_OnBaseCoreInfectionActorDestroyed final
+{
+public:
+	struct FMassEntityHandle                      BaseCore;                                          // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          LaseActor;                                         // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_BaseSiteAttackSubsystem_OnBaseCoreInfectionActorDestroyed;
+
+// Function MassAIPrototypeEnemyRuntime.BaseSiteAttackSubsystem.OnBaseCoreInfectionCleanedUp
+// 0x0008 (0x0008 - 0x0000)
+struct BaseSiteAttackSubsystem_OnBaseCoreInfectionCleanedUp final
+{
+public:
+	struct FMassEntityHandle                      Core;                                              // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_BaseSiteAttackSubsystem_OnBaseCoreInfectionCleanedUp;
+
+// Function MassAIPrototypeEnemyRuntime.BaseSiteAttackSubsystem.OnCoreInfectionActorDestroyed
+// 0x0008 (0x0008 - 0x0000)
+struct BaseSiteAttackSubsystem_OnCoreInfectionActorDestroyed final
+{
+public:
+	struct FMassEntityHandle                      Core;                                              // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_BaseSiteAttackSubsystem_OnCoreInfectionActorDestroyed;
+
+// Function MassAIPrototypeEnemyRuntime.BaseSiteAttackSubsystem.OnWavePositionChanged
+// 0x0034 (0x0034 - 0x0000)
+struct BaseSiteAttackSubsystem_OnWavePositionChanged final
+{
+public:
+	EEnviroWave                                   Wave;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCrEnviroWaveSettings                  Settings;                                          // 0x0004(0x002C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         Position;                                          // 0x0030(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_BaseSiteAttackSubsystem_OnWavePositionChanged;
+
+// Function MassAIPrototypeEnemyRuntime.BaseSiteAttackSubsystem.OnWaveStarted
+// 0x0034 (0x0034 - 0x0000)
+struct BaseSiteAttackSubsystem_OnWaveStarted final
+{
+public:
+	EEnviroWave                                   Wave;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EEnviroWaveStage                              Stage;                                             // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCrEnviroWaveSettings                  Settings;                                          // 0x0004(0x002C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         Progress;                                          // 0x0030(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_BaseSiteAttackSubsystem_OnWaveStarted;
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionAttack.Create_CrAiActionAttack
+// 0x0058 (0x0058 - 0x0000)
+struct CrAiActionAttack_Create_CrAiActionAttack final
+{
+public:
+	TSubclassOf<class UCrAiActionAttack>          ActionType;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NewMaxLifetimeS;                                   // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrEnemyAttackType                            NewAttackType;                                     // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNewWaitForAnimFinishEvent;                        // 0x000D(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UGameplayEffect>            NewDamageGameplayEffect;                           // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NewBuildingInfectionDamage;                        // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NewAllowedAttackDistance;                          // 0x001C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NewAllowedBuildingAttackDistance;                  // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NewAllowedAttackConeHalfAngle;                     // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bKeepRotatedToMovement_0;                          // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                TargetPosition_0;                                  // 0x0030(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNewAttackWithTurnInPlace;                         // 0x0048(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCrAiActionAttack*                      ReturnValue;                                       // 0x0050(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrAiActionAttack_Create_CrAiActionAttack;
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyEventQueueSubsystem.DealDamageToAiActor
+// 0x0018 (0x0018 - 0x0000)
+struct MassEnemyEventQueueSubsystem_DealDamageToAiActor final
+{
+public:
+	TSubclassOf<class UGameplayEffect>            AiDamageEffect;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 AttackerActor;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 TargetActor;                                       // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MassEnemyEventQueueSubsystem_DealDamageToAiActor;
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyEventQueueSubsystem.DealDamageToAiASC
+// 0x0020 (0x0020 - 0x0000)
+struct MassEnemyEventQueueSubsystem_DealDamageToAiASC final
+{
+public:
+	struct FGameplayEffectSpecHandle              SpecHandle;                                        // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class UAbilitySystemComponent*                InstigatorASC;                                     // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAbilitySystemComponent*                TargetASC;                                         // 0x0018(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MassEnemyEventQueueSubsystem_DealDamageToAiASC;
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyEventQueueSubsystem.NotifyAiSpawn
+// 0x0008 (0x0008 - 0x0000)
+struct MassEnemyEventQueueSubsystem_NotifyAiSpawn final
+{
+public:
+	class ACrAIBase*                              SpawnedAiActor;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MassEnemyEventQueueSubsystem_NotifyAiSpawn;
 
 // Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.GetMassEnemyInitializationState
 // 0x0001 (0x0001 - 0x0000)
@@ -334,308 +639,6 @@ public:
 };
 DUMPER7_ASSERTS_MassEnemyCharacterBase_OnMeshVisibilityUpdated;
 
-// Function MassAIPrototypeEnemyRuntime.BaseAttackVisualizationInterface.OnAttackIndicatorSpawned
-// 0x0018 (0x0018 - 0x0000)
-struct BaseAttackVisualizationInterface_OnAttackIndicatorSpawned final
-{
-public:
-	struct FVector                                Location;                                          // 0x0000(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_BaseAttackVisualizationInterface_OnAttackIndicatorSpawned;
-
-// Function MassAIPrototypeEnemyRuntime.BaseAttackVisualizationInterface.SetFloatingTrailObjectCount
-// 0x0004 (0x0004 - 0x0000)
-struct BaseAttackVisualizationInterface_SetFloatingTrailObjectCount final
-{
-public:
-	int32                                         Count;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_BaseAttackVisualizationInterface_SetFloatingTrailObjectCount;
-
-// Function MassAIPrototypeEnemyRuntime.DonutVisualizationActor.ClearArrayByIndex
-// 0x0018 (0x0018 - 0x0000)
-struct DonutVisualizationActor_ClearArrayByIndex final
-{
-public:
-	TArray<class UNiagaraComponent*>              Array;                                             // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	int32                                         Index_0;                                           // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_DonutVisualizationActor_ClearArrayByIndex;
-
-// Function MassAIPrototypeEnemyRuntime.DonutVisualizationActor.SetFloatingTrailObjectCount
-// 0x0004 (0x0004 - 0x0000)
-struct DonutVisualizationActor_SetFloatingTrailObjectCount final
-{
-public:
-	int32                                         Count;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_DonutVisualizationActor_SetFloatingTrailObjectCount;
-
-// Function MassAIPrototypeEnemyRuntime.DonutVisualizationActor.StartFallingRandomFloatingTrail
-// 0x0018 (0x0018 - 0x0000)
-struct DonutVisualizationActor_StartFallingRandomFloatingTrail final
-{
-public:
-	struct FVector                                TargetLocation;                                    // 0x0000(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_DonutVisualizationActor_StartFallingRandomFloatingTrail;
-
-// Function MassAIPrototypeEnemyRuntime.DonutVisualizationActor.UpdateFallingTrails
-// 0x0004 (0x0004 - 0x0000)
-struct DonutVisualizationActor_UpdateFallingTrails final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_DonutVisualizationActor_UpdateFallingTrails;
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionPlayAnimation.Create_CrAiActionPlayAnimation
-// 0x0018 (0x0018 - 0x0000)
-struct CrAiActionPlayAnimation_Create_CrAiActionPlayAnimation final
-{
-public:
-	TSubclassOf<class UCrAiActionPlayAnimation>   ActionType;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NewMaxLifetimeS;                                   // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrEnemyLocomotionType                        NewLocomotionState;                                // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bWaitForAnimFinishEvent_0;                         // 0x000D(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bNewFinishImmediately;                             // 0x000E(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bKeepRotatedToMovement_0;                          // 0x000F(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCrAiActionPlayAnimation*               ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrAiActionPlayAnimation_Create_CrAiActionPlayAnimation;
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionTaunt.Create_CrAiActionTaunt
-// 0x0028 (0x0028 - 0x0000)
-struct CrAiActionTaunt_Create_CrAiActionTaunt final
-{
-public:
-	TSubclassOf<class UCrAiActionPlayAnimation>   ActionType;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NewMaxLifetimeS;                                   // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrEnemyLocomotionType                        NewLocomotionState;                                // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bNewWaitForAnimFinishEvent;                        // 0x000D(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bNewFinishImmediately;                             // 0x000E(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bNewKeepRotatedToMovement;                         // 0x000F(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<ECrEnemyTauntType>                     NewAvailableTauntTypes;                            // 0x0010(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-	class UCrAiActionTaunt*                       ReturnValue;                                       // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrAiActionTaunt_Create_CrAiActionTaunt;
-
-// Function MassAIPrototypeEnemyRuntime.BaseSiteAttackSubsystem.OnBaseCoreInfected
-// 0x0008 (0x0008 - 0x0000)
-struct BaseSiteAttackSubsystem_OnBaseCoreInfected final
-{
-public:
-	struct FMassEntityHandle                      Core;                                              // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_BaseSiteAttackSubsystem_OnBaseCoreInfected;
-
-// Function MassAIPrototypeEnemyRuntime.BaseSiteAttackSubsystem.OnBaseCoreInfectionActorDestroyed
-// 0x0010 (0x0010 - 0x0000)
-struct BaseSiteAttackSubsystem_OnBaseCoreInfectionActorDestroyed final
-{
-public:
-	struct FMassEntityHandle                      BaseCore;                                          // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          LaseActor;                                         // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_BaseSiteAttackSubsystem_OnBaseCoreInfectionActorDestroyed;
-
-// Function MassAIPrototypeEnemyRuntime.BaseSiteAttackSubsystem.OnBaseCoreInfectionCleanedUp
-// 0x0008 (0x0008 - 0x0000)
-struct BaseSiteAttackSubsystem_OnBaseCoreInfectionCleanedUp final
-{
-public:
-	struct FMassEntityHandle                      Core;                                              // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_BaseSiteAttackSubsystem_OnBaseCoreInfectionCleanedUp;
-
-// Function MassAIPrototypeEnemyRuntime.BaseSiteAttackSubsystem.OnCoreInfectionActorDestroyed
-// 0x0008 (0x0008 - 0x0000)
-struct BaseSiteAttackSubsystem_OnCoreInfectionActorDestroyed final
-{
-public:
-	struct FMassEntityHandle                      Core;                                              // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_BaseSiteAttackSubsystem_OnCoreInfectionActorDestroyed;
-
-// Function MassAIPrototypeEnemyRuntime.BaseSiteAttackSubsystem.OnWavePositionChanged
-// 0x0034 (0x0034 - 0x0000)
-struct BaseSiteAttackSubsystem_OnWavePositionChanged final
-{
-public:
-	EEnviroWave                                   Wave;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrEnviroWaveSettings                  Settings;                                          // 0x0004(0x002C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         Position;                                          // 0x0030(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_BaseSiteAttackSubsystem_OnWavePositionChanged;
-
-// Function MassAIPrototypeEnemyRuntime.BaseSiteAttackSubsystem.OnWaveStarted
-// 0x0034 (0x0034 - 0x0000)
-struct BaseSiteAttackSubsystem_OnWaveStarted final
-{
-public:
-	EEnviroWave                                   Wave;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EEnviroWaveStage                              Stage;                                             // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrEnviroWaveSettings                  Settings;                                          // 0x0004(0x002C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         Progress;                                          // 0x0030(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_BaseSiteAttackSubsystem_OnWaveStarted;
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyEntityCollisionIsmWrapperSubsystem.GetOrCreateEntityCollisionIsmWrapperActor
-// 0x0038 (0x0038 - 0x0000)
-struct MassEnemyEntityCollisionIsmWrapperSubsystem_GetOrCreateEntityCollisionIsmWrapperActor final
-{
-public:
-	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UStaticMesh>             CollisionSM;                                       // 0x0008(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AMassEnemyEntityCollisionIsmWrapperActor* ReturnValue;                                     // 0x0030(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MassEnemyEntityCollisionIsmWrapperSubsystem_GetOrCreateEntityCollisionIsmWrapperActor;
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionAttack.Create_CrAiActionAttack
-// 0x0058 (0x0058 - 0x0000)
-struct CrAiActionAttack_Create_CrAiActionAttack final
-{
-public:
-	TSubclassOf<class UCrAiActionAttack>          ActionType;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NewMaxLifetimeS;                                   // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrEnemyAttackType                            NewAttackType;                                     // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bNewWaitForAnimFinishEvent;                        // 0x000D(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UGameplayEffect>            NewDamageGameplayEffect;                           // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NewBuildingInfectionDamage;                        // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NewAllowedAttackDistance;                          // 0x001C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NewAllowedBuildingAttackDistance;                  // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NewAllowedAttackConeHalfAngle;                     // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bKeepRotatedToMovement_0;                          // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                TargetPosition_0;                                  // 0x0030(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bNewAttackWithTurnInPlace;                         // 0x0048(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCrAiActionAttack*                      ReturnValue;                                       // 0x0050(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrAiActionAttack_Create_CrAiActionAttack;
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAllowedAttackConeHalfAngle
-// 0x0004 (0x0004 - 0x0000)
-struct MassEnemyDamageInterface_SetAllowedAttackConeHalfAngle final
-{
-public:
-	float                                         NewAttackConeHalfAngle;                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MassEnemyDamageInterface_SetAllowedAttackConeHalfAngle;
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAllowedAttackDistance
-// 0x0004 (0x0004 - 0x0000)
-struct MassEnemyDamageInterface_SetAllowedAttackDistance final
-{
-public:
-	float                                         NewAttackDistance;                                 // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MassEnemyDamageInterface_SetAllowedAttackDistance;
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAllowedBuildingAttackDistance
-// 0x0004 (0x0004 - 0x0000)
-struct MassEnemyDamageInterface_SetAllowedBuildingAttackDistance final
-{
-public:
-	float                                         NewAttackDistance;                                 // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MassEnemyDamageInterface_SetAllowedBuildingAttackDistance;
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAttackTargetPosition
-// 0x0018 (0x0018 - 0x0000)
-struct MassEnemyDamageInterface_SetAttackTargetPosition final
-{
-public:
-	struct FVector                                NewAttackTargetPosition;                           // 0x0000(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MassEnemyDamageInterface_SetAttackTargetPosition;
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetBuildingInfectionDamage
-// 0x0004 (0x0004 - 0x0000)
-struct MassEnemyDamageInterface_SetBuildingInfectionDamage final
-{
-public:
-	float                                         NewBuildingInfectionDamage;                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MassEnemyDamageInterface_SetBuildingInfectionDamage;
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetDamageGameplayEffect
-// 0x0008 (0x0008 - 0x0000)
-struct MassEnemyDamageInterface_SetDamageGameplayEffect final
-{
-public:
-	TSubclassOf<class UGameplayEffect>            DamageEffect;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MassEnemyDamageInterface_SetDamageGameplayEffect;
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAggroTargetActor
-// 0x0008 (0x0008 - 0x0000)
-struct MassEnemyDamageInterface_GetAggroTargetActor final
-{
-public:
-	class AActor*                                 ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MassEnemyDamageInterface_GetAggroTargetActor;
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAllowedAttackConeHalfAngle
-// 0x0004 (0x0004 - 0x0000)
-struct MassEnemyDamageInterface_GetAllowedAttackConeHalfAngle final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MassEnemyDamageInterface_GetAllowedAttackConeHalfAngle;
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAllowedAttackDistance
-// 0x0004 (0x0004 - 0x0000)
-struct MassEnemyDamageInterface_GetAllowedAttackDistance final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MassEnemyDamageInterface_GetAllowedAttackDistance;
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAllowedBuildingAttackDistance
-// 0x0004 (0x0004 - 0x0000)
-struct MassEnemyDamageInterface_GetAllowedBuildingAttackDistance final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MassEnemyDamageInterface_GetAllowedBuildingAttackDistance;
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAttackTargetPosition
-// 0x0018 (0x0018 - 0x0000)
-struct MassEnemyDamageInterface_GetAttackTargetPosition final
-{
-public:
-	struct FVector                                ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MassEnemyDamageInterface_GetAttackTargetPosition;
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetBuildingInfectionDamage
-// 0x0004 (0x0004 - 0x0000)
-struct MassEnemyDamageInterface_GetBuildingInfectionDamage final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MassEnemyDamageInterface_GetBuildingInfectionDamage;
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetDamageGameplayEffect
-// 0x0008 (0x0008 - 0x0000)
-struct MassEnemyDamageInterface_GetDamageGameplayEffect final
-{
-public:
-	TSubclassOf<class UGameplayEffect>            ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MassEnemyDamageInterface_GetDamageGameplayEffect;
-
 // Function MassAIPrototypeEnemyRuntime.CrAiActionDealAoeDamage.Create_CrAiDealAoeDamage
 // 0x0060 (0x0060 - 0x0000)
 struct CrAiActionDealAoeDamage_Create_CrAiDealAoeDamage final
@@ -890,6 +893,21 @@ public:
 };
 DUMPER7_ASSERTS_CrAiActionMoveTo_OnNavlikJumpEnded;
 
+// Function MassAIPrototypeEnemyRuntime.CrAiActionPlayAnimation.Create_CrAiActionPlayAnimation
+// 0x0018 (0x0018 - 0x0000)
+struct CrAiActionPlayAnimation_Create_CrAiActionPlayAnimation final
+{
+public:
+	TSubclassOf<class UCrAiActionPlayAnimation>   ActionType;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NewMaxLifetimeS;                                   // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrEnemyLocomotionType                        NewLocomotionState;                                // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bWaitForAnimFinishEvent_0;                         // 0x000D(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNewFinishImmediately;                             // 0x000E(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bKeepRotatedToMovement_0;                          // 0x000F(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCrAiActionPlayAnimation*               ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrAiActionPlayAnimation_Create_CrAiActionPlayAnimation;
+
 // Function MassAIPrototypeEnemyRuntime.CrAiActionRotateToFocus.Create_CrAiActionRotateToFocus
 // 0x0018 (0x0018 - 0x0000)
 struct CrAiActionRotateToFocus_Create_CrAiActionRotateToFocus final
@@ -1085,20 +1103,6 @@ public:
 };
 DUMPER7_ASSERTS_CrAiActionShowProjectileAndPrepareForLaunch_OnShootAnimEventOnClient;
 
-// Function MassAIPrototypeEnemyRuntime.CrAiActionSignalEntity.Create_CrAiActionSignalEntity
-// 0x0028 (0x0028 - 0x0000)
-struct CrAiActionSignalEntity_Create_CrAiActionSignalEntity final
-{
-public:
-	TSubclassOf<class UCrAiActionSignalEntity>    ActionType;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NewMaxLifetimeS;                                   // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMassNetworkID                         NetworkID_0;                                       // 0x000C(0x0004)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMassEntityHandle                      EntityHandle_0;                                    // 0x0010(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   SignalName_0;                                      // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCrAiActionSignalEntity*                ReturnValue;                                       // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrAiActionSignalEntity_Create_CrAiActionSignalEntity;
-
 // Function MassAIPrototypeEnemyRuntime.CrAiActionSpawnAnimation.Create_CrAiActionSpawnAnimation
 // 0x0020 (0x0020 - 0x0000)
 struct CrAiActionSpawnAnimation_Create_CrAiActionSpawnAnimation final
@@ -1152,6 +1156,22 @@ public:
 	uint8                                         Pad_E8[0x8];                                       // 0x00E8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_CrAiActionSpawnEntity_Create_CrAiActionSpawnEntity;
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionTaunt.Create_CrAiActionTaunt
+// 0x0028 (0x0028 - 0x0000)
+struct CrAiActionTaunt_Create_CrAiActionTaunt final
+{
+public:
+	TSubclassOf<class UCrAiActionPlayAnimation>   ActionType;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NewMaxLifetimeS;                                   // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrEnemyLocomotionType                        NewLocomotionState;                                // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNewWaitForAnimFinishEvent;                        // 0x000D(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNewFinishImmediately;                             // 0x000E(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNewKeepRotatedToMovement;                         // 0x000F(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<ECrEnemyTauntType>                     NewAvailableTauntTypes;                            // 0x0010(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	class UCrAiActionTaunt*                       ReturnValue;                                       // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrAiActionTaunt_Create_CrAiActionTaunt;
 
 // Function MassAIPrototypeEnemyRuntime.CrAiActionUseNavlink.Create_CrAiActionUseNavlink
 // 0x0098 (0x0098 - 0x0000)
@@ -1722,36 +1742,16 @@ public:
 };
 DUMPER7_ASSERTS_MassEnemyAnimationInstance_UpdateYawRotationRateForLocomotionState;
 
-// Function MassAIPrototypeEnemyRuntime.MassEnemyEventQueueSubsystem.DealDamageToAiActor
-// 0x0018 (0x0018 - 0x0000)
-struct MassEnemyEventQueueSubsystem_DealDamageToAiActor final
+// Function MassAIPrototypeEnemyRuntime.MassEnemyEntityCollisionIsmWrapperSubsystem.GetOrCreateEntityCollisionIsmWrapperActor
+// 0x0038 (0x0038 - 0x0000)
+struct MassEnemyEntityCollisionIsmWrapperSubsystem_GetOrCreateEntityCollisionIsmWrapperActor final
 {
 public:
-	TSubclassOf<class UGameplayEffect>            AiDamageEffect;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 AttackerActor;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 TargetActor;                                       // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UStaticMesh>             CollisionSM;                                       // 0x0008(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AMassEnemyEntityCollisionIsmWrapperActor* ReturnValue;                                     // 0x0030(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_MassEnemyEventQueueSubsystem_DealDamageToAiActor;
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyEventQueueSubsystem.DealDamageToAiASC
-// 0x0020 (0x0020 - 0x0000)
-struct MassEnemyEventQueueSubsystem_DealDamageToAiASC final
-{
-public:
-	struct FGameplayEffectSpecHandle              SpecHandle;                                        // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	class UAbilitySystemComponent*                InstigatorASC;                                     // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UAbilitySystemComponent*                TargetASC;                                         // 0x0018(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MassEnemyEventQueueSubsystem_DealDamageToAiASC;
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyEventQueueSubsystem.NotifyAiSpawn
-// 0x0008 (0x0008 - 0x0000)
-struct MassEnemyEventQueueSubsystem_NotifyAiSpawn final
-{
-public:
-	class ACrAIBase*                              SpawnedAiActor;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MassEnemyEventQueueSubsystem_NotifyAiSpawn;
+DUMPER7_ASSERTS_MassEnemyEntityCollisionIsmWrapperSubsystem_GetOrCreateEntityCollisionIsmWrapperActor;
 
 // Function MassAIPrototypeEnemyRuntime.MassEnemyFXEventSubsystem.RegisterEvent
 // 0x0010 (0x0010 - 0x0000)

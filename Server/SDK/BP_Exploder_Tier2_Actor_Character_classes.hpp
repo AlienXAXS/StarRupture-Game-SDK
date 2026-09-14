@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "BP_BaseAI_classes.hpp"
 #include "Engine_structs.hpp"
 #include "AuActorPlacement_structs.hpp"
-#include "BP_BaseAI_classes.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 
 

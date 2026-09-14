@@ -16,11 +16,11 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Chair.BP_Chair_C
-// 0x0008 (0x06C8 - 0x06C0)
+// 0x0008 (0x06D0 - 0x06C8)
 class ABP_Chair_C final : public ACrBuildingActorBase
 {
 public:
-	class UStaticMeshComponent*                   BuildingMesh;                                      // 0x06C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   BuildingMesh;                                      // 0x06C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

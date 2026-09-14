@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_MechanicalDrillTier2Placement_Helper.BP_MechanicalDrillTier2Placement_Helper_C
-// 0x0000 (0x0A40 - 0x0A40)
+// 0x0000 (0x0A00 - 0x0A00)
 class ABP_MechanicalDrillTier2Placement_Helper_C final : public ABP_ChimeraPlacementHelperReplicatedDrill_C
 {
 public:

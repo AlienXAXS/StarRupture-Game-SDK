@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ChimeraPlacementHelperReplicatedDrill.BP_ChimeraPlacementHelperReplicatedDrill_C
-// 0x0000 (0x0A40 - 0x0A40)
+// 0x0000 (0x0A00 - 0x0A00)
 class ABP_ChimeraPlacementHelperReplicatedDrill_C : public ACrAPHelperActorDrill
 {
 public:

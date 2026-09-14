@@ -240,6 +240,18 @@ public:
 };
 DUMPER7_ASSERTS_FAudioOscilloscopePanelStyle;
 
+// ScriptStruct AudioWidgets.AudioTextBoxStyle
+// 0x00D8 (0x00E0 - 0x0008)
+struct FAudioTextBoxStyle final : public FSlateWidgetStyle
+{
+public:
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            BackgroundImage;                                   // 0x0010(0x00B0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateColor                            BackgroundColor;                                   // 0x00C0(0x0014)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D4[0xC];                                       // 0x00D4(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAudioTextBoxStyle;
+
 // ScriptStruct AudioWidgets.MeterChannelInfo
 // 0x000C (0x000C - 0x0000)
 struct FMeterChannelInfo final
@@ -250,6 +262,20 @@ public:
 	float                                         ClippingValue;                                     // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FMeterChannelInfo;
+
+// ScriptStruct AudioWidgets.AudioMeterDefaultColorStyle
+// 0x0060 (0x0068 - 0x0008)
+struct FAudioMeterDefaultColorStyle final : public FSlateWidgetStyle
+{
+public:
+	struct FLinearColor                           MeterBackgroundColor;                              // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           MeterValueColor;                                   // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           MeterPeakColor;                                    // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           MeterClippingColor;                                // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           MeterScaleColor;                                   // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           MeterScaleLabelColor;                              // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAudioMeterDefaultColorStyle;
 
 // ScriptStruct AudioWidgets.AudioMaterialWidgetStyle
 // 0x0010 (0x0018 - 0x0008)
@@ -283,18 +309,6 @@ public:
 	struct FSlateFontInfo                         Font;                                              // 0x0090(0x0060)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FAudioMaterialMeterStyle;
-
-// ScriptStruct AudioWidgets.AudioTextBoxStyle
-// 0x00D8 (0x00E0 - 0x0008)
-struct FAudioTextBoxStyle final : public FSlateWidgetStyle
-{
-public:
-	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            BackgroundImage;                                   // 0x0010(0x00B0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateColor                            BackgroundColor;                                   // 0x00C0(0x0014)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D4[0xC];                                       // 0x00D4(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAudioTextBoxStyle;
 
 // ScriptStruct AudioWidgets.AudioMeterStyle
 // 0x0428 (0x0430 - 0x0008)
@@ -461,20 +475,6 @@ public:
 	bool                                          bDisplaySoundLevelAxisLabels;                      // 0x0008(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FSpectrumAnalyzerRackUnitSettings;
-
-// ScriptStruct AudioWidgets.AudioMeterDefaultColorStyle
-// 0x0060 (0x0068 - 0x0008)
-struct FAudioMeterDefaultColorStyle final : public FSlateWidgetStyle
-{
-public:
-	struct FLinearColor                           MeterBackgroundColor;                              // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           MeterValueColor;                                   // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           MeterPeakColor;                                    // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           MeterClippingColor;                                // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           MeterScaleColor;                                   // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           MeterScaleLabelColor;                              // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAudioMeterDefaultColorStyle;
 
 // ScriptStruct AudioWidgets.AudioSpectrumPlotStyle
 // 0x0128 (0x0130 - 0x0008)

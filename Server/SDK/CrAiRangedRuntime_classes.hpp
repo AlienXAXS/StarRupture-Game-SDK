@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "MassSpawner_classes.hpp"
-#include "CrAiRangedRuntime_structs.hpp"
 #include "Engine_classes.hpp"
+#include "CrAiRangedRuntime_structs.hpp"
 #include "Chimera_classes.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"

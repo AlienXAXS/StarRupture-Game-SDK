@@ -12,14 +12,14 @@
 
 #include "Chimera_classes.hpp"
 #include "AuActorPlacement_structs.hpp"
+#include "CrAiExploderRuntime_structs.hpp"
 #include "MassReplication_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "AIModule_structs.hpp"
-#include "AIModule_classes.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
-#include "CrAiExploderRuntime_structs.hpp"
+#include "AIModule_structs.hpp"
+#include "AIModule_classes.hpp"
 #include "MassSpawner_classes.hpp"
 #include "Engine_classes.hpp"
 #include "MassEntity_structs.hpp"
@@ -191,6 +191,26 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionBtTaskExploderT3SpawnCyst;
 
+// Class CrAiExploderRuntime.ExploderClientBubbleInfo
+// 0x0000 (0x0330 - 0x0330)
+class AExploderClientBubbleInfo final : public ACrMassClientBubbleInfo
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ExploderClientBubbleInfo")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ExploderClientBubbleInfo")
+	}
+	static class AExploderClientBubbleInfo* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AExploderClientBubbleInfo>();
+	}
+};
+DUMPER7_ASSERTS_AExploderClientBubbleInfo;
+
 // Class CrAiExploderRuntime.CrAiActionDealDamageAndSpawnEntity
 // 0x00F8 (0x0180 - 0x0088)
 class UCrAiActionDealDamageAndSpawnEntity final : public UCrAiAction
@@ -331,29 +351,6 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionExploderT3DigIn;
 
-// Class CrAiExploderRuntime.ExploderSpawnExplosionSphereProcessor
-// 0x0358 (0x0430 - 0x00D8)
-class UExploderSpawnExplosionSphereProcessor final : public UMassObserverProcessor
-{
-public:
-	uint8                                         Pad_D8[0x358];                                     // 0x00D8(0x0358)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("ExploderSpawnExplosionSphereProcessor")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"ExploderSpawnExplosionSphereProcessor")
-	}
-	static class UExploderSpawnExplosionSphereProcessor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UExploderSpawnExplosionSphereProcessor>();
-	}
-};
-DUMPER7_ASSERTS_UExploderSpawnExplosionSphereProcessor;
-
 // Class CrAiExploderRuntime.CrAiActionSpawnExplosionEntity
 // 0x0000 (0x0150 - 0x0150)
 class UCrAiActionSpawnExplosionEntity final : public UCrAiActionSpawnEntity
@@ -373,41 +370,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCrAiActionSpawnExplosionEntity;
-
-// Class CrAiExploderRuntime.ExploderStateSyncComponent
-// 0x0028 (0x00E0 - 0x00B8)
-class UExploderStateSyncComponent final : public UActorComponent
-{
-public:
-	float                                         ActivationStartTimestamp;                          // 0x00B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ExplosionStartTimestamp;                           // 0x00BC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AnimProgressA;                                     // 0x00C0(0x0004)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AnimProgressB;                                     // 0x00C4(0x0004)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TopAnimIndexA;                                     // 0x00C8(0x0004)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TopAnimIndexB;                                     // 0x00CC(0x0004)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Dissolve;                                          // 0x00D0(0x0004)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AnimLerp;                                          // 0x00D4(0x0004)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShouldSpawnHugeCollision;                         // 0x00D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D9[0x7];                                       // 0x00D9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void Reset();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("ExploderStateSyncComponent")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"ExploderStateSyncComponent")
-	}
-	static class UExploderStateSyncComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UExploderStateSyncComponent>();
-	}
-};
-DUMPER7_ASSERTS_UExploderStateSyncComponent;
 
 // Class CrAiExploderRuntime.CrAiExploder
 // 0x0000 (0x0000 - 0x0000)
@@ -551,26 +513,6 @@ public:
 };
 DUMPER7_ASSERTS_ACrMassExploderBubbleReplicatedSerializerHolder;
 
-// Class CrAiExploderRuntime.ExploderClientBubbleInfo
-// 0x0000 (0x0330 - 0x0330)
-class AExploderClientBubbleInfo final : public ACrMassClientBubbleInfo
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("ExploderClientBubbleInfo")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"ExploderClientBubbleInfo")
-	}
-	static class AExploderClientBubbleInfo* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<AExploderClientBubbleInfo>();
-	}
-};
-DUMPER7_ASSERTS_AExploderClientBubbleInfo;
-
 // Class CrAiExploderRuntime.ExploderMassEnemyDataAsset
 // 0x00E8 (0x0848 - 0x0760)
 class UExploderMassEnemyDataAsset final : public UMassEnemyDataAsset
@@ -627,6 +569,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UExploderMassStateTranslator;
+
+// Class CrAiExploderRuntime.ExploderSpawnExplosionSphereProcessor
+// 0x0358 (0x0430 - 0x00D8)
+class UExploderSpawnExplosionSphereProcessor final : public UMassObserverProcessor
+{
+public:
+	uint8                                         Pad_D8[0x358];                                     // 0x00D8(0x0358)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ExploderSpawnExplosionSphereProcessor")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ExploderSpawnExplosionSphereProcessor")
+	}
+	static class UExploderSpawnExplosionSphereProcessor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UExploderSpawnExplosionSphereProcessor>();
+	}
+};
+DUMPER7_ASSERTS_UExploderSpawnExplosionSphereProcessor;
 
 // Class CrAiExploderRuntime.ExploderAddExplosionEffectsProcessor
 // 0x0350 (0x0410 - 0x00C0)
@@ -733,6 +698,41 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UExploderRepresentationSubsystem;
+
+// Class CrAiExploderRuntime.ExploderStateSyncComponent
+// 0x0028 (0x00E0 - 0x00B8)
+class UExploderStateSyncComponent final : public UActorComponent
+{
+public:
+	float                                         ActivationStartTimestamp;                          // 0x00B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ExplosionStartTimestamp;                           // 0x00BC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AnimProgressA;                                     // 0x00C0(0x0004)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AnimProgressB;                                     // 0x00C4(0x0004)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TopAnimIndexA;                                     // 0x00C8(0x0004)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TopAnimIndexB;                                     // 0x00CC(0x0004)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Dissolve;                                          // 0x00D0(0x0004)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AnimLerp;                                          // 0x00D4(0x0004)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShouldSpawnHugeCollision;                         // 0x00D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D9[0x7];                                       // 0x00D9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void Reset();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ExploderStateSyncComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ExploderStateSyncComponent")
+	}
+	static class UExploderStateSyncComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UExploderStateSyncComponent>();
+	}
+};
+DUMPER7_ASSERTS_UExploderStateSyncComponent;
 
 // Class CrAiExploderRuntime.ExploderT3CystActor
 // 0x0070 (0x0348 - 0x02D8)

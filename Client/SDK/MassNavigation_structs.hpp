@@ -34,6 +34,15 @@ enum class EMassMovementAction : uint8
 	EMassMovementAction_MAX                  = 3,
 };
 
+// ScriptStruct MassNavigation.MassStandingSteeringFragment
+// 0x0028 (0x0028 - 0x0000)
+struct alignas(0x08) FMassStandingSteeringFragment final : public FMassFragment
+{
+public:
+	uint8                                         Pad_0[0x28];                                       // 0x0000(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassStandingSteeringFragment;
+
 // ScriptStruct MassNavigation.MassMovingAvoidanceParameters
 // 0x0044 (0x0044 - 0x0000)
 struct FMassMovingAvoidanceParameters final : public FMassConstSharedFragment
@@ -80,6 +89,15 @@ public:
 };
 DUMPER7_ASSERTS_FMassStandingAvoidanceParameters;
 
+// ScriptStruct MassNavigation.NavigationRelevantParameters
+// 0x0001 (0x0001 - 0x0000)
+struct FNavigationRelevantParameters final : public FMassConstSharedFragment
+{
+public:
+	bool                                          bFillCollisionUnderneathForNavData;                // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FNavigationRelevantParameters;
+
 // ScriptStruct MassNavigation.MassNavigationEdgesFragment
 // 0x0490 (0x0490 - 0x0000)
 struct alignas(0x08) FMassNavigationEdgesFragment final : public FMassFragment
@@ -116,67 +134,6 @@ public:
 };
 DUMPER7_ASSERTS_FMassGhostLocationFragment;
 
-// ScriptStruct MassNavigation.MassNavigationObstacleGridCellLocationFragment
-// 0x000C (0x000C - 0x0000)
-struct alignas(0x04) FMassNavigationObstacleGridCellLocationFragment final : public FMassFragment
-{
-public:
-	uint8                                         Pad_0[0xC];                                        // 0x0000(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassNavigationObstacleGridCellLocationFragment;
-
-// ScriptStruct MassNavigation.MassSteeringFragment
-// 0x0018 (0x0018 - 0x0000)
-struct alignas(0x08) FMassSteeringFragment final : public FMassFragment
-{
-public:
-	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassSteeringFragment;
-
-// ScriptStruct MassNavigation.MassAvoidanceColliderFragment
-// 0x000C (0x000C - 0x0000)
-struct alignas(0x04) FMassAvoidanceColliderFragment final : public FMassFragment
-{
-public:
-	uint8                                         Pad_0[0xC];                                        // 0x0000(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassAvoidanceColliderFragment;
-
-// ScriptStruct MassNavigation.MassInNavigationObstacleGridTag
-// 0x0000 (0x0001 - 0x0001)
-struct FMassInNavigationObstacleGridTag final : public FMassTag
-{
-};
-DUMPER7_ASSERTS_FMassInNavigationObstacleGridTag;
-
-// ScriptStruct MassNavigation.NavigationRelevantParameters
-// 0x0001 (0x0001 - 0x0000)
-struct FNavigationRelevantParameters final : public FMassConstSharedFragment
-{
-public:
-	bool                                          bFillCollisionUnderneathForNavData;                // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FNavigationRelevantParameters;
-
-// ScriptStruct MassNavigation.NavigationRelevantFragment
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FNavigationRelevantFragment final : public FMassFragment
-{
-public:
-	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FNavigationRelevantFragment;
-
-// ScriptStruct MassNavigation.MassTargetLocation
-// 0x0028 (0x0028 - 0x0000)
-struct alignas(0x08) FMassTargetLocation final
-{
-public:
-	uint8                                         Pad_0[0x28];                                       // 0x0000(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassTargetLocation;
-
 // ScriptStruct MassNavigation.MassSmoothOrientationWeights
 // 0x0008 (0x0008 - 0x0000)
 struct FMassSmoothOrientationWeights final : public FMassSharedFragment
@@ -199,14 +156,57 @@ public:
 };
 DUMPER7_ASSERTS_FMassSmoothOrientationParameters;
 
-// ScriptStruct MassNavigation.MassStandingSteeringFragment
+// ScriptStruct MassNavigation.MassNavigationObstacleGridCellLocationFragment
+// 0x000C (0x000C - 0x0000)
+struct alignas(0x04) FMassNavigationObstacleGridCellLocationFragment final : public FMassFragment
+{
+public:
+	uint8                                         Pad_0[0xC];                                        // 0x0000(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassNavigationObstacleGridCellLocationFragment;
+
+// ScriptStruct MassNavigation.MassAvoidanceColliderFragment
+// 0x000C (0x000C - 0x0000)
+struct alignas(0x04) FMassAvoidanceColliderFragment final : public FMassFragment
+{
+public:
+	uint8                                         Pad_0[0xC];                                        // 0x0000(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassAvoidanceColliderFragment;
+
+// ScriptStruct MassNavigation.MassInNavigationObstacleGridTag
+// 0x0000 (0x0001 - 0x0001)
+struct FMassInNavigationObstacleGridTag final : public FMassTag
+{
+};
+DUMPER7_ASSERTS_FMassInNavigationObstacleGridTag;
+
+// ScriptStruct MassNavigation.NavigationRelevantFragment
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FNavigationRelevantFragment final : public FMassFragment
+{
+public:
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FNavigationRelevantFragment;
+
+// ScriptStruct MassNavigation.MassTargetLocation
 // 0x0028 (0x0028 - 0x0000)
-struct alignas(0x08) FMassStandingSteeringFragment final : public FMassFragment
+struct alignas(0x08) FMassTargetLocation final
 {
 public:
 	uint8                                         Pad_0[0x28];                                       // 0x0000(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FMassStandingSteeringFragment;
+DUMPER7_ASSERTS_FMassTargetLocation;
+
+// ScriptStruct MassNavigation.MassSteeringFragment
+// 0x0018 (0x0018 - 0x0000)
+struct alignas(0x08) FMassSteeringFragment final : public FMassFragment
+{
+public:
+	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassSteeringFragment;
 
 // ScriptStruct MassNavigation.MassMovingSteeringParameters
 // 0x000C (0x000C - 0x0000)

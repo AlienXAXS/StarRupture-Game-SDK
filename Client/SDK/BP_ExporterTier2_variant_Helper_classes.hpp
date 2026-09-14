@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ExporterTier2_variant_Helper.BP_ExporterTier2_variant_Helper_C
-// 0x0000 (0x0A60 - 0x0A60)
+// 0x0000 (0x0A20 - 0x0A20)
 class ABP_ExporterTier2_variant_Helper_C final : public ABP_ChimeraPlacementHelperReplicatedBase_C
 {
 public:

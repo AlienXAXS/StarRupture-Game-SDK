@@ -14,15 +14,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function MeshModelingToolsExp.BakeMultiMeshAttributeMapsToolProperties.GetMapPreviewNamesFunc
-// 0x0010 (0x0010 - 0x0000)
-struct BakeMultiMeshAttributeMapsToolProperties_GetMapPreviewNamesFunc final
-{
-public:
-	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_BakeMultiMeshAttributeMapsToolProperties_GetMapPreviewNamesFunc;
-
 // Function MeshModelingToolsExp.BakeInputMeshProperties.GetSourceUVLayerNamesFunc
 // 0x0010 (0x0010 - 0x0000)
 struct BakeInputMeshProperties_GetSourceUVLayerNamesFunc final
@@ -41,15 +32,6 @@ public:
 };
 DUMPER7_ASSERTS_BakeInputMeshProperties_GetTargetUVLayerNamesFunc;
 
-// Function MeshModelingToolsExp.BakeMeshAttributeMapsToolProperties.GetMapPreviewNamesFunc
-// 0x0010 (0x0010 - 0x0000)
-struct BakeMeshAttributeMapsToolProperties_GetMapPreviewNamesFunc final
-{
-public:
-	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_BakeMeshAttributeMapsToolProperties_GetMapPreviewNamesFunc;
-
 // Function MeshModelingToolsExp.BakeTexture2DProperties.GetUVLayerNamesFunc
 // 0x0010 (0x0010 - 0x0000)
 struct BakeTexture2DProperties_GetUVLayerNamesFunc final
@@ -67,6 +49,24 @@ public:
 	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_BakeMultiTexture2DProperties_GetUVLayerNamesFunc;
+
+// Function MeshModelingToolsExp.BakeMeshAttributeMapsToolProperties.GetMapPreviewNamesFunc
+// 0x0010 (0x0010 - 0x0000)
+struct BakeMeshAttributeMapsToolProperties_GetMapPreviewNamesFunc final
+{
+public:
+	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_BakeMeshAttributeMapsToolProperties_GetMapPreviewNamesFunc;
+
+// Function MeshModelingToolsExp.BakeMultiMeshAttributeMapsToolProperties.GetMapPreviewNamesFunc
+// 0x0010 (0x0010 - 0x0000)
+struct BakeMultiMeshAttributeMapsToolProperties_GetMapPreviewNamesFunc final
+{
+public:
+	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_BakeMultiMeshAttributeMapsToolProperties_GetMapPreviewNamesFunc;
 
 // Function MeshModelingToolsExp.BakeMultiMeshInputToolProperties.GetTargetUVLayerNamesFunc
 // 0x0010 (0x0010 - 0x0000)

@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "DataflowSimulation_structs.hpp"
 #include "ChaosVDRuntime_structs.hpp"
+#include "DataflowSimulation_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -51,6 +51,15 @@ enum class EClusterConnectionTypeEnum : uint8
 	Chaos_MAX                                = 7,
 };
 
+// ScriptStruct ChaosSolverEngine.ChaosVDSessionPing
+// 0x0010 (0x0010 - 0x0000)
+struct FChaosVDSessionPing final
+{
+public:
+	struct FGuid                                  ControllerInstanceId;                              // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FChaosVDSessionPing;
+
 // ScriptStruct ChaosSolverEngine.ChaosPhysicsCollisionInfo
 // 0x00C0 (0x00C0 - 0x0000)
 struct FChaosPhysicsCollisionInfo final
@@ -82,15 +91,6 @@ public:
 	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FChaosVDSessionPong;
-
-// ScriptStruct ChaosSolverEngine.ChaosVDSessionPing
-// 0x0010 (0x0010 - 0x0000)
-struct FChaosVDSessionPing final
-{
-public:
-	struct FGuid                                  ControllerInstanceId;                              // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FChaosVDSessionPing;
 
 // ScriptStruct ChaosSolverEngine.ChaosVDStartRecordingCommandMessage
 // 0x0018 (0x0018 - 0x0000)

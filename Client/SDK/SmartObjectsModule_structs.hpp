@@ -158,15 +158,6 @@ enum class ESmartObjectTraceType : uint8
 	ESmartObjectTraceType_MAX                = 3,
 };
 
-// ScriptStruct SmartObjectsModule.SmartObjectSlotReference
-// 0x0001 (0x0001 - 0x0000)
-struct FSmartObjectSlotReference final
-{
-public:
-	uint8                                         Index;                                             // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-};
-DUMPER7_ASSERTS_FSmartObjectSlotReference;
-
 // ScriptStruct SmartObjectsModule.SmartObjectHandle
 // 0x0010 (0x0010 - 0x0000)
 struct FSmartObjectHandle final
@@ -209,31 +200,15 @@ public:
 };
 DUMPER7_ASSERTS_FSmartObjectDefinitionDataHandle;
 
-// ScriptStruct SmartObjectsModule.SmartObjectSlotEntranceHandle
-// 0x0018 (0x0018 - 0x0000)
-struct FSmartObjectSlotEntranceHandle final
+// ScriptStruct SmartObjectsModule.SmartObjectDefinitionPropertyBinding
+// 0x0008 (0x0030 - 0x0028)
+struct FSmartObjectDefinitionPropertyBinding final : public FPropertyBindingBinding
 {
 public:
-	struct FSmartObjectSlotHandle                 SlotHandle;                                        // 0x0000(0x0014)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FSmartObjectDefinitionDataHandle       SourceDataHandle;                                  // 0x0028(0x0004)(Edit, EditConst, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	struct FSmartObjectDefinitionDataHandle       TargetDataHandle;                                  // 0x002C(0x0004)(Edit, EditConst, NoDestructor, Protected, NativeAccessSpecifierProtected)
 };
-DUMPER7_ASSERTS_FSmartObjectSlotEntranceHandle;
-
-// ScriptStruct SmartObjectsModule.SmartObjectSlotEntranceLocationResult
-// 0x0080 (0x0080 - 0x0000)
-struct FSmartObjectSlotEntranceLocationResult final
-{
-public:
-	struct FVector                                Location;                                          // 0x0000(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               Rotation;                                          // 0x0018(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTag                           Tag;                                               // 0x0038(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTagContainer                  Tags;                                              // 0x0040(0x0020)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
-	struct FSmartObjectSlotEntranceHandle         EntranceHandle;                                    // 0x0060(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bIsValid;                                          // 0x0078(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSmartObjectSlotEntranceLocationResult;
+DUMPER7_ASSERTS_FSmartObjectDefinitionPropertyBinding;
 
 // ScriptStruct SmartObjectsModule.SmartObjectDefinitionBindableStructDescriptor
 // 0x0008 (0x0020 - 0x0018)
@@ -245,22 +220,16 @@ public:
 };
 DUMPER7_ASSERTS_FSmartObjectDefinitionBindableStructDescriptor;
 
-// ScriptStruct SmartObjectsModule.SmartObjectWorldConditionBase
-// 0x0000 (0x0010 - 0x0010)
-struct FSmartObjectWorldConditionBase : public FWorldConditionBase
-{
-};
-DUMPER7_ASSERTS_FSmartObjectWorldConditionBase;
-
-// ScriptStruct SmartObjectsModule.SmartObjectWorldConditionObjectTagQuery
-// 0x0060 (0x0070 - 0x0010)
-struct FSmartObjectWorldConditionObjectTagQuery final : public FSmartObjectWorldConditionBase
+// ScriptStruct SmartObjectsModule.SmartObjectUserCapsuleParams
+// 0x000C (0x000C - 0x0000)
+struct FSmartObjectUserCapsuleParams final
 {
 public:
-	uint8                                         Pad_10[0x18];                                      // 0x0010(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTagQuery                      TagQuery;                                          // 0x0028(0x0048)(Edit, NativeAccessSpecifierPublic)
+	float                                         Radius;                                            // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Height;                                            // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StepHeight;                                        // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FSmartObjectWorldConditionObjectTagQuery;
+DUMPER7_ASSERTS_FSmartObjectUserCapsuleParams;
 
 // ScriptStruct SmartObjectsModule.SmartObjectDefinitionData
 // 0x0008 (0x0008 - 0x0000)
@@ -278,15 +247,15 @@ struct FSmartObjectSlotAnnotation : public FSmartObjectDefinitionData
 };
 DUMPER7_ASSERTS_FSmartObjectSlotAnnotation;
 
-// ScriptStruct SmartObjectsModule.SmartObjectDefinitionPropertyBinding
-// 0x0008 (0x0030 - 0x0028)
-struct FSmartObjectDefinitionPropertyBinding final : public FPropertyBindingBinding
+// ScriptStruct SmartObjectsModule.SmartObjectSlotEntranceHandle
+// 0x0018 (0x0018 - 0x0000)
+struct FSmartObjectSlotEntranceHandle final
 {
 public:
-	struct FSmartObjectDefinitionDataHandle       SourceDataHandle;                                  // 0x0028(0x0004)(Edit, EditConst, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	struct FSmartObjectDefinitionDataHandle       TargetDataHandle;                                  // 0x002C(0x0004)(Edit, EditConst, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	struct FSmartObjectSlotHandle                 SlotHandle;                                        // 0x0000(0x0014)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FSmartObjectDefinitionPropertyBinding;
+DUMPER7_ASSERTS_FSmartObjectSlotEntranceHandle;
 
 // ScriptStruct SmartObjectsModule.SmartObjectRequestFilter
 // 0x00C0 (0x00C0 - 0x0000)
@@ -326,16 +295,12 @@ public:
 };
 DUMPER7_ASSERTS_FSmartObjectRequestResult;
 
-// ScriptStruct SmartObjectsModule.SmartObjectUserCapsuleParams
-// 0x000C (0x000C - 0x0000)
-struct FSmartObjectUserCapsuleParams final
+// ScriptStruct SmartObjectsModule.SmartObjectWorldConditionBase
+// 0x0000 (0x0010 - 0x0010)
+struct FSmartObjectWorldConditionBase : public FWorldConditionBase
 {
-public:
-	float                                         Radius;                                            // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Height;                                            // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StepHeight;                                        // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FSmartObjectUserCapsuleParams;
+DUMPER7_ASSERTS_FSmartObjectWorldConditionBase;
 
 // ScriptStruct SmartObjectsModule.SmartObjectAnnotation_SlotUserCollision
 // 0x0010 (0x0018 - 0x0008)
@@ -367,6 +332,15 @@ public:
 	float                                         TransitionCheckRadius;                             // 0x004C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FSmartObjectSlotEntranceAnnotation;
+
+// ScriptStruct SmartObjectsModule.SmartObjectSlotReference
+// 0x0001 (0x0001 - 0x0000)
+struct FSmartObjectSlotReference final
+{
+public:
+	uint8                                         Index;                                             // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+};
+DUMPER7_ASSERTS_FSmartObjectSlotReference;
 
 // ScriptStruct SmartObjectsModule.SmartObjectSlotLinkAnnotation
 // 0x0010 (0x0018 - 0x0008)
@@ -623,6 +597,22 @@ public:
 };
 DUMPER7_ASSERTS_FSmartObjectSlotEntranceLocationRequest;
 
+// ScriptStruct SmartObjectsModule.SmartObjectSlotEntranceLocationResult
+// 0x0080 (0x0080 - 0x0000)
+struct FSmartObjectSlotEntranceLocationResult final
+{
+public:
+	struct FVector                                Location;                                          // 0x0000(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               Rotation;                                          // 0x0018(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTag                           Tag;                                               // 0x0038(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTagContainer                  Tags;                                              // 0x0040(0x0020)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
+	struct FSmartObjectSlotEntranceHandle         EntranceHandle;                                    // 0x0060(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bIsValid;                                          // 0x0078(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSmartObjectSlotEntranceLocationResult;
+
 // ScriptStruct SmartObjectsModule.SmartObjectSlotIndex
 // 0x0004 (0x0004 - 0x0000)
 struct FSmartObjectSlotIndex final
@@ -688,6 +678,16 @@ public:
 	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FSmartObjectWorldConditionObjectTagQueryState;
+
+// ScriptStruct SmartObjectsModule.SmartObjectWorldConditionObjectTagQuery
+// 0x0060 (0x0070 - 0x0010)
+struct FSmartObjectWorldConditionObjectTagQuery final : public FSmartObjectWorldConditionBase
+{
+public:
+	uint8                                         Pad_10[0x18];                                      // 0x0010(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTagQuery                      TagQuery;                                          // 0x0028(0x0048)(Edit, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSmartObjectWorldConditionObjectTagQuery;
 
 // ScriptStruct SmartObjectsModule.SmartObjectWorldConditionSlotTagQueryState
 // 0x0020 (0x0020 - 0x0000)

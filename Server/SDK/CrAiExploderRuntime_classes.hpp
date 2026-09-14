@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "CrAiExploderRuntime_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "Chimera_classes.hpp"
@@ -19,7 +20,6 @@
 #include "AIModule_classes.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
-#include "CrAiExploderRuntime_structs.hpp"
 #include "Engine_classes.hpp"
 #include "MassSpawner_classes.hpp"
 #include "MassEntity_structs.hpp"
@@ -27,6 +27,26 @@
 
 
 SDK_NAMESPACE_START
+
+// Class CrAiExploderRuntime.ExploderClientBubbleInfo
+// 0x0000 (0x0330 - 0x0330)
+class AExploderClientBubbleInfo final : public ACrMassClientBubbleInfo
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ExploderClientBubbleInfo")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ExploderClientBubbleInfo")
+	}
+	static class AExploderClientBubbleInfo* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AExploderClientBubbleInfo>();
+	}
+};
+DUMPER7_ASSERTS_AExploderClientBubbleInfo;
 
 // Class CrAiExploderRuntime.CrAiActionBtTaskExploderStartExplosionTimer
 // 0x0000 (0x00D0 - 0x00D0)
@@ -348,6 +368,29 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionSpawnExplosionEntity;
 
+// Class CrAiExploderRuntime.ExploderAddExplosionEffectsProcessor
+// 0x0350 (0x0410 - 0x00C0)
+class UExploderAddExplosionEffectsProcessor final : public UMassProcessor
+{
+public:
+	uint8                                         Pad_C0[0x350];                                     // 0x00C0(0x0350)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ExploderAddExplosionEffectsProcessor")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ExploderAddExplosionEffectsProcessor")
+	}
+	static class UExploderAddExplosionEffectsProcessor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UExploderAddExplosionEffectsProcessor>();
+	}
+};
+DUMPER7_ASSERTS_UExploderAddExplosionEffectsProcessor;
+
 // Class CrAiExploderRuntime.CrAiExploder
 // 0x0000 (0x0000 - 0x0000)
 class ICrAiExploder final
@@ -483,26 +526,6 @@ public:
 };
 DUMPER7_ASSERTS_UCrMassExploderInfectionReplicator;
 
-// Class CrAiExploderRuntime.ExploderRepresentationActorManagement
-// 0x0000 (0x0028 - 0x0028)
-class UExploderRepresentationActorManagement final : public UMassEnemyRepresentationActorManagement
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("ExploderRepresentationActorManagement")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"ExploderRepresentationActorManagement")
-	}
-	static class UExploderRepresentationActorManagement* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UExploderRepresentationActorManagement>();
-	}
-};
-DUMPER7_ASSERTS_UExploderRepresentationActorManagement;
-
 // Class CrAiExploderRuntime.ExploderAnimationInstance
 // 0x0000 (0x0600 - 0x0600)
 class UExploderAnimationInstance : public UMassEnemyAnimationInstance
@@ -545,26 +568,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_ACrMassExploderBubbleReplicatedSerializerHolder;
-
-// Class CrAiExploderRuntime.ExploderClientBubbleInfo
-// 0x0000 (0x0330 - 0x0330)
-class AExploderClientBubbleInfo final : public ACrMassClientBubbleInfo
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("ExploderClientBubbleInfo")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"ExploderClientBubbleInfo")
-	}
-	static class AExploderClientBubbleInfo* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<AExploderClientBubbleInfo>();
-	}
-};
-DUMPER7_ASSERTS_AExploderClientBubbleInfo;
 
 // Class CrAiExploderRuntime.ExploderMassEnemyDataAsset
 // 0x00E8 (0x0848 - 0x0760)
@@ -646,29 +649,6 @@ public:
 };
 DUMPER7_ASSERTS_UExploderFollowActorProcessor;
 
-// Class CrAiExploderRuntime.ExploderAddExplosionEffectsProcessor
-// 0x0350 (0x0410 - 0x00C0)
-class UExploderAddExplosionEffectsProcessor final : public UMassProcessor
-{
-public:
-	uint8                                         Pad_C0[0x350];                                     // 0x00C0(0x0350)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("ExploderAddExplosionEffectsProcessor")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"ExploderAddExplosionEffectsProcessor")
-	}
-	static class UExploderAddExplosionEffectsProcessor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UExploderAddExplosionEffectsProcessor>();
-	}
-};
-DUMPER7_ASSERTS_UExploderAddExplosionEffectsProcessor;
-
 // Class CrAiExploderRuntime.CrMassEnemyClientExplosionSphereSetupObserver
 // 0x0358 (0x0430 - 0x00D8)
 class UCrMassEnemyClientExplosionSphereSetupObserver final : public UMassObserverProcessor
@@ -714,6 +694,26 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCrMassEnemyClientExploderFXEventsProcessor;
+
+// Class CrAiExploderRuntime.ExploderRepresentationActorManagement
+// 0x0000 (0x0028 - 0x0028)
+class UExploderRepresentationActorManagement final : public UMassEnemyRepresentationActorManagement
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ExploderRepresentationActorManagement")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ExploderRepresentationActorManagement")
+	}
+	static class UExploderRepresentationActorManagement* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UExploderRepresentationActorManagement>();
+	}
+};
+DUMPER7_ASSERTS_UExploderRepresentationActorManagement;
 
 // Class CrAiExploderRuntime.ExploderRepresentationSubsystem
 // 0x0000 (0x0100 - 0x0100)

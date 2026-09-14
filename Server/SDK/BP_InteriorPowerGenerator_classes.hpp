@@ -16,14 +16,14 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_InteriorPowerGenerator.BP_InteriorPowerGenerator_C
-// 0x0020 (0x06E0 - 0x06C0)
+// 0x0020 (0x06E8 - 0x06C8)
 class ABP_InteriorPowerGenerator_C final : public ACrSolarPanel
 {
 public:
-	class UStaticMeshComponent*                   SM_CombustionPowerGenerator_Interior_addon;        // 0x06C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   SM_CombustionPowerGenerator_Interior_Glass;        // 0x06C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   SM_BasicEnergyGenerator_main_body;                 // 0x06D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USceneComponent*                        Root;                                              // 0x06D8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_CombustionPowerGenerator_Interior_addon;        // 0x06C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_CombustionPowerGenerator_Interior_Glass;        // 0x06D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_BasicEnergyGenerator_main_body;                 // 0x06D8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        Root;                                              // 0x06E0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

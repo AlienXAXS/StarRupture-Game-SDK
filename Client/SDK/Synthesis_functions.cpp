@@ -2695,6 +2695,156 @@ void USourceEffectWaveShaperPreset::SetSettings(const struct FSourceEffectWaveSh
 }
 
 
+// Function Synthesis.Synth2DSlider.SetIndentHandle
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USynth2DSlider::SetIndentHandle(bool InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Synth2DSlider", "SetIndentHandle");
+
+	Params::Synth2DSlider_SetIndentHandle Parms{};
+
+	Parms.InValue = InValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.Synth2DSlider.SetLocked
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USynth2DSlider::SetLocked(bool InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Synth2DSlider", "SetLocked");
+
+	Params::Synth2DSlider_SetLocked Parms{};
+
+	Parms.InValue = InValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.Synth2DSlider.SetSliderHandleColor
+// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FLinearColor&              InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USynth2DSlider::SetSliderHandleColor(const struct FLinearColor& InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Synth2DSlider", "SetSliderHandleColor");
+
+	Params::Synth2DSlider_SetSliderHandleColor Parms{};
+
+	Parms.InValue = std::move(InValue);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.Synth2DSlider.SetStepSize
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USynth2DSlider::SetStepSize(float InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Synth2DSlider", "SetStepSize");
+
+	Params::Synth2DSlider_SetStepSize Parms{};
+
+	Parms.InValue = InValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.Synth2DSlider.SetValue
+// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector2D&                 InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USynth2DSlider::SetValue(const struct FVector2D& InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Synth2DSlider", "SetValue");
+
+	Params::Synth2DSlider_SetValue Parms{};
+
+	Parms.InValue = std::move(InValue);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.Synth2DSlider.GetValue
+// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector2D USynth2DSlider::GetValue() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Synth2DSlider", "GetValue");
+
+	Params::Synth2DSlider_GetValue Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function Synthesis.SubmixEffectConvolutionReverbPreset.SetImpulseResponse
 // (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
@@ -2836,6 +2986,524 @@ struct FSubmixEffectDelaySettings USubmixEffectDelayStatics::SetMaximumDelayLeng
 	Func->FunctionFlags = Flgs;
 
 	DelaySettings = std::move(Parms.DelaySettings);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Synthesis.GranularSynth.NoteOff
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// const float                             Note                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bKill                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGranularSynth::NoteOff(const float Note, const bool bKill)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GranularSynth", "NoteOff");
+
+	Params::GranularSynth_NoteOff Parms{};
+
+	Parms.Note = Note;
+	Parms.bKill = bKill;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.GranularSynth.NoteOn
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// const float                             Note                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             Velocity                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             Duration                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGranularSynth::NoteOn(const float Note, const int32 Velocity, const float Duration)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GranularSynth", "NoteOn");
+
+	Params::GranularSynth_NoteOn Parms{};
+
+	Parms.Note = Note;
+	Parms.Velocity = Velocity;
+	Parms.Duration = Duration;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.GranularSynth.SetAttackTime
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// const float                             AttackTimeMsec                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGranularSynth::SetAttackTime(const float AttackTimeMsec)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GranularSynth", "SetAttackTime");
+
+	Params::GranularSynth_SetAttackTime Parms{};
+
+	Parms.AttackTimeMsec = AttackTimeMsec;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.GranularSynth.SetDecayTime
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// const float                             DecayTimeMsec                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGranularSynth::SetDecayTime(const float DecayTimeMsec)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GranularSynth", "SetDecayTime");
+
+	Params::GranularSynth_SetDecayTime Parms{};
+
+	Parms.DecayTimeMsec = DecayTimeMsec;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.GranularSynth.SetGrainDuration
+// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const float                             BaseDurationMsec                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector2D&                 DurationRange                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGranularSynth::SetGrainDuration(const float BaseDurationMsec, const struct FVector2D& DurationRange)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GranularSynth", "SetGrainDuration");
+
+	Params::GranularSynth_SetGrainDuration Parms{};
+
+	Parms.BaseDurationMsec = BaseDurationMsec;
+	Parms.DurationRange = std::move(DurationRange);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.GranularSynth.SetGrainEnvelopeType
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// const EGranularSynthEnvelopeType        EnvelopeType                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGranularSynth::SetGrainEnvelopeType(const EGranularSynthEnvelopeType EnvelopeType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GranularSynth", "SetGrainEnvelopeType");
+
+	Params::GranularSynth_SetGrainEnvelopeType Parms{};
+
+	Parms.EnvelopeType = EnvelopeType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.GranularSynth.SetGrainPan
+// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const float                             BasePan                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector2D&                 PanRange                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGranularSynth::SetGrainPan(const float BasePan, const struct FVector2D& PanRange)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GranularSynth", "SetGrainPan");
+
+	Params::GranularSynth_SetGrainPan Parms{};
+
+	Parms.BasePan = BasePan;
+	Parms.PanRange = std::move(PanRange);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.GranularSynth.SetGrainPitch
+// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const float                             BasePitch                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector2D&                 PitchRange                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGranularSynth::SetGrainPitch(const float BasePitch, const struct FVector2D& PitchRange)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GranularSynth", "SetGrainPitch");
+
+	Params::GranularSynth_SetGrainPitch Parms{};
+
+	Parms.BasePitch = BasePitch;
+	Parms.PitchRange = std::move(PitchRange);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.GranularSynth.SetGrainProbability
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// const float                             InGrainProbability                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGranularSynth::SetGrainProbability(const float InGrainProbability)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GranularSynth", "SetGrainProbability");
+
+	Params::GranularSynth_SetGrainProbability Parms{};
+
+	Parms.InGrainProbability = InGrainProbability;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.GranularSynth.SetGrainsPerSecond
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// const float                             InGrainsPerSecond                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGranularSynth::SetGrainsPerSecond(const float InGrainsPerSecond)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GranularSynth", "SetGrainsPerSecond");
+
+	Params::GranularSynth_SetGrainsPerSecond Parms{};
+
+	Parms.InGrainsPerSecond = InGrainsPerSecond;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.GranularSynth.SetGrainVolume
+// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const float                             BaseVolume                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector2D&                 VolumeRange                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGranularSynth::SetGrainVolume(const float BaseVolume, const struct FVector2D& VolumeRange)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GranularSynth", "SetGrainVolume");
+
+	Params::GranularSynth_SetGrainVolume Parms{};
+
+	Parms.BaseVolume = BaseVolume;
+	Parms.VolumeRange = std::move(VolumeRange);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.GranularSynth.SetPlaybackSpeed
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// const float                             InPlayheadRate                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGranularSynth::SetPlaybackSpeed(const float InPlayheadRate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GranularSynth", "SetPlaybackSpeed");
+
+	Params::GranularSynth_SetPlaybackSpeed Parms{};
+
+	Parms.InPlayheadRate = InPlayheadRate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.GranularSynth.SetPlayheadTime
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// const float                             InPositionSec                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             LerpTimeSec                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EGranularSynthSeekType                  SeekType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGranularSynth::SetPlayheadTime(const float InPositionSec, const float LerpTimeSec, EGranularSynthSeekType SeekType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GranularSynth", "SetPlayheadTime");
+
+	Params::GranularSynth_SetPlayheadTime Parms{};
+
+	Parms.InPositionSec = InPositionSec;
+	Parms.LerpTimeSec = LerpTimeSec;
+	Parms.SeekType = SeekType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.GranularSynth.SetReleaseTimeMsec
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// const float                             ReleaseTimeMsec                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGranularSynth::SetReleaseTimeMsec(const float ReleaseTimeMsec)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GranularSynth", "SetReleaseTimeMsec");
+
+	Params::GranularSynth_SetReleaseTimeMsec Parms{};
+
+	Parms.ReleaseTimeMsec = ReleaseTimeMsec;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.GranularSynth.SetScrubMode
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// const bool                              bScrubMode                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGranularSynth::SetScrubMode(const bool bScrubMode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GranularSynth", "SetScrubMode");
+
+	Params::GranularSynth_SetScrubMode Parms{};
+
+	Parms.bScrubMode = bScrubMode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.GranularSynth.SetSoundWave
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// class USoundWave*                       InSoundWave                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGranularSynth::SetSoundWave(class USoundWave* InSoundWave)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GranularSynth", "SetSoundWave");
+
+	Params::GranularSynth_SetSoundWave Parms{};
+
+	Parms.InSoundWave = InSoundWave;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.GranularSynth.SetSustainGain
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// const float                             SustainGain                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGranularSynth::SetSustainGain(const float SustainGain)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GranularSynth", "SetSustainGain");
+
+	Params::GranularSynth_SetSustainGain Parms{};
+
+	Parms.SustainGain = SustainGain;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.GranularSynth.GetCurrentPlayheadTime
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UGranularSynth::GetCurrentPlayheadTime() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GranularSynth", "GetCurrentPlayheadTime");
+
+	Params::GranularSynth_GetCurrentPlayheadTime Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Synthesis.GranularSynth.GetSampleDuration
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UGranularSynth::GetSampleDuration() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GranularSynth", "GetSampleDuration");
+
+	Params::GranularSynth_GetSampleDuration Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Synthesis.GranularSynth.IsLoaded
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UGranularSynth::IsLoaded() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GranularSynth", "IsLoaded");
+
+	Params::GranularSynth_IsLoaded Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }
@@ -3746,524 +4414,6 @@ void USubmixEffectTapDelayPreset::SetTap(int32 TapId, const struct FTapDelayInfo
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.GranularSynth.NoteOff
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// const float                             Note                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const bool                              bKill                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGranularSynth::NoteOff(const float Note, const bool bKill)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GranularSynth", "NoteOff");
-
-	Params::GranularSynth_NoteOff Parms{};
-
-	Parms.Note = Note;
-	Parms.bKill = bKill;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.GranularSynth.NoteOn
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// const float                             Note                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const int32                             Velocity                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const float                             Duration                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGranularSynth::NoteOn(const float Note, const int32 Velocity, const float Duration)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GranularSynth", "NoteOn");
-
-	Params::GranularSynth_NoteOn Parms{};
-
-	Parms.Note = Note;
-	Parms.Velocity = Velocity;
-	Parms.Duration = Duration;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.GranularSynth.SetAttackTime
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// const float                             AttackTimeMsec                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGranularSynth::SetAttackTime(const float AttackTimeMsec)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GranularSynth", "SetAttackTime");
-
-	Params::GranularSynth_SetAttackTime Parms{};
-
-	Parms.AttackTimeMsec = AttackTimeMsec;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.GranularSynth.SetDecayTime
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// const float                             DecayTimeMsec                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGranularSynth::SetDecayTime(const float DecayTimeMsec)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GranularSynth", "SetDecayTime");
-
-	Params::GranularSynth_SetDecayTime Parms{};
-
-	Parms.DecayTimeMsec = DecayTimeMsec;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.GranularSynth.SetGrainDuration
-// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const float                             BaseDurationMsec                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector2D&                 DurationRange                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGranularSynth::SetGrainDuration(const float BaseDurationMsec, const struct FVector2D& DurationRange)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GranularSynth", "SetGrainDuration");
-
-	Params::GranularSynth_SetGrainDuration Parms{};
-
-	Parms.BaseDurationMsec = BaseDurationMsec;
-	Parms.DurationRange = std::move(DurationRange);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.GranularSynth.SetGrainEnvelopeType
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// const EGranularSynthEnvelopeType        EnvelopeType                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGranularSynth::SetGrainEnvelopeType(const EGranularSynthEnvelopeType EnvelopeType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GranularSynth", "SetGrainEnvelopeType");
-
-	Params::GranularSynth_SetGrainEnvelopeType Parms{};
-
-	Parms.EnvelopeType = EnvelopeType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.GranularSynth.SetGrainPan
-// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const float                             BasePan                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector2D&                 PanRange                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGranularSynth::SetGrainPan(const float BasePan, const struct FVector2D& PanRange)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GranularSynth", "SetGrainPan");
-
-	Params::GranularSynth_SetGrainPan Parms{};
-
-	Parms.BasePan = BasePan;
-	Parms.PanRange = std::move(PanRange);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.GranularSynth.SetGrainPitch
-// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const float                             BasePitch                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector2D&                 PitchRange                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGranularSynth::SetGrainPitch(const float BasePitch, const struct FVector2D& PitchRange)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GranularSynth", "SetGrainPitch");
-
-	Params::GranularSynth_SetGrainPitch Parms{};
-
-	Parms.BasePitch = BasePitch;
-	Parms.PitchRange = std::move(PitchRange);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.GranularSynth.SetGrainProbability
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// const float                             InGrainProbability                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGranularSynth::SetGrainProbability(const float InGrainProbability)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GranularSynth", "SetGrainProbability");
-
-	Params::GranularSynth_SetGrainProbability Parms{};
-
-	Parms.InGrainProbability = InGrainProbability;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.GranularSynth.SetGrainsPerSecond
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// const float                             InGrainsPerSecond                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGranularSynth::SetGrainsPerSecond(const float InGrainsPerSecond)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GranularSynth", "SetGrainsPerSecond");
-
-	Params::GranularSynth_SetGrainsPerSecond Parms{};
-
-	Parms.InGrainsPerSecond = InGrainsPerSecond;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.GranularSynth.SetGrainVolume
-// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const float                             BaseVolume                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector2D&                 VolumeRange                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGranularSynth::SetGrainVolume(const float BaseVolume, const struct FVector2D& VolumeRange)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GranularSynth", "SetGrainVolume");
-
-	Params::GranularSynth_SetGrainVolume Parms{};
-
-	Parms.BaseVolume = BaseVolume;
-	Parms.VolumeRange = std::move(VolumeRange);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.GranularSynth.SetPlaybackSpeed
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// const float                             InPlayheadRate                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGranularSynth::SetPlaybackSpeed(const float InPlayheadRate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GranularSynth", "SetPlaybackSpeed");
-
-	Params::GranularSynth_SetPlaybackSpeed Parms{};
-
-	Parms.InPlayheadRate = InPlayheadRate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.GranularSynth.SetPlayheadTime
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// const float                             InPositionSec                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const float                             LerpTimeSec                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EGranularSynthSeekType                  SeekType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGranularSynth::SetPlayheadTime(const float InPositionSec, const float LerpTimeSec, EGranularSynthSeekType SeekType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GranularSynth", "SetPlayheadTime");
-
-	Params::GranularSynth_SetPlayheadTime Parms{};
-
-	Parms.InPositionSec = InPositionSec;
-	Parms.LerpTimeSec = LerpTimeSec;
-	Parms.SeekType = SeekType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.GranularSynth.SetReleaseTimeMsec
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// const float                             ReleaseTimeMsec                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGranularSynth::SetReleaseTimeMsec(const float ReleaseTimeMsec)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GranularSynth", "SetReleaseTimeMsec");
-
-	Params::GranularSynth_SetReleaseTimeMsec Parms{};
-
-	Parms.ReleaseTimeMsec = ReleaseTimeMsec;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.GranularSynth.SetScrubMode
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// const bool                              bScrubMode                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGranularSynth::SetScrubMode(const bool bScrubMode)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GranularSynth", "SetScrubMode");
-
-	Params::GranularSynth_SetScrubMode Parms{};
-
-	Parms.bScrubMode = bScrubMode;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.GranularSynth.SetSoundWave
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// class USoundWave*                       InSoundWave                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGranularSynth::SetSoundWave(class USoundWave* InSoundWave)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GranularSynth", "SetSoundWave");
-
-	Params::GranularSynth_SetSoundWave Parms{};
-
-	Parms.InSoundWave = InSoundWave;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.GranularSynth.SetSustainGain
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// const float                             SustainGain                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGranularSynth::SetSustainGain(const float SustainGain)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GranularSynth", "SetSustainGain");
-
-	Params::GranularSynth_SetSustainGain Parms{};
-
-	Parms.SustainGain = SustainGain;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.GranularSynth.GetCurrentPlayheadTime
-// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UGranularSynth::GetCurrentPlayheadTime() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GranularSynth", "GetCurrentPlayheadTime");
-
-	Params::GranularSynth_GetCurrentPlayheadTime Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Synthesis.GranularSynth.GetSampleDuration
-// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UGranularSynth::GetSampleDuration() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GranularSynth", "GetSampleDuration");
-
-	Params::GranularSynth_GetSampleDuration Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Synthesis.GranularSynth.IsLoaded
-// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UGranularSynth::IsLoaded() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GranularSynth", "IsLoaded");
-
-	Params::GranularSynth_IsLoaded Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -5501,156 +5651,6 @@ float USynthesisUtilitiesBlueprintFunctionLibrary::GetLogFrequency(float InLinea
 	Func->FunctionFlags |= 0x400;
 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Synthesis.Synth2DSlider.SetIndentHandle
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USynth2DSlider::SetIndentHandle(bool InValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Synth2DSlider", "SetIndentHandle");
-
-	Params::Synth2DSlider_SetIndentHandle Parms{};
-
-	Parms.InValue = InValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.Synth2DSlider.SetLocked
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USynth2DSlider::SetLocked(bool InValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Synth2DSlider", "SetLocked");
-
-	Params::Synth2DSlider_SetLocked Parms{};
-
-	Parms.InValue = InValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.Synth2DSlider.SetSliderHandleColor
-// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FLinearColor&              InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USynth2DSlider::SetSliderHandleColor(const struct FLinearColor& InValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Synth2DSlider", "SetSliderHandleColor");
-
-	Params::Synth2DSlider_SetSliderHandleColor Parms{};
-
-	Parms.InValue = std::move(InValue);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.Synth2DSlider.SetStepSize
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USynth2DSlider::SetStepSize(float InValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Synth2DSlider", "SetStepSize");
-
-	Params::Synth2DSlider_SetStepSize Parms{};
-
-	Parms.InValue = InValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.Synth2DSlider.SetValue
-// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FVector2D&                 InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USynth2DSlider::SetValue(const struct FVector2D& InValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Synth2DSlider", "SetValue");
-
-	Params::Synth2DSlider_SetValue Parms{};
-
-	Parms.InValue = std::move(InValue);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.Synth2DSlider.GetValue
-// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector2D USynth2DSlider::GetValue() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Synth2DSlider", "GetValue");
-
-	Params::Synth2DSlider_GetValue Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 

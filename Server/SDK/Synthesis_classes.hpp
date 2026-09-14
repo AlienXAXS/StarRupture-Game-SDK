@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Synthesis_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "Synthesis_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "AudioMixer_classes.hpp"
@@ -792,6 +792,79 @@ public:
 };
 DUMPER7_ASSERTS_USubmixEffectFilterPreset;
 
+// Class Synthesis.SynthComponentMonoWaveTable
+// 0x0760 (0x1020 - 0x08C0)
+class USynthComponentMonoWaveTable final : public USynthComponent
+{
+public:
+	TMulticastInlineDelegate<void(int32 TableIndex)> OnTableAltered;                                 // 0x08C0(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnNumTablesChanged;                                // 0x08D8(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	class UMonoWaveTableSynthPreset*              CurrentPreset;                                     // 0x08F0(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_8F8[0x728];                                    // 0x08F8(0x0728)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	float GetCurveTangent(int32 TableIndex);
+	int32 GetNumTableEntries();
+	void NoteOff(const float InMidiNote);
+	void NoteOn(const float InMidiNote, const float InVelocity);
+	void RefreshAllWaveTables();
+	void RefreshWaveTable(int32 Index_0);
+	void SetAmpEnvelopeAttackTime(const float InAttackTimeMsec);
+	void SetAmpEnvelopeBiasDepth(const float InDepth);
+	void SetAmpEnvelopeBiasInvert(const bool bInBiasInvert);
+	void SetAmpEnvelopeDecayTime(const float InDecayTimeMsec);
+	void SetAmpEnvelopeDepth(const float InDepth);
+	void SetAmpEnvelopeInvert(const bool bInInvert);
+	void SetAmpEnvelopeReleaseTime(const float InReleaseTimeMsec);
+	void SetAmpEnvelopeSustainGain(const float InSustainGain);
+	bool SetCurveInterpolationType(ECurveInterpolationType InterpolationType, int32 TableIndex);
+	bool SetCurveTangent(int32 TableIndex, float InNewTangent);
+	bool SetCurveValue(int32 TableIndex, int32 KeyframeIndex, const float NewValue);
+	void SetFilterEnvelopeAttackTime(const float InAttackTimeMsec);
+	void SetFilterEnvelopeBiasDepth(const float InDepth);
+	void SetFilterEnvelopeBiasInvert(const bool bInBiasInvert);
+	void SetFilterEnvelopeDepth(const float InDepth);
+	void SetFilterEnvelopeInvert(const bool bInInvert);
+	void SetFilterEnvelopenDecayTime(const float InDecayTimeMsec);
+	void SetFilterEnvelopeReleaseTime(const float InReleaseTimeMsec);
+	void SetFilterEnvelopeSustainGain(const float InSustainGain);
+	void SetFrequency(const float FrequencyHz);
+	void SetFrequencyPitchBend(const float FrequencyOffsetCents);
+	void SetFrequencyWithMidiNote(const float InMidiNote);
+	void SetLowPassFilterResonance(float InNewQ);
+	void SetPositionEnvelopeAttackTime(const float InAttackTimeMsec);
+	void SetPositionEnvelopeBiasDepth(const float InDepth);
+	void SetPositionEnvelopeBiasInvert(const bool bInBiasInvert);
+	void SetPositionEnvelopeDecayTime(const float InDecayTimeMsec);
+	void SetPositionEnvelopeDepth(const float InDepth);
+	void SetPositionEnvelopeInvert(const bool bInInvert);
+	void SetPositionEnvelopeReleaseTime(const float InReleaseTimeMsec);
+	void SetPositionEnvelopeSustainGain(const float InSustainGain);
+	void SetPosLfoDepth(const float InLfoDepth);
+	void SetPosLfoFrequency(const float InLfoFrequency);
+	void SetPosLfoType(const ESynthLFOType InLfoType);
+	void SetSustainPedalState(bool InSustainPedalState);
+	void SetWaveTablePosition(float InPosition);
+
+	TArray<float> GetKeyFrameValuesForTable(float TableIndex) const;
+	int32 GetMaxTableIndex() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SynthComponentMonoWaveTable")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SynthComponentMonoWaveTable")
+	}
+	static class USynthComponentMonoWaveTable* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USynthComponentMonoWaveTable>();
+	}
+};
+DUMPER7_ASSERTS_USynthComponentMonoWaveTable;
+
 // Class Synthesis.SubmixEffectFlexiverbPreset
 // 0x0048 (0x00B0 - 0x0068)
 class USubmixEffectFlexiverbPreset final : public USoundEffectSubmixPreset
@@ -1066,79 +1139,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMonoWaveTableSynthPreset;
-
-// Class Synthesis.SynthComponentMonoWaveTable
-// 0x0760 (0x1020 - 0x08C0)
-class USynthComponentMonoWaveTable final : public USynthComponent
-{
-public:
-	TMulticastInlineDelegate<void(int32 TableIndex)> OnTableAltered;                                 // 0x08C0(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnNumTablesChanged;                                // 0x08D8(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	class UMonoWaveTableSynthPreset*              CurrentPreset;                                     // 0x08F0(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_8F8[0x728];                                    // 0x08F8(0x0728)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	float GetCurveTangent(int32 TableIndex);
-	int32 GetNumTableEntries();
-	void NoteOff(const float InMidiNote);
-	void NoteOn(const float InMidiNote, const float InVelocity);
-	void RefreshAllWaveTables();
-	void RefreshWaveTable(int32 Index_0);
-	void SetAmpEnvelopeAttackTime(const float InAttackTimeMsec);
-	void SetAmpEnvelopeBiasDepth(const float InDepth);
-	void SetAmpEnvelopeBiasInvert(const bool bInBiasInvert);
-	void SetAmpEnvelopeDecayTime(const float InDecayTimeMsec);
-	void SetAmpEnvelopeDepth(const float InDepth);
-	void SetAmpEnvelopeInvert(const bool bInInvert);
-	void SetAmpEnvelopeReleaseTime(const float InReleaseTimeMsec);
-	void SetAmpEnvelopeSustainGain(const float InSustainGain);
-	bool SetCurveInterpolationType(ECurveInterpolationType InterpolationType, int32 TableIndex);
-	bool SetCurveTangent(int32 TableIndex, float InNewTangent);
-	bool SetCurveValue(int32 TableIndex, int32 KeyframeIndex, const float NewValue);
-	void SetFilterEnvelopeAttackTime(const float InAttackTimeMsec);
-	void SetFilterEnvelopeBiasDepth(const float InDepth);
-	void SetFilterEnvelopeBiasInvert(const bool bInBiasInvert);
-	void SetFilterEnvelopeDepth(const float InDepth);
-	void SetFilterEnvelopeInvert(const bool bInInvert);
-	void SetFilterEnvelopenDecayTime(const float InDecayTimeMsec);
-	void SetFilterEnvelopeReleaseTime(const float InReleaseTimeMsec);
-	void SetFilterEnvelopeSustainGain(const float InSustainGain);
-	void SetFrequency(const float FrequencyHz);
-	void SetFrequencyPitchBend(const float FrequencyOffsetCents);
-	void SetFrequencyWithMidiNote(const float InMidiNote);
-	void SetLowPassFilterResonance(float InNewQ);
-	void SetPositionEnvelopeAttackTime(const float InAttackTimeMsec);
-	void SetPositionEnvelopeBiasDepth(const float InDepth);
-	void SetPositionEnvelopeBiasInvert(const bool bInBiasInvert);
-	void SetPositionEnvelopeDecayTime(const float InDecayTimeMsec);
-	void SetPositionEnvelopeDepth(const float InDepth);
-	void SetPositionEnvelopeInvert(const bool bInInvert);
-	void SetPositionEnvelopeReleaseTime(const float InReleaseTimeMsec);
-	void SetPositionEnvelopeSustainGain(const float InSustainGain);
-	void SetPosLfoDepth(const float InLfoDepth);
-	void SetPosLfoFrequency(const float InLfoFrequency);
-	void SetPosLfoType(const ESynthLFOType InLfoType);
-	void SetSustainPedalState(bool InSustainPedalState);
-	void SetWaveTablePosition(float InPosition);
-
-	TArray<float> GetKeyFrameValuesForTable(float TableIndex) const;
-	int32 GetMaxTableIndex() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SynthComponentMonoWaveTable")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SynthComponentMonoWaveTable")
-	}
-	static class USynthComponentMonoWaveTable* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USynthComponentMonoWaveTable>();
-	}
-};
-DUMPER7_ASSERTS_USynthComponentMonoWaveTable;
 
 // Class Synthesis.SynthComponentToneGenerator
 // 0x00F0 (0x09B0 - 0x08C0)

@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "MovieSceneTracks_structs.hpp"
 #include "MovieScene_structs.hpp"
 #include "MovieScene_classes.hpp"
-#include "MovieSceneTracks_structs.hpp"
 #include "CoreUObject_classes.hpp"
 
 
@@ -47,6 +47,29 @@ public:
 };
 DUMPER7_ASSERTS_UMovieSceneTakeSection;
 
+// Class TakeMovieScene.MovieSceneTakeTrack
+// 0x0010 (0x0128 - 0x0118)
+class UMovieSceneTakeTrack final : public UMovieSceneNameableTrack
+{
+public:
+	TArray<class UMovieSceneSection*>             Sections;                                          // 0x0118(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MovieSceneTakeTrack")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MovieSceneTakeTrack")
+	}
+	static class UMovieSceneTakeTrack* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMovieSceneTakeTrack>();
+	}
+};
+DUMPER7_ASSERTS_UMovieSceneTakeTrack;
+
 // Class TakeMovieScene.MovieSceneTakeSettings
 // 0x0070 (0x0098 - 0x0028)
 class UMovieSceneTakeSettings final : public UObject
@@ -75,28 +98,5 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMovieSceneTakeSettings;
-
-// Class TakeMovieScene.MovieSceneTakeTrack
-// 0x0010 (0x0128 - 0x0118)
-class UMovieSceneTakeTrack final : public UMovieSceneNameableTrack
-{
-public:
-	TArray<class UMovieSceneSection*>             Sections;                                          // 0x0118(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MovieSceneTakeTrack")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MovieSceneTakeTrack")
-	}
-	static class UMovieSceneTakeTrack* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMovieSceneTakeTrack>();
-	}
-};
-DUMPER7_ASSERTS_UMovieSceneTakeTrack;
 
 SDK_NAMESPACE_END

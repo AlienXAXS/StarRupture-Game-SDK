@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_PlacementHelperReplicatedModule.BP_PlacementHelperReplicatedModule_C
-// 0x0000 (0x0B70 - 0x0B70)
+// 0x0000 (0x0B30 - 0x0B30)
 class ABP_PlacementHelperReplicatedModule_C : public ABP_PlacementHelperReplicatedCustom_C
 {
 public:

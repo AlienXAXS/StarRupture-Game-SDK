@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "ABP_SuitWorkshop_structs.hpp"
+#include "AnimGraphRuntime_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "AnimGraphRuntime_structs.hpp"
 
 
 SDK_NAMESPACE_START

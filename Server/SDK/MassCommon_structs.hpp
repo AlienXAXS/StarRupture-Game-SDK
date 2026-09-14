@@ -17,39 +17,12 @@
 
 SDK_NAMESPACE_START
 
-// ScriptStruct MassCommon.ObjectWrapperFragment
-// 0x0000 (0x0000 - 0x0000)
-#pragma pack(push, 0x1)
-struct SDK_ALIGN(0x01) FObjectWrapperFragment : public FMassFragment
-{
-};
-#pragma pack(pop)
-DUMPER7_ASSERTS_FObjectWrapperFragment;
-
 // ScriptStruct MassCommon.MassNetworkID
 // 0x0000 (0x0004 - 0x0004)
 struct FMassNetworkID final : public FSequentialIDBase
 {
 };
 DUMPER7_ASSERTS_FMassNetworkID;
-
-// ScriptStruct MassCommon.TransformFragment
-// 0x0060 (0x0060 - 0x0000)
-struct FTransformFragment final : public FMassFragment
-{
-public:
-	struct FTransform                             Transform;                                         // 0x0000(0x0060)(Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-};
-DUMPER7_ASSERTS_FTransformFragment;
-
-// ScriptStruct MassCommon.AgentRadiusFragment
-// 0x0004 (0x0004 - 0x0000)
-struct FAgentRadiusFragment final : public FMassFragment
-{
-public:
-	float                                         Radius;                                            // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAgentRadiusFragment;
 
 // ScriptStruct MassCommon.MassInt16Real
 // 0x0002 (0x0002 - 0x0000)
@@ -59,15 +32,6 @@ public:
 	int16                                         Value;                                             // 0x0000(0x0002)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
 DUMPER7_ASSERTS_FMassInt16Real;
-
-// ScriptStruct MassCommon.MassInt16Real10
-// 0x0002 (0x0002 - 0x0000)
-struct FMassInt16Real10 final
-{
-public:
-	int16                                         Value;                                             // 0x0000(0x0002)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-};
-DUMPER7_ASSERTS_FMassInt16Real10;
 
 // ScriptStruct MassCommon.MassSnorm8Vector
 // 0x0003 (0x0003 - 0x0000)
@@ -79,6 +43,44 @@ public:
 	int8                                          Z;                                                 // 0x0002(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
 DUMPER7_ASSERTS_FMassSnorm8Vector;
+
+// ScriptStruct MassCommon.TransformFragment
+// 0x0060 (0x0060 - 0x0000)
+struct FTransformFragment final : public FMassFragment
+{
+public:
+	struct FTransform                             Transform;                                         // 0x0000(0x0060)(Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+};
+DUMPER7_ASSERTS_FTransformFragment;
+
+// ScriptStruct MassCommon.MassInt16Real10
+// 0x0002 (0x0002 - 0x0000)
+struct FMassInt16Real10 final
+{
+public:
+	int16                                         Value;                                             // 0x0000(0x0002)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+};
+DUMPER7_ASSERTS_FMassInt16Real10;
+
+// ScriptStruct MassCommon.AgentRadiusFragment
+// 0x0004 (0x0004 - 0x0000)
+struct FAgentRadiusFragment final : public FMassFragment
+{
+public:
+	float                                         Radius;                                            // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAgentRadiusFragment;
+
+// ScriptStruct MassCommon.ObjectWrapperFragment
+// 0x0001 (0x0001 - 0x0000)
+#pragma pack(push, 0x1)
+struct SDK_ALIGN(0x01) FObjectWrapperFragment : public FMassFragment
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+#pragma pack(pop)
+DUMPER7_ASSERTS_FObjectWrapperFragment;
 
 // ScriptStruct MassCommon.MassSnorm8Vector2D
 // 0x0002 (0x0002 - 0x0000)

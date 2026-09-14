@@ -16,11 +16,11 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_DroneSupport.BP_DroneSupport_C
-// 0x0008 (0x08C0 - 0x08B8)
+// 0x0008 (0x0880 - 0x0878)
 class ABP_DroneSupport_C final : public ACrCustomBuilding
 {
 public:
-	class UStaticMeshComponent*                   Rail;                                              // 0x08B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   Rail;                                              // 0x0878(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void GetBuildingMeshes(class UMeshComponent** MainBody, TArray<class UMeshComponent*>* AdditionalMeshes) const;

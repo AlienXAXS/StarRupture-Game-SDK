@@ -16,21 +16,46 @@
 
 SDK_NAMESPACE_START
 
-// Function WBP_ExporterCorporationLogo.WBP_ExporterCorporationLogo_C.ExecuteUbergraph_WBP_ExporterCorporationLogo
-// (Final, UbergraphFunction, HasDefaults)
+// Function WBP_ExporterCorporationLogo.WBP_ExporterCorporationLogo_C.UpdateName
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ACrBuildingActorBase*             Owning_Building                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm)
 
-void UWBP_ExporterCorporationLogo_C::ExecuteUbergraph_WBP_ExporterCorporationLogo(int32 EntryPoint)
+class FText UWBP_ExporterCorporationLogo_C::UpdateName(class ACrBuildingActorBase* Owning_Building)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ExporterCorporationLogo_C", "ExecuteUbergraph_WBP_ExporterCorporationLogo");
+		Func = Class->GetFunction("WBP_ExporterCorporationLogo_C", "UpdateName");
 
-	Params::WBP_ExporterCorporationLogo_C_ExecuteUbergraph_WBP_ExporterCorporationLogo Parms{};
+	Params::WBP_ExporterCorporationLogo_C_UpdateName Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.Owning_Building = Owning_Building;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function WBP_ExporterCorporationLogo.WBP_ExporterCorporationLogo_C.SetCorporationLogo
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          CorporationLogo                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsDefault                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_ExporterCorporationLogo_C::SetCorporationLogo(class UObject* CorporationLogo, bool IsDefault)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_ExporterCorporationLogo_C", "SetCorporationLogo");
+
+	Params::WBP_ExporterCorporationLogo_C_SetCorporationLogo Parms{};
+
+	Parms.CorporationLogo = CorporationLogo;
+	Parms.IsDefault = IsDefault;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -56,48 +81,23 @@ class FText UWBP_ExporterCorporationLogo_C::GetText()
 }
 
 
-// Function WBP_ExporterCorporationLogo.WBP_ExporterCorporationLogo_C.SetCorporationLogo
-// (BlueprintCallable, BlueprintEvent)
+// Function WBP_ExporterCorporationLogo.WBP_ExporterCorporationLogo_C.ExecuteUbergraph_WBP_ExporterCorporationLogo
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// class UObject*                          CorporationLogo_0                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// bool                                    IsDefault                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_ExporterCorporationLogo_C::SetCorporationLogo(class UObject* CorporationLogo_0, bool IsDefault)
+void UWBP_ExporterCorporationLogo_C::ExecuteUbergraph_WBP_ExporterCorporationLogo(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ExporterCorporationLogo_C", "SetCorporationLogo");
+		Func = Class->GetFunction("WBP_ExporterCorporationLogo_C", "ExecuteUbergraph_WBP_ExporterCorporationLogo");
 
-	Params::WBP_ExporterCorporationLogo_C_SetCorporationLogo Parms{};
+	Params::WBP_ExporterCorporationLogo_C_ExecuteUbergraph_WBP_ExporterCorporationLogo Parms{};
 
-	Parms.CorporationLogo_0 = CorporationLogo_0;
-	Parms.IsDefault = IsDefault;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_ExporterCorporationLogo.WBP_ExporterCorporationLogo_C.UpdateName
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class ACrBuildingActorBase*             Owning_Building                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm)
-
-class FText UWBP_ExporterCorporationLogo_C::UpdateName(class ACrBuildingActorBase* Owning_Building)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ExporterCorporationLogo_C", "UpdateName");
-
-	Params::WBP_ExporterCorporationLogo_C_UpdateName Parms{};
-
-	Parms.Owning_Building = Owning_Building;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
 }
 
 

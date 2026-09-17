@@ -16,43 +16,17 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Forge.BP_Forge_C.ExecuteUbergraph_BP_Forge
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Forge_C::ExecuteUbergraph_BP_Forge(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Forge_C", "ExecuteUbergraph_BP_Forge");
-
-	Params::BP_Forge_C_ExecuteUbergraph_BP_Forge Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Forge.BP_Forge_C.OnBuildingStateChanged
+// Function BP_Forge.BP_Forge_C.SetupSkeletalMesh
 // (Event, Public, BlueprintEvent)
-// Parameters:
-// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Forge_C::OnBuildingStateChanged(ECrBuildingState InState)
+void ABP_Forge_C::SetupSkeletalMesh()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Forge_C", "OnBuildingStateChanged");
+		Func = Class->GetFunction("BP_Forge_C", "SetupSkeletalMesh");
 
-	Params::BP_Forge_C_OnBuildingStateChanged Parms{};
-
-	Parms.InState = InState;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -70,17 +44,43 @@ void ABP_Forge_C::OnItemCraftingComplete()
 }
 
 
-// Function BP_Forge.BP_Forge_C.SetupSkeletalMesh
+// Function BP_Forge.BP_Forge_C.OnBuildingStateChanged
 // (Event, Public, BlueprintEvent)
+// Parameters:
+// ECrBuildingState                        InState_OnBuildingStateChanged                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Forge_C::SetupSkeletalMesh()
+void ABP_Forge_C::OnBuildingStateChanged(ECrBuildingState InState_OnBuildingStateChanged)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Forge_C", "SetupSkeletalMesh");
+		Func = Class->GetFunction("BP_Forge_C", "OnBuildingStateChanged");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_Forge_C_OnBuildingStateChanged Parms{};
+
+	Parms.InState_OnBuildingStateChanged = InState_OnBuildingStateChanged;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Forge.BP_Forge_C.ExecuteUbergraph_BP_Forge
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Forge_C::ExecuteUbergraph_BP_Forge(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Forge_C", "ExecuteUbergraph_BP_Forge");
+
+	Params::BP_Forge_C_ExecuteUbergraph_BP_Forge Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

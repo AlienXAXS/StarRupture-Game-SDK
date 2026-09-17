@@ -23,8 +23,8 @@ public:
 	class UStaticMeshComponent*                   Rail;                                              // 0x0878(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void GetBuildingMeshes(class UMeshComponent** MainBody, TArray<class UMeshComponent*>* AdditionalMeshes) const;
 	void GetBuildingProgressMeshes(float BuildingProgressPercentage, TArray<class UMeshComponent*>* OutMeshesToHide, TArray<class UMeshComponent*>* OutMeshesToShow) const;
+	void GetBuildingMeshes(class UMeshComponent** MainBody, TArray<class UMeshComponent*>* AdditionalMeshes) const;
 
 public:
 	static class UClass* StaticClass()

@@ -16,41 +16,21 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_WaterExtractorFoundation.BP_WaterExtractorFoundation_C.ExecuteUbergraph_BP_WaterExtractorFoundation
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_WaterExtractorFoundation_C::ExecuteUbergraph_BP_WaterExtractorFoundation(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WaterExtractorFoundation_C", "ExecuteUbergraph_BP_WaterExtractorFoundation");
-
-	Params::BP_WaterExtractorFoundation_C_ExecuteUbergraph_BP_WaterExtractorFoundation Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_WaterExtractorFoundation.BP_WaterExtractorFoundation_C.ReceiveActorBeginOverlap
+// Function BP_WaterExtractorFoundation.BP_WaterExtractorFoundation_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class AActor*                           OtherActor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaSeconds_ReceiveTick                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_WaterExtractorFoundation_C::ReceiveActorBeginOverlap(class AActor* OtherActor)
+void ABP_WaterExtractorFoundation_C::ReceiveTick(float DeltaSeconds_ReceiveTick)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WaterExtractorFoundation_C", "ReceiveActorBeginOverlap");
+		Func = Class->GetFunction("BP_WaterExtractorFoundation_C", "ReceiveTick");
 
-	Params::BP_WaterExtractorFoundation_C_ReceiveActorBeginOverlap Parms{};
+	Params::BP_WaterExtractorFoundation_C_ReceiveTick Parms{};
 
-	Parms.OtherActor = OtherActor;
+	Parms.DeltaSeconds_ReceiveTick = DeltaSeconds_ReceiveTick;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -70,21 +50,41 @@ void ABP_WaterExtractorFoundation_C::ReceiveBeginPlay()
 }
 
 
-// Function BP_WaterExtractorFoundation.BP_WaterExtractorFoundation_C.ReceiveTick
+// Function BP_WaterExtractorFoundation.BP_WaterExtractorFoundation_C.ReceiveActorBeginOverlap
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           OtherActor_ReceiveActorBeginOverlap                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_WaterExtractorFoundation_C::ReceiveTick(float DeltaSeconds)
+void ABP_WaterExtractorFoundation_C::ReceiveActorBeginOverlap(class AActor* OtherActor_ReceiveActorBeginOverlap)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WaterExtractorFoundation_C", "ReceiveTick");
+		Func = Class->GetFunction("BP_WaterExtractorFoundation_C", "ReceiveActorBeginOverlap");
 
-	Params::BP_WaterExtractorFoundation_C_ReceiveTick Parms{};
+	Params::BP_WaterExtractorFoundation_C_ReceiveActorBeginOverlap Parms{};
 
-	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.OtherActor_ReceiveActorBeginOverlap = OtherActor_ReceiveActorBeginOverlap;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_WaterExtractorFoundation.BP_WaterExtractorFoundation_C.ExecuteUbergraph_BP_WaterExtractorFoundation
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_WaterExtractorFoundation_C::ExecuteUbergraph_BP_WaterExtractorFoundation(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_WaterExtractorFoundation_C", "ExecuteUbergraph_BP_WaterExtractorFoundation");
+
+	Params::BP_WaterExtractorFoundation_C_ExecuteUbergraph_BP_WaterExtractorFoundation Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

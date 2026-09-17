@@ -16,29 +16,29 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Animal_GoldenBalloon.BP_Animal_GoldenBalloon_C.Emissive__FinishedFunc
-// (BlueprintEvent)
+// Function BP_Animal_GoldenBalloon.BP_Animal_GoldenBalloon_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ABP_Animal_GoldenBalloon_C::Emissive__FinishedFunc()
+void ABP_Animal_GoldenBalloon_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_GoldenBalloon_C", "Emissive__FinishedFunc");
+		Func = Class->GetFunction("BP_Animal_GoldenBalloon_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_Animal_GoldenBalloon.BP_Animal_GoldenBalloon_C.Emissive__UpdateFunc
-// (BlueprintEvent)
+// Function BP_Animal_GoldenBalloon.BP_Animal_GoldenBalloon_C.OnRunAwayStartedVisuals
+// (Event, Protected, BlueprintEvent)
 
-void ABP_Animal_GoldenBalloon_C::Emissive__UpdateFunc()
+void ABP_Animal_GoldenBalloon_C::OnRunAwayStartedVisuals()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_GoldenBalloon_C", "Emissive__UpdateFunc");
+		Func = Class->GetFunction("BP_Animal_GoldenBalloon_C", "OnRunAwayStartedVisuals");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -64,29 +64,29 @@ void ABP_Animal_GoldenBalloon_C::ExecuteUbergraph_BP_Animal_GoldenBalloon(int32 
 }
 
 
-// Function BP_Animal_GoldenBalloon.BP_Animal_GoldenBalloon_C.OnRunAwayStartedVisuals
-// (Event, Protected, BlueprintEvent)
+// Function BP_Animal_GoldenBalloon.BP_Animal_GoldenBalloon_C.Emissive__UpdateFunc
+// (BlueprintEvent)
 
-void ABP_Animal_GoldenBalloon_C::OnRunAwayStartedVisuals()
+void ABP_Animal_GoldenBalloon_C::Emissive__UpdateFunc()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_GoldenBalloon_C", "OnRunAwayStartedVisuals");
+		Func = Class->GetFunction("BP_Animal_GoldenBalloon_C", "Emissive__UpdateFunc");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_Animal_GoldenBalloon.BP_Animal_GoldenBalloon_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_Animal_GoldenBalloon.BP_Animal_GoldenBalloon_C.Emissive__FinishedFunc
+// (BlueprintEvent)
 
-void ABP_Animal_GoldenBalloon_C::ReceiveBeginPlay()
+void ABP_Animal_GoldenBalloon_C::Emissive__FinishedFunc()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_GoldenBalloon_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_Animal_GoldenBalloon_C", "Emissive__FinishedFunc");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

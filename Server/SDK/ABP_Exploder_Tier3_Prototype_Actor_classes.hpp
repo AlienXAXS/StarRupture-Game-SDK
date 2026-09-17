@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "CrAiExploderRuntime_classes.hpp"
+#include "ABP_Exploder_Tier3_Prototype_Actor_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 #include "Engine_structs.hpp"
-#include "ABP_Exploder_Tier3_Prototype_Actor_structs.hpp"
-#include "CrAiExploderRuntime_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -36,11 +36,11 @@ public:
 	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer;                      // 0x0770(0x0048)()
 
 public:
-	void AnimGraph(struct FPoseLink* AnimGraph_0);
-	void BlueprintInitializeAnimation();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor_AnimGraphNode_BlendListByBool_3DA41B154F0CEEF45F1690911F953BF7();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor_AnimGraphNode_BlendListByBool_A5846897452E5C73BAFFEF871CC1DD2A();
 	void ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor(int32 EntryPoint);
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor_AnimGraphNode_BlendListByBool_A5846897452E5C73BAFFEF871CC1DD2A();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor_AnimGraphNode_BlendListByBool_3DA41B154F0CEEF45F1690911F953BF7();
+	void BlueprintInitializeAnimation();
+	void AnimGraph(struct FPoseLink* AnimGraph);
 
 public:
 	static class UClass* StaticClass()

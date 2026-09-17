@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "BP_GatherableBaseActor_classes.hpp"
+#include "Engine_structs.hpp"
 #include "Chimera_structs.hpp"
 
 
@@ -25,9 +25,9 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Gatherable_Plant_h_C;            // 0x03A8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void BP_OnWaveChangedUpdate(EEnviroWave WaveType, EEnviroWaveStage WaveStage, EEnviroWaveFadeoutSubstage FadeoutSubstage, EEnviroWaveGrowbackSubstage GrowbackSubstage);
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay);
 	void ExecuteUbergraph_BP_Gatherable_Plant_h(int32 EntryPoint);
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void BP_OnWaveChangedUpdate(EEnviroWave WaveType_BP_OnWaveChangedUpdate, EEnviroWaveStage WaveStage_BP_OnWaveChangedUpdate, EEnviroWaveFadeoutSubstage FadeoutSubstage_BP_OnWaveChangedUpdate, EEnviroWaveGrowbackSubstage GrowbackSubstage_BP_OnWaveChangedUpdate);
 
 public:
 	static class UClass* StaticClass()

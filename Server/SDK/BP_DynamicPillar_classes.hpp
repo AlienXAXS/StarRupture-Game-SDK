@@ -29,8 +29,8 @@ public:
 	class UStaticMeshComponent*                   Bottom;                                            // 0x08B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_BP_DynamicPillar(int32 EntryPoint);
 	void ReceiveBeginPlay();
+	void ExecuteUbergraph_BP_DynamicPillar(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

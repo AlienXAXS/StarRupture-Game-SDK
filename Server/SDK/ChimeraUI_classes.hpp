@@ -2483,7 +2483,7 @@ DUMPER7_ASSERTS_UCrMenuWidgetsData;
 
 // Class ChimeraUI.CrUW_ArmoryWeaponDetails
 // 0x00B0 (0x06A0 - 0x05F0)
-class UCrUW_ArmoryWeaponDetails : public UCrUW_ActivatableWidget
+class UCrUW_ArmoryWeaponDetails final : public UCrUW_ActivatableWidget
 {
 public:
 	class UWidgetSwitcher*                        WidgetSwitcher;                                    // 0x05F0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
@@ -6607,7 +6607,7 @@ DUMPER7_ASSERTS_UCrUW_Crosshair;
 
 // Class ChimeraUI.CrUW_CrosshairDot
 // 0x0018 (0x03F8 - 0x03E0)
-class UCrUW_CrosshairDot : public UCrUW_CrosshairBase
+class UCrUW_CrosshairDot final : public UCrUW_CrosshairBase
 {
 public:
 	float                                         LookingAtBuildingDotScale;                         // 0x03E0(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -6633,7 +6633,7 @@ DUMPER7_ASSERTS_UCrUW_CrosshairDot;
 
 // Class ChimeraUI.CrUW_CrosshairDynamic
 // 0x0058 (0x0438 - 0x03E0)
-class UCrUW_CrosshairDynamic : public UCrUW_CrosshairBase
+class UCrUW_CrosshairDynamic final : public UCrUW_CrosshairBase
 {
 public:
 	ECrosshairType                                CrosshairType;                                     // 0x03E0(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)

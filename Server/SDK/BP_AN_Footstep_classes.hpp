@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "E_FootstepType_structs.hpp"
 #include "PhysicsCore_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "E_FootstepType_structs.hpp"
 #include "Engine_classes.hpp"
 
 

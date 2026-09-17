@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "BP_BaseAI_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "BP_BaseAI_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -43,19 +43,19 @@ public:
 	TArray<struct FVector>                        ExcludedDigInLocations;                            // 0x0DB8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
-	void AddExcludedLocation(const struct FVector& NewItem, bool DigIn);
-	void ExecuteUbergraph_BP_Exploder_Tier3_Prototype_Actor_Character(int32 EntryPoint);
-	void GetExcludedLocations(bool DigIn, TArray<struct FVector>* Result);
-	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
-	void HideCysts();
-	void OnCystDestroyed(class AExploderT3CystActor* Cyst);
-	void OnEnterActorPool();
-	void OnExitActorPool();
-	void ReceiveBeginPlay();
-	void RegisterCyst(class AExploderT3CystActor* Cyst);
 	void ResetExcludedLocations(bool DigIn);
+	void RegisterCyst(class AExploderT3CystActor* Cyst);
+	void ReceiveBeginPlay();
+	void OnExitActorPool();
+	void OnEnterActorPool();
+	void OnCystDestroyed(class AExploderT3CystActor* Cyst);
+	void HideCysts();
+	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam_GetNiagaraEyeSystem);
+	void GetExcludedLocations(bool DigIn, TArray<struct FVector>* Result);
+	void ExecuteUbergraph_BP_Exploder_Tier3_Prototype_Actor_Character(int32 EntryPoint);
+	void AddExcludedLocation(const struct FVector& NewItem, bool DigIn);
 
-	void OnMeshVisibilityUpdated(bool bIsMeshHidden) const;
+	void OnMeshVisibilityUpdated(bool bIsMeshHidden_OnMeshVisibilityUpdated) const;
 
 public:
 	static class UClass* StaticClass()

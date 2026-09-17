@@ -16,6 +16,20 @@
 
 SDK_NAMESPACE_START
 
+// Function BP_Modular_PillarSupport.BP_Modular_PillarSupport_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Modular_PillarSupport_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Modular_PillarSupport_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_Modular_PillarSupport.BP_Modular_PillarSupport_C.ExecuteUbergraph_BP_Modular_PillarSupport
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -33,20 +47,6 @@ void ABP_Modular_PillarSupport_C::ExecuteUbergraph_BP_Modular_PillarSupport(int3
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Modular_PillarSupport.BP_Modular_PillarSupport_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Modular_PillarSupport_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Modular_PillarSupport_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 

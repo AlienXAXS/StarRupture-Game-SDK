@@ -50,10 +50,10 @@ public:
 	TArray<class UStaticMeshComponent*>           StaticMeshesIn;                                    // 0x0958(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 
 public:
-	void ExecuteUbergraph_BP_Airlock_StartingHUB(int32 EntryPoint);
-	void OnOpenStateChanged(bool bInOpen);
-	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed);
 	void ReceiveBeginPlay();
+	void PostPlayBuildingEffect(bool bWasBuildingEffectPlayed_PostPlayBuildingEffect);
+	void OnOpenStateChanged(bool bInOpen_OnOpenStateChanged);
+	void ExecuteUbergraph_BP_Airlock_StartingHUB(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

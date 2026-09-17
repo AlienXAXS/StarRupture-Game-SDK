@@ -11,66 +11,34 @@
 
 namespace ABP_Armory_hier { struct FAnimBlueprintGeneratedConstantData; }
 
-namespace ABP_PistolAnimLayers_TPP { struct FAnimBlueprintGeneratedConstantData; }
-
-namespace ABP_RifleAnimLayers_TPP { struct FAnimBlueprintGeneratedConstantData; }
-
 namespace GameplayAbilities { struct FServerAbilityRPCBatch; }
-
-namespace ABP_Female_GrenadeAnimLayers_TPP { struct FAnimBlueprintGeneratedConstantData; }
-
-namespace ABP_BuildingToolAnimLayers_TPP { struct FAnimBlueprintGeneratedConstantData; }
-
-namespace ABP_FPP_MedTool_AnimLayers { struct FAnimBlueprintGeneratedConstantData; }
 
 namespace ABP_Unarmed_FPP_AnimLayers { struct FAnimBlueprintGeneratedConstantData; }
 
-namespace ABP_HarvesterAnimLayers_TPP { struct FAnimBlueprintGeneratedConstantData; }
-
-namespace ABP_GrenadeAnimLayers_TPP { struct FAnimBlueprintGeneratedConstantData; }
-
-namespace ABP_MedToolAnimLayers_TPP { struct FAnimBlueprintGeneratedConstantData; }
-
 namespace WBP_SessionOverwriteConfirmation { class UWBP_SaveOverwriteConfirmation_C; }
-
-namespace ABP_Female_UnarmedAnimLayers_TPP { struct FAnimBlueprintGeneratedConstantData; }
 
 namespace WBP_SaveOverwriteConfirmation { class UWBP_SaveOverwriteConfirmation_C; }
 
-namespace ABP_Pistol_AnimLayers_FPP { struct FAnimBlueprintGeneratedConstantData; }
 
-namespace ABP_FPP_MiningTool_AnimLayers { struct FAnimBlueprintGeneratedConstantData; }
-
-namespace ABP_FPP_Grenade_AnimLayers { struct FAnimBlueprintGeneratedConstantData; }
-
-namespace ABP_Female_MedToolAnimLayers_TPP { struct FAnimBlueprintGeneratedConstantData; }
-
-namespace ABP_FPP_BuildTool_AnimLayers { struct FAnimBlueprintGeneratedConstantData; }
-
-namespace ABP_Rifle_01_AnimLayers_FPP { struct FAnimBlueprintGeneratedConstantData; }
-
-namespace ABP_UnarmedAnimLayers { struct FAnimBlueprintGeneratedConstantData; }
-
+namespace ABP_Melee_Tier0_Ragdoll
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
 
 namespace ABP_SuitWorkshop
 {
-	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
 }
 
-namespace ABP_Mannequin_FPP_Base
+namespace ABP_PanzerHund_Ragdoll
 {
 	struct FAnimBlueprintGeneratedMutableData;
 	struct FAnimBlueprintGeneratedConstantData;
 }
 
-namespace ABP_Exploder_Tier2_Actor_NEW
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ABP_Melee_Tier1_Ragdoll
+namespace ABP_Crab
 {
 	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
@@ -82,46 +50,16 @@ namespace ABP_ItemAnimLayers_FPP_Base
 	struct FAnimBlueprintGeneratedConstantData;
 }
 
-namespace ABP_Exploder_Tier3_NEW
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ABP_Melee_Tier3_Actor
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ABP_Crab
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ABP_Mannequin_Base
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ABP_PanzerHund_Ragdoll
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
-}
-
 namespace ABP_Crab_Ragdoll
 {
 	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
 }
 
-namespace ABP_ItemAnimLayersBase
+namespace ABP_Ranged_Tier2_Ragdoll
 {
-	struct FAnimBlueprintGeneratedMutableData;
 	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
 }
 
 namespace ABP_PanzerHund
@@ -136,22 +74,64 @@ namespace ABP_Ranged_Tier3_Actor
 	struct FAnimBlueprintGeneratedMutableData;
 }
 
+namespace ABP_Melee_Tier1_Actor
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ABP_Melee_Tier2_Actor
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ABP_Mannequin_FPP_Base
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ABP_Melee_Tier1_Ragdoll
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ABP_Mannequin_Base
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ABP_Exploder_Tier2_Actor_NEW
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
 namespace ABP_Melee_Tier3_Ragdoll
 {
 	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
 }
 
-namespace ABP_Melee_Tier0_Ragdoll
+namespace ABP_Ranged_Tier1_Actor
 {
-	struct FAnimBlueprintGeneratedMutableData;
 	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
 }
 
-namespace ABP_Ranged_Tier2_LOD0
+namespace ABP_Exploder_Tier1_Actor
 {
 	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ABP_Melee_Tier3_Actor
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
 }
 
 namespace ABP_Item_MiningTool
@@ -166,38 +146,20 @@ namespace ABP_Ranged_Tier1_Ragdoll
 	struct FAnimBlueprintGeneratedMutableData;
 }
 
-namespace ABP_Exploder_Tier1_Actor
+namespace ABP_Ranged_Tier2_LOD0
 {
-	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ABP_Ranged_Tier2_Ragdoll
-{
 	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
 }
 
 namespace ABP_Exploder_Tier3_Prototype_Actor
 {
-	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
 }
 
-namespace ABP_Melee_Tier1_Actor
+namespace ABP_Exploder_Tier3_NEW
 {
-	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ABP_Melee_Tier2_Actor
-{
 	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ABP_Ranged_Tier1_Actor
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
 }

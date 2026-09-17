@@ -19,12 +19,12 @@ SDK_NAMESPACE_START
 // Function BP_AnimNotifyState_ShowMeshOnNotifyEnd.BP_AnimNotifyState_ShowMeshOnNotifyEnd_C.Received_NotifyEnd
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// class USkeletalMeshComponent*           MeshComp                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-// class UAnimSequenceBase*                Animation                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// const struct FAnimNotifyEventReference& EventReference                                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class USkeletalMeshComponent*           MeshComp_Received_NotifyEnd                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UAnimSequenceBase*                Animation_Received_NotifyEnd                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const struct FAnimNotifyEventReference& EventReference_Received_NotifyEnd                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// bool                                    ReturnValue_Received_NotifyEnd                         (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-bool UBP_AnimNotifyState_ShowMeshOnNotifyEnd_C::Received_NotifyEnd(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, const struct FAnimNotifyEventReference& EventReference) const
+bool UBP_AnimNotifyState_ShowMeshOnNotifyEnd_C::Received_NotifyEnd(class USkeletalMeshComponent* MeshComp_Received_NotifyEnd, class UAnimSequenceBase* Animation_Received_NotifyEnd, const struct FAnimNotifyEventReference& EventReference_Received_NotifyEnd) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -33,9 +33,9 @@ bool UBP_AnimNotifyState_ShowMeshOnNotifyEnd_C::Received_NotifyEnd(class USkelet
 
 	Params::BP_AnimNotifyState_ShowMeshOnNotifyEnd_C_Received_NotifyEnd Parms{};
 
-	Parms.MeshComp = MeshComp;
-	Parms.Animation = Animation;
-	Parms.EventReference = std::move(EventReference);
+	Parms.MeshComp_Received_NotifyEnd = MeshComp_Received_NotifyEnd;
+	Parms.Animation_Received_NotifyEnd = Animation_Received_NotifyEnd;
+	Parms.EventReference_Received_NotifyEnd = std::move(EventReference_Received_NotifyEnd);
 
 	UObject::ProcessEvent(Func, &Parms);
 

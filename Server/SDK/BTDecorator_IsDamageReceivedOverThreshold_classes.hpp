@@ -30,7 +30,7 @@ public:
 	bool                                          UseDamageThreshold;                                // 0x0108(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+	bool PerformConditionCheckAI(class AAIController* OwnerController_PerformConditionCheckAI, class APawn* ControlledPawn_PerformConditionCheckAI);
 
 public:
 	static class UClass* StaticClass()

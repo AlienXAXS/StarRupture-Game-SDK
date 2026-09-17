@@ -16,6 +16,20 @@
 
 SDK_NAMESPACE_START
 
+// Function BP_DynamicPillar.BP_DynamicPillar_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_DynamicPillar_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_DynamicPillar_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_DynamicPillar.BP_DynamicPillar_C.ExecuteUbergraph_BP_DynamicPillar
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -33,20 +47,6 @@ void ABP_DynamicPillar_C::ExecuteUbergraph_BP_DynamicPillar(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_DynamicPillar.BP_DynamicPillar_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_DynamicPillar_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DynamicPillar_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 

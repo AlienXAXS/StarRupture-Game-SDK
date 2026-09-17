@@ -31,11 +31,11 @@ public:
 	double                                        SectionLength;                                     // 0x0760(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_BP_Connector(int32 EntryPoint);
-	double GetRampAngle();
-	bool IsLadder();
+	void OnSplineReady(class USplineComponent* InSpline_OnSplineReady);
 	bool IsRamp();
-	void OnSplineReady(class USplineComponent* InSpline);
+	bool IsLadder();
+	double GetRampAngle();
+	void ExecuteUbergraph_BP_Connector(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

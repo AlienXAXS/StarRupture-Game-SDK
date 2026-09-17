@@ -16,63 +16,15 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Exploder_Tier2_ExplosionDamageAura.BP_Exploder_Tier2_ExplosionDamageAura_C.ExecuteUbergraph_BP_Exploder_Tier2_ExplosionDamageAura
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_Exploder_Tier2_ExplosionDamageAura.BP_Exploder_Tier2_ExplosionDamageAura_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ABP_Exploder_Tier2_ExplosionDamageAura_C::ExecuteUbergraph_BP_Exploder_Tier2_ExplosionDamageAura(int32 EntryPoint)
+void ABP_Exploder_Tier2_ExplosionDamageAura_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_ExplosionDamageAura_C", "ExecuteUbergraph_BP_Exploder_Tier2_ExplosionDamageAura");
-
-	Params::BP_Exploder_Tier2_ExplosionDamageAura_C_ExecuteUbergraph_BP_Exploder_Tier2_ExplosionDamageAura Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Exploder_Tier2_ExplosionDamageAura.BP_Exploder_Tier2_ExplosionDamageAura_C.FadeTimeline__FinishedFunc
-// (BlueprintEvent)
-
-void ABP_Exploder_Tier2_ExplosionDamageAura_C::FadeTimeline__FinishedFunc()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_ExplosionDamageAura_C", "FadeTimeline__FinishedFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier2_ExplosionDamageAura.BP_Exploder_Tier2_ExplosionDamageAura_C.FadeTimeline__UpdateFunc
-// (BlueprintEvent)
-
-void ABP_Exploder_Tier2_ExplosionDamageAura_C::FadeTimeline__UpdateFunc()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_ExplosionDamageAura_C", "FadeTimeline__UpdateFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Exploder_Tier2_ExplosionDamageAura.BP_Exploder_Tier2_ExplosionDamageAura_C.LightFadeTimeline__FinishedFunc
-// (BlueprintEvent)
-
-void ABP_Exploder_Tier2_ExplosionDamageAura_C::LightFadeTimeline__FinishedFunc()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_ExplosionDamageAura_C", "LightFadeTimeline__FinishedFunc");
+		Func = Class->GetFunction("BP_Exploder_Tier2_ExplosionDamageAura_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -92,17 +44,65 @@ void ABP_Exploder_Tier2_ExplosionDamageAura_C::LightFadeTimeline__UpdateFunc()
 }
 
 
-// Function BP_Exploder_Tier2_ExplosionDamageAura.BP_Exploder_Tier2_ExplosionDamageAura_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_Exploder_Tier2_ExplosionDamageAura.BP_Exploder_Tier2_ExplosionDamageAura_C.LightFadeTimeline__FinishedFunc
+// (BlueprintEvent)
 
-void ABP_Exploder_Tier2_ExplosionDamageAura_C::ReceiveBeginPlay()
+void ABP_Exploder_Tier2_ExplosionDamageAura_C::LightFadeTimeline__FinishedFunc()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_ExplosionDamageAura_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_Exploder_Tier2_ExplosionDamageAura_C", "LightFadeTimeline__FinishedFunc");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier2_ExplosionDamageAura.BP_Exploder_Tier2_ExplosionDamageAura_C.FadeTimeline__UpdateFunc
+// (BlueprintEvent)
+
+void ABP_Exploder_Tier2_ExplosionDamageAura_C::FadeTimeline__UpdateFunc()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier2_ExplosionDamageAura_C", "FadeTimeline__UpdateFunc");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier2_ExplosionDamageAura.BP_Exploder_Tier2_ExplosionDamageAura_C.FadeTimeline__FinishedFunc
+// (BlueprintEvent)
+
+void ABP_Exploder_Tier2_ExplosionDamageAura_C::FadeTimeline__FinishedFunc()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier2_ExplosionDamageAura_C", "FadeTimeline__FinishedFunc");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier2_ExplosionDamageAura.BP_Exploder_Tier2_ExplosionDamageAura_C.ExecuteUbergraph_BP_Exploder_Tier2_ExplosionDamageAura
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Exploder_Tier2_ExplosionDamageAura_C::ExecuteUbergraph_BP_Exploder_Tier2_ExplosionDamageAura(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Exploder_Tier2_ExplosionDamageAura_C", "ExecuteUbergraph_BP_Exploder_Tier2_ExplosionDamageAura");
+
+	Params::BP_Exploder_Tier2_ExplosionDamageAura_C_ExecuteUbergraph_BP_Exploder_Tier2_ExplosionDamageAura Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

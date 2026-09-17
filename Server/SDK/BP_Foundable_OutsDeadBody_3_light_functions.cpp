@@ -19,7 +19,7 @@ SDK_NAMESPACE_START
 // Function BP_Foundable_OutsDeadBody_3_light.BP_Foundable_OutsDeadBody_3_light_C.OnStorageEmptied
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue_OnStorageEmptied                           (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool ABP_Foundable_OutsDeadBody_3_light_C::OnStorageEmptied()
 {

@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "BP_BaseAI_classes.hpp"
 #include "Engine_structs.hpp"
 #include "Chimera_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "BP_BaseAI_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -37,26 +37,26 @@ public:
 	struct FVector                                NoMossVisualVariation;                             // 0x0D88(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ActivateDust();
-	void BndEvt__BP_Animal_PanzerHund_Character_Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult);
-	void BndEvt__BP_Animal_PanzerHund_Character_Sphere_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
-	void DeactivateDust();
-	void ExecuteUbergraph_BP_Animal_PanzerHund_Character(int32 EntryPoint);
-	class UCrAiAnimalPanzerHundUpdateStateComponent* GetPanzerHundUpdateStateComponent();
-	void OnPrepareForGame();
-	void OnPrepareForPooling();
-	void OnRep_IsMossVisible();
-	void OnRep_IsRolledCollision();
-	void OnWaveFadeoutSubstageChanged_Event(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveFadeoutSubstage Substage, float Progress);
-	void ReceiveBeginPlay();
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
-	void SetAudioState(const struct FGameplayTag& EventTag);
-	void SetDustDamageActivity(bool Active);
-	void SetMossVisibility(bool Visible);
-	void SetRolledCollision(bool NewIsRolledCollision);
 	bool ShouldMossBeActive();
+	void SetRolledCollision(bool NewIsRolledCollision);
+	void SetMossVisibility(bool Visible);
+	void SetDustDamageActivity(bool Active);
+	void SetAudioState(const struct FGameplayTag& EventTag);
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay);
+	void ReceiveBeginPlay();
+	void OnWaveFadeoutSubstageChanged_Event(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveFadeoutSubstage Substage, float Progress);
+	void OnRep_IsRolledCollision();
+	void OnRep_IsMossVisible();
+	void OnPrepareForPooling();
+	void OnPrepareForGame();
+	class UCrAiAnimalPanzerHundUpdateStateComponent* GetPanzerHundUpdateStateComponent();
+	void ExecuteUbergraph_BP_Animal_PanzerHund_Character(int32 EntryPoint);
+	void DeactivateDust();
+	void BndEvt__BP_Animal_PanzerHund_Character_Sphere_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+	void BndEvt__BP_Animal_PanzerHund_Character_Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult);
+	void ActivateDust();
 
-	void OnMeshVisibilityUpdated(bool bIsMeshHidden) const;
+	void OnMeshVisibilityUpdated(bool bIsMeshHidden_OnMeshVisibilityUpdated) const;
 
 public:
 	static class UClass* StaticClass()

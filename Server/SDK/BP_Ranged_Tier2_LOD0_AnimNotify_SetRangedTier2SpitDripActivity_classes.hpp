@@ -23,7 +23,7 @@ public:
 	bool                                          NewActivity;                                       // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	bool Received_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, const struct FAnimNotifyEventReference& EventReference) const;
+	bool Received_Notify(class USkeletalMeshComponent* MeshComp_Received_Notify, class UAnimSequenceBase* Animation_Received_Notify, const struct FAnimNotifyEventReference& EventReference_Received_Notify) const;
 
 public:
 	static class UClass* StaticClass()

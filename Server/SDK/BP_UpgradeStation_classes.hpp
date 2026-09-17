@@ -39,9 +39,9 @@ public:
 	class UAudioComponent*                        SFX_Loop;                                          // 0x0730(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_BP_UpgradeStation(int32 EntryPoint);
-	void OnUIOpened(bool bOpened);
 	void ReceiveBeginPlay();
+	void OnUIOpened(bool bOpened_OnUIOpened);
+	void ExecuteUbergraph_BP_UpgradeStation(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

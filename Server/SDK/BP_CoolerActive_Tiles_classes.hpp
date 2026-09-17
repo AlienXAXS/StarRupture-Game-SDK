@@ -24,10 +24,10 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_BP_CoolerActive_Tiles_C;            // 0x08B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ExecuteUbergraph_BP_CoolerActive_Tiles(int32 EntryPoint);
-	void ReceiveActorBeginOverlap(class AActor* OtherActor);
+	void ReceiveTick(float DeltaSeconds_ReceiveTick);
 	void ReceiveBeginPlay();
-	void ReceiveTick(float DeltaSeconds);
+	void ReceiveActorBeginOverlap(class AActor* OtherActor_ReceiveActorBeginOverlap);
+	void ExecuteUbergraph_BP_CoolerActive_Tiles(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

@@ -16,15 +16,201 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.BP_DebugToggleRegularVisualization
-// (Event, Public, BlueprintEvent)
+// Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.ProcessOnInstaceAdded
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UInstancedStaticMeshComponent*    InVisualInstancedVisualsComponent                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// int32                                   InVisualDataInstanceIdx                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_GatherableBaseActor_C::BP_DebugToggleRegularVisualization()
+void ABP_GatherableBaseActor_C::ProcessOnInstaceAdded(class UInstancedStaticMeshComponent* InVisualInstancedVisualsComponent, int32 InVisualDataInstanceIdx)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GatherableBaseActor_C", "BP_DebugToggleRegularVisualization");
+		Func = Class->GetFunction("BP_GatherableBaseActor_C", "ProcessOnInstaceAdded");
+
+	Params::BP_GatherableBaseActor_C_ProcessOnInstaceAdded Parms{};
+
+	Parms.InVisualInstancedVisualsComponent = InVisualInstancedVisualsComponent;
+	Parms.InVisualDataInstanceIdx = InVisualDataInstanceIdx;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.ProcessMeshInstancing
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_GatherableBaseActor_C::ProcessMeshInstancing()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GatherableBaseActor_C", "ProcessMeshInstancing");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.ProcessMeshInstanceRemoval
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_GatherableBaseActor_C::ProcessMeshInstanceRemoval()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GatherableBaseActor_C", "ProcessMeshInstanceRemoval");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.ProcessDataFloatsAfterDepletion
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FVector&                   InInteractingActorLocation                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_GatherableBaseActor_C::ProcessDataFloatsAfterDepletion(const struct FVector& InInteractingActorLocation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GatherableBaseActor_C", "ProcessDataFloatsAfterDepletion");
+
+	Params::BP_GatherableBaseActor_C_ProcessDataFloatsAfterDepletion Parms{};
+
+	Parms.InInteractingActorLocation = std::move(InInteractingActorLocation);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.PostPCGSpawnInstanceInitialize
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_GatherableBaseActor_C::PostPCGSpawnInstanceInitialize()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GatherableBaseActor_C", "PostPCGSpawnInstanceInitialize");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.InitializeInstance
+// (Event, Public, BlueprintEvent)
+
+void ABP_GatherableBaseActor_C::InitializeInstance()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GatherableBaseActor_C", "InitializeInstance");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.ExecuteUbergraph_BP_GatherableBaseActor
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_GatherableBaseActor_C::ExecuteUbergraph_BP_GatherableBaseActor(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GatherableBaseActor_C", "ExecuteUbergraph_BP_GatherableBaseActor");
+
+	Params::BP_GatherableBaseActor_C_ExecuteUbergraph_BP_GatherableBaseActor Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.DebugProcessRegularVisualization
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_GatherableBaseActor_C::DebugProcessRegularVisualization()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GatherableBaseActor_C", "DebugProcessRegularVisualization");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.BP_ShowInitVisuals
+// (Event, Protected, BlueprintEvent)
+
+void ABP_GatherableBaseActor_C::BP_ShowInitVisuals()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GatherableBaseActor_C", "BP_ShowInitVisuals");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.BP_ShowDepletedVisuals
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// const struct FVector&                   InInteractingActorLocation                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_GatherableBaseActor_C::BP_ShowDepletedVisuals(const struct FVector& InInteractingActorLocation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GatherableBaseActor_C", "BP_ShowDepletedVisuals");
+
+	Params::BP_GatherableBaseActor_C_BP_ShowDepletedVisuals Parms{};
+
+	Parms.InInteractingActorLocation = std::move(InInteractingActorLocation);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.BP_OnVisualInstanceAdded
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// const struct FCrGatherableInstancedVisualsData&InVisualData                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference)
+
+void ABP_GatherableBaseActor_C::BP_OnVisualInstanceAdded(const struct FCrGatherableInstancedVisualsData& InVisualData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GatherableBaseActor_C", "BP_OnVisualInstanceAdded");
+
+	Params::BP_GatherableBaseActor_C_BP_OnVisualInstanceAdded Parms{};
+
+	Parms.InVisualData = std::move(InVisualData);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.BP_OnRemoveInstancedVisualsRequested
+// (Event, Protected, BlueprintEvent)
+
+void ABP_GatherableBaseActor_C::BP_OnRemoveInstancedVisualsRequested()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GatherableBaseActor_C", "BP_OnRemoveInstancedVisualsRequested");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -52,203 +238,17 @@ void ABP_GatherableBaseActor_C::BP_OnDepletedCosmetics(const struct FVector& InI
 }
 
 
-// Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.BP_OnRemoveInstancedVisualsRequested
-// (Event, Protected, BlueprintEvent)
-
-void ABP_GatherableBaseActor_C::BP_OnRemoveInstancedVisualsRequested()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GatherableBaseActor_C", "BP_OnRemoveInstancedVisualsRequested");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.BP_OnVisualInstanceAdded
-// (Event, Protected, HasOutParams, BlueprintEvent)
-// Parameters:
-// const struct FCrGatherableInstancedVisualsData&InVisualData                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference)
-
-void ABP_GatherableBaseActor_C::BP_OnVisualInstanceAdded(const struct FCrGatherableInstancedVisualsData& InVisualData)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GatherableBaseActor_C", "BP_OnVisualInstanceAdded");
-
-	Params::BP_GatherableBaseActor_C_BP_OnVisualInstanceAdded Parms{};
-
-	Parms.InVisualData = std::move(InVisualData);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.BP_ShowDepletedVisuals
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// const struct FVector&                   InInteractingActorLocation                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_GatherableBaseActor_C::BP_ShowDepletedVisuals(const struct FVector& InInteractingActorLocation)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GatherableBaseActor_C", "BP_ShowDepletedVisuals");
-
-	Params::BP_GatherableBaseActor_C_BP_ShowDepletedVisuals Parms{};
-
-	Parms.InInteractingActorLocation = std::move(InInteractingActorLocation);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.BP_ShowInitVisuals
-// (Event, Protected, BlueprintEvent)
-
-void ABP_GatherableBaseActor_C::BP_ShowInitVisuals()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GatherableBaseActor_C", "BP_ShowInitVisuals");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.DebugProcessRegularVisualization
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void ABP_GatherableBaseActor_C::DebugProcessRegularVisualization()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GatherableBaseActor_C", "DebugProcessRegularVisualization");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.ExecuteUbergraph_BP_GatherableBaseActor
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_GatherableBaseActor_C::ExecuteUbergraph_BP_GatherableBaseActor(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GatherableBaseActor_C", "ExecuteUbergraph_BP_GatherableBaseActor");
-
-	Params::BP_GatherableBaseActor_C_ExecuteUbergraph_BP_GatherableBaseActor Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.InitializeInstance
+// Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.BP_DebugToggleRegularVisualization
 // (Event, Public, BlueprintEvent)
 
-void ABP_GatherableBaseActor_C::InitializeInstance()
+void ABP_GatherableBaseActor_C::BP_DebugToggleRegularVisualization()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GatherableBaseActor_C", "InitializeInstance");
+		Func = Class->GetFunction("BP_GatherableBaseActor_C", "BP_DebugToggleRegularVisualization");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.PostPCGSpawnInstanceInitialize
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_GatherableBaseActor_C::PostPCGSpawnInstanceInitialize()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GatherableBaseActor_C", "PostPCGSpawnInstanceInitialize");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.ProcessDataFloatsAfterDepletion
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FVector&                   InInteractingActorLocation                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_GatherableBaseActor_C::ProcessDataFloatsAfterDepletion(const struct FVector& InInteractingActorLocation)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GatherableBaseActor_C", "ProcessDataFloatsAfterDepletion");
-
-	Params::BP_GatherableBaseActor_C_ProcessDataFloatsAfterDepletion Parms{};
-
-	Parms.InInteractingActorLocation = std::move(InInteractingActorLocation);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.ProcessMeshInstanceRemoval
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void ABP_GatherableBaseActor_C::ProcessMeshInstanceRemoval()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GatherableBaseActor_C", "ProcessMeshInstanceRemoval");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.ProcessMeshInstancing
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void ABP_GatherableBaseActor_C::ProcessMeshInstancing()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GatherableBaseActor_C", "ProcessMeshInstancing");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_GatherableBaseActor.BP_GatherableBaseActor_C.ProcessOnInstaceAdded
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UInstancedStaticMeshComponent*    InVisualInstancedVisualsComponent                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-// int32                                   InVisualDataInstanceIdx                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_GatherableBaseActor_C::ProcessOnInstaceAdded(class UInstancedStaticMeshComponent* InVisualInstancedVisualsComponent, int32 InVisualDataInstanceIdx)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GatherableBaseActor_C", "ProcessOnInstaceAdded");
-
-	Params::BP_GatherableBaseActor_C_ProcessOnInstaceAdded Parms{};
-
-	Parms.InVisualInstancedVisualsComponent = InVisualInstancedVisualsComponent;
-	Parms.InVisualDataInstanceIdx = InVisualDataInstanceIdx;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 

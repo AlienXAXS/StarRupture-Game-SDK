@@ -16,83 +16,15 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_DroneStation.BP_DroneStation_C.ExecuteUbergraph_BP_DroneStation
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_DroneStation.BP_DroneStation_C.Timeline__UpdateFunc
+// (BlueprintEvent)
 
-void ABP_DroneStation_C::ExecuteUbergraph_BP_DroneStation(int32 EntryPoint)
+void ABP_DroneStation_C::Timeline__UpdateFunc()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneStation_C", "ExecuteUbergraph_BP_DroneStation");
-
-	Params::BP_DroneStation_C_ExecuteUbergraph_BP_DroneStation Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_DroneStation.BP_DroneStation_C.PlayBuildingEffect
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_DroneStation_C::PlayBuildingEffect()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneStation_C", "PlayBuildingEffect");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_DroneStation.BP_DroneStation_C.PostPlayBuildingEffect
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bWasBuildingEffectPlayed                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_DroneStation_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneStation_C", "PostPlayBuildingEffect");
-
-	Params::BP_DroneStation_C_PostPlayBuildingEffect Parms{};
-
-	Parms.bWasBuildingEffectPlayed = bWasBuildingEffectPlayed;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_DroneStation.BP_DroneStation_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_DroneStation_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneStation_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_DroneStation.BP_DroneStation_C.SetupSkeletalMesh
-// (Event, Public, BlueprintEvent)
-
-void ABP_DroneStation_C::SetupSkeletalMesh()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneStation_C", "SetupSkeletalMesh");
+		Func = Class->GetFunction("BP_DroneStation_C", "Timeline__UpdateFunc");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -112,17 +44,85 @@ void ABP_DroneStation_C::Timeline__FinishedFunc()
 }
 
 
-// Function BP_DroneStation.BP_DroneStation_C.Timeline__UpdateFunc
-// (BlueprintEvent)
+// Function BP_DroneStation.BP_DroneStation_C.SetupSkeletalMesh
+// (Event, Public, BlueprintEvent)
 
-void ABP_DroneStation_C::Timeline__UpdateFunc()
+void ABP_DroneStation_C::SetupSkeletalMesh()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneStation_C", "Timeline__UpdateFunc");
+		Func = Class->GetFunction("BP_DroneStation_C", "SetupSkeletalMesh");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_DroneStation.BP_DroneStation_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_DroneStation_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_DroneStation_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_DroneStation.BP_DroneStation_C.PostPlayBuildingEffect
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bWasBuildingEffectPlayed_PostPlayBuildingEffect        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_DroneStation_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed_PostPlayBuildingEffect)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_DroneStation_C", "PostPlayBuildingEffect");
+
+	Params::BP_DroneStation_C_PostPlayBuildingEffect Parms{};
+
+	Parms.bWasBuildingEffectPlayed_PostPlayBuildingEffect = bWasBuildingEffectPlayed_PostPlayBuildingEffect;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_DroneStation.BP_DroneStation_C.PlayBuildingEffect
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_DroneStation_C::PlayBuildingEffect()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_DroneStation_C", "PlayBuildingEffect");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_DroneStation.BP_DroneStation_C.ExecuteUbergraph_BP_DroneStation
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_DroneStation_C::ExecuteUbergraph_BP_DroneStation(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_DroneStation_C", "ExecuteUbergraph_BP_DroneStation");
+
+	Params::BP_DroneStation_C_ExecuteUbergraph_BP_DroneStation Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

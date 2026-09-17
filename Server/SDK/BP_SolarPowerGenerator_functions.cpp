@@ -16,6 +16,40 @@
 
 SDK_NAMESPACE_START
 
+// Function BP_SolarPowerGenerator.BP_SolarPowerGenerator_C.SetupSkeletalMesh
+// (Event, Public, BlueprintEvent)
+
+void ABP_SolarPowerGenerator_C::SetupSkeletalMesh()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SolarPowerGenerator_C", "SetupSkeletalMesh");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_SolarPowerGenerator.BP_SolarPowerGenerator_C.PostPlayBuildingEffect
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bWasBuildingEffectPlayed_PostPlayBuildingEffect        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_SolarPowerGenerator_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed_PostPlayBuildingEffect)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SolarPowerGenerator_C", "PostPlayBuildingEffect");
+
+	Params::BP_SolarPowerGenerator_C_PostPlayBuildingEffect Parms{};
+
+	Parms.bWasBuildingEffectPlayed_PostPlayBuildingEffect = bWasBuildingEffectPlayed_PostPlayBuildingEffect;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_SolarPowerGenerator.BP_SolarPowerGenerator_C.ExecuteUbergraph_BP_SolarPowerGenerator
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -36,48 +70,14 @@ void ABP_SolarPowerGenerator_C::ExecuteUbergraph_BP_SolarPowerGenerator(int32 En
 }
 
 
-// Function BP_SolarPowerGenerator.BP_SolarPowerGenerator_C.PostPlayBuildingEffect
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bWasBuildingEffectPlayed                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_SolarPowerGenerator_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SolarPowerGenerator_C", "PostPlayBuildingEffect");
-
-	Params::BP_SolarPowerGenerator_C_PostPlayBuildingEffect Parms{};
-
-	Parms.bWasBuildingEffectPlayed = bWasBuildingEffectPlayed;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_SolarPowerGenerator.BP_SolarPowerGenerator_C.SetupSkeletalMesh
-// (Event, Public, BlueprintEvent)
-
-void ABP_SolarPowerGenerator_C::SetupSkeletalMesh()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SolarPowerGenerator_C", "SetupSkeletalMesh");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_SolarPowerGenerator.BP_SolarPowerGenerator_C.Get Meshes
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// class USceneComponent*                  Static_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-// class USceneComponent*                  Animated_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class USceneComponent*                  Static                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class USceneComponent*                  Animated                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // TArray<class UMeshComponent*>*          NewParam                                               (Parm, OutParm, ContainsInstancedReference)
 
-void ABP_SolarPowerGenerator_C::Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Animated_0, TArray<class UMeshComponent*>* NewParam) const
+void ABP_SolarPowerGenerator_C::Get_Meshes(class USceneComponent* Static, class USceneComponent* Animated, TArray<class UMeshComponent*>* NewParam) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -86,8 +86,8 @@ void ABP_SolarPowerGenerator_C::Get_Meshes(class USceneComponent* Static_0, clas
 
 	Params::BP_SolarPowerGenerator_C_Get_Meshes Parms{};
 
-	Parms.Static_0 = Static_0;
-	Parms.Animated_0 = Animated_0;
+	Parms.Static = Static;
+	Parms.Animated = Animated;
 
 	UObject::ProcessEvent(Func, &Parms);
 

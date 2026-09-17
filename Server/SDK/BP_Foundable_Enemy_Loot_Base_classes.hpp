@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "BP_Foundable_Base_classes.hpp"
 #include "Engine_structs.hpp"
+#include "BP_Foundable_Base_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -31,12 +31,12 @@ public:
 	double                                        TrajectorySimulationSpeed;                         // 0x0350(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void CanPlaySound(bool* bRet);
-	void ExecuteUbergraph_BP_Foundable_Enemy_Loot_Base(int32 EntryPoint);
-	void ReceiveBeginPlay();
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
-	void ReceiveTick(float DeltaSeconds);
 	void SimulateDrop(const struct FVector& StartLocation);
+	void ReceiveTick(float DeltaSeconds);
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void ReceiveBeginPlay();
+	void ExecuteUbergraph_BP_Foundable_Enemy_Loot_Base(int32 EntryPoint);
+	void CanPlaySound(bool* bRet);
 
 public:
 	static class UClass* StaticClass()

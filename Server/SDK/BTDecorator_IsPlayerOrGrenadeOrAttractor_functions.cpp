@@ -19,11 +19,11 @@ SDK_NAMESPACE_START
 // Function BTDecorator_IsPlayerOrGrenadeOrAttractor.BTDecorator_IsPlayerOrGrenadeOrAttractor_C.PerformConditionCheckAI
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AAIController*                    OwnerController                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class APawn*                            ControlledPawn                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AAIController*                    OwnerController_PerformConditionCheckAI                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class APawn*                            ControlledPawn_PerformConditionCheckAI                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue_PerformConditionCheckAI                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-bool UBTDecorator_IsPlayerOrGrenadeOrAttractor_C::PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn)
+bool UBTDecorator_IsPlayerOrGrenadeOrAttractor_C::PerformConditionCheckAI(class AAIController* OwnerController_PerformConditionCheckAI, class APawn* ControlledPawn_PerformConditionCheckAI)
 {
 	static class UFunction* Func = nullptr;
 
@@ -32,8 +32,8 @@ bool UBTDecorator_IsPlayerOrGrenadeOrAttractor_C::PerformConditionCheckAI(class 
 
 	Params::BTDecorator_IsPlayerOrGrenadeOrAttractor_C_PerformConditionCheckAI Parms{};
 
-	Parms.OwnerController = OwnerController;
-	Parms.ControlledPawn = ControlledPawn;
+	Parms.OwnerController_PerformConditionCheckAI = OwnerController_PerformConditionCheckAI;
+	Parms.ControlledPawn_PerformConditionCheckAI = ControlledPawn_PerformConditionCheckAI;
 
 	UObject::ProcessEvent(Func, &Parms);
 

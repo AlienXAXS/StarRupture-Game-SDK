@@ -33,9 +33,9 @@ void ABP_Sulphur_Logic_C::UserConstructionScript()
 // Function BP_Sulphur_Logic.BP_Sulphur_Logic_C.OnSulphurActivityChanged
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool                                    bActive_OnSulphurActivityChanged                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bActive                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Sulphur_Logic_C::OnSulphurActivityChanged(bool bActive_OnSulphurActivityChanged)
+void ABP_Sulphur_Logic_C::OnSulphurActivityChanged(bool bActive)
 {
 	static class UFunction* Func = nullptr;
 
@@ -44,7 +44,7 @@ void ABP_Sulphur_Logic_C::OnSulphurActivityChanged(bool bActive_OnSulphurActivit
 
 	Params::BP_Sulphur_Logic_C_OnSulphurActivityChanged Parms{};
 
-	Parms.bActive_OnSulphurActivityChanged = bActive_OnSulphurActivityChanged;
+	Parms.bActive = bActive;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

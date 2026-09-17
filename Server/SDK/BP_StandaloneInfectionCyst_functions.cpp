@@ -16,188 +16,145 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.BP_OnDamageProtectionChanged
-// (Event, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    IsActive                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.UpdateInfectionEffect
+// (BlueprintCallable, BlueprintEvent)
 
-void ABP_StandaloneInfectionCyst_C::BP_OnDamageProtectionChanged(bool IsActive)
+void ABP_StandaloneInfectionCyst_C::UpdateInfectionEffect()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "BP_OnDamageProtectionChanged");
+		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "UpdateInfectionEffect");
 
-	Params::BP_StandaloneInfectionCyst_C_BP_OnDamageProtectionChanged Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.IsActive = IsActive;
+
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.Set_half_time
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_StandaloneInfectionCyst_C::Set_half_time()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "Set_half_time");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.Scale_cyst__UpdateFunc
+// (BlueprintEvent)
+
+void ABP_StandaloneInfectionCyst_C::Scale_cyst__UpdateFunc()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "Scale_cyst__UpdateFunc");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.Scale_cyst__FinishedFunc
+// (BlueprintEvent)
+
+void ABP_StandaloneInfectionCyst_C::Scale_cyst__FinishedFunc()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "Scale_cyst__FinishedFunc");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.ReceiveEndPlay
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// EEndPlayReason                          EndPlayReason_ReceiveEndPlay                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_StandaloneInfectionCyst_C::ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "ReceiveEndPlay");
+
+	Params::BP_StandaloneInfectionCyst_C_ReceiveEndPlay Parms{};
+
+	Parms.EndPlayReason_ReceiveEndPlay = EndPlayReason_ReceiveEndPlay;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.BP_OnDestroyed
-// (Event, Public, BlueprintEvent)
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ABP_StandaloneInfectionCyst_C::BP_OnDestroyed()
+void ABP_StandaloneInfectionCyst_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "BP_OnDestroyed");
+		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.BP_OnInfectionJustSpawned
-// (Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void ABP_StandaloneInfectionCyst_C::BP_OnInfectionJustSpawned()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "BP_OnInfectionJustSpawned");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.CalculateImmunityProgressFromTimers
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.OnGrowthProgress
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// double*                                 Progress                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   Progress_OnGrowthProgress                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_StandaloneInfectionCyst_C::CalculateImmunityProgressFromTimers(double* Progress)
+void ABP_StandaloneInfectionCyst_C::OnGrowthProgress(float Progress_OnGrowthProgress)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "CalculateImmunityProgressFromTimers");
+		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "OnGrowthProgress");
 
-	Params::BP_StandaloneInfectionCyst_C_CalculateImmunityProgressFromTimers Parms{};
+	Params::BP_StandaloneInfectionCyst_C_OnGrowthProgress Parms{};
 
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (Progress != nullptr)
-		*Progress = Parms.Progress;
-}
-
-
-// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.Dissolve__FinishedFunc
-// (BlueprintEvent)
-
-void ABP_StandaloneInfectionCyst_C::Dissolve__FinishedFunc()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "Dissolve__FinishedFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.Dissolve__UpdateFunc
-// (BlueprintEvent)
-
-void ABP_StandaloneInfectionCyst_C::Dissolve__UpdateFunc()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "Dissolve__UpdateFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.ExecuteUbergraph_BP_StandaloneInfectionCyst
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_StandaloneInfectionCyst_C::ExecuteUbergraph_BP_StandaloneInfectionCyst(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "ExecuteUbergraph_BP_StandaloneInfectionCyst");
-
-	Params::BP_StandaloneInfectionCyst_C_ExecuteUbergraph_BP_StandaloneInfectionCyst Parms{};
-
-	Parms.EntryPoint = EntryPoint;
+	Parms.Progress_OnGrowthProgress = Progress_OnGrowthProgress;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.ImmunityActivated
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.OnGrowthChanged
 // (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// double                                  Progress                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_StandaloneInfectionCyst_C::ImmunityActivated()
+void ABP_StandaloneInfectionCyst_C::OnGrowthChanged(double Progress)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "ImmunityActivated");
+		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "OnGrowthChanged");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_StandaloneInfectionCyst_C_OnGrowthChanged Parms{};
+
+	Parms.Progress = Progress;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.ImmunityDeactivated
-// (BlueprintCallable, BlueprintEvent)
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.OnDamageTaken_Multicast
+// (Net, NetMulticast, BlueprintCallable, BlueprintEvent)
 
-void ABP_StandaloneInfectionCyst_C::ImmunityDeactivated()
+void ABP_StandaloneInfectionCyst_C::OnDamageTaken_Multicast()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "ImmunityDeactivated");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.ImmunityTransition__FinishedFunc
-// (BlueprintEvent)
-
-void ABP_StandaloneInfectionCyst_C::ImmunityTransition__FinishedFunc()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "ImmunityTransition__FinishedFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.ImmunityTransition__UpdateFunc
-// (BlueprintEvent)
-
-void ABP_StandaloneInfectionCyst_C::ImmunityTransition__UpdateFunc()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "ImmunityTransition__UpdateFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.Infection_grow
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_StandaloneInfectionCyst_C::Infection_grow()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "Infection_grow");
+		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "OnDamageTaken_Multicast");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -227,147 +184,190 @@ void ABP_StandaloneInfectionCyst_C::K2_OnDamageTaken_1(class AActor* InInstigato
 }
 
 
-// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.OnDamageTaken_Multicast
-// (Net, NetMulticast, BlueprintCallable, BlueprintEvent)
-
-void ABP_StandaloneInfectionCyst_C::OnDamageTaken_Multicast()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "OnDamageTaken_Multicast");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.OnGrowthChanged
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.Infection_grow
 // (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// double                                  Progress                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_StandaloneInfectionCyst_C::OnGrowthChanged(double Progress)
+void ABP_StandaloneInfectionCyst_C::Infection_grow()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "OnGrowthChanged");
-
-	Params::BP_StandaloneInfectionCyst_C_OnGrowthChanged Parms{};
-
-	Parms.Progress = Progress;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.OnGrowthProgress
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   Progress                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_StandaloneInfectionCyst_C::OnGrowthProgress(float Progress)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "OnGrowthProgress");
-
-	Params::BP_StandaloneInfectionCyst_C_OnGrowthProgress Parms{};
-
-	Parms.Progress = Progress;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_StandaloneInfectionCyst_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "Infection_grow");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.ReceiveEndPlay
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_StandaloneInfectionCyst_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "ReceiveEndPlay");
-
-	Params::BP_StandaloneInfectionCyst_C_ReceiveEndPlay Parms{};
-
-	Parms.EndPlayReason = EndPlayReason;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.Scale_cyst__FinishedFunc
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.ImmunityTransition__UpdateFunc
 // (BlueprintEvent)
 
-void ABP_StandaloneInfectionCyst_C::Scale_cyst__FinishedFunc()
+void ABP_StandaloneInfectionCyst_C::ImmunityTransition__UpdateFunc()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "Scale_cyst__FinishedFunc");
+		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "ImmunityTransition__UpdateFunc");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.Scale_cyst__UpdateFunc
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.ImmunityTransition__FinishedFunc
 // (BlueprintEvent)
 
-void ABP_StandaloneInfectionCyst_C::Scale_cyst__UpdateFunc()
+void ABP_StandaloneInfectionCyst_C::ImmunityTransition__FinishedFunc()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "Scale_cyst__UpdateFunc");
+		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "ImmunityTransition__FinishedFunc");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.Set_half_time
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.ImmunityDeactivated
 // (BlueprintCallable, BlueprintEvent)
 
-void ABP_StandaloneInfectionCyst_C::Set_half_time()
+void ABP_StandaloneInfectionCyst_C::ImmunityDeactivated()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "Set_half_time");
+		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "ImmunityDeactivated");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.UpdateInfectionEffect
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.ImmunityActivated
 // (BlueprintCallable, BlueprintEvent)
 
-void ABP_StandaloneInfectionCyst_C::UpdateInfectionEffect()
+void ABP_StandaloneInfectionCyst_C::ImmunityActivated()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "UpdateInfectionEffect");
+		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "ImmunityActivated");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.ExecuteUbergraph_BP_StandaloneInfectionCyst
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_StandaloneInfectionCyst_C::ExecuteUbergraph_BP_StandaloneInfectionCyst(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "ExecuteUbergraph_BP_StandaloneInfectionCyst");
+
+	Params::BP_StandaloneInfectionCyst_C_ExecuteUbergraph_BP_StandaloneInfectionCyst Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.Dissolve__UpdateFunc
+// (BlueprintEvent)
+
+void ABP_StandaloneInfectionCyst_C::Dissolve__UpdateFunc()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "Dissolve__UpdateFunc");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.Dissolve__FinishedFunc
+// (BlueprintEvent)
+
+void ABP_StandaloneInfectionCyst_C::Dissolve__FinishedFunc()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "Dissolve__FinishedFunc");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.CalculateImmunityProgressFromTimers
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// double*                                 Progress                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_StandaloneInfectionCyst_C::CalculateImmunityProgressFromTimers(double* Progress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "CalculateImmunityProgressFromTimers");
+
+	Params::BP_StandaloneInfectionCyst_C_CalculateImmunityProgressFromTimers Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Progress != nullptr)
+		*Progress = Parms.Progress;
+}
+
+
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.BP_OnInfectionJustSpawned
+// (Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void ABP_StandaloneInfectionCyst_C::BP_OnInfectionJustSpawned()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "BP_OnInfectionJustSpawned");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.BP_OnDestroyed
+// (Event, Public, BlueprintEvent)
+
+void ABP_StandaloneInfectionCyst_C::BP_OnDestroyed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "BP_OnDestroyed");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_StandaloneInfectionCyst.BP_StandaloneInfectionCyst_C.BP_OnDamageProtectionChanged
+// (Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    IsActive_BP_OnDamageProtectionChanged                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_StandaloneInfectionCyst_C::BP_OnDamageProtectionChanged(bool IsActive_BP_OnDamageProtectionChanged)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "BP_OnDamageProtectionChanged");
+
+	Params::BP_StandaloneInfectionCyst_C_BP_OnDamageProtectionChanged Parms{};
+
+	Parms.IsActive_BP_OnDamageProtectionChanged = IsActive_BP_OnDamageProtectionChanged;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

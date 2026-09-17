@@ -16,155 +16,77 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_BaseCore.BP_BaseCore_C.BP_OnActiveCoolingChanged
-// (Event, Protected, BlueprintEvent)
+// Function BP_BaseCore.BP_BaseCore_C.SetBaseCoreAreaVisibility
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    ActiveCooling                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Visible_SetBaseCoreAreaVisibility                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_BaseCore_C::BP_OnActiveCoolingChanged(bool ActiveCooling)
+void ABP_BaseCore_C::SetBaseCoreAreaVisibility(bool Visible_SetBaseCoreAreaVisibility)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_C", "BP_OnActiveCoolingChanged");
+		Func = Class->GetFunction("BP_BaseCore_C", "SetBaseCoreAreaVisibility");
 
-	Params::BP_BaseCore_C_BP_OnActiveCoolingChanged Parms{};
+	Params::BP_BaseCore_C_SetBaseCoreAreaVisibility Parms{};
 
-	Parms.ActiveCooling = ActiveCooling;
+	Parms.Visible_SetBaseCoreAreaVisibility = Visible_SetBaseCoreAreaVisibility;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_BaseCore.BP_BaseCore_C.BP_OnBaseCoreInfectionActorDestroyed
-// (Event, Protected, HasOutParams, BlueprintEvent)
+// Function BP_BaseCore.BP_BaseCore_C.ReceiveEndPlay
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool                                    LastActor                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FVector&                   ActorLocation                                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEndPlayReason                          EndPlayReason_ReceiveEndPlay                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_BaseCore_C::BP_OnBaseCoreInfectionActorDestroyed(bool LastActor, const struct FVector& ActorLocation)
+void ABP_BaseCore_C::ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_C", "BP_OnBaseCoreInfectionActorDestroyed");
+		Func = Class->GetFunction("BP_BaseCore_C", "ReceiveEndPlay");
 
-	Params::BP_BaseCore_C_BP_OnBaseCoreInfectionActorDestroyed Parms{};
+	Params::BP_BaseCore_C_ReceiveEndPlay Parms{};
 
-	Parms.LastActor = LastActor;
-	Parms.ActorLocation = std::move(ActorLocation);
+	Parms.EndPlayReason_ReceiveEndPlay = EndPlayReason_ReceiveEndPlay;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_BaseCore.BP_BaseCore_C.BP_OnBeingAttackedStateChanged
+// Function BP_BaseCore.BP_BaseCore_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bUnderAttack                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_BaseCore_C::BP_OnBeingAttackedStateChanged(bool bUnderAttack)
+void ABP_BaseCore_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_C", "BP_OnBeingAttackedStateChanged");
-
-	Params::BP_BaseCore_C_BP_OnBeingAttackedStateChanged Parms{};
-
-	Parms.bUnderAttack = bUnderAttack;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_BaseCore.BP_BaseCore_C.BP_OnInfectedChanged
-// (Event, Protected, BlueprintEvent)
-
-void ABP_BaseCore_C::BP_OnInfectedChanged()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_C", "BP_OnInfectedChanged");
+		Func = Class->GetFunction("BP_BaseCore_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_BaseCore.BP_BaseCore_C.BP_OnInfectionChanged
-// (Event, Protected, BlueprintEvent)
+// Function BP_BaseCore.BP_BaseCore_C.PlayAlarm
+// (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                                   Infection                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    InfectionActive                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Slow                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Fast                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_BaseCore_C::BP_OnInfectionChanged(float Infection, bool InfectionActive)
+void ABP_BaseCore_C::PlayAlarm(bool Slow, bool Fast)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_C", "BP_OnInfectionChanged");
+		Func = Class->GetFunction("BP_BaseCore_C", "PlayAlarm");
 
-	Params::BP_BaseCore_C_BP_OnInfectionChanged Parms{};
+	Params::BP_BaseCore_C_PlayAlarm Parms{};
 
-	Parms.Infection = Infection;
-	Parms.InfectionActive = InfectionActive;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_BaseCore.BP_BaseCore_C.BP_OnUpgreadLevelChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// uint8                                   NewUpgreadLevel                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Immediately                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_BaseCore_C::BP_OnUpgreadLevelChanged(uint8 NewUpgreadLevel, bool Immediately)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_C", "BP_OnUpgreadLevelChanged");
-
-	Params::BP_BaseCore_C_BP_OnUpgreadLevelChanged Parms{};
-
-	Parms.NewUpgreadLevel = NewUpgreadLevel;
-	Parms.Immediately = Immediately;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_BaseCore.BP_BaseCore_C.BP_UpdateBaseCoreArea
-// (Event, Protected, BlueprintEvent)
-
-void ABP_BaseCore_C::BP_UpdateBaseCoreArea()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_C", "BP_UpdateBaseCoreArea");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_BaseCore.BP_BaseCore_C.ExecuteUbergraph_BP_BaseCore
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_BaseCore_C::ExecuteUbergraph_BP_BaseCore(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_C", "ExecuteUbergraph_BP_BaseCore");
-
-	Params::BP_BaseCore_C_ExecuteUbergraph_BP_BaseCore Parms{};
-
-	Parms.EntryPoint = EntryPoint;
+	Parms.Slow = Slow;
+	Parms.Fast = Fast;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -191,77 +113,155 @@ void ABP_BaseCore_C::IsPlayingAttackSound(bool* Result)
 }
 
 
-// Function BP_BaseCore.BP_BaseCore_C.PlayAlarm
-// (BlueprintCallable, BlueprintEvent)
+// Function BP_BaseCore.BP_BaseCore_C.ExecuteUbergraph_BP_BaseCore
+// (Final, UbergraphFunction)
 // Parameters:
-// bool                                    Slow                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Fast                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_BaseCore_C::PlayAlarm(bool Slow, bool Fast)
+void ABP_BaseCore_C::ExecuteUbergraph_BP_BaseCore(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_C", "PlayAlarm");
+		Func = Class->GetFunction("BP_BaseCore_C", "ExecuteUbergraph_BP_BaseCore");
 
-	Params::BP_BaseCore_C_PlayAlarm Parms{};
+	Params::BP_BaseCore_C_ExecuteUbergraph_BP_BaseCore Parms{};
 
-	Parms.Slow = Slow;
-	Parms.Fast = Fast;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_BaseCore.BP_BaseCore_C.ReceiveBeginPlay
+// Function BP_BaseCore.BP_BaseCore_C.BP_UpdateBaseCoreArea
 // (Event, Protected, BlueprintEvent)
 
-void ABP_BaseCore_C::ReceiveBeginPlay()
+void ABP_BaseCore_C::BP_UpdateBaseCoreArea()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_BaseCore_C", "BP_UpdateBaseCoreArea");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_BaseCore.BP_BaseCore_C.ReceiveEndPlay
+// Function BP_BaseCore.BP_BaseCore_C.BP_OnUpgreadLevelChanged
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// uint8                                   NewUpgreadLevel_BP_OnUpgreadLevelChanged               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Immediately_BP_OnUpgreadLevelChanged                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_BaseCore_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
+void ABP_BaseCore_C::BP_OnUpgreadLevelChanged(uint8 NewUpgreadLevel_BP_OnUpgreadLevelChanged, bool Immediately_BP_OnUpgreadLevelChanged)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_C", "ReceiveEndPlay");
+		Func = Class->GetFunction("BP_BaseCore_C", "BP_OnUpgreadLevelChanged");
 
-	Params::BP_BaseCore_C_ReceiveEndPlay Parms{};
+	Params::BP_BaseCore_C_BP_OnUpgreadLevelChanged Parms{};
 
-	Parms.EndPlayReason = EndPlayReason;
+	Parms.NewUpgreadLevel_BP_OnUpgreadLevelChanged = NewUpgreadLevel_BP_OnUpgreadLevelChanged;
+	Parms.Immediately_BP_OnUpgreadLevelChanged = Immediately_BP_OnUpgreadLevelChanged;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_BaseCore.BP_BaseCore_C.SetBaseCoreAreaVisibility
-// (Event, Public, BlueprintEvent)
+// Function BP_BaseCore.BP_BaseCore_C.BP_OnInfectionChanged
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool                                    Visible                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   Infection_BP_OnInfectionChanged                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    InfectionActive_BP_OnInfectionChanged                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_BaseCore_C::SetBaseCoreAreaVisibility(bool Visible)
+void ABP_BaseCore_C::BP_OnInfectionChanged(float Infection_BP_OnInfectionChanged, bool InfectionActive_BP_OnInfectionChanged)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_C", "SetBaseCoreAreaVisibility");
+		Func = Class->GetFunction("BP_BaseCore_C", "BP_OnInfectionChanged");
 
-	Params::BP_BaseCore_C_SetBaseCoreAreaVisibility Parms{};
+	Params::BP_BaseCore_C_BP_OnInfectionChanged Parms{};
 
-	Parms.Visible = Visible;
+	Parms.Infection_BP_OnInfectionChanged = Infection_BP_OnInfectionChanged;
+	Parms.InfectionActive_BP_OnInfectionChanged = InfectionActive_BP_OnInfectionChanged;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_BaseCore.BP_BaseCore_C.BP_OnInfectedChanged
+// (Event, Protected, BlueprintEvent)
+
+void ABP_BaseCore_C::BP_OnInfectedChanged()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseCore_C", "BP_OnInfectedChanged");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_BaseCore.BP_BaseCore_C.BP_OnBeingAttackedStateChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bUnderAttack_BP_OnBeingAttackedStateChanged            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_BaseCore_C::BP_OnBeingAttackedStateChanged(bool bUnderAttack_BP_OnBeingAttackedStateChanged)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseCore_C", "BP_OnBeingAttackedStateChanged");
+
+	Params::BP_BaseCore_C_BP_OnBeingAttackedStateChanged Parms{};
+
+	Parms.bUnderAttack_BP_OnBeingAttackedStateChanged = bUnderAttack_BP_OnBeingAttackedStateChanged;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_BaseCore.BP_BaseCore_C.BP_OnBaseCoreInfectionActorDestroyed
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// bool                                    LastActor_BP_OnBaseCoreInfectionActorDestroyed         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   ActorLocation_BP_OnBaseCoreInfectionActorDestroyed     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_BaseCore_C::BP_OnBaseCoreInfectionActorDestroyed(bool LastActor_BP_OnBaseCoreInfectionActorDestroyed, const struct FVector& ActorLocation_BP_OnBaseCoreInfectionActorDestroyed)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseCore_C", "BP_OnBaseCoreInfectionActorDestroyed");
+
+	Params::BP_BaseCore_C_BP_OnBaseCoreInfectionActorDestroyed Parms{};
+
+	Parms.LastActor_BP_OnBaseCoreInfectionActorDestroyed = LastActor_BP_OnBaseCoreInfectionActorDestroyed;
+	Parms.ActorLocation_BP_OnBaseCoreInfectionActorDestroyed = std::move(ActorLocation_BP_OnBaseCoreInfectionActorDestroyed);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_BaseCore.BP_BaseCore_C.BP_OnActiveCoolingChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    ActiveCooling_BP_OnActiveCoolingChanged                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_BaseCore_C::BP_OnActiveCoolingChanged(bool ActiveCooling_BP_OnActiveCoolingChanged)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseCore_C", "BP_OnActiveCoolingChanged");
+
+	Params::BP_BaseCore_C_BP_OnActiveCoolingChanged Parms{};
+
+	Parms.ActiveCooling_BP_OnActiveCoolingChanged = ActiveCooling_BP_OnActiveCoolingChanged;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

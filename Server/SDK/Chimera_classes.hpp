@@ -4528,7 +4528,7 @@ DUMPER7_ASSERTS_ACrOreActor;
 
 // Class Chimera.CrGatherableCropActor
 // 0x0050 (0x0520 - 0x04D0)
-class ACrGatherableCropActor : public ACrOreActor
+class ACrGatherableCropActor final : public ACrOreActor
 {
 public:
 	uint8                                         Pad_4D0[0x10];                                     // 0x04D0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
@@ -5366,7 +5366,7 @@ DUMPER7_ASSERTS_ACrMassEntitySpawnerSaved;
 
 // Class Chimera.CrAlienObeliskSpawner
 // 0x0000 (0x02C8 - 0x02C8)
-class ACrAlienObeliskSpawner : public ACrMassEntitySpawnerSaved
+class ACrAlienObeliskSpawner final : public ACrMassEntitySpawnerSaved
 {
 public:
 	float BP_GetBaseSpawnSearchRadius() const;
@@ -5768,7 +5768,7 @@ DUMPER7_ASSERTS_UCrMassEnviroWaveAffectedAddObserver;
 
 // Class Chimera.CrCharacterSpawnPointBase
 // 0x0098 (0x0340 - 0x02A8)
-class ACrCharacterSpawnPointBase : public AActor
+class ACrCharacterSpawnPointBase final : public AActor
 {
 public:
 	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -11140,7 +11140,7 @@ DUMPER7_ASSERTS_UCrGameUserSettings;
 
 // Class Chimera.CrCutsceneActor
 // 0x0048 (0x0398 - 0x0350)
-class ACrCutsceneActor : public ALevelSequenceActor
+class ACrCutsceneActor final : public ALevelSequenceActor
 {
 public:
 	TMulticastInlineDelegate<void()>              OnCutsceneStartedDelegate;                         // 0x0350(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
@@ -11520,7 +11520,7 @@ DUMPER7_ASSERTS_UCrPCGClusterSettings;
 
 // Class Chimera.CrDataLayerObserverBase
 // 0x0008 (0x02B0 - 0x02A8)
-class ACrDataLayerObserverBase : public AActor
+class ACrDataLayerObserverBase final : public AActor
 {
 public:
 	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -12798,7 +12798,7 @@ DUMPER7_ASSERTS_ACrDroneBase;
 
 // Class Chimera.CrDroneItem
 // 0x0040 (0x0440 - 0x0400)
-class UCrDroneItem : public UCrItemDataBase
+class UCrDroneItem final : public UCrItemDataBase
 {
 public:
 	struct FAuAPMassSpawnedEntityType             EntityType;                                        // 0x0400(0x0038)(Edit, NativeAccessSpecifierPublic)
@@ -16668,7 +16668,7 @@ DUMPER7_ASSERTS_UCrRadiationBordersSystemSettings;
 
 // Class Chimera.CrGrenadeWeaponProjectileActor
 // 0x0040 (0x02E8 - 0x02A8)
-class ACrGrenadeWeaponProjectileActor : public AActor
+class ACrGrenadeWeaponProjectileActor final : public AActor
 {
 public:
 	float                                         InitialSpeed;                                      // 0x02A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -18320,7 +18320,7 @@ DUMPER7_ASSERTS_UCrGrenadeChargeAttributeSet;
 
 // Class Chimera.CrGrenadeWeaponItemDataBase
 // 0x0010 (0x1300 - 0x12F0)
-class UCrGrenadeWeaponItemDataBase : public UCrWeaponItemDataBase
+class UCrGrenadeWeaponItemDataBase final : public UCrWeaponItemDataBase
 {
 public:
 	TSubclassOf<class ACrGrenadeWeaponProjectileActor> GrenadeProjectileClass;                       // 0x12F0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -20558,7 +20558,7 @@ DUMPER7_ASSERTS_UCrLocalPlayer;
 
 // Class Chimera.CrPCGActorBase
 // 0x0088 (0x0330 - 0x02A8)
-class ACrPCGActorBase : public AActor
+class ACrPCGActorBase final : public AActor
 {
 public:
 	bool                                          bShouldPreviewActors;                              // 0x02A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -20744,7 +20744,7 @@ DUMPER7_ASSERTS_UCrMassReplicatedAgentDestructorObserver;
 
 // Class Chimera.CrPCGExclusionZoneBase
 // 0x0020 (0x02C8 - 0x02A8)
-class ACrPCGExclusionZoneBase : public AActor
+class ACrPCGExclusionZoneBase final : public AActor
 {
 public:
 	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -27448,7 +27448,7 @@ DUMPER7_ASSERTS_UCrMassTemperatureAddObserver;
 
 // Class Chimera.CrPointOfInterestMarkerActor
 // 0x00C0 (0x0368 - 0x02A8)
-class ACrPointOfInterestMarkerActor : public AActor
+class ACrPointOfInterestMarkerActor final : public AActor
 {
 public:
 	class FText                                   UnknownPointOfInterestName;                        // 0x02A8(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, NativeAccessSpecifierPublic)
@@ -27937,7 +27937,7 @@ DUMPER7_ASSERTS_UCrMedToolChargeAttributeSet;
 
 // Class Chimera.CrMedToolItemDataBase
 // 0x0050 (0x1340 - 0x12F0)
-class UCrMedToolItemDataBase : public UCrWeaponItemDataBase
+class UCrMedToolItemDataBase final : public UCrWeaponItemDataBase
 {
 public:
 	struct FCrMontagePair                         HealMontagesSelf;                                  // 0x12F0(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
@@ -28457,7 +28457,7 @@ DUMPER7_ASSERTS_UCrMegamachinesSubsystem;
 
 // Class Chimera.CrMegamachineTeleporterDevice
 // 0x0178 (0x0420 - 0x02A8)
-class ACrMegamachineTeleporterDevice : public AActor
+class ACrMegamachineTeleporterDevice final : public AActor
 {
 public:
 	uint8                                         Pad_2A8[0x10];                                     // 0x02A8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])

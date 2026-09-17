@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "BP_BaseAI_classes.hpp"
 #include "Engine_structs.hpp"
+#include "BP_BaseAI_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -26,14 +26,14 @@ public:
 	class UCrAiRangedAnimationStateSyncComponent* CrAiRangedAnimationStateSync;                      // 0x0D30(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_BP_Ranged_Tier1_Reskin_A_Actor_Character(int32 EntryPoint);
-	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
-	void OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag);
-	void OnEnterActorPool();
-	void OnExitActorPool();
 	void UserConstructionScript();
+	void OnExitActorPool();
+	void OnEnterActorPool();
+	void OnAiDied(const struct FHitResult& HitResult_OnAiDied, const struct FGameplayTag& KillingDamageTag_OnAiDied);
+	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam_GetNiagaraEyeSystem);
+	void ExecuteUbergraph_BP_Ranged_Tier1_Reskin_A_Actor_Character(int32 EntryPoint);
 
-	void OnMeshVisibilityUpdated(bool bIsMeshHidden) const;
+	void OnMeshVisibilityUpdated(bool bIsMeshHidden_OnMeshVisibilityUpdated) const;
 
 public:
 	static class UClass* StaticClass()

@@ -24,10 +24,10 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_BP_WaterExtractorFoundation_C;      // 0x08B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ExecuteUbergraph_BP_WaterExtractorFoundation(int32 EntryPoint);
-	void ReceiveActorBeginOverlap(class AActor* OtherActor);
+	void ReceiveTick(float DeltaSeconds_ReceiveTick);
 	void ReceiveBeginPlay();
-	void ReceiveTick(float DeltaSeconds);
+	void ReceiveActorBeginOverlap(class AActor* OtherActor_ReceiveActorBeginOverlap);
+	void ExecuteUbergraph_BP_WaterExtractorFoundation(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

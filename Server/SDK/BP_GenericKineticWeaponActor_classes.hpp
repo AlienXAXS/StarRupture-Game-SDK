@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "BP_WeaponActor_classes.hpp"
 #include "Engine_structs.hpp"
 #include "AuAbilities_structs.hpp"
-#include "BP_WeaponActor_classes.hpp"
 #include "EFireType_structs.hpp"
 
 

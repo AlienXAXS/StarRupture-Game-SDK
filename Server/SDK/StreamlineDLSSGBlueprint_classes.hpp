@@ -24,6 +24,7 @@ class UStreamlineLibraryDLSSG final : public UBlueprintFunctionLibrary
 public:
 	static EStreamlineDLSSGMode GetDefaultDLSSGMode();
 	static void GetDLSSGFrameTiming(float* FrameRateInHertz, int32* FramesPresented);
+	static bool GetDLSSGIsVsyncSupportAvailable();
 	static EStreamlineDLSSGMode GetDLSSGMode();
 	static TArray<EStreamlineDLSSGMode> GetSupportedDLSSGModes();
 	static bool IsDLSSGModeSupported(EStreamlineDLSSGMode DLSSGMode);

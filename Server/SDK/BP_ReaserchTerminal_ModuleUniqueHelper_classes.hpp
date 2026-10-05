@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ReaserchTerminal_ModuleUniqueHelper.BP_ReaserchTerminal_ModuleUniqueHelper_C
-// 0x0000 (0x0B30 - 0x0B30)
+// 0x0000 (0x0B40 - 0x0B40)
 class ABP_ReaserchTerminal_ModuleUniqueHelper_C final : public ABP_PlacementHelperReplicatedModule_C
 {
 public:

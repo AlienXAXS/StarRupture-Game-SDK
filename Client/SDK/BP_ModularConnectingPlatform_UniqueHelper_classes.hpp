@@ -16,11 +16,11 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ModularConnectingPlatform_UniqueHelper.BP_ModularConnectingPlatform_UniqueHelper_C
-// 0x0010 (0x0B40 - 0x0B30)
+// 0x0010 (0x0B50 - 0x0B40)
 class ABP_ModularConnectingPlatform_UniqueHelper_C final : public ABP_PlacementHelperReplicatedPlatform_C
 {
 public:
-	class UStaticMeshComponent*                   MainMesh;                                          // 0x0B30(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   MainMesh;                                          // 0x0B40(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

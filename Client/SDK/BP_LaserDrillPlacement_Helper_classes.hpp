@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_LaserDrillPlacement_Helper.BP_LaserDrillPlacement_Helper_C
-// 0x0000 (0x0A00 - 0x0A00)
+// 0x0000 (0x0A10 - 0x0A10)
 class ABP_LaserDrillPlacement_Helper_C final : public ABP_ChimeraPlacementHelperReplicatedDrill_C
 {
 public:

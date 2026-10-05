@@ -16,13 +16,13 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_CoolerActive_Helper.BP_CoolerActive_Helper_C
-// 0x0010 (0x0A30 - 0x0A20)
+// 0x0010 (0x0A40 - 0x0A30)
 class ABP_CoolerActive_Helper_C final : public ABP_ChimeraPlacementHelperReplicatedBase_C
 {
 public:
-	int32                                         Grid_Size_X;                                       // 0x0A18(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Grid_Size_Y;                                       // 0x0A1C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        Tile_Size;                                         // 0x0A20(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Grid_Size_X;                                       // 0x0A28(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Grid_Size_Y;                                       // 0x0A2C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        Tile_Size;                                         // 0x0A30(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void UserConstructionScript();

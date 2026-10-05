@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_DroneVerticalConnector_Helper_T3.BP_DroneVerticalConnector_Helper_T3_C
-// 0x0000 (0x0AB0 - 0x0AB0)
+// 0x0000 (0x0AC0 - 0x0AC0)
 class ABP_DroneVerticalConnector_Helper_T3_C : public ABP_DroneVerticalConnector_Helper_T1_C
 {
 public:

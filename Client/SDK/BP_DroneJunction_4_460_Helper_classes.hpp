@@ -16,11 +16,11 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_DroneJunction_4_460_Helper.BP_DroneJunction_4_460_Helper_C
-// 0x0000 (0x0A20 - 0x0A20)
+// 0x0000 (0x0A30 - 0x0A30)
 class ABP_DroneJunction_4_460_Helper_C final : public ABP_PlacementHelperReplicatedBase_C
 {
 public:
-	class UStaticMeshComponent*                   Pole;                                              // 0x0A18(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   Pole;                                              // 0x0A28(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

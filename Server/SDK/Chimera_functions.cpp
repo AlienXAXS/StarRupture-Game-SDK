@@ -12385,6 +12385,33 @@ void UCrBuildingComponent::ServerHandleDestroyViewport(const struct FCrMassEntit
 }
 
 
+// Function Chimera.CrBuildingComponent.ServerReplaceViewport
+// (Final, Net, NetReliable, Native, Event, Private, NetServer)
+// Parameters:
+// const struct FCrMassEntityReplicationHelper&ViewportReplHelper                                     (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrBuildingID                           BuildingID                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrBuildingComponent::ServerReplaceViewport(const struct FCrMassEntityReplicationHelper& ViewportReplHelper, ECrBuildingID BuildingID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrBuildingComponent", "ServerReplaceViewport");
+
+	Params::CrBuildingComponent_ServerReplaceViewport Parms{};
+
+	Parms.ViewportReplHelper = std::move(ViewportReplHelper);
+	Parms.BuildingID = BuildingID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Chimera.CrBuildingComponent.ServerSetHelperDynamicExtent
 // (Final, Net, NetReliable, Native, Event, Private, NetServer, HasDefaults)
 // Parameters:
@@ -20839,36 +20866,6 @@ void ACrForgottenEngineReplicationHelper::OnRep_ForgottenEngineState()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Chimera.CrElectricityGraphSubsystem.GetElectricityForSubgraphsInRadius
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const struct FVector&                   Center                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Radius                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UCrElectricityGraphSubsystem::GetElectricityForSubgraphsInRadius(const struct FVector& Center, float Radius) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrElectricityGraphSubsystem", "GetElectricityForSubgraphsInRadius");
-
-	Params::CrElectricityGraphSubsystem_GetElectricityForSubgraphsInRadius Parms{};
-
-	Parms.Center = std::move(Center);
-	Parms.Radius = Radius;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -48259,6 +48256,25 @@ void ACrCharacterPlayerBase::ApplyLoadedGEWithDuration(TArray<struct FCrActiveGE
 
 	if (InData != nullptr)
 		*InData = std::move(Parms.InData);
+}
+
+
+// Function Chimera.CrCharacterPlayerBase.ApplyQueuedGEWithDurationAfterLoad
+// (Final, Native, Public)
+
+void ACrCharacterPlayerBase::ApplyQueuedGEWithDurationAfterLoad()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrCharacterPlayerBase", "ApplyQueuedGEWithDurationAfterLoad");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 

@@ -4194,7 +4194,7 @@ public:
 DUMPER7_ASSERTS_FCrAlienObeliskParameters;
 
 // ScriptStruct Chimera.CrElectricitySubgraphData
-// 0x005C (0x0068 - 0x000C)
+// 0x0020 (0x002C - 0x000C)
 struct FCrElectricitySubgraphData final : public FFastArraySerializerItem
 {
 public:
@@ -4209,8 +4209,6 @@ public:
 	float                                         PrevProducedElectricity;                           // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ConsumedElectricity;                               // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         PrevConsumedElectricity;                           // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBox                                   BoxWorld;                                          // 0x0030(0x0038)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCrElectricitySubgraphData;
 
@@ -4390,11 +4388,11 @@ public:
 DUMPER7_ASSERTS_FCrAntennaData;
 
 // ScriptStruct Chimera.EntityCallToActorRequest
-// 0x0028 (0x0028 - 0x0000)
-struct alignas(0x08) FEntityCallToActorRequest final
+// 0x0060 (0x0060 - 0x0000)
+struct alignas(0x10) FEntityCallToActorRequest final
 {
 public:
-	uint8                                         Pad_0[0x28];                                       // 0x0000(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x60];                                       // 0x0000(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FEntityCallToActorRequest;
 
@@ -7529,21 +7527,21 @@ public:
 DUMPER7_ASSERTS_FCrMassNiagaraUserParameterColor;
 
 // ScriptStruct Chimera.CrGraphNodePairWithPath
-// 0x0030 (0x0030 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct alignas(0x08) FCrGraphNodePairWithPath final
 {
 public:
-	uint8                                         Pad_0[0x30];                                       // 0x0000(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x38];                                       // 0x0000(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCrGraphNodePairWithPath;
 
 // ScriptStruct Chimera.CrLogisticsSubgraphData
-// 0x00D8 (0x00D8 - 0x0000)
+// 0x00E0 (0x00E0 - 0x0000)
 struct FCrLogisticsSubgraphData final
 {
 public:
 	TArray<struct FCrMassPersistentEntityID>      Nodes;                                             // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10[0xC8];                                      // 0x0010(0x00C8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_10[0xD0];                                      // 0x0010(0x00D0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCrLogisticsSubgraphData;
 
@@ -7592,11 +7590,11 @@ public:
 DUMPER7_ASSERTS_FCrBuildingInfectionFragment;
 
 // ScriptStruct Chimera.CrLogisticsEntityWithDistance
-// 0x0050 (0x0050 - 0x0000)
+// 0x0058 (0x0058 - 0x0000)
 struct alignas(0x08) FCrLogisticsEntityWithDistance final
 {
 public:
-	uint8                                         Pad_0[0x50];                                       // 0x0000(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x58];                                       // 0x0000(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCrLogisticsEntityWithDistance;
 

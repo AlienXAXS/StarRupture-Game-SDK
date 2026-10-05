@@ -3880,6 +3880,17 @@ public:
 };
 DUMPER7_ASSERTS_CrBuildingComponent_ServerHandleDestroyViewport;
 
+// Function Chimera.CrBuildingComponent.ServerReplaceViewport
+// 0x0020 (0x0020 - 0x0000)
+struct CrBuildingComponent_ServerReplaceViewport final
+{
+public:
+	struct FCrMassEntityReplicationHelper         ViewportReplHelper;                                // 0x0000(0x0018)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrBuildingID                                 BuildingID;                                        // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CrBuildingComponent_ServerReplaceViewport;
+
 // Function Chimera.CrBuildingComponent.ServerSetHelperDynamicExtent
 // 0x0018 (0x0018 - 0x0000)
 struct CrBuildingComponent_ServerSetHelperDynamicExtent final
@@ -6628,17 +6639,6 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrForgottenEngineReplicationHelper_IsForgottenEngineActivated;
-
-// Function Chimera.CrElectricityGraphSubsystem.GetElectricityForSubgraphsInRadius
-// 0x0020 (0x0020 - 0x0000)
-struct CrElectricityGraphSubsystem_GetElectricityForSubgraphsInRadius final
-{
-public:
-	struct FVector                                Center;                                            // 0x0000(0x0018)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Radius;                                            // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x001C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrElectricityGraphSubsystem_GetElectricityForSubgraphsInRadius;
 
 // Function Chimera.CrElectricityGraphSubsystem.GetElectricityInBounds
 // 0x0040 (0x0040 - 0x0000)

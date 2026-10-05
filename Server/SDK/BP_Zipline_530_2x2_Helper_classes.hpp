@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Zipline_530_2x2_Helper.BP_Zipline_530_2x2_Helper_C
-// 0x0000 (0x0A20 - 0x0A20)
+// 0x0000 (0x0A30 - 0x0A30)
 class ABP_Zipline_530_2x2_Helper_C final : public ABP_PlacementHelperReplicatedBase_C
 {
 public:

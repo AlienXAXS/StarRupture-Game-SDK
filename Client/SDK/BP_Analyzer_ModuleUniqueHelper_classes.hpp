@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Analyzer_ModuleUniqueHelper.BP_Analyzer_ModuleUniqueHelper_C
-// 0x0000 (0x0B30 - 0x0B30)
+// 0x0000 (0x0B40 - 0x0B40)
 class ABP_Analyzer_ModuleUniqueHelper_C final : public ABP_PlacementHelperReplicatedModule_C
 {
 public:

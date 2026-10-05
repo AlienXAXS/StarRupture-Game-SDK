@@ -16,11 +16,11 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ChimeraPlacementHelperReplicatedDecoy.BP_ChimeraPlacementHelperReplicatedDecoy_C
-// 0x0000 (0x0A20 - 0x0A20)
+// 0x0000 (0x0A30 - 0x0A30)
 class ABP_ChimeraPlacementHelperReplicatedDecoy_C final : public ABP_ChimeraPlacementHelperReplicatedBase_C
 {
 public:
-	class UStaticMeshComponent*                   Sphere;                                            // 0x0A18(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   Sphere;                                            // 0x0A28(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

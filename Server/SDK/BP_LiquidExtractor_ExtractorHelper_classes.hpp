@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_LiquidExtractor_ExtractorHelper.BP_LiquidExtractor_ExtractorHelper_C
-// 0x0000 (0x0A00 - 0x0A00)
+// 0x0000 (0x0A10 - 0x0A10)
 class ABP_LiquidExtractor_ExtractorHelper_C final : public ABP_ChimeraPlacementHelperReplicatedExtractor_C
 {
 public:

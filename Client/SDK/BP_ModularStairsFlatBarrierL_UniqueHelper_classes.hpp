@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ModularStairsFlatBarrierL_UniqueHelper.BP_ModularStairsFlatBarrierL_UniqueHelper_C
-// 0x0000 (0x0B30 - 0x0B30)
+// 0x0000 (0x0B40 - 0x0B40)
 class ABP_ModularStairsFlatBarrierL_UniqueHelper_C final : public ABP_PlacementHelperReplicatedModule_C
 {
 public:

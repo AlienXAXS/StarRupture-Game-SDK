@@ -36,6 +36,15 @@ public:
 };
 DUMPER7_ASSERTS_StreamlineLibraryDLSSG_GetDLSSGFrameTiming;
 
+// Function StreamlineDLSSGBlueprint.StreamlineLibraryDLSSG.GetDLSSGIsVsyncSupportAvailable
+// 0x0001 (0x0001 - 0x0000)
+struct StreamlineLibraryDLSSG_GetDLSSGIsVsyncSupportAvailable final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_StreamlineLibraryDLSSG_GetDLSSGIsVsyncSupportAvailable;
+
 // Function StreamlineDLSSGBlueprint.StreamlineLibraryDLSSG.GetDLSSGMode
 // 0x0001 (0x0001 - 0x0000)
 struct StreamlineLibraryDLSSG_GetDLSSGMode final
